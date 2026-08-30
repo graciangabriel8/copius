@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas — Ingredient Dictionary · Dictionnaire des ingrédients</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23f0f0ef' stroke='%23555' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' text-anchor='middle' fill='%23333'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css?v=13">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">A</div>
+    <div class="brand-text">
+      <h1>Atlas</h1>
+      <p id="tagline"></p>
+    </div>
+  </div>
+  <div class="head-tools">
+    <input id="search" type="search" autocomplete="off">
+    <button id="createBtn" class="create-btn" type="button"></button>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="atlasView">
+  <section id="daily" class="daily"></section>
+
+  <nav id="cats" class="cats" aria-label="Families"></nav>
+
+  <div class="toolbar">
+    <label class="check"><input type="checkbox" id="seasonNow"><span id="seasonNowLbl"></span></label>
+    <label class="check"><input type="checkbox" id="favsOnly"><span id="favsOnlyLbl"></span></label>
+    <label class="check"><input type="checkbox" id="rareOnly"><span id="rareOnlyLbl"></span></label>
+    <label class="check"><input type="checkbox" id="luxeOnly"><span id="luxeOnlyLbl"></span></label>
+    <select id="sort" aria-label="Sort"></select>
+    <button id="random" class="linkish" type="button"></button>
+    <span id="stats" class="stats"></span>
+  </div>
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden></p>
+
+  <section class="lab" id="lab">
+    <h2 id="labTitle"></h2>
+    <p id="labHint" class="muted"></p>
+    <div class="lab-row">
+      <select id="labA"></select>
+      <span class="lab-x" aria-hidden="true">×</span>
+      <select id="labB"></select>
+    </div>
+    <div id="labResult" class="lab-result"></div>
+  </section>
+
+  <section class="trios" id="triosSec">
+    <h2 id="triosTitle"></h2>
+    <div id="triosGrid" class="trio-grid"></div>
+  </section>
+
+  <section class="creations" id="creationsSec">
+    <h2 id="creationsTitle"></h2>
+    <p id="creationsHint" class="muted"></p>
+    <div id="creationsGrid" class="trio-grid"></div>
+  </section>
+  </div>
+
+</main>
+
+<footer class="site-foot"><span id="footNote"></span></footer>
+
+<div id="createOverlay" class="overlay" hidden>
+  <div class="modal" id="createModal"></div>
+</div>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" id="modal">
+    <div class="modal-bar">
+      <button id="backBtn" class="ghost" type="button" hidden>&#8592;</button>
+      <button id="closeBtn" class="ghost" type="button" aria-label="Close / Fermer">&#10005;</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<input type="file" id="photoFile" accept="image/*" hidden>
+
+<script src="js/i18n.js?v=13"></script>
+<script src="js/photos.js?v=13"></script>
+<script src="js/data-vegetables.js?v=13"></script>
+<script src="js/data-fruits.js?v=13"></script>
+<script src="js/data-herbs.js?v=13"></script>
+<script src="js/data-spices.js?v=13"></script>
+<script src="js/data-pantry.js?v=13"></script>
+<script src="js/data-animal.js?v=13"></script>
+<script src="js/data-gastronomy-garden.js?v=13"></script>
+<script src="js/data-gastronomy-pantry.js?v=13"></script>
+<script src="js/data-premium.js?v=13"></script>
+<script src="js/data-cuts.js?v=13"></script>
+<script src="js/trios.js?v=13"></script>
+<script src="js/trios-gastronomy.js?v=13"></script>
+<script src="js/trios-premium.js?v=13"></script>
+<script src="js/app.js?v=13"></script>
+</body>
+</html>
