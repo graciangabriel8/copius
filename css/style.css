@@ -36,8 +36,10 @@ input,select{font:inherit}
   width:44px;height:44px;border-radius:50%;background:var(--plate);
   border:1.5px solid var(--border-strong);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:24px;color:var(--ink-2);
 }
+.brand-logo .bl-f{fill:#d7d7d3;stroke:#585853;stroke-width:2.6;stroke-linejoin:round}
+.brand-logo .bl-s{fill:none;stroke:#585853;stroke-width:2.6;stroke-linecap:round}
+.brand-logo .bl-d{fill:#585853}
 .brand-text h1{margin:0;font-size:26px;line-height:1.1}
 .brand-text p{margin:0;font-size:12.5px;color:var(--ink-3)}
 .head-tools{display:flex;align-items:center;gap:12px;flex:1;justify-content:flex-end;min-width:260px}
