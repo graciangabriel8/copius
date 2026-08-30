@@ -1,4 +1,4 @@
-/* Atlas — app logic: language, search, filters, modal, pairing lab, trios. */
+/* Copius — app logic: language, search, filters, modal, pairing lab, trios. */
 (function () {
   "use strict";
 
@@ -662,7 +662,7 @@
   }).then(function (all) {
     photosMap = all;
     if (Object.keys(all).length) { renderAll(); refreshOpenModal(); }
-  }).catch(function () { /* photos unavailable — the Atlas works without them */ });
+  }).catch(function () { /* photos unavailable — Copius works without them */ });
   var hash = decodeURIComponent(location.hash.replace("#", ""));
   if (hash && byId[hash]) openModal(hash);
 })();
