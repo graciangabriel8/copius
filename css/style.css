@@ -312,9 +312,42 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 /* ---------- responsive ---------- */
 @media (max-width:720px){
   .site-head{padding:12px 16px}
+
+  /* The brand block is ~283px of a 375px screen, so the tools need their own row;
+     flex:1 1 0% made them shrink to 44px and push the language toggle off-screen. */
+  .head-tools{flex:1 1 100%;min-width:0;gap:10px;justify-content:flex-start}
+  #search{flex:1 1 100px;width:auto;min-width:0}
+  .brand-text p{font-size:12px}
+
+  /* iOS zooms the page when a focused field is under 16px, and never zooms back. */
+  #search,#sort,#cPick,#cNotes,select,textarea,
+  input[type="text"],input[type="search"]{font-size:16px}
+
+  /* Fifteen chips wrapped into seven rows swallowed the first screen — scroll them instead. */
+  .cats{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+        scroll-snap-type:x proximity;padding-bottom:4px;margin-bottom:12px;
+        scrollbar-width:none;-ms-overflow-style:none}
+  .cats::-webkit-scrollbar{display:none}
+  .cats .chip{flex:none;scroll-snap-align:start;padding:11px 15px;font-size:14px}
+
+  /* Apple's 44px minimum touch target. */
+  .lang-toggle button{padding:12px 16px}
+  .create-btn{padding:11px 18px}
+  .toolbar{gap:12px 18px;font-size:15px}
+  .check{min-height:44px}
+  .check input{width:20px;height:20px}
+  #sort{padding:11px 12px}
+  .linkish{min-height:44px;display:inline-flex;align-items:center}
   main{padding:18px 16px 50px}
-  .daily{flex-direction:column;text-align:center;gap:12px}
-  .daily .d-story{max-width:none}
+  /* Stacked + centred, this card was 700px tall and pushed the grid off the
+     first screen entirely. Keep it a row, shrink the art, trim the story. */
+  .daily{gap:14px;padding:16px;border-radius:16px;align-items:flex-start}
+  .daily .d-art svg,.daily .d-art img{width:64px;height:64px}
+  .daily h2{font-size:22px;line-height:1.15}
+  .daily .d-label{font-size:10.5px;margin:0 0 2px}
+  .daily .d-latin{margin:0 0 6px;font-size:12.5px}
+  .daily .d-story{max-width:none;font-size:14px;display:-webkit-box;
+                  -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .modal-body{padding:4px 20px 24px}
   .m-head{justify-content:center;text-align:center}
   .m-season{justify-content:center}
@@ -323,3 +356,30 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 @media print{
   .site-head,.toolbar,.cats,.lab,.site-foot{display:none}
 }
+
+
+/* ---------- safe areas (installed to the home screen, notched iPhones) ---------- */
+@supports (padding:max(0px)){
+  .site-head{
+    padding-left:max(28px,env(safe-area-inset-left));
+    padding-right:max(28px,env(safe-area-inset-right));
+  }
+  main{
+    padding-left:max(28px,env(safe-area-inset-left));
+    padding-right:max(28px,env(safe-area-inset-right));
+    padding-bottom:max(60px,calc(50px + env(safe-area-inset-bottom)));
+  }
+  @media (max-width:720px){
+    .site-head{
+      padding-left:max(16px,env(safe-area-inset-left));
+      padding-right:max(16px,env(safe-area-inset-right));
+    }
+    main{
+      padding-left:max(16px,env(safe-area-inset-left));
+      padding-right:max(16px,env(safe-area-inset-right));
+    }
+  }
+}
+
+/* No grey flash on tap. */
+button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
