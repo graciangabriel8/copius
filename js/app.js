@@ -269,6 +269,70 @@
     return TRIOS.filter(function (tr) { return tr.ids.indexOf(id) !== -1; });
   }
 
+  /* ---------- work trees: an ingredient and its preparations ---------- */
+  var TREES = window.TREES || [];
+  var treeById = {};
+  TREES.forEach(function (t) { treeById[t.id] = t; });
+  var treeSel = null;
+
+  // One drawn glyph per preparation, in a 40x40 box, same stroke idiom as the entry art.
+  var BRANCH_ART = {
+    puree:    '<path class="tl" d="M8 30q3-14 12-14t12 14"/><path class="tl" d="M14 30q2-8 6-8t6 8"/><path class="tl" d="M20 15v-6"/>',
+    roasted:  '<path class="tl" d="M9 24l7-12 7 5 8-3-4 14z"/><path class="tl" d="M16 12l-3 12M23 17l-2 11"/>',
+    confites: '<path class="tl" d="M8 16h24v10a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8z"/><path class="tl" d="M6 16h28"/><ellipse class="tl" cx="20" cy="25" rx="6" ry="4"/>',
+    gratin:   '<path class="tl" d="M7 27h26a6 6 0 0 1-6 6H13a6 6 0 0 1-6-6z"/><path class="tl" d="M9 22q11-5 22 0M10 17q10-5 20 0M12 12q8-4 16 0"/>',
+    gnocchi:  '<ellipse class="tl" cx="13" cy="17" rx="7" ry="5"/><ellipse class="tl" cx="27" cy="21" rx="7" ry="5"/><ellipse class="tl" cx="18" cy="29" rx="7" ry="5"/><path class="tl" d="M10 17h6M24 21h6M15 29h6"/>',
+    frites:   '<path class="tl" d="M11 33l5-24 4 1-4 24zM18 33l4-25 4 1-3 25zM25 32l4-23 4 1-4 23z"/>'
+  };
+
+  function renderTree(ing) {
+    var tr = treeById[ing.id];
+    if (!tr) return "";
+    var t = T(), n = tr.branches.length;
+    var has = tr.branches.some(function (b) { return b.id === treeSel; });
+    if (!has) treeSel = tr.branches[0].id;
+    var sel = tr.branches.filter(function (b) { return b.id === treeSel; })[0];
+
+    var CX = 220, CY = 175, R = 118, NR = 30, CR = 46, nodes = "", links = "";
+    tr.branches.forEach(function (b, k) {
+      var a = (-90 + k * (360 / n)) * Math.PI / 180;
+      var ux = Math.cos(a), uy = Math.sin(a);
+      var x = CX + R * ux, y = CY + R * uy;
+      var sx = CX + CR * ux, sy = CY + CR * uy;
+      var ex = x - NR * ux, ey = y - NR * uy;
+      var mx = (sx + ex) / 2 - uy * 12, my = (sy + ey) / 2 + ux * 12;   // gentle bow
+      var on = b.id === treeSel;
+      links += '<path class="tw-link' + (on ? " on" : "") + '" d="M' + sx.toFixed(1) + ' ' + sy.toFixed(1) +
+               'Q' + mx.toFixed(1) + ' ' + my.toFixed(1) + ' ' + ex.toFixed(1) + ' ' + ey.toFixed(1) + '"/>';
+      nodes += '<g class="tw-node' + (on ? " on" : "") + '" data-branch="' + b.id + '" tabindex="0" role="button" ' +
+               'aria-pressed="' + on + '" transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')">' +
+               '<circle class="tw-disc" r="' + NR + '"/>' +
+               '<g transform="translate(-20 -20)">' + (BRANCH_ART[b.id] || "") + "</g>" +
+               '<text class="tw-lbl" y="' + (NR + 17) + '">' + esc(b.name[state.lang]) + "</text></g>";
+    });
+
+    var svg = '<svg class="tw-svg" viewBox="0 0 440 372" role="img" aria-label="' + esc(name(ing)) + '">' +
+      links +
+      '<g class="tw-core"><circle class="tw-core-disc" r="' + CR + '" cx="' + CX + '" cy="' + CY + '"/>' +
+      '<g transform="translate(' + (CX - 34) + ' ' + (CY - 34) + ') scale(0.71)">' + (ing.svg || "") + "</g></g>" +
+      nodes + "</svg>";
+
+    var panel =
+      '<div class="tw-panel">' +
+      '<div class="tw-panel-head"><h4>' + esc(sel.name[state.lang]) + "</h4>" +
+      '<span class="tw-variety">' + esc(sel.variety[state.lang]) + "</span></div>" +
+      "<p>" + esc(sel.technique[state.lang]) + "</p>" +
+      '<div class="tw-tips">' + sel.tips.map(function (tp) {
+        return "<p>" + esc(tp[state.lang]) + "</p>"; }).join("") + "</div>" +
+      '<p class="tw-sub">' + esc(t.pairsInForm) + "</p>" +
+      '<div class="pair-grid tw-pairs">' + sel.pairs.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
+      "</div>";
+
+    return '<section class="tw" id="treeSec"><h3 class="tw-title">' + esc(t.preparations) + "</h3>" +
+           '<p class="tw-hint">' + esc(t.preparationsHint) + "</p>" +
+           '<div class="tw-stage">' + svg + "</div>" + panel + "</section>";
+  }
+
   function renderModal(id) {
     var t = T(), i = byId[id];
     var other = state.lang === "en" ? i.name.fr : i.name.en;
@@ -292,6 +356,7 @@
       (i.story[state.lang] ? "<h3>" + esc(i.custom ? t.notesLbl : t.story) + "</h3>" +
         '<p class="m-story">' + esc(i.story[state.lang]) + "</p>" : "") +
       (i.tip[state.lang] ? '<div class="m-note"><h3>' + esc(t.chefNote) + "</h3><p>" + esc(i.tip[state.lang]) + "</p></div>" : "") +
+      renderTree(i) +
       "<h3>" + esc(t.pairsWith) + "</h3>" +
       '<div class="pair-grid">' + pairs.map(pairChip).join("") + "</div>" +
       (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
@@ -306,6 +371,7 @@
   }
 
   function openModal(id, push) {
+    treeSel = null;
     if (!byId[id]) return;
     if (push !== false) modalStack.push(id);
     renderModal(id);
@@ -557,6 +623,17 @@
     if (pd) { deletePhoto(pd.getAttribute("data-photo-del")); return; }
     var o = e.target.closest("[data-open]");
     if (o) { openModal(o.getAttribute("data-open")); return; }
+    var br = e.target.closest("[data-branch]");
+    if (br) {
+      treeSel = br.getAttribute("data-branch");
+      var host = el("treeSec");
+      if (host) {
+        var tmp = document.createElement("div");
+        tmp.innerHTML = renderTree(byId[modalStack[modalStack.length - 1]]);
+        host.replaceWith(tmp.firstChild);
+      }
+      return;
+    }
     var lab = e.target.closest("[data-lab]");
     if (lab) {
       var id = lab.getAttribute("data-lab");
