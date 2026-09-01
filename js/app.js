@@ -122,7 +122,12 @@
 
   function T() { return I18N[state.lang]; }
   function name(i) { return i.name[state.lang]; }
-  function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  // œ/æ are separate letters, not decomposable — NFD leaves them alone, so expand
+  // them by hand. Applied to both query and names, so it matches either way round.
+  function norm(s) {
+    return s.toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
   function el(id) { return document.getElementById(id); }
 
@@ -201,11 +206,26 @@
         i.flavor.map(function (f) { return t.flavors[f]; }).join(" "));
       return hay.indexOf(q) !== -1;
     }).sort(function (a, b) {
+      // With a query, a name match outranks a match on latin, family or flavour —
+      // otherwise searching "oeuf" buries Œuf under every "Laitages & œufs" entry.
+      if (q) {
+        var ra = matchRank(a, q), rb = matchRank(b, q);
+        if (ra !== rb) return ra - rb;
+      }
       if (state.sort === "family" && a.cat !== b.cat) {
         return CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat);
       }
       return name(a).localeCompare(name(b), state.lang);
     });
+  }
+
+  function matchRank(i, q) {
+    var n = norm(name(i));
+    if (n.indexOf(q) === 0) return 0;                                  // name starts with it
+    if (n.indexOf(q) !== -1) return 1;                                 // name contains it
+    if (norm(i.name.en + " " + i.name.fr).indexOf(q) !== -1) return 2; // the other language
+    if (norm(i.latin || "").indexOf(q) !== -1) return 3;               // latin
+    return 4;                                                          // family or flavour only
   }
 
   function renderGrid() {
@@ -276,14 +296,47 @@
   var treeSel = null;
 
   // One drawn glyph per preparation, in a 40x40 box, same stroke idiom as the entry art.
+  // Keyed by technique, not by ingredient — confit looks the same everywhere,
+  // which is part of what the trees teach. Branches name one via `art`.
   var BRANCH_ART = {
-    puree:    '<path class="tl" d="M8 30q3-14 12-14t12 14"/><path class="tl" d="M14 30q2-8 6-8t6 8"/><path class="tl" d="M20 15v-6"/>',
-    roasted:  '<path class="tl" d="M9 24l7-12 7 5 8-3-4 14z"/><path class="tl" d="M16 12l-3 12M23 17l-2 11"/>',
-    confites: '<path class="tl" d="M8 16h24v10a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8z"/><path class="tl" d="M6 16h28"/><ellipse class="tl" cx="20" cy="25" rx="6" ry="4"/>',
-    gratin:   '<path class="tl" d="M7 27h26a6 6 0 0 1-6 6H13a6 6 0 0 1-6-6z"/><path class="tl" d="M9 22q11-5 22 0M10 17q10-5 20 0M12 12q8-4 16 0"/>',
-    gnocchi:  '<ellipse class="tl" cx="13" cy="17" rx="7" ry="5"/><ellipse class="tl" cx="27" cy="21" rx="7" ry="5"/><ellipse class="tl" cx="18" cy="29" rx="7" ry="5"/><path class="tl" d="M10 17h6M24 21h6M15 29h6"/>',
-    frites:   '<path class="tl" d="M11 33l5-24 4 1-4 24zM18 33l4-25 4 1-3 25zM25 32l4-23 4 1-4 23z"/>'
+    generic:   '<circle class="tl" cx="20" cy="20" r="11"/>',
+    raw:       '<path class="tl" d="M20 6v28"/><path class="tl" d="M20 16q-10-8-13 0 5 9 13 3zM20 25q10-8 13 0-5 9-13 3z"/>',
+    puree:     '<path class="tl" d="M8 30q3-14 12-14t12 14"/><path class="tl" d="M14 30q2-8 6-8t6 8"/><path class="tl" d="M20 15v-6"/>',
+    roasted:   '<path class="tl" d="M9 24l7-12 7 5 8-3-4 14z"/><path class="tl" d="M16 12l-3 12M23 17l-2 11"/>',
+    confit:    '<path class="tl" d="M8 16h24v10a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8z"/><path class="tl" d="M6 16h28"/><ellipse class="tl" cx="20" cy="25" rx="6" ry="4"/>',
+    gratin:    '<path class="tl" d="M7 27h26a6 6 0 0 1-6 6H13a6 6 0 0 1-6-6z"/><path class="tl" d="M9 22q11-5 22 0M10 17q10-5 20 0M12 12q8-4 16 0"/>',
+    dumpling:  '<ellipse class="tl" cx="13" cy="17" rx="7" ry="5"/><ellipse class="tl" cx="27" cy="21" rx="7" ry="5"/><ellipse class="tl" cx="18" cy="29" rx="7" ry="5"/><path class="tl" d="M10 17h6M24 21h6M15 29h6"/>',
+    chips:     '<path class="tl" d="M11 33l5-24 4 1-4 24zM18 33l4-25 4 1-3 25zM25 32l4-23 4 1-4 23z"/>',
+    sweated:   '<path class="tl" d="M8 22h24v6a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6z"/><path class="tl" d="M14 17q2-5 0-8M20 16q2-6 0-9M26 17q2-5 0-8"/>',
+    caramel:   '<path class="tl" d="M8 20h24v8a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6z"/><path class="tl" d="M12 26q4 4 8 0t8 0"/><path class="tl" d="M20 15V8M14 16l-3-6M26 16l3-6"/>',
+    grilled:   '<ellipse class="tl" cx="20" cy="20" rx="13" ry="10"/><path class="tl" d="M10 15l16 4M9 22l18 4M13 28l14 3"/>',
+    fried:     '<path class="tl" d="M6 20h20a8 8 0 0 1 0 12H6z"/><path class="tl" d="M26 26h9"/><path class="tl" d="M10 16q2-5 0-8M17 16q2-5 0-8"/>',
+    braised:   '<path class="tl" d="M9 18h22v10a7 7 0 0 1-7 7h-8a7 7 0 0 1-7-7z"/><path class="tl" d="M7 18h26M20 13v-5"/><path class="tl" d="M13 26q7 4 14 0"/>',
+    stock:     '<path class="tl" d="M10 16h20v12a7 7 0 0 1-7 7h-6a7 7 0 0 1-7-7z"/><path class="tl" d="M8 16h24"/><path class="tl" d="M14 11q2-4 0-6M20 10q2-4 0-6M26 11q2-4 0-6"/>',
+    emulsion:  '<path class="tl" d="M20 6v9"/><path class="tl" d="M14 15q6 12 12 0"/><path class="tl" d="M17 15q3 14 6 0M20 15v15"/><path class="tl" d="M9 30h22"/>',
+    whipped:   '<path class="tl" d="M9 32h22"/><path class="tl" d="M11 32q1-9 4-12t5 3 5-4 4 13"/><path class="tl" d="M20 20V8"/>',
+    custard:   '<ellipse class="tl" cx="14" cy="16" rx="7" ry="9"/><path class="tl" d="M18 23l12 12"/><path class="tl" d="M8 30q6 4 12 0"/>',
+    meringue:  '<path class="tl" d="M9 32h22"/><path class="tl" d="M11 32q1-9 4-12t5 3 5-4 4 13"/><path class="tl" d="M20 20V8"/><path class="tl" d="M17 11q3-4 6 0"/>',
+    reduced:   '<path class="tl" d="M11 12h18l-4 20a5 5 0 0 1-5 4h-0a5 5 0 0 1-5-4z"/><path class="tl" d="M13 24q7 4 14 0"/>',
+    sauce:     '<path class="tl" d="M8 26q6-6 12 0t12 0"/><path class="tl" d="M8 31q6-6 12 0t12 0"/><path class="tl" d="M20 20V9M16 12l4-4 4 4"/>',
+    pickled:   '<path class="tl" d="M13 13h14v18a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4z"/><path class="tl" d="M11 13h18M17 13V9h6v4"/><path class="tl" d="M15 22h10M15 27h10"/>',
+    dried:     '<path class="tl" d="M20 8v24"/><path class="tl" d="M20 15q-9-5-11 2 6 6 11 1zM20 24q9-5 11 2-6 6-11 1z"/><path class="tl" d="M14 35h12"/>',
+    smoked:    '<path class="tl" d="M8 30h24v4H8z"/><path class="tl" d="M13 26q-4-5 0-9t0-8M20 26q-4-5 0-9t0-8M27 26q-4-5 0-9t0-8"/>',
+    cured:     '<path class="tl" d="M10 24q10-12 20 0-10 10-20 0z"/><path class="tl" d="M20 18v12"/><circle class="tl" cx="14" cy="12" r="1.6"/><circle class="tl" cx="22" cy="9" r="1.6"/><circle class="tl" cx="29" cy="13" r="1.6"/>',
+    baked:     '<path class="tl" d="M7 28h26l-3 6H10z"/><path class="tl" d="M10 28q3-13 10-13t10 13"/><path class="tl" d="M15 21q5-3 10 0"/>',
+    compote:   '<path class="tl" d="M11 18h18v11a6 6 0 0 1-6 6h-6a6 6 0 0 1-6-6z"/><path class="tl" d="M9 18h22"/><circle class="tl" cx="16" cy="25" r="3"/><circle class="tl" cx="24" cy="27" r="3"/>',
+    tempered:  '<path class="tl" d="M8 14h24v6H8zM8 22h24v6H8z"/><path class="tl" d="M16 14v14M24 14v14"/>',
+    ganache:   '<path class="tl" d="M9 22q11-8 22 0v6a6 6 0 0 1-6 6H15a6 6 0 0 1-6-6z"/><path class="tl" d="M9 22q4 5 8 0t8 0 6 0"/>',
+    chopped:   '<path class="tl" d="M8 30h24"/><circle class="tl" cx="14" cy="25" r="2.4"/><circle class="tl" cx="21" cy="27" r="2.4"/><circle class="tl" cx="27" cy="24" r="2.4"/><circle class="tl" cx="18" cy="21" r="2.4"/><path class="tl" d="M28 8l-9 11"/>',
+    clarified: '<path class="tl" d="M13 10h14l-2 14H15z"/><path class="tl" d="M15 24h10l1 8a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3z"/><path class="tl" d="M11 10h18"/>',
+    noisette:  '<path class="tl" d="M7 22h20a7 7 0 0 1 0 12H7z"/><path class="tl" d="M27 28h8"/><circle class="tl" cx="13" cy="28" r="2"/><circle class="tl" cx="20" cy="29" r="2"/><path class="tl" d="M12 16q2-5 0-8"/>',
+    coque:     '<ellipse class="tl" cx="20" cy="14" rx="7" ry="9"/><path class="tl" d="M12 22h16l-2 10a3 3 0 0 1-3 2h-6a3 3 0 0 1-3-2z"/><path class="tl" d="M10 34h20"/>',
+    poached:   '<ellipse class="tl" cx="20" cy="19" rx="11" ry="8"/><circle class="tl" cx="20" cy="19" r="4"/><path class="tl" d="M6 31q4-3 7 0t7 0 7 0 7 0"/>',
+    scrambled: '<path class="tl" d="M8 28q2-7 7-7t6 5 7-6 5 8"/><ellipse class="tl" cx="14" cy="24" rx="4" ry="3"/><ellipse class="tl" cx="25" cy="26" rx="4" ry="3"/><path class="tl" d="M7 32h26"/>',
+    omelette:  '<path class="tl" d="M7 26q4-11 13-11t13 11q-6 6-13 6t-13-6z"/><path class="tl" d="M14 17q4 9 3 15M23 16q-3 9-2 15"/>',
+    friedegg:  '<path class="tl" d="M8 24q-1-8 6-9t8 3 8-1 4 8-6 8-10-2-10 1 0-8z"/><ellipse class="tl" cx="19" cy="22" rx="5" ry="4.5"/>'
   };
+
 
   function renderTree(ing) {
     var tr = treeById[ing.id];
@@ -293,7 +346,9 @@
     if (!has) treeSel = tr.branches[0].id;
     var sel = tr.branches.filter(function (b) { return b.id === treeSel; })[0];
 
-    var CX = 220, CY = 175, R = 118, NR = 30, CR = 46, nodes = "", links = "";
+    // widen the orbit as branches are added so labels never collide
+    var CX = 230, CY = 188, R = 118 + Math.max(0, n - 6) * 9, NR = n > 6 ? 27 : 30,
+        CR = 46, nodes = "", links = "";
     tr.branches.forEach(function (b, k) {
       var a = (-90 + k * (360 / n)) * Math.PI / 180;
       var ux = Math.cos(a), uy = Math.sin(a);
@@ -307,11 +362,11 @@
       nodes += '<g class="tw-node' + (on ? " on" : "") + '" data-branch="' + b.id + '" tabindex="0" role="button" ' +
                'aria-pressed="' + on + '" transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')">' +
                '<circle class="tw-disc" r="' + NR + '"/>' +
-               '<g transform="translate(-20 -20)">' + (BRANCH_ART[b.id] || "") + "</g>" +
+               '<g transform="translate(-20 -20)">' + (BRANCH_ART[b.art || b.id] || BRANCH_ART.generic) + "</g>" +
                '<text class="tw-lbl" y="' + (NR + 17) + '">' + esc(b.name[state.lang]) + "</text></g>";
     });
 
-    var svg = '<svg class="tw-svg" viewBox="0 0 440 372" role="img" aria-label="' + esc(name(ing)) + '">' +
+    var svg = '<svg class="tw-svg" viewBox="0 0 460 404" role="img" aria-label="' + esc(name(ing)) + '">' +
       links +
       '<g class="tw-core"><circle class="tw-core-disc" r="' + CR + '" cx="' + CX + '" cy="' + CY + '"/>' +
       '<g transform="translate(' + (CX - 34) + ' ' + (CY - 34) + ') scale(0.71)">' + (ing.svg || "") + "</g></g>" +

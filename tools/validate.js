@@ -21,7 +21,7 @@ if (typeof require === "function" && typeof process !== "undefined") {
 
 var g = (typeof globalThis !== "undefined") ? globalThis : this;
 g.window = {};
-["i18n.js","photos.js","data-vegetables.js","data-fruits.js","data-herbs.js","data-spices.js","data-pantry.js","data-animal.js","data-gastronomy-garden.js","data-gastronomy-pantry.js","data-premium.js","data-cuts.js","trios.js","trios-gastronomy.js","trios-premium.js"]
+["i18n.js","photos.js","data-vegetables.js","data-fruits.js","data-herbs.js","data-spices.js","data-pantry.js","data-animal.js","data-gastronomy-garden.js","data-gastronomy-pantry.js","data-premium.js","data-cuts.js","data-trees.js","trios.js","trios-gastronomy.js","trios-premium.js"]
   .forEach(function (f) { eval(read(f)); });
 
 var I18N = g.window.I18N, INGREDIENTS = g.window.INGREDIENTS, TRIOS = g.window.TRIOS, CAT_ORDER = g.window.CAT_ORDER;
@@ -61,11 +61,41 @@ TRIOS.forEach(function (t) {
   });
 });
 
+// ---- work trees ----
+var TREES = g.window.TREES || [];
+var branchCount = 0, seenBranch = {};
+TREES.forEach(function (tr) {
+  if (!ids[tr.id]) errors.push("tree '" + tr.id + "': no such ingredient");
+  if (!tr.branches || !tr.branches.length) errors.push("tree '" + tr.id + "': no branches");
+  (tr.branches || []).forEach(function (b) {
+    branchCount++;
+    var key = tr.id + "/" + b.id;
+    if (seenBranch[key]) errors.push("duplicate branch " + key);
+    seenBranch[key] = true;
+    ["name","variety","technique"].forEach(function (f) {
+      ["en","fr"].forEach(function (l) {
+        if (!b[f] || !b[f][l]) errors.push(key + ": missing " + f + "." + l);
+      });
+    });
+    if (!b.tips || !b.tips.length) errors.push(key + ": no tips");
+    (b.tips || []).forEach(function (tp, n) {
+      ["en","fr"].forEach(function (l) {
+        if (!tp[l]) errors.push(key + ": tip " + n + " missing " + l);
+      });
+    });
+    if (!b.pairs || b.pairs.length < 3) errors.push(key + ": fewer than 3 pairings");
+    (b.pairs || []).forEach(function (x) {
+      if (!ids[x]) errors.push(key + ": pairing ref '" + x + "' does not exist");
+    });
+  });
+});
+
 var cats = {};
 INGREDIENTS.forEach(function (i) { cats[i.cat] = (cats[i.cat] || 0) + 1; });
 log("ingredients: " + INGREDIENTS.length);
 log("families: " + Object.keys(cats).map(function (c) { return c + "=" + cats[c]; }).join(", "));
 log("trios: " + TRIOS.length);
+log("trees: " + TREES.length + " (" + branchCount + " branches)");
 
 if (errors.length) {
   log("\n" + errors.length + " error(s):");
