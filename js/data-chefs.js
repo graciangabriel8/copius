@@ -621,6 +621,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["shallot","beurre-de-baratte","cream","truffle","langoustine","white-wine-vinegar","mushroom","chicken"]},
 
 {id:"donckele", name:"Arnaud Donckele", born:1977,
+ url:"https://www.chevalblanc.com/fr/maison/paris/restaurants-et-bars/plenitude/",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Saint-Tropez and Paris",fr:"Saint-Tropez et Paris"},
  role:{en:"Chef",fr:"Chef"},
@@ -774,6 +775,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["lemon","hazelnut","apple","vanilla","dark-chocolate","cream","sugar","beurre-de-baratte"]},
 
 {id:"sacko", name:"Mory Sacko", born:1992,
+ url:"https://www.mosuke-restaurant.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"MoSuke, Paris 14e",fr:"MoSuke, Paris 14e"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -786,6 +788,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["peanut","chili","yam","miso","soy-sauce","lime","cilantro","black-rice"]},
 
 {id:"sedefdjian", name:"Julia Sedefdjian", born:1994,
+ url:"https://restaurant-baieta-paris.fr",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Baieta, Paris 5e",fr:"Baieta, Paris 5e"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -798,6 +801,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["red-mullet","olive-oil","basil","chickpea-flour","tomato","anchovy","lemon","fennel"]},
 
 {id:"fleury", name:"Manon Fleury", born:1990,
+ url:"https://www.datil-restaurant.fr",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Datil, Paris 3e",fr:"Datil, Paris 3e"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
