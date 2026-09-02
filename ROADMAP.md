@@ -6,7 +6,7 @@ Working note. Keeps the decisions *and their reasons* so they aren't re-argued.
 
 Live at https://graciangabriel8.github.io/copius/ — free, bilingual EN/FR, offline PWA.
 
-- **602 ingredients** in 15 families, 48 rare, 15 premium; search finds Oeuf and Œuf alike.
+- **510 ingredients** in 15 families, 48 rare, 15 premium; search finds Oeuf and Œuf alike.
 - **11 work trees, 66 preparations** — potato, egg, onion, butter, tomato, chicken, garlic,
   cream, mushroom, apple, dark chocolate.
 - **81 chefs**, Taillevent to today, 22 women, 17 countries, 55 with stars; filters by
