@@ -439,3 +439,47 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   .tw-panel{animation:none}
   .tw-link,.tw-disc,.tw-lbl,.tw-node .tl{transition:none}
 }
+
+
+/* ---------- view tabs ---------- */
+.view-tabs{display:inline-flex;gap:3px;border:1px solid var(--border-strong);border-radius:999px;
+           padding:3px;background:var(--card);margin-bottom:22px}
+.view-tab{border:0;background:transparent;padding:9px 20px;border-radius:999px;
+          color:var(--ink-2);font-size:13.5px;font-weight:600;cursor:pointer;transition:all .18s ease}
+.view-tab:hover{color:var(--ink)}
+.view-tab.active{background:var(--accent);color:#fff}
+
+/* ---------- chefs timeline ---------- */
+.chefs-head{margin-bottom:24px}
+.chefs-head h2{margin:0 0 4px;font-size:28px}
+.timeline{position:relative;padding-left:64px}
+.timeline::before{content:"";position:absolute;left:21px;top:6px;bottom:10px;
+                  width:1.5px;background:var(--border-strong)}
+.tl-era{margin:26px 0 12px -64px;padding-left:64px;font-size:11.5px;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--ink-3)}
+.tl-era:first-child{margin-top:0}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-marker{position:absolute;left:-64px;top:16px;width:44px;height:44px;border-radius:50%;
+           background:var(--plate);border:1.5px solid var(--border-strong);
+           display:flex;align-items:center;justify-content:center}
+.tl-mono{font-family:var(--serif);font-size:15px;color:var(--ink-2);letter-spacing:.02em}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:16px;
+         padding:18px 20px 8px;box-shadow:var(--shadow)}
+.tl-years{margin:0 0 2px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.tl-card h3{margin:0 0 3px;font-size:21px}
+.tl-role{margin:0 0 11px;font-size:13px;color:var(--ink-3)}
+.tl-card>p{margin:0 0 11px;color:var(--ink-2)}
+.tl-legacy{border-left:2px solid var(--border-strong);padding-left:13px;font-size:13.5px}
+
+@media (max-width:720px){
+  .timeline{padding-left:0}
+  .timeline::before{display:none}
+  .tl-era{margin-left:0;padding-left:0}
+  .tl-item{margin-bottom:18px}
+  .tl-marker{position:static;margin-bottom:-10px;transform:translateY(-6px)}
+  .tl-card{padding:16px 15px 6px}
+  .view-tab{padding:11px 20px}
+}
+
+.tl-stars{margin:-6px 0 11px!important;font-size:12.5px;color:var(--ink-3)}
+.tl-star{letter-spacing:2px;color:var(--ink-2)}

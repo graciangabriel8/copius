@@ -3,7 +3,7 @@
   "use strict";
 
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
-  var LS_MYINGS = "atlas-my-ingredients";
+  var LS_MYINGS = "atlas-my-ingredients", LS_VIEW = "copius-view";
   var BASE = window.INGREDIENTS, TRIOS = window.TRIOS, I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
   var PHOTOS = new Set(window.PHOTOS || []);
 
@@ -38,6 +38,7 @@
 
   var state = {
     lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
+    view: localStorage.getItem(LS_VIEW) || "atlas",
     cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, sort: "name"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
@@ -110,6 +111,7 @@
       photosMap[id] = dataURL;
       if (idb) idbPut(id, dataURL).catch(function () {});
       renderAll();
+  setView(state.view);
       refreshOpenModal();
     }, function () { alert(T().photoError); });
   }
@@ -168,6 +170,8 @@
     el("triosTitle").textContent = t.triosTitle;
     el("footNote").textContent = t.footNote;
     el("createBtn").textContent = "+ " + t.create;
+    el("tabAtlas").textContent = t.tabAtlas;
+    el("tabChefs").textContent = t.tabChefs;
     el("creationsTitle").textContent = t.myCreations;
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
@@ -386,6 +390,56 @@
     return '<section class="tw" id="treeSec"><h3 class="tw-title">' + esc(t.preparations) + "</h3>" +
            '<p class="tw-hint">' + esc(t.preparationsHint) + "</p>" +
            '<div class="tw-stage">' + svg + "</div>" + panel + "</section>";
+  }
+
+  /* ---------- chefs: a chronology ---------- */
+  var CHEFS = (window.CHEFS || []).slice().sort(function (a, b) { return a.born - b.born; });
+
+  function century(y) {
+    var c = Math.floor((y - 1) / 100) + 1;
+    return state.lang === "fr" ? c + "e siècle" : c + (c % 10 === 1 && c !== 11 ? "st" : c % 10 === 2 && c !== 12 ? "nd" : c % 10 === 3 && c !== 13 ? "rd" : "th") + " c.";
+  }
+
+  function initials(nm) {
+    var parts = nm.replace(/,.*$/, "").split(/\s+/).filter(function (w) { return /^[A-ZÉÈÀÂÎÔÛÇ]/.test(w); });
+    return (parts[0] || "?").charAt(0) + (parts.length > 1 ? parts[parts.length - 1].charAt(0) : "");
+  }
+
+  function setView(v) {
+    state.view = v;
+    try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
+    el("atlasView").hidden = v !== "atlas";
+    el("chefsView").hidden = v !== "chefs";
+    el("tabAtlas").classList.toggle("active", v === "atlas");
+    el("tabChefs").classList.toggle("active", v === "chefs");
+    el("tabAtlas").setAttribute("aria-selected", v === "atlas");
+    el("tabChefs").setAttribute("aria-selected", v === "chefs");
+    if (v === "chefs") renderChefs();
+  }
+
+  function renderChefs() {
+    var t = T(), lastC = null;
+    el("chefsTitle").textContent = t.chefsTitle;
+    el("chefsHint").textContent = t.chefsHint;
+    el("chefsTimeline").innerHTML = CHEFS.map(function (c) {
+      var cen = century(c.born), head = "";
+      if (cen !== lastC) { lastC = cen; head = '<p class="tl-era">' + esc(cen) + "</p>"; }
+      var years = (c.approx ? "c. " : "") + c.born + "–" + c.died;
+      return head +
+        '<article class="tl-item">' +
+        '<div class="tl-marker"><span class="tl-mono">' + esc(initials(c.name)) + "</span></div>" +
+        '<div class="tl-card">' +
+        '<p class="tl-years">' + esc(years) + " · " + esc(c.place[state.lang]) + "</p>" +
+        "<h3>" + esc(c.name) + "</h3>" +
+        '<p class="tl-role">' + esc(c.role[state.lang]) + " · <em>" + esc(c.work[state.lang]) + "</em></p>" +
+        (c.stars ? '<p class="tl-stars"><span class="tl-star">' + new Array(c.stars.n + 1).join("\u2605") +
+          '</span> ' + esc(t.michelin) + " · " + esc(c.stars.years) + " — " + esc(c.stars.note[state.lang]) + "</p>" : "") +
+        "<p>" + esc(c.contribution[state.lang]) + "</p>" +
+        '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
+        '<p class="tw-sub">' + esc(t.chefIngredients) + "</p>" +
+        '<div class="pair-grid">' + c.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
+        "</div></article>";
+    }).join("");
   }
 
   function renderModal(id) {
@@ -622,6 +676,7 @@
     renderLabResult();
     renderTrios();
     renderCreations();
+    if (state.view === "chefs") renderChefs();
   }
 
   function setLang(l) {
@@ -709,6 +764,8 @@
 
   /* creations events */
   el("createBtn").addEventListener("click", function () { openCreate(); });
+  el("tabAtlas").addEventListener("click", function () { setView("atlas"); });
+  el("tabChefs").addEventListener("click", function () { setView("chefs"); });
 
   /* photo events: hidden picker + drag & drop */
   var photoTarget = null;
@@ -796,5 +853,5 @@
     if (Object.keys(all).length) { renderAll(); refreshOpenModal(); }
   }).catch(function () { /* photos unavailable — Copius works without them */ });
   var hash = decodeURIComponent(location.hash.replace("#", ""));
-  if (hash && byId[hash]) openModal(hash);
+  if (hash && byId[hash]) { setView("atlas"); openModal(hash); }
 })();
