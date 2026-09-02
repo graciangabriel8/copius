@@ -123,6 +123,8 @@
     refreshOpenModal();
   }
 
+  // Sort names by their letters, not their punctuation — otherwise ’Nduja sits above Abricot.
+  var CMP = { ignorePunctuation: true, sensitivity: "base" };
   function T() { return I18N[state.lang]; }
   function name(i) { return i.name[state.lang]; }
   // œ/æ are separate letters, not decomposable — NFD leaves them alone, so expand
@@ -220,7 +222,7 @@
       if (state.sort === "family" && a.cat !== b.cat) {
         return CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat);
       }
-      return name(a).localeCompare(name(b), state.lang);
+      return name(a).localeCompare(name(b), state.lang, CMP);
     });
   }
 
@@ -490,7 +492,7 @@
   function renderModal(id) {
     var t = T(), i = byId[id];
     var other = state.lang === "en" ? i.name.fr : i.name.en;
-    var pairs = Array.from(PAIRS[i.id]).sort(function (a, b) { return name(byId[a]).localeCompare(name(byId[b]), state.lang); });
+    var pairs = Array.from(PAIRS[i.id]).sort(function (a, b) { return name(byId[a]).localeCompare(name(byId[b]), state.lang, CMP); });
     var trios = triosOf(id);
     var html =
       '<div class="m-head">' +
@@ -549,7 +551,7 @@
   /* ---------- pairing lab ---------- */
   function fillLabSelects() {
     var t = T();
-    var opts = ING.slice().sort(function (a, b) { return name(a).localeCompare(name(b), state.lang); })
+    var opts = ING.slice().sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); })
       .map(function (i) { return '<option value="' + i.id + '">' + esc(name(i)) + " · " + esc(catLabel(i.cat)) + "</option>"; }).join("");
     ["labA", "labB"].forEach(function (id) {
       var sel = el(id), prev = sel.value;
@@ -565,7 +567,7 @@
     var A = byId[a], B = byId[b];
     var direct = PAIRS[a].has(b);
     var bridges = Array.from(PAIRS[a]).filter(function (x) { return x !== b && PAIRS[b].has(x); })
-      .sort(function (x, y) { return name(byId[x]).localeCompare(name(byId[y]), state.lang); });
+      .sort(function (x, y) { return name(byId[x]).localeCompare(name(byId[y]), state.lang, CMP); });
     var shared = A.flavor.filter(function (f) { return B.flavor.indexOf(f) !== -1; });
     var html = "";
     if (direct) html += '<div class="verdict ok">&#10003;&nbsp; ' + esc(t.labDirect) + "</div>";
