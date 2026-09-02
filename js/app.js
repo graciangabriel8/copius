@@ -420,7 +420,7 @@
     if (v === "chefs") renderChefs();
   }
 
-  var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","SI","US","PE","JP"];
+  var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","FO","SI","US","PE","CO","GH","JP","KR","HK","TH"];
 
   function chefMatches(c, q) {
     if (state.chefGender !== "all" && c.gender !== state.chefGender) return false;
