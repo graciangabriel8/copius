@@ -39,6 +39,7 @@
   var state = {
     lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: localStorage.getItem(LS_VIEW) || "atlas",
+    chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
     cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, sort: "name"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
@@ -417,23 +418,65 @@
     if (v === "chefs") renderChefs();
   }
 
+  var COUNTRIES = ["FR","IT","US","ES","DK","GB","JP"];
+
+  function chefMatches(c, q) {
+    if (state.chefGender !== "all" && c.gender !== state.chefGender) return false;
+    var n = c.stars ? c.stars.n : 0;
+    if (state.chefStars !== "all" && String(n) !== state.chefStars) return false;
+    if (state.chefCountry !== "all" && c.country !== state.chefCountry) return false;
+    if (state.chefEra !== "all" && String(Math.floor((c.born - 1) / 100) + 1) !== state.chefEra) return false;
+    if (!q) return true;
+    var hay = norm(c.name + " " + c.place[state.lang] + " " + c.work[state.lang] + " " + c.role[state.lang]);
+    return hay.indexOf(q) !== -1;
+  }
+
+  function chefYears(c) {
+    var t = T();
+    if (c.died) return (c.approx ? "c. " : "") + c.born + "–" + c.died;
+    return (c.gender === "f" ? t.bornF : t.bornM) + " " + c.born;
+  }
+
+  function fillSel(id, opts, cur) {
+    el(id).innerHTML = opts.map(function (o) {
+      return '<option value="' + o[0] + '"' + (o[0] === cur ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+    }).join("");
+  }
+
+  function renderChefFilters() {
+    var t = T();
+    el("chefSearch").placeholder = t.chefSearchPh;
+    el("chefReset").textContent = t.chefReset;
+    fillSel("chefGender", [["all", t.fAllGender], ["f", t.fWomen], ["m", t.fMen]], state.chefGender);
+    fillSel("chefStars", [["all", t.fAllStars], ["3", "★★★"], ["2", "★★"], ["1", "★"], ["0", t.fNoStars]], state.chefStars);
+    fillSel("chefCountry", [["all", t.fAllCountries]].concat(COUNTRIES.map(function (k) { return [k, t.countries[k]]; })), state.chefCountry);
+    var eras = {}; CHEFS.forEach(function (c) { eras[Math.floor((c.born - 1) / 100) + 1] = true; });
+    fillSel("chefEra", [["all", t.fAllEras]].concat(Object.keys(eras).sort(function (a, b) { return a - b; }).map(function (k) {
+      return [k, century(k * 100 - 50)]; })), state.chefEra);
+  }
+
   function renderChefs() {
-    var t = T(), lastC = null;
+    var t = T(), lastC = null, q = norm(state.chefQ.trim());
     el("chefsTitle").textContent = t.chefsTitle;
     el("chefsHint").textContent = t.chefsHint;
-    el("chefsTimeline").innerHTML = CHEFS.map(function (c) {
+    renderChefFilters();
+    var list = CHEFS.filter(function (c) { return chefMatches(c, q); });
+    el("chefCount").textContent = t.chefCountTpl.replace("{n}", list.length).replace("{t}", CHEFS.length);
+    if (!list.length) { el("chefsTimeline").innerHTML = '<p class="empty">' + esc(t.chefEmpty) + "</p>"; return; }
+    el("chefsTimeline").innerHTML = list.map(function (c) {
       var cen = century(c.born), head = "";
       if (cen !== lastC) { lastC = cen; head = '<p class="tl-era">' + esc(cen) + "</p>"; }
-      var years = (c.approx ? "c. " : "") + c.born + "–" + c.died;
       return head +
         '<article class="tl-item">' +
         '<div class="tl-marker"><span class="tl-mono">' + esc(initials(c.name)) + "</span></div>" +
         '<div class="tl-card">' +
-        '<p class="tl-years">' + esc(years) + " · " + esc(c.place[state.lang]) + "</p>" +
+        '<p class="tl-years">' + esc(chefYears(c)) + " · " + esc(c.place[state.lang]) +
+          (c.discipline === "patisserie" ? " · " + esc(t.patisserie) : "") + "</p>" +
         "<h3>" + esc(c.name) + "</h3>" +
         '<p class="tl-role">' + esc(c.role[state.lang]) + " · <em>" + esc(c.work[state.lang]) + "</em></p>" +
-        (c.stars ? '<p class="tl-stars"><span class="tl-star">' + new Array(c.stars.n + 1).join("\u2605") +
+        (c.stars ? '<p class="tl-stars"><span class="tl-star">' + new Array(c.stars.n + 1).join("★") +
           '</span> ' + esc(t.michelin) + " · " + esc(c.stars.years) + " — " + esc(c.stars.note[state.lang]) + "</p>" : "") +
+        (c.phrase ? '<blockquote class="tl-phrase">“' + esc(c.phrase.text) + '”<cite>' + esc(c.phrase.by) + "</cite></blockquote>" : "") +
         "<p>" + esc(c.contribution[state.lang]) + "</p>" +
         '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
         '<p class="tw-sub">' + esc(t.chefIngredients) + "</p>" +
@@ -441,6 +484,7 @@
         "</div></article>";
     }).join("");
   }
+
 
   function renderModal(id) {
     var t = T(), i = byId[id];
@@ -766,6 +810,14 @@
   el("createBtn").addEventListener("click", function () { openCreate(); });
   el("tabAtlas").addEventListener("click", function () { setView("atlas"); });
   el("tabChefs").addEventListener("click", function () { setView("chefs"); });
+  el("chefSearch").addEventListener("input", function (e) { state.chefQ = e.target.value; renderChefs(); });
+  ["chefGender","chefStars","chefCountry","chefEra"].forEach(function (id) {
+    el(id).addEventListener("change", function (e) { state[id] = e.target.value; renderChefs(); });
+  });
+  el("chefReset").addEventListener("click", function () {
+    state.chefQ = ""; state.chefGender = state.chefStars = state.chefCountry = state.chefEra = "all";
+    el("chefSearch").value = ""; renderChefs();
+  });
 
   /* photo events: hidden picker + drag & drop */
   var photoTarget = null;
