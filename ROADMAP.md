@@ -21,7 +21,9 @@ taught. Nothing is ever removed from free — premium is additive.
   each with technique and tips. Makes the other three addressable.
 - **Pairing mechanics** — not *X goes with Y* but why, at which preparation, and when it
   fails. Caramelised onion works with sharp apple; raw onion with sweet apple doesn't.
-- **Dishes, chefs, houses** — the narrative form of the above.
+- **Dishes, chefs, houses** — the narrative form of the above. *Started: seven chefs,
+  Taillevent to Bocuse, in their own tab. Descriptive only; Michelin stars as plain
+  characters and facts, never the macaron, which is their registered mark.*
 - **A sequenced path** — what makes it a formation rather than a reference.
 
 Trees only for the workhorses: potato, egg, onion, butter, chicken.
@@ -30,12 +32,14 @@ Trees only for the workhorses: potato, egg, onion, butter, chicken.
 
 1. **One potato tree, complete.**
 2. Three pairing mechanics for things you've actually cooked.
-3. Three stories — a dish, a chef, a house.
+3. ~~Three stories~~ — chefs done (7). Dishes and houses still open.
 
 Then decide shape, price and gate. The data model falls out of what those nine needed.
 
 ## Locked
 
+- **French and English only.** The two kitchen languages; no third. This deletes the
+  data-split migration that was parked below — the 724 KB payload stays as it is.
 - Nothing removed from free.
 - Annotated pairings = separate dataset; `pairs` stays a flat id array.
 - Soft gate is fine — anyone opening devtools to dodge €10 was never paying.
@@ -51,8 +55,6 @@ Then decide shape, price and gate. The data model falls out of what those nine n
 
 ## Parked
 
-- **Multilingual** — split the prose by language *first*: 724 KB now, ~1.6 MB at seven,
-  all of it downloaded to read one seventh.
 - **copius.fr** — €10–15/yr. Needed before charging; a checkout on github.io reads badly.
 - **App Store** — $99/yr, perpetual. The PWA already gives offline + home-screen icon.
 - **Brand recommendations** — fragments per country, and affiliate money puts the
