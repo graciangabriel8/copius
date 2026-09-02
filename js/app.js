@@ -418,7 +418,7 @@
     if (v === "chefs") renderChefs();
   }
 
-  var COUNTRIES = ["FR","IT","US","ES","DK","GB","JP"];
+  var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","SI","US","PE","JP"];
 
   function chefMatches(c, q) {
     if (state.chefGender !== "all" && c.gender !== state.chefGender) return false;
@@ -434,7 +434,8 @@
   function chefYears(c) {
     var t = T();
     if (c.died) return (c.approx ? "c. " : "") + c.born + "–" + c.died;
-    return (c.gender === "f" ? t.bornF : t.bornM) + " " + c.born;
+    var b = c.approx ? (c.gender === "f" ? t.bornFc : t.bornMc) : (c.gender === "f" ? t.bornF : t.bornM);
+    return b + " " + c.born;
   }
 
   function fillSel(id, opts, cur) {
