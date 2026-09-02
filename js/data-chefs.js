@@ -49,6 +49,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["tenderloin","beurre-de-baratte","shallot","truffle","tarragon","flour-t55","cream","tomato"]},
 
 {id:"brazier", name:"Eugénie Brazier, la Mère Brazier", born:1895, died:1977,
+ url:"https://www.lamerebrazier.fr",
  gender:"f", country:"FR", discipline:"cuisine",
  stars:{n:3, years:"1933",
   note:{en:"Three stars at two restaurants at once — six in total, and the first three awarded to a woman.",fr:"Trois étoiles dans deux maisons à la fois — six au total, et les trois premières décernées à une femme."}},
@@ -62,6 +63,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["chicken","truffle","artichoke","foie-gras","beurre-de-baratte","cream","morel","tarragon"]},
 
 {id:"point", name:"Fernand Point", born:1897, died:1955,
+ url:"https://www.lapyramide.com",
  gender:"m", country:"FR", discipline:"cuisine",
  phrase:{text:"Du beurre ! Donnez-moi du beurre ! Toujours du beurre !", by:"Point"},
  stars:{n:3, years:"1933–1955",
@@ -76,6 +78,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","cream","morel","truffle","crayfish","asparagus","chicken","tarragon"]},
 
 {id:"bocuse", name:"Paul Bocuse", born:1926, died:2018,
+ url:"https://www.bocuse.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  phrase:{text:"Il n’y a qu’une seule cuisine : la bonne.", by:"Bocuse"},
  stars:{n:3, years:"1965–2019",
@@ -156,6 +159,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","shallot","tarragon","cream","truffle","flour-t55","mushroom","white-wine-vinegar"]},
 
 {id:"blanc", name:"Élisa Blanc, la Mère Blanc", born:1883, died:1949,
+ url:"https://www.georgesblanc.com",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Vonnas, Ain",fr:"Vonnas, Ain"},
  role:{en:"Cook and innkeeper",fr:"Cuisinière et aubergiste"},
@@ -168,6 +172,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["bresse-chicken","cream","beurre-de-baratte","morel","tarragon","egg","flour-t55","white-wine-vinegar"]},
 
 {id:"pic-andre", name:"André Pic", born:1893, died:1984,
+ url:"https://www.anne-sophie-pic.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Valence, Drôme",fr:"Valence, Drôme"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -180,6 +185,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["crayfish","truffle","cream","beurre-de-baratte","chicken","morel","tarragon","white-wine-vinegar"]},
 
 {id:"dumaine", name:"Alexandre Dumaine", born:1895, died:1974,
+ url:"https://www.bernard-loiseau.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Saulieu, Burgundy",fr:"Saulieu, Bourgogne"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -192,6 +198,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beef","red-wine-vinegar","mushroom","lard","onion","chicken","cream","truffle"]},
 
 {id:"bise", name:"Marguerite Bise", born:1898, died:1965,
+ url:"https://www.perebise.com",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Talloires, lac d’Annecy",fr:"Talloires, lac d’Annecy"},
  role:{en:"Cook and innkeeper",fr:"Cuisinière et aubergiste"},
@@ -204,6 +211,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["char","crayfish","beurre-de-baratte","cream","morel","chives","tarragon","white-wine-vinegar"]},
 
 {id:"oliver", name:"Raymond Oliver", born:1909, died:1990,
+ url:"https://www.grand-vefour.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Le Grand Véfour, Paris",fr:"Le Grand Véfour, Paris"},
  role:{en:"Chef-patron and broadcaster",fr:"Chef-propriétaire et homme de télévision"},
@@ -228,6 +236,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","beef","red-wine-vinegar","mushroom","onion","egg","cream","shallot"]},
 
 {id:"lenotre", name:"Gaston Lenôtre", born:1920, died:2009,
+ url:"https://www.lenotre.com",
  gender:"m", country:"FR", discipline:"patisserie",
  place:{en:"Paris, from Normandy",fr:"Paris, depuis la Normandie"},
  role:{en:"Pastry chef and founder of a school",fr:"Pâtissier et fondateur d’une école"},
@@ -239,6 +248,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","dark-chocolate","cream","raspberry","vanilla","almond","sugar","flour-t45"]},
 
 {id:"ono", name:"Jiro Ono", born:1925,
+ url:"https://www.sushi-jiro.jp",
  gender:"m", country:"JP", discipline:"cuisine",
  place:{en:"Sukiyabashi Jiro, Ginza, Tokyo",fr:"Sukiyabashi Jiro, Ginza, Tokyo"},
  role:{en:"Sushi chef",fr:"Maître sushi"},
@@ -251,6 +261,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["tuna","rice","rice-vinegar","wasabi","soy-sauce","nori","sea-bream","mackerel"]},
 
 {id:"troisgros", name:"Jean et Pierre Troisgros", born:1926, died:2020,
+ url:"https://www.troisgros.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Roanne, Loire",fr:"Roanne, Loire"},
  role:{en:"Brothers, chef-patrons",fr:"Frères, chefs-propriétaires"},
@@ -263,6 +274,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["salmon","sorrel","cream","shallot","white-wine-vinegar","beurre-de-baratte","chervil","black-pepper"]},
 
 {id:"verge", name:"Roger Vergé", born:1930, died:2015,
+ url:"https://www.moulindemougins.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Le Moulin de Mougins, Provence",fr:"Le Moulin de Mougins, Provence"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -275,6 +287,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["olive-oil","basil","tomato","zucchini","fennel","garlic","sea-bass","lemon"]},
 
 {id:"guerard", name:"Michel Guérard", born:1933, died:2024,
+ url:"https://www.lespresdeugenie.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Eugénie-les-Bains, Landes",fr:"Eugénie-les-Bains, Landes"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -299,6 +312,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["bresse-chicken","truffle","morel","cream","crayfish","beurre-de-baratte","artichoke","tarragon"]},
 
 {id:"waters", name:"Alice Waters", born:1944,
+ url:"https://www.chezpanisse.com",
  gender:"f", country:"US", discipline:"cuisine",
  place:{en:"Chez Panisse, Berkeley, California",fr:"Chez Panisse, Berkeley, Californie"},
  role:{en:"Restaurateur and campaigner",fr:"Restauratrice et militante"},
@@ -310,6 +324,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["lettuce","olive-oil","garlic","tomato","goat-cheese","basil","lemon","fig"]},
 
 {id:"robuchon", name:"Joël Robuchon", born:1945, died:2018,
+ url:"https://www.joel-robuchon.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Jamin, Paris; later L’Atelier, worldwide",fr:"Jamin, Paris ; puis L’Atelier, dans le monde"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -322,6 +337,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["potato","beurre-de-baratte","cream","truffle","caviar","langoustine","cauliflower","black-pepper"]},
 
 {id:"bras", name:"Michel Bras", born:1946,
+ url:"https://www.bras.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Laguiole, Aubrac",fr:"Laguiole, Aubrac"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -334,6 +350,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["dark-chocolate","fava-bean","pea","chervil","lovage","sorrel","beurre-de-baratte","cantal"]},
 
 {id:"gagnaire", name:"Pierre Gagnaire", born:1950,
+ url:"https://www.pierregagnaire.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Saint-Étienne, then Paris",fr:"Saint-Étienne, puis Paris"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -346,6 +363,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["langoustine","foie-gras","yuzu","tonka","dark-chocolate","cream","sea-urchin","black-pepper"]},
 
 {id:"keller", name:"Thomas Keller", born:1955,
+ url:"https://www.thomaskeller.com",
  gender:"m", country:"US", discipline:"cuisine",
  place:{en:"The French Laundry, Yountville; Per Se, New York",fr:"The French Laundry, Yountville ; Per Se, New York"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -358,6 +376,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","salmon","caviar","truffle","oyster","cauliflower","cream","chives"]},
 
 {id:"ducasse", name:"Alain Ducasse", born:1956,
+ url:"https://www.ducasse-paris.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Monaco, Paris, London and elsewhere",fr:"Monaco, Paris, Londres et ailleurs"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -370,6 +389,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["olive-oil","tomato","zucchini","basil","sea-bass","artichoke","lemon","fennel"]},
 
 {id:"herme", name:"Pierre Hermé", born:1961,
+ url:"https://www.pierreherme.com",
  gender:"m", country:"FR", discipline:"patisserie",
  place:{en:"Paris and Tokyo",fr:"Paris et Tokyo"},
  role:{en:"Pastry chef",fr:"Pâtissier"},
@@ -393,6 +413,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beurre-de-baratte","tarragon","langoustine","truffle","pigeon","cream","shallot","white-wine-vinegar"]},
 
 {id:"adria", name:"Ferran Adrià", born:1962,
+ url:"https://www.elbullifoundation.com",
  gender:"m", country:"ES", discipline:"cuisine",
  place:{en:"elBulli, Cala Montjoi, Catalonia",fr:"elBulli, Cala Montjoi, Catalogne"},
  role:{en:"Chef",fr:"Chef"},
@@ -405,6 +426,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["olive-oil","almond","tomato","saffron","sea-urchin","oyster","pea","parmesan"]},
 
 {id:"bottura", name:"Massimo Bottura", born:1962,
+ url:"https://www.osteriafrancescana.it",
  gender:"m", country:"IT", discipline:"cuisine",
  place:{en:"Osteria Francescana, Modena",fr:"Osteria Francescana, Modène"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -417,6 +439,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["parmesan","balsamic","flour-t55","egg","beurre-de-baratte","prosciutto","tomato","basil"]},
 
 {id:"crenn", name:"Dominique Crenn", born:1965,
+ url:"https://www.ateliercrenn.com",
  gender:"f", country:"US", discipline:"cuisine",
  place:{en:"Atelier Crenn, San Francisco",fr:"Atelier Crenn, San Francisco"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -429,6 +452,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["oyster","sea-urchin","buckwheat","beurre-de-baratte","cream","apple","cider-vinegar","nori"]},
 
 {id:"blumenthal", name:"Heston Blumenthal", born:1966,
+ url:"https://www.thefatduck.co.uk",
  gender:"m", country:"GB", discipline:"cuisine",
  place:{en:"The Fat Duck, Bray, Berkshire",fr:"The Fat Duck, Bray, Berkshire"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -441,6 +465,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beef","egg","cream","vanilla","dark-chocolate","lard","mustard","apple"]},
 
 {id:"darroze", name:"Hélène Darroze", born:1967,
+ url:"https://www.helenedarroze.com",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Paris and London",fr:"Paris et Londres"},
  role:{en:"Chef and restaurateur",fr:"Cheffe et restauratrice"},
@@ -453,6 +478,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["foie-gras","duck","piquillo","espelette","prune","beurre-de-baratte","chestnut","oyster"]},
 
 {id:"pic", name:"Anne-Sophie Pic", born:1969,
+ url:"https://www.anne-sophie-pic.com",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Maison Pic, Valence",fr:"Maison Pic, Valence"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -465,6 +491,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["sea-bass","caviar","truffle","coffee","cream","beurre-de-baratte","chervil","white-chocolate"]},
 
 {id:"redzepi", name:"René Redzepi", born:1977,
+ url:"https://noma.dk",
  gender:"m", country:"DK", discipline:"cuisine",
  place:{en:"Noma, Copenhagen",fr:"Noma, Copenhague"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -477,6 +504,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["oyster","nori","sea-buckthorn","juniper","buckwheat","creme-fraiche","lovage","beetroot"]},
 
 {id:"munk", name:"Rasmus Munk", born:1991,
+ url:"https://alchemist.dk",
  gender:"m", country:"DK", discipline:"cuisine",
  place:{en:"Alchemist, Refshaleøen, Copenhagen",fr:"Alchemist, Refshaleøen, Copenhague"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -489,6 +517,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["oyster","sea-urchin","caviar","beetroot","dark-chocolate","lamb","nori","cream"]},
 
 {id:"vildgaard", name:"Eric Vildgaard", born:1984, approx:true,
+ url:"https://www.restaurantjordnaer.dk",
  gender:"m", country:"DK", discipline:"cuisine",
  place:{en:"Jordnær, Gentofte, north of Copenhagen",fr:"Jordnær, Gentofte, au nord de Copenhague"},
  role:{en:"Chef-patron, with Tina Kragh Vildgaard",fr:"Chef-propriétaire, avec Tina Kragh Vildgaard"},
@@ -501,6 +530,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["langoustine","caviar","oyster","scallop","turbot","cream","beurre-de-baratte","chives"]},
 
 {id:"marcon", name:"Régis Marcon", born:1956,
+ url:"https://www.regismarcon.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Saint-Bonnet-le-Froid, Haute-Loire",fr:"Saint-Bonnet-le-Froid, Haute-Loire"},
  role:{en:"Chef-patron, with his son Jacques",fr:"Chef-propriétaire, avec son fils Jacques"},
@@ -513,6 +543,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["porcini","morel","lentille-du-puy","chanterelle","black-trumpet","cream","beurre-de-baratte","hazelnut"]},
 
 {id:"renaut", name:"Emmanuel Renaut", born:1968,
+ url:"https://www.floconsdesel.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Flocons de Sel, Megève",fr:"Flocons de Sel, Megève"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -525,6 +556,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["char","reblochon","beaufort","morel","hazelnut","cream","lovage","butter"]},
 
 {id:"roca", name:"Joan, Josep et Jordi Roca", born:1964,
+ url:"https://cellercanroca.com",
  gender:"m", country:"ES", discipline:"cuisine",
  place:{en:"El Celler de Can Roca, Girona",fr:"El Celler de Can Roca, Gérone"},
  role:{en:"Brothers — chef, sommelier, pastry chef",fr:"Frères — chef, sommelier, pâtissier"},
@@ -537,6 +569,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["shrimp","olive-oil","sea-urchin","dark-chocolate","truffle","saffron","almond","cream"]},
 
 {id:"colagreco", name:"Mauro Colagreco", born:1976,
+ url:"https://www.mirazur.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Mirazur, Menton — born in La Plata, Argentina",fr:"Mirazur, Menton — né à La Plata, Argentine"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -549,6 +582,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beetroot","lemon","olive-oil","sea-bass","fava-bean","lemon","artichoke","honey"]},
 
 {id:"kofoed", name:"Rasmus Kofoed", born:1974,
+ url:"https://www.geranium.dk",
  gender:"m", country:"DK", discipline:"cuisine",
  place:{en:"Geranium, Copenhagen",fr:"Geranium, Copenhague"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -561,6 +595,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["langoustine","oyster","caviar","celeriac","juniper","creme-fraiche","dill","beetroot"]},
 
 {id:"veyrat", name:"Marc Veyrat", born:1950,
+ url:"https://www.marcveyrat.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Annecy, then Megève and Manigod",fr:"Annecy, puis Megève et Manigod"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -573,6 +608,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["lovage","sorrel","wild-garlic","char","cream","beaufort","hazelnut","angelica"]},
 
 {id:"alleno", name:"Yannick Alléno", born:1968,
+ url:"https://www.yannick-alleno.com",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Pavillon Ledoyen, Paris; Courchevel",fr:"Pavillon Ledoyen, Paris ; Courchevel"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -597,6 +633,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["sea-bass","red-mullet","olive-oil","fennel","tomato","beurre-de-baratte","saffron","basil"]},
 
 {id:"aduriz", name:"Andoni Luis Aduriz", born:1971,
+ url:"https://www.mugaritz.com",
  gender:"m", country:"ES", discipline:"cuisine",
  place:{en:"Mugaritz, Errenteria, Basque Country",fr:"Mugaritz, Errenteria, Pays basque"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -609,6 +646,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["potato","hake","cod","olive-oil","egg","sea-urchin","white-beans","manchego"]},
 
 {id:"berasategui", name:"Martín Berasategui", born:1960,
+ url:"https://www.martinberasategui.com",
  gender:"m", country:"ES", discipline:"cuisine",
  place:{en:"Lasarte-Oria, Basque Country",fr:"Lasarte-Oria, Pays basque"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
@@ -621,6 +659,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["hake","squid","olive-oil","foie-gras","piquillo","cod","cream","truffle"]},
 
 {id:"arzak", name:"Elena Arzak", born:1969,
+ url:"https://www.arzak.es",
  gender:"f", country:"ES", discipline:"cuisine",
  place:{en:"Arzak, San Sebastián",fr:"Arzak, Saint-Sébastien"},
  role:{en:"Co-chef with her father, Juan Mari Arzak",fr:"Co-cheffe avec son père, Juan Mari Arzak"},
@@ -633,6 +672,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["hake","squid-ink","piquillo","egg","olive-oil","dark-chocolate","cod","almond"]},
 
 {id:"smyth", name:"Clare Smyth", born:1978,
+ url:"https://www.corebyclaresmyth.com",
  gender:"f", country:"GB", discipline:"cuisine",
  place:{en:"Core, Notting Hill, London",fr:"Core, Notting Hill, Londres"},
  role:{en:"Chef-patron",fr:"Cheffe-propriétaire"},
@@ -645,6 +685,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["potato","lamb","scallop","beurre-de-baratte","cream","apple","oyster","truffle"]},
 
 {id:"romito", name:"Niko Romito", born:1974,
+ url:"https://www.nikoromito.com",
  gender:"m", country:"IT", discipline:"cuisine",
  place:{en:"Reale, Castel di Sangro, Abruzzo",fr:"Reale, Castel di Sangro, Abruzzes"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -657,6 +698,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["flour-t55","tomato","olive-oil","potato","onion","lamb","pecorino","sage"]},
 
 {id:"crippa", name:"Enrico Crippa", born:1971,
+ url:"https://www.piazzaduomoalba.it",
  gender:"m", country:"IT", discipline:"cuisine",
  place:{en:"Piazza Duomo, Alba, Piedmont",fr:"Piazza Duomo, Alba, Piémont"},
  role:{en:"Chef",fr:"Chef"},
@@ -669,6 +711,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["white-truffle","lettuce","roquette","purslane","borage","hazelnut","egg","olive-oil"]},
 
 {id:"ros", name:"Ana Roš", born:1972,
+ url:"https://www.hisafranko.com",
  gender:"f", country:"SI", discipline:"cuisine",
  place:{en:"Hiša Franko, Kobarid, Slovenia",fr:"Hiša Franko, Kobarid, Slovénie"},
  role:{en:"Chef-patron",fr:"Cheffe-propriétaire"},
@@ -681,6 +724,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["trout","cream","kale","hazelnut","elderberry","sorrel","beetroot","honey"]},
 
 {id:"frantzen", name:"Björn Frantzén", born:1977,
+ url:"https://www.restaurantfrantzen.com",
  gender:"m", country:"SE", discipline:"cuisine",
  place:{en:"Frantzén, Stockholm; Zén, Singapore",fr:"Frantzén, Stockholm ; Zén, Singapour"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -693,6 +737,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["langoustine","caviar","truffle","beurre-de-baratte","soy-sauce","wasabi","cream","chives"]},
 
 {id:"bang", name:"Esben Holmboe Bang", born:1982,
+ url:"https://maaemo.no",
  gender:"m", country:"NO", discipline:"cuisine",
  place:{en:"Maaemo, Oslo",fr:"Maaemo, Oslo"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -705,6 +750,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["oyster","langoustine","creme-fraiche","juniper","sea-buckthorn","beetroot","dill","mackerel"]},
 
 {id:"martinez", name:"Virgilio Martínez", born:1977,
+ url:"https://www.centralrestaurante.com.pe",
  gender:"m", country:"PE", discipline:"cuisine",
  place:{en:"Central, Lima; Mil, Cusco",fr:"Central, Lima ; Mil, Cuzco"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -716,6 +762,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["potato","quinoa","lime","corn","chili","avocado","cilantro","dark-chocolate"]},
 
 {id:"grolet", name:"Cédric Grolet", born:1985,
+ url:"https://www.cedric-grolet.com",
  gender:"m", country:"FR", discipline:"patisserie",
  place:{en:"Le Meurice, Paris",fr:"Le Meurice, Paris"},
  role:{en:"Pastry chef",fr:"Pâtissier"},
@@ -763,6 +810,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["beetroot","celeriac","buckwheat","hazelnut","sorrel","cream","chickpeas","apple"]},
 
 {id:"grattard", name:"Adeline Grattard", born:1978,
+ url:"https://www.yamtcha.com",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Yam’Tcha, Paris 1er",fr:"Yam’Tcha, Paris 1er"},
  role:{en:"Chef-patronne, with Chi Wah Chan",fr:"Cheffe-propriétaire, avec Chi Wah Chan"},
@@ -775,6 +823,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["ginger","soy-sauce","pak-choi","scallop","sesame-oil","star-anise","duck","shiitake"]},
 
 {id:"grebaut", name:"Bertrand Grébaut", born:1981,
+ url:"https://www.septime-charonne.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Septime, Paris 11e",fr:"Septime, Paris 11e"},
  role:{en:"Chef-patron, with Théo Pourriat",fr:"Chef-propriétaire, avec Théo Pourriat"},
@@ -787,6 +836,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["mackerel","beetroot","buttermilk","sorrel","hazelnut","lard","celeriac","oyster"]},
 
 {id:"aizpitarte", name:"Iñaki Aizpitarte", born:1971,
+ url:"https://www.lechateaubriand.net",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Le Chateaubriand, Paris 11e",fr:"Le Chateaubriand, Paris 11e"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -798,6 +848,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["mackerel","beetroot","oyster","white-wine-vinegar","lard","radish","cream","black-pepper"]},
 
 {id:"lastra", name:"Santiago Lastra", born:1990,
+ url:"https://www.kolrestaurant.com",
  gender:"m", country:"GB", discipline:"cuisine",
  place:{en:"Kol, Marylebone, London — from Cuernavaca, Mexico",fr:"Kol, Marylebone, Londres — originaire de Cuernavaca, Mexique"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -810,6 +861,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["corn","langoustine","gooseberry","sea-buckthorn","black-radish","chili","lard","cilantro"]},
 
 {id:"chan", name:"Jeremy Chan", born:1985,
+ url:"https://ikoyilondon.com",
  gender:"m", country:"GB", discipline:"cuisine",
  place:{en:"Ikoyi, London",fr:"Ikoyi, Londres"},
  role:{en:"Chef-patron, with Iré Hassan-Odukale",fr:"Chef-propriétaire, avec Iré Hassan-Odukale"},
@@ -822,6 +874,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["chili","banana","peanut","rice","black-pepper","beef","lime","fenugreek"]},
 
 {id:"khan", name:"Asma Khan", born:1969,
+ url:"https://www.darjeeling-express.com",
  gender:"f", country:"GB", discipline:"cuisine",
  place:{en:"Darjeeling Express, London — from Kolkata",fr:"Darjeeling Express, Londres — originaire de Calcutta"},
  role:{en:"Restaurateur",fr:"Restauratrice"},
@@ -833,6 +886,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["cardamom","ghee","basmati","saffron","clove","cinnamon","ginger","yogurt"]},
 
 {id:"ottolenghi", name:"Yotam Ottolenghi", born:1968,
+ url:"https://ottolenghi.co.uk",
  gender:"m", country:"GB", discipline:"cuisine",
  place:{en:"London — born in Jerusalem",fr:"Londres — né à Jérusalem"},
  role:{en:"Chef, author and restaurateur",fr:"Chef, auteur et restaurateur"},
@@ -844,6 +898,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["tahini","zaatar","sumac","pomegranate","lemon","chickpeas","eggplant","yogurt"]},
 
 {id:"ziska", name:"Poul Andrias Ziska", born:1990,
+ url:"https://www.koks.fo",
  gender:"m", country:"FO", discipline:"cuisine",
  place:{en:"Koks — Faroe Islands, then Ilimanaq, Greenland",fr:"Koks — îles Féroé, puis Ilimanaq, Groenland"},
  role:{en:"Chef",fr:"Chef"},
@@ -856,6 +911,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["lamb","nori","mussel","langoustine","sea-urchin","juniper","rhubarb","cream"]},
 
 {id:"arora", name:"Garima Arora", born:1986,
+ url:"https://www.gaabkk.com",
  gender:"f", country:"TH", discipline:"cuisine",
  place:{en:"Gaa, Bangkok — from Mumbai",fr:"Gaa, Bangkok — originaire de Bombay"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -868,6 +924,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["cardamom","ghee","mustard-seed","curry-leaf","coconut-milk","chili","lime","turmeric"]},
 
 {id:"hasegawa", name:"Zaiyu Hasegawa", born:1978,
+ url:"https://www.jimbochoden.com",
  gender:"m", country:"JP", discipline:"cuisine",
  place:{en:"Den, Tokyo",fr:"Den, Tokyo"},
  role:{en:"Chef-patron",fr:"Chef-propriétaire"},
@@ -880,6 +937,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["rice","soy-sauce","kombu","katsuobushi","shiitake","sea-bream","yuzu","wasabi"]},
 
 {id:"lau", name:"Vicky Lau", born:1981,
+ url:"https://tate.com.hk",
  gender:"f", country:"HK", discipline:"cuisine",
  place:{en:"Tate Dining Room, Hong Kong",fr:"Tate Dining Room, Hong Kong"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -892,6 +950,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["soy-sauce","ginger","scallop","soy-bean","sesame","black-garlic","lobster","rice"]},
 
 {id:"leon", name:"Pía León", born:1987,
+ url:"https://www.kjolle.com",
  gender:"f", country:"PE", discipline:"cuisine",
  place:{en:"Kjolle, Lima",fr:"Kjolle, Lima"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -903,6 +962,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["potato","corn","quinoa","lime","chili","cilantro","avocado","dark-chocolate"]},
 
 {id:"espinosa", name:"Leonor Espinosa", born:1963,
+ url:"https://www.restauranteleo.com",
  gender:"f", country:"CO", discipline:"cuisine",
  place:{en:"Leo, Bogotá",fr:"Leo, Bogota"},
  role:{en:"Chef-patronne",fr:"Cheffe-propriétaire"},
@@ -914,6 +974,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["corn","coconut","chili","yam","lime","banana","cilantro","dark-chocolate"]},
 
 {id:"onwuachi", name:"Kwame Onwuachi", born:1989,
+ url:"https://www.tatiananyc.com",
  gender:"m", country:"US", discipline:"cuisine",
  place:{en:"Tatiana, Lincoln Center, New York",fr:"Tatiana, Lincoln Center, New York"},
  role:{en:"Chef and author",fr:"Chef et auteur"},
@@ -925,6 +986,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["chili","allspice","rice","coconut-milk","banana","lime","thyme","black-pepper"]},
 
 {id:"bailey", name:"Mashama Bailey", born:1974,
+ url:"https://www.thegreyrestaurant.com",
  gender:"f", country:"US", discipline:"cuisine",
  place:{en:"The Grey, Savannah, Georgia",fr:"The Grey, Savannah, Géorgie"},
  role:{en:"Executive chef and partner",fr:"Cheffe exécutive et associée"},
@@ -936,6 +998,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  ingredients:["rice","oyster","shrimp","tomato","corn","lard","black-pepper","buttermilk"]},
 
 {id:"atadika", name:"Selassie Atadika", born:1978, approx:true,
+ url:"https://www.midunu.com",
  gender:"f", country:"GH", discipline:"cuisine",
  place:{en:"Midunu, Accra",fr:"Midunu, Accra"},
  role:{en:"Chef and founder",fr:"Cheffe et fondatrice"},

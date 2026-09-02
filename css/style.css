@@ -495,3 +495,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   #chefSearch{flex:1 1 100%;font-size:16px}
   .chef-filters select{font-size:16px;padding:11px 10px;flex:1 1 45%}
 }
+
+.tl-link{margin:12px 0 4px!important;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px}
+.tl-link a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
+.tl-link a:hover{text-decoration-color:var(--ink)}
+.tl-link-host{color:var(--ink-3);font-size:12px}

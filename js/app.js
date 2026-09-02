@@ -484,6 +484,9 @@
         '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
         '<p class="tw-sub">' + esc(t.chefIngredients) + "</p>" +
         '<div class="pair-grid">' + c.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
+        (c.url ? '<p class="tl-link"><a href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' +
+          esc(t.chefSite) + ' <span aria-hidden="true">↗</span></a>' +
+          '<span class="tl-link-host">' + esc(c.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) + "</span></p>" : "") +
         "</div></article>";
     }).join("");
   }
