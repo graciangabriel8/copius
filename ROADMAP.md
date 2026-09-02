@@ -64,7 +64,8 @@ Then decide shape, price and gate. The data model falls out of what those needed
 
 - **copius.fr** — €10–15/yr. Needed before charging; a checkout on github.io reads badly.
 - **App Store** — $99/yr, perpetual. The PWA already gives offline + home-screen icon.
-- **Michelin authorisation** for the macaron — a kind-act request, drafted, not sent.
+- **Michelin authorisation** for the macaron — request sent by email (2026-09-02). Awaiting
+  reply; stars stay plain ★ until a written yes.
 - **Brand recommendations** — fragments per country, and affiliate money puts the
   credibility at risk. Safe version: *what to look for on the label*.
 - **Weekly recipes** — a treadmill. Only works as a byproduct of the trees and mechanics.
