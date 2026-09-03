@@ -261,10 +261,18 @@
   }
 
   /* ---------- ingredient of the day ---------- */
+  /* Full-cycle rotation. Consecutive days step by a stride coprime to the list
+     length, so every ingredient shows exactly once before any repeat, and
+     neighbours in the data files never land on consecutive days. The old
+     version added 1 to the index each day, which walked the files in order and
+     served twelve spices in a row. */
+  function gcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
   function dailyIngredient() {
-    var d = new Date();
-    var seed = d.getFullYear() * 372 + (d.getMonth() + 1) * 31 + d.getDate();
-    return BASE[seed % BASE.length];
+    var d = new Date(), n = BASE.length;
+    var day = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+    var k = Math.round(n * 0.6180339887);
+    while (k > 1 && gcd(k, n) !== 1) k--;
+    return BASE[((day % n) * k) % n];
   }
   function renderDaily() {
     var t = T(), i = dailyIngredient();
