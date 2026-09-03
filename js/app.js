@@ -185,7 +185,7 @@
     sort.value = state.sort;
     el("stats").textContent = t.statsTpl
       .replace("{n}", ING.length)
-      .replace("{f}", CAT_ORDER.length)
+      .replace("{f}", CAT_ORDER.filter(function (c) { return ING.some(function (i) { return i.cat === c; }); }).length)
       .replace("{p}", EDGE_COUNT);
   }
 
@@ -193,7 +193,9 @@
   function renderCats() {
     var t = T(), html = "";
     html += chip("all", t.all);
-    CAT_ORDER.forEach(function (c) { html += chip(c, t.categories[c]); });
+    var pop = {};
+    ING.forEach(function (i) { pop[i.cat] = 1; });
+    CAT_ORDER.forEach(function (c) { if (pop[c]) html += chip(c, t.categories[c]); });
     el("cats").innerHTML = html;
     function chip(v, label) {
       return '<button type="button" class="chip' + (state.cat === v ? " active" : "") + '" data-cat="' + v + '">' + esc(label) + "</button>";

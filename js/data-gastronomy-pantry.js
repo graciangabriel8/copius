@@ -71,7 +71,7 @@ fr:"Écrasez les baies avant de les jeter dans la marmite — entières, elles r
 pairs:["duck","pork","beef","bay-leaf","black-pepper"],
 svg:'<circle class="f3 sf" cx="42" cy="54" r="8"/><circle class="f3 sf" cx="58" cy="58" r="7"/><path class="s" d="M40 51l4 4M56 55l3 4" stroke-width="1.6"/><path class="s" d="M46 40l6-12M46 40l-2-10M46 40l10-8"/>'},
 
-{id:"kombu",cat:"condiments",rare:true,name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
+{id:"kombu",cat:"seaweed",rare:true,name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
 origin:{en:"Cold seas of Japan",fr:"Mers froides du Japon"},season:[],
 flavor:["umami","marine","briny","mild"],
 story:{en:"In 1908, chemist Kikunae Ikeda asked why kombu broth tasted like nothing else, isolated glutamate from the seaweed, and coined a new word for what he found: umami. The finest leaves are aged for years in cellars like wine — a kelp with vintages.",
@@ -91,7 +91,7 @@ fr:"Achetez les copeaux en petits sachets — le parfum s’évente vite. Une po
 pairs:["kombu","rice","soy-sauce","egg","shiitake"],
 svg:'<path class="f2 sf" d="M30 56q14-10 30-6l8-4-1 6 1 6-8-4q-16 4-30 2z"/><path class="f1 sf" d="M36 40q8-4 14 0l-2 6q-6-3-10 0z"/>'},
 
-{id:"nori",cat:"condiments",rare:true,name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
+{id:"nori",cat:"seaweed",rare:true,name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[],
 flavor:["marine","umami","toasty","salty"],
 story:{en:"When Japan’s nori harvests mysteriously collapsed after the war, it was a British scientist, Kathleen Mary Drew-Baker, whose research on seaweed life cycles saved the crop — she never visited Japan, yet fishermen there still honour her each April as the “Mother of the Sea”.",
@@ -101,7 +101,7 @@ fr:"Passez une feuille au-dessus d’une flamme jusqu’à ce qu’elle vire ém
 pairs:["rice","sesame","egg","butter","salmon","tuna"],
 svg:'<rect class="f3 sf" x="32" y="34" width="32" height="36" rx="2"/><path class="s" d="M36 42h24M36 50h24M36 58h24M36 66h24" stroke-width="1.2"/>'},
 
-{id:"bottarga",cat:"seafood",rare:true,name:{en:"Bottarga",fr:"Poutargue"},latin:"Mugil cephalus (roe)",
+{id:"bottarga",cat:"roe",rare:true,name:{en:"Bottarga",fr:"Poutargue"},latin:"Mugil cephalus (roe)",
 origin:{en:"Sardinia & Provence",fr:"Sardaigne & Provence"},season:[],
 flavor:["briny","umami","salty","rich"],
 story:{en:"Mullet roe salted, pressed and air-dried into an amber ingot — a technique the Phoenicians carried across the Mediterranean three thousand years ago. Sardinia grates its “Mediterranean caviar” over pasta; Martigues, near Marseille, guards its own as le caviar provençal.",
@@ -181,7 +181,7 @@ fr:"Fondez-en une cuillerée dans un miel tiède pour le fromage, dans une sauce
 pairs:["honey","tomato","mozzarella","egg","scallop"],
 svg:'<path class="f3 sf" d="M34 40q14-10 28 0 4 14 0 26-14 8-28 0-4-12 0-26z" transform="rotate(-8 48 52)"/><path class="s" d="M34 38q-4-4-2-8M62 38q4-4 2-8" stroke-width="1.8"/><path class="f1" d="M44 50a2 2 0 104 0 2 2 0 10-4 0M52 56a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"sea-urchin",cat:"seafood",rare:true,name:{en:"Sea urchin",fr:"Oursin"},latin:"Paracentrotus lividus",
+{id:"sea-urchin",cat:"shellfish",rare:true,name:{en:"Sea urchin",fr:"Oursin"},latin:"Paracentrotus lividus",
 origin:{en:"Mediterranean & cold coasts",fr:"Méditerranée & côtes froides"},season:[1,2,3,10,11,12],
 flavor:["marine","sweet","rich","briny"],
 story:{en:"Inside the hostile shell wait five coral tongues tasting of iodine, hazelnut and returning tide — uni to Japan, corail to Provence, where winter villages hold oursinades, festivals of urchins eaten by the dozen on the quay. The sea’s most guarded custard.",

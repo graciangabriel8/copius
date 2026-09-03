@@ -8,7 +8,7 @@
 
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 
-{id:"caviar",cat:"seafood",luxe:true,name:{en:"Caviar",fr:"Caviar"},latin:"Acipenser spp. (roe)",
+{id:"caviar",cat:"roe",luxe:true,name:{en:"Caviar",fr:"Caviar"},latin:"Acipenser spp. (roe)",
 origin:{en:"Caspian Sea, now farmed worldwide",fr:"Mer Caspienne, désormais élevé partout"},season:[],
 flavor:["briny","marine","rich","buttery"],
 story:{en:"Sturgeon roe cured malossol — “little salt” in Russian, the only seasoning it tolerates. In 19th-century America sturgeon were so plentiful that saloons gave caviar away free, like peanuts, to make drinkers thirsty; two centuries of appetite later, it is weighed out like jewellery.",
@@ -18,7 +18,7 @@ fr:"Jamais de métal sur le grain — cuillère de nacre ou de corne, à même l
 pairs:["cream","potato","egg","chives","butter"],
 svg:'<circle class="f1 sf" cx="48" cy="52" r="19"/><path class="s" d="M32 46h32" stroke-width="1.6"/><path class="dot" d="M40 54a2 2 0 104 0 2 2 0 10-4 0M47 52a2 2 0 104 0 2 2 0 10-4 0M54 55a2 2 0 104 0 2 2 0 10-4 0M43 60a2 2 0 104 0 2 2 0 10-4 0M51 61a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"lobster",cat:"seafood",luxe:true,name:{en:"Lobster",fr:"Homard"},latin:"Homarus gammarus",
+{id:"lobster",cat:"shellfish",luxe:true,name:{en:"Lobster",fr:"Homard"},latin:"Homarus gammarus",
 origin:{en:"North Atlantic; Brittany prizes the blue",fr:"Atlantique Nord ; la Bretagne vénère le bleu"},season:[5,6,7,8,9],
 flavor:["sweet","marine","rich","delicate"],
 story:{en:"Colonial New England fed lobster to prisoners and servants — the story goes that some contracts capped it at three meals a week. The rails and the rich reversed its fortune entirely; Brittany’s cobalt-shelled homard bleu now outranks nearly everything else in the tank.",
@@ -28,7 +28,7 @@ fr:"Sous-cuisez plutôt que trop — la chair devient gomme passé son point. R�
 pairs:["butter","vanilla","tarragon","lemon","corn"],
 svg:'<path class="f2 sf" d="M44 36q4-4 8 0l2 20q3 10-6 14-9-4-6-14z"/><path class="f2 sf" d="M40 34q-8-6-6-14 8 0 10 10zM56 34q8-6 6-14-8 0-10 10z"/><path class="s" d="M42 48l-8 2M42 56l-8 4M54 48l8 2M54 56l8 4M46 72l-3 5M50 72l3 5"/>'},
 
-{id:"langoustine",cat:"seafood",luxe:true,name:{en:"Langoustine",fr:"Langoustine"},latin:"Nephrops norvegicus",
+{id:"langoustine",cat:"shellfish",luxe:true,name:{en:"Langoustine",fr:"Langoustine"},latin:"Nephrops norvegicus",
 origin:{en:"North-East Atlantic",fr:"Atlantique Nord-Est"},season:[4,5,6,7,8],
 flavor:["sweet","delicate","marine"],
 story:{en:"The most impatient of shellfish: it dies fast out of water and sulks fast on ice, which is why for centuries only port towns ever tasted it at its best. The English called them Dublin Bay prawns after the boats that landed them; chefs simply call them the finest sweetness the Atlantic makes.",
@@ -38,7 +38,7 @@ fr:"Des secondes, pas des minutes : passez-les dans un beurre mousseux ou pochez
 pairs:["butter","lemon","garlic","finger-lime","chervil"],
 svg:'<path class="f1 sf" d="M46 34q3-3 6 0l1 22q2 9-4.5 12-6.5-3-4.5-12z"/><path class="s" d="M46 34q-4-8-2-14M52 34q4-8 2-14M44 44l-7 1M44 52l-7 3M54 44l7 1M54 52l7 3"/>'},
 
-{id:"king-crab",cat:"seafood",luxe:true,name:{en:"King crab",fr:"Crabe royal"},latin:"Paralithodes camtschaticus",
+{id:"king-crab",cat:"shellfish",luxe:true,name:{en:"King crab",fr:"Crabe royal"},latin:"Paralithodes camtschaticus",
 origin:{en:"Bering Sea & Barents Sea",fr:"Mer de Béring & mer de Barents"},season:[1,10,11,12],
 flavor:["sweet","marine","rich","briny"],
 story:{en:"A giant whose legs can span nearly two metres, fished in some of the deadliest waters on Earth. Soviet scientists released it near Murmansk in the 1960s; it marched west into Norwegian fjords, where fishermen — torn between plague and windfall — still call it “Stalin’s crab”.",
@@ -68,7 +68,7 @@ fr:"Sa chair ferme et douce se détache de l’arête en quatre filets parfaits 
 pairs:["butter","lemon","parsley","capers"],
 svg:'<path class="f1 sf" d="M30 54q6-16 24-16 14 0 12 14-2 16-20 16-14 0-16-14z" transform="rotate(-8 48 52)"/><path class="dot" d="M36 46a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/><path class="s" d="M64 50l8-4-2 8" stroke-width="1.8"/>'},
 
-{id:"abalone",cat:"seafood",luxe:true,rare:true,name:{en:"Abalone",fr:"Ormeau"},latin:"Haliotis tuberculata",
+{id:"abalone",cat:"shellfish",luxe:true,rare:true,name:{en:"Abalone",fr:"Ormeau"},latin:"Haliotis tuberculata",
 origin:{en:"Brittany, Channel Islands & Japan",fr:"Bretagne, îles Anglo-Normandes & Japon"},season:[1,2,10,11,12],
 flavor:["marine","sweet","meaty","briny"],
 story:{en:"A sea snail in a mother-of-pearl ear, prised off rocks at the lowest tides. Japan’s ama — women free-divers whose craft is two thousand years old — have gathered them for emperors; in Brittany the ormeau is so coveted that its harvest is rationed to a handful of big-tide days a year.",

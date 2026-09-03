@@ -95,6 +95,12 @@ window.I18N = {
       nuts: "Nuts & seeds",
       mushrooms: "Mushrooms",
       dairy: "Dairy & eggs",
+      seaweed: "Seaweed",
+      shellfish: "Shellfish & molluscs",
+      roe: "Roe & caviar",
+      texture: "Texture agents",
+      cellar: "Wines & spirits",
+      infusions: "Tea & infusions",
       meat: "Meat & poultry",
       cuts: "Cuts of meat",
       seafood: "Fish & seafood",
@@ -207,6 +213,12 @@ window.I18N = {
       nuts: "Noix & graines",
       mushrooms: "Champignons",
       dairy: "Laitages & œufs",
+      seaweed: "Algues",
+      shellfish: "Crustacés & coquillages",
+      roe: "Œufs de poisson & caviar",
+      texture: "Texturants",
+      cellar: "Cave & spiritueux",
+      infusions: "Thés & infusions",
       meat: "Viandes & volailles",
       cuts: "Morceaux du boucher",
       seafood: "Poissons & fruits de mer",
@@ -227,4 +239,4 @@ window.I18N = {
 };
 
 // Order in which families appear in the filter bar and "by family" sort.
-window.CAT_ORDER = ["vegetables","fruits","herbs","spices","mushrooms","grains","legumes","nuts","dairy","meat","cuts","seafood","fats","condiments","sweet"];
+window.CAT_ORDER = ["vegetables","fruits","herbs","spices","mushrooms","seaweed","grains","legumes","nuts","dairy","meat","cuts","seafood","shellfish","roe","fats","condiments","texture","cellar","infusions","sweet"];

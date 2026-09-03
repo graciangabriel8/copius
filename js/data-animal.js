@@ -191,7 +191,7 @@ fr:"Un ou deux filets, fondus dans l’huile tiède au départ d’une sauce tom
 pairs:["garlic","tomato","capers","olive","lemon","olive-oil"],
 svg:'<path class="f3 sf" d="M28 50q12-6 28-5l10-4-2 5 2 5-10-4q-16 1-28 3z"/><path class="f3 sf" d="M34 62q10-5 22-4l8-3-2 4 2 4-8-3q-12 1-22 2z"/><path class="dot" d="M34 48a1.2 1.2 0 102.4 0 1.2 1.2 0 10-2.4 0"/>'},
 
-{id:"shrimp",cat:"seafood",name:{en:"Shrimp",fr:"Crevette"},latin:"Penaeus spp.",
+{id:"shrimp",cat:"shellfish",name:{en:"Shrimp",fr:"Crevette"},latin:"Penaeus spp.",
 origin:{en:"All the world’s coasts",fr:"Toutes les côtes du monde"},season:[],
 flavor:["sweet","marine","briny","delicate"],
 story:{en:"Greeks grilled them over coals twenty-five centuries ago and argued about it in comedies. The cook’s secret has not changed since: the sweetness is in the shell — every discarded head is a spoonful of bisque thrown away.",
@@ -201,7 +201,7 @@ fr:"Elles cuisent le temps de regretter de s’être éloigné — deux minutes,
 pairs:["garlic","chili","lemon","coconut-milk","cilantro","saffron"],
 svg:'<path class="f2 sf" d="M60 36q10 8 4 20-6 12-20 14l-8 6 2-8-6-2 8-4q12-4 16-12 4-9-2-14z"/><path class="s" d="M52 46q-2 6-8 10M58 40q-1 7-6 12"/><path class="dot" d="M62 36a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"scallop",cat:"seafood",name:{en:"Scallop",fr:"Coquille Saint-Jacques"},latin:"Pecten maximus",
+{id:"scallop",cat:"shellfish",name:{en:"Scallop",fr:"Coquille Saint-Jacques"},latin:"Pecten maximus",
 origin:{en:"North Atlantic & Channel",fr:"Atlantique Nord & Manche"},season:[1,2,3,10,11,12],
 flavor:["sweet","delicate","marine","buttery"],
 story:{en:"Pilgrims to Santiago de Compostela sewed its shell onto their cloaks — proof of the journey, drinking cup and begging bowl in one; French still names it after Saint James. Botticelli floated Venus ashore on one: the only ingredient with its own Renaissance masterpiece.",
@@ -211,7 +211,7 @@ fr:"Séchez-les obsessionnellement, puis quatre-vingt-dix secondes par face dans
 pairs:["butter","chives","saffron","cream","lemon"],
 svg:'<path class="f1 sf" d="M48 30L30 58q0 8 18 8t18-8z"/><path class="s" d="M48 32L38 58M48 32v32M48 32l10 26"/><path class="f2 sf" d="M40 66h16l-2 6H42z"/>'},
 
-{id:"oyster",cat:"seafood",name:{en:"Oyster",fr:"Huître"},latin:"Ostrea edulis / Crassostrea gigas",
+{id:"oyster",cat:"shellfish",name:{en:"Oyster",fr:"Huître"},latin:"Ostrea edulis / Crassostrea gigas",
 origin:{en:"Atlantic & Pacific coasts",fr:"Côtes atlantiques & pacifiques"},season:[1,2,3,4,9,10,11,12],
 flavor:["briny","marine","umami","delicate"],
 story:{en:"Rome built roads to move them alive in snow; 19th-century New York sold them on street corners like hot dogs — the poor man’s protein became the rich man’s luxury within two generations. Each one tastes of its exact patch of sea: merroir, as winemakers would say.",
@@ -671,7 +671,7 @@ fr:"Cuisez-le à peine — il est à son meilleur encore translucide au cœur. I
 pairs:["butter","lemon","dill","creme-fraiche","hazelnut","chives","beetroot","horseradish"],
 svg:'<path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="38" cy="53" r="1.8"/><circle class="dot" cx="52" cy="57" r="1.8"/>'},
 
-{id:"crab",cat:"seafood",name:{en:"Brown crab",fr:"Tourteau"},latin:"Cancer pagurus",
+{id:"crab",cat:"shellfish",name:{en:"Brown crab",fr:"Tourteau"},latin:"Cancer pagurus",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[5,6,7,8,9,10],
 flavor:["sweet","marine","rich","umami"],
 story:{en:"Two entirely different foods live inside one shell: white claw meat, sweet and fibrous, and brown body meat, soft and intensely savoury. Most people only meet the white and never learn what the brown can do to a sauce.",
@@ -681,7 +681,7 @@ fr:"Achetez-le vivant et lourd pour sa taille. Un tourteau léger vient de muer 
 pairs:["egg","lemon","chives","cream","flour-t65","chili","butter","parsley"],
 svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="20" ry="14"/><path class="s" d="M30 46l-10-8M66 46l10-8M28 62l-10 6M68 62l10 6"/><circle class="dot" cx="42" cy="52" r="2"/><circle class="dot" cx="54" cy="52" r="2"/>'},
 
-{id:"spider-crab",cat:"seafood",name:{en:"Spider crab",fr:"Araignée de mer"},latin:"Maja squinado",
+{id:"spider-crab",cat:"shellfish",name:{en:"Spider crab",fr:"Araignée de mer"},latin:"Maja squinado",
 origin:{en:"Northeast Atlantic & Mediterranean",fr:"Atlantique Nord-Est & Méditerranée"},season:[4,5,6,7,8],
 flavor:["sweet","marine","delicate","briny"],
 story:{en:"Brittany considers it finer than the brown crab and it costs less, which is one of the last genuine bargains at a French fish counter. It migrates in vast columns along the seabed in spring, walking single file.",
@@ -691,7 +691,7 @@ fr:"Il y a bien moins de chair que la taille ne le laisse croire et le décortic
 pairs:["lemon","chives","olive-oil","shallot","white-wine-vinegar","tomato","parsley","black-pepper"],
 svg:'<ellipse class="f2 sf" cx="48" cy="56" rx="14" ry="16"/><path class="s" d="M34 48l-14-8M62 48l14-8M34 58l-16 2M62 58l16 2M36 66l-12 10M60 66l12 10"/>'},
 
-{id:"crayfish",cat:"seafood",name:{en:"Crayfish",fr:"Écrevisse"},latin:"Astacus astacus",
+{id:"crayfish",cat:"shellfish",name:{en:"Crayfish",fr:"Écrevisse"},latin:"Astacus astacus",
 origin:{en:"European fresh water",fr:"Eaux douces d’Europe"},season:[7,8,9,10],
 flavor:["sweet","marine","rich","delicate"],
 story:{en:"The native European species was devastated by a plague carried in with American imports in the nineteenth century, and it has never recovered. Nantua built an entire sauce on it — the shells, pounded into butter, are the dish.",
@@ -701,7 +701,7 @@ fr:"Ne jetez jamais les carapaces. Rôties et pilées en beurre ou mijotées en 
 pairs:["butter","cream","thyme","tarragon","pike","shallot","tomato","chervil"],
 svg:'<path class="f1 sf" d="M34 44q14-8 28 0t-4 28-24 0z"/><path class="s" d="M34 46l-12-8M62 46l12-8M36 70l-8 8M60 70l8 8"/><path class="s" d="M48 72v8"/>'},
 
-{id:"mussel",cat:"seafood",name:{en:"Mussel",fr:"Moule"},latin:"Mytilus edulis",
+{id:"mussel",cat:"shellfish",name:{en:"Mussel",fr:"Moule"},latin:"Mytilus edulis",
 origin:{en:"North Atlantic",fr:"Atlantique Nord"},season:[9,10,11,12,1,2],
 flavor:["briny","marine","sweet","umami"],
 story:{en:"Bouchot mussels are grown on wooden posts driven into tidal flats, a method a shipwrecked Irishman is said to have devised in the Bay of Aiguillon in 1235. The posts keep them off the sand, so they carry no grit.",
@@ -711,7 +711,7 @@ fr:"Jetez celles qui restent ouvertes au tapotement avant cuisson, et celles qui
 pairs:["white-wine-vinegar","shallot","parsley","cream","garlic","butter","leek","celery"],
 svg:'<path class="f1 sf" d="M26 62q4-22 22-22t22 22q-18 10-44 0z"/><path class="s" d="M48 40v22M36 52q12 8 24 0"/>'},
 
-{id:"clam",cat:"seafood",name:{en:"Clam",fr:"Palourde"},latin:"Ruditapes decussatus",
+{id:"clam",cat:"shellfish",name:{en:"Clam",fr:"Palourde"},latin:"Ruditapes decussatus",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[9,10,11,12,1,2,3],
 flavor:["briny","sweet","marine","delicate"],
 story:{en:"They live buried in sand and filter water through a siphon, which means they are full of grit unless purged — a few hours in clean salted water and they spit it out themselves. No amount of rinsing achieves the same thing.",
@@ -721,7 +721,7 @@ fr:"Dégorgez-les en eau salée, jamais douce — l’eau douce les tue, elles s
 pairs:["garlic","parsley","olive-oil","chili","white-wine-vinegar","hake","tomato","lemon"],
 svg:'<path class="f3 sf" d="M28 58q0-16 20-16t20 16q-16 12-40 0z"/><path class="s" d="M34 50q14 8 28 0M38 56q10 6 20 0"/>'},
 
-{id:"razor-clam",cat:"seafood",name:{en:"Razor clam",fr:"Couteau"},latin:"Ensis magnus",
+{id:"razor-clam",cat:"shellfish",name:{en:"Razor clam",fr:"Couteau"},latin:"Ensis magnus",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[9,10,11,12,1,2],
 flavor:["sweet","briny","marine","delicate"],
 story:{en:"They burrow at astonishing speed, which is why the traditional way to catch one is to pour salt down its hole — the sudden change in salinity drives it up within seconds. It is a trick, not a technique, and it works every time.",
@@ -731,7 +731,7 @@ fr:"Quatre-vingt-dix secondes, pas davantage. Ils passent du tendre au caoutchou
 pairs:["garlic","parsley","olive-oil","lemon","chili","butter","paprika","white-wine-vinegar"],
 svg:'<path class="f3 sf" d="M22 62l48-14 4 8-48 14z"/><path class="s" d="M24 60l48-14"/>'},
 
-{id:"squid",cat:"seafood",name:{en:"Squid",fr:"Calamar"},latin:"Loligo vulgaris",
+{id:"squid",cat:"shellfish",name:{en:"Squid",fr:"Calamar"},latin:"Loligo vulgaris",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[5,6,7,8,9,10],
 flavor:["sweet","marine","delicate","umami"],
 story:{en:"Its muscle has almost no fat and a great deal of collagen, which is why there are exactly two ways to cook it — under two minutes or over thirty. Anything between those and it is rubber, and no amount of skill rescues it.",
@@ -741,7 +741,7 @@ fr:"Incisez l’intérieur du manteau en croisillons avant la poêle. Il s’enr
 pairs:["garlic","chili","lemon","olive-oil","parsley","squid-ink","tomato","paprika"],
 svg:'<path class="f3 sf" d="M40 26q14 0 14 18t-4 20H42q-4-8-4-20 0-18 2-18z"/><path class="s" d="M42 64q-4 12-8 14M46 64q-2 12-4 16M50 64q2 12 4 16M54 64q4 12 8 14"/>'},
 
-{id:"octopus",cat:"seafood",name:{en:"Octopus",fr:"Poulpe"},latin:"Octopus vulgaris",
+{id:"octopus",cat:"shellfish",name:{en:"Octopus",fr:"Poulpe"},latin:"Octopus vulgaris",
 origin:{en:"Mediterranean & eastern Atlantic",fr:"Méditerranée & Atlantique Est"},season:[5,6,7,8,9,10],
 flavor:["sweet","marine","meaty","umami"],
 story:{en:"Greek fishermen beat it against rocks forty times to break down the collagen, and freezing does exactly the same job — ice crystals rupture the muscle fibres. A frozen octopus is genuinely more tender than a fresh one.",
@@ -751,7 +751,7 @@ fr:"Faites-le mijoter avec un bouchon de liège si vous voulez — la tradition 
 pairs:["paprika","olive-oil","potato","lemon","garlic","bay-leaf","chili","parsley"],
 svg:'<path class="f1 sf" d="M32 46q0-16 16-16t16 16-6 18H38q-6-6-6-18z"/><path class="s" d="M38 64q-6 14-14 16M44 64q-4 14-6 18M52 64q4 14 6 18M58 64q6 14 14 16"/><circle class="dot" cx="42" cy="44" r="2"/><circle class="dot" cx="54" cy="44" r="2"/>'},
 
-{id:"cuttlefish",cat:"seafood",name:{en:"Cuttlefish",fr:"Seiche"},latin:"Sepia officinalis",
+{id:"cuttlefish",cat:"shellfish",name:{en:"Cuttlefish",fr:"Seiche"},latin:"Sepia officinalis",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[3,4,5,6,9,10],
 flavor:["sweet","marine","umami","rich"],
 story:{en:"Its ink was the original sepia — the brown of old photographs and Renaissance drawings is named after this animal, and was made from it for centuries. The internal shell is the cuttlebone sold in birdcages.",
