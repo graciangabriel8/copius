@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"caviar-beluga",cat:"roe",name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
+{id:"caviar-beluga",cat:"roe",rare:true,luxe:true,name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
 origin:{en:"Caspian basin, now farmed",fr:"Bassin caspien, aujourd'hui d'élevage"},season:[],
 flavor:["creamy","marine","delicate","mild"],
 story:{en:"A beluga sturgeon can take twenty years to spawn for the first time, which is why its roe has sat on CITES Appendix II since 1998 and has been barred from the United States since 2005. What reaches a French table now comes from farms in Italy, China or the Gulf, and arrives under a numbered CITES label rather than a fisherman's name.",
@@ -29,7 +29,7 @@ fr:"Jamais de métal sur le grain — cuillère de nacre ou de corne, à même l
 pairs:["cream","potato","egg","chives","butter"],
 svg:'<circle class="f1 sf" cx="48" cy="52" r="19"/><path class="s" d="M32 46h32" stroke-width="1.6"/><path class="dot" d="M40 54a2 2 0 104 0 2 2 0 10-4 0M47 52a2 2 0 104 0 2 2 0 10-4 0M54 55a2 2 0 104 0 2 2 0 10-4 0M43 60a2 2 0 104 0 2 2 0 10-4 0M51 61a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"dried-shrimp-roe",cat:"roe",name:{en:"Dried shrimp roe",fr:"Œufs de crevette séchés (xiazi)"},latin:"Macrobrachium nipponense",
+{id:"dried-shrimp-roe",cat:"roe",rare:true,name:{en:"Dried shrimp roe",fr:"Œufs de crevette séchés (xiazi)"},latin:"Macrobrachium nipponense",
 origin:{en:"Suzhou and Shanghai, China",fr:"Suzhou et Shanghai, Chine"},season:[],
 flavor:["umami","briny","marine","salty"],
 story:{en:"Scraped from freshwater river shrimp and dried to a dark grit, xiazi is one of three separate parts a Suzhou kitchen takes from the same animal — meat, roe and head fat all go into san xia mian, three-shrimp noodles, as distinct ingredients. Drying shrinks the eggs smaller still and concentrates them, so the roe alone is sold as a seasoning rather than as seafood.",
@@ -39,7 +39,7 @@ fr:"C’est déjà salé : salez le plat après l’avoir ajoutée, jamais avant
 pairs:["sheng-chou","lard","spring-onion","silken-tofu","shaoxing-wine","ginger"],
 svg:'<ellipse class="f1 sf" cx="38" cy="46" rx="17" ry="13"/><path class="s" d="M54 46 78 62"/><path class="f3 sf" d="M28 44q10-8 20 0-4 6-10 6t-10-6z"/><circle class="dot" cx="60" cy="34" r="1.8"/><circle class="dot" cx="66" cy="29" r="1.8"/><circle class="dot" cx="56" cy="26" r="1.8"/>'},
 
-{id:"fugu-shirako",cat:"roe",name:{en:"Fugu shirako",fr:"Laitance de fugu"},latin:"Takifugu rubripes (milt)",
+{id:"fugu-shirako",cat:"roe",rare:true,luxe:true,name:{en:"Fugu shirako",fr:"Laitance de fugu"},latin:"Takifugu rubripes (milt)",
 origin:{en:"Shimonoseki, in winter",fr:"Shimonoseki, en hiver"},season:[12,1,2],
 flavor:["creamy","rich","marine","delicate"],
 story:{en:"In a fish whose liver and ovaries can kill, the milt is harmless — it is the one internal organ a licensed fugu cook may serve, and it peaks in the weeks before the winter spawn. It has nothing to do with the cod milt sold under the same word: firmer, sweeter, and priced accordingly.",
@@ -69,7 +69,7 @@ fr:"Détachez les grains dans une saumure à 3 % à peine chaude plutôt qu'à l
 pairs:["rice","nori","soy-sauce","wasabi","shiso","cucumber","junmai-sake","daikon"],
 svg:'<path class="f3 sf" d="M28 46h40v22q0 4-4 4H32q-4 0-4-4z"/><path class="f1" d="M32 58h32v10H32z"/><circle class="f2 sf" cx="38" cy="44" r="6"/><circle class="f2 sf" cx="50" cy="42" r="6"/><circle class="f2 sf" cx="61" cy="45" r="6"/>'},
 
-{id:"caviar-kaluga",cat:"roe",name:{en:"Kaluga caviar",fr:"Caviar kaluga"},latin:"Huso dauricus (roe)",
+{id:"caviar-kaluga",cat:"roe",luxe:true,name:{en:"Kaluga caviar",fr:"Caviar kaluga"},latin:"Huso dauricus (roe)",
 origin:{en:"Amur basin, farmed in Zhejiang",fr:"Bassin de l'Amour, élevé au Zhejiang"},season:[],
 flavor:["buttery","marine","rich","mild"],
 story:{en:"Kaluga is the beluga's eastern cousin, the other giant Huso, native to the Amur and reaching the same grain calibre. Almost all of it now comes from farms at Qiandao Lake in Zhejiang, frequently as a cross with the Amur sturgeon — the shift that made China the largest caviar producer in the world.",
@@ -79,7 +79,7 @@ fr:"Sa membrane est plus ferme que celle du beluga et supporte le contact d'un p
 pairs:["ratte-potato","egg","creme-epaisse","chives","butter","lemon"],
 svg:'<path class="f2 sf" d="M24 46h48v18q0 6-6 6H30q-6 0-6-6z"/><ellipse class="f3 sf" cx="48" cy="46" rx="24" ry="9"/><path class="s" d="M26 58h44"/><circle class="f1 sf" cx="42" cy="44" r="4"/><circle class="f1 sf" cx="54" cy="47" r="4"/>'},
 
-{id:"kazunoko",cat:"roe",name:{en:"Kazunoko",fr:"Kazunoko (œufs de hareng)"},latin:"Clupea pallasii (roe)",
+{id:"kazunoko",cat:"roe",rare:true,name:{en:"Kazunoko",fr:"Kazunoko (œufs de hareng)"},latin:"Clupea pallasii (roe)",
 origin:{en:"North Pacific herring grounds",fr:"Pêcheries de hareng du Pacifique Nord"},season:[1,12],
 flavor:["briny","umami","marine","mild"],
 story:{en:"The name reads as child of number: one sac holds tens of thousands of eggs, which is why kazunoko sits in the New Year osechi box as a wish for descendants. It is bought as much for its sound as its taste — the eggs stay bound together in the sac and crack between the teeth instead of bursting.",
@@ -109,7 +109,7 @@ fr:"Comme les grains éclatent, employez-le mélangé à une mayonnaise ou à un
 pairs:["rice","nori","cucumber","avocado","sesame","soy-sauce","spring-onion"],
 svg:'<path class="f1 sf" d="M22 58h52q-4 12-26 12T22 58z"/><path class="f2 sf" d="M28 58q6-14 20-14t20 14z"/><circle class="dot" cx="38" cy="52" r="1.6"/><circle class="dot" cx="48" cy="48" r="1.6"/><circle class="dot" cx="58" cy="53" r="1.6"/><circle class="dot" cx="78" cy="66" r="1.6"/>'},
 
-{id:"mentaiko",cat:"roe",name:{en:"Mentaiko",fr:"Mentaiko (œufs de colin marinés)"},latin:"Gadus chalcogrammus (roe)",
+{id:"mentaiko",cat:"roe",rare:true,name:{en:"Mentaiko",fr:"Mentaiko (œufs de colin marinés)"},latin:"Gadus chalcogrammus (roe)",
 origin:{en:"Fukuoka, Japan",fr:"Fukuoka, Japon"},season:[],
 flavor:["salty","umami","hot","marine"],
 story:{en:"Karashi mentaiko was worked out in Fukuoka in 1949 by Kawahara Toshio, who had grown up in Busan and spent years rebuilding the Korean myeongnan-jeot he remembered, with less salt and a chilli cure pitched at Japanese palates. Even the name is borrowed: mentai comes from myeongtae, the Korean word for pollock.",
@@ -119,7 +119,7 @@ fr:"Fendez la poche et raclez les œufs de la membrane avec le dos d'un couteau,
 pairs:["rice","butter","nori","spring-onion","cream","soy-sauce","egg","shiso"],
 svg:'<path class="f2 sf" d="M24 52q6-14 22-12t14 10-8 14-22 2-6-14z"/><path class="f1 sf" d="M52 58q10-14 22-6t-4 18-20-4z"/><path class="s" d="M30 48q10 8 22 6M58 60q8 2 12 8"/><circle class="dot" cx="36" cy="54" r="1.6"/><circle class="dot" cx="46" cy="50" r="1.6"/><circle class="dot" cx="64" cy="63" r="1.6"/>'},
 
-{id:"oursin-murasaki",cat:"roe",name:{en:"Murasaki uni",fr:"Oursin murasaki"},latin:"Heliocidaris crassispina",
+{id:"oursin-murasaki",cat:"roe",rare:true,luxe:true,name:{en:"Murasaki uni",fr:"Oursin murasaki"},latin:"Heliocidaris crassispina",
 origin:{en:"Warm coasts of western Japan",fr:"Côtes chaudes de l'ouest du Japon"},season:[6,7,8,9],
 flavor:["creamy","marine","sweet","delicate"],
 story:{en:"Murasaki is the long-spined purple urchin of warmer Japanese water, and its tongues of roe come out larger, paler and gentler than the deep orange bafun. Chefs name the species and often the bay, never simply uni, because the two ripen in opposite halves of the year and taste nothing alike.",
@@ -129,7 +129,7 @@ fr:"N'achetez les plateaux de bois ita que si les langues gardent une arête net
 pairs:["rice","nori","wasabi","sudachi","junmai-sake","soy-sauce"],
 svg:'<path class="f2 sf" d="M22 50a26 26 0 0 1 52 0q-4 15-26 15T22 50z"/><path class="s" d="M22 50l-9-5M31 34l-6-10M48 27V15M65 34l6-10M74 50l9-5"/><path class="f1 sf" d="M33 46q6-9 12 0t-6 9-6-9z"/><path class="f1 sf" d="M51 46q6-9 12 0t-6 9-6-9z"/>'},
 
-{id:"caviar-oscietre",cat:"roe",name:{en:"Osetra caviar",fr:"Caviar osciètre"},latin:"Acipenser gueldenstaedtii (roe)",
+{id:"caviar-oscietre",cat:"roe",luxe:true,name:{en:"Osetra caviar",fr:"Caviar osciètre"},latin:"Acipenser gueldenstaedtii (roe)",
 origin:{en:"Caspian and Black Sea basins",fr:"Bassins caspien et de la mer Noire"},season:[],
 flavor:["nutty","marine","buttery","rich"],
 story:{en:"Osetra is simply the Russian word for sturgeon, and the grain runs from near-black to the pale amber that trade calls imperial — a colour that comes with the age of the fish rather than with quality, though it is priced as though it were the same thing. It remains the reference caviar of French service: firm shell, walnut finish, a grain that survives a warm spoon.",
@@ -139,7 +139,7 @@ fr:"Laissez la boîte revenir vers 12 °C avant de l'ouvrir, une demi-heure hors
 pairs:["beurre-de-baratte","egg","potato","creme-fraiche","chives","vin-jaune"],
 svg:'<ellipse class="f1 sf" cx="38" cy="58" rx="18" ry="12"/><path class="s" d="M55 51q10-6 19-15"/><path class="f3 sf" d="M24 55q7-11 21-9t9 9q-14 7-30 0z"/><circle class="dot" cx="34" cy="51" r="2"/><circle class="dot" cx="44" cy="50" r="2"/>'},
 
-{id:"caviar-polyodon",cat:"roe",name:{en:"Paddlefish caviar",fr:"Caviar de polyodon"},latin:"Polyodon spathula (roe)",
+{id:"caviar-polyodon",cat:"roe",rare:true,name:{en:"Paddlefish caviar",fr:"Caviar de polyodon"},latin:"Polyodon spathula (roe)",
 origin:{en:"Mississippi basin, United States",fr:"Bassin du Mississippi, États-Unis"},season:[],
 flavor:["earthy","marine","mild","creamy"],
 story:{en:"The paddlefish is not a sturgeon at all: it sits in its own family, filters plankton through a rostrum nearly a third of its own length, and lives in the Mississippi basin. Its roe travels under the CITES species code SPA, and those three letters are how you tell a legitimate tin from one quietly calling itself something dearer.",
@@ -149,7 +149,7 @@ fr:"Plus tendre que l'œuf d'esturgeon, il s'affadit en une journée une fois ou
 pairs:["egg","potato","creme-fraiche","chives","cucumber","dill"],
 svg:'<path class="f1 sf" d="M30 50h36q0 14-18 14t-18-14z"/><path class="f3 sf" d="M30 50q6-13 18-13t18 13z"/><path class="s" d="M48 64v8M36 74h24"/><circle class="dot" cx="42" cy="45" r="2"/><circle class="dot" cx="53" cy="43" r="2"/>'},
 
-{id:"caviar-presse",cat:"roe",name:{en:"Pressed caviar",fr:"Caviar pressé (payusnaya)"},latin:"Acipenser spp. (pressed roe)",
+{id:"caviar-presse",cat:"roe",rare:true,name:{en:"Pressed caviar",fr:"Caviar pressé (payusnaya)"},latin:"Acipenser spp. (pressed roe)",
 origin:{en:"Caspian tradition, Astrakhan",fr:"Tradition caspienne, Astrakhan"},season:[],
 flavor:["salty","rich","umami","marine"],
 story:{en:"Payusnaya is built from the grains that burst on the sieve: salted, drained in muslin and compressed into a dark slab, with several kilos of roe going into each kilo of block. It was never the lesser product in Russia — it kept for months where loose grain kept for weeks, which made it the caviar that could travel.",
@@ -159,7 +159,7 @@ fr:"Tranchez-le froid, à la lame chaude, en fines feuilles, ou faites fondre un
 pairs:["butter","rye","egg","shallot","creme-fraiche","black-pepper"],
 svg:'<ellipse class="f3 sf" cx="44" cy="42" rx="22" ry="9"/><path class="f3 sf" d="M22 42v14q0 9 22 9t22-9V42"/><path class="s" d="M30 46q14 5 28 0"/><path class="f2 sf" d="M58 72q12-7 20-3-8 9-20 7z"/>'},
 
-{id:"chevreuil",cat:"roe",name:{en:"Roe deer",fr:"Chevreuil"},latin:"Capreolus capreolus",
+{id:"chevreuil",cat:"roe",luxe:true,name:{en:"Roe deer",fr:"Chevreuil"},latin:"Capreolus capreolus",
 origin:{en:"European woodland edge",fr:"Lisières forestières d’Europe"},season:[9,10,11,12,1],
 flavor:["delicate","mild","meaty","earthy"],
 story:{en:"The roe is the only hoofed animal in Europe with delayed implantation: it mates in July and the embryo lies dormant until December, so the fawn arrives in spring. The carcass is small — twenty kilos or less — and the meat correspondingly fine-grained and barely gamey.",
@@ -169,7 +169,7 @@ fr:"Une selle ou un filet demandent quatre minutes par face et un repos, pas dav
 pairs:["blackcurrant","chestnut","celeriac","butter","quince","black-pepper","cream","mushroom"],
 svg:'<path class="f1 sf" d="M40 46q8-4 16 0 4 10 2 18-2 12-10 12t-10-12q-2-8 2-18z"/><path class="s" d="M44 44V31l-4-6M44 34l5-7M52 44V31l4-6M52 34l-5-7" stroke-width="1.8"/><path class="f2 sf" d="M40 48q-13-9-15-2t13 10zM56 48q13-9 15-2t-13 10z"/><path class="dot" d="M42 57a2 2 0 104 0 2 2 0 10-4 0M50 57a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M45 70q3 3 6 0"/>'},
 
-{id:"caviar-schrenckii",cat:"roe",name:{en:"Schrenckii caviar",fr:"Caviar schrenckii"},latin:"Acipenser schrenckii (roe)",
+{id:"caviar-schrenckii",cat:"roe",luxe:true,name:{en:"Schrenckii caviar",fr:"Caviar schrenckii"},latin:"Acipenser schrenckii (roe)",
 origin:{en:"Amur basin & Chinese farms",fr:"Bassin de l’Amour et fermes chinoises"},season:[],
 flavor:["briny","marine","mild","umami"],
 story:{en:"The Amur sturgeon is named for the river that divides Russia from China, and its roe is the backbone of a Chinese industry that in 2017 produced over a hundred of the world’s roughly 360 tonnes of caviar. A trade the Caspian held for two centuries moved east in barely one decade.",
@@ -179,7 +179,7 @@ fr:"Le grain a une membrane exceptionnellement résistante : c’est le caviar q
 pairs:["potato","creme-fraiche","egg","chives","butter","scallop","vin-jaune"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="24"/><circle class="s" cx="48" cy="52" r="18"/><circle class="dot" cx="42" cy="46" r="2.6"/><circle class="dot" cx="53" cy="47" r="2.6"/><circle class="dot" cx="47" cy="56" r="2.6"/><circle class="dot" cx="57" cy="57" r="2.6"/>'},
 
-{id:"caviar-sevruga",cat:"roe",name:{en:"Sevruga caviar",fr:"Caviar sévruga"},latin:"Acipenser stellatus (roe)",
+{id:"caviar-sevruga",cat:"roe",luxe:true,name:{en:"Sevruga caviar",fr:"Caviar sévruga"},latin:"Acipenser stellatus (roe)",
 origin:{en:"Caspian & Black Sea",fr:"Caspienne et mer Noire"},season:[],
 flavor:["briny","salty","marine","umami"],
 story:{en:"Stellatus means starry — the fish carries star-shaped bony plates along its flanks and a snout like a blade. It ripens in about seven years where beluga needs twenty, which once made it the cheapest of the Caspian three and now, with the wild stock collapsed, one of the hardest to find.",
@@ -189,7 +189,7 @@ fr:"Son grain est le plus petit et le plus iodé des trois classiques : c’est 
 pairs:["creme-fraiche","egg","butter","lemon","shallot","sturgeon"],
 svg:'<path class="f1 sf" d="M26 44q0-12 14-12t14 12q0 12-14 12t-14-12z"/><path class="s" d="M54 40l18 22"/><circle class="dot" cx="35" cy="40" r="2"/><circle class="dot" cx="43" cy="38" r="2"/><circle class="dot" cx="39" cy="46" r="2"/><circle class="dot" cx="47" cy="45" r="2"/>'},
 
-{id:"oeufs-d-alose",cat:"roe",name:{en:"Shad roe",fr:"Œufs d’alose"},latin:"Alosa spp. (roe)",
+{id:"oeufs-d-alose",cat:"roe",rare:true,name:{en:"Shad roe",fr:"Œufs d’alose"},latin:"Alosa spp. (roe)",
 origin:{en:"Atlantic rivers",fr:"Fleuves atlantiques"},season:[3,4,5],
 flavor:["rich","meaty","mild","earthy"],
 story:{en:"Shad run up rivers to spawn each spring, and the roe comes out as a pair of lobes joined by a membrane — sold, priced and cooked as one piece. John McPhee called it America’s founding fish for how much of it the colonies ate; in France the same run once fed every town along the Loire and the Gironde.",
@@ -199,7 +199,7 @@ fr:"Piquez la membrane en quelques points, sinon les lobes éclatent à la poêl
 pairs:["butter","lemon","parsley","sorrel","poitrine-fumee","capers","shallot"],
 svg:'<path class="f2 sf" d="M46 22q-14 8-16 26 0 20 16 26 4-14 4-26t-4-26z"/><path class="f3 sf" d="M50 22q14 8 16 26 0 20-16 26-4-14-4-26t4-26z"/><path class="s" d="M38 36q4 10 2 22M58 36q-4 10-2 22"/>'},
 
-{id:"shirako",cat:"roe",name:{en:"Shirako",fr:"Shirako (laitance de morue)"},latin:"Gadus macrocephalus (milt)",
+{id:"shirako",cat:"roe",rare:true,name:{en:"Shirako",fr:"Shirako (laitance de morue)"},latin:"Gadus macrocephalus (milt)",
 origin:{en:"Hokkaido",fr:"Hokkaidō"},season:[11,12,1,2],
 flavor:["creamy","rich","delicate","marine"],
 story:{en:"Cod milt, sold only while the fish is in spawning condition — roughly November to February. Hokkaido calls it tachi, Kyoto calls it kumoko, the cloud child, for the folded white shape.",
@@ -219,7 +219,7 @@ fr:"Pelez la poche avant de mixer, sinon vous garderez du grain sous la dent : f
 pairs:["olive-oil","lemon","potato","garlic","red-onion","dill","cucumber"],
 svg:'<path class="f2 sf" d="M48 20q6 10 4 18 12 10 12 26 0 14-16 14t-16-14q0-16 12-26 2-8 4-18z"/><path class="s" d="M42 38q6 3 12 0"/><path class="s" d="M40 56q8 5 16 0M38 66q10 5 20 0"/>'},
 
-{id:"caviar-sterlet",cat:"roe",name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
+{id:"caviar-sterlet",cat:"roe",rare:true,name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
 origin:{en:"Volga & Danube",fr:"Volga et Danube"},season:[],
 flavor:["nutty","delicate","mild","creamy"],
 story:{en:"Before Russia reached the Caspian and its giant sturgeons, the caviar it sold to the courts of Europe through the eighteenth and nineteenth centuries came from the Volga sterlet — a fish rarely a metre long, called the tsar fish for the table it was kept for. It ripens in a handful of years where beluga needs twenty, which is why it is the sturgeon small European farms now stock.",
@@ -229,7 +229,7 @@ fr:"Le grain est à peau fine et s’effondre au premier signe de chaleur : il s
 pairs:["creme-fraiche","potato","egg","butter","cucumber","hazelnut","dill"],
 svg:'<path class="f1 sf" d="M34 40h28v26q0 8-14 8t-14-8z"/><path class="s" d="M30 40h36M38 32h20v8H38z"/><circle class="dot" cx="42" cy="52" r="1.8"/><circle class="dot" cx="50" cy="50" r="1.8"/><circle class="dot" cx="57" cy="54" r="1.8"/><circle class="dot" cx="46" cy="60" r="1.8"/>'},
 
-{id:"sujiko",cat:"roe",name:{en:"Sujiko",fr:"Sujiko (œufs de saumon en poche)"},latin:"Oncorhynchus spp. (roe sac)",
+{id:"sujiko",cat:"roe",rare:true,name:{en:"Sujiko",fr:"Sujiko (œufs de saumon en poche)"},latin:"Oncorhynchus spp. (roe sac)",
 origin:{en:"Hokkaido & Tohoku",fr:"Hokkaidō et Tōhoku"},season:[9,10,11],
 flavor:["salty","rich","umami","briny"],
 story:{en:"Suji is the streak of membrane still holding the eggs: roe taken before it ripens and salted inside its sac, so it stays smaller, darker and denser than loose grain. The loose version took a foreign name — ikura is Russian, икра, brought back by Japanese fishermen in the early twentieth century — while the older sac form kept its Japanese one.",
@@ -259,7 +259,7 @@ fr:"La salaison est légère et retient bien moins de sel que la rogue de saumon
 pairs:["egg","potato","creme-fraiche","chives","cucumber","butter","dill"],
 svg:'<circle class="f1 sf" cx="36" cy="42" r="11"/><circle class="f1 sf" cx="58" cy="40" r="10"/><circle class="f1 sf" cx="46" cy="62" r="12"/><circle class="f1 sf" cx="66" cy="60" r="9"/><circle class="dot" cx="34" cy="40" r="2.4"/><circle class="dot" cx="44" cy="60" r="2.4"/>'},
 
-{id:"poutargue-de-thon",cat:"roe",name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
+{id:"poutargue-de-thon",cat:"roe",rare:true,name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
 origin:{en:"Sicily & Sardinia",fr:"Sicile et Sardaigne"},season:[],
 flavor:["umami","salty","meaty","rich"],
 story:{en:"The trap fisheries of western Sicily took bluefin on their spawning run, and the roe of the trapped females was salted and pressed into slabs; the great tonnara of Favignana ran from 1859 until it closed in 1977. What comes out is darker, meatier and far louder than mullet bottarga — the same technique on a fish twenty times the size.",
@@ -269,7 +269,7 @@ fr:"Râpez-la, ne la tranchez pas : le bloc est plus grossier et plus sec que le
 pairs:["olive-oil","garlic","lemon","chili","parsley","tomato","olive-taggiasca","celery"],
 svg:'<path class="f3 sf" d="M24 38l38-10q4-1 5 3l7 24q1 4-3 5l-38 10q-4 1-5-3l-7-24q-1-4 3-5z"/><path class="s" d="M30 42l36-9M33 54l36-9"/><path class="s" d="M28 76q10-6 20-2M34 82q10-5 20-1"/>'},
 
-{id:"oeufs-de-coregone",cat:"roe",name:{en:"Vendace roe",fr:"Œufs de corégone"},latin:"Coregonus albula (roe)",
+{id:"oeufs-de-coregone",cat:"roe",rare:true,name:{en:"Vendace roe",fr:"Œufs de corégone"},latin:"Coregonus albula (roe)",
 origin:{en:"Bothnian Bay, Sweden",fr:"Golfe de Botnie, Suède"},season:[9,10],
 flavor:["sweet","delicate","briny","mild"],
 story:{en:"Kalix löjrom took a European protected designation in 2010, one of a handful Sweden holds, and the fishery runs for a regulated five weeks from around the twentieth of September. The brackish water of the Bothnian Bay is what makes it orange — vendace caught in fresh water give roe that is plainly yellow.",
@@ -279,7 +279,7 @@ fr:"Servez-le froid sur un blini tiède avec crème aigre et oignon rouge en dé
 pairs:["creme-fraiche","red-onion","dill","potato","butter","rye","lemon"],
 svg:'<ellipse class="f1 sf" cx="48" cy="66" rx="26" ry="9"/><path class="f2 sf" d="M26 64q4-18 22-18t22 18q-10 6-22 6t-22-6z"/><circle class="s" cx="48" cy="40" r="7"/><circle class="dot" cx="40" cy="56" r="1.6"/><circle class="dot" cx="48" cy="53" r="1.6"/><circle class="dot" cx="56" cy="56" r="1.6"/>'},
 
-{id:"vendace-roe",cat:"roe",name:{en:"Vendace roe (Kalix löjrom)",fr:"Œufs de corégone (Kalix löjrom)"},latin:"Coregonus albula",
+{id:"vendace-roe",cat:"roe",luxe:true,name:{en:"Vendace roe (Kalix löjrom)",fr:"Œufs de corégone (Kalix löjrom)"},latin:"Coregonus albula",
 origin:{en:"Bothnian Bay, Kalix",fr:"Golfe de Botnie, Kalix"},season:[9,10],
 flavor:["nutty","briny","delicate","creamy"],
 story:{en:"The Bothnian Bay is brackish enough to turn the eggs orange — the same fish in fresh water gives yellow roe — and that colour, with the feed behind it, is what the 2010 protected designation on Kalix löjrom actually defends. The whole year's catch comes out of a five-week window opening around 20 September, and a good share of it goes to the Nobel banquet.",
@@ -289,7 +289,7 @@ fr:"Tenez-le à l’écart de la chaleur et de tout vinaigre : dressez-le froid 
 pairs:["creme-fraiche","red-onion","dill","potato","butter","rye","lemon"],
 svg:'<path class="s" d="M60 46q14-8 24-18"/><ellipse class="f1 sf" cx="44" cy="54" rx="19" ry="13"/><circle class="dot" cx="38" cy="49" r="2"/><circle class="dot" cx="48" cy="47" r="2"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="52" cy="55" r="2"/>'},
 
-{id:"caviar-esturgeon-blanc",cat:"roe",name:{en:"White sturgeon caviar",fr:"Caviar d’esturgeon blanc"},latin:"Acipenser transmontanus (roe)",
+{id:"caviar-esturgeon-blanc",cat:"roe",luxe:true,name:{en:"White sturgeon caviar",fr:"Caviar d’esturgeon blanc"},latin:"Acipenser transmontanus (roe)",
 origin:{en:"Sacramento valley, California",fr:"Vallée du Sacramento, Californie"},season:[],
 flavor:["buttery","rich","marine","delicate"],
 story:{en:"North America's largest freshwater fish gave the continent its first farmed caviar: white sturgeon roe was harvested at Wilton, California in 1993, from broodstock that began as a UC Davis research project in 1979. The Po valley now raises the same Pacific species, so a tin stamped Italian may hold a fish native to the Sacramento River.",

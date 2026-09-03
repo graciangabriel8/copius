@@ -19,7 +19,7 @@ fr:"Ne jetez pas les grains infusés : égouttés et étalés sur une plaque, il
 pairs:["buckwheat","soba-noodles","dark-chocolate","honey","sesame","kinako","hojicha"],
 svg:'<path class="sf" d="M30 40h36l-5 26q-1 5-13 5t-13-5z"/><path class="s" d="M33 47h30"/><path class="f2 sf" d="M22 76l6-10 6 10z"/><path class="f2 sf" d="M62 76l6-10 6 10z"/>'},
 
-{id:"butterfly-pea-flower",cat:"infusions",name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
+{id:"butterfly-pea-flower",cat:"infusions",rare:true,name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
 flavor:["mild","earthy","grassy"],
 story:{en:"The blue comes from ternatins, polyacylated anthocyanins unusually stable for their class, which is why the flower colours rice and jellies where most plant blues collapse. The colour is a pH meter: acid below about 3 turns the infusion pink-red, neutral holds it blue, alkali sends it green.",
@@ -29,7 +29,7 @@ fr:"Compter 10 fleurs pour 250 ml d’eau chaude, cinq minutes et pas davantage 
 pairs:["lemon","lime","glutinous-rice","coconut-milk","pandan","lemongrass"],
 svg:'<path class="f2 sf" d="M24 48q5-21 24-21t24 21q-10 13-24 13T24 48z"/><path class="f1 sf" d="M38 60q10 8 20 0-3 13-10 13t-10-13z"/><path class="s" d="M48 28v25"/><path class="s" d="M34 46q14 7 28 0"/>'},
 
-{id:"cascara",cat:"infusions",name:{en:"Cascara",fr:"Cascara (pulpe de cerise de café)"},latin:"Coffea arabica",
+{id:"cascara",cat:"infusions",rare:true,name:{en:"Cascara",fr:"Cascara (pulpe de cerise de café)"},latin:"Coffea arabica",
 origin:{en:"Coffee farms, Yemen and Ethiopia",fr:"Fermes de café, Yémen et Éthiopie"},season:[],
 flavor:["fruity","tangy","sweet"],
 story:{en:"Cascara is the coffee cherry's dried flesh, the part a wet mill washes away to reach the two seeds inside; Yemen has brewed it as qishr, spiced with ginger, since at least the fifteenth century while the beans went for export. Europe only cleared it for sale as a food in February 2022, having spent years treating a drink older than espresso as an unproven novelty.",
@@ -59,7 +59,7 @@ fr:"Comptez 8 à 12 g par litre de crème anglaise ou par 500 g de crème au beu
 pairs:["butter","dark-chocolate","cream","mascarpone","egg","hazelnut","dark-rum"],
 svg:'<path class="f3 sf" d="M41 18h14v10H41z"/><path class="sf" d="M43 28h10v12H43z"/><path class="sf" d="M34 40h28v30a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6z"/><path class="f3" d="M36 52h24v18a4 4 0 0 1-4 4H40a4 4 0 0 1-4-4z"/>'},
 
-{id:"da-hong-pao",cat:"infusions",name:{en:"Da Hong Pao",fr:"Da Hong Pao (oolong de roche des Wuyi)"},latin:"Camellia sinensis var. sinensis",
+{id:"da-hong-pao",cat:"infusions",rare:true,luxe:true,name:{en:"Da Hong Pao",fr:"Da Hong Pao (oolong de roche des Wuyi)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Wuyi cliffs, Fujian",fr:"Falaises des Wuyi, Fujian"},season:[],
 flavor:["toasty","woody","rich"],
 story:{en:"Six mother bushes survive on the cliff at Jiulongke; they were picked for the last time in 2005 and harvesting them has been banned since 2006, so everything sold under the name comes from cuttings. Twenty grams of that final harvest went at auction for 208,000 yuan.",
@@ -69,7 +69,7 @@ fr:"Torréfié jusqu’au charbon, il se traite en épice plus qu’en boisson :
 pairs:["dark-chocolate","venison","prune","cocoa-nibs","walnut","coffee"],
 svg:'<path class="f3 sf" d="M26 78l9-33 10 8 8-19 13 44z"/><path class="f2 sf" d="M54 32q11-12 20-7-6 12-19 10z"/><path class="s" d="M35 48l9 6M57 30v9"/>'},
 
-{id:"darjeeling-tea",cat:"infusions",name:{en:"Darjeeling tea",fr:"Thé de Darjeeling"},latin:"Camellia sinensis var. sinensis",
+{id:"darjeeling-tea",cat:"infusions",luxe:true,name:{en:"Darjeeling tea",fr:"Thé de Darjeeling"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Darjeeling hills, West Bengal",fr:"Collines de Darjeeling, Bengale-Occidental"},season:[3,4,5,6],
 flavor:["fruity","floral","delicate"],
 story:{en:"The gardens sit between roughly 600 and 2,000 m and are planted with Chinese bush rather than assamica, which is why even the black grades are only partly oxidised and stay green-tinged in the leaf. It was the first Indian product granted a geographical indication, in 2004 — the annual crop is a fraction of what is sold under the name.",
@@ -129,7 +129,7 @@ fr:"C’est le seul vert qui accepte une vraie ébullition : faire bouillir avec
 pairs:["mint","sugar","pine-nut","orange-blossom-water","lemon","almond"],
 svg:'<circle class="f2 sf" cx="38" cy="58" r="12"/><circle class="f3 sf" cx="60" cy="64" r="9"/><circle class="f1 sf" cx="52" cy="40" r="10"/><path class="f1 sf" d="M60 34q11-6 12-16-11 3-14 11z"/><path class="s" d="M33 54q6 7 11 2M56 61q4 3 7 0"/>'},
 
-{id:"honeybush",cat:"infusions",name:{en:"Honeybush",fr:"Honeybush"},latin:"Cyclopia intermedia",
+{id:"honeybush",cat:"infusions",rare:true,name:{en:"Honeybush",fr:"Honeybush"},latin:"Cyclopia intermedia",
 origin:{en:"Cape fynbos, South Africa",fr:"Fynbos du Cap, Afrique du Sud"},season:[],
 flavor:["honeyed","fruity","floral"],
 story:{en:"A different Cape legume from rooibos, named for the honey smell of its yellow flowers and still largely cut from wild stands rather than farmed. Oxidising the chopped stems is what develops the apricot note; unfermented honeybush is green and thin.",
@@ -139,7 +139,7 @@ fr:"Naturellement sucré, il ne demande pas de sucre dans une crème : infuser 2
 pairs:["apricot","dried-apricot","honey","peach","cream","almond"],
 svg:'<path class="s" d="M34 78q11-21 13-42"/><path class="f1 sf" d="M47 38q11-11 19-5-4 11-17 9z"/><path class="f2 sf" d="M41 56q11-9 18-3-4 10-16 8z"/><path class="f3 sf" d="M45 44q-11-1-15-8 11-3 16 5z"/>'},
 
-{id:"jasmine-pearl-tea",cat:"infusions",name:{en:"Jasmine pearl tea",fr:"Perles de jasmin"},latin:"Camellia sinensis, Jasminum sambac",
+{id:"jasmine-pearl-tea",cat:"infusions",luxe:true,name:{en:"Jasmine pearl tea",fr:"Perles de jasmin"},latin:"Camellia sinensis, Jasminum sambac",
 origin:{en:"Fuzhou, Fujian",fr:"Fuzhou, Fujian"},season:[7,8],
 flavor:["floral","fresh","delicate"],
 story:{en:"Jasminum sambac blossoms are picked closed in the afternoon and laid over the tea at night as they open, then screened out and replaced with fresh flowers; a good pearl is scented across five to seven nights, and the flowers left visible in cheap versions are a sign of the opposite. The pearls themselves are rolled by hand from a bud and a leaf, which is why they sink and unfurl slowly.",
@@ -169,7 +169,7 @@ fr:"L’utiliser comme un acidulant qui a du corps : il titre bien moins de la m
 pairs:["cucumber","ginger","strawberry","oyster","olive-oil","honey"],
 svg:'<path class="f1 sf" d="M29 30h38v42q0 8-19 8t-19-8z"/><path class="s" d="M26 30h44"/><ellipse class="f2 sf" cx="48" cy="44" rx="17" ry="6"/><path class="s" d="M36 58q6-4 12 0t12 0"/><circle class="dot" cx="40" cy="66" r="2.2"/>'},
 
-{id:"labrador-tea",cat:"infusions",name:{en:"Labrador tea",fr:"Thé du Labrador"},latin:"Rhododendron groenlandicum",
+{id:"labrador-tea",cat:"infusions",rare:true,name:{en:"Labrador tea",fr:"Thé du Labrador"},latin:"Rhododendron groenlandicum",
 origin:{en:"Boreal bogs, Quebec and Labrador",fr:"Tourbières boréales, Québec et Labrador"},season:[6,7,8],
 flavor:["resinous","herbal","woody"],
 story:{en:"It is a rhododendron, not a tea — long placed in the genus Ledum — and it carries ledol, the compound behind the warnings against drinking it daily. R. groenlandicum is the mildest of the three species sharing the name, and it is the one Quebec kitchens use, dried, in creams and game sauces.",
@@ -189,7 +189,7 @@ fr:"Le traiter comme un combustible à fumer que l’on n’a pas à allumer : 3
 pairs:["salmon","duck","egg","prune","dark-chocolate","butter"],
 svg:'<path class="f3 sf" d="M24 78q7-9 15-9t15 9z"/><path class="s" d="M32 68q17-17 35-25"/><path class="s" d="M40 58l-9 5M44 54l-9 2M50 48l-9 4M54 44l-9 1M60 40l-9 3"/><path class="s" d="M64 62q-7-8 1-14-8-5-1-13"/>'},
 
-{id:"longjing-tea",cat:"infusions",name:{en:"Longjing tea",fr:"Thé Long Jing (Puits du Dragon)"},latin:"Camellia sinensis var. sinensis",
+{id:"longjing-tea",cat:"infusions",luxe:true,name:{en:"Longjing tea",fr:"Thé Long Jing (Puits du Dragon)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"West Lake hills, Hangzhou",fr:"Collines du lac de l’Ouest, Hangzhou"},season:[3,4],
 flavor:["nutty","buttery","grassy"],
 story:{en:"The leaf is pressed flat by hand against the wall of a hot wok, a single motion that halts oxidation and builds the chestnut note at the same time. Eighteen bushes below Shifeng peak stand fenced off as imperial tribute plants, a title the story says Qianlong gave them in 1751 after the tea was credited with his mother’s recovery.",
@@ -199,7 +199,7 @@ fr:"Infuser à 80 °C, jamais à l’eau bouillante : au-delà, la châtaigne vi
 pairs:["shrimp","bamboo-shoot","egg","scallop","chestnut","butter"],
 svg:'<path class="f1 sf" d="M20 50h56q0 22-28 22T20 50z"/><path class="f2 sf" d="M32 48q4-18 15-21-1 15-8 21z"/><path class="f3 sf" d="M52 48q9-14 18-13-4 10-11 13z"/><path class="s" d="M76 50l11-6"/>'},
 
-{id:"oriental-beauty-oolong",cat:"infusions",name:{en:"Oriental Beauty oolong",fr:"Oolong Oriental Beauty (Bai Hao)"},latin:"Camellia sinensis var. sinensis",
+{id:"oriental-beauty-oolong",cat:"infusions",rare:true,luxe:true,name:{en:"Oriental Beauty oolong",fr:"Oolong Oriental Beauty (Bai Hao)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Hsinchu and Miaoli, Taiwan",fr:"Hsinchu et Miaoli, Taïwan"},season:[6,7],
 flavor:["honeyed","fruity","floral"],
 story:{en:"The honey-muscat aroma is a wound response: the tea jassid Jacobiasca formosana feeds on the growing shoot and the plant answers with terpenes, which heavy oxidation then fixes. Growers stop spraying to invite the pest, and the local name pengfeng cha, braggart tea, is said to come from a farmer nobody believed when he reported what his bitten leaves fetched.",
@@ -249,7 +249,7 @@ fr:"Il contient si peu de tanin qu’il ne peut pas devenir amer : une heure d�
 pairs:["vanilla","cream","orange","cassia","honey","medjool-date"],
 svg:'<path class="s" d="M48 78V44M48 62L33 46M48 58l16-17M48 50L29 39M48 46l19-13M48 70l-11-13M48 66l13-15"/><path class="f3 sf" d="M40 68q8 4 16 0v7q-8 4-16 0z"/><path class="s" d="M34 42l-7-8M63 38l7-8"/>'},
 
-{id:"sheng-puerh",cat:"infusions",name:{en:"Sheng pu-erh",fr:"Pu-erh cru (sheng)"},latin:"Camellia sinensis var. assamica",
+{id:"sheng-puerh",cat:"infusions",luxe:true,name:{en:"Sheng pu-erh",fr:"Pu-erh cru (sheng)"},latin:"Camellia sinensis var. assamica",
 origin:{en:"Yunnan, southwest China",fr:"Yunnan, sud-ouest de la Chine"},season:[],
 flavor:["bitter","fruity","resinous"],
 story:{en:"The leaf is fixed in a wok, dried in the sun rather than an oven, then steamed and pressed into cakes — sun-drying leaves enough live enzyme and microflora for the cake to keep changing for decades. Raw and ripe pu-erh share a name and little else: this one was never wet-piled, and a young cake is pale, bitter and camphorous, not dark.",
@@ -269,7 +269,7 @@ fr:"Rincer deux fois : les deux premières eaux de toute galette cuite portent l
 pairs:["pork-belly","duck","star-anise","jujube","beetroot","dark-chocolate"],
 svg:'<path class="f3 sf" d="M20 60q0-26 28-26t28 26q-13 9-28 9t-28-9z"/><path class="s" d="M33 58q15 7 30-2"/><path class="s" d="M40 42q9-4 17 1"/><circle class="dot" cx="27" cy="74" r="2.6"/><circle class="dot" cx="37" cy="79" r="2"/>'},
 
-{id:"silver-needle-white-tea",cat:"infusions",name:{en:"Silver Needle white tea",fr:"Thé blanc Aiguilles d’argent (Yin Zhen)"},latin:"Camellia sinensis var. sinensis",
+{id:"silver-needle-white-tea",cat:"infusions",luxe:true,name:{en:"Silver Needle white tea",fr:"Thé blanc Aiguilles d’argent (Yin Zhen)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Fuding and Zhenghe, Fujian",fr:"Fuding et Zhenghe, Fujian"},season:[3,4],
 flavor:["delicate","honeyed","floral"],
 story:{en:"Only the unopened bud is picked, and nothing is done to it but withering and drying — no pan, no rolling, no bruising, which is why the silver down is still on the leaf in the cup. A kilo is tens of thousands of buds, all taken in a short window at the start of spring.",
@@ -279,7 +279,7 @@ fr:"L’infuser à froid : 6 g par litre d’eau froide, quatre heures au réfri
 pairs:["cantaloupe","scallop","cucumber","honey","langoustine","pear"],
 svg:'<path class="f2 sf" d="M40 74q-5-18-2-30 5-10 7-1 2 12-1 31z"/><path class="f1 sf" d="M48 76q-4-24 0-38 5 15 3 38z"/><path class="f3 sf" d="M56 74q3-20 8-29 2 12-4 29z"/><path class="s" d="M36 70h26"/><path class="s" d="M44 42l-5-5M53 38l5-5"/>'},
 
-{id:"tie-guan-yin",cat:"infusions",name:{en:"Tie Guan Yin oolong",fr:"Oolong Tie Guan Yin"},latin:"Camellia sinensis var. sinensis",
+{id:"tie-guan-yin",cat:"infusions",luxe:true,name:{en:"Tie Guan Yin oolong",fr:"Oolong Tie Guan Yin"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Anxi, Fujian",fr:"Anxi, Fujian"},season:[],
 flavor:["floral","creamy","fresh"],
 story:{en:"The name means Iron Goddess of Mercy, and legend has it that a farmer in Anxi who kept a neglected temple of Guanyin swept was shown a single shoot in a rock crevice in a dream. The modern style is rolled into tight balls and barely oxidised, so a leaf sold as a dark tea a century ago now brews closer to a green.",

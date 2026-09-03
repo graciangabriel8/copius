@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"abondance",cat:"dairy",name:{en:"Abondance",fr:"Abondance"},latin:"Abondance AOP",
+{id:"abondance",cat:"dairy",luxe:true,name:{en:"Abondance",fr:"Abondance"},latin:"Abondance AOP",
 origin:{en:"Vallée d'Abondance, Haute-Savoie",fr:"Vallée d’Abondance, Haute-Savoie"},season:[],
 flavor:["nutty","fruity","creamy","mild"],
 story:{en:"Savoyard tradition has it that in 1381 the monks of Abondance abbey sent fifteen quintals of their cheese to the papal conclave at Avignon; what is certain is that the abbey cleared the high pastures, let them for rent paid in cheese, and gave its name to the cattle breed still milked for it. The curd is only half-cooked, gentler than Beaufort's, which is why the paste stays supple and faintly lactic.",
@@ -29,7 +29,7 @@ fr:"Prenez-le vecchio à dix mois pour le trancher, stravecchio au-delà de quin
 pairs:["corn","honey","walnut","pear","black-pepper","balsamic","prosciutto","rye"],
 svg:'<path class="f2 sf" d="M32 34l20-8 14 8-20 8z"/><path class="f1 sf" d="M32 34v22l20 10V42z"/><path class="f3 sf" d="M52 42l14-8v22l-14 10z"/><path class="s" d="M28 74q6-6 12 0M44 76q6-6 12 0"/>'},
 
-{id:"banon",cat:"dairy",name:{en:"Banon",fr:"Banon"},latin:"Banon AOP",
+{id:"banon",cat:"dairy",luxe:true,name:{en:"Banon",fr:"Banon"},latin:"Banon AOP",
 origin:{en:"Haute-Provence, France",fr:"Haute-Provence, France"},season:[],
 flavor:["creamy","herbal","woody","mild"],
 story:{en:"In winter, when the goats dried up and no new cheese could be made, Provençal farms folded the last rounds into chestnut leaves to carry them through to spring. The leaves are gathered brown in autumn, when their tannin is lowest, soaked in five-per-cent vinegar water and tied with raffia, and the cheese then ferments inside them for at least ten days — the only French AOP ripened wrapped in leaves.",
@@ -49,7 +49,7 @@ fr:"C’est le fromage à fondue qui refuse de filer mal — il fond lisse. Frot
 pairs:["garlic","white-wine-vinegar","potato","black-pepper","nutmeg","walnut","onion","flour-t65"],
 svg:'<path class="f2 sf" d="M26 66q-4-14 0-28h44q4 14 0 28z"/><path class="s" d="M26 52h44"/><circle class="dot" cx="40" cy="44" r="2"/><circle class="dot" cx="56" cy="58" r="2"/>'},
 
-{id:"bitto",cat:"dairy",name:{en:"Bitto",fr:"Bitto"},latin:"Bitto DOP",
+{id:"bitto",cat:"dairy",rare:true,luxe:true,name:{en:"Bitto",fr:"Bitto"},latin:"Bitto DOP",
 origin:{en:"Valtellina, Lombardy",fr:"Valteline, Lombardie"},season:[],
 flavor:["umami","nutty","rich","earthy"],
 story:{en:"It is made only between June and September, in a calècc — a low drystone enclosure roofed with a canvas that moves up the pasture with the herd — where the cow's milk is worked minutes after milking and given a share of milk from Orobica goats. Wheels carry the year of their summer, and a good one is still edible ten years on.",
@@ -59,7 +59,7 @@ fr:"Passé cinq ans, la pâte devient cassante et cristalline : cessez de la tra
 pairs:["polenta-bramata","honey","walnut","butter","pear","rye","grappa","chestnut-honey"],
 svg:'<path class="f2 sf" d="M22 56v8q0 9 26 9t26-9v-8z"/><ellipse class="f1 sf" cx="48" cy="56" rx="26" ry="9"/><path class="f2 sf" d="M26 40v8q0 8 22 8t22-8v-8z"/><ellipse class="f1 sf" cx="48" cy="40" rx="22" ry="8"/>'},
 
-{id:"bleu-de-gex",cat:"dairy",name:{en:"Bleu de Gex Haut-Jura",fr:"Bleu de Gex Haut-Jura"},latin:"Bleu de Gex Haut-Jura AOP",
+{id:"bleu-de-gex",cat:"dairy",rare:true,name:{en:"Bleu de Gex Haut-Jura",fr:"Bleu de Gex Haut-Jura"},latin:"Bleu de Gex Haut-Jura AOP",
 origin:{en:"Haut-Jura, Ain and Jura",fr:"Haut-Jura, Ain et Jura"},season:[],
 flavor:["nutty","mild","bitter","milky"],
 story:{en:"Savoyard monks are said to have carried the recipe to the abbey of Saint-Claude in the fourteenth century, and the farms of the Haut-Jura have made it since. Each wheel still leaves the mould with the three letters of Gex standing in relief on one face — the cheese signs itself.",
@@ -69,7 +69,7 @@ fr:"Son bleu est discret et son amertume réelle : employez-le là où un roquef
 pairs:["vin-jaune","cream","chicken","potato","walnut","morel","comte","onion"],
 svg:'<circle class="f1 sf" cx="48" cy="50" r="29"/><circle class="s" cx="48" cy="50" r="23"/><path class="f3 sf" d="M48 40 58 50 48 60 38 50z"/><path class="s" d="M30 40q6 4 11 1M56 63q6-4 11-1"/>'},
 
-{id:"bleu-de-termignon",cat:"dairy",name:{en:"Bleu de Termignon",fr:"Bleu de Termignon"},latin:"Bleu de Termignon",
+{id:"bleu-de-termignon",cat:"dairy",rare:true,luxe:true,name:{en:"Bleu de Termignon",fr:"Bleu de Termignon"},latin:"Bleu de Termignon",
 origin:{en:"Termignon, Vanoise, Savoie",fr:"Termignon, Vanoise, Savoie"},season:[10,11,12,1],
 flavor:["earthy","herbal","mild","umami"],
 story:{en:"Four or five alpage families still make it, between June and September, to something like a hundred wheels a summer. Nothing is inoculated: the moulds arrive on their own, carried in on the pasture plants of the Vanoise, so the veining is patchy and no two wheels are alike.",
@@ -79,7 +79,7 @@ fr:"Regardez la coupe avant d’acheter : une meule à peine bleuie n’est pas 
 pairs:["potato","butter","rye","honey","walnut","pear","cream","genepi"],
 svg:'<path class="f1 sf" d="M34 20a28 28 0 0 1 0 56z"/><path class="s" d="M34 27a21 21 0 0 1 0 42"/><path class="f3" d="M44 36q7-3 9 2t-5 6-5-4z"/><path class="f3" d="M42 54q6-2 8 2t-4 5-4-3z"/>'},
 
-{id:"bleu-des-causses",cat:"dairy",name:{en:"Bleu des Causses",fr:"Bleu des Causses"},latin:"Bleu des Causses AOP",
+{id:"bleu-des-causses",cat:"dairy",luxe:true,name:{en:"Bleu des Causses",fr:"Bleu des Causses"},latin:"Bleu des Causses AOP",
 origin:{en:"Causses, Aveyron and Lot",fr:"Causses, Aveyron et Lot"},season:[],
 flavor:["salty","umami","earthy","rich"],
 story:{en:"When the law of 1925 reserved the name Roquefort for ewe's milk ripened in the Combalou, the cow's-milk blues maturing in the same limestone had to be renamed — Bleu d'Aveyron first, then Bleu des Causses from 1953. They still ripen in fleurines, the natural fissures that draw cold damp air through the rock.",
@@ -89,7 +89,7 @@ fr:"Plus ferme et plus sec qu’un bleu d’Auvergne, il s’émiette au lieu de
 pairs:["walnut","walnut-oil","pear","celery","endive","honey","grape","rye"],
 svg:'<path class="f2 sf" d="M48 20 66 74H30z"/><path class="f1 sf" d="M48 20 58 25 74 70 66 74z"/><path class="s" d="M44 42v18M52 50v16M38 58v12"/>'},
 
-{id:"bleu-du-vercors-sassenage",cat:"dairy",name:{en:"Bleu du Vercors-Sassenage",fr:"Bleu du Vercors-Sassenage"},latin:"Bleu du Vercors-Sassenage AOP",
+{id:"bleu-du-vercors-sassenage",cat:"dairy",rare:true,name:{en:"Bleu du Vercors-Sassenage",fr:"Bleu du Vercors-Sassenage"},latin:"Bleu du Vercors-Sassenage AOP",
 origin:{en:"Vercors, Isère and Drôme",fr:"Vercors, Isère et Drôme"},season:[],
 flavor:["mild","milky","sweet","nutty"],
 story:{en:"On 28 June 1338 Baron Albert de Sassenage signed a charter letting the people of Villard-de-Lans sell their cheese to whoever they liked; until then it had been owed to him as a due. The cheese has carried his name for nearly seven hundred years; the barons have not lasted as well.",
@@ -139,7 +139,7 @@ fr:"Sortez-le une heure avant. Froid, le brie est plâtreux ; à température il
 pairs:["apple","walnut","honey","grape","butter","mushroom","truffle","fig"],
 svg:'<circle class="f3 sf" cx="48" cy="52" r="24"/><path class="s" d="M48 28v48M24 52h48"/><circle class="s" cx="48" cy="52" r="16"/>'},
 
-{id:"brie-de-meaux",cat:"dairy",name:{en:"Brie de Meaux",fr:"Brie de Meaux"},latin:"Brie de Meaux AOP",
+{id:"brie-de-meaux",cat:"dairy",luxe:true,name:{en:"Brie de Meaux",fr:"Brie de Meaux"},latin:"Brie de Meaux AOP",
 origin:{en:"Seine-et-Marne, Île-de-France",fr:"Seine-et-Marne, Île-de-France"},season:[],
 flavor:["creamy","earthy","buttery","mild"],
 story:{en:"The curd goes into the mould in layers, lifted by hand with a pelle à brie — a flat perforated shovel — because a pump would shear it. Some twenty-five litres of raw milk make a single wheel a little over thirty-six centimetres across, most of which then leaves again as whey.",
@@ -149,7 +149,7 @@ fr:"À point, la pâte bombe mais tient encore. Un trait blanc crayeux au cœur 
 pairs:["butter","apple","walnut","flour-t65","grape","truffle","black-pepper","cider-vinegar"],
 svg:'<path class="f1 sf" d="M48 50 72 36a28 28 0 1 1-2 30z"/><path class="s" d="M66 40a21 21 0 1 1-1 22"/><path class="f2 sf" d="M62 48q9 3 10 10-9 4-13-3z"/>'},
 
-{id:"brie-de-melun",cat:"dairy",name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
+{id:"brie-de-melun",cat:"dairy",rare:true,name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
 origin:{en:"Melun, Seine-et-Marne",fr:"Melun, Seine-et-Marne"},season:[],
 flavor:["salty","earthy","pungent","umami"],
 story:{en:"Its curd is set by acidity over at least eighteen hours rather than by rennet in under one, the older method and the reason the paste stays dense and salty instead of flowing. Carried past six months it dries into brie noir, which farm workers in the Brie are said to have dunked in their morning coffee.",
@@ -159,7 +159,7 @@ fr:"N’attendez pas qu’il coule comme un meaux : il ne coulera pas. Achetez-l
 pairs:["walnut","apple","flour-t65","butter","grape","coffee","cider-vinegar","celery"],
 svg:'<path class="f1 sf" d="M24 46h48q4 0 4 8t-4 8H24q-4 0-4-8t4-8z"/><path class="s" d="M32 52q16 6 32 0"/><path class="s" d="M20 70h56M24 75h48"/>'},
 
-{id:"brocciu",cat:"dairy",name:{en:"Brocciu",fr:"Brocciu"},latin:"Brocciu Corse AOP",
+{id:"brocciu",cat:"dairy",rare:true,luxe:true,name:{en:"Brocciu",fr:"Brocciu"},latin:"Brocciu Corse AOP",
 origin:{en:"Corsica",fr:"Corse"},season:[11,12,1,2,3,4,5,6],
 flavor:["milky","sweet","creamy","delicate"],
 story:{en:"It is made from the whey left over from Corsica's ewe and goat cheeses: fresh whole milk is stirred in and the pot brought to around 80 °C until the last proteins float up in flakes. It is the only French AOP built out of what other cheesemakers pour away, and it stops altogether when the ewes dry off in summer.",
@@ -169,7 +169,7 @@ fr:"Pour un fiadone, travaillez-le lisse avec du sucre, des œufs entiers et du 
 pairs:["lemon","egg","sugar","mint","courgette-flower","chestnut-flour","honey","olive-oil"],
 svg:'<path class="f2 sf" d="M30 48h36l-5 26H35z"/><path class="f1 sf" d="M30 48q4-14 18-14t18 14z"/><circle class="s" cx="41" cy="58" r="1.8"/><circle class="s" cx="53" cy="58" r="1.8"/><circle class="s" cx="47" cy="66" r="1.8"/>'},
 
-{id:"brousse-du-rove",cat:"dairy",name:{en:"Brousse du Rove",fr:"Brousse du Rove"},latin:"Brousse du Rove AOP",
+{id:"brousse-du-rove",cat:"dairy",rare:true,luxe:true,name:{en:"Brousse du Rove",fr:"Brousse du Rove"},latin:"Brousse du Rove AOP",
 origin:{en:"Le Rove, Bouches-du-Rhône",fr:"Le Rove, Bouches-du-Rhône"},season:[2,3,4,5,6,7,8,9,10],
 flavor:["milky","delicate","fresh","mild"],
 story:{en:"The milk is set with acid rather than rennet and slipped, entirely unsalted, into the little twelve-centimetre cornets it is sold in. The Rove goats kid in mid-winter, so there is no brousse at all from November until the herd is back in milk.",
@@ -209,7 +209,7 @@ fr:"Il attendrit la viande aussi bien qu’il fait lever les gâteaux. Une nuit 
 pairs:["buckwheat","butter","honey","lemon","chives","dill","black-pepper","oats"],
 svg:'<path class="f3 sf" d="M36 68V40h24v28z"/><path class="s" d="M36 40h24M36 50h24"/><path class="s" d="M42 58v6M54 58v6"/>'},
 
-{id:"cabrales",cat:"dairy",name:{en:"Cabrales",fr:"Cabrales"},latin:"Cabrales DOP",
+{id:"cabrales",cat:"dairy",luxe:true,name:{en:"Cabrales",fr:"Cabrales"},latin:"Cabrales DOP",
 origin:{en:"Picos de Europa, Asturias",fr:"Picos de Europa, Asturies"},season:[],
 flavor:["salty","pungent","rich","umami"],
 story:{en:"It is made from whatever the herds are giving — cow's milk alone in winter, cow with goat and ewe through the summer — and ripened two to four months in caves in the Picos de Europa that sit near ninety per cent humidity. Wheels used to go in wrapped in damp maple leaves; hygiene rules replaced them with foil, and the green wrapper on the counter is all that is left of the leaves.",
@@ -229,7 +229,7 @@ fr:"Taillez des tranches d’un centimètre et posez-les à sec dans une poêle 
 pairs:["tomato","olive-oil","oregano","basil","black-pepper","eggplant","semolina","chili"],
 svg:'<path class="s" d="M20 22q28 10 56 0"/><ellipse class="f1 sf" cx="48" cy="60" rx="18" ry="17"/><path class="f2 sf" d="M43 34h10v12H43z"/><circle class="f2 sf" cx="48" cy="32" r="7"/><path class="s" d="M40 30q8 5 16 0"/>'},
 
-{id:"caerphilly",cat:"dairy",name:{en:"Caerphilly",fr:"Caerphilly"},latin:"Caerphilly",
+{id:"caerphilly",cat:"dairy",rare:true,name:{en:"Caerphilly",fr:"Caerphilly"},latin:"Caerphilly",
 origin:{en:"Caerphilly, South Wales",fr:"Caerphilly, pays de Galles du Sud"},season:[],
 flavor:["tangy","salty","milky","fresh"],
 story:{en:"The story goes that it was made for the collieries — salt and moisture to replace what a shift underground took out, and a rind thick enough to hold in a coal-black hand. The Ministry of Food stopped it during the war in favour of national Cheddar, and it came back through Somerset dairies that had taken it up in the 1920s.",
@@ -269,7 +269,7 @@ fr:"C’est le cantal jeune qui fait filer la truffade et l’aligot. Le vieux n
 pairs:["potato","garlic","butter","black-pepper","onion","walnut","apple","thyme"],
 svg:'<path class="f2 sf" d="M24 68V38l24-10 24 10v30z"/><path class="s" d="M24 38l24 10 24-10M48 48v20"/>'},
 
-{id:"castelmagno",cat:"dairy",name:{en:"Castelmagno",fr:"Castelmagno"},latin:"Castelmagno DOP",
+{id:"castelmagno",cat:"dairy",rare:true,luxe:true,name:{en:"Castelmagno",fr:"Castelmagno"},latin:"Castelmagno DOP",
 origin:{en:"Valle Grana, Piedmont",fr:"Val Grana, Piémont"},season:[],
 flavor:["salty","umami","earthy","tangy"],
 story:{en:"An arbitration of 1277 settled a grazing dispute in the Narbona combe against the village and fixed its yearly rent to the Marquis of Saluzzo in wheels of cheese rather than coin. Its curd is pressed, broken up again, left to acidify and salted only then, which is why the paste crumbles instead of slicing.",
@@ -309,7 +309,7 @@ fr:"Achetez-le jeune si vous voulez le crayeux. À pleine maturité il est unifo
 pairs:["strawberry","cream","walnut","apple","chives","black-pepper","grape","butter"],
 svg:'<path class="f3 sf" d="M32 68V40q16-8 32 0v28z"/><path class="s" d="M32 40q16 8 32 0"/><path class="s" d="M40 50v14M56 50v14"/>'},
 
-{id:"charolais",cat:"dairy",name:{en:"Charolais",fr:"Charolais"},latin:"Charolais AOP",
+{id:"charolais",cat:"dairy",rare:true,name:{en:"Charolais",fr:"Charolais"},latin:"Charolais AOP",
 origin:{en:"Charolais bocage, Saône-et-Loire",fr:"Bocage charolais, Saône-et-Loire"},season:[5,6,7,8,9,10],
 flavor:["earthy","rich","nutty","mild"],
 story:{en:"At 250 to 310 grams it weighs several times an ordinary goat cheese — a barrel taller than it is wide, six and a half centimetres across and seven and a half high. The mass is the point: it dries so slowly from the outside that the centre is still dense and almost fudgy when the rind has already gone blue-grey.",
@@ -329,7 +329,7 @@ fr:"Tout est dans l’âge. En dessous d’un an c’est un fromage à sandwich 
 pairs:["apple","onion","mustard","potato","black-pepper","chives","flour-t65","butter"],
 svg:'<path class="f2 sf" d="M26 66V40h44v26z"/><path class="s" d="M26 40h44M26 53h44"/>'},
 
-{id:"chevrotin",cat:"dairy",name:{en:"Chevrotin",fr:"Chevrotin"},latin:"Chevrotin AOP",
+{id:"chevrotin",cat:"dairy",rare:true,name:{en:"Chevrotin",fr:"Chevrotin"},latin:"Chevrotin AOP",
 origin:{en:"Aravis, Haute-Savoie",fr:"Aravis, Haute-Savoie"},season:[6,7,8,9,10],
 flavor:["earthy","nutty","pungent","milky"],
 story:{en:"It is made by the Reblochon method — uncooked, pressed, the rind washed right through the ripening — but from raw goat's milk, and only on the farm that did the milking. Every other washed-rind appellation in France, Époisses and Maroilles included, is a cow's cheese; this is the one goat.",
@@ -359,7 +359,7 @@ fr:"Demandez l’âge. En dessous de douze mois il est lacté et doux ; passé d
 pairs:["walnut","apple","honey","white-wine-vinegar","cumin","hazelnut","onion","potato"],
 svg:'<path class="f2 sf" d="M22 68 L48 26 L74 68 Z"/><path class="s" d="M30 62h36M36 52h24"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="54" cy="60" r="2"/>'},
 
-{id:"cornish-yarg",cat:"dairy",name:{en:"Cornish Yarg",fr:"Cornish Yarg"},latin:"Cornish Yarg",
+{id:"cornish-yarg",cat:"dairy",rare:true,name:{en:"Cornish Yarg",fr:"Cornish Yarg"},latin:"Cornish Yarg",
 origin:{en:"Cornwall, England",fr:"Cornouailles, Angleterre"},season:[],
 flavor:["mild","tangy","earthy","milky"],
 story:{en:"Alan and Jenny Gray began making it in the early 1980s from a nettle-wrapped recipe found in their attic, and named it by spelling Gray backwards. The leaves are picked in spring and frozen — they have lost their sting by the time they go on — and the mould that grows over them ripens the cheese from the rind inwards.",
@@ -429,7 +429,7 @@ fr:"Rincez-la et laissez-la dix minutes dans l’eau claire si elle est trop sal
 pairs:["tomato","cucumber","olive","olive-oil","oregano","watermelon","mint","red-onion"],
 svg:'<path class="f3 sf" d="M28 62V42h40v20z"/><path class="s" d="M28 42h40M28 52h40"/><circle class="dot" cx="38" cy="47" r="1.4"/><circle class="dot" cx="56" cy="57" r="1.4"/>'},
 
-{id:"fiore-sardo",cat:"dairy",name:{en:"Fiore Sardo",fr:"Fiore Sardo"},latin:"Fiore Sardo DOP",
+{id:"fiore-sardo",cat:"dairy",luxe:true,name:{en:"Fiore Sardo",fr:"Fiore Sardo"},latin:"Fiore Sardo DOP",
 origin:{en:"Barbagia, Sardinia",fr:"Barbagia, Sardaigne"},season:[],
 flavor:["smoky","salty","umami","pungent"],
 story:{en:"The name may come from the thistle flower once used to curdle it, or from the flower carved into the base of the wooden moulds — the record does not settle it. What is fixed is the lamb rennet and the smoke: wheels hang a fortnight over a fire of Mediterranean scrub before they ever see a cellar.",
@@ -449,7 +449,7 @@ fr:"Pour la fonduta, taillez-la en dés et laissez-la tremper au frais dans just
 pairs:["potato","white-truffle","egg","butter","polenta-bramata","nutmeg"],
 svg:'<path class="f1 sf" d="M22 54 48 24l26 30z"/><path class="f2 sf" d="M22 54h52v6q-26 8-52 0z"/><path class="s" d="M32 62v10q0 5 4 5M48 65v11M62 62v8"/>'},
 
-{id:"pecorino-di-fossa",cat:"dairy",name:{en:"Formaggio di Fossa",fr:"Pecorino di Fossa"},latin:"Formaggio di Fossa di Sogliano DOP",
+{id:"pecorino-di-fossa",cat:"dairy",rare:true,luxe:true,name:{en:"Formaggio di Fossa",fr:"Pecorino di Fossa"},latin:"Formaggio di Fossa di Sogliano DOP",
 origin:{en:"Sogliano al Rubicone, Romagna",fr:"Sogliano al Rubicone, Romagne"},season:[1,2,11,12],
 flavor:["pungent","umami","earthy","salty"],
 story:{en:"The wheels go down into sandstone pits in August, wrapped in cloth and sealed under a lid of clay and sand, and the pits stay shut until the feast of Santa Caterina on 25 November. Three months without oxygen do what no cellar does: the paste crumbles, loses its shape against the pit wall and turns sulphurous, almost truffled.",
@@ -459,7 +459,7 @@ fr:"Il arrive déjà à son maximum : servez-le comme un assaisonnement, en cope
 pairs:["honey","pear","walnut","fig","chestnut-honey","saba"],
 svg:'<path class="s" d="M14 34h68"/><path class="f3 sf" d="M28 34l5 40h30l5-40z"/><ellipse class="f1 sf" cx="48" cy="58" rx="11" ry="8"/><path class="s" d="M32 26h32v8H32z"/>'},
 
-{id:"fourme-de-montbrison",cat:"dairy",name:{en:"Fourme de Montbrison",fr:"Fourme de Montbrison"},latin:"Fourme de Montbrison AOP",
+{id:"fourme-de-montbrison",cat:"dairy",rare:true,name:{en:"Fourme de Montbrison",fr:"Fourme de Montbrison"},latin:"Fourme de Montbrison AOP",
 origin:{en:"Monts du Forez, Loire",fr:"Monts du Forez, Loire"},season:[],
 flavor:["fruity","nutty","mild","salty"],
 story:{en:"Until 2002 it shared an appellation with the Fourme d'Ambert, and the split came down to two gestures: the salt goes into the curd rather than onto the rind, and the young cheeses drain lying in spruce gutters. The wood gives the dry orange crust, the salted curd a paste that is drier, less blue and distinctly fruitier.",
@@ -489,7 +489,7 @@ fr:"Fouettez-le à la fourchette avant de servir, il s’allège complètement. 
 pairs:["honey","strawberry","chives","shallot","raspberry","cream","black-pepper","dill"],
 svg:'<path class="f3 sf" d="M34 66V46h28v20z"/><path class="s" d="M34 46q14-6 28 0"/><circle class="dot" cx="42" cy="56" r="1.4"/><circle class="dot" cx="54" cy="58" r="1.4"/>'},
 
-{id:"gaperon",cat:"dairy",name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
+{id:"gaperon",cat:"dairy",rare:true,name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
 origin:{en:"Limagne, Auvergne",fr:"Limagne, Auvergne"},season:[],
 flavor:["pungent","peppery","milky","salty"],
 story:{en:"The name comes from gape, the Auvergnat word for the buttermilk left in the churn, which is what the cheese was originally made from. Farms hung the domes from the kitchen beam to dry, and the story goes that a suitor's family counted the ones hanging there to judge the size of the dowry.",
@@ -499,7 +499,7 @@ fr:"L’ail est cru et s’aiguise à mesure que le fromage sèche : achetez-le 
 pairs:["potato","rye","poitrine-fumee","apple","walnut","butter"],
 svg:'<path class="f1 sf" d="M22 68q0-27 26-27t26 27z"/><path class="s" d="M48 41V26"/><path class="s" d="M42 62q6-9 14-5"/><circle class="dot" cx="38" cy="58" r="2"/><circle class="dot" cx="50" cy="50" r="2"/><circle class="dot" cx="60" cy="60" r="2"/>'},
 
-{id:"garrotxa",cat:"dairy",name:{en:"Garrotxa",fr:"Garrotxa"},latin:"Formatge Garrotxa",
+{id:"garrotxa",cat:"dairy",rare:true,name:{en:"Garrotxa",fr:"Garrotxa"},latin:"Formatge Garrotxa",
 origin:{en:"Catalonia, Spain",fr:"Catalogne, Espagne"},season:[],
 flavor:["nutty","earthy","mild","milky"],
 story:{en:"The cheese had all but vanished when, in the 1980s, city-raised Catalans who had moved to the mountains learned to make it again on a course at the Torre Marimon agricultural school. Its grey suede rind, the pell florida, is wild mould allowed to take the surface, and it is where the damp-cellar note in the paste comes from.",
@@ -579,7 +579,7 @@ fr:"Poêlez-le à sec, sans huile, dans une poêle très chaude, sans le bouger 
 pairs:["mint","lemon","watermelon","olive-oil","oregano","tomato","honey","cucumber"],
 svg:'<path class="f2 sf" d="M28 62V42h40v20z"/><path class="s" d="M34 42v20M46 42v20M58 42v20"/><path class="s" d="M28 52h40"/>'},
 
-{id:"idiazabal",cat:"dairy",name:{en:"Idiazábal",fr:"Idiazábal"},latin:"Idiazabal DOP",
+{id:"idiazabal",cat:"dairy",luxe:true,name:{en:"Idiazábal",fr:"Idiazábal"},latin:"Idiazabal DOP",
 origin:{en:"Basque Country & Navarre",fr:"Pays basque & Navarre"},season:[],
 flavor:["smoky","rich","nutty","salty"],
 story:{en:"The smoke was an accident of housing: shepherds kept their wheels in the rafters of stone huts that had no chimney but the hearth. Smoking is optional under the DO and the unsmoked wheels are just as legitimate, though it is the beech- and hawthorn-smoked ones that travelled beyond the Basque country.",
@@ -589,7 +589,7 @@ fr:"Fumée et chaleur s’additionnent : tenez-le loin du gril, servez-le cru en
 pairs:["pate-de-coing","walnut","apple","piquillo","honey","hazelnut"],
 svg:'<path class="s" d="M18 24v48M78 24v48"/><path class="s" d="M48 22v14"/><path class="f3 sf" d="M30 36h36v16q0 8-18 8t-18-8z"/><ellipse class="f2 sf" cx="48" cy="36" rx="18" ry="7"/>'},
 
-{id:"laguiole",cat:"dairy",name:{en:"Laguiole",fr:"Laguiole"},latin:"Laguiole AOP",
+{id:"laguiole",cat:"dairy",luxe:true,name:{en:"Laguiole",fr:"Laguiole"},latin:"Laguiole AOP",
 origin:{en:"Aubrac plateau, Aveyron",fr:"Plateau de l’Aubrac, Aveyron"},season:[],
 flavor:["tangy","buttery","nutty","rich"],
 story:{en:"Monks on the Aubrac built a dômerie in the twelfth century to shelter pilgrims walking to Compostela, and the cheese made each summer in the stone huts, the burons, fed them. Aligot came out of the same buildings: the buronniers held back some of the young curd, the tome fraîche, before it was ever pressed into wheels.",
@@ -599,7 +599,7 @@ fr:"Seule la tome fraîche fait l’aligot : un laguiole affiné ne filera pas. 
 pairs:["potato","garlic","cream","butter","saucisse-de-toulouse","parsley"],
 svg:'<path class="f2 sf" d="M24 40h44q-3 18-22 18t-22-18z"/><path class="s" d="M18 40h56"/><path class="s" d="M38 58q-3 14 3 20M56 56q5 12-1 20"/>'},
 
-{id:"langres",cat:"dairy",name:{en:"Langres",fr:"Langres"},latin:"Langres AOP",
+{id:"langres",cat:"dairy",luxe:true,name:{en:"Langres",fr:"Langres"},latin:"Langres AOP",
 origin:{en:"Plateau de Langres, Champagne",fr:"Plateau de Langres, Champagne"},season:[],
 flavor:["pungent","creamy","salty","rich"],
 story:{en:"The affineur never turns it, and gravity does the rest: the top sinks into a hollow the Champenois call the fontaine. At the table it is filled with marc de Champagne, poured into the dip a few minutes before the cheese is cut.",
@@ -609,7 +609,7 @@ fr:"L’orange doit autant au rocou qu’aux lavages, et la croûte se mange. Si
 pairs:["marc-de-bourgogne","potato","walnut","apple","rye","butter"],
 svg:'<path class="f2 sf" d="M28 38h40v26q0 7-20 7t-20-7z"/><path class="s" d="M28 38q5 10 20 10t20-10"/><path class="s" d="M48 18v14"/><circle class="dot" cx="48" cy="16" r="2.5"/>'},
 
-{id:"livarot",cat:"dairy",name:{en:"Livarot",fr:"Livarot"},latin:"Livarot AOP",
+{id:"livarot",cat:"dairy",luxe:true,name:{en:"Livarot",fr:"Livarot"},latin:"Livarot AOP",
 origin:{en:"Pays d’Auge, Normandy",fr:"Pays d’Auge, Normandie"},season:[],
 flavor:["pungent","meaty","salty","rich"],
 story:{en:"Five bands of sedge are wrapped round it, originally to stop it slumping on the road to market, and five stripes is the rank of a colonel — the nickname stuck. Underneath them is a washed rind that turns frankly ammoniac with age, where a Pont-l'Évêque of the same age stays sweet.",
@@ -619,7 +619,7 @@ fr:"Enfournez-le entier dans sa boîte de bois à 180 °C une vingtaine de minut
 pairs:["apple","calvados","potato","cider-vinegar","rye","walnut"],
 svg:'<path class="f2 sf" d="M24 38h48v20q0 8-24 8t-24-8z"/><ellipse class="f1 sf" cx="48" cy="38" rx="24" ry="8"/><path class="s" d="M24 43h48M24 48h48M24 53h48M25 58h46M27 63h42"/>'},
 
-{id:"l-etivaz",cat:"dairy",name:{en:"L’Etivaz",fr:"L’Etivaz"},latin:"L’Etivaz AOP",
+{id:"l-etivaz",cat:"dairy",rare:true,luxe:true,name:{en:"L’Etivaz",fr:"L’Etivaz"},latin:"L’Etivaz AOP",
 origin:{en:"Vaud Alps, Switzerland",fr:"Alpes vaudoises, Suisse"},season:[],
 flavor:["smoky","nutty","fruity","rich"],
 story:{en:"In 1932 seventy-six families walked out of the Gruyère system, which they judged to be letting its standards slip, and registered their own cheese under the name of their village. The rules they wrote still hold: only between 10 May and 10 October, only in a mountain chalet, only in a copper cauldron over an open wood fire — which is where the faint smoke in the paste comes from.",
@@ -649,7 +649,7 @@ fr:"Coupez-le en triangles fins depuis la pointe, jamais en cubes. Avec de la p�
 pairs:["quince","almond","olive-oil","fig","honey","iberico-ham","grape","paprika"],
 svg:'<path class="f2 sf" d="M24 66q-3-13 0-26h48q3 13 0 26z"/><path class="s" d="M24 44l8 6-8 6M40 44l8 6-8 6M56 44l8 6-8 6"/>'},
 
-{id:"manouri",cat:"dairy",name:{en:"Manouri",fr:"Manouri"},latin:"Manouri PDO",
+{id:"manouri",cat:"dairy",rare:true,name:{en:"Manouri",fr:"Manouri"},latin:"Manouri PDO",
 origin:{en:"Thessaly & Macedonia, Greece",fr:"Thessalie & Macédoine, Grèce"},season:[],
 flavor:["creamy","milky","mild","sweet"],
 story:{en:"It is built on the whey left after feta, with whole sheep's or goat's milk or cream stirred back in — a second cheese made from the first one's runoff. The cream is why it carries seventy per cent fat in dry matter with under one per cent salt, an unusual combination anywhere in Europe.",
@@ -689,7 +689,7 @@ fr:"Ne le faites jamais bouillir, il tranche aussitôt. Fouettez-le hors du feu 
 pairs:["cucumber","dill","mint","beetroot","buckwheat-flour","honey","strawberry","garlic"],
 svg:'<path class="f1 sf" d="M34 30h28l-4 44H38z"/><path class="s" d="M34 40q14 4 28 0"/><circle class="f2 sf" cx="43" cy="52" r="4"/><circle class="f2 sf" cx="54" cy="60" r="4"/><circle class="dot" cx="48" cy="46" r="1.6"/><circle class="dot" cx="55" cy="48" r="1.6"/>'},
 
-{id:"mont-dor",cat:"dairy",name:{en:"Mont d’Or",fr:"Mont d’Or (vacherin du Haut-Doubs)"},latin:"Vacherin du Haut-Doubs AOP",
+{id:"mont-dor",cat:"dairy",rare:true,luxe:true,name:{en:"Mont d’Or",fr:"Mont d’Or (vacherin du Haut-Doubs)"},latin:"Vacherin du Haut-Doubs AOP",
 origin:{en:"Haut-Doubs, Franche-Comté",fr:"Haut-Doubs, Franche-Comté"},season:[1,2,3,4,5,9,10,11,12],
 flavor:["creamy","woody","resinous","rich"],
 story:{en:"It may be made only between 15 August and 15 March and sold only from 10 September to 10 May, which gives it something almost no other cheese has: a legally closed season. The spruce belt is not decoration — the bark holds up a paste that cannot hold itself, and it is where the resin note comes from.",
@@ -729,7 +729,7 @@ fr:"Sortez-la du réfrigérateur une heure avant — le froid engourdit son parf
 pairs:["tomato","basil","olive-oil","prosciutto","peach","oregano"],
 svg:'<circle class="f1 sf" cx="48" cy="54" r="19"/><path class="s" d="M40 44q6-6 16-2" stroke-width="1.8"/><path class="f2 sf" d="M56 38q4-4 8-3-1 5-6 6z"/>'},
 
-{id:"mozzarella-di-bufala-campana",cat:"dairy",name:{en:"Mozzarella di bufala campana",fr:"Mozzarella di bufala campana"},latin:"Mozzarella di Bufala Campana DOP",
+{id:"mozzarella-di-bufala-campana",cat:"dairy",luxe:true,name:{en:"Mozzarella di bufala campana",fr:"Mozzarella di bufala campana"},latin:"Mozzarella di Bufala Campana DOP",
 origin:{en:"Campania, Italy",fr:"Campanie, Italie"},season:[],
 flavor:["milky","tangy","delicate","rich"],
 story:{en:"Twelfth-century records from the monastery of San Lorenzo in Capua describe monks handing pilgrims a slice of bread and a cheese called mozza. The animal has not changed since: buffalo milk carries roughly twice the fat of cow's milk, and it is that, with the lactic tang, that no cow mozzarella imitates.",
@@ -819,7 +819,7 @@ fr:"Choisissez selon l'âge : le mezzano, six mois, se tranche pour un plateau ;
 pairs:["honey","pear","walnut","apple","prosciutto","polenta-bramata","grape","hazelnut"],
 svg:'<circle class="f1 sf" cx="48" cy="50" r="26"/><circle class="s" cx="48" cy="50" r="19"/><path class="s" d="M48 24v5M60 27l-2 5M70 34l-4 3M75 47l-5 1M75 53l-5-1M70 66l-4-3M60 73l-2-5M48 76v-5M36 73l2-5M26 66l4-3M21 53l5-1M21 47l5 1M26 34l4 3M36 27l2 5"/>'},
 
-{id:"picodon",cat:"dairy",name:{en:"Picodon",fr:"Picodon"},latin:"Picodon AOP",
+{id:"picodon",cat:"dairy",rare:true,name:{en:"Picodon",fr:"Picodon"},latin:"Picodon AOP",
 origin:{en:"Drôme & Ardèche, France",fr:"Drôme et Ardèche, France"},season:[3,4,5,6,7,8,9,10],
 flavor:["tangy","peppery","pungent","nutty"],
 story:{en:"The name is usually traced to the Occitan for stinging, so it describes the taste rather than the shape. Ripened the Dieulefit way, the discs are aged, washed in clear water to strip the surface mould, then aged again — a method that drives the flavour up instead of letting the cheese go creamy.",
@@ -839,7 +839,7 @@ fr:"Jugez-le en pressant le centre, pas le bord : il doit céder comme une prune
 pairs:["apple","cider-vinegar","calvados","walnut","pear","potato","butter","rye"],
 svg:'<path class="f2 sf" d="M24 26h48v48H24z"/><path class="s" d="M32 34h32M32 42h32M32 50h32M32 58h32M32 66h32"/>'},
 
-{id:"pouligny-saint-pierre",cat:"dairy",name:{en:"Pouligny-Saint-Pierre",fr:"Pouligny-Saint-Pierre"},latin:"Pouligny-Saint-Pierre AOP",
+{id:"pouligny-saint-pierre",cat:"dairy",rare:true,name:{en:"Pouligny-Saint-Pierre",fr:"Pouligny-Saint-Pierre"},latin:"Pouligny-Saint-Pierre AOP",
 origin:{en:"Brenne, Berry",fr:"La Brenne, Berry"},season:[3,4,5,6,7,8,9,10],
 flavor:["tangy","herbal","earthy","pungent"],
 story:{en:"In 1972 it became the first goat cheese in France to be granted an appellation, over one of the smallest protected zones in the country, a corner of the Brenne marshes. Locals call it the Eiffel Tower; the pyramid is said to copy the pointed bell tower of Pouligny's church.",
@@ -849,7 +849,7 @@ fr:"Coupez-le de la pointe vers la base, en fines tranches verticales. La pointe
 pairs:["honey","walnut","chives","radish","sorrel","olive-oil","white-wine-vinegar","apple"],
 svg:'<path class="f1 sf" d="M40 22h16l10 54H30z"/><path class="s" d="M36 46h24M32 62h32"/>'},
 
-{id:"provolone-del-monaco",cat:"dairy",name:{en:"Provolone del Monaco",fr:"Provolone del Monaco"},latin:"Provolone del Monaco DOP",
+{id:"provolone-del-monaco",cat:"dairy",rare:true,luxe:true,name:{en:"Provolone del Monaco",fr:"Provolone del Monaco"},latin:"Provolone del Monaco DOP",
 origin:{en:"Sorrento peninsula, Campania",fr:"Presqu'île de Sorrente, Campanie"},season:[],
 flavor:["buttery","peppery","milky","nutty"],
 story:{en:"Cheesemakers crossed the bay of Naples before dawn, wrapped against the damp in sackcloth capes that made them look like monks — hence il monaco, the monk's provolone. At least a fifth of the milk must still come from the Agerolese, a local cow breed now down to a handful of herds.",
@@ -859,7 +859,7 @@ fr:"Il fond bien et sa finale est lente : râpez-le hors du feu dans une sauce, 
 pairs:["san-marzano-tomato","olive-oil","basil","black-pepper","walnut","pear","prosciutto","eggplant"],
 svg:'<path class="s" d="M48 16v10"/><path class="f2 sf" d="M48 26c15 0 22 12 22 26s-7 24-22 24-22-10-22-24 7-26 22-26z"/><path class="s" d="M27 44q21 8 42 0M27 60q21 8 42 0"/>'},
 
-{id:"puzzone-di-moena",cat:"dairy",name:{en:"Puzzone di Moena",fr:"Puzzone di Moena"},latin:"Puzzone di Moena DOP",
+{id:"puzzone-di-moena",cat:"dairy",rare:true,name:{en:"Puzzone di Moena",fr:"Puzzone di Moena"},latin:"Puzzone di Moena DOP",
 origin:{en:"Val di Fassa, Trentino",fr:"Val di Fassa, Trentin"},season:[],
 flavor:["pungent","umami","rich","salty"],
 story:{en:"Ladin speakers call it spretz tzaorì, the tasty cheese; Italian settled on puzzone, the big stinker. The smell is made on purpose — the wheels are washed in warm water every week for at least three months, which keeps the rind wet and the bacteria responsible for the reek alive.",
@@ -869,7 +869,7 @@ fr:"L'odeur est dans la croûte, pas dans la pâte : ôtez-la et le fromage est 
 pairs:["polenta-bramata","potato","butter","speck-alto-adige","onion","rye","cumin","apple"],
 svg:'<path class="f3 sf" d="M22 38q26-8 52 0v20q-26 8-52 0z"/><path class="s" d="M22 45q26 8 52 0"/><circle class="dot" cx="34" cy="70" r="2"/><circle class="dot" cx="48" cy="74" r="2.5"/><circle class="dot" cx="62" cy="70" r="2"/>'},
 
-{id:"pelardon",cat:"dairy",name:{en:"Pélardon",fr:"Pélardon"},latin:"Pélardon AOP",
+{id:"pelardon",cat:"dairy",rare:true,name:{en:"Pélardon",fr:"Pélardon"},latin:"Pélardon AOP",
 origin:{en:"Cévennes, Languedoc",fr:"Cévennes, Languedoc"},season:[3,4,5,6,7,8,9,10],
 flavor:["floral","herbal","tangy","milky"],
 story:{en:"Abbé Boissier de Sauvages defined a small flat Cévennes cheese called péraldou in 1756; the word drifted through péraldon and pélardou before settling late in the nineteenth century. It is usually traced to pèbre, Occitan for pepper — which fits the Picodon over the next valley better than it fits Pélardon, which stays supple and smells of the garrigue.",
@@ -879,7 +879,7 @@ fr:"Mangez-le entre dix et quinze jours, tant qu'il cède sous le pouce ; gardé
 pairs:["honey","thyme","olive-oil","walnut","fig","rosemary","lavender-honey","apricot"],
 svg:'<path class="f2 sf" d="M26 62q0-20 22-20t22 20z"/><ellipse class="f1 sf" cx="48" cy="62" rx="22" ry="6"/><path class="s" d="M64 34q9 3 11 12M66 37l6-1M69 42l6-1"/>'},
 
-{id:"serra-da-estrela",cat:"dairy",name:{en:"Queijo Serra da Estrela",fr:"Serra da Estrela"},latin:"Queijo Serra da Estrela DOP",
+{id:"serra-da-estrela",cat:"dairy",rare:true,luxe:true,name:{en:"Queijo Serra da Estrela",fr:"Serra da Estrela"},latin:"Queijo Serra da Estrela DOP",
 origin:{en:"Serra da Estrela, Portugal",fr:"Serra da Estrela, Portugal"},season:[11,12,1,2,3],
 flavor:["creamy","rich","tangy","herbal"],
 story:{en:"The curd is set not with animal rennet but with an extract of dried cardoon flowers, a wild thistle picked on the mountain; the enzyme works differently and leaves a paste that is close to pourable. Making runs from November to March, while the Bordaleira ewes are milking and the cold holds the cheese together.",
@@ -889,7 +889,7 @@ fr:"Ne le coupez pas en parts. Découpez le dessus de la croûte comme un couver
 pairs:["olive-oil","honey","quince","walnut","pear","ruby-port","fig","black-pepper"],
 svg:'<path class="f2 sf" d="M24 42q24-12 48 0v22q-24 12-48 0z"/><path class="f1 sf" d="M33 39q15 7 30 0-6 9-15 9t-15-9z"/><path class="s" d="M24 52h48M24 59h48"/><circle class="dot" cx="78" cy="58" r="2"/>'},
 
-{id:"raclette-du-valais",cat:"dairy",name:{en:"Raclette du Valais",fr:"Raclette du Valais"},latin:"Raclette du Valais AOP",
+{id:"raclette-du-valais",cat:"dairy",luxe:true,name:{en:"Raclette du Valais",fr:"Raclette du Valais"},latin:"Raclette du Valais AOP",
 origin:{en:"Valais, Switzerland",fr:"Valais, Suisse"},season:[],
 flavor:["rich","buttery","umami","milky"],
 story:{en:"In 1574 a Sion apothecary, Gaspard Ambuel, described Valais families walking up to the alpine pastures on Sundays to eat cheese melted at the fire. The dish is that old; the word raclette, from racler, to scrape, was only coined at the start of the twentieth century.",
@@ -899,7 +899,7 @@ fr:"Une demi-meule face à la flamme, raclée dès que la surface bouillonne : c
 pairs:["potato","cornichon","pearl-onion","viande-des-grisons","black-pepper","paprika","rye","nutmeg"],
 svg:'<path class="f2 sf" d="M60 26q-30 2-30 24t30 24z"/><path class="s" d="M60 42q8 4 6 12M60 58q9 3 8 10"/><path class="s" d="M76 40q-6 7-2 13 4-3 5 1 2 7-5 10"/>'},
 
-{id:"ragusano",cat:"dairy",name:{en:"Ragusano",fr:"Ragusano"},latin:"Ragusano DOP",
+{id:"ragusano",cat:"dairy",rare:true,name:{en:"Ragusano",fr:"Ragusano"},latin:"Ragusano DOP",
 origin:{en:"Hyblaean plateau, Sicily",fr:"Plateau ibléen, Sicile"},season:[],
 flavor:["grassy","pungent","salty","umami"],
 story:{en:"For centuries it sold as caciocavallo ragusano, named for the way the blocks were hung in pairs a cavaddu, astride a beam. Taking its DOP in 1996 meant dropping the word caciocavallo, so a cheese traded since the fourteenth century changed its name in order to keep its origin.",
@@ -939,7 +939,7 @@ fr:"Elle se râpe et se taille en copeaux mais ne fond pas : il ne reste plus de
 pairs:["eggplant","tomato","basil","olive-oil","san-marzano-tomato","zucchini","mint","black-pepper"],
 svg:'<path class="f1 sf" d="M30 44v24q0 6 18 6t18-6V44z"/><ellipse class="f1 sf" cx="48" cy="44" rx="18" ry="6"/><path class="s" d="M70 34q7-5 11 0-5 1-6 5-4 2-5-5M18 30q7-5 11 0-5 1-6 5-4 2-5-5"/>'},
 
-{id:"robiola-di-roccaverano",cat:"dairy",name:{en:"Robiola di Roccaverano",fr:"Robiola di Roccaverano"},latin:"Robiola di Roccaverano DOP",
+{id:"robiola-di-roccaverano",cat:"dairy",rare:true,name:{en:"Robiola di Roccaverano",fr:"Robiola di Roccaverano"},latin:"Robiola di Roccaverano DOP",
 origin:{en:"Roccaverano, Piedmont",fr:"Roccaverano, Piémont"},season:[3,4,5,6,7,8,9,10],
 flavor:["tangy","milky","fresh","delicate"],
 story:{en:"The name is traced to the Latin robium, red — Pliny mentions a rubeola from these hills, and old rounds reddened at the rind as they dried. It is the only Italian DOP that may be made entirely from goat milk, and the milk is raw with no added cultures, so each farm's own bacteria set the flavour.",
@@ -959,7 +959,7 @@ fr:"Réchauffez-le, ne le cuisez pas : deux à trois minutes à 180 °C sur une 
 pairs:["walnut","honey","lettuce","olive-oil","walnut-oil","apple","fig","thyme"],
 svg:'<path class="f2 sf" d="M22 58h52v9a5 5 0 0 1-5 5H27a5 5 0 0 1-5-5z"/><path class="f1 sf" d="M35 48q0-9 13-9t13 9q0 7-13 7t-13-7z"/><path class="s" d="M39 54q-1 5-3 5M57 54q1 5 3 5"/>'},
 
-{id:"roncal",cat:"dairy",name:{en:"Roncal",fr:"Roncal"},latin:"Roncal DOP",
+{id:"roncal",cat:"dairy",rare:true,name:{en:"Roncal",fr:"Roncal"},latin:"Roncal DOP",
 origin:{en:"Roncal valley, Navarre",fr:"Vallée du Roncal, Navarre"},season:[],
 flavor:["nutty","salty","earthy","rich"],
 story:{en:"In 1981 Roncal became the first Spanish cheese granted a denominación de origen. The valley won the pasture behind it in 882, when King Sancho García gave its seven villages the right to walk their flocks down to the Bardenas for the winter — a transhumance still walked today.",
@@ -1009,7 +1009,7 @@ fr:"La paille tient la bûche pendant l'affinage : retirez-la avant de trancher,
 pairs:["honey","walnut","olive-oil","radish","thyme","apple","chervil","beetroot"],
 svg:'<path class="f3 sf" d="M28 38h32q8 0 8 10t-8 10H28q-6 0-6-10t6-10z"/><ellipse class="f2 sf" cx="28" cy="48" rx="6" ry="10"/><path class="s" d="M16 48h64"/>'},
 
-{id:"salers",cat:"dairy",name:{en:"Salers",fr:"Salers"},latin:"Salers AOP",
+{id:"salers",cat:"dairy",luxe:true,name:{en:"Salers",fr:"Salers"},latin:"Salers AOP",
 origin:{en:"Cantal, Auvergne",fr:"Cantal, Auvergne"},season:[4,5,6,7,8,9,10,11],
 flavor:["grassy","umami","rich","tangy"],
 story:{en:"It may be made only between 15 April and 15 November, while the herd is out on grass, and only on the farm, from the milk of one single herd. The curd sets in a gerle, an open wooden tub whose timber carries each farm's own bacteria — the appellation protects a vessel as much as a recipe.",
@@ -1039,7 +1039,7 @@ fr:"Les cuisines les achètent pour le jaune et jettent presque tout le blanc. F
 pairs:["rice","pork-belly","pumpkin","silken-tofu","shrimp","corn","butter"],
 svg:'<path class="f1 sf" d="M24 52q0-22 24-22t24 22q0 20-24 20T24 52z"/><ellipse class="f3 sf" cx="48" cy="48" rx="14" ry="12"/><circle class="dot" cx="42" cy="44" r="2"/><path class="s" d="M24 52h48"/><circle class="s" cx="66" cy="70" r="3"/><circle class="s" cx="74" cy="62" r="2"/>'},
 
-{id:"sbrinz",cat:"dairy",name:{en:"Sbrinz",fr:"Sbrinz"},latin:"Sbrinz AOP",
+{id:"sbrinz",cat:"dairy",luxe:true,name:{en:"Sbrinz",fr:"Sbrinz"},latin:"Sbrinz AOP",
 origin:{en:"Central Switzerland",fr:"Suisse centrale"},season:[],
 flavor:["nutty","salty","umami","rich"],
 story:{en:"Bern's archives record a caravan of cheese setting out for Italy from Brienz in 1530, and the name Italian traders used for that town came back over the Alps as the name of the cheese. Before then it was sold as Spalen, after the wooden barrel it travelled in.",
@@ -1049,7 +1049,7 @@ fr:"Ne râpez pas les vieilles meules : détachez des copeaux au couteau court e
 pairs:["pear","honey","walnut","grape","black-pepper","prosciutto","apple","butter"],
 svg:'<path class="f2 sf" d="M20 56q28-10 56 0v10q-28 10-56 0z"/><path class="f1 sf" d="M30 46q8-11 17-6-7 2-9 9-5 4-8-3z"/><path class="f1 sf" d="M54 44q9-9 16-2-7 1-9 8-5 3-7-6z"/>'},
 
-{id:"schabziger",cat:"dairy",name:{en:"Schabziger",fr:"Schabziger"},latin:"Glarner Schabziger",
+{id:"schabziger",cat:"dairy",rare:true,name:{en:"Schabziger",fr:"Schabziger"},latin:"Glarner Schabziger",
 origin:{en:"Glarus, Switzerland",fr:"Glaris, Suisse"},season:[],
 flavor:["herbal","pungent","salty","grassy"],
 story:{en:"At the Landsgemeinde of 24 April 1463 the citizens of Glarus voted a law requiring every maker to stamp the cones with a mark of origin — the first branded product in Switzerland. The green comes from powdered blue fenugreek, an alpine herb, and not from mould or dye.",
@@ -1079,7 +1079,7 @@ fr:"L'orange vient du rocou, un colorant de graine sans goût : jugez plutôt la
 pairs:["pear","walnut","celery","pickled-walnut","honey","fig","apple","ruby-port"],
 svg:'<path class="f2 sf" d="M48 50V24a26 26 0 1 1-18 45z"/><path class="s" d="M48 32a18 18 0 0 1 11 33"/><path class="s" d="M40 40q4 7 0 13M52 48q-3 6-1 12M42 62q6-2 9 4"/>'},
 
-{id:"smoked-butter",cat:"dairy",name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
+{id:"smoked-butter",cat:"dairy",rare:true,name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
 origin:{en:"Northern European smokehouses",fr:"Fumoirs d’Europe du Nord"},season:[],
 flavor:["smoky","buttery","creamy"],
 story:{en:"The smoke has to be cold, under about 30 °C, or the butter simply melts and separates in the chamber, so producers either smoke the cream before churning or hold finished blocks over smouldering wood at low temperature. Smoking the cream gives the rounder result, because the fat takes up the phenols evenly, while a smoked block carries most of its flavour in the outer few millimetres.",
@@ -1099,7 +1099,7 @@ fr:"Ayant perdu son eau, elle dore au lieu de rendre du jus : tranchez-la à un 
 pairs:["mushroom","potato","black-pepper","radicchio","olive-oil","prosciutto","oregano","zucchini"],
 svg:'<path class="s" d="M48 22v6"/><path class="f3 sf" d="M42 28q6-5 12 0-1 7-6 7t-6-7z"/><path class="f3 sf" d="M48 34q15 0 15 18t-15 22-15-22 15-18z"/><path class="s" d="M70 64q7-5 2-11t5-11"/>'},
 
-{id:"squacquerone-di-romagna",cat:"dairy",name:{en:"Squacquerone di Romagna",fr:"Squacquerone di Romagna"},latin:"Squacquerone di Romagna DOP",
+{id:"squacquerone-di-romagna",cat:"dairy",rare:true,name:{en:"Squacquerone di Romagna",fr:"Squacquerone di Romagna"},latin:"Squacquerone di Romagna DOP",
 origin:{en:"Romagna, Emilia-Romagna",fr:"Romagne, Émilie-Romagne"},season:[],
 flavor:["sour","milky","fresh","delicate"],
 story:{en:"The name is the Romagnol squaquaròn, which says its failure to hold a shape: it is sold in a tub because it cannot stand up. A Romagnol dictionary printed in 1879 already lists it, well before the DOP arrived in 2012.",
@@ -1119,7 +1119,7 @@ fr:"Incorporez-le au risotto hors du feu : 40 g par personne remplacent à la 
 pairs:["olive-oil","tomato","basil","prosciutto","roquette","black-pepper","walnut"],
 svg:'<path class="f1 sf" d="M22 50h44l8-9H30z"/><path class="f2 sf" d="M22 50h44v14q0 4-4 4H26q-4 0-4-4z"/><path class="f3 sf" d="M66 50l8-9v14q0 4-4 4h-4z"/><path class="s" d="M34 57q7 5 14 0"/>'},
 
-{id:"stracciatella-di-bufala",cat:"dairy",name:{en:"Stracciatella di bufala",fr:"Stracciatella di bufala"},latin:"Bubalus bubalis",
+{id:"stracciatella-di-bufala",cat:"dairy",luxe:true,name:{en:"Stracciatella di bufala",fr:"Stracciatella di bufala"},latin:"Bubalus bubalis",
 origin:{en:"Andria, Puglia",fr:"Andria, Pouilles"},season:[],
 flavor:["creamy","milky","delicate","sweet"],
 story:{en:"By the usual account it was worked out at a farm near Andria in the winter of 1956, when a snowed-in cheesemaker mixed the torn scraps of mozzarella curd with cream to stop them spoiling and shut the lot inside a pouch of curd — burrata. Stracciatella is that filling sold on its own, and its name says how it is made: stracciata, torn, because the curd is pulled apart by hand and never cut.",
@@ -1139,7 +1139,7 @@ fr:"Il fond à basse température sans trancher, mais l’ammoniaque est dans la
 pairs:["polenta-bramata","pear","walnut","honey","radicchio","porcini","black-pepper","prosciutto"],
 svg:'<path class="f2 sf" d="M24 28h48v44H24z"/><path class="s" d="M24 40h48M24 52h48M24 64h48M40 28v44M56 28v44"/><path class="f1 sf" d="M48 50l24 22H48z"/>'},
 
-{id:"lancashire",cat:"dairy",name:{en:"Tasty Lancashire",fr:"Lancashire"},latin:"Bos taurus",
+{id:"lancashire",cat:"dairy",rare:true,name:{en:"Tasty Lancashire",fr:"Lancashire"},latin:"Bos taurus",
 origin:{en:"The Fylde, Lancashire",fr:"Le Fylde, Lancashire"},season:[],
 flavor:["buttery","tangy","milky","rich"],
 story:{en:"Traditional Lancashire blends curd from two consecutive days in one vat, sometimes three or four — a habit forced on smallholdings that never had enough cows to fill a vat in a single milking. The crumbly Lancashire sold almost everywhere now was invented in the 1960s to compete with Cheshire and Wensleydale, is made in a day, and is a different cheese wearing the same name.",
@@ -1159,7 +1159,7 @@ fr:"Elle ne monte pas — la matière grasse est déjà prise. Pour une chantill
 pairs:["potato","mushroom","shallot","nutmeg","black-pepper","leek","egg","butter"],
 svg:'<path class="f3 sf" d="M32 66V46q16-8 32 0v20z"/><path class="s" d="M32 46q16 8 32 0"/>'},
 
-{id:"tome-des-bauges",cat:"dairy",name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
+{id:"tome-des-bauges",cat:"dairy",rare:true,name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
 origin:{en:"Massif des Bauges, Savoie",fr:"Massif des Bauges, Savoie"},season:[9,10,11,12,1],
 flavor:["earthy","nutty","milky","woody"],
 story:{en:"It is spelled tome, with one m: the Bauges kept the older local spelling when the appellation was drawn up in 2002, and that single letter is the quickest way to tell it from Tomme de Savoie on a label. The grey felt on the rind is grown on purpose — the wheels are turned and brushed in the cellar for months, but they are never scrubbed clean.",
@@ -1179,7 +1179,7 @@ fr:"Ne parez pas toute la croûte — l’odeur de cave y loge, et la pâte seul
 pairs:["potato","apple","walnut","onion","black-pepper","grape","butter","thyme"],
 svg:'<circle class="f1 sf" cx="48" cy="52" r="22"/><circle class="s" cx="48" cy="52" r="16"/><circle class="dot" cx="38" cy="44" r="1.4"/><circle class="dot" cx="58" cy="48" r="1.4"/><circle class="dot" cx="44" cy="62" r="1.4"/><circle class="dot" cx="58" cy="60" r="1.4"/>'},
 
-{id:"torta-del-casar",cat:"dairy",name:{en:"Torta del Casar",fr:"Torta del Casar"},latin:"Ovis aries",
+{id:"torta-del-casar",cat:"dairy",rare:true,luxe:true,name:{en:"Torta del Casar",fr:"Torta del Casar"},latin:"Ovis aries",
 origin:{en:"Casar de Cáceres, Extremadura",fr:"Casar de Cáceres, Estrémadure"},season:[3,4,5,6],
 flavor:["creamy","bitter","rich","earthy"],
 story:{en:"It is set not with rennet but with a water infusion of dried cardoon flowers, Cynara cardunculus, whose enzymes cut the protein network further than an animal rennet does — which is why the paste ends up spoonable rather than sliceable. The same thistle leaves the faint bitterness at the end of the mouthful: it belongs to the method, and a Torta without it has been made wrong.",
@@ -1189,7 +1189,7 @@ fr:"Découpez le dessus en couvercle une heure après la sortie du réfrigérate
 pairs:["potato","lamb","white-asparagus","olive-oil","honey","walnut","rye"],
 svg:'<path class="f2 sf" d="M24 46v14q0 10 24 10t24-10V46"/><ellipse class="f1 sf" cx="48" cy="46" rx="24" ry="10"/><ellipse class="f3 sf" cx="46" cy="46" rx="13" ry="5"/><path class="s" d="M52 44l16-18"/><ellipse class="f1 sf" cx="69" cy="24" rx="4" ry="5"/>'},
 
-{id:"tete-de-moine",cat:"dairy",name:{en:"Tête de Moine",fr:"Tête de Moine"},latin:"Bos taurus",
+{id:"tete-de-moine",cat:"dairy",luxe:true,name:{en:"Tête de Moine",fr:"Tête de Moine"},latin:"Bos taurus",
 origin:{en:"Bellelay, Bernese Jura",fr:"Bellelay, Jura bernois"},season:[],
 flavor:["nutty","rich","umami","salty"],
 story:{en:"The canons of Bellelay abbey were making it by the twelfth century, but the tool that now defines it is barely older than the microwave: the girolle, a spindle and blade that shaves a cylinder into ruffled rosettes, was invented by Nicolas Crevoisier in 1981 and patented the following year. Before it the cheese was scraped with a knife and sold within a few valleys; the rosette turned a local wheel into an export.",
@@ -1209,7 +1209,7 @@ fr:"Dans une moitié-moitié, gardez-le à poids égal avec le gruyère et retir
 pairs:["potato","garlic","kirsch","nutmeg","black-pepper","cornichon","beaufort"],
 svg:'<path class="f1 sf" d="M20 62L48 24l28 38z"/><path class="f3 sf" d="M20 62h56v6H20z"/><path class="s" d="M32 52q9-6 18 0"/><path class="f2 sf" d="M42 68q-3 8 1 10t3-10z"/>'},
 
-{id:"valencay",cat:"dairy",name:{en:"Valençay",fr:"Valençay"},latin:"Capra hircus",
+{id:"valencay",cat:"dairy",luxe:true,name:{en:"Valençay",fr:"Valençay"},latin:"Capra hircus",
 origin:{en:"Berry, Indre",fr:"Berry, Indre"},season:[4,5,6,7,8,9],
 flavor:["tangy","earthy","milky","mild"],
 story:{en:"The story goes that Napoleon, back from Egypt and in no mood for pyramids, struck the point off one with his sword at Talleyrand's château — an anecdote that appears in print long after both men were dead. The flat top has a duller explanation: a full point dries faster than the base, snaps in transit, and gives the cheese no stable face to stand on.",
@@ -1229,7 +1229,7 @@ fr:"C’est un caillé lactique qui ne fond pas : la chaleur en chasse le petit
 pairs:["apple","fig","honey","dried-cranberry","walnut","celery","quince"],
 svg:'<path class="f1 sf" d="M22 34h34v40H22z"/><path class="s" d="M22 46h34M22 58h34"/><path class="f2 sf" d="M60 52l10-4 4 10-8 6-8-4z"/><circle class="dot" cx="63" cy="70" r="2"/>'},
 
-{id:"whey-butter",cat:"dairy",name:{en:"Whey butter",fr:"Beurre de petit-lait"},latin:"Bos taurus",
+{id:"whey-butter",cat:"dairy",rare:true,name:{en:"Whey butter",fr:"Beurre de petit-lait"},latin:"Bos taurus",
 origin:{en:"Cheese dairies, England and the Alps",fr:"Fromageries d’Angleterre et des Alpes"},season:[],
 flavor:["tangy","buttery","nutty"],
 story:{en:"Whey butter is what Cheddar dairies made from the cream that rose off drained whey, a farmhouse perquisite in Somerset, Devon and Lancashire rather than a product anyone set out to make. The whey has already been acidified by the cheese starter, so the cream churns out tangy and keeps residual lactose that milk butter does not have.",

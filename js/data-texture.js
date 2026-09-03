@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"charbon-vegetal-actif",cat:"texture",name:{en:"Activated charcoal",fr:"Charbon végétal activé"},latin:"Carbo activatus",
+{id:"charbon-vegetal-actif",cat:"texture",rare:true,name:{en:"Activated charcoal",fr:"Charbon végétal activé"},latin:"Carbo activatus",
 origin:{en:"Charred coconut shell",fr:"Coques de coco carbonisées"},season:[],
 flavor:["mild","earthy"],
 story:{en:"The powder that blackens a bun is the same one an emergency room gives to adsorb a swallowed poison - it works by surface area, a single gram carrying hundreds of square metres of it. New York City ordered it off menus in 2018 and the FDA has never approved it as a food colour, while the EU lists it as E153.",
@@ -9,7 +9,7 @@ fr:"0,5 à 1 % du poids de farine donne un vrai noir ; au-delà la pâte vire au
 pairs:["flour-t65","rye-flour","butter","salt","sesame","squid-ink","parmesan","olive-oil"],
 svg:'<path class="f1 sf" d="M20 62h56q-6 12-28 12T20 62z"/><path class="f3 sf" d="M28 62q6-22 20-22t20 22z"/><path class="dot" d="M39 30l2-3 2 3-2 3zM56 26l2-3 2 3-2 3zM47 20l2-3 2 3-2 3z"/>'},
 
-{id:"bicarbonate-d-ammonium",cat:"texture",name:{en:"Ammonium bicarbonate",fr:"Bicarbonate d’ammonium"},latin:"Ammonii hydrogenocarbonas",
+{id:"bicarbonate-d-ammonium",cat:"texture",rare:true,name:{en:"Ammonium bicarbonate",fr:"Bicarbonate d’ammonium"},latin:"Ammonii hydrogenocarbonas",
 origin:{en:"Northern European bakeries",fr:"Boulangeries d’Europe du Nord"},season:[],
 flavor:["pungent","salty","bitter"],
 story:{en:"Bakers called it hartshorn because it was once distilled from shavings of deer antler, and German recipes still say Hirschhornsalz. It breaks down completely into ammonia, carbon dioxide and water, so alone among chemical leaveners it leaves no salt behind to taste.",
@@ -59,7 +59,7 @@ fr:"À 0,5 % environ dans une saumure de concombre, il garde les rondelles croqu
 pairs:["cucumber","yogurt","apple","cherry","dill","carrot","mustard-seed"],
 svg:'<path class="f2 sf" d="M34 24q12-4 16 10t0 34-14 8-8-24 2-28z"/><circle class="dot" cx="40" cy="38" r="2"/><circle class="dot" cx="45" cy="52" r="2"/><circle class="dot" cx="38" cy="62" r="2"/><path class="f1 sf" d="M60 56 70 50l6 10-8 8-8-4z"/>'},
 
-{id:"gluconolactate-de-calcium",cat:"texture",name:{en:"Calcium lactate gluconate",fr:"Gluconolactate de calcium"},latin:"Calcium lactate gluconate (E327/E578)",
+{id:"gluconolactate-de-calcium",cat:"texture",rare:true,name:{en:"Calcium lactate gluconate",fr:"Gluconolactate de calcium"},latin:"Calcium lactate gluconate (E327/E578)",
 origin:{en:"Industrial calcium salts",fr:"Sels de calcium industriels"},season:[],
 flavor:["mild","delicate"],
 story:{en:"It is not one salt but two fused into a double salt, calcium bound to both lactic and gluconic acid, made because plain calcium lactate reaches its solubility limit and throws a chalky grit long before a spherification base carries enough calcium. The gluconate half keeps it dissolved in cream, in acidic fruit purée and in spirits, where the lactate alone clouds.",
@@ -99,7 +99,7 @@ fr:"Un huitième de cuillère à café par blanc d’œuf, ajouté quand les bla
 pairs:["egg","sugar","icing-sugar","glucose-syrup","bicarbonate-de-sodium","lemon","vanilla"],
 svg:'<path class="f1 sf" d="M24 58q0-13 15-13t15 13q0 9-15 9t-15-9z"/><path class="f2 sf" d="M26 52q5-13 13-13t13 13q-6 4-13 4t-13-4z"/><path class="s" d="M54 56q11 2 18 9"/><path class="dot" d="M64 42l2.5-3.5 2.5 3.5-2.5 3.5zM72 48l2-3 2 3-2 3z"/>'},
 
-{id:"chaux-alimentaire",cat:"texture",name:{en:"Culinary lime (cal)",fr:"Chaux alimentaire"},latin:"Calcii hydroxidum",
+{id:"chaux-alimentaire",cat:"texture",rare:true,name:{en:"Culinary lime (cal)",fr:"Chaux alimentaire"},latin:"Calcii hydroxidum",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
 flavor:["bitter","earthy"],
 story:{en:"Nixtamal comes from the Nahuatl nextli, ashes, and tamalli, dough: maize simmered in lime water sheds its hull and gives up bound niacin, which is why the maize cultures of the Americas had no pellagra and nineteenth-century Europe, which took the grain without the technique, did. The alkali also rearranges the corn protein so the dough will hold together at all — untreated maize simply crumbles.",
@@ -119,7 +119,7 @@ fr:"0,5 % du poids de farine, pas davantage. Les enzymes ne s’arrêtent pas : 
 pairs:["flour-t65","rye-flour","yeast","barley","honey","salt","sesame","poppy-seed"],
 svg:'<path class="f2 sf" d="M38 44q8 0 8 13t-8 13-8-13 8-13z"/><path class="f1 sf" d="M60 52q7 0 7 11t-7 11-7-11 7-11z"/><path class="s" d="M38 70q-5 6-11 8M38 70q1 8 2 10M38 44q2-11 9-14M60 74q-4 5-8 6M60 74q1 5 2 6M60 52q1-8 6-11"/>'},
 
-{id:"feuille-d-or",cat:"texture",name:{en:"Edible gold leaf",fr:"Feuille d’or alimentaire"},latin:"Aurum foliatum",
+{id:"feuille-d-or",cat:"texture",luxe:true,name:{en:"Edible gold leaf",fr:"Feuille d’or alimentaire"},latin:"Aurum foliatum",
 origin:{en:"Kanazawa and Europe",fr:"Kanazawa et l’Europe"},season:[],
 flavor:["mild","delicate"],
 story:{en:"A gram of gold beats out to roughly half a square metre, a tenth of a micron thick, between sheets of goldbeater's skin - ox intestine, so airtight that Zeppelin gas cells were built from it in the First World War. Gold passes through the body unchanged and tastes of nothing at all; the EU lists it as E175.",
@@ -129,7 +129,7 @@ fr:"N’y touchez jamais du doigt : l’humidité l’emporte aussitôt. Souleve
 pairs:["dark-chocolate","white-chocolate","praline-paste","vanilla","raspberry","saffron","caviar","foie-gras"],
 svg:'<path class="f2 sf" d="M24 42l32-12 15 20-32 13z"/><path class="s" d="M32 46l30-9M31 54l31-9"/><path class="f1 sf" d="M50 70l8-8 7 7-8 8z"/><path class="s" d="M60 74l14-14"/>'},
 
-{id:"feuille-d-argent",cat:"texture",name:{en:"Edible silver leaf",fr:"Feuille d’argent alimentaire"},latin:"Argentum foliatum",
+{id:"feuille-d-argent",cat:"texture",luxe:true,name:{en:"Edible silver leaf",fr:"Feuille d’argent alimentaire"},latin:"Argentum foliatum",
 origin:{en:"Mughal India",fr:"Inde moghole"},season:[],
 flavor:["mild","fresh","delicate"],
 story:{en:"Vark has topped Indian sweets since the Mughal courts, beaten between skins until it is thinner than gold leaf and far more fragile. Silver tarnishes: sulphur blackens it, which puts egg, onion, mustard and cabbage out of bounds underneath it.",
@@ -159,7 +159,7 @@ fr:"Incorporez-la dans un praliné ou un chocolat sous 30 °C et façonnez aussi
 pairs:["praline-paste","gianduja","dark-chocolate","milk-chocolate","white-chocolate","hazelnut","almond","butter"],
 svg:'<path class="f1 sf" d="M24 44q14-10 28-4-12 7-28 4z"/><path class="f2 sf" d="M44 32q16-6 26 4-16 3-26-4z"/><path class="f2 sf" d="M28 60q16-9 30 0-14 9-30 0z"/><path class="f1 sf" d="M52 68q14-6 21 3-15 4-21-3z"/><path class="s" d="M32 52h14M60 50h9"/>'},
 
-{id:"gelatine-de-poisson",cat:"texture",name:{en:"Fish gelatine",fr:"Gélatine de poisson"},latin:"Piscine collagen hydrolysate",
+{id:"gelatine-de-poisson",cat:"texture",rare:true,name:{en:"Fish gelatine",fr:"Gélatine de poisson"},latin:"Piscine collagen hydrolysate",
 origin:{en:"Fish skins, cold-water species",fr:"Peaux de poissons d’eaux froides"},season:[],
 flavor:["mild","marine"],
 story:{en:"Cold-water fish build a collagen that has to stay flexible at sea temperature, so it carries far less proline than a pig's, and the gelatine made from their skins melts and sets several degrees lower. It is also the oldest form of the ingredient under another name: isinglass, from sturgeon swim bladders, was fining beer and wine centuries before sheet gelatine existed.",
@@ -169,7 +169,7 @@ fr:"Comptez un cinquième à un quart de plus qu’en gélatine en feuilles, et 
 pairs:["yuzu","lemon","raspberry","cream","sugar","elderflower","passion-fruit"],
 svg:'<path class="f2 sf" d="M18 48q12-14 28-14t20 14q-4 14-20 14T18 48z"/><path class="f3 sf" d="M66 48 78 38v20z"/><circle class="dot" cx="30" cy="43" r="2.5"/><path class="s" d="M42 35q4 13 0 26"/><path class="f1 sf" d="M32 74q0-9 16-9t16 9z"/>'},
 
-{id:"glucono-delta-lactone",cat:"texture",name:{en:"Glucono delta-lactone",fr:"Glucono-delta-lactone"},latin:"Gluconolactonum",
+{id:"glucono-delta-lactone",cat:"texture",rare:true,name:{en:"Glucono delta-lactone",fr:"Glucono-delta-lactone"},latin:"Gluconolactonum",
 origin:{en:"Fermented glucose",fr:"Glucose fermenté"},season:[],
 flavor:["sour","tangy","mild"],
 story:{en:"It is not an acid when you weigh it out: it is a ring that opens slowly in water into gluconic acid, so the pH falls over minutes instead of the instant it meets the pot. That delay is the whole point - it lets soy milk be poured into its box and set there untouched, as silken tofu.",
@@ -189,7 +189,7 @@ fr:"Elle se dissout à des concentrations qu’aucune autre gomme ne tolère —
 pairs:["dark-chocolate","orange","sugar","icing-sugar","coffee","vanilla","almond"],
 svg:'<path class="f2 sf" d="M40 24h12v54H40z"/><path class="s" d="M40 38 26 28M52 44l16-12M40 58 27 52"/><path class="s" d="M45 28v46"/><ellipse class="f1 sf" cx="61" cy="58" rx="10" ry="8"/><path class="f1 sf" d="M52 52q6 0 9 4l-9 2z"/>'},
 
-{id:"gomme-adragante",cat:"texture",name:{en:"Gum tragacanth",fr:"Gomme adragante"},latin:"Astragalus gummifer",
+{id:"gomme-adragante",cat:"texture",rare:true,name:{en:"Gum tragacanth",fr:"Gomme adragante"},latin:"Astragalus gummifer",
 origin:{en:"Zagros mountains, Iran",fr:"Monts Zagros, Iran"},season:[],
 flavor:["mild","delicate"],
 story:{en:"The name is Greek — tragos, goat, and akantha, thorn — for the low spiny Astragalus shrubs of the Iranian highlands whose slit stems weep the gum in ribbons. Iran has supplied most of the world's tragacanth for a very long time, and it is still gathered by hand, flake by flake.",
@@ -209,7 +209,7 @@ fr:"Hydratez-la à 0,1 à 0,2 % du liquide porté à 85 °C, et laissez-la prend
 pairs:["tomato","basil","olive-oil","cucumber","lemon","mint","elderflower"],
 svg:'<path class="f1 sf" d="M32 22h32l-4 30q-1 8-12 8t-12-8z"/><path class="s" d="M48 60v18"/><path class="s" d="M34 80h28"/><circle class="f3 sf" cx="43" cy="34" r="4.5"/><circle class="f3 sf" cx="54" cy="44" r="4"/><circle class="dot" cx="47" cy="51" r="3"/>'},
 
-{id:"proteine-de-soja-hydrolysee",cat:"texture",name:{en:"Hydrolysed soy protein (Versawhip)",fr:"Protéine de soja hydrolysée"},latin:"Glycine max (hydrolysate)",
+{id:"proteine-de-soja-hydrolysee",cat:"texture",rare:true,name:{en:"Hydrolysed soy protein (Versawhip)",fr:"Protéine de soja hydrolysée"},latin:"Glycine max (hydrolysate)",
 origin:{en:"Enzyme-treated soy protein, United States",fr:"Protéine de soja traitée aux enzymes, États-Unis"},season:[],
 flavor:["mild","nutty"],
 story:{en:"Enzymes chop soy protein into fragments short enough to unfold and race to the air-water interface, which is what whipping actually requires; the result foams at a fraction of the dose of egg white. It also ignores everything that ruins a meringue — heat, acid, alcohol — so a hot foam or a whipped spirit becomes possible where albumin would simply curdle.",
@@ -219,7 +219,7 @@ fr:"Dispersez 0,5 à 1 % dans un liquide froid, ajoutez une pointe de gomme xant
 pairs:["raspberry","lemon","coffee","cognac","passion-fruit","sugar","dark-chocolate"],
 svg:'<path class="f1 sf" d="M33 36h30v34q0 8-8 8H41q-8 0-8-8z"/><path class="s" d="M33 50h30"/><circle class="f2 sf" cx="40" cy="30" r="8"/><circle class="f2 sf" cx="56" cy="28" r="9"/><circle class="f2 sf" cx="48" cy="18" r="6"/>'},
 
-{id:"amidon-de-mais-cireux-modifie",cat:"texture",name:{en:"Instant modified waxy maize starch",fr:"Amidon de maïs cireux modifié"},latin:"Zea mays var. ceratina",
+{id:"amidon-de-mais-cireux-modifie",cat:"texture",rare:true,name:{en:"Instant modified waxy maize starch",fr:"Amidon de maïs cireux modifié"},latin:"Zea mays var. ceratina",
 origin:{en:"Waxy maize, first found in China",fr:"Maïs cireux, repéré en Chine"},season:[],
 flavor:["mild","creamy"],
 story:{en:"A waxy maize mutant collected in China in 1908 gave a starch that is almost pure amylopectin — no amylose, so nothing that can recrystallise and weep. American mills scaled it when the Pacific war cut off tapioca, and the pre-gelatinised grade, cooked and drum-dried before it is ever sold, is what thickens a cold fruit coulis in thirty seconds.",
@@ -239,7 +239,7 @@ fr:"Pour un gel fluide, prenez-le en plaque à 0,4 % puis mixez-le froid : il se
 pairs:["cream","butter","olive-oil","lemon","chlorure-de-calcium","sugar","gomme-xanthane"],
 svg:'<ellipse class="f1 sf" cx="40" cy="60" rx="18" ry="11"/><path class="s" d="M56 56q12-6 20-16"/><path class="f2 sf" d="M28 58q4-14 12-14t12 14z"/><path class="s" d="M32 68q8 5 16 0"/>'},
 
-{id:"kansui",cat:"texture",name:{en:"Kansui",fr:"Kansui"},latin:"Natrii carbonas",
+{id:"kansui",cat:"texture",rare:true,name:{en:"Kansui",fr:"Kansui"},latin:"Natrii carbonas",
 origin:{en:"Inner Mongolia, by way of Japan",fr:"Mongolie-Intérieure, via le Japon"},season:[],
 flavor:["bitter","pungent"],
 story:{en:"The story goes that noodle makers in Inner Mongolia drew their water from alkaline lakes and found the dough turned springy and yellow; kansui means nothing more than alkaline water. The colour is not dye — at around pH 9 the wheat's own flavones turn yellow, the gluten tightens, and the starch surface goes slippery.",
@@ -259,7 +259,7 @@ fr:"Dispersez-le dans le liquide froid, puis montez au-dessus de 80 °C, sinon i
 pairs:["cream","coconut-milk","vanilla","sugar","cocoa-powder-natural","agar-agar-kanten"],
 svg:'<path class="f1 sf" d="M32 38h24v30q0 6-6 6H38q-6 0-6-6z"/><path class="s" d="M38 30h12v8H38z"/><path class="s" d="M32 54q12 4 24 0"/><path class="f2 sf" d="M62 62h14v14H62z"/><path class="s" d="M66 62l4 8-3 6"/>'},
 
-{id:"spores-de-koji",cat:"texture",name:{en:"Koji spores (tane-koji)",fr:"Spores de koji"},latin:"Aspergillus oryzae",
+{id:"spores-de-koji",cat:"texture",rare:true,name:{en:"Koji spores (tane-koji)",fr:"Spores de koji"},latin:"Aspergillus oryzae",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["earthy","nutty","mild"],
 story:{en:"Aspergillus oryzae was named Japan's national fungus in 2006, and the spore houses that sell it - the moyashi-ya - have been selecting strains since the Muromachi period, centuries before anyone could see one. What you buy is a green powder measured in spores per gram, not a food: it is seed for growing koji yourself.",
@@ -279,7 +279,7 @@ fr:"Gardez-en une solution à 10 % et rectifiez un beurre blanc goutte à goutte
 pairs:["butter","cream","yogurt","buttermilk","creme-fraiche","sauerkraut","kimchi","cabbage"],
 svg:'<path class="f1 sf" d="M42 28h12v13l14 27q3 6-4 6H32q-7 0-4-6l14-27z"/><path class="f2" d="M38 58h20l9 16H29z"/><path class="s" d="M42 34h12"/><path class="f2 sf" d="M48 12q5 7 5 9a5 5 0 01-10 0q0-2 5-9z"/>'},
 
-{id:"carraghenane-lambda",cat:"texture",name:{en:"Lambda carrageenan",fr:"Carraghénane lambda"},latin:"Gigartina spp.",
+{id:"carraghenane-lambda",cat:"texture",rare:true,name:{en:"Lambda carrageenan",fr:"Carraghénane lambda"},latin:"Gigartina spp.",
 origin:{en:"Wild Gigartina, North Atlantic",fr:"Gigartina sauvage, Atlantique Nord"},season:[],
 flavor:["mild","creamy"],
 story:{en:"Lambda is the fraction that never sets: its molecule lacks the kink needed to zip into a helix, so all it can do is thicken. That makes it the odd one out and the useful one — it dissolves cold and gives cream body without turning it to jelly, which is what holds the cocoa in suspension in a bottle of chocolate milk.",
@@ -319,7 +319,7 @@ fr:"À poids égal, il paraît de 10 à 20 % plus acide que le citrique : partez
 pairs:["apple","rhubarb","quince","sugar","pectine-nh","cider-vinegar","blackcurrant"],
 svg:'<path class="f2 sf" d="M48 34q9-9 18 0t-2 28q-7 10-16 6-9 4-16-6t-2-28q9-9 18 0z"/><path class="s" d="M48 34V25"/><path class="f1 sf" d="M48 27q7-6 13-2-4 7-13 2z"/><path class="dot" d="M24 72l3-4 3 4-3 4zM33 78l2.5-3.5 2.5 3.5-2.5 3.5z"/>'},
 
-{id:"methylcellulose-a4m",cat:"texture",name:{en:"Methylcellulose A4M",fr:"Méthylcellulose A4M"},latin:"Methylcellulose (E461)",
+{id:"methylcellulose-a4m",cat:"texture",rare:true,name:{en:"Methylcellulose A4M",fr:"Méthylcellulose A4M"},latin:"Methylcellulose (E461)",
 origin:{en:"Wood pulp cellulose, Midland, Michigan",fr:"Cellulose de bois, Midland, Michigan"},season:[],
 flavor:["mild","delicate"],
 story:{en:"Methylcellulose is wood pulp treated with alkali and methyl chloride, and A4M is a specification rather than a brand: A for plain methylcellulose, 4M for the four thousand millipascal-seconds a 2 % solution reads on the viscometer. It behaves backwards — cold, it is only a thickener; heat is what makes it gel, and the bind lets go again as the pan cools.",
@@ -329,7 +329,7 @@ fr:"Dispersez-la dans un tiers du liquide chauffé à 80 °C pour éviter les gr
 pairs:["mushroom","potato","spinach","pork","egg","onion","parmesan"],
 svg:'<path class="f2 sf" d="M22 52h38v10q0 8-8 8H30q-8 0-8-8z"/><path class="s" d="M60 56h16q4 0 4 4"/><ellipse class="f3 sf" cx="41" cy="52" rx="13" ry="4"/><path class="s" d="M34 42q4-6 0-12M48 42q4-6 0-12"/>'},
 
-{id:"methylcellulose-f50",cat:"texture",name:{en:"Methylcellulose F50 (HPMC)",fr:"Méthylcellulose F50"},latin:"Hydroxypropyl methylcellulose (E464)",
+{id:"methylcellulose-f50",cat:"texture",rare:true,name:{en:"Methylcellulose F50 (HPMC)",fr:"Méthylcellulose F50"},latin:"Hydroxypropyl methylcellulose (E464)",
 origin:{en:"Modified wood cellulose",fr:"Cellulose de bois modifiée"},season:[],
 flavor:["mild","delicate"],
 story:{en:"Despite the shared shelf, F50 is not a weaker A4M but a different molecule: hydroxypropyl groups sit alongside the methyl ones, which pushes the gel point up to roughly 62-68 °C. The 50 is again a viscosity reading, and it is the low one — thin enough in solution to whip, which is exactly what it is bought for.",
@@ -339,7 +339,7 @@ fr:"Fouettez 1 % dans un liquide froid, laissez refroidir quelques heures, puis 
 pairs:["lemon","raspberry","coffee","olive-oil","vanilla","sugar","matcha"],
 svg:'<path class="f1 sf" d="M28 68q0-24 20-24t20 24z"/><path class="s" d="M26 68h44"/><path class="s" d="M48 44V20"/><path class="s" d="M39 42q-5-12 9-18 14 6 9 18"/>'},
 
-{id:"nigari",cat:"texture",name:{en:"Nigari",fr:"Nigari"},latin:"Magnesii chloridum",
+{id:"nigari",cat:"texture",rare:true,name:{en:"Nigari",fr:"Nigari"},latin:"Magnesii chloridum",
 origin:{en:"Japanese salt pans",fr:"Marais salants japonais"},season:[],
 flavor:["bitter","briny","marine"],
 story:{en:"Nigari is what is left when seawater has given up its salt: a magnesium-heavy bittern whose name comes straight from nigai, bitter. Tofu makers were buying the salt trade's waste long before anyone had written down what magnesium chloride does to soy protein.",
@@ -359,7 +359,7 @@ fr:"Mélangez-la à cinq fois son poids de sucre avant tout contact avec la pur�
 pairs:["raspberry","apricot","dark-chocolate","passion-fruit","blackcurrant","sugar","glucose-syrup"],
 svg:'<path class="f2 sf" d="M22 70q0-30 26-30t26 30z"/><path class="s" d="M18 70h60"/><path class="f1 sf" d="M34 56q4-11 13-12-3 7-13 12z"/><path class="s" d="M30 64q18-16 36-2"/>'},
 
-{id:"pectine-x58",cat:"texture",name:{en:"Pectin X58",fr:"Pectine X58"},latin:"Calcium-reactive pectin (E440ii)",
+{id:"pectine-x58",cat:"texture",rare:true,name:{en:"Pectin X58",fr:"Pectine X58"},latin:"Calcium-reactive pectin (E440ii)",
 origin:{en:"Citrus peel, amidated",fr:"Écorces d’agrumes, amidées"},season:[],
 flavor:["mild","delicate"],
 story:{en:"X58 answers to calcium rather than to sugar and acid, which frees it from fruit altogether: it will set milk, cream or a ganache, bases that carry plenty of calcium and nothing like the acidity a classic pectin demands. The dairy supplies its own setting agent, so nothing goes in but the pectin.",
@@ -369,7 +369,7 @@ fr:"Mélangez 1 à 2 % au sucre, fouettez dans le lait froid, portez une minute 
 pairs:["milk-chocolate","dark-chocolate","cream","vanilla","coffee","hazelnut","yogurt"],
 svg:'<path class="f3 sf" d="M26 46h44v30H26z"/><path class="s" d="M26 61h44M41 46v30M55 46v30"/><path class="f1 sf" d="M48 16q8 13 8 18a8 8 0 01-16 0q0-5 8-18z"/>'},
 
-{id:"pectinase",cat:"texture",name:{en:"Pectinase",fr:"Pectinase"},latin:"Polygalacturonasum",
+{id:"pectinase",cat:"texture",rare:true,name:{en:"Pectinase",fr:"Pectinase"},latin:"Polygalacturonasum",
 origin:{en:"Aspergillus cultures",fr:"Cultures d’Aspergillus"},season:[],
 flavor:["mild","fresh"],
 story:{en:"It does the exact opposite of what a jam maker wants: the enzyme cuts pectin chains, and a cloudy juice held with it overnight drops its haze and turns clear enough to read through. Juice presses have used it since the 1930s, which is why bought apple juice is transparent and yours is not.",
@@ -379,7 +379,7 @@ fr:"0,1 à 0,3 ml par litre de jus brut, deux heures à 45-50 °C ou une nuit au
 pairs:["apple","pear","quince","grape","raspberry","tomato","carrot","cider-vinegar"],
 svg:'<path class="f1 sf" d="M26 30h44L52 54v8h-8v-8z"/><path class="s" d="M36 70h24l-3 14H39z"/><path class="f2" d="M37 76h22l-2 8H39z"/><circle class="dot" cx="48" cy="66" r="2"/>'},
 
-{id:"phycocyanine",cat:"texture",name:{en:"Phycocyanin",fr:"Phycocyanine"},latin:"Arthrospira platensis",
+{id:"phycocyanine",cat:"texture",rare:true,name:{en:"Phycocyanin",fr:"Phycocyanine"},latin:"Arthrospira platensis",
 origin:{en:"Alkaline lakes",fr:"Lacs alcalins"},season:[],
 flavor:["mild","marine","grassy"],
 story:{en:"The blue is a protein, not a dye: phycocyanin is the antenna spirulina uses to catch the wavelengths chlorophyll lets past, and it fluoresces deep red under UV light. The Aztecs skimmed the same organism off Lake Texcoco and dried it into cakes they called tecuitlatl.",
@@ -469,7 +469,7 @@ fr:"Pour une écume, fouettez 0,5 % dans le liquide, puis faites tourner un mixe
 pairs:["parmesan","olive-oil","lemon","soy-sauce","ginger","carrot","beetroot"],
 svg:'<path class="f2 sf" d="M41 14h12v32H41z"/><path class="f3 sf" d="M38 46h18v12q0 4-4 4H42q-4 0-4-4z"/><path class="s" d="M18 70h60"/><circle class="f1 sf" cx="26" cy="62" r="8"/><circle class="f1 sf" cx="42" cy="66" r="5"/><circle class="f1 sf" cx="66" cy="63" r="7"/>'},
 
-{id:"sucroester",cat:"texture",name:{en:"Sucrose ester",fr:"Sucroester"},latin:"Sucrose fatty acid esters (E473)",
+{id:"sucroester",cat:"texture",rare:true,name:{en:"Sucrose ester",fr:"Sucroester"},latin:"Sucrose fatty acid esters (E473)",
 origin:{en:"Sugar and vegetable fatty acids, Japan",fr:"Sucre et acides gras végétaux, Japon"},season:[],
 flavor:["mild","sweet"],
 story:{en:"Sucrose is hooked to fatty acids from vegetable oil, and how many of its eight free hydroxyls get hooked decides everything: a mono-ester is water-loving, a tri-ester fat-loving, so one family of molecules covers the whole range from end to end. They were developed commercially in Japan, where they also coat fruit to slow it drying out.",
@@ -509,7 +509,7 @@ fr:"Une pincée — 0,5 g par kilo de sucre — ajoutée à 114 °C invertit jus
 pairs:["grape","grape-must","raisin","sugar","glucose-syrup","creme-de-tartre","lemon"],
 svg:'<path class="f1 sf" d="M32 28q16-5 32 0 5 6 5 20t-5 20q-16 5-32 0-5-6-5-20t5-20z"/><path class="s" d="M31 40q17 5 34 0M31 56q17 5 34 0"/><path class="dot" d="M38 62l3-4 3 4-3 4zM50 64l3-4 3 4-3 4zM60 60l2.5-3.5 2.5 3.5-2.5 3.5z"/>'},
 
-{id:"transglutaminase",cat:"texture",name:{en:"Transglutaminase",fr:"Transglutaminase"},latin:"Streptomyces mobaraensis (EC 2.3.2.13)",
+{id:"transglutaminase",cat:"texture",rare:true,name:{en:"Transglutaminase",fr:"Transglutaminase"},latin:"Streptomyces mobaraensis (EC 2.3.2.13)",
 origin:{en:"Fermented Streptomyces, Japan",fr:"Fermentation de Streptomyces, Japon"},season:[],
 flavor:["mild","delicate"],
 story:{en:"The enzyme cross-links glutamine to lysine, and it was first pulled from guinea pig liver, which kept it a laboratory curiosity priced beyond any kitchen until a fermentation route from Streptomyces mobaraensis was worked out in the late 1980s. Your own blood carries a relative of it, Factor XIII, doing exactly the same welding to fibrin every time a cut closes.",
@@ -519,7 +519,7 @@ fr:"Saupoudrez un film à peine visible, pressez les deux faces coupées l’une
 pairs:["chicken","scallop","pork","salmon","lamb","squid","prosciutto"],
 svg:'<path class="f2 sf" d="M24 40q0-8 8-8h16v32H32q-8 0-8-8z"/><path class="f3 sf" d="M48 32h16q8 0 8 8v16q0 8-8 8H48z"/><path class="s" d="M48 32v32"/><path class="s" d="M44 36 52 40M44 44 52 48M44 52 52 56"/><path class="s" d="M20 74h56"/>'},
 
-{id:"trehalose",cat:"texture",name:{en:"Trehalose",fr:"Tréhalose"},latin:"Trehalosum",
+{id:"trehalose",cat:"texture",rare:true,name:{en:"Trehalose",fr:"Tréhalose"},latin:"Trehalosum",
 origin:{en:"Manna cocoons, now starch",fr:"Cocons de manne, aujourd’hui l’amidon"},season:[],
 flavor:["sweet","mild","delicate"],
 story:{en:"It is named for trehala manna, a sugary weevil cocoon from the Middle East in which it was first identified, and it is the molecule a tardigrade or a resurrection plant fills its cells with to survive being dried to dust. Pastry buys it for exactly that reason: it protects structure through freezing and drying.",

@@ -9,7 +9,7 @@ fr:"Changez l’eau une fois en cours de cuisson pour une pâte sucrée nette. L
 pairs:["sugar","rice","sesame","vanilla","coconut-milk","ginger","dark-chocolate","honey"],
 svg:'<ellipse class="f1 sf" cx="41" cy="55" rx="6.5" ry="5"/><ellipse class="f1 sf" cx="54" cy="53" rx="6.5" ry="5"/><ellipse class="f1 sf" cx="47" cy="66" rx="6.5" ry="5"/><path class="s" d="M36 55h10M49 53h10"/>'},
 
-{id:"ayocote-bean",cat:"legumes",name:{en:"Ayocote bean",fr:"Haricot ayocote"},latin:"Phaseolus coccineus",
+{id:"ayocote-bean",cat:"legumes",rare:true,name:{en:"Ayocote bean",fr:"Haricot ayocote"},latin:"Phaseolus coccineus",
 origin:{en:"Highland Mexico",fr:"Hauts plateaux du Mexique"},season:[],
 flavor:["earthy","meaty","nutty","mild"],
 story:{en:"Phaseolus coccineus is a different species from the common bean — perennial, regrowing each year from a starchy root — and Europe kept it for two centuries as a garden climber, grown for its scarlet flowers rather than its seed. In Mexico the pot liquor counts as much as the bean: ayocotes are ladled out in their own dark broth as a course, not a side.",
@@ -39,7 +39,7 @@ fr:"Gardez l’eau de cuisson et faites-la réduire. C’est là que résident l
 pairs:["cumin","lime","cilantro","chili","garlic","onion","avocado","orange"],
 svg:'<ellipse class="f1 sf" cx="41" cy="54" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="56" cy="56" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="47" cy="67" rx="8.5" ry="6"/>'},
 
-{id:"black-chickpea",cat:"legumes",name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
+{id:"black-chickpea",cat:"legumes",rare:true,name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
 origin:{en:"Murgia Carsica, Puglia",fr:"Murgia Carsica, Pouilles"},season:[],
 flavor:["earthy","nutty","mild"],
 story:{en:"The black chickpea of the Murgia Carsica, around Cassano delle Murge in Puglia, was nearly abandoned because its thick wrinkled skin demands twelve hours of soaking and two of cooking. It carries roughly three times the fibre of a common chickpea, which is also why it stays whole where the pale ones collapse.",
@@ -59,7 +59,7 @@ fr:"Cuisez-le sec, sans trempage, trente-cinq à quarante-cinq minutes, en salan
 pairs:["rice","pork-belly","thyme","tomato","spring-onion","chili"],
 svg:'<ellipse class="f1 sf" cx="44" cy="42" rx="22" ry="15"/><ellipse class="f3" cx="44" cy="42" rx="6" ry="3.5"/><ellipse class="f2 sf" cx="54" cy="66" rx="18" ry="12"/><ellipse class="f3" cx="54" cy="66" rx="5" ry="3"/>'},
 
-{id:"lentille-blonde",cat:"legumes",name:{en:"Blond lentil",fr:"Lentille blonde de Saint-Flour"},latin:"Lens culinaris",
+{id:"lentille-blonde",cat:"legumes",rare:true,name:{en:"Blond lentil",fr:"Lentille blonde de Saint-Flour"},latin:"Lens culinaris",
 origin:{en:"Planeze de Saint-Flour, Cantal",fr:"Planèze de Saint-Flour, Cantal"},season:[],
 flavor:["sweet","mild","earthy"],
 story:{en:"Grown on the basalt plateau of the Planeze de Saint-Flour since the Middle Ages, the blond lentil had all but vanished by the 1960s and came back with a Label Rouge in 2009 and an IGP behind it. Production runs to some eighty tonnes a year against six thousand for the green lentil of Le Puy - and the two are opposite tools.",
@@ -109,7 +109,7 @@ fr:"Gardez l’eau de cuisson : fouettée, elle monte comme du blanc d’œuf. U
 pairs:["sesame","lemon","cumin","garlic","spinach","tomato"],
 svg:'<path class="f1 sf" d="M40 44a8 8 0 11-1 8q-2-4 1-8z"/><path class="f1 sf" d="M56 42a8 8 0 11-1 8q-2-4 1-8z"/><path class="f1 sf" d="M48 58a8 8 0 11-1 8q-2-4 1-8z"/>'},
 
-{id:"cicerchia",cat:"legumes",name:{en:"Cicerchia",fr:"Gesse (pois carré)"},latin:"Lathyrus sativus",
+{id:"cicerchia",cat:"legumes",rare:true,name:{en:"Cicerchia",fr:"Gesse (pois carré)"},latin:"Lathyrus sativus",
 origin:{en:"Central Italy and the Mediterranean",fr:"Italie centrale et Méditerranée"},season:[],
 flavor:["earthy","bitter","nutty","creamy"],
 story:{en:"Cicerchia carries a neurotoxin, β-ODAP, that caused outbreaks of lathyrism in Europe whenever it became the only thing left to eat — and it became that often, because the plant yields through drought and flood alike. Serra de' Conti in the Marche keeps a low-toxin local variety alive as a Slow Food presidium, sown now by choice rather than by desperation.",
@@ -149,7 +149,7 @@ fr:"Achetez-les décortiquées si possible. Peler un kilo de fèves sèches trem
 pairs:["olive-oil","cumin","lemon","garlic","parsley","chili","escarole","onion"],
 svg:'<path class="f2 sf" d="M34 34q-6 22 4 34t18-4q4-16-6-28t-16-2z"/><path class="s" d="M40 46q6 12 8 20"/>'},
 
-{id:"faba-asturiana",cat:"legumes",name:{en:"Faba asturiana",fr:"Fabes de la Granja"},latin:"Phaseolus vulgaris",
+{id:"faba-asturiana",cat:"legumes",luxe:true,name:{en:"Faba asturiana",fr:"Fabes de la Granja"},latin:"Phaseolus vulgaris",
 origin:{en:"Asturias, northern Spain",fr:"Asturies, Espagne du Nord"},season:[9,10],
 flavor:["buttery","creamy","mild"],
 story:{en:"The variety is Granja Asturiana, long and flat and ivory, selected around a single dish; the protected designation demands a skin fine enough to go unnoticed on the palate and a grain that holds its shape through three hours in the pot. Cooks still interrupt the boil two or three times with a splash of cold water — asustar les fabes, frightening the beans — a habit inherited from charcoal ranges that no modern hob requires.",
@@ -179,7 +179,7 @@ fr:"C’est le haricot classique du gigot d’agneau, et il ne demande que du be
 pairs:["lamb","garlic","butter","parsley","cream","thyme","shallot","rosemary"],
 svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="9" ry="6"/><ellipse class="f3 sf" cx="55" cy="58" rx="9" ry="6"/><ellipse class="f3 sf" cx="47" cy="68" rx="9" ry="6"/>'},
 
-{id:"judion",cat:"legumes",name:{en:"Judión bean",fr:"Judión (haricot géant d’Espagne)"},latin:"Phaseolus coccineus",
+{id:"judion",cat:"legumes",rare:true,luxe:true,name:{en:"Judión bean",fr:"Judión (haricot géant d’Espagne)"},latin:"Phaseolus coccineus",
 origin:{en:"La Granja de San Ildefonso, Segovia",fr:"La Granja de San Ildefonso, Ségovie"},season:[],
 flavor:["buttery","creamy","mild"],
 story:{en:"The scarlet runner reached the royal gardens at La Granja as an ornamental, grown for its red flowers and fed to the palace's game birds before anyone thought to eat it. Gardeners selected it for the pot over generations, and the stew that made it famous only reached restaurant menus in the 1950s.",
@@ -229,7 +229,7 @@ fr:"Ne les salez qu’en fin de cuisson — l’eau salée durcit leur peau. Les
 pairs:["cumin","bay-leaf","carrot","pork","yogurt","cilantro","turmeric"],
 svg:'<path class="f2 sf" d="M36 46a5.5 5.5 0 100 .1zM52 42a5.5 5.5 0 100 .1zM62 52a5.5 5.5 0 100 .1zM42 58a5.5 5.5 0 100 .1zM54 62a5.5 5.5 0 100 .1zM34 64a5.5 5.5 0 100 .1z"/>'},
 
-{id:"lupini",cat:"legumes",name:{en:"Lupini beans",fr:"Lupins"},latin:"Lupinus albus",
+{id:"lupini",cat:"legumes",rare:true,name:{en:"Lupini beans",fr:"Lupins"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
 flavor:["salty","bitter","fresh"],
 story:{en:"The bitterness is lupanine, an alkaloid the plant makes as a defence; Roman and Egyptian eaters dealt with it by boiling the beans and then leaving them for days in running water. Sweet, low-alkaloid lupins were only bred in the 1930s, and most beans sold in brine are still the bitter kind, tamed.",
@@ -239,7 +239,7 @@ fr:"Goûtez-en un avant de servir : la moindre amertume persistante impose de re
 pairs:["lemon","olive-oil","olive-castelvetrano","oregano","garlic","chili","parsley"],
 svg:'<ellipse class="f2 sf" cx="38" cy="44" rx="16" ry="13"/><ellipse class="f1 sf" cx="58" cy="60" rx="16" ry="13"/><path class="s" d="M28 40q10 6 20 0M48 56q10 6 20 0"/><circle class="dot" cx="53" cy="47" r="2"/><circle class="dot" cx="73" cy="63" r="2"/>'},
 
-{id:"mogette",cat:"legumes",name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
+{id:"mogette",cat:"legumes",rare:true,name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
 origin:{en:"Vendée, western France",fr:"Vendée"},season:[7,8,9],
 flavor:["creamy","mild","buttery"],
 story:{en:"Physicians were already recording bean fields in the Vendée at the end of the seventeenth century, and the name is usually traced to the mounges — the monks of the local abbeys. Picked half-dry in late summer, the bean skips the drying yard entirely and goes to market as a fresh vegetable.",
@@ -279,7 +279,7 @@ fr:"Sans trempage, le toor dal demande environ 40 minutes de frémissement et un
 pairs:["coconut-milk","curry-leaf","tamarind-paste","turmeric","asafoetida","mustard-seed","thyme","rice"],
 svg:'<path class="f1 sf" d="M24 60q10-19 26-23t26 5q-8 15-25 19t-27-1z"/><circle class="f2 sf" cx="38" cy="53" r="6"/><circle class="f2 sf" cx="51" cy="47" r="6"/><circle class="f2 sf" cx="64" cy="43" r="6"/>'},
 
-{id:"pochas",cat:"legumes",name:{en:"Pochas",fr:"Pochas (haricots demi-secs de Navarre)"},latin:"Phaseolus vulgaris",
+{id:"pochas",cat:"legumes",rare:true,name:{en:"Pochas",fr:"Pochas (haricots demi-secs de Navarre)"},latin:"Phaseolus vulgaris",
 origin:{en:"Navarre and the Ebro valley",fr:"Navarre et vallée de l’Èbre"},season:[8,9],
 flavor:["fresh","grassy","delicate"],
 story:{en:"A pocha is not a variety but a moment: the same white bean picked once the pod has gone pale and papery but before the seed inside has given up its water. The window runs a few weeks in late summer, which is why a bean that cooks in half an hour supports an entire tinned and frozen trade.",
@@ -309,7 +309,7 @@ fr:"Employez-la quand vous voulez qu’elle disparaisse — dal, soupe, liant. S
 pairs:["cumin","turmeric","ghee","ginger","garlic","cilantro","coconut-milk","chili"],
 svg:'<circle class="f2 sf" cx="41" cy="54" r="7"/><circle class="f2 sf" cx="56" cy="52" r="7"/><circle class="f2 sf" cx="48" cy="66" r="7"/>'},
 
-{id:"santorini-fava",cat:"legumes",name:{en:"Santorini fava",fr:"Fava de Santorin"},latin:"Lathyrus clymenum",
+{id:"santorini-fava",cat:"legumes",rare:true,name:{en:"Santorini fava",fr:"Fava de Santorin"},latin:"Lathyrus clymenum",
 origin:{en:"Santorini and the Cyclades",fr:"Santorin et les Cyclades"},season:[6,7],
 flavor:["sweet","earthy","nutty"],
 story:{en:"Despite the name it is neither a broad bean nor a split pea but a grass pea, Lathyrus clymenum, and carbonised seeds of that exact species were excavated from the Bronze Age town at Akrotiri — the same crop on the same island before the eruption. It is still grown without irrigation, rooted in volcanic ash that holds the night humidity the plants live on.",
@@ -329,7 +329,7 @@ fr:"Il ne se presse pas : égouttez-le dix minutes sur une assiette inclinée. F
 pairs:["koikuchi-shoyu","ginger","negi","katsuobushi","sesame-oil","century-egg","wasabi"],
 svg:'<path class="f2 sf" d="M20 72h56q-4 8-10 8H30q-6 0-10-8z"/><path class="f1 sf" d="M26 40q0-6 6-6h32q6 0 6 6v26q0 6-6 6H32q-6 0-6-6z"/><path class="s" d="M40 40q8 8 16 0"/><path class="s" d="M26 56h44"/>'},
 
-{id:"soissons-bean",cat:"legumes",name:{en:"Soissons bean",fr:"Haricot de Soissons"},latin:"Phaseolus coccineus",
+{id:"soissons-bean",cat:"legumes",rare:true,luxe:true,name:{en:"Soissons bean",fr:"Haricot de Soissons"},latin:"Phaseolus coccineus",
 origin:{en:"Aisne valley, Picardy",fr:"Vallée de l’Aisne, Picardie"},season:[9,10],
 flavor:["creamy","mild","earthy"],
 story:{en:"It is not the common bean at all but a runner bean, Phaseolus coccineus, sent three or four metres up poles on the Aisne floodplain. The specification effectively sells it by the ruler: pods of twenty to twenty-five centimetres, and a dried grain of at least seventeen millimetres to carry the name.",
@@ -339,7 +339,7 @@ fr:"Après douze heures de trempage, il ne demande guère plus d’une heure de 
 pairs:["butter","cream","garlic","thyme","sage","pork","parsley","bay-leaf"],
 svg:'<path class="f1 sf" d="M20 44q14-13 28-13t28 13q-14 8-28 8t-28-8z"/><path class="s" d="M22 43q13-10 26-10t26 10"/><ellipse class="f2 sf" cx="34" cy="62" rx="11" ry="8"/><ellipse class="f3 sf" cx="58" cy="66" rx="12" ry="9"/><path class="s" d="M26 60q8 4 16 0M48 64q10 5 20 0"/>'},
 
-{id:"sorana-bean",cat:"legumes",name:{en:"Sorana bean",fr:"Haricot de Sorana"},latin:"Phaseolus vulgaris",
+{id:"sorana-bean",cat:"legumes",rare:true,luxe:true,name:{en:"Sorana bean",fr:"Haricot de Sorana"},latin:"Phaseolus vulgaris",
 origin:{en:"Pescia valley, Tuscany",fr:"Vallée de la Pescia, Toscane"},season:[9,10],
 flavor:["delicate","mild","buttery"],
 story:{en:"It grows on one strip of sand and gravel along the Pescia river, the ghiareto, on ground reclaimed under the Medici and later the grand dukes; the skin that all but disappears in cooking is credited to that poor, fast-draining soil and the damp valley air. The protected area is measured in hectares, and the plants are still staked on cane by hand.",
@@ -389,7 +389,7 @@ fr:"Faites-le cuire dix minutes à la vapeur avant de le mariner : il s’ouvre,
 pairs:["soy-sauce","garlic","palm-sugar","coriander-seed","tamarind-paste","chili","lime","peanut"],
 svg:'<path class="f1 sf" d="M24 42h40v22H24z"/><path class="f2 sf" d="M24 42l8-8h40l-8 8z"/><path class="f2 sf" d="M64 42l8-8v22l-8 8z"/><path class="dot" d="M32 50a3 2 0 106 0 3 2 0 10-6 0M44 56a3 2 0 106 0 3 2 0 10-6 0M52 48a3 2 0 106 0 3 2 0 10-6 0"/>'},
 
-{id:"tolosa-black-bean",cat:"legumes",name:{en:"Tolosa black bean",fr:"Haricot noir de Tolosa"},latin:"Phaseolus vulgaris",
+{id:"tolosa-black-bean",cat:"legumes",rare:true,luxe:true,name:{en:"Tolosa black bean",fr:"Haricot noir de Tolosa"},latin:"Phaseolus vulgaris",
 origin:{en:"Tolosaldea, Gipuzkoa",fr:"Tolosaldea, Guipuscoa"},season:[9,10],
 flavor:["earthy","rich","meaty"],
 story:{en:"Cooked, it throws a broth so dark and so bound by its own dissolved skins that Basque cooks judge the dish by the liquid rather than the bean — nothing like the firm, dry turtle bean the name suggests. The growers organised formally only in 1994, as Tolosako Babarruna, to defend a bean that had been local currency for far longer.",
@@ -399,7 +399,7 @@ fr:"Ne le faites pas tremper. Départ à froid, maintenez-le juste sous le frém
 pairs:["morcilla-de-burgos","chorizo","pork-belly","guindilla","cabbage","garlic","olive-oil"],
 svg:'<path class="f1 sf" d="M22 40h52l-6 26a10 10 0 0 1-10 8H38a10 10 0 0 1-10-8z"/><path class="f3 sf" d="M24 48h48l-4 18a10 10 0 0 1-10 8H38a10 10 0 0 1-10-8z"/><path class="s" d="M20 40h56"/><circle class="dot" cx="40" cy="56" r="2.5"/><circle class="dot" cx="52" cy="60" r="2.5"/><circle class="dot" cx="62" cy="54" r="2.5"/>'},
 
-{id:"urad-dal",cat:"legumes",name:{en:"Urad dal",fr:"Urad dal (haricot urd)"},latin:"Vigna mungo",
+{id:"urad-dal",cat:"legumes",rare:true,name:{en:"Urad dal",fr:"Urad dal (haricot urd)"},latin:"Vigna mungo",
 origin:{en:"South Asia",fr:"Asie du Sud"},season:[],
 flavor:["earthy","nutty","mild"],
 story:{en:"Ground and left to stand with rice, urad does what no other pulse does: its arabinogalactan mucilage traps the gas of fermentation, and the batter rises with no yeast added at all. South Indian cooks read the ratio in the grinder rather than the recipe — three or four parts rice to one of urad, the dal ground longer and finer than the rice.",
@@ -419,7 +419,7 @@ fr:"Cuisez-les doucement — un gros bouillon fait éclater leur peau — et tou
 pairs:["sage","tomato","rosemary","pork","bay-leaf","olive-oil","onion"],
 svg:'<path class="f1 sf" d="M34 48q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(-14 42 52)"/><path class="f1 sf" d="M50 52q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(10 58 56)"/>'},
 
-{id:"yuba",cat:"legumes",name:{en:"Yuba",fr:"Yuba (peau de soja)"},latin:"Glycine max",
+{id:"yuba",cat:"legumes",luxe:true,name:{en:"Yuba",fr:"Yuba (peau de soja)"},latin:"Glycine max",
 origin:{en:"Temple kitchens of Kyoto and Nikko, Japan",fr:"Cuisines de temple de Kyoto et Nikko, Japon"},season:[],
 flavor:["creamy","mild","nutty"],
 story:{en:"Yuba is the skin that forms on soy milk held just below the boil, lifted off one sheet at a time on a bamboo rod until the pan is spent. Kyoto and Nikko each built a temple cuisine on it and even write the word with different characters: Nikko folds its sheets double as they come off, so they eat thicker.",
@@ -429,7 +429,7 @@ fr:"Le yuba frais ne se cuit pas : mangez-le dans la journée avec un trait de s
 pairs:["wasabi","usukuchi-shoyu","kombu","mitsuba","sesame","myoga"],
 svg:'<path class="s" d="M24 30h48"/><path class="f1 sf" d="M36 30q-2 20 2 28 6-10 10 0 6-8 12 0 4-8 2-28z"/><path class="f3 sf" d="M26 62h44q-2 10-10 10H36q-8 0-10-10z"/>'},
 
-{id:"zolfino-bean",cat:"legumes",name:{en:"Zolfino bean",fr:"Haricot zolfino"},latin:"Phaseolus vulgaris",
+{id:"zolfino-bean",cat:"legumes",rare:true,luxe:true,name:{en:"Zolfino bean",fr:"Haricot zolfino"},latin:"Phaseolus vulgaris",
 origin:{en:"Pratomagno terraces, Tuscany",fr:"Terrasses du Pratomagno, Toscane"},season:[7,8],
 flavor:["buttery","nutty","earthy"],
 story:{en:"It is sown in April on dry-stone terraces between roughly 250 and 600 metres, often under the olives so that rain runs straight off: its root system is so shallow that a day of standing water finishes the plant. The traditional pot is a straw-wrapped wine flask set among the embers, which happens to give exactly the slow, never-boiling heat the bean wants.",

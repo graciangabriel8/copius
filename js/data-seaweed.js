@@ -19,7 +19,7 @@ fr:"Faites-la revenir vingt à trente secondes dans un voile d'huile, pas davant
 pairs:["butter","oats","potato","scallop","oyster","cream","egg","lemon"],
 svg:'<path class="f2 sf" d="M48 80v-16q-14-2-18-14 8-4 14 2-6-10-2-20 8 4 8 16 4-10 12-10-1 12-8 18 8-2 12 4-6 8-18 4z"/><path class="s" d="M48 64V42M48 56l-8-6M48 50l8-6"/><path class="s" d="M43 80h10"/>'},
 
-{id:"gagome-kombu",cat:"seaweed",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
+{id:"gagome-kombu",cat:"seaweed",rare:true,name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaidō"},season:[7,8,9],
 flavor:["marine","mild","umami"],
 story:{en:"Gagome names the basket-weave: the blade is embossed all over with a lattice of pits, which is how it is told from every other kelp growing on the same rocks. It holds to a short stretch of sea around Hakodate and almost nowhere else, and it is gathered for the slime rather than in spite of it.",
@@ -49,7 +49,7 @@ fr:"Ne le faites jamais bouillir — l’amertume s’échappe au-delà de 60 °
 pairs:["katsuobushi","shiitake","rice","miso","soy-sauce"],
 svg:'<path class="f2 sf" d="M36 26q10 6 6 18t2 20q4 8-2 14-10-6-6-18t-2-20q-4-8 2-14z" transform="rotate(6 44 50)"/><path class="f2 sf" d="M56 30q8 6 4 16t2 18q3 7-3 12-8-6-4-16t-2-18q-3-7 3-12z" transform="rotate(-4 58 50)"/>'},
 
-{id:"ma-kombu",cat:"seaweed",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
+{id:"ma-kombu",cat:"seaweed",luxe:true,name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaido"},season:[],
 flavor:["umami","sweet","marine","delicate"],
 story:{en:"Ma-kombu is cut off Hakodate in southern Hokkaido and travelled south for centuries aboard the kitamae-bune cargo ships, on what is still called the kombu road. Kyoto built its kitchen on it partly as a matter of water: the city's is soft, and soft water pulls glutamate out of the leaf where hard water leaves much of it behind.",
@@ -59,7 +59,7 @@ fr:"Essuyez-le, ne le lavez jamais : la poudre blanche est du mannitol, sa douce
 pairs:["katsuobushi","sea-bream","hamo","usukuchi-shoyu","mitsuba","shiitake"],
 svg:'<path class="f2 sf" d="M32 20q16 8 32 0 6 28-4 56-12 6-24 0-10-28-4-56z"/><path class="s" d="M48 26v46"/><circle class="dot" cx="40" cy="40" r="1.6"/><circle class="dot" cx="56" cy="54" r="1.6"/><circle class="dot" cx="44" cy="62" r="1.6"/>'},
 
-{id:"moshio-salt",cat:"seaweed",name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
+{id:"moshio-salt",cat:"seaweed",rare:true,luxe:true,name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
 origin:{en:"Kamagari, Seto Inland Sea",fr:"Kamagari, mer intérieure de Seto"},season:[],
 flavor:["salty","marine","umami"],
 story:{en:"Before Japan had salt pans it had moshio: seawater steeped with hondawara seaweed, then boiled down in clay pots. Excavated shards around the Seto Inland Sea let salt-makers on Kamagari island rebuild the method in the 1980s, and the beige crystals carry the seaweed's glutamate along with its salt.",
@@ -69,7 +69,7 @@ fr:"Employez-le là où la sauce soja noircirait l’assiette : une pincée sur 
 pairs:["silken-tofu","sea-bream","squid","rice","egg","cucumber","scallop","sea-urchin"],
 svg:'<path class="f1 sf" d="M28 56l6 18h28l6-18z"/><path class="f2 sf" d="M36 56q6-14 12-14t12 14z"/><path class="s" d="M28 56h40"/><path class="s" d="M66 26q-6 10-4 20M66 26q-8 2-8 8M66 26q0 10 6 12"/>'},
 
-{id:"mozuku",cat:"seaweed",name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
+{id:"mozuku",cat:"seaweed",rare:true,name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[4,5,6],
 flavor:["briny","marine","delicate","mild"],
 story:{en:"Nearly all the mozuku eaten in Japan is farmed off Okinawa, on nets seeded in autumn and cut between April and June. Up to a third of its dry weight is fucoidan, the sulphated sugar responsible for the slipperiness — one of the few sea vegetables bought for texture rather than flavour.",
@@ -99,7 +99,7 @@ fr:"Une lame glissée avec des haricots secs ou des lentilles attendrit les peau
 pairs:["white-beans","cod","butter","potato","mussel","lentils","scallop"],
 svg:'<path class="f2 sf" d="M40 16q8 5 16 0 6 20 2 36t-2 20q-8 4-16 0 2-20-2-36t2-20z"/><path class="s" d="M42 26q4 8 0 14t0 14M56 28q-4 8 0 14t0 14"/><path class="s" d="M48 72v8"/><path class="f3 sf" d="M43 80q5-5 10 0 2 5-5 5t-5-5z"/>'},
 
-{id:"umibudo",cat:"seaweed",name:{en:"Sea grapes (umibudo)",fr:"Raisin de mer"},latin:"Caulerpa lentillifera",
+{id:"umibudo",cat:"seaweed",rare:true,name:{en:"Sea grapes (umibudo)",fr:"Raisin de mer"},latin:"Caulerpa lentillifera",
 origin:{en:"Okinawa",fr:"Okinawa"},season:[],
 flavor:["briny","marine","fresh","delicate"],
 story:{en:"A Caulerpa has no walls dividing it: a whole frond is one enormous cell with many nuclei, which is why a cut anywhere empties it everywhere. Okinawa has farmed sea grapes in shallow tanks since the 1980s and sells them at room temperature, deliberately.",
@@ -119,7 +119,7 @@ fr:"C’est une finition, pas un ingrédient de bouillon : ajoutez-le dans le bo
 pairs:["rice","umeboshi","soba-noodles","soy-sauce","katsuobushi","silken-tofu"],
 svg:'<path class="s" d="M22 46q12-10 26-8t26 6M24 56q12-8 24-6t26 4M26 66q10-9 22-8t24 6M28 38q12-7 22-5t22 7"/><path class="s" d="M30 42q-6 5-4 11M66 44q8 5 4 11"/><path class="f1 sf" d="M40 50q8-4 16 0 4 4 0 8-8 4-16 0-4-4 0-8z"/>'},
 
-{id:"tosaka-nori",cat:"seaweed",name:{en:"Tosaka-nori",fr:"Tosaka nori"},latin:"Meristotheca papulosa",
+{id:"tosaka-nori",cat:"seaweed",rare:true,name:{en:"Tosaka-nori",fr:"Tosaka nori"},latin:"Meristotheca papulosa",
 origin:{en:"Kyushu & Shikoku coasts",fr:"Côtes de Kyushu et Shikoku"},season:[],
 flavor:["marine","briny","fresh","delicate"],
 story:{en:"Tosaka means cockscomb, which is the shape exactly: flat branching combs growing on rock in warm Japanese water. The red is the alga's own colour; the green and the white sold beside it are the same seaweed with the red pigment stripped out, not different species.",

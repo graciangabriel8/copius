@@ -49,7 +49,7 @@ fr:"Vérifier s’il est diastasique avant d’acheter : la version enzymatique 
 pairs:["flour-t65","rye-flour","yeast","sesame","tahini","oats"],
 svg:'<path class="f2 sf" d="M55 44h19v28a5 5 0 0 1-5 5H60a5 5 0 0 1-5-5z"/><path class="s" d="M53 40h23v4H53z"/><path class="f1 sf" d="M30 30q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 50q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 70q7 4 7 10t-7 6q-7-2-7-6t7-10z"/><path class="s" d="M30 30v-8M24 34l-3-7M36 34l3-7"/>'},
 
-{id:"bee-pollen",cat:"sweet",name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
+{id:"bee-pollen",cat:"sweet",rare:true,name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
 origin:{en:"Hives, spring and summer flowering",fr:"Ruches, floraisons de printemps"},season:[4,5,6,7],
 flavor:["floral","bitter","honeyed"],
 story:{en:"A foraging bee glues pollen together with a drop of nectar and packs it into the baskets on her hind legs; the beekeeper harvests it with a trap that scrapes the pellets off as she comes home. Every colour in the jar is a different flower, which makes a pot of pollen a map of what was blooming that week.",
@@ -59,7 +59,7 @@ fr:"La chaleur le rend amer et gluant : incorporez-le froid, dans un yaourt, ou 
 pairs:["yogurt","honey","fromage-blanc","raspberry","hazelnut","fig"],
 svg:'<path class="f2 sf" d="M24 52h48a24 20 0 0 1-48 0z"/><path class="f1 sf" d="M28 52q6-14 20-14t20 14z"/><circle class="dot" cx="40" cy="46" r="2.5"/><circle class="dot" cx="48" cy="42" r="2.5"/><circle class="dot" cx="56" cy="46" r="2.5"/>'},
 
-{id:"birch-syrup",cat:"sweet",name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
+{id:"birch-syrup",cat:"sweet",rare:true,luxe:true,name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
 origin:{en:"Alaska, Yukon, Finland",fr:"Alaska, Yukon, Finlande"},season:[],
 flavor:["bitter","earthy","warm"],
 story:{en:"It takes around 110 litres of birch sap to make one litre of syrup, against forty for maple - the sap runs at barely one percent sugar. That sugar is mostly fructose rather than sucrose, which is why the syrup tastes mineral and faintly bitter instead of sweet.",
@@ -99,7 +99,7 @@ fr:"N’en mettez pas sur une tartine. Sa place est dans une marinade, un laquag
 pairs:["buckwheat-flour","pork","rye-flour","ginger","dark-chocolate","clove","walnut","cider-vinegar"],
 svg:'<path class="f1 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M44 58l4-6 4 6-4 6z"/>'},
 
-{id:"angelique-confite",cat:"sweet",name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
+{id:"angelique-confite",cat:"sweet",rare:true,name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
 origin:{en:"Marais poitevin, Niort",fr:"Marais poitevin, Niort"},season:[],
 flavor:["bitter","musky","resinous","herbal"],
 story:{en:"Angelica reached the Marais poitevin with monks who grew it as medicine, and the nuns of Niort turned the hollow stems into a confection in the eighteenth century, candied in grooved batons. It is a biennial cut in its second spring, when the stem is thick but has not yet gone woody towards the flower.",
@@ -109,7 +109,7 @@ fr:"Taillez-la menu : le goût est musqué et résineux, et au-delà d’une cui
 pairs:["almond","kirsch","butter","cream","rhubarb","strawberry","genepi"],
 svg:'<path class="f2 sf" d="M36 24h10v46q0 6-5 6t-5-6z"/><path class="f1 sf" d="M52 30h10v42q0 6-5 6t-5-6z"/><ellipse class="s" cx="41" cy="24" rx="5" ry="2.5"/><ellipse class="s" cx="57" cy="30" rx="5" ry="2.5"/><path class="s" d="M41 26v46M57 32v42"/>'},
 
-{id:"cedrat-confit",cat:"sweet",name:{en:"Candied citron",fr:"Cédrat confit"},latin:"Citrus medica",
+{id:"cedrat-confit",cat:"sweet",luxe:true,name:{en:"Candied citron",fr:"Cédrat confit"},latin:"Citrus medica",
 origin:{en:"Cap Corse",fr:"Cap Corse"},season:[],
 flavor:["floral","citrus","sweet","bitter"],
 story:{en:"The citron is almost entirely pith: a thick white albedo around a pulp so reduced there is barely any juice, which is why the fruit exists commercially as candied peel rather than as fruit. Cap Corse supplied about a third of the world’s candied citron into the 1950s before the orchards went and Corsican production nearly vanished.",
@@ -129,7 +129,7 @@ fr:"Blanchissez l’écorce fraîche trois fois en repartant de l’eau froide, 
 pairs:["dark-chocolate","almond","hazelnut","butter","cinnamon","cardamom","coffee"],
 svg:'<path class="f2 sf" d="M30 24q10 14 8 30t-10 20q6-12 4-24T26 26z"/><path class="f1 sf" d="M46 22q10 16 8 32t-10 20q6-12 4-24t-8-28z"/><path class="f2 sf" d="M62 26q10 14 8 30t-10 18q6-10 4-22t-8-26z"/>'},
 
-{id:"carob-powder",cat:"sweet",name:{en:"Carob powder",fr:"Poudre de caroube"},latin:"Ceratonia siliqua",
+{id:"carob-powder",cat:"sweet",rare:true,name:{en:"Carob powder",fr:"Poudre de caroube"},latin:"Ceratonia siliqua",
 origin:{en:"Mediterranean carob groves",fr:"Caroubiers méditerranéens"},season:[],
 flavor:["sweet","toasty","earthy"],
 story:{en:"Carob is a roasted legume pod with no kinship to cacao, and its flesh is already about half sugar before anything is added to it. The story goes that its seeds were so even in weight that they gave the jeweller's carat its name; weighing them shows them no steadier than any other seed.",
@@ -179,7 +179,7 @@ fr:"Pour un hongshao, faites fondre un morceau de deux centimètres dans l’hui
 pairs:["pork-belly","soy-sauce","star-anise","ginger","shaoxing-wine","chenpi"],
 svg:'<path class="f1 sf" d="M26 46l16-16 22 6 6 20-14 16-24-4z"/><path class="s" d="M42 30l6 22 20-4M48 52l-6 24"/><path class="f2 sf" d="M62 66l10-3 3 10-10 3z"/>'},
 
-{id:"cocoa-husk",cat:"sweet",name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
+{id:"cocoa-husk",cat:"sweet",rare:true,name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
 origin:{en:"Chocolate roasting rooms",fr:"Ateliers de torréfaction du cacao"},season:[],
 flavor:["smoky","woody","toasty"],
 story:{en:"The husk is about a tenth of the bean's weight, winnowed off after roasting, and in nineteenth-century Britain and France it was sold on its own as cocoa shell tea to households that could not afford the nib. It carries the smoke of the roast with almost none of the fat and almost none of the bitterness.",
@@ -219,7 +219,7 @@ fr:"En cuisine, il agit comme une épice : un trait d’expresso approfondit les
 pairs:["dark-chocolate","cardamom","hazelnut","vanilla","cinnamon","walnut","maple-syrup"],
 svg:'<ellipse class="f3 sf" cx="40" cy="48" rx="10" ry="13" transform="rotate(-20 40 48)"/><path class="s" d="M35 39q6 9 2 18" transform="rotate(-20 40 48)"/><ellipse class="f3 sf" cx="58" cy="60" rx="10" ry="13" transform="rotate(24 58 60)"/><path class="s" d="M53 51q6 9 2 18" transform="rotate(24 58 60)"/>'},
 
-{id:"criollo-cacao",cat:"sweet",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
+{id:"criollo-cacao",cat:"sweet",rare:true,name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
 flavor:["nutty","mild","fruity","honeyed"],
 story:{en:"Cut a criollo pod and the beans are white or pale violet, not the deep purple of the forastero that fills the commodity trade — the group simply lacks the anthocyanins that carry most of chocolate's bitterness and astringency. It lacks the vigour too: the trees are fragile and shy-bearing, which is why criollo remains a sliver of the world crop.",
@@ -239,7 +239,7 @@ fr:"Une pincée de sel donne au chocolat un goût plus profond de chocolat. Fond
 pairs:["raspberry","orange","coffee","chili","hazelnut","cardamom","vanilla","pear"],
 svg:'<rect class="f3 sf" x="32" y="36" width="32" height="36" rx="3"/><path class="s" d="M48 36v36M32 54h32M40 36v36M56 36v36M32 45h32M32 63h32" stroke-width="1.6"/>'},
 
-{id:"nolen-gur",cat:"sweet",name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
+{id:"nolen-gur",cat:"sweet",rare:true,luxe:true,name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
 origin:{en:"Bengal, date palm groves",fr:"Bengale, palmeraies dattières"},season:[11,12,1,2],
 flavor:["smoky","sweet","rich"],
 story:{en:"The shiuli climb the date palms at dusk, cut a strip of bark and hang an earthen pot; the sap runs overnight and has to be boiled at dawn, because by midday it has begun to ferment. It is made only while Bengal's nights stay below about fourteen degrees - November to February, and not a week longer.",
@@ -289,7 +289,7 @@ fr:"N’ayant plus d’acidité, il ne fera pas lever le bicarbonate : une recet
 pairs:["butter","coffee","cream","flour-t55","cocoa-butter","orange"],
 svg:'<path class="f2 sf" d="M34 42h28v34H34z"/><path class="f1 sf" d="M34 42q14-16 28 0z"/><path class="s" d="M42 34v3M48 32v3M54 34v3"/><path class="s" d="M38 82v4M48 84v4M58 82v4"/>'},
 
-{id:"eucalyptus-honey",cat:"sweet",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
+{id:"eucalyptus-honey",cat:"sweet",rare:true,name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
 origin:{en:"Iberia, Italy, Australia",fr:"Péninsule Ibérique, Italie, Australie"},season:[],
 flavor:["resinous","bitter","warm"],
 story:{en:"The eucalyptus honey of Portugal, Spain and Italy comes from trees that were not on the continent two centuries ago - Australian seed planted through the 1800s for timber and for drying out marshland. It tastes of malt and camphor, nearer a medicine chest than a dessert.",
@@ -299,7 +299,7 @@ fr:"Employez-le là où il peut tenir tête au sel et au gras : une cuillerée d
 pairs:["pecorino","walnut","duck","black-pepper","rosemary","ricotta"],
 svg:'<path class="f2 sf" d="M26 62q2-24 22-34-1 25-22 34z"/><path class="f1 sf" d="M46 70q9-20 26-24-7 21-26 24z"/><path class="s" d="M28 60q10-16 18-30M50 68q9-14 20-20"/><circle class="dot" cx="52" cy="82" r="4"/>'},
 
-{id:"fir-honeydew-honey",cat:"sweet",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
+{id:"fir-honeydew-honey",cat:"sweet",rare:true,name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
 origin:{en:"Fir forests of the Vosges and Jura",fr:"Sapinières des Vosges et du Jura"},season:[7,8],
 flavor:["resinous","woody","warm"],
 story:{en:"Fir honey comes from no flower at all: aphids drink the tree's sap, void the excess as honeydew on the needles, and the bees collect that. Carrying almost no glucose, it stays liquid for years — and since the flow depends on an insect that may or may not appear, whole seasons pass with no crop.",
@@ -349,7 +349,7 @@ fr:"Râpez-le plutôt que de le couper — le cylindre est assez dur pour faire 
 pairs:["coconut-milk","pandan","glutinous-rice","banana","tapioca-starch","salt"],
 svg:'<ellipse class="f2 sf" cx="48" cy="36" rx="24" ry="9"/><path class="f3 sf" d="M24 36v22a24 9 0 0 0 48 0V36"/><path class="s" d="M34 44q6 5 12 0t12 3"/>'},
 
-{id:"heather-honey",cat:"sweet",name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
+{id:"heather-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
 origin:{en:"Northern moors — Scotland, Brittany, the Landes",fr:"Landes et tourbières du nord — Écosse, Bretagne, Landes"},season:[8,9],
 flavor:["bitter","woody","rich"],
 story:{en:"Ling heather honey is thixotropic: it sets to a jelly in the comb and returns to that jelly faster than any other honey the moment you stop stirring it. That is why it cannot be spun out in an extractor at all — the comb is pressed, or sold whole, which is half the reason for the price.",
@@ -369,7 +369,7 @@ fr:"Un miel cristallisé n’est pas perdu — tiédissez le pot au bain-marie e
 pairs:["blue-cheese","walnut","yogurt","fig","lemon","ginger","goat-cheese","rosemary"],
 svg:'<path class="s" d="M60 36L44 52"/><path class="f2 sf" d="M34 58h20M32 63h24M34 68h20M38 73h12" stroke-width="4"/><path class="f2 sf" d="M40 50a8 8 0 0016 0 8 8 0 00-16 0z" transform="translate(-6 8)"/>'},
 
-{id:"honeycomb",cat:"sweet",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
+{id:"honeycomb",cat:"sweet",rare:true,name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
 origin:{en:"Hive frames, wherever bees are kept",fr:"Cadres de ruche, partout où l’on élève des abeilles"},season:[6,7,8,9],
 flavor:["honeyed","floral","sweet"],
 story:{en:"Worker bees secrete wax from glands on the underside of the abdomen, spending several kilos of honey for every kilo of comb they build. Until the centrifugal extractor arrived in the 1860s all honey was sold this way — the jar is the modern form, not the comb.",
@@ -419,7 +419,7 @@ fr:"Employez-le là où son parfum compte — sur du chèvre, dans une glace, av
 pairs:["goat-cheese","apricot","peach","almond","cream","fig","lemon","yogurt"],
 svg:'<path class="f3 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M46 62q2-10 4 0z"/><circle class="dot" cx="48" cy="58" r="1.4"/>'},
 
-{id:"leatherwood-honey",cat:"sweet",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
+{id:"leatherwood-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
 origin:{en:"Rainforest of western Tasmania",fr:"Forêts pluviales de l’ouest de la Tasmanie"},season:[1,2,3],
 flavor:["floral","resinous","warm"],
 story:{en:"Leatherwood grows nowhere but the wet west of Tasmania, and it supplies roughly seven tenths of all the honey the island produces; hives are trucked to forestry-road camps for the January flowering. The trees take decades to come into full flower, so the crop rests on forest nobody can replant on a beekeeper's timescale.",
@@ -429,7 +429,7 @@ fr:"Il écrase tout ce à quoi on l’associe : commencez au tiers de la quantit
 pairs:["blue-cheese","goat-cheese","yogurt","walnut","pear","ginger"],
 svg:'<path class="s" d="M48 14v18"/><path class="f2 sf" d="M48 32q11 0 11 15t-11 21q-11-6-11-21t11-15z"/><path class="s" d="M38 42h20M37 50h22M39 58h18"/><path class="f1 sf" d="M48 72q7 8 0 13-7-5 0-13z"/>'},
 
-{id:"linden-honey",cat:"sweet",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
+{id:"linden-honey",cat:"sweet",rare:true,name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
 origin:{en:"Lime avenues of central and eastern Europe",fr:"Allées de tilleuls d’Europe centrale et orientale"},season:[6,7],
 flavor:["fresh","herbal","floral"],
 story:{en:"Limes were planted along town avenues across central Europe long before anyone valued them for honey, and a mature tree in flower can out-yield a field of clover for the fortnight it lasts. The cool, menthol edge in the jar comes from the same aromatics you taste in a cup of lime-flower tisane.",
@@ -459,7 +459,7 @@ fr:"Jugez-la à la poêle, non à la montre : la spatule doit y laisser un sillo
 pairs:["salted-duck-egg","sugar","sesame","osmanthus","black-sesame","honey","glutinous-rice-flour"],
 svg:'<ellipse class="f2 sf" cx="48" cy="50" rx="26" ry="22"/><path class="s" d="M28 50q20 12 40 0M28 50q20-12 40 0M48 28v44"/><circle class="f3 sf" cx="48" cy="50" r="7"/>'},
 
-{id:"maesil-cheong",cat:"sweet",name:{en:"Maesil cheong",fr:"Sirop de prune verte (maesil)"},latin:"Prunus mume (steeped)",
+{id:"maesil-cheong",cat:"sweet",rare:true,name:{en:"Maesil cheong",fr:"Sirop de prune verte (maesil)"},latin:"Prunus mume (steeped)",
 origin:{en:"Southern Korea",fr:"Sud de la Corée"},season:[],
 flavor:["sweet","tangy","fruity"],
 story:{en:"Green ume are picked in June before the rains, layered with their own weight in sugar and left about a hundred days, until osmosis has drawn a clear syrup out of the fruit. The plums are strained off and discarded at that point: raw and unripe they are not eaten, the kernel above all, which carries amygdalin.",
@@ -469,7 +469,7 @@ fr:"Utilisez-le partout où une sauce réclame en même temps du sucre et de l�
 pairs:["gochujang","soy-sauce","sesame-oil","garlic","ginger","cucumber","rice-vinegar"],
 svg:'<path class="f1 sf" d="M32 34h32v34a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><rect class="f3 sf" x="36" y="24" width="24" height="9" rx="2"/><path class="s" d="M32 46q16 6 32 0"/><circle class="f2 sf" cx="43" cy="57" r="7"/><circle class="f2 sf" cx="55" cy="64" r="6"/>'},
 
-{id:"manuka-honey",cat:"sweet",name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
+{id:"manuka-honey",cat:"sweet",luxe:true,name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
 origin:{en:"Scrubland of New Zealand",fr:"Broussailles de Nouvelle-Zélande"},season:[11,12,1],
 flavor:["earthy","musky","warm"],
 story:{en:"Manuka nectar contains no methylglyoxal at all: it carries dihydroxyacetone, which turns into MGO slowly as the honey stands, so a jar's rating climbs with storage. Chemists at Waikato only worked this out in 2008, and before that manuka was scrub that farmers paid to clear.",
@@ -479,7 +479,7 @@ fr:"Ne le cuisez pas : la chaleur dégrade le méthylglyoxal que vous avez payé
 pairs:["yogurt","oats","lemon","ginger","walnut","apple","blue-cheese"],
 svg:'<path class="f1 sf" d="M30 45q0-7 7-7h22q7 0 7 7v27a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M28 29h40v9H28z"/><path class="f2 sf" d="M35 54h26v13H35z"/><path class="s" d="M39 61h18"/>'},
 
-{id:"maple-butter",cat:"sweet",name:{en:"Maple butter",fr:"Beurre d’érable"},latin:"Acer saccharum",
+{id:"maple-butter",cat:"sweet",rare:true,name:{en:"Maple butter",fr:"Beurre d’érable"},latin:"Acer saccharum",
 origin:{en:"Sugar bush of Quebec",fr:"Érablières du Québec"},season:[],
 flavor:["sweet","creamy","rich"],
 story:{en:"There is no dairy in it at all: maple butter is syrup boiled to around 112 °C, cooled without being touched, then beaten until the sugar crystallises so finely that the tongue reads it as cream. Those crystals are its entire structure, which is why warming a jar destroys it for good.",
@@ -539,7 +539,7 @@ fr:"Il brûle et fige bien plus facilement que le noir. Faites-le fondre sur une
 pairs:["hazelnut","maple-syrup","banana","almond","coffee","cream","salt","orange"],
 svg:'<path class="f2 sf" d="M28 44h40v24H28z"/><path class="s" d="M28 56h40M42 44v24M56 44v24"/>'},
 
-{id:"mizuame",cat:"sweet",name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
+{id:"mizuame",cat:"sweet",rare:true,name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["sweet","mild","delicate"],
 story:{en:"Japan had mizuame centuries before it had cane sugar: rice or millet starch broken down by malt into a clear syrup. Edo-period street artists pulled candy animals from it while it was still warm, and because it is far less sweet than sugar it is still reached for as body and shine rather than sweetness.",
@@ -569,7 +569,7 @@ fr:"Il durcit en bloc. Gardez un morceau de pain ou un disque de terre cuite dan
 pairs:["dark-chocolate","coffee","ginger","butter","cream","banana","cinnamon","pecan"],
 svg:'<path class="f1 sf" d="M32 68V48h32v20z"/><path class="s" d="M32 58h32"/><circle class="dot" cx="42" cy="63" r="1.6"/><circle class="dot" cx="54" cy="53" r="1.6"/>'},
 
-{id:"nacional-arriba-cacao",cat:"sweet",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
+{id:"nacional-arriba-cacao",cat:"sweet",luxe:true,name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
 origin:{en:"Guayas river basin, Ecuador",fr:"Bassin du Guayas, Équateur"},season:[],
 flavor:["floral","fruity","nutty","delicate"],
 story:{en:"Arriba is a shipping word, not a botanical one: cacao floated down the Guayas to Guayaquil was said to come from río arriba, upriver, and the buyers kept the term for the perfume that came with it. The blight years from 1916 took most of the old Nacional groves, so much of what is sold as Arriba today carries the blood of the high-yield clones planted to replace them.",
@@ -589,7 +589,7 @@ fr:"Elle constitue la moitié acide d’une recette au bicarbonate : remplacée 
 pairs:["creme-de-tartre","butter","coffee","vanilla","raspberry","cream","dark-chocolate"],
 svg:'<path class="f1 sf" d="M36 24h26v34H36z"/><path class="f3 sf" d="M33 17h32v7H33z"/><path class="f2 sf" d="M22 78q12-22 27-22t27 22z"/><path class="s" d="M33 70q16-8 32 0"/>'},
 
-{id:"kokuto",cat:"sweet",name:{en:"Okinawan black sugar",fr:"Kokutō (sucre noir d’Okinawa)"},latin:"Saccharum officinarum",
+{id:"kokuto",cat:"sweet",rare:true,luxe:true,name:{en:"Okinawan black sugar",fr:"Kokutō (sucre noir d’Okinawa)"},latin:"Saccharum officinarum",
 origin:{en:"Eight islands of the Okinawa archipelago",fr:"Huit îles de l’archipel d’Okinawa"},season:[],
 flavor:["salty","rich","toasty"],
 story:{en:"Sugar-making reached the Ryukyu kingdom in the early 1600s, brought back from Fujian by an official, and it became the islands' tribute crop. Only eight Okinawan islands still make the real thing — whole cane juice boiled down and set in blocks with nothing removed, which is where the salt-mineral edge comes from.",
@@ -629,7 +629,7 @@ fr:"Il sucre bien moins que le sucre blanc et tire vers le salé. Ne le substitu
 pairs:["fish-sauce","lime","chili","ginger","coconut-milk","lemongrass","garlic","peanut"],
 svg:'<path class="f2 sf" d="M34 66q0-16 14-16t14 16q-14 8-28 0z"/><path class="s" d="M34 60q14 6 28 0"/>'},
 
-{id:"persipan",cat:"sweet",name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
+{id:"persipan",cat:"sweet",rare:true,name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
 origin:{en:"German and Austrian bakeries",fr:"Boulangeries d'Allemagne et d'Autriche"},season:[],
 flavor:["bitter","sweet","nutty"],
 story:{en:"German food law defines persipan as a paste of debittered apricot or peach kernels, and requires a marker to be stirred into the raw paste — a trace of starch — so that a laboratory can tell it from marzipan inside a finished cake. The rule exists because the paste began as the cheap stand-in during almond shortages, and was written down precisely to stop it being sold as the thing it replaced.",
@@ -639,7 +639,7 @@ fr:"Plus vif et moins sucré que le massepain, il tient sous une garniture lourd
 pairs:["apricot","dark-rum","raisin","cinnamon","butter","dark-chocolate"],
 svg:'<path class="f1 sf" d="M32 40h28q8 0 8 14t-8 14H32q-8 0-8-14t8-14z"/><ellipse class="f2 sf" cx="32" cy="54" rx="8" ry="14"/><path class="f3 sf" d="M66 66q10 0 10 8t-10 8q-8-3-8-8t8-8z"/><path class="s" d="M59 74h16"/>'},
 
-{id:"pistachio-paste",cat:"sweet",name:{en:"Pistachio paste",fr:"Pâte de pistache"},latin:"Pistacia vera",
+{id:"pistachio-paste",cat:"sweet",luxe:true,name:{en:"Pistachio paste",fr:"Pâte de pistache"},latin:"Pistacia vera",
 origin:{en:"Pastry kitchens, Sicily and France",fr:"Pâtisseries, Sicile et France"},season:[],
 flavor:["nutty","rich","creamy","resinous"],
 story:{en:"Pure ground kernel is a dull khaki-olive; the bright green on most shelves is dye, and often almond making up part of the weight. That matters beyond colour — a cut paste carries less fat, so a ganache built on it sets harder and a cream splits sooner.",
@@ -689,7 +689,7 @@ fr:"Si un pot a figé en grain sableux, portez-le à environ 40 °C, incorporez 
 pairs:["butter","apple","cinnamon","yogurt","oats","almond","buckwheat-flour"],
 svg:'<path class="f1 sf" d="M26 44h44l-4 30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f2 sf" d="M26 44h44l-3 10q-19 6-38 0z"/><path class="s" d="M24 44h48"/><path class="f3 sf" d="M60 20l8 4-24 24-6-2z"/>'},
 
-{id:"rosemary-honey",cat:"sweet",name:{en:"Rosemary honey",fr:"Miel de romarin"},latin:"Rosmarinus officinalis",
+{id:"rosemary-honey",cat:"sweet",rare:true,name:{en:"Rosemary honey",fr:"Miel de romarin"},latin:"Rosmarinus officinalis",
 origin:{en:"Mediterranean garrigue",fr:"Garrigue méditerranéenne"},season:[4,5],
 flavor:["sweet","floral","delicate","resinous"],
 story:{en:"Rosemary flowers in late winter, when almost nothing else on the Mediterranean garrigue is in bloom, so hives set among it fill with a nectar barely mixed with anything else — the miel de Narbonne that French apothecaries sold under its own name for centuries. It crystallises within weeks into a paste so white that first-time buyers often suspect it has been cut with sugar.",
@@ -709,7 +709,7 @@ fr:"Ne dépassez pas 45 °C à la fonte et tempérez vers 28-29 °C, plus bas qu
 pairs:["raspberry","yuzu","pistachio","cream","rose-water","hazelnut"],
 svg:'<path class="f2 sf" d="M22 34h30v34H22z"/><path class="f3 sf" d="M52 30h22v34H52z"/><path class="s" d="M22 51h30M37 34v34M63 30v34M52 47h22"/>'},
 
-{id:"saba",cat:"sweet",name:{en:"Saba (cooked grape must)",fr:"Saba (moût de raisin cuit)"},latin:"Vitis vinifera (mosto cotto)",
+{id:"saba",cat:"sweet",rare:true,name:{en:"Saba (cooked grape must)",fr:"Saba (moût de raisin cuit)"},latin:"Vitis vinifera (mosto cotto)",
 origin:{en:"Emilia-Romagna & the Marche",fr:"Émilie-Romagne & les Marches"},season:[],
 flavor:["sweet","fruity","rich","honeyed"],
 story:{en:"Romans called it defrutum or sapa and boiled the must down in lead vessels, which sweetened it further and poisoned them slowly. The same reduction is the first step of traditional balsamic, but saba stops there and never sees a vinegar barrel.",
@@ -719,7 +719,7 @@ fr:"Traitez-la comme un miel, non comme un vinaigre : aucune acidité ne vient y
 pairs:["pecorino","parmesan","walnut","ricotta","fig","chestnut","pork","radicchio"],
 svg:'<path class="f3 sf" d="M34 44h26l-4 30q-1 4-5 4H43q-4 0-5-4z"/><path class="s" d="M60 48q8 2 8 8t-8 8"/><path class="f2 sf" d="M34 44l-8-6 4-4 10 6z"/><path class="s" d="M26 40q-4 8-2 18"/><circle class="dot" cx="24" cy="62" r="3"/>'},
 
-{id:"sidr-honey",cat:"sweet",name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
+{id:"sidr-honey",cat:"sweet",luxe:true,name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
 origin:{en:"Wadi Do’an, Hadhramaut",fr:"Wadi Do’an, Hadramaout"},season:[10,11],
 flavor:["sweet","rich","toasty","warm"],
 story:{en:"The sidr trees of Wadi Do’an in Hadhramaut flower for roughly three weeks a year, and hives are carried into the valleys for that window alone — which is most of the reason a kilo can pass two hundred dollars. The bloom comes twice, autumn and spring, and beekeepers rate the autumn crop the darker and denser of the two.",
@@ -729,7 +729,7 @@ fr:"Il est assez épais pour tenir la cuillère droite : réchauffez le pot dans
 pairs:["date","almond","yogurt","cardamom","tahini","walnut"],
 svg:'<path class="f3 sf" d="M42 28h12v6q12 5 12 20 0 18-18 18t-18-18q0-15 12-20z"/><path class="f1 sf" d="M38 28h20v5H38z"/><path class="s" d="M38 58q10 6 20 0"/><path class="s" d="M58 24q10-6 12-14-12 0-12 14z"/>'},
 
-{id:"sorghum-syrup",cat:"sweet",name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
+{id:"sorghum-syrup",cat:"sweet",rare:true,name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
 origin:{en:"Upland American South",fr:"Sud appalachien des États-Unis"},season:[9,10],
 flavor:["sweet","tangy","earthy"],
 story:{en:"Sweet sorghum reached American farms in the 1850s and became the upland South’s own sweetener: cane pressed by a mule walking a circle, the juice boiled down that same afternoon in a long open pan. It is reduced juice and nothing else, where molasses is what is left after the sugar has been taken out — which is why sorghum stays pourable and never sets.",
@@ -739,7 +739,7 @@ fr:"Remplacez le miel volume pour volume dans une pâte, puis réduisez le bicar
 pairs:["butter","pecan","buttermilk","ginger","apple","black-pepper"],
 svg:'<path class="f2 sf" d="M34 34h24v34q0 6-6 6H40q-6 0-6-6z"/><path class="s" d="M58 44q10 2 10 10t-10 10"/><path class="f1 sf" d="M32 28h28l-4 6H36z"/><path class="s" d="M72 76V48"/><path class="f3 sf" d="M72 48q-7-2-7-10 9 0 9 10z"/>'},
 
-{id:"strawberry-tree-honey",cat:"sweet",name:{en:"Strawberry-tree honey",fr:"Miel d’arbousier"},latin:"Arbutus unedo",
+{id:"strawberry-tree-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Strawberry-tree honey",fr:"Miel d’arbousier"},latin:"Arbutus unedo",
 origin:{en:"Sardinia and Corsica",fr:"Sardaigne et Corse"},season:[10,11,12],
 flavor:["bitter","herbal","woody"],
 story:{en:"The arbutus flowers from October into December, which makes this the only European honey harvested in winter — and in air so damp that Italian law raises the permitted water content for this one honey alone. The bitterness, coffee and quinine at the finish, is not a fault in it; it is the reason anyone buys it.",
@@ -759,7 +759,7 @@ fr:"Son mordant herbacé traverse le four là où un miel d’acacia disparaîtr
 pairs:["rye-flour","orange","anise","ginger","almond","clove","hazelnut"],
 svg:'<path class="f1 sf" d="M30 34l9-14h18l9 14-9 14H39z"/><path class="f2 sf" d="M39 48h18l9 14-9 14H39l-9-14z"/><path class="s" d="M39 20l9 14 9-14M39 48l9 14 9-14"/><path class="f3 sf" d="M48 76q4 6 4 9t-4 3-4-3 4-9z"/>'},
 
-{id:"thyme-honey",cat:"sweet",name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
+{id:"thyme-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
 origin:{en:"Attica and Provence",fr:"Attique et Provence"},season:[7,8],
 flavor:["sweet","herbal","warm","pungent"],
 story:{en:"Thyme honey from Mount Hymettus was the honey of ancient Athens, sold and taxed under its own name, with the hillsides above the city kept for hives. What sets it apart is phenolic rather than floral: it reads almost savoury, which is why Greek and Provençal kitchens put it on cheese and lamb rather than on cake.",
@@ -769,7 +769,7 @@ fr:"Employez-le là où vous prendriez un aigre-doux : une cuillerée montée au
 pairs:["feta","lamb","walnut","yogurt","olive-oil","manouri"],
 svg:'<path class="s" d="M40 16v18"/><path class="f2 sf" d="M40 34q-8 0-8 9t8 15q8-6 8-15t-8-9z"/><path class="s" d="M32 42h16M33 48h14M35 54h10"/><path class="s" d="M62 74V46"/><path class="s" d="M62 52q6-3 8-8M62 60q6-3 8-8M62 68q6-3 8-8"/>'},
 
-{id:"tupelo-honey",cat:"sweet",name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
+{id:"tupelo-honey",cat:"sweet",rare:true,name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
 origin:{en:"Apalachicola river swamps, Florida",fr:"Marais de l’Apalachicola, Floride"},season:[4,5],
 flavor:["sweet","floral","delicate","fruity"],
 story:{en:"The white tupelo blooms for two or three weeks in April along one Florida river system, and beekeepers barge their hives onto platforms in the swamp to reach it; a wet fortnight cancels the year. The hives are stripped of every other frame first, because a single day of a different nectar shows up in the jar.",
@@ -789,7 +789,7 @@ fr:"Blonde et brune ne sont pas interchangeables. La brune est caramélisée deu
 pairs:["butter","cinnamon","flour-t55","cream","egg","apple","clove","dark-chocolate"],
 svg:'<path class="f2 sf" d="M34 68V50h28v18z"/><path class="s" d="M34 60h28"/><circle class="dot" cx="44" cy="55" r="1.4"/><circle class="dot" cx="54" cy="64" r="1.4"/>'},
 
-{id:"wasanbon",cat:"sweet",name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
+{id:"wasanbon",cat:"sweet",rare:true,luxe:true,name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
 origin:{en:"Tokushima and Kagawa, Shikoku",fr:"Tokushima et Kagawa, Shikoku"},season:[],
 flavor:["sweet","delicate","mild"],
 story:{en:"Made in Tokushima and Kagawa from a thin local cane called chikutō, it takes about twenty days: the sugar is crystallised slowly in wooden tubs, then kneaded by hand with a little water on trays, up to five times, to press the molasses out. Sanbon means three trays, after the kneadings the old method counted — the process now runs longer than its own name admits.",
@@ -819,7 +819,7 @@ fr:"Il fait bien plus que sucrer — il retient l’humidité, colore et freine 
 pairs:["butter","egg","vanilla","flour-t45","lemon","cream","dark-chocolate","cinnamon"],
 svg:'<path class="f3 sf" d="M34 70V50h28v20z"/><path class="s" d="M34 58h28M44 50v20M54 50v20"/>'},
 
-{id:"yacon-syrup",cat:"sweet",name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
+{id:"yacon-syrup",cat:"sweet",rare:true,name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
 origin:{en:"Andes of Peru and Bolivia",fr:"Andes du Pérou et de Bolivie"},season:[],
 flavor:["sweet","earthy","fruity"],
 story:{en:"The root stores its sugar as fructo-oligosaccharides rather than starch or sucrose — chains the human gut cannot break down, so most of the sweetness passes straight through. Andean growers ate the root raw as fruit long before anyone reduced its juice; French still calls the plant poire de terre, the ground pear.",

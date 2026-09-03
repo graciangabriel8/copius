@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"aceto-balsamico-tradizionale",cat:"condiments",name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
+{id:"aceto-balsamico-tradizionale",cat:"condiments",rare:true,luxe:true,name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
 origin:{en:"Modena and Reggio Emilia, Italy",fr:"Modène et Reggio d’Émilie, Italie"},season:[],
 flavor:["sweet","sour","woody","rich"],
 story:{en:"Cooked grape must works its way down a battery of casks — oak, cherry, chestnut, mulberry, juniper — each year giving a little to the barrel below and taking a little from the one above, for twelve years at the very least. Every bottle the tasting panel passes is sold in the same 100 ml bulb, a shape drawn by the car designer Giorgetto Giugiaro.",
@@ -29,7 +29,7 @@ fr:"Il porte environ deux fois plus de sel qu’un miso blanc : substituez-le à
 pairs:["pork","leek","ginger","garlic","butter","potato","carrot","black-radish"],
 svg:'<path class="f2 sf" d="M28 34h40l-4 38H32z"/><path class="s" d="M28 44h40M30 60h36M40 34v38M56 34v38"/><ellipse class="f1 sf" cx="48" cy="32" rx="18" ry="5"/><ellipse class="f3 sf" cx="48" cy="25" rx="8" ry="4"/>'},
 
-{id:"akazu",cat:"condiments",name:{en:"Akazu",fr:"Akazu (vinaigre rouge japonais)"},latin:"Oryza sativa",
+{id:"akazu",cat:"condiments",luxe:true,name:{en:"Akazu",fr:"Akazu (vinaigre rouge japonais)"},latin:"Oryza sativa",
 origin:{en:"Handa, Aichi",fr:"Handa, préfecture d’Aichi"},season:[],
 flavor:["umami","sour","mild"],
 story:{en:"In 1804 Matazaemon Nakano, founder of the house that became Mizkan, tasted the fast sushi of Edo and worked out that vinegar from aged sake lees would suit it better, and cost far less, than rice vinegar that ordinary people could not afford. He brewed it in Handa and shipped it to Edo, and the amber rice of Edomae sushi descends directly from that decision.",
@@ -39,7 +39,7 @@ fr:"Réduisez d’au moins de moitié le sucre de votre vinaigre à sushi : les 
 pairs:["rice","tuna","kombu","wasabi","anago","sea-bream"],
 svg:'<path class="f1 sf" d="M28 32h40q6 10 6 20t-6 20H28q-6-10-6-20t6-20z"/><path class="s" d="M34 32v40M62 32v40"/><ellipse class="f2 sf" cx="28" cy="52" rx="6" ry="20"/><path class="f3 sf" d="M70 54h8v6h-8z"/>'},
 
-{id:"alaea-salt",cat:"condiments",name:{en:"Alaea red Hawaiian salt",fr:"Sel rouge d’Hawaï (alaea)"},latin:"Halite (NaCl)",
+{id:"alaea-salt",cat:"condiments",rare:true,name:{en:"Alaea red Hawaiian salt",fr:"Sel rouge d’Hawaï (alaea)"},latin:"Halite (NaCl)",
 origin:{en:"Kauai, Hawaii",fr:"Kauai, Hawaï"},season:[],
 flavor:["salty","earthy","mild"],
 story:{en:"The colour is alaea, an iron-rich volcanic clay stirred into sea salt, added as much to hold the salt through the wet months and to bless canoes and houses as to season food. The ponds at Hanapepe on Kauai are still worked by hand by a few families, and by custom that salt is never sold, only given.",
@@ -59,7 +59,7 @@ fr:"Maintenez-le entre 55 et 60 °C pendant huit heures : en dessous il tourne, 
 pairs:["ginger","strawberry","yuzu","sesame","cream","lemon"],
 svg:'<path class="f1 sf" d="M32 38h32l-4 30q-1 6-12 6t-12-6z"/><path class="s" d="M32 46q16 6 32 0"/><ellipse class="dot" cx="44" cy="56" rx="3" ry="2"/><ellipse class="dot" cx="54" cy="62" rx="3" ry="2"/><ellipse class="dot" cx="48" cy="50" rx="3" ry="2"/>'},
 
-{id:"amba",cat:"condiments",name:{en:"Amba",fr:"Amba"},latin:"Mangifera indica",
+{id:"amba",cat:"condiments",rare:true,name:{en:"Amba",fr:"Amba"},latin:"Mangifera indica",
 origin:{en:"Iraq, by way of Bombay",fr:"Irak, via Bombay"},season:[],
 flavor:["sour","tangy","pungent","warm"],
 story:{en:"Iraqi Jewish traders settled in Bombay from the seventeenth century met the Indian mango there and shipped it home to Basra in brine; the story goes that the Sassoon family sent the first barrels. The name is simply the Marathi word for mango, and the sauce it became — brined green fruit soured further with fenugreek and turmeric — is poured over grilled Tigris carp and shawarma alike.",
@@ -99,7 +99,7 @@ fr:"Le vrai est épais comme un sirop et n’a nul besoin de réduction ; celui 
 pairs:["strawberry","tomato","parmesan","fig","onion","beetroot"],
 svg:'<path class="f3 sf" d="M45 24h6v10q8 4 8 14v22q0 8-11 8t-11-8V48q0-10 8-14z"/><path class="f1" d="M40 58h16v8q0 4-8 4t-8-4z"/>'},
 
-{id:"bamboo-salt",cat:"condiments",name:{en:"Bamboo salt",fr:"Sel de bambou (jukyeom)"},latin:"Phyllostachys spp.",
+{id:"bamboo-salt",cat:"condiments",luxe:true,name:{en:"Bamboo salt",fr:"Sel de bambou (jukyeom)"},latin:"Phyllostachys spp.",
 origin:{en:"Jeolla coast, Korea",fr:"Côte du Jeolla, Corée"},season:[],
 flavor:["salty","pungent","smoky","umami"],
 story:{en:"Jukyeom is sea salt packed into three-year-old bamboo, sealed at both ends with yellow clay and fired over pine wood up to nine times; the ninth firing runs hot enough to melt the salt, which pours out and sets as a purple-grey rock. The nine-roast method was codified by the herbalist Kim Il-hun and only industrialised in 1987, so the product is far older in idea than in trade.",
@@ -139,7 +139,7 @@ fr:"Servez-la froide et épaisse à côté d’une Weisswurst ou d’un Leberkä
 pairs:["boudin-blanc","pork","potato","cabbage","horseradish","apple"],
 svg:'<path class="f1 sf" d="M36 34h24v34H36z"/><path class="f3 sf" d="M33 68h30v7H33z"/><path class="f2 sf" d="M43 24h10v10H43z"/><path class="f2 sf" d="M40 24q3-11 8-11t8 11z"/><circle class="dot" cx="45" cy="19" r="2"/><circle class="dot" cx="52" cy="17" r="2"/>'},
 
-{id:"beer-vinegar",cat:"condiments",name:{en:"Beer vinegar",fr:"Vinaigre de bière"},latin:"Hordeum vulgare",
+{id:"beer-vinegar",cat:"condiments",rare:true,name:{en:"Beer vinegar",fr:"Vinaigre de bière"},latin:"Hordeum vulgare",
 origin:{en:"Brewing countries of Northern Europe",fr:"Pays brassicoles d’Europe du Nord"},season:[],
 flavor:["sour","bitter","toasty"],
 story:{en:"Beer vinegar is what happens when acetobacter reaches a beer left open, and northern kitchens have made it deliberately since long before anyone bottled it — the malt and the hop bitterness both survive acetification. Malt vinegar is a different animal: it starts from unhopped malted barley wort, which is why it reads sweet and caramel where beer vinegar stays dry and bitter.",
@@ -169,7 +169,7 @@ fr:"Une pincée suffit : il est agressivement salé et acide, et une cuillerée 
 pairs:["pork","beef","cabbage","soba-noodles","katsuobushi","rice","umezu"],
 svg:'<path class="f2 sf" d="M26 52q-4-10 6-12 0-10 10-8t10 8q10-4 14 4t-4 14q2 10-8 12t-16-6-12-12z"/><path class="s" d="M62 64q10 0 14 6M60 70q10 2 13 8M56 75q8 2 11 7"/><path class="f3 sf" d="M18 74q14-7 26-3-12 7-26 3z"/>'},
 
-{id:"bettarazuke",cat:"condiments",name:{en:"Bettarazuke",fr:"Bettarazuke"},latin:"Raphanus sativus var. longipinnatus",
+{id:"bettarazuke",cat:"condiments",rare:true,name:{en:"Bettarazuke",fr:"Bettarazuke"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"Nihonbashi, Tokyo",fr:"Nihonbashi, Tokyo"},season:[10,11,12],
 flavor:["sweet","mild","fresh"],
 story:{en:"The Bettara market has run beside the Ebisu shrine at Nihonbashi on 19 and 20 October since the middle of the Edo period, and betabeta is simply the sound of something sticky — the kōji paste clinging to the daikon and, went the street joke, to a passing kimono sleeve. Kōji rather than bran is why it stays white and sweet where takuan turns yellow and pungent.",
@@ -189,7 +189,7 @@ fr:"Il ne reste aucun mordant — utilisez-le comme condiment, pas comme ail. É
 pairs:["beef","miso","mushroom","butter","balsamic","dark-chocolate"],
 svg:'<path class="f3 sf" d="M48 28q3 10 12 16 8 6 8 14a20 16 0 01-40 0q0-8 8-14 9-6 12-16z"/><path class="f1" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40" fill="none"/><path class="s" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40" stroke-width="1.6"/>'},
 
-{id:"black-koji",cat:"condiments",name:{en:"Black koji",fr:"Koji noir (kuro-kōji)"},latin:"Aspergillus luchuensis",
+{id:"black-koji",cat:"condiments",rare:true,name:{en:"Black koji",fr:"Koji noir (kuro-kōji)"},latin:"Aspergillus luchuensis",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[],
 flavor:["sour","tangy","earthy"],
 story:{en:"Okinawan awamori is brewed with this mould, which floods the mash with citric acid and keeps it from spoiling in subtropical heat - a preservative the brewer grows instead of adding. It was called Aspergillus awamori for the better part of a century before mycologists settled on Aspergillus luchuensis in 2013.",
@@ -229,7 +229,7 @@ fr:"Elle passe par le gras : faites-en fondre une cuillère à café dans l’hu
 pairs:["olive-oil","garlic","nduja","san-marzano-tomato","pecorino","anchovy","oregano","honey"],
 svg:'<path class="f3 sf" d="M35 24h26v8H35z"/><path class="f1 sf" d="M32 32h32v42q0 4-4 4H36q-4 0-4-4z"/><path class="s" d="M32 42h32"/><path class="f2 sf" d="M38 48q9 4 13 13-9-2-13-7-4-4 0-6z"/><path class="f2 sf" d="M58 52q-7 6-7 15 7-4 9-11 2-5-2-4z"/>'},
 
-{id:"cane-vinegar",cat:"condiments",name:{en:"Cane vinegar",fr:"Vinaigre de canne"},latin:"Saccharum officinarum",
+{id:"cane-vinegar",cat:"condiments",rare:true,name:{en:"Cane vinegar",fr:"Vinaigre de canne"},latin:"Saccharum officinarum",
 origin:{en:"Ilocos, Philippines",fr:"Ilocos, Philippines"},season:[],
 flavor:["sour","sweet","tangy"],
 story:{en:"Sukang Iloko is fermented from basi, the Ilocano sugarcane wine, in the same burnay clay jars used to age the wine itself, the juice having first been boiled down to a syrup. The Philippines runs on four native vinegars — cane, coconut, nipa and kaong palm — and an adobo made with each one tastes measurably different.",
@@ -249,7 +249,7 @@ fr:"Servez-les entiers avec la queue, à température ambiante, et ne les hachez
 pairs:["anchovy","olive-oil","manzanilla-sherry","jamon-serrano","tomato","sea-bass"],
 svg:'<path class="f2 sf" d="M48 40q12 6 12 20t-12 16q-12-2-12-16t12-20z"/><path class="s" d="M48 40V20"/><path class="f1 sf" d="M48 28q10-8 18-4-6 10-18 4z"/><path class="s" d="M48 46q6 12 2 28"/><circle class="dot" cx="43" cy="58" r="1.8"/><circle class="dot" cx="54" cy="64" r="1.8"/>'},
 
-{id:"caper-leaves",cat:"condiments",name:{en:"Caper leaves",fr:"Feuilles de câprier"},latin:"Capparis spinosa",
+{id:"caper-leaves",cat:"condiments",rare:true,name:{en:"Caper leaves",fr:"Feuilles de câprier"},latin:"Capparis spinosa",
 origin:{en:"Aeolian Islands and the Levant",fr:"Îles Éoliennes et Levant"},season:[],
 flavor:["bitter","salty","herbal","fresh"],
 story:{en:"On Salina and Pantelleria the leaves are a second crop off the same bush the buds come from, brined whole once the picking of capers is over. In Cyprus and Lebanon the tender shoot tips go into the jar with them, so a Levantine jar holds as much stem as leaf.",
@@ -279,7 +279,7 @@ fr:"Tiédissez-les brièvement dans l’huile d’olive avec du zeste d’orange
 pairs:["almond","fennel","orange","ricotta","olive-oil","dry-vermouth","parmesan","lemon"],
 svg:'<path class="f2 sf" d="M62 34q14 3 14 19t-14 19-14-19 14-19Z"/><path class="f1 sf" d="M40 30q18 3 18 22t-18 22-18-22 18-22Z"/><path class="s" d="M40 30v-8M62 34v-7"/>'},
 
-{id:"cheonggukjang",cat:"condiments",name:{en:"Cheonggukjang",fr:"Cheonggukjang"},latin:"Bacillus subtilis",
+{id:"cheonggukjang",cat:"condiments",rare:true,name:{en:"Cheonggukjang",fr:"Cheonggukjang"},latin:"Bacillus subtilis",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["umami","pungent","earthy","nutty"],
 story:{en:"Where doenjang is a year’s work, this is two or three days: cooked soybeans held warm around 40 C while Bacillus subtilis takes them over. The threads that string off a lifted spoon are poly-gamma-glutamic acid, the same polymer that makes natto stringy — the smell is the by-product of a very fast fermentation, not of age.",
@@ -359,7 +359,7 @@ fr:"Ne secouez pas la boîte : la crème épaisse du dessus sert à frire la pâ
 pairs:["chili","cilantro","ginger","rice","mango","shrimp","turmeric"],
 svg:'<circle class="f3 sf" cx="48" cy="54" r="19"/><path class="f1 sf" d="M48 54a19 19 0 010-38v19z" transform="rotate(30 48 45)"/><path class="f1 sf" d="M34 46a19 14 0 0128 0 22 22 0 01-28 0z"/><path class="s" d="M42 30l2 4M52 30l-2 4"/>'},
 
-{id:"coconut-vinegar",cat:"condiments",name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
+{id:"coconut-vinegar",cat:"condiments",rare:true,name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
 origin:{en:"The Philippines",fr:"Philippines"},season:[],
 flavor:["sour","tangy","mild","fruity"],
 story:{en:"Sukang tuba begins as tuba, the sap a climber cuts from the coconut flower spike twice a day, which ferments into palm wine and then, left alone, into vinegar. The mother keeps working in the bottle, so it stays cloudy and its acidity is still moving when you buy it.",
@@ -369,7 +369,7 @@ fr:"Il est plus doux qu’un vinaigre de cidre ou de riz, autour de 4 % : un kin
 pairs:["pork","garlic","black-pepper","ginger","bay-leaf","soy-sauce"],
 svg:'<path class="f3 sf" d="M22 46a26 26 0 0 0 52 0z"/><path class="f1" d="M27 48h42a21 21 0 0 1-42 0z"/><path class="s" d="M22 46h52"/><path class="s" d="M34 58q6 6 14 4t12-8"/><path class="f1 sf" d="M48 22q5 8 5 11t-5 3-5-3 5-11z"/>'},
 
-{id:"colatura-d-anchois",cat:"condiments",name:{en:"Colatura di alici",fr:"Colatura d'anchois"},latin:"Engraulis encrasicolus (anchovy liquid)",
+{id:"colatura-d-anchois",cat:"condiments",rare:true,name:{en:"Colatura di alici",fr:"Colatura d'anchois"},latin:"Engraulis encrasicolus (anchovy liquid)",
 origin:{en:"Cetara, Amalfi coast",fr:"Cetara, côte amalfitaine"},season:[],
 flavor:["umami","salty","briny","marine"],
 story:{en:"Cetara packs its anchovies in salt inside small chestnut barrels called terzigni, then pierces the base after two or three years and lets the amber liquid fall drop by drop. Legend has it that medieval monks found the method by accident, when brine seeped through the worn staves of old wine casks; the sauce only received its protected designation in 2020.",
@@ -389,7 +389,7 @@ fr:"Hachez-les dans une gribiche ou une rémoulade au dernier moment. Laissés �
 pairs:["mustard","capers","egg","tarragon","shallot","parsley","beef","butter"],
 svg:'<path class="f2 sf" d="M38 30q8 0 10 10t2 30q-2 8-8 6t-6-16 0-26 2-4z"/><circle class="dot" cx="40" cy="46" r="1.4"/><circle class="dot" cx="45" cy="58" r="1.4"/>'},
 
-{id:"olive-cassee-baux",cat:"condiments",name:{en:"Cracked olive of the Vallée des Baux",fr:"Olive cassée de la vallée des Baux"},latin:"Olea europaea 'Salonenque'",
+{id:"olive-cassee-baux",cat:"condiments",rare:true,name:{en:"Cracked olive of the Vallée des Baux",fr:"Olive cassée de la vallée des Baux"},latin:"Olea europaea 'Salonenque'",
 origin:{en:"Vallée des Baux-de-Provence",fr:"Vallée des Baux-de-Provence"},season:[],
 flavor:["anise","bitter","fresh","herbal"],
 story:{en:"The olives are struck open with a wooden mallet while still green and hard, then held in brine changed daily so the bitterness escapes through the crack. The 1997 appellation decree fixes both the varieties, Salonenque and Béruguette, and a hand harvest before ripeness — which is why the wild fennel has already gone to seed by the time the olives come in.",
@@ -529,7 +529,7 @@ fr:"Écrasez-le entre le pouce et l’index au-dessus de l’assiette : il est f
 pairs:["cote-de-boeuf","dark-chocolate","tomato","butter","potato","oyster"],
 svg:'<path class="f1 sf" d="M48 30L66 62H30z"/><path class="s" d="M48 30v32M48 62l-13-7M48 62l13-7"/><path class="f2 sf" d="M28 56L36 70H20z"/><path class="f2 sf" d="M68 58L76 72H60z"/>'},
 
-{id:"fleur-de-sel-guerande",cat:"condiments",name:{en:"Fleur de sel de Guérande",fr:"Fleur de sel de Guérande"},latin:"Halite (NaCl)",
+{id:"fleur-de-sel-guerande",cat:"condiments",luxe:true,name:{en:"Fleur de sel de Guérande",fr:"Fleur de sel de Guérande"},latin:"Halite (NaCl)",
 origin:{en:"Guérande marshes, Brittany",fr:"Marais salants de Guérande, Bretagne"},season:[6,7,8,9],
 flavor:["salty","marine","delicate"],
 story:{en:"Fleur de sel sets as a thin crust on the surface of the pan on dry days with a light easterly, and the paludier lifts it with a flat wooden board called a lousse without ever touching the clay floor — grey salt is what is raked off the bottom afterwards. The marshes have been worked since the ninth century, and it is the clay that keeps the salt damp: it never fully dries.",
@@ -609,7 +609,7 @@ fr:"Achetez-les non dénoyautées : la machine meurtrit un canal dans la chair o
 pairs:["anchovy","guindilla","manchego","almond","sherry-vinegar","piquillo","thyme","olive-oil"],
 svg:'<ellipse class="f1 sf" cx="48" cy="52" rx="19" ry="25"/><ellipse class="f3 sf" cx="48" cy="36" rx="8" ry="5"/><path class="s" d="M33 48q3 14 15 20M63 48q-3 14-15 20"/>'},
 
-{id:"tengjiao-oil",cat:"condiments",name:{en:"Green Sichuan pepper oil",fr:"Huile de poivre de Sichuan vert"},latin:"Zanthoxylum armatum",
+{id:"tengjiao-oil",cat:"condiments",rare:true,name:{en:"Green Sichuan pepper oil",fr:"Huile de poivre de Sichuan vert"},latin:"Zanthoxylum armatum",
 origin:{en:"Hongya, Sichuan",fr:"Hongya, Sichuan"},season:[],
 flavor:["numbing","citrus","fresh","resinous"],
 story:{en:"Tengjiao is Zanthoxylum armatum, a different species from the red huajiao of northern Sichuan, and Hongya county near Meishan calls itself its hometown. The oil is drawn from fresh green berries rather than dried ones, which is why it smells of lime leaf and delivers a higher, brighter buzz than any dried pepper can.",
@@ -639,7 +639,7 @@ fr:"Elle s’hydrate à l’eau froide, sans aucune chauffe, et épaissit jusqu�
 pairs:["cream","yogurt","coconut-milk","vanilla","sugar","strawberry","buttermilk","dark-chocolate"],
 svg:'<path class="f2 sf" d="M40 24q7 24 5 46-1 6-5 6t-5-6q2-22-4-45z"/><circle class="dot" cx="39" cy="40" r="2"/><circle class="dot" cx="40" cy="54" r="2"/><path class="f1 sf" d="M50 74q5-16 12-16t12 16z"/>'},
 
-{id:"guk-ganjang",cat:"condiments",name:{en:"Guk-ganjang",fr:"Ganjang de soupe (guk-ganjang)"},latin:"Glycine max",
+{id:"guk-ganjang",cat:"condiments",rare:true,name:{en:"Guk-ganjang",fr:"Ganjang de soupe (guk-ganjang)"},latin:"Glycine max",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["salty","umami","earthy"],
 story:{en:"It is the liquid poured off the meju jar, the same ferment that leaves doenjang behind, and it contains no wheat at all — the wheat-brewed style Koreans call waeganjang came later, from Japan. Cooks still name this one joseon-ganjang, the Korean soy, and keep it for soups where the broth has to stay pale.",
@@ -649,7 +649,7 @@ fr:"Il sale bien plus que le shoyu japonais : partez du tiers du volume que vous
 pairs:["beef","spinach","garlic","sesame-oil","doenjang","daikon","egg","kombu"],
 svg:'<path class="f1 sf" d="M30 52q0-13 12-13t12 13q0 11-12 11t-12-11z"/><path class="s" d="M54 46 71 31"/><path class="s" d="M34 48q8 4 16 0"/><path class="s" d="M38 62v7M46 63v9"/>'},
 
-{id:"gyokuro",cat:"condiments",name:{en:"Gyokuro",fr:"Gyokuro"},latin:"Camellia sinensis var. sinensis",
+{id:"gyokuro",cat:"condiments",luxe:true,name:{en:"Gyokuro",fr:"Gyokuro"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Uji, Kyoto prefecture",fr:"Uji, préfecture de Kyoto"},season:[4,5],
 flavor:["umami","sweet","marine"],
 story:{en:"The bushes are covered for roughly three weeks before picking. Starved of light the leaf stops building the bitter catechins and stockpiles theanine instead, which is why a cup of gyokuro reads closer to a shellfish stock than to tea.",
@@ -669,7 +669,7 @@ fr:"C’est le carvi qui en fait une harissa plutôt qu’une purée de piment. 
 pairs:["caraway","garlic","olive-oil","cumin","lamb","tomato","chickpeas","lemon"],
 svg:'<path class="f1 sf" d="M36 72V46h24v26z"/><path class="s" d="M36 54h24"/><path class="s" d="M42 62l4 4 4-4 4 4"/>'},
 
-{id:"hatcho-miso",cat:"condiments",name:{en:"Hatchō miso",fr:"Hatchō miso"},latin:"Glycine max",
+{id:"hatcho-miso",cat:"condiments",luxe:true,name:{en:"Hatchō miso",fr:"Hatchō miso"},latin:"Glycine max",
 origin:{en:"Okazaki, Aichi",fr:"Okazaki, préfecture d'Aichi"},season:[],
 flavor:["umami","bitter","rich"],
 story:{en:"Hatchō is a place — eight chō from Okazaki castle — where two houses still ferment nothing but soybeans, salt and water, with no rice or barley koji in the vat at all. Each cedar barrel is weighted with river stones stacked by hand into a cone of about three tonnes, and it has to stand without mortar through two full summers.",
@@ -709,7 +709,7 @@ fr:"Faites-le bouillir trente secondes pour brûler l'alcool avant de l'employer
 pairs:["soy-sauce","junmai-sake","sugar","eel","chicken","miso","dried-shiitake-donko","kombu"],
 svg:'<path class="f1 sf" d="M44 26h8v8q10 8 10 22t-14 20-14-20 10-22z"/><path class="s" d="M43 31h10"/><path class="f2 sf" d="M61 65h15q-1 11-7.5 11T61 65z"/><path class="s" d="M40 56q8 4 16 0"/>'},
 
-{id:"honey-vinegar",cat:"condiments",name:{en:"Honey vinegar",fr:"Vinaigre de miel"},latin:"Acetum mellis",
+{id:"honey-vinegar",cat:"condiments",rare:true,name:{en:"Honey vinegar",fr:"Vinaigre de miel"},latin:"Acetum mellis",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[],
 flavor:["sour","honeyed","floral","mild"],
 story:{en:"Vinegar only forms on something already alcoholic, so this one begins as mead: yeast first, acetobacter second, two fermentations where wine vinegar needs one. The detour costs it bite — most bottles sit near 5% acidity against a wine vinegar's 7.",
@@ -729,7 +729,7 @@ fr:"Deux ou trois prunes écrasées avec leur noyau et réparties sur un poisson
 pairs:["sea-bass","ginger","liquorice","osmanthus","chinese-rock-sugar","douchi","apricot","shaoxing-wine"],
 svg:'<path class="f2 sf" d="M48 28q20 2 20 22t-20 26q-20-6-20-26t20-22Z"/><path class="s" d="M48 20v52M38 40q5-6 10-6"/><path class="f1 sf" d="M50 22q10-6 16-2-6 8-16 2Z"/>'},
 
-{id:"iburigakko",cat:"condiments",name:{en:"Iburigakko",fr:"Iburigakko"},latin:"Raphanus sativus var. longipinnatus",
+{id:"iburigakko",cat:"condiments",rare:true,name:{en:"Iburigakko",fr:"Iburigakko"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"Inland Akita",fr:"Akita intérieur"},season:[1,2,3,12],
 flavor:["smoky","salty","sweet"],
 story:{en:"Inland Akita is under snow from November and short of the sun a daikon needs to dry outdoors, so farmers hung them over the irori, the sunken hearth, and let the smoke do the drying; the bran pickling came afterwards. Gakko is simply the Akita word for pickle, and the compound name dates only from 1967, when a local maker put it on a label.",
@@ -749,7 +749,7 @@ fr:"Ajoutez-le hors du feu, ou à frémissement à peine et moins d’une minute
 pairs:["osmanthus","glutinous-rice-flour","ginger","egg","goji","chinese-rock-sugar"],
 svg:'<path class="f1 sf" d="M20 46h56q-3 24-16 28H36q-13-4-16-28z"/><path class="f2 sf" d="M25 50h46q-2 10-5 14H30q-3-4-5-14z"/><circle class="dot" cx="38" cy="55" r="1.8"/><circle class="dot" cx="48" cy="58" r="1.8"/><circle class="dot" cx="58" cy="55" r="1.8"/>'},
 
-{id:"kala-namak",cat:"condiments",name:{en:"Kala namak (Indian black salt)",fr:"Kala namak (sel noir de l’Himalaya)"},latin:"Halitum",
+{id:"kala-namak",cat:"condiments",rare:true,name:{en:"Kala namak (Indian black salt)",fr:"Kala namak (sel noir de l’Himalaya)"},latin:"Halitum",
 origin:{en:"North India & Pakistan",fr:"Inde du Nord & Pakistan"},season:[],
 flavor:["salty","pungent","earthy"],
 story:{en:"Raw rock salt is sealed into a clay kiln with charcoal and harad seeds and fired for hours; the reaction leaves iron sulphides behind and the lumps come out violet-black. Ground, they turn pink-grey and smell unmistakably of boiled egg yolk — hydrogen sulphide, the same compound.",
@@ -779,7 +779,7 @@ fr:"Il doit atteindre une pleine ébullition pendant deux minutes, faute de quoi
 pairs:["sugar","adzuki","matcha","coconut-milk","kokuto","lemon","honey"],
 svg:'<path class="f1 sf" d="M28 44h16v28H28z"/><path class="s" d="M33 44v28M38.5 44v28"/><path class="f2 sf" d="M52 52h18v20H52z"/><path class="s" d="M52 52 58 46h18l-6 6M70 52l6-6v20l-6 6"/>'},
 
-{id:"kanzuri",cat:"condiments",name:{en:"Kanzuri",fr:"Kanzuri"},latin:"Capsicum annuum",
+{id:"kanzuri",cat:"condiments",rare:true,name:{en:"Kanzuri",fr:"Kanzuri"},latin:"Capsicum annuum",
 origin:{en:"Myoko, Niigata",fr:"Myōkō, Niigata"},season:[],
 flavor:["hot","citrus","umami","floral"],
 story:{en:"Kanzuri is made in Myoko, in the deep snow country of Niigata, where chillies salted since autumn are spread on the snow for three or four days in midwinter — the yukisarashi — which leaches out salt and bitterness before a fermentation of at least three years with yuzu peel and rice koji. The name is trademarked, so only the one producer in Myoko may use it.",
@@ -799,7 +799,7 @@ fr:"Délayez la poudre à l’eau tiède, jamais chaude, et laissez reposer dix 
 pairs:["pork","lotus-root","soy-sauce","miso","egg","shrimp","napa-cabbage"],
 svg:'<path class="f1 sf" d="M38 34h20v34l-20 8z"/><path class="f3 sf" d="M44 22h8v12h-8z"/><path class="s" d="M40 44h16"/><path class="f2 sf" d="M48 14q4 4 4 8h-8q0-4 4-8z"/>'},
 
-{id:"karikari-ume",cat:"condiments",name:{en:"Karikari ume",fr:"Karikari ume"},latin:"Prunus mume",
+{id:"karikari-ume",cat:"condiments",rare:true,name:{en:"Karikari ume",fr:"Karikari ume"},latin:"Prunus mume",
 origin:{en:"Ume orchards of Japan",fr:"Vergers d’ume du Japon"},season:[],
 flavor:["sour","salty","fresh"],
 story:{en:"The crunch is chemistry: a calcium salt goes into the brine, and calcium ions cross-link the pectin of the unripe fruit so the flesh cannot collapse the way it does in umeboshi. The window is short — the ume must be picked hard and green in late May and early June, weeks before they would be ripe enough for umeboshi.",
@@ -839,7 +839,7 @@ fr:"Un kimchi vieux et acide n’est pas gâté — c’est la qualité à cuire
 pairs:["pork","rice","sesame-oil","spring-onion","egg","garlic","gochujang","soy-sauce"],
 svg:'<path class="f1 sf" d="M32 70q4-24 16-24t16 24z"/><path class="s" d="M40 56q8 4 16 0M38 64q10 4 20 0"/>'},
 
-{id:"kkaennip-jangajji",cat:"condiments",name:{en:"Kkaennip-jangajji",fr:"Kkaennip-jangajji"},latin:"Perilla frutescens var. frutescens",
+{id:"kkaennip-jangajji",cat:"condiments",rare:true,name:{en:"Kkaennip-jangajji",fr:"Kkaennip-jangajji"},latin:"Perilla frutescens var. frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["herbal","umami","salty","anise"],
 story:{en:"Korean perilla is a different variety from Japanese shiso - a broader, softer leaf, closer to mint and anise than to shiso's sharper scent. Stacked one leaf at a time with soy, chilli and garlic laid between them, the pile slumps into a single supple block that is peeled apart leaf by leaf at the table.",
@@ -909,7 +909,7 @@ fr:"Les tiges demandent une chaleur que le limbe ne supporte pas : 80 °C et deu
 pairs:["rice","chestnut","honey","white-chocolate","hazelnut","pear"],
 svg:'<path class="s" d="M26 74 45 24M35 76 51 22M45 78 59 26M55 74 67 30"/><path class="s" d="M41 40l-9-7M53 36l9-8M46 60l-11 4"/><path class="f2 sf" d="M32 54h32a4 4 0 0 1 0 8H32a4 4 0 0 1 0-8z"/>'},
 
-{id:"kurozu",cat:"condiments",name:{en:"Kurozu",fr:"Vinaigre noir japonais (kurozu)"},latin:"Oryza sativa",
+{id:"kurozu",cat:"condiments",luxe:true,name:{en:"Kurozu",fr:"Vinaigre noir japonais (kurozu)"},latin:"Oryza sativa",
 origin:{en:"Fukuyama, Kagoshima",fr:"Fukuyama, Kagoshima"},season:[],
 flavor:["sour","umami","nutty"],
 story:{en:"Unpolished rice, koji and water go into one earthenware jar standing in an open field, and all three stages — saccharification, alcohol, then acetic acid — run in that single vessel over one to three years. The jars have stood in rows at Fukuyama in Kagoshima since about 1800, worked without lids, pumps or any transfer between tanks.",
@@ -929,7 +929,7 @@ fr:"Elle ne s’hydrate pas à froid : portez le liquide à 85 °C une minute, s
 pairs:["cream","vanilla","coconut-milk","yogurt","sugar","dark-chocolate","hazelnut","honey"],
 svg:'<path class="f3 sf" d="M22 40q14-10 28-2t24 8q-8 8-24 2T22 40z"/><path class="s" d="M26 42q14-6 26 0t20 4"/><ellipse class="f1 sf" cx="38" cy="68" rx="7" ry="5"/><ellipse class="f1 sf" cx="56" cy="70" rx="7" ry="5"/>'},
 
-{id:"olive-lucques",cat:"condiments",name:{en:"Lucques olive",fr:"Olive lucques"},latin:"Olea europaea 'Lucques'",
+{id:"olive-lucques",cat:"condiments",luxe:true,name:{en:"Lucques olive",fr:"Olive lucques"},latin:"Olea europaea 'Lucques'",
 origin:{en:"Herault and Aude, Languedoc",fr:"Hérault et Aude, Languedoc"},season:[9,10],
 flavor:["buttery","nutty","delicate"],
 story:{en:"The Lucques is hand-picked green in late September and October and sold within weeks as olives nouvelles, under an appellation covering the Hérault and the Aude. Its crescent comes from the fruit's own shape, and the flesh is soft enough to leave the stone whole: it is never cracked before curing.",
@@ -949,7 +949,7 @@ fr:"Aspergez-en les frites brûlantes dès la sortie du bain, avant refroidissem
 pairs:["potato","cod","onion","black-pepper","butter","egg","mustard","beef"],
 svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><path class="f2 sf" d="M44 36V24h8v12z"/>'},
 
-{id:"maneul-jangajji",cat:"condiments",name:{en:"Maneul-jangajji",fr:"Maneul-jangajji"},latin:"Allium sativum",
+{id:"maneul-jangajji",cat:"condiments",rare:true,name:{en:"Maneul-jangajji",fr:"Maneul-jangajji"},latin:"Allium sativum",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["sweet","tangy","umami","mild"],
 story:{en:"It is a farmhouse preserve tied to the June garlic harvest, when the new heads are still juicy enough to take a brine rather than dry out in it. Months in soy and vinegar take the raw heat out entirely, and the cloves turn amber, translucent and sweet.",
@@ -989,7 +989,7 @@ fr:"Il contient du sucre, donc il glace : réduit de moitié dans la poêle apr�
 pairs:["foie-gras","duck","strawberry","olive-oil","shallot","blue-cheese","peach","endive"],
 svg:'<path class="f2 sf" d="M42 30h12v10l4 8v28q0 4-4 4H42q-4 0-4-4V48l4-8z"/><path class="s" d="M38 56h20"/><circle class="f1 sf" cx="66" cy="52" r="5"/><circle class="f1 sf" cx="70" cy="62" r="5"/><circle class="f1 sf" cx="60" cy="62" r="5"/><path class="s" d="M66 46v-6"/>'},
 
-{id:"mostarda-di-cremona",cat:"condiments",name:{en:"Mostarda di Cremona",fr:"Mostarda di Cremona (fruits confits à la moutarde)"},latin:"Mostum ardens",
+{id:"mostarda-di-cremona",cat:"condiments",rare:true,name:{en:"Mostarda di Cremona",fr:"Mostarda di Cremona (fruits confits à la moutarde)"},latin:"Mostum ardens",
 origin:{en:"Cremona, Lombardy",fr:"Crémone, Lombardie"},season:[],
 flavor:["sweet","hot","fruity","pungent"],
 story:{en:"The name is older than mustard the condiment: medieval mostum ardens, burning must, was grape must spiked with ground seed to stop it fermenting. Cremona kept the fruit, swapped the must for sugar syrup, and adds mustard essence drop by drop — a few drops flavour a whole jar.",
@@ -999,7 +999,7 @@ fr:"Servez-la en petits morceaux à côté d’un bollito misto ou d’un fromag
 pairs:["parmesan","gorgonzola-piccante","quince","pear","beef","pork","grana-padano","mustard-seed"],
 svg:'<path class="f1 sf" d="M32 34h32v40q0 4-4 4H36q-4 0-4-4z"/><path class="f3 sf" d="M30 26h36v8H30z"/><path class="f2 sf" d="M44 46q4 0 4 4t4 8-4 8-8-4 0-12 4-4z"/><circle class="f2 sf" cx="57" cy="64" r="6"/><path class="s" d="M57 58v-6"/>'},
 
-{id:"mostarda-mantovana",cat:"condiments",name:{en:"Mostarda di Mantova",fr:"Mostarda de Mantoue"},latin:"Malus domestica 'Campanina'",
+{id:"mostarda-mantovana",cat:"condiments",rare:true,name:{en:"Mostarda di Mantova",fr:"Mostarda de Mantoue"},latin:"Malus domestica 'Campanina'",
 origin:{en:"Mantua, Lombardy",fr:"Mantoue, Lombardie"},season:[],
 flavor:["sweet","pungent","hot","fruity"],
 story:{en:"Mantuan mostarda is built on a single fruit — most often the campanina, a small hard local apple — cooked down to a dense purée instead of being kept as whole candied pieces the way Cremona keeps them. The Gonzaga court had its apothecaries make it, which is why the heat comes from essence of mustard, a pharmacy ingredient, and not from the seed.",
@@ -1049,7 +1049,7 @@ fr:"Incorporez l’huile autant que la pâte : l’arôme y loge en majorité, e
 pairs:["shrimp","lemongrass","lime","fish-sauce","tamarind-paste","palm-sugar"],
 svg:'<path class="f1 sf" d="M22 44h44q0 22-14 26H36q-14-4-14-26z"/><path class="f2 sf" d="M36 70h20v5H36z"/><path class="f2 sf" d="M58 16l10 4-12 30-8-4z"/><path class="f3 sf" d="M28 48h32q-2 12-10 14H38q-8-2-10-14z"/>'},
 
-{id:"narazuke",cat:"condiments",name:{en:"Narazuke",fr:"Narazuke"},latin:"Cucumis melo var. conomon",
+{id:"narazuke",cat:"condiments",rare:true,name:{en:"Narazuke",fr:"Narazuke"},latin:"Cucumis melo var. conomon",
 origin:{en:"Nara",fr:"Nara"},season:[],
 flavor:["sweet","rich","pungent"],
 story:{en:"Wooden tablets dug from Nara's eighth-century capital already record kasuzuke uri, melon put down in sake lees, more than 1,300 years ago. The melon passes through fresh lees several times over one to three years, darkening from pale green to amber and picking up enough alcohol to be genuinely heady.",
@@ -1059,7 +1059,7 @@ fr:"Ne rincez pas la lie sous l’eau : raclez-la au plat du couteau et gardez-l
 pairs:["sake-kasu","rice","sencha","butter","mascarpone","junmai-sake"],
 svg:'<path class="f3 sf" d="M22 52q0-15 26-15t26 15-26 15-26-15z"/><ellipse class="f1" cx="48" cy="52" rx="11" ry="5"/><path class="s" d="M30 45q18-5 36 0"/><circle class="dot" cx="31" cy="74" r="3"/><circle class="dot" cx="47" cy="77" r="3.5"/>'},
 
-{id:"nasturtium-capers",cat:"condiments",name:{en:"Nasturtium capers",fr:"Câpres de capucine"},latin:"Tropaeolum majus",
+{id:"nasturtium-capers",cat:"condiments",rare:true,name:{en:"Nasturtium capers",fr:"Câpres de capucine"},latin:"Tropaeolum majus",
 origin:{en:"Andean gardens, by way of Europe",fr:"Jardins andins, par l’Europe"},season:[7,8,9],
 flavor:["peppery","pungent","tangy","grassy"],
 story:{en:"The nasturtium came out of the Andes as an ornamental, and its heat is not capsaicin but glucotropaeolin, from the same family of mustard-oil compounds that powers horseradish and wasabi. Cooks pickled the green pods as a caper substitute because the plant grew where the caper bush would not — English kitchen books call them poor man's capers.",
@@ -1079,7 +1079,7 @@ fr:"Ôtez la tête et retirez l'intestin noir avant l'infusion, puis laissez-les
 pairs:["kombu","soy-sauce","miso","daikon","soba-noodles","hon-mirin"],
 svg:'<path class="f2 sf" d="M18 40q16-10 32 0l10-6v12l-10-6q-16 10-32 0z"/><path class="f1 sf" d="M26 56q16-10 32 0l10-6v12l-10-6q-16 10-32 0z"/><path class="f2 sf" d="M24 70q14-8 28 0l8-5v10l-8-5q-14 8-28 0z"/><circle class="dot" cx="24" cy="39" r="1.6"/><circle class="dot" cx="32" cy="55" r="1.6"/>'},
 
-{id:"nozawana-zuke",cat:"condiments",name:{en:"Nozawana-zuke",fr:"Nozawana-zuke"},latin:"Brassica rapa var. hakabura",
+{id:"nozawana-zuke",cat:"condiments",rare:true,name:{en:"Nozawana-zuke",fr:"Nozawana-zuke"},latin:"Brassica rapa var. hakabura",
 origin:{en:"Nozawa Onsen, Nagano",fr:"Nozawa Onsen, Nagano"},season:[1,2,3,11,12],
 flavor:["grassy","salty","mild"],
 story:{en:"Temple legend at Kenmei-ji has its eighth abbot carrying Tennōji turnip seed home from Kyoto in 1756; planted in the cold at Nozawa Onsen the root stayed small and the leaves ran to nearly a metre, so the village kept the leaf and forgot the root. It is salted whole, stalk and all, and ferments in barrels through the snow.",
@@ -1109,7 +1109,7 @@ fr:"Torréfiez les flocons à sec une minute avant usage, la note de noisette do
 pairs:["cashew","garlic","kale","corn","potato","mustard","black-pepper","tomato"],
 svg:'<path class="f1 sf" d="M28 54q0-12 14-12t14 12-14 12-14-12z"/><path class="f2 sf" d="M32 46q10-10 20 0z"/><path class="s" d="M56 48l14-12"/><circle class="dot" cx="64" cy="58" r="2"/><circle class="dot" cx="70" cy="64" r="2"/>'},
 
-{id:"olive-nyons",cat:"condiments",name:{en:"Nyons olive",fr:"Olive de Nyons"},latin:"Olea europaea 'Tanche'",
+{id:"olive-nyons",cat:"condiments",luxe:true,name:{en:"Nyons olive",fr:"Olive de Nyons"},latin:"Olea europaea 'Tanche'",
 origin:{en:"Nyons, Drome",fr:"Nyons, Drôme"},season:[],
 flavor:["fruity","sweet","salty"],
 story:{en:"The Tanche of the Baronnies became the first French olive to win an appellation, in 1994, and it grows to any purpose almost nowhere else. It is left on the tree until it is fully black and wrinkled, then cured in dry salt rather than brine, which is why it tastes nearer a prune than a pickle.",
@@ -1149,7 +1149,7 @@ fr:"Ajoutez-la en fin de cuisson, hors de la grande flamme : ses sucres brûlent
 pairs:["chinese-broccoli","garlic","shaoxing-wine","ginger","sesame-oil","beef","choy-sum"],
 svg:'<path class="f2 sf" d="M42 20h12v10l8 12v34a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V42l8-12z"/><rect class="f1 sf" x="37" y="50" width="22" height="18" rx="1"/><path class="s" d="M42 60q6-7 12 0"/><path class="s" d="M42 24h12"/>'},
 
-{id:"pedro-ximenez-vinegar",cat:"condiments",name:{en:"Pedro Ximénez vinegar",fr:"Vinaigre de Pedro Ximénez"},latin:"Vitis vinifera",
+{id:"pedro-ximenez-vinegar",cat:"condiments",luxe:true,name:{en:"Pedro Ximénez vinegar",fr:"Vinaigre de Pedro Ximénez"},latin:"Vitis vinifera",
 origin:{en:"Jerez and Montilla, Andalusia",fr:"Jerez et Montilla, Andalousie"},season:[],
 flavor:["sweet","sour","fruity","rich"],
 story:{en:"Pedro Ximénez grapes are laid out in the sun for one to three weeks before pressing — the asoleo — which raisins them and pushes the sugar far past what fermentation can consume. The vinegar made from that wine keeps the leftover sweetness, so it behaves like a finished reduction straight from the bottle rather than like an acid.",
@@ -1159,7 +1159,7 @@ fr:"Servez-vous-en là où vous passeriez vingt minutes à réduire un vin doux 
 pairs:["foie-gras","venison","manchego","fig","raisin","duck"],
 svg:'<path class="f3 sf" d="M41 18h14v10l7 13v26q0 5-5 5H39q-5 0-5-5V41l7-13z"/><path class="f2 sf" d="M39 12h18v7H39z"/><path class="s" d="M36 46h24"/><circle class="f2 sf" cx="72" cy="60" r="7"/><path class="s" d="M67 57q5 5 10 1"/>'},
 
-{id:"perry-vinegar",cat:"condiments",name:{en:"Perry vinegar",fr:"Vinaigre de poiré"},latin:"Pyrus communis",
+{id:"perry-vinegar",cat:"condiments",rare:true,name:{en:"Perry vinegar",fr:"Vinaigre de poiré"},latin:"Pyrus communis",
 origin:{en:"Domfront, Normandy",fr:"Domfront, Normandie"},season:[],
 flavor:["sour","fruity","floral"],
 story:{en:"A perry pear takes fifteen years or more to come into fruit, which is where the English advice about planting pears for your heirs comes from; the Domfront orchards still hold trees two centuries old. Vinegar from their cider is softer than an apple's, because pears leave behind sorbitol the yeasts cannot ferment.",
@@ -1179,7 +1179,7 @@ fr:"Achetez-les non pasteurisées et conservez-les dans leur saumure au réfrig�
 pairs:["coriander-seed","fennel-seed","lemon","almond","dry-vermouth","thyme","goat-cheese","olive-oil"],
 svg:'<path class="f1 sf" d="M48 22q10 7 10 25t-10 25q-10-7-10-25t10-25Z"/><path class="s" d="M48 22v-7"/><ellipse class="f3 sf" cx="28" cy="52" rx="4" ry="2.5"/><circle class="dot" cx="68" cy="46" r="2.2"/><circle class="dot" cx="66" cy="58" r="2.2"/>'},
 
-{id:"pickled-walnut",cat:"condiments",name:{en:"Pickled walnut",fr:"Noix confites au vinaigre"},latin:"Juglans regia",
+{id:"pickled-walnut",cat:"condiments",rare:true,name:{en:"Pickled walnut",fr:"Noix confites au vinaigre"},latin:"Juglans regia",
 origin:{en:"England",fr:"Angleterre"},season:[],
 flavor:["bitter","sour","rich","earthy"],
 story:{en:"Green walnuts are picked before the shell begins to lignify, traditionally around St John's Day on the twenty-fourth of June and never past the end of July. The black is not a dye: juglone in the husk oxidises on contact with air, which is why Mrs Beeton's method lays the brined nuts out in the sun for three days before the spiced vinegar goes on.",
@@ -1249,7 +1249,7 @@ fr:"Déglacez à sa place plutôt qu’au vin quand vous voulez que l’acidité
 pairs:["shallot","olive-oil","oyster","black-pepper","mustard","garlic","thyme","onion"],
 svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><path class="f1 sf" d="M44 36V26h8v10z"/>'},
 
-{id:"red-yeast-rice",cat:"condiments",name:{en:"Red yeast rice",fr:"Riz rouge fermenté (levure de riz rouge)"},latin:"Monascus purpureus",
+{id:"red-yeast-rice",cat:"condiments",rare:true,name:{en:"Red yeast rice",fr:"Riz rouge fermenté (levure de riz rouge)"},latin:"Monascus purpureus",
 origin:{en:"Fujian, China",fr:"Fujian, Chine"},season:[],
 flavor:["earthy","mild","umami"],
 story:{en:"Rice inoculated with Monascus purpureus goes crimson right through the grain; the Song-dynasty Qingyi Lu already lists it as a colouring for wine and a preservative for food. The mould makes monacolin K, a molecule chemically identical to lovastatin — the first statin ever brought to market came out of this ferment.",
@@ -1299,7 +1299,7 @@ fr:"Ajoutez-le hors du feu : l’huile de sésame brûle et l’arôme tombe à 
 pairs:["silken-tofu","pork","soba-noodles","soy-sauce","rice-vinegar","spring-onion"],
 svg:'<path class="f1 sf" d="M40 24h16v6l6 12v24q0 4-4 4H38q-4 0-4-4V42l6-12z"/><path class="f2 sf" d="M39 17h18v7H39z"/><path class="f3 sf" d="M46 46q7 5 6 13t-7 7-3-11 4-9z"/><path class="s" d="M35 44h26"/>'},
 
-{id:"sababushi",cat:"condiments",name:{en:"Sababushi",fr:"Sababushi (maquereau séché)"},latin:"Scomber japonicus (dried, smoked)",
+{id:"sababushi",cat:"condiments",rare:true,name:{en:"Sababushi",fr:"Sababushi (maquereau séché)"},latin:"Scomber japonicus (dried, smoked)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["umami","smoky","rich","meaty"],
 story:{en:"Made exactly like katsuobushi — simmered, boned, smoked over weeks — but from mackerel, which carries far more fat than skipjack and leaves a darker, sweeter broth. Soba houses keep it for precisely that: a dashi with enough body to stand up to the black soy of a tsuyu.",
@@ -1319,7 +1319,7 @@ fr:"Pour un saikyo-yaki, détendez-le au saké et au mirin, couchez-y le poisson
 pairs:["sea-bass","scallop","hon-mirin","junmai-sake","turnip","mitsuba"],
 svg:'<path class="f2 sf" d="M28 54q0-11 13-11t13 11q0 9-13 9t-13-9z"/><path class="f1 sf" d="M54 50l20-7v7l-20 6z"/><path class="f1 sf" d="M31 50q7-13 21-3z"/><path class="s" d="M37 48q6-4 10 0"/>'},
 
-{id:"saishikomi-shoyu",cat:"condiments",name:{en:"Saishikomi shoyu",fr:"Sauce soja saishikomi (double brassage)"},latin:"Glycine max (double-brewed)",
+{id:"saishikomi-shoyu",cat:"condiments",luxe:true,name:{en:"Saishikomi shoyu",fr:"Sauce soja saishikomi (double brassage)"},latin:"Glycine max (double-brewed)",
 origin:{en:"Yanai, Yamaguchi",fr:"Yanai, Yamaguchi"},season:[],
 flavor:["umami","rich","salty","toasty"],
 story:{en:"Instead of brine, the second brew is mashed with finished soy sauce: twice the raw material, twice the time, and a liquid dark and thick enough to look like molasses. Yanai in Yamaguchi has made it for generations under the name kanro shoyu, sweet dew.",
@@ -1329,7 +1329,7 @@ fr:"Gardez-la pour la table et les finitions : la chaleur emporte précisément 
 pairs:["tuna","sea-bream","rice","wasabi","scallop","egg","silken-tofu"],
 svg:'<path class="f1 sf" d="M30 44h34l-4 22q-1 8-13 8t-13-8z"/><path class="f1 sf" d="M60 44l12-5-2 9-10 2z"/><path class="f3 sf" d="M33 56h28l-2 10q-1 6-12 6t-12-6z"/><circle class="dot" cx="73" cy="56" r="2.5"/>'},
 
-{id:"sake-kasu",cat:"condiments",name:{en:"Sake kasu",fr:"Lie de saké (sake kasu)"},latin:"Oryza sativa (lees)",
+{id:"sake-kasu",cat:"condiments",rare:true,name:{en:"Sake kasu",fr:"Lie de saké (sake kasu)"},latin:"Oryza sativa (lees)",
 origin:{en:"Sake breweries, Japan",fr:"Brasseries de saké, Japon"},season:[1,2,3,4],
 flavor:["rich","sweet","warm","creamy"],
 story:{en:"What comes off the press at the end of a sake brew is a pale cake still holding around eight percent alcohol and the enzymes that made the sake. Breweries sold it cheap to their neighbours through the cold months, which is how kasujiru soup and narazuke pickles came to exist at all.",
@@ -1369,7 +1369,7 @@ fr:"Rincez, puis faites dessaler quinze minutes à l’eau froide et goûtez ; l
 pairs:["anchovy","lemon","olive-oil","parsley","butter","tomato","tuna","skate"],
 svg:'<path class="s" d="M22 62q26 16 52 0"/><path class="f2 sf" d="M38 60q-9-2-9-11t9-9 9 9-9 11z"/><path class="f2 sf" d="M56 58q-8-2-8-10t8-8 8 8-8 10z"/><path class="f1 sf" d="M47 64q-6-2-6-7t6-6 6 6-6 7z"/><circle class="dot" cx="26" cy="44" r="1.8"/><circle class="dot" cx="70" cy="42" r="1.8"/>'},
 
-{id:"salted-cherry-blossom",cat:"condiments",name:{en:"Salted cherry blossom",fr:"Fleurs de cerisier salées"},latin:"Prunus serrulata",
+{id:"salted-cherry-blossom",cat:"condiments",rare:true,luxe:true,name:{en:"Salted cherry blossom",fr:"Fleurs de cerisier salées"},latin:"Prunus serrulata",
 origin:{en:"Hadano, Kanagawa",fr:"Hadano, Kanagawa"},season:[],
 flavor:["salty","floral","delicate","nutty"],
 story:{en:"About four fifths of Japan’s supply comes from one district of Hadano in Kanagawa, where the double-flowered kanzan is picked half open, salted, then steeped in plum vinegar. The almond and hay smell is made by the curing rather than the flower: salt breaks the glycoside and frees the coumarin, which the living blossom barely gives off.",
@@ -1379,7 +1379,7 @@ fr:"Rincer puis faire tremper cinq à dix minutes, et goûter l’eau de trempag
 pairs:["adzuki","glutinous-rice","matcha","junmai-sake","rice","white-chocolate"],
 svg:'<path class="f1 sf" d="M46 25a9 9 0 1 0 0 18 9 9 0 1 0 0-18M57 33a9 9 0 1 0 0 18 9 9 0 1 0 0-18M53 47a9 9 0 1 0 0 18 9 9 0 1 0 0-18M39 47a9 9 0 1 0 0 18 9 9 0 1 0 0-18M35 33a9 9 0 1 0 0 18 9 9 0 1 0 0-18"/><circle class="f2 sf" cx="46" cy="45" r="5"/><circle class="dot" cx="70" cy="70" r="2"/><circle class="dot" cx="78" cy="62" r="2"/><circle class="dot" cx="64" cy="78" r="2"/>'},
 
-{id:"sakura-leaf",cat:"condiments",name:{en:"Salted cherry leaf",fr:"Feuille de cerisier saumurée (sakura)"},latin:"Prunus serrulata",
+{id:"sakura-leaf",cat:"condiments",rare:true,name:{en:"Salted cherry leaf",fr:"Feuille de cerisier saumurée (sakura)"},latin:"Prunus serrulata",
 origin:{en:"Izu peninsula, Japan",fr:"Péninsule d'Izu, Japon"},season:[],
 flavor:["salty","floral","herbal"],
 story:{en:"A fresh cherry leaf smells of almost nothing; the almond-and-hay perfume is coumarin, and it appears only after weeks in salt, once the glycoside holding it has broken down. Most of the supply is Oshima cherry, grown on the Izu peninsula for its large soft leaves rather than for fruit or blossom.",
@@ -1429,7 +1429,7 @@ fr:"70–80 °C, soixante secondes, et videz la théière jusqu’à la dernièr
 pairs:["rice","salmon","cucumber","sesame","ginger","umeboshi"],
 svg:'<path class="f2 sf" d="M34 26c5 8 6 30 0 44-6-14-5-36 0-44z"/><path class="f2 sf" d="M48 20c6 10 7 36 0 52-7-16-6-42 0-52z"/><path class="f2 sf" d="M62 26c5 8 6 30 0 44-6-14-5-36 0-44z"/><path class="s" d="M34 32v32M48 28v38M62 32v32"/>'},
 
-{id:"senmaizuke",cat:"condiments",name:{en:"Senmaizuke",fr:"Senmaizuke"},latin:"Brassica rapa",
+{id:"senmaizuke",cat:"condiments",rare:true,name:{en:"Senmaizuke",fr:"Senmaizuke"},latin:"Brassica rapa",
 origin:{en:"Kyoto",fr:"Kyoto"},season:[1,2,11,12],
 flavor:["sweet","delicate","mild"],
 story:{en:"A cook attached to the Kyoto imperial palace began slicing Shōgoin turnips paper-thin in 1865 and layering them with kombu in a barrel; senmai, a thousand sheets, gave the pickle its name. It is barely a pickle at all — a few days in salt, sweet vinegar and kelp, with none of the lactic sourness of the other Kyoto tsukemono.",
@@ -1489,7 +1489,7 @@ fr:"Dix pour cent du poids de ce que vous marinez : trente minutes pour un filet
 pairs:["chicken","cod","cucumber","turnip","pork","salmon","egg"],
 svg:'<path class="f1 sf" d="M30 42h36v26a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8z"/><path class="f2 sf" d="M31 54h34v14a8 8 0 0 1-8 8H39a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M56 46l14-17 4 3-15 17z"/><circle class="dot" cx="42" cy="64" r="1.6"/><circle class="dot" cx="53" cy="69" r="1.6"/>'},
 
-{id:"shiokara",cat:"condiments",name:{en:"Shiokara",fr:"Shiokara"},latin:"Todarodes pacificus (fermented)",
+{id:"shiokara",cat:"condiments",rare:true,name:{en:"Shiokara",fr:"Shiokara"},latin:"Todarodes pacificus (fermented)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["umami","salty","pungent","briny"],
 story:{en:"Squid cut into strips and left to break down in its own salted liver — the traditional cure runs near twelve per cent salt at room temperature, the supermarket version five per cent and refrigerated. The three styles are named by colour: red with the liver, white without it, black with the ink stirred through.",
@@ -1499,7 +1499,7 @@ fr:"Traitez-le en assaisonnement, pas en plat : une cuillère à café dans du r
 pairs:["rice","cucumber","junmai-sake","negi","butter","yuzu","daikon"],
 svg:'<path class="f1 sf" d="M28 46h40l-4 26q-1 6-16 6t-16-6z"/><path class="s" d="M24 46h48"/><path class="f3 sf" d="M34 46q4-8 14-8t14 8z"/><path class="s" d="M40 58q8 4 16 0"/>'},
 
-{id:"shiro-shoyu",cat:"condiments",name:{en:"Shiro shoyu",fr:"Sauce soja blanche (shiro)"},latin:"Triticum aestivum (fermented)",
+{id:"shiro-shoyu",cat:"condiments",rare:true,name:{en:"Shiro shoyu",fr:"Sauce soja blanche (shiro)"},latin:"Triticum aestivum (fermented)",
 origin:{en:"Hekinan, Aichi",fr:"Hekinan, Aichi"},season:[],
 flavor:["salty","umami","sweet","mild"],
 story:{en:"Shiro shoyu inverts the recipe — roughly nine parts wheat to one of soybean — and brews for months rather than years, around Hekinan in Aichi. It comes out the colour of straw, which is the entire point: it seasons a clear broth or a chawanmushi without tinting it.",
@@ -1569,7 +1569,7 @@ fr:"Pressez les lanières pour les assécher et faites-les revenir dans du saind
 pairs:["pork-belly","white-pepper","ginger","garlic","chili","soy-sauce","silken-tofu","shaoxing-wine"],
 svg:'<path class="f1 sf" d="M20 62q10-25 28-25t28 25q-28 10-56 0Z"/><path class="s" d="M30 58q6-14 14-17M42 60q4-16 10-19M54 60q7-11 11-4"/><path class="f2 sf" d="M20 62q28 10 56 0 0 9-28 9t-28-9Z"/>'},
 
-{id:"sugukizuke",cat:"condiments",name:{en:"Sugukizuke",fr:"Sugukizuke"},latin:"Brassica rapa var. neosuguki",
+{id:"sugukizuke",cat:"condiments",rare:true,name:{en:"Sugukizuke",fr:"Sugukizuke"},latin:"Brassica rapa var. neosuguki",
 origin:{en:"Kamigamo, Kyoto",fr:"Kamigamo, Kyoto"},season:[1,2,11,12],
 flavor:["sour","umami","salty"],
 story:{en:"Until the end of the Edo period only the priestly families of Kamigamo shrine were permitted to grow suguki, and the turnips left the precinct as gifts rather than goods. There is no vinegar in it at all: the sourness is lactic, produced by bacteria that were first isolated from these barrels and named after the pickle.",
@@ -1579,7 +1579,7 @@ fr:"Tranchez-le entier, feuilles comprises, et servez-le froid avec du riz : c�
 pairs:["rice","sencha","sesame-oil","salt","katsuobushi","koikuchi-shoyu"],
 svg:'<ellipse class="f3 sf" cx="48" cy="18" rx="16" ry="7"/><path class="s" d="M48 46V26M48 34q-9-6-15-4M48 32q9-8 15-6"/><path class="f1 sf" d="M48 44q14 0 14 14 0 12-14 20-14-8-14-20 0-14 14-14z"/>'},
 
-{id:"olive-taggiasca",cat:"condiments",name:{en:"Taggiasca olive",fr:"Olive taggiasche"},latin:"Olea europaea 'Taggiasca'",
+{id:"olive-taggiasca",cat:"condiments",luxe:true,name:{en:"Taggiasca olive",fr:"Olive taggiasche"},latin:"Olea europaea 'Taggiasca'",
 origin:{en:"Riviera di Ponente, Liguria",fr:"Riviera di Ponente, Ligurie"},season:[],
 flavor:["nutty","mild","fruity","briny"],
 story:{en:"Benedictine monks who came from the abbey of Lérins are credited with establishing the olive in the Argentina valley, and the town of Taggia gave the variety its name. The fruit is tiny around a proportionally large stone, so a jar is mostly stone by weight - Ligurian cooks buy it whole in oil and pit it themselves rather than pay for it done.",
@@ -1599,7 +1599,7 @@ fr:"Continuez d’ajouter l’eau pendant la phase de figeage. Elle revient touj
 pairs:["lemon","garlic","chickpeas","cumin","olive-oil","date","honey","parsley"],
 svg:'<path class="f3 sf" d="M36 70V48q12-4 24 0v22z"/><path class="s" d="M36 48q12 4 24 0"/><ellipse class="dot" cx="44" cy="60" rx="2" ry="1.4"/><ellipse class="dot" cx="53" cy="63" rx="2" ry="1.4"/>'},
 
-{id:"takana-zuke",cat:"condiments",name:{en:"Takana-zuke",fr:"Takana-zuke"},latin:"Brassica juncea var. integrifolia",
+{id:"takana-zuke",cat:"condiments",rare:true,name:{en:"Takana-zuke",fr:"Takana-zuke"},latin:"Brassica juncea var. integrifolia",
 origin:{en:"Kyushu",fr:"Kyūshū"},season:[3,4,5],
 flavor:["pungent","sour","salty"],
 story:{en:"Takana is a mustard green, Brassica juncea, and the Kyushu strain grown at Miike came from crossing a Sichuan mustard with a local variety in the Meiji period. Around Mount Aso the young pickle is eaten three days in, while barrels left six months turn hot and sour — two quite different foods out of one vegetable.",
@@ -1639,7 +1639,7 @@ fr:"Le bloc de tamarin se trempe vingt minutes à l’eau chaude puis se passe a
 pairs:["palm-sugar","fish-sauce","chili","garlic","ginger","coconut-milk","peanut","shallot"],
 svg:'<path class="f2 sf" d="M30 28q-4 26 18 40 8 5 12-1t-6-9Q38 46 40 28q1-7-5-7t-5 7z"/><path class="s" d="M36 44q6 4 12 6M44 52q5 3 10 4"/><path class="f3 sf" d="M56 66q8-4 12 2t-6 8-8-4z"/>'},
 
-{id:"olive-throuba",cat:"condiments",name:{en:"Throuba Thassos olive",fr:"Olive throumba de Thassos"},latin:"Olea europaea",
+{id:"olive-throuba",cat:"condiments",rare:true,name:{en:"Throuba Thassos olive",fr:"Olive throumba de Thassos"},latin:"Olea europaea",
 origin:{en:"Thassos, northern Aegean",fr:"Thassos, mer Égée du Nord"},season:[],
 flavor:["fruity","salty","rich","mild"],
 story:{en:"Throuba olives debitter on the branch rather than in the barrel: a harmless fungus, Phoma oleae, colonises the ripening fruit and hydrolyses the bitter glycoside away, so they can be eaten straight from the tree. Picked already wrinkled, they meet nothing afterwards but coarse salt, for two to three months.",
@@ -1659,7 +1659,7 @@ fr:"Faites-la revenir une trentaine de secondes dans l’huile avant que quoi qu
 pairs:["pork","duck","spring-onion","cucumber","shaoxing-wine","soy-sauce"],
 svg:'<path class="f2 sf" d="M28 40h40v26q0 6-6 6H34q-6 0-6-6z"/><path class="f1 sf" d="M24 36q24-12 48 0-4 6-24 6t-24-6z"/><path class="s" d="M27 40h42"/><path class="s" d="M34 56h28"/>'},
 
-{id:"truffle-juice",cat:"condiments",name:{en:"Truffle juice",fr:"Jus de truffe"},latin:"Tuber melanosporum",
+{id:"truffle-juice",cat:"condiments",luxe:true,name:{en:"Truffle juice",fr:"Jus de truffe"},latin:"Tuber melanosporum",
 origin:{en:"Périgord canneries",fr:"Conserveries du Périgord"},season:[],
 flavor:["earthy","umami","woody","rich"],
 story:{en:"When truffles are sterilised in the tin they give up a dark liquor, and that liquor is drawn off and sold on its own, the first cooking yielding the strongest. The tinned truffle has by then lost most of what it had; the juice is where it went.",
@@ -1719,7 +1719,7 @@ fr:"Déglacez-en une poêle de poulet, ou assaisonnez une salade destinée à cr
 pairs:["chicken","mustard","tarragon","scallop","grape"],
 svg:'<path class="f1 sf" d="M44 24h8v12q6 4 6 12v22q0 8-10 8t-10-8V48q0-8 6-12z"/><path class="f2" d="M40 54a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0M47 62a4 4 0 108 0 4 4 0 10-8 0"/>'},
 
-{id:"vin-de-paille",cat:"condiments",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
+{id:"vin-de-paille",cat:"condiments",rare:true,luxe:true,name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
 origin:{en:"Jura, dried in unheated lofts",fr:"Jura, séché en greniers non chauffés"},season:[],
 flavor:["sweet","honeyed","fruity"],
 story:{en:"The bunches are laid on straw or hung in an unheated loft for at least six weeks and pressed between Christmas and late February; a hundred kilos of shrivelled grapes yield fifteen to eighteen litres of must. Nothing is added at any point — the sweetness is only the water that left.",
@@ -1729,7 +1729,7 @@ fr:"Déglacez hors du feu et ne réduisez pas de plus de moitié : à gros bouil
 pairs:["foie-gras","apricot","pear","walnut","blue-cheese","fig"],
 svg:'<path class="f2 sf" d="M48 24c6 0 10 4 10 9 5 2 7 8 4 12 2 6-2 12-6 14-2 6-6 9-8 9s-6-3-8-9c-4-2-8-8-6-14-3-4-1-10 4-12 0-5 4-9 10-9z"/><path class="s" d="M39 34q9 4 18 0M37 46q11 5 22 0M42 58q6 3 12 0"/><path class="s" d="M28 74h40M24 80h48"/><path class="s" d="M48 24V13"/>'},
 
-{id:"vin-jaune",cat:"condiments",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
+{id:"vin-jaune",cat:"condiments",rare:true,luxe:true,name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
 flavor:["nutty","warm","umami"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",
@@ -1739,7 +1739,7 @@ fr:"Réduisez-le beaucoup moins qu’un blanc sec : le sotolon, qui porte la not
 pairs:["morel","cream","bresse-chicken","comte","walnut","butter"],
 svg:'<path class="f2 sf" d="M43 19h10v9c0 6 9 8 9 18v28a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V46c0-10 9-12 9-18z"/><path class="s" d="M34 56h28M34 68h28"/><path class="f3 sf" d="M42 14h12v6H42z"/>'},
 
-{id:"vin-santo",cat:"condiments",name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
+{id:"vin-santo",cat:"condiments",rare:true,name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
 origin:{en:"Tuscany",fr:"Toscane"},season:[],
 flavor:["nutty","sweet","woody"],
 story:{en:"The dried must goes into caratelli — fifty-litre casks that are sealed shut and never topped up — each carrying a madre, a sludge of yeast and lees held back from the previous batch to start the next. Years of that, under a roof that freezes in winter and bakes in summer, is what turns it oxidative where a straw wine stays fruity.",
@@ -1749,7 +1749,7 @@ fr:"En cuisine, prenez le sec, le secco : le doux brûle dans une poêle chaude.
 pairs:["almond","dark-chocolate","fig","hazelnut","pecorino","raisin"],
 svg:'<path class="f2 sf" d="M36 28q12-4 24 0c6 12 6 28 0 40q-12 4-24 0c-6-12-6-28 0-40z"/><path class="s" d="M34 40h28M34 56h28"/><ellipse class="f3 sf" cx="48" cy="48" rx="4" ry="3"/><path class="s" d="M40 27q8-3 16 0"/>'},
 
-{id:"moutarde-violette-brive",cat:"condiments",name:{en:"Violet mustard of Brive",fr:"Moutarde violette de Brive"},latin:"Brassica nigra & Vitis vinifera",
+{id:"moutarde-violette-brive",cat:"condiments",rare:true,name:{en:"Violet mustard of Brive",fr:"Moutarde violette de Brive"},latin:"Brassica nigra & Vitis vinifera",
 origin:{en:"Brive-la-Gaillarde, Correze",fr:"Brive-la-Gaillarde, Corrèze"},season:[],
 flavor:["sweet","pungent","fruity","warm"],
 story:{en:"The colour comes from the grapes, not the seed: the must is cooked down and the black skins dye the paste purple, with no vinegar involved at any point. Legend hands it to Pope Clement VI, a Limousin who is said to have taken his mustard-maker with him to Avignon in the fourteenth century.",
@@ -1759,7 +1759,7 @@ fr:"Sans vinaigre, elle n’émulsionne presque pas et ne tiendra pas une vinaig
 pairs:["duck","foie-gras","pork","boudin-noir","comte","walnut"],
 svg:'<path class="f3 sf" d="M34 46h28v26q0 6-6 6H40q-6 0-6-6z"/><path class="f2 sf" d="M30 40h36v6H30z"/><circle class="f2 sf" cx="48" cy="35" r="4"/><path class="f1 sf" d="M66 30l8 4-16 20-5-3z"/>'},
 
-{id:"wasabizuke",cat:"condiments",name:{en:"Wasabizuke",fr:"Wasabizuke"},latin:"Eutrema japonicum",
+{id:"wasabizuke",cat:"condiments",rare:true,name:{en:"Wasabizuke",fr:"Wasabizuke"},latin:"Eutrema japonicum",
 origin:{en:"Shizuoka",fr:"Shizuoka"},season:[],
 flavor:["hot","pungent","sweet"],
 story:{en:"Merchants in Fuchū, now Shizuoka, worked it out when local sake brewing took off late in the Edo period: the lees were a by-product, and wasabi grew in the spring-fed streams above the town. It was sold on the platform from the day Shizuoka station opened in 1889 and has been the local souvenir since.",
@@ -1819,7 +1819,7 @@ fr:"Pesez-la, ne la dosez jamais à la cuillère : 0,2 % du poids du liquide don
 pairs:["olive-oil","lemon","mustard","balsamic","tomato","cream"],
 svg:'<rect class="f1 sf" x="28" y="40" width="26" height="32" rx="3"/><rect class="f2 sf" x="26" y="32" width="30" height="8" rx="2"/><path class="f2 sf" d="M62 52q0-6 5-6t5 6-5 6-5-6z"/><path class="s" d="M67 58v12"/><path class="s" d="M34 52h14"/>'},
 
-{id:"xo-sauce",cat:"condiments",name:{en:"XO sauce",fr:"Sauce XO"},latin:"—",
+{id:"xo-sauce",cat:"condiments",luxe:true,name:{en:"XO sauce",fr:"Sauce XO"},latin:"—",
 origin:{en:"Hong Kong",fr:"Hong Kong"},season:[],
 flavor:["umami","salty","hot","rich"],
 story:{en:"Hong Kong hotel kitchens built it in the 1980s and borrowed the name from XO cognac purely as a signal of expense; there is no brandy in the jar. Several restaurants claim the invention and none can prove it.",
@@ -1829,7 +1829,7 @@ fr:"Le goût est autant dans l’huile que dans les morceaux : remuez le pot dep
 pairs:["scallop","egg","choy-sum","rice","silken-tofu","green-bean"],
 svg:'<path class="f2 sf" d="M32 38h32v26q0 6-6 6H38q-6 0-6-6z"/><path class="f3 sf" d="M30 30h36v8H30z"/><circle class="dot" cx="42" cy="50" r="3"/><circle class="dot" cx="55" cy="55" r="3"/><circle class="dot" cx="46" cy="61" r="2.5"/>'},
 
-{id:"ya-cai",cat:"condiments",name:{en:"Ya cai",fr:"Ya cai"},latin:"Brassica juncea",
+{id:"ya-cai",cat:"condiments",rare:true,name:{en:"Ya cai",fr:"Ya cai"},latin:"Brassica juncea",
 origin:{en:"Yibin, Sichuan",fr:"Yibin, Sichuan"},season:[],
 flavor:["sweet","umami","salty","pungent"],
 story:{en:"Ya cai is made from the tender upper stems of a Sichuan mustard, salted and then fermented a second time with sugar, which is where the dark sweetness comes from. Yibin sells it already minced as sui mi ya cai, and dan dan noodles built on anything else are a different dish.",

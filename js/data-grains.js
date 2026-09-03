@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"amaranth",cat:"grains",name:{en:"Amaranth",fr:"Amarante"},latin:"Amaranthus caudatus",
+{id:"amaranth",cat:"grains",rare:true,name:{en:"Amaranth",fr:"Amarante"},latin:"Amaranthus caudatus",
 origin:{en:"Andes and Mesoamerica",fr:"Andes et Mésoamérique"},season:[],
 flavor:["nutty","earthy","toasty"],
 story:{en:"Aztec priests bound ground amaranth with honey into figures of Huitzilopochtli that worshippers then ate, and the Spanish, reading this as a mockery of communion, banned the crop outright after 1521. The same popped seed and syrup is still sold in Mexico as alegría.",
@@ -79,7 +79,7 @@ fr:"Il déteint en violet sur tout ce qu’il touche. Cuisez-le à part si vous 
 pairs:["coconut-milk","mango","lime","ginger","sesame","honey","chili","cilantro"],
 svg:'<ellipse class="f1 sf" cx="40" cy="54" rx="4.5" ry="9"/><ellipse class="f1 sf" cx="53" cy="52" rx="4.5" ry="9"/><ellipse class="f1 sf" cx="46" cy="67" rx="4.5" ry="9"/>'},
 
-{id:"blue-corn",cat:"grains",name:{en:"Blue corn",fr:"Maïs bleu"},latin:"Zea mays (Hopi blue)",
+{id:"blue-corn",cat:"grains",rare:true,name:{en:"Blue corn",fr:"Maïs bleu"},latin:"Zea mays (Hopi blue)",
 origin:{en:"Hopi and Rio Grande pueblos, American Southwest",fr:"Pueblos hopi et du Rio Grande, Sud-Ouest américain"},season:[9,10],
 flavor:["sweet","nutty","grassy"],
 story:{en:"The colour is anthocyanin, the same pigment class as in blackcurrant, sitting in the aleurone layer where grinding cannot remove it. Hopi growers sow the seed a foot or more down into dry sand so the shoot reaches buried moisture — a landrace trait a modern short-shoot hybrid simply cannot manage.",
@@ -129,7 +129,7 @@ fr:"Le boulgour fin du taboulé ne se cuit pas — le jus de citron et l’eau d
 pairs:["parsley","mint","lemon","tomato","olive-oil","spring-onion","cumin","pomegranate"],
 svg:'<path class="f2 sf" d="M32 68q0-16 16-20 16 4 16 20z"/><circle class="dot" cx="41" cy="60" r="1.8"/><circle class="dot" cx="50" cy="57" r="1.8"/><circle class="dot" cx="55" cy="64" r="1.8"/>'},
 
-{id:"camargue-red-rice",cat:"grains",name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
+{id:"camargue-red-rice",cat:"grains",rare:true,name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
 origin:{en:"Rhone delta, Camargue",fr:"Delta du Rhône, Camargue"},season:[],
 flavor:["nutty","earthy","toasty"],
 story:{en:"Camargue red rice is barely forty years old: trialled from 1982 with INRA, first harvested in 1988, on shelves from 1992. It sits under the Riz de Camargue IGP granted in 1998 - a protected name for a grain younger than most of the cooks using it.",
@@ -149,7 +149,7 @@ fr:"Nacrez les grains à sec dans la matière grasse jusqu’à ce que les bords
 pairs:["parmesan","butter","porcini","saffron","shallot","white-wine-vinegar","black-pepper","scallop"],
 svg:'<ellipse class="f3 sf" cx="40" cy="50" rx="4.5" ry="10"/><ellipse class="f3 sf" cx="53" cy="52" rx="4.5" ry="10"/><ellipse class="f3 sf" cx="46" cy="66" rx="4.5" ry="10"/>'},
 
-{id:"carolina-gold-rice",cat:"grains",name:{en:"Carolina Gold rice",fr:"Riz Carolina Gold"},latin:"Oryza sativa",
+{id:"carolina-gold-rice",cat:"grains",rare:true,luxe:true,name:{en:"Carolina Gold rice",fr:"Riz Carolina Gold"},latin:"Oryza sativa",
 origin:{en:"Lowcountry, South Carolina",fr:"Lowcountry, Caroline du Sud"},season:[],
 flavor:["nutty","mild","buttery"],
 story:{en:"It had gone out of commercial fields by the 1920s and came back out of a USDA seed bank in the 1980s: fourteen pounds of seed sent to a Savannah eye surgeon, twelve acres planted in 1986, and a crop rebuilt from there. Its history is West African as much as Carolinian — the tidal-field system it grew under arrived with enslaved rice growers who already knew it.",
@@ -229,7 +229,7 @@ fr:"De 0,1 à 0,5 % du poids de farine : c’est toute la plage utile — surdos
 pairs:["flour-t65","yeast","honey","butter","rye-flour","sugar"],
 svg:'<path class="f1 sf" d="M24 51h34v20a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6z"/><path class="s" d="M30 51v-7h22v7"/><ellipse class="f3 sf" cx="68" cy="43" rx="7" ry="11"/><path class="s" d="M68 32q4 7-1 11M68 54q6 4 6 11"/>'},
 
-{id:"domyojiko",cat:"grains",name:{en:"Domyojiko",fr:"Domyojiko"},latin:"Oryza sativa glutinosa",
+{id:"domyojiko",cat:"grains",rare:true,name:{en:"Domyojiko",fr:"Domyojiko"},latin:"Oryza sativa glutinosa",
 origin:{en:"Fujiidera, Osaka",fr:"Fujiidera, Osaka"},season:[],
 flavor:["mild","sweet","delicate"],
 story:{en:"Domyojiko began as hoshii, steamed rice dried hard for keeping, made by the nuns of Domyoji temple at Fujiidera near Osaka and carried as a travel and campaign ration; the eighteenth-century encyclopaedia Wakan Sansai Zue already lists it under the temple's name. It is why Kansai sakuramochi is pearled and grainy where the Tokyo version is a smooth crepe.",
@@ -249,7 +249,7 @@ fr:"Cuisez les grains entiers comme du riz, dans deux fois leur volume d’eau. 
 pairs:["olive-oil","thyme","tomato","lamb","honey","almond","mushroom","lemon"],
 svg:'<path class="s" d="M48 76V32"/><path class="f2 sf" d="M46 38q-7-3-8 2 7 5 8 0zM50 46q7-3 8 2-7 5-8 0zM46 54q-7-3-8 2 7 5 8 0zM50 62q7-3 8 2-7 5-8 0z"/>'},
 
-{id:"emmer",cat:"grains",name:{en:"Emmer wheat",fr:"Blé amidonnier"},latin:"Triticum dicoccum",
+{id:"emmer",cat:"grains",rare:true,name:{en:"Emmer wheat",fr:"Blé amidonnier"},latin:"Triticum dicoccum",
 origin:{en:"Fertile Crescent, Tuscany",fr:"Croissant fertile, Toscane"},season:[],
 flavor:["nutty","earthy","woody"],
 story:{en:"Emmer is the middle of Italy's three farri - a species of its own, neither spelt nor einkorn - and it was the wheat of Roman puls, the far that bride and groom shared in the confarreatio marriage rite. It is a hulled wheat: the grain will not thresh free of its husk, which is exactly what lost it the field to bread wheat.",
@@ -269,7 +269,7 @@ fr:"Dosez à 0,5 à 1 % du poids de farine plutôt qu’aux 2 % légaux : le tau
 pairs:["flour-t65","flour-t55","yeast","salt","olive-oil","butter"],
 svg:'<path class="f1 sf" d="M34 45h28q6 14 6 22a10 10 0 0 1-10 10H38a10 10 0 0 1-10-10q0-8 6-22z"/><path class="f3 sf" d="M33 38h30v7H33z"/><path class="s" d="M40 32q8-7 16 0"/><ellipse class="f2 sf" cx="24" cy="76" rx="7" ry="4.5"/>'},
 
-{id:"fonio",cat:"grains",name:{en:"Fonio",fr:"Fonio"},latin:"Digitaria exilis",
+{id:"fonio",cat:"grains",rare:true,name:{en:"Fonio",fr:"Fonio"},latin:"Digitaria exilis",
 origin:{en:"Fouta Djallon, Guinea",fr:"Fouta-Djalon, Guinée"},season:[],
 flavor:["nutty","mild","grassy"],
 story:{en:"Fonio has been farmed in West Africa for some five thousand years; in Dogon cosmogony the grain is po, the seed from which the universe was made. The grains are minute, and hulling them by hand is what kept the crop from travelling.",
@@ -299,7 +299,7 @@ fr:"Trempez-le quatre heures au minimum, une nuit de préférence, puis vingt-ci
 pairs:["mango","coconut-milk","adzuki","lotus-leaf","dried-shiitake-donko","sesame"],
 svg:'<path class="f2 sf" d="M22 56h52v18a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z"/><path class="s" d="M22 65h52M22 73h52"/><path class="f1 sf" d="M28 56q8-18 20-18t20 18z"/><path class="s" d="M40 30q5-7 0-14M56 30q5-7 0-14"/>'},
 
-{id:"glutinous-rice-flour",cat:"grains",name:{en:"Glutinous rice flour",fr:"Farine de riz gluant"},latin:"Oryza sativa var. glutinosa",
+{id:"glutinous-rice-flour",cat:"grains",rare:true,name:{en:"Glutinous rice flour",fr:"Farine de riz gluant"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["mild","sweet","delicate"],
 story:{en:"Shiratamako is not simply milled: the rice is soaked, ground wet, the starch settled out of the water and dried, which is why it arrives as chalky pebbles rather than a powder. Dry-milled mochiko behaves differently again, and joshinko - made from ordinary rice - is another flour altogether.",
@@ -309,7 +309,7 @@ fr:"Délayez-le à l’eau froide, petit à petit, jusqu’à la souplesse d’u
 pairs:["adzuki","kinako","matcha","black-sesame","yomogi","lotus-seed-paste"],
 svg:'<path class="f1 sf" d="M32 38h32v40H32z"/><path class="f2 sf" d="M32 38l7-8h18l7 8z"/><path class="s" d="M40 52h16M40 60h11"/><path class="f1 sf" d="M22 78q6-11 14-4-6 6-14 4z"/>'},
 
-{id:"green-spelt",cat:"grains",name:{en:"Green spelt",fr:"Épeautre vert (grünkern)"},latin:"Triticum spelta",
+{id:"green-spelt",cat:"grains",rare:true,name:{en:"Green spelt",fr:"Épeautre vert (grünkern)"},latin:"Triticum spelta",
 origin:{en:"Bauland, Baden-Württemberg and Franconia",fr:"Bauland, Bade-Wurtemberg et Franconie"},season:[],
 flavor:["smoky","nutty","toasty"],
 story:{en:"The first written record is from 1660, in the accounts of Amorbach Abbey: farmers in the Bauland saved a rain-ruined harvest by cutting the spelt unripe and drying it over beechwood fires. The emergency became the region's signature grain, and the kilns still burn beech.",
@@ -359,7 +359,7 @@ fr:"Mettez moins d’eau que le paquet ne l’indique, environ un et quart pour 
 pairs:["coconut-milk","lemongrass","chili","fish-sauce","cilantro","lime","ginger","garlic"],
 svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="4" ry="10"/><ellipse class="f3 sf" cx="52" cy="52" rx="4" ry="10"/><ellipse class="f3 sf" cx="46" cy="68" rx="4" ry="10"/>'},
 
-{id:"jobs-tears",cat:"grains",name:{en:"Job's tears",fr:"Larmes de Job (coix)"},latin:"Coix lacryma-jobi",
+{id:"jobs-tears",cat:"grains",rare:true,name:{en:"Job's tears",fr:"Larmes de Job (coix)"},latin:"Coix lacryma-jobi",
 origin:{en:"Monsoon Asia",fr:"Asie des moussons"},season:[],
 flavor:["nutty","mild","earthy"],
 story:{en:"The wild plant makes a shell hard enough to drill, and its seeds have been strung as rosary and prayer beads across Asia and beyond — lacryma-jobi means Job's tear. What reaches the kitchen is a soft-shelled cultivar, sold in Chinese pharmacies as often as in grocers.",
@@ -369,7 +369,7 @@ fr:"Trempez-les une nuit, puis comptez trois quarts d’heure à frémissement :
 pairs:["chicken","pork","adzuki","jujube","ginger","kombu"],
 svg:'<path class="s" d="M22 48h52"/><path class="f2 sf" d="M33 35q7 2 7 13t-7 13q-7-2-7-13t7-13z"/><path class="f1 sf" d="M48 32q8 2 8 16t-8 16q-8-2-8-16t8-16z"/><path class="f2 sf" d="M63 35q7 2 7 13t-7 13q-7-2-7-13t7-13z"/>'},
 
-{id:"kaniwa",cat:"grains",name:{en:"Kañiwa",fr:"Kañiwa"},latin:"Chenopodium pallidicaule",
+{id:"kaniwa",cat:"grains",rare:true,name:{en:"Kañiwa",fr:"Kañiwa"},latin:"Chenopodium pallidicaule",
 origin:{en:"Altiplano of Peru and Bolivia, above 3,800 m",fr:"Altiplano péruvien et bolivien, au-dessus de 3 800 m"},season:[],
 flavor:["nutty","toasty","earthy"],
 story:{en:"Quinoa's small cousin carries saponins that are not bitter, so unlike quinoa it was never washed before use — it was toasted whole and milled into a travelling flour called cañihuaco. It ripens above 3,800 metres, through frost and hail that flatten most other crops.",
@@ -379,7 +379,7 @@ fr:"Torréfiez-la à sec jusqu’à ce qu’elle crépite et sente la noisette a
 pairs:["quinoa","corn","potato","avocado","lime","peanut","cilantro"],
 svg:'<ellipse class="f1 sf" cx="42" cy="58" rx="21" ry="13"/><path class="s" d="M62 52q9-7 13-14"/><path class="f3 sf" d="M25 55q17-16 34 0z"/><circle class="dot" cx="38" cy="50" r="2"/><circle class="dot" cx="48" cy="48" r="2"/>'},
 
-{id:"khorasan-wheat",cat:"grains",name:{en:"Khorasan wheat",fr:"Blé de Khorasan"},latin:"Triticum turgidum subsp. turanicum",
+{id:"khorasan-wheat",cat:"grains",rare:true,name:{en:"Khorasan wheat",fr:"Blé de Khorasan"},latin:"Triticum turgidum subsp. turanicum",
 origin:{en:"Fertile Crescent; now grown in Montana and Alberta",fr:"Croissant fertile ; cultivé aujourd’hui au Montana et en Alberta"},season:[],
 flavor:["buttery","nutty","sweet"],
 story:{en:"The story goes that an American airman carried a handful of kernels out of an Egyptian tomb in the late 1940s, which earned the grain its nickname of King Tut's wheat; a Cairo market stall is the likelier source. A Montana farmer revived it and trademarked it in 1990 as Kamut, so the same wheat now sells under a brand and under its own name at two prices.",
@@ -389,7 +389,7 @@ fr:"Le grain fait le double d’un blé tendre : trempage d’une nuit, puis qua
 pairs:["olive-oil","lemon","parsley","chickpeas","pecorino","tomato"],
 svg:'<path class="f2 sf" d="M40 22q11 0 11 22v14q0 22-11 22t-11-22V44q0-22 11-22z"/><path class="s" d="M40 26v52"/><path class="f1 sf" d="M62 36q8 0 8 15v9q0 15-8 15t-8-15v-9q0-15 8-15z"/><path class="s" d="M62 40v34"/>'},
 
-{id:"koshihikari",cat:"grains",name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
+{id:"koshihikari",cat:"grains",rare:true,luxe:true,name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
 origin:{en:"Fukui and Niigata, Japan",fr:"Fukui et Niigata, Japon"},season:[],
 flavor:["sweet","milky","mild"],
 story:{en:"Bred at Fukui and released in 1956, its name means the light of Koshi, the old province strung along the Japan Sea coast. It is an awkward plant — tall, weak-strawed, apt to fall in wind — and was adopted for eating quality alone, which is how it came to cover more Japanese paddy than any other variety.",
@@ -399,7 +399,7 @@ fr:"Rincez jusqu’à ce que l’eau sorte presque claire, trempez trente minute
 pairs:["nori","salmon","umeboshi","soy-sauce","rice-vinegar","egg","ikura","shiso"],
 svg:'<path class="f1 sf" d="M24 50h48q-5 26-24 26T24 50z"/><path class="s" d="M22 50h52"/><path class="f2 sf" d="M28 50q6-17 20-17t20 17z"/><path class="s" d="M37 43q6-6 11-6"/>'},
 
-{id:"kuzu",cat:"grains",name:{en:"Kuzu",fr:"Kuzu"},latin:"Pueraria montana",
+{id:"kuzu",cat:"grains",luxe:true,name:{en:"Kuzu",fr:"Kuzu"},latin:"Pueraria montana",
 origin:{en:"Yoshino, Nara",fr:"Yoshino, Nara"},season:[],
 flavor:["mild","delicate"],
 story:{en:"Yoshino kuzu is made by washing crushed winter-dug root through change after change of cold water for months until nothing but the starch remains, which is why it arrives as chalky lumps and costs what it does. The same vine was shown at the 1876 Philadelphia exhibition, then planted across the American South to hold the soil, and is now the weed that ate the region.",
@@ -409,7 +409,7 @@ fr:"Écrasez les morceaux et dissolvez-les à l'eau froide avant tout contact av
 pairs:["adzuki","ginger","kokuto","hon-mirin","kombu","soy-sauce","matcha","sugar"],
 svg:'<path class="f1 sf" d="M34 68 30 54l10-8 6 10z"/><path class="f2 sf" d="M46 68 40 56l12-10 8 12z"/><path class="f1 sf" d="M60 68 56 58l10-6 6 10z"/><path class="s" d="M26 70h44"/>'},
 
-{id:"lupin-flour",cat:"grains",name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
+{id:"lupin-flour",cat:"grains",rare:true,name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
 flavor:["nutty","bitter","rich"],
 story:{en:"Every lupin was bitter with quinolizidine alkaloids until Reinhold von Sengbusch, screening hundreds of thousands of plants in 1920s Germany, isolated the rare sweet mutants that all modern varieties descend from. The flour runs near 40% protein with almost no starch, and it emulsifies like egg yolk, which no cereal flour does.",
@@ -419,7 +419,7 @@ fr:"Trois à cinq pour cent du poids de farine suffisent à colorer des pâtes o
 pairs:["egg","tipo-00-flour","olive-oil","semolina","saffron","butter","honey"],
 svg:'<path class="f1 sf" d="M32 40h32v30a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path class="f3 sf" d="M36 29h24v11H36z"/><path class="f2 sf" d="M34 55h28v15a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6z"/>'},
 
-{id:"masa-harina",cat:"grains",name:{en:"Masa harina",fr:"Masa harina (farine de maïs nixtamalisée)"},latin:"Zea mays",
+{id:"masa-harina",cat:"grains",rare:true,name:{en:"Masa harina",fr:"Masa harina (farine de maïs nixtamalisée)"},latin:"Zea mays",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
 flavor:["toasty","earthy","mild"],
 story:{en:"Cooking maize in lime — nixtamalization, from the Nahuatl — is at least three thousand years old, and it does two things at once: it loosens the hulls so the dough will hold together, and it frees the grain's niacin. Where maize travelled without the lime, into Europe and the American South, pellagra followed it.",
@@ -669,7 +669,7 @@ fr:"Elle épaissit à plus basse température que la maïzena et se relâche à 
 pairs:["coconut-milk","palm-sugar","pandan","mango","shrimp","black-sesame"],
 svg:'<path class="f1 sf" d="M28 44q0-12 14-12t14 12q0 12-14 12T28 44z"/><path class="s" d="M56 44l14 14"/><circle class="dot" cx="38" cy="42" r="3"/><circle class="dot" cx="46" cy="40" r="3"/><circle class="dot" cx="42" cy="49" r="3"/><circle class="f3 sf" cx="50" cy="48" r="3"/>'},
 
-{id:"teff",cat:"grains",name:{en:"Teff",fr:"Teff"},latin:"Eragrostis tef",
+{id:"teff",cat:"grains",rare:true,name:{en:"Teff",fr:"Teff"},latin:"Eragrostis tef",
 origin:{en:"Ethiopian highlands",fr:"Hauts plateaux éthiopiens"},season:[],
 flavor:["nutty","earthy","mild"],
 story:{en:"The Amharic name is thought to come from teffa, to be lost: the grain is about a millimetre long, small enough to vanish into the soil at threshing. That size settles everything else — a grain this small cannot be degermed, so every teff flour on the market is a wholegrain flour whether the bag says so or not.",
@@ -699,7 +699,7 @@ fr:"Lisez le W, pas les zéros. Pour des pâtes fraîches, 100 g d’une 00 soup
 pairs:["egg","semola-rimacinata","olive-oil","mozzarella","san-marzano-tomato","basil","parmesan"],
 svg:'<path class="f1 sf" d="M32 36h32v34a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4z"/><path class="f2 sf" d="M32 36l6-8h20l6 8z"/><path class="s" d="M40 50h16M40 58h11"/>'},
 
-{id:"vialone-nano",cat:"grains",name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
+{id:"vialone-nano",cat:"grains",rare:true,name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
 origin:{en:"Veronese lowlands",fr:"Basse plaine véronaise"},season:[],
 flavor:["mild","creamy","nutty"],
 story:{en:"Crossed in 1937 from a tall Vialone and a dwarf variety called Nano, it became in 1996 the first rice in Europe granted a protected geographical indication, as Riso Nano Vialone Veronese. It is a semifino, a shorter and rounder class than the superfino Arborio and Carnaroli, and it gives up its starch faster than either — which is why Veneto risotto is served loose enough to move on the plate.",
@@ -709,7 +709,7 @@ fr:"Il est cuit en treize à quinze minutes, plusieurs minutes de moins que le c
 pairs:["parmesan","butter","pea","saffron","radicchio","langoustine"],
 svg:'<ellipse class="f1 sf" cx="40" cy="40" rx="7" ry="11"/><ellipse class="f2 sf" cx="56" cy="48" rx="7" ry="11"/><ellipse class="f1 sf" cx="44" cy="62" rx="7" ry="11"/><path class="s" d="M40 33v14M56 41v14M44 55v14"/>'},
 
-{id:"warabiko",cat:"grains",name:{en:"Warabi-ko (bracken starch)",fr:"Fécule de fougère (warabi-ko)"},latin:"Pteridium aquilinum",
+{id:"warabiko",cat:"grains",luxe:true,name:{en:"Warabi-ko (bracken starch)",fr:"Fécule de fougère (warabi-ko)"},latin:"Pteridium aquilinum",
 origin:{en:"Japan, mountain woodland",fr:"Japon, sous-bois de montagne"},season:[],
 flavor:["mild","earthy","delicate"],
 story:{en:"A bracken rhizome is only about five percent starch, and washing that out is slow enough that pure hon-warabiko has run to twelve to fifteen thousand yen a kilo, some thirty times the price of sweet potato starch. Almost every packet sold as warabimochiko is mostly sweet potato or tapioca with a little bracken in it for the grey.",

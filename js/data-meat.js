@@ -9,7 +9,7 @@ fr:"Fondez-en une cuillerée dans un miel tiède pour le fromage, dans une sauce
 pairs:["honey","tomato","mozzarella","egg","scallop"],
 svg:'<path class="f3 sf" d="M34 40q14-10 28 0 4 14 0 26-14 8-28 0-4-12 0-26z" transform="rotate(-8 48 52)"/><path class="s" d="M34 38q-4-4-2-8M62 38q4-4 2-8" stroke-width="1.8"/><path class="f1" d="M44 50a2 2 0 104 0 2 2 0 10-4 0M52 56a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"wagyu-akaushi",cat:"meat",name:{en:"Akaushi wagyu",fr:"Wagyu Akaushi (japonais brun)"},latin:"Bos taurus",
+{id:"wagyu-akaushi",cat:"meat",luxe:true,name:{en:"Akaushi wagyu",fr:"Wagyu Akaushi (japonais brun)"},latin:"Bos taurus",
 origin:{en:"Kumamoto and Kōchi, Japan",fr:"Kumamoto et Kōchi, Japon"},season:[],
 flavor:["meaty","rich","umami","sweet"],
 story:{en:"Akaushi is the Japanese Brown, a separate breed from the Japanese Black that supplies almost all wagyu; it was selected on the Aso grasslands for grazing and for turning rough forage into meat rather than for marbling, and it is only around five percent of the national herd. The consequence shows on the plate: enough intramuscular fat to stay tender, little enough that a whole steak of it is not too much of a good thing.",
@@ -39,7 +39,7 @@ fr:"Incisez le boyau en deux ou trois endroits avant la cuisson, sinon il éclat
 pairs:["dijon-mustard","shallot","potato","cider-vinegar","onion","parsley"],
 svg:'<path class="f1 sf" d="M24 50q0-13 26-13t26 13q0 13-26 13t-26-13z"/><ellipse class="f2 sf" cx="26" cy="50" rx="5" ry="11"/><path class="s" d="M24 42v16M28 41v18M32 42v16"/><path class="s" d="M70 39q5 11 0 22"/>'},
 
-{id:"boeuf-aubrac",cat:"meat",name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
+{id:"boeuf-aubrac",cat:"meat",luxe:true,name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
 origin:{en:"Aubrac plateau, Aveyron",fr:"Plateau de l’Aubrac, Aveyron"},season:[],
 flavor:["meaty","rich","earthy","umami"],
 story:{en:"The Aubrac was a dairy breed first: it filled the burons of the plateau with milk for Laguiole cheese and aligot, and the beef was what was left over — when the mountain dairies emptied in the twentieth century the breed nearly went with them. What survived is a very late-maturing animal, finished well past thirty months, with dense muscle and deep yellow grass fat.",
@@ -49,7 +49,7 @@ fr:"Achetez-le rassis : quatre à six semaines sur l’os, c’est là que son 
 pairs:["shallot","red-wine-vinegar","bone-marrow","thyme","garlic","black-pepper","potato","butter"],
 svg:'<path class="f2 sf" d="M22 44q4-18 24-16t20 18-6 24-28 4-10-30z"/><path class="s" d="M32 46q10-6 20 2M30 58q14 7 24-2"/><path class="f1 sf" d="M64 52h8q4 0 4 4t-4 4h-8z"/><circle class="f1 sf" cx="73" cy="50" r="4"/>'},
 
-{id:"bastourma",cat:"meat",name:{en:"Bastourma",fr:"bastourma"},latin:"Bos taurus (cured, çemen-coated)",
+{id:"bastourma",cat:"meat",rare:true,name:{en:"Bastourma",fr:"bastourma"},latin:"Bos taurus (cured, çemen-coated)",
 origin:{en:"Kayseri, Anatolia",fr:"Kayseri, Anatolie"},season:[],
 flavor:["pungent","warm","meaty","bitter"],
 story:{en:"The name is Turkish — bastırma et, pressed meat — and the technique is credited to Armenian curers in Caesarea, today's Kayseri, who pressed and dried beef for long journeys on horseback. Basturmajian, the one who makes basturma, became a family surname that is still carried.",
@@ -79,7 +79,7 @@ fr:"Sortez-le une heure avant, saisissez-le fort, laissez-le reposer aussi longt
 pairs:["black-pepper","mushroom","onion","mustard","blue-cheese","thyme","soy-sauce"],
 svg:'<path class="f2 sf" d="M32 44q10-10 26-6 10 3 8 14-2 12-16 14-14 2-18-8-3-8 0-14z"/><path class="f1 sf" d="M54 44q8 2 6 10-1 6-8 8" fill="none"/><path class="s" d="M54 44q8 2 6 10-1 6-8 8"/>'},
 
-{id:"jambon-noir-de-bigorre",cat:"meat",name:{en:"Bigorre black ham",fr:"jambon noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon, cured)",
+{id:"jambon-noir-de-bigorre",cat:"meat",rare:true,luxe:true,name:{en:"Bigorre black ham",fr:"jambon noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon, cured)",
 origin:{en:"Hautes-Pyrénées, Gascony",fr:"Hautes-Pyrénées, Gascogne"},season:[],
 flavor:["nutty","rich","salty","meaty"],
 story:{en:"In 1981 the Gascon black pig was down to two boars and about thirty sows; a handful of breeders rebuilt the herd, and the ham took its AOP in 2017. Curing and ageing run a minimum of twenty months, twelve of them in a drying loft open to the outside air.",
@@ -179,7 +179,7 @@ fr:"C’est la seule volaille qui récompense réellement un rôtissage long et 
 pairs:["truffle","butter","chestnut","morel","cream","thyme","foie-gras","shallot"],
 svg:'<path class="f2 sf" d="M28 62q0-24 22-24t20 22q-16 14-42 2z"/><path class="f1 sf" d="M52 38q8-10 14-4-6 8-14 4z"/><circle class="dot" cx="44" cy="54" r="1.6"/>'},
 
-{id:"cecina-de-leon",cat:"meat",name:{en:"Cecina de León",fr:"cecina de León"},latin:"Bos taurus (hind leg, smoked and cured)",
+{id:"cecina-de-leon",cat:"meat",luxe:true,name:{en:"Cecina de León",fr:"cecina de León"},latin:"Bos taurus (hind leg, smoked and cured)",
 origin:{en:"León, Castile",fr:"León, Castille"},season:[],
 flavor:["smoky","salty","meaty","woody"],
 story:{en:"Only four muscles of the hind leg qualify — tapa, contra, babilla, cadera — and between salting and drying the pieces spend twelve to sixteen days over slow-burning oak or holm oak. The minimum cure is seven months, twelve for the Reserva, and it is that smoke that separates it from every Italian air-dried beef.",
@@ -199,7 +199,7 @@ fr:"La fibre grossière est un atout en braisé : taillez le paleron ou le gît
 pairs:["red-wine-vinegar","carrot","onion","bay-leaf","thyme","garlic","bone-marrow","mushroom"],
 svg:'<path class="f1 sf" d="M24 40l24-12 24 12-24 12z"/><path class="f2 sf" d="M24 40v22l24 12V52z"/><path class="f3 sf" d="M72 40v22L48 74V52z"/><path class="s" d="M36 34l24 12M36 68V46M60 68V46"/>'},
 
-{id:"boeuf-chianina",cat:"meat",name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
+{id:"boeuf-chianina",cat:"meat",luxe:true,name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
 origin:{en:"Val di Chiana, Tuscany",fr:"Val di Chiana, Toscane"},season:[],
 flavor:["meaty","mild","umami","rich"],
 story:{en:"The Chianina is among the largest cattle in the world — a mature bull stands over 1.7 metres at the shoulder — and the white oxen of the Val di Chiana were draught animals for two thousand years before anyone bred them for meat. That scale is the whole point of a fiorentina: only a loin this broad yields a T-bone cut five centimetres thick that is still a steak and not a roast.",
@@ -229,7 +229,7 @@ fr:"Démarrez le chorizo à poêle froide et sèche : le pimentón est liposolub
 pairs:["potato","chickpeas","egg","onion","cider-vinegar","clam"],
 svg:'<path class="f3 sf" d="M24 58v12a5 5 0 0 0 11 0V58a13 13 0 0 1 26 0v12a5 5 0 0 0 11 0V58a24 24 0 0 0-48 0z"/><circle class="s" cx="48" cy="28" r="4"/><circle class="dot" cx="31" cy="46" r="1.8"/><circle class="dot" cx="65" cy="48" r="1.8"/>'},
 
-{id:"ciauscolo",cat:"meat",name:{en:"Ciauscolo",fr:"ciauscolo"},latin:"Sus scrofa (soft salami)",
+{id:"ciauscolo",cat:"meat",rare:true,name:{en:"Ciauscolo",fr:"ciauscolo"},latin:"Sus scrofa (soft salami)",
 origin:{en:"Macerata, Marche",fr:"Macerata, Marches"},season:[],
 flavor:["rich","salty","smoky","meaty"],
 story:{en:"The name is thought to descend from the Latin cibusculum, little food: it was eaten in small pieces between meals to get through winter work in the fields. It has held an IGP since 2009 and the meat is ground two or three times, which is why it spreads instead of slicing.",
@@ -269,7 +269,7 @@ fr:"Enveloppez-le dans un linge, démarrez à l’eau froide et maintenez un fr�
 pairs:["lentille-du-puy","polenta-bramata","mostarda-di-cremona","onion","bay-leaf","balsamic"],
 svg:'<ellipse class="f1 sf" cx="48" cy="64" rx="30" ry="10"/><ellipse class="f2 sf" cx="48" cy="48" rx="20" ry="12"/><path class="s" d="M28 44q-6-2-7 4t7 4M68 44q6-2 7 4t-7 4"/><circle class="dot" cx="32" cy="66" r="2"/><circle class="dot" cx="62" cy="67" r="2"/><circle class="dot" cx="47" cy="70" r="2"/>'},
 
-{id:"culatello-di-zibello",cat:"meat",name:{en:"Culatello di Zibello",fr:"culatello de Zibello"},latin:"Sus scrofa (rump heart, bladder-cased)",
+{id:"culatello-di-zibello",cat:"meat",rare:true,luxe:true,name:{en:"Culatello di Zibello",fr:"culatello de Zibello"},latin:"Sus scrofa (rump heart, bladder-cased)",
 origin:{en:"Zibello, Po valley",fr:"Zibello, plaine du Pô"},season:[],
 flavor:["sweet","delicate","rich","musky"],
 story:{en:"It can only be made between October and February, when the Bassa Parmense fills with cold river fog — the DOP writes the weather into its rules. The boned heart of the rump is sewn into a pig's bladder, tied in a wide irregular mesh, and aged from the winter fog through a summer of heat, ready the following winter.",
@@ -279,7 +279,7 @@ fr:"Avant de trancher, coupez les ficelles et faites tremper la pièce plusieurs
 pairs:["butter","grape","fig","parmesan","black-pepper","olive-oil"],
 svg:'<path class="s" d="M48 16v10"/><path class="f2 sf" d="M48 26q-16 8-16 26t16 22 16-22-16-26z"/><path class="s" d="M34 42q14 8 28 0M32 54q16 8 32 0M36 66q12 6 24 0"/><path class="s" d="M48 26v48M38 31q-3 21 3 40M58 31q3 21-3 40"/>'},
 
-{id:"prosciutto-doca",cat:"meat",name:{en:"Cured goose breast",fr:"jambon d’oie"},latin:"Anser anser (breast, cured)",
+{id:"prosciutto-doca",cat:"meat",rare:true,name:{en:"Cured goose breast",fr:"jambon d’oie"},latin:"Anser anser (breast, cured)",
 origin:{en:"Lomellina, Lombardy",fr:"Lomellina, Lombardie"},season:[],
 flavor:["salty","meaty","delicate","rich"],
 story:{en:"Goose charcuterie took root in the Lomellina after a Sforza edict allowed Jewish families to settle there in the fifteenth century: pork being forbidden, the goose took the pig's place. The cured breast is the lean end of that tradition; the salame d'oca di Mortara that grew out of it later took in pork as well, for the other half of the town.",
@@ -329,7 +329,7 @@ fr:"Ne le faites jamais dorer dans la graisse dont il sort : essuyez la cuisse p
 pairs:["garlic","thyme","potato","white-beans","frisee","shallot"],
 svg:'<path class="f1 sf" d="M24 76q24-9 48 0-24 9-48 0z"/><path class="f2 sf" d="M30 62q-9-15 4-25t28-5q12 7 7 21-6 16-22 17t-17-8z"/><path class="f1 sf" d="M62 40l12-9a5 5 0 1 1 5 7 5 5 0 1 1-8 5z"/><path class="s" d="M38 58q10 6 20 0"/>'},
 
-{id:"edible-birds-nest",cat:"meat",name:{en:"Edible bird’s nest",fr:"Nid d’hirondelle"},latin:"Aerodramus fuciphagus",
+{id:"edible-birds-nest",cat:"meat",luxe:true,name:{en:"Edible bird’s nest",fr:"Nid d’hirondelle"},latin:"Aerodramus fuciphagus",
 origin:{en:"Borneo and Java",fr:"Bornéo et Java"},season:[],
 flavor:["delicate","mild"],
 story:{en:"The nest is built almost entirely from the male swiftlet’s own hardened saliva, laid down in strands over about thirty-five days. Since the late 1990s the great Bornean limestone caves have been overtaken as a source by purpose-built concrete bird houses, which now supply most of a trade priced between one and ten thousand dollars a kilo.",
@@ -349,7 +349,7 @@ fr:"La longe est assez grosse pour être rôtie entière mais n’a aucune couve
 pairs:["juniper","blackcurrant","chestnut","celeriac","red-wine-vinegar","thyme","pear","butter"],
 svg:'<path class="f2 sf" d="M38 50q0-12 10-12t10 12-2 20-8 8-8-8z"/><path class="f1 sf" d="M38 44q-10-2-14-12t-2-14q8 4 10 12t8 8zM58 44q10-2 14-12t2-14q-8 4-10 12t-8 8z"/><path class="s" d="M36 50q-8 0-12 4M60 50q8 0 12 4"/><circle class="dot" cx="43" cy="52" r="1.6"/><circle class="dot" cx="53" cy="52" r="1.6"/><path class="s" d="M44 70q4 3 8 0"/>'},
 
-{id:"figatellu",cat:"meat",name:{en:"Figatellu",fr:"figatellu"},latin:"Sus scrofa (Nustrale, liver sausage)",
+{id:"figatellu",cat:"meat",rare:true,name:{en:"Figatellu",fr:"figatellu"},latin:"Sus scrofa (Nustrale, liver sausage)",
 origin:{en:"Corsica",fr:"Corse"},season:[11,12,1,2,3],
 flavor:["smoky","meaty","rich","earthy"],
 story:{en:"It is made only in the cold months, from the Nustrale pig fattened on the island's chestnuts and acorns, and smoked over chestnut wood — the wood lends a faint sweetness that offsets the liver, which dominates the mix rather than accompanying it. The name comes from figatu, Corsican for liver.",
@@ -389,7 +389,7 @@ fr:"Piquez la peau partout et retirez la graisse trois ou quatre fois pendant la
 pairs:["apple","red-cabbage","chestnut","onion","sage","thyme","juniper","potato"],
 svg:'<path class="f3 sf" d="M28 62q2-22 22-22t20 20q-16 14-42 2z"/><path class="s" d="M50 40q10-16 20-12"/><circle class="dot" cx="60" cy="32" r="1.8"/>'},
 
-{id:"foie-gras-doie",cat:"meat",name:{en:"Goose foie gras",fr:"foie gras d’oie"},latin:"Anser anser (fattened liver)",
+{id:"foie-gras-doie",cat:"meat",luxe:true,name:{en:"Goose foie gras",fr:"foie gras d’oie"},latin:"Anser anser (fattened liver)",
 origin:{en:"South-West France and Alsace",fr:"Sud-Ouest et Alsace"},season:[11,12,1],
 flavor:["rich","buttery","delicate","mild"],
 story:{en:"Goose liver is paler, larger and finer-grained than duck: its fat cells are smaller, so it renders almost nothing in the pan or the terrine where a duck liver loses a fifth of itself. That structure is why it was the Alsatian and Périgord terrine liver long before duck took the market on price.",
@@ -399,7 +399,7 @@ fr:"Ramenez-le à 18 °C avant de le déveiner : froid il casse, tiède il s’�
 pairs:["fig","quince","black-pepper","fleur-de-sel-guerande","pear","vin-de-paille"],
 svg:'<path class="f1 sf" d="M22 52q-1-14 14-17t16 6q5-9 17-5 12 4 10 18t-16 17-21-3-20-16z"/><path class="s" d="M46 40v12q-7 6-15 6M46 52q7 6 16 6"/><path class="f2 sf" d="M52 40q11-6 18 3t-3 20q7-14-3-20t-12-3z"/>'},
 
-{id:"perdreau-gris",cat:"meat",name:{en:"Grey partridge",fr:"Perdreau gris"},latin:"Perdix perdix",
+{id:"perdreau-gris",cat:"meat",rare:true,luxe:true,name:{en:"Grey partridge",fr:"Perdreau gris"},latin:"Perdix perdix",
 origin:{en:"Cereal plains of Europe",fr:"Plaines céréalières d’Europe"},season:[9,10,11,12],
 flavor:["delicate","mild","meaty","earthy"],
 story:{en:"Escoffier placed the grey partridge above the red-legged for finesse and the classical repertoire followed him, but the bird has since become far the scarcer of the two: British breeding numbers are down around ninety percent since 1970 as the hedgerows went. The word on the menu matters — a perdreau is a bird of the year and is roasted; after the turn of the year it is a perdrix and goes in a pot.",
@@ -449,7 +449,7 @@ fr:"Tranchez-le froid, à la sortie du réfrigérateur, avec une lame fine essuy
 pairs:["cornichon","dijon-mustard","shallot","parsley","white-wine-vinegar","potato"],
 svg:'<path class="f1 sf" d="M24 32h48v34a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z"/><path class="f3 sf" d="M31 42q9-5 13 1t-4 9-11-4z"/><path class="f2 sf" d="M52 43q10-2 12 5t-8 8-8-6z"/><path class="f3 sf" d="M35 58q10-4 14 3t-8 8-8-5z"/><circle class="dot" cx="61" cy="61" r="2"/><circle class="dot" cx="29" cy="55" r="2"/>'},
 
-{id:"biche",cat:"meat",name:{en:"Hind",fr:"Biche"},latin:"Cervus elaphus",
+{id:"biche",cat:"meat",luxe:true,name:{en:"Hind",fr:"Biche"},latin:"Cervus elaphus",
 origin:{en:"Forests of Europe",fr:"Forêts d’Europe"},season:[10,11,12,1],
 flavor:["meaty","delicate","earthy","mild"],
 story:{en:"Kitchens buy the hind under her own name because of the rut: from mid-September a stag runs himself down, all but stops feeding and empties his muscle of glycogen, and the meat comes out dark, musky and tough. The hind goes through none of that, so her flesh stays pale and fine-grained — which is why she is roasted where stag meat is braised.",
@@ -459,7 +459,7 @@ fr:"Le râble prend douze minutes à feu vif, pas une de plus : la biche porte 
 pairs:["juniper","cranberry","chanterelle","celeriac","pear","thyme","cream","blackcurrant"],
 svg:'<path class="f2 sf" d="M40 40q0-10 8-10t8 10-1 24-7 8-8-8z"/><path class="f1 sf" d="M38 40q-14-6-18-2t8 12 12 2zM58 40q14-6 18-2t-8 12-12 2z"/><circle class="dot" cx="43" cy="44" r="1.6"/><circle class="dot" cx="53" cy="44" r="1.6"/><path class="s" d="M44 68q4 3 8 0"/>'},
 
-{id:"porc-iberique-bellota",cat:"meat",name:{en:"Iberian pork (bellota)",fr:"Porc ibérique de bellota"},latin:"Sus scrofa domesticus",
+{id:"porc-iberique-bellota",cat:"meat",luxe:true,name:{en:"Iberian pork (bellota)",fr:"Porc ibérique de bellota"},latin:"Sus scrofa domesticus",
 origin:{en:"Dehesa, Extremadura and Andalusia",fr:"Dehesa, Estrémadure et Andalousie"},season:[12,1,2,3],
 flavor:["rich","nutty","meaty","sweet"],
 story:{en:"Between October and March the pigs are turned loose on the dehesa for the montanera and eat several kilos of acorns a day; the oleic acid from the acorns goes straight into their fat, which is why it glosses and softens at room temperature. Almost every animal is destined to become ham — the fresh cuts sold as presa, secreto and pluma are simply what is left of the carcass once the four legs have gone to the drying loft.",
@@ -479,7 +479,7 @@ fr:"Servez-le à température ambiante chaude, que le gras devienne translucide 
 pairs:["fig","almond","tomato","olive-oil"],
 svg:'<path class="f2 sf" d="M28 62q2-12 16-16l16-6q10-2 12 6t-8 12l-18 6q-12 4-18-2z"/><path class="s" d="M60 40q4-6 10-6" stroke-width="1.8"/><path class="f1" d="M36 56q10-6 22-8" fill="none"/><path class="s" d="M36 56q10-6 22-8" stroke-width="1.4"/>'},
 
-{id:"paleta-iberica",cat:"meat",name:{en:"Ibérico shoulder",fr:"paleta ibérique"},latin:"Sus scrofa (Ibérico foreleg, cured)",
+{id:"paleta-iberica",cat:"meat",luxe:true,name:{en:"Ibérico shoulder",fr:"paleta ibérique"},latin:"Sus scrofa (Ibérico foreleg, cured)",
 origin:{en:"Extremadura and Andalusia",fr:"Estrémadure et Andalousie"},season:[],
 flavor:["nutty","rich","salty","sweet"],
 story:{en:"The paleta is the foreleg, not the hind leg, and the shoulder blade running through it accounts for around 40 percent of the weight against 30 for a jamón's hip bone — so a whole piece yields far less meat. Being smaller it cures faster, roughly two years for an acorn-fed shoulder against three for the ham, and the flavour comes out more concentrated.",
@@ -489,7 +489,7 @@ fr:"L’omoplate partage la pièce en deux faces inégales : commencez par la pl
 pairs:["olive-oil","tomato","almond","manchego","fig","sherry-vinegar"],
 svg:'<path class="f2 sf" d="M24 76h48v6H24z"/><path class="s" d="M48 76V62"/><path class="f3 sf" d="M28 58q-4-15 9-23t21-3 10 15-9 18-19 4-12-11z"/><path class="f2 sf" d="M64 32l10-8 3 4-9 8z"/><path class="s" d="M22 48l-8-5"/>'},
 
-{id:"jinhua-ham",cat:"meat",name:{en:"Jinhua ham",fr:"Jambon de Jinhua"},latin:"Sus scrofa domesticus",
+{id:"jinhua-ham",cat:"meat",luxe:true,name:{en:"Jinhua ham",fr:"Jambon de Jinhua"},latin:"Sus scrofa domesticus",
 origin:{en:"Jinhua, Zhejiang, China",fr:"Jinhua, Zhejiang, Chine"},season:[],
 flavor:["salty","umami","rich","meaty"],
 story:{en:"The ham comes from the liangtouwu, both ends black, a small Zhejiang pig with a dark head and rump and a white middle, and it is trimmed to the shape of a bamboo leaf before eight to ten months of salting and drying. Unlike the raw hams of Europe it is not a cold cut at all: it is a seasoning, cut into stocks and steamed dishes for salt and depth.",
@@ -499,7 +499,7 @@ fr:"Brossez la surface et blanchissez brièvement le morceau : la croûte d’af
 pairs:["chicken","bamboo-shoot","shaoxing-wine","dried-shiitake-donko","winter-melon","silken-tofu","ginger"],
 svg:'<path class="s" d="M48 14v8"/><path class="f2 sf" d="M48 22q4 4 4 8 16 9 16 27 0 21-20 27-20-6-20-27 0-18 16-27 0-4 4-8z"/><path class="s" d="M32 48q16 8 32 0M32 62q16 8 32 0"/><circle class="dot" cx="48" cy="22" r="2"/>'},
 
-{id:"chevreau",cat:"meat",name:{en:"Kid goat",fr:"Chevreau"},latin:"Capra hircus",
+{id:"chevreau",cat:"meat",rare:true,luxe:true,name:{en:"Kid goat",fr:"Chevreau"},latin:"Capra hircus",
 origin:{en:"Goat dairies, Mediterranean",fr:"Élevages caprins du pourtour méditerranéen"},season:[12,1,2,3,4,5],
 flavor:["delicate","mild","milky","meaty"],
 story:{en:"Kid is a by-product of cheese: a goat gives milk only after she has kidded, the male kids are no use to a dairy herd, and they are sold milk-fed at six to twelve weeks — which is why the meat appears in spring and lands on Easter tables from Extremadura to Greece. A milk-fed kid carries almost no fat cover at all, and that absence is the whole difference from lamb.",
@@ -509,7 +509,7 @@ fr:"Sans gras protecteur, rôtissez-le à couvert avec un fond de liquide dans l
 pairs:["lemon","garlic","rosemary","thyme","olive-oil","potato","artichoke","yogurt"],
 svg:'<path class="f1 sf" d="M26 50q0-10 12-10h20q8 0 10 8t-4 12H36q-10 0-10-10z"/><path class="f2 sf" d="M64 34q6-2 8 4t-2 12-10 2-2-14z"/><path class="s" d="M64 32q-2-8 2-10M72 34q4-6 8-6"/><path class="s" d="M34 60v14M46 60v14M56 60v12"/><circle class="dot" cx="68" cy="42" r="1.4"/>'},
 
-{id:"porc-kintoa",cat:"meat",name:{en:"Kintoa pork",fr:"Porc Kintoa"},latin:"Sus scrofa domesticus",
+{id:"porc-kintoa",cat:"meat",rare:true,name:{en:"Kintoa pork",fr:"Porc Kintoa"},latin:"Sus scrofa domesticus",
 origin:{en:"Basque Country, Pyrénées-Atlantiques",fr:"Pays basque, Pyrénées-Atlantiques"},season:[],
 flavor:["rich","sweet","nutty","meaty"],
 story:{en:"When the Ministry of Agriculture listed the Pie noir du Pays basque as endangered in 1981 there were twenty-five sows and a handful of boars left in the entire breed; the fresh meat took its AOC in July 2016 and its AOP the following October. The name is said to come from the quint, the one pig in five that Basque herders owed the Kingdom of Navarre for the right to graze the border valleys.",
@@ -519,7 +519,7 @@ fr:"Le gras est plus tendre et plus doux que celui du Bigorre et fond plus vite�
 pairs:["espelette","garlic","piquillo","thyme","onion","cider-vinegar","apple","black-pepper"],
 svg:'<path class="f1 sf" d="M18 54q0-14 14-16h26q10 0 14 8l6 2q4 1 4 4t-4 4l-6 2q0 10-4 12h-6l-2-8H34l-2 8h-6q-8-2-8-16z"/><path class="f3 sf" d="M56 38q10 0 14 8l6 2q4 1 4 4t-4 4l-6 2q0 10-4 12h-6l-2-8h-2z"/><path class="f3 sf" d="M18 54q0-14 14-16h4v32h-2l-2 8h-6q-8-2-8-16z"/><circle class="dot" cx="70" cy="46" r="1.4"/><path class="s" d="M34 70v6M46 70v6M58 70v6"/>'},
 
-{id:"boeuf-de-kobe",cat:"meat",name:{en:"Kobe beef",fr:"Bœuf de Kobe (Tajima)"},latin:"Bos taurus",
+{id:"boeuf-de-kobe",cat:"meat",luxe:true,name:{en:"Kobe beef",fr:"Bœuf de Kobe (Tajima)"},latin:"Bos taurus",
 origin:{en:"Hyōgo prefecture, Japan",fr:"Préfecture de Hyōgo, Japon"},season:[],
 flavor:["rich","buttery","umami","sweet"],
 story:{en:"Kobe is not a breed but a certificate: Tajima-strain Japanese Black, born, fattened and slaughtered inside Hyōgo prefecture and clearing the grading thresholds of an association founded in 1983, which certifies fewer than three thousand carcasses in a year. The Tajima line's fat melts at around 25 °C — below blood heat, and below the temperature of a warm hand.",
@@ -559,7 +559,7 @@ fr:"Tranchez-le presque transparent et posez-le sur du pain tiède ou des pommes
 pairs:["rosemary","flour-t65","black-pepper","garlic","potato","fig","sage","olive-oil"],
 svg:'<path class="f3 sf" d="M28 46h40v20H28z"/><path class="s" d="M28 56h40"/><path class="s" d="M36 46v20M52 46v20"/>'},
 
-{id:"lardo-di-colonnata",cat:"meat",name:{en:"Lardo di Colonnata",fr:"lardo di Colonnata"},latin:"Sus scrofa (backfat, cured)",
+{id:"lardo-di-colonnata",cat:"meat",luxe:true,name:{en:"Lardo di Colonnata",fr:"lardo di Colonnata"},latin:"Sus scrofa (backfat, cured)",
 origin:{en:"Colonnata, Carrara",fr:"Colonnata, Carrare"},season:[],
 flavor:["rich","buttery","herbal","salty"],
 story:{en:"It cures in basins hollowed from Carrara marble — the porous Canaloni vein, which holds cold and damp on its own — rubbed inside with garlic, then packed in layers with sea salt, rosemary and pepper for six to ten months. Quarrymen carried it down the mountain as their working lunch long before the IGP of 2004 turned it into a restaurant luxury.",
@@ -589,7 +589,7 @@ fr:"Tranchez-la aussi fine que la lame le permet et laissez reposer dix minutes 
 pairs:["manchego","olive-oil","tomato","marcona-almond","piquillo","pimenton-de-la-vera","oloroso"],
 svg:'<path class="f2 sf" d="M22 36q26-8 52 0v10q-26 8-52 0z"/><path class="s" d="M34 33v16M48 32v18M62 33v16"/><ellipse class="f1 sf" cx="48" cy="66" rx="13" ry="5"/><ellipse class="s" cx="48" cy="66" rx="7" ry="2.4"/>'},
 
-{id:"lonzu",cat:"meat",name:{en:"Lonzu",fr:"lonzu"},latin:"Sus scrofa (nustrale loin, cured)",
+{id:"lonzu",cat:"meat",rare:true,name:{en:"Lonzu",fr:"lonzu"},latin:"Sus scrofa (nustrale loin, cured)",
 origin:{en:"Corsica",fr:"Corse"},season:[],
 flavor:["nutty","rich","herbal","meaty"],
 story:{en:"A Corsican AOP since 2012, made only from the island nustrale pig, which the rules require to be finished on chestnuts in the maquis. Its fat cap is left on and the loin dries in cellars, often over chestnut wood — which is why it reads sweeter and more resinous than the lean Spanish loin it otherwise resembles.",
@@ -599,7 +599,7 @@ fr:"Coupez-le plus épais qu’une longe espagnole — trois à quatre millimèt
 pairs:["fig","chestnut","brocciu","myrtle","olive-oil","chestnut-honey","walnut"],
 svg:'<path class="s" d="M44 24a4 4 0 018 0v6"/><path class="f2 sf" d="M36 30q12-4 24 0v32q0 6-12 6t-12-6z"/><path class="f1 sf" d="M36 30q3-1 6-1v38q-4-2-6-6z"/><ellipse class="f1 sf" cx="48" cy="62" rx="12" ry="6"/>'},
 
-{id:"saucisson-de-lyon-a-cuire",cat:"meat",name:{en:"Lyon cooking sausage",fr:"saucisson de Lyon à cuire"},latin:"Sus scrofa (fresh sausage)",
+{id:"saucisson-de-lyon-a-cuire",cat:"meat",luxe:true,name:{en:"Lyon cooking sausage",fr:"saucisson de Lyon à cuire"},latin:"Sus scrofa (fresh sausage)",
 origin:{en:"Lyon",fr:"Lyon"},season:[],
 flavor:["meaty","rich","nutty","earthy"],
 story:{en:"Lyon poaches this one instead of drying it: raw, finely ground pork set with pistachios and, in the grander version, black truffle, simmered slowly in stock. The bouchons serve it two ways and no others — warm on potato salad dressed while the potatoes still steam, or baked whole in brioche dough.",
@@ -609,7 +609,7 @@ fr:"Pochez-le à frémissement à peine visible, autour de 80 °C, pendant 40 mi
 pairs:["potato","pistachio","truffle","dijon-mustard","parsley","grey-shallot"],
 svg:'<path class="f2 sf" d="M20 48q0-14 16-14h22v28H36q-16 0-16-14z"/><ellipse class="f1 sf" cx="60" cy="48" rx="8" ry="14"/><circle class="dot" cx="58" cy="41" r="1.8"/><circle class="dot" cx="62" cy="50" r="1.8"/><circle class="dot" cx="57" cy="55" r="1.8"/>'},
 
-{id:"canard-colvert",cat:"meat",name:{en:"Mallard",fr:"Canard colvert"},latin:"Anas platyrhynchos",
+{id:"canard-colvert",cat:"meat",rare:true,luxe:true,name:{en:"Mallard",fr:"Canard colvert"},latin:"Anas platyrhynchos",
 origin:{en:"Wetlands of Europe and North America",fr:"Zones humides d’Europe et d’Amérique du Nord"},season:[9,10,11,12,1],
 flavor:["meaty","earthy","umami"],
 story:{en:"Every farmed duck except the Muscovy descends from this bird, yet the wild one carries almost none of the fat domestication built in. A shot mallard has been flying and eating whatever it found, so no two taste alike — birds off grain stubble are noticeably sweeter than birds off open water.",
@@ -619,7 +619,7 @@ fr:"Ne gardez que les magrets et sortez-les à 52 °C à cœur : sans couche de 
 pairs:["turnip","juniper","blackcurrant","cabbage","red-wine-vinegar","celeriac","quince","black-pepper"],
 svg:'<path class="f2 sf" d="M22 62q-4-10 6-14t20-2q10 2 12 8 2 8-6 12H32q-8 0-10-4z"/><path class="s" d="M22 58q-7-3-10-9 7 1 12 4"/><path class="f3 sf" d="M52 46q-5-8 1-13t12 1q3 6-1 10l12 2-12 3q-7 2-10-1z"/><circle class="dot" cx="60" cy="36" r="1.6"/><path class="s" d="M18 74q7-3 14 0t14 0 14 0 14 0"/>'},
 
-{id:"porc-mangalitza",cat:"meat",name:{en:"Mangalitsa pork",fr:"Porc mangalitza"},latin:"Sus scrofa domesticus (Mangalica)",
+{id:"porc-mangalitza",cat:"meat",rare:true,name:{en:"Mangalitsa pork",fr:"Porc mangalitza"},latin:"Sus scrofa domesticus (Mangalica)",
 origin:{en:"Hungarian plain",fr:"Plaine hongroise"},season:[],
 flavor:["nutty","rich","buttery","meaty"],
 story:{en:"Bred in Hungary in the 1830s for lard, the woolly Mangalitsa was down to a few dozen purebred sows by 1990 and was rebuilt by a geneticist who bought up what was left. A mature carcass is roughly two-thirds fat, and that fat is unusually unsaturated — it softens at hand temperature.",
@@ -639,7 +639,7 @@ fr:"Grillez-la vite à feu vif et ne la piquez jamais : la merguez porte peu de 
 pairs:["harissa","couscous","cumin","bell-pepper","mint","lemon","tomato"],
 svg:'<path class="f3 sf" d="M30 26q-9 18-1 34 2 5 6 3t1-6q-5-13 0-27 2-5-2-6t-4 2z"/><path class="f3 sf" d="M46 28q-8 17 0 31 2 5 6 3t1-6q-5-12 0-25 2-5-2-6t-5 3z"/><path class="f2 sf" d="M62 30q-7 16 0 29 2 5 5 3t1-6q-4-11 0-23 2-5-1-6t-5 3z"/><path class="s" d="M30 24h5M46 26h5M62 28h4"/>'},
 
-{id:"veau-sous-la-mere",cat:"meat",name:{en:"Milk-fed veal",fr:"Veau sous la mère"},latin:"Bos taurus (veau de lait)",
+{id:"veau-sous-la-mere",cat:"meat",luxe:true,name:{en:"Milk-fed veal",fr:"Veau sous la mère"},latin:"Bos taurus (veau de lait)",
 origin:{en:"Limousin and southwest France",fr:"Limousin et Sud-Ouest"},season:[],
 flavor:["milky","delicate","sweet","mild"],
 story:{en:"A calf raised sous la mère suckles two or three times a day and is usually given a nurse cow as well as its dam, because one cow cannot carry it to weight on milk alone. Nothing else is fed — no grain, no forage — and that is what keeps the flesh nearly white: iron from grass would redden it within days.",
@@ -689,7 +689,7 @@ fr:"Faites-la frémir 45 minutes sans ébullition, cheville comprise, et cuisez 
 pairs:["potato","comte","lentille-du-puy","savoy-cabbage","vin-jaune","leek","cream"],
 svg:'<path class="f3 sf" d="M26 42q20-10 42 0 4 3 4 8t-4 8q-22 10-42 0-4-3-4-8t4-8z"/><path class="f1 sf" d="M70 46h11l-2 8h-9z"/><path class="s" d="M40 32q5-5 1-10t4-8M56 32q5-5 1-10t4-8"/><path class="s" d="M27 44q-4 6 0 12"/>'},
 
-{id:"canard-mulard",cat:"meat",name:{en:"Mulard duck",fr:"Canard mulard"},latin:"Cairina moschata × Anas platyrhynchos",
+{id:"canard-mulard",cat:"meat",luxe:true,name:{en:"Mulard duck",fr:"Canard mulard"},latin:"Cairina moschata × Anas platyrhynchos",
 origin:{en:"Southwest France and the Vendée",fr:"Sud-Ouest et Vendée"},season:[],
 flavor:["rich","meaty","umami"],
 story:{en:"A male Muscovy crossed with a Pekin female gives a bird that cannot breed — the parents are not even the same genus, so every mulard is a dead end that has to be made again. It is raised for the liver, and everything a French cook calls duck — the magret, the confit leg, the jar of fat — is what is left of the carcass afterwards.",
@@ -719,7 +719,7 @@ fr:"Parez sévèrement le gras dur avant cuisson — c’est là que loge le go�
 pairs:["turnip","barley","cumin","garlic","onion","carrot","bay-leaf","harissa"],
 svg:'<path class="f1 sf" d="M38 36q10-6 20 0 5 10 3 20-3 14-13 14t-13-14q-2-10 3-20z"/><path class="s" d="M38 36q-11-3-14 6t7 12 10-5M58 36q11-3 14 6t-7 12-10-5" stroke-width="2"/><path class="s" d="M38 33q4-7 10-7t10 7"/><path class="dot" d="M42 49a2 2 0 104 0 2 2 0 10-4 0M50 49a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M44 63q4 3 8 0"/>'},
 
-{id:"porc-noir-de-bigorre",cat:"meat",name:{en:"Noir de Bigorre pork",fr:"Porc noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon)",
+{id:"porc-noir-de-bigorre",cat:"meat",luxe:true,name:{en:"Noir de Bigorre pork",fr:"Porc noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon)",
 origin:{en:"Bigorre, Hautes-Pyrénées",fr:"Bigorre, Hautes-Pyrénées"},season:[],
 flavor:["nutty","rich","meaty","earthy"],
 story:{en:"By 1981 the Gascon black pig was down to thirty-four sows and two boars across twenty farms — too fat and too slow for the intensive sheds. The whole trade was rebuilt from those animals, and the AOP now requires at least twelve months on Pyrenean pasture, acorns and chestnuts.",
@@ -779,7 +779,7 @@ fr:"La dernière étape est la vapeur, pas la fumée : une heure ou plus, jusqu�
 pairs:["rye","dijon-mustard","cornichon","sauerkraut","black-pepper","coriander-seed","gruyere"],
 svg:'<path class="f2 sf" d="M28 44q20-9 40 0-20 7-40 0zM28 53q20-9 40 0-20 7-40 0zM28 62q20-9 40 0-20 7-40 0z"/><path class="dot" d="M40 42a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M53 43a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/><path class="s" d="M22 71h52"/>'},
 
-{id:"agneau-de-pauillac",cat:"meat",name:{en:"Pauillac lamb",fr:"Agneau de Pauillac"},latin:"Ovis aries (agneau de lait)",
+{id:"agneau-de-pauillac",cat:"meat",luxe:true,name:{en:"Pauillac lamb",fr:"Agneau de Pauillac"},latin:"Ovis aries (agneau de lait)",
 origin:{en:"Médoc, Gironde",fr:"Médoc, Gironde"},season:[1,2,3,4],
 flavor:["delicate","milky","sweet","mild"],
 story:{en:"The lamb stays in the fold and never grazes: seventy-five days at most on its mother's milk, for a carcass of eleven to fifteen kilos. The Médoc kept the practice because lambing fell in the quiet weeks before the vines needed work, and the flock manured the rows.",
@@ -849,7 +849,7 @@ fr:"Sortez-les trente minutes avant de servir : froid, le gras est de la cire et
 pairs:["cornichon","dijon-mustard","grey-shallot","apple","white-wine-vinegar","black-pepper","prune"],
 svg:'<path class="f1 sf" d="M30 46h36l-3 24q-1 5-6 5H39q-5 0-6-5z"/><path class="f2 sf" d="M30 46q18-8 36 0-18 6-36 0z"/><path class="s" d="M38 60q7 3 14 0M42 67q4 2 8 0"/><path class="s" d="M54 40l16-16M62 32l5 5"/>'},
 
-{id:"poularde",cat:"meat",name:{en:"Poularde",fr:"Poularde"},latin:"Gallus gallus domesticus",
+{id:"poularde",cat:"meat",luxe:true,name:{en:"Poularde",fr:"Poularde"},latin:"Gallus gallus domesticus",
 origin:{en:"Bresse and Le Mans, France",fr:"Bresse et Le Mans"},season:[11,12,1],
 flavor:["rich","buttery","delicate","mild"],
 story:{en:"A poularde is a pullet stopped from laying and fattened for her last weeks in an épinette, a narrow darkened crate that keeps her still. She is the female counterpart of the castrated capon, and those weeks of stillness are what lace the flesh with fat instead of packing it under the skin.",
@@ -879,7 +879,7 @@ fr:"Tranché si fin qu’on lit au travers, servi à température ambiante — j
 pairs:["fig","mozzarella","asparagus","peach","parmesan","balsamic"],
 svg:'<path class="f2 sf" d="M30 44q10-8 22-4-6 8 2 10 10-8 14 2 2 8-8 12-16 6-26-2-8-8-4-18z"/><path class="f1" d="M36 48q8-4 14 0" fill="none"/><path class="s" d="M36 48q8-4 14 0M40 58q8-4 16-1" stroke-width="1.8"/>'},
 
-{id:"prosciutto-di-san-daniele",cat:"meat",name:{en:"Prosciutto di San Daniele",fr:"jambon de San Daniele"},latin:"Sus scrofa (leg, dry-cured)",
+{id:"prosciutto-di-san-daniele",cat:"meat",luxe:true,name:{en:"Prosciutto di San Daniele",fr:"jambon de San Daniele"},latin:"Sus scrofa (leg, dry-cured)",
 origin:{en:"San Daniele del Friuli",fr:"San Daniele del Friuli"},season:[],
 flavor:["sweet","salty","delicate","nutty"],
 story:{en:"Three ingredients are permitted: Italian pork, sea salt, and the air of San Daniele, where alpine cold meets Adriatic damp. The trotter stays on and the leg is pressed flat for a day or two, which gives it the guitar silhouette and lets the salt reach the centre without the ham being salted harder.",
@@ -889,7 +889,7 @@ fr:"Coupez-le plus épais qu’un Parme : la chair est plus humide et une tranch
 pairs:["fig","cantaloupe","parmesan","butter","sage","mozzarella-di-bufala-campana","poire-comice"],
 svg:'<path class="s" d="M48 16v8"/><path class="f1 sf" d="M48 24q17 1 18 19t-11 27l-3 8h-8l-3-8q-13-9-15-27t16-19z"/><path class="f3 sf" d="M44 78h8l-2 8h-4z"/><path class="s" d="M40 40q10 9 8 25"/>'},
 
-{id:"lagopede",cat:"meat",name:{en:"Ptarmigan",fr:"Lagopède"},latin:"Lagopus muta",
+{id:"lagopede",cat:"meat",rare:true,name:{en:"Ptarmigan",fr:"Lagopède"},latin:"Lagopus muta",
 origin:{en:"Scandinavian and Alpine tundra",fr:"Toundra scandinave et alpine"},season:[10,11,12,1,2],
 flavor:["mild","woody","resinous","meaty"],
 story:{en:"Lagopus means hare-foot: the toes are feathered right to the claw, which is how the bird walks on snow and holds its temperature through a tundra winter. It spends the cold months on birch and willow buds and lichen, and that comes through in the flesh as a faint resin note grouse does not have.",
@@ -919,7 +919,7 @@ fr:"Le râble et les cuisses ne cuisent pas du tout pareil — le râble en quin
 pairs:["mustard","thyme","lard","white-wine-vinegar","bay-leaf","shallot","cream","tarragon"],
 svg:'<path class="f3 sf" d="M34 64q2-16 16-16t14 14q-12 12-30 2z"/><path class="s" d="M42 48q-3-14 0-16 3 3 3 16M52 48q3-14 6-15-2 5-3 15"/>'},
 
-{id:"grouse-ecosse",cat:"meat",name:{en:"Red grouse",fr:"Grouse d’Écosse"},latin:"Lagopus lagopus scotica",
+{id:"grouse-ecosse",cat:"meat",luxe:true,name:{en:"Red grouse",fr:"Grouse d’Écosse"},latin:"Lagopus lagopus scotica",
 origin:{en:"Heather moorland, Scotland and northern England",fr:"Landes à bruyère, Écosse et nord de l’Angleterre"},season:[8,9,10,11,12],
 flavor:["bitter","earthy","smoky","meaty"],
 story:{en:"Red grouse has never been reared in captivity, so every bird on a menu was shot wild on managed heather moor. The season opens on 12 August by statute — the earliest game of the British year — and it is the bird's year-round diet of heather shoots that gives the flesh its almost bitter, peat-edged flavour.",
@@ -929,7 +929,7 @@ fr:"Coffre au four à 230 °C douze minutes, pas davantage ; le filet doit sorti
 pairs:["blackberry","juniper","cream","butter","blackcurrant","cabbage","black-pepper","chanterelle"],
 svg:'<path class="f3 sf" d="M26 60q-3-16 13-22t25 5q3 9-4 15l6 2-6 3q-6 6-18 6t-16-9z"/><circle class="dot" cx="58" cy="43" r="1.5"/><path class="s" d="M54 38q5-3 9-1" stroke-width="2"/><path class="s" d="M74 76q-5-16-3-28"/><path class="dot" d="M67 48a2 2 0 104 0 2 2 0 10-4 0M71 41a2 2 0 104 0 2 2 0 10-4 0M66 58a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"perdrix-rouge",cat:"meat",name:{en:"Red-legged partridge",fr:"Perdrix rouge"},latin:"Alectoris rufa",
+{id:"perdrix-rouge",cat:"meat",luxe:true,name:{en:"Red-legged partridge",fr:"Perdrix rouge"},latin:"Alectoris rufa",
 origin:{en:"Iberia and southwest France",fr:"Péninsule Ibérique et Sud-Ouest"},season:[9,10,11,12],
 flavor:["meaty","earthy","woody"],
 story:{en:"The hen often lays two clutches and leaves one to the cock to sit on, a division of labour almost unknown among European game birds. She is a bigger, darker and firmer bird than the grey partridge, and wants a different treatment entirely from the one most recipes mean by partridge.",
@@ -939,7 +939,7 @@ fr:"Une jeune bête — première rémige pointue, pattes claires — rôtit en 
 pairs:["cabbage","juniper","lard","thyme","garlic","chestnut","red-wine-vinegar","onion"],
 svg:'<path class="f1 sf" d="M32 68q-5-13 3-22t19-9q9 2 11 10l8 2-8 3q1 12-9 18t-24-2z"/><path class="s" d="M50 40q9 2 12 9"/><path class="s" d="M34 52h12M33 58h14M35 64h13"/><circle class="dot" cx="60" cy="34" r="1.5"/><path class="s" d="M44 76v6M54 74v8"/>'},
 
-{id:"renne",cat:"meat",name:{en:"Reindeer",fr:"Renne"},latin:"Rangifer tarandus",
+{id:"renne",cat:"meat",rare:true,name:{en:"Reindeer",fr:"Renne"},latin:"Rangifer tarandus",
 origin:{en:"Sápmi, northern Scandinavia",fr:"Sápmi, Grand Nord scandinave"},season:[9,10,11,12,1],
 flavor:["sweet","resinous","earthy","meaty"],
 story:{en:"It is the only deer in which both sexes carry antlers, and the only large ruminant that can digest lichen — a winter of it is what puts the faint resin sweetness into the meat. Sámi herders take most animals in the autumn slaughter, which is why the season is short and most of the year's meat is sold frozen or cold-smoked.",
@@ -959,7 +959,7 @@ fr:"Marinez la nuit dans le vin, puis braisez à frémissement à peine percepti
 pairs:["red-wine-vinegar","lard","onion","mushroom","thyme","garlic","bay-leaf","carrot"],
 svg:'<path class="f3 sf" d="M38 33q1-8 6-4 1-8 6-3 3-6 7-1t2 9z"/><path class="f2 sf" d="M36 37q10-6 20 0 6 6 5 13l11 3-11 4q-3 9-13 9t-15-11q-2-12 3-18z"/><path class="f3 sf" d="M50 64q7 2 7 9t-8 6-4-9z"/><circle class="dot" cx="55" cy="45" r="2"/><path class="s" d="M36 60q-6 8-4 16M42 67q-4 7-2 11"/>'},
 
-{id:"boeuf-rouge-des-pres",cat:"meat",name:{en:"Rouge des Prés beef",fr:"Bœuf Rouge des Prés"},latin:"Bos taurus (Rouge des Prés)",
+{id:"boeuf-rouge-des-pres",cat:"meat",luxe:true,name:{en:"Rouge des Prés beef",fr:"Bœuf Rouge des Prés"},latin:"Bos taurus (Rouge des Prés)",
 origin:{en:"Loire valley, Maine-et-Loire",fr:"Val de Loire, Maine-et-Loire"},season:[],
 flavor:["meaty","rich","buttery","earthy"],
 story:{en:"The breed had to surrender its own name: it was called Maine-Anjou until 2003, when the meat won its appellation and European rules forbade a protected name that is also a breed's — so the cattle became Rouge des Prés and the AOP kept Maine-Anjou. The animals are mostly cull cows finished on Loire valley grass, which is where the marbling and the yellow fat come from.",
@@ -969,7 +969,7 @@ fr:"Un gras jaune signale le carotène et une longue vie à l’herbe : ne le pa
 pairs:["bone-marrow","shallot","mushroom","beurre-de-baratte","black-pepper","carrot","thyme","red-wine-vinegar"],
 svg:'<path class="f2 sf" d="M24 44q10-6 24-6t20 4l8-3-2 9q2 11-4 15H28q-6-4-4-19z"/><path class="f1" d="M34 48q9-4 15 0t-3 11-15-4z"/><path class="s" d="M32 62v14M42 62v14M58 62v14M68 62v12" stroke-width="2"/><path class="s" d="M70 40q4-4 6-3M70 43q4 0 6 3"/><path class="s" d="M24 46q-7 6-5 19"/>'},
 
-{id:"boeuf-rubia-gallega",cat:"meat",name:{en:"Rubia Gallega old-cow beef",fr:"Bœuf Rubia Gallega"},latin:"Bos taurus (Rubia Gallega)",
+{id:"boeuf-rubia-gallega",cat:"meat",luxe:true,name:{en:"Rubia Gallega old-cow beef",fr:"Bœuf Rubia Gallega"},latin:"Bos taurus (Rubia Gallega)",
 origin:{en:"Galicia, northwest Spain",fr:"Galice, Espagne"},season:[],
 flavor:["rich","meaty","buttery","earthy"],
 story:{en:"The blonde Galician cow works or milks for eight to fourteen years before she is taken, and it is the age rather than the breed that makes the meat: deep purple, dense, carrying fat the colour of daffodils from a lifetime of Atlantic grass. Hung for weeks, that yellow fat picks up a faint blue-cheese note, which is exactly what buyers are after.",
@@ -989,7 +989,7 @@ fr:"Servez-le entre 18 et 20 °C, coupé en biais à 2 mm environ : sorti du fro
 pairs:["manchego","olive-oil","marcona-almond","oloroso","tomato","black-pepper","pate-de-coing"],
 svg:'<path class="f2 sf" d="M22 62q-4-5 0-9l30-22q5-3 9 2t-2 9L28 64q-5 3-6-2z"/><ellipse class="f1 sf" cx="61" cy="35" rx="7" ry="9" transform="rotate(35 61 35)"/><path class="dot" d="M58 31a2 2 0 104 0 2 2 0 10-4 0M62 39a2 2 0 104 0 2 2 0 10-4 0M56 37a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0"/>'},
 
-{id:"boeuf-salers",cat:"meat",name:{en:"Salers beef",fr:"Bœuf Salers"},latin:"Bos taurus (Salers)",
+{id:"boeuf-salers",cat:"meat",luxe:true,name:{en:"Salers beef",fr:"Bœuf Salers"},latin:"Bos taurus (Salers)",
 origin:{en:"Cantal, Auvergne",fr:"Cantal, Auvergne"},season:[],
 flavor:["meaty","earthy","rich"],
 story:{en:"A Salers cow will not let her milk down without her calf beside her, which is why the herds that make Salers cheese still bring the calf to the parlour twice a day. The meat comes mostly from those cows at the end of their working life: dark, close-grained, and far more strongly flavoured than a young bull's.",
@@ -999,7 +999,7 @@ fr:"Une côte de trois doigts, salée une heure à l’avance, grillée fort pui
 pairs:["shallot","black-pepper","beurre-de-baratte","cantal","potato","thyme","garlic","red-wine-vinegar"],
 svg:'<path class="f3 sf" d="M36 42q12-6 24 0 5 12 1 22-4 12-13 12t-13-12q-4-10 1-22z"/><path class="s" d="M36 42q-11-6-13-17 0-6 6-6 5 0 5 7M60 42q11-6 13-17 0-6-6-6-5 0-5 7" stroke-width="2"/><path class="f3 sf" d="M36 49q-10-4-12 1t12 6zM60 49q10-4 12 1t-12 6z"/><path class="dot" d="M42 55a2 2 0 104 0 2 2 0 10-4 0M50 55a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M42 69q6 4 12 0"/>'},
 
-{id:"agneau-de-pre-sale",cat:"meat",name:{en:"Salt marsh lamb",fr:"Agneau de pré-salé"},latin:"Ovis aries (pré-salé)",
+{id:"agneau-de-pre-sale",cat:"meat",luxe:true,name:{en:"Salt marsh lamb",fr:"Agneau de pré-salé"},latin:"Ovis aries (pré-salé)",
 origin:{en:"Bays of Mont-Saint-Michel and the Somme",fr:"Baies du Mont-Saint-Michel et de Somme"},season:[7,8,9,10,11],
 flavor:["briny","herbal","meaty","mild"],
 story:{en:"The appellation requires the lambs to spend most of their lives on the herbus of the bay, grazing sea purslane and samphire washed by the tide — it is the halophyte plants that put iodine into the fat, not salt settling on the grass. Shepherds still walk the flocks out between tides, and the animals learn the channels.",
@@ -1029,7 +1029,7 @@ fr:"C’est le jambon avec lequel on cuisine : enroulé autour d’un poisson ou
 pairs:["cantaloupe","tomato","olive-oil","chickpeas","manchego","white-beans","egg"],
 svg:'<path class="f2 sf" d="M26 56q-5-13 6-19t23-2 8 18-14 13-23-10z"/><path class="f3 sf" d="M61 35l11-9-3 12z"/><path class="f3 sf" d="M44 62h8v8h-8z"/><path class="s" d="M26 76h44M48 76v-6"/>'},
 
-{id:"agneau-de-sisteron",cat:"meat",name:{en:"Sisteron lamb",fr:"Agneau de Sisteron"},latin:"Ovis aries",
+{id:"agneau-de-sisteron",cat:"meat",luxe:true,name:{en:"Sisteron lamb",fr:"Agneau de Sisteron"},latin:"Ovis aries",
 origin:{en:"Provence and the southern Alps",fr:"Provence et Alpes du Sud"},season:[],
 flavor:["herbal","meaty","rich"],
 story:{en:"The IGP granted in 2007 covers lambs of rustic Provençal ewes — Mérinos d’Arles, Préalpes du Sud, Mourérous — raised under the mother and finished on dry pastoral ground. The name comes from the market town where the region’s lambs were graded and sold, not from any flock the town keeps itself.",
@@ -1049,7 +1049,7 @@ fr:"Blanchissez les lardons deux minutes à l’eau bouillante avant de les fair
 pairs:["potato","savoy-cabbage","onion","cream","egg","lentille-du-puy","leek","mushroom"],
 svg:'<path class="f2 sf" d="M24 46h48l-2 24H26z"/><path class="f1 sf" d="M24 52h47l-1 4H24zM25 61h45l-1 4H25z"/><path class="s" d="M36 40q5-6 1-11t4-9M57 40q5-6 1-11t4-9"/>'},
 
-{id:"becassine",cat:"meat",name:{en:"Snipe",fr:"Bécassine des marais"},latin:"Gallinago gallinago",
+{id:"becassine",cat:"meat",rare:true,name:{en:"Snipe",fr:"Bécassine des marais"},latin:"Gallinago gallinago",
 origin:{en:"Wet meadows and marshes",fr:"Prés humides et marais"},season:[10,11,12,1],
 flavor:["meaty","earthy","delicate"],
 story:{en:"The bird’s evasive zigzag flight gave English the word sniper, coined by soldiers in British India who found no harder small target on the wing. In the kitchen it weighs about a quarter of a woodcock, which is why it arrives two or three to a plate rather than one.",
@@ -1089,7 +1089,7 @@ fr:"Pour cuisiner, taillez-le à la main en gros bâtonnets plutôt qu’en tran
 pairs:["juniper","rye","horseradish","egg","potato","cream","mushroom","apple"],
 svg:'<path class="f3 sf" d="M24 40h42q6 0 6 7v16q0 7-6 7H24z"/><path class="f1 sf" d="M24 40h8v30h-8z"/><path class="s" d="M46 40V31a4 4 0 018 0v9"/><circle class="dot" cx="59" cy="78" r="2.4"/><circle class="dot" cx="67" cy="76" r="2"/>'},
 
-{id:"cou-de-canard-farci",cat:"meat",name:{en:"Stuffed duck neck",fr:"cou de canard farci"},latin:"Anas platyrhynchos (neck, confit)",
+{id:"cou-de-canard-farci",cat:"meat",luxe:true,name:{en:"Stuffed duck neck",fr:"cou de canard farci"},latin:"Anas platyrhynchos (neck, confit)",
 origin:{en:"Gascony",fr:"Gascogne"},season:[],
 flavor:["rich","meaty","salty","warm"],
 story:{en:"The neck skin is pulled off whole like a sleeve, sewn shut at one end, filled with a forcemeat of duck, pork and foie gras, then confited and kept under fat. It exists because a Gascon farm raising ducks for foie gras threw nothing away: the skin was the casing it already had.",
@@ -1099,7 +1099,7 @@ fr:"Sortez-le du gras, essuyez-le et saisissez-le à sec jusqu’à ce que la pe
 pairs:["foie-gras","duck-fat","armagnac","fig","frisee","potato","prune","walnut"],
 svg:'<path class="f2 sf" d="M24 62q-5-12 4-21t24-15q9-4 13 2t-5 12q-11 7-17 17t-19 5z"/><path class="s" d="M64 32l9-6M67 37l9-4"/><ellipse class="f1 sf" cx="34" cy="74" rx="9" ry="4"/><circle class="dot" cx="32" cy="74" r="1.5"/>'},
 
-{id:"cochon-de-lait",cat:"meat",name:{en:"Suckling pig",fr:"Cochon de lait"},latin:"Sus scrofa domesticus",
+{id:"cochon-de-lait",cat:"meat",luxe:true,name:{en:"Suckling pig",fr:"Cochon de lait"},latin:"Sus scrofa domesticus",
 origin:{en:"Farmyards across Europe",fr:"Fermes d’Europe"},season:[],
 flavor:["rich","buttery","mild","meaty"],
 story:{en:"A piglet taken at four to six weeks, still on the sow, has collagen that has not yet set into tough connective tissue and skin thin enough to blister into glass. In Segovia the roasters carve the finished animal with the edge of a plate to prove how tender it is, then smash the plate on the floor.",
@@ -1109,7 +1109,7 @@ fr:"Séchez la couenne une nuit au réfrigérateur à découvert, rôtissez coue
 pairs:["bay-leaf","garlic","lard","sage","cider-vinegar","apple","thyme","salt"],
 svg:'<path class="f2 sf" d="M28 54q0-13 15-16t28 5q8 4 8 11t-8 10q-14 6-29 2t-14-12z"/><path class="sf" d="M58 39q6-7 11-3t-3 9z"/><path class="s" d="M79 52q5-1 5 3t-5 2M35 67v8M46 69v7M61 67v8M28 52q-6-3-6 3t4 2"/><circle class="dot" cx="70" cy="50" r="1.7"/>'},
 
-{id:"sarcelle",cat:"meat",name:{en:"Teal",fr:"Sarcelle"},latin:"Anas crecca",
+{id:"sarcelle",cat:"meat",rare:true,name:{en:"Teal",fr:"Sarcelle"},latin:"Anas crecca",
 origin:{en:"Coastal marshes and floodplains",fr:"Marais littoraux et plaines inondables"},season:[9,10,11,12,1],
 flavor:["meaty","briny","delicate"],
 story:{en:"Europe’s smallest dabbling duck weighs around 300 g and feeds by sieving mud at the surface rather than diving, so it tastes of the marsh and never of fish. One bird is one portion, and it is out of the oven before a mallard has come up to temperature.",
@@ -1179,7 +1179,7 @@ fr:"Marinez-le une nuit au vin rouge avec genièvre et laurier. Un jeune en dema
 pairs:["juniper","red-wine-vinegar","chestnut","bay-leaf","thyme","onion","carrot","dark-chocolate"],
 svg:'<path class="f1 sf" d="M28 62q4-20 22-20t18 18q-14 12-40 2z"/><path class="s" d="M30 56l-6 4 6 2"/><circle class="dot" cx="40" cy="54" r="1.6"/>'},
 
-{id:"lapin-de-garenne",cat:"meat",name:{en:"Wild rabbit",fr:"Lapin de garenne"},latin:"Oryctolagus cuniculus",
+{id:"lapin-de-garenne",cat:"meat",rare:true,luxe:true,name:{en:"Wild rabbit",fr:"Lapin de garenne"},latin:"Oryctolagus cuniculus",
 origin:{en:"Sandy warrens and scrub",fr:"Garennes sableuses et maquis"},season:[9,10,11,12,1],
 flavor:["meaty","herbal","earthy"],
 story:{en:"The Romans kept this species in walled enclosures they called leporaria, the ancestor of the medieval warren and, eventually, of every hutch rabbit alive. Shot wild it weighs half what its domestic descendants do and carries almost no fat, so the recipe written for one will ruin the other.",
@@ -1189,7 +1189,7 @@ fr:"Ne rôtissez que le râble, huit minutes à 220 °C, bardé de lard gras pui
 pairs:["thyme","mustard","white-wine-vinegar","fatback","prune","savory","shallot","bay-leaf"],
 svg:'<path class="f2 sf" d="M24 62q-2-16 14-20t28 2q8 4 8 12t-10 12q-18 4-32 0t-8-6z"/><path class="sf" d="M58 44q-4-16 2-20t8 6-2 15zM66 46q0-16 7-18t5 10-6 12z"/><path class="s" d="M24 60q-6 2-6 6M40 70v6M60 70v6"/><circle class="dot" cx="70" cy="52" r="1.6"/>'},
 
-{id:"palombe",cat:"meat",name:{en:"Wood pigeon",fr:"Palombe"},latin:"Columba palumbus",
+{id:"palombe",cat:"meat",rare:true,luxe:true,name:{en:"Wood pigeon",fr:"Palombe"},latin:"Columba palumbus",
 origin:{en:"South-West France, autumn flyway",fr:"Sud-Ouest, couloir migratoire d’automne"},season:[10,11],
 flavor:["meaty","rich","earthy","woody"],
 story:{en:"Every October the flocks funnel through the passes of the Basque country and the Landes, where hunters wait in palombières — huts built up in the oaks and joined by walkways through the canopy. The birds arrive muscled from the crossing, which is why the breast is firmer and far darker than any farmed squab.",
@@ -1199,7 +1199,7 @@ fr:"Uniquement les filets, quatre minutes par face au beurre mousseux, puis auta
 pairs:["porcini","armagnac","juniper","chestnut","butter","cabbage"],
 svg:'<path class="f2 sf" d="M28 58q2-15 18-17t22 7q5 9-3 17-14 10-29 5t-8-12z"/><circle class="f1 sf" cx="70" cy="40" r="8"/><path class="f3" d="M40 50q13-7 23 1-9 10-23 6z"/><path class="s" d="M78 40q5 0 7 3-3 3-7 2M24 78h48M46 70v8M56 70v8"/><circle class="dot" cx="73" cy="38" r="1.6"/>'},
 
-{id:"becasse",cat:"meat",name:{en:"Woodcock",fr:"Bécasse"},latin:"Scolopax rusticola",
+{id:"becasse",cat:"meat",rare:true,luxe:true,name:{en:"Woodcock",fr:"Bécasse"},latin:"Scolopax rusticola",
 origin:{en:"Damp woodland floor",fr:"Sous-bois humides"},season:[10,11,12,1],
 flavor:["meaty","rich","earthy","musky"],
 story:{en:"Woodcock swallow no grit, so the gizzard holds none and the bird is roasted undrawn with its trail spread on the toast beneath it. Its eyes sit so far back on the skull that it sees a full circle without turning its head, which is also why it is nearly impossible to surprise.",
@@ -1209,7 +1209,7 @@ fr:"Quinze minutes à 230 °C, le canapé dessous pour recueillir tout ce qui co
 pairs:["butter","armagnac","juniper","shallot","black-pepper","lemon","porcini","foie-gras"],
 svg:'<path class="f2 sf" d="M32 52q6-14 22-14t24 12q4 12-8 18-18 8-32 0t-6-16z"/><path class="f3" d="M46 42q12-4 22 4-10 6-22 2z"/><path class="s" d="M34 46 20 62M22 74h52M50 70v6M62 70v6"/><circle class="dot" cx="40" cy="44" r="2.4"/>'},
 
-{id:"marcassin",cat:"meat",name:{en:"Young wild boar",fr:"Marcassin"},latin:"Sus scrofa",
+{id:"marcassin",cat:"meat",luxe:true,name:{en:"Young wild boar",fr:"Marcassin"},latin:"Sus scrofa",
 origin:{en:"European woodland",fr:"Forêts d’Europe"},season:[9,10,11,12],
 flavor:["meaty","mild","delicate","earthy"],
 story:{en:"Under six months the animal still carries the pale longitudinal stripes it was born with, and a hunter can read its age from them: they begin to fade at three or four months and are gone by six. It has not yet built the strong-smelling fat of an adult, so the marinade a mature boar needs would only strip it.",

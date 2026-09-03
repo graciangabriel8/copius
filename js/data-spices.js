@@ -9,7 +9,7 @@ fr:"Écrasez-le entre les paumes au moment de l’ajouter. Une toute petite quan
 pairs:["chickpea-flour","potato","red-lentil","ghee","turmeric","cumin","chili","garlic"],
 svg:'<path class="f1 sf" d="M40 48q4 10 0 18M48 46q4 11 0 20M56 48q4 10 0 18"/><circle class="dot" cx="40" cy="57" r="1.2"/><circle class="dot" cx="48" cy="56" r="1.2"/>'},
 
-{id:"aji-amarillo",cat:"spices",name:{en:"Ají amarillo",fr:"Ají amarillo (piment jaune du Pérou)"},latin:"Capsicum baccatum",
+{id:"aji-amarillo",cat:"spices",rare:true,name:{en:"Ají amarillo",fr:"Ají amarillo (piment jaune du Pérou)"},latin:"Capsicum baccatum",
 origin:{en:"Peruvian coast & valleys",fr:"Côte et vallées du Pérou"},season:[],
 flavor:["fruity","hot","fresh","sweet"],
 story:{en:"Peruvians call it yellow although the ripe pod is deep orange; the name describes the colour the sauce turns, not the chilli. It belongs to Capsicum baccatum rather than the annuum species behind almost every other chilli in a European kitchen, and the flower gives it away — baccatum petals carry yellow-green blotches no annuum has.",
@@ -59,7 +59,7 @@ fr:"Ajoutez-la hors du feu, en fin de cuisson : frite dans l’huile chaude, ell
 pairs:["chickpeas","cumin","coriander-seed","potato","onion","chili","turmeric","ghee"],
 svg:'<path class="f1 sf" d="M22 70q10-18 26-18t26 18z"/><path class="f3 sf" d="M42 52q4-20 16-24-2 16-8 24z"/><path class="s" d="M46 52q4-14 10-20"/><path class="s" d="M28 66q16-6 36 0"/>'},
 
-{id:"anardana",cat:"spices",name:{en:"Anardana",fr:"Anardana (grenade séchée)"},latin:"Punica granatum",
+{id:"anardana",cat:"spices",rare:true,name:{en:"Anardana",fr:"Anardana (grenade séchée)"},latin:"Punica granatum",
 origin:{en:"Himachal Pradesh & the Pir Panjal",fr:"Himachal Pradesh & chaîne du Pir Panjal"},season:[],
 flavor:["sour","fruity","tangy","sweet"],
 story:{en:"The best of it does not come from the pomegranates anyone eats: daru, the wild tree of the southern Himalaya, bears fruit too sour to swallow and is grown for drying alone. The arils go into the sun with their pulp still attached, which is why the spice stays tacky in the jar and clumps instead of pouring.",
@@ -79,7 +79,7 @@ fr:"Écrasez-le à plat sur une poêle sèche quinze secondes par face, pas dava
 pairs:["cacao-mass","cumin","garlic","tomato","onion","cinnamon","sesame","oregano"],
 svg:'<path class="f3 sf" d="M30 40q18-8 36 0 4 14-6 26t-14 10-14-12-2-24z"/><path class="s" d="M40 44q2 16 6 30M54 44q-2 16-4 28"/><path class="f2 sf" d="M46 36l-2-10 8 1 2 9z"/>'},
 
-{id:"andaliman",cat:"spices",name:{en:"Andaliman",fr:"Baies des Bataks (poivre andaliman)"},latin:"Zanthoxylum acanthopodium",
+{id:"andaliman",cat:"spices",rare:true,name:{en:"Andaliman",fr:"Baies des Bataks (poivre andaliman)"},latin:"Zanthoxylum acanthopodium",
 origin:{en:"Lake Toba, North Sumatra",fr:"Lac Toba, Sumatra du Nord"},season:[],
 flavor:["citrus","numbing","fresh","herbal"],
 story:{en:"Acanthopodium means thorn-footed, and the shrub is armed all the way down the stem; it grows around Lake Toba and has resisted every attempt to plant it commercially elsewhere, so the berries still come out of smallholders’ hedges. The Batak call it their pepper and put it in arsik, carp cooked without coconut milk, where its lemon edge does the work an acid would.",
@@ -119,7 +119,7 @@ fr:"Un quart de cuillère à café de poudre composée pour quatre, jetée trois
 pairs:["ghee","cumin","turmeric","red-lentil","chickpeas","curry-leaf","mustard-seed","potato"],
 svg:'<path class="f2 sf" d="M30 44h36v28q-18 5-36 0z"/><path class="f3 sf" d="M35 32h26v12H35z"/><path class="s" d="M30 44h36"/><path class="f1 sf" d="M38 56q8-7 15-2t3 12-20 2z"/>'},
 
-{id:"ashanti-pepper",cat:"spices",name:{en:"Ashanti pepper",fr:"Poivre des Ashantis"},latin:"Piper guineense",
+{id:"ashanti-pepper",cat:"spices",rare:true,name:{en:"Ashanti pepper",fr:"Poivre des Ashantis"},latin:"Piper guineense",
 origin:{en:"West African forests",fr:"Forêts d’Afrique de l’Ouest"},season:[],
 flavor:["peppery","herbal","woody","fresh"],
 story:{en:"The vine gives two crops: the berry, and the leaf — uziza — which West African kitchens treat as a green vegetable dropped into soups at the last moment. Tell it from cubeb by the tail: on Ashanti pepper the little stalk curves, on cubeb it is dead straight, which is how false cubeb came by its other name.",
@@ -129,7 +129,7 @@ fr:"Concassez-le grossièrement au mortier et mettez-le en début de braisage pl
 pairs:["chili","onion","ginger","garlic","red-palm-oil","egusi-seed","beef","crevettes-sechees"],
 svg:'<circle class="f3 sf" cx="38" cy="44" r="8"/><circle class="f3 sf" cx="58" cy="40" r="8"/><circle class="f2 sf" cx="48" cy="60" r="8"/><path class="s" d="M38 52q-2 8-8 11M58 48q0 9 7 12M48 68q-4 6-2 10"/>'},
 
-{id:"avocado-leaf",cat:"spices",name:{en:"Avocado leaf",fr:"Feuille d’avocatier"},latin:"Persea americana var. drymifolia",
+{id:"avocado-leaf",cat:"spices",rare:true,name:{en:"Avocado leaf",fr:"Feuille d’avocatier"},latin:"Persea americana var. drymifolia",
 origin:{en:"Highlands of Michoacán, Mexico",fr:"Hauts plateaux du Michoacán, Mexique"},season:[],
 flavor:["anise","nutty","toasty"],
 story:{en:"Only the Mexican race of avocado has a scented leaf; crush a West Indian one and it smells of nothing at all. The compound responsible is estragole, the same molecule that makes tarragon taste of tarragon, and it is why a pot of black beans in Oaxaca tastes unlike a pot of black beans anywhere else.",
@@ -149,7 +149,7 @@ fr:"Travaillez-le à l’huile sur la viande une heure avant le feu : posé à s
 pairs:["lamb","allspice","cinnamon","black-pepper","tomato","onion","rice","olive-oil"],
 svg:'<path class="f2 sf" d="M28 52h40q-2 20-20 20t-20-20z"/><path class="s" d="M28 52h40"/><path class="f1 sf" d="M34 52q6-8 14-8t14 8z"/><path class="f3 sf" d="M56 46l14-18 5 4-14 18z"/>'},
 
-{id:"balsam-poplar-buds",cat:"spices",name:{en:"Balsam poplar buds",fr:"Bourgeons de peuplier baumier"},latin:"Populus balsamifera",
+{id:"balsam-poplar-buds",cat:"spices",rare:true,name:{en:"Balsam poplar buds",fr:"Bourgeons de peuplier baumier"},latin:"Populus balsamifera",
 origin:{en:"Boreal riverbanks of Canada",fr:"Rives boréales du Canada"},season:[3,4],
 flavor:["resinous","honeyed","woody"],
 story:{en:"Bees find these buds long before cooks do: the resin they strip from them is the base of propolis, the glue a hive uses to seal its own walls. Apothecaries sold the same buds as balm of Gilead, a name borrowed wholesale from a Levantine resin that has nothing to do with poplars.",
@@ -189,7 +189,7 @@ fr:"Moulez-le au dernier moment — le poivre pré-moulu n’est que poussière 
 pairs:["strawberry","beef","egg","lemon","parmesan","oyster"],
 svg:'<circle class="f3 sf" cx="38" cy="50" r="8"/><circle class="f3 sf" cx="58" cy="46" r="8"/><circle class="f3 sf" cx="48" cy="64" r="8"/><path class="s" d="M35 47l6 6M55 43l6 6M45 61l6 6"/>'},
 
-{id:"bog-myrtle",cat:"spices",name:{en:"Bog myrtle",fr:"Piment royal"},latin:"Myrica gale",
+{id:"bog-myrtle",cat:"spices",rare:true,name:{en:"Bog myrtle",fr:"Piment royal"},latin:"Myrica gale",
 origin:{en:"Northern peat bogs",fr:"Tourbières du Nord"},season:[4,5,6,7,8],
 flavor:["resinous","bitter","woody"],
 story:{en:"Before hops took over, northern European ale was bittered with gruit, and bog myrtle was one of its principal herbs — a shrub of acid bogs where almost nothing edible grows. Nordic kitchens brought it back for fish and game, where it works like a bay leaf with eucalyptus behind it.",
@@ -239,7 +239,7 @@ fr:"Elle tient au braisage long là où la cannelle de Ceylan s’efface. Réser
 pairs:["star-anise","clove","beef","orange","soy-sauce","ginger","sugar","black-pepper"],
 svg:'<path class="f1 sf" d="M36 30q14 0 14 24t-14 22q6-22 0-46z"/><path class="s" d="M50 34q10 6 10 20t-10 20"/>'},
 
-{id:"cassia-buds",cat:"spices",name:{en:"Cassia buds",fr:"Boutons de casse"},latin:"Cinnamomum cassia",
+{id:"cassia-buds",cat:"spices",rare:true,name:{en:"Cassia buds",fr:"Boutons de casse"},latin:"Cinnamomum cassia",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
 flavor:["warm","sweet","woody","peppery"],
 story:{en:"These are the flower buds of the cassia tree, picked before they open and dried until they look like small cloves still on the stalk. Rome used them, medieval Europe bought them by the pound and nineteenth-century American kitchens turned them into sweet cassia bud pickles — then the trade moved to bark and the bud all but vanished.",
@@ -269,7 +269,7 @@ fr:"Ne le cuisez jamais. La chaleur écrase l’amchur en quelques secondes : ga
 pairs:["mango","potato","yogurt","cucumber","chickpeas","lime","cilantro","watermelon"],
 svg:'<path class="f2 sf" d="M37 40h22v32a5 5 0 01-5 5H42a5 5 0 01-5-5z"/><path class="f3 sf" d="M36 31h24v9H36z"/><path class="dot" d="M41 35a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M46 35a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M51 35a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/><path class="s" d="M41 52h14M41 60h14"/><path class="dot" d="M63 70a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M69 74a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M64 78a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"chenpi",cat:"spices",name:{en:"Chenpi",fr:"Chenpi (écorce de mandarine séchée)"},latin:"Citrus reticulata",
+{id:"chenpi",cat:"spices",rare:true,luxe:true,name:{en:"Chenpi",fr:"Chenpi (écorce de mandarine séchée)"},latin:"Citrus reticulata",
 origin:{en:"Xinhui, Guangdong",fr:"Xinhui, Guangdong"},season:[],
 flavor:["bitter","citrus","resinous","woody"],
 story:{en:"Under China's geographical indication the peel may not be called chenpi until it has aged three years, and the Xinhui district of Guangdong holds the name for the finest lots. Old vintages are dated, stored and traded much as old wine is, the raw bitterness of fresh peel having turned camphorous and medicinal.",
@@ -319,7 +319,7 @@ fr:"Sa peau est plus fine que celle de l’ancho et brûle plus vite : cinq seco
 pairs:["dark-chocolate","tomato","garlic","onion","cumin","beef","raisin","sesame"],
 svg:'<path class="f3 sf" d="M42 30c5-1 8 2 8 8 0 12-2 22 0 32 1 6 4 10 6 14-6 0-11-6-13-14-3-12-4-24-4-32 0-4 1-7 3-8z"/><path class="s" d="M42 30q-2-10-8-14"/><path class="s" d="M45 46q3 2 4 0M47 60q3 2 5 0"/>'},
 
-{id:"chile-piquin",cat:"spices",name:{en:"Chile piquín",fr:"Chile piquín"},latin:"Capsicum annuum var. glabriusculum",
+{id:"chile-piquin",cat:"spices",rare:true,name:{en:"Chile piquín",fr:"Chile piquín"},latin:"Capsicum annuum var. glabriusculum",
 origin:{en:"Wild, northern Mexico and Texas",fr:"Sauvage, nord du Mexique et Texas"},season:[8,9,10,11],
 flavor:["hot","citrus","grassy","fruity"],
 story:{en:"This is the wild ancestor of every domesticated Capsicum annuum — bell pepper, jalapeño and poblano all descend from it. Birds swallow the fruit whole and carry the seed off because they lack the receptor capsaicin acts on, which is the reason the plant makes the compound at all.",
@@ -329,7 +329,7 @@ fr:"Le feu monte vite et retombe vite, à l’inverse du habanero : assaisonnez 
 pairs:["lime","tomato","avocado","cilantro","corn","peanut","mango","onion"],
 svg:'<path class="s" d="M28 78q10-20 20-26t20-18"/><ellipse class="f3 sf" cx="40" cy="60" rx="5" ry="7"/><ellipse class="f3 sf" cx="52" cy="48" rx="5" ry="7"/><ellipse class="f2 sf" cx="62" cy="38" rx="5" ry="7"/><ellipse class="f2 sf" cx="46" cy="72" rx="5" ry="7"/><path class="f1 sf" d="M34 50q-11-6-12-16t14 8z"/>'},
 
-{id:"chilhuacle-negro",cat:"spices",name:{en:"Chilhuacle negro",fr:"Chilhuacle negro"},latin:"Capsicum annuum",
+{id:"chilhuacle-negro",cat:"spices",rare:true,luxe:true,name:{en:"Chilhuacle negro",fr:"Chilhuacle negro"},latin:"Capsicum annuum",
 origin:{en:"Cañada valley, Oaxaca",fr:"Vallée de la Cañada, Oaxaca"},season:[],
 flavor:["smoky","bitter","fruity","earthy"],
 story:{en:"The chilhuacle grows on fewer than ten hectares in the Cañada of Oaxaca and yields about a tonne a hectare, which is why dried pods pass 200 dollars a pound and make it the most expensive chilli in Mexico. Its name comes from Nahuatl chilli and huactli, old — and mole negro genuinely cannot be built without it.",
@@ -369,7 +369,7 @@ fr:"Traitez-le comme un agent fumant plutôt que comme une source de force : un 
 pairs:["pork","tomato","garlic","lime","onion","cumin","dark-chocolate","oregano"],
 svg:'<path class="f3 sf" d="M58 40q6 14-2 26-7 11-16 8-6-3-2-9 8-11 12-25z"/><path class="s" d="M58 40q1-6 7-7"/><path class="s" d="M55 48q-7 4-11 13M59 55q-7 4-11 13"/><path class="s" d="M32 42q7-4 3-10t4-9M40 32q5-3 2-8"/>'},
 
-{id:"chipotle-meco",cat:"spices",name:{en:"Chipotle meco",fr:"Chipotle meco"},latin:"Capsicum annuum 'Jalapeño'",
+{id:"chipotle-meco",cat:"spices",rare:true,name:{en:"Chipotle meco",fr:"Chipotle meco"},latin:"Capsicum annuum 'Jalapeño'",
 origin:{en:"Chihuahua and Veracruz, Mexico",fr:"Chihuahua et Veracruz, Mexique"},season:[],
 flavor:["smoky","hot","woody","toasty"],
 story:{en:"Both chipotles begin as a red jalapeño, but the meco is left longer on the plant and then smoked roughly twice as long as the morita — long enough to come out ash-grey and stiff as cardboard. The morita, softer and purple-brown, is what nearly every tin and packet labelled chipotle actually contains.",
@@ -449,7 +449,7 @@ fr:"Torréfiez les graines entières à sec jusqu’à ce qu’elles sentent le 
 pairs:["carrot","chickpeas","lamb","yogurt","lentils","beetroot","cilantro"],
 svg:'<path class="f3 sf" d="M36 44q2-8 8-8-1 8-8 8zM52 38q2-8 8-8-1 8-8 8zM44 58q2-8 8-8-1 8-8 8zM58 54q2-8 8-8-1 8-8 8zM32 62q2-8 8-8-1 8-8 8zM50 70q2-8 8-8-1 8-8 8z"/>'},
 
-{id:"dried-barberry",cat:"spices",name:{en:"Dried barberry",fr:"Épine-vinette séchée (zereshk)"},latin:"Berberis vulgaris",
+{id:"dried-barberry",cat:"spices",rare:true,name:{en:"Dried barberry",fr:"Épine-vinette séchée (zereshk)"},latin:"Berberis vulgaris",
 origin:{en:"South Khorasan, Iran",fr:"Khorassan du Sud, Iran"},season:[],
 flavor:["sour","tangy","fruity"],
 story:{en:"Almost all of Iran’s zereshk comes from one corner of South Khorasan around Qaen, where the seedless bush has been cultivated for roughly two centuries. The berries are dried in the shade rather than the sun, which is the whole reason they stay scarlet instead of going brown.",
@@ -489,7 +489,7 @@ fr:"Arrêtez de piler tant que le mélange crisse encore sous le pilon. Poussé 
 pairs:["hazelnut","sesame","coriander-seed","cumin","olive-oil","egg","yogurt","chickpeas"],
 svg:'<path class="f1 sf" d="M30 36h36L52 80q-4 6-8 0z"/><path class="s" d="M30 36q18 8 36 0"/><path class="s" d="M48 40v34"/><path class="dot" d="M35 32a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M45 27a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M55 31a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M49 36a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0"/>'},
 
-{id:"erjingtiao",cat:"spices",name:{en:"Erjingtiao chilli",fr:"Piment erjingtiao"},latin:"Capsicum annuum",
+{id:"erjingtiao",cat:"spices",rare:true,name:{en:"Erjingtiao chilli",fr:"Piment erjingtiao"},latin:"Capsicum annuum",
 origin:{en:"Sichuan basin",fr:"Bassin du Sichuan"},season:[],
 flavor:["fruity","warm","toasty"],
 story:{en:"Er jing tiao means roughly two gold strips, for the long grooved pods grown in the Sichuan basin around Pixian. It is the only chilli the traditional Pixian doubanjiang makers will take, chosen for fragrance and red pigment rather than pure burn at 15,000 to 20,000 Scoville.",
@@ -519,7 +519,7 @@ fr:"Jetez-les entières dans l’huile à environ 150 °C quelques secondes, jus
 pairs:["sichuan-pepper","rapeseed-oil","garlic","ginger","chicken","peanut","chinkiang-vinegar"],
 svg:'<path class="f3 sf" d="M38 62q2-24 6-32 4 8 6 32-6 3-12 0z"/><path class="f3 sf" d="M52 64q2-20 6-27 4 7 6 27-6 3-12 0z"/><path class="s" d="M44 64q0 8-4 12M58 66q0 8 4 10"/><path class="s" d="M40 76q6 6 20 4"/>'},
 
-{id:"fennel-pollen",cat:"spices",name:{en:"Fennel pollen",fr:"Pollen de fenouil"},latin:"Foeniculum vulgare",
+{id:"fennel-pollen",cat:"spices",luxe:true,name:{en:"Fennel pollen",fr:"Pollen de fenouil"},latin:"Foeniculum vulgare",
 origin:{en:"Tuscany and Calabria",fr:"Toscane et Calabre"},season:[],
 flavor:["anise","honeyed","floral"],
 story:{en:"Pollen is taken by cutting the umbels as the flowers open, drying them head-down and shaking the dust loose — a day's work yields grams, which is why it is priced like saffron. Tuscan producers call it the spice of angels; it is the same plant as fennel seed, caught three weeks earlier in its cycle.",
@@ -549,7 +549,7 @@ fr:"Grillez-le à peine, et arrêtez avant qu’il ne fonce. Une seconde de trop
 pairs:["turmeric","cumin","ghee","tomato","garlic","ginger","red-lentil","cilantro"],
 svg:'<path class="f2 sf" d="M40 50l8 4-8 4-2-4z"/><path class="f2 sf" d="M54 56l8 4-8 4-2-4z"/><path class="f2 sf" d="M44 64l8 4-8 4-2-4z"/>'},
 
-{id:"file-powder",cat:"spices",name:{en:"Filé powder",fr:"Poudre de filé"},latin:"Sassafras albidum",
+{id:"file-powder",cat:"spices",rare:true,name:{en:"Filé powder",fr:"Poudre de filé"},latin:"Sassafras albidum",
 origin:{en:"Louisiana",fr:"Louisiane"},season:[],
 flavor:["woody","herbal","earthy","mild"],
 story:{en:"The Choctaw ground dried sassafras leaf and called it kombo, a word that may well be the root of gumbo itself. Filé is simply the French for threaded, which is a warning as much as a name: let the pot boil and it goes stringy.",
@@ -559,7 +559,7 @@ fr:"Retirez le gumbo du feu avant qu’il n’approche de la poudre, puis incorp
 pairs:["okra","shrimp","chicken","andouille","celery","bell-pepper","onion","rice"],
 svg:'<path class="f1 sf" d="M50 20q12 6 12 20 0 16-14 24-8-6-11-14-7 1-11-5t3-11q5-3 9 1 0-11 12-15z"/><path class="s" d="M48 32v30M48 46l-9-3"/><path class="s" d="M48 62q0 9-5 14"/><path class="dot" d="M60 70a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M66 76a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M58 79a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"fingerroot",cat:"spices",name:{en:"Fingerroot",fr:"Krachai (gingembre digité)"},latin:"Boesenbergia rotunda",
+{id:"fingerroot",cat:"spices",rare:true,name:{en:"Fingerroot",fr:"Krachai (gingembre digité)"},latin:"Boesenbergia rotunda",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
 flavor:["pungent","bitter","citrus","warm"],
 story:{en:"The rhizome grows as a bunch of slim fingers hanging off a central knob, which is why Malay calls it kunci, a key, and English calls it Chinese keys. Its bite is camphorous rather than hot — cineole and camphor carry it, not the gingerols that make ginger burn.",
@@ -569,7 +569,7 @@ fr:"Taillez-le en fine julienne plutôt que de le hacher : dans le kaeng pa et l
 pairs:["fish-sauce","holy-basil","galangal","lemongrass","kaffir-lime-leaf","green-pepper","chili","garlic"],
 svg:'<ellipse class="f2 sf" cx="48" cy="34" rx="15" ry="9"/><path class="f1 sf" d="M37 40q-3 14-1 22t5 4 2-8-2-18zM47 42q-2 16 0 24t5 3 2-9-3-18zM58 40q1 14 3 20t5 2 0-8-4-14z"/><path class="s" d="M39 48h5M49 50h5M60 48h5"/>'},
 
-{id:"frankincense",cat:"spices",name:{en:"Frankincense",fr:"Oliban"},latin:"Boswellia sacra",
+{id:"frankincense",cat:"spices",rare:true,name:{en:"Frankincense",fr:"Oliban"},latin:"Boswellia sacra",
 origin:{en:"Dhofar, southern Oman",fr:"Dhofar, sud d’Oman"},season:[],
 flavor:["resinous","citrus","bitter"],
 story:{en:"Frankincense is a wound response: the tapper scores the bark and comes back a fortnight later to lift off the hardened tears. The palest grades, the hojari, come from trees on the dry inland side of the Dhofar mountains, where less rain means slower growth and cleaner resin.",
@@ -629,7 +629,7 @@ fr:"Concassez-la grossièrement au dernier moment ; elle flatte l’agneau, le p
 pairs:["lamb","chicken","carrot","rice"],
 svg:'<path class="f3" d="M38 42a3 3 0 106 0 3 3 0 10-6 0M52 38a3 3 0 106 0 3 3 0 10-6 0M32 54a3 3 0 106 0 3 3 0 10-6 0M46 52a3 3 0 106 0 3 3 0 10-6 0M60 50a3 3 0 106 0 3 3 0 10-6 0M40 64a3 3 0 106 0 3 3 0 10-6 0M54 62a3 3 0 106 0 3 3 0 10-6 0"/>'},
 
-{id:"grains-of-selim",cat:"spices",name:{en:"Grains of Selim",fr:"Baies de Selim"},latin:"Xylopia aethiopica",
+{id:"grains-of-selim",cat:"spices",rare:true,name:{en:"Grains of Selim",fr:"Baies de Selim"},latin:"Xylopia aethiopica",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
 flavor:["resinous","woody","musky","warm"],
 story:{en:"In Wolof the twisted pods are djar, and their most visible job is café Touba — coffee roasted with them, a recipe credited to the Sufi sheikh Amadou Bamba and now sold on every street corner in Dakar. Before the sea route to India opened, European traders shipped the same pods as Guinea pepper and sold them in place of the real thing.",
@@ -649,7 +649,7 @@ fr:"Écrasez ceux en saumure du plat du couteau directement dans une sauce crèm
 pairs:["cream","duck","beef","butter","thyme","shallot","mustard","tenderloin"],
 svg:'<circle class="f2 sf" cx="42" cy="52" r="7"/><circle class="f2 sf" cx="56" cy="55" r="7"/><circle class="f2 sf" cx="47" cy="66" r="7"/><path class="s" d="M42 45v-6"/>'},
 
-{id:"green-sichuan-pepper",cat:"spices",name:{en:"Green Sichuan pepper",fr:"Poivre de Sichuan vert"},latin:"Zanthoxylum schinifolium",
+{id:"green-sichuan-pepper",cat:"spices",rare:true,name:{en:"Green Sichuan pepper",fr:"Poivre de Sichuan vert"},latin:"Zanthoxylum schinifolium",
 origin:{en:"Sichuan & Chongqing",fr:"Sichuan & Chongqing"},season:[],
 flavor:["numbing","citrus","fresh","herbal"],
 story:{en:"A different species from the red huajiao, picked while the husks are still green. The tingle comes from hydroxy-alpha-sanshool, which does not act on taste at all: it fires the mouth’s touch receptors at around fifty vibrations a second, so what you register is a frequency rather than a flavour.",
@@ -669,7 +669,7 @@ fr:"La peau est coriace et ne s’attendrit jamais, quel que soit le temps de tr
 pairs:["tomato","garlic","onion","cumin","oregano","pork","lime","ancho-chilli"],
 svg:'<path class="f2 sf" d="M40 26q10 12 8 26-2 16-10 22-7-6-8-20t10-28z"/><path class="f1 sf" d="M60 30q8 14 4 28-4 14-12 18-5-8-2-22t10-24z"/><path class="s" d="M40 26q-1-6-7-7M60 30q2-6 9-6"/>'},
 
-{id:"hana-sansho",cat:"spices",name:{en:"Hana-sanshō (sanshō flower buds)",fr:"Fleurs de sanshō"},latin:"Zanthoxylum piperitum",
+{id:"hana-sansho",cat:"spices",rare:true,luxe:true,name:{en:"Hana-sanshō (sanshō flower buds)",fr:"Fleurs de sanshō"},latin:"Zanthoxylum piperitum",
 origin:{en:"Nara and Hida, Japan",fr:"Nara et Hida, Japon"},season:[4],
 flavor:["citrus","numbing","floral","woody"],
 story:{en:"Sanshō trees are male or female, and only the male ones flower without setting fruit — those unopened clusters are hana-sanshō, on the market for about two weeks in April and then gone. A single tree gives a handful, which is why a spring sukiyaki of Hida beef and flower buds is priced by the gram rather than by the portion.",
@@ -719,7 +719,7 @@ fr:"Écrasez les baies avant de les jeter dans la marmite — entières, elles r
 pairs:["duck","pork","beef","bay-leaf","black-pepper"],
 svg:'<circle class="f3 sf" cx="42" cy="54" r="8"/><circle class="f3 sf" cx="58" cy="58" r="7"/><path class="s" d="M40 51l4 4M56 55l3 4" stroke-width="1.6"/><path class="s" d="M46 40l6-12M46 40l-2-10M46 40l10-8"/>'},
 
-{id:"kala-jeera",cat:"spices",name:{en:"Kala jeera",fr:"Cumin noir de l’Himalaya (kala jeera)"},latin:"Bunium persicum",
+{id:"kala-jeera",cat:"spices",rare:true,name:{en:"Kala jeera",fr:"Cumin noir de l’Himalaya (kala jeera)"},latin:"Bunium persicum",
 origin:{en:"Himalaya (Kashmir)",fr:"Himalaya (Cachemire)"},season:[],
 flavor:["smoky","earthy","musky","nutty"],
 story:{en:"It is neither cumin nor nigella, though English calls all three black cumin: this is a Himalayan umbellifer, still largely gathered wild, with seeds thinner and darker than cumin’s. Mughal court kitchens used it where an ordinary household reached for cumin, which is why it also answers to shahi jeera, royal cumin.",
@@ -739,7 +739,7 @@ fr:"Faites-le infuser dix secondes dans la matière grasse chaude, hors du feu, 
 pairs:["yogurt","ghee","garam-masala","fennel-seed","asafoetida","ginger","turmeric","lamb"],
 svg:'<path class="f2 sf" d="M36 26q6 0 8 6 6 20 16 32 6 8 2 10t-10-8Q40 48 34 34q-2-6 2-8z"/><path class="s" d="M36 22q-2-6 4-8"/><path class="s" d="M40 34q6 16 18 30"/>'},
 
-{id:"kokum",cat:"spices",name:{en:"Kokum",fr:"Kokum"},latin:"Garcinia indica",
+{id:"kokum",cat:"spices",rare:true,name:{en:"Kokum",fr:"Kokum"},latin:"Garcinia indica",
 origin:{en:"Konkan coast",fr:"Côte de Konkan"},season:[],
 flavor:["sour","tangy","fruity","fresh"],
 story:{en:"A tree of the Western Ghats gives a purple fruit whose rind is sun-dried whole until it is nearly black and still pliable. Its sourness is hydroxycitric acid rather than the tartaric and citric acids of tamarind, which is why it lands clean and fruity where tamarind lands sweet.",
@@ -779,7 +779,7 @@ fr:"C’est le frère plus délicat de la muscade — employez-le là où la mus
 pairs:["cream","butter","potato","nutmeg","white-pepper","spinach","chicken","comte"],
 svg:'<path class="f1 sf" d="M48 30q-16 8-14 26t14 18 14-18-14-26z"/><path class="s" d="M40 42q8 6 16 0M38 56q10 6 20 0"/>'},
 
-{id:"mahleb",cat:"spices",name:{en:"Mahleb",fr:"Mahleb"},latin:"Prunus mahaleb",
+{id:"mahleb",cat:"spices",rare:true,name:{en:"Mahleb",fr:"Mahleb"},latin:"Prunus mahaleb",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[],
 flavor:["nutty","bitter","fruity","floral"],
 story:{en:"It is the kernel inside the stone of the St Lucie cherry, a small wild tree planted more often as rootstock for eating cherries than for any fruit of its own. Cracked and ground, it tastes of bitter almond and sour cherry at once, and it is what gives Greek tsoureki and Levantine ka’ak their particular smell.",
@@ -789,7 +789,7 @@ fr:"Achetez les amandes entières et moulez à la dernière minute : la poudre e
 pairs:["flour-t55","egg","butter","sugar","orange-blossom-water","sesame","honey","almond"],
 svg:'<circle class="f3 sf" cx="37" cy="52" r="14"/><path class="s" d="M37 38q2-12 13-16"/><path class="f1 sf" d="M60 52q11 0 13 9t-9 12q-9 1-12-7t8-14z"/><ellipse class="f2 sf" cx="63" cy="63" rx="5" ry="7" transform="rotate(20 63 63)"/>'},
 
-{id:"mastic",cat:"spices",name:{en:"Mastic",fr:"Mastic de Chios"},latin:"Pistacia lentiscus var. chia",
+{id:"mastic",cat:"spices",rare:true,luxe:true,name:{en:"Mastic",fr:"Mastic de Chios"},latin:"Pistacia lentiscus var. chia",
 origin:{en:"Chios, Greece",fr:"Chios, Grèce"},season:[],
 flavor:["resinous","woody","bitter","fresh"],
 story:{en:"The lentisk grows all round the Mediterranean, but it only weeps usable resin in the twenty-four mastic villages of southern Chios, where growers score the bark and gather the hardened tears off swept ground beneath the tree. The resin carries a European PDO, and the cultivation method sits on the UNESCO intangible heritage list.",
@@ -809,7 +809,7 @@ fr:"Faites éclater les graines entières dans l’huile chaude jusqu’à ce qu
 pairs:["turmeric","curry-leaf","cider-vinegar","cabbage","potato","honey","chili","cumin"],
 svg:'<circle class="f2 sf" cx="41" cy="52" r="5"/><circle class="f2 sf" cx="54" cy="50" r="5"/><circle class="f2 sf" cx="47" cy="62" r="5"/><circle class="f2 sf" cx="59" cy="62" r="5"/><circle class="f2 sf" cx="38" cy="64" r="4"/>'},
 
-{id:"myrtle",cat:"spices",name:{en:"Myrtle",fr:"Myrte"},latin:"Myrtus communis",
+{id:"myrtle",cat:"spices",rare:true,name:{en:"Myrtle",fr:"Myrte"},latin:"Myrtus communis",
 origin:{en:"Corsican and Sardinian maquis",fr:"Maquis corse et sarde"},season:[10,11,12,1],
 flavor:["resinous","woody","fruity"],
 story:{en:"In Sardinia the suckling pig comes out of the fire pit onto a bed of myrtle branches and is covered with more, so the leaf perfumes the meat while it rests rather than while it cooks. The black berries ripen only from late autumn and are a separate seasoning altogether, sweeter, closer to juniper steeped in wine.",
@@ -839,7 +839,7 @@ fr:"Achetez-la entière, râpez-la directement sur le plat, et arrêtez-vous plu
 pairs:["spinach","potato","cream","egg","honey"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="17"/><path class="s" d="M48 38q-8 6-8 14t8 14M48 38q8 6 8 14t-8 14"/><circle class="f3 sf" cx="48" cy="52" r="5"/>'},
 
-{id:"orris-root",cat:"spices",name:{en:"Orris root",fr:"Iris de Florence"},latin:"Iris germanica var. florentina",
+{id:"orris-root",cat:"spices",rare:true,luxe:true,name:{en:"Orris root",fr:"Iris de Florence"},latin:"Iris germanica var. florentina",
 origin:{en:"Tuscan hills, Chianti",fr:"Collines toscanes, Chianti"},season:[],
 flavor:["floral","woody","delicate"],
 story:{en:"The violet smell does not exist in the living plant: the rhizome is lifted after three years in the ground, then dried three to five years more while enzymes slowly build the irones that carry it. Moroccan spice merchants grind a pinch into the most elaborate ras el hanout, where it fixes the other forty spices rather than adding a flavour of its own.",
@@ -849,7 +849,7 @@ fr:"Le doser comme un fixateur, pas comme une épice : un quart de cuillère à 
 pairs:["damask-rose-petals","cardamom","grains-of-paradise","honey","almond","lamb"],
 svg:'<path class="f2 sf" d="M22 66q0-10 12-10t14 4 14-4 12 10-10 12-16 2-16-2-10-12z"/><path class="s" d="M36 60q-2 8 0 14M60 60q2 8 0 14"/><path class="s" d="M48 56V32"/><path class="f1 sf" d="M48 32q-5-12 0-19 5 7 0 19zM48 36q-11-2-15-10 13-3 15 10zM48 36q11-2 15-10-13-3-15 10z"/>'},
 
-{id:"panch-phoron",cat:"spices",name:{en:"Panch phoron",fr:"Panch phoron"},latin:"—",
+{id:"panch-phoron",cat:"spices",rare:true,name:{en:"Panch phoron",fr:"Panch phoron"},latin:"—",
 origin:{en:"Bengal",fr:"Bengale"},season:[],
 flavor:["bitter","anise","pungent","warm"],
 story:{en:"Five whole seeds in equal parts — fenugreek, nigella, cumin, black mustard, fennel — never a sixth and never ground. The name is the instruction: panch is five, phoron is the tempering, the half minute in hot oil that opens a Bengali dish before anything else enters the pan.",
@@ -869,7 +869,7 @@ fr:"Le paprika brûle et devient amer en quelques secondes : ajoutez-le hors du 
 pairs:["chicken","potato","egg","white-beans","pork","corn"],
 svg:'<path class="f2 sf" d="M40 34q-12 18 0 32 8 10 16 2 8-9 0-22-6-9-16-12z" transform="rotate(14 48 52)"/><path class="s" d="M44 32q0-6 6-8"/><path class="dot" d="M60 70a2 2 0 104 0 2 2 0 10-4 0M66 64a2 2 0 104 0 2 2 0 10-4 0M68 72a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"pasilla-de-oaxaca",cat:"spices",name:{en:"Pasilla de Oaxaca",fr:"Pasilla de Oaxaca"},latin:"Capsicum annuum",
+{id:"pasilla-de-oaxaca",cat:"spices",rare:true,name:{en:"Pasilla de Oaxaca",fr:"Pasilla de Oaxaca"},latin:"Capsicum annuum",
 origin:{en:"Sierra Mixe, Oaxaca",fr:"Sierra Mixe, Oaxaca"},season:[],
 flavor:["smoky","hot","fruity","woody"],
 story:{en:"Despite the name it is not the chilaca: this is a Oaxacan chilli grown in the Sierra Mixe and effectively nowhere else, smoked over smouldering wood for two or three days after picking. It carries real heat, roughly ten times a plain pasilla, on top of a smoke heavier than any chipotle.",
@@ -959,7 +959,7 @@ fr:"Laissez infuser les filaments dans une eau ou un bouillon tiède vingt minut
 pairs:["rice","shrimp","cod","chicken","cardamom","orange","honey"],
 svg:'<path class="s" d="M40 70q-4-16 2-30M48 72q-2-18 2-34M56 70q4-14-2-30"/><path class="f3" d="M40 38a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M47 34a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M52 40a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0"/>'},
 
-{id:"sand-ginger",cat:"spices",name:{en:"Sand ginger (kencur)",fr:"Kencur (gingembre des sables)"},latin:"Kaempferia galanga",
+{id:"sand-ginger",cat:"spices",rare:true,name:{en:"Sand ginger (kencur)",fr:"Kencur (gingembre des sables)"},latin:"Kaempferia galanga",
 origin:{en:"Southern China and island Southeast Asia",fr:"Chine du Sud et Asie du Sud-Est insulaire"},season:[],
 flavor:["resinous","woody","warm","pungent"],
 story:{en:"The plant has no stem: two round leaves lie flat on the soil like saucers, which is where the English name found its sand. Its aroma comes from ethyl methoxycinnamate rather than the gingerols that make ginger hot, so it reads as pine resin and camphor — a third rhizome to keep straight, after ginger and galangal.",
@@ -969,7 +969,7 @@ fr:"Comptez le dixième de ce que vous mettriez de gingembre : l’équivalent d
 pairs:["lemongrass","garlic","shallot","chili","palm-sugar","tamarind-paste","coconut-milk","peanut"],
 svg:'<path class="f2 sf" d="M30 52q-4-12 8-16 8-3 14 2 8-6 16 0t2 18q-4 10-20 12t-20-16z"/><path class="s" d="M42 44q4 6 2 12M58 44q-3 6-1 12"/><circle class="f1 sf" cx="62" cy="72" r="10"/><circle class="s" cx="62" cy="72" r="5"/>'},
 
-{id:"sansho",cat:"spices",name:{en:"Sansho pepper",fr:"Poivre sansho"},latin:"Zanthoxylum piperitum",
+{id:"sansho",cat:"spices",rare:true,name:{en:"Sansho pepper",fr:"Poivre sansho"},latin:"Zanthoxylum piperitum",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["citrus","numbing","peppery","fresh"],
 story:{en:"Sanshō belongs to the citrus family, not the pepper family, and its tingle comes from hydroxy-alpha-sanshool rather than from capsaicin or piperine. The same shrub gives kinome, the young leaf clapped between the palms to wake it before it goes on a spring dish.",
@@ -1019,7 +1019,7 @@ fr:"Pensez-le comme du jus de citron sec : sur une viande grillée, un yaourt ou
 pairs:["onion","yogurt","lamb","chickpeas","tomato"],
 svg:'<path class="f3 sf" d="M48 30l14 22q6 12-4 18-10 5-20 0-10-6-4-18z"/><path class="dot" d="M42 48a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M50 46a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M46 56a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M54 54a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"tahitian-vanilla",cat:"spices",name:{en:"Tahitian vanilla",fr:"Vanille de Tahiti"},latin:"Vanilla ×tahitensis",
+{id:"tahitian-vanilla",cat:"spices",luxe:true,name:{en:"Tahitian vanilla",fr:"Vanille de Tahiti"},latin:"Vanilla ×tahitensis",
 origin:{en:"French Polynesia",fr:"Polynésie française"},season:[],
 flavor:["floral","anise","fruity","delicate"],
 story:{en:"Admiral Hamelin landed the first cuttings in Tahiti in 1848, and what grew there turned out to be a separate species — a natural hybrid, low in vanillin and heavy instead in anisaldehyde and heliotropin. That is where the prune, cherry and liquorice come from; it is not Bourbon vanilla done differently.",
@@ -1029,7 +1029,7 @@ fr:"Ses composés sont plus fragiles que ceux de la Bourbon : fendre la gousse d
 pairs:["cream","mascarpone","peach","coconut-milk","white-chocolate","dark-rum"],
 svg:'<path class="f2 sf" d="M30 80Q34 44 64 20Q46 48 36 82Z"/><path class="f3 sf" d="M46 82Q52 48 76 26Q60 52 52 84Z"/><path class="s" d="M38 66Q44 44 60 28"/><circle class="dot" cx="44" cy="56" r="2"/><circle class="dot" cx="50" cy="46" r="2"/>'},
 
-{id:"tasmanian-pepperberry",cat:"spices",name:{en:"Tasmanian pepperberry",fr:"Baies de Tasmanie"},latin:"Tasmannia lanceolata",
+{id:"tasmanian-pepperberry",cat:"spices",rare:true,name:{en:"Tasmanian pepperberry",fr:"Baies de Tasmanie"},latin:"Tasmannia lanceolata",
 origin:{en:"Tasmania and the Australian Alps",fr:"Tasmanie et Alpes australiennes"},season:[],
 flavor:["hot","fruity","woody"],
 story:{en:"The bite is polygodial, a sesquiterpene dialdehyde with nothing in common with piperine or capsaicin, and it arrives late — two seconds of sweet berry, then a heat that keeps climbing for half a minute. Colonial cooks used the leaf as a pepper substitute; the berry only reached restaurant kitchens with the native-food revival of the 1980s.",
@@ -1069,7 +1069,7 @@ fr:"Une pincée de poivre noir démultiplie ce que le corps en absorbe — les d
 pairs:["rice","coconut-milk","lentils","chickpeas","ginger","yogurt"],
 svg:'<path class="f3 sf" d="M32 60q-4-8 4-10 6-1 8-6 2-6 8-6t8 6q2 5 8 6-2 10-10 10-4 0-6 4-2 5-8 5t-8-5q-2-4-4-4z"/><path class="dot" d="M60 68a2 2 0 104 0 2 2 0 10-4 0M66 62a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"urfa-biber",cat:"spices",name:{en:"Urfa biber",fr:"Piment d’Urfa"},latin:"Capsicum annuum",
+{id:"urfa-biber",cat:"spices",rare:true,name:{en:"Urfa biber",fr:"Piment d’Urfa"},latin:"Capsicum annuum",
 origin:{en:"Şanlıurfa, south-eastern Turkey",fr:"Şanlıurfa, sud-est de la Turquie"},season:[],
 flavor:["smoky","fruity","earthy","rich"],
 story:{en:"For a week or more the peppers are laid out in the sun by day and wrapped tight in cloth at night, so the moisture drawn to the surface is pushed back into the flesh and the fruit ferments as it dries. No smoke ever touches them: the tobacco, raisin and cocoa are made by that sweating alone.",
@@ -1099,7 +1099,7 @@ fr:"Fendez la gousse et grattez les graines, puis enterrez la gousse vide dans v
 pairs:["cream","dark-chocolate","peach","pear","raspberry","coffee"],
 svg:'<path class="f3 sf" d="M36 26q-6 26 6 48 3-26-6-48z" transform="rotate(-6 40 50)"/><path class="f3 sf" d="M56 26q6 26-6 48-3-26 6-48z" transform="rotate(6 56 50)"/><path class="f1 sf" d="M48 60l4-6 6 3-2 7-7 2z"/>'},
 
-{id:"vanillon",cat:"spices",name:{en:"Vanillon",fr:"Vanillon"},latin:"Vanilla pompona",
+{id:"vanillon",cat:"spices",rare:true,luxe:true,name:{en:"Vanillon",fr:"Vanillon"},latin:"Vanilla pompona",
 origin:{en:"Guadeloupe, Basse-Terre",fr:"Guadeloupe, Basse-Terre"},season:[],
 flavor:["woody","fruity","warm","rich"],
 story:{en:"Short, wide and thick enough that the Caribbean calls it banana vanilla, the pompona pod is a third commercial species — barely any vanillin, and a nose of cut hay, tobacco leaf and dried cherry instead. It has all but vanished from Basse-Terre, where a grower may cure a few dozen pods in a year.",
@@ -1109,7 +1109,7 @@ fr:"Ne pas l’employer là où l’on mettrait de la Bourbon : si peu vanillée
 pairs:["dark-rum","rhum-agricole","coffee","dark-chocolate","pineapple","banana"],
 svg:'<path class="f3 sf" d="M22 66q-4-14 10-24t34-6q10 4 6 14t-22 16-22 8-6-8z"/><path class="s" d="M30 58q14-12 32-14"/><circle class="dot" cx="40" cy="54" r="2"/><circle class="dot" cx="50" cy="48" r="2"/>'},
 
-{id:"voatsiperifery",cat:"spices",name:{en:"Voatsiperifery pepper",fr:"Poivre voatsiperifery"},latin:"Piper borbonense",
+{id:"voatsiperifery",cat:"spices",rare:true,luxe:true,name:{en:"Voatsiperifery pepper",fr:"Poivre voatsiperifery"},latin:"Piper borbonense",
 origin:{en:"Rainforests of southern Madagascar",fr:"Forêts pluviales du sud de Madagascar"},season:[],
 flavor:["resinous","floral","peppery","woody"],
 story:{en:"The name opens with the Malagasy voa, fruit, and the plant grows only wild, on lianas climbing twenty metres or more, so the clusters are picked one at a time from the tops of forest trees between June and August. Each berry keeps the short stalk that held it, which is why it is sold as a tailed pepper.",
@@ -1139,7 +1139,7 @@ fr:"Employez-le là où des points noirs se verraient — béchamel, sauce de po
 pairs:["cream","butter","potato","scallop","turbot","nutmeg","chicken","comte"],
 svg:'<circle class="f3 sf" cx="42" cy="52" r="7"/><circle class="f3 sf" cx="56" cy="56" r="7"/><circle class="f3 sf" cx="47" cy="66" r="7"/><path class="s" d="M38 50q4-3 8 0"/>'},
 
-{id:"wood-avens-root",cat:"spices",name:{en:"Wood avens root",fr:"Racine de benoîte"},latin:"Geum urbanum",
+{id:"wood-avens-root",cat:"spices",rare:true,name:{en:"Wood avens root",fr:"Racine de benoîte"},latin:"Geum urbanum",
 origin:{en:"European woodland edges",fr:"Lisières des bois d’Europe"},season:[3,4,9,10,11],
 flavor:["warm","woody","earthy"],
 story:{en:"Augsburg brewers hung a linen bag of the dried root inside each cask, and the beer was said to keep from souring as well as taste of clove — the root carries eugenol, the compound cloves are named for. Its French name is a worn-down herba benedicta, blessed herb, the heading monastic gardeners filed it under.",
@@ -1149,7 +1149,7 @@ fr:"Arrachez-la à l’automne ou en tout début de printemps et employez-la fra
 pairs:["cream","apple","prune","honey","pork","rye"],
 svg:'<path class="f2 sf" d="M42 28q6-4 12 0l-3 16q-1 24-3 36-2-12-3-36z"/><path class="s" d="M46 48q-9 3-13 9M50 60q9 1 13 7M45 38q-9-3-12-8"/><path class="s" d="M44 28q-1-7 3-9M52 28q1-7 5-8"/><circle class="s" cx="60" cy="24" r="5"/>'},
 
-{id:"gentian-root",cat:"spices",name:{en:"Yellow gentian root",fr:"Racine de gentiane jaune"},latin:"Gentiana lutea",
+{id:"gentian-root",cat:"spices",rare:true,name:{en:"Yellow gentian root",fr:"Racine de gentiane jaune"},latin:"Gentiana lutea",
 origin:{en:"Auvergne, Jura and the Alps",fr:"Auvergne, Jura et Alpes"},season:[],
 flavor:["bitter","earthy","woody"],
 story:{en:"A gentian is not worth lifting until it is fifteen or twenty years old, and the root comes out on a two-pronged lever the diggers call the devil’s fork, which on a good day brings up two hundred kilos. The danger is above ground: before it flowers the plant is easily confused with white hellebore, which grows in the same meadows and has poisoned people who believed they were making gentian liqueur.",
@@ -1179,7 +1179,7 @@ fr:"Mélangez-le à l’huile d’olive en pâte avant de l’étaler sur le pai
 pairs:["olive-oil","sumac","sesame","flour-t65","yogurt","feta","tomato","cucumber"],
 svg:'<path class="f2 sf" d="M32 66q0-16 16-20 16 4 16 20z"/><path class="s" d="M40 58q8-4 16 0M38 64q10-4 20 0"/><circle class="dot" cx="44" cy="54" r="1.4"/>'},
 
-{id:"zedoary",cat:"spices",name:{en:"Zedoary",fr:"Zédoaire"},latin:"Curcuma zedoaria",
+{id:"zedoary",cat:"spices",rare:true,name:{en:"Zedoary",fr:"Zédoaire"},latin:"Curcuma zedoaria",
 origin:{en:"India and Indonesia",fr:"Inde et Indonésie"},season:[],
 flavor:["bitter","fruity","earthy","resinous"],
 story:{en:"Medieval Europe bought it by the pound, and it runs through apothecary lists and cookbooks up to the sixteenth century before all but vanishing from European kitchens, while staying put in Indian pickles and Thai curry pastes. The cut flesh is white to pale yellow and smells of green mango, and that is where the bitterness sits.",
