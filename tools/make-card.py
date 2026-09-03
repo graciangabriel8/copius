@@ -122,6 +122,20 @@ def build_all(rows, outdir):
 
 if __name__ == "__main__":
     rows = load()
+    if len(sys.argv) > 1 and sys.argv[1] == "--window":
+        # The day -> ingredient map is a pure function of the date, so only the
+        # next N days need to exist. A full set is 1,857 files and ~86 MB of
+        # repository for cards that will not be posted for years.
+        days = int(sys.argv[2]) if len(sys.argv) > 2 else 400
+        d0 = datetime.date.today()
+        want, seen = [], set()
+        for k in range(days):
+            i = pick(rows, d0 + datetime.timedelta(days=k))
+            if i["id"] not in seen:
+                seen.add(i["id"]); want.append(i)
+        n = build_all(want, ROOT / "social")
+        print(json.dumps({"built": n, "days": days, "dir": "social/"}))
+        sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "--all":
         n = build_all(rows, ROOT / "social")
         print(json.dumps({"built": n, "dir": "social/"}))

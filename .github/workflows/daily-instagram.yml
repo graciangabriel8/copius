@@ -27,7 +27,10 @@ jobs:
           ID="$(python3 tools/make-card.py --today-id)"
           echo "id=$ID" >> "$GITHUB_OUTPUT"
           echo "Today: $ID"
-          test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — run tools/build-social.sh and commit"; exit 1; }
+          test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: sh tools/build-social.sh 400 && git add social && git commit && git push"; exit 1; }
+          # warn while there is still time to rebuild
+          LEFT=$(ls -1 social/*.jpg | wc -l | tr -d " ")
+          [ "$LEFT" -lt 40 ] && echo "::warning::only $LEFT cards left in the window — rerun tools/build-social.sh"
 
       - name: Publish
         env:
