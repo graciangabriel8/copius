@@ -512,12 +512,15 @@
     el("dishSearch").placeholder = t.dishSearchPh;
     var regions = [];
     DISHES.forEach(function (d) { if (regions.indexOf(d.group) === -1) regions.push(d.group); });
-    fillSel("dishRegion", [["all", t.fAllRegions]].concat(regions.map(function (r) { return [r, r]; })), state.dishRegion);
+    fillSel("dishRegion", [["all", t.fAllRegions]].concat(regions.map(function (r) {
+      return [r, t["r" + r.charAt(0).toUpperCase() + r.slice(1)] || r];
+    })), state.dishRegion);
     var q = norm(state.dishQ.trim());
     var list = DISHES.filter(function (d) {
       if (state.dishRegion !== "all" && d.group !== state.dishRegion) return false;
       if (!q) return true;
-      return norm(d.name.en + " " + d.name.fr + " " + d.region + " " + d.summary[state.lang]).indexOf(q) !== -1;
+      return norm(d.name.en + " " + d.name.fr + " " + d.region.fr + " " + d.region.en + " " +
+        d.summary[state.lang]).indexOf(q) !== -1;
     }).sort(function (x, y) {
       return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
     });
@@ -538,7 +541,7 @@
           '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
       }).join("");
       return '<article class="dish-card">' +
-        '<p class="dish-meta">' + esc(d.region) + " · " + esc(d.era) + "</p>" +
+        '<p class="dish-meta">' + esc(d.region[state.lang]) + " · " + esc(d.era[state.lang]) + "</p>" +
         "<h3>" + esc(d.name[state.lang]) + "</h3>" +
         '<p class="dish-sum">' + esc(d.summary[state.lang]) + "</p>" +
         '<h4>' + esc(t.dishBalance) + "</h4><p class=\"dish-balance\">" + esc(d.balance[state.lang]) + "</p>" +
