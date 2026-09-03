@@ -21,7 +21,19 @@ if (typeof require === "function" && typeof process !== "undefined") {
 
 var g = (typeof globalThis !== "undefined") ? globalThis : this;
 g.window = {};
-["i18n.js","photos.js","data-vegetables.js","data-fruits.js","data-herbs.js","data-spices.js","data-pantry.js","data-animal.js","data-gastronomy-garden.js","data-gastronomy-pantry.js","data-premium.js","data-cuts.js","data-trees.js","trios.js","trios-gastronomy.js","trios-premium.js"]
+(function () {
+  // Load exactly what index.html loads, so the validator can never drift
+  // from the app the way it did when this list was written by hand.
+  var html = read("../index.html");
+  var re = /src="js\/([a-z0-9.-]+\.js)\?/g, m, out = ["i18n.js", "photos.js"];
+  while ((m = re.exec(html))) {
+    var f = m[1];
+    // data + vocabulary only; app.js needs a browser and is not data
+    if (!/^(data-|trios)/.test(f)) continue;
+    if (out.indexOf(f) === -1) out.push(f);
+  }
+  return out;
+})()
   .forEach(function (f) { eval(read(f)); });
 
 var I18N = g.window.I18N, INGREDIENTS = g.window.INGREDIENTS, TRIOS = g.window.TRIOS, CAT_ORDER = g.window.CAT_ORDER;
