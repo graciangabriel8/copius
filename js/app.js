@@ -172,6 +172,7 @@
     el("labHint").textContent = t.labHint;
     el("triosTitle").textContent = t.triosTitle;
     el("footNote").textContent = t.footNote;
+    el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabChefs").textContent = t.tabChefs;

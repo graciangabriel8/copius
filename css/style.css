@@ -248,6 +248,10 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   border-top:1px solid var(--border);color:var(--ink-3);
   text-align:center;padding:26px 20px;font-size:12.5px;
 }
+.foot-legal{
+  display:block;max-width:62ch;margin:10px auto 0;
+  font-size:11px;line-height:1.55;opacity:.72;
+}
 
 /* ---------- modal ---------- */
 .overlay{
