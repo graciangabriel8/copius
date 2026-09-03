@@ -5,6 +5,10 @@
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
   var LS_MYINGS = "atlas-my-ingredients", LS_VIEW = "copius-view";
   var BASE = window.INGREDIENTS, TRIOS = window.TRIOS, I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
+  var TECHNIQUES = window.TECHNIQUES || [], DISHES = window.DISHES || [];
+  var techById = {}, dishById = {};
+  TECHNIQUES.forEach(function (x) { techById[x.id] = x; });
+  DISHES.forEach(function (x) { dishById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
 
   // User creations, persisted in this browser.
@@ -40,7 +44,8 @@
     lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: localStorage.getItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
-    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", sort: "name"
+    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", sort: "name",
+    techQ: "", techGroup: "all", dishQ: "", dishRegion: "all"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
   var modalStack = [];
@@ -196,6 +201,11 @@
     el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
+    el("tabTech").textContent = t.tabTech;
+    el("tabDishes").textContent = t.tabDishes;
+    /* a tab with nothing behind it reads as broken — hide it until it has data */
+    el("tabTech").hidden = TECHNIQUES.length === 0;
+    el("tabDishes").hidden = DISHES.length === 0;
     el("tabChefs").textContent = t.tabChefs;
     el("creationsTitle").textContent = t.myCreations;
     el("creationsHint").textContent = t.myCreationsHint;
@@ -448,13 +458,99 @@
   function setView(v) {
     state.view = v;
     try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
-    el("atlasView").hidden = v !== "atlas";
-    el("chefsView").hidden = v !== "chefs";
-    el("tabAtlas").classList.toggle("active", v === "atlas");
-    el("tabChefs").classList.toggle("active", v === "chefs");
-    el("tabAtlas").setAttribute("aria-selected", v === "atlas");
-    el("tabChefs").setAttribute("aria-selected", v === "chefs");
+    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", dishes: "dishesView" };
+    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", dishes: "tabDishes" };
+    Object.keys(views).forEach(function (k) {
+      el(views[k]).hidden = v !== k;
+      el(tabs[k]).classList.toggle("active", v === k);
+      el(tabs[k]).setAttribute("aria-selected", v === k);
+    });
     if (v === "chefs") renderChefs();
+    if (v === "tech") renderTech();
+    if (v === "dishes") renderDishes();
+  }
+
+  /* ---------- techniques ---------- */
+  var TECH_GROUPS = ["cuisson", "preparation", "liaison", "froid", "patisserie"];
+  function groupLabel(g) {
+    var t = T();
+    return t["g" + g.charAt(0).toUpperCase() + g.slice(1)] || g;
+  }
+  function renderTech() {
+    var t = T();
+    el("techTitle").textContent = t.techTitle;
+    el("techHint").textContent = t.techHint;
+    el("techSearch").placeholder = t.techSearchPh;
+    fillSel("techGroup", [["all", t.fAllGroups]].concat(TECH_GROUPS.map(function (g) {
+      return [g, groupLabel(g)];
+    })), state.techGroup);
+    var q = norm(state.techQ.trim());
+    var list = TECHNIQUES.filter(function (x) {
+      if (state.techGroup !== "all" && x.group !== state.techGroup) return false;
+      if (!q) return true;
+      return norm(x.name.en + " " + x.name.fr + " " + x.summary[state.lang]).indexOf(q) !== -1;
+    }).sort(function (x, y) {
+      return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
+    });
+    el("techCount").textContent = t.techCountTpl.replace("{n}", list.length);
+    el("techList").innerHTML = list.map(function (x) {
+      return '<article class="tech-card" id="t-' + esc(x.id) + '">' +
+        '<p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
+        "<h3>" + esc(x.name[state.lang]) + "</h3>" +
+        '<p class="tech-sum">' + esc(x.summary[state.lang]) + "</p>" +
+        '<div class="tech-body"><h4>' + esc(t.techHow) + "</h4><p>" + esc(x.how[state.lang]) + "</p>" +
+        '<h4 class="warn">' + esc(t.techWatch) + "</h4><p>" + esc(x.watch[state.lang]) + "</p></div>" +
+        "</article>";
+    }).join("");
+  }
+
+  /* ---------- dishes ---------- */
+  function renderDishes() {
+    var t = T();
+    el("dishesTitle").textContent = t.dishesTitle;
+    el("dishesHint").textContent = t.dishesHint;
+    el("dishSearch").placeholder = t.dishSearchPh;
+    var regions = [];
+    DISHES.forEach(function (d) { if (regions.indexOf(d.group) === -1) regions.push(d.group); });
+    fillSel("dishRegion", [["all", t.fAllRegions]].concat(regions.map(function (r) { return [r, r]; })), state.dishRegion);
+    var q = norm(state.dishQ.trim());
+    var list = DISHES.filter(function (d) {
+      if (state.dishRegion !== "all" && d.group !== state.dishRegion) return false;
+      if (!q) return true;
+      return norm(d.name.en + " " + d.name.fr + " " + d.region + " " + d.summary[state.lang]).indexOf(q) !== -1;
+    }).sort(function (x, y) {
+      return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
+    });
+    el("dishCount").textContent = t.dishCountTpl.replace("{n}", list.length);
+    var anyWine = false;
+    el("dishList").innerHTML = list.map(function (d) {
+      if (d.wines && d.wines.length) anyWine = true;
+      var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
+        return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + esc(name(byId[i])) + "</button>";
+      }).join("");
+      var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
+        return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' + esc(techById[x].name[state.lang]) + "</button>";
+      }).join("");
+      var wines = (d.wines || []).map(function (w) {
+        return '<li><span class="w-app">' + esc(w.appellation) + "</span>" +
+          ' <span class="w-style">' + esc(w.style) + "</span>" +
+          ' <span class="w-band">' + "€".repeat(w.band || 2) + "</span>" +
+          '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
+      }).join("");
+      return '<article class="dish-card">' +
+        '<p class="dish-meta">' + esc(d.region) + " · " + esc(d.era) + "</p>" +
+        "<h3>" + esc(d.name[state.lang]) + "</h3>" +
+        '<p class="dish-sum">' + esc(d.summary[state.lang]) + "</p>" +
+        '<h4>' + esc(t.dishBalance) + "</h4><p class=\"dish-balance\">" + esc(d.balance[state.lang]) + "</p>" +
+        (ings ? "<h4>" + esc(t.dishIngredients) + '</h4><div class="chip-row">' + ings + "</div>" : "") +
+        (techs ? "<h4>" + esc(t.dishTechniques) + '</h4><div class="chip-row">' + techs + "</div>" : "") +
+        (wines ? "<h4>" + esc(t.dishWines) + '</h4><ul class="wine-list">' + wines + "</ul>" : "") +
+        "</article>";
+    }).join("");
+    /* loi Evin, CSP art. L3323-4: the health message is mandatory wherever a
+       page carries content that names an alcoholic drink. */
+    var warn = el("alcoholWarn");
+    if (warn) warn.textContent = anyWine ? t.alcoholWarning : "";
   }
 
   var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","FO","SI","US","PE","CO","GH","JP","KR","HK","TH"];
@@ -857,6 +953,23 @@
   el("createBtn").addEventListener("click", function () { openCreate(); });
   el("tabAtlas").addEventListener("click", function () { setView("atlas"); });
   el("tabChefs").addEventListener("click", function () { setView("chefs"); });
+  el("tabTech").addEventListener("click", function () { setView("tech"); });
+  el("tabDishes").addEventListener("click", function () { setView("dishes"); });
+  el("techSearch").addEventListener("input", function (e) { state.techQ = e.target.value; renderTech(); });
+  el("techGroup").addEventListener("change", function (e) { state.techGroup = e.target.value; renderTech(); });
+  el("dishSearch").addEventListener("input", function (e) { state.dishQ = e.target.value; renderDishes(); });
+  el("dishRegion").addEventListener("change", function (e) { state.dishRegion = e.target.value; renderDishes(); });
+  /* a dish's ingredient chip opens the ingredient; a technique chip jumps to it */
+  el("dishList").addEventListener("click", function (e) {
+    var o = e.target.closest("[data-open]"), k = e.target.closest("[data-tech]");
+    if (o) { openModal(o.getAttribute("data-open")); return; }
+    if (k) {
+      setView("tech");
+      state.techGroup = "all"; state.techQ = ""; renderTech();
+      var node = el("t-" + k.getAttribute("data-tech"));
+      if (node) { node.scrollIntoView({ block: "center" }); node.classList.add("flash"); setTimeout(function () { node.classList.remove("flash"); }, 1200); }
+    }
+  });
   el("chefSearch").addEventListener("input", function (e) { state.chefQ = e.target.value; renderChefs(); });
   ["chefGender","chefStars","chefCountry","chefEra"].forEach(function (id) {
     el(id).addEventListener("change", function (e) { state[id] = e.target.value; renderChefs(); });

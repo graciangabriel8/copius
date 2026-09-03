@@ -508,3 +508,24 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .m-price .price-band{font-size:15px;letter-spacing:1px;color:var(--ink-2)}
 .m-price .price-kg{font-size:13px;color:var(--ink-2)}
 .price-hint{font-size:11px;color:var(--ink-3)}
+
+/* ---------- techniques & dishes ---------- */
+.tech-list,.dish-list{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));padding:0 20px 40px}
+.tech-card,.dish-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.tech-card.flash{outline:2px solid var(--ink-2);outline-offset:2px}
+.tech-group,.dish-meta{margin:0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
+.tech-card h3,.dish-card h3{margin:6px 0 4px;font-size:22px}
+.tech-sum,.dish-sum{margin:0 0 10px;color:var(--ink-2)}
+.tech-body h4,.dish-card h4{margin:12px 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
+.tech-body h4.warn{color:#8a6d3b}
+.tech-body p,.dish-balance{margin:0;font-size:14px;line-height:1.6}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px}
+.chip-link{border:1px solid var(--border);background:#fafaf9;border-radius:999px;padding:4px 10px;font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--ink-1)}
+.chip-link:hover{background:#f1f1f0}
+.wine-list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.wine-list li{font-size:13.5px;line-height:1.5}
+.w-app{font-weight:600}
+.w-style{color:var(--ink-3);font-style:italic}
+.w-band{color:var(--ink-3);font-size:12px}
+.w-why{display:block;color:var(--ink-2)}
+.alcohol-warn{display:block;max-width:62ch;margin:0 auto;padding:0 20px 24px;font-size:11px;color:var(--ink-3);text-align:center}
