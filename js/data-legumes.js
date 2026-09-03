@@ -69,6 +69,16 @@ fr:"Il ne se trempe pas, contrairement à tout haricot sec. Quarante minutes à 
 pairs:["thyme","garlic","tomato","olive-oil","lamb","onion","bay-leaf","parsley"],
 svg:'<path class="f3 sf" d="M28 58q14-18 40-14-6 20-30 24-12 2-10-10z"/><circle class="f2 sf" cx="42" cy="54" r="5"/><circle class="f2 sf" cx="54" cy="50" r="5"/>'},
 
+{id:"douchi",cat:"legumes",name:{en:"Douchi",fr:"Haricots noirs fermentés (douchi)"},latin:"Glycine max",
+origin:{en:"Sichuan and Guangdong",fr:"Sichuan et Guangdong"},season:[],
+flavor:["salty","umami","pungent"],
+story:{en:"Sealed jars of fermented black beans were recovered from the Han-dynasty tombs at Mawangdui, which makes them one of the oldest soy preparations still cooked from daily. Unlike every paste made from the same bean, they are fermented dry and kept whole, so the salt stays on the outside and the funk is only released when they are crushed.",
+fr:"Des jarres scellées de haricots noirs fermentés ont été exhumées des tombes Han de Mawangdui, ce qui en fait l'une des plus anciennes préparations de soja encore cuisinées au quotidien. Contrairement à toutes les pâtes tirées de la même fève, ils fermentent à sec et restent entiers : le sel demeure en surface et le fumet ne se libère qu'à l'écrasement."},
+tip:{en:"Rinse them a few seconds to take the surface salt off, then crush them roughly under the flat of the knife and drop them into hot oil before anything else — left whole they stay mute. Salt the dish only at the end.",
+fr:"Rincez-les quelques secondes pour ôter le sel de surface, écrasez-les grossièrement sous le plat du couteau et jetez-les dans l'huile chaude avant tout le reste : entiers, ils restent muets. Ne salez le plat qu'à la fin."},
+pairs:["garlic","ginger","chili","pork","sea-bass","doubanjiang","spring-onion","shaoxing-wine"],
+svg:'<path class="f1 sf" d="M28 52h40q-2 18-20 18t-20-18z"/><path class="f3 sf" d="M32 52q4-10 16-10t16 10z"/><circle class="dot" cx="42" cy="46" r="3"/><circle class="dot" cx="53" cy="45" r="3"/><circle class="dot" cx="47" cy="38" r="3"/>'},
+
 {id:"dried-fava",cat:"legumes",name:{en:"Dried broad bean",fr:"Fève sèche"},latin:"Vicia faba",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
 flavor:["earthy","nutty","mild","bitter"],
@@ -78,6 +88,16 @@ tip:{en:"Buy them already skinned if you can. Peeling a kilo of soaked dried fav
 fr:"Achetez-les décortiquées si possible. Peler un kilo de fèves sèches trempées à la main occupe un après-midi."},
 pairs:["olive-oil","cumin","lemon","garlic","parsley","chili","escarole","onion"],
 svg:'<path class="f2 sf" d="M34 34q-6 22 4 34t18-4q4-16-6-28t-16-2z"/><path class="s" d="M40 46q6 12 8 20"/>'},
+
+{id:"furu",cat:"legumes",name:{en:"Fermented bean curd",fr:"Tofu fermenté (furu)"},latin:"Glycine max",
+origin:{en:"China",fr:"Chine"},season:[],
+flavor:["salty","pungent","rich"],
+story:{en:"Cubes of tofu are grown over with a white Mucor mould until they are furred like a young cheese rind, then salted and jarred in brine, rice wine or red yeast rice — which is where the crimson version takes both its colour and its name. Nineteenth-century European visitors filed it under cheese, and the texture is why: nothing else made from soy behaves like it.",
+fr:"Des cubes de tofu sont couverts d'une moisissure blanche du genre Mucor jusqu'à se feutrer comme une jeune croûte de fromage, puis salés et mis en pot dans la saumure, l'alcool de riz ou la levure de riz rouge — d'où la couleur et le nom de la version pourpre. Les voyageurs européens du XIXᵉ siècle le rangeaient parmi les fromages, et c'est la texture qui l'explique : rien d'autre issu du soja ne se comporte ainsi."},
+tip:{en:"One cube mashed with a spoonful of its own brine will season a whole wok of greens; it runs about as salty as anchovy paste, so nothing else salted goes in. Take it from the jar with a dry spoon or the surface spoils within the week.",
+fr:"Un cube écrasé avec une cuillerée de sa propre saumure assaisonne un wok entier de légumes verts ; il sale à peu près comme la pâte d'anchois, donc rien d'autre de salé n'entre dans le plat. Prélevez-le avec une cuillère sèche, sinon la surface tourne en une semaine."},
+pairs:["water-spinach","garlic","rice","pork-belly","chili","sesame-oil","spring-onion","shaoxing-wine"],
+svg:'<path class="s" d="M34 32h28v7H34z"/><path class="f1 sf" d="M36 39h24v35q0 4-4 4H40q-4 0-4-4z"/><path class="f3 sf" d="M40 55h9v9h-9zM52 61h6v6h-6zM42 68h9v8h-9z"/><path class="s" d="M36 48h24"/>'},
 
 {id:"flageolet",cat:"legumes",name:{en:"Flageolet",fr:"Flageolet"},latin:"Phaseolus vulgaris",
 origin:{en:"Brittany, France",fr:"Bretagne, France"},season:[],
@@ -99,6 +119,16 @@ fr:"Faites bouillir à gros bouillons dix minutes pleines avant toute cuisson le
 pairs:["chili","cumin","onion","tomato","garlic","paprika","rice","cilantro"],
 svg:'<path class="f1 sf" d="M32 56q4-12 16-10t14 12-12 12-18-14z"/><path class="f1 sf" d="M44 70q4-8 14-6t8 10-14 6-8-10z"/>'},
 
+{id:"koya-dofu",cat:"legumes",name:{en:"Koya-dofu",fr:"Tofu séché (koya-dofu)"},latin:"Glycine max",
+origin:{en:"Mount Kōya, Wakayama",fr:"Mont Kōya, Wakayama"},season:[],
+flavor:["mild","nutty"],
+story:{en:"It takes its name from the monastery complex on Mount Kōya, where tofu left out in the winter cold froze, thawed and dried into something that kept a year on a shelf. The ice crystals are the structure: they shoulder the protein aside as they grow, and the sponge they leave behind is the reason the block drinks dashi the way it does.",
+fr:"Il tient son nom du complexe monastique du mont Kōya, où le tofu laissé dehors dans le froid de l'hiver gelait, dégelait et séchait en quelque chose qui se gardait un an sur une étagère. Les cristaux de glace sont la structure : en grossissant ils repoussent les protéines, et l'éponge qu'ils laissent explique pourquoi le bloc boit ainsi le dashi."},
+tip:{en:"Modern blocks need no hot pre-soak: five minutes in warm dashi is enough. Press it gently between the palms rather than wringing it out, and hold the simmer at a bare tremble — a real boil tears the sponge apart.",
+fr:"Les blocs modernes ne demandent aucun trempage à l'eau chaude : cinq minutes dans un dashi tiède suffisent. Pressez-le doucement entre les paumes plutôt que de le tordre, et maintenez la cuisson à peine frémissante : une vraie ébullition déchire l'éponge."},
+pairs:["kombu","dried-shiitake-donko","hon-mirin","soy-sauce","carrot","mangetout","egg","chicken"],
+svg:'<path class="f1 sf" d="M30 36h36v32H30z"/><path class="s" d="M30 36 38 30h36v32l-8 6"/><circle class="s" cx="40" cy="46" r="3"/><circle class="s" cx="53" cy="42" r="2.5"/><circle class="s" cx="46" cy="58" r="3.5"/><circle class="s" cx="58" cy="57" r="2.5"/>'},
+
 {id:"lentils",cat:"legumes",name:{en:"Lentils",fr:"Lentilles"},latin:"Lens culinaris",
 origin:{en:"Fertile Crescent",fr:"Croissant fertile"},season:[],
 flavor:["earthy","mild","nutty"],
@@ -118,6 +148,16 @@ tip:{en:"It is the one pulse that genuinely needs no soaking. Twenty-five minute
 fr:"C’est la seule légumineuse qui ne demande réellement aucun trempage. Vingt-cinq minutes depuis le sec et il est tendre."},
 pairs:["ginger","turmeric","cumin","ghee","cilantro","chili","coconut-milk","lime"],
 svg:'<ellipse class="f2 sf" cx="41" cy="55" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="53" cy="52" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="47" cy="64" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="58" cy="63" rx="6" ry="4.5"/>'},
+
+{id:"natto",cat:"legumes",name:{en:"Natto",fr:"Natto"},latin:"Bacillus subtilis var. natto",
+origin:{en:"Ibaraki, Japan",fr:"Ibaraki, Japon"},season:[],
+flavor:["umami","pungent","earthy"],
+story:{en:"The threads are polyglutamic acid, spun by Bacillus subtilis, a bacterium that lives on rice straw — hence the story that natto was found by accident in boiled beans packed in straw bales. Sake and miso brewers still refuse to eat it before entering the fermentation room: the bacterium travels on skin and clothes, and it overruns koji.",
+fr:"Les fils sont de l’acide polyglutamique, filé par Bacillus subtilis, une bactérie qui vit sur la paille de riz — d’où l’histoire, dit-on, de fèves bouillies oubliées dans des bottes de paille. Les brasseurs de saké et de miso refusent encore d’en manger avant d’entrer dans la salle de fermentation : la bactérie voyage sur la peau et les vêtements, et elle écrase le koji."},
+tip:{en:"Beat the beans on their own thirty or fifty times before the mustard and the tare go in — liquid added first stops the threads forming. Over rice just off the boil, never scalding.",
+fr:"Battez les fèves seules trente à cinquante fois avant d’ajouter la moutarde et la sauce : versé en premier, le liquide empêche les fils de se former. Sur du riz à peine tiédi, jamais brûlant."},
+pairs:["rice","karashi","negi","soy-sauce","egg","nori","kimchi"],
+svg:'<path class="f1 sf" d="M26 52h44q-3 20-22 20T26 52z"/><ellipse class="f2 sf" cx="40" cy="56" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="54" cy="58" rx="6" ry="4.5"/><path class="s" d="M40 50q1-14 10-22M54 52q0-12 8-18"/>'},
 
 {id:"lentille-du-puy",cat:"legumes",name:{en:"Puy lentil",fr:"Lentille verte du Puy"},latin:"Lens culinaris",
 origin:{en:"Haute-Loire, Auvergne",fr:"Haute-Loire, Auvergne"},season:[],
@@ -169,6 +209,16 @@ fr:"Trempez douze heures, puis démarrez à l’eau froide en montant lentement.
 pairs:["duck-fat","garlic","thyme","lard","onion","tomato","bay-leaf","carrot"],
 svg:'<path class="f3 sf" d="M34 32q-8 24 4 38t20-6q4-18-6-30t-18-2z"/><path class="s" d="M40 44q6 14 8 22"/>'},
 
+{id:"tempeh",cat:"legumes",name:{en:"Tempeh",fr:"Tempeh"},latin:"Rhizopus oligosporus",
+origin:{en:"Java, Indonesia",fr:"Java, Indonésie"},season:[],
+flavor:["nutty","earthy","umami","mild"],
+story:{en:"A colony of Rhizopus knits whole cooked soybeans into a solid white cake in about thirty-six hours, and the mycelium itself is eaten - it is the structure, not a seasoning. Javanese writing of the early nineteenth century already describes it, which makes it, unusually among soy foods, an Indonesian invention rather than a Chinese one.",
+fr:"Une colonie de Rhizopus lie en trente-six heures des graines de soja entières en un gâteau blanc et ferme, et l’on mange le mycélium lui-même : il est la structure, non l’assaisonnement. Des textes javanais du début du XIXe siècle le décrivent déjà, ce qui en fait, chose rare parmi les produits du soja, une invention indonésienne et non chinoise."},
+tip:{en:"Steam it ten minutes before marinating: it opens up, takes salt, and any raw bitterness goes off with the steam. Grey and black patches are the mould sporing and are harmless, but a smell of ammonia is not - that block goes out.",
+fr:"Faites-le cuire dix minutes à la vapeur avant de le mariner : il s’ouvre, prend le sel, et l’amertume crue part avec la vapeur. Les taches grises ou noires sont le champignon qui sporule, sans danger ; une odeur d’ammoniac, elle, condamne le pain."},
+pairs:["soy-sauce","garlic","palm-sugar","coriander-seed","tamarind-paste","chili","lime","peanut"],
+svg:'<path class="f1 sf" d="M24 42h40v22H24z"/><path class="f2 sf" d="M24 42l8-8h40l-8 8z"/><path class="f2 sf" d="M64 42l8-8v22l-8 8z"/><path class="dot" d="M32 50a3 2 0 106 0 3 2 0 10-6 0M44 56a3 2 0 106 0 3 2 0 10-6 0M52 48a3 2 0 106 0 3 2 0 10-6 0"/>'},
+
 {id:"white-beans",cat:"legumes",name:{en:"White beans",fr:"Haricots blancs"},latin:"Phaseolus vulgaris",
 origin:{en:"Americas",fr:"Amériques"},season:[],
 flavor:["mild","buttery","earthy"],
@@ -177,5 +227,15 @@ fr:"Le haricot arriva des Amériques dans les années 1530 ; Catherine de Médic
 tip:{en:"Cook them gently — a hard boil bursts their jackets — and always with a bay leaf and a whole garlic clove. Their broth is liquid silver: keep it.",
 fr:"Cuisez-les doucement — un gros bouillon fait éclater leur peau — et toujours avec du laurier et une gousse d’ail entière. Leur bouillon est de l’argent liquide : gardez-le."},
 pairs:["sage","tomato","rosemary","pork","bay-leaf","olive-oil","onion"],
-svg:'<path class="f1 sf" d="M34 48q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(-14 42 52)"/><path class="f1 sf" d="M50 52q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(10 58 56)"/>'}
+svg:'<path class="f1 sf" d="M34 48q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(-14 42 52)"/><path class="f1 sf" d="M50 52q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(10 58 56)"/>'},
+
+{id:"yuba",cat:"legumes",name:{en:"Yuba",fr:"Yuba (peau de soja)"},latin:"Glycine max",
+origin:{en:"Temple kitchens of Kyoto and Nikko, Japan",fr:"Cuisines de temple de Kyoto et Nikko, Japon"},season:[],
+flavor:["creamy","mild","nutty"],
+story:{en:"Yuba is the skin that forms on soy milk held just below the boil, lifted off one sheet at a time on a bamboo rod until the pan is spent. Kyoto and Nikko each built a temple cuisine on it and even write the word with different characters: Nikko folds its sheets double as they come off, so they eat thicker.",
+fr:"Le yuba est la peau qui se forme sur le lait de soja maintenu juste sous l’ébullition, levée feuille à feuille à la baguette de bambou jusqu’à épuisement du bain. Kyoto et Nikko en ont chacune tiré une cuisine de temple et écrivent même le mot avec des caractères différents : Nikko plie sa feuille en deux au moment de la lever, elle se mange donc plus épaisse."},
+tip:{en:"Fresh yuba wants no cooking at all: eat it the same day with a trace of soy and wasabi. Dried sheets need only a brief dip in warm water — left to soak, they dissolve into the bowl.",
+fr:"Le yuba frais ne se cuit pas : mangez-le dans la journée avec un trait de soja et un peu de wasabi. Les feuilles sèches ne demandent qu’un passage bref en eau tiède, oubliées à tremper elles se dissolvent dans le bol."},
+pairs:["wasabi","usukuchi-shoyu","kombu","mitsuba","sesame","myoga"],
+svg:'<path class="s" d="M24 30h48"/><path class="f1 sf" d="M36 30q-2 20 2 28 6-10 10 0 6-8 12 0 4-8 2-28z"/><path class="f3 sf" d="M26 62h44q-2 10-10 10H36q-8 0-10-10z"/>'}
 ]);

@@ -79,6 +79,16 @@ fr:"Ne les trempez jamais — brossez-les. Du beurre, un peu de crème, et elles
 pairs:["butter","egg","cream","chives","chicken","hazelnut"],
 svg:'<path class="f2 sf" d="M36 32q12 8 24 0-2 10-8 16l-2 22q0 4-2 4t-2-4l-2-22q-6-6-8-16z"/><path class="s" d="M42 40q6 4 12 0M44 50q4 3 8 0"/>'},
 
+{id:"dried-shiitake-donko",cat:"mushrooms",name:{en:"Dried shiitake (donko)",fr:"Shiitaké séché (donko)"},latin:"Lentinula edodes",
+origin:{en:"Japan and China",fr:"Japon et Chine"},season:[],
+flavor:["umami","earthy","woody"],
+story:{en:"Donko means winter mushroom: the cap is picked young and still curled under, in cold dry weather that cracks the surface into white fissures. The drying does the real work — enzymes build the guanylate that the fresh mushroom barely carries, and sunlight turns the ergosterol in the flesh into vitamin D.",
+fr:"Donko veut dire « champignon d'hiver » : le chapeau est cueilli jeune, encore enroulé sous lui-même, par temps froid et sec qui craquelle la surface de fissures blanches. C'est le séchage qui fait le travail : les enzymes construisent le guanylate que le champignon frais possède à peine, et le soleil convertit l'ergostérol de la chair en vitamine D."},
+tip:{en:"Soak in cold water in the fridge, six hours or overnight; hot water is faster but drags out bitterness. Bring the soaking liquid slowly up through 60–70 °C rather than straight to the boil — that is the band where the guanylate is released — and leave the gritty last centimetre in the bowl.",
+fr:"Réhydratez à l'eau froide au réfrigérateur, six heures ou une nuit ; l'eau chaude va plus vite mais extrait l'amertume. Montez le liquide de trempage lentement à travers 60–70 °C plutôt que droit à l'ébullition — c'est la plage où le guanylate se libère — et laissez le dernier centimètre sableux au fond du bol."},
+pairs:["kombu","soy-sauce","hon-mirin","chicken","pork","bamboo-shoot","napa-cabbage","junmai-sake"],
+svg:'<path class="f3 sf" d="M24 46q0-18 24-18t24 18q-10 6-24 6t-24-6z"/><path class="f2 sf" d="M43 52h10v20q0 4-5 4t-5-4z"/><path class="s" d="M36 34q6 4 8 10M52 32q-2 6-2 12M44 30v6M60 38q-6 2-8 6"/>'},
+
 {id:"enoki",cat:"mushrooms",name:{en:"Enoki",fr:"Énoki"},latin:"Flammulina velutipes",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[],
 flavor:["delicate","fresh","mild","sweet"],

@@ -179,6 +179,16 @@ fr:"Mettez moins d’eau que le paquet ne l’indique, environ un et quart pour 
 pairs:["coconut-milk","lemongrass","chili","fish-sauce","cilantro","lime","ginger","garlic"],
 svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="4" ry="10"/><ellipse class="f3 sf" cx="52" cy="52" rx="4" ry="10"/><ellipse class="f3 sf" cx="46" cy="68" rx="4" ry="10"/>'},
 
+{id:"kuzu",cat:"grains",name:{en:"Kuzu",fr:"Kuzu"},latin:"Pueraria montana",
+origin:{en:"Yoshino, Nara",fr:"Yoshino, Nara"},season:[],
+flavor:["mild","delicate"],
+story:{en:"Yoshino kuzu is made by washing crushed winter-dug root through change after change of cold water for months until nothing but the starch remains, which is why it arrives as chalky lumps and costs what it does. The same vine was shown at the 1876 Philadelphia exhibition, then planted across the American South to hold the soil, and is now the weed that ate the region.",
+fr:"Le kuzu de Yoshino s'obtient en lavant la racine d'hiver broyée dans des eaux froides renouvelées pendant des mois, jusqu'à ne laisser que l'amidon : d'où ces morceaux crayeux, et d'où le prix. La même liane fut exposée à Philadelphie en 1876, puis plantée dans tout le Sud américain pour retenir les sols, et c'est aujourd'hui la mauvaise herbe qui a mangé la région."},
+tip:{en:"Crush the lumps and dissolve them in cold water before they meet anything hot — kuzu will not disperse in a warm pan. About 2 % by weight gives a pourable sauce, and keep stirring a full minute after it turns clear or it tastes of raw starch.",
+fr:"Écrasez les morceaux et dissolvez-les à l'eau froide avant tout contact avec le chaud : le kuzu ne se disperse pas dans une casserole tiède. Environ 2 % du poids donne une sauce nappante, et continuez de remuer une minute pleine après qu'elle est devenue limpide, sinon elle garde un goût d'amidon cru."},
+pairs:["adzuki","ginger","kokuto","hon-mirin","kombu","soy-sauce","matcha","sugar"],
+svg:'<path class="f1 sf" d="M34 68 30 54l10-8 6 10z"/><path class="f2 sf" d="M46 68 40 56l12-10 8 12z"/><path class="f1 sf" d="M60 68 56 58l10-6 6 10z"/><path class="s" d="M26 70h44"/>'},
+
 {id:"millet",cat:"grains",name:{en:"Millet",fr:"Millet"},latin:"Panicum miliaceum",
 origin:{en:"Northern China & the Sahel",fr:"Chine du Nord & Sahel"},season:[],
 flavor:["mild","nutty","sweet","earthy"],
