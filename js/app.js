@@ -277,8 +277,8 @@
         "<h3>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
         '<p class="latin">' + esc(i.custom ? t.creationLabel : i.latin) + "</p>" +
         '<p class="cat-line">' + esc(catLabel(i.cat)) + "</p>" +
-        '<p class="price-line"><span class="price-band">' + "\u20ac".repeat(i.price || 2) + "</span>" +
-          (i.pk ? ' <span class="price-kg">' + esc(priceText(i.pk)) + "</span>" : "") + "</p>" +
+        '<p class="price-line"><span class="price-band" title="' + esc(T().priceLabel) + '">' +
+          "\u20ac".repeat(i.price || 2) + "</span></p>" +
         '<div class="tags">' + i.flavor.slice(0, 3).map(function (f) {
           return '<span class="tag">' + esc(t.flavors[f]) + "</span>";
         }).join("") + "</div>" +
@@ -546,6 +546,9 @@
       "<h2>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h2>" +
       '<p class="m-latin">' + (i.custom ? esc(other) : esc(i.latin) + " · " + esc(other)) + "</p>" +
       (i.origin[state.lang] ? '<p class="m-origin">' + esc(t.origin) + " — " + esc(i.origin[state.lang]) + "</p>" : "") +
+      (i.price ? '<p class="m-price"><span class="price-band">' + "\u20ac".repeat(i.price) + "</span>" +
+        (i.pk ? ' <span class="price-kg">' + esc(priceText(i.pk)) + "</span>" : "") +
+        ' <span class="price-hint">' + esc(t.priceHint) + "</span></p>" : "") +
       (i.custom ? "" : '<div class="m-season">' + seasonDots(i) + "</div>") +
       "</div></div>" +
       '<div class="m-tags">' + i.flavor.map(function (f) { return '<span class="tag">' + esc(t.flavors[f]) + "</span>"; }).join("") + "</div>" +

@@ -504,3 +504,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .tl-link a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
 .tl-link a:hover{text-decoration-color:var(--ink)}
 .tl-link-host{color:var(--ink-3);font-size:12px}
+.m-price{margin:6px 0 0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.m-price .price-band{font-size:15px;letter-spacing:1px;color:var(--ink-2)}
+.m-price .price-kg{font-size:13px;color:var(--ink-2)}
+.price-hint{font-size:11px;color:var(--ink-3)}
