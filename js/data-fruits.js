@@ -719,6 +719,16 @@ fr:"La peau lisse marque là où une pêche ne montrerait rien. Achetez-les en v
 pairs:["basil","almond","vanilla","prosciutto","honey","mint","cream","raspberry"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="18"/><path class="s" d="M42 40q6 18 0 34"/><path class="f3 sf" d="M50 40q10-10 16-6-4 10-14 10z"/>'},
 
+{id:"omija",cat:"fruits",name:{en:"Omija (schisandra berry)",fr:"Baie de schisandra (omija)"},latin:"Schisandra chinensis",
+origin:{en:"Mountain forests of Korea and Manchuria",fr:"Forêts de montagne de Corée et de Mandchourie"},season:[8,9],
+flavor:["sour","bitter","fruity","warm"],
+story:{en:"Its Chinese name, wu wei zi, means five-flavour berry: the skin sour, the flesh sweet, the seeds bitter and pungent, the whole faintly salty. Korean cooks never boil it — hot water drags tannin out of the seeds and the clear red goes muddy and harsh.",
+fr:"Son nom chinois, wu wei zi, signifie « baie aux cinq saveurs » : peau acide, chair sucrée, pépins amers et piquants, l’ensemble légèrement salé. Les cuisiniers coréens ne la font jamais bouillir — l’eau chaude tire le tanin des pépins et le rouge limpide vire au trouble et à l’âpre."},
+tip:{en:"Infuse the whole dried berries in cold water overnight, about 30 g to the litre, then strain without pressing — crushing the fruit releases exactly the seed bitterness you spent the night avoiding.",
+fr:"Faites infuser les baies séchées entières à l’eau froide toute une nuit, environ 30 g par litre, puis filtrez sans presser : écraser les fruits libère précisément l’amertume des pépins que vous avez passé la nuit à éviter."},
+pairs:["honey","poire-comice","ginger","jujube","pine-nut","raspberry","mint"],
+svg:'<path class="s" d="M48 16v14M48 30q-8 2-12 6M48 30q8 2 12 6"/><circle class="f3 sf" cx="36" cy="42" r="8"/><circle class="f2 sf" cx="58" cy="44" r="9"/><circle class="f3 sf" cx="45" cy="60" r="9"/><circle class="f2 sf" cx="60" cy="64" r="7"/><path class="s" d="M33 39q3-2 6 0"/>'},
+
 {id:"orange",cat:"fruits",name:{en:"Orange",fr:"Orange"},latin:"Citrus sinensis",
 origin:{en:"Southern China",fr:"Chine méridionale"},season:[1,2,3,11,12],
 flavor:["sweet","citrus","floral"],
