@@ -909,6 +909,16 @@ fr:"Tout l’intérêt de la tartiflette est qu’il fond sans trancher. Coupez 
 pairs:["potato","onion","guanciale","cream","black-pepper","white-wine-vinegar","garlic","thyme"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="22"/><circle class="s" cx="48" cy="52" r="15"/><circle class="dot" cx="48" cy="52" r="3"/>'},
 
+{id:"presure",cat:"dairy",name:{en:"Rennet",fr:"Présure"},latin:"Chymosinum",
+origin:{en:"Calf abomasum",fr:"Caillette de veau"},season:[],
+flavor:["mild","milky","creamy"],
+story:{en:"Rennet is an enzyme, chymosin, taken from the fourth stomach of an unweaned calf, where its job is to clot its mother's milk and slow it down for digestion. Since 1990 most of it has been made by fermentation instead - the first genetically engineered enzyme cleared for food, and the reason a great deal of cheese is now vegetarian.",
+fr:"La présure est une enzyme, la chymosine, prélevée dans la caillette du veau non sevré, où elle sert à coaguler le lait de sa mère pour en ralentir la digestion. Depuis 1990 l’essentiel est produit par fermentation — première enzyme génétiquement modifiée autorisée en alimentation, et raison pour laquelle beaucoup de fromages sont aujourd’hui végétariens."},
+tip:{en:"It is sold by strength, usually 1:10,000: about 0.5 ml for 4 litres of milk at 32 C. Stir it in for thirty seconds, then stop completely - any movement after that tears the curd as it forms and the fat runs out into the whey.",
+fr:"Elle se vend en force, le plus souvent au 1/10 000 : environ 0,5 ml pour 4 litres de lait à 32 °C. Brassez trente secondes, puis arrêtez tout — le moindre mouvement ensuite déchire le caillé en formation et la matière grasse part dans le petit-lait."},
+pairs:["cream","butter","buttermilk","whey-butter","fromage-blanc","salt","thyme","honey"],
+svg:'<path class="f1 sf" d="M42 30h12v10l6 10v22q0 4-4 4H40q-4 0-4-4V50l6-10z"/><path class="f2" d="M36 54h24v18q0 4-4 4H40q-4 0-4-4z"/><path class="f3 sf" d="M41 24h14v6H41z"/><path class="s" d="M40 60h6M40 66h6"/>'},
+
 {id:"ricotta",cat:"dairy",name:{en:"Ricotta",fr:"Ricotta"},latin:"Ricotta — recooked",
 origin:{en:"Italy",fr:"Italie"},season:[],
 flavor:["milky","sweet","delicate","creamy"],
@@ -1058,6 +1068,16 @@ tip:{en:"The orange is annatto, a seed dye that adds no flavour, so judge the pa
 fr:"L'orange vient du rocou, un colorant de graine sans goût : jugez plutôt la pâte, qui doit être dense et fondante, pas friable. Plus doux et moins salé que le stilton, il demande du vif en face — cidre brut, noix au vinaigre — plutôt qu'un porto."},
 pairs:["pear","walnut","celery","pickled-walnut","honey","fig","apple","ruby-port"],
 svg:'<path class="f2 sf" d="M48 50V24a26 26 0 1 1-18 45z"/><path class="s" d="M48 32a18 18 0 0 1 11 33"/><path class="s" d="M40 40q4 7 0 13M52 48q-3 6-1 12M42 62q6-2 9 4"/>'},
+
+{id:"lait-ecreme-en-poudre",cat:"dairy",name:{en:"Skimmed milk powder",fr:"Lait écrémé en poudre"},latin:"Bos taurus",
+origin:{en:"Industrial dairies",fr:"Laiteries industrielles"},season:[],
+flavor:["milky","sweet","mild"],
+story:{en:"Marco Polo's account of the Mongol army describes riders carrying a paste of sun-dried milk and reconstituting it in the saddle, long before the spray-drying tower, patented in the 1870s, turned powder into a commodity. What an ice-cream kitchen actually buys it for is not milk but the non-fat solids: protein and lactose that bind free water and keep ice crystals small.",
+fr:"Le récit de Marco Polo décrit les cavaliers mongols emportant une pâte de lait séché au soleil et la reconstituant en selle, bien avant que la tour d’atomisation, brevetée dans les années 1870, ne fasse de la poudre une marchandise. Ce que le glacier achète, ce n’est pas du lait mais l’extrait sec dégraissé : protéines et lactose qui fixent l’eau libre et brident les cristaux."},
+tip:{en:"Keep the milk solids-not-fat near 10 percent of the total weight of an ice-cream base; push much past that and the lactose crystallises in the freezer, turning the ice cream sandy within a fortnight.",
+fr:"Visez environ 10 % d’extrait sec dégraissé sur le poids total de la base ; au-delà, le lactose cristallise au froid et la glace devient sableuse en quinze jours."},
+pairs:["cream","egg","sugar","vanilla","glucose-syrup","dextrose"],
+svg:'<path class="f1 sf" d="M30 34h36l-3 42H33z"/><path class="f2 sf" d="M36 34q6-11 12-11t12 11z"/><path class="s" d="M30 34q9 6 18 0t18 0"/><circle class="dot" cx="26" cy="70" r="2"/><circle class="dot" cx="70" cy="66" r="2"/>'},
 
 {id:"scamorza-affumicata",cat:"dairy",name:{en:"Smoked scamorza",fr:"Scamorza fumée"},latin:"Scamorza affumicata",
 origin:{en:"Abruzzo & Puglia, Italy",fr:"Abruzzes et Pouilles, Italie"},season:[],

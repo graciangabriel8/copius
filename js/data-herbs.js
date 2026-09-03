@@ -79,6 +79,16 @@ fr:"Infusez chaud mais ne faites jamais bouillir : deux minutes hors du feu dans
 pairs:["blackcurrant","raspberry","strawberry","honey","verjus","gooseberry"],
 svg:'<path class="f2 sf" d="M48 24q4 8 3 14 6-8 14-8-2 8-8 12 8 0 13 5-7 5-14 4 6 5 6 12-8-1-13-7-1 8-5 14-4-6-5-14-5 6-13 7 0-7 6-12-7 1-14-4 5-5 13-5-6-4-8-12 8 0 14 8-1-6 3-14z"/><path class="s" d="M48 30v40M48 44l10-6M48 44l-10-6M48 56l10-4M48 56l-10-4"/><path class="s" d="M48 68v10"/>'},
 
+{id:"blue-fenugreek",cat:"herbs",name:{en:"Blue fenugreek",fr:"Fenugrec bleu"},latin:"Trigonella caerulea",
+origin:{en:"Caucasus & the Alps",fr:"Caucase & Alpes"},season:[],
+flavor:["herbal","sweet","nutty","grassy"],
+story:{en:"Georgians call it utskho suneli, the foreign spice, although it has grown in the Caucasus for centuries, and it is the blue in khmeli suneli. In Glarus the same herb is ground whole — pods included, which is why it is milder than common fenugreek — into Schabziger, the hard green cheese Swiss records mention as early as the fifteenth century.",
+fr:"Les Géorgiens l’appellent utskho suneli, « l’épice étrangère », alors qu’il pousse dans le Caucase depuis des siècles, et c’est lui le bleu du khmeli suneli. Dans le canton de Glaris, la même herbe est moulue entière — gousses comprises, d’où sa douceur au regard du fenugrec commun — pour le schabziger, ce fromage vert et dur que les archives suisses mentionnent dès le XVe siècle."},
+tip:{en:"Add it at the end of cooking, off the heat, the way you would a dried herb — sustained heat strips the hay-and-maple aroma out of it within minutes. Do not swap it weight for weight with common fenugreek: the ordinary seed is far more bitter, and half the quantity is already too much.",
+fr:"Ajoutez-le en fin de cuisson, hors du feu, comme une herbe séchée : une chaleur prolongée en chasse en quelques minutes l’arôme de foin et de sirop d’érable. Ne le remplacez pas au poids par du fenugrec commun — la graine ordinaire est bien plus amère, et la moitié de la quantité est déjà de trop."},
+pairs:["coriander-seed","walnut","garlic","savory","chili","marjoram","kidney-bean","dill"],
+svg:'<path class="s" d="M48 78V44"/><path class="f2 sf" d="M48 52q-12-2-16-10 10-4 16 4zM48 52q12-2 16-10-10-4-16 4z"/><path class="f1 sf" d="M48 44q-6-4-4-12 8 2 8 12z"/><circle class="f1 sf" cx="48" cy="32" r="8"/><path class="s" d="M43 30q5 4 10 0M44 36q4 3 8 0"/>'},
+
 {id:"borage",cat:"herbs",name:{en:"Borage",fr:"Bourrache"},latin:"Borago officinalis",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[5,6,7,8],
 flavor:["fresh","marine","grassy","delicate"],
@@ -219,6 +229,16 @@ fr:"N’utilisez que les pousses claires et tendres, dans la quinzaine où elles
 pairs:["cream","white-chocolate","rhubarb","trout","honey","blackcurrant"],
 svg:'<path class="s" d="M16 62q18-8 62-14"/><path class="s" d="M28 58l-4-10M36 55l-3-10M44 52l-2-10M52 50l-2-10M60 48l-1-10M28 58l4 9M36 55l3 9M44 52l2 9M52 50l2 9M60 48l1 9"/><path class="f2 sf" d="M70 36q8 0 9 6t-9 8q-9-2-9-8t9-6z"/><path class="s" d="M70 36v14"/>'},
 
+{id:"dried-fenugreek-leaves",cat:"herbs",name:{en:"Dried fenugreek leaves",fr:"Feuilles de fenugrec séchées (kasoori methi)"},latin:"Trigonella foenum-graecum",
+origin:{en:"Punjab",fr:"Pendjab"},season:[],
+flavor:["bitter","herbal","grassy","warm"],
+story:{en:"Kasoori methi takes its name from Kasur in the Punjab, the town whose dried crop set the standard. The leaf carries the same compound, sotolon, that makes the seed smell of maple syrup and burnt sugar, but without the seed’s hard resinous bitterness.",
+fr:"Le kasoori methi tient son nom de Kasur, au Pendjab, dont la récolte séchée a fixé la référence. La feuille porte le même composé, le sotolon, qui donne à la graine son odeur de sirop d’érable et de sucre brûlé, mais sans l’amertume dure et résineuse de celle-ci."},
+tip:{en:"Crush a tablespoon between your palms straight over the pan in the last minute, off the heat. Added early it stews down into something that tastes of hay.",
+fr:"Écrasez-en une cuillère à soupe entre les paumes, directement au-dessus de la sauteuse, dans la dernière minute et hors du feu. Ajoutée trop tôt, elle mijote et finit par goûter le foin."},
+pairs:["cream","tomato","chicken","ginger","garam-masala","butter","potato","yogurt"],
+svg:'<path class="f1 sf" d="M48 28q9 6 9 16t-9 12q-9-2-9-12t9-16z"/><path class="f1 sf" d="M30 42q10-4 16 4t-4 14q-10 1-13-7t1-11z"/><path class="f1 sf" d="M66 42q-10-4-16 4t4 14q10 1 13-7t-1-11z"/><path class="s" d="M48 58v18"/><path class="dot" d="M33 74a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M59 76a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M42 82a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
+
 {id:"elderflower",cat:"herbs",name:{en:"Elderflower",fr:"Fleur de sureau"},latin:"Sambucus nigra",
 origin:{en:"European hedgerows",fr:"Haies d’Europe"},season:[5,6],
 flavor:["floral","honeyed","fruity"],
@@ -358,6 +378,16 @@ tip:{en:"Never chop it — bruise it whole in the palm and lay it on, or the cit
 fr:"Ne la hachez jamais : meurtrissez-la entière dans la paume et posez-la, sinon la note citronnée s’oxyde en une minute. Elle picote à peine, loin de l’engourdissement du grain séché, et convient donc aux choses délicates — palourdes, tofu, bambou."},
 pairs:["bamboo-shoot","miso","scallop","silken-tofu","clam","sea-bream"],
 svg:'<path class="s" d="M48 82V22"/><path class="f1 sf" d="M46 74q-12 0-16-8 10-6 16 0zM46 60q-12 0-16-8 10-6 16 0zM46 46q-11 0-14-7 9-5 14 0zM46 34q-9 0-12-6 8-4 12 0z"/><path class="f2 sf" d="M50 74q12 0 16-8-10-6-16 0zM50 60q12 0 16-8-10-6-16 0zM50 46q11 0 14-7-9-5-14 0zM50 34q9 0 12-6-8-4-12 0z"/><path class="f2 sf" d="M48 20q6 4 6 9H42q0-5 6-9z"/>'},
+
+{id:"lavender-flowers",cat:"herbs",name:{en:"Lavender flowers",fr:"Fleurs de lavande"},latin:"Lavandula angustifolia",
+origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[6,7,8],
+flavor:["floral","herbal","resinous","woody"],
+story:{en:"Only fine lavender, angustifolia, belongs in food; the lavandin hybrid that covers most of the Provençal plateaux is grown for oil and runs high in camphor, which is what turns a cream soapy. In the field the two are easy to tell apart — lavandin sends up a branched stem carrying three heads, fine lavender a single one.",
+fr:"Seule la lavande fine, angustifolia, a sa place en cuisine ; le lavandin hybride qui couvre l’essentiel des plateaux provençaux est cultivé pour l’huile et riche en camphre — c’est lui qui rend une crème savonneuse. Au champ, on les distingue sans peine : le lavandin porte une tige ramifiée à trois épis, la lavande fine un seul."},
+tip:{en:"Measure in pinches, not spoons: a teaspoon of buds infused in a litre of cream is already at the limit. Infuse warm, strain, and never leave the buds in — held too long they go medicinal.",
+fr:"Dosez en pincées, pas en cuillères : une cuillère à café de boutons infusée dans un litre de crème est déjà à la limite. Infusez tiède, filtrez, et ne laissez jamais les boutons dedans — trop longtemps, ils tournent au médicinal."},
+pairs:["honey","cream","apricot","peach","goat-cheese","lemon","thyme","blueberry"],
+svg:'<path class="s" d="M48 82V52"/><path class="f2 sf" d="M48 16q7 4 7 11t-7 7q-7 0-7-7t7-11zM40 33q6 2 8 8-2 6-8 6t-6-7 6-7zM56 33q-6 2-8 8 2 6 8 6t6-7-6-7zM42 48q6 1 6 6-2 5-7 5t-5-6 6-5zM54 48q-6 1-6 6 2 5 7 5t5-6-6-5z"/><path class="s" d="M48 68q-8-2-12-8M48 74q8-2 12-8"/>'},
 
 {id:"lemon-balm",cat:"herbs",name:{en:"Lemon balm",fr:"Mélisse"},latin:"Melissa officinalis",
 origin:{en:"Southern Europe",fr:"Europe méridionale"},season:[5,6,7,8,9],
@@ -518,6 +548,16 @@ tip:{en:"For yomogi, blanch only the young leaves with a pinch of bicarbonate of
 fr:"Pour le yomogi, blanchissez seulement les jeunes feuilles avec une pincée de bicarbonate pour fixer le vert, pressez-les fortement et pilez. Pour l'oie, employez les tiges entières et retirez-les avant de découper : elles ne se mangent pas."},
 pairs:["goose","duck","wild-boar","adzuki","kinako","glutinous-rice-flour","pork"],
 svg:'<path class="f2 sf" d="M48 22q7 6 5 12 8-5 13 1-8 5-11 11 10 0 11 8-10 3-14 9-2 6-4 11-2-5-4-11-4-6-14-9 1-8 11-8-3-6-11-11 5-6 13-1-2-6 5-12z"/><path class="s" d="M48 30v34M48 42l-9-6M48 42l9-6M48 54l-11-5M48 54l11-5"/><path class="s" d="M48 64v12"/>'},
+
+{id:"myoga-ginger",cat:"herbs",name:{en:"Myoga ginger",fr:"Gingembre myoga"},latin:"Zingiber mioga",
+origin:{en:"Japan (Kōchi)",fr:"Japon (Kōchi)"},season:[7,8,9,10],
+flavor:["fresh","bitter","floral","peppery"],
+story:{en:"The part eaten is the flower bud, pushed up at the base of the plant, not the rhizome — a separate Zingiber species from culinary ginger. More than eighty per cent of Japan’s crop comes from Kōchi, grown under shade because full sun greens the buds and coarsens them.",
+fr:"Ce que l’on mange est le bouton floral, poussé à la base de la plante, et non le rhizome — une espèce de Zingiber distincte du gingembre de cuisine. Plus de quatre-vingts pour cent de la récolte japonaise vient de Kōchi, cultivée à l’ombre, car le plein soleil verdit les boutons et les rend grossiers."},
+tip:{en:"Shred it lengthways as fine as you can, drop it into cold water for two minutes to pull the harshness out, then squeeze it dry. It is a raw garnish — heat destroys the perfume outright.",
+fr:"Émincez-le dans la longueur, le plus fin possible, plongez-le deux minutes à l’eau froide pour ôter l’âpreté, puis essorez-le. C’est une garniture crue : la chaleur en détruit le parfum sur-le-champ."},
+pairs:["miso","cucumber","soba-noodles","katsuobushi","silken-tofu","rice-vinegar","shiso","eggplant"],
+svg:'<path class="f2 sf" d="M48 16q4 18 12 30 6 10 0 20-6 8-12 8t-12-8q-6-10 0-20 8-12 12-30z"/><path class="s" d="M48 24q-8 14-8 30t8 20M48 24q8 14 8 30t-8 20"/><path class="s" d="M37 68q11 6 22 0"/>'},
 
 {id:"nasturtium",cat:"herbs",name:{en:"Nasturtium",fr:"Capucine"},latin:"Tropaeolum majus",
 origin:{en:"Andean South America",fr:"Andes d’Amérique du Sud"},season:[6,7,8,9,10],
@@ -837,5 +877,15 @@ fr:"Le genre honore Achille qui, dit la légende, étanchait avec cette feuille 
 tip:{en:"Use only the young feathery leaves, finely chopped, and no more than a teaspoon for four — mature leaves turn medicinally bitter. Fold it in raw, into soured cream or soft butter; heat flattens the anise and leaves the bitterness alone on the plate.",
 fr:"N'utilisez que les jeunes feuilles plumeuses, finement ciselées, et pas plus d'une cuillère à café pour quatre : les feuilles âgées prennent une amertume médicinale. Incorporez-la crue, dans la crème acidulée ou le beurre pommade ; la chaleur efface l'anis et ne laisse que l'amertume."},
 pairs:["butter","cream","cucumber","trout","potato","lemon"],
-svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 66q-10-2-14-8M48 66q10-2 14-8M48 56q-9-2-12-7M48 56q9-2 12-7M48 46q-7-2-10-6M48 46q7-2 10-6"/><ellipse class="f2 sf" cx="48" cy="28" rx="18" ry="6"/><path class="s" d="M36 28q6-6 12-6t12 6"/>'}
+svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 66q-10-2-14-8M48 66q10-2 14-8M48 56q-9-2-12-7M48 56q9-2 12-7M48 46q-7-2-10-6M48 46q7-2 10-6"/><ellipse class="f2 sf" cx="48" cy="28" rx="18" ry="6"/><path class="s" d="M36 28q6-6 12-6t12 6"/>'},
+
+{id:"yomogi",cat:"herbs",name:{en:"Yomogi",fr:"Armoise japonaise"},latin:"Artemisia princeps",
+origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
+flavor:["bitter","herbal","grassy","fresh"],
+story:{en:"The same plant is the source of moxa, the smouldering cone of dried leaf used in moxibustion, so the kitchen and the clinic come out of one spring picking. Pounded into rice cake it makes kusamochi, grass cake, whose green is the leaf itself and not a colouring.",
+fr:"La même plante fournit le moxa, ce cône de feuille séchée que l’on fait se consumer en moxibustion : la cuisine et la médecine sortent d’une seule cueillette de printemps. Pilée dans la pâte de riz, elle donne le kusamochi, le « gâteau d’herbe », dont le vert est celui de la feuille et non un colorant."},
+tip:{en:"Take only the pale tips before the plant flowers, since older leaves turn harsh. Blanch thirty seconds in water with a pinch of bicarbonate to hold the green, squeeze hard, and pound while still warm — cold leaves will not break down into the dough.",
+fr:"Ne prendre que les pousses claires avant la floraison : les vieilles feuilles deviennent âpres. Les blanchir trente secondes dans une eau additionnée d’une pincée de bicarbonate pour fixer le vert, les presser fort et les piler encore tièdes — froides, elles ne se lient pas à la pâte."},
+pairs:["glutinous-rice","adzuki","kinako","sesame","miso","rice"],
+svg:'<path class="f1 sf" d="M48 20C40 26 42 32 34 34 42 36 38 44 30 46 40 48 36 56 28 58 40 60 44 58 48 60ZM48 20C56 26 54 32 62 34 54 36 58 44 66 46 56 48 60 56 68 58 56 60 52 58 48 60Z"/><path class="s" d="M48 22v62"/><path class="f2 sf" d="M48 72q-11 0-15-7 13-5 15 7z"/>'}
 ]);
