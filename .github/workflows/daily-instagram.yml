@@ -1,0 +1,76 @@
+name: Daily ingredient to Instagram
+
+# Posts the same ingredient the website shows that day. The picture and the
+# caption are pre-built and committed, so this job only calls the API.
+on:
+  schedule:
+    - cron: "0 8 * * *"      # 08:00 UTC — 10:00 Paris in summer, 09:00 in winter
+  workflow_dispatch:          # lets you run it by hand from the Actions tab
+
+concurrency:
+  group: daily-instagram      # never two posts at once
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out today's ingredient
+        id: pick
+        run: |
+          set -euo pipefail
+          ID="$(python3 tools/make-card.py --today-id)"
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "Today: $ID"
+          test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — run tools/build-social.sh and commit"; exit 1; }
+
+      - name: Publish
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          ID: ${{ steps.pick.outputs.id }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
+          : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN repository secret}"
+          IMG="https://graciangabriel8.github.io/copius/social/$ID.jpg"
+          CAPTION="$(python3 -c 'import json,os;print(json.load(open("social/captions.json"))[os.environ["ID"]]["caption"])')"
+
+          # 1. container
+          CREATE="$(curl -sS -X POST "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "image_url=$IMG" \
+            --data-urlencode "caption=$CAPTION" \
+            -d "access_token=$IG_ACCESS_TOKEN")"
+          CID="$(printf '%s' "$CREATE" | python3 -c 'import sys,json;print(json.load(sys.stdin).get("id",""))')"
+          if [ -z "$CID" ]; then echo "::error::container failed: $(printf '%s' "$CREATE" | head -c 400)"; exit 1; fi
+
+          # 2. publish
+          PUB="$(curl -sS -X POST "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
+            -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
+          printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
+
+  # Long-lived tokens die after 60 days and cannot be revived. This refreshes
+  # weekly and writes the new one straight back into the repository secret.
+  refresh-token:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Refresh the access token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::SECRETS_PAT not set — refresh the token by hand before it expires"; exit 0
+          fi
+          NEW="$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
+          if [ -z "$NEW" ]; then echo "::error::refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
+          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" --body "$NEW"
+          echo "token refreshed (value never printed)"
