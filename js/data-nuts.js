@@ -49,7 +49,7 @@ fr:"C'est la pistache qui tient au four : concassez-la grossièrement et répart
 pairs:["clarified-butter","honey","rose-water","semolina","lemon","cardamom"],
 svg:'<ellipse class="f1 sf" cx="38" cy="48" rx="12" ry="15"/><ellipse class="f1 sf" cx="58" cy="52" rx="11" ry="14"/><path class="s" d="M38 32v-3q6-6 14-6"/><path class="f3 sf" d="M48 66q9 3 9 8t-9 6q-9-1-9-6t9-8z"/>'},
 
-{id:"apricot-kernel",cat:"nuts",rare:true,name:{en:"Apricot kernel",fr:"Amandon d'abricot"},latin:"Prunus armeniaca",
+{id:"apricot-kernel",cat:"nuts",name:{en:"Apricot kernel",fr:"Amandon d'abricot"},latin:"Prunus armeniaca",
 origin:{en:"Malatya, Anatolia",fr:"Malatya, Anatolie"},season:[],
 flavor:["bitter","nutty","delicate"],
 story:{en:"The almond flavour in amaretti and in most noyau liqueurs is not almond at all: it comes from this seed, cracked out of the apricot stone. Sweet or bitter is a cultivar trait rather than a stage of ripeness, so the same-looking kernel is eaten by the handful in Malatya and weighed out by the gram in a distillery.",
@@ -99,7 +99,7 @@ fr:"Grillez-les avant de les manger : dix minutes à 150 °C décollent la pelli
 pairs:["butter","honey","apple","mushroom","venison","walnut-oil","pear"],
 svg:'<path class="f2 sf" d="M48 26l16 40q-16 6-32 0z"/><path class="s" d="M48 26v40M34 58q14 5 28 0"/><path class="f1 sf" d="M30 66q18 8 36 0-4 8-18 8t-18-8z"/>'},
 
-{id:"bitter-almond",cat:"nuts",rare:true,name:{en:"Bitter almond",fr:"Amande amère"},latin:"Prunus dulcis var. amara",
+{id:"bitter-almond",cat:"nuts",name:{en:"Bitter almond",fr:"Amande amère"},latin:"Prunus dulcis var. amara",
 origin:{en:"Wild and seedling almond trees",fr:"Amandiers sauvages et de semis"},season:[],
 flavor:["bitter","floral","nutty"],
 story:{en:"The kernel keeps amygdalin and the enzyme that splits it in separate cells, so nothing happens until it is crushed and wetted — at which point it releases benzaldehyde, the almond smell, and hydrogen cyanide in the same breath. The two part company in the pan: cyanide boils off near 26 °C and benzaldehyde not until 178 °C, which is why a cooked preparation keeps the aroma and loses the poison.",
@@ -129,7 +129,7 @@ fr:"Une seule noix peut porter plus d’une journée de sélénium. C’est une 
 pairs:["dark-chocolate","honey","coffee","vanilla","cream","banana","coconut-milk","date"],
 svg:'<path class="f1 sf" d="M36 38l16 4 6 26-18 8-8-24z"/><path class="s" d="M40 46l12 18"/>'},
 
-{id:"bronte-pistachio",cat:"nuts",rare:true,luxe:true,name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
+{id:"bronte-pistachio",cat:"nuts",luxe:true,name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
 origin:{en:"Bronte, Sicily",fr:"Bronte, Sicile"},season:[8,9],
 flavor:["resinous","herbal","nutty","rich"],
 story:{en:"The trees grow out of fissures in Etna's lava, grafted onto wild terebinth, and they crop in odd years only: growers strip the buds in the even year so the whole harvest arrives at once. Nothing mechanical holds on that ground, which is why the crop still comes down the mountain in baskets.",
@@ -279,7 +279,7 @@ fr:"Les graines entières traversent sans être digérées. Moulez-les juste ava
 pairs:["oats","yogurt","honey","flour-complete","raisin","banana","cinnamon","sunflower-seed"],
 svg:'<ellipse class="f1 sf" cx="40" cy="52" rx="7" ry="4"/><ellipse class="f1 sf" cx="55" cy="58" rx="7" ry="4"/><ellipse class="f1 sf" cx="45" cy="66" rx="7" ry="4"/>'},
 
-{id:"fresh-hazelnut",cat:"nuts",rare:true,name:{en:"Fresh green hazelnut",fr:"Noisette fraîche"},latin:"Corylus avellana",
+{id:"fresh-hazelnut",cat:"nuts",name:{en:"Fresh green hazelnut",fr:"Noisette fraîche"},latin:"Corylus avellana",
 origin:{en:"Orchards, late summer",fr:"Vergers, fin d'été"},season:[8,9],
 flavor:["milky","fresh","grassy","delicate"],
 story:{en:"A green hazelnut kernel is close to half water; drying takes it below a tenth of its weight, and that single number is the entire difference between the two ingredients. It is also why the fresh nut is sold by the day in late summer and never appears on a shelf — it moulds inside its own shell within a week.",
@@ -289,7 +289,7 @@ fr:"Cassez-les au dernier moment et retirez la pellicule au pouce : elle glisse 
 pairs:["sea-bass","olive-oil","lemon","celery","goat-cheese","peach"],
 svg:'<path class="f1 sf" d="M26 46l4-14 6 8 6-12 6 12 6-10 6 12 6-8 4 12z"/><circle class="f2 sf" cx="40" cy="58" r="13"/><circle class="f2 sf" cx="58" cy="60" r="12"/><path class="s" d="M48 32v-8"/>'},
 
-{id:"fresh-walnut",cat:"nuts",rare:true,name:{en:"Fresh walnut",fr:"Noix fraîche"},latin:"Juglans regia",
+{id:"fresh-walnut",cat:"nuts",name:{en:"Fresh walnut",fr:"Noix fraîche"},latin:"Juglans regia",
 origin:{en:"French orchards, September",fr:"Vergers français, septembre"},season:[9,10],
 flavor:["milky","fresh","delicate","mild"],
 story:{en:"Everything that makes a fresh walnut taste unlike a dried one sits in the pellicle: while the nut is still moist that skin lifts away in sheets, and it carries nearly all the tannin. Give it a fortnight and the skin has bonded to the kernel and will not come off — which is the point at which a walnut starts tasting like a walnut.",
@@ -319,7 +319,7 @@ fr:"Faites-les mijoter dans un bouillon ou un congee comme les cuisiniers chinoi
 pairs:["ginger","rice","goat-cheese","honey","chicken","jasmine-rice","sesame","almond"],
 svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="5" ry="8"/><ellipse class="f1 sf" cx="54" cy="58" rx="5" ry="8"/><ellipse class="f1 sf" cx="47" cy="68" rx="5" ry="8"/>'},
 
-{id:"green-almond",cat:"nuts",rare:true,name:{en:"Green almond",fr:"Amande fraîche"},latin:"Prunus dulcis",
+{id:"green-almond",cat:"nuts",name:{en:"Green almond",fr:"Amande fraîche"},latin:"Prunus dulcis",
 origin:{en:"Mediterranean orchards, spring",fr:"Vergers méditerranéens, printemps"},season:[4,5,6],
 flavor:["sour","grassy","fresh","delicate"],
 story:{en:"Across Turkey and the Levant the whole unripe fruit is a spring street food — çağla, loz akhdar — sold by the bagful with a twist of salt and eaten hull, shell and all. The window is short: once the shell lignifies, a matter of two or three weeks, you have to cut the fruit open and eat only the jelly kernel inside.",
@@ -329,7 +329,7 @@ fr:"Essayez l'ongle avant d'acheter : s'il ne s'enfonce pas dans la bogue, la co
 pairs:["salt","olive-oil","feta","mint","sumac","yogurt"],
 svg:'<path class="f1 sf" d="M48 28q18 6 18 24t-18 22q-18-4-18-22t18-24z"/><path class="s" d="M34 38l-5-4M32 50h-6M36 62l-5 5M62 38l5-4M64 50h6M60 62l5 5"/><path class="f2 sf" d="M50 26q10-10 20-8-4 10-18 10z"/><path class="f3 sf" d="M54 56q8 2 8 8t-8 8q-4-4-4-8t4-8z"/>'},
 
-{id:"green-walnut",cat:"nuts",rare:true,name:{en:"Green walnut",fr:"Noix verte"},latin:"Juglans regia",
+{id:"green-walnut",cat:"nuts",name:{en:"Green walnut",fr:"Noix verte"},latin:"Juglans regia",
 origin:{en:"France and Emilia, late June",fr:"France et Émilie, fin juin"},season:[6,7],
 flavor:["bitter","grassy","resinous","pungent"],
 story:{en:"The traditional date is Saint John's Eve, the twenty-fourth of June, and the test is a needle: if it passes clean through the whole fruit, shell and all, the walnut is still soft enough for nocino or vin de noix. The window runs about ten days, after which the shell has begun to harden and the fruit is fit only for brining.",
@@ -549,7 +549,7 @@ fr:"Ils brûlent traîtreusement vite : torréfiez-les à sec sans les quitter d
 pairs:["basil","parmesan","spinach","zucchini","fig","honey"],
 svg:'<path class="f1 sf" d="M42 42q-4-8 3-12 5 4 3 12-3 3-6 0zM54 46q-4-8 3-12 5 4 3 12-3 3-6 0zM40 60q-4-8 3-12 5 4 3 12-3 3-6 0zM52 62q-4-8 3-12 5 4 3 12-3 3-6 0z"/>'},
 
-{id:"pinyon-pine-nut",cat:"nuts",rare:true,name:{en:"Pinyon pine nut",fr:"Pignon pinyon"},latin:"Pinus edulis",
+{id:"pinyon-pine-nut",cat:"nuts",name:{en:"Pinyon pine nut",fr:"Pignon pinyon"},latin:"Pinus edulis",
 origin:{en:"American Southwest",fr:"Sud-ouest américain"},season:[9,10,11],
 flavor:["resinous","sweet","woody"],
 story:{en:"The pinyon has been the state tree of New Mexico since 1949, and its nuts are still gathered off the ground by hand under wild trees — there are no orchards, and no way to hurry a crop. The tree masts: a heavy year fills every roadside stand in the state, and the several that follow give almost nothing.",

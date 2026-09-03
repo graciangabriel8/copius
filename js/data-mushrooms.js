@@ -59,7 +59,7 @@ fr:"Elle tient trois ou quatre jours et son parfum meurt dès qu’elle touche l
 pairs:["egg","butter","parmesan","garlic","olive-oil","artichoke","cream"],
 svg:'<path class="f1 sf" d="M26 62q0-24 22-24t22 24z"/><path class="s" d="M48 62V42M40 62q2-10-6-14M56 62q-2-10 6-14"/><path class="s" d="M26 62h44"/>'},
 
-{id:"black-morel",cat:"mushrooms",rare:true,luxe:true,name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
+{id:"black-morel",cat:"mushrooms",luxe:true,name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
 origin:{en:"Conifer edges and burnt ground",fr:"Lisières de conifères et terres brûlées"},season:[3,4,5],
 flavor:["smoky","earthy","meaty","woody"],
 story:{en:"It comes up in March, a good month before the blonde, taller and sharper-capped, its pits so dark they read as black in the leaf litter. Fresh it smells of surprisingly little; dried it is by far the more perfumed of the two, which is why the conique dominates the dried trade while the blonde is sold fresh.",
@@ -79,7 +79,7 @@ fr:"Ne la cuisez jamais fort : râpez-la sur des œufs chauds, des pâtes ou des
 pairs:["egg","potato","rice","parmesan","cream","chicken"],
 svg:'<path class="f3 sf" d="M33 50q-2-14 13-17 16-3 18 11 2 12-8 17-11 5-19-2-4-4-4-9z"/><path class="s" d="M40 44l6 5-2 7M52 42l3 8-7 4"/>'},
 
-{id:"black-trumpet",cat:"mushrooms",rare:true,name:{en:"Black trumpet",fr:"Trompette de la mort"},latin:"Craterellus cornucopioides",
+{id:"black-trumpet",cat:"mushrooms",name:{en:"Black trumpet",fr:"Trompette de la mort"},latin:"Craterellus cornucopioides",
 origin:{en:"European & American woodlands",fr:"Forêts d’Europe & d’Amérique"},season:[9,10,11],
 flavor:["earthy","smoky","rich","fruity"],
 story:{en:"The French name means “trumpet of death” — pure slander for one of the finest mushrooms in the forest, black as a shadow and nearly invisible against the leaf litter. Foragers call finding a patch “reading the void”; chefs call it the poor man’s truffle and dry it into winter gold.",
@@ -99,7 +99,7 @@ fr:"Jamais crue, jamais saisie à peine : une morille veut dix bonnes minutes de
 pairs:["butter","cream","asparagus","chicken","vin-jaune","grey-shallot","egg"],
 svg:'<path class="f2 sf" d="M48 16q16 0 16 22t-16 30q-16-8-16-30t16-22z"/><path class="s" d="M38 26q10 6 20 0M36 38q12 7 24 0M38 50q10 6 20 0M48 18v48"/><path class="f1 sf" d="M44 66h8v12q0 4-4 4t-4-4z"/>'},
 
-{id:"bloody-milk-cap",cat:"mushrooms",rare:true,name:{en:"Bloody milk cap",fr:"Lactaire sanguin"},latin:"Lactarius sanguifluus",
+{id:"bloody-milk-cap",cat:"mushrooms",name:{en:"Bloody milk cap",fr:"Lactaire sanguin"},latin:"Lactarius sanguifluus",
 origin:{en:"Pine woods, Catalonia and Provence",fr:"Pinèdes de Catalogne et de Provence"},season:[9,10,11,12],
 flavor:["earthy","peppery","resinous","meaty"],
 story:{en:"Break the flesh and it bleeds deep wine red where the saffron milk cap bleeds carrot orange — the same test Catalan and Provençal markets have used for generations to price one above the other. This is the rovelló proper; the orange one is the pinetell, and it fetches less.",
@@ -119,7 +119,7 @@ fr:"Ne le mangez jamais cru ni à peine cuit — mal cuit, le pied-bleu dérange
 pairs:["butter","garlic","parsley","cream","chestnut","thyme","shallot","hazelnut"],
 svg:'<path class="f2 sf" d="M24 50q6-18 24-18t24 18q-10 6-24 6t-24-6z"/><path class="s" d="M32 50q16 5 32 0"/><path class="f1 sf" d="M42 56h12l2 16q0 4-8 4t-8-4z"/><path class="s" d="M44 62q4 3 8 0M44 70q4 3 8 0"/>'},
 
-{id:"bronze-bolete",cat:"mushrooms",rare:true,name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
+{id:"bronze-bolete",cat:"mushrooms",name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
 origin:{en:"Warm oak and chestnut woods",fr:"Chênaies et châtaigneraies chaudes"},season:[6,7,8,9],
 flavor:["nutty","earthy","woody","meaty"],
 story:{en:"Boletus aereus takes its name from aereus, of bronze: the cap is nearly black on a young one and fades towards the colour of an old coin. It fruits in hot oak and chestnut woods weeks before the cèpe de Bordeaux and holds its flesh far firmer, which is why southern markets sell it apart from it and above it.",
@@ -129,7 +129,7 @@ fr:"Sa chair est assez dense pour se trancher crue en carpaccio, ce que l’edul
 pairs:["olive-oil","garlic","parsley","thyme","chestnut","egg"],
 svg:'<path class="f3 sf" d="M20 46q0-18 28-18t28 18q0 6-28 6t-28-6z"/><path class="f1 sf" d="M40 50q0 14-3 20 5 4 22 0-3-6-3-20z"/><path class="s" d="M42 58q8 3 14 0M41 66q9 3 16 0"/>'},
 
-{id:"burgundy-truffle",cat:"mushrooms",rare:true,luxe:true,name:{en:"Burgundy truffle",fr:"Truffe de Bourgogne"},latin:"Tuber uncinatum",
+{id:"burgundy-truffle",cat:"mushrooms",luxe:true,name:{en:"Burgundy truffle",fr:"Truffe de Bourgogne"},latin:"Tuber uncinatum",
 origin:{en:"Beech and hazel woods, Burgundy and Lorraine",fr:"Hêtraies et coudraies de Bourgogne et de Lorraine"},season:[9,10,11,12,1],
 flavor:["earthy","nutty","musky","woody"],
 story:{en:"Genetically it is the same species as the summer truffle, and mycologists now write it Tuber aestivum uncinatum — but the trade has never merged the two, because a truffle lifted in November under beech is not the same object as one lifted in July. The autumn form has a dark, heavily marbled interior and a hazelnut-and-cocoa nose strong enough to hold through a minute of heat, which aestivum has not.",
@@ -149,7 +149,7 @@ fr:"Ne surchargez pas la poêle : en foule les champignons bouillent, en solitai
 pairs:["garlic","parsley","cream","thyme","egg","chicken","barley"],
 svg:'<path class="f2 sf" d="M28 52q0-18 20-18t20 18q0 4-4 4H32q-4 0-4-4z"/><path class="f1 sf" d="M42 56h12l-2 18q0 4-4 4t-4-4z"/><path class="s" d="M36 48h24"/>'},
 
-{id:"caesars-mushroom",cat:"mushrooms",rare:true,luxe:true,name:{en:"Caesar’s mushroom",fr:"Oronge"},latin:"Amanita caesarea",
+{id:"caesars-mushroom",cat:"mushrooms",luxe:true,name:{en:"Caesar’s mushroom",fr:"Oronge"},latin:"Amanita caesarea",
 origin:{en:"Hot chestnut and oak woods",fr:"Châtaigneraies et chênaies chaudes"},season:[7,8,9,10],
 flavor:["sweet","nutty","delicate"],
 story:{en:"The Romans called it boletus and reserved it for the emperors, which is where the name comes from; Suetonius reports that Claudius was killed by a dish of them, a death cap slipped in among the good. Both do emerge from a white egg-shaped veil in the same woods, and at that stage they are told apart only by cutting: the Caesar’s is yellow inside, the death cap white.",
@@ -269,7 +269,7 @@ fr:"Ôtez toute la base agglomérée et séparez les filaments. Ajoutez-les dans
 pairs:["soy-sauce","spring-onion","sesame-oil","ginger","tamari","garlic","chili","shiitake"],
 svg:'<path class="s" d="M38 74V44M44 74V40M50 74V40M56 74V44"/><circle class="f3 sf" cx="38" cy="42" r="4"/><circle class="f3 sf" cx="44" cy="38" r="4"/><circle class="f3 sf" cx="50" cy="38" r="4"/><circle class="f3 sf" cx="56" cy="42" r="4"/>'},
 
-{id:"fairy-ring-mushroom",cat:"mushrooms",rare:true,name:{en:"Fairy ring mushroom",fr:"Faux mousseron"},latin:"Marasmius oreades",
+{id:"fairy-ring-mushroom",cat:"mushrooms",name:{en:"Fairy ring mushroom",fr:"Faux mousseron"},latin:"Marasmius oreades",
 origin:{en:"Grazed meadows",fr:"Prairies pâturées"},season:[5,6,7,8,9,10],
 flavor:["nutty","sweet","grassy"],
 story:{en:"Fries put it in Marasmius, from the Greek for drying out, because of what it does in a drought: the cap shrivels away, then rehydrates with the next rain and resumes releasing spores, protected by the trehalose in its walls. That is also why it dries so well in a kitchen — it was built for it.",
@@ -419,7 +419,7 @@ fr:"Son parfum — pin, cannelle, pluie d’automne — est tout l’enjeu : ne 
 pairs:["rice","kombu","katsuobushi","chicken"],
 svg:'<path class="f2 sf" d="M32 44q4-14 16-14t16 14q0 4-4 4H36q-4 0-4-4z"/><path class="f1 sf" d="M43 48h10l-1 22q0 6-4 6t-4-6z"/><path class="s" d="M38 42h20" stroke-width="1.4"/>'},
 
-{id:"morel",cat:"mushrooms",rare:true,name:{en:"Morel",fr:"Morille"},latin:"Morchella esculenta",
+{id:"morel",cat:"mushrooms",name:{en:"Morel",fr:"Morille"},latin:"Morchella esculenta",
 origin:{en:"Temperate woodlands",fr:"Forêts tempérées"},season:[3,4,5],
 flavor:["earthy","nutty","meaty","smoky"],
 story:{en:"Spring’s honeycombed treasure, mysteriously fond of burnt ground — after forest fires, morel hunters follow the ash. In the Jura, poulet aux morilles et au vin jaune is less a recipe than a regional religion, the wine’s walnut oxidation meeting the mushroom’s dark perfume.",
@@ -509,7 +509,7 @@ fr:"Sa note de noyer fumé est liposoluble et bien plus discrète que celle d’
 pairs:["pecan","butter","egg","cream","chicken","corn","sweet-potato"],
 svg:'<ellipse class="f2 sf" cx="36" cy="54" rx="16" ry="14"/><path class="s" d="M28 48q6 6 4 12M43 46q-3 8 3 12"/><path class="f3 sf" d="M66 36q9 8 9 18t-9 18q-9-8-9-18t9-18z"/><path class="s" d="M66 38v32"/>'},
 
-{id:"pine-bolete",cat:"mushrooms",rare:true,name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
+{id:"pine-bolete",cat:"mushrooms",name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
 origin:{en:"Mountain pinewoods, Europe",fr:"Pinèdes de montagne, Europe"},season:[5,6,9,10,11],
 flavor:["resinous","nutty","earthy","woody"],
 story:{en:"It fruits twice where the oak cep fruits once — a flush after the May rains, a heavier one from late September into November — which is why the trade names and prices it apart from edulis. Mahogany cap, orange-red netting on a swollen stem, and flesh underneath that stays white and does not blue.",
@@ -639,7 +639,7 @@ fr:"Égouttez les champignons en boîte et blanchissez-les trente secondes à l'
 pairs:["oyster-sauce","garlic","ginger","chicken","silken-tofu","spring-onion","soy-sauce","chili"],
 svg:'<path class="f1 sf" d="M48 20q16 0 16 24t-16 30q-16-6-16-30t16-24z"/><path class="s" d="M34 50q6 8 14 8t14-8"/><path class="f3 sf" d="M40 34q0-10 8-10t8 10q-4 3-8 3t-8-3z"/><path class="s" d="M48 37v22"/>'},
 
-{id:"summer-cep",cat:"mushrooms",rare:true,luxe:true,name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
+{id:"summer-cep",cat:"mushrooms",luxe:true,name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
 origin:{en:"Oak and beech woods, Europe",fr:"Chênaies et hêtraies d’Europe"},season:[5,6,7,8,9],
 flavor:["nutty","earthy","delicate","woody"],
 story:{en:"Its name comes from the net that runs the whole length of the stem, where the autumn cep carries one only at the top, and it fruits from May under oak and beech — weeks ahead of Boletus edulis. In dry heat the cap goes suede-matt and crazes into fine cracks, which is the mark most foragers actually go by.",
@@ -679,7 +679,7 @@ fr:"Elle ne doit jamais voir la poêle : rasez-la crue, à table, sur une soie c
 pairs:["egg","rice","butter","parmesan","potato"],
 svg:'<path class="f1 sf" d="M34 50q-2-13 12-16 15-3 17 10 2 11-7 16-10 5-18-2-4-4-4-8z"/><path class="s" d="M42 44l5 4-2 6M53 42l2 7-6 3" stroke-width="1.6"/>'},
 
-{id:"winter-chanterelle",cat:"mushrooms",rare:true,name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
+{id:"winter-chanterelle",cat:"mushrooms",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
 origin:{en:"Mossy conifer woods, northern Europe",fr:"Sous-bois moussus de conifères, Europe du Nord"},season:[9,10,11,12],
 flavor:["peppery","woody","delicate"],
 story:{en:"It runs months after the girolle has finished, on into the frosts, and grows so thick in the moss that a good patch is picked by the kilo rather than the handful. Hollow-stemmed and papery, it dries better than any other chanterelle and comes back in five minutes, which is how most of the Nordic crop is sold.",

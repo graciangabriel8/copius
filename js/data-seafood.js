@@ -19,7 +19,7 @@ fr:"La longe passe de crue à sèche entre deux tours de poêle : trente seconde
 pairs:["piquillo","tomato","espelette","potato","olive-oil","onion","garlic","bay-leaf"],
 svg:'<path class="f2 sf" d="M20 52q16-14 38-12t18 12q-6 12-24 13T20 52z"/><path class="f2 sf" d="M76 52l10-8-3 8 3 8z"/><path class="f3 sf" d="M34 58q10 14 26 18-14 2-28-14z"/><circle class="dot" cx="32" cy="49" r="2"/>'},
 
-{id:"allis-shad",cat:"seafood",rare:true,name:{en:"Allis shad",fr:"Alose"},latin:"Alosa alosa",
+{id:"allis-shad",cat:"seafood",name:{en:"Allis shad",fr:"Alose"},latin:"Alosa alosa",
 origin:{en:"Loire, Gironde & Atlantic rivers",fr:"Loire, Gironde & fleuves atlantiques"},season:[4,5,6],
 flavor:["rich","meaty","marine","mild"],
 story:{en:"It lives at sea and climbs the rivers once, in spring, to spawn - the Loire and the Gironde carried the great runs until the dams, and the counts now come in hundreds where they once came in tens of thousands. The classic alose à l'oseille braises it for hours on a bed of sorrel, whose acid was long held to dissolve the fine bones; cooks still disagree about whether it does.",
@@ -89,7 +89,7 @@ fr:"Achetez-le en barquette de bois, jamais au bain de saumure : c’est l’alu
 pairs:["rice","nori","soy-sauce","egg","wasabi","scallop"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="20"/><path class="s" d="M48 32V19M28 52H15M68 52h13M34 38l-9-9M62 38l9-9M34 66l-9 9M62 66l9 9"/><path class="f1 sf" d="M39 45q9-6 18 0-3 12-9 14t-9-14z"/><path class="s" d="M48 45v14"/>'},
 
-{id:"black-scabbardfish",cat:"seafood",rare:true,name:{en:"Black scabbardfish",fr:"Sabre noir"},latin:"Aphanopus carbo",
+{id:"black-scabbardfish",cat:"seafood",name:{en:"Black scabbardfish",fr:"Sabre noir"},latin:"Aphanopus carbo",
 origin:{en:"Madeira & the Portuguese slope",fr:"Madère & le talus portugais"},season:[],
 flavor:["delicate","mild","buttery","marine"],
 story:{en:"It is fished off Madeira on longlines set a kilometre and more down, and comes up jet black with eyes the size of coins; the black is a loose skin pigment that comes away on your hands. The island eats it fried with a fried banana beside it, a pairing that sounds like a dare and is on every menu there.",
@@ -129,7 +129,7 @@ fr:"Cuisez-la sur l’arête. Les deux poissons plats perdent l’essentiel de c
 pairs:["butter","shallot","white-wine-vinegar","cream","chives","lemon","mushroom","spinach"],
 svg:'<ellipse class="f3 sf" cx="46" cy="56" rx="27" ry="17"/><path class="f3 sf" d="M73 56l11-6v12z"/><circle class="dot" cx="38" cy="52" r="2"/><path class="s" d="M30 56q16 6 34 0"/>'},
 
-{id:"brown-scorpionfish",cat:"seafood",rare:true,name:{en:"Brown scorpionfish",fr:"Rascasse brune"},latin:"Scorpaena porcus",
+{id:"brown-scorpionfish",cat:"seafood",name:{en:"Brown scorpionfish",fr:"Rascasse brune"},latin:"Scorpaena porcus",
 origin:{en:"Mediterranean rocky shores",fr:"Côtes rocheuses de Méditerranée"},season:[],
 flavor:["marine","umami","rich","mild"],
 story:{en:"The charter drawn up by Marseille restaurateurs in 1980 makes it compulsory in a bouillabaisse - a soup defined, unusually, by a document. The fish is nearly all head: the fillet yield is derisory, and that is exactly the point, because the head is where the gelatine and the flavour are.",
@@ -139,7 +139,7 @@ fr:"Ne la filetez jamais : tête et arêtes partent entières dans la marmite, p
 pairs:["saffron","fennel","tomato","garlic","olive-oil","orange","potato","leek"],
 svg:'<path class="f3 sf" d="M22 56q6-16 20-18t26 8q10 6 8 14-14 8-30 6T22 56z"/><path class="s" d="M30 40l4-8 4 8 5-9 4 9 6-8 3 8"/><path class="f2 sf" d="M46 60q10 4 12 14-12-2-16-10z"/><circle class="dot" cx="34" cy="48" r="2.4"/><path class="s" d="M26 54q6 4 12 2"/>'},
 
-{id:"escargot-de-bourgogne",cat:"seafood",rare:true,name:{en:"Burgundy snail",fr:"Escargot de Bourgogne"},latin:"Helix pomatia",
+{id:"escargot-de-bourgogne",cat:"seafood",name:{en:"Burgundy snail",fr:"Escargot de Bourgogne"},latin:"Helix pomatia",
 origin:{en:"Burgundy and eastern France",fr:"Bourgogne et est de la France"},season:[9,10,11],
 flavor:["earthy","meaty","mild"],
 story:{en:"The arrêté of 24 April 1979 forbids gathering Helix pomatia at any time below a shell diameter of 3 cm, and from 1 April to 30 June at any size at all — the wild French population had been collected almost to nothing. Nearly everything sold now comes from central and eastern Europe, and none of it is farmed: the species has never been bred at scale.",
@@ -159,7 +159,7 @@ fr:"Salez les filets vingt minutes avant cuisson : la chair se raffermit et les 
 pairs:["potato","leek","olive-oil","garlic","capers","parsley","saffron"],
 svg:'<path class="f1 sf" d="M26 54q12-12 32-10l10-6-2 8 2 8-10-6q-20 4-32 6z" transform="translate(0 2)"/><path class="s" d="M30 56q4 4 8 4M40 48q0 8-2 10" transform="translate(0 2)"/><path class="dot" d="M32 52a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0" transform="translate(0 1)"/>'},
 
-{id:"foie-de-morue",cat:"seafood",rare:true,name:{en:"Cod liver",fr:"Foie de morue"},latin:"Gadus morhua (liver)",
+{id:"foie-de-morue",cat:"seafood",name:{en:"Cod liver",fr:"Foie de morue"},latin:"Gadus morhua (liver)",
 origin:{en:"Iceland, Norway and the Barents Sea",fr:"Islande, Norvège et mer de Barents"},season:[],
 flavor:["rich","marine","creamy","umami"],
 story:{en:"Cod liver was industrialised for its oil long before anyone tinned it whole: nineteenth-century Norwegian and Icelandic plants rendered it as medicine against rickets, and the flesh of the fish was in some seasons the by-product. The tinned liver is cooked exactly once, sealed, in nothing but the oil it gives off itself.",
@@ -249,7 +249,7 @@ fr:"Cuisez-la entière en croûte de sel. La chair cuit dans sa propre humidité
 pairs:["lemon","olive-oil","fennel","potato","thyme","garlic","tomato","salt"],
 svg:'<path class="f2 sf" d="M20 56q16-16 40-12t16 12q-8 12-30 12T20 56z"/><path class="f2 sf" d="M76 56l10-8v16z"/><path class="s" d="M30 48h8"/><circle class="dot" cx="33" cy="53" r="2"/>'},
 
-{id:"glass-eel",cat:"seafood",rare:true,luxe:true,name:{en:"Glass eel",fr:"Civelle (pibale)"},latin:"Anguilla anguilla",
+{id:"glass-eel",cat:"seafood",luxe:true,name:{en:"Glass eel",fr:"Civelle (pibale)"},latin:"Anguilla anguilla",
 origin:{en:"Gironde & Adour estuaries",fr:"Estuaires de la Gironde & de l’Adour"},season:[12,1,2,3],
 flavor:["delicate","mild","marine"],
 story:{en:"They reach the Gironde and the Adour after two or three years drifting from the Sargasso, transparent and about six centimetres long, and the fishery now runs on quota with every kilo traced because the species is critically endangered. Prices climbed high enough that Spain answered with gulas - surimi threads with two ink dots for eyes - now more common on Spanish tables than the fish.",
@@ -469,7 +469,7 @@ fr:"Passez-le quelques secondes au-dessus d’une flamme, jusqu’à ce qu’il 
 pairs:["junmai-sake","rice","nori","yuzu","kombu","daikon"],
 svg:'<path class="f2 sf" d="M48 24q14 20 18 46-18 6-36 0 4-26 18-46z"/><path class="s" d="M48 30v40"/><path class="s" d="M40 44q-3 14-4 26M56 44q3 14 4 26"/>'},
 
-{id:"lamprey",cat:"seafood",rare:true,name:{en:"Lamprey",fr:"Lamproie"},latin:"Petromyzon marinus",
+{id:"lamprey",cat:"seafood",name:{en:"Lamprey",fr:"Lamproie"},latin:"Petromyzon marinus",
 origin:{en:"Gironde and Garonne",fr:"Gironde et Garonne"},season:[1,2,3,4,5],
 flavor:["rich","meaty","earthy"],
 story:{en:"Gloucester owed the Crown a lamprey pie each Christmas, and King John fined the city forty marks the year it failed to send one. The animal has no jaw, no bones and no scales; the Bordeaux dish bleeds it live and thickens the red wine with its own blood.",
@@ -519,7 +519,7 @@ fr:"Rasez-le finement et n’infusez qu’une fois, hors ébullition : une à de
 pairs:["kombu","usukuchi-shoyu","daikon","mitsuba","silken-tofu","hakurei-turnip"],
 svg:'<path class="f3 sf" d="M24 56q6-18 26-18t20 12q2 8-6 12-16 8-32 2-8-2-8-8z"/><path class="s" d="M38 42q6 12 4 24M52 40q4 12 2 22"/><path class="f1 sf" d="M62 68q10 0 13 7-9 3-15-2z"/>'},
 
-{id:"hareng-matjes",cat:"seafood",rare:true,name:{en:"Matjes herring",fr:"Hareng matjes"},latin:"Clupea harengus (enzyme-ripened)",
+{id:"hareng-matjes",cat:"seafood",name:{en:"Matjes herring",fr:"Hareng matjes"},latin:"Clupea harengus (enzyme-ripened)",
 origin:{en:"Dutch North Sea fleet",fr:"Flotte néerlandaise de mer du Nord"},season:[6,7,8],
 flavor:["rich","mild","briny","delicate"],
 story:{en:"Matjes depends on a fourteenth-century Dutch technique called gibbing: the gills and most of the guts are drawn out, but the pancreas is deliberately left in, and its enzymes ripen the flesh from the inside in a light brine. The first barrels of the year are auctioned in June, and the fish must be young enough not to have spawned — which is what keeps it sweet, soft and barely salty.",
@@ -529,7 +529,7 @@ fr:"Servez-le froid mais pas glacé : dix minutes hors du réfrigérateur suffis
 pairs:["onion","potato","rye","cornichon","creme-fraiche","dill","apple"],
 svg:'<path class="f1 sf" d="M26 44q16-11 32-4t14 10q-14 9-30 6t-16-12z"/><path class="f2 sf" d="M72 50l10-8v18z"/><path class="s" d="M32 46q14 8 32 4"/><path class="s" d="M38 39l4 9M48 37l4 10M58 39l3 9"/>'},
 
-{id:"meagre",cat:"seafood",rare:true,name:{en:"Meagre",fr:"Maigre (ombrine)"},latin:"Argyrosomus regius",
+{id:"meagre",cat:"seafood",name:{en:"Meagre",fr:"Maigre (ombrine)"},latin:"Argyrosomus regius",
 origin:{en:"Gironde estuary and Atlantic coast",fr:"Estuaire de la Gironde et côte atlantique"},season:[5,6,7],
 flavor:["mild","meaty","marine"],
 story:{en:"Sciaenids drum: the males vibrate muscles against the swim bladder, and spawning meagre in the Gironde can be heard from a boat thirty metres off. Fishermen used to locate the shoals by ear, leaning over the side.",
@@ -549,7 +549,7 @@ fr:"C’est très salé et légèrement amer : quelques grammes sur du riz chaud
 pairs:["rice","junmai-sake","daikon","nori","cucumber","negi"],
 svg:'<path class="s" d="M18 44h60"/><path class="s" d="M24 44l-4-8M32 44l-3-9M40 44l-2-9M48 44v-9M56 44l2-9M64 44l3-9M72 44l4-8"/><path class="f3 sf" d="M20 50q28-6 56 0-2 8-4 10-24 4-48 0-2-2-4-10z"/>'},
 
-{id:"mojama",cat:"seafood",rare:true,name:{en:"Mojama",fr:"Mojama (thon séché)"},latin:"Thunnus thynnus (air-dried loin)",
+{id:"mojama",cat:"seafood",name:{en:"Mojama",fr:"Mojama (thon séché)"},latin:"Thunnus thynnus (air-dried loin)",
 origin:{en:"Cádiz and Huelva, Andalusia",fr:"Cadix et Huelva, Andalousie"},season:[],
 flavor:["salty","umami","rich","meaty"],
 story:{en:"The word comes from the Arabic musama, dried, but the practice is Phoenician: the salting works at Gadir — today's Cádiz — were curing tuna from the almadraba traps three thousand years ago. Two days buried in salt and fifteen to twenty in the sea wind leave a loin that has lost most of its water and behaves like a ham rather than a fish.",
@@ -729,7 +729,7 @@ fr:"Écaillez-le délicatement — la peau est fragile et la couleur fait la moi
 pairs:["olive-oil","fennel","tomato","saffron","thyme","garlic","olive","lemon"],
 svg:'<path class="f1 sf" d="M20 56q16-16 40-12t16 12q-8 12-30 12T20 56z"/><path class="f1 sf" d="M76 56l10-8v16z"/><path class="s" d="M26 60q-4 6-2 8"/>'},
 
-{id:"red-porgy",cat:"seafood",rare:true,name:{en:"Red porgy",fr:"Pagre"},latin:"Pagrus pagrus",
+{id:"red-porgy",cat:"seafood",name:{en:"Red porgy",fr:"Pagre"},latin:"Pagrus pagrus",
 origin:{en:"Eastern Atlantic and Mediterranean",fr:"Atlantique Est et Méditerranée"},season:[9,10,11,12],
 flavor:["mild","sweet","marine"],
 story:{en:"Pagre and daurade royale sit side by side on French ice but belong to different genera: Pagrus pagrus has a rounder head, rose-edged scales and a coarser grain. Pagrus is also the genus that gave Japan its madai, so the pagre is a closer relative of the Japanese celebration bream than of the royale beside it.",
@@ -829,7 +829,7 @@ fr:"Trempez-la trois à cinq jours au réfrigérateur en changeant l’eau froid
 pairs:["dried-shiitake-donko","oyster-sauce","ginger","spring-onion","shaoxing-wine","abalone","conpoy","pork"],
 svg:'<path class="f3 sf" d="M22 56q4-14 26-16 24-2 26 12 2 12-24 14-26 2-28-10z"/><path class="s" d="M28 48q4 4 6-2M40 44q4 5 6-1M52 43q4 5 7-1M64 46q4 4 6-1"/><path class="s" d="M26 60q22 8 46 0"/>'},
 
-{id:"sea-trout",cat:"seafood",rare:true,name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
+{id:"sea-trout",cat:"seafood",name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
 origin:{en:"Atlantic rivers and estuaries",fr:"Rivières et estuaires atlantiques"},season:[4,5,6,7,8],
 flavor:["delicate","sweet","rich"],
 story:{en:"Sea trout and brown trout are one species: in a single river some individuals drop down to the sea, grow far larger on marine feed and return silver, and their own offspring may do either. The coral colour is dietary, from crustaceans, and fades as the fish waits in fresh water to spawn.",
@@ -869,7 +869,7 @@ fr:"La raie au beurre noisette est le plat : beurre noisette, câpres, un trait 
 pairs:["capers","butter","white-wine-vinegar","parsley","potato","lemon","black-pepper","shallot"],
 svg:'<path class="f2 sf" d="M14 56q20-18 34-18t34 18q-16 12-34 12T14 56z"/><path class="s" d="M48 68v14"/><circle class="dot" cx="40" cy="50" r="2"/><circle class="dot" cx="56" cy="50" r="2"/>'},
 
-{id:"smelt",cat:"seafood",rare:true,name:{en:"Smelt",fr:"Éperlan"},latin:"Osmerus eperlanus",
+{id:"smelt",cat:"seafood",name:{en:"Smelt",fr:"Éperlan"},latin:"Osmerus eperlanus",
 origin:{en:"Northern European estuaries",fr:"Estuaires d’Europe du Nord"},season:[10,11,12,1,2,3],
 flavor:["fresh","delicate","marine"],
 story:{en:"The genus name Osmerus comes from the Greek for odour: a fresh smelt smells of cut cucumber, and a smelt that smells of fish is no longer fresh. That single test is the whole of quality control at the stall.",
@@ -949,7 +949,7 @@ fr:"Ne le dépouillez jamais : pour le sashimi, versez de l’eau bouillante sur
 pairs:["hon-mirin","koikuchi-shoyu","ginger","kombu","daikon","spring-onion","junmai-sake"],
 svg:'<path class="f2 sf" d="M26 50q10-18 26-18t22 18q-12 18-24 18T26 50z"/><path class="f3 sf" d="M74 50l10-10v20z"/><circle class="s" cx="38" cy="45" r="5"/><circle class="dot" cx="38" cy="45" r="2"/><path class="s" d="M52 34v32"/>'},
 
-{id:"stockfisch",cat:"seafood",rare:true,name:{en:"Stockfish",fr:"Stockfisch (morue séchée)"},latin:"Gadus morhua (air-dried)",
+{id:"stockfisch",cat:"seafood",name:{en:"Stockfish",fr:"Stockfisch (morue séchée)"},latin:"Gadus morhua (air-dried)",
 origin:{en:"Lofoten Islands",fr:"Îles Lofoten"},season:[],
 flavor:["umami","sweet","marine","meaty"],
 story:{en:"In 1432 a Venetian merchant named Pietro Querini was wrecked on Røst, at the outer end of Lofoten, wintered with the islanders and sailed home with their dried cod — the account Italy still tells as the start of its baccalà. Nothing but wind does the work: the Lofoten winter is too cold to rot the fish and too mild to freeze it solid, and three months on the racks takes it down to about a fifth of its weight.",
@@ -1019,7 +1019,7 @@ fr:"Incisez la peau deux fois et faites-le mijoter à la nitsuke, moitié saké 
 pairs:["koikuchi-shoyu","hon-mirin","ginger","junmai-sake","negi","silken-tofu"],
 svg:'<path class="f3 sf" d="M28 52q8-16 24-14t20 14q-8 16-24 16T28 52z"/><path class="s" d="M36 38l4-8 4 8 4-8 4 8 4-8 4 8"/><path class="f2 sf" d="M72 52l10-9-2 9 2 9z"/><circle class="dot" cx="38" cy="50" r="2.2"/>'},
 
-{id:"fugu",cat:"seafood",rare:true,luxe:true,name:{en:"Tiger pufferfish (torafugu)",fr:"Fugu (poisson-globe)"},latin:"Takifugu rubripes",
+{id:"fugu",cat:"seafood",luxe:true,name:{en:"Tiger pufferfish (torafugu)",fr:"Fugu (poisson-globe)"},latin:"Takifugu rubripes",
 origin:{en:"Shimonoseki & the Inland Sea",fr:"Shimonoseki & mer intérieure de Seto"},season:[1,2,3,10,11,12],
 flavor:["delicate","mild","umami","marine"],
 story:{en:"The fish does not make tetrodotoxin itself — it accumulates it through its food, from bacteria, so farmed torafugu raised on controlled feed test clean, a point argued in Japan for decades without loosening a single rule. Handlers have needed a licence since Osaka issued the first ones in 1948, and the examination is still set prefecture by prefecture.",
@@ -1089,7 +1089,7 @@ fr:"Ouvrez-le en deux par le milieu, prélevez uniquement le jaune et jetez tout
 pairs:["lemon","olive-oil","black-pepper","sea-urchin","oyster","shallot","parsley","white-wine-vinegar"],
 svg:'<path class="f3 sf" d="M26 56q-4-18 10-24t28 2 8 22-14 14-24 2-8-16z"/><path class="f1 sf" d="M40 46q10-6 18 2 2 10-8 12t-12-8z"/><path class="s" d="M28 40q6 4 4 10M66 42q-6 4-4 10M44 72q8 4 14 0"/>'},
 
-{id:"weever",cat:"seafood",rare:true,name:{en:"Weever",fr:"Vive"},latin:"Trachinus draco",
+{id:"weever",cat:"seafood",name:{en:"Weever",fr:"Vive"},latin:"Trachinus draco",
 origin:{en:"Sandy Atlantic & Mediterranean shores",fr:"Fonds sableux, Atlantique & Méditerranée"},season:[6,7,8,9],
 flavor:["sweet","delicate","marine","mild"],
 story:{en:"It lies buried in sand with only its eyes and its black first dorsal showing, and the venom in those spines stays active for hours in a fish that is already dead — which is why the spines come off at the quay rather than in the kitchen. The venom is a protein and heat unfolds it: a stung foot goes into water as hot as the bather can bear, and stays there.",
@@ -1099,7 +1099,7 @@ fr:"Passez le doigt le long du dos avant de saisir le poisson, et coupez toute l
 pairs:["saffron","fennel","olive-oil","tomato","garlic","orange","potato"],
 svg:'<path class="f1 sf" d="M18 58q14-8 32-8t28 6q-12 10-30 10t-30-8z"/><path class="f3 sf" d="M30 50l2-16 12 14z"/><path class="s" d="M48 48l6-9 6 9"/><circle class="dot" cx="26" cy="55" r="2"/>'},
 
-{id:"whitefish-fera",cat:"seafood",rare:true,name:{en:"Whitefish (féra)",fr:"Féra (corégone)"},latin:"Coregonus lavaretus",
+{id:"whitefish-fera",cat:"seafood",name:{en:"Whitefish (féra)",fr:"Féra (corégone)"},latin:"Coregonus lavaretus",
 origin:{en:"Lake Geneva & Savoy lakes",fr:"Léman & lacs de Savoie"},season:[4,5,6,7,8,9,10],
 flavor:["delicate","mild","buttery","fresh"],
 story:{en:"The true féra of Lake Geneva, Coregonus fera, was last seen around 1920 and is gone, taken by overfishing and by the lake's own enrichment. Everything sold as féra on the Léman today descends from coregonids restocked out of Neuchâtel and Constance, so the name has outlived the fish it named.",

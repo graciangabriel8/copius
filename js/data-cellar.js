@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"absinthe",cat:"cellar",rare:true,name:{en:"Absinthe",fr:"Absinthe"},latin:"Artemisia absinthium",
+{id:"absinthe",cat:"cellar",name:{en:"Absinthe",fr:"Absinthe"},latin:"Artemisia absinthium",
 origin:{en:"Val-de-Travers, Switzerland & Pontarlier",fr:"Val-de-Travers, Suisse, et Pontarlier"},season:[],
 flavor:["bitter","anise","herbal","pungent"],
 story:{en:"France banned it in 1915 and the name did not return to a French label until 2011; wormwood took the blame, though the modern reading is that alcohol at seventy percent was doing most of the damage. The milky clouding when water hits it is anise oil coming out of solution, which is exactly what happens the moment it meets a hot pan.",
@@ -9,7 +9,7 @@ fr:"Une cuillère à café fait une dose entière dans une sauce de coquillages 
 pairs:["oyster","scallop","fennel","cream","lobster","mussel","butter","shallot"],
 svg:'<path class="f1 sf" d="M34 34h28l-4 26q-1 6-10 6t-10-6z"/><path class="f2" d="M39 52h18l-2 8q-1 4-7 4t-7-4z"/><path class="s" d="M48 66v12M38 80h20"/><path class="s" d="M28 30h40"/><path class="f3 sf" d="M42 22h12v8H42z"/>'},
 
-{id:"amontillado",cat:"cellar",rare:true,name:{en:"Amontillado",fr:"Amontillado"},latin:"Vitis vinifera 'Palomino'",
+{id:"amontillado",cat:"cellar",name:{en:"Amontillado",fr:"Amontillado"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["nutty","woody","rich"],
 story:{en:"The name means in the manner of Montilla, the neighbouring region whose wines aged without a flor veil. An amontillado begins as a fino, then the veil is killed — by a further dose of spirit, or simply by starving it — and the wine spends years exposed to air, so it carries the yeast notes of its first life and hazelnut oxidation from its second.",
@@ -29,7 +29,7 @@ fr:"Ces composés lourds tiennent la chaleur là où le cognac disparaît : une 
 pairs:["prune","foie-gras","duck","magret","walnut","dark-chocolate","pork","pear"],
 svg:'<path class="f2 sf" d="M22 48q0-16 15-16t15 16v18q0 8-8 8H30q-8 0-8-8z"/><path class="s" d="M22 62h30M37 32V22"/><path class="s" d="M37 22h22q9 0 9 11v13"/><path class="f1 sf" d="M60 46h16v10q0 10-8 10t-8-10z"/>'},
 
-{id:"banyuls-wine",cat:"cellar",rare:true,name:{en:"Banyuls",fr:"Banyuls"},latin:"Vitis vinifera 'Grenache noir'",
+{id:"banyuls-wine",cat:"cellar",name:{en:"Banyuls",fr:"Banyuls"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Banyuls, Roussillon",fr:"Banyuls, Roussillon"},season:[],
 flavor:["sweet","nutty","rich"],
 story:{en:"Mutage — killing the ferment with spirit while the sugar is still the grape's own — is credited to Arnaud de Villeneuve, physician at Montpellier around 1285, and it underlies every vin doux naturel. At Banyuls the wine then spends years in glass bonbonnes left out in the sun and in old foudres, deliberately oxidising into the walnut-and-cocoa note the trade calls rancio.",
@@ -129,7 +129,7 @@ fr:"Traitez-le comme un produit vivant, pas comme un vin muté : bouteille ouver
 pairs:["jamon-serrano","almond","olive-gordal","anchovy","manchego","shrimp"],
 svg:'<path class="f1 sf" d="M36 24h24q0 24-12 30-12-6-12-30z"/><path class="s" d="M48 54v16M38 72h20"/><path class="s" d="M37 32h22"/><circle class="dot" cx="42" cy="29" r="1.8"/><circle class="dot" cx="48" cy="28" r="1.8"/><circle class="dot" cx="54" cy="29" r="1.8"/>'},
 
-{id:"floc-de-gascogne",cat:"cellar",rare:true,name:{en:"Floc de Gascogne",fr:"Floc de Gascogne"},latin:"Vitis vinifera",
+{id:"floc-de-gascogne",cat:"cellar",name:{en:"Floc de Gascogne",fr:"Floc de Gascogne"},latin:"Vitis vinifera",
 origin:{en:"Gascony, Gers",fr:"Gascogne, Gers"},season:[],
 flavor:["sweet","fruity","warm"],
 story:{en:"Lo floc is Gascon for a bouquet of flowers, and the appellation, recognised in 1990, is the region's own mistelle: fresh must muted with Armagnac from the same estate. Armagnac is distilled once, at low strength, and keeps more of the grape than Cognac does — which is why Floc arrives with prune and rancio weight where Pineau stays bright.",
@@ -139,7 +139,7 @@ fr:"Déglacez un magret avec, en y jetant deux pruneaux qui gonfleront dans la r
 pairs:["duck","prune","foie-gras","armagnac","walnut","cantaloupe"],
 svg:'<path class="f2 sf" d="M36 22h12v10q10 6 10 16v28a5 5 0 0 1-5 5H31a5 5 0 0 1-5-5V48q0-10 10-16z"/><path class="f3 sf" d="M36 19h12v6H36z"/><circle class="f1 sf" cx="70" cy="40" r="5"/><circle class="f1 sf" cx="70" cy="52" r="5"/><circle class="f1 sf" cx="76" cy="46" r="5"/><circle class="dot" cx="70" cy="46" r="2.5"/>'},
 
-{id:"grape-must",cat:"cellar",rare:true,name:{en:"Grape must",fr:"Moût de raisin"},latin:"Vitis vinifera",
+{id:"grape-must",cat:"cellar",name:{en:"Grape must",fr:"Moût de raisin"},latin:"Vitis vinifera",
 origin:{en:"Wine regions, at harvest",fr:"Vignobles, à la vendange"},season:[9,10],
 flavor:["sweet","fruity","tangy"],
 story:{en:"The word mostarda comes from mustum ardens, burning must - grape must cooked down with ground mustard, long before it came to mean candied fruit in syrup. Must is only itself for a few days, since the wild yeast on the skins starts fermenting it in the vat, so everything made from it is made at harvest or not at all.",
@@ -189,7 +189,7 @@ fr:"Une cuillerée dans une sauce à la crème, hors du feu, apporte une note é
 pairs:["comte","walnut","cream","morel","pear","chestnut"],
 svg:'<path class="f2 sf" d="M26 56a18 18 0 0 1 36 0v14a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6z"/><path class="f1 sf" d="M36 42h16v10H36z"/><path class="s" d="M52 44q14 0 16 12t0 18"/><circle class="dot" cx="68" cy="80" r="2"/>'},
 
-{id:"madeira-malmsey",cat:"cellar",rare:true,luxe:true,name:{en:"Malmsey Madeira",fr:"Madère Malvoisie"},latin:"Vitis vinifera 'Malvasia'",
+{id:"madeira-malmsey",cat:"cellar",luxe:true,name:{en:"Malmsey Madeira",fr:"Madère Malvoisie"},latin:"Vitis vinifera 'Malvasia'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
 flavor:["sweet","rich","nutty","warm"],
 story:{en:"Malmsey is an English mangling of Monemvasia, the Peloponnesian port that shipped Malvasia wine across medieval Europe long before the vine reached Madeira. Chroniclers record that the Duke of Clarence, condemned in 1478, was allowed to choose his death and asked to be drowned in a butt of it — a story repeated for five centuries with no way left to check it.",
@@ -209,7 +209,7 @@ fr:"Faites-y cuire gambas ou palourdes plutôt qu’au vin blanc : un trait au m
 pairs:["clam","common-prawn","olive-gordal","anchovy","boquerones","lemon"],
 svg:'<path class="f1 sf" d="M30 50h36l-4 26H34z"/><path class="s" d="M27 50h42"/><path class="f2 sf" d="M42 18h12v10l4 8v14H38V36z"/><path class="s" d="M34 60q6-7 12 0M50 60q6-7 12 0"/>'},
 
-{id:"maraschino",cat:"cellar",rare:true,name:{en:"Maraschino liqueur",fr:"Marasquin"},latin:"Prunus cerasus var. marasca",
+{id:"maraschino",cat:"cellar",name:{en:"Maraschino liqueur",fr:"Marasquin"},latin:"Prunus cerasus var. marasca",
 origin:{en:"Zadar, Dalmatia; now the Veneto",fr:"Zadar, Dalmatie ; aujourd’hui la Vénétie"},season:[],
 flavor:["fruity","bitter","nutty","sweet"],
 story:{en:"The Marasca is a small sour cherry of the Dalmatian coast, and the distillation takes the whole fruit - stems, leaves and stones together - which is where the nutty bitterness comes from. Luxardo, founded at Zadar in 1821, ages it in ash rather than oak precisely so that it stays colourless, then sweetens it; the straw jacket on the bottle is its old shipping armour.",
@@ -219,7 +219,7 @@ fr:"C’est une liqueur sèche, qui ne sucrera pas un sirop à elle seule : dans
 pairs:["cherry","griotte","amarena","cream","vanilla","dark-chocolate","peach","pistachio"],
 svg:'<path class="f2 sf" d="M44 14h8v14q16 8 16 26t-20 22-20-22 16-26z"/><path class="f1 sf" d="M30 52q4-8 18-8t18 8q2 22-18 24T30 52z"/><path class="s" d="M32 52l32 14M64 52l-32 14M48 44v32"/>'},
 
-{id:"marc-de-bourgogne",cat:"cellar",rare:true,name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
+{id:"marc-de-bourgogne",cat:"cellar",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
 origin:{en:"Burgundy",fr:"Bourgogne"},season:[],
 flavor:["earthy","woody","warm","pungent"],
 story:{en:"It is made from what the press leaves behind - skins, pips and stalks, wetted down and fermented a second time - which is why it was the grower's own drink rather than the merchant's. Epoisses and Ami du Chambertin are washed with it through their ripening, so a good part of what you smell in the cheese is the spirit.",
@@ -259,7 +259,7 @@ fr:"Le grenat est un vin réduit : contrairement aux mutés oxydatifs, il s’ab
 pairs:["venison","cherry","black-pepper","blackcurrant","duck","juniper"],
 svg:'<path class="s" d="M48 26v10"/><circle class="f3 sf" cx="40" cy="42" r="7"/><circle class="f3 sf" cx="56" cy="42" r="7"/><circle class="f2 sf" cx="48" cy="54" r="7"/><circle class="f2 sf" cx="33" cy="55" r="7"/><circle class="f2 sf" cx="63" cy="55" r="7"/>'},
 
-{id:"eau-de-vie-mirabelle",cat:"cellar",rare:true,name:{en:"Mirabelle eau-de-vie",fr:"Eau-de-vie de mirabelle"},latin:"Prunus domestica subsp. syriaca",
+{id:"eau-de-vie-mirabelle",cat:"cellar",name:{en:"Mirabelle eau-de-vie",fr:"Eau-de-vie de mirabelle"},latin:"Prunus domestica subsp. syriaca",
 origin:{en:"Lorraine",fr:"Lorraine"},season:[],
 flavor:["fruity","honeyed","nutty","warm"],
 story:{en:"Lorraine grows the great majority of the world's mirabelles, in a season of barely six weeks in August, and the fruit bruises too easily to travel far - distilling was how the surplus was kept. The eau-de-vie is clear and unsweetened, so the honeyed note in the glass belongs to the plum and not to any sugar.",
@@ -279,7 +279,7 @@ fr:"Ne le faites jamais bouillir : ses terpènes sont volatils et la première m
 pairs:["cantaloupe","peach","apricot","lychee","raspberry","egg"],
 svg:'<path class="f1 sf" d="M44 24h8v13q13 8 13 22a17 17 0 0 1-34 0q0-14 13-22z"/><path class="s" d="M32 56q16 9 32 0"/><path class="s" d="M70 33v9"/><circle class="f2 sf" cx="70" cy="29" r="4"/><circle class="f1 sf" cx="64" cy="23" r="4"/><circle class="f1 sf" cx="75" cy="23" r="4"/>'},
 
-{id:"oloroso",cat:"cellar",rare:true,name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
+{id:"oloroso",cat:"cellar",name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["nutty","rich","woody"],
 story:{en:"Oloroso is fortified to seventeen degrees or more at the outset, above what the flor yeast can survive, so it never grows a veil and oxidises from its first year in cask. Oloroso means fragrant, and the confusion follows from there: it smells of raisin and walnut and is, in the classic style, bone dry — the sweet supermarket bottle is oloroso with syrup added afterwards.",
@@ -309,7 +309,7 @@ fr:"Réduisez-le avant d’ajouter le moindre liquide : le sucre du pastis attac
 pairs:["fennel","saffron","tomato","mussel","monkfish","garlic","red-mullet","orange"],
 svg:'<path class="f1 sf" d="M36 26h24l-3 46q-1 6-9 6t-9-6z"/><path class="f2" d="M36 46h24l-3 26q-1 6-9 6t-9-6z"/><path class="s" d="M35 44h26"/><path class="f3 sf" d="M48 6l4 7 8-1-4 7 4 7-8-1-4 7-4-7-8 1 4-7-4-7 8 1z"/>'},
 
-{id:"pedro-ximenez",cat:"cellar",rare:true,name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
+{id:"pedro-ximenez",cat:"cellar",name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
 origin:{en:"Montilla-Moriles, Andalusia",fr:"Montilla-Moriles, Andalousie"},season:[],
 flavor:["sweet","rich","fruity","toasty"],
 story:{en:"The grapes are laid out on esparto mats in the September sun for a week or more — the soleo — until they are raisins, and the press yields a must so sugary that yeast can barely work on it. What is bottled carries around 400 grams of sugar a litre, black as treacle, tasting of raisin, fig and liquorice.",
@@ -359,7 +359,7 @@ fr:"Il réduit sans devenir agressif : déglacez le gibier ou le canard au verju
 pairs:["duck","venison","pigeon","redcurrant","foie-gras","beetroot","shallot","cherry"],
 svg:'<path class="f2 sf" d="M48 28q10 0 12 8t-2 14q-2 12-10 20-8-8-10-20t-2-14 12-8z"/><path class="s" d="M36 42h24M40 56h16M48 28v42"/><path class="f1 sf" d="M48 26q10-12 20-6-6 12-20 6z"/><path class="s" d="M48 26v-8"/>'},
 
-{id:"rhum-agricole",cat:"cellar",rare:true,name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
+{id:"rhum-agricole",cat:"cellar",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
 origin:{en:"Martinique & Guadeloupe",fr:"Martinique et Guadeloupe"},season:[],
 flavor:["grassy","fruity","warm","briny"],
 story:{en:"Cane juice begins fermenting on its own within hours of pressing, so an agricole distillery runs only during the harvest and stands idle the rest of the year - molasses, by contrast, keeps indefinitely, which is why most of the world's rum is made from it. Martinique's rhum has held an appellation of origin since 1996, the only one of its kind for a rum.",
@@ -389,7 +389,7 @@ fr:"Réduisez-le des deux tiers à part, avant de le joindre au fond : ajouté t
 pairs:["venison","fig","blue-cheese","black-pepper","cherry","orange"],
 svg:'<path class="f3 sf" d="M32 26h22v12q0 12-11 15-11-3-11-15z"/><path class="s" d="M43 53v14M35 69h16"/><path class="f2 sf" d="M68 34q8 6 8 16t-8 12q-8-2-8-12t8-16z"/><path class="s" d="M68 34v-6M60 52h16"/>'},
 
-{id:"madeira-sercial",cat:"cellar",rare:true,name:{en:"Sercial Madeira",fr:"Madère Sercial"},latin:"Vitis vinifera 'Esgana Cão'",
+{id:"madeira-sercial",cat:"cellar",name:{en:"Sercial Madeira",fr:"Madère Sercial"},latin:"Vitis vinifera 'Esgana Cão'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
 flavor:["sour","briny","nutty"],
 story:{en:"Casks shipped to the Indies as ballast came back better than they left, so Madeira's growers reproduced the tropical crossing on land: estufagem, months of gentle heat that cook the wine and leave it nearly indestructible. Sercial is the driest of the noble grapes, known on the island as Esgana Cão, dog-strangler, for an acidity that scrapes the mouth clean.",
@@ -419,7 +419,7 @@ fr:"Versez-le en début de braisage et laissez-le réduire avec le fond ; ajout�
 pairs:["beef-cheek","orange","juniper","bay-leaf","dark-chocolate","shallot"],
 svg:'<path class="f2 sf" d="M27 33h42a21 19 0 0 1-42 0z"/><path class="s" d="M48 52v16"/><path class="s" d="M36 70q12 4 24 0"/><path class="s" d="M60 26a7 7 0 1 0 4 9"/>'},
 
-{id:"tawny-port",cat:"cellar",rare:true,luxe:true,name:{en:"Tawny port",fr:"Porto tawny"},latin:"Vitis vinifera 'Touriga Nacional'",
+{id:"tawny-port",cat:"cellar",luxe:true,name:{en:"Tawny port",fr:"Porto tawny"},latin:"Vitis vinifera 'Touriga Nacional'",
 origin:{en:"Vila Nova de Gaia, Portugal",fr:"Vila Nova de Gaia, Portugal"},season:[],
 flavor:["sweet","nutty","rich","toasty"],
 story:{en:"The ten, twenty or forty years on a tawny label is the average age of the blend, not a vintage — the house holds parcels in small casks and marries young wine into old to keep the style constant. Decades of that slow oxidation drop the colour out and put walnut, caramel and dried apricot in its place.",
@@ -429,7 +429,7 @@ fr:"Déjà oxydé, il tient un mois ou plus au réfrigérateur une fois ouvert. 
 pairs:["foie-gras","walnut","mushroom","dried-apricot","blue-cheese","quasi-de-veau"],
 svg:'<path class="f1 sf" d="M40 34h16l9 33a6 6 0 0 1-6 8H37a6 6 0 0 1-6-8z"/><path class="f3 sf" d="M43 22h10v12H43z"/><circle class="f2 sf" cx="48" cy="18" r="6"/><circle class="f2 sf" cx="74" cy="36" r="9"/><path class="s" d="M74 27v18M66 33q8 6 16 0"/>'},
 
-{id:"umeshu",cat:"cellar",rare:true,name:{en:"Umeshu",fr:"Umeshu"},latin:"Prunus mume",
+{id:"umeshu",cat:"cellar",name:{en:"Umeshu",fr:"Umeshu"},latin:"Prunus mume",
 origin:{en:"Wakayama and across Japan",fr:"Wakayama et tout le Japon"},season:[],
 flavor:["sour","sweet","fruity","nutty"],
 story:{en:"Home brewing is illegal in Japan, but steeping fruit in a spirit of at least twenty percent is expressly allowed - which is why nearly every household made umeshu and almost none made beer. The almond note is the stone's doing: amygdalin in the kernels yields benzaldehyde as the fruit sits in the jar.",

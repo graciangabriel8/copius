@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"charbon-vegetal-actif",cat:"texture",rare:true,name:{en:"Activated charcoal",fr:"Charbon végétal activé"},latin:"Carbo activatus",
+{id:"charbon-vegetal-actif",cat:"texture",name:{en:"Activated charcoal",fr:"Charbon végétal activé"},latin:"Carbo activatus",
 origin:{en:"Charred coconut shell",fr:"Coques de coco carbonisées"},season:[],
 flavor:["mild","earthy"],
 story:{en:"The powder that blackens a bun is the same one an emergency room gives to adsorb a swallowed poison - it works by surface area, a single gram carrying hundreds of square metres of it. New York City ordered it off menus in 2018 and the FDA has never approved it as a food colour, while the EU lists it as E153.",
@@ -9,7 +9,7 @@ fr:"0,5 à 1 % du poids de farine donne un vrai noir ; au-delà la pâte vire au
 pairs:["flour-t65","rye-flour","butter","salt","sesame","squid-ink","parmesan","olive-oil"],
 svg:'<path class="f1 sf" d="M20 62h56q-6 12-28 12T20 62z"/><path class="f3 sf" d="M28 62q6-22 20-22t20 22z"/><path class="dot" d="M39 30l2-3 2 3-2 3zM56 26l2-3 2 3-2 3zM47 20l2-3 2 3-2 3z"/>'},
 
-{id:"bicarbonate-d-ammonium",cat:"texture",rare:true,name:{en:"Ammonium bicarbonate",fr:"Bicarbonate d’ammonium"},latin:"Ammonii hydrogenocarbonas",
+{id:"bicarbonate-d-ammonium",cat:"texture",name:{en:"Ammonium bicarbonate",fr:"Bicarbonate d’ammonium"},latin:"Ammonii hydrogenocarbonas",
 origin:{en:"Northern European bakeries",fr:"Boulangeries d’Europe du Nord"},season:[],
 flavor:["pungent","salty","bitter"],
 story:{en:"Bakers called it hartshorn because it was once distilled from shavings of deer antler, and German recipes still say Hirschhornsalz. It breaks down completely into ammonia, carbon dioxide and water, so alone among chemical leaveners it leaves no salt behind to taste.",
@@ -159,7 +159,7 @@ fr:"Incorporez-la dans un praliné ou un chocolat sous 30 °C et façonnez aussi
 pairs:["praline-paste","gianduja","dark-chocolate","milk-chocolate","white-chocolate","hazelnut","almond","butter"],
 svg:'<path class="f1 sf" d="M24 44q14-10 28-4-12 7-28 4z"/><path class="f2 sf" d="M44 32q16-6 26 4-16 3-26-4z"/><path class="f2 sf" d="M28 60q16-9 30 0-14 9-30 0z"/><path class="f1 sf" d="M52 68q14-6 21 3-15 4-21-3z"/><path class="s" d="M32 52h14M60 50h9"/>'},
 
-{id:"gelatine-de-poisson",cat:"texture",rare:true,name:{en:"Fish gelatine",fr:"Gélatine de poisson"},latin:"Piscine collagen hydrolysate",
+{id:"gelatine-de-poisson",cat:"texture",name:{en:"Fish gelatine",fr:"Gélatine de poisson"},latin:"Piscine collagen hydrolysate",
 origin:{en:"Fish skins, cold-water species",fr:"Peaux de poissons d’eaux froides"},season:[],
 flavor:["mild","marine"],
 story:{en:"Cold-water fish build a collagen that has to stay flexible at sea temperature, so it carries far less proline than a pig's, and the gelatine made from their skins melts and sets several degrees lower. It is also the oldest form of the ingredient under another name: isinglass, from sturgeon swim bladders, was fining beer and wine centuries before sheet gelatine existed.",
@@ -339,7 +339,7 @@ fr:"Fouettez 1 % dans un liquide froid, laissez refroidir quelques heures, puis 
 pairs:["lemon","raspberry","coffee","olive-oil","vanilla","sugar","matcha"],
 svg:'<path class="f1 sf" d="M28 68q0-24 20-24t20 24z"/><path class="s" d="M26 68h44"/><path class="s" d="M48 44V20"/><path class="s" d="M39 42q-5-12 9-18 14 6 9 18"/>'},
 
-{id:"nigari",cat:"texture",rare:true,name:{en:"Nigari",fr:"Nigari"},latin:"Magnesii chloridum",
+{id:"nigari",cat:"texture",name:{en:"Nigari",fr:"Nigari"},latin:"Magnesii chloridum",
 origin:{en:"Japanese salt pans",fr:"Marais salants japonais"},season:[],
 flavor:["bitter","briny","marine"],
 story:{en:"Nigari is what is left when seawater has given up its salt: a magnesium-heavy bittern whose name comes straight from nigai, bitter. Tofu makers were buying the salt trade's waste long before anyone had written down what magnesium chloride does to soy protein.",

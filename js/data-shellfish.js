@@ -19,7 +19,7 @@ fr:"Pressez la carapace derrière la pince : si elle plie, c’est une carapace 
 pairs:["butter","tarragon","cognac","cream","lemon","corn","chives","celery"],
 svg:'<path class="f2 sf" d="M48 32q8 4 8 14l-2 22q-6 6-12 0l-2-22q0-10 8-14z"/><path class="f1 sf" d="M42 68q6 8 12 0 6 6 2 12-8 4-16 0-4-6 2-12z"/><path class="f1 sf" d="M40 41q-12-4-16-13-8 5-4 13 5 8 13 6z"/><path class="f1 sf" d="M56 41q12-4 16-13 8 5 4 13-5 8-13 6z"/><path class="s" d="M44 32l-8-12M52 32l8-12"/>'},
 
-{id:"belon-flat-oyster",cat:"shellfish",rare:true,luxe:true,name:{en:"Belon flat oyster",fr:"Huître plate (belon)"},latin:"Ostrea edulis",
+{id:"belon-flat-oyster",cat:"shellfish",luxe:true,name:{en:"Belon flat oyster",fr:"Huître plate (belon)"},latin:"Ostrea edulis",
 origin:{en:"Brittany, the Belon estuary",fr:"Bretagne, estuaire du Belon"},season:[9,10,11,12,1,2,3,4],
 flavor:["briny","marine","nutty","bitter"],
 story:{en:"France was producing close to 30,000 tonnes of flat oysters a year at the end of the 1960s; then came the parasite Marteilia refringens, then Bonamia ostreae in 1979, and output fell below 2,000 tonnes, where it has stayed. What survives is a different species from the cupped oyster on the next tray, and it tastes like one — metallic, hazelnut, faintly bitter at the finish.",
@@ -119,7 +119,7 @@ fr:"Plus épaisse et plus charnue que le calamar, elle demande plus de temps. Qu
 pairs:["squid-ink","garlic","tomato","olive-oil","chili","parsley","arborio","white-wine-vinegar"],
 svg:'<ellipse class="f2 sf" cx="48" cy="46" rx="17" ry="20"/><path class="s" d="M38 64q-4 12-10 14M46 66q-2 12-2 16M52 66q2 12 2 16M58 64q4 12 10 14"/><circle class="dot" cx="42" cy="42" r="2"/><circle class="dot" cx="54" cy="42" r="2"/>'},
 
-{id:"dog-cockle",cat:"shellfish",rare:true,name:{en:"Dog cockle",fr:"Amande de mer"},latin:"Glycymeris glycymeris",
+{id:"dog-cockle",cat:"shellfish",name:{en:"Dog cockle",fr:"Amande de mer"},latin:"Glycymeris glycymeris",
 origin:{en:"Gravel beds of the Atlantic shelf",fr:"Fonds de graviers du plateau atlantique"},season:[1,2,3,4,9,10,11,12],
 flavor:["marine","nutty","briny"],
 story:{en:"The shell lays down one growth ring a year and never pauses, which is why researchers off western Scotland have aged dog cockles at close to two hundred years and built dated sea-temperature records out of them. The sclerochronologist reads the shell the cook throws away.",
@@ -219,7 +219,7 @@ fr:"Pour le sashimi, raffermissez-le quinze minutes au congélateur, puis tranch
 pairs:["yuzu","soy-sauce","butter","wasabi","kombu","sudachi","junmai-sake","chives"],
 svg:'<path class="f2 sf" d="M40 30h16l14 31q4 8-4 12H30q-8-4-4-12z"/><path class="s" d="M40 30l-9 4 9 3M56 30l9 4-9 3"/><path class="s" d="M48 34v38M42 34l-6 36M54 34l6 36M36 43l-4 27M60 43l4 27"/>'},
 
-{id:"awabi",cat:"shellfish",rare:true,luxe:true,name:{en:"Japanese abalone",fr:"Awabi (ormeau du Japon)"},latin:"Haliotis discus hannai",
+{id:"awabi",cat:"shellfish",luxe:true,name:{en:"Japanese abalone",fr:"Awabi (ormeau du Japon)"},latin:"Haliotis discus hannai",
 origin:{en:"Northern Japan, dived by ama",fr:"Nord du Japon, pêché par les ama"},season:[6,7,8,9],
 flavor:["marine","umami","briny","mild"],
 story:{en:"At Kuzaki in Mie prefecture, elders still slice abalone thin, stretch it and dry it into strips offered at the Ise Shrine three times a year. That dried strip is the origin of the noshi, the folded paper flash printed on Japanese gift envelopes ever since — a stretched abalone standing for good fortune drawn out and prolonged.",
@@ -279,7 +279,7 @@ fr:"Sous-cuisez plutôt que trop — la chair devient gomme passé son point. R�
 pairs:["butter","vanilla","tarragon","lemon","corn"],
 svg:'<path class="f2 sf" d="M44 36q4-4 8 0l2 20q3 10-6 14-9-4-6-14z"/><path class="f2 sf" d="M40 34q-8-6-6-14 8 0 10 10zM56 34q8-6 6-14-8 0-10 10z"/><path class="s" d="M42 48l-8 2M42 56l-8 4M54 48l8 2M54 56l8 4M46 72l-3 5M50 72l3 5"/>'},
 
-{id:"corail-de-homard",cat:"shellfish",rare:true,name:{en:"Lobster coral",fr:"Corail de homard"},latin:"Homarus gammarus (coral)",
+{id:"corail-de-homard",cat:"shellfish",name:{en:"Lobster coral",fr:"Corail de homard"},latin:"Homarus gammarus (coral)",
 origin:{en:"Brittany and the North Atlantic",fr:"Bretagne et Atlantique Nord"},season:[5,6,7,8,9],
 flavor:["rich","marine","briny","umami"],
 story:{en:"The coral is the hen lobster's unripe eggs, dark green while raw and scarlet only once heat unlocks the protein holding the pigment down — the same reaction that reddens the shell. Escoffier's beurre de corail works it raw into butter so that colour and thickening arrive together, at the last second.",
@@ -429,7 +429,7 @@ fr:"Salez-le, séchez-le à 70 °C jusqu’à ce qu’il casse, puis broyez-le :
 pairs:["scallop","butter","cream","leek","saffron","dry-vermouth","shallot"],
 svg:'<path class="f1 sf" d="M48 74q-20 0-24-16 4-18 24-18t24 18q-4 16-24 16z"/><path class="s" d="M36 44l4 28M48 40v34M60 44l-4 28"/><path class="f3 sf" d="M52 34q14 6 12 20-2 12-12 12-8 0-8-7 0-8 6-13 4-4 2-12z"/>'},
 
-{id:"sea-urchin",cat:"shellfish",rare:true,name:{en:"Sea urchin",fr:"Oursin"},latin:"Paracentrotus lividus",
+{id:"sea-urchin",cat:"shellfish",name:{en:"Sea urchin",fr:"Oursin"},latin:"Paracentrotus lividus",
 origin:{en:"Mediterranean & cold coasts",fr:"Méditerranée & côtes froides"},season:[1,2,3,10,11,12],
 flavor:["marine","sweet","rich","briny"],
 story:{en:"Inside the hostile shell wait five coral tongues tasting of iodine, hazelnut and returning tide — uni to Japan, corail to Provence, where winter villages hold oursinades, festivals of urchins eaten by the dozen on the quay. The sea’s most guarded custard.",
@@ -449,7 +449,7 @@ fr:"Elles cuisent le temps de regretter de s’être éloigné — deux minutes,
 pairs:["garlic","chili","lemon","coconut-milk","cilantro","saffron"],
 svg:'<path class="f2 sf" d="M60 36q10 8 4 20-6 12-20 14l-8 6 2-8-6-2 8-4q12-4 16-12 4-9-2-14z"/><path class="s" d="M52 46q-2 6-8 10M58 40q-1 7-6 12"/><path class="dot" d="M62 36a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"slipper-lobster",cat:"shellfish",rare:true,luxe:true,name:{en:"Slipper lobster",fr:"Cigale de mer"},latin:"Scyllarides latus",
+{id:"slipper-lobster",cat:"shellfish",luxe:true,name:{en:"Slipper lobster",fr:"Cigale de mer"},latin:"Scyllarides latus",
 origin:{en:"Mediterranean rock and Posidonia beds",fr:"Roches et herbiers de posidonie de Méditerranée"},season:[],
 flavor:["sweet","marine","delicate","briny"],
 story:{en:"It has no claws and no whip antennae — the front pair is flattened into two shovels it digs with — so the whole edible animal is one broad tail. Taking it has been forbidden in France since a decree of 26 November 1992, after diving pressure emptied the Gulf of Lion, and kitchens here buy it from Italian and Spanish landings instead.",
@@ -569,7 +569,7 @@ fr:"Ouvrez-la crue, lame courte à la charnière, et mangez-la telle quelle : sa
 pairs:["lemon","garlic","parsley","butter","shallot","espelette","olive-oil","white-wine-vinegar"],
 svg:'<path class="f2 sf" d="M48 28q20 4 22 22t-22 22-22-22 22-22z"/><path class="s" d="M30 48q18 8 36 0M32 58q16 8 32 0M34 38q14 6 28 0"/><circle class="dot" cx="48" cy="30" r="2"/>'},
 
-{id:"telline",cat:"shellfish",rare:true,name:{en:"Wedge clam",fr:"Telline"},latin:"Donax trunculus",
+{id:"telline",cat:"shellfish",name:{en:"Wedge clam",fr:"Telline"},latin:"Donax trunculus",
 origin:{en:"Camargue & Landes beaches",fr:"Plages de Camargue & des Landes"},season:[5,6,7,8,9],
 flavor:["briny","marine","sweet","delicate"],
 story:{en:"It lives in the swash zone and reburies itself with every wave, so it is taken by walking backwards through knee-deep surf dragging a wide-mouthed rake called a tellinier. Two centimetres is a normal one and a portion is counted in hundreds, which is why the Camargue limits a hand-gatherer to a kilo a day.",

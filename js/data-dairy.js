@@ -59,7 +59,7 @@ fr:"Passé cinq ans, la pâte devient cassante et cristalline : cessez de la tra
 pairs:["polenta-bramata","honey","walnut","butter","pear","rye","grappa","chestnut-honey"],
 svg:'<path class="f2 sf" d="M22 56v8q0 9 26 9t26-9v-8z"/><ellipse class="f1 sf" cx="48" cy="56" rx="26" ry="9"/><path class="f2 sf" d="M26 40v8q0 8 22 8t22-8v-8z"/><ellipse class="f1 sf" cx="48" cy="40" rx="22" ry="8"/>'},
 
-{id:"bleu-de-gex",cat:"dairy",rare:true,name:{en:"Bleu de Gex Haut-Jura",fr:"Bleu de Gex Haut-Jura"},latin:"Bleu de Gex Haut-Jura AOP",
+{id:"bleu-de-gex",cat:"dairy",name:{en:"Bleu de Gex Haut-Jura",fr:"Bleu de Gex Haut-Jura"},latin:"Bleu de Gex Haut-Jura AOP",
 origin:{en:"Haut-Jura, Ain and Jura",fr:"Haut-Jura, Ain et Jura"},season:[],
 flavor:["nutty","mild","bitter","milky"],
 story:{en:"Savoyard monks are said to have carried the recipe to the abbey of Saint-Claude in the fourteenth century, and the farms of the Haut-Jura have made it since. Each wheel still leaves the mould with the three letters of Gex standing in relief on one face — the cheese signs itself.",
@@ -89,7 +89,7 @@ fr:"Plus ferme et plus sec qu’un bleu d’Auvergne, il s’émiette au lieu de
 pairs:["walnut","walnut-oil","pear","celery","endive","honey","grape","rye"],
 svg:'<path class="f2 sf" d="M48 20 66 74H30z"/><path class="f1 sf" d="M48 20 58 25 74 70 66 74z"/><path class="s" d="M44 42v18M52 50v16M38 58v12"/>'},
 
-{id:"bleu-du-vercors-sassenage",cat:"dairy",rare:true,name:{en:"Bleu du Vercors-Sassenage",fr:"Bleu du Vercors-Sassenage"},latin:"Bleu du Vercors-Sassenage AOP",
+{id:"bleu-du-vercors-sassenage",cat:"dairy",name:{en:"Bleu du Vercors-Sassenage",fr:"Bleu du Vercors-Sassenage"},latin:"Bleu du Vercors-Sassenage AOP",
 origin:{en:"Vercors, Isère and Drôme",fr:"Vercors, Isère et Drôme"},season:[],
 flavor:["mild","milky","sweet","nutty"],
 story:{en:"On 28 June 1338 Baron Albert de Sassenage signed a charter letting the people of Villard-de-Lans sell their cheese to whoever they liked; until then it had been owed to him as a due. The cheese has carried his name for nearly seven hundred years; the barons have not lasted as well.",
@@ -149,7 +149,7 @@ fr:"À point, la pâte bombe mais tient encore. Un trait blanc crayeux au cœur 
 pairs:["butter","apple","walnut","flour-t65","grape","truffle","black-pepper","cider-vinegar"],
 svg:'<path class="f1 sf" d="M48 50 72 36a28 28 0 1 1-2 30z"/><path class="s" d="M66 40a21 21 0 1 1-1 22"/><path class="f2 sf" d="M62 48q9 3 10 10-9 4-13-3z"/>'},
 
-{id:"brie-de-melun",cat:"dairy",rare:true,name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
+{id:"brie-de-melun",cat:"dairy",name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
 origin:{en:"Melun, Seine-et-Marne",fr:"Melun, Seine-et-Marne"},season:[],
 flavor:["salty","earthy","pungent","umami"],
 story:{en:"Its curd is set by acidity over at least eighteen hours rather than by rennet in under one, the older method and the reason the paste stays dense and salty instead of flowing. Carried past six months it dries into brie noir, which farm workers in the Brie are said to have dunked in their morning coffee.",
@@ -159,7 +159,7 @@ fr:"N’attendez pas qu’il coule comme un meaux : il ne coulera pas. Achetez-l
 pairs:["walnut","apple","flour-t65","butter","grape","coffee","cider-vinegar","celery"],
 svg:'<path class="f1 sf" d="M24 46h48q4 0 4 8t-4 8H24q-4 0-4-8t4-8z"/><path class="s" d="M32 52q16 6 32 0"/><path class="s" d="M20 70h56M24 75h48"/>'},
 
-{id:"brocciu",cat:"dairy",rare:true,luxe:true,name:{en:"Brocciu",fr:"Brocciu"},latin:"Brocciu Corse AOP",
+{id:"brocciu",cat:"dairy",luxe:true,name:{en:"Brocciu",fr:"Brocciu"},latin:"Brocciu Corse AOP",
 origin:{en:"Corsica",fr:"Corse"},season:[11,12,1,2,3,4,5,6],
 flavor:["milky","sweet","creamy","delicate"],
 story:{en:"It is made from the whey left over from Corsica's ewe and goat cheeses: fresh whole milk is stirred in and the pot brought to around 80 °C until the last proteins float up in flakes. It is the only French AOP built out of what other cheesemakers pour away, and it stops altogether when the ewes dry off in summer.",
@@ -459,7 +459,7 @@ fr:"Il arrive déjà à son maximum : servez-le comme un assaisonnement, en cope
 pairs:["honey","pear","walnut","fig","chestnut-honey","saba"],
 svg:'<path class="s" d="M14 34h68"/><path class="f3 sf" d="M28 34l5 40h30l5-40z"/><ellipse class="f1 sf" cx="48" cy="58" rx="11" ry="8"/><path class="s" d="M32 26h32v8H32z"/>'},
 
-{id:"fourme-de-montbrison",cat:"dairy",rare:true,name:{en:"Fourme de Montbrison",fr:"Fourme de Montbrison"},latin:"Fourme de Montbrison AOP",
+{id:"fourme-de-montbrison",cat:"dairy",name:{en:"Fourme de Montbrison",fr:"Fourme de Montbrison"},latin:"Fourme de Montbrison AOP",
 origin:{en:"Monts du Forez, Loire",fr:"Monts du Forez, Loire"},season:[],
 flavor:["fruity","nutty","mild","salty"],
 story:{en:"Until 2002 it shared an appellation with the Fourme d'Ambert, and the split came down to two gestures: the salt goes into the curd rather than onto the rind, and the young cheeses drain lying in spruce gutters. The wood gives the dry orange crust, the salted curd a paste that is drier, less blue and distinctly fruitier.",
@@ -489,7 +489,7 @@ fr:"Fouettez-le à la fourchette avant de servir, il s’allège complètement. 
 pairs:["honey","strawberry","chives","shallot","raspberry","cream","black-pepper","dill"],
 svg:'<path class="f3 sf" d="M34 66V46h28v20z"/><path class="s" d="M34 46q14-6 28 0"/><circle class="dot" cx="42" cy="56" r="1.4"/><circle class="dot" cx="54" cy="58" r="1.4"/>'},
 
-{id:"gaperon",cat:"dairy",rare:true,name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
+{id:"gaperon",cat:"dairy",name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
 origin:{en:"Limagne, Auvergne",fr:"Limagne, Auvergne"},season:[],
 flavor:["pungent","peppery","milky","salty"],
 story:{en:"The name comes from gape, the Auvergnat word for the buttermilk left in the churn, which is what the cheese was originally made from. Farms hung the domes from the kitchen beam to dry, and the story goes that a suitor's family counted the ones hanging there to judge the size of the dowry.",
@@ -689,7 +689,7 @@ fr:"Ne le faites jamais bouillir, il tranche aussitôt. Fouettez-le hors du feu 
 pairs:["cucumber","dill","mint","beetroot","buckwheat-flour","honey","strawberry","garlic"],
 svg:'<path class="f1 sf" d="M34 30h28l-4 44H38z"/><path class="s" d="M34 40q14 4 28 0"/><circle class="f2 sf" cx="43" cy="52" r="4"/><circle class="f2 sf" cx="54" cy="60" r="4"/><circle class="dot" cx="48" cy="46" r="1.6"/><circle class="dot" cx="55" cy="48" r="1.6"/>'},
 
-{id:"mont-dor",cat:"dairy",rare:true,luxe:true,name:{en:"Mont d’Or",fr:"Mont d’Or (vacherin du Haut-Doubs)"},latin:"Vacherin du Haut-Doubs AOP",
+{id:"mont-dor",cat:"dairy",luxe:true,name:{en:"Mont d’Or",fr:"Mont d’Or (vacherin du Haut-Doubs)"},latin:"Vacherin du Haut-Doubs AOP",
 origin:{en:"Haut-Doubs, Franche-Comté",fr:"Haut-Doubs, Franche-Comté"},season:[1,2,3,4,5,9,10,11,12],
 flavor:["creamy","woody","resinous","rich"],
 story:{en:"It may be made only between 15 August and 15 March and sold only from 10 September to 10 May, which gives it something almost no other cheese has: a legally closed season. The spruce belt is not decoration — the bark holds up a paste that cannot hold itself, and it is where the resin note comes from.",
@@ -819,7 +819,7 @@ fr:"Choisissez selon l'âge : le mezzano, six mois, se tranche pour un plateau ;
 pairs:["honey","pear","walnut","apple","prosciutto","polenta-bramata","grape","hazelnut"],
 svg:'<circle class="f1 sf" cx="48" cy="50" r="26"/><circle class="s" cx="48" cy="50" r="19"/><path class="s" d="M48 24v5M60 27l-2 5M70 34l-4 3M75 47l-5 1M75 53l-5-1M70 66l-4-3M60 73l-2-5M48 76v-5M36 73l2-5M26 66l4-3M21 53l5-1M21 47l5 1M26 34l4 3M36 27l2 5"/>'},
 
-{id:"picodon",cat:"dairy",rare:true,name:{en:"Picodon",fr:"Picodon"},latin:"Picodon AOP",
+{id:"picodon",cat:"dairy",name:{en:"Picodon",fr:"Picodon"},latin:"Picodon AOP",
 origin:{en:"Drôme & Ardèche, France",fr:"Drôme et Ardèche, France"},season:[3,4,5,6,7,8,9,10],
 flavor:["tangy","peppery","pungent","nutty"],
 story:{en:"The name is usually traced to the Occitan for stinging, so it describes the taste rather than the shape. Ripened the Dieulefit way, the discs are aged, washed in clear water to strip the surface mould, then aged again — a method that drives the flavour up instead of letting the cheese go creamy.",
@@ -839,7 +839,7 @@ fr:"Jugez-le en pressant le centre, pas le bord : il doit céder comme une prune
 pairs:["apple","cider-vinegar","calvados","walnut","pear","potato","butter","rye"],
 svg:'<path class="f2 sf" d="M24 26h48v48H24z"/><path class="s" d="M32 34h32M32 42h32M32 50h32M32 58h32M32 66h32"/>'},
 
-{id:"pouligny-saint-pierre",cat:"dairy",rare:true,name:{en:"Pouligny-Saint-Pierre",fr:"Pouligny-Saint-Pierre"},latin:"Pouligny-Saint-Pierre AOP",
+{id:"pouligny-saint-pierre",cat:"dairy",name:{en:"Pouligny-Saint-Pierre",fr:"Pouligny-Saint-Pierre"},latin:"Pouligny-Saint-Pierre AOP",
 origin:{en:"Brenne, Berry",fr:"La Brenne, Berry"},season:[3,4,5,6,7,8,9,10],
 flavor:["tangy","herbal","earthy","pungent"],
 story:{en:"In 1972 it became the first goat cheese in France to be granted an appellation, over one of the smallest protected zones in the country, a corner of the Brenne marshes. Locals call it the Eiffel Tower; the pyramid is said to copy the pointed bell tower of Pouligny's church.",
@@ -869,7 +869,7 @@ fr:"L'odeur est dans la croûte, pas dans la pâte : ôtez-la et le fromage est 
 pairs:["polenta-bramata","potato","butter","speck-alto-adige","onion","rye","cumin","apple"],
 svg:'<path class="f3 sf" d="M22 38q26-8 52 0v20q-26 8-52 0z"/><path class="s" d="M22 45q26 8 52 0"/><circle class="dot" cx="34" cy="70" r="2"/><circle class="dot" cx="48" cy="74" r="2.5"/><circle class="dot" cx="62" cy="70" r="2"/>'},
 
-{id:"pelardon",cat:"dairy",rare:true,name:{en:"Pélardon",fr:"Pélardon"},latin:"Pélardon AOP",
+{id:"pelardon",cat:"dairy",name:{en:"Pélardon",fr:"Pélardon"},latin:"Pélardon AOP",
 origin:{en:"Cévennes, Languedoc",fr:"Cévennes, Languedoc"},season:[3,4,5,6,7,8,9,10],
 flavor:["floral","herbal","tangy","milky"],
 story:{en:"Abbé Boissier de Sauvages defined a small flat Cévennes cheese called péraldou in 1756; the word drifted through péraldon and pélardou before settling late in the nineteenth century. It is usually traced to pèbre, Occitan for pepper — which fits the Picodon over the next valley better than it fits Pélardon, which stays supple and smells of the garrigue.",
@@ -1079,7 +1079,7 @@ fr:"L'orange vient du rocou, un colorant de graine sans goût : jugez plutôt la
 pairs:["pear","walnut","celery","pickled-walnut","honey","fig","apple","ruby-port"],
 svg:'<path class="f2 sf" d="M48 50V24a26 26 0 1 1-18 45z"/><path class="s" d="M48 32a18 18 0 0 1 11 33"/><path class="s" d="M40 40q4 7 0 13M52 48q-3 6-1 12M42 62q6-2 9 4"/>'},
 
-{id:"smoked-butter",cat:"dairy",rare:true,name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
+{id:"smoked-butter",cat:"dairy",name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
 origin:{en:"Northern European smokehouses",fr:"Fumoirs d’Europe du Nord"},season:[],
 flavor:["smoky","buttery","creamy"],
 story:{en:"The smoke has to be cold, under about 30 °C, or the butter simply melts and separates in the chamber, so producers either smoke the cream before churning or hold finished blocks over smouldering wood at low temperature. Smoking the cream gives the rounder result, because the fat takes up the phenols evenly, while a smoked block carries most of its flavour in the outer few millimetres.",
@@ -1159,7 +1159,7 @@ fr:"Elle ne monte pas — la matière grasse est déjà prise. Pour une chantill
 pairs:["potato","mushroom","shallot","nutmeg","black-pepper","leek","egg","butter"],
 svg:'<path class="f3 sf" d="M32 66V46q16-8 32 0v20z"/><path class="s" d="M32 46q16 8 32 0"/>'},
 
-{id:"tome-des-bauges",cat:"dairy",rare:true,name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
+{id:"tome-des-bauges",cat:"dairy",name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
 origin:{en:"Massif des Bauges, Savoie",fr:"Massif des Bauges, Savoie"},season:[9,10,11,12,1],
 flavor:["earthy","nutty","milky","woody"],
 story:{en:"It is spelled tome, with one m: the Bauges kept the older local spelling when the appellation was drawn up in 2002, and that single letter is the quickest way to tell it from Tomme de Savoie on a label. The grey felt on the rind is grown on purpose — the wheels are turned and brushed in the cellar for months, but they are never scrubbed clean.",

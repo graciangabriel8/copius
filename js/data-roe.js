@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"caviar-beluga",cat:"roe",rare:true,luxe:true,name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
+{id:"caviar-beluga",cat:"roe",luxe:true,name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
 origin:{en:"Caspian basin, now farmed",fr:"Bassin caspien, aujourd'hui d'élevage"},season:[],
 flavor:["creamy","marine","delicate","mild"],
 story:{en:"A beluga sturgeon can take twenty years to spawn for the first time, which is why its roe has sat on CITES Appendix II since 1998 and has been barred from the United States since 2005. What reaches a French table now comes from farms in Italy, China or the Gulf, and arrives under a numbered CITES label rather than a fisherman's name.",
@@ -9,7 +9,7 @@ fr:"Gardez la boîte entre 0 et 4 °C et ne l'ouvrez qu'à table. Jamais de cuil
 pairs:["creme-fraiche","beurre-de-baratte","egg","potato","chives","lemon"],
 svg:'<circle class="f2 sf" cx="48" cy="50" r="27"/><circle class="f3" cx="48" cy="50" r="21"/><circle class="f1 sf" cx="40" cy="44" r="5"/><circle class="f1 sf" cx="52" cy="47" r="5"/><circle class="f1 sf" cx="44" cy="57" r="5"/><circle class="f1 sf" cx="56" cy="58" r="5"/>'},
 
-{id:"bottarga",cat:"roe",rare:true,name:{en:"Bottarga",fr:"Poutargue"},latin:"Mugil cephalus (roe)",
+{id:"bottarga",cat:"roe",name:{en:"Bottarga",fr:"Poutargue"},latin:"Mugil cephalus (roe)",
 origin:{en:"Sardinia & Provence",fr:"Sardaigne & Provence"},season:[],
 flavor:["briny","umami","salty","rich"],
 story:{en:"Mullet roe salted, pressed and air-dried into an amber ingot — a technique the Phoenicians carried across the Mediterranean three thousand years ago. Sardinia grates its “Mediterranean caviar” over pasta; Martigues, near Marseille, guards its own as le caviar provençal.",
@@ -109,7 +109,7 @@ fr:"Comme les grains éclatent, employez-le mélangé à une mayonnaise ou à un
 pairs:["rice","nori","cucumber","avocado","sesame","soy-sauce","spring-onion"],
 svg:'<path class="f1 sf" d="M22 58h52q-4 12-26 12T22 58z"/><path class="f2 sf" d="M28 58q6-14 20-14t20 14z"/><circle class="dot" cx="38" cy="52" r="1.6"/><circle class="dot" cx="48" cy="48" r="1.6"/><circle class="dot" cx="58" cy="53" r="1.6"/><circle class="dot" cx="78" cy="66" r="1.6"/>'},
 
-{id:"mentaiko",cat:"roe",rare:true,name:{en:"Mentaiko",fr:"Mentaiko (œufs de colin marinés)"},latin:"Gadus chalcogrammus (roe)",
+{id:"mentaiko",cat:"roe",name:{en:"Mentaiko",fr:"Mentaiko (œufs de colin marinés)"},latin:"Gadus chalcogrammus (roe)",
 origin:{en:"Fukuoka, Japan",fr:"Fukuoka, Japon"},season:[],
 flavor:["salty","umami","hot","marine"],
 story:{en:"Karashi mentaiko was worked out in Fukuoka in 1949 by Kawahara Toshio, who had grown up in Busan and spent years rebuilding the Korean myeongnan-jeot he remembered, with less salt and a chilli cure pitched at Japanese palates. Even the name is borrowed: mentai comes from myeongtae, the Korean word for pollock.",
@@ -219,7 +219,7 @@ fr:"Pelez la poche avant de mixer, sinon vous garderez du grain sous la dent : f
 pairs:["olive-oil","lemon","potato","garlic","red-onion","dill","cucumber"],
 svg:'<path class="f2 sf" d="M48 20q6 10 4 18 12 10 12 26 0 14-16 14t-16-14q0-16 12-26 2-8 4-18z"/><path class="s" d="M42 38q6 3 12 0"/><path class="s" d="M40 56q8 5 16 0M38 66q10 5 20 0"/>'},
 
-{id:"caviar-sterlet",cat:"roe",rare:true,name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
+{id:"caviar-sterlet",cat:"roe",name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
 origin:{en:"Volga & Danube",fr:"Volga et Danube"},season:[],
 flavor:["nutty","delicate","mild","creamy"],
 story:{en:"Before Russia reached the Caspian and its giant sturgeons, the caviar it sold to the courts of Europe through the eighteenth and nineteenth centuries came from the Volga sterlet — a fish rarely a metre long, called the tsar fish for the table it was kept for. It ripens in a handful of years where beluga needs twenty, which is why it is the sturgeon small European farms now stock.",
@@ -259,7 +259,7 @@ fr:"La salaison est légère et retient bien moins de sel que la rogue de saumon
 pairs:["egg","potato","creme-fraiche","chives","cucumber","butter","dill"],
 svg:'<circle class="f1 sf" cx="36" cy="42" r="11"/><circle class="f1 sf" cx="58" cy="40" r="10"/><circle class="f1 sf" cx="46" cy="62" r="12"/><circle class="f1 sf" cx="66" cy="60" r="9"/><circle class="dot" cx="34" cy="40" r="2.4"/><circle class="dot" cx="44" cy="60" r="2.4"/>'},
 
-{id:"poutargue-de-thon",cat:"roe",rare:true,name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
+{id:"poutargue-de-thon",cat:"roe",name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
 origin:{en:"Sicily & Sardinia",fr:"Sicile et Sardaigne"},season:[],
 flavor:["umami","salty","meaty","rich"],
 story:{en:"The trap fisheries of western Sicily took bluefin on their spawning run, and the roe of the trapped females was salted and pressed into slabs; the great tonnara of Favignana ran from 1859 until it closed in 1977. What comes out is darker, meatier and far louder than mullet bottarga — the same technique on a fish twenty times the size.",

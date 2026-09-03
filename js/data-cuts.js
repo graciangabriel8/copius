@@ -29,7 +29,7 @@ fr:"Faites-les tremper une heure à l’eau froide, puis retirez la fine membran
 pairs:["butter","lemon","parsley","capers","mushroom","madeira-sercial","egg","truffle"],
 svg:'<path class="f2 sf" d="M26 40q12-8 24 0t22 0v12q-10 8-22 0t-24 0z"/><path class="s" d="M26 46q12-8 24 0t22 0"/><circle class="f1 sf" cx="26" cy="46" r="6"/>'},
 
-{id:"beef-cheek",cat:"cuts",rare:true,name:{en:"Beef cheek",fr:"Joue de bœuf"},latin:"Bos taurus (masseter)",
+{id:"beef-cheek",cat:"cuts",name:{en:"Beef cheek",fr:"Joue de bœuf"},latin:"Bos taurus (masseter)",
 origin:{en:"The chewing muscle of the jaw",fr:"Le muscle masticateur de la mâchoire"},season:[],
 flavor:["meaty","rich","umami"],
 story:{en:"A muscle that worked every waking hour of the animal’s life, woven through with collagen as payment. Braised three hours it performs the great conversion: sinew into gloss, toughness into spoon-soft daube — the cut that taught cooks that time is an ingredient.",
@@ -79,7 +79,7 @@ fr:"Huit à dix secondes dans le bouillon bouillant, puis on sort. Passée une m
 pairs:["doubanjiang","sichuan-pepper","rayu","sesame-oil","garlic","gochugaru","spring-onion","cilantro"],
 svg:'<path class="f1 sf" d="M48 70q-18-8-22-32 18-2 22 10 4-12 22-10-4 24-22 32z"/><path class="s" d="M48 48v22"/><path class="s" d="M32 42q9 3 13 11M64 42q-9 3-13 11"/>'},
 
-{id:"bone-marrow",cat:"cuts",rare:true,name:{en:"Bone marrow",fr:"Os à moelle"},latin:"Bos taurus (medulla ossium)",
+{id:"bone-marrow",cat:"cuts",name:{en:"Bone marrow",fr:"Os à moelle"},latin:"Bos taurus (medulla ossium)",
 origin:{en:"The heart of the femur",fr:"Le cœur du fémur"},season:[],
 flavor:["rich","buttery","meaty","umami"],
 story:{en:"The pot-au-feu’s hidden dividend, spread on toast with coarse salt by whoever claims the bone. In 1990s London, Fergus Henderson made roast marrow with parsley salad the manifesto dish of nose-to-tail cooking — the humblest part of the animal, restated as a first course.",
@@ -89,7 +89,7 @@ fr:"Faites dégorger les os un jour dans l’eau salée, puis rôtissez-les face
 pairs:["parsley","capers","onion","black-pepper"],
 svg:'<path class="f1 sf" d="M38 34h20v36H38z" rx="6"/><path class="f1 sf" d="M34 30a5 5 0 108 2h12a5 5 0 108-2M34 74a5 5 0 018-2h12a5 5 0 018 2" fill="#e9e9e6"/><circle class="f2 sf" cx="48" cy="52" r="7"/>'},
 
-{id:"cervelle-de-veau",cat:"cuts",rare:true,name:{en:"Calf's brain",fr:"Cervelle de veau"},latin:"Bos taurus (cerebrum)",
+{id:"cervelle-de-veau",cat:"cuts",name:{en:"Calf's brain",fr:"Cervelle de veau"},latin:"Bos taurus (cerebrum)",
 origin:{en:"The calf's head, under twelve months",fr:"La tête de veau, moins de douze mois"},season:[],
 flavor:["creamy","delicate","milky","rich"],
 story:{en:"BSE rules redrew this cut: the brain of any bovine over twelve months is specified risk material in the EU, so every calf's brain legally sold comes from an animal younger than that. What the regulation left untouched is the oldest way of eating it — soaked pale, membranes lifted, poached, then browned in noisette butter until the outside sets and the middle stays custard.",
@@ -279,7 +279,7 @@ fr:"Même échaudé, il demande une bonne heure de cuisson avant toute autre cho
 pairs:["dijon-mustard","egg","parsley","shallot","white-wine-vinegar","cornichon","lemon","butter"],
 svg:'<path class="f1 sf" d="M24 34h48v30q-24 8-48 0z"/><path class="f2 sf" d="M60 34h12v14q-9-1-12-7z"/><path class="s" d="M30 46q18 6 36 0"/>'},
 
-{id:"onglet",cat:"cuts",rare:true,name:{en:"Hanger steak",fr:"Onglet"},latin:"Bos taurus (hanging tender)",
+{id:"onglet",cat:"cuts",name:{en:"Hanger steak",fr:"Onglet"},latin:"Bos taurus (hanging tender)",
 origin:{en:"Hangs from the diaphragm — one per animal",fr:"Suspendu au diaphragme — un seul par bête"},season:[],
 flavor:["meaty","rich","umami","earthy"],
 story:{en:"The French call it the butcher’s cut, because for generations the butcher quietly took it home — there is only one on each animal, and it never reached the display case. Loose-grained, iron-dark and twice the flavour of noble cuts, it is the bistro’s open secret, forever wedded to melted shallots.",
@@ -319,7 +319,7 @@ fr:"Grillez-les au bord de la braise en les tournant sans cesse : un feu vif cr�
 pairs:["salt","hon-mirin","koikuchi-shoyu","sansho","negi","yuzu-kosho"],
 svg:'<path class="s" d="M18 72L78 30"/><circle class="f2 sf" cx="62" cy="42" r="11"/><circle class="f2 sf" cx="44" cy="55" r="8"/><circle class="f2 sf" cx="31" cy="64" r="5"/><circle class="dot" cx="24" cy="69" r="2.5"/>'},
 
-{id:"cervelle-agneau",cat:"cuts",rare:true,name:{en:"Lamb brain",fr:"Cervelle d’agneau"},latin:"Ovis aries (cerebrum)",
+{id:"cervelle-agneau",cat:"cuts",name:{en:"Lamb brain",fr:"Cervelle d’agneau"},latin:"Ovis aries (cerebrum)",
 origin:{en:"Spain and the eastern Mediterranean",fr:"Espagne et Méditerranée orientale"},season:[],
 flavor:["creamy","delicate","mild"],
 story:{en:"A lamb's brain runs to about a fifth the weight of a calf's, so it is never sliced — it is crumbed and fried whole, one per person, which is how Spanish sesos and the Turkish and Lebanese versions have always served it. Lambs are slaughtered under a year, so the BSE age rule that reshaped the calf's-brain trade never touched this one.",
@@ -379,7 +379,7 @@ fr:"Cuisez-la plus longtemps que vous ne croyez. Il n’y a pas de rosé ici —
 pairs:["garlic","rosemary","thyme","anchovy","white-beans","lemon","onion","olive-oil"],
 svg:'<path class="f1 sf" d="M28 44q24-8 42 2v20q-22 10-42 2z"/><path class="s" d="M38 46q6 14 4 26"/>'},
 
-{id:"ris-agneau",cat:"cuts",rare:true,name:{en:"Lamb sweetbread",fr:"Ris d’agneau"},latin:"Ovis aries (thymus)",
+{id:"ris-agneau",cat:"cuts",name:{en:"Lamb sweetbread",fr:"Ris d’agneau"},latin:"Ovis aries (thymus)",
 origin:{en:"The thymus of the lamb",fr:"Le thymus de l’agneau"},season:[],
 flavor:["delicate","milky","mild","creamy"],
 story:{en:"A lamb's thymus weighs a few dozen grams where a calf's runs to several hundred, so it reaches the counter as a handful of walnut-sized nuggets rather than a lobe to be pared and portioned. It sells for a fraction of the veal price, and that is roughly how the two were divided: ris de veau went to restaurants, ris d'agneau stayed at home.",
@@ -459,7 +459,7 @@ fr:"Pelez la peau tant qu’elle est brûlante à la sortie du bouillon. Laissez
 pairs:["cornichon","capers","mustard","parsley","white-wine-vinegar","shallot","carrot","bay-leaf"],
 svg:'<path class="f1 sf" d="M30 62q0-24 18-24t18 22q-16 12-36 2z"/><path class="s" d="M48 40v22"/>'},
 
-{id:"oxtail",cat:"cuts",rare:true,name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
+{id:"oxtail",cat:"cuts",name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
 origin:{en:"The tail, ring by ring",fr:"La queue, anneau par anneau"},season:[],
 flavor:["rich","meaty","umami"],
 story:{en:"In Rome’s old slaughterhouse district of Testaccio, workers were paid partly in the quinto quarto — the “fifth quarter” of offal and tail — and from that wage they built coda alla vaccinara, the tail braise that now anchors trattoria menus. Poverty’s invention, gelatine’s triumph.",
@@ -499,7 +499,7 @@ fr:"Achetez-les fendus et par paire, et flambez les soies à la flamme avant qu�
 pairs:["dijon-mustard","flour-t55","shallot","white-wine-vinegar","carrot","onion","bay-leaf","black-pepper"],
 svg:'<path class="f1 sf" d="M40 22h16v30q0 6 6 10 7 5 4 13-4 9-18 9t-18-9q-3-8 4-13 6-4 6-10z"/><path class="s" d="M48 62v18"/><path class="s" d="M40 30h16"/>'},
 
-{id:"vessie-de-porc",cat:"cuts",rare:true,name:{en:"Pig’s bladder",fr:"Vessie de porc"},latin:"Sus scrofa domesticus (vesica)",
+{id:"vessie-de-porc",cat:"cuts",name:{en:"Pig’s bladder",fr:"Vessie de porc"},latin:"Sus scrofa domesticus (vesica)",
 origin:{en:"Lyon and the Bresse table",fr:"Lyon et la table bressane"},season:[],
 flavor:["mild","meaty","rich"],
 story:{en:"Bought at the tripe stall as equipment rather than as food: soaked, a bird slid inside with truffle and wine, then tied and poached until the bladder balloons taut. Lyon made the dish its own — the story goes that Mère Fillioux carved her poulardes at table for forty years with the same short knife.",
@@ -609,7 +609,7 @@ fr:"Grillez-le vite et fort — trente secondes par face sur la braise vive. Pas
 pairs:["sesame-oil","garlic","gochujang","salt","lemon","negi","shichimi-togarashi"],
 svg:'<path class="f1 sf" d="M44 74q-2-14-10-24-6-8-2-14 5-6 10 2 4 6 6 14 2-8 6-14 5-8 10-2 4 6-2 14-8 10-10 24z"/><path class="s" d="M40 44q4 8 6 16M56 44q-4 8-6 16"/><circle class="dot" cx="48" cy="79" r="2"/>'},
 
-{id:"sot-l-y-laisse",cat:"cuts",rare:true,name:{en:"Poultry oyster",fr:"Sot-l’y-laisse"},latin:"Gallus gallus domesticus",
+{id:"sot-l-y-laisse",cat:"cuts",name:{en:"Poultry oyster",fr:"Sot-l’y-laisse"},latin:"Gallus gallus domesticus",
 origin:{en:"France, taken off the whole bird",fr:"France, prélevé sur la carcasse"},season:[],
 flavor:["meaty","rich","delicate"],
 story:{en:"The name is an eighteenth-century joke that explains itself: only a fool would leave it there. It is the pair of muscles sitting in the hollow of the pelvic bone above the parson's nose, which English calls oysters for the shape — two to a bird, perhaps fifteen grams each.",
@@ -689,7 +689,7 @@ fr:"La fibre est grossière et court dans la longueur. Tranchez franchement en t
 pairs:["shallot","red-wine-vinegar","black-pepper","butter","garlic","thyme","mustard","parsley"],
 svg:'<path class="f1 sf" d="M22 48q26-8 52 0v14q-26 8-52 0z"/><path class="s" d="M22 52h52M22 58h52"/>'},
 
-{id:"araignee",cat:"cuts",rare:true,name:{en:"Spider steak",fr:"Araignée"},latin:"Bos taurus",
+{id:"araignee",cat:"cuts",name:{en:"Spider steak",fr:"Araignée"},latin:"Bos taurus",
 origin:{en:"The hip socket, French butchery",fr:"Cavité de la hanche, boucherie française"},season:[],
 flavor:["meaty","rich","umami"],
 story:{en:"It is one of the morceaux du boucher: roughly 500 g on a whole animal, prised out of the hollow of the hip socket, and long kept back rather than put on the counter. The web of fat running through it, which an industrial grader reads as a fault, is exactly what keeps it juicy.",
@@ -709,7 +709,7 @@ fr:"Retirez la membrane extérieure avant cuisson, sinon elle se recroqueville e
 pairs:["capers","red-wine-vinegar","caciocavallo-silano","ricotta","lemon","lard","onion","parsley"],
 svg:'<path class="f3 sf" d="M32 28q16-4 26 12 8 14 4 30-2 8-8 4-14-10-20-26-4-12-2-20z"/><path class="s" d="M38 38q8 12 14 28"/><path class="s" d="M34 32q10 3 16 13"/>'},
 
-{id:"sweetbreads",cat:"cuts",rare:true,luxe:true,name:{en:"Sweetbreads",fr:"Ris de veau"},latin:"Bos taurus (thymus)",
+{id:"sweetbreads",cat:"cuts",luxe:true,name:{en:"Sweetbreads",fr:"Ris de veau"},latin:"Bos taurus (thymus)",
 origin:{en:"The thymus of the calf — gone by adulthood",fr:"Le thymus du veau — disparu à l’âge adulte"},season:[],
 flavor:["delicate","creamy","rich","milky"],
 story:{en:"Not brains, as the nervous suppose, but the thymus gland — an organ that shrinks away as the animal grows, so only young calves can offer it. Haute cuisine’s badge of nerve and technique: soaked, blanched, pressed, then seared to a gilded crust over a custard heart.",

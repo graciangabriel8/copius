@@ -59,7 +59,7 @@ fr:"Rincez les baies séchées, laissez-les gonfler dix minutes, puis chauffez-l
 pairs:["rice","saffron","butter","chicken","pistachio","sugar","lamb","onion"],
 svg:'<path class="f1 sf" d="M20 50h56q-4 20-28 20T20 50z"/><ellipse class="f3 sf" cx="36" cy="46" rx="5" ry="3.5"/><ellipse class="f3 sf" cx="48" cy="43" rx="5" ry="3.5"/><ellipse class="f3 sf" cx="60" cy="46" rx="5" ry="3.5"/><path class="s" d="M28 57q20 8 40 0"/>'},
 
-{id:"bergamot",cat:"fruits",rare:true,name:{en:"Bergamot",fr:"Bergamote"},latin:"Citrus bergamia",
+{id:"bergamot",cat:"fruits",name:{en:"Bergamot",fr:"Bergamote"},latin:"Citrus bergamia",
 origin:{en:"Calabria, Italy",fr:"Calabre, Italie"},season:[1,2,11,12],
 flavor:["citrus","floral","bitter","fresh"],
 story:{en:"A narrow strip of Calabrian coast grows nearly all the world’s bergamot, a citrus too bitter to eat that conquered the planet by scent alone: it is the soul of eau de Cologne and the perfume in every cup of Earl Grey. Cooks are only now reclaiming it from the perfumers.",
@@ -309,7 +309,7 @@ fr:"Attendez-en l’allure plus que le goût — il est doux par nature. Le citr
 pairs:["lime","mint","passion-fruit","coconut-milk","honey","yogurt","mango","ginger"],
 svg:'<ellipse class="f1 sf" cx="48" cy="58" rx="16" ry="19"/><circle class="dot" cx="43" cy="52" r="1.5"/><circle class="dot" cx="52" cy="55" r="1.5"/><circle class="dot" cx="46" cy="63" r="1.5"/><path class="f3 sf" d="M36 44q-10-4-12-12 12 0 16 8zM60 44q10-4 12-12-12 0-16 8z"/>'},
 
-{id:"durian",cat:"fruits",rare:true,name:{en:"Durian",fr:"Durian"},latin:"Durio zibethinus",
+{id:"durian",cat:"fruits",name:{en:"Durian",fr:"Durian"},latin:"Durio zibethinus",
 origin:{en:"Borneo & Southeast Asia",fr:"Bornéo & Asie du Sud-Est"},season:[6,7,8],
 flavor:["rich","creamy","sweet","pungent"],
 story:{en:"The smell is sulphur chemistry: the genome published in 2017 showed the ripening fruit switching on a whole family of sulphur-handling genes, the same class of compounds behind onion and cooked cabbage. It has been barred from the Singapore metro since the network's early years, and hotels across the region still bill for the cleaning.",
@@ -349,7 +349,7 @@ fr:"Une figue ne mûrit jamais après la cueillette — achetez-la souple, affai
 pairs:["prosciutto","goat-cheese","honey","walnut","balsamic","blue-cheese"],
 svg:'<path class="f2 sf" d="M48 34q3 10 10 16 6 6 6 12a16 14 0 01-32 0q0-6 6-12 7-6 10-16z"/><path class="s" d="M48 34q0-6-4-9M48 44v24"/>'},
 
-{id:"finger-lime",cat:"fruits",rare:true,name:{en:"Finger lime",fr:"Citron caviar"},latin:"Citrus australasica",
+{id:"finger-lime",cat:"fruits",name:{en:"Finger lime",fr:"Citron caviar"},latin:"Citrus australasica",
 origin:{en:"Australian rainforest",fr:"Forêt pluviale australienne"},season:[9,10,11,12],
 flavor:["citrus","tangy","fresh","delicate"],
 story:{en:"Australia’s rainforest kept this secret for millennia: a finger-shaped citrus whose flesh falls apart into hundreds of pearls that pop on the tongue like sour caviar. Aboriginal peoples ate it long before bush-food chefs made it the most photographed garnish in fine dining.",
@@ -469,7 +469,7 @@ fr:"Mangez la pulpe et laissez la peau à table, mais gardez ces peaux pour la c
 pairs:["sugar","lime","vanilla","dark-chocolate","duck","pork","red-wine-vinegar","black-pepper"],
 svg:'<path class="f2 sf" d="M40 18h16v58H40z"/><path class="s" d="M46 22v50M52 24v46"/><circle class="f3 sf" cx="34" cy="34" r="7"/><circle class="f3 sf" cx="63" cy="46" r="8"/><circle class="f3 sf" cx="35" cy="60" r="6"/>'},
 
-{id:"jaque",cat:"fruits",rare:true,name:{en:"Jackfruit",fr:"Jaque"},latin:"Artocarpus heterophyllus",
+{id:"jaque",cat:"fruits",name:{en:"Jackfruit",fr:"Jaque"},latin:"Artocarpus heterophyllus",
 origin:{en:"Western Ghats, India",fr:"Ghâts occidentaux, Inde"},season:[3,4,5,6,7],
 flavor:["sweet","fruity","musky","mild"],
 story:{en:"The largest fruit borne on any tree — heavy specimens pass fifty kilos — it reaches the kitchen as two ingredients in one skin: ripe, the golden bulbs are perfumed and honeyed; unripe, the same flesh is neutral and pulls apart in fibres like poultry. Both the French jaque and the English jackfruit come from chakka, the Malayalam word the first Portuguese traders in Kerala wrote down.",
@@ -519,7 +519,7 @@ fr:"Sa protéase, l’actinidine, digère la gélatine comme les protéines du l
 pairs:["lime","mint","honey","banana","strawberry","ginger","coconut-flakes","yogurt"],
 svg:'<circle class="f2 sf" cx="48" cy="50" r="22"/><circle class="f1 sf" cx="48" cy="50" r="18"/><circle class="f3 sf" cx="48" cy="50" r="6"/><path class="s" d="M48 37v3M39 41l2 2M57 41l-2 2M35 50h3M61 50h-3M39 59l2-2M57 59l-2-2M48 63v-3"/>'},
 
-{id:"kiwai",cat:"fruits",rare:true,name:{en:"Kiwi berry",fr:"Kiwaï"},latin:"Actinidia arguta",
+{id:"kiwai",cat:"fruits",name:{en:"Kiwi berry",fr:"Kiwaï"},latin:"Actinidia arguta",
 origin:{en:"Northeast Asia",fr:"Asie du Nord-Est"},season:[9,10],
 flavor:["sweet","fruity","fresh"],
 story:{en:"The same genus as the kiwi, but the vine survives winters near −30 °C, which is why it fruits in Burgundy, Poland and Ontario where kiwi will not set. The skin is smooth and thin enough to eat, so it goes in whole like a grape — and there is nowhere to hide a bruise.",
@@ -559,7 +559,7 @@ fr:"Roulez-le fermement sur le plan de travail avant de presser, et zestez d’a
 pairs:["chili","coconut-milk","cilantro","fish-sauce","ginger","mint","avocado","shrimp"],
 svg:'<circle class="f2 sf" cx="48" cy="54" r="20"/><path class="s" d="M48 34v40M28 54h40M34 40l28 28M62 40L34 68"/>'},
 
-{id:"airelle-rouge",cat:"fruits",rare:true,name:{en:"Lingonberry",fr:"Airelle rouge"},latin:"Vaccinium vitis-idaea",
+{id:"airelle-rouge",cat:"fruits",name:{en:"Lingonberry",fr:"Airelle rouge"},latin:"Vaccinium vitis-idaea",
 origin:{en:"Nordic & alpine heaths",fr:"Landes nordiques et alpines"},season:[8,9,10],
 flavor:["sour","bitter","fruity","tangy"],
 story:{en:"The berry carries enough benzoic acid to preserve itself: rårörda lingon, the Swedish standard, is nothing but raw berries and sugar stirred cold in a jar, and it keeps for months without ever seeing heat. The same acidity is why it is put next to fat — meatballs, liver, reindeer, game.",
@@ -569,7 +569,7 @@ fr:"Mélangez les baies crues à la moitié de leur poids en sucre jusqu’à di
 pairs:["venison","renne","juniper","cream","potato","boudin-noir","foie-de-veau","pork"],
 svg:'<path class="s" d="M48 78V30"/><circle class="f3 sf" cx="39" cy="40" r="7"/><circle class="f3 sf" cx="58" cy="46" r="7"/><circle class="f3 sf" cx="45" cy="56" r="6"/><path class="f2 sf" d="M48 66q11-5 15 4-11 6-15-4zM48 70q-11-4-15 5 11 5 15-5z"/>'},
 
-{id:"longane",cat:"fruits",rare:true,name:{en:"Longan",fr:"Longane"},latin:"Dimocarpus longan",
+{id:"longane",cat:"fruits",name:{en:"Longan",fr:"Longane"},latin:"Dimocarpus longan",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[7,8,9],
 flavor:["sweet","musky","honeyed"],
 story:{en:"Its Chinese name, longyan, means dragon eye: peel one and a ring of translucent flesh stares back around a black seed. Dried, it darkens and turns smoky-sweet, at which point it leaves the fruit bowl for the stockpot and the pharmacy drawer.",
@@ -579,7 +579,7 @@ fr:"Le longane séché demande vingt minutes de trempage puis un frémissement l
 pairs:["ginger","goji","jujube","lotus-seed","snow-fungus","chicken","fresh-ginseng","rice"],
 svg:'<circle class="f2 sf" cx="34" cy="56" r="12"/><circle class="f2 sf" cx="60" cy="52" r="13"/><circle class="f1 sf" cx="60" cy="52" r="8"/><circle class="f3 sf" cx="60" cy="52" r="4"/><path class="s" d="M34 44l10-13M60 39l-8-8M48 31v-9"/>'},
 
-{id:"nefle-du-japon",cat:"fruits",rare:true,name:{en:"Loquat",fr:"Nèfle du Japon"},latin:"Eriobotrya japonica",
+{id:"nefle-du-japon",cat:"fruits",name:{en:"Loquat",fr:"Nèfle du Japon"},latin:"Eriobotrya japonica",
 origin:{en:"Southeastern China",fr:"Chine du Sud-Est"},season:[4,5,6],
 flavor:["sweet","sour","floral","fruity"],
 story:{en:"The tree is Chinese, not Japanese: it reached the royal garden in Paris from Guangdong in 1784 and Kew three years later, collecting misleading names along the way. It shares nothing but the French word nèfle with the true medlar, which is edible only bletted in November — the loquat is eaten ripe off the branch in May.",
@@ -599,7 +599,7 @@ fr:"La coque doit être rose et légèrement souple. Brune et dure, elle a été
 pairs:["raspberry","lime","mint","coconut-milk","vanilla","ginger","cream","passion-fruit"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="17"/><path class="s" d="M38 46l4 4M48 42l3 5M58 46l-4 4M40 62l4 4M56 62l-4 4M48 68v-4"/><path class="s" d="M48 39v-8"/>'},
 
-{id:"combava",cat:"fruits",rare:true,name:{en:"Makrut lime",fr:"Combava"},latin:"Citrus hystrix",
+{id:"combava",cat:"fruits",name:{en:"Makrut lime",fr:"Combava"},latin:"Citrus hystrix",
 origin:{en:"Sunda Islands",fr:"Îles de la Sonde"},season:[],
 flavor:["citrus","resinous","floral","pungent"],
 story:{en:"Western sailors wrote the Indonesian island of Sumbawa as Combava on their charts, and in French the fruit that came from that quarter kept the name. Only the rind is worth buying: the juice is scant, bitter and resinous, and is generally thrown away.",
@@ -629,7 +629,7 @@ fr:"La mangue mûre avec piment, sel et citron est une leçon d’équilibre ; l
 pairs:["chili","coconut-milk","cilantro","lemon","rice","yogurt"],
 svg:'<path class="f2 sf" d="M34 44q6-12 20-10 16 2 14 18-2 14-16 18-14 4-20-8-4-9 2-18z"/><path class="f3 sf" d="M56 32q6-6 12-4-2 7-10 8z"/>'},
 
-{id:"mangoustan",cat:"fruits",rare:true,luxe:true,name:{en:"Mangosteen",fr:"Mangoustan"},latin:"Garcinia mangostana",
+{id:"mangoustan",cat:"fruits",luxe:true,name:{en:"Mangosteen",fr:"Mangoustan"},latin:"Garcinia mangostana",
 origin:{en:"Malay archipelago",fr:"Archipel malais"},season:[5,6,7,8],
 flavor:["sweet","sour","floral","delicate"],
 story:{en:"The story that Queen Victoria offered a reward to anyone who could land one fresh in England has no record behind it and appears to trace back to a fruit explorer writing in 1930. What is documented is that David Fairchild called it the queen of fruits in 1903, and the title stuck.",
@@ -669,7 +669,7 @@ fr:"Utilisez-le entier, écorce comprise : tranché cru dans une salade ou confi
 pairs:["olive-oil","sea-bass","sugar","almond","vanilla","fleur-de-sel-guerande","basil","ricotta"],
 svg:'<path class="f1 sf" d="M28 50q0-20 12-20t12 20-12 22-12-22z"/><path class="s" d="M40 30v-5M40 72v5"/><circle class="f1 sf" cx="66" cy="60" r="12"/><circle class="f2 sf" cx="66" cy="60" r="7"/>'},
 
-{id:"citron-meyer",cat:"fruits",rare:true,name:{en:"Meyer lemon",fr:"Citron Meyer"},latin:"Citrus × meyeri",
+{id:"citron-meyer",cat:"fruits",name:{en:"Meyer lemon",fr:"Citron Meyer"},latin:"Citrus × meyeri",
 origin:{en:"China, via California",fr:"Chine, via la Californie"},season:[12,1,2,3],
 flavor:["citrus","floral","sweet","sour"],
 story:{en:"Frank Meyer found it growing in a dooryard near Peking in 1908 and shipped it home to the USDA; it is a lemon crossed with a mandarin, which accounts for the orange cast and the missing sharpness. Most American trees were destroyed in the 1940s once they were found to carry tristeza virus, and the variety was reissued clean in 1975 as the Improved Meyer.",
@@ -829,7 +829,7 @@ fr:"Coupez-la en deux et tapez le dos avec une cuillère en bois au-dessus d’u
 pairs:["walnut","yogurt","mint","orange","cinnamon","duck","quinoa"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="19"/><path class="f1 sf" d="M42 38l3-8h6l3 8"/><path class="dot" d="M41 52a2 2 0 104 0 2 2 0 10-4 0M51 52a2 2 0 104 0 2 2 0 10-4 0M46 60a2 2 0 104 0 2 2 0 10-4 0M55 60a2 2 0 104 0 2 2 0 10-4 0M41 62a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"pamplemousse-chinois",cat:"fruits",rare:true,name:{en:"Pomelo",fr:"Pamplemousse chinois"},latin:"Citrus maxima",
+{id:"pamplemousse-chinois",cat:"fruits",name:{en:"Pomelo",fr:"Pamplemousse chinois"},latin:"Citrus maxima",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[11,12,1,2],
 flavor:["sweet","bitter","citrus","delicate"],
 story:{en:"One of the three ancestral citrus species, and the parent of the grapefruit rather than its cousin; it reached the Caribbean in the seventeenth century by an account Hans Sloane credited to a Captain Shaddock, whose existence no shipping record has ever confirmed. The English name shaddock therefore honours a man who may never have sailed.",
@@ -839,7 +839,7 @@ fr:"Épluchez profondément : coupez la calotte, incisez l’écorce en quartier
 pairs:["shrimp","fish-sauce","chili","mint","peanut","coconut-flakes","crab","shallot"],
 svg:'<circle class="f1 sf" cx="40" cy="50" r="20"/><circle class="f2 sf" cx="40" cy="50" r="13"/><path class="s" d="M40 37v26M27 50h26M31 41l18 18M49 41 31 59"/><ellipse class="f2 sf" cx="68" cy="62" rx="8" ry="6"/>'},
 
-{id:"figue-de-barbarie",cat:"fruits",rare:true,name:{en:"Prickly pear",fr:"Figue de Barbarie"},latin:"Opuntia ficus-indica",
+{id:"figue-de-barbarie",cat:"fruits",name:{en:"Prickly pear",fr:"Figue de Barbarie"},latin:"Opuntia ficus-indica",
 origin:{en:"Mexico",fr:"Mexique"},season:[8,9,10],
 flavor:["sweet","mild","fresh","fruity"],
 story:{en:"The cactus is Mexican, host to the cochineal insect that supplied Europe's scarlet for three centuries, and it is the same plant the eagle stands on in the national arms. It travelled to the Barbary coast on Spanish ships and picked up its French name there, which is why nothing about it is either fig or African.",
@@ -859,7 +859,7 @@ fr:"Coupez-les en deux, dénoyautez, puis rangez-les serrées, face coupée vers
 pairs:["butter","almond","cinnamon","vanilla","kirsch","creme-fraiche","flour-t55","sugar"],
 svg:'<ellipse class="f2 sf" cx="46" cy="54" rx="17" ry="22"/><path class="s" d="M46 33q-5 12 0 42"/><path class="s" d="M49 33q2-8 8-11"/><path class="f1 sf" d="M57 21q10-2 12 5-9 5-14-1z"/>'},
 
-{id:"quince",cat:"fruits",rare:true,name:{en:"Quince",fr:"Coing"},latin:"Cydonia oblonga",
+{id:"quince",cat:"fruits",name:{en:"Quince",fr:"Coing"},latin:"Cydonia oblonga",
 origin:{en:"Caucasus & Persia",fr:"Caucase & Perse"},season:[10,11],
 flavor:["floral","musky","tangy","honeyed"],
 story:{en:"Scholars suspect the “golden apples” of Greek myth were quinces — and the word marmalade comes from marmelo, Portuguese for quince, whose paste was the original marmalade. Inedibly hard and astringent raw, it performs the kitchen’s quietest miracle: hours of slow heat turn its pale flesh ruby.",
@@ -869,7 +869,7 @@ fr:"Pochez-le entier et longuement avec miel et safran, ou rôtissez-le près d�
 pairs:["lamb","cinnamon","honey","walnut","vanilla","saffron"],
 svg:'<path class="f1 sf" d="M48 34q6 2 10 0 10 4 8 18-2 16-18 16T30 52q-2-14 8-18 4 2 10 0z"/><path class="s" d="M48 34q0-6 4-9"/><path class="f2 sf" d="M52 27q5-5 10-3-2 6-9 6z"/>'},
 
-{id:"ramboutan",cat:"fruits",rare:true,name:{en:"Rambutan",fr:"Ramboutan"},latin:"Nephelium lappaceum",
+{id:"ramboutan",cat:"fruits",name:{en:"Rambutan",fr:"Ramboutan"},latin:"Nephelium lappaceum",
 origin:{en:"Malay archipelago",fr:"Archipel malais"},season:[6,7,8],
 flavor:["sweet","fresh","mild"],
 story:{en:"Rambut is Malay for hair, and the name is nothing more than a description of the soft red spines, which are not spines at all but harmless outgrowths of the rind. The flesh does not release its seed the way a lychee’s does — it clings, and the bitter brown seed coat comes away with it if you pull.",
@@ -899,7 +899,7 @@ fr:"Elles sont riches en pectine : une gelée prend sans rien ajouter. Égrappez
 pairs:["cream","vanilla","almond","honey","raspberry","mint","dark-chocolate","lemon"],
 svg:'<path class="s" d="M48 26v14"/><circle class="f1 sf" cx="40" cy="48" r="6"/><circle class="f1 sf" cx="55" cy="50" r="6"/><circle class="f1 sf" cx="46" cy="62" r="6"/><path class="s" d="M48 40l-8 2M48 40l7 4M48 40l-2 16"/>'},
 
-{id:"reinette-grise-du-canada",cat:"fruits",rare:true,name:{en:"Reinette grise du Canada apple",fr:"Pomme reinette grise du Canada"},latin:"Malus domestica",
+{id:"reinette-grise-du-canada",cat:"fruits",name:{en:"Reinette grise du Canada apple",fr:"Pomme reinette grise du Canada"},latin:"Malus domestica",
 origin:{en:"French orchards, in spite of the name",fr:"Vergers français, malgré le nom"},season:[10,11,12,1,2],
 flavor:["sour","nutty","fruity"],
 story:{en:"Described in France in 1771 and grown around Paris from the early nineteenth century, the variety has no documented tie to Canada whatever — the name appears to have been borrowed to make a plain russet sound like an import. Its dry, granular flesh is the whole point: where a juicier apple collapses into sauce, this one concentrates and keeps its walls.",
@@ -909,7 +909,7 @@ fr:"Crue, elle est terne et coriace : donnez-lui du feu. Pour une tarte, taillez
 pairs:["butter","calvados","cinnamon","creme-fraiche","vanilla","walnut","sugar"],
 svg:'<path class="f2 sf" d="M48 32q-8-8-17-2-8 5-8 17 0 20 13 28 8 4 12-2 4 6 12 2 13-8 13-28 0-12-8-17-9-6-17 2z"/><path class="s" d="M48 32V22q0-5 6-7"/><circle class="dot" cx="37" cy="46" r="1.6"/><circle class="dot" cx="58" cy="53" r="1.6"/><circle class="dot" cx="46" cy="62" r="1.6"/>'},
 
-{id:"rhubarb",cat:"fruits",rare:true,name:{en:"Rhubarb",fr:"Rhubarbe"},latin:"Rheum rhabarbarum",
+{id:"rhubarb",cat:"fruits",name:{en:"Rhubarb",fr:"Rhubarbe"},latin:"Rheum rhabarbarum",
 origin:{en:"Siberia & China",fr:"Sibérie & Chine"},season:[4,5,6],
 flavor:["sour","fruity","fresh","grassy"],
 story:{en:"Botanically a vegetable, legally a fruit — a US court ruled it so in 1947, since it was eaten as one. In Yorkshire’s “rhubarb triangle”, forced stalks grow in pitch-dark sheds and are harvested by candlelight; growers say you can hear them creak as they rise.",
@@ -919,7 +919,7 @@ fr:"Jamais les feuilles — elles sont toxiques. Rôtissez les tiges plutôt que
 pairs:["strawberry","vanilla","ginger","cream","almond","honey"],
 svg:'<path class="f2 sf" d="M38 34l6-2 4 44q-3 4-6 0zM52 30l6 0 0 46q-3 4-6 0z" transform="rotate(-4 48 52)"/><path class="f1 sf" d="M36 32q-8-8-2-14 8 2 8 12z"/>'},
 
-{id:"cynorhodon",cat:"fruits",rare:true,name:{en:"Rosehip",fr:"Cynorhodon"},latin:"Rosa canina",
+{id:"cynorhodon",cat:"fruits",name:{en:"Rosehip",fr:"Cynorhodon"},latin:"Rosa canina",
 origin:{en:"European hedgerows",fr:"Haies d’Europe"},season:[9,10,11],
 flavor:["sour","fruity","floral"],
 story:{en:"Britain’s Ministry of Health launched a national rosehip collection in 1941 once the sea blockade had cut off citrus; schoolchildren and rural institutes brought in 200 tons that first year, turned into some 600,000 bottles of syrup. The same hips are the original itching powder — the hairs packed around the seeds are the reason for both.",
@@ -939,7 +939,7 @@ fr:"Congelez les baies au moins deux nuits avant cuisson, ou blanchissez-les deu
 pairs:["venison","apple","juniper","goose","thyme","red-wine-vinegar","blackcurrant","sugar"],
 svg:'<path class="s" d="M48 80V46M48 54l-13-8M48 60l13-9"/><circle class="f2 sf" cx="33" cy="40" r="8"/><circle class="f2 sf" cx="48" cy="33" r="8"/><circle class="f3 sf" cx="63" cy="43" r="8"/><path class="s" d="M48 68l-12-4M48 74l-12-4"/>'},
 
-{id:"sea-buckthorn",cat:"fruits",rare:true,name:{en:"Sea buckthorn",fr:"Argousier"},latin:"Hippophae rhamnoides",
+{id:"sea-buckthorn",cat:"fruits",name:{en:"Sea buckthorn",fr:"Argousier"},latin:"Hippophae rhamnoides",
 origin:{en:"Coasts & steppes of Eurasia",fr:"Côtes & steppes d’Eurasie"},season:[9,10],
 flavor:["sour","fruity","citrus"],
 story:{en:"Blazing orange berries on a thorned shrub that thrives where nothing should — dunes, steppes, roadsides. Soviet science put its oil in cosmonauts’ skin cream; the New Nordic movement put its juice on tasting menus, where it plays the citrus that northern latitudes never had.",
@@ -949,7 +949,7 @@ fr:"Pur, il est brutalement acide — adoucissez-le au miel ou glissez-le dans u
 pairs:["carrot","honey","cream","yogurt","dark-chocolate"],
 svg:'<path class="s" d="M48 78V26M48 60l-14-8M48 60l14-8M48 44l-12-7M48 44l12-7"/><path class="f2" d="M36 50a3 3 0 106 0 3 3 0 10-6 0M54 50a3 3 0 106 0 3 3 0 10-6 0M40 36a3 3 0 106 0 3 3 0 10-6 0M50 36a3 3 0 106 0 3 3 0 10-6 0M45 26a3 3 0 106 0 3 3 0 10-6 0"/>'},
 
-{id:"bigarade",cat:"fruits",rare:true,name:{en:"Seville orange",fr:"Bigarade"},latin:"Citrus × aurantium",
+{id:"bigarade",cat:"fruits",name:{en:"Seville orange",fr:"Bigarade"},latin:"Citrus × aurantium",
 origin:{en:"Seville and the Mediterranean coast",fr:"Séville et le pourtour méditerranéen"},season:[1,2],
 flavor:["bitter","sour","citrus","floral"],
 story:{en:"The bitter orange reached Europe with Arab traders some four centuries before the sweet one, so for a long stretch the word orange meant this fruit and no other. Its blossom is distilled for neroli, named after Anne Marie de La Trémoille, princess of Nerola, who is said to have scented her gloves with it in the 1680s.",
@@ -979,7 +979,7 @@ fr:"Si le gel tarde, congelez les prunelles quarante-huit heures et piquez-les u
 pairs:["sugar","juniper","almond","venison","apple","bay-leaf","blackcurrant"],
 svg:'<path class="s" d="M22 28q12 14 22 42M31 40l-8 3M39 54l9-5"/><circle class="f3 sf" cx="55" cy="46" r="11"/><circle class="f3 sf" cx="62" cy="67" r="9"/><path class="s" d="M55 35v-6M62 58v-5"/>'},
 
-{id:"griotte",cat:"fruits",rare:true,name:{en:"Sour cherry",fr:"Griotte"},latin:"Prunus cerasus",
+{id:"griotte",cat:"fruits",name:{en:"Sour cherry",fr:"Griotte"},latin:"Prunus cerasus",
 origin:{en:"Central Europe and the Rhine valley",fr:"Europe centrale et vallée du Rhin"},season:[6,7],
 flavor:["sour","tangy","fruity"],
 story:{en:"Prunus cerasus is a species apart from the sweet cherry, a natural hybrid carrying far more malic acid, which is why it survives sugar and alcohol instead of vanishing into them. The clafoutis of the Limousin is made with the stones left in — never a rustic oversight, but the source of the almond note that comes up during baking.",
@@ -1049,7 +1049,7 @@ fr:"Faites tremper le bloc dans de l’eau chaude, environ une part de pulpe pou
 pairs:["fish-sauce","palm-sugar","chili","ginger","garlic","coconut-milk","cumin"],
 svg:'<path class="f2 sf" d="M32 22q22 14 34 46 2 6-4 8t-8-4Q44 44 26 30q-5-4-1-8t7 0z"/><path class="s" d="M41 34q-4 6-7 8M50 50q-5 5-8 7M58 65q-5 3-9 4"/><circle class="dot" cx="43" cy="39" r="2.2"/><circle class="dot" cx="54" cy="58" r="2.2"/>'},
 
-{id:"peche-de-vigne",cat:"fruits",rare:true,name:{en:"Vineyard peach",fr:"Pêche de vigne"},latin:"Prunus persica",
+{id:"peche-de-vigne",cat:"fruits",name:{en:"Vineyard peach",fr:"Pêche de vigne"},latin:"Prunus persica",
 origin:{en:"Vineyards of the Rhône and the Lyonnais",fr:"Vignobles du Rhône et du Lyonnais"},season:[8,9],
 flavor:["floral","fruity","tangy"],
 story:{en:"Growers set these peaches at the ends of the vine rows because the tree takes powdery mildew before the vine does, buying a fortnight’s warning; that the fruit ripened at harvest time was the second reason. Its flesh is blood-red to the stone and carries less sugar than a table peach, which is why it ends up in wine rather than in a fruit bowl.",
@@ -1069,7 +1069,7 @@ fr:"Le sel exalte spectaculairement le sucré, d’où la réussite de l’accor
 pairs:["feta","mint","lime","black-pepper","basil","olive-oil","cucumber","red-onion"],
 svg:'<path class="f1 sf" d="M24 44a24 24 0 0 0 48 0z"/><path class="s" d="M24 44h48"/><circle class="dot" cx="40" cy="54" r="2"/><circle class="dot" cx="52" cy="52" r="2"/><circle class="dot" cx="46" cy="62" r="2"/>'},
 
-{id:"myrtille-sauvage",cat:"fruits",rare:true,luxe:true,name:{en:"Wild bilberry",fr:"Myrtille sauvage"},latin:"Vaccinium myrtillus",
+{id:"myrtille-sauvage",cat:"fruits",luxe:true,name:{en:"Wild bilberry",fr:"Myrtille sauvage"},latin:"Vaccinium myrtillus",
 origin:{en:"Upland heath and forest floor",fr:"Landes et sous-bois d’altitude"},season:[7,8,9],
 flavor:["sour","fruity","fresh"],
 story:{en:"Wartime Britain put about the story that RAF night-fighter crews ate bilberry jam to sharpen their night vision; it was cover for radar, and the claim has never held up in trials since. What is true is the colour: unlike the cultivated blueberry, the bilberry is purple all the way through, and one handful will stain a whole litre of cream.",
@@ -1079,7 +1079,7 @@ fr:"Elles n’ont presque pas de pectine : une confiture réclame de la pomme, d
 pairs:["cream","lemon","venison","butter","honey","vanilla","kirsch","sugar"],
 svg:'<circle class="f3 sf" cx="41" cy="53" r="15"/><path class="s" d="M41 41V33M41 41l-6-5M41 41l6-5"/><circle class="f3 sf" cx="64" cy="66" r="10"/><path class="s" d="M64 56v-6"/><path class="f1 sf" d="M56 33q10-8 18-3-7 10-18 5z"/>'},
 
-{id:"fraise-des-bois",cat:"fruits",rare:true,luxe:true,name:{en:"Wild strawberry",fr:"Fraise des bois"},latin:"Fragaria vesca",
+{id:"fraise-des-bois",cat:"fruits",luxe:true,name:{en:"Wild strawberry",fr:"Fraise des bois"},latin:"Fragaria vesca",
 origin:{en:"Woodland edges across Europe",fr:"Lisières de bois d’Europe"},season:[6,7,8,9],
 flavor:["sweet","floral","delicate"],
 story:{en:"Every garden strawberry descends from a cross made at Brest around 1766 between a Chilean plant Amédée-François Frézier carried home in 1714 and a Virginian one; the wild strawberry took no part in it and remains a species of its own. That is why its perfume differs in kind rather than degree — and why nobody has yet bred a large berry that keeps it.",
@@ -1099,7 +1099,7 @@ fr:"Elle mûrit après cueillette et de l’intérieur vers l’extérieur : jug
 pairs:["dark-chocolate","roquefort","vanilla","cinnamon","butter","walnut","honey"],
 svg:'<path class="f2 sf" d="M48 31q-7 6-7 14 0 8-6 14-4 5-4 12 0 12 17 12t17-12q0-7-4-12-6-6-6-14 0-8-7-14z"/><path class="s" d="M48 31V19"/><path class="f1 sf" d="M50 23q10-6 16-1-7 8-16 3z"/><path class="s" d="M40 58q-4 8 0 14"/>'},
 
-{id:"yuzu",cat:"fruits",rare:true,name:{en:"Yuzu",fr:"Yuzu"},latin:"Citrus junos",
+{id:"yuzu",cat:"fruits",name:{en:"Yuzu",fr:"Yuzu"},latin:"Citrus junos",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[1,11,12],
 flavor:["citrus","floral","tangy","fresh"],
 story:{en:"A gnarled, seed-choked citrus that gives barely a spoonful of juice — and perfumes a whole room. On the winter solstice, Japanese bathers float whole yuzu in hot tubs to ward off colds; French pastry chefs discovered it in the 2000s and have refused to let go since.",

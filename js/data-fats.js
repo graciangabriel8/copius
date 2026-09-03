@@ -59,7 +59,7 @@ fr:"Son point de fumée tourne autour de 200 °C, assez haut pour les frites et 
 pairs:["potato","beef","onion","rosemary","salt","carrot"],
 svg:'<path class="f1 sf" d="M28 40h40l-4 30q-1 4-5 4H37q-4 0-5-4z"/><path class="f2 sf" d="M25 33h46v8H25z"/><path class="f1 sf" d="M38 33q4-13 12-13t12 13z"/><path class="s" d="M35 54h26"/>'},
 
-{id:"beeswax",cat:"fats",rare:true,name:{en:"Beeswax",fr:"Cire d’abeille"},latin:"Cera alba",
+{id:"beeswax",cat:"fats",name:{en:"Beeswax",fr:"Cire d’abeille"},latin:"Cera alba",
 origin:{en:"Honeycomb cappings",fr:"Opercules de rayon"},season:[],
 flavor:["honeyed","warm","delicate"],
 story:{en:"A colony eats something like six to eight kilos of honey to secrete a single kilo of wax, which makes comb the most expensive material in the hive. Kitchens came to it late, for a prosaic reason: beeswax melts at 62-65C, which happens to be poaching temperature.",
@@ -89,7 +89,7 @@ fr:"Ne la chauffez jamais : son parfum s’en va au-delà de 60 °C et ses acide
 pairs:["white-asparagus","potato","saumon-fume","herring","pea","fromage-blanc"],
 svg:'<path class="f2 sf" d="M42 24h12v14l12 22q3 6-3 10H33q-6-4-3-10l12-22z"/><path class="s" d="M40 24h16"/><path class="f1" d="M36 54h24l6 10H30z"/><path class="s" d="M74 30q-8 14-6 32"/><circle class="f1 sf" cx="74" cy="38" r="3"/><circle class="f1 sf" cx="70" cy="50" r="3"/>'},
 
-{id:"caul-fat",cat:"fats",rare:true,name:{en:"Caul fat",fr:"Crépine"},latin:"Sus scrofa domesticus",
+{id:"caul-fat",cat:"fats",name:{en:"Caul fat",fr:"Crépine"},latin:"Sus scrofa domesticus",
 origin:{en:"Pig, the membrane over the stomach",fr:"Porc, la membrane de l’estomac"},season:[],
 flavor:["rich","meaty","mild"],
 story:{en:"Crépine is the omentum, the fat-laced membrane that hangs over a pig's stomach; one animal yields a single sheet, which is why butchers ration it. English and French both borrow the word from birth — the caul, la coiffe, that some babies arrive wearing, once sold to sailors as insurance against drowning.",
@@ -339,7 +339,7 @@ fr:"Comptez-la en gouttes et ne la chauffez jamais : quelques gouttes sur une sa
 pairs:["scallop","trout","basil","parmesan","sea-bass","fennel","lemon","ricotta"],
 svg:'<path class="f1 sf" d="M40 42h16v28q0 4-4 4h-8q-4 0-4-4z"/><path class="f3 sf" d="M43 30h10v12H43z"/><ellipse class="f2 sf" cx="48" cy="24" rx="6" ry="7"/><path class="s" d="M66 32L58 50M71 38l-11 14M62 30l-2 12"/>'},
 
-{id:"pistachio-oil",cat:"fats",rare:true,luxe:true,name:{en:"Pistachio oil",fr:"Huile de pistache"},latin:"Pistacia vera",
+{id:"pistachio-oil",cat:"fats",luxe:true,name:{en:"Pistachio oil",fr:"Huile de pistache"},latin:"Pistacia vera",
 origin:{en:"Iran & the Mediterranean",fr:"Iran & Méditerranée"},season:[],
 flavor:["nutty","toasty","resinous","rich"],
 story:{en:"The kernels are roasted before pressing, which is where the depth comes from — pressed raw the oil is thin and grassy. Its green is chlorophyll and does not last: an open bottle fades to khaki in a couple of months, and the flavour goes with the colour.",
@@ -399,7 +399,7 @@ fr:"Prenez la version vierge pour les assaisonnements — herbacée et jaune vif
 pairs:["mustard","potato","white-wine-vinegar","chives","lemon","black-pepper","shallot","dill"],
 svg:'<path class="f2 sf" d="M40 76V42h16v34z"/><path class="s" d="M40 50h16"/><path class="f3 sf" d="M44 38V28h8v10z"/>'},
 
-{id:"raw-milk-butter",cat:"fats",rare:true,name:{en:"Raw-milk butter",fr:"Beurre cru"},latin:"Butyrum crudum",
+{id:"raw-milk-butter",cat:"fats",name:{en:"Raw-milk butter",fr:"Beurre cru"},latin:"Butyrum crudum",
 origin:{en:"Normandy & Brittany",fr:"Normandie & Bretagne"},season:[],
 flavor:["creamy","rich","grassy","milky"],
 story:{en:"Colour tells you the season: spring grass is loaded with carotene and the butter comes out deep yellow, while winter butter made on hay is nearly white. Because the cream is never heated the milk's own bacteria stay in the churn, so two farms a valley apart give two different butters.",

@@ -19,7 +19,7 @@ fr:"Ne jetez pas les grains infusés : égouttés et étalés sur une plaque, il
 pairs:["buckwheat","soba-noodles","dark-chocolate","honey","sesame","kinako","hojicha"],
 svg:'<path class="sf" d="M30 40h36l-5 26q-1 5-13 5t-13-5z"/><path class="s" d="M33 47h30"/><path class="f2 sf" d="M22 76l6-10 6 10z"/><path class="f2 sf" d="M62 76l6-10 6 10z"/>'},
 
-{id:"butterfly-pea-flower",cat:"infusions",rare:true,name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
+{id:"butterfly-pea-flower",cat:"infusions",name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
 flavor:["mild","earthy","grassy"],
 story:{en:"The blue comes from ternatins, polyacylated anthocyanins unusually stable for their class, which is why the flower colours rice and jellies where most plant blues collapse. The colour is a pH meter: acid below about 3 turns the infusion pink-red, neutral holds it blue, alkali sends it green.",
@@ -129,7 +129,7 @@ fr:"C’est le seul vert qui accepte une vraie ébullition : faire bouillir avec
 pairs:["mint","sugar","pine-nut","orange-blossom-water","lemon","almond"],
 svg:'<circle class="f2 sf" cx="38" cy="58" r="12"/><circle class="f3 sf" cx="60" cy="64" r="9"/><circle class="f1 sf" cx="52" cy="40" r="10"/><path class="f1 sf" d="M60 34q11-6 12-16-11 3-14 11z"/><path class="s" d="M33 54q6 7 11 2M56 61q4 3 7 0"/>'},
 
-{id:"honeybush",cat:"infusions",rare:true,name:{en:"Honeybush",fr:"Honeybush"},latin:"Cyclopia intermedia",
+{id:"honeybush",cat:"infusions",name:{en:"Honeybush",fr:"Honeybush"},latin:"Cyclopia intermedia",
 origin:{en:"Cape fynbos, South Africa",fr:"Fynbos du Cap, Afrique du Sud"},season:[],
 flavor:["honeyed","fruity","floral"],
 story:{en:"A different Cape legume from rooibos, named for the honey smell of its yellow flowers and still largely cut from wild stands rather than farmed. Oxidising the chopped stems is what develops the apricot note; unfermented honeybush is green and thin.",

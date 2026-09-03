@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"amaranth",cat:"grains",rare:true,name:{en:"Amaranth",fr:"Amarante"},latin:"Amaranthus caudatus",
+{id:"amaranth",cat:"grains",name:{en:"Amaranth",fr:"Amarante"},latin:"Amaranthus caudatus",
 origin:{en:"Andes and Mesoamerica",fr:"Andes et Mésoamérique"},season:[],
 flavor:["nutty","earthy","toasty"],
 story:{en:"Aztec priests bound ground amaranth with honey into figures of Huitzilopochtli that worshippers then ate, and the Spanish, reading this as a mockery of communion, banned the crop outright after 1521. The same popped seed and syrup is still sold in Mexico as alegría.",
@@ -129,7 +129,7 @@ fr:"Le boulgour fin du taboulé ne se cuit pas — le jus de citron et l’eau d
 pairs:["parsley","mint","lemon","tomato","olive-oil","spring-onion","cumin","pomegranate"],
 svg:'<path class="f2 sf" d="M32 68q0-16 16-20 16 4 16 20z"/><circle class="dot" cx="41" cy="60" r="1.8"/><circle class="dot" cx="50" cy="57" r="1.8"/><circle class="dot" cx="55" cy="64" r="1.8"/>'},
 
-{id:"camargue-red-rice",cat:"grains",rare:true,name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
+{id:"camargue-red-rice",cat:"grains",name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
 origin:{en:"Rhone delta, Camargue",fr:"Delta du Rhône, Camargue"},season:[],
 flavor:["nutty","earthy","toasty"],
 story:{en:"Camargue red rice is barely forty years old: trialled from 1982 with INRA, first harvested in 1988, on shelves from 1992. It sits under the Riz de Camargue IGP granted in 1998 - a protected name for a grain younger than most of the cooks using it.",
@@ -299,7 +299,7 @@ fr:"Trempez-le quatre heures au minimum, une nuit de préférence, puis vingt-ci
 pairs:["mango","coconut-milk","adzuki","lotus-leaf","dried-shiitake-donko","sesame"],
 svg:'<path class="f2 sf" d="M22 56h52v18a6 6 0 0 1-6 6H28a6 6 0 0 1-6-6z"/><path class="s" d="M22 65h52M22 73h52"/><path class="f1 sf" d="M28 56q8-18 20-18t20 18z"/><path class="s" d="M40 30q5-7 0-14M56 30q5-7 0-14"/>'},
 
-{id:"glutinous-rice-flour",cat:"grains",rare:true,name:{en:"Glutinous rice flour",fr:"Farine de riz gluant"},latin:"Oryza sativa var. glutinosa",
+{id:"glutinous-rice-flour",cat:"grains",name:{en:"Glutinous rice flour",fr:"Farine de riz gluant"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["mild","sweet","delicate"],
 story:{en:"Shiratamako is not simply milled: the rice is soaked, ground wet, the starch settled out of the water and dried, which is why it arrives as chalky pebbles rather than a powder. Dry-milled mochiko behaves differently again, and joshinko - made from ordinary rice - is another flour altogether.",
@@ -379,7 +379,7 @@ fr:"Torréfiez-la à sec jusqu’à ce qu’elle crépite et sente la noisette a
 pairs:["quinoa","corn","potato","avocado","lime","peanut","cilantro"],
 svg:'<ellipse class="f1 sf" cx="42" cy="58" rx="21" ry="13"/><path class="s" d="M62 52q9-7 13-14"/><path class="f3 sf" d="M25 55q17-16 34 0z"/><circle class="dot" cx="38" cy="50" r="2"/><circle class="dot" cx="48" cy="48" r="2"/>'},
 
-{id:"khorasan-wheat",cat:"grains",rare:true,name:{en:"Khorasan wheat",fr:"Blé de Khorasan"},latin:"Triticum turgidum subsp. turanicum",
+{id:"khorasan-wheat",cat:"grains",name:{en:"Khorasan wheat",fr:"Blé de Khorasan"},latin:"Triticum turgidum subsp. turanicum",
 origin:{en:"Fertile Crescent; now grown in Montana and Alberta",fr:"Croissant fertile ; cultivé aujourd’hui au Montana et en Alberta"},season:[],
 flavor:["buttery","nutty","sweet"],
 story:{en:"The story goes that an American airman carried a handful of kernels out of an Egyptian tomb in the late 1940s, which earned the grain its nickname of King Tut's wheat; a Cairo market stall is the likelier source. A Montana farmer revived it and trademarked it in 1990 as Kamut, so the same wheat now sells under a brand and under its own name at two prices.",
@@ -389,7 +389,7 @@ fr:"Le grain fait le double d’un blé tendre : trempage d’une nuit, puis qua
 pairs:["olive-oil","lemon","parsley","chickpeas","pecorino","tomato"],
 svg:'<path class="f2 sf" d="M40 22q11 0 11 22v14q0 22-11 22t-11-22V44q0-22 11-22z"/><path class="s" d="M40 26v52"/><path class="f1 sf" d="M62 36q8 0 8 15v9q0 15-8 15t-8-15v-9q0-15 8-15z"/><path class="s" d="M62 40v34"/>'},
 
-{id:"koshihikari",cat:"grains",rare:true,luxe:true,name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
+{id:"koshihikari",cat:"grains",luxe:true,name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
 origin:{en:"Fukui and Niigata, Japan",fr:"Fukui et Niigata, Japon"},season:[],
 flavor:["sweet","milky","mild"],
 story:{en:"Bred at Fukui and released in 1956, its name means the light of Koshi, the old province strung along the Japan Sea coast. It is an awkward plant — tall, weak-strawed, apt to fall in wind — and was adopted for eating quality alone, which is how it came to cover more Japanese paddy than any other variety.",
@@ -409,7 +409,7 @@ fr:"Écrasez les morceaux et dissolvez-les à l'eau froide avant tout contact av
 pairs:["adzuki","ginger","kokuto","hon-mirin","kombu","soy-sauce","matcha","sugar"],
 svg:'<path class="f1 sf" d="M34 68 30 54l10-8 6 10z"/><path class="f2 sf" d="M46 68 40 56l12-10 8 12z"/><path class="f1 sf" d="M60 68 56 58l10-6 6 10z"/><path class="s" d="M26 70h44"/>'},
 
-{id:"lupin-flour",cat:"grains",rare:true,name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
+{id:"lupin-flour",cat:"grains",name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
 flavor:["nutty","bitter","rich"],
 story:{en:"Every lupin was bitter with quinolizidine alkaloids until Reinhold von Sengbusch, screening hundreds of thousands of plants in 1920s Germany, isolated the rare sweet mutants that all modern varieties descend from. The flour runs near 40% protein with almost no starch, and it emulsifies like egg yolk, which no cereal flour does.",
@@ -419,7 +419,7 @@ fr:"Trois à cinq pour cent du poids de farine suffisent à colorer des pâtes o
 pairs:["egg","tipo-00-flour","olive-oil","semolina","saffron","butter","honey"],
 svg:'<path class="f1 sf" d="M32 40h32v30a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path class="f3 sf" d="M36 29h24v11H36z"/><path class="f2 sf" d="M34 55h28v15a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6z"/>'},
 
-{id:"masa-harina",cat:"grains",rare:true,name:{en:"Masa harina",fr:"Masa harina (farine de maïs nixtamalisée)"},latin:"Zea mays",
+{id:"masa-harina",cat:"grains",name:{en:"Masa harina",fr:"Masa harina (farine de maïs nixtamalisée)"},latin:"Zea mays",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
 flavor:["toasty","earthy","mild"],
 story:{en:"Cooking maize in lime — nixtamalization, from the Nahuatl — is at least three thousand years old, and it does two things at once: it loosens the hulls so the dough will hold together, and it frees the grain's niacin. Where maize travelled without the lime, into Europe and the American South, pellagra followed it.",
@@ -669,7 +669,7 @@ fr:"Elle épaissit à plus basse température que la maïzena et se relâche à 
 pairs:["coconut-milk","palm-sugar","pandan","mango","shrimp","black-sesame"],
 svg:'<path class="f1 sf" d="M28 44q0-12 14-12t14 12q0 12-14 12T28 44z"/><path class="s" d="M56 44l14 14"/><circle class="dot" cx="38" cy="42" r="3"/><circle class="dot" cx="46" cy="40" r="3"/><circle class="dot" cx="42" cy="49" r="3"/><circle class="f3 sf" cx="50" cy="48" r="3"/>'},
 
-{id:"teff",cat:"grains",rare:true,name:{en:"Teff",fr:"Teff"},latin:"Eragrostis tef",
+{id:"teff",cat:"grains",name:{en:"Teff",fr:"Teff"},latin:"Eragrostis tef",
 origin:{en:"Ethiopian highlands",fr:"Hauts plateaux éthiopiens"},season:[],
 flavor:["nutty","earthy","mild"],
 story:{en:"The Amharic name is thought to come from teffa, to be lost: the grain is about a millimetre long, small enough to vanish into the soil at threshing. That size settles everything else — a grain this small cannot be degermed, so every teff flour on the market is a wholegrain flour whether the bag says so or not.",
@@ -699,7 +699,7 @@ fr:"Lisez le W, pas les zéros. Pour des pâtes fraîches, 100 g d’une 00 soup
 pairs:["egg","semola-rimacinata","olive-oil","mozzarella","san-marzano-tomato","basil","parmesan"],
 svg:'<path class="f1 sf" d="M32 36h32v34a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4z"/><path class="f2 sf" d="M32 36l6-8h20l6 8z"/><path class="s" d="M40 50h16M40 58h11"/>'},
 
-{id:"vialone-nano",cat:"grains",rare:true,name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
+{id:"vialone-nano",cat:"grains",name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
 origin:{en:"Veronese lowlands",fr:"Basse plaine véronaise"},season:[],
 flavor:["mild","creamy","nutty"],
 story:{en:"Crossed in 1937 from a tall Vialone and a dwarf variety called Nano, it became in 1996 the first rice in Europe granted a protected geographical indication, as Riso Nano Vialone Veronese. It is a semifino, a shorter and rounder class than the superfino Arborio and Carnaroli, and it gives up its starch faster than either — which is why Veneto risotto is served loose enough to move on the plate.",

@@ -39,7 +39,7 @@ fr:"Faites tremper vingt à trente minutes dans une grande quantité d'eau froid
 pairs:["carrot","soy-sauce","hon-mirin","sesame-oil","edamame","rice","chicken","sesame"],
 svg:'<path class="s" d="M26 40q10 6 12 18t-2 20"/><path class="s" d="M36 34q6 10 6 22t-4 20"/><path class="s" d="M48 32q2 12 0 24t2 20"/><path class="s" d="M60 34q-4 12-2 24t4 18"/><path class="s" d="M70 40q-10 6-12 18t2 18"/><path class="f3 sf" d="M34 52h28v8H34z"/>'},
 
-{id:"kombu",cat:"seaweed",rare:true,name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
+{id:"kombu",cat:"seaweed",name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
 origin:{en:"Cold seas of Japan",fr:"Mers froides du Japon"},season:[],
 flavor:["umami","marine","briny","mild"],
 story:{en:"In 1908, chemist Kikunae Ikeda asked why kombu broth tasted like nothing else, isolated glutamate from the seaweed, and coined a new word for what he found: umami. The finest leaves are aged for years in cellars like wine — a kelp with vintages.",
@@ -79,7 +79,7 @@ fr:"Elle arrive au sel ou en saumure : rincez-la à l’eau froide en plusieurs 
 pairs:["rice-vinegar","ginger","cucumber","myoga","shiso","kombu"],
 svg:'<path class="f1 sf" d="M20 50h56q-4 22-28 22T20 50z"/><path class="s" d="M24 46h48"/><path class="s" d="M26 50q6-12 16-8t12-6 14 2"/><path class="s" d="M28 56q10-6 18 0t20-4"/><path class="s" d="M30 64q10 4 18-2t16 2"/>'},
 
-{id:"nori",cat:"seaweed",rare:true,name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
+{id:"nori",cat:"seaweed",name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[],
 flavor:["marine","umami","toasty","salty"],
 story:{en:"When Japan’s nori harvests mysteriously collapsed after the war, it was a British scientist, Kathleen Mary Drew-Baker, whose research on seaweed life cycles saved the crop — she never visited Japan, yet fishermen there still honour her each April as the “Mother of the Sea”.",

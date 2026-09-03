@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"aceto-balsamico-tradizionale",cat:"condiments",rare:true,luxe:true,name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
+{id:"aceto-balsamico-tradizionale",cat:"condiments",luxe:true,name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
 origin:{en:"Modena and Reggio Emilia, Italy",fr:"Modène et Reggio d’Émilie, Italie"},season:[],
 flavor:["sweet","sour","woody","rich"],
 story:{en:"Cooked grape must works its way down a battery of casks — oak, cherry, chestnut, mulberry, juniper — each year giving a little to the barrel below and taking a little from the one above, for twelve years at the very least. Every bottle the tasting panel passes is sold in the same 100 ml bulb, a shape drawn by the car designer Giorgetto Giugiaro.",
@@ -139,7 +139,7 @@ fr:"Servez-la froide et épaisse à côté d’une Weisswurst ou d’un Leberkä
 pairs:["boudin-blanc","pork","potato","cabbage","horseradish","apple"],
 svg:'<path class="f1 sf" d="M36 34h24v34H36z"/><path class="f3 sf" d="M33 68h30v7H33z"/><path class="f2 sf" d="M43 24h10v10H43z"/><path class="f2 sf" d="M40 24q3-11 8-11t8 11z"/><circle class="dot" cx="45" cy="19" r="2"/><circle class="dot" cx="52" cy="17" r="2"/>'},
 
-{id:"beer-vinegar",cat:"condiments",rare:true,name:{en:"Beer vinegar",fr:"Vinaigre de bière"},latin:"Hordeum vulgare",
+{id:"beer-vinegar",cat:"condiments",name:{en:"Beer vinegar",fr:"Vinaigre de bière"},latin:"Hordeum vulgare",
 origin:{en:"Brewing countries of Northern Europe",fr:"Pays brassicoles d’Europe du Nord"},season:[],
 flavor:["sour","bitter","toasty"],
 story:{en:"Beer vinegar is what happens when acetobacter reaches a beer left open, and northern kitchens have made it deliberately since long before anyone bottled it — the malt and the hop bitterness both survive acetification. Malt vinegar is a different animal: it starts from unhopped malted barley wort, which is why it reads sweet and caramel where beer vinegar stays dry and bitter.",
@@ -179,7 +179,7 @@ fr:"C’est un pickle frais, au kōji encore vivant : mangez-le dans la semaine 
 pairs:["koji-rice","daikon","rice","junmai-sake","cucumber","salt"],
 svg:'<path class="f1 sf" d="M38 28q10-8 20 0 4 8-2 20l-6 28q-1 4-3 4t-3-4l-6-28q-6-12 0-20z"/><path class="s" d="M46 26V14M53 26q4-8 10-10M41 26q-4-8-10-9"/><circle class="dot" cx="44" cy="44" r="2"/><circle class="dot" cx="53" cy="56" r="2"/><circle class="dot" cx="46" cy="66" r="2"/>'},
 
-{id:"black-garlic",cat:"condiments",rare:true,name:{en:"Black garlic",fr:"Ail noir"},latin:"Allium sativum (aged)",
+{id:"black-garlic",cat:"condiments",name:{en:"Black garlic",fr:"Ail noir"},latin:"Allium sativum (aged)",
 origin:{en:"Korea & Japan",fr:"Corée & Japon"},season:[],
 flavor:["sweet","umami","rich","tangy"],
 story:{en:"Whole heads of garlic held warm and humid for weeks until the Maillard reaction — the chemistry of bread crusts and seared steaks — turns each clove black, soft and sweet as a balsamic date. An ancient Asian preparation that modern chefs adopted almost overnight in the 2000s.",
@@ -229,7 +229,7 @@ fr:"Elle passe par le gras : faites-en fondre une cuillère à café dans l’hu
 pairs:["olive-oil","garlic","nduja","san-marzano-tomato","pecorino","anchovy","oregano","honey"],
 svg:'<path class="f3 sf" d="M35 24h26v8H35z"/><path class="f1 sf" d="M32 32h32v42q0 4-4 4H36q-4 0-4-4z"/><path class="s" d="M32 42h32"/><path class="f2 sf" d="M38 48q9 4 13 13-9-2-13-7-4-4 0-6z"/><path class="f2 sf" d="M58 52q-7 6-7 15 7-4 9-11 2-5-2-4z"/>'},
 
-{id:"cane-vinegar",cat:"condiments",rare:true,name:{en:"Cane vinegar",fr:"Vinaigre de canne"},latin:"Saccharum officinarum",
+{id:"cane-vinegar",cat:"condiments",name:{en:"Cane vinegar",fr:"Vinaigre de canne"},latin:"Saccharum officinarum",
 origin:{en:"Ilocos, Philippines",fr:"Ilocos, Philippines"},season:[],
 flavor:["sour","sweet","tangy"],
 story:{en:"Sukang Iloko is fermented from basi, the Ilocano sugarcane wine, in the same burnay clay jars used to age the wine itself, the juice having first been boiled down to a syrup. The Philippines runs on four native vinegars — cane, coconut, nipa and kaong palm — and an adobo made with each one tastes measurably different.",
@@ -359,7 +359,7 @@ fr:"Ne secouez pas la boîte : la crème épaisse du dessus sert à frire la pâ
 pairs:["chili","cilantro","ginger","rice","mango","shrimp","turmeric"],
 svg:'<circle class="f3 sf" cx="48" cy="54" r="19"/><path class="f1 sf" d="M48 54a19 19 0 010-38v19z" transform="rotate(30 48 45)"/><path class="f1 sf" d="M34 46a19 14 0 0128 0 22 22 0 01-28 0z"/><path class="s" d="M42 30l2 4M52 30l-2 4"/>'},
 
-{id:"coconut-vinegar",cat:"condiments",rare:true,name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
+{id:"coconut-vinegar",cat:"condiments",name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
 origin:{en:"The Philippines",fr:"Philippines"},season:[],
 flavor:["sour","tangy","mild","fruity"],
 story:{en:"Sukang tuba begins as tuba, the sap a climber cuts from the coconut flower spike twice a day, which ferments into palm wine and then, left alone, into vinegar. The mother keeps working in the bottle, so it stays cloudy and its acidity is still moving when you buy it.",
@@ -369,7 +369,7 @@ fr:"Il est plus doux qu’un vinaigre de cidre ou de riz, autour de 4 % : un kin
 pairs:["pork","garlic","black-pepper","ginger","bay-leaf","soy-sauce"],
 svg:'<path class="f3 sf" d="M22 46a26 26 0 0 0 52 0z"/><path class="f1" d="M27 48h42a21 21 0 0 1-42 0z"/><path class="s" d="M22 46h52"/><path class="s" d="M34 58q6 6 14 4t12-8"/><path class="f1 sf" d="M48 22q5 8 5 11t-5 3-5-3 5-11z"/>'},
 
-{id:"colatura-d-anchois",cat:"condiments",rare:true,name:{en:"Colatura di alici",fr:"Colatura d'anchois"},latin:"Engraulis encrasicolus (anchovy liquid)",
+{id:"colatura-d-anchois",cat:"condiments",name:{en:"Colatura di alici",fr:"Colatura d'anchois"},latin:"Engraulis encrasicolus (anchovy liquid)",
 origin:{en:"Cetara, Amalfi coast",fr:"Cetara, côte amalfitaine"},season:[],
 flavor:["umami","salty","briny","marine"],
 story:{en:"Cetara packs its anchovies in salt inside small chestnut barrels called terzigni, then pierces the base after two or three years and lets the amber liquid fall drop by drop. Legend has it that medieval monks found the method by accident, when brine seeped through the worn staves of old wine casks; the sauce only received its protected designation in 2020.",
@@ -509,7 +509,7 @@ fr:"Torréfiez-le avant tout emploi : une tranche fine, deux minutes de chaque c
 pairs:["chili","garlic","shallot","lime","lemongrass","tamarind-paste"],
 svg:'<path class="f3 sf" d="M30 46q18-8 36 0 4 14-4 22-14 6-28 0-4-8-4-22z"/><path class="f1 sf" d="M24 46q10-8 24-8t24 8q-12 4-24 4t-24-4z"/><path class="s" d="M40 58q8 4 16 0"/><path class="s" d="M44 24q10-3 15 5-6 7-15 3-4-4 0-8z"/><circle class="dot" cx="57" cy="26" r="1.6"/>'},
 
-{id:"fish-sauce",cat:"condiments",rare:true,name:{en:"Fish sauce",fr:"Nuoc-mâm"},latin:"Engraulidae (fermented)",
+{id:"fish-sauce",cat:"condiments",name:{en:"Fish sauce",fr:"Nuoc-mâm"},latin:"Engraulidae (fermented)",
 origin:{en:"Vietnam & Thailand",fr:"Vietnam & Thaïlande"},season:[],
 flavor:["salty","umami","pungent","rich"],
 story:{en:"Anchovies and salt, stacked in wooden barrels under the tropical sun for a year — the direct heir of Rome’s garum, still pressed the old way in Cetara, Italy, as colatura. The first amber run of the barrel, nhĩ, is graded and prized like an extra-virgin oil.",
@@ -709,7 +709,7 @@ fr:"Faites-le bouillir trente secondes pour brûler l'alcool avant de l'employer
 pairs:["soy-sauce","junmai-sake","sugar","eel","chicken","miso","dried-shiitake-donko","kombu"],
 svg:'<path class="f1 sf" d="M44 26h8v8q10 8 10 22t-14 20-14-20 10-22z"/><path class="s" d="M43 31h10"/><path class="f2 sf" d="M61 65h15q-1 11-7.5 11T61 65z"/><path class="s" d="M40 56q8 4 16 0"/>'},
 
-{id:"honey-vinegar",cat:"condiments",rare:true,name:{en:"Honey vinegar",fr:"Vinaigre de miel"},latin:"Acetum mellis",
+{id:"honey-vinegar",cat:"condiments",name:{en:"Honey vinegar",fr:"Vinaigre de miel"},latin:"Acetum mellis",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[],
 flavor:["sour","honeyed","floral","mild"],
 story:{en:"Vinegar only forms on something already alcoholic, so this one begins as mead: yeast first, acetobacter second, two fermentations where wine vinegar needs one. The detour costs it bite — most bottles sit near 5% acidity against a wine vinegar's 7.",
@@ -809,7 +809,7 @@ fr:"Si vous les faites, retirez le pédoncule à la pointe d’une brochette en 
 pairs:["rice","shiso","katsuobushi","cucumber","junmai-sake","salt"],
 svg:'<circle class="f1 sf" cx="46" cy="54" r="21"/><path class="s" d="M46 33q-7 21 0 42"/><path class="s" d="M46 33q0-8 7-12"/><path class="f2 sf" d="M53 21q12-9 19-3-4 11-14 9-6-1-5-6z"/>'},
 
-{id:"katsuobushi",cat:"condiments",rare:true,name:{en:"Katsuobushi",fr:"Katsuobushi"},latin:"Katsuwonus pelamis (dried)",
+{id:"katsuobushi",cat:"condiments",name:{en:"Katsuobushi",fr:"Katsuobushi"},latin:"Katsuwonus pelamis (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["umami","smoky","marine","toasty"],
 story:{en:"Bonito simmered, smoked for weeks and dried with a noble mould until it becomes the hardest food on Earth — a fillet that rings like wood. Shaved into rosy petals, its inosinate meets kombu’s glutamate in dashi, a synergy that multiplies perceived umami nearly eightfold: broth as chemistry lesson.",
@@ -989,7 +989,7 @@ fr:"Il contient du sucre, donc il glace : réduit de moitié dans la poêle apr�
 pairs:["foie-gras","duck","strawberry","olive-oil","shallot","blue-cheese","peach","endive"],
 svg:'<path class="f2 sf" d="M42 30h12v10l4 8v28q0 4-4 4H42q-4 0-4-4V48l4-8z"/><path class="s" d="M38 56h20"/><circle class="f1 sf" cx="66" cy="52" r="5"/><circle class="f1 sf" cx="70" cy="62" r="5"/><circle class="f1 sf" cx="60" cy="62" r="5"/><path class="s" d="M66 46v-6"/>'},
 
-{id:"mostarda-di-cremona",cat:"condiments",rare:true,name:{en:"Mostarda di Cremona",fr:"Mostarda di Cremona (fruits confits à la moutarde)"},latin:"Mostum ardens",
+{id:"mostarda-di-cremona",cat:"condiments",name:{en:"Mostarda di Cremona",fr:"Mostarda di Cremona (fruits confits à la moutarde)"},latin:"Mostum ardens",
 origin:{en:"Cremona, Lombardy",fr:"Crémone, Lombardie"},season:[],
 flavor:["sweet","hot","fruity","pungent"],
 story:{en:"The name is older than mustard the condiment: medieval mostum ardens, burning must, was grape must spiked with ground seed to stop it fermenting. Cremona kept the fruit, swapped the must for sugar syrup, and adds mustard essence drop by drop — a few drops flavour a whole jar.",
@@ -1159,7 +1159,7 @@ fr:"Servez-vous-en là où vous passeriez vingt minutes à réduire un vin doux 
 pairs:["foie-gras","venison","manchego","fig","raisin","duck"],
 svg:'<path class="f3 sf" d="M41 18h14v10l7 13v26q0 5-5 5H39q-5 0-5-5V41l7-13z"/><path class="f2 sf" d="M39 12h18v7H39z"/><path class="s" d="M36 46h24"/><circle class="f2 sf" cx="72" cy="60" r="7"/><path class="s" d="M67 57q5 5 10 1"/>'},
 
-{id:"perry-vinegar",cat:"condiments",rare:true,name:{en:"Perry vinegar",fr:"Vinaigre de poiré"},latin:"Pyrus communis",
+{id:"perry-vinegar",cat:"condiments",name:{en:"Perry vinegar",fr:"Vinaigre de poiré"},latin:"Pyrus communis",
 origin:{en:"Domfront, Normandy",fr:"Domfront, Normandie"},season:[],
 flavor:["sour","fruity","floral"],
 story:{en:"A perry pear takes fifteen years or more to come into fruit, which is where the English advice about planting pears for your heirs comes from; the Domfront orchards still hold trees two centuries old. Vinegar from their cider is softer than an apple's, because pears leave behind sorbitol the yeasts cannot ferment.",
@@ -1179,7 +1179,7 @@ fr:"Achetez-les non pasteurisées et conservez-les dans leur saumure au réfrig�
 pairs:["coriander-seed","fennel-seed","lemon","almond","dry-vermouth","thyme","goat-cheese","olive-oil"],
 svg:'<path class="f1 sf" d="M48 22q10 7 10 25t-10 25q-10-7-10-25t10-25Z"/><path class="s" d="M48 22v-7"/><ellipse class="f3 sf" cx="28" cy="52" rx="4" ry="2.5"/><circle class="dot" cx="68" cy="46" r="2.2"/><circle class="dot" cx="66" cy="58" r="2.2"/>'},
 
-{id:"pickled-walnut",cat:"condiments",rare:true,name:{en:"Pickled walnut",fr:"Noix confites au vinaigre"},latin:"Juglans regia",
+{id:"pickled-walnut",cat:"condiments",name:{en:"Pickled walnut",fr:"Noix confites au vinaigre"},latin:"Juglans regia",
 origin:{en:"England",fr:"Angleterre"},season:[],
 flavor:["bitter","sour","rich","earthy"],
 story:{en:"Green walnuts are picked before the shell begins to lignify, traditionally around St John's Day on the twenty-fourth of June and never past the end of July. The black is not a dye: juglone in the husk oxidises on contact with air, which is why Mrs Beeton's method lays the brined nuts out in the sun for three days before the spiced vinegar goes on.",
@@ -1529,7 +1529,7 @@ fr:"Pensez-la comme un assaisonnement liquide, pas seulement un marqueur asiatiq
 pairs:["ginger","rice","sesame","shiitake","salmon","beef","tuna"],
 svg:'<path class="f3 sf" d="M42 34h12l4 10v24q0 8-10 8t-10-8V44z"/><path class="f1 sf" d="M44 26h8l2 8H42z"/><path class="s" d="M48 20v6"/>'},
 
-{id:"squid-ink",cat:"condiments",rare:true,name:{en:"Squid ink",fr:"Encre de seiche"},latin:"Sepia officinalis (ink)",
+{id:"squid-ink",cat:"condiments",name:{en:"Squid ink",fr:"Encre de seiche"},latin:"Sepia officinalis (ink)",
 origin:{en:"Mediterranean coasts",fr:"Côtes méditerranéennes"},season:[],
 flavor:["marine","briny","umami","rich"],
 story:{en:"The cephalopod’s smoke bomb, turned into the kitchen’s most dramatic pigment. Venice stirs it into risotto nero, Catalonia into arròs negre — dishes that arrive black as a new moon and taste, against all appearance, of gentle sea and sweet rice.",
@@ -1669,7 +1669,7 @@ fr:"Il est salé et concentré : une cuillère à soupe finit une sauce pour qua
 pairs:["madeira-malmsey","butter","cream","foie-gras","egg","potato","ris-de-veau-noix"],
 svg:'<path class="f1 sf" d="M40 34h16v6l4 6v26q0 4-4 4H40q-4 0-4-4V46l4-6z"/><path class="f3 sf" d="M36 56h24v14q0 4-4 4H40q-4 0-4-4z"/><path class="s" d="M42 26h12v8H42z"/><ellipse class="f2 sf" cx="72" cy="44" rx="7" ry="5"/><path class="s" d="M72 49l-4 22"/>'},
 
-{id:"umeboshi",cat:"condiments",rare:true,name:{en:"Umeboshi",fr:"Umeboshi"},latin:"Prunus mume (salted)",
+{id:"umeboshi",cat:"condiments",name:{en:"Umeboshi",fr:"Umeboshi"},latin:"Prunus mume (salted)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["sour","salty","fruity","pungent"],
 story:{en:"Ume — an apricot cousin, not a plum — salted for months and blushed crimson with red shiso. Samurai carried them as field rations against fatigue, and a single one centred on white rice makes the hinomaru bentō: lunch as the Japanese flag.",
@@ -1709,7 +1709,7 @@ fr:"Comptez les trois quarts de la dose prévue en sauce courante et goûtez ava
 pairs:["kombu","katsuobushi","hon-mirin","daikon","egg","mitsuba"],
 svg:'<path class="f2 sf" d="M44 24h8v10l10 12v22q0 4-4 4H38q-4 0-4-4V46l10-12z"/><path class="s" d="M42 24h12"/><path class="f1" d="M36 56h24v14q0 2-2 2H38q-2 0-2-2z"/><path class="s" d="M40 62h16"/>'},
 
-{id:"verjus",cat:"condiments",rare:true,name:{en:"Verjuice",fr:"Verjus"},latin:"Vitis vinifera (green juice)",
+{id:"verjus",cat:"condiments",name:{en:"Verjuice",fr:"Verjus"},latin:"Vitis vinifera (green juice)",
 origin:{en:"Medieval Europe & Persia",fr:"Europe médiévale & Perse"},season:[],
 flavor:["sour","fruity","fresh","tangy"],
 story:{en:"The pressed juice of unripe grapes — medieval Europe’s everyday acid before lemons were affordable, and the original soul of Dijon mustard. Sommeliers revived it for a precise reason: unlike vinegar, its gentle acidity doesn’t wage war on the wine in your glass.",
@@ -1729,7 +1729,7 @@ fr:"Déglacez hors du feu et ne réduisez pas de plus de moitié : à gros bouil
 pairs:["foie-gras","apricot","pear","walnut","blue-cheese","fig"],
 svg:'<path class="f2 sf" d="M48 24c6 0 10 4 10 9 5 2 7 8 4 12 2 6-2 12-6 14-2 6-6 9-8 9s-6-3-8-9c-4-2-8-8-6-14-3-4-1-10 4-12 0-5 4-9 10-9z"/><path class="s" d="M39 34q9 4 18 0M37 46q11 5 22 0M42 58q6 3 12 0"/><path class="s" d="M28 74h40M24 80h48"/><path class="s" d="M48 24V13"/>'},
 
-{id:"vin-jaune",cat:"condiments",rare:true,luxe:true,name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
+{id:"vin-jaune",cat:"condiments",luxe:true,name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
 flavor:["nutty","warm","umami"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",
@@ -1739,7 +1739,7 @@ fr:"Réduisez-le beaucoup moins qu’un blanc sec : le sotolon, qui porte la not
 pairs:["morel","cream","bresse-chicken","comte","walnut","butter"],
 svg:'<path class="f2 sf" d="M43 19h10v9c0 6 9 8 9 18v28a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V46c0-10 9-12 9-18z"/><path class="s" d="M34 56h28M34 68h28"/><path class="f3 sf" d="M42 14h12v6H42z"/>'},
 
-{id:"vin-santo",cat:"condiments",rare:true,name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
+{id:"vin-santo",cat:"condiments",name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
 origin:{en:"Tuscany",fr:"Toscane"},season:[],
 flavor:["nutty","sweet","woody"],
 story:{en:"The dried must goes into caratelli — fifty-litre casks that are sealed shut and never topped up — each carrying a madre, a sludge of yeast and lees held back from the previous batch to start the next. Years of that, under a roof that freezes in winter and bakes in summer, is what turns it oxidative where a straw wine stays fruity.",

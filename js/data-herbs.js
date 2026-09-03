@@ -69,7 +69,7 @@ fr:"Déchirez plutôt que de couper, et ajoutez au tout dernier moment : les pé
 pairs:["strawberry","cucumber","scallop","oyster","goat-cheese","trout"],
 svg:'<path class="f1 sf" d="M48 48q-4-16 2-22t12 4-6 18z"/><path class="f2 sf" d="M48 48q16-6 22 0t-6 12-16-12z"/><path class="f1 sf" d="M48 48q8 14 2 20t-14-4 12-16z"/><path class="f2 sf" d="M48 48q-16 4-22-2t8-12 14 14z"/><circle class="dot" cx="48" cy="48" r="3"/>'},
 
-{id:"acacia-flower",cat:"herbs",rare:true,name:{en:"Black locust flower",fr:"Fleur d’acacia"},latin:"Robinia pseudoacacia",
+{id:"acacia-flower",cat:"herbs",name:{en:"Black locust flower",fr:"Fleur d’acacia"},latin:"Robinia pseudoacacia",
 origin:{en:"North America, naturalised in Europe",fr:"Amérique du Nord, naturalisé en Europe"},season:[5,6],
 flavor:["floral","honeyed","sweet"],
 story:{en:"The tree is Robinia pseudoacacia, no relation to true acacia, and it carries the name of Jean Robin, who sowed one in Paris in 1601 — that tree still stands in square René-Viviani. Its white racemes smell of orange blossom and honey for about two weeks in late spring, and then there is nothing until the following year.",
@@ -89,7 +89,7 @@ fr:"Infusez dix grammes de bourgeons par litre de crème froide, une nuit au ré
 pairs:["cream","blackcurrant","raspberry","dark-chocolate","lemon","honey"],
 svg:'<path class="s" d="M24 78q16-10 24-26t12-28"/><path class="f2 sf" d="M38 60q-8-2-8-10t8-8 8 8-8 10z"/><path class="f2 sf" d="M48 42q-8-2-8-10t8-8 8 8-8 10z"/><path class="f2 sf" d="M58 30q-7-2-7-9t7-7 7 7-7 9z"/><path class="s" d="M34 50q4 3 8-1M44 32q4 3 8-1"/>'},
 
-{id:"blackcurrant-leaf",cat:"herbs",rare:true,name:{en:"Blackcurrant leaf",fr:"Feuille de cassis"},latin:"Ribes nigrum",
+{id:"blackcurrant-leaf",cat:"herbs",name:{en:"Blackcurrant leaf",fr:"Feuille de cassis"},latin:"Ribes nigrum",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[5,6,7,8],
 flavor:["grassy","herbal","fruity"],
 story:{en:"The leaf smells of blackcurrant with none of the fruit's sugar or colour — green, sappy, faintly catty, from the same thiol family that makes Sauvignon Blanc smell of blackcurrant bud. It is at its most aromatic before the fruit sets, which is precisely when nobody is paying the bush any attention.",
@@ -129,7 +129,7 @@ fr:"Les feuilles sont couvertes de poils piquants qui ne s’assouplissent qu’
 pairs:["ricotta","cucumber","lemon","olive-oil","parmesan","egg","oyster","cream"],
 svg:'<path class="s" d="M48 76V44"/><path class="f2 sf" d="M44 52q-14 0-16-8 12-6 18 4z"/><path class="f3 sf" d="M52 38l4 6 6 1-5 4 2 6-7-4-7 4 2-6-5-4 6-1z"/>'},
 
-{id:"buckler-leaf-sorrel",cat:"herbs",rare:true,name:{en:"Buckler-leaf sorrel",fr:"Oseille ronde"},latin:"Rumex scutatus",
+{id:"buckler-leaf-sorrel",cat:"herbs",name:{en:"Buckler-leaf sorrel",fr:"Oseille ronde"},latin:"Rumex scutatus",
 origin:{en:"French kitchen gardens",fr:"Potagers français"},season:[4,5,6,7,8,9,10],
 flavor:["sour","citrus","fresh"],
 story:{en:"Scutatus means shielded, and Linnaeus named it for the little bucklers the leaves cut against the light. English seedsmen have sold it as French sorrel for three centuries, which is how one country’s garden herb ended up carrying another country’s name on the packet.",
@@ -149,7 +149,7 @@ fr:"Faites infuser les pétales entiers dix minutes dans une matière grasse ti�
 pairs:["butter","rice","egg","chicken","cream","cheddar"],
 svg:'<path class="f2 sf" d="M48 20q5 9 4 16 6-6 14-6-2 8-8 12 8-1 14 4-7 5-15 4 7 4 8 12-9 0-15-6 1 8-2 16-3-8-2-16-6 6-15 6 1-8 8-12-8 1-15-4 6-5 14-4-6-4-8-12 8 0 14 6-1-7 4-16z"/><circle class="f3 sf" cx="48" cy="50" r="9"/><circle class="s" cx="48" cy="50" r="4"/>'},
 
-{id:"chervil",cat:"herbs",rare:true,name:{en:"Chervil",fr:"Cerfeuil"},latin:"Anthriscus cerefolium",
+{id:"chervil",cat:"herbs",name:{en:"Chervil",fr:"Cerfeuil"},latin:"Anthriscus cerefolium",
 origin:{en:"Caucasus & Southern Russia",fr:"Caucase & Russie du Sud"},season:[3,4,5,6],
 flavor:["delicate","anise","fresh","grassy"],
 story:{en:"The most fragile of the fines herbes — the classic French quartet with parsley, chives and tarragon — whispering anise where the others speak. Old Europe ate it at Easter as a herb of renewal; today it is the connoisseur’s test of a kitchen’s finesse, since heat erases it entirely.",
@@ -309,7 +309,7 @@ fr:"Ajoutez une cuillère à soupe de vinaigre de riz par litre d’eau de blanc
 pairs:["rice-vinegar","koikuchi-shoyu","katsuobushi","sesame","daikon","yuzu"],
 svg:'<path class="f2 sf" d="M48 22q6 10 0 18-6-8 0-18zM70 34q-2 12-12 12 2-10 12-12zM74 56q-10 6-18 0 8-6 18 0zM60 76q-10-6-8-16 8 4 8 16zM36 76q-2-12 6-16 2 10-6 16zM22 56q10-6 18 0-8 6-18 0zM26 34q10 2 12 12-10 0-12-12z"/><circle class="f1 sf" cx="48" cy="50" r="9"/><circle class="dot" cx="48" cy="50" r="3"/>'},
 
-{id:"elderflower",cat:"herbs",rare:true,name:{en:"Elderflower",fr:"Fleur de sureau"},latin:"Sambucus nigra",
+{id:"elderflower",cat:"herbs",name:{en:"Elderflower",fr:"Fleur de sureau"},latin:"Sambucus nigra",
 origin:{en:"European hedgerows",fr:"Haies d’Europe"},season:[5,6],
 flavor:["floral","honeyed","fruity"],
 story:{en:"The story goes that the genus name Sambucus comes from the sambuke, an ancient instrument, because the soft pith of elder wood pushes out to leave a tube. What is certain is the window: the heads hold their muscat scent for barely three weeks, and only while dry — one picked after rain has already lost it.",
@@ -329,7 +329,7 @@ fr:"Une branche pour toute une casserole, ajoutée dans les dix dernières minut
 pairs:["black-bean","chili","corn","onion","garlic","tomatillo","cilantro","lime"],
 svg:'<path class="s" d="M48 76V32"/><path class="f1 sf" d="M46 40q-14-2-16 6 12 8 16 0zM50 54q14-2 16 6-12 8-16 0z"/>'},
 
-{id:"fig-leaf",cat:"herbs",rare:true,name:{en:"Fig leaf",fr:"Feuille de figuier"},latin:"Ficus carica",
+{id:"fig-leaf",cat:"herbs",name:{en:"Fig leaf",fr:"Feuille de figuier"},latin:"Ficus carica",
 origin:{en:"Mediterranean orchards",fr:"Vergers méditerranéens"},season:[5,6,7,8,9],
 flavor:["grassy","nutty","creamy"],
 story:{en:"The green smell of a fig leaf is largely coumarin, the compound behind new-mown hay and tonka bean — the fruit holds almost none of it, which is why leaf and fig taste nothing alike. Handling the leaves in strong sun can burn the skin, because the sap carries furocoumarins.",
@@ -459,7 +459,7 @@ fr:"Tenez la pointe et raclez les boutons vers le bas avec des baguettes dans la
 pairs:["tuna","hirame","koikuchi-shoyu","wasabi","shiso","daikon"],
 svg:'<path class="s" d="M48 80V22"/><path class="f2 sf" d="M48 30q-7-1-8-6 7-2 8 6zM48 42q-8-1-9-6 8-2 9 6zM48 54q-9-1-10-6 9-2 10 6zM48 66q-10-1-11-6 10-2 11 6z"/><path class="f2 sf" d="M48 36q7-1 8-6-7-2-8 6zM48 48q8-1 9-6-8-2-9 6zM48 60q9-1 10-6-9-2-10 6zM48 72q10-1 11-6-10-2-11 6z"/>'},
 
-{id:"holy-basil",cat:"herbs",rare:true,name:{en:"Holy basil",fr:"Basilic sacré (tulsi, kaphrao)"},latin:"Ocimum tenuiflorum",
+{id:"holy-basil",cat:"herbs",name:{en:"Holy basil",fr:"Basilic sacré (tulsi, kaphrao)"},latin:"Ocimum tenuiflorum",
 origin:{en:"Indian subcontinent",fr:"Sous-continent indien"},season:[6,7,8,9],
 flavor:["peppery","hot","herbal"],
 story:{en:"Tulsi is grown in the courtyard of Hindu households as a sacred plant, and it is a different species from the Thai basil of restaurant menus — pad kaphrao is named for this one, and outside Thailand is routinely made with the wrong basil. Its heat comes from eugenol, the same compound that makes clove hot.",
@@ -519,7 +519,7 @@ fr:"Deux ou trois feuilles entières par kilo de viande, jetées dès le début 
 pairs:["lemongrass","galangal","turmeric","kaffir-lime-leaf","coconut-milk","shallot","candlenut","tamarind-paste"],
 svg:'<path class="s" d="M30 78q10-14 20-24t18-20"/><path class="f2 sf" d="M44 56q-14-6-18-18 14-2 20 6 4 6-2 12z"/><path class="f1 sf" d="M58 40q4-14 18-18 2 14-8 20-6 4-10-2z"/><path class="s" d="M28 40q10 6 15 15M74 24q-9 6-14 15"/>'},
 
-{id:"jasmine-sambac",cat:"herbs",rare:true,name:{en:"Jasmine sambac",fr:"Jasmin sambac"},latin:"Jasminum sambac",
+{id:"jasmine-sambac",cat:"herbs",name:{en:"Jasmine sambac",fr:"Jasmin sambac"},latin:"Jasminum sambac",
 origin:{en:"Fuzhou and South Asia",fr:"Fuzhou et Asie du Sud"},season:[6,7,8,9],
 flavor:["floral","honeyed","musky"],
 story:{en:"The flower opens after dark, which sets the working hours of every jasmine tea house in Fuzhou: buds picked by day, held until they crack open at night, layered with tea until dawn, then picked back out. The higher grades repeat that night five, seven or nine times with fresh flowers each round.",
@@ -599,7 +599,7 @@ fr:"C’est un thym de finition : effeuillez-le dans les deux dernières minutes
 pairs:["scallop","lemon","butter","chicken","apricot","honey"],
 svg:'<path class="s" d="M48 84q-4-30 6-56"/><path class="f2 sf" d="M45 72q-11 2-14-4 8-6 14 0zM46 58q-11 2-14-4 8-6 14 0zM48 44q-10 2-13-4 7-6 13 0z"/><path class="f1 sf" d="M51 66q11 2 14-4-8-6-14 0zM53 52q11 2 14-4-8-6-14 0zM55 38q10 2 13-4-7-6-13 0z"/>'},
 
-{id:"lemon-verbena",cat:"herbs",rare:true,name:{en:"Lemon verbena",fr:"Verveine citronnelle"},latin:"Aloysia citrodora",
+{id:"lemon-verbena",cat:"herbs",name:{en:"Lemon verbena",fr:"Verveine citronnelle"},latin:"Aloysia citrodora",
 origin:{en:"Andes of Chile & Peru",fr:"Andes du Chili & du Pérou"},season:[6,7,8,9],
 flavor:["citrus","floral","fresh","delicate"],
 story:{en:"Brought from the Andes in the 18th century and named for a Spanish queen, it settled into French life as the grandmother’s tisane of Provence. Pastry chefs rediscovered what the grandmothers knew: no other leaf smells this purely of lemon without a drop of acidity.",
@@ -609,7 +609,7 @@ fr:"Infusez-la dans une crème ou un sirop tiède, hors du feu, à couvert, dix 
 pairs:["peach","strawberry","cream","honey","raspberry"],
 svg:'<path class="s" d="M48 78V30"/><path class="f1 sf" d="M46 44q-14 0-16-12 14-2 17 8zM50 44q14 0 16-12-14-2-17 8zM46 60q-12 0-14-10 12-2 15 7zM50 60q12 0 14-10-12-2-15 7z"/>'},
 
-{id:"lemongrass",cat:"herbs",rare:true,name:{en:"Lemongrass",fr:"Citronnelle"},latin:"Cymbopogon citratus",
+{id:"lemongrass",cat:"herbs",name:{en:"Lemongrass",fr:"Citronnelle"},latin:"Cymbopogon citratus",
 origin:{en:"Maritime Southeast Asia",fr:"Asie du Sud-Est insulaire"},season:[],
 flavor:["citrus","fresh","floral","grassy"],
 story:{en:"A grass that decided to be a citrus: its stalks carry citral, the same aromatic soul as lemon zest, without any of the acid. It is the upright backbone of Thai tom yum and Vietnamese broths — always present, always fished out, never chewed.",
@@ -619,7 +619,7 @@ fr:"N’utilisez que le tiers inférieur, pâle ; écrasez-le du dos du couteau 
 pairs:["coconut-milk","ginger","chili","shrimp","chicken","cilantro"],
 svg:'<path class="f1 sf" d="M44 76V40q0-8 4-14 4 6 4 14v36z"/><path class="s" d="M44 48q-6-2-8-8M52 48q6-2 8-8M44 60q-6-2-9-7M52 60q6-2 9-7" stroke-width="1.8"/>'},
 
-{id:"linden-flower",cat:"herbs",rare:true,name:{en:"Linden blossom",fr:"Fleur de tilleul"},latin:"Tilia cordata",
+{id:"linden-flower",cat:"herbs",name:{en:"Linden blossom",fr:"Fleur de tilleul"},latin:"Tilia cordata",
 origin:{en:"European limes, Drôme",fr:"Tilleuls d’Europe, Drôme"},season:[6,7],
 flavor:["floral","honeyed","delicate"],
 story:{en:"The bract — the pale strap of leaf the flowers hang from — is picked and dried with them and counts as part of the product, not a stalk to be thrown out. The window runs about ten days at the start of summer, and Buis-les-Baronnies in the Drôme built a linden market on it that long concentrated most of the French crop.",
@@ -649,7 +649,7 @@ fr:"Faites tremper une feuille sèche une demi-heure environ à l’eau chaude j
 pairs:["glutinous-rice","chicken","dried-shiitake-donko","saucisse-chinoise","ginger","shaoxing-wine"],
 svg:'<circle class="f1 sf" cx="48" cy="46" r="26"/><path class="s" d="M48 46l-24-6M48 46l-18 18M48 46l4 25M48 46l22 12M48 46l20-16M48 46l-8-25"/><circle class="f3 sf" cx="48" cy="46" r="4"/><path class="s" d="M48 50v34"/>'},
 
-{id:"lovage",cat:"herbs",rare:true,name:{en:"Lovage",fr:"Livèche"},latin:"Levisticum officinale",
+{id:"lovage",cat:"herbs",name:{en:"Lovage",fr:"Livèche"},latin:"Levisticum officinale",
 origin:{en:"Mediterranean & Persia",fr:"Méditerranée & Perse"},season:[5,6,7,8,9],
 flavor:["herbal","pungent","fresh","warm"],
 story:{en:"Charlemagne ordered it grown in every imperial garden, and German kitchens still call it Maggikraut — the Maggi herb — because it tastes uncannily of the famous seasoning, though the sauce never contained it. Celery’s louder, wilder great-uncle, one leaf deep.",
@@ -799,7 +799,7 @@ fr:"Crue et en dernier : la chaleur réduit les feuilles en chiffons olivâtres 
 pairs:["scallop","trout","cucumber","buttermilk","potato","oyster","cream"],
 svg:'<path class="f2 sf" d="M48 40q-14-3-14-13 0-7 7-7 5 0 7 6 2-6 7-6 7 0 7 7 0 10-14 13z"/><path class="f1 sf" d="M34 62q-12-3-12-11 0-6 6-6 4 0 6 5 2-5 6-5 6 0 6 6 0 8-12 11z"/><path class="f1 sf" d="M62 62q-12-3-12-11 0-6 6-6 4 0 6 5 2-5 6-5 6 0 6 6 0 8-12 11z"/><path class="s" d="M48 42v34"/>'},
 
-{id:"pandan",cat:"herbs",rare:true,name:{en:"Pandan leaf",fr:"Feuille de pandan"},latin:"Pandanus amaryllifolius",
+{id:"pandan",cat:"herbs",name:{en:"Pandan leaf",fr:"Feuille de pandan"},latin:"Pandanus amaryllifolius",
 origin:{en:"Southeast Asian gardens",fr:"Jardins d'Asie du Sud-Est"},season:[],
 flavor:["grassy","floral","nutty"],
 story:{en:"The scent is 2-acetyl-1-pyrroline, the identical molecule that makes basmati and jasmine rice smell the way they do. This one pandanus almost never flowers and travels only as cuttings, so the fragrant plant in a Bangkok garden and one in Jakarta are divisions of the same stock.",
@@ -839,7 +839,7 @@ fr:"Il ne fait pas un bon pesto — la couleur vire au brun boueux. Employez-le 
 pairs:["tomato","white-wine-vinegar","olive-oil","peach","mozzarella","garlic","strawberry","lemon"],
 svg:'<path class="s" d="M48 76V38"/><path class="f1 sf" d="M46 44q-14-6-16 2 12 10 16 2zM50 56q14-6 16 2-12 10-16 2z"/>'},
 
-{id:"red-shiso",cat:"herbs",rare:true,name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
+{id:"red-shiso",cat:"herbs",name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
 origin:{en:"Japan, Korea and highland China",fr:"Japon, Corée et hautes terres chinoises"},season:[6,7],
 flavor:["herbal","anise","tangy"],
 story:{en:"The purple is shisonin, an anthocyanin that sits dull violet until it meets acid — dropped into the brine of salting plums it flares scarlet, and that reaction is what colours umeboshi. Dried and ground with salt the same leaf becomes yukari, a name that traces back to an old poetic word for the colour purple.",
@@ -889,7 +889,7 @@ fr:"Déchirez les tiges hors du feu, trente secondes avant de servir : une minut
 pairs:["tamarind-paste","fish-sauce","pineapple","okra","shrimp","chili"],
 svg:'<path class="s" d="M48 78V24"/><path class="f2 sf" d="M48 34q-14 0-18-5 12-6 18 5zM48 34q14 0 18-5-12-6-18 5zM48 48q-14 0-18-5 12-6 18 5zM48 48q14 0 18-5-12-6-18 5zM48 62q-12 0-16-5 11-5 16 5zM48 62q12 0 16-5-11-5-16 5z"/><path class="s" d="M18 74q8-4 15 0t15 0 15 0 15 0"/>'},
 
-{id:"roman-chamomile",cat:"herbs",rare:true,name:{en:"Roman chamomile",fr:"Camomille romaine"},latin:"Chamaemelum nobile",
+{id:"roman-chamomile",cat:"herbs",name:{en:"Roman chamomile",fr:"Camomille romaine"},latin:"Chamaemelum nobile",
 origin:{en:"Western Europe, Anjou plantings",fr:"Europe de l'Ouest, cultures d'Anjou"},season:[6,7,8],
 flavor:["bitter","floral","fruity"],
 story:{en:"It is a different plant from the German chamomile of teabags: a creeping perennial once laid as a lawn you walked on to release the scent, and far more bitter in the mouth. French production settled around Chemillé in Anjou, where the double-flowered form is still grown for the whole head.",
@@ -899,7 +899,7 @@ fr:"Quatre ou cinq capitules par litre, hors du feu, cinq minutes au maximum : l
 pairs:["honey","cream","apple","lemon","chicken","butter","pear"],
 svg:'<path class="f2 sf" d="M36 48q0-16 12-16t12 16q-12 6-24 0z"/><path class="f1 sf" d="M37 48q-14 1-17 7 8 7 20 1zM59 48q14 1 17 7-8 7-20 1z"/><path class="dot" d="M42 40a2 2 0 0 1 4 0a2 2 0 0 1-4 0M50 42a2 2 0 0 1 4 0a2 2 0 0 1-4 0M46 34a2 2 0 0 1 4 0a2 2 0 0 1-4 0"/><path class="s" d="M48 54v22"/>'},
 
-{id:"rose-geranium",cat:"herbs",rare:true,name:{en:"Rose geranium",fr:"Géranium rosat"},latin:"Pelargonium graveolens",
+{id:"rose-geranium",cat:"herbs",name:{en:"Rose geranium",fr:"Géranium rosat"},latin:"Pelargonium graveolens",
 origin:{en:"Southern Africa, grown on Réunion",fr:"Afrique australe, cultivé à La Réunion"},season:[5,6,7,8,9],
 flavor:["floral","fruity","fresh"],
 story:{en:"It is not a geranium at all but a Pelargonium from the Cape, grown on Réunion since the nineteenth century for an oil the perfume trade still calls geranium bourbon. Its leaf carries geraniol and citronellol, two of the compounds in rose oil, which is how a handful of leaves reads as roses at a fraction of the price.",
@@ -939,7 +939,7 @@ fr:"Faites frire les feuilles entières au beurre jusqu’à croustiller : le be
 pairs:["pork","butter","onion","apple","white-beans","chestnut"],
 svg:'<path class="s" d="M48 78V32"/><path class="f2 sf" d="M46 50q-14 4-18-8 12-8 19 3zM50 50q14 4 18-8-12-8-19 3zM46 34q-10 0-12-8 10-4 13 3z"/>'},
 
-{id:"salad-burnet",cat:"herbs",rare:true,name:{en:"Salad burnet",fr:"Pimprenelle"},latin:"Sanguisorba minor",
+{id:"salad-burnet",cat:"herbs",name:{en:"Salad burnet",fr:"Pimprenelle"},latin:"Sanguisorba minor",
 origin:{en:"European chalk grassland",fr:"Pelouses calcaires d'Europe"},season:[3,4,5,6,10,11],
 flavor:["fresh","grassy","mild"],
 story:{en:"Sanguisorba means blood-absorber, from the centuries when the crushed leaf was pressed onto a wound to stop it bleeding; the kitchen found the plant much later and by another road. It is a rose relative that tastes squarely of cucumber, and it holds its green through a mild winter when nothing else in the herb bed does.",
@@ -999,7 +999,7 @@ fr:"Lavez les racines dans trois eaux — le sable de rizière se cache dans le 
 pairs:["chicken","maitake","negi","burdock-root","koikuchi-shoyu","rice"],
 svg:'<path class="f2 sf" d="M48 42q-15-5-17-16 13-2 17 8z"/><path class="f2 sf" d="M48 42q15-5 17-16-13-2-17 8z"/><path class="f2 sf" d="M48 40q-6-11 0-20 6 9 0 20z"/><path class="s" d="M48 40v28M48 68q-6 6-8 12M48 68q1 7 0 12M48 68q7 5 9 11"/>'},
 
-{id:"shiso",cat:"herbs",rare:true,name:{en:"Shiso",fr:"Shiso"},latin:"Perilla frutescens",
+{id:"shiso",cat:"herbs",name:{en:"Shiso",fr:"Shiso"},latin:"Perilla frutescens",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[6,7,8,9],
 flavor:["herbal","fresh","anise","citrus"],
 story:{en:"The jagged leaf beside your sashimi is not decoration but a thousand-year-old palate cleanser — mint’s enigmatic Japanese cousin, tasting of cumin, basil and citrus at once. Its red variety dyes umeboshi plums their warning shade of crimson.",
@@ -1009,7 +1009,7 @@ fr:"Roulez plusieurs feuilles et taillez-les en aiguilles à la dernière second
 pairs:["tuna","rice","umeboshi","salmon","ginger"],
 svg:'<path class="f2 sf" d="M48 26q18 8 14 28-3 16-14 20-11-4-14-20-4-20 14-28z"/><path class="s" d="M48 32v36M48 42l-8-4M48 42l8-4M48 54l-9-4M48 54l9-4M36 36l-3-2M60 36l3-2M34 48l-3-1M62 48l3-1" stroke-width="1.8"/>'},
 
-{id:"sorrel",cat:"herbs",rare:true,name:{en:"Sorrel",fr:"Oseille"},latin:"Rumex acetosa",
+{id:"sorrel",cat:"herbs",name:{en:"Sorrel",fr:"Oseille"},latin:"Rumex acetosa",
 origin:{en:"Europe & Western Asia",fr:"Europe & Asie occidentale"},season:[4,5,6,7,8,9],
 flavor:["sour","grassy","fresh"],
 story:{en:"A leaf that tastes of green lemon, beloved of peasant soups for centuries — then, in 1973, the Troisgros brothers laid a barely-cooked salmon escalope on sorrel cream and produced the signature dish of nouvelle cuisine. One acid leaf rewrote French fish cookery.",
@@ -1049,7 +1049,7 @@ fr:"Hachez une bonne poignée de feuilles dans la rhubarbe ou les groseilles à 
 pairs:["rhubarb","gooseberry","redcurrant","cream","strawberry","apple","blackcurrant"],
 svg:'<path class="s" d="M48 78V50M48 50 32 36M48 50 40 30M48 50V28M48 50 56 30M48 50 64 36"/><path class="f1 sf" d="M27 34a5 5 0 0 1 10 0a5 5 0 0 1-10 0M35 28a5 5 0 0 1 10 0a5 5 0 0 1-10 0M43 24a5 5 0 0 1 10 0a5 5 0 0 1-10 0M51 28a5 5 0 0 1 10 0a5 5 0 0 1-10 0M59 34a5 5 0 0 1 10 0a5 5 0 0 1-10 0"/><path class="f2 sf" d="M46 66q-15 0-19-10 15-6 19 10z"/>'},
 
-{id:"sweet-violet",cat:"herbs",rare:true,luxe:true,name:{en:"Sweet violet",fr:"Violette"},latin:"Viola odorata",
+{id:"sweet-violet",cat:"herbs",luxe:true,name:{en:"Sweet violet",fr:"Violette"},latin:"Viola odorata",
 origin:{en:"Toulouse and its glasshouses",fr:"Toulouse et ses serres"},season:[2,3],
 flavor:["floral","sweet","delicate"],
 story:{en:"Its scent comes from ionones, which briefly numb the very receptors that detect them — you smell a violet, then you do not, then a minute later you do again. Toulouse built a winter industry on the flower in the nineteenth century, raising it under frames and candying it by the ton for the Paris trade.",
@@ -1159,7 +1159,7 @@ fr:"Ciselez-la en rubans d’un millimètre et ajoutez-la pour la dernière heur
 pairs:["coconut-milk","lemongrass","galangal","chili","beef","kaffir-lime-leaf","candlenut"],
 svg:'<path class="f2 sf" d="M48 16q14 20 12 40t-12 24q-10-4-12-24t12-40z"/><path class="s" d="M48 20v58"/><path class="s" d="M46 26q-5 24-2 50M50 26q5 24 2 50M42 40q-3 16-1 30M54 40q3 16 1 30"/>'},
 
-{id:"vietnamese-coriander",cat:"herbs",rare:true,name:{en:"Vietnamese coriander",fr:"Coriandre vietnamienne (rau răm)"},latin:"Persicaria odorata",
+{id:"vietnamese-coriander",cat:"herbs",name:{en:"Vietnamese coriander",fr:"Coriandre vietnamienne (rau răm)"},latin:"Persicaria odorata",
 origin:{en:"Mekong delta gardens",fr:"Jardins du delta du Mékong"},season:[],
 flavor:["peppery","hot","citrus"],
 story:{en:"It belongs to the knotweeds, not to the carrot family that gives us coriander, parsley and dill, and the difference shows in the heat that arrives behind the citrus. In Vietnam it is the leaf set beside a bowl of hot vit lon, and the story goes that monks were told to eat it to dampen desire.",
@@ -1219,7 +1219,7 @@ fr:"Faites bouillir les frondes dix minutes, hachez-les et cuisez les pâtes dan
 pairs:["sardine","pine-nut","raisin","saffron","semola-rimacinata","olive-oil","anchovy"],
 svg:'<path class="s" d="M48 82q0-30 4-52"/><path class="s" d="M50 62q-14-2-20-10M50 62q14-6 18-14M52 48q-14-2-20-10M52 48q14-6 18-14M54 34q-10-2-14-8M54 34q10-4 14-10"/><path class="s" d="M30 52q-2 4-6 6M32 44q-2 5-6 7M66 48q4 3 6 7M68 40q3 4 6 6"/>'},
 
-{id:"wild-garlic",cat:"herbs",rare:true,name:{en:"Wild garlic",fr:"Ail des ours"},latin:"Allium ursinum",
+{id:"wild-garlic",cat:"herbs",name:{en:"Wild garlic",fr:"Ail des ours"},latin:"Allium ursinum",
 origin:{en:"European woodlands",fr:"Forêts d’Europe"},season:[3,4,5],
 flavor:["pungent","grassy","fresh"],
 story:{en:"“Bear’s garlic” in half of Europe’s languages: legend says bears eat it first thing after hibernation to wake their blood. For a few weeks each spring, whole forests smell of garlic, and foragers fill baskets with the leaves — the kitchen’s brief, green thunderclap.",
@@ -1229,7 +1229,7 @@ fr:"Gare à son sosie mortel, le muguet : froissez une feuille — pas d’odeur
 pairs:["potato","butter","egg","pine-nut","parmesan","salmon"],
 svg:'<path class="f1 sf" d="M40 30q8 14 4 46-8-10-8-28 0-12 4-18z"/><path class="f1 sf" d="M56 30q-8 14-4 46 8-10 8-28 0-12-4-18z"/><path class="dot" d="M46 26a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"wild-thyme",cat:"herbs",rare:true,name:{en:"Wild thyme",fr:"Serpolet"},latin:"Thymus serpyllum",
+{id:"wild-thyme",cat:"herbs",name:{en:"Wild thyme",fr:"Serpolet"},latin:"Thymus serpyllum",
 origin:{en:"Limestone and alpine pasture",fr:"Causses et pâturages d'altitude"},season:[6,7,8],
 flavor:["herbal","woody","floral"],
 story:{en:"Serpyllum comes from the Latin serpere, to creep, and the plant does exactly that, flattening itself across limestone and alpine turf instead of making a bush. It carries far less thymol than garden thyme, which is why a whole flowering stem can go into a dish where common thyme would have to be stripped and rationed.",
@@ -1239,7 +1239,7 @@ fr:"Employez la tige fleurie entière et retirez-la en fin de cuisson, comme une
 pairs:["lamb","rabbit","honey","goat-cheese","olive-oil","apricot","garlic"],
 svg:'<path class="s" d="M22 72q14 8 26 0t26-6"/><path class="f2 sf" d="M30 70q4-4 8 0-4 4-8 0zM44 74q4-4 8 0-4 4-8 0zM58 68q4-4 8 0-4 4-8 0z"/><path class="s" d="M36 66V52M60 62V47"/><circle class="f3 sf" cx="36" cy="44" r="8"/><circle class="f3 sf" cx="60" cy="40" r="7"/>'},
 
-{id:"wormwood",cat:"herbs",rare:true,name:{en:"Wormwood",fr:"Grande absinthe"},latin:"Artemisia absinthium",
+{id:"wormwood",cat:"herbs",name:{en:"Wormwood",fr:"Grande absinthe"},latin:"Artemisia absinthium",
 origin:{en:"Temperate Europe; Val-de-Travers, Switzerland",fr:"Europe tempérée ; Val-de-Travers, Suisse"},season:[6,7,8],
 flavor:["bitter","herbal","resinous"],
 story:{en:"Vermouth takes its name straight from Wermut, the German word for wormwood, and the plant is still what legally separates that drink from any other aromatised wine. Its bitterness comes from absinthin, detectable when diluted many tens of thousands of times, which is why the leaf is dosed by the count and not by the sprig.",

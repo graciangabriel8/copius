@@ -39,7 +39,7 @@ fr:"Gardez l’eau de cuisson et faites-la réduire. C’est là que résident l
 pairs:["cumin","lime","cilantro","chili","garlic","onion","avocado","orange"],
 svg:'<ellipse class="f1 sf" cx="41" cy="54" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="56" cy="56" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="47" cy="67" rx="8.5" ry="6"/>'},
 
-{id:"black-chickpea",cat:"legumes",rare:true,name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
+{id:"black-chickpea",cat:"legumes",name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
 origin:{en:"Murgia Carsica, Puglia",fr:"Murgia Carsica, Pouilles"},season:[],
 flavor:["earthy","nutty","mild"],
 story:{en:"The black chickpea of the Murgia Carsica, around Cassano delle Murge in Puglia, was nearly abandoned because its thick wrinkled skin demands twelve hours of soaking and two of cooking. It carries roughly three times the fibre of a common chickpea, which is also why it stays whole where the pale ones collapse.",
@@ -229,7 +229,7 @@ fr:"Ne les salez qu’en fin de cuisson — l’eau salée durcit leur peau. Les
 pairs:["cumin","bay-leaf","carrot","pork","yogurt","cilantro","turmeric"],
 svg:'<path class="f2 sf" d="M36 46a5.5 5.5 0 100 .1zM52 42a5.5 5.5 0 100 .1zM62 52a5.5 5.5 0 100 .1zM42 58a5.5 5.5 0 100 .1zM54 62a5.5 5.5 0 100 .1zM34 64a5.5 5.5 0 100 .1z"/>'},
 
-{id:"lupini",cat:"legumes",rare:true,name:{en:"Lupini beans",fr:"Lupins"},latin:"Lupinus albus",
+{id:"lupini",cat:"legumes",name:{en:"Lupini beans",fr:"Lupins"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
 flavor:["salty","bitter","fresh"],
 story:{en:"The bitterness is lupanine, an alkaloid the plant makes as a defence; Roman and Egyptian eaters dealt with it by boiling the beans and then leaving them for days in running water. Sweet, low-alkaloid lupins were only bred in the 1930s, and most beans sold in brine are still the bitter kind, tamed.",
@@ -239,7 +239,7 @@ fr:"Goûtez-en un avant de servir : la moindre amertume persistante impose de re
 pairs:["lemon","olive-oil","olive-castelvetrano","oregano","garlic","chili","parsley"],
 svg:'<ellipse class="f2 sf" cx="38" cy="44" rx="16" ry="13"/><ellipse class="f1 sf" cx="58" cy="60" rx="16" ry="13"/><path class="s" d="M28 40q10 6 20 0M48 56q10 6 20 0"/><circle class="dot" cx="53" cy="47" r="2"/><circle class="dot" cx="73" cy="63" r="2"/>'},
 
-{id:"mogette",cat:"legumes",rare:true,name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
+{id:"mogette",cat:"legumes",name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
 origin:{en:"Vendée, western France",fr:"Vendée"},season:[7,8,9],
 flavor:["creamy","mild","buttery"],
 story:{en:"Physicians were already recording bean fields in the Vendée at the end of the seventeenth century, and the name is usually traced to the mounges — the monks of the local abbeys. Picked half-dry in late summer, the bean skips the drying yard entirely and goes to market as a fresh vegetable.",
@@ -399,7 +399,7 @@ fr:"Ne le faites pas tremper. Départ à froid, maintenez-le juste sous le frém
 pairs:["morcilla-de-burgos","chorizo","pork-belly","guindilla","cabbage","garlic","olive-oil"],
 svg:'<path class="f1 sf" d="M22 40h52l-6 26a10 10 0 0 1-10 8H38a10 10 0 0 1-10-8z"/><path class="f3 sf" d="M24 48h48l-4 18a10 10 0 0 1-10 8H38a10 10 0 0 1-10-8z"/><path class="s" d="M20 40h56"/><circle class="dot" cx="40" cy="56" r="2.5"/><circle class="dot" cx="52" cy="60" r="2.5"/><circle class="dot" cx="62" cy="54" r="2.5"/>'},
 
-{id:"urad-dal",cat:"legumes",rare:true,name:{en:"Urad dal",fr:"Urad dal (haricot urd)"},latin:"Vigna mungo",
+{id:"urad-dal",cat:"legumes",name:{en:"Urad dal",fr:"Urad dal (haricot urd)"},latin:"Vigna mungo",
 origin:{en:"South Asia",fr:"Asie du Sud"},season:[],
 flavor:["earthy","nutty","mild"],
 story:{en:"Ground and left to stand with rice, urad does what no other pulse does: its arabinogalactan mucilage traps the gas of fermentation, and the batter rises with no yeast added at all. South Indian cooks read the ratio in the grinder rather than the recipe — three or four parts rice to one of urad, the dal ground longer and finer than the rice.",
