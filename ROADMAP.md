@@ -15,7 +15,8 @@ Live at https://graciangabriel8.github.io/copius/ — free, bilingual EN/FR, off
 
 - **135 techniques** — cuissons, préparations, liaisons, cold work, pastry; each with method
   numbers and a "what goes wrong".
-- **Dishes** — in progress: classics tied to their ingredients, techniques and wines.
+- **59 dishes** — classics taken apart: ingredients, techniques, why the balance works, and what to
+  drink. 178 wine notes, appellation-and-mechanism only.
 
 **Audience: two people.** That's the binding constraint, not features.
 
@@ -32,9 +33,9 @@ taught. Nothing is ever removed from free — premium is additive.
 - **Pairing mechanics** — not *X goes with Y* but why, at which preparation, and when it
   fails. Caramelised onion works with sharp apple; raw onion with sweet apple doesn't.
   *Not started.*
-- **Dishes, chefs, houses** — the narrative form of the above. *Chefs built. Descriptive
-  only; stars as plain characters, never the macaron, which is Michelin's registered mark.
-  Dishes and houses open.*
+- **Dishes, chefs, houses** — the narrative form of the above. *Chefs built (81). Dishes built (59).
+  Houses open. Descriptive only; stars as plain characters, never the macaron, which is Michelin's
+  registered mark.*
 - **A sequenced path** — what makes it a formation rather than a reference. *Not started.*
 
 ## Wine, and what the law allows
@@ -56,7 +57,8 @@ iodine. The health message is carried on any page naming a drink. Fine is €75,
    cookie-less counter. Everything below waits on this.
 2. **Three pairing mechanics** for things actually cooked. Tests whether premium holds
    before any checkout exists.
-3. Dishes and houses, once the chefs page shows people read that far.
+3. Houses, once the dishes and chefs pages show people read that far.
+4. Weekly dish on top of the 59, if it stays enjoyable. Not an obligation — the library stands alone.
 
 Then decide shape, price and gate. The data model falls out of what those needed.
 
