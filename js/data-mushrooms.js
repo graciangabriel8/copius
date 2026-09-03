@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"amethyst-deceiver",cat:"mushrooms",rare:true,name:{en:"Amethyst deceiver",fr:"Laccaire améthyste"},latin:"Laccaria amethystina",
+{id:"amethyst-deceiver",cat:"mushrooms",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Amethyst deceiver",fr:"Laccaire améthyste"},latin:"Laccaria amethystina",
 origin:{en:"Beech leaf litter",fr:"Litière de hêtre"},season:[8,9,10,11],
 flavor:["mild","earthy","delicate"],
 story:{en:"The violet is genuine pigment, but it drains out as the mushroom dries until a mature cap is buff and nearly unrecognisable — the deceiver in the name is that disappearance. Laccaria amethystina also concentrates arsenic from the soil far beyond the levels of fungi growing beside it, which is a fair reason to keep it as a garnish rather than a plateful.",
@@ -9,7 +9,7 @@ fr:"Trente secondes dans un beurre mousseux conservent la couleur ; une minute d
 pairs:["butter","chervil","cream","egg","chives","potato"],
 svg:'<path class="f3 sf" d="M34 42q0-15 14-15t14 15q-6 6-14 6t-14-6z"/><path class="f2 sf" d="M45 48q-6 12-3 18t2 14h6q-2-10 1-16t-1-16z"/><path class="s" d="M37 40h22"/><path class="f1 sf" d="M62 62q0-10 8-10t8 10q-4 4-8 4t-8-4z"/>'},
 
-{id:"bagnoli-truffle",cat:"mushrooms",rare:true,name:{en:"Bagnoli truffle",fr:"Truffe de Bagnoli"},latin:"Tuber mesentericum",
+{id:"bagnoli-truffle",cat:"mushrooms",rare:true,price:3,pk:"100–220 €/kg",name:{en:"Bagnoli truffle",fr:"Truffe de Bagnoli"},latin:"Tuber mesentericum",
 origin:{en:"Irpinia, Italy & Lorraine, France",fr:"Irpinia, Italie & Lorraine, France"},season:[1,2,3,8,9,10,11,12],
 flavor:["bitter","pungent","earthy","resinous"],
 story:{en:"Its aroma is phenolic and bituminous — tar and iodine, closing on bitter almond as it ripens — and chefs refused it outright for a long time. It is dug in Italy around Bagnoli Irpino and in France as the truffe de la Meuse or de Lorraine, and alone among truffles its perfume survives cooking, which is what eventually saved it.",
@@ -19,7 +19,7 @@ fr:"Ne la râpez sur rien. Pesez deux ou trois grammes dans une farce à terrine
 pairs:["butter","egg","potato","pork","chicken","cream","chestnut","foie-gras"],
 svg:'<path class="f3 sf" d="M32 44q4-12 16-12t18 12q4 12-6 20t-22 2q-10-8-6-22z"/><path class="s" d="M46 40q-6 6-2 12t10 2"/><path class="s" d="M36 56q6 2 8 8M58 46q4 6 0 12"/>'},
 
-{id:"bamboo-fungus",cat:"mushrooms",rare:true,name:{en:"Bamboo fungus",fr:"Satyre voilé (champignon bambou)"},latin:"Phallus indusiatus",
+{id:"bamboo-fungus",cat:"mushrooms",rare:true,price:3,pk:"60–140 €/kg",name:{en:"Bamboo fungus",fr:"Satyre voilé (champignon bambou)"},latin:"Phallus indusiatus",
 origin:{en:"Bamboo groves, southern China",fr:"Bambouseraies du sud de la Chine"},season:[],
 flavor:["mild","delicate","umami"],
 story:{en:"Fresh, it is a stinkhorn: the cap carries a slime that smells of carrion and draws flies to carry the spores away. Only the veil reaches the kitchen, dried into a hollow cylinder of lace, and until Chinese growers learned to cultivate it in the 1980s it was among the most expensive foods in the country.",
@@ -29,7 +29,7 @@ fr:"Vingt minutes de trempage à l'eau légèrement salée, puis coupez les deux
 pairs:["chicken","dried-shiitake-donko","goji","jujube","ginger","conpoy","lotus-seed","fresh-ginseng"],
 svg:'<path class="f3 sf" d="M40 20q8-4 16 0-2 10-8 12t-8-12z"/><path class="f1 sf" d="M46 32h4l10 34q-12 6-24 0z"/><path class="s" d="M40 44h16M38 53h20M36 62h24"/><path class="s" d="M48 68v12"/>'},
 
-{id:"bay-bolete",cat:"mushrooms",name:{en:"Bay bolete",fr:"Bolet bai"},latin:"Imleria badia",
+{id:"bay-bolete",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Bay bolete",fr:"Bolet bai"},latin:"Imleria badia",
 origin:{en:"Conifer plantations, Europe",fr:"Plantations de conifères, Europe"},season:[8,9,10,11],
 flavor:["earthy","umami","woody","mild"],
 story:{en:"Press the pores and they turn blue-grey within seconds, a reaction that stops for good the moment the mushroom meets heat. Imleria badia is also the bolete that took up caesium from the Chernobyl fallout most readily, and central European authorities still monitor it for that reason.",
@@ -39,7 +39,7 @@ fr:"Il retient bien plus d’eau qu’un cèpe : saisissez-le à sec dans une po
 pairs:["butter","shallot","cream","parsley","thyme","garlic","chicken"],
 svg:'<path class="f3 sf" d="M20 48q6-21 28-21t28 21q-14 10-28 10t-28-10z"/><path class="f1 sf" d="M42 57v20a6 6 0 0 0 12 0V57z"/><circle class="dot" cx="33" cy="52" r="2"/><circle class="dot" cx="48" cy="55" r="2"/><circle class="dot" cx="63" cy="52" r="2"/>'},
 
-{id:"beefsteak-fungus",cat:"mushrooms",rare:true,name:{en:"Beefsteak fungus",fr:"Langue de bœuf"},latin:"Fistulina hepatica",
+{id:"beefsteak-fungus",cat:"mushrooms",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Beefsteak fungus",fr:"Langue de bœuf"},latin:"Fistulina hepatica",
 origin:{en:"Old oaks and sweet chestnut",fr:"Vieux chênes et châtaigniers"},season:[8,9,10],
 flavor:["sour","meaty","earthy"],
 story:{en:"It grows on living oak and sweet chestnut, and the wood it colonises turns a deep russet that cabinetmakers sell at a premium as brown oak. Cut the bracket and it bleeds a red juice; the flesh under the skin is sour with tannin rather than savoury.",
@@ -49,7 +49,7 @@ fr:"Ne prenez que des langues jeunes et souples, tranchées très fin en travers
 pairs:["walnut-oil","grey-shallot","parsley","lemon","olive-oil","hazelnut","butter"],
 svg:'<path class="f1 sf" d="M20 22h7v54h-7z"/><path class="f3 sf" d="M27 34h5q26 0 32 14t-17 18q-18 2-24-8z"/><path class="s" d="M31 41q19 2 25 10M30 52q14 1 20 6"/><circle class="dot" cx="46" cy="76" r="2.5"/>'},
 
-{id:"bianchetto-truffle",cat:"mushrooms",rare:true,luxe:true,name:{en:"Bianchetto truffle",fr:"Truffe blanchette"},latin:"Tuber borchii",
+{id:"bianchetto-truffle",cat:"mushrooms",rare:true,luxe:true,price:4,pk:"200–500 €/kg",name:{en:"Bianchetto truffle",fr:"Truffe blanchette"},latin:"Tuber borchii",
 origin:{en:"Central Italy",fr:"Italie centrale"},season:[1,2,3,4],
 flavor:["pungent","earthy","nutty","musky"],
 story:{en:"It ripens from January into late April, filling the months when Alba's white truffle is finished, and sells for a fraction of it. The aroma opens mushroomy and mild then hardens towards garlic and gas within days, while the veins — coarser than any other truffle's — darken to red-brown, which is how you read its age at the counter.",
@@ -59,7 +59,7 @@ fr:"Elle tient trois ou quatre jours et son parfum meurt dès qu’elle touche l
 pairs:["egg","butter","parmesan","garlic","olive-oil","artichoke","cream"],
 svg:'<path class="f1 sf" d="M26 62q0-24 22-24t22 24z"/><path class="s" d="M48 62V42M40 62q2-10-6-14M56 62q-2-10 6-14"/><path class="s" d="M26 62h44"/>'},
 
-{id:"black-morel",cat:"mushrooms",luxe:true,name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
+{id:"black-morel",cat:"mushrooms",luxe:true,price:4,pk:"120–250 €/kg",name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
 origin:{en:"Conifer edges and burnt ground",fr:"Lisières de conifères et terres brûlées"},season:[3,4,5],
 flavor:["smoky","earthy","meaty","woody"],
 story:{en:"It comes up in March, a good month before the blonde, taller and sharper-capped, its pits so dark they read as black in the leaf litter. Fresh it smells of surprisingly little; dried it is by far the more perfumed of the two, which is why the conique dominates the dried trade while the blonde is sold fresh.",
@@ -69,7 +69,7 @@ fr:"Achetez celle-ci séchée et la blonde fraîche. Faites tremper 20 g une dem
 pairs:["cream","chicken","butter","shallot","thyme","pea","garlic"],
 svg:'<path class="f3 sf" d="M48 20q14 14 12 32-1 8-12 10-11-2-12-10-2-18 12-32z"/><path class="s" d="M48 22v40M38 34h20M36 46h24"/><path class="s" d="M40 28l16 16M56 28L40 44"/><path class="f1 sf" d="M43 62h10l-1 10q0 5-4 5t-4-5z"/>'},
 
-{id:"truffle",cat:"mushrooms",name:{en:"Black truffle",fr:"Truffe noire"},latin:"Tuber melanosporum",
+{id:"truffle",cat:"mushrooms",price:4,pk:"700–1500 €/kg",name:{en:"Black truffle",fr:"Truffe noire"},latin:"Tuber melanosporum",
 origin:{en:"Périgord & Provence, France",fr:"Périgord & Provence, France"},season:[1,2,12],
 flavor:["earthy","umami","rich"],
 story:{en:"Brillat-Savarin called it “the diamond of the kitchen”. For centuries pigs hunted it — too well, since they ate their finds — until trainers switched to dogs, who trade the black nugget for a biscuit without regret.",
@@ -79,7 +79,7 @@ fr:"Ne la cuisez jamais fort : râpez-la sur des œufs chauds, des pâtes ou des
 pairs:["egg","potato","rice","parmesan","cream","chicken"],
 svg:'<path class="f3 sf" d="M33 50q-2-14 13-17 16-3 18 11 2 12-8 17-11 5-19-2-4-4-4-9z"/><path class="s" d="M40 44l6 5-2 7M52 42l3 8-7 4"/>'},
 
-{id:"black-trumpet",cat:"mushrooms",name:{en:"Black trumpet",fr:"Trompette de la mort"},latin:"Craterellus cornucopioides",
+{id:"black-trumpet",cat:"mushrooms",price:3,pk:"25–45 €/kg",name:{en:"Black trumpet",fr:"Trompette de la mort"},latin:"Craterellus cornucopioides",
 origin:{en:"European & American woodlands",fr:"Forêts d’Europe & d’Amérique"},season:[9,10,11],
 flavor:["earthy","smoky","rich","fruity"],
 story:{en:"The French name means “trumpet of death” — pure slander for one of the finest mushrooms in the forest, black as a shadow and nearly invisible against the leaf litter. Foragers call finding a patch “reading the void”; chefs call it the poor man’s truffle and dry it into winter gold.",
@@ -89,7 +89,7 @@ fr:"Fendez chaque trompette en long pour déloger aiguilles et sable cachés. S�
 pairs:["egg","cream","chestnut","parmesan","garlic"],
 svg:'<path class="f3 sf" d="M40 26q4 10 0 22-3 10-8 14 8 4 16 0t16 0q-5-4-8-14-4-12 0-22-8 6-16 0z" transform="scale(.9) translate(6 8)"/>'},
 
-{id:"blonde-morel",cat:"mushrooms",luxe:true,name:{en:"Blonde morel",fr:"Morille blonde"},latin:"Morchella esculenta",
+{id:"blonde-morel",cat:"mushrooms",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Blonde morel",fr:"Morille blonde"},latin:"Morchella esculenta",
 origin:{en:"Ash and elm woods, spring",fr:"Bois de frênes et d'ormes, au printemps"},season:[4,5,6],
 flavor:["earthy","nutty","delicate"],
 story:{en:"The name comes from Old High German morhila, a little carrot, for the pitted cone that pushes up through leaf litter in spring. Chinese growers now raise several black morel species under plastic; the blonde is still lifted from the ground, one at a time.",
@@ -99,7 +99,7 @@ fr:"Jamais crue, jamais saisie à peine : une morille veut dix bonnes minutes de
 pairs:["butter","cream","asparagus","chicken","vin-jaune","grey-shallot","egg"],
 svg:'<path class="f2 sf" d="M48 16q16 0 16 22t-16 30q-16-8-16-30t16-22z"/><path class="s" d="M38 26q10 6 20 0M36 38q12 7 24 0M38 50q10 6 20 0M48 18v48"/><path class="f1 sf" d="M44 66h8v12q0 4-4 4t-4-4z"/>'},
 
-{id:"bloody-milk-cap",cat:"mushrooms",name:{en:"Bloody milk cap",fr:"Lactaire sanguin"},latin:"Lactarius sanguifluus",
+{id:"bloody-milk-cap",cat:"mushrooms",price:2,pk:"12–22 €/kg",name:{en:"Bloody milk cap",fr:"Lactaire sanguin"},latin:"Lactarius sanguifluus",
 origin:{en:"Pine woods, Catalonia and Provence",fr:"Pinèdes de Catalogne et de Provence"},season:[9,10,11,12],
 flavor:["earthy","peppery","resinous","meaty"],
 story:{en:"Break the flesh and it bleeds deep wine red where the saffron milk cap bleeds carrot orange — the same test Catalan and Provençal markets have used for generations to price one above the other. This is the rovelló proper; the orange one is the pinetell, and it fetches less.",
@@ -109,7 +109,7 @@ fr:"Ne le lavez jamais : la chair est une éponge et ne colorera plus ensuite. G
 pairs:["garlic","parsley","olive-oil","thyme","chorizo","lard","egg"],
 svg:'<path class="f2 sf" d="M22 44q10-15 26-15t26 15q-10 12-26 12T22 44z"/><path class="s" d="M34 40q14 8 28 0M40 34q8 4 16 0"/><path class="f1 sf" d="M44 56v20h8V56z"/><path class="f3 sf" d="M48 78q5 6 0 9t-5-9z"/>'},
 
-{id:"blue-foot-mushroom",cat:"mushrooms",name:{en:"Blue foot mushroom",fr:"Pied-bleu"},latin:"Lepista nuda",
+{id:"blue-foot-mushroom",cat:"mushrooms",price:2,pk:"10–18 €/kg",name:{en:"Blue foot mushroom",fr:"Pied-bleu"},latin:"Lepista nuda",
 origin:{en:"Leaf litter and compost heaps",fr:"Litières de feuilles et tas de compost"},season:[10,11,12],
 flavor:["floral","earthy","fresh","mild"],
 story:{en:"It fruits late, often into the first frosts when almost nothing else is up, and it prefers compost heaps and hedge clippings to deep woodland — which is why it is one of the few mushrooms with a wild taste that can actually be farmed. The violet in the stem fades in the pan; the perfume, closer to a flower than a fungus, does not.",
@@ -119,7 +119,7 @@ fr:"Ne le mangez jamais cru ni à peine cuit — mal cuit, le pied-bleu dérange
 pairs:["butter","garlic","parsley","cream","chestnut","thyme","shallot","hazelnut"],
 svg:'<path class="f2 sf" d="M24 50q6-18 24-18t24 18q-10 6-24 6t-24-6z"/><path class="s" d="M32 50q16 5 32 0"/><path class="f1 sf" d="M42 56h12l2 16q0 4-8 4t-8-4z"/><path class="s" d="M44 62q4 3 8 0M44 70q4 3 8 0"/>'},
 
-{id:"bronze-bolete",cat:"mushrooms",name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
+{id:"bronze-bolete",cat:"mushrooms",price:3,pk:"35–60 €/kg",name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
 origin:{en:"Warm oak and chestnut woods",fr:"Chênaies et châtaigneraies chaudes"},season:[6,7,8,9],
 flavor:["nutty","earthy","woody","meaty"],
 story:{en:"Boletus aereus takes its name from aereus, of bronze: the cap is nearly black on a young one and fades towards the colour of an old coin. It fruits in hot oak and chestnut woods weeks before the cèpe de Bordeaux and holds its flesh far firmer, which is why southern markets sell it apart from it and above it.",
@@ -129,7 +129,7 @@ fr:"Sa chair est assez dense pour se trancher crue en carpaccio, ce que l’edul
 pairs:["olive-oil","garlic","parsley","thyme","chestnut","egg"],
 svg:'<path class="f3 sf" d="M20 46q0-18 28-18t28 18q0 6-28 6t-28-6z"/><path class="f1 sf" d="M40 50q0 14-3 20 5 4 22 0-3-6-3-20z"/><path class="s" d="M42 58q8 3 14 0M41 66q9 3 16 0"/>'},
 
-{id:"burgundy-truffle",cat:"mushrooms",luxe:true,name:{en:"Burgundy truffle",fr:"Truffe de Bourgogne"},latin:"Tuber uncinatum",
+{id:"burgundy-truffle",cat:"mushrooms",luxe:true,price:4,pk:"300–600 €/kg",name:{en:"Burgundy truffle",fr:"Truffe de Bourgogne"},latin:"Tuber uncinatum",
 origin:{en:"Beech and hazel woods, Burgundy and Lorraine",fr:"Hêtraies et coudraies de Bourgogne et de Lorraine"},season:[9,10,11,12,1],
 flavor:["earthy","nutty","musky","woody"],
 story:{en:"Genetically it is the same species as the summer truffle, and mycologists now write it Tuber aestivum uncinatum — but the trade has never merged the two, because a truffle lifted in November under beech is not the same object as one lifted in July. The autumn form has a dark, heavily marbled interior and a hazelnut-and-cocoa nose strong enough to hold through a minute of heat, which aestivum has not.",
@@ -139,7 +139,7 @@ fr:"Contrairement à la truffe du Périgord, elle supporte une cuisson brève : 
 pairs:["egg","butter","potato","comte","hazelnut","cream"],
 svg:'<path class="f3 sf" d="M26 50q0-20 22-20t22 20-22 22-22-22z"/><path class="f1 sf" d="M48 30q22 0 22 20t-22 22z"/><path class="s" d="M52 38q6 6 4 14M60 42q4 8 0 16M56 58q6 2 8 8"/><path class="s" d="M30 42q4-4 8-2M32 56q5-3 9 0"/>'},
 
-{id:"mushroom",cat:"mushrooms",name:{en:"Button mushroom",fr:"Champignon de Paris"},latin:"Agaricus bisporus",
+{id:"mushroom",cat:"mushrooms",price:1,pk:"4–8 €/kg",name:{en:"Button mushroom",fr:"Champignon de Paris"},latin:"Agaricus bisporus",
 origin:{en:"Cultivated in France",fr:"Cultivé en France"},season:[],
 flavor:["earthy","umami","mild"],
 story:{en:"Under Napoleon’s Paris, growers discovered that abandoned quarry tunnels — cool, damp, dark — were perfect for mushrooms, and the catacomb farms gave it its French name. The world’s most cultivated mushroom began underground in the capital of light.",
@@ -149,7 +149,7 @@ fr:"Ne surchargez pas la poêle : en foule les champignons bouillent, en solitai
 pairs:["garlic","parsley","cream","thyme","egg","chicken","barley"],
 svg:'<path class="f2 sf" d="M28 52q0-18 20-18t20 18q0 4-4 4H32q-4 0-4-4z"/><path class="f1 sf" d="M42 56h12l-2 18q0 4-4 4t-4-4z"/><path class="s" d="M36 48h24"/>'},
 
-{id:"caesars-mushroom",cat:"mushrooms",luxe:true,name:{en:"Caesar’s mushroom",fr:"Oronge"},latin:"Amanita caesarea",
+{id:"caesars-mushroom",cat:"mushrooms",price:3,pk:"40–80 €/kg",name:{en:"Caesar’s mushroom",fr:"Oronge"},latin:"Amanita caesarea",
 origin:{en:"Hot chestnut and oak woods",fr:"Châtaigneraies et chênaies chaudes"},season:[7,8,9,10],
 flavor:["sweet","nutty","delicate"],
 story:{en:"The Romans called it boletus and reserved it for the emperors, which is where the name comes from; Suetonius reports that Claudius was killed by a dish of them, a death cap slipped in among the good. Both do emerge from a white egg-shaped veil in the same woods, and at that stage they are told apart only by cutting: the Caesar’s is yellow inside, the death cap white.",
@@ -159,7 +159,7 @@ fr:"Mangez-la crue : émincée à l’huile d’olive, citron et parmesan, c’e
 pairs:["olive-oil","parmesan","lemon","celery","black-pepper","hazelnut"],
 svg:'<path class="f2 sf" d="M22 44q0-16 26-16t26 16q0 4-26 4T22 44z"/><path class="s" d="M28 42h40"/><path class="f1 sf" d="M42 48v18h12V48z"/><path class="f1 sf" d="M36 66q0-8 12-8t12 8q0 8-12 8t-12-8z"/>'},
 
-{id:"candy-cap",cat:"mushrooms",rare:true,name:{en:"Candy cap",fr:"Candy cap"},latin:"Lactarius rubidus",
+{id:"candy-cap",cat:"mushrooms",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Candy cap",fr:"Candy cap"},latin:"Lactarius rubidus",
 origin:{en:"Californian coastal woods",fr:"Forêts côtières de Californie"},season:[11,12,1,2],
 flavor:["sweet","toasty","warm","honeyed"],
 story:{en:"Fresh, it smells of almost nothing; dried, a reaction between its amino acids produces quabalactone III, which breaks down into sotolon — the same molecule that carries maple syrup and fenugreek. Thirty grams will scent a room for days, and it is sold dried and by weight, as a flavouring rather than as a vegetable.",
@@ -169,7 +169,7 @@ fr:"Réduisez les chapeaux secs en poudre et faites-les infuser vingt minutes da
 pairs:["cream","egg","maple-syrup","dark-chocolate","pecan","vanilla"],
 svg:'<path class="f2 sf" d="M22 46q0-12 13-12t13 12q0 4-13 4t-13-4z"/><path class="s" d="M35 50v20"/><path class="f1 sf" d="M50 56q0-10 11-10t11 10q0 4-11 4t-11-4z"/><path class="s" d="M61 60v14"/><path class="s" d="M24 44q11 4 22 0M52 55q9 3 18 0"/>'},
 
-{id:"cauliflower-mushroom",cat:"mushrooms",rare:true,name:{en:"Cauliflower mushroom",fr:"Clavaire crépue"},latin:"Sparassis crispa",
+{id:"cauliflower-mushroom",cat:"mushrooms",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Cauliflower mushroom",fr:"Clavaire crépue"},latin:"Sparassis crispa",
 origin:{en:"Pine roots",fr:"Pieds de pins"},season:[8,9,10,11],
 flavor:["nutty","mild","resinous"],
 story:{en:"It is not a cluster of caps but a single fungus folded into hundreds of brittle ribbons, growing out of the roots of a pine it is slowly rotting from below. One specimen can weigh several kilos, and it is among the few wild mushrooms whose texture survives an hour of cooking: the ribbons stay springy where a cap would collapse.",
@@ -179,7 +179,7 @@ fr:"Le nettoyage est tout le travail : détachez-la lobe par lobe et rincez chac
 pairs:["butter","cream","thyme","chicken","leek","pine-nut"],
 svg:'<path class="f1 sf" d="M24 54q-4-14 10-18 2-10 14-10t14 10q14 4 10 18-6 14-24 14t-24-14z"/><path class="s" d="M32 50q6-6 12-2t8-4M28 58q8-4 14 2t12-2M40 40q4-6 10-2"/><path class="s" d="M46 68v8"/>'},
 
-{id:"chaga",cat:"mushrooms",rare:true,name:{en:"Chaga",fr:"Chaga"},latin:"Inonotus obliquus",
+{id:"chaga",cat:"mushrooms",rare:true,price:3,pk:"50–120 €/kg",name:{en:"Chaga",fr:"Chaga"},latin:"Inonotus obliquus",
 origin:{en:"Living birch, northern forests",fr:"Bouleaux vivants des forêts du Nord"},season:[11,12,1,2],
 flavor:["bitter","woody","toasty"],
 story:{en:"The black lump on a birch is not a fruiting body at all but a sterile mass of fungal tissue and wood, armoured in melanin, and Siberian households boiled it as a tea long before anyone called it a supplement. It smoulders rather than flames, and in the north it was carried as a fire-ember.",
@@ -189,7 +189,7 @@ fr:"Ne le faites jamais bouillir à gros bouillons : cassez-le en morceaux et te
 pairs:["birch-syrup","honey","coffee","dark-chocolate","cream","juniper","airelle-rouge","rye"],
 svg:'<path class="f1 sf" d="M26 18h14v60H26z"/><path class="s" d="M28 30h9M28 44h9M28 58h9"/><path class="f3 sf" d="M40 34q14-8 22 2t-2 22q-14 8-20-2t0-22z"/><path class="s" d="M46 44q8-2 12 4M44 56q10 0 14-6"/>'},
 
-{id:"chanterelle",cat:"mushrooms",name:{en:"Chanterelle",fr:"Girolle"},latin:"Cantharellus cibarius",
+{id:"chanterelle",cat:"mushrooms",price:3,pk:"20–40 €/kg",name:{en:"Chanterelle",fr:"Girolle"},latin:"Cantharellus cibarius",
 origin:{en:"Old-growth woodlands",fr:"Forêts anciennes"},season:[6,7,8,9,10],
 flavor:["fruity","peppery","delicate"],
 story:{en:"Golden trumpets that smell faintly of apricot, chanterelles have never been farmed — they live in quiet partnership with tree roots. Foragers speak of their spots in whispers, if at all.",
@@ -199,7 +199,7 @@ fr:"Ne les trempez jamais — brossez-les. Du beurre, un peu de crème, et elles
 pairs:["butter","egg","cream","chives","chicken","hazelnut"],
 svg:'<path class="f2 sf" d="M36 32q12 8 24 0-2 10-8 16l-2 22q0 4-2 4t-2-4l-2-22q-6-6-8-16z"/><path class="s" d="M42 40q6 4 12 0M44 50q4 3 8 0"/>'},
 
-{id:"charcoal-burner-russula",cat:"mushrooms",name:{en:"Charcoal burner",fr:"Russule charbonnière"},latin:"Russula cyanoxantha",
+{id:"charcoal-burner-russula",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Charcoal burner",fr:"Russule charbonnière"},latin:"Russula cyanoxantha",
 origin:{en:"European broadleaf forest",fr:"Forêts de feuillus d’Europe"},season:[6,7,8,9,10],
 flavor:["mild","nutty","earthy"],
 story:{en:"Every other russula has brittle gills that shatter under a thumb; cyanoxantha's are flexible and faintly greasy, and drawing a finger across them is the whole identification. Its cap runs from slate to violet to green on one patch of forest floor, which is why the French named it for charcoal instead of for a colour.",
@@ -209,7 +209,7 @@ fr:"Elle ne rend presque pas d’eau : les jeunes chapeaux se poêlent entiers a
 pairs:["butter","shallot","parsley","cream","egg","thyme"],
 svg:'<path class="f3 sf" d="M22 42q8-17 26-17t26 17z"/><ellipse class="f1 sf" cx="48" cy="44" rx="26" ry="8"/><path class="s" d="M30 40l6 8M48 36v12M66 40l-6 8"/><path class="f2 sf" d="M44 51h8v23a4 4 0 0 1-8 0z"/>'},
 
-{id:"chicken-of-the-woods",cat:"mushrooms",rare:true,name:{en:"Chicken of the woods",fr:"Polypore soufré"},latin:"Laetiporus sulphureus",
+{id:"chicken-of-the-woods",cat:"mushrooms",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Chicken of the woods",fr:"Polypore soufré"},latin:"Laetiporus sulphureus",
 origin:{en:"Living oak trunks",fr:"Troncs de chênes vivants"},season:[5,6,7,8,9],
 flavor:["meaty","umami","mild","sour"],
 story:{en:"It is a brown-rot bracket: it eats the heartwood of a living oak from inside while the tree stands on for years, sulphur-yellow shelf after shelf returning on the same trunk each summer. The flesh pulls apart in fibres instead of slicing, which is why it is cooked as a protein and not as a mushroom.",
@@ -219,7 +219,7 @@ fr:"Ne prélevez que les deux ou trois centimètres tendres du bord d’une jeun
 pairs:["butter","lemon","thyme","garlic","cream","paprika"],
 svg:'<path class="s" d="M26 18v60"/><path class="f2 sf" d="M26 34q22-6 30 4-14 8-30 4z"/><path class="f1 sf" d="M26 50q26-6 34 5-16 9-34 4z"/><path class="f2 sf" d="M26 66q18-5 24 3-12 6-24 3z"/>'},
 
-{id:"chinese-truffle",cat:"mushrooms",name:{en:"Chinese truffle",fr:"Truffe de Chine"},latin:"Tuber indicum",
+{id:"chinese-truffle",cat:"mushrooms",price:3,pk:"60–150 €/kg",name:{en:"Chinese truffle",fr:"Truffe de Chine"},latin:"Tuber indicum",
 origin:{en:"Yunnan and Sichuan",fr:"Yunnan et Sichuan"},season:[11,12,1,2],
 flavor:["earthy","mild","woody"],
 story:{en:"Tuber indicum is a genuine Asian species, harvested in Yunnan and Sichuan, that happens to look almost exactly like the Périgord truffle in cross-section while carrying a fraction of its aroma. DNA testing of European truffle products has turned it up repeatedly in jars and oils labelled melanosporum, and it has since been found growing in a few European orchards, its spores having travelled with the trade.",
@@ -229,7 +229,7 @@ fr:"Achetez-la en connaissance de cause et servez-vous de ce qu’elle fait : sa
 pairs:["egg","butter","rice","cream","potato","chicken"],
 svg:'<path class="f3 sf" d="M22 46q0-16 18-16t18 16-18 18-18-18z"/><path class="s" d="M28 38q4-4 7-1M34 52q5-3 9 1M46 40q4 2 4 7"/><ellipse class="f1 sf" cx="64" cy="66" rx="14" ry="7"/><path class="s" d="M55 64q6 4 12 0M58 70q6-3 10 0"/>'},
 
-{id:"cordyceps-flower",cat:"mushrooms",rare:true,name:{en:"Cordyceps flower",fr:"Fleur de cordyceps"},latin:"Cordyceps militaris",
+{id:"cordyceps-flower",cat:"mushrooms",rare:true,price:3,pk:"80–200 €/kg",name:{en:"Cordyceps flower",fr:"Fleur de cordyceps"},latin:"Cordyceps militaris",
 origin:{en:"Cultivated on grain, East Asia",fr:"Cultivé sur céréales, Asie orientale"},season:[],
 flavor:["mild","sweet","earthy"],
 story:{en:"In the wild, Cordyceps militaris grows out of a buried moth pupa; the orange spikes sold for soup are raised in sealed jars on cooked rice, with no insect anywhere near them. In one generation they went from laboratory curiosity to Cantonese soup pot.",
@@ -239,7 +239,7 @@ fr:"Une bonne poignée colore deux litres de soupe à double cuisson : ajoutez-l
 pairs:["chicken","jujube","goji","pork","lotus-seed","snow-fungus","fresh-ginseng","ginger"],
 svg:'<path class="f2 sf" d="M34 70q-2-24 2-32t6 32z"/><path class="f2 sf" d="M44 72q-1-30 4-38t4 38z"/><path class="f2 sf" d="M56 70q0-22 5-28t2 28z"/><path class="f1 sf" d="M30 70h38v8H30z"/>'},
 
-{id:"desert-truffle",cat:"mushrooms",rare:true,name:{en:"Desert truffle",fr:"Terfèze"},latin:"Terfezia claveryi",
+{id:"desert-truffle",cat:"mushrooms",rare:true,price:3,pk:"25–60 €/kg",name:{en:"Desert truffle",fr:"Terfèze"},latin:"Terfezia claveryi",
 origin:{en:"Saharan and Arabian scrub",fr:"Steppes sahariennes et arabiques"},season:[2,3,4],
 flavor:["earthy","mild","nutty"],
 story:{en:"Terfezia is not a Tuber at all: it lives with a low desert shrub, Helianthemum, and swells after the winter storms, harvesters reading the cracks the growing fungus opens in the sand. Bedouin tradition holds that lightning makes the crop, and the thing itself is nearly odourless, firm as a potato, and sold by the sack rather than the gram.",
@@ -249,7 +249,7 @@ fr:"Pelez-la : la peau retient un sable qu’aucun lavage n’enlève, et la cha
 pairs:["lamb","butter","cumin","garlic","onion","saffron"],
 svg:'<path class="f1 sf" d="M28 50q0-16 20-16t20 16-20 16-20-16z"/><path class="s" d="M20 68h56"/><path class="s" d="M34 70l-6 6M50 70l-5 6M66 70l-6 6"/><path class="s" d="M38 44q6-4 12 0M42 54q6 3 12-1"/>'},
 
-{id:"dried-shiitake-donko",cat:"mushrooms",name:{en:"Dried shiitake (donko)",fr:"Shiitaké séché (donko)"},latin:"Lentinula edodes",
+{id:"dried-shiitake-donko",cat:"mushrooms",price:3,pk:"50–120 €/kg",name:{en:"Dried shiitake (donko)",fr:"Shiitaké séché (donko)"},latin:"Lentinula edodes",
 origin:{en:"Japan and China",fr:"Japon et Chine"},season:[],
 flavor:["umami","earthy","woody"],
 story:{en:"Donko means winter mushroom: the cap is picked young and still curled under, in cold dry weather that cracks the surface into white fissures. The drying does the real work — enzymes build the guanylate that the fresh mushroom barely carries, and sunlight turns the ergosterol in the flesh into vitamin D.",
@@ -259,7 +259,7 @@ fr:"Réhydratez à l'eau froide au réfrigérateur, six heures ou une nuit ; l'e
 pairs:["kombu","soy-sauce","hon-mirin","chicken","pork","bamboo-shoot","napa-cabbage","junmai-sake"],
 svg:'<path class="f3 sf" d="M24 46q0-18 24-18t24 18q-10 6-24 6t-24-6z"/><path class="f2 sf" d="M43 52h10v20q0 4-5 4t-5-4z"/><path class="s" d="M36 34q6 4 8 10M52 32q-2 6-2 12M44 30v6M60 38q-6 2-8 6"/>'},
 
-{id:"enoki",cat:"mushrooms",name:{en:"Enoki",fr:"Énoki"},latin:"Flammulina velutipes",
+{id:"enoki",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Enoki",fr:"Énoki"},latin:"Flammulina velutipes",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[],
 flavor:["delicate","fresh","mild","sweet"],
 story:{en:"The wild version is squat, brown and grows on tree stumps in winter — nothing like the pale white threads sold in shops, which are grown in the dark in high carbon dioxide to force them long and thin. Two forms of one fungus.",
@@ -269,7 +269,7 @@ fr:"Ôtez toute la base agglomérée et séparez les filaments. Ajoutez-les dans
 pairs:["soy-sauce","spring-onion","sesame-oil","ginger","tamari","garlic","chili","shiitake"],
 svg:'<path class="s" d="M38 74V44M44 74V40M50 74V40M56 74V44"/><circle class="f3 sf" cx="38" cy="42" r="4"/><circle class="f3 sf" cx="44" cy="38" r="4"/><circle class="f3 sf" cx="50" cy="38" r="4"/><circle class="f3 sf" cx="56" cy="42" r="4"/>'},
 
-{id:"fairy-ring-mushroom",cat:"mushrooms",name:{en:"Fairy ring mushroom",fr:"Faux mousseron"},latin:"Marasmius oreades",
+{id:"fairy-ring-mushroom",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Fairy ring mushroom",fr:"Faux mousseron"},latin:"Marasmius oreades",
 origin:{en:"Grazed meadows",fr:"Prairies pâturées"},season:[5,6,7,8,9,10],
 flavor:["nutty","sweet","grassy"],
 story:{en:"Fries put it in Marasmius, from the Greek for drying out, because of what it does in a drought: the cap shrivels away, then rehydrates with the next rain and resumes releasing spores, protected by the trehalose in its walls. That is also why it dries so well in a kitchen — it was built for it.",
@@ -279,7 +279,7 @@ fr:"Sec, c’est un condiment et non un légume : une petite poignée réduite e
 pairs:["cream","butter","chicken","parsley","shallot","tarragon"],
 svg:'<ellipse class="s" cx="48" cy="60" rx="23" ry="11"/><path class="f1 sf" d="M21 57q0-4 4-4t4 4q0 2-4 2t-4-2z"/><path class="f1 sf" d="M44 46q0-4 4-4t4 4q0 2-4 2t-4-2z"/><path class="f1 sf" d="M67 57q0-4 4-4t4 4q0 2-4 2t-4-2z"/><path class="f2 sf" d="M44 70q0-5 4-5t4 5q0 2-4 2t-4-2z"/><path class="s" d="M25 59v6M48 48v6M71 59v6M48 72v6"/>'},
 
-{id:"field-mushroom",cat:"mushrooms",name:{en:"Field mushroom",fr:"Rosé des prés"},latin:"Agaricus campestris",
+{id:"field-mushroom",cat:"mushrooms",price:1,pk:"8–15 €/kg",name:{en:"Field mushroom",fr:"Rosé des prés"},latin:"Agaricus campestris",
 origin:{en:"Manured pasture",fr:"Prés fumés"},season:[8,9,10],
 flavor:["earthy","anise","umami"],
 story:{en:"Agaricus campestris is a different species from the cultivated button, and it will not be farmed: it wants grazed pasture and the manure that comes with it. Its gills run bright pink and then chocolate where the cultivated one stays pale, and its juices blacken the pan and any cream they touch.",
@@ -289,7 +289,7 @@ fr:"Lames roses, on ramasse ; lames blanches, on s’arrête — des lames blanc
 pairs:["butter","parsley","garlic","poitrine-fumee","egg","thyme"],
 svg:'<path class="f1 sf" d="M24 50q0-18 24-18t24 18z"/><path class="s" d="M29 50q3-6 3-14M39 50q2-7 2-15M57 50q-2-8-2-15M67 50q0-8-3-14"/><path class="f3 sf" d="M24 50h48v5H24z"/><path class="f1 sf" d="M42 55h12v20H42z"/>'},
 
-{id:"giant-puffball",cat:"mushrooms",rare:true,name:{en:"Giant puffball",fr:"Vesse-de-loup géante"},latin:"Calvatia gigantea",
+{id:"giant-puffball",cat:"mushrooms",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Giant puffball",fr:"Vesse-de-loup géante"},latin:"Calvatia gigantea",
 origin:{en:"Meadow edges and hedgerows",fr:"Lisières et haies"},season:[8,9,10],
 flavor:["mild","earthy","delicate"],
 story:{en:"A large one holds something on the order of seven trillion spores, which is exactly why its edible window is so short: the flesh is food while it is pure white and becomes a bag of powder as soon as they ripen. No gills, no stem, no cap — a uniform white block, which is why it is cut into steaks and handled as butchery rather than as mushroom.",
@@ -299,7 +299,7 @@ fr:"Coupez-la en deux avant de l’acheter ou de la rapporter : le moindre jaune
 pairs:["butter","garlic","parsley","egg","parmesan","black-pepper"],
 svg:'<circle class="f1 sf" cx="42" cy="48" r="24"/><path class="s" d="M28 38q6-4 12 0M34 58q8 4 16 0"/><path class="f2 sf" d="M62 58h14v14H62z"/><path class="s" d="M20 76h56"/>'},
 
-{id:"golden-oyster",cat:"mushrooms",name:{en:"Golden oyster",fr:"Pleurote jaune"},latin:"Pleurotus citrinopileatus",
+{id:"golden-oyster",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Golden oyster",fr:"Pleurote jaune"},latin:"Pleurotus citrinopileatus",
 origin:{en:"Dead elm, East Asia",fr:"Ormes morts d'Asie orientale"},season:[],
 flavor:["nutty","woody","mild"],
 story:{en:"Tamogitake in Japan, where it fruits on dead elm, this yellow oyster travelled the world in grow kits and then escaped them - it now fruits wild across the American Midwest, where it is treated as an invasive species. Raw, the cluster smells closer to cashew than to mushroom.",
@@ -309,7 +309,7 @@ fr:"Commencez à sec, à feu vif : ils rendent beaucoup d'eau et ne croustillent
 pairs:["garlic","soy-sauce","sesame-oil","spring-onion","butter","thyme","egg","chili"],
 svg:'<path class="f1 sf" d="M46 30q-22 0-26 12t20 12q16 0 22-10z"/><path class="f2 sf" d="M56 46q-16 0-20 10t18 12q16 0 20-10z"/><path class="s" d="M24 44q12-6 24-8M40 60q14-6 26-6"/>'},
 
-{id:"green-cracking-russula",cat:"mushrooms",rare:true,name:{en:"Green cracking russula",fr:"Russule verdoyante (palomet)"},latin:"Russula virescens",
+{id:"green-cracking-russula",cat:"mushrooms",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Green cracking russula",fr:"Russule verdoyante (palomet)"},latin:"Russula virescens",
 origin:{en:"Deciduous woods, southern Europe",fr:"Feuillus du sud de l’Europe"},season:[6,7,8,9],
 flavor:["nutty","fresh","delicate","earthy"],
 story:{en:"The cap surface breaks up into a mosaic of pale green patches like crackled glaze, which makes it one of the very few russulas that cautious foragers will name on sight. In Provence and Catalonia it is the palomet, and it is among the small handful of wild mushrooms traditionally eaten raw.",
@@ -319,7 +319,7 @@ fr:"Ne le taillez pas en dés : la chair est granuleuse et s’effrite sous le c
 pairs:["olive-oil","lemon","parsley","hazelnut","parmesan","garlic"],
 svg:'<path class="f1 sf" d="M20 46q6-19 28-19t28 19q-12 10-28 10T20 46z"/><path class="s" d="M32 30v18M48 26v22M64 32v16M26 40h44"/><path class="f2 sf" d="M40 55h16v19a8 8 0 0 1-16 0z"/>'},
 
-{id:"pied-de-mouton",cat:"mushrooms",name:{en:"Hedgehog mushroom",fr:"Pied-de-mouton"},latin:"Hydnum repandum",
+{id:"pied-de-mouton",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Hedgehog mushroom",fr:"Pied-de-mouton"},latin:"Hydnum repandum",
 origin:{en:"European woodland",fr:"Forêts d’Europe"},season:[9,10,11,12],
 flavor:["nutty","sweet","earthy","mild"],
 story:{en:"Underneath it has spines rather than gills — tiny soft teeth that shed spores, which is why French calls it a sheep's foot and English a hedgehog. It has no dangerous lookalike at all, which makes it the beginner's mushroom.",
@@ -329,7 +329,7 @@ fr:"Grattez les aiguillons s’il est gros — ils amèrent avec l’âge. Les j
 pairs:["butter","parsley","garlic","cream","shallot","thyme","egg","chicken"],
 svg:'<path class="f2 sf" d="M26 52q0-16 22-16t22 16q-20 10-44 0z"/><path class="f3 sf" d="M42 52h12v22h-12z"/><path class="s" d="M32 54v4M40 55v4M48 55v4M56 55v4M64 54v4"/>'},
 
-{id:"hon-shimeji",cat:"mushrooms",luxe:true,name:{en:"Hon-shimeji",fr:"Hon-shimeji"},latin:"Lyophyllum shimeji",
+{id:"hon-shimeji",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Hon-shimeji",fr:"Hon-shimeji"},latin:"Lyophyllum shimeji",
 origin:{en:"Pine and oak woods, Japan",fr:"Sous les pins et les chênes du Japon"},season:[9,10,11],
 flavor:["umami","nutty","sweet"],
 story:{en:"A Japanese proverb ranks the mushrooms: matsutake for scent, shimeji for taste - and the shimeji it means is this wild, mycorrhizal one, not the cheap cultivated cluster. It resisted farming until the very end of the twentieth century, which is why the name on the punnet matters more here than for any other mushroom.",
@@ -339,7 +339,7 @@ fr:"Cuisez-les à cœur, quatre ou cinq minutes au moins : sautés trop vite, le
 pairs:["kombu","soy-sauce","junmai-sake","butter","rice","mitsuba","sudachi","chicken"],
 svg:'<path class="f2 sf" d="M22 40q0-8 8-8t8 8q-4 3-8 3t-8-3z"/><path class="f2 sf" d="M38 32q0-9 9-9t9 9q-4 3-9 3t-9-3z"/><path class="f2 sf" d="M58 44q0-8 8-8t8 8q-4 3-8 3t-8-3z"/><path class="s" d="M30 43q-2 18 6 27M47 35q0 21 1 35M66 47q2 15-6 23"/><path class="f1 sf" d="M38 70h20v6H38z"/>'},
 
-{id:"honey-fungus",cat:"mushrooms",name:{en:"Honey fungus (chiodini)",fr:"Armillaire couleur de miel"},latin:"Armillaria mellea",
+{id:"honey-fungus",cat:"mushrooms",price:2,pk:"10–20 €/kg",name:{en:"Honey fungus (chiodini)",fr:"Armillaire couleur de miel"},latin:"Armillaria mellea",
 origin:{en:"Stumps of broadleaf trees",fr:"Souches de feuillus"},season:[9,10,11],
 flavor:["earthy","woody","mild"],
 story:{en:"The mycelium of this tree-killer glows faintly in rotting wood - the cold light Aristotle described and foresters still call foxfire. In Italy the young caps are chiodini, little nails, sold by the crate in autumn and never thrown straight into the pan.",
@@ -349,7 +349,7 @@ fr:"Blanchissez-les cinq minutes et jetez l'eau : crus ou à peine cuits, ils re
 pairs:["garlic","parsley","olive-oil","polenta-bramata","pork","thyme","red-wine-vinegar"],
 svg:'<path class="f2 sf" d="M30 44q0-10 10-10t10 10q-4 4-10 4t-10-4z"/><path class="f2 sf" d="M50 52q0-9 9-9t9 9q-4 4-9 4t-9-4z"/><path class="s" d="M40 48v22M59 56v14"/><path class="f3 sf" d="M32 70h34l-3 10H35z"/>'},
 
-{id:"huitlacoche",cat:"mushrooms",rare:true,name:{en:"Huitlacoche",fr:"Huitlacoche"},latin:"Ustilago maydis",
+{id:"huitlacoche",cat:"mushrooms",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Huitlacoche",fr:"Huitlacoche"},latin:"Ustilago maydis",
 origin:{en:"Mexican maize fields",fr:"Champs de maïs mexicains"},season:[7,8,9],
 flavor:["earthy","umami","sweet","smoky"],
 story:{en:"It is a plant disease: Ustilago maydis infects a living corn plant and swells individual kernels into grey-blue galls — the thing American extension services spent a century trying to eradicate and Mexican farmers were selling at market. The Nahuatl name is older than either position, and Mexican growers now inoculate young cobs on purpose.",
@@ -359,7 +359,7 @@ fr:"Utilisez-le le jour même de la récolte : les galles passent de fermes à u
 pairs:["corn","epazote","onion","chili","masa-harina","garlic"],
 svg:'<path class="f1 sf" d="M48 20q11 0 11 16v24q0 14-11 14t-11-14V36q0-16 11-16z"/><circle class="f3 sf" cx="42" cy="34" r="7"/><circle class="f3 sf" cx="56" cy="46" r="8"/><circle class="f3 sf" cx="43" cy="60" r="7"/><path class="s" d="M37 62q-10 6-9 18 10-2 12-12M59 62q10 6 9 18-10-2-12-12"/>'},
 
-{id:"king-oyster",cat:"mushrooms",name:{en:"King oyster",fr:"Pleurote du panicaut"},latin:"Pleurotus eryngii",
+{id:"king-oyster",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"King oyster",fr:"Pleurote du panicaut"},latin:"Pleurotus eryngii",
 origin:{en:"Mediterranean grassland",fr:"Prairies méditerranéennes"},season:[9,10,11],
 flavor:["meaty","umami","nutty","mild"],
 story:{en:"It grows on the roots of eryngo, the sea holly — hence panicaut in French, after the plant it parasitises. Its stem is unusually thick and dense, and it is the mushroom most often used as a scallop substitute because of the texture.",
@@ -369,7 +369,7 @@ fr:"Taillez le pied en épais médaillons, incisez-les en croisillons et saisiss
 pairs:["butter","garlic","thyme","soy-sauce","black-pepper","parsley","sesame-oil","lemon"],
 svg:'<path class="f2 sf" d="M36 40q0-8 12-8t12 8q-10 6-24 0z"/><path class="f3 sf" d="M40 40h16v34H40z"/>'},
 
-{id:"lions-mane",cat:"mushrooms",name:{en:"Lion's mane",fr:"Hydne hérisson"},latin:"Hericium erinaceus",
+{id:"lions-mane",cat:"mushrooms",price:3,pk:"25–45 €/kg",name:{en:"Lion's mane",fr:"Hydne hérisson"},latin:"Hericium erinaceus",
 origin:{en:"Standing beech and oak",fr:"Hêtres et chênes sur pied"},season:[8,9,10,11],
 flavor:["delicate","meaty","nutty"],
 story:{en:"In Japan it is yamabushitake, named for the tufted pom-poms on the robes of the yamabushi mountain ascetics. It carries no cap and no gills — the whole white cascade of spines is the spore surface, hanging from a wound in a living beech or oak.",
@@ -379,7 +379,7 @@ fr:"Il est fait d'eau aux neuf dixièmes : effilochez-le, pressez-le fermement d
 pairs:["butter","lemon","chives","shallot","cream","tarragon","white-pepper"],
 svg:'<path class="f1 sf" d="M30 40q4-16 18-16t18 16q4 8-2 12H32q-6-4-2-12z"/><path class="s" d="M34 52l-3 16M40 52l-2 20M46 53l-1 22M52 53l1 21M58 52l2 18M64 52l3 14"/><path class="s" d="M38 32q10-6 20 0"/>'},
 
-{id:"lobster-mushroom",cat:"mushrooms",rare:true,name:{en:"Lobster mushroom",fr:"Champignon homard"},latin:"Hypomyces lactifluorum",
+{id:"lobster-mushroom",cat:"mushrooms",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Lobster mushroom",fr:"Champignon homard"},latin:"Hypomyces lactifluorum",
 origin:{en:"Conifer forests, North America",fr:"Forêts de conifères d'Amérique du Nord"},season:[7,8,9,10],
 flavor:["marine","nutty","earthy"],
 story:{en:"There is no lobster mushroom species: it is a parasitic mould, Hypomyces lactifluorum, that engulfs a russula and rewrites it, sealing the gills shut under an orange crust. In Quebec and the Pacific Northwest it is bought by the kilo, and the forager knows they are picking two organisms at once.",
@@ -389,7 +389,7 @@ fr:"Frottez la croûte grenue sous l'eau, elle retient un sable que la brosse ne
 pairs:["butter","cream","tarragon","lobster","corn","grey-shallot","cognac"],
 svg:'<path class="f3 sf" d="M24 52q2-20 24-20t24 20q-8 8-24 8t-24-8z"/><path class="f2 sf" d="M41 59h14l-2 19q-1 4-5 4t-5-4z"/><circle class="dot" cx="36" cy="43" r="2"/><circle class="dot" cx="48" cy="37" r="2"/><circle class="dot" cx="60" cy="44" r="2"/>'},
 
-{id:"maitake",cat:"mushrooms",name:{en:"Maitake",fr:"Maïtaké"},latin:"Grifola frondosa",
+{id:"maitake",cat:"mushrooms",price:3,pk:"25–50 €/kg",name:{en:"Maitake",fr:"Maïtaké"},latin:"Grifola frondosa",
 origin:{en:"Japan & North America",fr:"Japon & Amérique du Nord"},season:[9,10,11],
 flavor:["earthy","umami","woody","meaty"],
 story:{en:"Its Japanese name means dancing mushroom, said to describe people finding one — a single cluster at the base of an oak can weigh twenty kilos and reappear on the same tree for decades. English calls it hen of the woods.",
@@ -399,7 +399,7 @@ fr:"Rôtissez-le en gros morceaux à feu vif jusqu’à ce que les bords frangé
 pairs:["soy-sauce","butter","garlic","thyme","sesame-oil","black-pepper","spring-onion","cream"],
 svg:'<path class="f1 sf" d="M26 58q8-14 22-12t22 12q-16 10-44 0z"/><path class="s" d="M32 50q6 6 4 12M44 46q4 8 2 14M56 48q4 8 2 12"/>'},
 
-{id:"march-hygrophorus",cat:"mushrooms",rare:true,name:{en:"March hygrophorus",fr:"Hygrophore de mars"},latin:"Hygrophorus marzuolus",
+{id:"march-hygrophorus",cat:"mushrooms",rare:true,price:2,pk:"15–30 €/kg",name:{en:"March hygrophorus",fr:"Hygrophore de mars"},latin:"Hygrophorus marzuolus",
 origin:{en:"Montane fir and beech, 1000-2000 m",fr:"Sapinières et hêtraies d'altitude"},season:[2,3,4,5],
 flavor:["sweet","earthy","floral"],
 story:{en:"Marzuolus is simply of March: it fruits under melting snow in mountain fir and beech, when nothing else edible is up. Grey on grey litter and usually half-buried, it is hunted by feeling for domes underfoot rather than by eye.",
@@ -409,7 +409,7 @@ fr:"Sa chair est épaisse et ne rend presque pas d'eau : elle supporte une vraie
 pairs:["butter","garlic","parsley","thyme","cream","hazelnut","potato"],
 svg:'<path class="f2 sf" d="M24 46q0-16 24-16t24 16q-10 6-24 6t-24-6z"/><path class="f1 sf" d="M40 50h16l-2 20q-6 4-12 0z"/><path class="s" d="M32 40q16-6 32 0"/><path class="s" d="M20 74q12-6 28-6t28 6"/>'},
 
-{id:"matsutake",cat:"mushrooms",luxe:true,rare:true,name:{en:"Matsutake",fr:"Matsutaké"},latin:"Tricholoma matsutake",
+{id:"matsutake",cat:"mushrooms",luxe:true,price:4,pk:"300–900 €/kg",rare:true,name:{en:"Matsutake",fr:"Matsutaké"},latin:"Tricholoma matsutake",
 origin:{en:"Pine forests of Japan & Korea",fr:"Pinèdes du Japon & de Corée"},season:[9,10,11],
 flavor:["woody","resinous","earthy","fresh"],
 story:{en:"Japan’s autumn treasure, wedded to pine roots and impossible to farm — a boxed matsutake is a gift as weighty as a great bottle of wine. It is also famously resilient: matsutake is said to have been among the first living things to push up through the scorched earth of Hiroshima in 1945.",
@@ -419,7 +419,7 @@ fr:"Son parfum — pin, cannelle, pluie d’automne — est tout l’enjeu : ne 
 pairs:["rice","kombu","katsuobushi","chicken"],
 svg:'<path class="f2 sf" d="M32 44q4-14 16-14t16 14q0 4-4 4H36q-4 0-4-4z"/><path class="f1 sf" d="M43 48h10l-1 22q0 6-4 6t-4-6z"/><path class="s" d="M38 42h20" stroke-width="1.4"/>'},
 
-{id:"morel",cat:"mushrooms",name:{en:"Morel",fr:"Morille"},latin:"Morchella esculenta",
+{id:"morel",cat:"mushrooms",price:4,pk:"120–250 €/kg",name:{en:"Morel",fr:"Morille"},latin:"Morchella esculenta",
 origin:{en:"Temperate woodlands",fr:"Forêts tempérées"},season:[3,4,5],
 flavor:["earthy","nutty","meaty","smoky"],
 story:{en:"Spring’s honeycombed treasure, mysteriously fond of burnt ground — after forest fires, morel hunters follow the ash. In the Jura, poulet aux morilles et au vin jaune is less a recipe than a regional religion, the wine’s walnut oxidation meeting the mushroom’s dark perfume.",
@@ -429,7 +429,7 @@ fr:"Ne les mangez jamais crues — leurs toxines ne meurent qu’à la poêle. L
 pairs:["cream","chicken","asparagus","butter","egg"],
 svg:'<path class="f3 sf" d="M38 48q-2-20 10-22 12 2 10 22-1 8-10 10-9-2-10-10z"/><path class="s" d="M42 34q4 4 0 10 4 4 0 8M48 30v26M54 34q-4 4 0 10-4 4 0 8" stroke-width="1.6"/><path class="f1 sf" d="M43 58h10l-1 12q0 6-4 6t-4-6z"/>'},
 
-{id:"brumale-truffle",cat:"mushrooms",rare:true,name:{en:"Musky truffle",fr:"Truffe musquée"},latin:"Tuber brumale",
+{id:"brumale-truffle",cat:"mushrooms",rare:true,price:4,pk:"150–350 €/kg",name:{en:"Musky truffle",fr:"Truffe musquée"},latin:"Tuber brumale",
 origin:{en:"Limestone truffle ground, Provence",fr:"Truffières calcaires de Provence"},season:[11,12,1,2,3],
 flavor:["musky","pungent","earthy","woody"],
 story:{en:"Brumale means of winter, and it shares the black truffle's season, its soils and often its own plantation — which is the problem, since it colonises melanosporum ground and leaves with the crop. The cut face gives it away: broad white veins, widely spaced, where melanosporum runs fine and dense.",
@@ -439,7 +439,7 @@ fr:"Son musc tourne à l'âcre sous une chaleur longue : gardez-la hors du plat 
 pairs:["butter","egg","potato","foie-gras","cream","pork","salt"],
 svg:'<path class="f3 sf" d="M24 56q-6-18 12-26t32 8q6 20-12 28T24 56z"/><path class="f1 sf" d="M48 30q14 2 20 14-10 10-20 6t0-20z"/><path class="s" d="M52 38q6 2 10 6M50 46q8 0 14-4"/><path class="s" d="M30 58q6 4 12 0M34 66q8 3 14-2"/>'},
 
-{id:"nameko",cat:"mushrooms",name:{en:"Nameko",fr:"Nameko"},latin:"Pholiota microspora",
+{id:"nameko",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Nameko",fr:"Nameko"},latin:"Pholiota microspora",
 origin:{en:"Beech logs, Tōhoku",fr:"Rondins de hêtre, Tōhoku"},season:[],
 flavor:["earthy","umami","mild"],
 story:{en:"The name is a worn-down numerikko, from numeri, slime, and kinoko, mushroom — nothing in it is metaphor. Log cultivation began in Tōhoku in 1921, and almost every nameko sold today descends from a single wild strain collected in Fukushima.",
@@ -449,7 +449,7 @@ fr:"Ne le rincez jamais : le gel qui l'enrobe est précisément ce que vous ache
 pairs:["miso","kombu","silken-tofu","negi","katsuobushi","daikon","mitsuba"],
 svg:'<path class="f2 sf" d="M22 44q2-10 12-10t12 10q-6 5-12 5t-12-5z"/><path class="f2 sf" d="M50 48q2-11 13-11t13 11q-7 5-13 5t-13-5z"/><path class="f1 sf" d="M30 48h8l-2 22h-5zM60 53h6l-2 18h-5z"/><path class="s" d="M26 50q1 6 3 8M46 52q1 5 3 7M56 56q1 5 3 7"/>'},
 
-{id:"orange-birch-bolete",cat:"mushrooms",name:{en:"Orange birch bolete",fr:"Bolet roux"},latin:"Leccinum aurantiacum",
+{id:"orange-birch-bolete",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Orange birch bolete",fr:"Bolet roux"},latin:"Leccinum aurantiacum",
 origin:{en:"Birch and aspen woods",fr:"Bois de bouleaux et de trembles"},season:[6,7,8,9,10],
 flavor:["earthy","meaty","woody"],
 story:{en:"Its white flesh runs wine-grey and then near-black within minutes of being cut, and no amount of lemon or acidulated water prevents it. Northern and eastern Europe never fought the reaction: the mushroom went into dark stews and pickling jars where colour was never the point.",
@@ -459,7 +459,7 @@ fr:"Cuisez chapeaux et pieds séparément : le pied reste fibreux bien après qu
 pairs:["creme-fraiche","dill","onion","potato","butter","juniper","buckwheat"],
 svg:'<path class="f2 sf" d="M26 48a22 16 0 0 1 44 0z"/><path class="f1 sf" d="M42 48h12l3 30H39z"/><path class="s" d="M44 56h4M52 61h4M45 67h4M53 72h4"/>'},
 
-{id:"oregon-black-truffle",cat:"mushrooms",luxe:true,name:{en:"Oregon black truffle",fr:"Truffe noire d’Oregon"},latin:"Leucangium carthusianum",
+{id:"oregon-black-truffle",cat:"mushrooms",luxe:true,price:4,pk:"200–400 €/kg",name:{en:"Oregon black truffle",fr:"Truffe noire d’Oregon"},latin:"Leucangium carthusianum",
 origin:{en:"Pacific Northwest forests",fr:"Forêts du Nord-Ouest pacifique"},season:[11,12,1,2,3,4],
 flavor:["fruity","musky","earthy","floral"],
 story:{en:"Leucangium carthusianum is not a Tuber at all — it sits in the Morchellaceae, closer kin to a morel than to a Périgord truffle — and it smells of pineapple and green apple, turning musky as it ripens. Cooks in the Pacific Northwest use it exactly where a black truffle would be absurd: on custard, on chocolate, on cream.",
@@ -469,7 +469,7 @@ fr:"Infusez-la plutôt que de la râper : enfermée une nuit avec de la crème, 
 pairs:["cream","white-chocolate","pineapple","apple","egg","honey","vanilla"],
 svg:'<path class="f3 sf" d="M22 44h52q4 17-10 24t-34 2-8-26z"/><path class="f1 sf" d="M27 44h42q2 10-8 15t-29 0-5-15z"/><path class="s" d="M37 48q6 6 4 11M57 47q-4 6 0 12"/>'},
 
-{id:"oregon-white-truffle",cat:"mushrooms",luxe:true,name:{en:"Oregon white truffle",fr:"Truffe blanche d’Oregon"},latin:"Tuber oregonense",
+{id:"oregon-white-truffle",cat:"mushrooms",luxe:true,price:4,pk:"250–600 €/kg",name:{en:"Oregon white truffle",fr:"Truffe blanche d’Oregon"},latin:"Tuber oregonense",
 origin:{en:"Douglas fir stands, Oregon",fr:"Sapinières de Douglas, Oregon"},season:[10,11,12,1,2,3],
 flavor:["pungent","nutty","herbal","earthy"],
 story:{en:"Separated from Tuber gibbosum as a species of its own only in 2010, the Oregon winter white grows under planted Douglas fir on cutover ground rather than in old forest. Raking a patch strips it for years, so the harvest has largely moved to dogs, which take only the ripe ones and leave the rest to finish.",
@@ -479,7 +479,7 @@ fr:"L’arôme disparaît en une semaine après la levée : achetez-la datée et
 pairs:["egg","butter","potato","parmesan","cream","hazelnut","chicken"],
 svg:'<path class="f1 sf" d="M28 52q-4-17 12-21t28 8 2 27-30 6-12-20z"/><path class="s" d="M40 44q8 7 6 17M53 40q-3 12 7 19"/><path class="f2 sf" d="M62 70q11-2 12 5t-9 7-6-7z"/>'},
 
-{id:"pleurote",cat:"mushrooms",name:{en:"Oyster mushroom",fr:"Pleurote"},latin:"Pleurotus ostreatus",
+{id:"pleurote",cat:"mushrooms",price:2,pk:"8–18 €/kg",name:{en:"Oyster mushroom",fr:"Pleurote"},latin:"Pleurotus ostreatus",
 origin:{en:"Worldwide temperate forests",fr:"Forêts tempérées du monde"},season:[9,10,11,12,1],
 flavor:["delicate","mild","umami","marine"],
 story:{en:"It is carnivorous — the mycelium hunts and digests nematode worms in the wood, which is how it gets nitrogen from a diet of pure cellulose. It also grows readily on coffee grounds and straw, which is why it is the easiest mushroom to farm.",
@@ -489,7 +489,7 @@ fr:"Déchirez-le plutôt que de le couper, et saisissez-le fort. Cuit doucement 
 pairs:["garlic","parsley","soy-sauce","butter","thyme","spring-onion","sesame-oil","cream"],
 svg:'<path class="f3 sf" d="M22 56q6-18 26-16t20 14q-14 10-46 2z"/><path class="s" d="M30 52q14 4 28 0M28 58q16 4 32 0"/>'},
 
-{id:"parasol-mushroom",cat:"mushrooms",name:{en:"Parasol mushroom",fr:"Coulemelle"},latin:"Macrolepiota procera",
+{id:"parasol-mushroom",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Parasol mushroom",fr:"Coulemelle"},latin:"Macrolepiota procera",
 origin:{en:"Woodland edges and pasture",fr:"Lisières et pâtures"},season:[7,8,9,10],
 flavor:["nutty","toasty","creamy","earthy"],
 story:{en:"A mature cap opens flat to thirty centimetres, carried on a hard snakeskin-patterned stem with a double ring that slides freely up and down it — a loose collar no other common woodland mushroom offers. Across central Europe the cap is treated as a cutlet: floured, egged, crumbed and fried whole in a pan the size of the mushroom.",
@@ -499,7 +499,7 @@ fr:"Jetez le pied : il reste ligneux quelle que soit la cuisson. Panez le chapea
 pairs:["butter","clarified-butter","egg","flour-t55","lemon","parsley","garlic"],
 svg:'<path class="f1 sf" d="M18 50q4-9 12-13 8-11 18-11t18 11q8 4 12 13z"/><path class="f2 sf" d="M44 31q4-7 8 0 2 5-4 5t-4-5z"/><path class="f1 sf" d="M45 50h6v28h-6z"/><path class="f3 sf" d="M40 58h16v5H40z"/><circle class="dot" cx="30" cy="46" r="2"/><circle class="dot" cx="66" cy="46" r="2"/>'},
 
-{id:"pecan-truffle",cat:"mushrooms",rare:true,name:{en:"Pecan truffle",fr:"Truffe de pécan"},latin:"Tuber lyonii",
+{id:"pecan-truffle",cat:"mushrooms",rare:true,price:3,pk:"80–180 €/kg",name:{en:"Pecan truffle",fr:"Truffe de pécan"},latin:"Tuber lyonii",
 origin:{en:"Pecan orchards, American South",fr:"Vergers de pécaniers, sud des États-Unis"},season:[7,8,9,10],
 flavor:["nutty","smoky","earthy"],
 story:{en:"It surfaced as a farming curiosity: a Georgia plant pathologist digging around pecan roots in the late 1980s kept turning up truffles, later confirmed as Tuber lyonii. They fruit along the herbicide strips where orchard management has pushed the soil towards neutral, which means the growers had been making them by accident for years.",
@@ -509,7 +509,7 @@ fr:"Sa note de noyer fumé est liposoluble et bien plus discrète que celle d’
 pairs:["pecan","butter","egg","cream","chicken","corn","sweet-potato"],
 svg:'<ellipse class="f2 sf" cx="36" cy="54" rx="16" ry="14"/><path class="s" d="M28 48q6 6 4 12M43 46q-3 8 3 12"/><path class="f3 sf" d="M66 36q9 8 9 18t-9 18q-9-8-9-18t9-18z"/><path class="s" d="M66 38v32"/>'},
 
-{id:"pine-bolete",cat:"mushrooms",name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
+{id:"pine-bolete",cat:"mushrooms",price:3,pk:"25–50 €/kg",name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
 origin:{en:"Mountain pinewoods, Europe",fr:"Pinèdes de montagne, Europe"},season:[5,6,9,10,11],
 flavor:["resinous","nutty","earthy","woody"],
 story:{en:"It fruits twice where the oak cep fruits once — a flush after the May rains, a heavier one from late September into November — which is why the trade names and prices it apart from edulis. Mahogany cap, orange-red netting on a swollen stem, and flesh underneath that stays white and does not blue.",
@@ -519,7 +519,7 @@ fr:"Les sujets de printemps se taillent crus en fines lamelles, huile d'olive et
 pairs:["butter","garlic","parsley","olive-oil","parmesan","thyme","pork","egg"],
 svg:'<path class="f3 sf" d="M20 46q0-18 24-18t24 18q-10 8-24 8t-24-8z"/><path class="f1 sf" d="M36 52q8 4 16 0l-2 22q-6 5-12 0z"/><path class="s" d="M40 58q6 3 10 0M39 66q7 3 12 0"/><path class="s" d="M70 32l8-6M70 36l10-1M70 40l8 5"/>'},
 
-{id:"pink-oyster",cat:"mushrooms",name:{en:"Pink oyster",fr:"Pleurote rose"},latin:"Pleurotus djamor",
+{id:"pink-oyster",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Pink oyster",fr:"Pleurote rose"},latin:"Pleurotus djamor",
 origin:{en:"Tropical hardwoods",fr:"Bois tropicaux"},season:[6,7,8,9],
 flavor:["meaty","umami","mild"],
 story:{en:"An oyster of the warm half of the world, it fruits faster than any other cultivated mushroom - days from pinning to harvest - and keeps for barely two more. The pink is a pigment, not a flavour: it drains out in the pan and leaves the strips grey-brown.",
@@ -529,7 +529,7 @@ fr:"Déchirez-le en lanières et faites-le frire fort dans un film d'huile jusqu
 pairs:["garlic","chili","soy-sauce","lime","spring-onion","peanut-oil","black-pepper","cilantro"],
 svg:'<path class="f2 sf" d="M48 22q20 0 26 16t-26 34q-26-16-26-34t26-16z"/><path class="s" d="M48 24v46M34 30q8 16 6 34M62 30q-8 16-6 34"/><path class="s" d="M28 42q20 6 40 0M31 56q17 5 34 0"/>'},
 
-{id:"pioppino",cat:"mushrooms",name:{en:"Pioppino",fr:"Pholiote du peuplier"},latin:"Cyclocybe aegerita",
+{id:"pioppino",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Pioppino",fr:"Pholiote du peuplier"},latin:"Cyclocybe aegerita",
 origin:{en:"Poplar stumps, Italy",fr:"Souches de peuplier, Italie"},season:[],
 flavor:["nutty","woody","earthy"],
 story:{en:"Pliny the Elder describes it grown on poplar stumps, which makes it one of the first mushrooms anyone farmed on purpose. Two thousand years on the method has barely moved: a cut poplar log, spawn in the wound, and a tuft that returns to the same stump for years.",
@@ -539,7 +539,7 @@ fr:"Ici le pied vaut le chapeau — ferme, franchement noisette — alors ne le 
 pairs:["garlic","parsley","olive-oil","polenta-bramata","pancetta","thyme","parmesan","egg"],
 svg:'<path class="f2 sf" d="M28 36q2-9 10-9t10 9q-5 4-10 4t-10-4z"/><path class="f2 sf" d="M52 44q2-9 10-9t10 9q-5 4-10 4t-10-4z"/><path class="f1 sf" d="M35 40h5l-2 30h-3zM59 48h5l-1 22h-4z"/><path class="s" d="M33 48h9M57 56h9"/><path class="f3 sf" d="M24 70h48v10H24z"/>'},
 
-{id:"porcini",cat:"mushrooms",name:{en:"Porcini",fr:"Cèpe"},latin:"Boletus edulis",
+{id:"porcini",cat:"mushrooms",price:3,pk:"25–60 €/kg",name:{en:"Porcini",fr:"Cèpe"},latin:"Boletus edulis",
 origin:{en:"Temperate forests",fr:"Forêts tempérées"},season:[8,9,10,11],
 flavor:["earthy","nutty","meaty","umami"],
 story:{en:"Italians call them porcini — “little pigs” — for their plump stems. They refuse all domestication: every cep on every table was found by someone walking a forest, and good spots are secrets carried to the grave.",
@@ -549,7 +549,7 @@ fr:"Les cèpes séchés sont un trésor de garde-manger : leur eau de trempage e
 pairs:["garlic","parsley","parmesan","rice","olive-oil","thyme","beef"],
 svg:'<path class="f3 sf" d="M26 50q0-20 22-20t22 20q0 4-5 4H31q-5 0-5-4z"/><path class="f1 sf" d="M39 54h18l-1 8q-1 14-8 14t-8-14z"/>'},
 
-{id:"lactaire",cat:"mushrooms",name:{en:"Saffron milk cap",fr:"Lactaire délicieux"},latin:"Lactarius deliciosus",
+{id:"lactaire",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Saffron milk cap",fr:"Lactaire délicieux"},latin:"Lactarius deliciosus",
 origin:{en:"European pine forests",fr:"Pinèdes d’Europe"},season:[9,10,11],
 flavor:["earthy","bitter","nutty","umami"],
 story:{en:"Cut it and it bleeds orange latex that slowly turns green — alarming, and entirely normal. It appears in Roman frescoes at Herculaneum, making it one of the few mushrooms with a two-thousand-year-old portrait.",
@@ -559,7 +559,7 @@ fr:"La Catalogne les grille entiers à l’ail et au persil, sans rien d’autre
 pairs:["garlic","parsley","olive-oil","lard","thyme","black-pepper","egg","potato"],
 svg:'<path class="f2 sf" d="M26 54q0-16 22-16t22 16q-20 10-44 0z"/><path class="f2 sf" d="M43 54h10v20H43z"/><path class="s" d="M34 48q14 4 28 0"/>'},
 
-{id:"shaggy-ink-cap",cat:"mushrooms",rare:true,name:{en:"Shaggy ink cap",fr:"Coprin chevelu"},latin:"Coprinus comatus",
+{id:"shaggy-ink-cap",cat:"mushrooms",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Shaggy ink cap",fr:"Coprin chevelu"},latin:"Coprinus comatus",
 origin:{en:"Verges and grassland",fr:"Bords de chemins et prairies"},season:[6,7,8,9,10,11],
 flavor:["milky","delicate","mild"],
 story:{en:"Within a day of picking, its own enzymes dissolve the cap into black liquid — genuine ink, once boiled up with cloves for scribes and mapmakers, and legible on some sheets centuries later. That autolysis is why no wholesaler will touch it: it does not survive a night in a crate.",
@@ -569,7 +569,7 @@ fr:"Cuisez-le dans l'heure et seulement tant que le chapeau est blanc et fermé 
 pairs:["butter","cream","egg","chives","parsley","shallot","white-pepper","potato"],
 svg:'<path class="f1 sf" d="M38 30q0-10 10-10t10 10v28q0 8-10 8t-10-8z"/><path class="s" d="M38 36l-4 3M58 36l4 3M38 44l-4 3M58 44l4 3M38 52l-4 3M58 52l4 3"/><path class="f3 sf" d="M40 66q8 4 16 0-2 8-8 8t-8-8z"/><path class="s" d="M44 78v6M52 78v5"/>'},
 
-{id:"shiitake",cat:"mushrooms",name:{en:"Shiitake",fr:"Shiitaké"},latin:"Lentinula edodes",
+{id:"shiitake",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Shiitake",fr:"Shiitaké"},latin:"Lentinula edodes",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[],
 flavor:["umami","smoky","meaty"],
 story:{en:"For a thousand years, Japanese and Chinese growers have coaxed shiitake from oak logs — shii is the tree, take the mushroom. Dried, it becomes one of the deepest umami sources known, the quiet power behind countless broths.",
@@ -579,7 +579,7 @@ fr:"Les pieds sont coriaces mais pleins de goût : gardez-les pour le bouillon, 
 pairs:["soy-sauce","ginger","rice","miso","garlic","sesame"],
 svg:'<path class="f3 sf" d="M26 54q2-22 22-22t22 22q0 3-4 3H30q-4 0-4-3z"/><path class="f1" d="M40 40a2 2 0 104 0 2 2 0 10-4 0M50 36a2 2 0 104 0 2 2 0 10-4 0M56 44a2 2 0 104 0 2 2 0 10-4 0M36 46a2 2 0 104 0 2 2 0 10-4 0"/><path class="f1 sf" d="M43 57h10l-1 12q0 4-4 4t-4-4z"/>'},
 
-{id:"shimeji",cat:"mushrooms",name:{en:"Shimeji",fr:"Shimeji"},latin:"Hypsizygus marmoreus",
+{id:"shimeji",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Shimeji",fr:"Shimeji"},latin:"Hypsizygus marmoreus",
 origin:{en:"Beech wood, Japan",fr:"Bois de hêtre, Japon"},season:[],
 flavor:["nutty","umami","earthy"],
 story:{en:"The proverb runs kaori matsutake, aji shimeji — matsutake for the scent, shimeji for the flavour — but the shimeji it praises is the wild honshimeji, which nobody has learned to farm properly. What fills the chiller is buna-shimeji, a beech-wood species grown since the 1970s that inherited the older name.",
@@ -589,7 +589,7 @@ fr:"Cru il est amer, et il le reste s'il mijote : l'amertume ne part qu'à feu v
 pairs:["soy-sauce","butter","garlic","junmai-sake","hon-mirin","negi","chicken","sesame-oil"],
 svg:'<path class="f2 sf" d="M22 52q1-8 8-8t8 8q-4 4-8 4t-8-4zM38 44q1-8 8-8t8 8q-4 4-8 4t-8-4zM54 50q1-8 8-8t8 8q-4 4-8 4t-8-4z"/><path class="f1 sf" d="M27 56h5l-3 18h-2zM43 48h5l-2 26h-3zM59 54h5l-3 20h-2z"/><circle class="dot" cx="30" cy="48" r="2"/><circle class="dot" cx="46" cy="40" r="2"/><path class="s" d="M24 74q22 6 44-2"/>'},
 
-{id:"smooth-black-truffle",cat:"mushrooms",rare:true,luxe:true,name:{en:"Smooth black truffle",fr:"Truffe noire lisse"},latin:"Tuber macrosporum",
+{id:"smooth-black-truffle",cat:"mushrooms",rare:true,luxe:true,price:4,pk:"300–700 €/kg",name:{en:"Smooth black truffle",fr:"Truffe noire lisse"},latin:"Tuber macrosporum",
 origin:{en:"Clay under poplar and willow, Italy",fr:"Argiles sous peupliers et saules, Italie"},season:[9,10,11,12],
 flavor:["pungent","musky","earthy","woody"],
 story:{en:"Black-skinned and nearly smooth, its warts flattened almost away — and it smells of garlic, so plainly that the trade calls it the garlic truffle. It shares its host trees with the white truffle, poplar and willow, and fills the autumn gap before magnatum is up.",
@@ -599,7 +599,7 @@ fr:"Traitez-la en truffe blanche et non en noire : râpée crue sur le plat chau
 pairs:["egg","butter","parmesan","olive-oil","carnaroli","potato","cream"],
 svg:'<path class="f3 sf" d="M22 52q-4-20 16-24t26 12q4 18-14 24T22 52z"/><path class="s" d="M32 38q10-4 18 2M30 50q8 4 16-1"/><ellipse class="f1 sf" cx="64" cy="70" rx="14" ry="6"/><path class="s" d="M56 70q8 3 16 0"/>'},
 
-{id:"snow-fungus",cat:"mushrooms",name:{en:"Snow fungus",fr:"Trémelle blanche"},latin:"Tremella fuciformis",
+{id:"snow-fungus",cat:"mushrooms",price:2,pk:"30–60 €/kg",name:{en:"Snow fungus",fr:"Trémelle blanche"},latin:"Tremella fuciformis",
 origin:{en:"Broadleaf deadwood, Fujian",fr:"Bois mort de feuillus, Fujian"},season:[],
 flavor:["mild","delicate"],
 story:{en:"It cannot grow alone: the jelly is a parasite that must meet a second fungus, an Annulohypoxylon, inside the wood before it will fruit, so growers inoculate both species into the same sawdust block. Fujian has done this at scale since the 1960s, which is why something once counted among the rarest banquet goods now costs almost nothing dried.",
@@ -609,7 +609,7 @@ fr:"Deux heures de trempage à l'eau froide — elle prend six à huit fois son 
 pairs:["chinese-rock-sugar","jujube","goji","lotus-seed","pear","ginger","longane","osmanthus"],
 svg:'<path class="f1 sf" d="M24 58q-4-14 10-18 2-12 16-10t16 12q12 6 6 18-8 12-24 12t-24-14z"/><path class="s" d="M32 44q8 6 6 18M48 34q4 10 0 26M62 42q-6 8-4 20"/><path class="s" d="M28 54q10-6 20 0t18-2"/>'},
 
-{id:"sooty-head",cat:"mushrooms",rare:true,name:{en:"Sooty head",fr:"Petit-gris"},latin:"Tricholoma portentosum",
+{id:"sooty-head",cat:"mushrooms",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Sooty head",fr:"Petit-gris"},latin:"Tricholoma portentosum",
 origin:{en:"Sandy pinewoods, southwest France",fr:"Pinèdes sableuses du Sud-Ouest"},season:[10,11,12],
 flavor:["nutty","earthy","sweet"],
 story:{en:"It comes up when the ceps have finished, after the first hard frosts, and the cold is said to improve it — in the Landes pines the pickers go back for it in December. Grey cap streaked with darker radiating fibres, flesh firm and faintly yellowed, where most late tricholomas have gone soft.",
@@ -619,7 +619,7 @@ fr:"Il tient le sable comme personne : lavez-le — c'est l'exception — puis e
 pairs:["garlic","parsley","duck-fat","potato","olive-oil","shallot","egg","walnut-oil"],
 svg:'<path class="f2 sf" d="M20 50q6-20 28-20t28 20q-4 3-8 1t-8 2-8-1-8 2-8-1-8 2-8-4z"/><path class="f1 sf" d="M40 53h16l-3 20q-5 3-10 0z"/><path class="s" d="M48 32v16M38 34l-6 14M58 34l6 14M28 42l-4 6M68 42l4 6"/>'},
 
-{id:"mousseron",cat:"mushrooms",name:{en:"St George’s mushroom",fr:"Mousseron"},latin:"Calocybe gambosa",
+{id:"mousseron",cat:"mushrooms",price:3,pk:"30–60 €/kg",name:{en:"St George’s mushroom",fr:"Mousseron"},latin:"Calocybe gambosa",
 origin:{en:"European grassland",fr:"Prairies d’Europe"},season:[4,5,6],
 flavor:["earthy","mild","nutty","umami"],
 story:{en:"It appears around Saint George's day in late April, which is where the English name comes from, and it grows in rings on old pasture. It smells strongly of fresh flour — a diagnostic so reliable that foragers identify it by nose.",
@@ -629,7 +629,7 @@ fr:"L’un des très rares bons champignons de printemps, et c’est là son int
 pairs:["asparagus","butter","cream","pea","chervil","shallot","egg","chicken"],
 svg:'<path class="f3 sf" d="M28 54q0-16 20-16t20 16q-18 10-40 0z"/><path class="f3 sf" d="M42 54h12v20h-12z"/>'},
 
-{id:"straw-mushroom",cat:"mushrooms",name:{en:"Straw mushroom",fr:"Champignon de paille"},latin:"Volvariella volvacea",
+{id:"straw-mushroom",cat:"mushrooms",price:1,pk:"6–12 €/kg",name:{en:"Straw mushroom",fr:"Champignon de paille"},latin:"Volvariella volvacea",
 origin:{en:"Rice straw beds, southern China",fr:"Lits de paille de riz, sud de la Chine"},season:[],
 flavor:["mild","earthy","umami"],
 story:{en:"Grown on spent rice straw in southern China for centuries, it is picked while still shut inside its egg, before the cap tears through the veil. Cold kills it - a few hours in a domestic fridge is enough - which is why it travels the world in tins and is never dried.",
@@ -639,7 +639,7 @@ fr:"Égouttez les champignons en boîte et blanchissez-les trente secondes à l'
 pairs:["oyster-sauce","garlic","ginger","chicken","silken-tofu","spring-onion","soy-sauce","chili"],
 svg:'<path class="f1 sf" d="M48 20q16 0 16 24t-16 30q-16-6-16-30t16-24z"/><path class="s" d="M34 50q6 8 14 8t14-8"/><path class="f3 sf" d="M40 34q0-10 8-10t8 10q-4 3-8 3t-8-3z"/><path class="s" d="M48 37v22"/>'},
 
-{id:"summer-cep",cat:"mushrooms",luxe:true,name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
+{id:"summer-cep",cat:"mushrooms",price:3,pk:"20–45 €/kg",name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
 origin:{en:"Oak and beech woods, Europe",fr:"Chênaies et hêtraies d’Europe"},season:[5,6,7,8,9],
 flavor:["nutty","earthy","delicate","woody"],
 story:{en:"Its name comes from the net that runs the whole length of the stem, where the autumn cep carries one only at the top, and it fruits from May under oak and beech — weeks ahead of Boletus edulis. In dry heat the cap goes suede-matt and crazes into fine cracks, which is the mark most foragers actually go by.",
@@ -649,7 +649,7 @@ fr:"La chair est plus tendre que celle du cèpe et les vers l’atteignent tôt 
 pairs:["olive-oil","parmesan","lemon","parsley","hazelnut","butter","egg"],
 svg:'<path class="f2 sf" d="M22 46q4-19 26-19t26 19q-12 8-26 8t-26-8z"/><path class="f1 sf" d="M40 52q2 20-2 26h20q-4-6-2-26z"/><path class="s" d="M32 36h10M50 32h12M40 42h14"/><path class="s" d="M41 59h11M41 67h11"/>'},
 
-{id:"summer-truffle",cat:"mushrooms",name:{en:"Summer truffle",fr:"Truffe d’été"},latin:"Tuber aestivum",
+{id:"summer-truffle",cat:"mushrooms",price:4,pk:"120–300 €/kg",name:{en:"Summer truffle",fr:"Truffe d’été"},latin:"Tuber aestivum",
 origin:{en:"Europe",fr:"Europe"},season:[5,6,7,8],
 flavor:["earthy","nutty","mild","woody"],
 story:{en:"A fraction of the price of the winter black truffle and a fraction of the perfume — the flesh is pale hazelnut rather than dark, and the aroma is faint. It is honest, but it is not a substitute, and menus that blur the two are being careless.",
@@ -659,7 +659,7 @@ fr:"Ne la cuisez pas et ne la payez pas au prix de l’hiver. Râpez-la crue sur
 pairs:["egg","butter","parmesan","cream","potato","arborio","olive-oil","chicken"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="18"/><path class="s" d="M36 46l6 6-6 4M56 44l6 8-8 4M42 64l8 4"/>'},
 
-{id:"termite-mushroom",cat:"mushrooms",luxe:true,name:{en:"Termite mushroom (jizong)",fr:"Champignon des termitières (jizong)"},latin:"Termitomyces spp.",
+{id:"termite-mushroom",cat:"mushrooms",price:4,pk:"200–500 €/kg",name:{en:"Termite mushroom (jizong)",fr:"Champignon des termitières (jizong)"},latin:"Termitomyces spp.",
 origin:{en:"Termite mounds, Yunnan",fr:"Termitières du Yunnan"},season:[6,7,8,9],
 flavor:["sweet","umami","meaty"],
 story:{en:"Termites farm it: it fruits from the fungus combs a colony builds and tends underground, which is why nobody has managed to grow it on a farm. The story goes that the Ming emperor Tianqi had it carried north from Yunnan by relay horse, packed to arrive before it spoiled.",
@@ -669,7 +669,7 @@ fr:"Effilochez-le dans le sens des fibres et confisez-le doucement à l'huile pl
 pairs:["chili","jinhua-ham","rapeseed-oil","garlic","chicken","sichuan-pepper","rice","spring-onion"],
 svg:'<path class="f2 sf" d="M48 16q5 16 20 30-9 6-20 6t-20-6q15-14 20-30z"/><path class="s" d="M33 46q15 6 30 0"/><path class="f1 sf" d="M45 52h6l-2 22-1 10-2-10z"/>'},
 
-{id:"white-truffle",cat:"mushrooms",luxe:true,name:{en:"White truffle",fr:"Truffe blanche d’Alba"},latin:"Tuber magnatum",
+{id:"white-truffle",cat:"mushrooms",luxe:true,price:4,pk:"1500–6000 €/kg",name:{en:"White truffle",fr:"Truffe blanche d’Alba"},latin:"Tuber magnatum",
 origin:{en:"Piedmont, Italy",fr:"Piémont, Italie"},season:[10,11,12],
 flavor:["earthy","pungent","umami","rich"],
 story:{en:"The black truffle submitted to orchards long ago; the white of Alba never has — every one is found wild, by dog and secret, in a few Piedmont valleys in autumn. The great specimens are auctioned at Grinzane Cavour castle to bidders on satellite link, and Rossini reportedly crowned the truffle “the Mozart of mushrooms”.",
@@ -679,7 +679,7 @@ fr:"Elle ne doit jamais voir la poêle : rasez-la crue, à table, sur une soie c
 pairs:["egg","rice","butter","parmesan","potato"],
 svg:'<path class="f1 sf" d="M34 50q-2-13 12-16 15-3 17 10 2 11-7 16-10 5-18-2-4-4-4-8z"/><path class="s" d="M42 44l5 4-2 6M53 42l2 7-6 3" stroke-width="1.6"/>'},
 
-{id:"winter-chanterelle",cat:"mushrooms",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
+{id:"winter-chanterelle",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
 origin:{en:"Mossy conifer woods, northern Europe",fr:"Sous-bois moussus de conifères, Europe du Nord"},season:[9,10,11,12],
 flavor:["peppery","woody","delicate"],
 story:{en:"It runs months after the girolle has finished, on into the frosts, and grows so thick in the moss that a good patch is picked by the kilo rather than the handful. Hollow-stemmed and papery, it dries better than any other chanterelle and comes back in five minutes, which is how most of the Nordic crop is sold.",
@@ -689,7 +689,7 @@ fr:"Il n'y a rien à saisir : elle s'effondre en quelques secondes, alors elle a
 pairs:["cream","butter","egg","thyme","shallot","chicken","walnut","juniper"],
 svg:'<path class="f2 sf" d="M24 36q10-8 24-8t24 8q-8 12-18 16l-2 4h-8l-2-4q-10-4-18-16z"/><ellipse class="f3 sf" cx="48" cy="34" rx="12" ry="5"/><path class="f1 sf" d="M44 56h8l-2 20q-2 3-4 0z"/><path class="s" d="M30 44q6 5 10 6M66 44q-6 5-10 6"/>'},
 
-{id:"wood-ear",cat:"mushrooms",name:{en:"Wood ear",fr:"Oreille de Judas"},latin:"Auricularia auricula-judae",
+{id:"wood-ear",cat:"mushrooms",price:1,pk:"15–35 €/kg",name:{en:"Wood ear",fr:"Oreille de Judas"},latin:"Auricularia auricula-judae",
 origin:{en:"Worldwide, on elder",fr:"Monde entier, sur sureau"},season:[],
 flavor:["mild","earthy","delicate","umami"],
 story:{en:"Its French and Latin names come from a medieval legend that Judas hanged himself from an elder tree, and the fungus grows on elder wood. Chinese cooking has used it for well over a thousand years, entirely for texture rather than taste.",

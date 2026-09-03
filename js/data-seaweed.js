@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"kombu-breton",cat:"seaweed",name:{en:"Breton kombu",fr:"Kombu breton"},latin:"Laminaria digitata",
+{id:"kombu-breton",cat:"seaweed",price:2,pk:"60–120 €/kg",name:{en:"Breton kombu",fr:"Kombu breton"},latin:"Laminaria digitata",
 origin:{en:"Iroise sea, Brittany",fr:"Mer d'Iroise, Bretagne"},season:[5,6,7,8,9,10],
 flavor:["marine","briny","umami"],
 story:{en:"Breton goémoniers still take it from the boat with the scoubidou, a hooked steel rod that twists the stipe off the rock, a tool designed in the 1960s and used almost nowhere else. The kelp fields around the Molène archipelago are among the largest in Europe, and the cut is governed by a season and a quota like a fishery.",
@@ -9,7 +9,7 @@ fr:"Une lanière de 10 cm dans l'eau des légumes secs attendrit les peaux et ra
 pairs:["white-beans","lentils","chickpeas","cod","mussel","potato","shiitake","butter"],
 svg:'<path class="s" d="M48 82V56"/><path class="f2 sf" d="M48 56q-10-6-14-22 8 4 12 12-4-12-2-24 6 10 4 24 6-8 12-10-4 14-12 20z"/><path class="s" d="M44 40q2 6 4 12M54 38q-3 8-6 14"/>'},
 
-{id:"dulse",cat:"seaweed",name:{en:"Dulse",fr:"Dulse"},latin:"Palmaria palmata",
+{id:"dulse",cat:"seaweed",price:2,pk:"55–110 €/kg",name:{en:"Dulse",fr:"Dulse"},latin:"Palmaria palmata",
 origin:{en:"North Atlantic shores",fr:"Rivages de l'Atlantique Nord"},season:[6,7,8,9],
 flavor:["briny","marine","smoky","nutty"],
 story:{en:"Icelanders call it söl and gathered it under written law: the medieval codes set out who could take it from which shore, which is unusual treatment for a plant. In 2015 a strain bred at Oregon State drew headlines for frying up tasting of bacon — the smoke note is in the leaf itself, and it survives the pan where every other seaweed flavour collapses.",
@@ -19,7 +19,7 @@ fr:"Faites-la revenir vingt à trente secondes dans un voile d'huile, pas davant
 pairs:["butter","oats","potato","scallop","oyster","cream","egg","lemon"],
 svg:'<path class="f2 sf" d="M48 80v-16q-14-2-18-14 8-4 14 2-6-10-2-20 8 4 8 16 4-10 12-10-1 12-8 18 8-2 12 4-6 8-18 4z"/><path class="s" d="M48 64V42M48 56l-8-6M48 50l8-6"/><path class="s" d="M43 80h10"/>'},
 
-{id:"gagome-kombu",cat:"seaweed",rare:true,name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
+{id:"gagome-kombu",cat:"seaweed",rare:true,price:3,pk:"120–220 €/kg",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaidō"},season:[7,8,9],
 flavor:["marine","mild","umami"],
 story:{en:"Gagome names the basket-weave: the blade is embossed all over with a lattice of pits, which is how it is told from every other kelp growing on the same rocks. It holds to a short stretch of sea around Hakodate and almost nowhere else, and it is gathered for the slime rather than in spite of it.",
@@ -29,7 +29,7 @@ fr:"Taillez-la en fines lanières et laissez infuser dix minutes à l'eau froide
 pairs:["natto","okra","rice","soy-sauce","cucumber","sea-bream","tuna","nagaimo"],
 svg:'<path class="f2 sf" d="M22 40q10-8 26-6t26 8q-8 10-26 10t-26-12z"/><path class="s" d="M30 38q4 6 6 10M40 34q2 8 4 12M52 34q0 8-2 12M62 38q-2 8-6 10"/><path class="s" d="M26 42q22 6 44-2"/><path class="s" d="M36 56q0 8-2 12M50 57q2 8 0 14M62 55q0 8-2 10"/>'},
 
-{id:"hijiki",cat:"seaweed",name:{en:"Hijiki",fr:"Hijiki"},latin:"Sargassum fusiforme",
+{id:"hijiki",cat:"seaweed",price:2,pk:"50–90 €/kg",name:{en:"Hijiki",fr:"Hijiki"},latin:"Sargassum fusiforme",
 origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
 flavor:["marine","briny","earthy"],
 story:{en:"It is not black on the rock: living hijiki is olive brown, and the colour arrives after hours of steaming or boiling before it is dried, which is also the step that makes the wiry strands chewable at all. That processing is why it is never sold fresh outside the harvest villages themselves.",
@@ -39,7 +39,7 @@ fr:"Faites tremper vingt à trente minutes dans une grande quantité d'eau froid
 pairs:["carrot","soy-sauce","hon-mirin","sesame-oil","edamame","rice","chicken","sesame"],
 svg:'<path class="s" d="M26 40q10 6 12 18t-2 20"/><path class="s" d="M36 34q6 10 6 22t-4 20"/><path class="s" d="M48 32q2 12 0 24t2 20"/><path class="s" d="M60 34q-4 12-2 24t4 18"/><path class="s" d="M70 40q-10 6-12 18t2 18"/><path class="f3 sf" d="M34 52h28v8H34z"/>'},
 
-{id:"kombu",cat:"seaweed",name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
+{id:"kombu",cat:"seaweed",price:2,pk:"50–100 €/kg",name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
 origin:{en:"Cold seas of Japan",fr:"Mers froides du Japon"},season:[],
 flavor:["umami","marine","briny","mild"],
 story:{en:"In 1908, chemist Kikunae Ikeda asked why kombu broth tasted like nothing else, isolated glutamate from the seaweed, and coined a new word for what he found: umami. The finest leaves are aged for years in cellars like wine — a kelp with vintages.",
@@ -49,7 +49,7 @@ fr:"Ne le faites jamais bouillir — l’amertume s’échappe au-delà de 60 °
 pairs:["katsuobushi","shiitake","rice","miso","soy-sauce"],
 svg:'<path class="f2 sf" d="M36 26q10 6 6 18t2 20q4 8-2 14-10-6-6-18t-2-20q-4-8 2-14z" transform="rotate(6 44 50)"/><path class="f2 sf" d="M56 30q8 6 4 16t2 18q3 7-3 12-8-6-4-16t-2-18q-3-7 3-12z" transform="rotate(-4 58 50)"/>'},
 
-{id:"ma-kombu",cat:"seaweed",luxe:true,name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
+{id:"ma-kombu",cat:"seaweed",price:3,pk:"150–300 €/kg",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaido"},season:[],
 flavor:["umami","sweet","marine","delicate"],
 story:{en:"Ma-kombu is cut off Hakodate in southern Hokkaido and travelled south for centuries aboard the kitamae-bune cargo ships, on what is still called the kombu road. Kyoto built its kitchen on it partly as a matter of water: the city's is soft, and soft water pulls glutamate out of the leaf where hard water leaves much of it behind.",
@@ -59,7 +59,7 @@ fr:"Essuyez-le, ne le lavez jamais : la poudre blanche est du mannitol, sa douce
 pairs:["katsuobushi","sea-bream","hamo","usukuchi-shoyu","mitsuba","shiitake"],
 svg:'<path class="f2 sf" d="M32 20q16 8 32 0 6 28-4 56-12 6-24 0-10-28-4-56z"/><path class="s" d="M48 26v46"/><circle class="dot" cx="40" cy="40" r="1.6"/><circle class="dot" cx="56" cy="54" r="1.6"/><circle class="dot" cx="44" cy="62" r="1.6"/>'},
 
-{id:"moshio-salt",cat:"seaweed",rare:true,luxe:true,name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
+{id:"moshio-salt",cat:"seaweed",rare:true,price:2,pk:"50–100 €/kg",name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
 origin:{en:"Kamagari, Seto Inland Sea",fr:"Kamagari, mer intérieure de Seto"},season:[],
 flavor:["salty","marine","umami"],
 story:{en:"Before Japan had salt pans it had moshio: seawater steeped with hondawara seaweed, then boiled down in clay pots. Excavated shards around the Seto Inland Sea let salt-makers on Kamagari island rebuild the method in the 1980s, and the beige crystals carry the seaweed's glutamate along with its salt.",
@@ -69,7 +69,7 @@ fr:"Employez-le là où la sauce soja noircirait l’assiette : une pincée sur 
 pairs:["silken-tofu","sea-bream","squid","rice","egg","cucumber","scallop","sea-urchin"],
 svg:'<path class="f1 sf" d="M28 56l6 18h28l6-18z"/><path class="f2 sf" d="M36 56q6-14 12-14t12 14z"/><path class="s" d="M28 56h40"/><path class="s" d="M66 26q-6 10-4 20M66 26q-8 2-8 8M66 26q0 10 6 12"/>'},
 
-{id:"mozuku",cat:"seaweed",rare:true,name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
+{id:"mozuku",cat:"seaweed",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[4,5,6],
 flavor:["briny","marine","delicate","mild"],
 story:{en:"Nearly all the mozuku eaten in Japan is farmed off Okinawa, on nets seeded in autumn and cut between April and June. Up to a third of its dry weight is fucoidan, the sulphated sugar responsible for the slipperiness — one of the few sea vegetables bought for texture rather than flavour.",
@@ -79,7 +79,7 @@ fr:"Elle arrive au sel ou en saumure : rincez-la à l’eau froide en plusieurs 
 pairs:["rice-vinegar","ginger","cucumber","myoga","shiso","kombu"],
 svg:'<path class="f1 sf" d="M20 50h56q-4 22-28 22T20 50z"/><path class="s" d="M24 46h48"/><path class="s" d="M26 50q6-12 16-8t12-6 14 2"/><path class="s" d="M28 56q10-6 18 0t20-4"/><path class="s" d="M30 64q10 4 18-2t16 2"/>'},
 
-{id:"nori",cat:"seaweed",name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
+{id:"nori",cat:"seaweed",price:2,pk:"90–180 €/kg",name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[],
 flavor:["marine","umami","toasty","salty"],
 story:{en:"When Japan’s nori harvests mysteriously collapsed after the war, it was a British scientist, Kathleen Mary Drew-Baker, whose research on seaweed life cycles saved the crop — she never visited Japan, yet fishermen there still honour her each April as the “Mother of the Sea”.",
@@ -89,7 +89,7 @@ fr:"Passez une feuille au-dessus d’une flamme jusqu’à ce qu’elle vire ém
 pairs:["rice","sesame","egg","butter","salmon","tuna"],
 svg:'<rect class="f3 sf" x="32" y="34" width="32" height="36" rx="2"/><path class="s" d="M36 42h24M36 50h24M36 58h24M36 66h24" stroke-width="1.2"/>'},
 
-{id:"kombu-royal",cat:"seaweed",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
+{id:"kombu-royal",cat:"seaweed",price:3,pk:"150–280 €/kg",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
 origin:{en:"Brittany",fr:"Bretagne"},season:[4,5,6,7],
 flavor:["umami","marine","sweet","mild"],
 story:{en:"Breton harvesters sell Saccharina latissima as kombu royal, though it is a different species from the Japanese kelp — sugar kelp, named for the mannitol that dries to a white bloom on the blade. France drew up a legal list of seaweeds permitted as vegetables at the start of the 1990s, and this was among the first on it.",
@@ -99,7 +99,7 @@ fr:"Une lame glissée avec des haricots secs ou des lentilles attendrit les peau
 pairs:["white-beans","cod","butter","potato","mussel","lentils","scallop"],
 svg:'<path class="f2 sf" d="M40 16q8 5 16 0 6 20 2 36t-2 20q-8 4-16 0 2-20-2-36t2-20z"/><path class="s" d="M42 26q4 8 0 14t0 14M56 28q-4 8 0 14t0 14"/><path class="s" d="M48 72v8"/><path class="f3 sf" d="M43 80q5-5 10 0 2 5-5 5t-5-5z"/>'},
 
-{id:"umibudo",cat:"seaweed",rare:true,name:{en:"Sea grapes (umibudo)",fr:"Raisin de mer"},latin:"Caulerpa lentillifera",
+{id:"umibudo",cat:"seaweed",rare:true,price:3,pk:"80–160 €/kg",name:{en:"Sea grapes (umibudo)",fr:"Raisin de mer"},latin:"Caulerpa lentillifera",
 origin:{en:"Okinawa",fr:"Okinawa"},season:[],
 flavor:["briny","marine","fresh","delicate"],
 story:{en:"A Caulerpa has no walls dividing it: a whole frond is one enormous cell with many nuclei, which is why a cut anywhere empties it everywhere. Okinawa has farmed sea grapes in shallow tanks since the 1980s and sells them at room temperature, deliberately.",
@@ -109,7 +109,7 @@ fr:"Ne le mettez jamais au froid : en dessous de 15 °C environ, les perles se r
 pairs:["ponzu","tuna","rice-vinegar","wasabi","sea-bream","shikuwasa","soy-sauce"],
 svg:'<path class="s" d="M24 72q16 4 28-6t20-30"/><path class="s" d="M32 68l4-10M46 62l2-10M58 52l4-10"/><path class="f2 sf" d="M29 68a3 3 0 1 0 6 0a3 3 0 1 0-6 0M35 66a3 3 0 1 0 6 0a3 3 0 1 0-6 0M41 62a3 3 0 1 0 6 0a3 3 0 1 0-6 0M37 56a3 3 0 1 0 6 0a3 3 0 1 0-6 0M43 52a3 3 0 1 0 6 0a3 3 0 1 0-6 0M49 56a3 3 0 1 0 6 0a3 3 0 1 0-6 0M47 46a3 3 0 1 0 6 0a3 3 0 1 0-6 0M53 44a3 3 0 1 0 6 0a3 3 0 1 0-6 0M55 52a3 3 0 1 0 6 0a3 3 0 1 0-6 0M59 38a3 3 0 1 0 6 0a3 3 0 1 0-6 0M63 42a3 3 0 1 0 6 0a3 3 0 1 0-6 0M65 32a3 3 0 1 0 6 0a3 3 0 1 0-6 0"/>'},
 
-{id:"tororo-kombu",cat:"seaweed",name:{en:"Tororo kombu",fr:"Tororo kombu"},latin:"Saccharina japonica (shaved)",
+{id:"tororo-kombu",cat:"seaweed",price:2,pk:"70–130 €/kg",name:{en:"Tororo kombu",fr:"Tororo kombu"},latin:"Saccharina japonica (shaved)",
 origin:{en:"Fukui & Osaka",fr:"Fukui & Osaka"},season:[],
 flavor:["umami","marine","tangy","delicate"],
 story:{en:"Blocks of kombu steep in vinegar until the surface softens, are pressed together and then shaved: taken by hand along the flat they come away as translucent sheets called oboro, and taken against the pressed edge of a stack they come away as the wool-fine threads called tororo. The vinegar is why the threads taste faintly sour and slip apart the instant they touch hot liquid.",
@@ -119,7 +119,7 @@ fr:"C’est une finition, pas un ingrédient de bouillon : ajoutez-le dans le bo
 pairs:["rice","umeboshi","soba-noodles","soy-sauce","katsuobushi","silken-tofu"],
 svg:'<path class="s" d="M22 46q12-10 26-8t26 6M24 56q12-8 24-6t26 4M26 66q10-9 22-8t24 6M28 38q12-7 22-5t22 7"/><path class="s" d="M30 42q-6 5-4 11M66 44q8 5 4 11"/><path class="f1 sf" d="M40 50q8-4 16 0 4 4 0 8-8 4-16 0-4-4 0-8z"/>'},
 
-{id:"tosaka-nori",cat:"seaweed",rare:true,name:{en:"Tosaka-nori",fr:"Tosaka nori"},latin:"Meristotheca papulosa",
+{id:"tosaka-nori",cat:"seaweed",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Tosaka-nori",fr:"Tosaka nori"},latin:"Meristotheca papulosa",
 origin:{en:"Kyushu & Shikoku coasts",fr:"Côtes de Kyushu et Shikoku"},season:[],
 flavor:["marine","briny","fresh","delicate"],
 story:{en:"Tosaka means cockscomb, which is the shape exactly: flat branching combs growing on rock in warm Japanese water. The red is the alga's own colour; the green and the white sold beside it are the same seaweed with the red pigment stripped out, not different species.",
@@ -129,7 +129,7 @@ fr:"Il arrive conservé dans le sel. Rincez, puis faites tremper dix minutes à 
 pairs:["sea-bream","squid","cucumber","ponzu","rice-vinegar","scallop"],
 svg:'<path class="f2 sf" d="M46 78q-2-13-9-19-6-6-2-12 4-5 9 0 0-9 4-13 5 4 5 13 5-5 9 0 4 6-2 12-7 6-9 19z"/><path class="s" d="M48 72V44M40 54q4 5 6 12M56 54q-4 5-6 12"/><path class="f3 sf" d="M43 78h10v4H43z"/>'},
 
-{id:"wakame",cat:"seaweed",name:{en:"Wakame",fr:"Wakamé"},latin:"Undaria pinnatifida",
+{id:"wakame",cat:"seaweed",price:2,pk:"45–90 €/kg",name:{en:"Wakame",fr:"Wakamé"},latin:"Undaria pinnatifida",
 origin:{en:"Cold coastal waters of Japan and Korea",fr:"Eaux froides du Japon et de Corée"},season:[2,3,4,5],
 flavor:["marine","briny","delicate"],
 story:{en:"Wakame travels the world in ballast water and on hulls; it sits on the register of the hundred worst invasive species and has taken hold from the Venice lagoon to Tasmania. In Brittany, where it arrived uninvited, it is now grown deliberately on ropes.",

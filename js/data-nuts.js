@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"acorn",cat:"nuts",rare:true,name:{en:"Acorn",fr:"Gland"},latin:"Quercus spp.",
+{id:"acorn",cat:"nuts",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Acorn",fr:"Gland"},latin:"Quercus spp.",
 origin:{en:"Temperate oak woodland",fr:"Chênaies tempérées"},season:[9,10,11],
 flavor:["bitter","earthy","nutty"],
 story:{en:"In central California the acorn was the staple grain: the meal was spread in a shallow sand basin and cold stream water run through it for hours until the tannin was gone, a technique with no European equivalent. Those same tannins are why wine and whisky are aged in oak — what makes the nut inedible is what makes the barrel worth having.",
@@ -9,7 +9,7 @@ fr:"Lessivez à froid, jamais à chaud. L’eau froide emporte le tanin en laiss
 pairs:["soy-sauce","sesame-oil","gochugaru","garlic-chives","honey","chestnut"],
 svg:'<path class="f2 sf" d="M38 42h20q0 22-10 30-10-8-10-30z"/><path class="f3 sf" d="M35 32q13-6 26 0 2 10-13 10t-13-10z"/><path class="s" d="M48 24v8"/>'},
 
-{id:"almond",cat:"nuts",name:{en:"Almond",fr:"Amande"},latin:"Prunus amygdalus",
+{id:"almond",cat:"nuts",price:2,pk:"14–25 €/kg",name:{en:"Almond",fr:"Amande"},latin:"Prunus amygdalus",
 origin:{en:"Central & Western Asia",fr:"Asie centrale & occidentale"},season:[],
 flavor:["nutty","sweet","milky"],
 story:{en:"The almond tree flowers before it leafs — a white promise in bare February orchards that van Gogh painted for his newborn nephew. Sugared almonds have marked weddings since Roman times: bitterness coated in sweetness, like marriage, says the joke.",
@@ -19,7 +19,7 @@ fr:"Torréfiez-les toujours — l’amande crue n’est qu’une rumeur d’elle
 pairs:["peach","raspberry","dark-chocolate","honey","cherry","saffron"],
 svg:'<path class="f2 sf" d="M48 30q14 14 12 30-1 14-12 14t-12-14q-2-16 12-30z"/><path class="dot" d="M43 50a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M50 44a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M50 58a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M43 62a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/>'},
 
-{id:"almond-flour",cat:"nuts",name:{en:"Almond flour",fr:"Poudre d'amande"},latin:"Prunus dulcis",
+{id:"almond-flour",cat:"nuts",price:2,pk:"16–28 €/kg",name:{en:"Almond flour",fr:"Poudre d'amande"},latin:"Prunus dulcis",
 origin:{en:"Nut mills, Spain and California",fr:"Moulins à fruits secs, Espagne et Californie"},season:[],
 flavor:["nutty","mild","sweet"],
 story:{en:"The macaron base is called tant pour tant, as much for as much: equal weights of almond powder and icing sugar. The sugar is not only sweetening — it takes up the oil the kernel releases as it is ground, and it is the only way to get almond that fine without turning it into paste.",
@@ -29,7 +29,7 @@ fr:"Achetez-la selon sa finesse et tamisez-la avec le sucre glace plutôt que se
 pairs:["egg","icing-sugar","butter","vanilla","apricot","raspberry"],
 svg:'<ellipse class="f1 sf" cx="48" cy="32" rx="22" ry="8"/><path class="s" d="M26 32v6q0 8 22 8t22-8v-6"/><path class="s" d="M38 50v10M46 50v12M54 50v10"/><path class="f2 sf" d="M30 74q12-12 18-12t18 12z"/>'},
 
-{id:"amardine",cat:"nuts",rare:true,name:{en:"Amardine",fr:"Amardine (pâte d’abricot séchée)"},latin:"Prunus armeniaca",
+{id:"amardine",cat:"nuts",rare:true,price:1,pk:"8–15 €/kg",name:{en:"Amardine",fr:"Amardine (pâte d’abricot séchée)"},latin:"Prunus armeniaca",
 origin:{en:"Ghouta orchards, Syria",fr:"Vergers de la Ghouta, Syrie"},season:[],
 flavor:["tangy","sweet","fruity"],
 story:{en:"Amardine is the Levantine name for qamar al-din, apricot pulp cooked with sugar and dried in sheets on wooden trays; the apricots of the Ghouta orchards outside Damascus set the standard. It is drunk more than it is eaten — soaked overnight into a thick nectar that breaks the Ramadan fast.",
@@ -39,7 +39,7 @@ fr:"Déchirez la feuille et faites-la tremper au moins quatre heures à l’eau 
 pairs:["orange-blossom-water","rose-water","pistachio","almond","yogurt","cinnamon","pomegranate-molasses"],
 svg:'<path class="f2 sf" d="M24 40h40l6 8-6 6H24l-6-6z"/><path class="f1 sf" d="M24 54h40l6 6-6 8H24l-6-8z"/><path class="s" d="M64 48l-40 6M64 60l-40 8"/>'},
 
-{id:"antep-pistachio",cat:"nuts",luxe:true,name:{en:"Antep pistachio",fr:"Pistache d'Antep"},latin:"Pistacia vera",
+{id:"antep-pistachio",cat:"nuts",price:3,pk:"40–80 €/kg",name:{en:"Antep pistachio",fr:"Pistache d'Antep"},latin:"Pistacia vera",
 origin:{en:"Gaziantep, Türkiye",fr:"Gaziantep, Turquie"},season:[9],
 flavor:["nutty","rich","earthy"],
 story:{en:"Turkish has no separate word for the nut: it is Antep fıstığı, the Antep nut, named for the city that grows it. When Gaziantep baklava became the first Turkish product to win a European protected name, this pistachio was written into the pastry's legal definition — there it is not an ingredient choice but a specification.",
@@ -49,7 +49,7 @@ fr:"C'est la pistache qui tient au four : concassez-la grossièrement et répart
 pairs:["clarified-butter","honey","rose-water","semolina","lemon","cardamom"],
 svg:'<ellipse class="f1 sf" cx="38" cy="48" rx="12" ry="15"/><ellipse class="f1 sf" cx="58" cy="52" rx="11" ry="14"/><path class="s" d="M38 32v-3q6-6 14-6"/><path class="f3 sf" d="M48 66q9 3 9 8t-9 6q-9-1-9-6t9-8z"/>'},
 
-{id:"apricot-kernel",cat:"nuts",name:{en:"Apricot kernel",fr:"Amandon d'abricot"},latin:"Prunus armeniaca",
+{id:"apricot-kernel",cat:"nuts",price:2,pk:"18–35 €/kg",name:{en:"Apricot kernel",fr:"Amandon d'abricot"},latin:"Prunus armeniaca",
 origin:{en:"Malatya, Anatolia",fr:"Malatya, Anatolie"},season:[],
 flavor:["bitter","nutty","delicate"],
 story:{en:"The almond flavour in amaretti and in most noyau liqueurs is not almond at all: it comes from this seed, cracked out of the apricot stone. Sweet or bitter is a cultivar trait rather than a stage of ripeness, so the same-looking kernel is eaten by the handful in Malatya and weighed out by the gram in a distillery.",
@@ -59,7 +59,7 @@ fr:"Ouvrez les noyaux avec le plat d'un couteau plutôt qu'avec un casse-noix, q
 pairs:["apricot","dried-apricot","cherry","persipan","honey","vanilla"],
 svg:'<path class="f1 sf" d="M40 26q-16 10-16 26t16 24q6-26 0-50z"/><path class="f2 sf" d="M56 30q16 10 16 24t-16 22q-6-24 0-46z"/><path class="f3 sf" d="M48 40q8 4 8 14t-8 12q-8-4-8-12t8-14z"/><path class="s" d="M32 40q-2 12 2 22M64 44q2 10-2 20"/>'},
 
-{id:"avola-almond",cat:"nuts",luxe:true,name:{en:"Avola almond",fr:"Amande d'Avola"},latin:"Prunus dulcis (Pizzuta d'Avola)",
+{id:"avola-almond",cat:"nuts",price:2,pk:"28–50 €/kg",name:{en:"Avola almond",fr:"Amande d'Avola"},latin:"Prunus dulcis (Pizzuta d'Avola)",
 origin:{en:"Val di Noto, Sicily",fr:"Val di Noto, Sicile"},season:[8,9],
 flavor:["nutty","bitter","delicate"],
 story:{en:"Pizzuta means pointed in Sicilian, and the kernel is flat and almost perfectly symmetrical — which is why it became the almond for sugared confetti, since an even shape takes an even coat. The trees are grown without irrigation in the Val di Noto, so crops are small and the kernels dense enough to grind dry.",
@@ -69,7 +69,7 @@ fr:"Pour la granita di mandorla, broyez-la froide et par à-coups : elle est ass
 pairs:["lemon","orange-blossom-water","ricotta","honey","coffee","cinnamon"],
 svg:'<path class="f1 sf" d="M48 22q-20 12-20 30t20 24z"/><path class="f2 sf" d="M48 22q20 12 20 30t-20 24z"/><path class="f3 sf" d="M48 34q8 8 8 18t-8 14q-8-4-8-14t8-18z"/><path class="s" d="M30 46q6 4 12 0M54 46q6 4 12 0"/>'},
 
-{id:"baru-nut",cat:"nuts",rare:true,name:{en:"Baru nut",fr:"Noix de baru"},latin:"Dipteryx alata",
+{id:"baru-nut",cat:"nuts",rare:true,price:3,pk:"40–70 €/kg",name:{en:"Baru nut",fr:"Noix de baru"},latin:"Dipteryx alata",
 origin:{en:"Cerrado, Brazil",fr:"Cerrado, Brésil"},season:[],
 flavor:["nutty","toasty","bitter"],
 story:{en:"Baru is a legume, not a nut, and belongs to the same genus as the tonka bean — Dipteryx — gathered under wild savanna trees whose fruit cattle eat and scatter across the Cerrado. Roasting is not a matter of flavour here: the raw seed carries trypsin inhibitors and is not food until it has been through the oven.",
@@ -79,7 +79,7 @@ fr:"Vingt minutes à 180 °C, retournées une fois : sous-torréfié, le baru ga
 pairs:["dark-chocolate","coffee","honey","banana","cassava","tonka","salt"],
 svg:'<ellipse class="f2 sf" cx="36" cy="52" rx="14" ry="18"/><ellipse class="f1 sf" cx="62" cy="54" rx="9" ry="13"/><path class="s" d="M36 36v32"/>'},
 
-{id:"basil-seed",cat:"nuts",name:{en:"Basil seed",fr:"Graine de basilic"},latin:"Ocimum basilicum",
+{id:"basil-seed",cat:"nuts",price:1,pk:"12–25 €/kg",name:{en:"Basil seed",fr:"Graine de basilic"},latin:"Ocimum basilicum",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[],
 flavor:["mild","herbal","fresh"],
 story:{en:"It is the seed of the same plant grown for its leaves, drunk as a cooling sherbet in Persian and Indian kitchens long before it reached anybody's dessert — tukmaria in one, sabja in the other. It hydrates in under a minute where chia takes twenty, because the mucilage sits in a thin outer layer rather than through the whole seed, and the black core stays crisp inside its halo.",
@@ -89,7 +89,7 @@ fr:"Hydratez-les à part dans de l’eau froide — une cuillerée à café pour
 pairs:["rose-water","lime","coconut-milk","lychee","palm-sugar","mint","lemon","watermelon"],
 svg:'<circle class="f1 sf" cx="44" cy="44" r="16"/><circle class="f3 sf" cx="44" cy="44" r="7"/><circle class="f1 sf" cx="64" cy="64" r="10"/><circle class="f3 sf" cx="64" cy="64" r="4.5"/>'},
 
-{id:"beechnut",cat:"nuts",rare:true,name:{en:"Beechnut",fr:"Faîne"},latin:"Fagus sylvatica",
+{id:"beechnut",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Beechnut",fr:"Faîne"},latin:"Fagus sylvatica",
 origin:{en:"European beech woods",fr:"Hêtraies d’Europe"},season:[9,10],
 flavor:["nutty","bitter","woody"],
 story:{en:"Beech oil — huile de faîne — was a household oil across northern France into the nineteenth century, pressed at village mills and valued because it kept for years without turning. The trees mast: a heavy crop perhaps once in five years and near nothing between, so the oil went out of use for want of material rather than want of favour.",
@@ -99,7 +99,7 @@ fr:"Grillez-les avant de les manger : dix minutes à 150 °C décollent la pelli
 pairs:["butter","honey","apple","mushroom","venison","walnut-oil","pear"],
 svg:'<path class="f2 sf" d="M48 26l16 40q-16 6-32 0z"/><path class="s" d="M48 26v40M34 58q14 5 28 0"/><path class="f1 sf" d="M30 66q18 8 36 0-4 8-18 8t-18-8z"/>'},
 
-{id:"bitter-almond",cat:"nuts",name:{en:"Bitter almond",fr:"Amande amère"},latin:"Prunus dulcis var. amara",
+{id:"bitter-almond",cat:"nuts",price:3,pk:"25–50 €/kg",name:{en:"Bitter almond",fr:"Amande amère"},latin:"Prunus dulcis var. amara",
 origin:{en:"Wild and seedling almond trees",fr:"Amandiers sauvages et de semis"},season:[],
 flavor:["bitter","floral","nutty"],
 story:{en:"The kernel keeps amygdalin and the enzyme that splits it in separate cells, so nothing happens until it is crushed and wetted — at which point it releases benzaldehyde, the almond smell, and hydrogen cyanide in the same breath. The two part company in the pan: cyanide boils off near 26 °C and benzaldehyde not until 178 °C, which is why a cooked preparation keeps the aroma and loses the poison.",
@@ -109,7 +109,7 @@ fr:"Deux ou trois amandes par kilo d'amande douce : c'est la dose de travail pou
 pairs:["almond-flour","marzipan","cherry","apricot","kirsch","cream"],
 svg:'<path class="f2 sf" d="M46 24q-12 14-12 30t12 22q2-26 0-52z"/><path class="f1 sf" d="M50 24q12 14 12 30t-12 22q-2-26 0-52z"/><path class="s" d="M40 40q2 14 2 24M56 42q-2 12-2 22"/>'},
 
-{id:"black-sesame",cat:"nuts",name:{en:"Black sesame",fr:"Sésame noir"},latin:"Sesamum indicum",
+{id:"black-sesame",cat:"nuts",price:2,pk:"9–16 €/kg",name:{en:"Black sesame",fr:"Sésame noir"},latin:"Sesamum indicum",
 origin:{en:"Tropical Africa & India",fr:"Afrique tropicale & Inde"},season:[],
 flavor:["nutty","toasty","bitter"],
 story:{en:"The ripe capsule splits with an audible snap, and the story goes that this is where open sesame comes from. Black seed is simply seed that has not been hulled: the pigment, most of the bitterness and the mineral edge all live in the skin that white sesame has had rubbed off.",
@@ -119,7 +119,7 @@ fr:"La couleur ne dit rien : fiez-vous au bruit — poêle sèche, feu moyen, en
 pairs:["rice","soy-sauce","sugar","spinach","silken-tofu","honey","salt","kabocha"],
 svg:'<ellipse class="f3 sf" cx="40" cy="40" rx="6" ry="4"/><ellipse class="f3 sf" cx="57" cy="45" rx="6" ry="4"/><ellipse class="f3 sf" cx="46" cy="55" rx="6" ry="4"/><ellipse class="f3 sf" cx="62" cy="60" rx="6" ry="4"/><ellipse class="f3 sf" cx="35" cy="58" rx="6" ry="4"/>'},
 
-{id:"brazil-nut",cat:"nuts",name:{en:"Brazil nut",fr:"Noix du Brésil"},latin:"Bertholletia excelsa",
+{id:"brazil-nut",cat:"nuts",price:2,pk:"14–24 €/kg",name:{en:"Brazil nut",fr:"Noix du Brésil"},latin:"Bertholletia excelsa",
 origin:{en:"Amazon basin",fr:"Bassin amazonien"},season:[],
 flavor:["creamy","nutty","earthy","rich"],
 story:{en:"It cannot be farmed — the tree depends on a single orchid bee for pollination and a large rodent, the agouti, to open its cannonball pods. Every Brazil nut sold has been gathered from wild forest, which makes the trade a genuine argument for keeping it standing.",
@@ -129,7 +129,7 @@ fr:"Une seule noix peut porter plus d’une journée de sélénium. C’est une 
 pairs:["dark-chocolate","honey","coffee","vanilla","cream","banana","coconut-milk","date"],
 svg:'<path class="f1 sf" d="M36 38l16 4 6 26-18 8-8-24z"/><path class="s" d="M40 46l12 18"/>'},
 
-{id:"bronte-pistachio",cat:"nuts",luxe:true,name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
+{id:"bronte-pistachio",cat:"nuts",luxe:true,price:4,pk:"90–180 €/kg",name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
 origin:{en:"Bronte, Sicily",fr:"Bronte, Sicile"},season:[8,9],
 flavor:["resinous","herbal","nutty","rich"],
 story:{en:"The trees grow out of fissures in Etna's lava, grafted onto wild terebinth, and they crop in odd years only: growers strip the buds in the even year so the whole harvest arrives at once. Nothing mechanical holds on that ground, which is why the crop still comes down the mountain in baskets.",
@@ -139,7 +139,7 @@ fr:"Ne la torréfiez jamais : la chaleur tue la note résineuse que vous avez pa
 pairs:["ricotta","honey","orange-blossom-water","dark-chocolate","olive-oil","lemon"],
 svg:'<path class="f1 sf" d="M48 22q14 6 14 28t-14 26q-14-4-14-26T48 22z"/><path class="f3 sf" d="M48 26q4 10 4 22t-4 22q-4-10-4-22t4-22z"/><path class="s" d="M38 34q4 16 0 32M58 34q4 16 0 32"/><circle class="dot" cx="48" cy="19" r="2"/>'},
 
-{id:"candlenut",cat:"nuts",name:{en:"Candlenut",fr:"Noix de bancoul"},latin:"Aleurites moluccanus",
+{id:"candlenut",cat:"nuts",price:2,pk:"15–28 €/kg",name:{en:"Candlenut",fr:"Noix de bancoul"},latin:"Aleurites moluccanus",
 origin:{en:"Maritime Southeast Asia & the Pacific",fr:"Asie du Sud-Est insulaire & Pacifique"},season:[],
 flavor:["buttery","rich","mild"],
 story:{en:"The kernel is oily enough to burn: across the Pacific they were threaded onto a palm rib and lit end to end, a few minutes of light per nut, which is where the English name comes from. Kukui is the state tree of Hawaii, where the same nut is roasted, pounded with salt into inamona and eaten with raw fish.",
@@ -149,7 +149,7 @@ fr:"Grillez-les toujours avant de les broyer et cuisez toujours la pâte : la no
 pairs:["galangal","lemongrass","shallot","turmeric","chili","coconut-milk","shrimp-paste","garlic"],
 svg:'<path class="f1 sf" d="M48 22q7 8 7 13t-7 5-7-5 7-13z"/><circle class="f2 sf" cx="48" cy="58" r="18"/><path class="s" d="M30 58q18-10 36 0M48 40v36"/>'},
 
-{id:"cashew",cat:"nuts",name:{en:"Cashew",fr:"Noix de cajou"},latin:"Anacardium occidentale",
+{id:"cashew",cat:"nuts",price:2,pk:"12–20 €/kg",name:{en:"Cashew",fr:"Noix de cajou"},latin:"Anacardium occidentale",
 origin:{en:"Northeast Brazil",fr:"Nord-est du Brésil"},season:[],
 flavor:["sweet","creamy","nutty","buttery"],
 story:{en:"It grows hanging beneath a fleshy false fruit, and its shell contains a caustic oil related to poison ivy — which is why cashews are never sold in the shell and why shelling them by hand is genuinely hazardous work.",
@@ -159,7 +159,7 @@ fr:"Trempée et mixée elle donne une crème qui se comporte comme un laitage. C
 pairs:["coconut-milk","chili","lime","cilantro","ginger","garlic","curry-leaf","honey"],
 svg:'<path class="f2 sf" d="M34 50q14-12 24 0t-6 20-22-4 4-16z"/><path class="s" d="M40 56q10 4 14 10"/>'},
 
-{id:"cervione-hazelnut",cat:"nuts",rare:true,name:{en:"Cervione hazelnut",fr:"Noisette de Cervione"},latin:"Corylus avellana (Fertile de Coutard)",
+{id:"cervione-hazelnut",cat:"nuts",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Cervione hazelnut",fr:"Noisette de Cervione"},latin:"Corylus avellana (Fertile de Coutard)",
 origin:{en:"Cervione, Corsica",fr:"Cervione, Corse"},season:[9],
 flavor:["nutty","woody","resinous"],
 story:{en:"Corsica's hazelnut groves had nearly gone when growers around Cervione replanted a single old cultivar in the last decades of the twentieth century, and the whole protected area still turns out a fraction of what one Piedmont valley does. The nuts are dried in moving air rather than in a kiln, which is why the kernel keeps a woody, almost resinous edge that hot-dried nuts lose.",
@@ -169,7 +169,7 @@ fr:"Sa pointe est aromatique plutôt que sucrée : associez-la au brocciu, à la
 pairs:["brocciu","chestnut","chestnut-honey","fig","myrtle","goat-cheese"],
 svg:'<path class="s" d="M48 20v16"/><path class="f1 sf" d="M34 24q10-6 14 4-8 8-14-4z"/><path class="f1 sf" d="M62 24q-10-6-14 4 8 8 14-4z"/><path class="f2 sf" d="M48 36q14 2 14 18t-14 24q-14-8-14-24T48 36z"/><path class="s" d="M48 42v32"/>'},
 
-{id:"chestnut",cat:"nuts",name:{en:"Chestnut",fr:"Châtaigne"},latin:"Castanea sativa",
+{id:"chestnut",cat:"nuts",price:1,pk:"4–8 €/kg",name:{en:"Chestnut",fr:"Châtaigne"},latin:"Castanea sativa",
 origin:{en:"Southern Europe & Asia Minor",fr:"Europe du Sud & Asie Mineure"},season:[10,11,12],
 flavor:["sweet","earthy","toasty"],
 story:{en:"For centuries, mountain villages from Corsica to the Cévennes lived off the “bread tree”: chestnuts ground into flour when wheat wouldn’t grow. The candied marron glacé turned the peasant staple into a jewel — same nut, different destiny.",
@@ -179,7 +179,7 @@ fr:"Incisez une croix avant de les rôtir, sinon elles explosent — chaque coin
 pairs:["mushroom","pork","cream","dark-chocolate","honey","sage"],
 svg:'<path class="f2 sf" d="M48 30q16 10 16 26 0 12-16 12T32 56q0-16 16-26z"/><path class="f3 sf" d="M38 64q10 6 20 0l-2 6H40z"/><path class="s" d="M48 30v-4"/>'},
 
-{id:"chia-seed",cat:"nuts",name:{en:"Chia seed",fr:"Graine de chia"},latin:"Salvia hispanica",
+{id:"chia-seed",cat:"nuts",price:1,pk:"7–13 €/kg",name:{en:"Chia seed",fr:"Graine de chia"},latin:"Salvia hispanica",
 origin:{en:"Central Mexico",fr:"Mexique central"},season:[],
 flavor:["mild","nutty","grassy"],
 story:{en:"Chia was an Aztec tribute crop alongside maize, beans and amaranth, and Chiapas takes its name from it — chian is the Nahuatl word for the seed. The Spanish suppressed the crop for its part in temple offerings, and it stayed a regional Mexican drink until the 1990s.",
@@ -189,7 +189,7 @@ fr:"Une part de graines pour six de liquide, au poids, prend en gel à la cuill�
 pairs:["lime","coconut-milk","honey","mango","yogurt","vanilla","raspberry","maple-syrup"],
 svg:'<path class="f1 sf" d="M34 26h28l-4 44q-1 6-10 6t-10-6z"/><path class="s" d="M35 42h26"/><path class="dot" d="M40 50a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M50 46a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M46 60a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M53 56a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M42 68a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"date-paste",cat:"nuts",name:{en:"Date paste",fr:"Pâte de dattes"},latin:"Phoenix dactylifera",
+{id:"date-paste",cat:"nuts",price:1,pk:"6–12 €/kg",name:{en:"Date paste",fr:"Pâte de dattes"},latin:"Phoenix dactylifera",
 origin:{en:"Middle East & North Africa",fr:"Moyen-Orient & Afrique du Nord"},season:[],
 flavor:["sweet","rich","earthy","honeyed"],
 story:{en:"The filling of maamoul and of the Iraqi kleicha, and one of the oldest sweeteners in use — Mesopotamian tablets record date syrup as a trade good four thousand years ago, long before cane sugar reached the region.",
@@ -199,7 +199,7 @@ fr:"Réchauffez-la avec une cuillerée d’eau et un peu de beurre pour la rendr
 pairs:["tahini","cardamom","orange","sesame","cinnamon","walnut","butter","coffee"],
 svg:'<path class="f1 sf" d="M32 58q0-16 16-16t16 16-16 14-16-14z"/><path class="s" d="M38 54q10 6 20 0"/>'},
 
-{id:"deglet-nour",cat:"nuts",name:{en:"Deglet Nour date",fr:"Datte Deglet Nour"},latin:"Phoenix dactylifera",
+{id:"deglet-nour",cat:"nuts",price:1,pk:"6–12 €/kg",name:{en:"Deglet Nour date",fr:"Datte Deglet Nour"},latin:"Phoenix dactylifera",
 origin:{en:"Tolga oases, Algeria",fr:"Oasis de Tolga, Algérie"},season:[],
 flavor:["honeyed","sweet","delicate","nutty"],
 story:{en:"The name means roughly date of light: hold one up to a lamp and the amber flesh goes translucent around the stone. It comes from the Tolga oases of Biskra in Algeria and spread from there to the Tunisian Djerid, and it is still sold in France on the branch each December.",
@@ -209,7 +209,7 @@ fr:"À environ 20 % d’eau contre 30 % pour la Medjool, elle se tranche sans co
 pairs:["lamb","almond","cinnamon","orange","semolina","saffron","chickpeas"],
 svg:'<path class="s" d="M48 16v20q0 6-8 10M48 36q8 4 8 10"/><ellipse class="f1 sf" cx="36" cy="58" rx="10" ry="18"/><ellipse class="f1 sf" cx="60" cy="60" rx="10" ry="18"/><path class="s" d="M36 42v30M60 44v30"/>'},
 
-{id:"coconut-flakes",cat:"nuts",name:{en:"Desiccated coconut",fr:"Noix de coco râpée"},latin:"Cocos nucifera",
+{id:"coconut-flakes",cat:"nuts",price:1,pk:"5–10 €/kg",name:{en:"Desiccated coconut",fr:"Noix de coco râpée"},latin:"Cocos nucifera",
 origin:{en:"Indo-Pacific",fr:"Indo-Pacifique"},season:[],
 flavor:["sweet","nutty","creamy","toasty"],
 story:{en:"Drying was what let coconut leave the tropics — fresh flesh spoils within days, dried it keeps for a year. The Victorian appetite for coconut cake and macaroons is entirely a consequence of that one process.",
@@ -219,7 +219,7 @@ fr:"Torréfiez-la à sec avant de l’incorporer. Crue, la coco râpée a un go�
 pairs:["dark-chocolate","lime","mango","sugar","vanilla","cardamom","pineapple","coconut-milk"],
 svg:'<path class="f3 sf" d="M32 52h32v4H32zM30 60h34v4H30zM34 68h28v4H34z"/>'},
 
-{id:"dried-apricot",cat:"nuts",name:{en:"Dried apricot",fr:"Abricot sec"},latin:"Prunus armeniaca",
+{id:"dried-apricot",cat:"nuts",price:1,pk:"8–15 €/kg",name:{en:"Dried apricot",fr:"Abricot sec"},latin:"Prunus armeniaca",
 origin:{en:"Turkey & Central Asia",fr:"Turquie & Asie centrale"},season:[],
 flavor:["sweet","sour","fruity","honeyed"],
 story:{en:"The bright orange ones are treated with sulphur dioxide to keep the colour; the brown ones are not. The brown are more honeyed and figgy, the orange fresher and more acidic — they are effectively two different ingredients.",
@@ -229,7 +229,7 @@ fr:"Faites-les gonfler dans du thé tiède plutôt que dans l’eau avant un taj
 pairs:["lamb","almond","cinnamon","pistachio","honey","ras-el-hanout","orange","cream"],
 svg:'<path class="f2 sf" d="M34 56q0-14 14-14t14 14q0 12-14 14t-14-14z"/><path class="s" d="M40 50q8 6 16 0M40 62q8 4 16 0"/>'},
 
-{id:"dried-cranberry",cat:"nuts",name:{en:"Dried cranberry",fr:"Canneberge séchée"},latin:"Vaccinium macrocarpon",
+{id:"dried-cranberry",cat:"nuts",price:1,pk:"9–15 €/kg",name:{en:"Dried cranberry",fr:"Canneberge séchée"},latin:"Vaccinium macrocarpon",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[],
 flavor:["sweet","sour","fruity","tangy"],
 story:{en:"Almost always sweetened before drying, because an unsweetened dried cranberry is close to inedible — the fruit is far too acidic. Read the label: many are sweetened with apple juice concentrate rather than sugar, and they taste different.",
@@ -239,7 +239,7 @@ fr:"Leur acidité coupe le gras, ce qui les rend bien meilleures qu’un raisin 
 pairs:["turkey","pecan","orange","wild-rice","goat-cheese","walnut","sage","hazelnut"],
 svg:'<ellipse class="f1 sf" cx="42" cy="55" rx="6" ry="5"/><ellipse class="f1 sf" cx="55" cy="58" rx="6" ry="5"/><ellipse class="f1 sf" cx="47" cy="66" rx="6" ry="5"/>'},
 
-{id:"dried-fig",cat:"nuts",name:{en:"Dried fig",fr:"Figue sèche"},latin:"Ficus carica",
+{id:"dried-fig",cat:"nuts",price:1,pk:"8–16 €/kg",name:{en:"Dried fig",fr:"Figue sèche"},latin:"Ficus carica",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[],
 flavor:["sweet","honeyed","earthy","nutty"],
 story:{en:"Figs were being dried in the Jordan valley eleven thousand years ago, and some archaeologists argue the fig was the first plant humans ever cultivated — earlier than wheat, because a cutting will root on its own.",
@@ -249,7 +249,7 @@ fr:"Le voile blanc en surface est du sucre cristallisé, non une moisissure. C�
 pairs:["walnut","blue-cheese","honey","fennel-seed","almond","prosciutto","orange","red-wine-vinegar"],
 svg:'<path class="f1 sf" d="M48 36q14 10 14 22t-14 14-14-14 14-22z"/><path class="s" d="M48 36v-6"/><path class="s" d="M40 56q8 6 16 0"/>'},
 
-{id:"griotte-sechee",cat:"nuts",name:{en:"Dried sour cherry",fr:"Griotte séchée"},latin:"Prunus cerasus",
+{id:"griotte-sechee",cat:"nuts",price:3,pk:"25–45 €/kg",name:{en:"Dried sour cherry",fr:"Griotte séchée"},latin:"Prunus cerasus",
 origin:{en:"Orchards of central Europe",fr:"Vergers d’Europe centrale"},season:[],
 flavor:["sour","tangy","fruity"],
 story:{en:"Morello cherries are dried without the sugaring that sweet cherries get, so the acid concentrates alongside the sugar instead of being buried under it. They are a separate species from the sweet cherry and self-fertile, which is why one griotte tree in a garden fruits where a lone sweet cherry often will not.",
@@ -259,7 +259,7 @@ fr:"Faites-les gonfler vingt minutes dans du vin rouge tiède ou du kirsch, puis
 pairs:["duck","venison","dark-chocolate","kirsch","juniper","foie-gras","pistachio"],
 svg:'<path class="f3 sf" d="M46 40q14-2 18 10t-10 20q-14 4-20-8t12-22z"/><path class="s" d="M50 38q2-14 12-20"/><path class="s" d="M44 48q8 2 12 10M56 46q-6 6-6 16"/><circle class="f3 sf" cx="32" cy="62" r="9"/>'},
 
-{id:"egusi-seed",cat:"nuts",rare:true,name:{en:"Egusi",fr:"Graines d’egusi"},latin:"Citrullus mucosospermus",
+{id:"egusi-seed",cat:"nuts",rare:true,price:2,pk:"12–22 €/kg",name:{en:"Egusi",fr:"Graines d’egusi"},latin:"Citrullus mucosospermus",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
 flavor:["nutty","earthy","rich"],
 story:{en:"The melon it comes from is grown for nothing else — the flesh is too bitter to eat — and the sprawling vines earn their keep shading yam and cassava fields while the seed matures. Roughly half fat and a third protein, milled egusi behaves like a curd rather than a thickener: it sets into soft lumps instead of dissolving, which is the whole point of the soup named after it.",
@@ -269,7 +269,7 @@ fr:"Versez la pâte moulue dans l’huile chaude et n’y touchez pas pendant tr
 pairs:["red-palm-oil","chili","crayfish","molokhia","onion","spinach","crevettes-sechees","beef"],
 svg:'<path class="f1 sf" d="M38 26q10 8 10 24t-10 22q-10-6-10-22t10-24z"/><path class="f1 sf" d="M60 34q9 8 9 22t-9 20q-9-6-9-20t9-22z"/><path class="s" d="M38 32q6 6 6 18t-6 16M60 40q5 6 5 16t-5 14"/>'},
 
-{id:"flax",cat:"nuts",name:{en:"Flaxseed",fr:"Graine de lin"},latin:"Linum usitatissimum",
+{id:"flax",cat:"nuts",price:1,pk:"4–8 €/kg",name:{en:"Flaxseed",fr:"Graine de lin"},latin:"Linum usitatissimum",
 origin:{en:"Fertile Crescent",fr:"Croissant fertile"},season:[],
 flavor:["nutty","earthy","mild","toasty"],
 story:{en:"One of the first plants humans domesticated, and for most of history it was grown for linen rather than food — the Latin name means most useful. Dyed flax fibres found in a Georgian cave are thirty thousand years old.",
@@ -279,7 +279,7 @@ fr:"Les graines entières traversent sans être digérées. Moulez-les juste ava
 pairs:["oats","yogurt","honey","flour-complete","raisin","banana","cinnamon","sunflower-seed"],
 svg:'<ellipse class="f1 sf" cx="40" cy="52" rx="7" ry="4"/><ellipse class="f1 sf" cx="55" cy="58" rx="7" ry="4"/><ellipse class="f1 sf" cx="45" cy="66" rx="7" ry="4"/>'},
 
-{id:"fresh-hazelnut",cat:"nuts",name:{en:"Fresh green hazelnut",fr:"Noisette fraîche"},latin:"Corylus avellana",
+{id:"fresh-hazelnut",cat:"nuts",price:2,pk:"8–15 €/kg",name:{en:"Fresh green hazelnut",fr:"Noisette fraîche"},latin:"Corylus avellana",
 origin:{en:"Orchards, late summer",fr:"Vergers, fin d'été"},season:[8,9],
 flavor:["milky","fresh","grassy","delicate"],
 story:{en:"A green hazelnut kernel is close to half water; drying takes it below a tenth of its weight, and that single number is the entire difference between the two ingredients. It is also why the fresh nut is sold by the day in late summer and never appears on a shelf — it moulds inside its own shell within a week.",
@@ -289,7 +289,7 @@ fr:"Cassez-les au dernier moment et retirez la pellicule au pouce : elle glisse 
 pairs:["sea-bass","olive-oil","lemon","celery","goat-cheese","peach"],
 svg:'<path class="f1 sf" d="M26 46l4-14 6 8 6-12 6 12 6-10 6 12 6-8 4 12z"/><circle class="f2 sf" cx="40" cy="58" r="13"/><circle class="f2 sf" cx="58" cy="60" r="12"/><path class="s" d="M48 32v-8"/>'},
 
-{id:"fresh-walnut",cat:"nuts",name:{en:"Fresh walnut",fr:"Noix fraîche"},latin:"Juglans regia",
+{id:"fresh-walnut",cat:"nuts",price:1,pk:"6–12 €/kg",name:{en:"Fresh walnut",fr:"Noix fraîche"},latin:"Juglans regia",
 origin:{en:"French orchards, September",fr:"Vergers français, septembre"},season:[9,10],
 flavor:["milky","fresh","delicate","mild"],
 story:{en:"Everything that makes a fresh walnut taste unlike a dried one sits in the pellicle: while the nut is still moist that skin lifts away in sheets, and it carries nearly all the tannin. Give it a fortnight and the skin has bonded to the kernel and will not come off — which is the point at which a walnut starts tasting like a walnut.",
@@ -299,7 +299,7 @@ fr:"Épluchez-les, fastidieusement : cela en vaut la peine. Un bol de cerneaux f
 pairs:["grape","comte","celery","verjus","fig","cream"],
 svg:'<path class="f1 sf" d="M26 46q2 26 22 30t22-30q-10 10-22 10t-22-10z"/><path class="f3 sf" d="M36 44q4-14 12-14t12 14q-6 6-12 6t-12-6z"/><path class="s" d="M48 30v14M42 36q6 4 12 0"/><path class="f2 sf" d="M70 30q10 4 8 12-8 0-10-6z"/>'},
 
-{id:"ginkgo-nut",cat:"nuts",rare:true,name:{en:"Ginkgo nut",fr:"Noix de ginkgo (ginnan)"},latin:"Ginkgo biloba",
+{id:"ginkgo-nut",cat:"nuts",rare:true,price:3,pk:"30–55 €/kg",name:{en:"Ginkgo nut",fr:"Noix de ginkgo (ginnan)"},latin:"Ginkgo biloba",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[10,11],
 flavor:["bitter","resinous","delicate"],
 story:{en:"The kernel sits inside a fleshy coat that smells of rancid butter, which is why cities plant only male trees and why ginnan reaches the market already cleaned. Ginkgos standing about a kilometre from the Hiroshima hypocentre put out buds the following spring, and several are alive today.",
@@ -309,7 +309,7 @@ fr:"Faites-les éclater à la poêle sèche avec une cuillerée de gros sel, pui
 pairs:["kombu","egg","chicken","junmai-sake","salt","shiitake","mitsuba","yuzu"],
 svg:'<path class="f2 sf" d="M48 74q-20-12-24-38 12 8 24 10 12-2 24-10-4 26-24 38z"/><path class="s" d="M48 74v6"/><ellipse class="f1 sf" cx="48" cy="28" rx="9" ry="7"/>'},
 
-{id:"goji",cat:"nuts",name:{en:"Goji berry",fr:"Baie de goji"},latin:"Lycium barbarum",
+{id:"goji",cat:"nuts",price:2,pk:"15–30 €/kg",name:{en:"Goji berry",fr:"Baie de goji"},latin:"Lycium barbarum",
 origin:{en:"Ningxia, China",fr:"Ningxia, Chine"},season:[],
 flavor:["sweet","sour","earthy","musky"],
 story:{en:"Grown in China for centuries as a medicinal ingredient in soups and teas rather than a snack — it is in the same family as the tomato and the aubergine. Its Western career as a superfood dates only to the early 2000s.",
@@ -319,7 +319,7 @@ fr:"Faites-les mijoter dans un bouillon ou un congee comme les cuisiniers chinoi
 pairs:["ginger","rice","goat-cheese","honey","chicken","jasmine-rice","sesame","almond"],
 svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="5" ry="8"/><ellipse class="f1 sf" cx="54" cy="58" rx="5" ry="8"/><ellipse class="f1 sf" cx="47" cy="68" rx="5" ry="8"/>'},
 
-{id:"green-almond",cat:"nuts",name:{en:"Green almond",fr:"Amande fraîche"},latin:"Prunus dulcis",
+{id:"green-almond",cat:"nuts",price:2,pk:"10–20 €/kg",name:{en:"Green almond",fr:"Amande fraîche"},latin:"Prunus dulcis",
 origin:{en:"Mediterranean orchards, spring",fr:"Vergers méditerranéens, printemps"},season:[4,5,6],
 flavor:["sour","grassy","fresh","delicate"],
 story:{en:"Across Turkey and the Levant the whole unripe fruit is a spring street food — çağla, loz akhdar — sold by the bagful with a twist of salt and eaten hull, shell and all. The window is short: once the shell lignifies, a matter of two or three weeks, you have to cut the fruit open and eat only the jelly kernel inside.",
@@ -329,7 +329,7 @@ fr:"Essayez l'ongle avant d'acheter : s'il ne s'enfonce pas dans la bogue, la co
 pairs:["salt","olive-oil","feta","mint","sumac","yogurt"],
 svg:'<path class="f1 sf" d="M48 28q18 6 18 24t-18 22q-18-4-18-22t18-24z"/><path class="s" d="M34 38l-5-4M32 50h-6M36 62l-5 5M62 38l5-4M64 50h6M60 62l5 5"/><path class="f2 sf" d="M50 26q10-10 20-8-4 10-18 10z"/><path class="f3 sf" d="M54 56q8 2 8 8t-8 8q-4-4-4-8t4-8z"/>'},
 
-{id:"green-walnut",cat:"nuts",name:{en:"Green walnut",fr:"Noix verte"},latin:"Juglans regia",
+{id:"green-walnut",cat:"nuts",price:1,pk:"5–10 €/kg",name:{en:"Green walnut",fr:"Noix verte"},latin:"Juglans regia",
 origin:{en:"France and Emilia, late June",fr:"France et Émilie, fin juin"},season:[6,7],
 flavor:["bitter","grassy","resinous","pungent"],
 story:{en:"The traditional date is Saint John's Eve, the twenty-fourth of June, and the test is a needle: if it passes clean through the whole fruit, shell and all, the walnut is still soft enough for nocino or vin de noix. The window runs about ten days, after which the shell has begun to harden and the fruit is fit only for brining.",
@@ -339,7 +339,7 @@ fr:"Mettez des gants et n'utilisez pas de planche en bois : la juglone du brou t
 pairs:["sugar","clove","cinnamon","lemon","vanilla","dark-rum"],
 svg:'<circle class="f2 sf" cx="46" cy="54" r="20"/><path class="f1 sf" d="M46 34q4-14 18-16-2 14-16 18z"/><path class="f1 sf" d="M42 34q-6-12-18-12 4 12 16 16z"/><path class="s" d="M20 60h52"/><circle class="dot" cx="75" cy="60" r="2"/>'},
 
-{id:"grenoble-walnut",cat:"nuts",luxe:true,name:{en:"Grenoble walnut",fr:"Noix de Grenoble"},latin:"Juglans regia (Franquette)",
+{id:"grenoble-walnut",cat:"nuts",price:2,pk:"9–16 €/kg",name:{en:"Grenoble walnut",fr:"Noix de Grenoble"},latin:"Juglans regia (Franquette)",
 origin:{en:"Isère, Drôme and Savoie",fr:"Isère, Drôme et Savoie"},season:[9,10,11],
 flavor:["nutty","buttery","mild"],
 story:{en:"Three varieties are permitted and Franquette is nearly all of it: walnuts from the valleys around Grenoble took an appellation in 1938, among the first granted to anything that was not wine. The rule that carries it is that they are sold in the shell and dated by harvest, and that date is the only real information on the sack — walnut oil turns rancid inside the shell as readily as out.",
@@ -349,7 +349,7 @@ fr:"Achetez l'année en cours et cassez-les vous-même. Ouvrez-en une avant de v
 pairs:["roquefort","comte","pear","endive","honey","apple"],
 svg:'<path class="f1 sf" d="M48 22q20 0 20 26t-20 28q-20-8-20-28t20-26z"/><path class="s" d="M48 22v54"/><path class="s" d="M36 36q8 6 0 14M60 36q-8 6 0 14M38 58q10 4 20 0"/>'},
 
-{id:"hazelnut",cat:"nuts",name:{en:"Hazelnut",fr:"Noisette"},latin:"Corylus avellana",
+{id:"hazelnut",cat:"nuts",price:2,pk:"12–22 €/kg",name:{en:"Hazelnut",fr:"Noisette"},latin:"Corylus avellana",
 origin:{en:"Europe & Asia Minor",fr:"Europe & Asie Mineure"},season:[9,10],
 flavor:["nutty","sweet","toasty","buttery"],
 story:{en:"In Celtic legend, nine hazel trees dropped their nuts of wisdom into a sacred pool, and the salmon who ate them knew everything. Later, Napoleon’s blockade cut Turin off from cocoa — chocolatiers stretched what little they had with local hazelnuts, and gianduja was born of scarcity.",
@@ -359,7 +359,7 @@ fr:"Torréfiez, puis frottez-les dans un torchon : les peaux s’envolent et l�
 pairs:["dark-chocolate","coffee","pear","butter","chanterelle"],
 svg:'<circle class="f2 sf" cx="48" cy="56" r="15"/><path class="f3 sf" d="M34 48q2-14 14-14t14 14q-6 4-14 4t-14-4z"/><path class="s" d="M48 34v-6"/>'},
 
-{id:"hazelnut-flour",cat:"nuts",name:{en:"Hazelnut flour",fr:"Poudre de noisette"},latin:"Corylus avellana",
+{id:"hazelnut-flour",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Hazelnut flour",fr:"Poudre de noisette"},latin:"Corylus avellana",
 origin:{en:"Nut mills, Piedmont and Turkey",fr:"Moulins à fruits secs, Piémont et Turquie"},season:[],
 flavor:["nutty","toasty","rich"],
 story:{en:"At around sixty percent fat it is not a flour in any working sense: it builds no structure and it turns to butter under a warm blade, which is why mills grind it cold and sometimes with sugar. The same milling strips away the nut's own protection, so a bag in a warm cupboard is rancid in weeks while whole nuts keep a year.",
@@ -369,7 +369,7 @@ fr:"Ne remplacez pas plus du tiers du poids de farine, et baissez le four d'une 
 pairs:["butter","egg","dark-chocolate","sugar","flour-t55","pear"],
 svg:'<path class="f1 sf" d="M32 34h32l-2 40q0 4-4 4H38q-4 0-4-4z"/><path class="s" d="M32 34q8-6 16 0t16 0"/><ellipse class="f2 sf" cx="52" cy="74" rx="18" ry="7"/><path class="f3 sf" d="M68 58q8 0 8 8t-8 10q-8-4-8-10t8-8z"/>'},
 
-{id:"hemp-seed",cat:"nuts",name:{en:"Hemp seed",fr:"Graine de chanvre"},latin:"Cannabis sativa",
+{id:"hemp-seed",cat:"nuts",price:2,pk:"12–20 €/kg",name:{en:"Hemp seed",fr:"Graine de chanvre"},latin:"Cannabis sativa",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[],
 flavor:["nutty","grassy","creamy","mild"],
 story:{en:"The same species as the drug plant but a different cultivar, bred for fibre and seed and containing almost no THC. France is the largest hemp producer in Europe and has grown it continuously since the age of sail, when it made rope.",
@@ -379,7 +379,7 @@ fr:"Ne la cuisez jamais — l’huile s’oxyde vite et prend un goût de poisso
 pairs:["yogurt","honey","oats","banana","flax","spinach","olive-oil","lemon"],
 svg:'<circle class="f2 sf" cx="41" cy="54" r="5"/><circle class="f2 sf" cx="54" cy="52" r="5"/><circle class="f2 sf" cx="47" cy="65" r="5"/><circle class="f2 sf" cx="59" cy="63" r="4"/>'},
 
-{id:"hoshigaki",cat:"nuts",luxe:true,name:{en:"Hoshigaki",fr:"Hoshigaki (kaki séché)"},latin:"Diospyros kaki",
+{id:"hoshigaki",cat:"nuts",price:3,pk:"80–200 €/kg",name:{en:"Hoshigaki",fr:"Hoshigaki (kaki séché)"},latin:"Diospyros kaki",
 origin:{en:"Japan",fr:"Japon"},season:[12,1,2],
 flavor:["sweet","honeyed","fruity"],
 story:{en:"Astringent Hachiya persimmons are peeled, strung up and then hand-massaged every few days for three to five weeks, the massage breaking the pulp inside while the skin stays whole. The white bloom that finally appears is not mould but the fruit's own sugar drawn to the surface; dried persimmon has been made as ceremonial confectionery in Japan since the Heian period.",
@@ -389,7 +389,7 @@ fr:"Cueillez les fruits fermes, en octobre, jamais mous : un Hachiya mûr ne se 
 pairs:["walnut","matcha","junmai-sake","butter","goat-cheese","chestnut","yuzu","dark-chocolate"],
 svg:'<path class="f1 sf" d="M48 32q18 4 18 22t-18 22-18-22 18-22Z"/><path class="f3 sf" d="M48 22l10 5-4 6H42l-4-6Z"/><path class="s" d="M48 22V12M40 46q8 6 16 0"/><circle class="dot" cx="41" cy="56" r="1.5"/><circle class="dot" cx="55" cy="62" r="1.5"/>'},
 
-{id:"japanese-chestnut",cat:"nuts",rare:true,name:{en:"Japanese chestnut",fr:"Châtaigne japonaise (kuri)"},latin:"Castanea crenata",
+{id:"japanese-chestnut",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Japanese chestnut",fr:"Châtaigne japonaise (kuri)"},latin:"Castanea crenata",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[9,10],
 flavor:["earthy","mild","toasty"],
 story:{en:"Castanea crenata carries natural resistance to the blight that erased the American chestnut, and its genes have been bred into restoration hybrids for a century. In the kitchen it is the harder chestnut: the inner shibukawa skin grips the flesh instead of flaking away, and shibukawa-ni, the dish that keeps that skin on, takes three days of simmering and changes of water before the tannin lets go.",
@@ -399,7 +399,7 @@ fr:"Faites-les tremper une nuit avant de les éplucher : la coque se détache al
 pairs:["rice","sweet-potato","soy-sauce","sugar","hon-mirin","black-sesame","kombu"],
 svg:'<path class="f3 sf" d="M48 24q19 13 20 32 1 12-20 12t-20-12q1-19 20-32z"/><path class="f1 sf" d="M34 62q14 7 28 0v4q-14 6-28 0z"/><path class="s" d="M48 22v8"/>'},
 
-{id:"kluwak",cat:"nuts",rare:true,name:{en:"Kluwak",fr:"Noix de kluwak"},latin:"Pangium edule",
+{id:"kluwak",cat:"nuts",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Kluwak",fr:"Noix de kluwak"},latin:"Pangium edule",
 origin:{en:"Rainforests of Indonesia and Malaysia",fr:"Forêts humides d’Indonésie et de Malaisie"},season:[],
 flavor:["earthy","bitter","nutty","rich"],
 story:{en:"The raw kernel carries enough hydrogen cyanide to kill, and the same tree gives villagers a fish poison; the fix is to boil the seeds, then bury them in ash and banana leaves for about forty days, over which cream turns to black. What comes out is not a nut flavour at all but something between truffle, dark chocolate and wet earth.",
@@ -409,7 +409,7 @@ fr:"Achetez-les en coque et secouez-les : une noix qui claque a séché et ne va
 pairs:["beef","lemongrass","galangal","shallot","tamarind-paste","chili","kaffir-lime-leaf","coconut-milk"],
 svg:'<path class="f3 sf" d="M48 18q20 6 22 24t-12 32q-10 8-20 0T26 42 48 18z"/><path class="s" d="M38 24q-6 18-2 36M58 24q6 18 2 36M48 20v58"/><path class="f1 sf" d="M42 20q6-4 12 0-2 8-6 8t-6-8z"/>'},
 
-{id:"kola-nut",cat:"nuts",rare:true,name:{en:"Kola nut",fr:"Noix de kola"},latin:"Cola nitida",
+{id:"kola-nut",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Kola nut",fr:"Noix de kola"},latin:"Cola nitida",
 origin:{en:"West African forest belt",fr:"Ceinture forestière ouest-africaine"},season:[],
 flavor:["bitter","earthy","pungent"],
 story:{en:"Among the Igbo the nut is broken and shared before any serious conversation begins — he who brings kola brings life, as the proverb has it — and the number of lobes it splits into is read as an omen. It carries more caffeine by weight than a coffee bean, which is what put the cola in the first Coca-Cola formula, though the drink has not used it in any real quantity for a century.",
@@ -419,7 +419,7 @@ fr:"Congelez-la et râpez-la à la microplane : sèche, elle est trop dure à co
 pairs:["dark-chocolate","coffee","ginger","molasses","orange","vanilla","cocoa-nibs"],
 svg:'<path class="f2 sf" d="M48 24q18 10 18 28T48 76 30 52 48 24z"/><path class="s" d="M48 24v52M48 50l-18 2M48 50l18 2"/>'},
 
-{id:"korean-pine-nut",cat:"nuts",name:{en:"Korean pine nut",fr:"Pignon de pin de Corée"},latin:"Pinus koraiensis",
+{id:"korean-pine-nut",cat:"nuts",price:3,pk:"40–70 €/kg",name:{en:"Korean pine nut",fr:"Pignon de pin de Corée"},latin:"Pinus koraiensis",
 origin:{en:"Northeast Asia",fr:"Asie du Nord-Est"},season:[],
 flavor:["buttery","delicate","resinous"],
 story:{en:"Korean pine cones are still brought down tree by tree by climbers with a rope and a hook, and the kernels go into jatjuk, the pine-nut porridge long served to convalescents. Species matters here: the wave of pine mouth — days of metallic taste after eating pine nuts — reported across Europe in the late 2000s was traced to Pinus armandii kernels entering the trade, which is why buyers now name Pinus koraiensis on the order.",
@@ -429,7 +429,7 @@ fr:"Ils sont à moitié gras et rancissent en quelques semaines à température 
 pairs:["honey","jujube","rice","sesame-oil","chicken","spinach","doenjang"],
 svg:'<path class="f2 sf" d="M48 22q13 9 13 26 0 20-13 26-13-6-13-26 0-17 13-26z"/><path class="s" d="M35 36q13 6 26 0M34 48q14 6 28 0M36 60q12 6 24 0M48 24v50"/>'},
 
-{id:"largueta-almond",cat:"nuts",name:{en:"Largueta almond",fr:"Amande Largueta"},latin:"Prunus dulcis (Desmayo Largueta)",
+{id:"largueta-almond",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Largueta almond",fr:"Amande Largueta"},latin:"Prunus dulcis (Desmayo Largueta)",
 origin:{en:"Ebro valley, Aragón",fr:"Vallée de l'Èbre, Aragon"},season:[8,9],
 flavor:["nutty","toasty","bitter"],
 story:{en:"Its full name is Desmayo Largueta — desmayo, a swoon, for the way the branches droop. It is also among the earliest almonds to flower, so a February frost in the Ebro valley settles that year's price before anyone has seen a nut.",
@@ -439,7 +439,7 @@ fr:"C'est l'amande qui reste croquante sous le sucre ou le chocolat. Pour les ga
 pairs:["dark-chocolate","sugar","cinnamon","anise","honey","orange"],
 svg:'<path class="f2 sf" d="M48 22q13 12 13 30t-13 24q-13-6-13-24t13-30z"/><path class="s" d="M48 30v40M42 36q-3 14 0 26M54 36q3 14 0 26"/><path class="f1 sf" d="M66 46q7 8 7 16t-7 12q-6-4-6-12t6-16z"/>'},
 
-{id:"lotus-seed",cat:"nuts",name:{en:"Lotus seed",fr:"Graine de lotus"},latin:"Nelumbo nucifera",
+{id:"lotus-seed",cat:"nuts",price:2,pk:"12–25 €/kg",name:{en:"Lotus seed",fr:"Graine de lotus"},latin:"Nelumbo nucifera",
 origin:{en:"Asian ponds & paddies",fr:"Étangs et rizières d’Asie"},season:[7,8,9],
 flavor:["mild","delicate","sweet"],
 story:{en:"A lotus seed dug from a dry lakebed in Liaoning germinated after radiocarbon dating had put it at around thirteen centuries old — the seed coat is close to airtight and the embryo simply waits. Fresh in summer the whole green pod is sold at market and the seeds eaten raw like nuts, once the bitter green germ has been pushed out of the middle of each one.",
@@ -449,7 +449,7 @@ fr:"Les graines sèches demandent une nuit de trempage puis quarante minutes de 
 pairs:["pork","jujube","goji","chicken","ginger","chinese-rock-sugar","snow-fungus","fresh-lily-bulb"],
 svg:'<path class="f2 sf" d="M24 44q24-14 48 0-4 22-24 22t-24-22z"/><circle class="f1 sf" cx="36" cy="46" r="5"/><circle class="f1 sf" cx="48" cy="43" r="5"/><circle class="f1 sf" cx="60" cy="46" r="5"/><circle class="f1 sf" cx="42" cy="57" r="5"/><circle class="f1 sf" cx="54" cy="57" r="5"/>'},
 
-{id:"macadamia",cat:"nuts",name:{en:"Macadamia",fr:"Noix de macadamia"},latin:"Macadamia integrifolia",
+{id:"macadamia",cat:"nuts",price:3,pk:"35–60 €/kg",name:{en:"Macadamia",fr:"Noix de macadamia"},latin:"Macadamia integrifolia",
 origin:{en:"Queensland, Australia",fr:"Queensland, Australie"},season:[],
 flavor:["buttery","sweet","creamy","nutty"],
 story:{en:"The hardest shell of any commercial nut — it takes about three hundred atmospheres to crack, which is why it is the most expensive nut in the world. It is also toxic to dogs, for reasons nobody has fully explained.",
@@ -459,7 +459,7 @@ fr:"Elle est à plus de soixante-dix pour cent de gras, donc elle brûle vite. T
 pairs:["cream","coffee","vanilla","honey","coconut-milk","dark-chocolate","lime","maple-syrup"],
 svg:'<circle class="f3 sf" cx="42" cy="54" r="11"/><circle class="f3 sf" cx="58" cy="60" r="9"/><path class="s" d="M36 50q6-4 12 0"/>'},
 
-{id:"marcona-almond",cat:"nuts",luxe:true,name:{en:"Marcona almond",fr:"Amande Marcona"},latin:"Prunus dulcis (Marcona)",
+{id:"marcona-almond",cat:"nuts",price:2,pk:"22–40 €/kg",name:{en:"Marcona almond",fr:"Amande Marcona"},latin:"Prunus dulcis (Marcona)",
 origin:{en:"Levante coast, Spain",fr:"Levant espagnol"},season:[8,9],
 flavor:["buttery","sweet","rich","mild"],
 story:{en:"Marcona is round where almonds are normally flattened, and carries enough extra oil that it goes soft in the fryer instead of crisping — nearer a macadamia than a baking almond. Its price is agronomy rather than fashion: the tree is a shy, irregular bearer, and Spain eats most of what it grows.",
@@ -469,7 +469,7 @@ fr:"Faites-les frire dans une huile d'olive douce vers 140 °C et sortez-les enc
 pairs:["olive-oil","salt","sherry-vinegar","jamon-serrano","manchego","saffron"],
 svg:'<ellipse class="f1 sf" cx="46" cy="48" rx="18" ry="20"/><path class="s" d="M46 30q-6 18 0 36M39 32q-5 16 0 32M53 32q5 16 0 32"/><path class="f2 sf" d="M64 60q10 2 10 8t-10 8q-10-2-10-8t10-8z"/>'},
 
-{id:"medjool-date",cat:"nuts",luxe:true,name:{en:"Medjool date",fr:"Datte Medjool"},latin:"Phoenix dactylifera",
+{id:"medjool-date",cat:"nuts",price:2,pk:"12–22 €/kg",name:{en:"Medjool date",fr:"Datte Medjool"},latin:"Phoenix dactylifera",
 origin:{en:"Tafilalet oases, Morocco",fr:"Oasis du Tafilalet, Maroc"},season:[],
 flavor:["sweet","rich","honeyed","creamy"],
 story:{en:"In 1927 the botanist Walter Swingle carried eleven offshoots out of Boudenib in Morocco, where bayoud disease was killing the palms; nine survived a nine-year quarantine on the Colorado River before being planted out in California. Almost every Medjool sold in the West descends from those nine.",
@@ -479,7 +479,7 @@ fr:"Pour une purée, laissez gonfler les dattes dénoyautées dix minutes dans l
 pairs:["tahini","almond","goat-cheese","orange-blossom-water","cardamom","coffee","butter"],
 svg:'<ellipse class="f2 sf" cx="48" cy="52" rx="17" ry="26"/><path class="s" d="M48 28q-6 14-4 46"/><path class="f3 sf" d="M42 27q6 3 12 0 1 5-6 6t-6-6z"/>'},
 
-{id:"raisin-de-malaga",cat:"nuts",luxe:true,name:{en:"Muscat raisin of Málaga",fr:"Raisin de Malaga"},latin:"Vitis vinifera 'Moscatel de Alejandría'",
+{id:"raisin-de-malaga",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Muscat raisin of Málaga",fr:"Raisin de Malaga"},latin:"Vitis vinifera 'Moscatel de Alejandría'",
 origin:{en:"Axarquía, Andalusia",fr:"Axarquía, Andalousie"},season:[],
 flavor:["floral","honeyed","sweet","musky"],
 story:{en:"The Muscat of Alexandria grapes of the Axarquía are still dried on paseros, sloped stone beds angled at the midday sun, and are cut and sold in whole bunches with the stalk left on. In 2018 the FAO added those terraces to its register of Globally Important Agricultural Heritage Systems.",
@@ -489,7 +489,7 @@ fr:"Ils gardent leurs pépins : servez la grappe entière avec un manchego ou un
 pairs:["manchego","pedro-ximenez","almond","walnut","blue-cheese","olive-oil"],
 svg:'<path class="s" d="M48 16v12"/><path class="f2 sf" d="M36 32q12-6 24 0 4 14-2 24-4 8-10 20-6-12-10-20-6-10-2-24z"/><path class="s" d="M42 34q0 12 4 22M54 34q0 12-4 22M37 44h22M40 56h16"/>'},
 
-{id:"peanut",cat:"nuts",name:{en:"Peanut",fr:"Cacahuète"},latin:"Arachis hypogaea",
+{id:"peanut",cat:"nuts",price:1,pk:"4–9 €/kg",name:{en:"Peanut",fr:"Cacahuète"},latin:"Arachis hypogaea",
 origin:{en:"South America",fr:"Amérique du Sud"},season:[],
 flavor:["nutty","sweet","rich","toasty"],
 story:{en:"Not a nut at all but a legume that buries its own pods underground. Born in South America, carried to Africa, it came back to the Americas in slave-ship provisions; George Washington Carver later catalogued three hundred uses for it, rebuilding Southern farming on its back.",
@@ -499,7 +499,7 @@ fr:"Broyée avec un peu de sa propre huile, elle devient sauce pour la moitié d
 pairs:["chili","coconut-milk","soy-sauce","dark-chocolate","ginger"],
 svg:'<path class="f1 sf" d="M42 32q10-2 12 6 1 4 5 6 8 4 6 14-2 12-14 10-8-1-10-8-1-4-5-7-6-5-2-13 3-7 8-8z"/><path class="s" d="M40 42q6 4 6 10M52 44q4 4 4 9"/>'},
 
-{id:"pecan",cat:"nuts",name:{en:"Pecan",fr:"Noix de pécan"},latin:"Carya illinoinensis",
+{id:"pecan",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Pecan",fr:"Noix de pécan"},latin:"Carya illinoinensis",
 origin:{en:"Mississippi valley",fr:"Vallée du Mississippi"},season:[10,11,12],
 flavor:["sweet","buttery","toasty","rich"],
 story:{en:"A native North American nut that indigenous peoples gathered long before any orchard existed — the word is Algonquian, for a nut requiring a stone to crack. Jefferson planted them at Monticello and sent trees to Washington.",
@@ -509,7 +509,7 @@ fr:"Plus sucrée et plus tendre que la noix, sans son amertume. Elles ne sont pa
 pairs:["maple-syrup","butter","vanilla","dark-chocolate","honey","cream","cinnamon","coffee"],
 svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="12" ry="18"/><path class="s" d="M48 38v36M42 44q4 12 0 24M54 44q-4 12 0 24"/>'},
 
-{id:"perilla-seed",cat:"nuts",rare:true,name:{en:"Perilla seed",fr:"Graine de périlla"},latin:"Perilla frutescens",
+{id:"perilla-seed",cat:"nuts",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Perilla seed",fr:"Graine de périlla"},latin:"Perilla frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["nutty","grassy","toasty"],
 story:{en:"Korea grows perilla for the seed where Japan grows the same species for the leaf: deulkkae is pressed for a green oil or roasted and milled into deulkkae-garu, the powder that thickens namul and gamjatang. The oil oxidises within months rather than years, which is why it is sold in small dark bottles and kept in the fridge, and why sesame oil cannot stand in for it.",
@@ -519,7 +519,7 @@ fr:"Incorporez la poudre hors du feu, tout à la fin : maintenue à ébullition,
 pairs:["doenjang","sesame-oil","garlic","spinach","napa-cabbage","soy-sauce","pork"],
 svg:'<path class="f2 sf" d="M26 52h44q-2 18-22 18T26 52z"/><path class="f1 sf" d="M32 52q6-11 16-11t16 11z"/><path class="s" d="M48 41V30"/><path class="f2 sf" d="M48 30q-14 0-16-12 14-2 16 12z"/>'},
 
-{id:"piedmont-hazelnut",cat:"nuts",luxe:true,name:{en:"Piedmont hazelnut",fr:"Noisette du Piémont"},latin:"Corylus avellana (Tonda Gentile Trilobata)",
+{id:"piedmont-hazelnut",cat:"nuts",price:3,pk:"30–55 €/kg",name:{en:"Piedmont hazelnut",fr:"Noisette du Piémont"},latin:"Corylus avellana (Tonda Gentile Trilobata)",
 origin:{en:"Langhe, Piedmont",fr:"Langhe, Piémont"},season:[9,10],
 flavor:["nutty","toasty","buttery","rich"],
 story:{en:"The Tonda Gentile's distinction is mechanical before it is aromatic: roast it and the pellicle lets go completely, where most hazelnuts leave shreds of bitter skin welded to the kernel. Turin's confectioners settled on it for that while stretching scarce cocoa with ground nut under Napoleon's blockade, and gianduja still specifies it.",
@@ -529,7 +529,7 @@ fr:"Torréfiez à 150 °C pendant 15 à 20 minutes, jusqu'à ce que les peaux se
 pairs:["dark-chocolate","milk-chocolate","butter","cream","coffee","gianduja"],
 svg:'<path class="f1 sf" d="M48 26q17 0 17 20t-17 28q-17-8-17-28t17-20z"/><ellipse class="f3 sf" cx="48" cy="30" rx="9" ry="4"/><path class="s" d="M42 36q-3 16 4 30M56 38q2 14-3 26"/>'},
 
-{id:"pili-nut",cat:"nuts",rare:true,name:{en:"Pili nut",fr:"Noix de pili"},latin:"Canarium ovatum",
+{id:"pili-nut",cat:"nuts",rare:true,price:3,pk:"60–100 €/kg",name:{en:"Pili nut",fr:"Noix de pili"},latin:"Canarium ovatum",
 origin:{en:"Bicol, Philippines",fr:"Bicol, Philippines"},season:[],
 flavor:["buttery","creamy","rich"],
 story:{en:"The shell is hard enough that it is split one nut at a time with a struck blade, which is why pili is only ever sold shelled and priced accordingly. In Bicol nothing is wasted: the fleshy pulp around the shell is softened in hot water and eaten with salt and rice, treated as a vegetable rather than a fruit.",
@@ -539,7 +539,7 @@ fr:"Il est le plus gras des fruits à coque du commerce et grille vite : 140 °C
 pairs:["dark-chocolate","coconut","palm-sugar","vanilla","honey","salt","butter","cocoa-nibs"],
 svg:'<path class="f3 sf" d="M48 18q16 16 16 32t-16 28q-16-12-16-28t16-32z"/><path class="f1 sf" d="M48 30q7 10 7 20t-7 16q-7-6-7-16t7-20z"/>'},
 
-{id:"pine-nut",cat:"nuts",name:{en:"Pine nut",fr:"Pignon de pin"},latin:"Pinus pinea",
+{id:"pine-nut",cat:"nuts",price:3,pk:"40–80 €/kg",name:{en:"Pine nut",fr:"Pignon de pin"},latin:"Pinus pinea",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
 flavor:["nutty","buttery","delicate"],
 story:{en:"Roman legionaries carried pine nuts as marching rations, and jars of them were found preserved in the ashes of Pompeii. Each stone pine takes decades to bear cones — patience, shelled one kernel at a time.",
@@ -549,7 +549,7 @@ fr:"Ils brûlent traîtreusement vite : torréfiez-les à sec sans les quitter d
 pairs:["basil","parmesan","spinach","zucchini","fig","honey"],
 svg:'<path class="f1 sf" d="M42 42q-4-8 3-12 5 4 3 12-3 3-6 0zM54 46q-4-8 3-12 5 4 3 12-3 3-6 0zM40 60q-4-8 3-12 5 4 3 12-3 3-6 0zM52 62q-4-8 3-12 5 4 3 12-3 3-6 0z"/>'},
 
-{id:"pinyon-pine-nut",cat:"nuts",name:{en:"Pinyon pine nut",fr:"Pignon pinyon"},latin:"Pinus edulis",
+{id:"pinyon-pine-nut",cat:"nuts",price:3,pk:"80–150 €/kg",name:{en:"Pinyon pine nut",fr:"Pignon pinyon"},latin:"Pinus edulis",
 origin:{en:"American Southwest",fr:"Sud-ouest américain"},season:[9,10,11],
 flavor:["resinous","sweet","woody"],
 story:{en:"The pinyon has been the state tree of New Mexico since 1949, and its nuts are still gathered off the ground by hand under wild trees — there are no orchards, and no way to hurry a crop. The tree masts: a heavy year fills every roadside stand in the state, and the several that follow give almost nothing.",
@@ -559,7 +559,7 @@ fr:"La coque est assez fine pour se casser entre les dents : faites-les griller 
 pairs:["blue-corn","corn","sage","juniper","lamb","honey","chili"],
 svg:'<ellipse class="f2 sf" cx="40" cy="56" rx="8" ry="11"/><ellipse class="f1 sf" cx="56" cy="58" rx="7" ry="10"/><ellipse class="f2 sf" cx="48" cy="42" rx="7" ry="10"/><path class="s" d="M28 32q10 5 16 3M28 39q10 3 15-1"/>'},
 
-{id:"pistachio",cat:"nuts",name:{en:"Pistachio",fr:"Pistache"},latin:"Pistacia vera",
+{id:"pistachio",cat:"nuts",price:2,pk:"18–35 €/kg",name:{en:"Pistachio",fr:"Pistache"},latin:"Pistacia vera",
 origin:{en:"Persia & Central Asia",fr:"Perse & Asie centrale"},season:[],
 flavor:["nutty","sweet","grassy"],
 story:{en:"The Queen of Sheba is said to have claimed her land’s whole pistachio harvest for her court. In Persia, lovers met under pistachio trees on moonlit nights: hearing the shells crack open was a promise of good fortune.",
@@ -569,7 +569,7 @@ fr:"Plus le cerneau est vert, plus la pistache est fine — celles de Bronte en 
 pairs:["cherry","dark-chocolate","honey","yogurt","cardamom"],
 svg:'<path class="f1 sf" d="M36 50q0-14 12-14t12 14q0 8-6 12l-6-10-6 10q-6-4-6-12z"/><path class="f3 sf" d="M44 52q4-6 8 0 2 8-4 14-6-6-4-14z"/>'},
 
-{id:"poire-tapee",cat:"nuts",rare:true,name:{en:"Poire tapée",fr:"Poire tapée"},latin:"Pyrus communis",
+{id:"poire-tapee",cat:"nuts",rare:true,price:3,pk:"35–60 €/kg",name:{en:"Poire tapée",fr:"Poire tapée"},latin:"Pyrus communis",
 origin:{en:"Rivarennes, Touraine",fr:"Rivarennes, Touraine"},season:[],
 flavor:["honeyed","fruity","toasty"],
 story:{en:"At Rivarennes in Touraine the peeled pears go into a bread oven brought down to about 70°C for two days, then each is struck flat with a wooden paddle, the platissoire, to drive the air out. The village had hundreds of ovens in 1850, production stopped in the 1930s, and two families restarted it in the 1980s.",
@@ -579,7 +579,7 @@ fr:"Réhydratez-les au moins douze heures dans un vouvray ou un rouge léger ave
 pairs:["blue-cheese","cinnamon","vanilla","butter","walnut","rocamadour","honey"],
 svg:'<path class="f1 sf" d="M48 26q14 0 20 14t-4 30q-8 8-16 8t-16-8q-10-16-4-30t16-14z"/><path class="s" d="M48 26v-8"/><path class="s" d="M34 44q14 6 28 0M32 58q16 6 32 0"/>'},
 
-{id:"prune",cat:"nuts",name:{en:"Prune",fr:"Pruneau"},latin:"Prunus domestica",
+{id:"prune",cat:"nuts",price:1,pk:"8–16 €/kg",name:{en:"Prune",fr:"Pruneau"},latin:"Prunus domestica",
 origin:{en:"Agen, southwest France",fr:"Agen, Sud-Ouest"},season:[],
 flavor:["sweet","rich","earthy","fruity"],
 story:{en:"The pruneau d'Agen comes from the ente plum, grafted from a variety crusaders brought back from Syria. It is dried in ovens rather than the sun, and Lot-et-Garonne still lives on it.",
@@ -589,7 +589,7 @@ fr:"Il va avec le porc et le lapin autant qu’avec le dessert. Le Sud-Ouest l�
 pairs:["rabbit","thyme","pork","cream","bay-leaf","dark-chocolate","orange","lard"],
 svg:'<path class="f1 sf" d="M34 56q0-16 14-16t14 16-14 16-14-16z"/><path class="s" d="M40 48q8 8 16 2M42 64q6 4 12 0"/>'},
 
-{id:"pumpkin-seed",cat:"nuts",name:{en:"Pumpkin seed",fr:"Graine de courge"},latin:"Cucurbita pepo",
+{id:"pumpkin-seed",cat:"nuts",price:1,pk:"8–14 €/kg",name:{en:"Pumpkin seed",fr:"Graine de courge"},latin:"Cucurbita pepo",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
 flavor:["nutty","toasty","earthy","grassy"],
 story:{en:"Styria grows a mutant squash whose seeds have no husk at all — a single natural mutation recorded in the 1870s, which is why Austrian pepitas are dark green and naked while everyone else's need shelling.",
@@ -599,7 +599,7 @@ fr:"Torréfiez-les jusqu’à ce qu’elles éclatent et gonflent. C’est l’i
 pairs:["pumpkin-seed-oil","chili","lime","salt","honey","cilantro","cumin","sunflower-seed"],
 svg:'<ellipse class="f2 sf" cx="42" cy="54" rx="7" ry="10"/><ellipse class="f2 sf" cx="56" cy="60" rx="7" ry="10"/><path class="s" d="M38 50q4-3 8 0M52 56q4-3 8 0"/>'},
 
-{id:"perigord-walnut",cat:"nuts",luxe:true,name:{en:"Périgord walnut",fr:"Noix du Périgord"},latin:"Juglans regia",
+{id:"perigord-walnut",cat:"nuts",price:2,pk:"10–18 €/kg",name:{en:"Périgord walnut",fr:"Noix du Périgord"},latin:"Juglans regia",
 origin:{en:"Dordogne, Lot and Corrèze",fr:"Dordogne, Lot et Corrèze"},season:[9,10],
 flavor:["nutty","toasty","woody"],
 story:{en:"The appellation covers four varieties, not one, and they are not interchangeable: Marbot is picked early and sold fresh, Corne is small and hard-shelled and goes to the press, Grandjean and Franquette are the keeping nuts. So the name on the label gives you the region and not the nut — the oil and the dessert walnut come off different trees.",
@@ -609,7 +609,7 @@ fr:"L'huile pressée sur cerneaux de Corne torréfiés est une huile de finition
 pairs:["walnut-oil","rocamadour","endive","confit-de-canard","honey","blue-cheese"],
 svg:'<path class="f2 sf" d="M42 30q-16 6-16 22t16 22q6-22 0-44z"/><path class="s" d="M36 38q6 6 0 12t0 14"/><path class="f2 sf" d="M54 34q16 6 16 20t-16 20q-6-20 0-40z"/><path class="s" d="M60 42q-6 6 0 12t0 12"/>'},
 
-{id:"raisin",cat:"nuts",name:{en:"Raisin",fr:"Raisin sec"},latin:"Vitis vinifera",
+{id:"raisin",cat:"nuts",price:1,pk:"5–10 €/kg",name:{en:"Raisin",fr:"Raisin sec"},latin:"Vitis vinifera",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
 flavor:["sweet","fruity","honeyed","earthy"],
 story:{en:"Grapes that dried on the vine were almost certainly the first dried fruit anyone ate, since it happens without human help. Corinth gave its name to the currant, Smyrna to the sultana — the varieties are named after their ports.",
@@ -619,7 +619,7 @@ fr:"Faites-les gonfler vingt minutes dans un liquide tiède — rhum, thé, vin 
 pairs:["cinnamon","almond","flour-t55","pine-nut","swiss-chard","butter","honey","orange"],
 svg:'<circle class="f1 sf" cx="41" cy="52" r="6"/><circle class="f1 sf" cx="55" cy="55" r="6"/><circle class="f1 sf" cx="46" cy="64" r="6"/><circle class="f1 sf" cx="58" cy="66" r="5"/><path class="s" d="M38 48q4-3 8 0"/>'},
 
-{id:"sacha-inchi",cat:"nuts",rare:true,name:{en:"Sacha inchi",fr:"Sacha inchi"},latin:"Plukenetia volubilis",
+{id:"sacha-inchi",cat:"nuts",rare:true,price:2,pk:"25–45 €/kg",name:{en:"Sacha inchi",fr:"Sacha inchi"},latin:"Plukenetia volubilis",
 origin:{en:"Peruvian Amazon",fr:"Amazonie péruvienne"},season:[],
 flavor:["nutty","grassy","earthy"],
 story:{en:"The vine's fruit dries into a woody four- or five-pointed star, which is the whole of its trade name and most of its shelf appeal; the seed inside is inedible raw and becomes a nut only in the roasting pan. Around half its oil is alpha-linolenic acid, one of the highest figures of any pressed seed — and the reason that oil goes off faster than almost anything else in the pantry.",
@@ -629,7 +629,7 @@ fr:"Ne cuisinez jamais à cette huile. Elle s’oxyde à feu doux et tourne au p
 pairs:["quinoa","lime","cocoa-nibs","avocado","honey","salt","chili","sweet-potato"],
 svg:'<path class="f2 sf" d="M48 24q6 18 24 24-18 6-24 24-6-18-24-24 18-6 24-24z"/><ellipse class="f1 sf" cx="48" cy="48" rx="8" ry="6"/>'},
 
-{id:"sesame",cat:"nuts",name:{en:"Sesame",fr:"Sésame"},latin:"Sesamum indicum",
+{id:"sesame",cat:"nuts",price:1,pk:"5–10 €/kg",name:{en:"Sesame",fr:"Sésame"},latin:"Sesamum indicum",
 origin:{en:"India & Africa",fr:"Inde & Afrique"},season:[],
 flavor:["nutty","toasty","rich"],
 story:{en:"“Open sesame!” — the magic words of Ali Baba echo the plant itself: ripe sesame pods burst open at a touch, scattering their seeds. It is likely the oldest oil crop on Earth, pressed in Mesopotamia four thousand years ago.",
@@ -639,7 +639,7 @@ fr:"Torréfié et broyé avec du sel, il devient gomasio ; torréfié et pressé
 pairs:["chickpeas","honey","soy-sauce","ginger","eggplant","rice","tuna"],
 svg:'<path class="f2 sf" d="M40 42q3-6 6 0 2 5-3 8-5-3-3-8zM52 38q3-6 6 0 2 5-3 8-5-3-3-8zM34 56q3-6 6 0 2 5-3 8-5-3-3-8zM48 54q3-6 6 0 2 5-3 8-5-3-3-8zM60 52q3-6 6 0 2 5-3 8-5-3-3-8zM42 68q3-6 6 0 2 5-3 8-5-3-3-8z"/>'},
 
-{id:"pine-nut-toasted",cat:"nuts",name:{en:"Stone pine kernel",fr:"Pignon de pin parasol"},latin:"Pinus pinea",
+{id:"pine-nut-toasted",cat:"nuts",price:3,pk:"100–180 €/kg",name:{en:"Stone pine kernel",fr:"Pignon de pin parasol"},latin:"Pinus pinea",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[],
 flavor:["nutty","resinous","sweet","buttery"],
 story:{en:"It takes three years for a stone pine cone to ripen, and the kernels are extracted by hand — which is why Mediterranean pine nuts cost several times what Chinese ones do. Some Chinese species cause a metallic taste distortion lasting days.",
@@ -649,7 +649,7 @@ fr:"Vérifiez l’origine sur le paquet. Pinus pinea est le méditerranéen, et 
 pairs:["basil","parmesan","raisin","swiss-chard","olive-oil","garlic","spinach","lemon"],
 svg:'<path class="f3 sf" d="M42 40q6-4 8 4t-2 24-8-4 2-24z"/><path class="f3 sf" d="M54 50q5-3 6 4t-2 18-6-3z"/>'},
 
-{id:"sunflower-seed",cat:"nuts",name:{en:"Sunflower seed",fr:"Graine de tournesol"},latin:"Helianthus annuus",
+{id:"sunflower-seed",cat:"nuts",price:1,pk:"4–8 €/kg",name:{en:"Sunflower seed",fr:"Graine de tournesol"},latin:"Helianthus annuus",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[],
 flavor:["nutty","toasty","mild","earthy"],
 story:{en:"Domesticated in what is now the United States some four thousand years ago, then taken to Russia, industrialised, and sold back to America as a Russian crop. The head follows the sun only while growing; a mature flower faces east and stops.",
@@ -659,7 +659,7 @@ fr:"Torréfiées, elles cessent d’avoir un goût de graine pour oiseaux. Crues
 pairs:["honey","flour-t65","yogurt","raisin","oats","dark-chocolate","salt","pumpkin-seed"],
 svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="5" ry="9"/><ellipse class="f1 sf" cx="54" cy="58" rx="5" ry="9"/><ellipse class="f1 sf" cx="47" cy="68" rx="5" ry="9"/>'},
 
-{id:"tiger-nut",cat:"nuts",name:{en:"Tiger nut",fr:"Souchet"},latin:"Cyperus esculentus",
+{id:"tiger-nut",cat:"nuts",price:2,pk:"10–18 €/kg",name:{en:"Tiger nut",fr:"Souchet"},latin:"Cyperus esculentus",
 origin:{en:"Valencia & the Sahel",fr:"Valence & le Sahel"},season:[],
 flavor:["sweet","nutty","milky"],
 story:{en:"It is the tuber of a sedge, not a nut at all, and dried ones have been found in Egyptian tombs — one of the oldest foods still eaten in the same form. In Valencia the crop carries a protected designation and exists for one purpose, horchata de chufa; across the Americas the same plant is called yellow nutsedge and farmers spend real money killing it.",
@@ -669,7 +669,7 @@ fr:"Faites tremper les tubercules secs une journée entière avant de les broyer
 pairs:["cinnamon","lemon","sugar","vanilla","date","coconut","honey"],
 svg:'<ellipse class="f2 sf" cx="42" cy="46" rx="12" ry="16"/><path class="s" d="M31 40q11 5 22 0M31 48q11 5 22 0M31 56q11 5 22 0"/><ellipse class="f1 sf" cx="62" cy="64" rx="9" ry="12"/><path class="s" d="M54 60q8 4 16 0M54 68q8 4 16 0"/>'},
 
-{id:"tombul-hazelnut",cat:"nuts",name:{en:"Tombul hazelnut",fr:"Noisette Tombul (de Giresun)"},latin:"Corylus avellana (Tombul)",
+{id:"tombul-hazelnut",cat:"nuts",price:2,pk:"25–40 €/kg",name:{en:"Tombul hazelnut",fr:"Noisette Tombul (de Giresun)"},latin:"Corylus avellana (Tombul)",
 origin:{en:"Giresun, Black Sea coast",fr:"Giresun, côte de la mer Noire"},season:[8,9],
 flavor:["nutty","sweet","toasty","mild"],
 story:{en:"Tombul means plump, and the Giresun crop is the reference grade of the world hazelnut trade — most of the planet's supply grows on one stretch of Black Sea coast. Frost or hail there in a single spring moves the price of hazelnut chocolate across Europe the following year.",
@@ -679,7 +679,7 @@ fr:"C'est la noisette que l'on achète au kilo : torréfiez à 160 °C jusqu'à 
 pairs:["dark-chocolate","milk-chocolate","salt","honey","butter","tahini"],
 svg:'<path class="f1 sf" d="M20 44q4 24 14 28t14-28q-6 8-14 8t-14-8z"/><path class="f3 sf" d="M64 34q13 0 13 16t-13 24q-13-8-13-24t13-16z"/><path class="s" d="M64 40v30"/><circle class="dot" cx="52" cy="74" r="2"/>'},
 
-{id:"walnut",cat:"nuts",name:{en:"Walnut",fr:"Noix"},latin:"Juglans regia",
+{id:"walnut",cat:"nuts",price:1,pk:"6–12 €/kg",name:{en:"Walnut",fr:"Noix"},latin:"Juglans regia",
 origin:{en:"Persia & Central Asia",fr:"Perse & Asie centrale"},season:[9,10,11],
 flavor:["nutty","bitter","rich","toasty"],
 story:{en:"Romans called it Jovis glans — “Jupiter’s acorn”, food fit for a god. Because its kernel looks like a brain, medieval doctors prescribed it for head ailments; the doctrine was nonsense, but the walnut forgave them and fed them anyway.",
@@ -689,7 +689,7 @@ fr:"Achetez-les en coque — les cerneaux nus rancissent vite. Dix secondes dans
 pairs:["blue-cheese","pear","fig","beetroot","honey","coffee","grape","celery"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="18"/><path class="s" d="M48 36v32M42 42q-4 10 0 20M54 42q4 10 0 20"/>'},
 
-{id:"water-caltrop",cat:"nuts",rare:true,name:{en:"Water caltrop",fr:"Mâcre"},latin:"Trapa natans",
+{id:"water-caltrop",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Water caltrop",fr:"Mâcre"},latin:"Trapa natans",
 origin:{en:"Eurasian still waters",fr:"Eaux dormantes d’Eurasie"},season:[8,9,10],
 flavor:["mild","earthy","sweet"],
 story:{en:"It is named after the caltrop, the spiked iron thrown on the ground to lame cavalry, which is very nearly what the horned seed looks like. Trapa was a European food long before it was an Asian one — the nuts turn up in Neolithic lake-dwelling deposits — and it is now rare or protected across much of the continent while Chinese markets sell it by the kilo as ling jiao.",
@@ -699,7 +699,7 @@ fr:"Ne la mangez jamais crue : dans ses eaux de culture asiatiques elle peut por
 pairs:["pork","soy-sauce","ginger","shiitake","chicken","star-anise","shaoxing-wine"],
 svg:'<path class="f3 sf" d="M30 34q10 10 18 10t18-10q2 12-4 20t-14 10q-8-2-14-10t-4-20z"/><path class="s" d="M40 50q8 4 16 0"/><path class="dot" d="M46.4 64a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"wattleseed",cat:"nuts",rare:true,name:{en:"Wattleseed",fr:"Graines d’acacia"},latin:"Acacia victoriae",
+{id:"wattleseed",cat:"nuts",rare:true,price:3,pk:"120–250 €/kg",name:{en:"Wattleseed",fr:"Graines d’acacia"},latin:"Acacia victoriae",
 origin:{en:"Inland Australia",fr:"Australie intérieure"},season:[],
 flavor:["toasty","bitter","nutty"],
 story:{en:"Australia has close to a thousand acacia species and only a handful are safe to eat, so wattleseed is bought by botanical name — Acacia victoriae above all. Roasted and ground it smells of coffee, cocoa and hazelnut while containing none of them, which is what carried it out of desert country and into the bush-food trade in the 1980s.",
@@ -709,7 +709,7 @@ fr:"Infusez-la, ne l’incorporez pas : une cuillerée à soupe laissée vingt m
 pairs:["cream","dark-chocolate","coffee","vanilla","macadamia","honey","milk-chocolate"],
 svg:'<path class="f2 sf" d="M26 30q26 6 44 40-4 4-9 4-12-26-38-36z"/><path class="dot" d="M34 38a2 2 0 104 0 2 2 0 10-4 0M44 46a2 2 0 104 0 2 2 0 10-4 0M53 56a2 2 0 104 0 2 2 0 10-4 0M60 66a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"white-poppy-seed",cat:"nuts",name:{en:"White poppy seed",fr:"Pavot blanc"},latin:"Papaver somniferum",
+{id:"white-poppy-seed",cat:"nuts",price:2,pk:"15–25 €/kg",name:{en:"White poppy seed",fr:"Pavot blanc"},latin:"Papaver somniferum",
 origin:{en:"Bengal & the Deccan",fr:"Bengale & Deccan"},season:[],
 flavor:["nutty","mild","creamy"],
 story:{en:"Bengal's posto habit is usually traced to the colonial opium trade: the East India Company grew poppies across Bihar and Bengal for the resin, and the seed left behind was cheap there where it was dear everywhere else. The seed itself carries no opiates worth speaking of, though eat enough of it and a drug test will still say otherwise.",
@@ -719,7 +719,7 @@ fr:"Trempez une demi-heure à l’eau tiède, puis broyez humide avec un peu de 
 pairs:["mustard-oil","potato","nigella","chili","onion","yogurt","ghee","cashew"],
 svg:'<path class="f1 sf" d="M28 44q0-13 15-13t15 13-15 13-15-13z"/><path class="s" d="M57 49l15 17"/><path class="dot" d="M35 40a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M43 35a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M50 41a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M41 46a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"raisin-de-corinthe",cat:"nuts",name:{en:"Zante currant",fr:"Raisin de Corinthe"},latin:"Vitis vinifera 'Black Corinth'",
+{id:"raisin-de-corinthe",cat:"nuts",price:1,pk:"8–14 €/kg",name:{en:"Zante currant",fr:"Raisin de Corinthe"},latin:"Vitis vinifera 'Black Corinth'",
 origin:{en:"Ionian islands, Greece",fr:"Îles Ioniennes, Grèce"},season:[],
 flavor:["sour","tangy","fruity","sweet"],
 story:{en:"The English word currant is a worn-down raisins of Corinth, the medieval trade name for these tiny dried grapes shipped out of the Greek port. The blackcurrant borrowed the name in the 1570s, because the new northern berry looked like them — the grape came first, not the bush.",

@@ -40,7 +40,7 @@
     lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: localStorage.getItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
-    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, sort: "name"
+    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceMax: "all", sort: "name"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
   var modalStack = [];
@@ -154,6 +154,27 @@
       '<circle cx="48" cy="50" r="42" fill="#f1f1f0"/>' + i.svg + "</svg>";
   }
 
+  /* Prices are French retail, in euros. The English view keeps the euro — these
+     are euro figures, and converting them would date instantly — but writes them
+     the English way: symbol first, no space. "12–18 €/kg" -> "€12–18/kg". */
+  var UNIT_EN = { "pièce": "each", "botte": "bunch", "barquette": "punnet",
+                  "flacon": "bottle", "pot": "pot", "botte de": "bunch of" };
+  function priceText(s) {
+    if (state.lang !== "en") return s;
+    var out = s.replace(/([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*[\u2013-]\s*([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*\u20ac\s*\/\s*/g,
+      function (m, lo, hi) {
+        var num = function (x) { return x.replace(/[\s\u00a0\u202f]/g, "").replace(",", "."); };
+        return "\u20ac" + num(lo) + "\u2013" + num(hi) + "/";
+      });
+    out = out.replace(/([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*\u20ac\s*\/\s*/g, function (m, v) {
+      return "\u20ac" + v.replace(/[\s\u00a0\u202f]/g, "").replace(",", ".") + "/";
+    });
+    Object.keys(UNIT_EN).forEach(function (k) {
+      out = out.replace(new RegExp(k, "g"), UNIT_EN[k]);
+    });
+    return out.replace(/\bde\b/g, "of");
+  }
+
   function catLabel(c) { return T().categories[c]; }
   function inSeasonNow(i) { return i.season.length === 0 || i.season.indexOf(new Date().getMonth() + 1) !== -1; }
 
@@ -180,6 +201,8 @@
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
+    var t2 = t;
+    fillSel("priceMax", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceMax);
     var sort = el("sort");
     sort.innerHTML = '<option value="name">' + esc(t.sortName) + '</option><option value="family">' + esc(t.sortFamily) + "</option>";
     sort.value = state.sort;
@@ -211,6 +234,7 @@
       if (state.favsOnly && !favs.has(i.id)) return false;
       if (state.rareOnly && !i.rare) return false;
       if (state.luxeOnly && !i.luxe) return false;
+      if (state.priceMax !== "all" && (i.price || 2) > +state.priceMax) return false;
       if (!q) return true;
       var hay = norm(i.name.en + " " + i.name.fr + " " + i.latin + " " + catLabel(i.cat) + " " +
         i.flavor.map(function (f) { return t.flavors[f]; }).join(" "));
@@ -253,6 +277,8 @@
         "<h3>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
         '<p class="latin">' + esc(i.custom ? t.creationLabel : i.latin) + "</p>" +
         '<p class="cat-line">' + esc(catLabel(i.cat)) + "</p>" +
+        '<p class="price-line"><span class="price-band">' + "\u20ac".repeat(i.price || 2) + "</span>" +
+          (i.pk ? ' <span class="price-kg">' + esc(priceText(i.pk)) + "</span>" : "") + "</p>" +
         '<div class="tags">' + i.flavor.slice(0, 3).map(function (f) {
           return '<span class="tag">' + esc(t.flavors[f]) + "</span>";
         }).join("") + "</div>" +
@@ -757,6 +783,7 @@
   el("favsOnly").addEventListener("change", function (e) { state.favsOnly = e.target.checked; renderGrid(); });
   el("rareOnly").addEventListener("change", function (e) { state.rareOnly = e.target.checked; renderGrid(); });
   el("luxeOnly").addEventListener("change", function (e) { state.luxeOnly = e.target.checked; renderGrid(); });
+  el("priceMax").addEventListener("change", function (e) { state.priceMax = e.target.value; renderGrid(); });
   el("sort").addEventListener("change", function (e) { state.sort = e.target.value; renderGrid(); });
   el("random").addEventListener("click", function () {
     openModal(ING[Math.floor(Math.random() * ING.length)].id);

@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"acacia-honey",cat:"sweet",name:{en:"Acacia honey",fr:"Miel d’acacia"},latin:"Robinia pseudoacacia",
+{id:"acacia-honey",cat:"sweet",price:2,pk:"10–20 €/kg",name:{en:"Acacia honey",fr:"Miel d’acacia"},latin:"Robinia pseudoacacia",
 origin:{en:"Europe & North America",fr:"Europe & Amérique du Nord"},season:[5,6],
 flavor:["sweet","floral","delicate","mild"],
 story:{en:"From the false acacia, which flowers for barely two weeks in late spring — a single storm can wipe out an entire year's crop. Its very high fructose content is why it stays liquid for years while other honeys crystallise.",
@@ -9,7 +9,7 @@ fr:"C’est le miel neutre — employez-le quand vous voulez du sucré sans que 
 pairs:["goat-cheese","yogurt","lemon","almond","apple","cream","walnut","honey"],
 svg:'<path class="f3 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f2 sf" d="M42 58l4-6 4 6-4 6z"/>'},
 
-{id:"agave-syrup",cat:"sweet",name:{en:"Agave syrup",fr:"Sirop d’agave"},latin:"Agave tequilana",
+{id:"agave-syrup",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Agave syrup",fr:"Sirop d’agave"},latin:"Agave tequilana",
 origin:{en:"Jalisco, Mexico",fr:"Jalisco, Mexique"},season:[],
 flavor:["sweet","mild","floral","earthy"],
 story:{en:"From the same plant that makes tequila — the heart of the agave is cut out and its sap boiled down. Marketed for years as a low-glycaemic alternative, though it is largely fructose, which is a rather different claim than most labels imply.",
@@ -19,7 +19,7 @@ fr:"Il sucre plus que le sucre : comptez environ les trois quarts, et réduisez 
 pairs:["lime","chili","grapefruit","mint","coffee","cinnamon","orange","yogurt"],
 svg:'<path class="f2 sf" d="M40 74V42h16v32z"/><path class="s" d="M40 50h16"/><path class="f3 sf" d="M44 38q4-12 8 0z"/>'},
 
-{id:"amarena",cat:"sweet",name:{en:"Amarena cherry in syrup",fr:"Cerise amarena au sirop"},latin:"Prunus cerasus var. austera",
+{id:"amarena",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Amarena cherry in syrup",fr:"Cerise amarena au sirop"},latin:"Prunus cerasus var. austera",
 origin:{en:"Bologna and Modena",fr:"Bologne et Modène"},season:[],
 flavor:["sour","rich","fruity"],
 story:{en:"The amarena in syrup was worked out by Rachele Fabbri in Bologna around 1915, and the blue-and-white jar it still comes in was thrown in the same years by the Faenza ceramicist Riccardo Gatti. The fruit is a genuine sour cherry held firm in heavy syrup, not a sweet cherry bleached and re-dyed the way a maraschino is.",
@@ -29,7 +29,7 @@ fr:"Servez-vous du sirop : une cuillerée dans l’assiette sous un semifreddo f
 pairs:["mascarpone","dark-chocolate","vanilla","cream","kirsch","hazelnut","coffee"],
 svg:'<path class="f1 sf" d="M32 38h32v30q0 8-8 8H40q-8 0-8-8z"/><path class="f3 sf" d="M34 30h28v8H34z"/><circle class="f3 sf" cx="42" cy="56" r="7"/><circle class="f3 sf" cx="56" cy="62" r="6"/><path class="s" d="M42 49q2-8 8-11M56 56q1-6 6-9"/>'},
 
-{id:"atomised-glucose",cat:"sweet",name:{en:"Atomised glucose",fr:"Glucose atomisé"},latin:"—",
+{id:"atomised-glucose",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Atomised glucose",fr:"Glucose atomisé"},latin:"—",
 origin:{en:"Industrial starch conversion",fr:"Conversion industrielle de l’amidon"},season:[],
 flavor:["mild","sweet"],
 story:{en:"It is glucose syrup sprayed into a hot chamber and dried in flight, so what lands is a powder of the same dextrins with the water gone. Confectioners buy it by dextrose equivalent — around DE 21 for sorbets, higher when they want sweetness — and it is the DE, not the weight, that says how it will behave.",
@@ -39,7 +39,7 @@ fr:"Il sert à monter la matière sèche d’un sorbet sans monter le sucrant : 
 pairs:["sugar","glucose-syrup","invert-sugar","cream","dextrose","sorbitol"],
 svg:'<path class="f1 sf" d="M32 44q-8 14-8 26t10 12h28q10 0 10-12t-8-26z"/><path class="s" d="M32 44q8-6 16-6t16 6"/><path class="f2 sf" d="M40 38q-4-10 8-12t10 10q-9 4-18 2z"/><path class="s" d="M36 66h24M34 74h28"/>'},
 
-{id:"barley-malt-syrup",cat:"sweet",name:{en:"Barley malt syrup",fr:"Sirop de malt d’orge"},latin:"Hordeum vulgare",
+{id:"barley-malt-syrup",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Barley malt syrup",fr:"Sirop de malt d’orge"},latin:"Hordeum vulgare",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[],
 flavor:["toasty","earthy","rich"],
 story:{en:"Sprouted barley is kilned, then mashed so its own enzymes cut the starch into maltose, about two thirds of the finished syrup, and maltose is why it reads as roughly half as sweet as sugar. Bakers buy it for the enzymes and for the sugar the yeast cannot finish: what survives fermentation caramelises into the crust.",
@@ -49,7 +49,7 @@ fr:"Vérifier s’il est diastasique avant d’acheter : la version enzymatique 
 pairs:["flour-t65","rye-flour","yeast","sesame","tahini","oats"],
 svg:'<path class="f2 sf" d="M55 44h19v28a5 5 0 0 1-5 5H60a5 5 0 0 1-5-5z"/><path class="s" d="M53 40h23v4H53z"/><path class="f1 sf" d="M30 30q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 50q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 70q7 4 7 10t-7 6q-7-2-7-6t7-10z"/><path class="s" d="M30 30v-8M24 34l-3-7M36 34l3-7"/>'},
 
-{id:"bee-pollen",cat:"sweet",name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
+{id:"bee-pollen",cat:"sweet",price:2,pk:"30–60 €/kg",name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
 origin:{en:"Hives, spring and summer flowering",fr:"Ruches, floraisons de printemps"},season:[4,5,6,7],
 flavor:["floral","bitter","honeyed"],
 story:{en:"A foraging bee glues pollen together with a drop of nectar and packs it into the baskets on her hind legs; the beekeeper harvests it with a trap that scrapes the pellets off as she comes home. Every colour in the jar is a different flower, which makes a pot of pollen a map of what was blooming that week.",
@@ -59,7 +59,7 @@ fr:"La chaleur le rend amer et gluant : incorporez-le froid, dans un yaourt, ou 
 pairs:["yogurt","honey","fromage-blanc","raspberry","hazelnut","fig"],
 svg:'<path class="f2 sf" d="M24 52h48a24 20 0 0 1-48 0z"/><path class="f1 sf" d="M28 52q6-14 20-14t20 14z"/><circle class="dot" cx="40" cy="46" r="2.5"/><circle class="dot" cx="48" cy="42" r="2.5"/><circle class="dot" cx="56" cy="46" r="2.5"/>'},
 
-{id:"birch-syrup",cat:"sweet",rare:true,luxe:true,name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
+{id:"birch-syrup",cat:"sweet",rare:true,luxe:true,price:3,pk:"150–350 €/L",name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
 origin:{en:"Alaska, Yukon, Finland",fr:"Alaska, Yukon, Finlande"},season:[],
 flavor:["bitter","earthy","warm"],
 story:{en:"It takes around 110 litres of birch sap to make one litre of syrup, against forty for maple - the sap runs at barely one percent sugar. That sugar is mostly fructose rather than sucrose, which is why the syrup tastes mineral and faintly bitter instead of sweet.",
@@ -69,7 +69,7 @@ fr:"Le fructose brûle bien avant l’érable : ne le réduisez jamais en glaça
 pairs:["venison","salmon","rye","juniper","creme-fraiche","duck"],
 svg:'<path class="f2 sf" d="M42 20h12v10l8 14v30a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6V44l8-14z"/><path class="f1 sf" d="M36 54h24v16H36z"/><path class="s" d="M40 60h5M50 60h6M42 65h4M52 65h5"/><path class="s" d="M42 20h12"/>'},
 
-{id:"blond-chocolate",cat:"sweet",name:{en:"Blond chocolate",fr:"Chocolat blond"},latin:"Theobroma cacao",
+{id:"blond-chocolate",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Blond chocolate",fr:"Chocolat blond"},latin:"Theobroma cacao",
 origin:{en:"Tain-l'Hermitage, Drome",fr:"Tain-l’Hermitage, Drôme"},season:[],
 flavor:["toasty","creamy","sweet","milky"],
 story:{en:"In 2004 Frederic Bau left white chocolate in a bain-marie during a demonstration and came back to something the colour of shortbread; Valrhona spent eight years making the accident repeatable and launched Dulcey in 2012. What happened was a Maillard reaction in a product with no cocoa solids at all - the browning is entirely milk.",
@@ -79,7 +79,7 @@ fr:"Traitez-le comme un chocolat blanc, en plus froid : fondu à 45 °C maximum,
 pairs:["hazelnut","passion-fruit","butter","fleur-de-sel-guerande","coffee","banana"],
 svg:'<path class="f2 sf" d="M22 34h44v30H22z"/><path class="s" d="M22 49h44M37 34v30M52 34v30"/><path class="f1 sf" d="M60 60l16 4-4 14-16-4z"/>'},
 
-{id:"brown-rice-syrup",cat:"sweet",name:{en:"Brown rice syrup",fr:"Sirop de riz"},latin:"Oryza sativa",
+{id:"brown-rice-syrup",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Brown rice syrup",fr:"Sirop de riz"},latin:"Oryza sativa",
 origin:{en:"Japan and East Asia",fr:"Japon et Asie de l’Est"},season:[],
 flavor:["sweet","mild","nutty"],
 story:{en:"Rice starch has no sweetness of its own until an enzyme cuts it: barley malt or koji amylase chops the long chains into maltose, a sugar roughly half as sweet as sucrose. That is the whole character of the syrup — you can use it by the spoonful and the flavour never announces itself as sugar, though it browns faster than you expect.",
@@ -89,7 +89,7 @@ fr:"Remplacez le sucre à raison d’environ 1,3 pour 1 en poids, et retirez d�
 pairs:["sesame","ginger","soy-sauce","walnut","matcha","black-sesame","peanut","miso"],
 svg:'<path class="f1 sf" d="M30 34h36v40a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f2 sf" d="M30 54h36v20a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f3 sf" d="M28 26h40v8H28z"/><path class="s" d="M40 26v-4h16v4"/>'},
 
-{id:"buckwheat-honey",cat:"sweet",name:{en:"Buckwheat honey",fr:"Miel de sarrasin"},latin:"Fagopyrum esculentum",
+{id:"buckwheat-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Buckwheat honey",fr:"Miel de sarrasin"},latin:"Fagopyrum esculentum",
 origin:{en:"Brittany & northern Europe",fr:"Bretagne & Europe du Nord"},season:[7,8],
 flavor:["earthy","musky","rich","smoky"],
 story:{en:"Almost black, and it smells of molasses, malt and the farmyard — it is the most divisive honey there is, and the one with by far the most antioxidants. Brittany makes it because Brittany grows buckwheat for its galettes.",
@@ -99,7 +99,7 @@ fr:"N’en mettez pas sur une tartine. Sa place est dans une marinade, un laquag
 pairs:["buckwheat-flour","pork","rye-flour","ginger","dark-chocolate","clove","walnut","cider-vinegar"],
 svg:'<path class="f1 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M44 58l4-6 4 6-4 6z"/>'},
 
-{id:"angelique-confite",cat:"sweet",name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
+{id:"angelique-confite",cat:"sweet",price:3,pk:"50–100 €/kg",name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
 origin:{en:"Marais poitevin, Niort",fr:"Marais poitevin, Niort"},season:[],
 flavor:["bitter","musky","resinous","herbal"],
 story:{en:"Angelica reached the Marais poitevin with monks who grew it as medicine, and the nuns of Niort turned the hollow stems into a confection in the eighteenth century, candied in grooved batons. It is a biennial cut in its second spring, when the stem is thick but has not yet gone woody towards the flower.",
@@ -109,7 +109,7 @@ fr:"Taillez-la menu : le goût est musqué et résineux, et au-delà d’une cui
 pairs:["almond","kirsch","butter","cream","rhubarb","strawberry","genepi"],
 svg:'<path class="f2 sf" d="M36 24h10v46q0 6-5 6t-5-6z"/><path class="f1 sf" d="M52 30h10v42q0 6-5 6t-5-6z"/><ellipse class="s" cx="41" cy="24" rx="5" ry="2.5"/><ellipse class="s" cx="57" cy="30" rx="5" ry="2.5"/><path class="s" d="M41 26v46M57 32v42"/>'},
 
-{id:"cedrat-confit",cat:"sweet",luxe:true,name:{en:"Candied citron",fr:"Cédrat confit"},latin:"Citrus medica",
+{id:"cedrat-confit",cat:"sweet",price:2,pk:"30–60 €/kg",name:{en:"Candied citron",fr:"Cédrat confit"},latin:"Citrus medica",
 origin:{en:"Cap Corse",fr:"Cap Corse"},season:[],
 flavor:["floral","citrus","sweet","bitter"],
 story:{en:"The citron is almost entirely pith: a thick white albedo around a pulp so reduced there is barely any juice, which is why the fruit exists commercially as candied peel rather than as fruit. Cap Corse supplied about a third of the world’s candied citron into the 1950s before the orchards went and Corsican production nearly vanished.",
@@ -119,7 +119,7 @@ fr:"Achetez-le en blocs entiers plutôt qu’en dés : les cubes du commerce son
 pairs:["ricotta","brocciu","almond","pistachio","dark-chocolate","honey","vanilla"],
 svg:'<circle class="f2 sf" cx="48" cy="50" r="27"/><circle class="f1 sf" cx="48" cy="50" r="9"/><path class="s" d="M48 23v18M48 59v18M21 50h18M57 50h18"/>'},
 
-{id:"ecorce-orange-confite",cat:"sweet",name:{en:"Candied orange peel",fr:"Écorce d’orange confite"},latin:"Citrus sinensis",
+{id:"ecorce-orange-confite",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Candied orange peel",fr:"Écorce d’orange confite"},latin:"Citrus sinensis",
 origin:{en:"Mediterranean citrus groves",fr:"Vergers d’agrumes méditerranéens"},season:[],
 flavor:["bitter","citrus","sweet"],
 story:{en:"Candying works by slow exchange: the peel sits in syrups of rising sugar concentration over several days, so water leaves the cells gradually enough that they never collapse and the peel turns translucent instead of shrivelling. Forced through in one strong syrup it goes tough and hollow, which is what cheap candied peel is.",
@@ -129,7 +129,7 @@ fr:"Blanchissez l’écorce fraîche trois fois en repartant de l’eau froide, 
 pairs:["dark-chocolate","almond","hazelnut","butter","cinnamon","cardamom","coffee"],
 svg:'<path class="f2 sf" d="M30 24q10 14 8 30t-10 20q6-12 4-24T26 26z"/><path class="f1 sf" d="M46 22q10 16 8 32t-10 20q6-12 4-24t-8-28z"/><path class="f2 sf" d="M62 26q10 14 8 30t-10 18q6-10 4-22t-8-26z"/>'},
 
-{id:"carob-powder",cat:"sweet",name:{en:"Carob powder",fr:"Poudre de caroube"},latin:"Ceratonia siliqua",
+{id:"carob-powder",cat:"sweet",price:1,pk:"8–16 €/kg",name:{en:"Carob powder",fr:"Poudre de caroube"},latin:"Ceratonia siliqua",
 origin:{en:"Mediterranean carob groves",fr:"Caroubiers méditerranéens"},season:[],
 flavor:["sweet","toasty","earthy"],
 story:{en:"Carob is a roasted legume pod with no kinship to cacao, and its flesh is already about half sugar before anything is added to it. The story goes that its seeds were so even in weight that they gave the jeweller's carat its name; weighing them shows them no steadier than any other seed.",
@@ -139,7 +139,7 @@ fr:"Presque sans matière grasse, elle ne cristallisera ni ne prendra jamais : u
 pairs:["date","orange","tahini","oats","cinnamon","almond"],
 svg:'<path class="f2 sf" d="M20 40q14-8 28 0t28 0v10q-14 8-28 0t-28 0z"/><circle class="dot" cx="32" cy="46" r="3"/><circle class="dot" cx="48" cy="48" r="3"/><circle class="dot" cx="64" cy="46" r="3"/><path class="f1 sf" d="M30 76q18-14 36 0z"/><path class="s" d="M66 76h10"/>'},
 
-{id:"cassonade",cat:"sweet",name:{en:"Cassonade",fr:"Cassonade"},latin:"Saccharum — sucre roux de canne",
+{id:"cassonade",cat:"sweet",price:1,pk:"2–4 €/kg",name:{en:"Cassonade",fr:"Cassonade"},latin:"Saccharum — sucre roux de canne",
 origin:{en:"France & Belgium",fr:"France & Belgique"},season:[],
 flavor:["sweet","toasty","warm","rich"],
 story:{en:"Beware the word: in France cassonade means unrefined cane sugar, in Belgium and Quebec it means something closer to soft brown sugar made from beet. Recipes crossing those borders go wrong on this single term more than any other.",
@@ -149,7 +149,7 @@ fr:"C’est elle qu’on met sur une crème brûlée parce qu’elle caramélise
 pairs:["cream","vanilla","butter","apple","cinnamon","egg","orange","dark-chocolate"],
 svg:'<path class="f2 sf" d="M34 68V50h28v18z"/><path class="s" d="M34 58h28M44 50v18M54 50v18"/>'},
 
-{id:"chestnut-cream",cat:"sweet",name:{en:"Chestnut cream",fr:"Crème de marrons"},latin:"Castanea sativa",
+{id:"chestnut-cream",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Chestnut cream",fr:"Crème de marrons"},latin:"Castanea sativa",
 origin:{en:"Ardèche, France",fr:"Ardèche, France"},season:[],
 flavor:["sweet","nutty","earthy"],
 story:{en:"Clément Faugier set up in Privas in 1882 to candy chestnuts and, as the house tells it, was left with a mountain of broken marrons glacés; in 1885 he sweetened and vanilla-scented the debris and sold it as crème de marrons. The by-product outlived the luxury it came from: the tube is a French pantry fixture, and candied chestnuts are a fraction of the trade.",
@@ -159,7 +159,7 @@ fr:"Elle est déjà sucrée à près de moitié : traitez-la en sucre, non en pu
 pairs:["cream","dark-chocolate","vanilla","dark-rum","creme-fraiche","coffee"],
 svg:'<path class="f2 sf" d="M40 30h16l5 32H35z"/><path class="f3 sf" d="M43 20h10v10H43z"/><path class="s" d="M35 62h26v6H35zM44 42h8"/>'},
 
-{id:"chestnut-honey",cat:"sweet",name:{en:"Chestnut honey",fr:"Miel de châtaignier"},latin:"Castanea sativa",
+{id:"chestnut-honey",cat:"sweet",price:2,pk:"14–24 €/kg",name:{en:"Chestnut honey",fr:"Miel de châtaignier"},latin:"Castanea sativa",
 origin:{en:"Corsica, Cévennes, Italy",fr:"Corse, Cévennes, Italie"},season:[6,7],
 flavor:["bitter","earthy","woody","rich"],
 story:{en:"Dark, resinous and genuinely bitter — the honey people either love or send back. Its pollen count is so distinctive that laboratories use it as a reference sample, and Corsica protects its version with an appellation.",
@@ -169,7 +169,7 @@ fr:"C’est un miel salé. Mettez-le avec un bleu, du gibier ou un laquage de ca
 pairs:["blue-cheese","pecorino","venison","walnut","duck","fig","ricotta","chestnut"],
 svg:'<path class="f1 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f2 sf" d="M43 60q5-8 10 0z"/>'},
 
-{id:"chinese-rock-sugar",cat:"sweet",name:{en:"Chinese rock sugar",fr:"Sucre candi chinois"},latin:"Saccharum officinarum",
+{id:"chinese-rock-sugar",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Chinese rock sugar",fr:"Sucre candi chinois"},latin:"Saccharum officinarum",
 origin:{en:"Sichuan and Guangdong",fr:"Sichuan et Guangdong"},season:[],
 flavor:["sweet","mild"],
 story:{en:"Bing tang means ice sugar: crystals grown over days on threads or bamboo splints hung in a supersaturated syrup, rather than milled out of it. Size is the whole point - one lump dissolves across a long braise instead of all at once.",
@@ -179,7 +179,7 @@ fr:"Pour un hongshao, faites fondre un morceau de deux centimètres dans l’hui
 pairs:["pork-belly","soy-sauce","star-anise","ginger","shaoxing-wine","chenpi"],
 svg:'<path class="f1 sf" d="M26 46l16-16 22 6 6 20-14 16-24-4z"/><path class="s" d="M42 30l6 22 20-4M48 52l-6 24"/><path class="f2 sf" d="M62 66l10-3 3 10-10 3z"/>'},
 
-{id:"cocoa-husk",cat:"sweet",rare:true,name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
+{id:"cocoa-husk",cat:"sweet",rare:true,price:1,pk:"12–25 €/kg",name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
 origin:{en:"Chocolate roasting rooms",fr:"Ateliers de torréfaction du cacao"},season:[],
 flavor:["smoky","woody","toasty"],
 story:{en:"The husk is about a tenth of the bean's weight, winnowed off after roasting, and in nineteenth-century Britain and France it was sold on its own as cocoa shell tea to households that could not afford the nib. It carries the smoke of the roast with almost none of the fat and almost none of the bitterness.",
@@ -189,7 +189,7 @@ fr:"Infusez-la comme un thé : 30 g par litre de crème ou de lait à 80 °C pen
 pairs:["cream","coffee","vanilla","pear","hazelnut","rye"],
 svg:'<path class="f3 sf" d="M34 28q18-6 26 8t-4 32q-18 6-25-8t3-32z"/><path class="s" d="M40 34q6 22-2 34"/><path class="f1 sf" d="M60 24q14 6 12 18-6-10-14-10z"/><path class="f2 sf" d="M24 68q12 8 24 2-8 12-24-2z"/>'},
 
-{id:"cacao-mass",cat:"sweet",name:{en:"Cocoa mass",fr:"Pâte de cacao"},latin:"Theobroma cacao",
+{id:"cacao-mass",cat:"sweet",price:2,pk:"20–35 €/kg",name:{en:"Cocoa mass",fr:"Pâte de cacao"},latin:"Theobroma cacao",
 origin:{en:"Cacao grinding rooms",fr:"Broyage de la fève de cacao"},season:[],
 flavor:["bitter","rich","earthy"],
 story:{en:"Cocoa liquor has nothing to do with alcohol; the word only records that ground nib runs liquid above about 35C, half its weight being cocoa butter. It is chocolate at the moment before anyone adds anything to it.",
@@ -199,7 +199,7 @@ fr:"Elle sert à monter le pourcentage de cacao d’une couverture sans sucre su
 pairs:["cocoa-butter","sugar","vanilla","hazelnut","coffee","raspberry"],
 svg:'<path class="f3 sf" d="M26 42h44l6 10-6 22H26l-6-22z"/><path class="f2 sf" d="M26 42h44l6 10H20z"/><path class="s" d="M48 52v22"/>'},
 
-{id:"cocoa-nibs",cat:"sweet",name:{en:"Cocoa nibs",fr:"Grué de cacao"},latin:"Theobroma cacao",
+{id:"cocoa-nibs",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Cocoa nibs",fr:"Grué de cacao"},latin:"Theobroma cacao",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[],
 flavor:["bitter","toasty","earthy","nutty"],
 story:{en:"Roasted cocoa beans cracked into fragments, before any sugar or grinding — this is what chocolate is made from, and it is unrecognisably bitter. The Aztecs drank it with chilli and used the beans as currency.",
@@ -209,7 +209,7 @@ fr:"Employez-le comme un fruit sec, pour le croquant et l’amertume contre un �
 pairs:["dark-chocolate","cream","raspberry","banana","coffee","honey","hazelnut","orange"],
 svg:'<path class="f1 sf" d="M38 48l6 4-4 6-6-4z"/><path class="f1 sf" d="M52 54l6 4-4 6-6-4z"/><path class="f1 sf" d="M44 64l6 4-4 6-6-4z"/>'},
 
-{id:"coffee",cat:"sweet",name:{en:"Coffee",fr:"Café"},latin:"Coffea arabica",
+{id:"coffee",cat:"sweet",price:2,pk:"15–35 €/kg",name:{en:"Coffee",fr:"Café"},latin:"Coffea arabica",
 origin:{en:"Ethiopian highlands",fr:"Hauts plateaux d’Éthiopie"},season:[],
 flavor:["bitter","toasty","fruity","rich"],
 story:{en:"Legend credits Kaldi, an Ethiopian goatherd, whose goats danced after eating red berries. From Sufi monasteries it reached Ottoman coffeehouses — nicknamed “schools of the wise” — and Europe’s cafés, where more than one revolution was stirred with a spoon.",
@@ -219,7 +219,7 @@ fr:"En cuisine, il agit comme une épice : un trait d’expresso approfondit les
 pairs:["dark-chocolate","cardamom","hazelnut","vanilla","cinnamon","walnut","maple-syrup"],
 svg:'<ellipse class="f3 sf" cx="40" cy="48" rx="10" ry="13" transform="rotate(-20 40 48)"/><path class="s" d="M35 39q6 9 2 18" transform="rotate(-20 40 48)"/><ellipse class="f3 sf" cx="58" cy="60" rx="10" ry="13" transform="rotate(24 58 60)"/><path class="s" d="M53 51q6 9 2 18" transform="rotate(24 58 60)"/>'},
 
-{id:"criollo-cacao",cat:"sweet",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
+{id:"criollo-cacao",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
 flavor:["nutty","mild","fruity","honeyed"],
 story:{en:"Cut a criollo pod and the beans are white or pale violet, not the deep purple of the forastero that fills the commodity trade — the group simply lacks the anthocyanins that carry most of chocolate's bitterness and astringency. It lacks the vigour too: the trees are fragile and shy-bearing, which is why criollo remains a sliver of the world crop.",
@@ -229,7 +229,7 @@ fr:"Torréfiez bas, vers 110–120 °C, bien en dessous de ce qu’encaisse un a
 pairs:["hazelnut","vanilla","butter","cream","almond","honey","orange","pistachio"],
 svg:'<path class="f2 sf" d="M48 16q16 10 18 32T48 84Q34 70 30 48t18-32z"/><path class="s" d="M40 24q-5 24 2 52M48 18v64M56 24q5 24-2 52"/><path class="s" d="M48 16q2-6 8-8"/>'},
 
-{id:"dark-chocolate",cat:"sweet",name:{en:"Dark chocolate",fr:"Chocolat noir"},latin:"Theobroma cacao",
+{id:"dark-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Dark chocolate",fr:"Chocolat noir"},latin:"Theobroma cacao",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
 flavor:["bitter","rich","fruity","toasty"],
 story:{en:"The Aztecs used cacao beans as money and drank chocolate bitter, spiced with chili — Linnaeus later named the tree Theobroma, “food of the gods”. Europe added sugar in the 1600s, and chocolate houses became the social networks of London and Madrid.",
@@ -239,7 +239,7 @@ fr:"Une pincée de sel donne au chocolat un goût plus profond de chocolat. Fond
 pairs:["raspberry","orange","coffee","chili","hazelnut","cardamom","vanilla","pear"],
 svg:'<rect class="f3 sf" x="32" y="36" width="32" height="36" rx="3"/><path class="s" d="M48 36v36M32 54h32M40 36v36M56 36v36M32 45h32M32 63h32" stroke-width="1.6"/>'},
 
-{id:"nolen-gur",cat:"sweet",rare:true,luxe:true,name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
+{id:"nolen-gur",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
 origin:{en:"Bengal, date palm groves",fr:"Bengale, palmeraies dattières"},season:[11,12,1,2],
 flavor:["smoky","sweet","rich"],
 story:{en:"The shiuli climb the date palms at dusk, cut a strip of bark and hang an earthen pot; the sap runs overnight and has to be boiled at dawn, because by midday it has begun to ferment. It is made only while Bengal's nights stay below about fourteen degrees - November to February, and not a week longer.",
@@ -249,7 +249,7 @@ fr:"Semi-liquide, il brûle vite : incorporez-le hors du feu dans du lait tiède
 pairs:["rice","coconut","cardamom","ghee","date","yogurt"],
 svg:'<path class="f2 sf" d="M34 34h28l-3 9q11 7 11 19t-22 20-22-20 11-19z"/><path class="s" d="M34 34h28"/><path class="s" d="M48 20v8"/><circle class="dot" cx="48" cy="16" r="3"/>'},
 
-{id:"date-syrup",cat:"sweet",name:{en:"Date syrup (silan)",fr:"Sirop de dattes (silan)"},latin:"Phoenix dactylifera",
+{id:"date-syrup",cat:"sweet",price:2,pk:"8–16 €/kg",name:{en:"Date syrup (silan)",fr:"Sirop de dattes (silan)"},latin:"Phoenix dactylifera",
 origin:{en:"Iraq and the Levant",fr:"Irak et Levant"},season:[],
 flavor:["sweet","rich","bitter","fruity"],
 story:{en:"Dibs, or silan, is among the oldest sweeteners on record: Mesopotamian tablets account for it by the jar, and the honey of the biblical land of milk and honey is usually read as this rather than the bee's. It is nothing but juice reduced, so the tannin of the skins concentrates alongside the sugar — which is why the finish bites.",
@@ -259,7 +259,7 @@ fr:"Coupez-le d’un poids égal de tahini pour la sauce levantine. En laque sur
 pairs:["tahini","lamb","eggplant","walnut","yogurt","cardamom","sesame","lemon"],
 svg:'<path class="f1 sf" d="M42 20h12v14q12 8 12 22v20a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6V56q0-14 12-22z"/><path class="f3 sf" d="M31 58h34v22a6 6 0 0 1-6 6H37a6 6 0 0 1-6-6z"/><path class="f2 sf" d="M40 16h16v6H40z"/><path class="s" d="M42 22h12"/>'},
 
-{id:"demerara-sugar",cat:"sweet",name:{en:"Demerara sugar",fr:"Sucre demerara"},latin:"Saccharum officinarum",
+{id:"demerara-sugar",cat:"sweet",price:1,pk:"3–6 €/kg",name:{en:"Demerara sugar",fr:"Sucre demerara"},latin:"Saccharum officinarum",
 origin:{en:"Mauritius, formerly Guyana",fr:"Maurice, autrefois le Guyana"},season:[],
 flavor:["sweet","toasty","warm"],
 story:{en:"Demerara is a river in what is now Guyana, and almost no demerara sugar has come from there for a long time - most of it is milled in Mauritius. The word survives as a crystal specification rather than an origin.",
@@ -269,7 +269,7 @@ fr:"Achetez-le pour ce que fait le cristal, non pour une mélasse qu’il n’a 
 pairs:["butter","dark-rum","oats","coffee","cream","cinnamon"],
 svg:'<path class="f1 sf" d="M22 72q10-28 26-28t26 28z"/><path class="s" d="M34 66l7-7 7 7-7 7zM50 66l7-7 7 7-7 7zM41 53l7-7 7 7-7 7z"/><path class="s" d="M20 72h56"/>'},
 
-{id:"dextrose",cat:"sweet",name:{en:"Dextrose",fr:"Dextrose"},latin:"Zea mays",
+{id:"dextrose",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Dextrose",fr:"Dextrose"},latin:"Zea mays",
 origin:{en:"Maize starch hydrolysis",fr:"Hydrolyse de l’amidon de maïs"},season:[],
 flavor:["sweet","mild"],
 story:{en:"Dextrose is glucose in crystal form, and its molecule weighs 180 against sucrose's 342 - a gram of it puts nearly twice as many particles into the water. Freezing point depression counts particles rather than sweetness, which is why a sorbet maker reaches for it.",
@@ -279,7 +279,7 @@ fr:"Remplacez quinze à vingt pour cent du saccharose d’un sorbet par du dextr
 pairs:["strawberry","lemon","raspberry","mango","glucose-syrup","invert-sugar"],
 svg:'<path class="f1 sf" d="M32 38h32v32a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8z"/><path class="f2 sf" d="M30 26h36v12H30z"/><circle class="dot" cx="42" cy="58" r="2.5"/><circle class="dot" cx="52" cy="64" r="2.5"/><circle class="dot" cx="48" cy="50" r="2.5"/>'},
 
-{id:"cocoa-powder-dutch",cat:"sweet",name:{en:"Dutch-process cocoa powder",fr:"Cacao en poudre alcalinisé"},latin:"Theobroma cacao",
+{id:"cocoa-powder-dutch",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Dutch-process cocoa powder",fr:"Cacao en poudre alcalinisé"},latin:"Theobroma cacao",
 origin:{en:"Netherlands",fr:"Pays-Bas"},season:[],
 flavor:["rich","earthy","mild"],
 story:{en:"Alkalising cocoa to pH 7-8 darkens it and rounds it off, and the process took its name from the Netherlands and from Coenraad van Houten, whose 1828 press had made cocoa powder possible in the first place. Colour is not strength: the alkali carries off flavour acids along with the sharpness, so the blackest powders often taste the weakest.",
@@ -289,7 +289,7 @@ fr:"N’ayant plus d’acidité, il ne fera pas lever le bicarbonate : une recet
 pairs:["butter","coffee","cream","flour-t55","cocoa-butter","orange"],
 svg:'<path class="f2 sf" d="M34 42h28v34H34z"/><path class="f1 sf" d="M34 42q14-16 28 0z"/><path class="s" d="M42 34v3M48 32v3M54 34v3"/><path class="s" d="M38 82v4M48 84v4M58 82v4"/>'},
 
-{id:"eucalyptus-honey",cat:"sweet",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
+{id:"eucalyptus-honey",cat:"sweet",price:2,pk:"12–22 €/kg",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
 origin:{en:"Iberia, Italy, Australia",fr:"Péninsule Ibérique, Italie, Australie"},season:[],
 flavor:["resinous","bitter","warm"],
 story:{en:"The eucalyptus honey of Portugal, Spain and Italy comes from trees that were not on the continent two centuries ago - Australian seed planted through the 1800s for timber and for drying out marshland. It tastes of malt and camphor, nearer a medicine chest than a dessert.",
@@ -299,7 +299,7 @@ fr:"Employez-le là où il peut tenir tête au sel et au gras : une cuillerée d
 pairs:["pecorino","walnut","duck","black-pepper","rosemary","ricotta"],
 svg:'<path class="f2 sf" d="M26 62q2-24 22-34-1 25-22 34z"/><path class="f1 sf" d="M46 70q9-20 26-24-7 21-26 24z"/><path class="s" d="M28 60q10-16 18-30M50 68q9-14 20-20"/><circle class="dot" cx="52" cy="82" r="4"/>'},
 
-{id:"fir-honeydew-honey",cat:"sweet",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
+{id:"fir-honeydew-honey",cat:"sweet",price:2,pk:"18–32 €/kg",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
 origin:{en:"Fir forests of the Vosges and Jura",fr:"Sapinières des Vosges et du Jura"},season:[7,8],
 flavor:["resinous","woody","warm"],
 story:{en:"Fir honey comes from no flower at all: aphids drink the tree's sap, void the excess as honeydew on the needles, and the bees collect that. Carrying almost no glucose, it stays liquid for years — and since the flow depends on an insect that may or may not appear, whole seasons pass with no crop.",
@@ -309,7 +309,7 @@ fr:"Employez-le là où sa résine est le sujet : une cuillère dans une marinad
 pairs:["comte","walnut","venison","rye","pear","blue-cheese"],
 svg:'<path class="f3 sf" d="M32 40h28v26q0 6-6 6H38q-6 0-6-6z"/><path class="s" d="M30 34h32v6H30z"/><path class="s" d="M74 24v40"/><path class="f1 sf" d="M74 28l-8 8h16zM74 40l-10 8h20zM74 52l-8 8h16z"/>'},
 
-{id:"gianduja",cat:"sweet",name:{en:"Gianduja",fr:"Gianduja"},latin:"Corylus avellana × Theobroma cacao",
+{id:"gianduja",cat:"sweet",price:2,pk:"20–35 €/kg",name:{en:"Gianduja",fr:"Gianduja"},latin:"Corylus avellana × Theobroma cacao",
 origin:{en:"Turin, Piedmont",fr:"Turin, Piémont"},season:[],
 flavor:["nutty","creamy","sweet","rich"],
 story:{en:"Napoleon's continental blockade made cocoa scarce in Turin, so the city's chocolatiers stretched it with Piedmont hazelnuts; the paste was handed out at the Carnival of 1865 by the masked character Gianduja and took his name. Up to thirty percent of it is nut oil, which drops its melting point close to body temperature.",
@@ -319,7 +319,7 @@ fr:"Il ne se tempère pas comme une couverture : l’huile de noisette le garde 
 pairs:["hazelnut","coffee","orange","cream","pear","fleur-de-sel-guerande"],
 svg:'<path class="f3 sf" d="M22 42h34v34H22z"/><path class="s" d="M39 42v34M22 59h34"/><path class="f2 sf" d="M60 36q14 0 14 15t-14 15-14-15 14-15z"/><path class="f1 sf" d="M52 40q8-10 16 0-8 5-16 0z"/>'},
 
-{id:"glucose-syrup",cat:"sweet",name:{en:"Glucose syrup",fr:"Sirop de glucose"},latin:"Glucosum liquidum",
+{id:"glucose-syrup",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Glucose syrup",fr:"Sirop de glucose"},latin:"Glucosum liquidum",
 origin:{en:"Europe, 1811",fr:"Europe, 1811"},season:[],
 flavor:["sweet","mild","delicate","milky"],
 story:{en:"Invented by a Russian chemist during the Napoleonic blockade, when cane sugar could not reach the continent — he made it from potato starch. Confectioners use it not for sweetness but to stop other sugars crystallising.",
@@ -329,7 +329,7 @@ fr:"C’est lui qui garde un sorbet malléable et un caramel lisse. Une cuiller�
 pairs:["sugar","cream","butter","vanilla","dark-chocolate","lemon","raspberry","honey"],
 svg:'<path class="f3 sf" d="M40 74V40h16v34z"/><path class="s" d="M40 48h16"/><circle class="dot" cx="48" cy="60" r="2"/>'},
 
-{id:"golden-syrup",cat:"sweet",name:{en:"Golden syrup",fr:"Golden syrup"},latin:"Saccharum officinarum",
+{id:"golden-syrup",cat:"sweet",price:2,pk:"8–14 €/kg",name:{en:"Golden syrup",fr:"Golden syrup"},latin:"Saccharum officinarum",
 origin:{en:"Plaistow, London",fr:"Plaistow, Londres"},season:[],
 flavor:["sweet","buttery","tangy"],
 story:{en:"Abram Lyle began selling it from his refinery on the Thames in 1881, and the tin has carried a dead lion, a swarm of bees and Samson's riddle since the 1880s - Guinness records it as the world's oldest unchanged brand packaging. The picture is apt: the syrup is a by-product of refining, sweetness left over from the strong.",
@@ -339,7 +339,7 @@ fr:"Partiellement inverti, il ne cristallise pas et retient l’eau : une cuille
 pairs:["butter","oats","ginger","lemon","cream","bicarbonate-de-sodium"],
 svg:'<path class="f2 sf" d="M30 36h36v42H30z"/><path class="f1 sf" d="M27 28h42v8H27z"/><path class="s" d="M30 44h36"/><ellipse class="s" cx="48" cy="60" rx="12" ry="9"/>'},
 
-{id:"gula-melaka",cat:"sweet",name:{en:"Gula melaka",fr:"Gula melaka (sucre de palmier de Malacca)"},latin:"Cocos nucifera",
+{id:"gula-melaka",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Gula melaka",fr:"Gula melaka (sucre de palmier de Malacca)"},latin:"Cocos nucifera",
 origin:{en:"Melaka, Malaysia",fr:"Malacca, Malaisie"},season:[],
 flavor:["sweet","smoky","toasty","rich"],
 story:{en:"Despite the name it is not made from a sugar palm but from the coconut: a tapper climbs twice a day to slice the unopened flower spike and catch the sap, which is boiled down over a wood fire and poured into bamboo tubes to set. That wood fire is where the smoke comes from, and why two cylinders from two villages do not taste alike.",
@@ -349,7 +349,7 @@ fr:"Râpez-le plutôt que de le couper — le cylindre est assez dur pour faire 
 pairs:["coconut-milk","pandan","glutinous-rice","banana","tapioca-starch","salt"],
 svg:'<ellipse class="f2 sf" cx="48" cy="36" rx="24" ry="9"/><path class="f3 sf" d="M24 36v22a24 9 0 0 0 48 0V36"/><path class="s" d="M34 44q6 5 12 0t12 3"/>'},
 
-{id:"heather-honey",cat:"sweet",luxe:true,name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
+{id:"heather-honey",cat:"sweet",price:2,pk:"22–40 €/kg",name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
 origin:{en:"Northern moors — Scotland, Brittany, the Landes",fr:"Landes et tourbières du nord — Écosse, Bretagne, Landes"},season:[8,9],
 flavor:["bitter","woody","rich"],
 story:{en:"Ling heather honey is thixotropic: it sets to a jelly in the comb and returns to that jelly faster than any other honey the moment you stop stirring it. That is why it cannot be spun out in an extractor at all — the comb is pressed, or sold whole, which is half the reason for the price.",
@@ -359,7 +359,7 @@ fr:"Battez-le vigoureusement dans le pot avant de le peser, sinon il reste en bl
 pairs:["oats","blue-cheese","venison","walnut","chestnut","grouse-ecosse"],
 svg:'<path class="f1 sf" d="M32 42h32v32a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path class="f3 sf" d="M30 33h36v9H30z"/><path class="s" d="M48 72V26"/><ellipse class="f2 sf" cx="48" cy="21" rx="7" ry="5"/>'},
 
-{id:"honey",cat:"sweet",name:{en:"Honey",fr:"Miel"},latin:"Apis mellifera (nectar)",
+{id:"honey",cat:"sweet",price:1,pk:"7–15 €/kg",name:{en:"Honey",fr:"Miel"},latin:"Apis mellifera (nectar)",
 origin:{en:"Everywhere bees fly",fr:"Partout où volent les abeilles"},season:[],
 flavor:["sweet","floral","honeyed","warm"],
 story:{en:"Jars of honey found in pharaohs’ tombs were still edible after three thousand years — it is the only food that never spoils. A single pound represents the nectar of about two million flowers; every spoonful is a map of a landscape in bloom.",
@@ -369,7 +369,7 @@ fr:"Un miel cristallisé n’est pas perdu — tiédissez le pot au bain-marie e
 pairs:["blue-cheese","walnut","yogurt","fig","lemon","ginger","goat-cheese","rosemary"],
 svg:'<path class="s" d="M60 36L44 52"/><path class="f2 sf" d="M34 58h20M32 63h24M34 68h20M38 73h12" stroke-width="4"/><path class="f2 sf" d="M40 50a8 8 0 0016 0 8 8 0 00-16 0z" transform="translate(-6 8)"/>'},
 
-{id:"honeycomb",cat:"sweet",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
+{id:"honeycomb",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
 origin:{en:"Hive frames, wherever bees are kept",fr:"Cadres de ruche, partout où l’on élève des abeilles"},season:[6,7,8,9],
 flavor:["honeyed","floral","sweet"],
 story:{en:"Worker bees secrete wax from glands on the underside of the abdomen, spending several kilos of honey for every kilo of comb they build. Until the centrifugal extractor arrived in the 1860s all honey was sold this way — the jar is the modern form, not the comb.",
@@ -379,7 +379,7 @@ fr:"Coupez-le au couteau trempé dans l’eau chaude et servez-le à températur
 pairs:["pecorino","ricotta","blue-cheese","walnut","fig","prosciutto"],
 svg:'<path class="f2 sf" d="M48 20l12 7v14l-12 7-12-7V27z"/><path class="f1 sf" d="M33 46l12 7v14l-12 7-12-7V53z"/><path class="f1 sf" d="M63 46l12 7v14l-12 7-12-7V53z"/><circle class="dot" cx="48" cy="52" r="3"/>'},
 
-{id:"icing-sugar",cat:"sweet",name:{en:"Icing sugar",fr:"Sucre glace"},latin:"Saccharum pulverulentum",
+{id:"icing-sugar",cat:"sweet",price:1,pk:"2–5 €/kg",name:{en:"Icing sugar",fr:"Sucre glace"},latin:"Saccharum pulverulentum",
 origin:{en:"Europe",fr:"Europe"},season:[],
 flavor:["sweet","delicate","mild","milky"],
 story:{en:"Ground to a powder and cut with two or three per cent starch to stop it caking — which is why it clouds a liquid and why it can never be used to make caramel. The starch is the reason, not the fineness.",
@@ -389,7 +389,7 @@ fr:"Tamisez-le toujours, sans exception. Il s’agglomère dans la boîte et un 
 pairs:["butter","vanilla","lemon","cream","strawberry","dark-chocolate","raspberry","almond"],
 svg:'<path class="f3 sf" d="M34 70q0-18 14-22 14 4 14 22z"/><circle class="dot" cx="42" cy="62" r="1.2"/><circle class="dot" cx="52" cy="60" r="1.2"/><circle class="dot" cx="47" cy="68" r="1.2"/>'},
 
-{id:"invert-sugar",cat:"sweet",name:{en:"Invert sugar",fr:"Sucre inverti (trimoline)"},latin:"Saccharum officinarum",
+{id:"invert-sugar",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Invert sugar",fr:"Sucre inverti (trimoline)"},latin:"Saccharum officinarum",
 origin:{en:"Pastry kitchens, from cane or beet sugar",fr:"Laboratoires de pâtisserie, à partir de sucre de canne ou de betterave"},season:[],
 flavor:["sweet","honeyed","mild"],
 story:{en:"The name comes from a physics bench, not a kitchen: splitting sucrose into glucose and fructose reverses the direction in which the syrup rotates polarised light. Bees run the same reaction with the enzyme invertase, which is why honey and trimoline behave so alike in a dough.",
@@ -399,7 +399,7 @@ fr:"N’en substituez pas plus d’un dixième du sucre de la recette : plus suc
 pairs:["dark-chocolate","cream","butter","milk-chocolate","hazelnut","vanilla"],
 svg:'<path class="f1 sf" d="M20 24q13-7 22 2-9 9-22 2z"/><path class="s" d="M42 26q11 5 12 14"/><path class="s" d="M54 40q-9 14 0 22t-6 12"/><ellipse class="f2 sf" cx="46" cy="74" rx="22" ry="8"/>'},
 
-{id:"isomalt",cat:"sweet",name:{en:"Isomalt",fr:"Isomalt"},latin:"Beta vulgaris",
+{id:"isomalt",cat:"sweet",price:2,pk:"10–20 €/kg",name:{en:"Isomalt",fr:"Isomalt"},latin:"Beta vulgaris",
 origin:{en:"Mannheim, Germany — made from beet sugar",fr:"Mannheim, Allemagne — issu du sucre de betterave"},season:[],
 flavor:["sweet","mild"],
 story:{en:"Isomalt was built in the 1960s at a German sugar company, by rearranging sucrose into isomaltulose and then hydrogenating it, and was sold first as a tooth-kind sweetener. Pastry took it over for an unintended property: it absorbs almost no moisture, so a sugar showpiece stops weeping.",
@@ -409,7 +409,7 @@ fr:"Cuisez-le à sec vers 170 °C : ni glucose ni acide, et il se refond indéfi
 pairs:["dark-chocolate","raspberry","vanilla","pistachio","blood-orange","mint"],
 svg:'<circle class="f1 sf" cx="44" cy="34" r="17"/><path class="s" d="M35 27q5-6 13-4"/><path class="f2 sf" d="M24 64q22-11 46 1-16 13-30 9-9-3-16-10z"/><path class="s" d="M31 67q17-6 32 1"/>'},
 
-{id:"lavender-honey",cat:"sweet",name:{en:"Lavender honey",fr:"Miel de lavande"},latin:"Lavandula angustifolia",
+{id:"lavender-honey",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Lavender honey",fr:"Miel de lavande"},latin:"Lavandula angustifolia",
 origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[7,8],
 flavor:["floral","sweet","delicate","herbal"],
 story:{en:"Hives are trucked up to the Provençal plateaux in July when the lavender opens, a migration beekeepers have made for generations. It crystallises into a fine white cream rather than gritty crystals, which is the mark of the real thing.",
@@ -419,7 +419,7 @@ fr:"Employez-le là où son parfum compte — sur du chèvre, dans une glace, av
 pairs:["goat-cheese","apricot","peach","almond","cream","fig","lemon","yogurt"],
 svg:'<path class="f3 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M46 62q2-10 4 0z"/><circle class="dot" cx="48" cy="58" r="1.4"/>'},
 
-{id:"leatherwood-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
+{id:"leatherwood-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
 origin:{en:"Rainforest of western Tasmania",fr:"Forêts pluviales de l’ouest de la Tasmanie"},season:[1,2,3],
 flavor:["floral","resinous","warm"],
 story:{en:"Leatherwood grows nowhere but the wet west of Tasmania, and it supplies roughly seven tenths of all the honey the island produces; hives are trucked to forestry-road camps for the January flowering. The trees take decades to come into full flower, so the crop rests on forest nobody can replant on a beekeeper's timescale.",
@@ -429,7 +429,7 @@ fr:"Il écrase tout ce à quoi on l’associe : commencez au tiers de la quantit
 pairs:["blue-cheese","goat-cheese","yogurt","walnut","pear","ginger"],
 svg:'<path class="s" d="M48 14v18"/><path class="f2 sf" d="M48 32q11 0 11 15t-11 21q-11-6-11-21t11-15z"/><path class="s" d="M38 42h20M37 50h22M39 58h18"/><path class="f1 sf" d="M48 72q7 8 0 13-7-5 0-13z"/>'},
 
-{id:"linden-honey",cat:"sweet",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
+{id:"linden-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
 origin:{en:"Lime avenues of central and eastern Europe",fr:"Allées de tilleuls d’Europe centrale et orientale"},season:[6,7],
 flavor:["fresh","herbal","floral"],
 story:{en:"Limes were planted along town avenues across central Europe long before anyone valued them for honey, and a mature tree in flower can out-yield a field of clover for the fortnight it lasts. The cool, menthol edge in the jar comes from the same aromatics you taste in a cup of lime-flower tisane.",
@@ -439,7 +439,7 @@ fr:"Employez-le là où un miel chaud sonnerait faux : monté en vinaigrette pou
 pairs:["lemon","yogurt","trout","fennel","mint","german-chamomile","pear"],
 svg:'<path class="f1 sf" d="M34 46h28l-3 30a5 5 0 0 1-5 5H42a5 5 0 0 1-5-5z"/><path class="s" d="M31 46h34"/><path class="f2 sf" d="M62 42q12-9 13-22-14 1-17 10-2 7 4 12z"/><path class="s" d="M73 22L60 39"/>'},
 
-{id:"sirop-de-liege",cat:"sweet",name:{en:"Liège syrup",fr:"Sirop de Liège"},latin:"Sirop de Liège",
+{id:"sirop-de-liege",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Liège syrup",fr:"Sirop de Liège"},latin:"Sirop de Liège",
 origin:{en:"Wallonia, Belgium",fr:"Wallonie, Belgique"},season:[],
 flavor:["sweet","sour","fruity","rich"],
 story:{en:"Pears and apples boiled for hours until they reduce to a near-black paste, with no added sugar at all — the sweetness is entirely the fruit's. It has been made in the Pays de Herve since the seventeenth century and is eaten with cheese.",
@@ -449,7 +449,7 @@ fr:"Les Belges le servent avec un fromage fort et avec le lapin. Le prendre pour
 pairs:["rabbit","blue-cheese","pear","apple","flour-t65","beurre-demi-sel","onion","mustard"],
 svg:'<path class="f1 sf" d="M38 74V42h20v32z"/><path class="s" d="M38 50h20"/><path class="f2 sf" d="M44 60q4-8 8 0z"/>'},
 
-{id:"lotus-seed-paste",cat:"sweet",name:{en:"Lotus seed paste",fr:"Pâte de graines de lotus"},latin:"Nelumbo nucifera",
+{id:"lotus-seed-paste",cat:"sweet",price:2,pk:"8–18 €/kg",name:{en:"Lotus seed paste",fr:"Pâte de graines de lotus"},latin:"Nelumbo nucifera",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
 flavor:["sweet","floral","rich"],
 story:{en:"Mooncakes are priced on two things: whether the filling is white lotus paste, made from peeled pale seed, or the ordinary yellow, and how many salted duck yolks are buried in it. The paste is fried down with sugar and oil for an hour or more until it pulls cleanly away from the pan, and that long reduction is the whole difference between it and a purée.",
@@ -459,7 +459,7 @@ fr:"Jugez-la à la poêle, non à la montre : la spatule doit y laisser un sillo
 pairs:["salted-duck-egg","sugar","sesame","osmanthus","black-sesame","honey","glutinous-rice-flour"],
 svg:'<ellipse class="f2 sf" cx="48" cy="50" rx="26" ry="22"/><path class="s" d="M28 50q20 12 40 0M28 50q20-12 40 0M48 28v44"/><circle class="f3 sf" cx="48" cy="50" r="7"/>'},
 
-{id:"maesil-cheong",cat:"sweet",rare:true,name:{en:"Maesil cheong",fr:"Sirop de prune verte (maesil)"},latin:"Prunus mume (steeped)",
+{id:"maesil-cheong",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Maesil cheong",fr:"Sirop de prune verte (maesil)"},latin:"Prunus mume (steeped)",
 origin:{en:"Southern Korea",fr:"Sud de la Corée"},season:[],
 flavor:["sweet","tangy","fruity"],
 story:{en:"Green ume are picked in June before the rains, layered with their own weight in sugar and left about a hundred days, until osmosis has drawn a clear syrup out of the fruit. The plums are strained off and discarded at that point: raw and unripe they are not eaten, the kernel above all, which carries amygdalin.",
@@ -469,7 +469,7 @@ fr:"Utilisez-le partout où une sauce réclame en même temps du sucre et de l�
 pairs:["gochujang","soy-sauce","sesame-oil","garlic","ginger","cucumber","rice-vinegar"],
 svg:'<path class="f1 sf" d="M32 34h32v34a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><rect class="f3 sf" x="36" y="24" width="24" height="9" rx="2"/><path class="s" d="M32 46q16 6 32 0"/><circle class="f2 sf" cx="43" cy="57" r="7"/><circle class="f2 sf" cx="55" cy="64" r="6"/>'},
 
-{id:"manuka-honey",cat:"sweet",luxe:true,name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
+{id:"manuka-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
 origin:{en:"Scrubland of New Zealand",fr:"Broussailles de Nouvelle-Zélande"},season:[11,12,1],
 flavor:["earthy","musky","warm"],
 story:{en:"Manuka nectar contains no methylglyoxal at all: it carries dihydroxyacetone, which turns into MGO slowly as the honey stands, so a jar's rating climbs with storage. Chemists at Waikato only worked this out in 2008, and before that manuka was scrub that farmers paid to clear.",
@@ -479,7 +479,7 @@ fr:"Ne le cuisez pas : la chaleur dégrade le méthylglyoxal que vous avez payé
 pairs:["yogurt","oats","lemon","ginger","walnut","apple","blue-cheese"],
 svg:'<path class="f1 sf" d="M30 45q0-7 7-7h22q7 0 7 7v27a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M28 29h40v9H28z"/><path class="f2 sf" d="M35 54h26v13H35z"/><path class="s" d="M39 61h18"/>'},
 
-{id:"maple-butter",cat:"sweet",name:{en:"Maple butter",fr:"Beurre d’érable"},latin:"Acer saccharum",
+{id:"maple-butter",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Maple butter",fr:"Beurre d’érable"},latin:"Acer saccharum",
 origin:{en:"Sugar bush of Quebec",fr:"Érablières du Québec"},season:[],
 flavor:["sweet","creamy","rich"],
 story:{en:"There is no dairy in it at all: maple butter is syrup boiled to around 112 °C, cooled without being touched, then beaten until the sugar crystallises so finely that the tongue reads it as cream. Those crystals are its entire structure, which is why warming a jar destroys it for good.",
@@ -489,7 +489,7 @@ fr:"Ne le chauffez jamais pour l’assouplir : travaillez-le à la cuillère à 
 pairs:["pecan","walnut","apple","buckwheat","cream","dark-chocolate"],
 svg:'<path class="f1 sf" d="M26 47h44l-4 27a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6z"/><ellipse class="f2 sf" cx="48" cy="47" rx="22" ry="8"/><path class="s" d="M38 47q10 6 20 0M42 43q6 3 12 0"/>'},
 
-{id:"maple-sugar",cat:"sweet",name:{en:"Maple sugar",fr:"Sucre d’érable"},latin:"Acer saccharum",
+{id:"maple-sugar",cat:"sweet",price:3,pk:"35–70 €/kg",name:{en:"Maple sugar",fr:"Sucre d’érable"},latin:"Acer saccharum",
 origin:{en:"Quebec, Vermont and the Eastern Woodlands",fr:"Québec, Vermont et forêts de l’Est"},season:[],
 flavor:["sweet","woody","toasty"],
 story:{en:"For most of its history maple was stored as sugar rather than syrup — hard cakes kept and travelled, and a liquid did neither before sealed tins. The Eastern Woodlands nations who developed sugaring made blocks; the can of syrup is the recent form.",
@@ -499,7 +499,7 @@ fr:"Remplacez le sucre blanc poids pour poids, mais baissez le four d’une diza
 pairs:["pecan","butter","apple","poitrine-fumee","buckwheat","cinnamon","walnut"],
 svg:'<path class="f2 sf" d="M48 20l6 12 8-4-2 10 10 2-8 8 10 8-16 2 2 8-10-6-10 6 2-8-16-2 10-8-8-8 10-2-2-10 8 4z"/><circle class="dot" cx="30" cy="76" r="3"/><circle class="dot" cx="42" cy="80" r="2"/><circle class="dot" cx="58" cy="78" r="2.5"/>'},
 
-{id:"maple-syrup",cat:"sweet",name:{en:"Maple syrup",fr:"Sirop d’érable"},latin:"Acer saccharum",
+{id:"maple-syrup",cat:"sweet",price:2,pk:"20–35 €/L",name:{en:"Maple syrup",fr:"Sirop d’érable"},latin:"Acer saccharum",
 origin:{en:"Northeastern North America",fr:"Nord-Est de l’Amérique du Nord"},season:[3,4],
 flavor:["sweet","woody","toasty","warm"],
 story:{en:"Indigenous peoples of the northeastern forests taught settlers to read the “sugar moon” — the late-winter thaw when maples let their sap rise. It takes forty litres of sap, boiled down over days, to make a single litre of syrup: patience you can pour.",
@@ -509,7 +509,7 @@ fr:"Les grades foncés ont plus de caractère — gardez le « doré » pour les
 pairs:["pork","walnut","apple","oats","butter","coffee"],
 svg:'<path class="f2 sf" d="M48 26l4 8 8-2-2 8 8 4-8 6 2 8-8-2-4 8-4-8-8 2 2-8-8-6 8-4-2-8 8 2z"/><path class="s" d="M48 66v10"/>'},
 
-{id:"marzipan",cat:"sweet",name:{en:"Marzipan",fr:"Massepain"},latin:"Prunus dulcis",
+{id:"marzipan",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Marzipan",fr:"Massepain"},latin:"Prunus dulcis",
 origin:{en:"Lübeck and Toledo",fr:"Lübeck et Tolède"},season:[],
 flavor:["sweet","nutty","rich"],
 story:{en:"Marzipan is bought by ratio rather than by name: the more almond and the less sugar in the raw paste, the higher the grade, and the Lübeck designations sit at the top of that scale. The story told in every Lübeck shop is that bakers invented it in a famine, ordered to make bread when only almonds and sugar were left in the stores — there is no record of it, and the paste had reached northern Europe from the Arab Mediterranean long before.",
@@ -519,7 +519,7 @@ fr:"Travaillez-le froid et peu. Le pétrissage fait remonter l'huile d'amande, l
 pairs:["dark-chocolate","apricot","cherry","rose-water","pistachio-paste","kirsch"],
 svg:'<path class="f1 sf" d="M26 46h44v22q0 4-4 4H30q-4 0-4-4z"/><path class="f2 sf" d="M26 46q6-10 22-10t22 10z"/><path class="s" d="M34 44l4-6M44 42l4-6M54 42l4-6"/><path class="f3 sf" d="M72 54h10v18H72z"/>'},
 
-{id:"matcha",cat:"sweet",name:{en:"Matcha",fr:"Matcha"},latin:"Camellia sinensis",
+{id:"matcha",cat:"sweet",price:3,pk:"80–250 €/kg",name:{en:"Matcha",fr:"Matcha"},latin:"Camellia sinensis",
 origin:{en:"Uji, Japan",fr:"Uji, Japon"},season:[],
 flavor:["bitter","grassy","umami","earthy"],
 story:{en:"The bushes are shaded for three weeks before harvest, which forces them to make more chlorophyll and more theanine — that is where the colour and the savoury depth come from. The leaves are then stone-ground, a kilo taking about an hour.",
@@ -529,7 +529,7 @@ fr:"N’utilisez jamais d’eau bouillante — 70 à 80 °C au plus. L’eau bou
 pairs:["white-chocolate","cream","adzuki","sugar","sesame","vanilla","lemon","rice"],
 svg:'<path class="f2 sf" d="M32 60q0-14 16-14t16 14q-14 10-32 0z"/><path class="s" d="M36 54q12 6 24 0"/><path class="s" d="M48 46v-8"/>'},
 
-{id:"milk-chocolate",cat:"sweet",name:{en:"Milk chocolate",fr:"Chocolat au lait"},latin:"Theobroma cacao",
+{id:"milk-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Milk chocolate",fr:"Chocolat au lait"},latin:"Theobroma cacao",
 origin:{en:"Vevey, Switzerland, 1875",fr:"Vevey, Suisse, 1875"},season:[],
 flavor:["sweet","creamy","milky","rich"],
 story:{en:"Daniel Peter spent eight years failing to combine milk and chocolate — the water in milk seizes cocoa butter. His neighbour Henri Nestlé had just invented condensed milk, and the two of them solved it in 1875 by removing the water first.",
@@ -539,7 +539,7 @@ fr:"Il brûle et fige bien plus facilement que le noir. Faites-le fondre sur une
 pairs:["hazelnut","maple-syrup","banana","almond","coffee","cream","salt","orange"],
 svg:'<path class="f2 sf" d="M28 44h40v24H28z"/><path class="s" d="M28 56h40M42 44v24M56 44v24"/>'},
 
-{id:"mizuame",cat:"sweet",rare:true,name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
+{id:"mizuame",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["sweet","mild","delicate"],
 story:{en:"Japan had mizuame centuries before it had cane sugar: rice or millet starch broken down by malt into a clear syrup. Edo-period street artists pulled candy animals from it while it was still warm, and because it is far less sweet than sugar it is still reached for as body and shine rather than sweetness.",
@@ -549,7 +549,7 @@ fr:"Mouillez la cuillère avant de la plonger, sinon vous soulevez le pot entier
 pairs:["soy-sauce","hon-mirin","kinako","black-sesame","matcha","ginger","glutinous-rice"],
 svg:'<path class="f1 sf" d="M26 52h40q-4 22-20 22T26 52z"/><path class="s" d="M24 52h44"/><path class="s" d="M54 55q9-11 10-22"/><path class="f3 sf" d="M62 34l10-12 4 3-10 12z"/>'},
 
-{id:"molasses",cat:"sweet",name:{en:"Molasses",fr:"Mélasse"},latin:"Melassum",
+{id:"molasses",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Molasses",fr:"Mélasse"},latin:"Melassum",
 origin:{en:"Caribbean",fr:"Caraïbes"},season:[],
 flavor:["bitter","rich","smoky","earthy"],
 story:{en:"What is left after sugar crystals are spun out, and it was the raw material of rum and of the triangular trade. In 1919 a storage tank burst in Boston and sent a wave of it through the streets, killing twenty-one people.",
@@ -559,7 +559,7 @@ fr:"La blackstrap est issue de la troisième cuite et elle est franchement amèr
 pairs:["ginger","dark-chocolate","rye-flour","clove","cinnamon","butter","coffee","orange"],
 svg:'<path class="f1 sf" d="M38 74V40h20v34z"/><path class="s" d="M38 48h20"/><path class="s" d="M44 58q4 6 8 0"/>'},
 
-{id:"muscovado",cat:"sweet",name:{en:"Muscovado",fr:"Muscovado"},latin:"Saccharum officinarum",
+{id:"muscovado",cat:"sweet",price:2,pk:"6–12 €/kg",name:{en:"Muscovado",fr:"Muscovado"},latin:"Saccharum officinarum",
 origin:{en:"Mauritius & the Philippines",fr:"Maurice & Philippines"},season:[],
 flavor:["rich","earthy","smoky","sweet"],
 story:{en:"Sugar with none of its molasses removed — the darkest, stickiest, least processed form there is, and it tastes of liquorice and smoke rather than simple sweetness. The name comes from Portuguese mascavado, unrefined.",
@@ -569,7 +569,7 @@ fr:"Il durcit en bloc. Gardez un morceau de pain ou un disque de terre cuite dan
 pairs:["dark-chocolate","coffee","ginger","butter","cream","banana","cinnamon","pecan"],
 svg:'<path class="f1 sf" d="M32 68V48h32v20z"/><path class="s" d="M32 58h32"/><circle class="dot" cx="42" cy="63" r="1.6"/><circle class="dot" cx="54" cy="53" r="1.6"/>'},
 
-{id:"nacional-arriba-cacao",cat:"sweet",luxe:true,name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
+{id:"nacional-arriba-cacao",cat:"sweet",price:3,pk:"40–80 €/kg",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
 origin:{en:"Guayas river basin, Ecuador",fr:"Bassin du Guayas, Équateur"},season:[],
 flavor:["floral","fruity","nutty","delicate"],
 story:{en:"Arriba is a shipping word, not a botanical one: cacao floated down the Guayas to Guayaquil was said to come from río arriba, upriver, and the buyers kept the term for the perfume that came with it. The blight years from 1916 took most of the old Nacional groves, so much of what is sold as Arriba today carries the blood of the high-yield clones planted to replace them.",
@@ -579,7 +579,7 @@ fr:"La note de jasmin tient à des composés volatils qui s’évaporent. Incorp
 pairs:["cream","honey","jasmine-sambac","orange-blossom-water","raspberry","pistachio","butter","vanilla"],
 svg:'<circle class="f1 sf" cx="36" cy="30" r="11"/><path class="s" d="M36 19v22M25 30h22M28 22l16 16M44 22L28 38"/><ellipse class="f3 sf" cx="60" cy="60" rx="14" ry="10"/><ellipse class="f2 sf" cx="40" cy="70" rx="12" ry="9"/><path class="s" d="M50 58h20M30 69h20"/>'},
 
-{id:"cocoa-powder-natural",cat:"sweet",name:{en:"Natural cocoa powder",fr:"Cacao en poudre non alcalinisé"},latin:"Theobroma cacao",
+{id:"cocoa-powder-natural",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Natural cocoa powder",fr:"Cacao en poudre non alcalinisé"},latin:"Theobroma cacao",
 origin:{en:"Cacao beans, defatted and milled",fr:"Fèves de cacao dégraissées et broyées"},season:[],
 flavor:["bitter","sour","fruity"],
 story:{en:"Coenraad van Houten's press of 1828 is what made cocoa a powder at all, by squeezing the butter out of the ground bean; the alkali treatment that gives Dutch cocoa its dark colour came out of the same Amsterdam workshop. Natural powder is simply the one left alone, acidity and all, sitting around pH 5.3.",
@@ -589,7 +589,7 @@ fr:"Elle constitue la moitié acide d’une recette au bicarbonate : remplacée 
 pairs:["creme-de-tartre","butter","coffee","vanilla","raspberry","cream","dark-chocolate"],
 svg:'<path class="f1 sf" d="M36 24h26v34H36z"/><path class="f3 sf" d="M33 17h32v7H33z"/><path class="f2 sf" d="M22 78q12-22 27-22t27 22z"/><path class="s" d="M33 70q16-8 32 0"/>'},
 
-{id:"kokuto",cat:"sweet",rare:true,luxe:true,name:{en:"Okinawan black sugar",fr:"Kokutō (sucre noir d’Okinawa)"},latin:"Saccharum officinarum",
+{id:"kokuto",cat:"sweet",rare:true,price:2,pk:"20–45 €/kg",name:{en:"Okinawan black sugar",fr:"Kokutō (sucre noir d’Okinawa)"},latin:"Saccharum officinarum",
 origin:{en:"Eight islands of the Okinawa archipelago",fr:"Huit îles de l’archipel d’Okinawa"},season:[],
 flavor:["salty","rich","toasty"],
 story:{en:"Sugar-making reached the Ryukyu kingdom in the early 1600s, brought back from Fujian by an official, and it became the islands' tribute crop. Only eight Okinawan islands still make the real thing — whole cane juice boiled down and set in blocks with nothing removed, which is where the salt-mineral edge comes from.",
@@ -599,7 +599,7 @@ fr:"Les blocs ne se dissolvent pas seuls : concassez-les dans un sac ou râpez-l
 pairs:["pork","ginger","peanut","kinako","soy-sauce","sweet-potato"],
 svg:'<path class="f3 sf" d="M22 48l16-16 20 4 4 20-14 14-20-2z"/><path class="f2 sf" d="M58 56l12-8 8 12-6 14-14 2z"/><path class="s" d="M32 46l14 6-6 14"/>'},
 
-{id:"orange-blossom-honey",cat:"sweet",name:{en:"Orange blossom honey",fr:"Miel de fleur d’oranger"},latin:"Citrus sinensis",
+{id:"orange-blossom-honey",cat:"sweet",price:2,pk:"12–22 €/kg",name:{en:"Orange blossom honey",fr:"Miel de fleur d’oranger"},latin:"Citrus sinensis",
 origin:{en:"Citrus groves of Spain, Mexico and Florida",fr:"Vergers d’agrumes d’Espagne, du Mexique et de Floride"},season:[3,4,5],
 flavor:["floral","citrus","delicate"],
 story:{en:"The perfume in the jar is neroli, the same aromatic the blossom gives to perfumery, and one of the few that survives into honey intact. Bees and citrus are not always allies: growers of seedless mandarins have gone to law to keep hives at a distance, since pollination puts pips back in the fruit.",
@@ -609,7 +609,7 @@ fr:"Traitez-le en aromate plutôt qu’en sucrant : incorporez-le hors du feu, e
 pairs:["almond","orange-blossom-water","pistachio","ricotta","yogurt","fig","mint"],
 svg:'<path class="f1 sf" d="M42 26h12v11l10 14v25a5 5 0 0 1-5 5H37a5 5 0 0 1-5-5V51l10-14z"/><path class="f3 sf" d="M40 19h16v7H40z"/><circle class="f2 sf" cx="70" cy="32" r="8"/><circle class="dot" cx="70" cy="32" r="2.5"/>'},
 
-{id:"orgeat-syrup",cat:"sweet",name:{en:"Orgeat syrup",fr:"Sirop d'orgeat"},latin:"Prunus dulcis",
+{id:"orgeat-syrup",cat:"sweet",price:2,pk:"8–18 €/L",name:{en:"Orgeat syrup",fr:"Sirop d'orgeat"},latin:"Prunus dulcis",
 origin:{en:"Southern France",fr:"Midi de la France"},season:[],
 flavor:["sweet","nutty","floral","creamy"],
 story:{en:"The name comes from orge, barley: orgeat began as a barley emulsion, and almonds only replaced the grain in the eighteenth century while the word stayed where it was. It survives today largely because of a California tiki bar in the 1940s, which put it in the Mai Tai and kept a French barley drink in business a continent away.",
@@ -619,7 +619,7 @@ fr:"C'est une émulsion et non un sirop : ne le portez jamais à ébullition, et
 pairs:["lime","dark-rum","orange-blossom-water","pineapple","mint","coffee"],
 svg:'<path class="f2 sf" d="M40 32h16v8q12 8 12 22v14q0 4-4 4H32q-4 0-4-4V62q0-14 12-22z"/><path class="f1 sf" d="M39 23h18v10H39z"/><path class="s" d="M30 58q9 5 18 0t18 0"/><circle class="dot" cx="42" cy="68" r="2"/><circle class="dot" cx="55" cy="71" r="2"/>'},
 
-{id:"palm-sugar",cat:"sweet",name:{en:"Palm sugar",fr:"Sucre de palme"},latin:"Borassus flabellifer",
+{id:"palm-sugar",cat:"sweet",price:1,pk:"6–14 €/kg",name:{en:"Palm sugar",fr:"Sucre de palme"},latin:"Borassus flabellifer",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
 flavor:["sweet","toasty","earthy","floral"],
 story:{en:"Tapped from the flower stalk of a palm, not from any fruit — a climber cuts the stem and hangs a pot beneath it every morning. The sap is boiled the same day, because it ferments within hours in tropical heat.",
@@ -629,7 +629,7 @@ fr:"Il sucre bien moins que le sucre blanc et tire vers le salé. Ne le substitu
 pairs:["fish-sauce","lime","chili","ginger","coconut-milk","lemongrass","garlic","peanut"],
 svg:'<path class="f2 sf" d="M34 66q0-16 14-16t14 16q-14 8-28 0z"/><path class="s" d="M34 60q14 6 28 0"/>'},
 
-{id:"persipan",cat:"sweet",rare:true,name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
+{id:"persipan",cat:"sweet",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
 origin:{en:"German and Austrian bakeries",fr:"Boulangeries d'Allemagne et d'Autriche"},season:[],
 flavor:["bitter","sweet","nutty"],
 story:{en:"German food law defines persipan as a paste of debittered apricot or peach kernels, and requires a marker to be stirred into the raw paste — a trace of starch — so that a laboratory can tell it from marzipan inside a finished cake. The rule exists because the paste began as the cheap stand-in during almond shortages, and was written down precisely to stop it being sold as the thing it replaced.",
@@ -639,7 +639,7 @@ fr:"Plus vif et moins sucré que le massepain, il tient sous une garniture lourd
 pairs:["apricot","dark-rum","raisin","cinnamon","butter","dark-chocolate"],
 svg:'<path class="f1 sf" d="M32 40h28q8 0 8 14t-8 14H32q-8 0-8-14t8-14z"/><ellipse class="f2 sf" cx="32" cy="54" rx="8" ry="14"/><path class="f3 sf" d="M66 66q10 0 10 8t-10 8q-8-3-8-8t8-8z"/><path class="s" d="M59 74h16"/>'},
 
-{id:"pistachio-paste",cat:"sweet",luxe:true,name:{en:"Pistachio paste",fr:"Pâte de pistache"},latin:"Pistacia vera",
+{id:"pistachio-paste",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Pistachio paste",fr:"Pâte de pistache"},latin:"Pistacia vera",
 origin:{en:"Pastry kitchens, Sicily and France",fr:"Pâtisseries, Sicile et France"},season:[],
 flavor:["nutty","rich","creamy","resinous"],
 story:{en:"Pure ground kernel is a dull khaki-olive; the bright green on most shelves is dye, and often almond making up part of the weight. That matters beyond colour — a cut paste carries less fat, so a ganache built on it sets harder and a cream splits sooner.",
@@ -649,7 +649,7 @@ fr:"Comptez-la comme une matière grasse, pas comme un arôme : à près de la m
 pairs:["bronte-pistachio","white-chocolate","cream","butter","cherry","ricotta"],
 svg:'<path class="f2 sf" d="M34 44h28v28q0 4-4 4H38q-4 0-4-4z"/><path class="f1 sf" d="M32 36h32v8H32z"/><path class="f3 sf" d="M36 56h24v16q0 4-4 4H40q-4 0-4-4z"/><path class="s" d="M58 40l10-12"/><path class="f1 sf" d="M66 26l6-6 4 4-6 6z"/>'},
 
-{id:"praline-paste",cat:"sweet",name:{en:"Praline paste",fr:"Praliné"},latin:"Corylus avellana",
+{id:"praline-paste",cat:"sweet",price:2,pk:"20–40 €/kg",name:{en:"Praline paste",fr:"Praliné"},latin:"Corylus avellana",
 origin:{en:"Montargis and Lyon, France",fr:"Montargis et Lyon"},season:[],
 flavor:["nutty","toasty","rich"],
 story:{en:"The name belongs to a seventeenth-century marshal, du Plessis-Praslin, whose cook is credited — the story goes — with dropping almonds into boiling sugar at Montargis. The paste came much later, when someone ground the cooled sweets, and it is that grinding rather than the caramel that made it a pastry ingredient.",
@@ -659,7 +659,7 @@ fr:"Il se sépare dans le seau comme une purée d’oléagineux : réincorporez 
 pairs:["milk-chocolate","dark-chocolate","hazelnut","cream","coffee","paillete-feuilletine"],
 svg:'<ellipse class="f1 sf" cx="48" cy="62" rx="26" ry="14"/><path class="s" d="M32 62q16 8 32 0"/><path class="f2 sf" d="M48 22q11 0 11 12t-11 16q-11-4-11-16t11-12z"/><path class="f3 sf" d="M43 19h10v4H43z"/><path class="s" d="M44 30q4 4 8 0"/>'},
 
-{id:"pate-de-coing",cat:"sweet",name:{en:"Quince paste",fr:"Pâte de coing"},latin:"Cydonia oblonga",
+{id:"pate-de-coing",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Quince paste",fr:"Pâte de coing"},latin:"Cydonia oblonga",
 origin:{en:"Iberian peninsula",fr:"Péninsule Ibérique"},season:[],
 flavor:["floral","sweet","tangy","honeyed"],
 story:{en:"Quince paste is the original marmalade: Portuguese marmelada, from marmelo for quince, meant a firm sliceable block, and English cooks only carried the word over to spoonable citrus preserve in the eighteenth century. Quince holds enough of its own pectin to set with nothing added, which is why the block cuts clean.",
@@ -669,7 +669,7 @@ fr:"Cuisez la pulpe à poids égal de sucre, à feu doux et en remuant, jusqu’
 pairs:["manchego","idiazabal","walnut","almond","blue-cheese","olive-oil","black-pepper"],
 svg:'<path class="f3 sf" d="M24 40h30v30H24z"/><path class="f2 sf" d="M24 40l8-8h30l-8 8z"/><path class="f1 sf" d="M54 32h8v30l-8 8z"/><path class="f2 sf" d="M66 44l6 2-4 26-6-2z"/>'},
 
-{id:"rapadura",cat:"sweet",name:{en:"Rapadura",fr:"Rapadura"},latin:"Saccharum officinarum",
+{id:"rapadura",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Rapadura",fr:"Rapadura"},latin:"Saccharum officinarum",
 origin:{en:"Brazil & Latin America",fr:"Brésil & Amérique latine"},season:[],
 flavor:["earthy","rich","sweet","smoky"],
 story:{en:"Whole cane juice boiled down and left to set in a block, then scraped — rapar means to scrape. It is called panela in Colombia, piloncillo in Mexico, jaggery in India: the same product with five names and no refining at any point.",
@@ -679,7 +679,7 @@ fr:"Elle ne se dissout pas comme le sucre blanc. Faites-la fondre d’abord dans
 pairs:["lime","coffee","cinnamon","dark-chocolate","banana","ginger","coconut-flakes","clove"],
 svg:'<path class="f1 sf" d="M32 44l32 8-4 20-32-8z"/><path class="s" d="M34 56l30 8"/>'},
 
-{id:"rapeseed-honey",cat:"sweet",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
+{id:"rapeseed-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
 origin:{en:"Oilseed fields of northern Europe",fr:"Champs de colza d’Europe du Nord"},season:[4,5],
 flavor:["sweet","mild","grassy","buttery"],
 story:{en:"Its glucose load is so high that it will set solid inside the comb if the beekeeper is slow: the frames have to come off within days of capping or the honey must be cut out rather than spun. French producers turned the defect into the product, whipping it as it crystallises to make crème de miel.",
@@ -689,7 +689,7 @@ fr:"Si un pot a figé en grain sableux, portez-le à environ 40 °C, incorporez 
 pairs:["butter","apple","cinnamon","yogurt","oats","almond","buckwheat-flour"],
 svg:'<path class="f1 sf" d="M26 44h44l-4 30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f2 sf" d="M26 44h44l-3 10q-19 6-38 0z"/><path class="s" d="M24 44h48"/><path class="f3 sf" d="M60 20l8 4-24 24-6-2z"/>'},
 
-{id:"rosemary-honey",cat:"sweet",name:{en:"Rosemary honey",fr:"Miel de romarin"},latin:"Rosmarinus officinalis",
+{id:"rosemary-honey",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Rosemary honey",fr:"Miel de romarin"},latin:"Rosmarinus officinalis",
 origin:{en:"Mediterranean garrigue",fr:"Garrigue méditerranéenne"},season:[4,5],
 flavor:["sweet","floral","delicate","resinous"],
 story:{en:"Rosemary flowers in late winter, when almost nothing else on the Mediterranean garrigue is in bloom, so hives set among it fill with a nectar barely mixed with anything else — the miel de Narbonne that French apothecaries sold under its own name for centuries. It crystallises within weeks into a paste so white that first-time buyers often suspect it has been cut with sugar.",
@@ -699,7 +699,7 @@ fr:"Sa note résineuse est volatile : au-delà de 40 °C, il ne reste qu’une d
 pairs:["goat-cheese","almond","apricot","lemon","ricotta","fig"],
 svg:'<path class="f2 sf" d="M32 48h32v22q0 6-6 6H38q-6 0-6-6z"/><path class="f1 sf" d="M30 42h36v6H30z"/><path class="s" d="M48 42V22"/><path class="s" d="M48 26l-7-5M48 26l7-5M48 32l-7-5M48 32l7-5M48 38l-6-4M48 38l6-4"/>'},
 
-{id:"ruby-chocolate",cat:"sweet",name:{en:"Ruby chocolate",fr:"Chocolat ruby"},latin:"Theobroma cacao",
+{id:"ruby-chocolate",cat:"sweet",price:2,pk:"22–40 €/kg",name:{en:"Ruby chocolate",fr:"Chocolat ruby"},latin:"Theobroma cacao",
 origin:{en:"Belgian couverture works",fr:"Chocolateries belges"},season:[],
 flavor:["sour","fruity","creamy","tangy"],
 story:{en:"Barry Callebaut launched it in Shanghai in 2017 as the first new chocolate type since white, and the colour comes from no added fruit: barely fermented beans are treated with acid, which shifts the purple pigment already sitting in the seed towards pink. The sourness and the colour are the same chemistry, which is why sustained heat dulls the pink to brown.",
@@ -709,7 +709,7 @@ fr:"Ne dépassez pas 45 °C à la fonte et tempérez vers 28-29 °C, plus bas qu
 pairs:["raspberry","yuzu","pistachio","cream","rose-water","hazelnut"],
 svg:'<path class="f2 sf" d="M22 34h30v34H22z"/><path class="f3 sf" d="M52 30h22v34H52z"/><path class="s" d="M22 51h30M37 34v34M63 30v34M52 47h22"/>'},
 
-{id:"saba",cat:"sweet",rare:true,name:{en:"Saba (cooked grape must)",fr:"Saba (moût de raisin cuit)"},latin:"Vitis vinifera (mosto cotto)",
+{id:"saba",cat:"sweet",rare:true,price:2,pk:"20–40 €/L",name:{en:"Saba (cooked grape must)",fr:"Saba (moût de raisin cuit)"},latin:"Vitis vinifera (mosto cotto)",
 origin:{en:"Emilia-Romagna & the Marche",fr:"Émilie-Romagne & les Marches"},season:[],
 flavor:["sweet","fruity","rich","honeyed"],
 story:{en:"Romans called it defrutum or sapa and boiled the must down in lead vessels, which sweetened it further and poisoned them slowly. The same reduction is the first step of traditional balsamic, but saba stops there and never sees a vinegar barrel.",
@@ -719,7 +719,7 @@ fr:"Traitez-la comme un miel, non comme un vinaigre : aucune acidité ne vient y
 pairs:["pecorino","parmesan","walnut","ricotta","fig","chestnut","pork","radicchio"],
 svg:'<path class="f3 sf" d="M34 44h26l-4 30q-1 4-5 4H43q-4 0-5-4z"/><path class="s" d="M60 48q8 2 8 8t-8 8"/><path class="f2 sf" d="M34 44l-8-6 4-4 10 6z"/><path class="s" d="M26 40q-4 8-2 18"/><circle class="dot" cx="24" cy="62" r="3"/>'},
 
-{id:"sidr-honey",cat:"sweet",luxe:true,name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
+{id:"sidr-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
 origin:{en:"Wadi Do’an, Hadhramaut",fr:"Wadi Do’an, Hadramaout"},season:[10,11],
 flavor:["sweet","rich","toasty","warm"],
 story:{en:"The sidr trees of Wadi Do’an in Hadhramaut flower for roughly three weeks a year, and hives are carried into the valleys for that window alone — which is most of the reason a kilo can pass two hundred dollars. The bloom comes twice, autumn and spring, and beekeepers rate the autumn crop the darker and denser of the two.",
@@ -729,7 +729,7 @@ fr:"Il est assez épais pour tenir la cuillère droite : réchauffez le pot dans
 pairs:["date","almond","yogurt","cardamom","tahini","walnut"],
 svg:'<path class="f3 sf" d="M42 28h12v6q12 5 12 20 0 18-18 18t-18-18q0-15 12-20z"/><path class="f1 sf" d="M38 28h20v5H38z"/><path class="s" d="M38 58q10 6 20 0"/><path class="s" d="M58 24q10-6 12-14-12 0-12 14z"/>'},
 
-{id:"sorghum-syrup",cat:"sweet",rare:true,name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
+{id:"sorghum-syrup",cat:"sweet",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
 origin:{en:"Upland American South",fr:"Sud appalachien des États-Unis"},season:[9,10],
 flavor:["sweet","tangy","earthy"],
 story:{en:"Sweet sorghum reached American farms in the 1850s and became the upland South’s own sweetener: cane pressed by a mule walking a circle, the juice boiled down that same afternoon in a long open pan. It is reduced juice and nothing else, where molasses is what is left after the sugar has been taken out — which is why sorghum stays pourable and never sets.",
@@ -739,7 +739,7 @@ fr:"Remplacez le miel volume pour volume dans une pâte, puis réduisez le bicar
 pairs:["butter","pecan","buttermilk","ginger","apple","black-pepper"],
 svg:'<path class="f2 sf" d="M34 34h24v34q0 6-6 6H40q-6 0-6-6z"/><path class="s" d="M58 44q10 2 10 10t-10 10"/><path class="f1 sf" d="M32 28h28l-4 6H36z"/><path class="s" d="M72 76V48"/><path class="f3 sf" d="M72 48q-7-2-7-10 9 0 9 10z"/>'},
 
-{id:"strawberry-tree-honey",cat:"sweet",rare:true,luxe:true,name:{en:"Strawberry-tree honey",fr:"Miel d’arbousier"},latin:"Arbutus unedo",
+{id:"strawberry-tree-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Strawberry-tree honey",fr:"Miel d’arbousier"},latin:"Arbutus unedo",
 origin:{en:"Sardinia and Corsica",fr:"Sardaigne et Corse"},season:[10,11,12],
 flavor:["bitter","herbal","woody"],
 story:{en:"The arbutus flowers from October into December, which makes this the only European honey harvested in winter — and in air so damp that Italian law raises the permitted water content for this one honey alone. The bitterness, coffee and quinine at the finish, is not a fault in it; it is the reason anyone buys it.",
@@ -749,7 +749,7 @@ fr:"Servez-le face au sel et au gras — un éclat de pecorino affiné, une tran
 pairs:["pecorino","foie-gras","walnut","ricotta","blue-cheese","chestnut","dark-chocolate"],
 svg:'<path class="f2 sf" d="M34 36h28v34a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M32 28h32v8H32z"/><circle class="f1 sf" cx="66" cy="62" r="12"/><circle class="dot" cx="62" cy="58" r="1.6"/><circle class="dot" cx="70" cy="60" r="1.6"/><circle class="dot" cx="66" cy="68" r="1.6"/>'},
 
-{id:"sunflower-honey",cat:"sweet",name:{en:"Sunflower honey",fr:"Miel de tournesol"},latin:"Helianthus annuus",
+{id:"sunflower-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Sunflower honey",fr:"Miel de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Sunflower plains of France, Spain and the Balkans",fr:"Plaines à tournesol de France, d’Espagne et des Balkans"},season:[7,8],
 flavor:["sweet","grassy","herbal","floral"],
 story:{en:"A sunflower head is hundreds of separate florets that open in a spiral from the rim inward over about a week, so one field gives the hive a long staggered flow rather than a burst. What comes out is a hard yellow honey that grains coarsely within weeks — a flaw on a breakfast table, and exactly the backbone that nougat and pain d'épices need.",
@@ -759,7 +759,7 @@ fr:"Son mordant herbacé traverse le four là où un miel d’acacia disparaîtr
 pairs:["rye-flour","orange","anise","ginger","almond","clove","hazelnut"],
 svg:'<path class="f1 sf" d="M30 34l9-14h18l9 14-9 14H39z"/><path class="f2 sf" d="M39 48h18l9 14-9 14H39l-9-14z"/><path class="s" d="M39 20l9 14 9-14M39 48l9 14 9-14"/><path class="f3 sf" d="M48 76q4 6 4 9t-4 3-4-3 4-9z"/>'},
 
-{id:"thyme-honey",cat:"sweet",luxe:true,name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
+{id:"thyme-honey",cat:"sweet",price:2,pk:"20–40 €/kg",name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
 origin:{en:"Attica and Provence",fr:"Attique et Provence"},season:[7,8],
 flavor:["sweet","herbal","warm","pungent"],
 story:{en:"Thyme honey from Mount Hymettus was the honey of ancient Athens, sold and taxed under its own name, with the hillsides above the city kept for hives. What sets it apart is phenolic rather than floral: it reads almost savoury, which is why Greek and Provençal kitchens put it on cheese and lamb rather than on cake.",
@@ -769,7 +769,7 @@ fr:"Employez-le là où vous prendriez un aigre-doux : une cuillerée montée au
 pairs:["feta","lamb","walnut","yogurt","olive-oil","manouri"],
 svg:'<path class="s" d="M40 16v18"/><path class="f2 sf" d="M40 34q-8 0-8 9t8 15q8-6 8-15t-8-9z"/><path class="s" d="M32 42h16M33 48h14M35 54h10"/><path class="s" d="M62 74V46"/><path class="s" d="M62 52q6-3 8-8M62 60q6-3 8-8M62 68q6-3 8-8"/>'},
 
-{id:"tupelo-honey",cat:"sweet",rare:true,name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
+{id:"tupelo-honey",cat:"sweet",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
 origin:{en:"Apalachicola river swamps, Florida",fr:"Marais de l’Apalachicola, Floride"},season:[4,5],
 flavor:["sweet","floral","delicate","fruity"],
 story:{en:"The white tupelo blooms for two or three weeks in April along one Florida river system, and beekeepers barge their hives onto platforms in the swamp to reach it; a wet fortnight cancels the year. The hives are stripped of every other frame first, because a single day of a different nectar shows up in the jar.",
@@ -779,7 +779,7 @@ fr:"C’est le miel des usages que la cristallisation ruinerait : glaçage miroi
 pairs:["goat-cheese","peach","pecan","buttermilk","lemon","vanilla","butter"],
 svg:'<path class="s" d="M48 16v16"/><path class="f1 sf" d="M48 32q14 1 14 15t-14 21q-14-7-14-21t14-15z"/><path class="s" d="M34 42h28M35 51h26M38 60h20"/><path class="f2 sf" d="M48 70q5 7 5 11t-5 4-5-4 5-11z"/>'},
 
-{id:"vergeoise",cat:"sweet",name:{en:"Vergeoise",fr:"Vergeoise"},latin:"Saccharum — sucre de betterave",
+{id:"vergeoise",cat:"sweet",price:1,pk:"3–6 €/kg",name:{en:"Vergeoise",fr:"Vergeoise"},latin:"Saccharum — sucre de betterave",
 origin:{en:"Northern France & Belgium",fr:"Nord de la France & Belgique"},season:[],
 flavor:["sweet","toasty","rich","warm"],
 story:{en:"A beet sugar, not a cane one — which is what separates it from cassonade and why the north of France insists on it. Speculoos, tarte au sucre and gaufres de Lille are all built on vergeoise brune and taste wrong without it.",
@@ -789,7 +789,7 @@ fr:"Blonde et brune ne sont pas interchangeables. La brune est caramélisée deu
 pairs:["butter","cinnamon","flour-t55","cream","egg","apple","clove","dark-chocolate"],
 svg:'<path class="f2 sf" d="M34 68V50h28v18z"/><path class="s" d="M34 60h28"/><circle class="dot" cx="44" cy="55" r="1.4"/><circle class="dot" cx="54" cy="64" r="1.4"/>'},
 
-{id:"wasanbon",cat:"sweet",rare:true,luxe:true,name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
+{id:"wasanbon",cat:"sweet",rare:true,price:3,pk:"100–250 €/kg",name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
 origin:{en:"Tokushima and Kagawa, Shikoku",fr:"Tokushima et Kagawa, Shikoku"},season:[],
 flavor:["sweet","delicate","mild"],
 story:{en:"Made in Tokushima and Kagawa from a thin local cane called chikutō, it takes about twenty days: the sugar is crystallised slowly in wooden tubs, then kneaded by hand with a little water on trays, up to five times, to press the molasses out. Sanbon means three trays, after the kneadings the old method counted — the process now runs longer than its own name admits.",
@@ -799,7 +799,7 @@ fr:"Son cristal est assez fin pour fondre sur la langue, et la chaleur en suppri
 pairs:["matcha","adzuki","kinako","black-sesame","yuzu","sencha"],
 svg:'<circle class="f1 sf" cx="48" cy="34" r="9"/><circle class="f1 sf" cx="64" cy="46" r="9"/><circle class="f1 sf" cx="58" cy="64" r="9"/><circle class="f1 sf" cx="38" cy="64" r="9"/><circle class="f1 sf" cx="32" cy="46" r="9"/><circle class="f3 sf" cx="48" cy="52" r="6"/>'},
 
-{id:"white-chocolate",cat:"sweet",name:{en:"White chocolate",fr:"Chocolat blanc"},latin:"Theobroma cacao — beurre de cacao",
+{id:"white-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"White chocolate",fr:"Chocolat blanc"},latin:"Theobroma cacao — beurre de cacao",
 origin:{en:"Switzerland, 1930s",fr:"Suisse, années 1930"},season:[],
 flavor:["sweet","creamy","milky","buttery"],
 story:{en:"Cocoa butter, sugar and milk with no cocoa solids at all — which is why purists argue it is not chocolate. It was invented to use up surplus cocoa butter left over from making cocoa powder, and it is a by-product that became a product.",
@@ -809,7 +809,7 @@ fr:"Vérifiez que l’étiquette dit beurre de cacao et non matière grasse vég
 pairs:["raspberry","passion-fruit","pistachio","lime","cardamom","matcha","vanilla","timut-pepper"],
 svg:'<path class="f3 sf" d="M28 44h40v24H28z"/><path class="s" d="M28 56h40M42 44v24M56 44v24"/>'},
 
-{id:"sugar",cat:"sweet",name:{en:"White sugar",fr:"Sucre blanc"},latin:"Saccharum officinarum",
+{id:"sugar",cat:"sweet",price:1,pk:"1–2 €/kg",name:{en:"White sugar",fr:"Sucre blanc"},latin:"Saccharum officinarum",
 origin:{en:"New Guinea, via India",fr:"Nouvelle-Guinée, via l’Inde"},season:[],
 flavor:["sweet","mild","delicate","toasty"],
 story:{en:"Cane was chewed in New Guinea nine thousand years ago; India learned to crystallise the juice, and the Sanskrit sharkara became sucre, sugar, azúcar. For four centuries it was the engine of the Atlantic slave trade, which is the part the word does not carry.",
@@ -819,7 +819,7 @@ fr:"Il fait bien plus que sucrer — il retient l’humidité, colore et freine 
 pairs:["butter","egg","vanilla","flour-t45","lemon","cream","dark-chocolate","cinnamon"],
 svg:'<path class="f3 sf" d="M34 70V50h28v20z"/><path class="s" d="M34 58h28M44 50v20M54 50v20"/>'},
 
-{id:"yacon-syrup",cat:"sweet",rare:true,name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
+{id:"yacon-syrup",cat:"sweet",rare:true,price:2,pk:"35–70 €/kg",name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
 origin:{en:"Andes of Peru and Bolivia",fr:"Andes du Pérou et de Bolivie"},season:[],
 flavor:["sweet","earthy","fruity"],
 story:{en:"The root stores its sugar as fructo-oligosaccharides rather than starch or sucrose — chains the human gut cannot break down, so most of the sweetness passes straight through. Andean growers ate the root raw as fruit long before anyone reduced its juice; French still calls the plant poire de terre, the ground pear.",
