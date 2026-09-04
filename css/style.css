@@ -19,6 +19,8 @@
   --warn-line:#c8a869;
   --ring:#ececea;
   --on-accent:#ffffff;
+  --head-bg:rgba(250,250,250,.92);
+  --scrim:rgba(28,28,26,.45);
   --shadow:0 1px 2px rgba(30,30,28,.05);
   --shadow-lift:0 10px 30px rgba(30,30,28,.10);
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
@@ -46,6 +48,8 @@
   --warn:#d1b276;
   --warn-line:#7a6435;
   --ring:#33332f;
+  --head-bg:rgba(20,20,19,.92);
+  --scrim:rgba(0,0,0,.6);
   --shadow:0 1px 2px rgba(0,0,0,.35);
   --shadow-lift:0 10px 30px rgba(0,0,0,.45);
 }
@@ -57,6 +61,7 @@
     --art-1:#2f2f2c; --art-2:#3a3a36; --art-3:#4a4a45; --art-line:#b8b5ae;
     --warn:#d1b276; --warn-line:#7a6435; --ring:#33332f;
     --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lift:0 10px 30px rgba(0,0,0,.45);
+    --head-bg:rgba(20,20,19,.92); --scrim:rgba(0,0,0,.6);
   }
 }
 *{box-sizing:border-box}
@@ -71,7 +76,7 @@ input,select{font:inherit}
 .site-head{
   position:sticky;top:0;z-index:40;
   display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  padding:14px 28px;background:rgba(250,250,250,.92);backdrop-filter:blur(8px);
+  padding:14px 28px;background:var(--head-bg);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
 }
 .brand{display:flex;align-items:center;gap:14px}
@@ -298,14 +303,14 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 
 /* ---------- modal ---------- */
 .overlay{
-  position:fixed;inset:0;background:rgba(28,28,26,.45);z-index:60;
+  position:fixed;inset:0;background:var(--scrim);z-index:60;
   display:flex;align-items:flex-start;justify-content:center;
   padding:40px 16px;overflow-y:auto;
 }
 .overlay[hidden]{display:none}
 .modal{
   background:var(--card);border-radius:22px;max-width:720px;width:100%;
-  box-shadow:0 24px 60px rgba(20,20,18,.25);
+  box-shadow:var(--shadow-lift);
   animation:pop .18s ease;
 }
 @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
