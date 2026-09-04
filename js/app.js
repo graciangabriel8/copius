@@ -528,26 +528,16 @@
     var anyWine = false;
     el("dishList").innerHTML = list.map(function (d) {
       if (d.wines && d.wines.length) anyWine = true;
-      var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
-        return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + esc(name(byId[i])) + "</button>";
-      }).join("");
-      var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
-        return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' + esc(techById[x].name[state.lang]) + "</button>";
-      }).join("");
-      var wines = (d.wines || []).map(function (w) {
-        return '<li><span class="w-app">' + esc(w.appellation) + "</span>" +
-          ' <span class="w-style">' + esc(w.style) + "</span>" +
-          ' <span class="w-band">' + "€".repeat(w.band || 2) + "</span>" +
-          '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
-      }).join("");
-      return '<article class="dish-card">' +
-        '<p class="dish-meta">' + esc(d.region[state.lang]) + " · " + esc(d.era[state.lang]) + "</p>" +
+      var top = d.ingredients.filter(function (i) { return byId[i]; }).slice(0, 4)
+        .map(function (i) { return esc(name(byId[i])); }).join(" · ");
+      return '<article class="dish-card" data-dish="' + esc(d.id) + '" tabindex="0" role="button">' +
+        '<p class="dish-meta">' + esc(d.region[state.lang]) + "</p>" +
         "<h3>" + esc(d.name[state.lang]) + "</h3>" +
+        '<p class="dish-era">' + esc(d.era[state.lang]) + "</p>" +
         '<p class="dish-sum">' + esc(d.summary[state.lang]) + "</p>" +
-        '<h4>' + esc(t.dishBalance) + "</h4><p class=\"dish-balance\">" + esc(d.balance[state.lang]) + "</p>" +
-        (ings ? "<h4>" + esc(t.dishIngredients) + '</h4><div class="chip-row">' + ings + "</div>" : "") +
-        (techs ? "<h4>" + esc(t.dishTechniques) + '</h4><div class="chip-row">' + techs + "</div>" : "") +
-        (wines ? "<h4>" + esc(t.dishWines) + '</h4><ul class="wine-list">' + wines + "</ul>" : "") +
+        '<p class="dish-foot"><span class="dish-ings">' + top + "</span>" +
+        '<span class="dish-counts">' + d.techniques.length + " · " +
+          (d.wines ? d.wines.length : 0) + " \u25cf</span></p>" +
         "</article>";
     }).join("");
     /* loi Evin, CSP art. L3323-4: the health message is mandatory wherever a
@@ -679,6 +669,7 @@
   }
   function closeModal() {
     modalStack = [];
+    openDishId = null;
     el("overlay").hidden = true;
     document.body.style.overflow = "";
     if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
@@ -689,6 +680,42 @@
     if (prev) { renderModal(prev); if (history.replaceState) history.replaceState(null, "", "#" + prev); }
     else closeModal();
   }
+
+  function renderDishModal(id) {
+    var t = T(), d = dishById[id];
+    if (!d) return;
+    var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
+      return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + esc(name(byId[i])) + "</button>";
+    }).join("");
+    var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
+      return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' + esc(techById[x].name[state.lang]) + "</button>";
+    }).join("");
+    var wines = (d.wines || []).map(function (w) {
+      return '<li><span class="w-app">' + esc(w.appellation) + "</span>" +
+        ' <span class="w-band">' + "\u20ac".repeat(w.band || 2) + "</span>" +
+        '<span class="w-style">' + esc(w.style) + "</span>" +
+        '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
+    }).join("");
+    el("modalBody").innerHTML =
+      '<div class="dm-head"><p class="dish-meta">' + esc(d.region[state.lang]) + "</p>" +
+      "<h2>" + esc(d.name[state.lang]) + "</h2>" +
+      '<p class="dish-era">' + esc(d.era[state.lang]) + "</p></div>" +
+      '<p class="dm-sum">' + esc(d.summary[state.lang]) + "</p>" +
+      '<div class="m-note"><h3>' + esc(t.dishBalance) + "</h3><p>" + esc(d.balance[state.lang]) + "</p></div>" +
+      (ings ? "<h3>" + esc(t.dishIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
+      (techs ? "<h3>" + esc(t.dishTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "") +
+      (wines ? "<h3>" + esc(t.dishWines) + '</h3><ul class="wine-list">' + wines + "</ul>" +
+        '<p class="alcohol-warn">' + esc(t.alcoholWarning) + "</p>" : "");
+    el("backBtn").hidden = true;
+  }
+  function openDish(id) {
+    if (!dishById[id]) return;
+    openDishId = id;
+    renderDishModal(id);
+    el("overlay").hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  var openDishId = null;
 
   /* ---------- pairing lab ---------- */
   function fillLabSelects() {
@@ -877,6 +904,7 @@
     renderAll();
     var current = modalStack[modalStack.length - 1];
     if (current && !el("overlay").hidden) renderModal(current);
+    else if (openDishId && !el("overlay").hidden) renderDishModal(openDishId);
   }
 
   /* ---------- events ---------- */
@@ -967,9 +995,19 @@
   el("dishRegion").addEventListener("change", function (e) { state.dishRegion = e.target.value; renderDishes(); });
   /* a dish's ingredient chip opens the ingredient; a technique chip jumps to it */
   el("dishList").addEventListener("click", function (e) {
+    var card = e.target.closest("[data-dish]");
+    if (card) { openDish(card.getAttribute("data-dish")); return; }
+  });
+  el("dishList").addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var card = e.target.closest("[data-dish]");
+    if (card) { e.preventDefault(); openDish(card.getAttribute("data-dish")); }
+  });
+  el("modalBody").addEventListener("click", function (e) {
     var o = e.target.closest("[data-open]"), k = e.target.closest("[data-tech]");
-    if (o) { openModal(o.getAttribute("data-open")); return; }
+    if (o && openDishId) { closeModal(); openModal(o.getAttribute("data-open")); return; }
     if (k) {
+      closeModal();
       setView("tech");
       state.techGroup = "all"; state.techQ = ""; renderTech();
       var node = el("t-" + k.getAttribute("data-tech"));
