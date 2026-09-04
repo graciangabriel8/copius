@@ -865,7 +865,10 @@
     renderLabResult();
     renderTrios();
     renderCreations();
-    if (state.view === "chefs") renderChefs();
+    /* every non-atlas view has to re-render too, or a language switch leaves it
+       in the old language — keyed off state.view so a new view cannot be missed */
+    var render = { chefs: renderChefs, tech: renderTech, dishes: renderDishes };
+    if (render[state.view]) render[state.view]();
   }
 
   function setLang(l) {
