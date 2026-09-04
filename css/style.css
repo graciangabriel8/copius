@@ -510,12 +510,15 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .price-hint{font-size:11px;color:var(--ink-3)}
 
 /* ---------- techniques & dishes ---------- */
-.tech-list{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));padding:0 20px 40px}
-.tech-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.tech-list{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));padding:0 20px 40px}
+.tech-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 18px 14px;
+  cursor:pointer;min-height:150px;display:flex;flex-direction:column;transition:border-color .12s,transform .12s}
+.tech-card:hover,.tech-card:focus-visible{border-color:var(--ink-3);transform:translateY(-1px);outline:none}
 .tech-card.flash{outline:2px solid var(--ink-2);outline-offset:2px}
 .tech-group{margin:0;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
-.tech-card h3{margin:6px 0 4px;font-size:21px}
-.tech-sum{margin:0 0 10px;color:var(--ink-2);font-size:14px;line-height:1.55}
+.tech-card h3{margin:6px 0 6px;font-size:20px;line-height:1.15}
+.tech-sum{margin:0;color:var(--ink-2);font-size:13.5px;line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .tech-body h4{margin:12px 0 4px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
 .tech-body h4.warn{color:#8a6d3b}
 .tech-body p{margin:0;font-size:13.5px;line-height:1.6}
@@ -552,3 +555,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .w-style{display:block;color:var(--ink-3);font-style:italic;font-size:12.5px}
 .w-why{display:block;color:var(--ink-2);margin-top:2px}
 .alcohol-warn{display:block;margin:14px 0 0;font-size:10.5px;color:var(--ink-3);line-height:1.5}
+
+.tm-body{margin:0 0 4px;font-size:14px;line-height:1.65;color:var(--ink-1)}
+.m-note.warn{border-left-color:#c8a869}
+.m-note.warn h3{color:#8a6d3b}

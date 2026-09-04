@@ -494,15 +494,40 @@
     });
     el("techCount").textContent = t.techCountTpl.replace("{n}", list.length);
     el("techList").innerHTML = list.map(function (x) {
-      return '<article class="tech-card" id="t-' + esc(x.id) + '">' +
+      return '<article class="tech-card" id="t-' + esc(x.id) + '" data-tech-card="' + esc(x.id) + '" tabindex="0" role="button">' +
         '<p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
         "<h3>" + esc(x.name[state.lang]) + "</h3>" +
         '<p class="tech-sum">' + esc(x.summary[state.lang]) + "</p>" +
-        '<div class="tech-body"><h4>' + esc(t.techHow) + "</h4><p>" + esc(x.how[state.lang]) + "</p>" +
-        '<h4 class="warn">' + esc(t.techWatch) + "</h4><p>" + esc(x.watch[state.lang]) + "</p></div>" +
         "</article>";
     }).join("");
   }
+
+  function renderTechModal(id) {
+    var t = T(), x = techById[id];
+    if (!x) return;
+    var used = DISHES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
+      .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
+    el("modalBody").innerHTML =
+      '<div class="dm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
+      "<h2>" + esc(x.name[state.lang]) + "</h2>" +
+      '<p class="dish-era">' + esc(state.lang === "en" ? x.name.fr : x.name.en) + "</p></div>" +
+      '<p class="dm-sum">' + esc(x.summary[state.lang]) + "</p>" +
+      "<h3>" + esc(t.techHow) + '</h3><p class="tm-body">' + esc(x.how[state.lang]) + "</p>" +
+      '<div class="m-note warn"><h3>' + esc(t.techWatch) + "</h3><p>" + esc(x.watch[state.lang]) + "</p></div>" +
+      (used.length ? "<h3>" + esc(t.techUsedIn) + '</h3><div class="chip-row">' +
+        used.map(function (d) {
+          return '<button type="button" class="chip-link" data-dishlink="' + esc(d.id) + '">' + esc(d.name[state.lang]) + "</button>";
+        }).join("") + "</div>" : "");
+    el("backBtn").hidden = true;
+  }
+  function openTech(id) {
+    if (!techById[id]) return;
+    openTechId = id; openDishId = null;
+    renderTechModal(id);
+    el("overlay").hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  var openTechId = null;
 
   /* ---------- dishes ---------- */
   function renderDishes() {
@@ -670,6 +695,7 @@
   function closeModal() {
     modalStack = [];
     openDishId = null;
+    openTechId = null;
     el("overlay").hidden = true;
     document.body.style.overflow = "";
     if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
@@ -905,6 +931,7 @@
     var current = modalStack[modalStack.length - 1];
     if (current && !el("overlay").hidden) renderModal(current);
     else if (openDishId && !el("overlay").hidden) renderDishModal(openDishId);
+    else if (openTechId && !el("overlay").hidden) renderTechModal(openTechId);
   }
 
   /* ---------- events ---------- */
@@ -1004,15 +1031,21 @@
     if (card) { e.preventDefault(); openDish(card.getAttribute("data-dish")); }
   });
   el("modalBody").addEventListener("click", function (e) {
-    var o = e.target.closest("[data-open]"), k = e.target.closest("[data-tech]");
-    if (o && openDishId) { closeModal(); openModal(o.getAttribute("data-open")); return; }
-    if (k) {
-      closeModal();
-      setView("tech");
-      state.techGroup = "all"; state.techQ = ""; renderTech();
-      var node = el("t-" + k.getAttribute("data-tech"));
-      if (node) { node.scrollIntoView({ block: "center" }); node.classList.add("flash"); setTimeout(function () { node.classList.remove("flash"); }, 1200); }
-    }
+    var o = e.target.closest("[data-open]"),
+        k = e.target.closest("[data-tech]"),
+        d = e.target.closest("[data-dishlink]");
+    if (o) { closeModal(); openModal(o.getAttribute("data-open")); return; }
+    if (k) { openTech(k.getAttribute("data-tech")); return; }
+    if (d) { openDish(d.getAttribute("data-dishlink")); }
+  });
+  el("techList").addEventListener("click", function (e) {
+    var c = e.target.closest("[data-tech-card]");
+    if (c) openTech(c.getAttribute("data-tech-card"));
+  });
+  el("techList").addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var c = e.target.closest("[data-tech-card]");
+    if (c) { e.preventDefault(); openTech(c.getAttribute("data-tech-card")); }
   });
   el("chefSearch").addEventListener("input", function (e) { state.chefQ = e.target.value; renderChefs(); });
   ["chefGender","chefStars","chefCountry","chefEra"].forEach(function (id) {
