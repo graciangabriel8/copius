@@ -143,9 +143,9 @@
 
   function monogramSvg(ch, label) {
     return '<svg class="art" viewBox="0 0 96 96" role="img" aria-label="' + esc(label || ch) + '">' +
-      '<circle cx="48" cy="50" r="42" fill="#f1f1f0"/>' +
+      '<circle cx="48" cy="50" r="42" fill="var(--plate)"/>' +
       '<circle cx="48" cy="50" r="32" fill="none" stroke="#c9c9c4" stroke-width="1.6" stroke-dasharray="4 5"/>' +
-      '<text x="48" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#6a6a64">' + esc(ch) + "</text></svg>";
+      '<text x="48" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="var(--ink-3)">' + esc(ch) + "</text></svg>";
   }
   function monogram(i) {
     return monogramSvg((name(i) || "?").trim().charAt(0).toUpperCase(), name(i));
@@ -156,7 +156,7 @@
     if (PHOTOS.has(i.id)) return '<img class="' + (cls || "") + '" src="img/' + i.id + '.jpg" alt="' + esc(name(i)) + '" loading="lazy">';
     if (i.custom) return monogram(i);
     return '<svg class="art" viewBox="0 0 96 96" role="img" aria-label="' + esc(name(i)) + '">' +
-      '<circle cx="48" cy="50" r="42" fill="#f1f1f0"/>' + i.svg + "</svg>";
+      '<circle cx="48" cy="50" r="42" fill="var(--plate)"/>' + i.svg + "</svg>";
   }
 
   /* Prices are French retail, in euros. The English view keeps the euro — these
@@ -935,6 +935,32 @@
   }
 
   /* ---------- events ---------- */
+  /* ---------- theme ---------- */
+  var LS_THEME = "copius-theme";
+  function currentTheme() {
+    var set = document.documentElement.getAttribute("data-theme");
+    if (set) return set;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function paintThemeBtn() {
+    var dark = currentTheme() === "dark";
+    el("themeBtn").textContent = dark ? "\u2600" : "\u263D";
+    el("themeBtn").setAttribute("aria-pressed", dark ? "true" : "false");
+    el("themeBtn").title = dark ? "Light" : "Dark";
+  }
+  el("themeBtn").addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem(LS_THEME, next); } catch (e) {}
+    paintThemeBtn();
+  });
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+      if (!document.documentElement.getAttribute("data-theme")) paintThemeBtn();
+    });
+  }
+  paintThemeBtn();
+
   el("lang-en").addEventListener("click", function () { setLang("en"); });
   el("lang-fr").addEventListener("click", function () { setLang("fr"); });
 
