@@ -635,3 +635,5 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   border-radius:999px;width:34px;height:34px;line-height:1;font-size:15px;padding:0;
   display:inline-flex;align-items:center;justify-content:center;transition:background .12s,border-color .12s}
 .theme-btn:hover{border-color:var(--ink-3);background:var(--chip)}
+
+.foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
