@@ -100,11 +100,13 @@ def caption(i):
     un = lambda s: re.sub(r"\\+(.)", r"\1", s or "")
     tags = ["#copius", "#ingredients", "#cuisine", "#gastronomie",
             "#chef", "#cooking", "#terroir", "#" + i["cat"]]
+    # A flag opens each story, so a reader scrolling past knows which paragraph
+    # is theirs without reading into it. The title line is already both languages.
     return "\n".join([
         "%s \u00b7 %s" % (i["en"], i["fr"]),
         i["latin"], "",
-        un(i["story_en"]), "",
-        un(i["story_fr"]), "",
+        "\U0001F1EC\U0001F1E7 " + un(i["story_en"]), "",
+        "\U0001F1EB\U0001F1F7 " + un(i["story_fr"]), "",
         "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
         "", " ".join(tags),
     ])
