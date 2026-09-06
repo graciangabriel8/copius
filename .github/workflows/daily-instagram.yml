@@ -24,9 +24,13 @@ jobs:
         id: pick
         run: |
           set -euo pipefail
+          # The date is pinned once and reused, so the picture and the caption
+          # cannot come from two different days if the job straddles midnight.
+          DATE="$(date -u +%F)"
           ID="$(python3 tools/make-card.py --today-id)"
           echo "id=$ID" >> "$GITHUB_OUTPUT"
-          echo "Today: $ID"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "Today: $ID ($DATE)"
           test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: sh tools/build-social.sh 400 && git add social && git commit && git push"; exit 1; }
           # warn while there is still time to rebuild
           LEFT=$(ls -1 social/*.jpg | wc -l | tr -d " ")
@@ -42,12 +46,16 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           ID: ${{ steps.pick.outputs.id }}
+          DATE: ${{ steps.pick.outputs.date }}
         run: |
           set -euo pipefail
           : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
           : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN repository secret}"
           IMG="https://copius.fr/social/$ID.jpg"
-          CAPTION="$(python3 -c 'import json,os;print(json.load(open("social/captions.json"))[os.environ["ID"]]["caption"])')"
+          # Derived here, not read from a committed copy: a change to caption()
+          # then reaches the next post without a regeneration step to forget.
+          CAPTION="$(python3 tools/make-card.py --caption "$DATE")"
+          test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
 
           # 1. container
           CREATE="$(curl -sS -X POST "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \

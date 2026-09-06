@@ -5,15 +5,23 @@ This posts that same ingredient, automatically, with no server.
 
 ## How it works
 
-1. `tools/build-social.sh` renders every ingredient to a 1080×1080 JPEG plus a
-   bilingual caption. Run it on the Mac; commit `social/`.
+1. `tools/build-social.sh` renders a rolling window of days to 1080×1080 JPEGs.
+   Run it on the Mac — the rasteriser is `qlmanage` — and commit `social/`.
 2. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
    Instagram's API requires, since it fetches the image rather than accepting an
    upload.
 3. `.github/workflows/daily-instagram.yml` runs at 08:00 UTC, works out today's
-   ingredient with the same formula the site uses, and publishes it.
+   ingredient with the same formula the site uses, and publishes it. The
+   bilingual caption is produced there and then by `make-card.py --caption`,
+   which needs nothing but Python — so an edit to the caption reaches the next
+   post without a regeneration step to forget.
 
-Nothing is generated at post time, so the daily job cannot fail on rendering.
+The picture is never generated at post time, so the daily job cannot fail on
+rendering. To read a caption before it goes out:
+
+```
+python3 tools/make-card.py --caption 2026-09-20
+```
 
 ## One-time setup (about an hour, all in a browser)
 

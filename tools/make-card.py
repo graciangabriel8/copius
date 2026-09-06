@@ -113,13 +113,14 @@ def caption(i):
 
 
 def build_all(rows, outdir):
+    """Only the pictures. The caption is derived at post time by --caption, so
+    there is no committed copy of it to drift out of step with caption()."""
     outdir.mkdir(parents=True, exist_ok=True)
-    man = {}
+    done = set()
     for i in rows:
         (outdir / (i["id"] + ".svg")).write_text(card(i))
-        man[i["id"]] = {"en": i["en"], "fr": i["fr"], "caption": caption(i)}
-    (outdir / "captions.json").write_text(json.dumps(man, ensure_ascii=False, indent=1))
-    return len(man)
+        done.add(i["id"])
+    return len(done)
 
 
 if __name__ == "__main__":
@@ -142,9 +143,14 @@ if __name__ == "__main__":
         n = build_all(rows, ROOT / "social")
         print(json.dumps({"built": n, "dir": "social/"}))
         sys.exit(0)
-    if len(sys.argv) > 1 and sys.argv[1] == "--today-id":
-        i = pick(rows, datetime.date.today())
-        print(i["id"])
+    # Both take an optional date. The poster passes the same one to each, so the
+    # picture and the caption cannot come from two different days; with no date
+    # they mean today, and answer for the entry the website is showing.
+    if len(sys.argv) > 1 and sys.argv[1] in ("--today-id", "--caption"):
+        d = (datetime.date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2
+             else datetime.date.today())
+        i = pick(rows, d)
+        print(i["id"] if sys.argv[1] == "--today-id" else caption(i))
         sys.exit(0)
     d = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date.today()
     i = pick(rows, d)
