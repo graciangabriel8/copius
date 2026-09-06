@@ -23,6 +23,22 @@ rendering. To read a caption before it goes out:
 python3 tools/make-card.py --caption 2026-09-20
 ```
 
+## Two things that cannot be undone
+
+**A published caption cannot be edited through the API.** The only writable
+field on a live post is whether comments are on: the media node documents one
+update call, `POST /{ig-media-id}`, and it takes `comment_enabled` and nothing
+else. Deleting a post needs the Facebook-Login product, which this account is
+not on. So a caption is fixed the moment `media_publish` returns, and any fix
+after that is done by hand in the app.
+
+**Which is why the loi Évin mention is in `caption()`.** CSP art. L3323-4
+requires the health message on a communication in favour of an alcoholic drink,
+and about nine days in four hundred draw one — the `cellar` family carries it by
+default, so a bottle added to that family later is covered without anyone
+remembering. `NOT_A_DRINK` in `tools/make-card.py` lists the vinegars and musts
+that sit in the same family and do not need it.
+
 ## One-time setup (about an hour, all in a browser)
 
 **You do these — never paste a token into a chat, a file, or a commit.**

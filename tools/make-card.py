@@ -94,6 +94,28 @@ def card(i):
 <text x="540" y="1002" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
 </svg>'''
 
+# loi Evin, CSP art. L3323-4: a communication in favour of an alcoholic drink
+# carries the health message. The site already does this (js/app.js), and a post
+# is the same communication. It goes in before publishing because it cannot go in
+# after: the Instagram API exposes no way to edit a published caption, so the only
+# writable field on a live post is whether comments are on.
+#
+# The cellar family IS the drinks cabinet, so it carries the mention by default
+# and the exceptions are the ones listed. A bottle added to the family later is
+# then covered without anyone having to remember this rule; a vinegar added to it
+# gets a mention it does not need, which is the harmless direction to be wrong in.
+NOT_A_DRINK = {"champagne-vinegar", "raspberry-vinegar", "shanxi-vinegar",
+               "verjus-rouge", "vincotto", "grape-must"}
+DRINKS_ELSEWHERE = {"shaoxing-wine", "hon-mirin"}
+EVIN = ("L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
+        "\u00c0 consommer avec mod\u00e9ration.")
+
+
+def is_alcohol(i):
+    return ((i["cat"] == "cellar" and i["id"] not in NOT_A_DRINK)
+            or i["id"] in DRINKS_ELSEWHERE)
+
+
 def caption(i):
     """Bilingual caption. Instagram captions carry no clickable link, so the
     site is named rather than linked."""
@@ -102,9 +124,12 @@ def caption(i):
             "#chef", "#cooking", "#terroir", "#" + i["cat"]]
     # A flag opens each story, so a reader scrolling past knows which paragraph
     # is theirs without reading into it. The title line is already both languages.
+    # High in the caption, not buried: Instagram hides everything past the first
+    # couple of lines behind "... more", and a mention nobody can see is not one.
     return "\n".join([
         "%s \u00b7 %s" % (i["en"], i["fr"]),
-        i["latin"], "",
+        i["latin"],
+    ] + ([EVIN] if is_alcohol(i) else []) + ["",
         "\U0001F1EC\U0001F1E7 " + un(i["story_en"]), "",
         "\U0001F1EB\U0001F1F7 " + un(i["story_fr"]), "",
         "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
