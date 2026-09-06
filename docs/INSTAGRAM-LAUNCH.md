@@ -12,8 +12,8 @@ On the phone: open **https://copius.fr/brand/copius-profile.png** and long-press
 
 ## 2. Bio
 
-150 characters is the limit. This fits, in French, with the count that does the
-work sitting first:
+150 characters is the limit. This fits, with the count that does the work
+sitting first:
 
 ```
 1,857 ingredients. 135 techniques. 59 dishes.
