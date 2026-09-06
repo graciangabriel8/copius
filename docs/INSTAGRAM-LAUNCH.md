@@ -35,19 +35,25 @@ the site rather than anything else.
 
 ## 3. The three pinned posts
 
-`brand/pinned/` holds them, already sliced to 1080×1440 — the size the profile
-grid crops to since January 2025, so they display uncropped.
+`brand/pinned/` holds them, sliced to 1080×1440 — the size the profile grid
+crops to since January 2025, so they display uncropped.
+
+A bordered plate: engraved corner ornaments, the wordmark, a fleuron. No
+ingredients, so it does not date as the atlas grows, and every tile carries
+something rather than one panel holding all the weight.
 
 **Post them in this order.** The grid fills newest-first, left to right, so the
 rightmost panel is published first:
 
-1. `1-right-safran.png`
-2. `2-middle-huitre.png`
-3. `3-left-truffe.png`
+1. `1-right.png`
+2. `2-middle.png`
+3. `3-left.png`
 
 Then pin all three. `assembled-preview.png` shows what they form together.
 
 Get the order wrong and the wordmark reads backwards.
+
+Captions can be empty, or a single line — the images carry it.
 
 ## 4. Automated daily posting
 
