@@ -16,13 +16,17 @@ On the phone: open **https://copius.fr/brand/copius-profile.png** and long-press
 sitting first:
 
 ```
-1,857 ingredients. 135 techniques. 59 dishes.
+1,800+ ingredients. 130+ techniques. 55+ dishes.
 An illustrated atlas of cooking — EN / FR
 contact@copius.fr
 ```
 
-108 characters. The numbers lead because they are the pitch; EN / FR stays
-because bilingual is the differentiator for the audience this is aimed at.
+111 characters. Floors, not counts — the catalogue only grows, so a floor
+stays true while an exact figure is right for about a week and wrong after.
+The live numbers belong on the site, where the stat line computes them.
+
+Raise a floor only when it has been comfortably passed, never to the current
+number: it goes stale the same day.
 
 Link field: `https://copius.fr`
 
