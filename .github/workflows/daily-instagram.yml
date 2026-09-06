@@ -30,7 +30,12 @@ jobs:
           test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: sh tools/build-social.sh 400 && git add social && git commit && git push"; exit 1; }
           # warn while there is still time to rebuild
           LEFT=$(ls -1 social/*.jpg | wc -l | tr -d " ")
-          [ "$LEFT" -lt 40 ] && echo "::warning::only $LEFT cards left in the window — rerun tools/build-social.sh"
+          # An `if`, not `[ ] && echo` — under set -e a false test makes the
+          # && chain return non-zero, and as the step's last command that
+          # fails the whole job. The warning fired by not firing.
+          if [ "$LEFT" -lt 40 ]; then
+            echo "::warning::only $LEFT cards left in the window — rerun tools/build-social.sh"
+          fi
 
       - name: Publish
         env:
