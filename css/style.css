@@ -132,8 +132,21 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 /* ---------- toolbar ---------- */
 .toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--ink-2);font-size:13.5px}
 .check{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
-.check input{accent-color:var(--accent)}
-#sort{padding:6px 10px;border-radius:10px;border:1px solid var(--border-strong);background:var(--card);color:var(--ink-2)}
+/* The native checkbox draws a white box whatever the page is, which reads as a
+   hole punched in the dark theme. Draw our own from the tokens instead. */
+.check input{appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;
+  border:1.5px solid var(--border-strong);border-radius:5px;background:var(--card);
+  display:grid;place-content:center;cursor:pointer;transition:background .12s,border-color .12s}
+.check input:checked{background:var(--accent);border-color:var(--accent)}
+.check input:checked::after{content:"";width:9px;height:5px;border:2px solid var(--on-accent);
+  border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.check input:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
+#sort,#priceBand{padding:6px 10px;border-radius:10px;border:1px solid var(--border-strong);
+  background:var(--card);color:var(--ink-2);-webkit-appearance:none;appearance:none;
+  padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+    linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 .linkish{border:0;background:none;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;padding:0}
 .linkish:hover{color:var(--ink)}
 .stats{margin-left:auto;color:var(--ink-3);font-size:12.5px}
@@ -368,7 +381,10 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   /* The brand block is ~283px of a 375px screen, so the tools need their own row;
      flex:1 1 0% made them shrink to 44px and push the language toggle off-screen. */
   .head-tools{flex:1 1 100%;min-width:0;gap:10px;justify-content:flex-start}
-  #search{flex:1 1 100px;width:auto;min-width:0}
+  /* Search shared a row with Créer and both toggles and was cut to "Recherc".
+     Give it the full width and let the buttons sit under it. */
+  .head-tools{flex-wrap:wrap}
+  #search{flex:1 1 100%;width:100%;min-width:0;order:-1}
   .brand-text p{font-size:12px}
 
   /* iOS zooms the page when a focused field is under 16px, and never zooms back. */
@@ -382,13 +398,20 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .cats::-webkit-scrollbar{display:none}
   .cats .chip{flex:none;scroll-snap-align:start;padding:11px 15px;font-size:14px}
 
+  /* Four tabs no longer fit a single pill at 375px, so "Les chefs" wrapped to
+     two lines and threw the row's baseline out. Scroll them like the families. */
+  .view-tabs{display:flex;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+             scrollbar-width:none;-ms-overflow-style:none;border-radius:22px}
+  .view-tabs::-webkit-scrollbar{display:none}
+  .view-tab{flex:none;white-space:nowrap;padding:11px 18px}
+
   /* Apple's 44px minimum touch target. */
   .lang-toggle button{padding:12px 16px}
   .create-btn{padding:11px 18px}
   .toolbar{gap:12px 18px;font-size:15px}
   .check{min-height:44px}
   .check input{width:20px;height:20px}
-  #sort{padding:11px 12px}
+  #sort,#priceBand{padding:11px 26px 11px 12px}
   .linkish{min-height:44px;display:inline-flex;align-items:center}
   main{padding:18px 16px 50px}
   /* Stacked + centred, this card was 700px tall and pushed the grid off the
@@ -530,7 +553,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   .tl-item{margin-bottom:18px}
   .tl-marker{position:static;margin-bottom:-10px;transform:translateY(-6px)}
   .tl-card{padding:16px 15px 6px}
-  .view-tab{padding:11px 20px}
+
 }
 
 .tl-stars{margin:-6px 0 11px!important;font-size:12.5px;color:var(--ink-3)}
