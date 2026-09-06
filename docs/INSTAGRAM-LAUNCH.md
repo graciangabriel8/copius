@@ -16,10 +16,13 @@ On the phone: open **https://copius.fr/brand/copius-profile.png** and long-press
 work sitting first:
 
 ```
-1 857 ingrédients, 135 techniques, 59 plats.
-Atlas illustré de la cuisine — FR / EN
+1,857 ingredients. 135 techniques. 59 dishes.
+An illustrated atlas of cooking — EN / FR
 contact@copius.fr
 ```
+
+108 characters. The numbers lead because they are the pitch; EN / FR stays
+because bilingual is the differentiator for the audience this is aimed at.
 
 Link field: `https://copius.fr`
 
