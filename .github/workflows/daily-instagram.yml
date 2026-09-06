@@ -41,7 +41,7 @@ jobs:
           set -euo pipefail
           : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
           : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN repository secret}"
-          IMG="https://graciangabriel8.github.io/copius/social/$ID.jpg"
+          IMG="https://copius.fr/social/$ID.jpg"
           CAPTION="$(python3 -c 'import json,os;print(json.load(open("social/captions.json"))[os.environ["ID"]]["caption"])')"
 
           # 1. container

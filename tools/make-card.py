@@ -105,7 +105,7 @@ def caption(i):
         i["latin"], "",
         un(i["story_en"]), "",
         un(i["story_fr"]), "",
-        "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 graciangabriel8.github.io/copius",
+        "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
         "", " ".join(tags),
     ])
 
