@@ -12,18 +12,21 @@ On the phone: open **https://copius.fr/brand/copius-profile.png** and long-press
 
 ## 2. Bio
 
-150 characters is the limit. This fits, with the count that does the work
-sitting first:
+150 characters is the limit. This fits, and each line opens with the flag of
+the language it is in:
 
 ```
-1,800+ ingredients. 130+ techniques. 55+ dishes.
-An illustrated atlas of cooking — EN / FR
-contact@copius.fr
+🇬🇧 Illustrated atlas of cooking — 1,800+ ingredients, 130+ techniques, 55+ dishes
+🇫🇷 Atlas illustré de la cuisine
+✉️ contact@copius.fr
 ```
 
-111 characters. Floors, not counts — the catalogue only grows, so a floor
+138 characters. Floors, not counts — the catalogue only grows, so a floor
 stays true while an exact figure is right for about a week and wrong after.
 The live numbers belong on the site, where the stat line computes them.
+
+The flags do the work "EN / FR" used to: a reader sees in one glance that the
+atlas is written twice, before reading a word of either language.
 
 Raise a floor only when it has been comfortably passed, never to the current
 number: it goes stale the same day.
