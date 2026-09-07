@@ -250,7 +250,8 @@ def page(i, lang, by_id, count):
 </main>
 
 <footer>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a><br>
+  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a>
+  <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" aria-label="Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
 </body>
@@ -418,6 +419,7 @@ def season_page(month, lang, rows):
 <footer>
   <a href="%(prevurl)s">← %(prev)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
   <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a>
+  <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" aria-label="Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a>
 </footer>
 </body>
 </html>
@@ -480,6 +482,11 @@ td{color:var(--ink)}
   padding:4px 12px;font-size:14px;text-decoration:none;color:var(--ink-2)}
 .pairs a:hover{border-color:var(--ink-3);color:var(--ink)}
 h2 small{color:var(--ink-3);font-size:14px}
+.ig-link{display:inline-block;vertical-align:-4px;margin-left:8px;text-decoration:none}
+.ig{width:16px;height:16px;fill:none;stroke:var(--ink-3);stroke-width:1.7}
+.ig-dot{fill:var(--ink-3);stroke:none}
+.ig-link:hover .ig{stroke:var(--ink)}
+.ig-link:hover .ig-dot{fill:var(--ink)}
 footer{padding:24px 20px 48px;margin-top:26px;border-top:1px solid var(--border);
   font-size:13.5px;color:var(--ink-3);line-height:1.9}
 h3{font:400 16px/1.3 var(--sans);margin:20px 0 7px;color:var(--ink-3);
