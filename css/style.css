@@ -73,6 +73,15 @@ input,select{font:inherit}
 ::selection{background:var(--border-strong)}
 
 /* ---------- header ---------- */
+/* Profile link. Sits in the sticky header so it is reachable without scrolling,
+   at the weight of a tool rather than a call to action. */
+.ig-link{display:inline-flex;align-items:center;padding:6px;border-radius:9px;
+  line-height:0;text-decoration:none;transition:background .12s}
+.ig-link:hover{background:var(--chip)}
+.ig{width:20px;height:20px;fill:none;stroke:var(--ink-3);stroke-width:1.8}
+.ig-dot{fill:var(--ink-3);stroke:none}
+.ig-link:hover .ig{stroke:var(--ink)}
+.ig-link:hover .ig-dot{fill:var(--ink)}
 .site-head{
   position:sticky;top:0;z-index:40;
   display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
