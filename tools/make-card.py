@@ -11,8 +11,12 @@ import re, sys, json, math, pathlib, datetime, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
+# / is the holding page now; the app that lists the data files is atlas.html.
+APP = "atlas.html"
+
+
 def load():
-    idx = (ROOT / "index.html").read_text()
+    idx = (ROOT / APP).read_text()
     rows = []
     for fn in re.findall(r'src="js/(data-[a-z-]+\.js)\?', idx):
         if "chefs" in fn or "trees" in fn:
@@ -33,6 +37,11 @@ def load():
                 "story_en": field(r'story:\{en:"((?:[^"\\]|\\.)*)"'),
                 "story_fr": field(r'story:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"'),
             })
+    # Say so rather than dividing by zero three frames later: this returned an
+    # empty list for an afternoon after the app moved off index.html, and the
+    # only symptom was a ZeroDivisionError inside pick().
+    if not rows:
+        sys.exit("no data files listed in %s — has the app moved again?" % APP)
     return rows
 
 def pick(rows, d):
