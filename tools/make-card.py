@@ -91,7 +91,8 @@ def card(i):
 <text x="540" y="716" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-style="italic" fill="#8a857d">{e(i["fr"])}</text>
 <text x="540" y="762" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" letter-spacing="3" fill="#a29c92">{e(i["latin"].upper())}</text>
 {body}
-<text x="540" y="1002" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
+<text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
+<text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
 </svg>'''
 
 # loi Evin, CSP art. L3323-4: a communication in favour of an alcoholic drink
