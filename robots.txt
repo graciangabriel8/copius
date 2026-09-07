@@ -1,0 +1,10 @@
+# Nothing is blocked here on purpose.
+#
+# atlas.html and brand/ carry <meta name="robots" content="noindex">, and a
+# crawler has to be allowed to fetch a page to read that tag — Disallow here
+# would hide the instruction and let the bare URL be listed anyway.
+#
+# social/ must stay fetchable: Instagram pulls the card from this host when the
+# daily job publishes.
+User-agent: *
+Allow: /

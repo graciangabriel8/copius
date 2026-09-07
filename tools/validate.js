@@ -24,7 +24,7 @@ g.window = {};
 (function () {
   // Load exactly what index.html loads, so the validator can never drift
   // from the app the way it did when this list was written by hand.
-  var html = read("../index.html");
+  var html = read("../atlas.html");
   var re = /src="js\/([a-z0-9.-]+\.js)\?/g, m, out = ["i18n.js", "photos.js"];
   while ((m = re.exec(html))) {
     var f = m[1];

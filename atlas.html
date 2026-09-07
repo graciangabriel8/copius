@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Copius — Ingredient Dictionary · Dictionnaire des ingrédients</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='46' fill='%23f0f0ef' stroke='%23555' stroke-width='3'/%3E%3Cpath d='M52 26C32 34 20 52 24 64c2 8 11 10 15 5 3-4 0-10-4-8 4-11 15-19 31-21Z' fill='%23d7d7d3' stroke='%23444' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='62' cy='22' r='8' fill='%23444'/%3E%3Ccircle cx='76' cy='32' r='6' fill='%23444'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css?v=59">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#fafafa">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Copius">
+
+  <script>
+    /* Applied before first paint so a dark visitor never sees a white flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem("copius-theme");
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="brand">
+    <div class="brand-mark"><svg class="brand-logo" viewBox="0 0 96 96" width="30" height="30" aria-hidden="true"><path class="bl-f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/><path class="bl-s" d="M52 24c9 4 14 11 14 20"/><circle class="bl-d" cx="62" cy="20" r="7"/><circle class="bl-d" cx="75" cy="30" r="5.5"/><circle class="bl-d" cx="52" cy="11" r="4.5"/></svg></div>
+    <div class="brand-text">
+      <h1>Copius</h1>
+      <p id="tagline"></p>
+    </div>
+  </div>
+  <div class="head-tools">
+    <input id="search" type="search" autocomplete="off">
+    <button id="createBtn" class="create-btn" type="button"></button>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button id="themeBtn" class="theme-btn" type="button" aria-label="Theme"></button>
+      <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="view-tabs" aria-label="Views">
+    <button id="tabAtlas" class="view-tab" type="button"></button>
+    <button id="tabChefs" class="view-tab" type="button"></button>
+    <button id="tabTech" class="view-tab" type="button"></button>
+    <button id="tabDishes" class="view-tab" type="button"></button>
+  </nav>
+
+  <div id="atlasView">
+  <section id="daily" class="daily"></section>
+
+  <nav id="cats" class="cats" aria-label="Families"></nav>
+
+  <div class="toolbar">
+    <label class="check"><input type="checkbox" id="seasonNow"><span id="seasonNowLbl"></span></label>
+    <label class="check"><input type="checkbox" id="favsOnly"><span id="favsOnlyLbl"></span></label>
+    <label class="check"><input type="checkbox" id="rareOnly"><span id="rareOnlyLbl"></span></label>
+    <label class="check"><input type="checkbox" id="luxeOnly"><span id="luxeOnlyLbl"></span></label>
+    <select id="priceBand" aria-label="Price"></select>
+    <select id="sort" aria-label="Sort"></select>
+    <button id="random" class="linkish" type="button"></button>
+    <span id="stats" class="stats"></span>
+  </div>
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden></p>
+
+  <section class="lab" id="lab">
+    <h2 id="labTitle"></h2>
+    <p id="labHint" class="muted"></p>
+    <div class="lab-row">
+      <select id="labA"></select>
+      <span class="lab-x" aria-hidden="true">×</span>
+      <select id="labB"></select>
+    </div>
+    <div id="labResult" class="lab-result"></div>
+  </section>
+
+  <section class="trios" id="triosSec">
+    <h2 id="triosTitle"></h2>
+    <div id="triosGrid" class="trio-grid"></div>
+  </section>
+
+  <section class="creations" id="creationsSec">
+    <h2 id="creationsTitle"></h2>
+    <p id="creationsHint" class="muted"></p>
+    <div id="creationsGrid" class="trio-grid"></div>
+  </section>
+  </div>
+
+
+  <div id="chefsView" hidden>
+    <div class="chefs-head">
+      <h2 id="chefsTitle"></h2>
+      <p id="chefsHint" class="muted"></p>
+    </div>
+    <div class="chef-filters">
+      <input id="chefSearch" type="search" autocomplete="off">
+      <select id="chefGender" aria-label="Gender"></select>
+      <select id="chefStars" aria-label="Stars"></select>
+      <select id="chefCountry" aria-label="Country"></select>
+      <select id="chefEra" aria-label="Era"></select>
+      <button id="chefReset" class="linkish" type="button"></button>
+      <span id="chefCount" class="stats"></span>
+    </div>
+    <div id="chefsTimeline" class="timeline"></div>
+  </div>
+
+  <div id="techView" hidden>
+    <div class="chefs-head">
+      <h2 id="techTitle"></h2>
+      <p id="techHint" class="muted"></p>
+    </div>
+    <div class="chef-filters">
+      <input id="techSearch" type="search" autocomplete="off">
+      <select id="techGroup" aria-label="Group"></select>
+      <span id="techCount" class="stats"></span>
+    </div>
+    <div id="techList" class="tech-list"></div>
+  </div>
+
+  <div id="dishesView" hidden>
+    <div class="chefs-head">
+      <h2 id="dishesTitle"></h2>
+      <p id="dishesHint" class="muted"></p>
+    </div>
+    <div class="chef-filters">
+      <input id="dishSearch" type="search" autocomplete="off">
+      <select id="dishRegion" aria-label="Region"></select>
+      <span id="dishCount" class="stats"></span>
+    </div>
+    <div id="dishList" class="dish-list"></div>
+    <p id="alcoholWarn" class="alcohol-warn"></p>
+  </div>
+</main>
+
+<footer class="site-foot"><span id="footNote"></span><span id="contactLine" class="foot-contact"></span><span id="disclaimer" class="foot-legal"></span></footer>
+
+<div id="createOverlay" class="overlay" hidden>
+  <div class="modal" id="createModal"></div>
+</div>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" id="modal">
+    <div class="modal-bar">
+      <button id="backBtn" class="ghost" type="button" hidden>&#8592;</button>
+      <button id="closeBtn" class="ghost" type="button" aria-label="Close / Fermer">&#10005;</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<input type="file" id="photoFile" accept="image/*" hidden>
+
+<script src="js/i18n.js?v=59"></script>
+<script src="js/photos.js?v=59"></script>
+  <script src="js/data-cellar.js?v=59"></script>
+  <script src="js/data-condiments.js?v=59"></script>
+  <script src="js/data-cuts.js?v=59"></script>
+  <script src="js/data-dairy.js?v=59"></script>
+  <script src="js/data-fats.js?v=59"></script>
+  <script src="js/data-fruits.js?v=59"></script>
+  <script src="js/data-grains.js?v=59"></script>
+  <script src="js/data-herbs.js?v=59"></script>
+  <script src="js/data-infusions.js?v=59"></script>
+  <script src="js/data-legumes.js?v=59"></script>
+  <script src="js/data-meat.js?v=59"></script>
+  <script src="js/data-mushrooms.js?v=59"></script>
+  <script src="js/data-nuts.js?v=59"></script>
+  <script src="js/data-roe.js?v=59"></script>
+  <script src="js/data-seafood.js?v=59"></script>
+  <script src="js/data-seaweed.js?v=59"></script>
+  <script src="js/data-shellfish.js?v=59"></script>
+  <script src="js/data-spices.js?v=59"></script>
+  <script src="js/data-sweet.js?v=59"></script>
+  <script src="js/data-texture.js?v=59"></script>
+  <script src="js/data-vegetables.js?v=59"></script>
+<script src="js/data-dishes.js?v=59"></script>
+  <script src="js/data-techniques.js?v=59"></script>
+  <script src="js/data-trees.js?v=59"></script>
+<script src="js/data-chefs.js?v=59"></script>
+<script src="js/trios.js?v=59"></script>
+<script src="js/trios-gastronomy.js?v=59"></script>
+<script src="js/trios-premium.js?v=59"></script>
+<script src="js/app.js?v=59"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("service-worker.js", { scope: "./" });
+  });
+}
+</script>
+</body>
+</html>

@@ -8,7 +8,7 @@ set -e
 cd "$(dirname "$0")/.."
 python3 - <<'PY'
 import pathlib, re
-p = pathlib.Path("index.html"); t = p.read_text()
+p = pathlib.Path("atlas.html"); t = p.read_text()
 cur = int(re.search(r'\?v=(\d+)', t).group(1))
 new = cur + 1
 p.write_text(re.sub(r'\?v=\d+', '?v=%d' % new, t))

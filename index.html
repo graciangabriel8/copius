@@ -3,196 +3,118 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Copius — Ingredient Dictionary · Dictionnaire des ingrédients</title>
+<title>Copius — an illustrated atlas of cooking</title>
+<meta name="description" content="An illustrated bilingual atlas of ingredients, techniques, dishes and the people who cooked them. In progress.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='46' fill='%23f0f0ef' stroke='%23555' stroke-width='3'/%3E%3Cpath d='M52 26C32 34 20 52 24 64c2 8 11 10 15 5 3-4 0-10-4-8 4-11 15-19 31-21Z' fill='%23d7d7d3' stroke='%23444' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='62' cy='22' r='8' fill='%23444'/%3E%3Ccircle cx='76' cy='32' r='6' fill='%23444'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/style.css?v=58">
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#fafafa">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Copius">
 
-  <script>
-    /* Applied before first paint so a dark visitor never sees a white flash. */
-    (function () {
-      try {
-        var t = localStorage.getItem("copius-theme");
-        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
+<style>
+  /* Self-contained on purpose: the atlas stylesheet is 100 KB of app, and this
+     page has to appear instantly on a phone. Same tokens, copied not imported. */
+  :root{
+    --bg:#fafafa; --card:#ffffff; --border:#e7e7e5; --ink:#1f1f1e;
+    --ink-2:#55554f; --ink-3:#8a8a84; --plate:#f1f1f0; --rule:#d6d6d3;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --ink:#eceae5;
+      --ink-2:#b6b3ac; --ink-3:#87847d; --plate:#242422; --rule:#3d3d39;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink); font:16px/1.6 var(--sans);
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:36px 20px 56px;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{width:100%; max-width:560px}
+
+  .mark{display:flex; align-items:center; gap:12px; margin-bottom:30px}
+  .mark svg{width:38px; height:38px; flex:none}
+  .bl-f{fill:var(--plate); stroke:var(--ink); stroke-width:4; stroke-linejoin:round}
+  .bl-s{fill:none; stroke:var(--ink); stroke-width:3.4; stroke-linecap:round}
+  .bl-d{fill:var(--ink)}
+  .mark h1{font:400 34px/1 var(--serif); margin:0; letter-spacing:.4px}
+
+  .lede{font:400 22px/1.45 var(--serif); margin:0 0 20px; color:var(--ink)}
+  p{margin:0 0 16px; color:var(--ink-2)}
+  .fr{color:var(--ink-3)}
+  .fr .lede{color:var(--ink-2)}
+
+  hr{border:0; border-top:1px solid var(--border); margin:30px 0}
+
+  .counts{
+    display:flex; flex-wrap:wrap; gap:0; margin:0 0 4px;
+    border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    background:var(--card);
+  }
+  .counts div{
+    flex:1 1 25%; min-width:88px; padding:14px 10px; text-align:center;
+    border-right:1px solid var(--border);
+  }
+  .counts div:last-child{border-right:0}
+  .counts b{display:block; font:400 21px/1.2 var(--serif); color:var(--ink)}
+  .counts span{font-size:11.5px; letter-spacing:.7px; text-transform:uppercase; color:var(--ink-3)}
+
+  a{color:var(--ink); text-underline-offset:3px; text-decoration-color:var(--rule)}
+  a:hover{text-decoration-color:var(--ink)}
+  .sign{margin-top:30px; font-size:14px; color:var(--ink-3)}
+
+  @media (max-width:420px){
+    .mark h1{font-size:29px}
+    .lede{font-size:20px}
+    .counts div{flex:1 1 50%; border-bottom:1px solid var(--border)}
+    .counts div:nth-child(2){border-right:0}
+    .counts div:nth-child(3),.counts div:nth-child(4){border-bottom:0}
+  }
+</style>
 </head>
 <body>
 
-<header class="site-head">
-  <div class="brand">
-    <div class="brand-mark"><svg class="brand-logo" viewBox="0 0 96 96" width="30" height="30" aria-hidden="true"><path class="bl-f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/><path class="bl-s" d="M52 24c9 4 14 11 14 20"/><circle class="bl-d" cx="62" cy="20" r="7"/><circle class="bl-d" cx="75" cy="30" r="5.5"/><circle class="bl-d" cx="52" cy="11" r="4.5"/></svg></div>
-    <div class="brand-text">
-      <h1>Copius</h1>
-      <p id="tagline"></p>
-    </div>
-  </div>
-  <div class="head-tools">
-    <input id="search" type="search" autocomplete="off">
-    <button id="createBtn" class="create-btn" type="button"></button>
-    <div class="lang-toggle" role="group" aria-label="Language / Langue">
-      <button id="themeBtn" class="theme-btn" type="button" aria-label="Theme"></button>
-      <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
-    </div>
-  </div>
-</header>
-
 <main>
-  <nav class="view-tabs" aria-label="Views">
-    <button id="tabAtlas" class="view-tab" type="button"></button>
-    <button id="tabChefs" class="view-tab" type="button"></button>
-    <button id="tabTech" class="view-tab" type="button"></button>
-    <button id="tabDishes" class="view-tab" type="button"></button>
-  </nav>
 
-  <div id="atlasView">
-  <section id="daily" class="daily"></section>
-
-  <nav id="cats" class="cats" aria-label="Families"></nav>
-
-  <div class="toolbar">
-    <label class="check"><input type="checkbox" id="seasonNow"><span id="seasonNowLbl"></span></label>
-    <label class="check"><input type="checkbox" id="favsOnly"><span id="favsOnlyLbl"></span></label>
-    <label class="check"><input type="checkbox" id="rareOnly"><span id="rareOnlyLbl"></span></label>
-    <label class="check"><input type="checkbox" id="luxeOnly"><span id="luxeOnlyLbl"></span></label>
-    <select id="priceBand" aria-label="Price"></select>
-    <select id="sort" aria-label="Sort"></select>
-    <button id="random" class="linkish" type="button"></button>
-    <span id="stats" class="stats"></span>
+  <div class="mark">
+    <svg viewBox="0 0 96 96" aria-hidden="true">
+      <path class="bl-f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/>
+      <path class="bl-s" d="M52 24c9 4 14 11 14 20"/>
+      <circle class="bl-d" cx="62" cy="20" r="7"/>
+      <circle class="bl-d" cx="75" cy="30" r="5.5"/>
+      <circle class="bl-d" cx="52" cy="11" r="4.5"/>
+    </svg>
+    <h1>Copius</h1>
   </div>
 
-  <section id="grid" class="grid" aria-live="polite"></section>
-  <p id="empty" class="empty" hidden></p>
+  <p class="lede">An illustrated atlas of cooking — the ingredients, the techniques, the dishes, and the people who cooked them.</p>
 
-  <section class="lab" id="lab">
-    <h2 id="labTitle"></h2>
-    <p id="labHint" class="muted"></p>
-    <div class="lab-row">
-      <select id="labA"></select>
-      <span class="lab-x" aria-hidden="true">×</span>
-      <select id="labB"></select>
-    </div>
-    <div id="labResult" class="lab-result"></div>
-  </section>
+  <p>It is being built. What exists already is written twice, once in English and once in French, and it keeps growing:</p>
 
-  <section class="trios" id="triosSec">
-    <h2 id="triosTitle"></h2>
-    <div id="triosGrid" class="trio-grid"></div>
-  </section>
-
-  <section class="creations" id="creationsSec">
-    <h2 id="creationsTitle"></h2>
-    <p id="creationsHint" class="muted"></p>
-    <div id="creationsGrid" class="trio-grid"></div>
-  </section>
+  <div class="counts">
+    <div><b>1 857</b><span>ingredients</span></div>
+    <div><b>135</b><span>techniques</span></div>
+    <div><b>59</b><span>dishes</span></div>
+    <div><b>81</b><span>chefs</span></div>
   </div>
 
+  <p style="margin-top:14px">There is nothing to buy yet, and nothing to sign up for. When it opens, it opens here.</p>
 
-  <div id="chefsView" hidden>
-    <div class="chefs-head">
-      <h2 id="chefsTitle"></h2>
-      <p id="chefsHint" class="muted"></p>
-    </div>
-    <div class="chef-filters">
-      <input id="chefSearch" type="search" autocomplete="off">
-      <select id="chefGender" aria-label="Gender"></select>
-      <select id="chefStars" aria-label="Stars"></select>
-      <select id="chefCountry" aria-label="Country"></select>
-      <select id="chefEra" aria-label="Era"></select>
-      <button id="chefReset" class="linkish" type="button"></button>
-      <span id="chefCount" class="stats"></span>
-    </div>
-    <div id="chefsTimeline" class="timeline"></div>
+  <hr>
+
+  <div class="fr" lang="fr">
+    <p class="lede">Un atlas illustré de la cuisine — les ingrédients, les gestes, les plats, et ceux qui les ont faits.</p>
+    <p>Il est en construction. Ce qui existe déjà est écrit deux fois, en anglais et en français, et continue de s’étoffer. Rien à acheter pour l’instant, rien à souscrire. Quand ce sera ouvert, ce sera ici.</p>
   </div>
 
-  <div id="techView" hidden>
-    <div class="chefs-head">
-      <h2 id="techTitle"></h2>
-      <p id="techHint" class="muted"></p>
-    </div>
-    <div class="chef-filters">
-      <input id="techSearch" type="search" autocomplete="off">
-      <select id="techGroup" aria-label="Group"></select>
-      <span id="techCount" class="stats"></span>
-    </div>
-    <div id="techList" class="tech-list"></div>
-  </div>
+  <p class="sign">
+    Une question, une correction, une envie d’en voir plus —<br>
+    <a href="mailto:contact@copius.fr">contact@copius.fr</a>
+  </p>
 
-  <div id="dishesView" hidden>
-    <div class="chefs-head">
-      <h2 id="dishesTitle"></h2>
-      <p id="dishesHint" class="muted"></p>
-    </div>
-    <div class="chef-filters">
-      <input id="dishSearch" type="search" autocomplete="off">
-      <select id="dishRegion" aria-label="Region"></select>
-      <span id="dishCount" class="stats"></span>
-    </div>
-    <div id="dishList" class="dish-list"></div>
-    <p id="alcoholWarn" class="alcohol-warn"></p>
-  </div>
 </main>
 
-<footer class="site-foot"><span id="footNote"></span><span id="contactLine" class="foot-contact"></span><span id="disclaimer" class="foot-legal"></span></footer>
-
-<div id="createOverlay" class="overlay" hidden>
-  <div class="modal" id="createModal"></div>
-</div>
-
-<div id="overlay" class="overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" id="modal">
-    <div class="modal-bar">
-      <button id="backBtn" class="ghost" type="button" hidden>&#8592;</button>
-      <button id="closeBtn" class="ghost" type="button" aria-label="Close / Fermer">&#10005;</button>
-    </div>
-    <div id="modalBody" class="modal-body"></div>
-  </div>
-</div>
-
-<input type="file" id="photoFile" accept="image/*" hidden>
-
-<script src="js/i18n.js?v=58"></script>
-<script src="js/photos.js?v=58"></script>
-  <script src="js/data-cellar.js?v=58"></script>
-  <script src="js/data-condiments.js?v=58"></script>
-  <script src="js/data-cuts.js?v=58"></script>
-  <script src="js/data-dairy.js?v=58"></script>
-  <script src="js/data-fats.js?v=58"></script>
-  <script src="js/data-fruits.js?v=58"></script>
-  <script src="js/data-grains.js?v=58"></script>
-  <script src="js/data-herbs.js?v=58"></script>
-  <script src="js/data-infusions.js?v=58"></script>
-  <script src="js/data-legumes.js?v=58"></script>
-  <script src="js/data-meat.js?v=58"></script>
-  <script src="js/data-mushrooms.js?v=58"></script>
-  <script src="js/data-nuts.js?v=58"></script>
-  <script src="js/data-roe.js?v=58"></script>
-  <script src="js/data-seafood.js?v=58"></script>
-  <script src="js/data-seaweed.js?v=58"></script>
-  <script src="js/data-shellfish.js?v=58"></script>
-  <script src="js/data-spices.js?v=58"></script>
-  <script src="js/data-sweet.js?v=58"></script>
-  <script src="js/data-texture.js?v=58"></script>
-  <script src="js/data-vegetables.js?v=58"></script>
-<script src="js/data-dishes.js?v=58"></script>
-  <script src="js/data-techniques.js?v=58"></script>
-  <script src="js/data-trees.js?v=58"></script>
-<script src="js/data-chefs.js?v=58"></script>
-<script src="js/trios.js?v=58"></script>
-<script src="js/trios-gastronomy.js?v=58"></script>
-<script src="js/trios-premium.js?v=58"></script>
-<script src="js/app.js?v=58"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("service-worker.js", { scope: "./" });
-  });
-}
-</script>
 </body>
 </html>
