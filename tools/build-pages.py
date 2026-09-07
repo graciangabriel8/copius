@@ -16,6 +16,7 @@ import pathlib
 import re
 import shutil
 import sys
+import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APP = "atlas.html"
@@ -53,14 +54,22 @@ UI = {
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
-           "index": "All ingredients"},
+           "index": "All ingredients",
+           "fixLbl": "Something wrong here, or missing?",
+           "fixCta": "Tell us",
+           "fixSubj": "Correction — %s",
+           "fixBody": "Page: %s\n\nWhat is wrong, or what is missing:\n\n"},
     "fr": {"latin": "Nom latin", "family": "Famille", "origin": "Origine",
            "season": "Saison", "flavour": "Goût", "story": "Ce que c’est",
            "tip": "En cuisine", "pairs": "S’accorde avec", "price": "Prix courant",
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
-           "index": "Tous les ingrédients"},
+           "index": "Tous les ingrédients",
+           "fixLbl": "Une erreur ici, ou un oubli ?",
+           "fixCta": "Dites-le nous",
+           "fixSubj": "Correction — %s",
+           "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n"},
 }
 
 
@@ -113,6 +122,17 @@ def load():
                 "svg": one(r"svg:'(.*?)'\s*\}"),
             })
     return rows
+
+
+def correction_link(subject, url, lang):
+    """A mailto, deliberately. No account, no moderation queue, and nothing that
+    looks abandoned when nobody has written yet."""
+    t = UI[lang]
+    href = "mailto:contact@copius.fr?subject=%s&body=%s" % (
+        urllib.parse.quote(t["fixSubj"] % subject),
+        urllib.parse.quote(t["fixBody"] % url))
+    return ('<p class="fix">%s <a href="%s">%s</a></p>'
+            % (e(t["fixLbl"]), e(href), e(t["fixCta"])))
 
 
 def head_extra(title, desc, url, lang):
@@ -225,6 +245,8 @@ def page(i, lang, by_id, count):
   %(tipblock)s
 
   %(pairblock)s
+
+  %(fix)s
 </main>
 
 <footer>
@@ -246,6 +268,7 @@ def page(i, lang, by_id, count):
         "tipblock": ("<h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))) if tip else "",
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
+        "fix": correction_link(name, here, lang),
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]),
         "tagline": e(t["tagline"]), "count": count,
     }
@@ -388,6 +411,8 @@ def season_page(month, lang, rows):
   %(blocks)s
   <h2>%(alllbl)s</h2>
   %(fams)s
+
+  %(fix)s
 </main>
 
 <footer>
@@ -406,6 +431,7 @@ def season_page(month, lang, rows):
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
         "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
+        "fix": correction_link(t["h1"] % name, here, lang),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
     }
 
@@ -461,6 +487,9 @@ h3{font:400 16px/1.3 var(--sans);margin:20px 0 7px;color:var(--ink-3);
 h3 small{text-transform:none;letter-spacing:0}
 .lede{margin:0 0 22px;font:400 18px/1.5 var(--serif);color:var(--ink-2)}
 .note{margin:-2px 0 9px;font-size:13.5px;color:var(--ink-3)}
+.fix{margin:30px 0 0;padding:14px 16px;background:var(--card);
+  border:1px solid var(--border);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
+.fix a{color:var(--ink-2)}
 @media (max-width:420px){h1{font-size:29px}th{width:44%;font-size:12px}}
 """
 
