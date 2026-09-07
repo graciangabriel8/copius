@@ -297,7 +297,7 @@ def index_page(rows, lang):
 <link rel="stylesheet" href="%scss/page.css">
 </head>
 <body>
-<header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a></nav></header>
+<header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav></header>
 <main><h1>%s</h1>%s</main>
 <footer>Copius — %s</footer>
 </body>
