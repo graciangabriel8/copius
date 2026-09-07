@@ -262,6 +262,131 @@ def index_page(rows, lang):
        up, up, up, APP, e(t["back"]), e(t["index"]), "".join(blocks), e(t["tagline"]))
 
 
+SLUG = {
+    "en": [None, "january", "february", "march", "april", "may", "june", "july",
+           "august", "september", "october", "november", "december"],
+    "fr": [None, "janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet",
+           "aout", "septembre", "octobre", "novembre", "decembre"],
+}
+
+SEASON_UI = {
+    "en": {"h1": "What is in season in %s",
+           "title": "What is in season in %s — fruit, vegetables, fish and mushrooms",
+           "lede": ("%d of the ingredients in this atlas are in season in %s in France — "
+                    "not only fruit and vegetables, but the fish, mushrooms, game and "
+                    "cheeses that have a season too."),
+           "new": "New this month", "last": "Last month for",
+           "newNote": "In season now and not in %s.",
+           "lastNote": "In season now and gone in %s.",
+           "all": "Everything in season in %s",
+           "prev": "%s", "next": "%s", "months": "Every month",
+           "none": "Nothing starts or ends this month."},
+    "fr": {"h1": "Produits de saison en %s",
+           "title": "Produits de saison en %s — fruits, légumes, poissons et champignons",
+           "lede": ("%d ingrédients de cet atlas sont de saison en %s en France — pas "
+                    "seulement des fruits et des légumes, mais aussi les poissons, les "
+                    "champignons, le gibier et les fromages, qui ont une saison eux aussi."),
+           "new": "Nouveau ce mois-ci", "last": "Dernier mois pour",
+           "newNote": "De saison maintenant, pas en %s.",
+           "lastNote": "De saison maintenant, plus en %s.",
+           "all": "Tout ce qui est de saison en %s",
+           "prev": "%s", "next": "%s", "months": "Tous les mois",
+           "none": "Rien ne commence ni ne finit ce mois-ci."},
+}
+
+
+def season_page(month, lang, rows):
+    """One month. The arrivals and departures are the part no calendar page has:
+    they need every ingredient's whole season, not a list of what is available."""
+    t, other = SEASON_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    name = MONTHS[lang][month]
+    prev_m, next_m = (month - 2) % 12 + 1, month % 12 + 1
+
+    def url(m, lg):
+        return ("%s/season/%s/" % (SITE, SLUG["en"][m]) if lg == "en"
+                else "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m]))
+
+    here, there = url(month, lang), url(month, other)
+    # Two different climbs: /season/<m>/ is two deep, /fr/saison/<m>/ is three.
+    # `up` reaches the site root (css, atlas.html); `rel` reaches this language's
+    # entry pages, which happen to be ../../i/ from both.
+    up = "../../" if lang == "en" else "../../../"
+    rel = "../../i/"
+
+    now = [r for r in rows if month in r["season"]]
+    arriving = [r for r in now if prev_m not in r["season"]]
+    leaving = [r for r in now if next_m not in r["season"]]
+
+    def chips(items, rel):
+        return " ".join('<a href="%s%s/">%s</a>' % (rel, r["id"], e(r["name"][lang]))
+                        for r in sorted(items, key=lambda x: x["name"][lang].lower()))
+
+    blocks = []
+    if arriving:
+        blocks.append('<h2>%s <small>%d</small></h2><p class="note">%s</p><p class="pairs">%s</p>'
+                      % (e(t["new"]), len(arriving),
+                         e(t["newNote"] % MONTHS[lang][prev_m]), chips(arriving, rel)))
+    if leaving:
+        blocks.append('<h2>%s <small>%d</small></h2><p class="note">%s</p><p class="pairs">%s</p>'
+                      % (e(t["last"]), len(leaving),
+                         e(t["lastNote"] % MONTHS[lang][next_m]), chips(leaving, rel)))
+
+    by_fam = {}
+    for r in now:
+        by_fam.setdefault(r["cat"], []).append(r)
+    fam_blocks = []
+    for cat in sorted(by_fam, key=lambda c: FAMILY.get(c, (c, c))[0 if lang == "en" else 1]):
+        fam_blocks.append('<h3>%s <small>%d</small></h3><p class="pairs">%s</p>' % (
+            e(FAMILY.get(cat, (cat, cat))[0 if lang == "en" else 1]),
+            len(by_fam[cat]), chips(by_fam[cat], rel)))
+
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(title)s · Copius</title>
+<meta name="description" content="%(lede)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+<link rel="stylesheet" href="%(up)scss/page.css">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a></nav>
+</header>
+
+<main>
+  <h1>%(h1)s</h1>
+  <p class="lede">%(lede)s</p>
+  %(blocks)s
+  <h2>%(alllbl)s</h2>
+  %(fams)s
+</main>
+
+<footer>
+  <a href="%(prevurl)s">← %(prev)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
+  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a>
+</footer>
+</body>
+</html>
+""" % {
+        "lang": lang, "other": other, "up": up, "app": APP,
+        "title": e(t["title"] % name), "h1": e(t["h1"] % name),
+        "lede": e(t["lede"] % (len(now), name)),
+        "robots": robots, "here": here, "there": there,
+        "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]),
+        "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
+        "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
+        "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
+    }
+
+
 CSS = """/* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
 :root{--bg:#fafafa;--card:#fff;--border:#e7e7e5;--ink:#1f1f1e;--ink-2:#55554f;
@@ -308,6 +433,11 @@ td{color:var(--ink)}
 h2 small{color:var(--ink-3);font-size:14px}
 footer{padding:24px 20px 48px;margin-top:26px;border-top:1px solid var(--border);
   font-size:13.5px;color:var(--ink-3);line-height:1.9}
+h3{font:400 16px/1.3 var(--sans);margin:20px 0 7px;color:var(--ink-3);
+  letter-spacing:.4px;text-transform:uppercase}
+h3 small{text-transform:none;letter-spacing:0}
+.lede{margin:0 0 22px;font:400 18px/1.5 var(--serif);color:var(--ink-2)}
+.note{margin:-2px 0 9px;font-size:13.5px;color:var(--ink-3)}
 @media (max-width:420px){h1{font-size:29px}th{width:44%;font-size:12px}}
 """
 
@@ -333,9 +463,24 @@ def main():
     (ROOT / "i" / "index.html").write_text(index_page(rows, "en"))
     (ROOT / "fr" / "i" / "index.html").write_text(index_page(rows, "fr"))
 
+    # Twelve pages built from the one field an encyclopaedia does not carry.
+    shutil.rmtree(ROOT / "season", ignore_errors=True)
+    shutil.rmtree(ROOT / "fr" / "saison", ignore_errors=True)
+    months = 0
+    for m in range(1, 13):
+        for lang in ("en", "fr"):
+            out = (ROOT / "season" / SLUG["en"][m] if lang == "en"
+                   else ROOT / "fr" / "saison" / SLUG["fr"][m])
+            out.mkdir(parents=True, exist_ok=True)
+            (out / "index.html").write_text(season_page(m, lang, rows))
+            months += 1
+
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
     urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE]
+    for m in range(1, 13):
+        urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
+                 "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]
     for i in rows:
         urls += ["%s/i/%s/" % (SITE, i["id"]), "%s/fr/i/%s/" % (SITE, i["id"])]
     (ROOT / "sitemap.xml").write_text(
@@ -344,8 +489,9 @@ def main():
         + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, today) for u in urls)
         + "</urlset>\n")
 
-    print('{"pages": %d, "indexes": 2, "sitemapUrls": %d, "indexable": %s}'
-          % (written, len(urls), "true" if INDEXABLE else "false"))
+    print('{"ingredientPages": %d, "seasonPages": %d, "indexes": 2, '
+          '"sitemapUrls": %d, "indexable": %s}'
+          % (written, months, len(urls), "true" if INDEXABLE else "false"))
     if not INDEXABLE:
         print("# every page carries noindex — flip INDEXABLE in this file when the atlas opens")
 
