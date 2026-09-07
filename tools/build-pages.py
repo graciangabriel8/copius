@@ -115,6 +115,25 @@ def load():
     return rows
 
 
+def head_extra(title, desc, url, lang):
+    """Favicon from real files, not a data: URI — Google needs a crawlable URL to
+    show an icon — plus the card that appears when the link is pasted anywhere."""
+    return (
+        '<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">\n'
+        '<link rel="icon" sizes="192x192" href="/icons/icon-192.png">\n'
+        '<meta property="og:type" content="article">\n'
+        '<meta property="og:site_name" content="Copius">\n'
+        '<meta property="og:title" content="%s">\n'
+        '<meta property="og:description" content="%s">\n'
+        '<meta property="og:url" content="%s">\n'
+        '<meta property="og:locale" content="%s">\n'
+        '<meta property="og:image" content="%s/og/copius.jpg">\n'
+        '<meta property="og:image:width" content="1200">\n'
+        '<meta property="og:image:height" content="630">\n'
+        '<meta name="twitter:card" content="summary_large_image">'
+        % (title, desc, url, "fr_FR" if lang == "fr" else "en_GB", SITE))
+
+
 def e(s):
     return html.escape(s or "", quote=True)
 
@@ -181,6 +200,7 @@ def page(i, lang, by_id, count):
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 <link rel="alternate" hreflang="x-default" href="%(xdef)s">
+%(og)s
 <link rel="stylesheet" href="%(up)scss/page.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Thing","name":"%(jname)s","alternateName":"%(jalt)s","description":"%(jdesc)s","url":"%(here)s","isPartOf":{"@type":"WebSite","name":"Copius","url":"%(site)s"}}
@@ -214,6 +234,7 @@ def page(i, lang, by_id, count):
 </body>
 </html>
 """ % {
+        "og": head_extra(e("%s — %s · Copius" % (name, fam)), e(desc), here, lang),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
         "fam": e(fam), "desc": e(desc), "robots": robots,
         "here": here, "there": there,
@@ -352,6 +373,7 @@ def season_page(month, lang, rows):
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
+%(og)s
 <link rel="stylesheet" href="%(up)scss/page.css">
 </head>
 <body>
@@ -375,6 +397,7 @@ def season_page(month, lang, rows):
 </body>
 </html>
 """ % {
+        "og": head_extra(e(t["title"] % name), e(t["lede"] % (len(now), name)), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP,
         "title": e(t["title"] % name), "h1": e(t["h1"] % name),
         "lede": e(t["lede"] % (len(now), name)),
