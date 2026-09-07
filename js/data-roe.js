@@ -159,16 +159,6 @@ fr:"Tranchez-le froid, à la lame chaude, en fines feuilles, ou faites fondre un
 pairs:["butter","rye","egg","shallot","creme-fraiche","black-pepper"],
 svg:'<ellipse class="f3 sf" cx="44" cy="42" rx="22" ry="9"/><path class="f3 sf" d="M22 42v14q0 9 22 9t22-9V42"/><path class="s" d="M30 46q14 5 28 0"/><path class="f2 sf" d="M58 72q12-7 20-3-8 9-20 7z"/>'},
 
-{id:"chevreuil",cat:"roe",price:3,pk:"25–45 €/kg",name:{en:"Roe deer",fr:"Chevreuil"},latin:"Capreolus capreolus",
-origin:{en:"European woodland edge",fr:"Lisières forestières d’Europe"},season:[9,10,11,12,1],
-flavor:["delicate","mild","meaty","earthy"],
-story:{en:"The roe is the only hoofed animal in Europe with delayed implantation: it mates in July and the embryo lies dormant until December, so the fawn arrives in spring. The carcass is small — twenty kilos or less — and the meat correspondingly fine-grained and barely gamey.",
-fr:"Le chevreuil est le seul ongulé d’Europe à pratiquer la diapause embryonnaire : il s’accouple en juillet et l’embryon reste dormant jusqu’en décembre, pour que le faon naisse au printemps. La carcasse est petite — vingt kilos ou moins — et la chair d’autant plus fine et à peine gibier."},
-tip:{en:"A saddle or a loin needs four minutes a side and a rest, no more. The long juniper-and-red-wine marinade that red deer expects bruises and sours it — roe is better with butter and pepper alone.",
-fr:"Une selle ou un filet demandent quatre minutes par face et un repos, pas davantage. La longue marinade genièvre-vin rouge que réclame le cerf le meurtrit et l’aigrit : le chevreuil est meilleur au beurre et au poivre, seuls."},
-pairs:["blackcurrant","chestnut","celeriac","butter","quince","black-pepper","cream","mushroom"],
-svg:'<path class="f1 sf" d="M40 46q8-4 16 0 4 10 2 18-2 12-10 12t-10-12q-2-8 2-18z"/><path class="s" d="M44 44V31l-4-6M44 34l5-7M52 44V31l4-6M52 34l-5-7" stroke-width="1.8"/><path class="f2 sf" d="M40 48q-13-9-15-2t13 10zM56 48q13-9 15-2t-13 10z"/><path class="dot" d="M42 57a2 2 0 104 0 2 2 0 10-4 0M50 57a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M45 70q3 3 6 0"/>'},
-
 {id:"caviar-schrenckii",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Schrenckii caviar",fr:"Caviar schrenckii"},latin:"Acipenser schrenckii (roe)",
 origin:{en:"Amur basin & Chinese farms",fr:"Bassin de l’Amour et fermes chinoises"},season:[],
 flavor:["briny","marine","mild","umami"],
