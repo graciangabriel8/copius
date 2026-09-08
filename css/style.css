@@ -393,6 +393,10 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   /* The brand block is ~283px of a 375px screen, so the tools need their own row;
      flex:1 1 0% made them shrink to 44px and push the language toggle off-screen. */
   .head-tools{flex:1 1 100%;min-width:0;gap:10px;justify-content:flex-start}
+  /* The search field spans the row above; leaving the controls packed left
+     ended the second row 72px short of it and read as unfinished. Push the
+     language and theme group to the right edge so the two rows align. */
+  .head-tools .lang-toggle{margin-left:auto}
   /* Search shared a row with Créer and both toggles and was cut to "Recherc".
      Give it the full width and let the buttons sit under it. */
   .head-tools{flex-wrap:wrap}
