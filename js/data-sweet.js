@@ -209,16 +209,6 @@ fr:"Employez-le comme un fruit sec, pour le croquant et l’amertume contre un �
 pairs:["dark-chocolate","cream","raspberry","banana","coffee","honey","hazelnut","orange"],
 svg:'<path class="f1 sf" d="M38 48l6 4-4 6-6-4z"/><path class="f1 sf" d="M52 54l6 4-4 6-6-4z"/><path class="f1 sf" d="M44 64l6 4-4 6-6-4z"/>'},
 
-{id:"coffee",cat:"sweet",price:2,pk:"15–35 €/kg",name:{en:"Coffee",fr:"Café"},latin:"Coffea arabica",
-origin:{en:"Ethiopian highlands",fr:"Hauts plateaux d’Éthiopie"},season:[],
-flavor:["bitter","toasty","fruity","rich"],
-story:{en:"Legend credits Kaldi, an Ethiopian goatherd, whose goats danced after eating red berries. From Sufi monasteries it reached Ottoman coffeehouses — nicknamed “schools of the wise” — and Europe’s cafés, where more than one revolution was stirred with a spoon.",
-fr:"La légende crédite Kaldi, un chevrier éthiopien, dont les chèvres dansaient après avoir mangé des baies rouges. Des monastères soufis, il gagna les cafés ottomans — surnommés « écoles des sages » — puis les cafés d’Europe, où plus d’une révolution fut remuée à la petite cuillère."},
-tip:{en:"In cooking it works like a spice: a shot of espresso deepens chocolate cakes, chili con carne and even a beef glaze without tasting of coffee.",
-fr:"En cuisine, il agit comme une épice : un trait d’expresso approfondit les gâteaux au chocolat, le chili et même un jus de bœuf, sans goût de café."},
-pairs:["dark-chocolate","cardamom","hazelnut","vanilla","cinnamon","walnut","maple-syrup"],
-svg:'<ellipse class="f3 sf" cx="40" cy="48" rx="10" ry="13" transform="rotate(-20 40 48)"/><path class="s" d="M35 39q6 9 2 18" transform="rotate(-20 40 48)"/><ellipse class="f3 sf" cx="58" cy="60" rx="10" ry="13" transform="rotate(24 58 60)"/><path class="s" d="M53 51q6 9 2 18" transform="rotate(24 58 60)"/>'},
-
 {id:"criollo-cacao",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
 flavor:["nutty","mild","fruity","honeyed"],

@@ -689,16 +689,6 @@ fr:"Infusez-le, ne le faites jamais bouillir — cinq minutes hors ébullition d
 pairs:["sugar","ginger","lime","mint","vanilla","raspberry","orange","cinnamon"],
 svg:'<path class="f3 sf" d="M48 42q12 6 12 18t-12 16q-12-2-12-16t12-18z"/><path class="s" d="M48 42V22M48 42L34 28M48 42l14-14M48 42l-18-4M48 42l18-4"/><path class="s" d="M38 62q10 5 20 0"/>'},
 
-{id:"hojicha",cat:"spices",price:2,pk:"40–90 €/kg",name:{en:"Hojicha",fr:"Thé hojicha"},latin:"Camellia sinensis",
-origin:{en:"Kyoto",fr:"Kyoto"},season:[],
-flavor:["toasty","woody","nutty"],
-story:{en:"A Kyoto merchant in the 1920s put stems and coarse late-season leaf over charcoal rather than throw them out, and the roasting turned the cheapest grade in the shop into a category of its own. The heat drives off most of the caffeine along with all the grassiness, which is why it is the tea poured for children and at the end of a meal.",
-fr:"Un marchand de Kyoto, dans les années 1920, passa tiges et feuilles grossières de fin de saison sur le charbon plutôt que de les jeter : la torréfaction fit du grade le moins cher de la boutique une catégorie à part entière. La chaleur chasse l'essentiel de la caféine en même temps que toute l'herbacée, d'où le thé que l'on sert aux enfants et en fin de repas."},
-tip:{en:"Brew it at 95 °C, near boiling — unlike green tea it cannot turn bitter, and a cool infusion tastes of nothing at all. For a cream or a panna cotta, steep 15 g of leaf per litre off the heat for ten minutes and strain hard; go longer and the roast reads as ash.",
-fr:"Infusez-le à 95 °C, près de l'ébullition : contrairement au thé vert il ne peut pas devenir amer, et une infusion tiède ne donne rien. Pour une crème ou une panna cotta, comptez 15 g de feuilles par litre, hors du feu, dix minutes, puis passez fermement ; au-delà, le grillé vire au goût de cendre."},
-pairs:["cream","milk-chocolate","chestnut","kinako","hazelnut","honey","adzuki","vanilla"],
-svg:'<path class="f2 sf" d="M32 52q0-14 16-14t16 14q0 16-16 16t-16-16z"/><path class="s" d="M32 50 20 44l10 10"/><path class="s" d="M64 50h10"/><path class="f3 sf" d="M42 38h12l-2-4H44z"/><path class="s" d="M44 26q4-4 0-8M52 26q4-4 0-8"/>'},
-
 {id:"horseradish",cat:"spices",price:1,pk:"10–20 €/kg",name:{en:"Horseradish",fr:"Raifort"},latin:"Armoracia rusticana",
 origin:{en:"Southeastern Europe",fr:"Europe du Sud-Est"},season:[10,11,12,1,2,3],
 flavor:["hot","pungent","bitter","earthy"],

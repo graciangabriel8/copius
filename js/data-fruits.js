@@ -1107,5 +1107,15 @@ fr:"Un agrume noueux, gorgé de pépins, qui donne à peine une cuillerée de ju
 tip:{en:"The zest carries the magic — the juice is a bonus. A few gratings over scallops, chocolate or a beurre blanc do what no lemon can.",
 fr:"Le zeste porte la magie — le jus est un bonus. Quelques râpures sur des Saint-Jacques, un chocolat ou un beurre blanc font ce qu’aucun citron ne sait faire."},
 pairs:["honey","ginger","scallop","miso","soy-sauce","dark-chocolate"],
-svg:'<circle class="f1 sf" cx="48" cy="55" r="19"/><path class="s" d="M40 48q3-3 6 0M50 48q3-3 6 0" stroke-width="1.8"/><path class="f2 sf" d="M46 36q-2-8 4-11 4 5-1 11z"/>'}
+svg:'<circle class="f1 sf" cx="48" cy="55" r="19"/><path class="s" d="M40 48q3-3 6 0M50 48q3-3 6 0" stroke-width="1.8"/><path class="f2 sf" d="M46 36q-2-8 4-11 4 5-1 11z"/>'},
+
+{id:"forced-rhubarb",cat:"fruits",price:2,pk:"8–15 €/kg",name:{en:"Forced rhubarb",fr:"Rhubarbe forcée"},latin:"Rheum rhabarbarum",
+origin:{en:"The Rhubarb Triangle, Yorkshire",fr:"Le Rhubarb Triangle, Yorkshire"},season:[1,2,3],
+flavor:["sour","tangy","fresh"],
+story:{en:"In the sheds of the Yorkshire Rhubarb Triangle the roots are lifted after a winter outdoors and brought into total darkness, where they grow on stored sugar alone and are cut by candlelight. The stalks move fast enough that you can hear the buds pop.",
+fr:"Dans les hangars du Rhubarb Triangle du Yorkshire, on relève les souches après un hiver dehors et on les rentre dans le noir complet : elles poussent sur leurs seules réserves de sucre et se coupent à la bougie. Les tiges montent si vite qu’on entend les bourgeons craquer."},
+tip:{en:"It needs no added water and almost no time — 10 minutes covered at 160 °C with sugar, or slid into a syrup taken off the boil. A rolling boil turns it to threads in pink water.",
+fr:"Elle ne demande ni eau ajoutée ni presque de temps : 10 minutes à couvert à 160 °C avec du sucre, ou glissée dans un sirop hors ébullition. À gros bouillons, elle se défait en fils dans une eau rose."},
+pairs:["sugar","ginger","orange","vanilla","cream","strawberry","honey"],
+svg:'<path class="f2 sf" d="M38 34h7l3 46h-8z"/><path class="f1 sf" d="M51 34h7l-2 46h-8z"/><path class="f3 sf" d="M41 34q-10-6-8-14 10 2 12 14zM55 34q10-6 8-14-10 2-12 14z"/><path class="s" d="M41 42v34M55 42v34"/>'}
 ]);

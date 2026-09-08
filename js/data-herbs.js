@@ -289,16 +289,6 @@ fr:"Écrasez-en une cuillère à soupe entre les paumes, directement au-dessus d
 pairs:["cream","tomato","chicken","ginger","garam-masala","butter","potato","yogurt"],
 svg:'<path class="f1 sf" d="M48 28q9 6 9 16t-9 12q-9-2-9-12t9-16z"/><path class="f1 sf" d="M30 42q10-4 16 4t-4 14q-10 1-13-7t1-11z"/><path class="f1 sf" d="M66 42q-10-4-16 4t4 14q10 1 13-7t-1-11z"/><path class="s" d="M48 58v18"/><path class="dot" d="M33 74a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M59 76a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M42 82a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"golden-needles",cat:"herbs",rare:true,price:1,pk:"3–6 €/100 g",name:{en:"Dried lily buds (golden needles)",fr:"Fleurs de lys séchées (aiguilles d’or)"},latin:"Hemerocallis citrina",
-origin:{en:"Datong, Shanxi, China",fr:"Datong, Shanxi, Chine"},season:[],
-flavor:["musky","earthy","honeyed"],
-story:{en:"Daylily buds must be picked in the few hours before they open, which is why the Shanxi harvest starts before dawn; they are then steamed and sun-dried into amber strands. The stomach upset caused by raw buds was blamed on colchicine for decades, until the plant’s genome was sequenced and turned out to lack the pathway for it entirely.",
-fr:"Les boutons d’hémérocalle doivent être cueillis dans les quelques heures qui précèdent leur ouverture, d’où une récolte qui commence avant l’aube dans le Shanxi ; ils sont ensuite étuvés et séchés au soleil en filaments ambrés. Les troubles digestifs provoqués par les boutons crus furent attribués pendant des décennies à la colchicine, jusqu’au séquençage du génome de la plante, qui n’en possède pas du tout la voie de biosynthèse."},
-tip:{en:"Soak twenty minutes in warm water, then snap off the pale hard base of each bud — that end never softens and is what gets mistaken for the ingredient being tough. Knot them in pairs before they go into hot and sour soup so they stay findable in the bowl.",
-fr:"Trempez vingt minutes à l’eau tiède, puis cassez la base pâle et dure de chaque bouton : cette extrémité ne s’attendrit jamais et c’est elle que l’on prend pour un défaut de l’ingrédient. Nouez-les deux à deux avant de les mettre dans la soupe aigre-piquante, elles resteront repérables dans le bol."},
-pairs:["wood-ear","dried-shiitake-donko","chinkiang-vinegar","white-pepper","egg","pork","silken-tofu"],
-svg:'<path class="s" d="M24 74q12-30 24-46M32 76q10-30 18-46M42 78q6-30 10-48M52 78q0-30 2-48M62 76q-4-30-8-46"/><path class="f2 sf" d="M44 78q4-30 8-48h4q-4 18-8 48z"/><circle class="s" cx="46" cy="52" r="5"/>'},
-
 {id:"shokuyo-giku",cat:"herbs",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Edible chrysanthemum petals (shokuyō-giku)",fr:"Pétales de chrysanthème comestible"},latin:"Chrysanthemum morifolium",
 origin:{en:"Yamagata and Aomori, Japan",fr:"Yamagata et Aomori, Japon"},season:[9,10,11],
 flavor:["floral","bitter","delicate"],

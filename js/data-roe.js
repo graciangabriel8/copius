@@ -287,5 +287,25 @@ fr:"Le plus grand poisson d’eau douce d’Amérique du Nord a donné le premie
 tip:{en:"Serve it at 8–10 °C from a nacre or horn spoon; steel oxidises the grain within seconds and leaves a tinny edge you cannot wash out. Being low in iodine it holds its own under cream and warm blini — but never under lemon, which flattens it.",
 fr:"Servez-le entre 8 et 10 °C à la cuillère de nacre ou de corne : l’acier oxyde le grain en quelques secondes et y laisse un goût de métal. Peu iodé, il tient sous la crème et le blini tiède sans disparaître — mais jamais sous le citron, qui l’aplatit."},
 pairs:["creme-fraiche","egg","potato","chives","butter","cream"],
-svg:'<ellipse class="f2 sf" cx="70" cy="34" rx="13" ry="7"/><ellipse class="f1 sf" cx="46" cy="56" rx="24" ry="16"/><ellipse class="f3 sf" cx="46" cy="56" rx="18" ry="11"/><circle class="dot" cx="40" cy="53" r="2.2"/><circle class="dot" cx="50" cy="59" r="2.2"/><circle class="dot" cx="48" cy="51" r="2.2"/>'}
+svg:'<ellipse class="f2 sf" cx="70" cy="34" rx="13" ry="7"/><ellipse class="f1 sf" cx="46" cy="56" rx="24" ry="16"/><ellipse class="f3 sf" cx="46" cy="56" rx="18" ry="11"/><circle class="dot" cx="40" cy="53" r="2.2"/><circle class="dot" cx="50" cy="59" r="2.2"/><circle class="dot" cx="48" cy="51" r="2.2"/>'},
+
+{id:"caviar-baeri",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Baerii caviar",fr:"Caviar baeri"},latin:"Acipenser baerii",
+origin:{en:"Ponds of Aquitaine and Sologne",fr:"Étangs d’Aquitaine et de Sologne"},season:[],
+flavor:["buttery","briny","delicate"],
+story:{en:"France banned fishing its native Gironde sturgeon in 1982; a decade later the farms restarted with Siberian baerii imported for the purpose, and the Aquitaine caviar trade is entirely built on that substitution. The fish gives roe at around seven years where a beluga needs fifteen, which is why baerii is the caviar a kitchen can afford to put near heat.",
+fr:"La France a interdit la pêche de son esturgeon de Gironde en 1982 ; dix ans plus tard, les fermes repartaient avec le baeri sibérien importé pour cela, et tout le caviar d’Aquitaine repose sur cette substitution. Le poisson donne ses œufs vers sept ans quand le béluga en demande quinze : c’est pourquoi le baeri est le caviar qu’une cuisine peut se permettre d’approcher du feu."},
+tip:{en:"It is the one caviar to warm: spoon the grains onto a sauce off the heat, below 40 °C, and they hold their shape. Above that they burst and go oily, and no amount of stirring brings them back.",
+fr:"C’est le seul caviar à tiédir : posez les grains sur une sauce hors du feu, sous 40 °C, ils tiennent. Au-delà, ils éclatent et graissent, et rien ne les rattrape."},
+pairs:["cream","potato","egg","chives","scallop","leek"],
+svg:'<ellipse class="f1 sf" cx="40" cy="56" rx="16" ry="11"/><path class="f2 sf" d="M54 50q9-8 16-14-4 9-12 17z"/><path class="s" d="M30 53q9-7 19-2"/><circle class="dot" cx="36" cy="57" r="2.3"/><circle class="dot" cx="44" cy="59" r="2.3"/><circle class="dot" cx="42" cy="51" r="2.3"/>'},
+
+{id:"caviar-naccarii",cat:"roe",rare:true,price:4,pk:"2–3,5 €/g",name:{en:"Adriatic sturgeon caviar",fr:"Caviar naccarii"},latin:"Acipenser naccarii",
+origin:{en:"Po valley, Lombardy",fr:"Vallée du Pô, Lombardie"},season:[],
+flavor:["nutty","milky","briny","delicate"],
+story:{en:"The Adriatic sturgeon was fished out of the Po and its tributaries and is now listed as critically endangered in the wild, so every grain sold comes from farms that also raise fingerlings for restocking the river. Its roe carries an almond-milk sweetness no other species gives, which is the only reason the fish had a commercial future at all.",
+fr:"L’esturgeon adriatique a disparu du Pô et de ses affluents — l’espèce est classée en danger critique à l’état sauvage, et chaque grain vendu sort d’élevages qui fournissent aussi les alevins de réintroduction. Son œuf porte une douceur d’amande fraîche qu’aucune autre espèce ne donne, et c’est la seule raison pour laquelle le poisson a gardé un avenir commercial."},
+tip:{en:"Serve at 8–10 °C on the back of the hand or a nacre spoon; metal turns the almond note metallic within seconds. Keep lemon away from it — the acid erases exactly the sweetness you paid for.",
+fr:"Servez-le à 8–10 °C sur le dos de la main ou à la cuillère de nacre : le métal métallise la note d’amande en quelques secondes. Pas de citron — l’acide efface précisément la douceur que vous avez payée."},
+pairs:["creme-fraiche","potato","egg","chives","butter","oyster"],
+svg:'<ellipse class="f2 sf" cx="48" cy="52" rx="26" ry="19"/><ellipse class="s" cx="48" cy="52" rx="20" ry="13"/><circle class="dot" cx="42" cy="47" r="2.4"/><circle class="dot" cx="53" cy="47" r="2.4"/><circle class="dot" cx="46" cy="56" r="2.4"/><circle class="dot" cx="56" cy="55" r="2.2"/>'}
 ]);
