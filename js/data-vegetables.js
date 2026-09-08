@@ -69,16 +69,6 @@ fr:"Les pousses en conserve gardent un goût métallique. Cinq minutes d’ébul
 pairs:["soy-sauce","ginger","sesame","shiitake","chili","spring-onion","garlic","fish-sauce"],
 svg:'<path class="f3 sf" d="M40 76q-4-30 8-48 12 18 8 48z"/><path class="s" d="M41 62h14M43 50h10M45 40h6"/>'},
 
-{id:"banana-blossom",cat:"vegetables",price:2,pk:"4–7 €/pièce",name:{en:"Banana blossom",fr:"Fleur de bananier"},latin:"Musa spp.",
-origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["bitter","fresh","mild"],
-story:{en:"The purple cone hanging below a banana bunch is the flower bud, and growers cut it off so the fruit above fills out — which makes it a by-product of the banana harvest rather than a crop of its own. Strip the bracts and the pale heart inside behaves exactly like an artichoke, browning included.",
-fr:"Le cône pourpre suspendu sous le régime est le bouton floral, et on le coupe pour que les bananes au-dessus se remplissent : c’est donc un sous-produit de la récolte, pas une culture. Sous les bractées, le cœur pâle se comporte en tout point comme un artichaut, noircissement compris."},
-tip:{en:"Have a bowl of acidulated water standing before the knife touches it — shredded heart browns in under two minutes. Oil your hands and the blade first: the sap is a latex that stains black and does not wash off.",
-fr:"Préparez un bain d’eau citronnée avant même de sortir le couteau : le cœur émincé noircit en moins de deux minutes. Huilez vos mains et la lame — la sève est un latex qui tache en noir et ne part pas au lavage."},
-pairs:["lime","coconut-milk","chili","peanut","cilantro","fish-sauce"],
-svg:'<path class="f2 sf" d="M48 82c-12-11-16-27-14-41 8-8 20-8 28 0 2 14-2 30-14 41z"/><path class="s" d="M34 52q14 8 28 0M36 64q12 7 24 0"/><path class="f1 sf" d="M34 41q14-11 28 0-14 7-28 0z"/><path class="s" d="M48 34V16"/>'},
-
 {id:"banana-shallot",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Banana shallot",fr:"Échalote banane"},latin:"Allium cepa var. aggregatum",
 origin:{en:"Northern Europe, seed-grown",fr:"Europe du Nord, semée en graine"},season:[],
 flavor:["mild","sweet","delicate"],
@@ -469,16 +459,6 @@ fr:"Deux minutes de blanchiment et la pelure se retire d'une pièce. Pour l'agro
 pairs:["balsamic","butter","sugar","thyme","bay-leaf","olive-oil","pancetta","red-wine-vinegar"],
 svg:'<path class="f1 sf" d="M20 58q0-15 28-15t28 15-28 15-28-15z"/><path class="s" d="M28 52q20 10 40 0M34 67q14 4 28 0"/><path class="s" d="M48 43V33M43 34q5-7 10 0"/>'},
 
-{id:"courgette-flower",cat:"vegetables",price:2,pk:"0,80–1,50 €/pièce",name:{en:"Courgette flower",fr:"Fleur de courgette"},latin:"Cucurbita pepo",
-origin:{en:"Mediterranean kitchen gardens",fr:"Potagers méditerranéens"},season:[6,7,8,9],
-flavor:["delicate","floral","mild"],
-story:{en:"The flowers sold on long bare stems are the male ones, since removing them costs the plant no fruit; the female bloom comes attached to a baby courgette and is picked far less often. Cut at dawn, a flower is firm by eight and collapsed by evening, which is why it has never travelled well.",
-fr:"Les fleurs vendues sur longue tige nue sont les mâles, car les prélever ne coûte aucun fruit à la plante ; la fleur femelle vient attachée à une courgette naissante et se cueille bien plus rarement. Coupée à l’aube, elle est ferme à huit heures et affaissée le soir : elle n’a jamais supporté le transport."},
-tip:{en:"Pull the stamen out, it is bitter, and stuff with something already cooked or set, because the batter needs only two minutes and will not cook a filling. Mix the batter with ice-cold sparkling water and use it within a minute.",
-fr:"Retirez l’étamine, amère, et farcissez d’un appareil déjà cuit ou pris : la pâte à frire ne demande que deux minutes et ne cuira pas la farce. Montez la pâte à l’eau gazeuse glacée et utilisez-la dans la minute."},
-pairs:["ricotta","parmesan","anchovy","basil","olive-oil","lemon","mozzarella","mint"],
-svg:'<path class="f1 sf" d="M48 18q6 6 6 14 6-8 14-8-2 8-8 12 8 0 12 6-10 6-24 6t-24-6q4-6 12-6-6-4-8-12 8 0 14 8 0-8 6-14z"/><path class="f2 sf" d="M38 48q10 4 20 0 2 16-2 26t-8 10-8-10-2-26z"/><path class="s" d="M48 22v26M42 54q6 3 12 0M44 70q4 2 8 0"/>'},
-
 {id:"crapaudine-beetroot",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Crapaudine beetroot",fr:"Betterave crapaudine"},latin:"Beta vulgaris",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[10,11,12,1,2],
 flavor:["earthy","sweet","rich"],
@@ -728,16 +708,6 @@ tip:{en:"Crushed, it roars; sliced, it speaks; whole and roasted, it whispers sw
 fr:"Écrasé, il rugit ; émincé, il parle ; entier et rôti, il murmure doucement. Choisissez sa voix avant de cuisiner."},
 pairs:["olive-oil","parsley","tomato","shrimp","chicken","rosemary","lemon","chili"],
 svg:'<path class="f1 sf" d="M48 28q3 10 12 16 8 6 8 14a20 16 0 01-40 0q0-8 8-14 9-6 12-16z"/><path class="s" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40"/>'},
-
-{id:"garlic-scape",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Garlic scape",fr:"Fleur d’ail"},latin:"Allium sativum",
-origin:{en:"Hardneck garlic fields",fr:"Champs d’ail à tige dure"},season:[5,6],
-flavor:["grassy","fresh","pungent"],
-story:{en:"Hardneck garlic throws up a flower stem that has to be cut off or the bulb below stays small, and for almost the whole history of the crop that cut stem went on the compost heap. It became a market vegetable only in the last few decades, which is why there is no old recipe for it.",
-fr:"L’ail à tige dure monte une hampe florale qu’il faut couper, faute de quoi le bulbe reste petit ; pendant presque toute l’histoire de la culture, cette hampe finissait au compost. Elle n’est devenue un légume de marché que depuis quelques décennies, ce qui explique qu’il n’en existe aucune recette ancienne."},
-tip:{en:"Grill them whole over high heat until they blister and go limp, about five minutes — raw they are stringy, gently cooked they stay tough. For pesto, blanch thirty seconds first or the raw grassiness takes over the jar.",
-fr:"Grillez-les entières à feu vif jusqu’à ce qu’elles cloquent et retombent, cinq minutes : crues elles sont filandreuses, cuites doucement elles restent coriaces. Pour un pesto, blanchissez trente secondes, sinon l’herbacé cru couvre tout."},
-pairs:["olive-oil","lemon","parmesan","pine-nut","egg","butter","chili","rice-vinegar"],
-svg:'<path class="s" d="M30 84q2-30 9-38"/><path class="s" d="M39 46q5-14 19-14t16 15-11 18-14-5"/><path class="f2 sf" d="M49 60q7-2 9 3 2 7-5 14-7-7-4-17z"/>'},
 
 {id:"gernika-pepper",cat:"vegetables",price:2,pk:"14–25 €/kg",name:{en:"Gernika pepper",fr:"Piment de Gernika"},latin:"Capsicum annuum",
 origin:{en:"Gernika-Lumo, Bizkaia",fr:"Gernika-Lumo, Biscaye"},season:[7,8,9,10],
@@ -1218,16 +1188,6 @@ tip:{en:"Grate it on a fine ceramic or metal plate, not a box grater — you wan
 fr:"Râpez-la sur une râpe fine en céramique ou en métal, pas sur une boîte à quatre faces : il faut la briser en mousse, non la déchiqueter. Frottez-vous les mains au vinaigre avant, ou pelez-la sous l’eau courante, et la démangeaison ne vient pas."},
 pairs:["koikuchi-shoyu","wasabi","nori","soba-noodles","egg","tuna","katsuobushi","negi"],
 svg:'<path class="f1 sf" d="M36 26q0-10 12-10t12 10l3 44H33z"/><path class="s" d="M33 70h30"/><path class="s" d="M64 34q6-3 10-8M66 50q6-2 8-5M32 38q-6-3-10-8M30 54q-6-2-8-5"/><path class="f2 sf" d="M46 70q4 0 4 6t-2 10q-4-6-4-10 0-6 2-6z"/>'},
-
-{id:"nanohana",cat:"vegetables",price:2,pk:"10–20 €/kg",name:{en:"Nanohana (rapeseed blossom)",fr:"Fleurs de colza (nanohana)"},latin:"Brassica rapa",
-origin:{en:"Japan",fr:"Japon"},season:[1,2,3],
-flavor:["bitter","grassy","fresh","sweet"],
-story:{en:"The nanohana on a February plate is the flowering shoot of the rape whose oil lit the lamps of Edo — the same plant, picked before the buds open instead of run on to seed. Growers cut it while the yellow is still shut, because an open flower means the stem has already gone woody.",
-fr:"Le nanohana de février est la pousse fleurie du colza dont l’huile éclairait les lampes d’Edo : la même plante, cueillie avant l’ouverture des boutons au lieu d’être menée jusqu’à la graine. Les maraîchers coupent tant que le jaune est encore fermé, car une fleur ouverte signifie une tige déjà filandreuse."},
-tip:{en:"Blanch sixty to ninety seconds in well-salted water, straight into cold, then squeeze hard — waterlogged nanohana dilutes any dressing you put on it. Stems in first, flowering tips ten seconds later.",
-fr:"Blanchissez soixante à quatre-vingt-dix secondes à l’eau bien salée, glacez aussitôt, puis pressez fermement : un nanohana gorgé d’eau dilue n’importe quelle sauce. Les tiges d’abord, les sommités dix secondes plus tard."},
-pairs:["karashi","soy-sauce","katsuobushi","sesame","clam","kombu"],
-svg:'<path class="s" d="M48 78V34"/><path class="f1 sf" d="M48 58q-14-4-18-14 12-2 18 8zM48 68q14-4 18-14-12-2-18 8z"/><circle class="f2 sf" cx="41" cy="28" r="6"/><circle class="f2 sf" cx="56" cy="27" r="6"/><circle class="f2 sf" cx="48" cy="18" r="6"/>'},
 
 {id:"napa-cabbage",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Napa cabbage",fr:"Chou chinois"},latin:"Brassica rapa subsp. pekinensis",
 origin:{en:"Yangtze delta, China",fr:"Delta du Yangzi, Chine"},season:[10,11,12,1,2],
@@ -2298,15 +2258,5 @@ tip:{en:"It is nine-tenths water: cook it fast and hot, or salt and drain it, so
 fr:"Elle est aux neuf dixièmes de l’eau : cuisez-la vite et fort, ou salez-la et égouttez-la, pour qu’elle dore au lieu de bouillir."},
 pairs:["mint","lemon","garlic","parmesan","basil","pine-nut","olive-oil"],
 svg:'<rect class="f2 sf" x="26" y="44" width="44" height="16" rx="8" transform="rotate(-14 48 52)"/><path class="s" d="M68 38q6-2 8-6"/><path class="dot" d="M38 52a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M48 49a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M44 58a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M56 53a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
-
-{id:"zucchini-flower",cat:"vegetables",price:2,pk:"0,50–1 €/pièce",name:{en:"Zucchini flower",fr:"Fleur de courgette"},latin:"Cucurbita pepo",
-origin:{en:"Mediterranean kitchen gardens",fr:"Potagers méditerranéens"},season:[6,7,8,9],
-flavor:["delicate","mild","grassy"],
-story:{en:"The flower opens at dawn and has closed for good by noon, which is why it reaches the market picked wet at first light and never survives a second day. Male flowers arrive on a bare stem — they were never going to become anything — while the female comes attached to a finger of fruit, and the two are sold at different prices for exactly that reason.",
-fr:"La fleur s'ouvre à l'aube et s'est refermée pour de bon à midi : elle arrive donc au marché cueillie humide au petit jour et ne passe jamais une seconde journée. Les fleurs mâles se vendent sur tige nue — elles n'allaient rien devenir — tandis que la femelle tient encore à un fruit gros comme un doigt, et c'est cela qui sépare les deux prix."},
-tip:{en:"Pull out the stamen or pistil from inside: it is bitter and it holds water that will blow a batter open. Never wash them, brush them; and fry at 180 °C so the petal sets before the filling has time to warm and run.",
-fr:"Retirez l'étamine ou le pistil à l'intérieur : ils sont amers et retiennent une eau qui fera éclater la pâte. Ne les lavez jamais, brossez-les ; et frisez à 180 °C pour que le pétale prenne avant que la farce n'ait le temps de chauffer et de couler."},
-pairs:["ricotta","mozzarella-di-bufala-campana","anchovy","basil","olive-oil","lemon","parmesan","mint"],
-svg:'<path class="f1 sf" d="M40 44q-8-14-4-20 4 4 6 2-2-8 6-10 8 2 6 10 2 2 6-2 4 6-4 20z"/><path class="f2 sf" d="M40 44h16l-2 26q0 6-6 6t-6-6z"/><path class="s" d="M48 48v22M44 50l1 18M52 50l-1 18"/>'},
 
 ]);

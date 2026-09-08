@@ -42,7 +42,7 @@ MONTHS = {
 FAMILY = {
     "cellar": ("Cellar", "Cave"), "condiments": ("Condiments", "Condiments"),
     "cuts": ("Cuts", "Morceaux"), "dairy": ("Dairy", "Crèmerie"),
-    "fats": ("Fats", "Matières grasses"), "fruits": ("Fruit", "Fruits"),
+    "fats": ("Fats", "Matières grasses"), "flowers": ("Flowers", "Fleurs"), "fruits": ("Fruit", "Fruits"),
     "grains": ("Grains", "Céréales"), "herbs": ("Herbs", "Herbes"),
     "infusions": ("Infusions", "Infusions"), "legumes": ("Pulses", "Légumineuses"),
     "meat": ("Meat", "Viandes"), "mushrooms": ("Mushrooms", "Champignons"),

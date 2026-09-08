@@ -469,16 +469,6 @@ fr:"Percez-le deux fois et jetez-le entier, puis retirez-le avant de servir. Mou
 pairs:["lamb","rice","turmeric","onion","chickpeas","cilantro","cinnamon","saffron"],
 svg:'<circle class="f1 sf" cx="48" cy="54" r="18"/><path class="s" d="M36 44q12 8 24 0M34 58q14 8 28 0"/><circle class="dot" cx="44" cy="50" r="1.6"/>'},
 
-{id:"dried-rosebuds",cat:"spices",price:2,pk:"60–120 €/kg",name:{en:"Dried rosebuds",fr:"Boutons de rose séchés"},latin:"Rosa damascena",
-origin:{en:"Iran & Turkey",fr:"Iran & Turquie"},season:[],
-flavor:["floral","fruity","delicate"],
-story:{en:"Damask roses are picked before dawn in the valleys around Kashan and Isparta, because the aromatic oil in the petals falls away as the sun climbs. The whole buds sold for the kitchen come off that same harvest — they are what the distillers have no use for.",
-fr:"Les roses de Damas se cueillent avant l’aube dans les vallées de Kashan et d’Isparta, parce que l’huile parfumée des pétales s’évanouit à mesure que le soleil monte. Les boutons entiers vendus pour la cuisine viennent de cette même récolte : c’est ce dont les distillateurs n’ont pas l’usage."},
-tip:{en:"Infuse the buds whole, but pull them out at five minutes. Left longer, the sepals and stem give up their tannin and the liquid turns dry and bitter behind the perfume.",
-fr:"Infusez les boutons entiers, mais retirez-les au bout de cinq minutes. Passé ce délai, les sépales et la tige libèrent leurs tanins et le liquide devient sec et amer derrière le parfum."},
-pairs:["pistachio","honey","cardamom","lamb","yogurt","almond","saffron","rice"],
-svg:'<path class="f2 sf" d="M48 22q12 8 12 22t-12 16q-12-2-12-16t12-22z"/><path class="s" d="M48 28q-5 10 0 26M42 32q4 12 0 22M54 32q-4 12 0 22"/><path class="s" d="M40 56q-9 4-11 12M56 56q9 4 11 12"/><path class="s" d="M48 60v20"/>'},
-
 {id:"dukkah",cat:"spices",price:2,pk:"30–70 €/kg",name:{en:"Dukkah",fr:"Doukkah"},latin:"دقة",
 origin:{en:"Egypt",fr:"Égypte"},season:[],
 flavor:["nutty","toasty","earthy","salty"],

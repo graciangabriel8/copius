@@ -118,6 +118,7 @@ window.I18N = {
       vegetables: "Vegetables",
       fruits: "Fruits",
       herbs: "Herbs",
+      flowers: "Flowers",
       spices: "Spices",
       grains: "Grains & flours",
       legumes: "Legumes & pulses",
@@ -265,6 +266,7 @@ window.I18N = {
       vegetables: "Légumes",
       fruits: "Fruits",
       herbs: "Herbes",
+      flowers: "Fleurs",
       spices: "Épices",
       grains: "Céréales & farines",
       legumes: "Légumineuses",
@@ -297,4 +299,4 @@ window.I18N = {
 };
 
 // Order in which families appear in the filter bar and "by family" sort.
-window.CAT_ORDER = ["vegetables","fruits","herbs","spices","mushrooms","seaweed","grains","legumes","nuts","dairy","meat","cuts","seafood","shellfish","roe","fats","condiments","texture","cellar","infusions","sweet"];
+window.CAT_ORDER = ["vegetables","fruits","herbs","flowers","spices","mushrooms","seaweed","grains","legumes","nuts","dairy","meat","cuts","seafood","shellfish","roe","fats","condiments","texture","cellar","infusions","sweet"];

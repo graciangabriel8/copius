@@ -19,16 +19,6 @@ fr:"Ne jetez pas les grains infusés : égouttés et étalés sur une plaque, il
 pairs:["buckwheat","soba-noodles","dark-chocolate","honey","sesame","kinako","hojicha"],
 svg:'<path class="sf" d="M30 40h36l-5 26q-1 5-13 5t-13-5z"/><path class="s" d="M33 47h30"/><path class="f2 sf" d="M22 76l6-10 6 10z"/><path class="f2 sf" d="M62 76l6-10 6 10z"/>'},
 
-{id:"butterfly-pea-flower",cat:"infusions",price:2,pk:"80–160 €/kg",name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
-origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["mild","earthy","grassy"],
-story:{en:"The blue comes from ternatins, polyacylated anthocyanins unusually stable for their class, which is why the flower colours rice and jellies where most plant blues collapse. The colour is a pH meter: acid below about 3 turns the infusion pink-red, neutral holds it blue, alkali sends it green.",
-fr:"Le bleu vient des ternatines, des anthocyanes polyacylées d’une stabilité inhabituelle, d’où l’emploi de la fleur pour colorer riz et gelées là où la plupart des bleus végétaux s’effondrent. La couleur est un pH-mètre : en dessous d’environ 3, l’infusion vire au rose-rouge ; neutre, elle reste bleue ; en milieu alcalin, elle passe au vert."},
-tip:{en:"Ten flowers per 250 ml of hot water for five minutes and no longer — you are extracting a colour, and time only adds a faint hay taste. Add the lemon at the table, in front of whoever is eating: the violet-to-pink shift is the whole reason the flower is on the plate.",
-fr:"Compter 10 fleurs pour 250 ml d’eau chaude, cinq minutes et pas davantage : on extrait une couleur, et le temps n’ajoute qu’un goût de foin. Ajouter le citron à table, devant le convive : le passage du violet au rose est toute la raison d’être de la fleur dans l’assiette."},
-pairs:["lemon","lime","glutinous-rice","coconut-milk","pandan","lemongrass"],
-svg:'<path class="f2 sf" d="M24 48q5-21 24-21t24 21q-10 13-24 13T24 48z"/><path class="f1 sf" d="M38 60q10 8 20 0-3 13-10 13t-10-13z"/><path class="s" d="M48 28v25"/><path class="s" d="M34 46q14 7 28 0"/>'},
-
 {id:"cascara",cat:"infusions",rare:true,price:2,pk:"40–90 €/kg",name:{en:"Cascara",fr:"Cascara (pulpe de cerise de café)"},latin:"Coffea arabica",
 origin:{en:"Coffee farms, Yemen and Ethiopia",fr:"Fermes de café, Yémen et Éthiopie"},season:[],
 flavor:["fruity","tangy","sweet"],
