@@ -1127,5 +1127,14 @@ fr:"Le piment pousse dans toute la Murcie et la Vega Baja, mais il n’est séch
 tip:{en:"Soak thirty minutes in hot water, then scrape the softened flesh off the skin with a teaspoon and throw the skin away — blitzing the whole pod leaves gritty flecks through a romesco. Two ñoras is right for a sauce for six.",
 fr:"Le faire tremper trente minutes à l’eau chaude, puis racler la chair ramollie à la petite cuillère et jeter la peau : mixé entier, il laisse des éclats granuleux dans le romesco. Deux ñoras suffisent pour une sauce pour six."},
 pairs:["almond","tomato","garlic","olive-oil","hazelnut","sherry-vinegar"],
-svg:'<path class="s" d="M22 26h52"/><path class="s" d="M34 42V26M62 46V26"/><path class="f2 sf" d="M34 42q-14 0-14 14t14 16 14-16-14-14z"/><path class="f1 sf" d="M62 46q-12 0-12 12t12 14 12-14-12-12z"/><path class="s" d="M28 54q6 4 12 0M56 58q5 3 10 0"/>'}
+svg:'<path class="s" d="M22 26h52"/><path class="s" d="M34 42V26M62 46V26"/><path class="f2 sf" d="M34 42q-14 0-14 14t14 16 14-16-14-14z"/><path class="f1 sf" d="M62 46q-12 0-12 12t12 14 12-14-12-12z"/><path class="s" d="M28 54q6 4 12 0M56 58q5 3 10 0"/>'},
+{id:"wattleseed",cat:"spices",rare:true,price:3,pk:"120–250 €/kg",name:{en:"Wattleseed",fr:"Graines d’acacia"},latin:"Acacia victoriae",
+origin:{en:"Inland Australia",fr:"Australie intérieure"},season:[],
+flavor:["toasty","bitter","nutty"],
+story:{en:"Australia has close to a thousand acacia species and only a handful are safe to eat, so wattleseed is bought by botanical name — Acacia victoriae above all. Roasted and ground it smells of coffee, cocoa and hazelnut while containing none of them, which is what carried it out of desert country and into the bush-food trade in the 1980s.",
+fr:"L’Australie compte près de mille espèces d’acacias dont une poignée seulement est comestible : la graine s’achète donc au nom botanique, Acacia victoriae en premier lieu. Torréfiée et moulue, elle sent le café, le cacao et la noisette sans rien contenir de tout cela — ce qui l’a fait sortir du désert pour entrer dans le commerce des bush foods dans les années 1980."},
+tip:{en:"Infuse it, do not stir it in: a tablespoon steeped twenty minutes in a litre of hot cream or milk, then strained, behaves exactly like coffee grounds. Left in the mix the grounds stay gritty and never dissolve, and a custard made that way is unpleasant on the tongue.",
+fr:"Infusez-la, ne l’incorporez pas : une cuillerée à soupe laissée vingt minutes dans un litre de crème ou de lait chaud, puis passée, se conduit exactement comme du marc de café. Laissée dans l’appareil, la mouture reste sableuse et ne se dissout jamais — une crème anglaise ainsi faite est désagréable en bouche."},
+pairs:["cream","dark-chocolate","coffee","vanilla","macadamia","honey","milk-chocolate"],
+svg:'<path class="f2 sf" d="M26 30q26 6 44 40-4 4-9 4-12-26-38-36z"/><path class="dot" d="M34 38a2 2 0 104 0 2 2 0 10-4 0M44 46a2 2 0 104 0 2 2 0 10-4 0M53 56a2 2 0 104 0 2 2 0 10-4 0M60 66a2 2 0 104 0 2 2 0 10-4 0"/>'}
 ]);

@@ -1149,7 +1149,7 @@ fr:"Tranchez-le épais, trois ou quatre millimètres. Taillé en voile comme un 
 pairs:["butter","cornichon","mogette","parsley","shallot","cantaloupe","thyme","bay-leaf"],
 svg:'<path class="f2 sf" d="M58 32q14 6 14 20 0 14-14 20 -14 6-24-2 -10-8-6-24 4-16 30-14z"/><path class="s" d="M58 32 66 25"/><circle class="s" cx="69" cy="22" r="4"/><circle class="dot" cx="44" cy="48" r="2.2"/><circle class="dot" cx="54" cy="60" r="2.2"/><circle class="dot" cx="40" cy="62" r="2.2"/>'},
 
-{id:"venison",cat:"meat",price:3,pk:"22–40 €/kg",name:{en:"Venison",fr:"Chevreuil"},latin:"Capreolus capreolus",
+{id:"venison",cat:"meat",price:3,pk:"22–40 €/kg",name:{en:"Venison",fr:"Venaison"},latin:"Cervidae",
 origin:{en:"Europe",fr:"Europe"},season:[9,10,11,12,1],
 flavor:["meaty","earthy","rich","musky"],
 story:{en:"Almost fat-free, because a wild animal that runs does not store marbling — which is why it dries out at temperatures beef would shrug off. Medieval forest law reserved it for the king, and poaching it could cost a hand.",

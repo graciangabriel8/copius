@@ -99,16 +99,6 @@ fr:"Trempez et faites frire les grappes entières tenues par la queue, puis coup
 pairs:["honey","lemon","egg","sugar","cream","apricot","elderflower"],
 svg:'<path class="s" d="M48 18q4 16 2 30t-6 26"/><path class="f1 sf" d="M50 28q8-5 11 0t-4 8-7-8zM50 42q9-5 12 0t-4 8-8-8zM48 56q9-5 12 0t-4 8-8-8z"/><path class="f2 sf" d="M46 34q-9-5-12 0t4 8 8-8zM45 48q-9-5-12 0t4 8 8-8zM44 64q-9-5-12 0t4 8 8-8z"/>'},
 
-{id:"hanawasabi",cat:"flowers",rare:true,price:3,pk:"15–30 €/100 g",name:{en:"Hanawasabi (wasabi flower stems)",fr:"Fleurs de wasabi"},latin:"Eutrema japonicum",
-origin:{en:"Wasabi beds of Shizuoka and Nagano",fr:"Cressonnières à wasabi, Shizuoka et Nagano"},season:[2,3,4],
-flavor:["pungent","hot","fresh"],
-story:{en:"Growers cut the flowering stems to drive the plant’s strength back into the rhizome, so hanawasabi began as a by-product of the crop that pays. Its heat has to be provoked: the pungent compound forms only once the cells are torn, so cooks salt the stems, scald them and shut them warm in a sealed jar — a step the Japanese describe as making the wasabi angry.",
-fr:"Les producteurs coupent les hampes florales pour renvoyer la vigueur de la plante dans le rhizome : le hanawasabi est né comme sous-produit de la vraie récolte. Son piquant se provoque — la molécule ne se forme qu’une fois les cellules déchirées : on sale les tiges, on les ébouillante, puis on les enferme au chaud dans un bocal, ce que le japonais appelle « mettre le wasabi en colère »."},
-tip:{en:"Salt and rub the stems, dip them ten seconds in water at 80 °C, then shake them hard in a sealed jar and leave it at room temperature two hours before it goes to the fridge. Boiling water kills the enzyme and a loose lid lets the heat escape; either mistake leaves you a merely green vegetable.",
-fr:"Salez et frottez les tiges, plongez-les dix secondes dans une eau à 80 °C, puis secouez-les vigoureusement dans un bocal fermé et laissez deux heures à température ambiante avant le réfrigérateur. L’eau bouillante détruit l’enzyme et un couvercle mal fermé laisse fuir le piquant : dans les deux cas, il ne reste qu’un légume vert."},
-pairs:["koikuchi-shoyu","katsuobushi","hon-mirin","salt","rice","junmai-sake"],
-svg:'<path class="s" d="M36 76q4-24 10-38M48 76q1-22 2-38M60 76q-3-24-7-38"/><circle class="f1 sf" cx="46" cy="30" r="6"/><circle class="f1 sf" cx="50" cy="36" r="5"/><circle class="f1 sf" cx="56" cy="30" r="5"/><path class="f2 sf" d="M40 60q-12 2-14-8 12-4 14 8z"/>'},
-
 {id:"torch-ginger-flower",cat:"flowers",rare:true,price:2,pk:"2–5 €/pièce",name:{en:"Torch ginger bud",fr:"Bouton de gingembre torche (bunga kantan)"},latin:"Etlingera elatior",
 origin:{en:"Malaysia, Indonesia, Thailand",fr:"Malaisie, Indonésie, Thaïlande"},season:[],
 flavor:["sour","resinous","floral","pungent"],
@@ -139,23 +129,13 @@ fr:"Retirez l’étamine, amère, et farcissez d’un appareil déjà cuit ou pr
 pairs:["ricotta","parmesan","anchovy","basil","olive-oil","lemon","mozzarella","mint"],
 svg:'<path class="f1 sf" d="M48 18q6 6 6 14 6-8 14-8-2 8-8 12 8 0 12 6-10 6-24 6t-24-6q4-6 12-6-6-4-8-12 8 0 14 8 0-8 6-14z"/><path class="f2 sf" d="M38 48q10 4 20 0 2 16-2 26t-8 10-8-10-2-26z"/><path class="s" d="M48 22v26M42 54q6 3 12 0M44 70q4 2 8 0"/>'},
 
-{id:"banana-blossom",cat:"flowers",price:2,pk:"4–7 €/pièce",name:{en:"Banana blossom",fr:"Fleur de bananier"},latin:"Musa spp.",
-origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["bitter","fresh","mild"],
-story:{en:"The purple cone hanging below a banana bunch is the flower bud, and growers cut it off so the fruit above fills out — which makes it a by-product of the banana harvest rather than a crop of its own. Strip the bracts and the pale heart inside behaves exactly like an artichoke, browning included.",
-fr:"Le cône pourpre suspendu sous le régime est le bouton floral, et on le coupe pour que les bananes au-dessus se remplissent : c’est donc un sous-produit de la récolte, pas une culture. Sous les bractées, le cœur pâle se comporte en tout point comme un artichaut, noircissement compris."},
-tip:{en:"Have a bowl of acidulated water standing before the knife touches it — shredded heart browns in under two minutes. Oil your hands and the blade first: the sap is a latex that stains black and does not wash off.",
-fr:"Préparez un bain d’eau citronnée avant même de sortir le couteau : le cœur émincé noircit en moins de deux minutes. Huilez vos mains et la lame — la sève est un latex qui tache en noir et ne part pas au lavage."},
-pairs:["lime","coconut-milk","chili","peanut","cilantro","fish-sauce"],
-svg:'<path class="f2 sf" d="M48 82c-12-11-16-27-14-41 8-8 20-8 28 0 2 14-2 30-14 41z"/><path class="s" d="M34 52q14 8 28 0M36 64q12 7 24 0"/><path class="f1 sf" d="M34 41q14-11 28 0-14 7-28 0z"/><path class="s" d="M48 34V16"/>'},
-
 {id:"hibiscus-roselle",cat:"flowers",price:1,pk:"12–25 €/kg",name:{en:"Hibiscus / Roselle",fr:"Hibiscus (bissap)"},latin:"Hibiscus sabdariffa",
 origin:{en:"Sahel and West Africa",fr:"Sahel et Afrique de l’Ouest"},season:[],
 flavor:["sour","tangy","fruity"],
 story:{en:"Picked fresh, the calyx is thick, crisp and as sharp as an unripe plum, and that is how it is cooked where the plant grows: seeded and stewed with ginger into the Caribbean Christmas sorrel, boiled to a scarlet jam in Senegal, candied whole in Mexico. The young leaves are sour too and go into stews from Burma to Sudan, so the plant is grown as a vegetable as much as a flower.",
 fr:"Cueilli frais, le calice est épais, croquant et acide comme une prune verte, et c’est ainsi qu’on le cuisine là où la plante pousse : épépiné et mijoté au gingembre dans le sorrel de Noël des Antilles, bouilli en confiture écarlate au Sénégal, confit entier au Mexique. Les jeunes feuilles sont acides elles aussi et entrent dans les ragoûts de la Birmanie au Soudan : la plante se cultive comme légume autant que comme fleur."},
-tip:{en:"Brew below boiling and no longer than ten minutes: hot and long pulls tannin out along with the acid and the drink turns drying. Never use aluminium or bare cast iron — the pigment reacts with the metal and the red goes grey.",
-fr:"Infusez sous l’ébullition et pas plus de dix minutes : trop chaud et trop long, on extrait les tanins avec l’acidité et la boisson assèche. Jamais d’aluminium ni de fonte nue — le pigment réagit au métal et le rouge vire au gris."},
+tip:{en:"Split each calyx and pull the seed capsule out before cooking — it is woody and bitter. Colour and sourness both live in the calyx: cooked briefly with sugar or ginger it keeps its crunch; cooked long it collapses into a scarlet jam.",
+fr:"Fendez chaque calice et retirez la capsule de graines avant la cuisson — elle est ligneuse et amère. La couleur et l’acidité sont toutes deux dans le calice : cuit brièvement avec du sucre ou du gingembre, il garde son croquant ; cuit longtemps, il s’effondre en confiture écarlate."},
 pairs:["ginger","lime","sugar","mint","raspberry","vanilla"],
 svg:'<path class="f3 sf" d="M48 26q10 12 10 26t-10 20q-10-6-10-20t10-26z"/><path class="f2 sf" d="M38 46q-14-4-18 4 10 8 20 2zM58 46q14-4 18 4-10 8-20 2z"/><path class="s" d="M48 32v36"/><path class="s" d="M48 72v12"/>'},
 
@@ -197,5 +177,14 @@ fr:"La salicine fut extraite de ses fleurs dans les années 1830, et lorsque Bay
 tip:{en:"Infuse the flowers off the heat in cream at about 70 °C for twenty minutes, then strain. Boiling pulls the salicylate out and the cream turns bitter and antiseptic.",
 fr:"Infusez les fleurs hors du feu dans une crème à 70 °C environ pendant vingt minutes, puis passez. Une ébullition libère le salicylate et la crème vire à l'amer médicinal."},
 pairs:["honey","cream","rhubarb","strawberry","elderflower","gooseberry","almond"],
-svg:'<path class="f1 sf" d="M48 18q17 7 13 22-13 9-26 0Q31 25 48 18z"/><path class="s" d="M38 28q10 5 20 0M40 36q8 4 16 0"/><path class="s" d="M48 42v32"/><path class="f2 sf" d="M48 58q-11-2-14 6 9 5 14-6z"/>'}
+svg:'<path class="f1 sf" d="M48 18q17 7 13 22-13 9-26 0Q31 25 48 18z"/><path class="s" d="M38 28q10 5 20 0M40 36q8 4 16 0"/><path class="s" d="M48 42v32"/><path class="f2 sf" d="M48 58q-11-2-14 6 9 5 14-6z"/>'},
+{id:"lavender-flowers",cat:"flowers",price:1,pk:"25–50 €/kg",name:{en:"Lavender flowers",fr:"Fleurs de lavande"},latin:"Lavandula angustifolia",
+origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[6,7,8],
+flavor:["floral","herbal","resinous","woody"],
+story:{en:"Only fine lavender, angustifolia, belongs in food; the lavandin hybrid that covers most of the Provençal plateaux is grown for oil and runs high in camphor, which is what turns a cream soapy. In the field the two are easy to tell apart — lavandin sends up a branched stem carrying three heads, fine lavender a single one.",
+fr:"Seule la lavande fine, angustifolia, a sa place en cuisine ; le lavandin hybride qui couvre l’essentiel des plateaux provençaux est cultivé pour l’huile et riche en camphre — c’est lui qui rend une crème savonneuse. Au champ, on les distingue sans peine : le lavandin porte une tige ramifiée à trois épis, la lavande fine un seul."},
+tip:{en:"Measure in pinches, not spoons: a teaspoon of buds infused in a litre of cream is already at the limit. Infuse warm, strain, and never leave the buds in — held too long they go medicinal.",
+fr:"Dosez en pincées, pas en cuillères : une cuillère à café de boutons infusée dans un litre de crème est déjà à la limite. Infusez tiède, filtrez, et ne laissez jamais les boutons dedans — trop longtemps, ils tournent au médicinal."},
+pairs:["honey","cream","apricot","peach","goat-cheese","lemon","thyme","blueberry"],
+svg:'<path class="s" d="M48 82V52"/><path class="f2 sf" d="M48 16q7 4 7 11t-7 7q-7 0-7-7t7-11zM40 33q6 2 8 8-2 6-8 6t-6-7 6-7zM56 33q-6 2-8 8 2 6 8 6t6-7-6-7zM42 48q6 1 6 6-2 5-7 5t-5-6 6-5zM54 48q-6 1-6 6 2 5 7 5t5-6-6-5z"/><path class="s" d="M48 68q-8-2-12-8M48 74q8-2 12-8"/>'}
 ]);

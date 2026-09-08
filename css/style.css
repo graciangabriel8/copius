@@ -343,6 +343,8 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   width:40px;height:40px;border-radius:50%;font-size:15px;line-height:1;
 }
 .modal-bar .ghost:hover{border-color:var(--ink-3);color:var(--ink)}
+/* Phones: the entry becomes a sheet from the top edge, so the sticky bar sits at the very top. */
+@media (max-width:720px){.overlay{padding:0 0 24px}.modal,.modal-bar{border-radius:0}}
 #backBtn{margin-right:auto}
 #closeBtn{margin-left:auto}
 .modal-body{padding:6px 34px 34px}

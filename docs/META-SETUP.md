@@ -100,7 +100,7 @@ Check Instagram before leaving it on the 08:00 UTC schedule.
 Long-lived tokens last **60 days** and cannot be revived once expired — you
 have to issue a new one.
 
-The `refresh-token` job renews it weekly and writes the new value straight back
+The `refresh-token` job renews it on Mondays and writes the new value straight back
 into the secret, but only if a third secret exists:
 
 | Name | Value |

@@ -397,5 +397,14 @@ fr:"Bissap à Dakar, karkadé au Caire, agua de jamaica à Mexico : le même cal
 tip:{en:"Steep it, never boil it — five minutes off the boil gives clean cranberry acidity, while a simmer turns it stewed and drying. Sweeten while it is still hot, since the acidity reads much sharper cold.",
 fr:"Infusez-le, ne le faites jamais bouillir — cinq minutes hors ébullition donnent une acidité nette de canneberge, tandis qu’un frémissement le rend compoté et asséchant. Sucrez tant qu’il est chaud : l’acidité paraît bien plus vive une fois refroidie."},
 pairs:["sugar","ginger","lime","mint","vanilla","raspberry","orange","cinnamon"],
-svg:'<path class="f3 sf" d="M48 42q12 6 12 18t-12 16q-12-2-12-16t12-18z"/><path class="s" d="M48 42V22M48 42L34 28M48 42l14-14M48 42l-18-4M48 42l18-4"/><path class="s" d="M38 62q10 5 20 0"/>'}
+svg:'<path class="f3 sf" d="M48 42q12 6 12 18t-12 16q-12-2-12-16t12-18z"/><path class="s" d="M48 42V22M48 42L34 28M48 42l14-14M48 42l-18-4M48 42l18-4"/><path class="s" d="M38 62q10 5 20 0"/>'},
+{id:"omija",cat:"infusions",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Omija (schisandra berry)",fr:"Baie de schisandra (omija)"},latin:"Schisandra chinensis",
+origin:{en:"Mountain forests of Korea and Manchuria",fr:"Forêts de montagne de Corée et de Mandchourie"},season:[8,9],
+flavor:["sour","bitter","fruity","warm"],
+story:{en:"Its Chinese name, wu wei zi, means five-flavour berry: the skin sour, the flesh sweet, the seeds bitter and pungent, the whole faintly salty. Korean cooks never boil it — hot water drags tannin out of the seeds and the clear red goes muddy and harsh.",
+fr:"Son nom chinois, wu wei zi, signifie « baie aux cinq saveurs » : peau acide, chair sucrée, pépins amers et piquants, l’ensemble légèrement salé. Les cuisiniers coréens ne la font jamais bouillir — l’eau chaude tire le tanin des pépins et le rouge limpide vire au trouble et à l’âpre."},
+tip:{en:"Infuse the whole dried berries in cold water overnight, about 30 g to the litre, then strain without pressing — crushing the fruit releases exactly the seed bitterness you spent the night avoiding.",
+fr:"Faites infuser les baies séchées entières à l’eau froide toute une nuit, environ 30 g par litre, puis filtrez sans presser : écraser les fruits libère précisément l’amertume des pépins que vous avez passé la nuit à éviter."},
+pairs:["honey","poire-comice","ginger","jujube","pine-nut","raspberry","mint"],
+svg:'<path class="s" d="M48 16v14M48 30q-8 2-12 6M48 30q8 2 12 6"/><circle class="f3 sf" cx="36" cy="42" r="8"/><circle class="f2 sf" cx="58" cy="44" r="9"/><circle class="f3 sf" cx="45" cy="60" r="9"/><circle class="f2 sf" cx="60" cy="64" r="7"/><path class="s" d="M33 39q3-2 6 0"/>'}
 ]);

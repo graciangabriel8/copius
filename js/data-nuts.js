@@ -589,16 +589,6 @@ fr:"Ne la mangez jamais crue : dans ses eaux de culture asiatiques elle peut por
 pairs:["pork","soy-sauce","ginger","shiitake","chicken","star-anise","shaoxing-wine"],
 svg:'<path class="f3 sf" d="M30 34q10 10 18 10t18-10q2 12-4 20t-14 10q-8-2-14-10t-4-20z"/><path class="s" d="M40 50q8 4 16 0"/><path class="dot" d="M46.4 64a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 
-{id:"wattleseed",cat:"nuts",rare:true,price:3,pk:"120–250 €/kg",name:{en:"Wattleseed",fr:"Graines d’acacia"},latin:"Acacia victoriae",
-origin:{en:"Inland Australia",fr:"Australie intérieure"},season:[],
-flavor:["toasty","bitter","nutty"],
-story:{en:"Australia has close to a thousand acacia species and only a handful are safe to eat, so wattleseed is bought by botanical name — Acacia victoriae above all. Roasted and ground it smells of coffee, cocoa and hazelnut while containing none of them, which is what carried it out of desert country and into the bush-food trade in the 1980s.",
-fr:"L’Australie compte près de mille espèces d’acacias dont une poignée seulement est comestible : la graine s’achète donc au nom botanique, Acacia victoriae en premier lieu. Torréfiée et moulue, elle sent le café, le cacao et la noisette sans rien contenir de tout cela — ce qui l’a fait sortir du désert pour entrer dans le commerce des bush foods dans les années 1980."},
-tip:{en:"Infuse it, do not stir it in: a tablespoon steeped twenty minutes in a litre of hot cream or milk, then strained, behaves exactly like coffee grounds. Left in the mix the grounds stay gritty and never dissolve, and a custard made that way is unpleasant on the tongue.",
-fr:"Infusez-la, ne l’incorporez pas : une cuillerée à soupe laissée vingt minutes dans un litre de crème ou de lait chaud, puis passée, se conduit exactement comme du marc de café. Laissée dans l’appareil, la mouture reste sableuse et ne se dissout jamais — une crème anglaise ainsi faite est désagréable en bouche."},
-pairs:["cream","dark-chocolate","coffee","vanilla","macadamia","honey","milk-chocolate"],
-svg:'<path class="f2 sf" d="M26 30q26 6 44 40-4 4-9 4-12-26-38-36z"/><path class="dot" d="M34 38a2 2 0 104 0 2 2 0 10-4 0M44 46a2 2 0 104 0 2 2 0 10-4 0M53 56a2 2 0 104 0 2 2 0 10-4 0M60 66a2 2 0 104 0 2 2 0 10-4 0"/>'},
-
 {id:"white-poppy-seed",cat:"nuts",price:2,pk:"15–25 €/kg",name:{en:"White poppy seed",fr:"Pavot blanc"},latin:"Papaver somniferum",
 origin:{en:"Bengal & the Deccan",fr:"Bengale & Deccan"},season:[],
 flavor:["nutty","mild","creamy"],

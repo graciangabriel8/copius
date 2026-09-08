@@ -609,16 +609,6 @@ fr:"Il est cuit en treize à quinze minutes, plusieurs minutes de moins que le c
 pairs:["parmesan","butter","pea","saffron","radicchio","langoustine"],
 svg:'<ellipse class="f1 sf" cx="40" cy="40" rx="7" ry="11"/><ellipse class="f2 sf" cx="56" cy="48" rx="7" ry="11"/><ellipse class="f1 sf" cx="44" cy="62" rx="7" ry="11"/><path class="s" d="M40 33v14M56 41v14M44 55v14"/>'},
 
-{id:"warabiko",cat:"grains",price:3,pk:"60–200 €/kg",name:{en:"Warabi-ko (bracken starch)",fr:"Fécule de fougère (warabi-ko)"},latin:"Pteridium aquilinum",
-origin:{en:"Japan, mountain woodland",fr:"Japon, sous-bois de montagne"},season:[],
-flavor:["mild","earthy","delicate"],
-story:{en:"A bracken rhizome is only about five percent starch, and washing that out is slow enough that pure hon-warabiko has run to twelve to fifteen thousand yen a kilo, some thirty times the price of sweet potato starch. Almost every packet sold as warabimochiko is mostly sweet potato or tapioca with a little bracken in it for the grey.",
-fr:"Le rhizome de fougère aigle ne contient qu’environ cinq pour cent d’amidon, et l’extraction est si lente que le hon-warabiko pur se négocie douze à quinze mille yens le kilo, une trentaine de fois le prix de la fécule de patate douce. Presque tous les sachets vendus comme warabimochiko sont surtout de la patate douce ou du tapioca, avec un peu de fougère pour le gris."},
-tip:{en:"Cook it hard. Whisk it cold with the water and sugar, then stir over medium heat past the cloudy stage and keep going four or five minutes after it turns clear — stopped at translucent it leaves a starchy tongue and a gel that weeps.",
-fr:"Il faut le cuire longtemps. Fouettez-le à froid avec l’eau et le sucre, puis remuez à feu moyen en dépassant le stade trouble et continuez quatre à cinq minutes après la transparence : arrêté translucide, il laisse un goût d’amidon et un gel qui rend de l’eau."},
-pairs:["kinako","kokuto","matcha","black-sesame","sugar","mizuame"],
-svg:'<path class="f2 sf" d="M32 44q0-7 16-7t16 7v16q0 8-16 8t-16-8z"/><path class="s" d="M38 49q10 4 20 0"/><path class="f1 sf" d="M22 70h52l-4 6H26z"/>'},
-
 {id:"flour-complete",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Wholemeal flour",fr:"Farine complète"},latin:"Triticum aestivum",
 origin:{en:"Everywhere wheat grows",fr:"Partout où pousse le blé"},season:[],
 flavor:["earthy","nutty","bitter","toasty"],

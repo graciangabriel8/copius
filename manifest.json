@@ -1,7 +1,7 @@
 {
   "name": "Copius — dictionnaire illustré des ingrédients",
   "short_name": "Copius",
-  "description": "A bilingual EN/FR illustrated atlas of cooking: 1,857 ingredients, 135 techniques, 45 bases and 81 chefs — origin, season, flavour notes, a story and a kitchen note for each.",
+  "description": "A bilingual EN/FR illustrated atlas of cooking: 1,835 ingredients, 135 techniques, 45 bases and 81 chefs — origin, season, flavour notes, a story and a kitchen note for each.",
   "start_url": "./atlas.html",
   "scope": "./",
   "display": "standalone",

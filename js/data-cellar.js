@@ -129,16 +129,6 @@ fr:"Déglacez un magret avec, en y jetant deux pruneaux qui gonfleront dans la r
 pairs:["duck","prune","foie-gras","armagnac","walnut","cantaloupe"],
 svg:'<path class="f2 sf" d="M36 22h12v10q10 6 10 16v28a5 5 0 0 1-5 5H31a5 5 0 0 1-5-5V48q0-10 10-16z"/><path class="f3 sf" d="M36 19h12v6H36z"/><circle class="f1 sf" cx="70" cy="40" r="5"/><circle class="f1 sf" cx="70" cy="52" r="5"/><circle class="f1 sf" cx="76" cy="46" r="5"/><circle class="dot" cx="70" cy="46" r="2.5"/>'},
 
-{id:"grape-must",cat:"cellar",price:1,pk:"4–9 €/L",name:{en:"Grape must",fr:"Moût de raisin"},latin:"Vitis vinifera",
-origin:{en:"Wine regions, at harvest",fr:"Vignobles, à la vendange"},season:[9,10],
-flavor:["sweet","fruity","tangy"],
-story:{en:"The word mostarda comes from mustum ardens, burning must - grape must cooked down with ground mustard, long before it came to mean candied fruit in syrup. Must is only itself for a few days, since the wild yeast on the skins starts fermenting it in the vat, so everything made from it is made at harvest or not at all.",
-fr:"Le mot mostarda vient de mustum ardens, le moût brûlant - du moût de raisin cuit avec de la moutarde broyée, bien avant qu’il ne désigne des fruits confits au sirop. Le moût n’est lui-même que quelques jours, les levures des peaux le faisant partir en fermentation dans la cuve : tout ce qu’on en tire se fait aux vendanges ou pas du tout."},
-tip:{en:"Reduce it uncovered in a wide pan and skim as you go: it falls by three quarters to a syrup, while a lid turns the same must into jam. In the fridge it will ferment inside a week, so freeze whatever you are not cooking down that day.",
-fr:"Réduisez-le à découvert dans une large bassine en écumant au fur et à mesure : il tombe des trois quarts pour donner un sirop, là où un couvercle transforme le même moût en confiture. Au réfrigérateur, il fermente en moins d’une semaine : congelez ce que vous ne cuisez pas le jour même."},
-pairs:["walnut","chestnut","quince","mustard-seed","pork","cinnamon","grape","ricotta"],
-svg:'<path class="f1 sf" d="M22 38h52l-6 34a6 6 0 0 1-6 4H34a6 6 0 0 1-6-4z"/><path class="f2" d="M26 52h44l-3 20a6 6 0 0 1-6 4H35a6 6 0 0 1-6-4z"/><path class="s" d="M22 38h52M27 54h42"/><circle class="dot" cx="40" cy="60" r="2.5"/><circle class="dot" cx="56" cy="64" r="2.5"/>'},
-
 {id:"grappa",cat:"cellar",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
 origin:{en:"Italy (Friuli, Veneto, Piedmont)",fr:"Italie (Frioul, Vénétie, Piémont)"},season:[],
 flavor:["floral","fruity","warm","pungent"],

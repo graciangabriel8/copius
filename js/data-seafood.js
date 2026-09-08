@@ -709,16 +709,6 @@ fr:"Moins grasse que le saumon, elle ne pardonne rien. Salez-la quarante minutes
 pairs:["dill","cucumber","lemon","butter","sorrel","cream","horseradish","chives"],
 svg:'<path class="f1 sf" d="M24 50q14-13 30-11t18 11q-2 11-18 13T24 50z"/><path class="f2 sf" d="M24 50l-4-10v20z"/><path class="f3 sf" d="M40 38l6-6 4 6zM58 40l3-4 2 4z"/><circle class="dot" cx="38" cy="47" r="1.8"/><circle class="dot" cx="48" cy="44" r="1.8"/><circle class="dot" cx="54" cy="53" r="1.8"/>'},
 
-{id:"shuto",cat:"seafood",rare:true,price:3,pk:"100–200 €/kg",name:{en:"Shutō (fermented bonito viscera)",fr:"Shutō"},latin:"Katsuwonus pelamis (viscera)",
-origin:{en:"Kochi, Shikoku",fr:"Kochi, Shikoku"},season:[],
-flavor:["salty","umami","briny","rich"],
-story:{en:"The name means sake thief: the salt is so insistent that a cup vanishes beside it, and Kochi has sold it under that name for a couple of centuries. It is bonito stomach and gut, heavily salted and left to break down for months until it is dark, sticky and closer to a seasoning than a dish.",
-fr:"Le nom veut dire « voleur de saké » : le sel y est si insistant qu’une coupe disparaît à côté, et Kochi le vend sous ce nom depuis deux siècles. Ce sont l’estomac et les boyaux de bonite, très salés et laissés se défaire des mois durant, jusqu’à devenir sombres, collants et plus proches d’un assaisonnement que d’un mets."},
-tip:{en:"Treat it as salt with an opinion: half a teaspoon melted into butter will season a whole plate of pasta or a pan of clams. If a piece is too fierce to eat straight, chop it with spring onion and a drop of sesame oil.",
-fr:"Traitez-le comme un sel qui a un avis : une demi-cuillère fondue dans du beurre assaisonne une assiette entière de pâtes ou une poêlée de coques. Si un morceau est trop violent à croquer, hachez-le avec de la cive et une goutte d’huile de sésame."},
-pairs:["junmai-sake","butter","cucumber","rice","negi","sesame-oil","koikuchi-shoyu"],
-svg:'<path class="f3 sf" d="M30 46h36l-4 24q-1 6-7 6H41q-6 0-7-6z"/><path class="s" d="M26 46h44"/><path class="s" d="M56 44l16-18"/><path class="s" d="M38 58q10 5 20-2"/>'},
-
 {id:"foie-de-raie",cat:"seafood",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Skate liver",fr:"Foie de raie"},latin:"Raja spp. (hepar)",
 origin:{en:"Channel and Atlantic day boats",fr:"Fileyeurs de la Manche et de l'Atlantique"},season:[],
 flavor:["rich","creamy","marine","delicate"],

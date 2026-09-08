@@ -419,7 +419,7 @@ fr:"Son parfum — pin, cannelle, pluie d’automne — est tout l’enjeu : ne 
 pairs:["rice","kombu","katsuobushi","chicken"],
 svg:'<path class="f2 sf" d="M32 44q4-14 16-14t16 14q0 4-4 4H36q-4 0-4-4z"/><path class="f1 sf" d="M43 48h10l-1 22q0 6-4 6t-4-6z"/><path class="s" d="M38 42h20" stroke-width="1.4"/>'},
 
-{id:"morel",cat:"mushrooms",price:4,pk:"120–250 €/kg",name:{en:"Morel",fr:"Morille"},latin:"Morchella esculenta",
+{id:"morel",cat:"mushrooms",price:4,pk:"120–250 €/kg",name:{en:"Morel",fr:"Morille"},latin:"Morchella spp.",
 origin:{en:"Temperate woodlands",fr:"Forêts tempérées"},season:[3,4,5],
 flavor:["earthy","nutty","meaty","smoky"],
 story:{en:"Spring’s honeycombed treasure, mysteriously fond of burnt ground — after forest fires, morel hunters follow the ash. In the Jura, poulet aux morilles et au vin jaune is less a recipe than a regional religion, the wine’s walnut oxidation meeting the mushroom’s dark perfume.",
@@ -450,7 +450,7 @@ pairs:["miso","kombu","silken-tofu","negi","katsuobushi","daikon","mitsuba"],
 svg:'<path class="f2 sf" d="M22 44q2-10 12-10t12 10q-6 5-12 5t-12-5z"/><path class="f2 sf" d="M50 48q2-11 13-11t13 11q-7 5-13 5t-13-5z"/><path class="f1 sf" d="M30 48h8l-2 22h-5zM60 53h6l-2 18h-5z"/><path class="s" d="M26 50q1 6 3 8M46 52q1 5 3 7M56 56q1 5 3 7"/>'},
 
 {id:"orange-birch-bolete",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Orange oak bolete",fr:"Bolet roux"},latin:"Leccinum aurantiacum",
-origin:{en:"Birch and aspen woods",fr:"Bois de bouleaux et de trembles"},season:[6,7,8,9,10],
+origin:{en:"Aspen and oak woods",fr:"Bois de trembles et de chênes"},season:[6,7,8,9,10],
 flavor:["earthy","meaty","woody"],
 story:{en:"Its white flesh runs wine-grey and then near-black within minutes of being cut, and no amount of lemon or acidulated water prevents it. Northern and eastern Europe never fought the reaction: the mushroom went into dark stews and pickling jars where colour was never the point.",
 fr:"Sa chair blanche vire au gris vineux puis au presque noir en quelques minutes après la coupe, et ni citron ni eau acidulée n’y changent rien. L’Europe du Nord et de l’Est n’a jamais combattu cette réaction : le champignon partait dans les ragoûts sombres et les bocaux au vinaigre, où la couleur n’avait aucune importance."},
@@ -697,5 +697,14 @@ fr:"Ses noms français et latin viennent d’une légende médiévale selon laqu
 tip:{en:"Soak the dried ones twenty minutes and they swell to five times their size. Never eat them raw.",
 fr:"Trempez les séchées vingt minutes et elles gonflent à cinq fois leur volume. Ne les mangez jamais crues."},
 pairs:["soy-sauce","ginger","sesame-oil","spring-onion","garlic","rice-vinegar","chili","tamari"],
-svg:'<path class="f1 sf" d="M28 58q4-20 22-18t18 16q-12 12-42 2z"/><path class="s" d="M36 52q10 6 20 2M34 60q14 6 26 0"/>'}
+svg:'<path class="f1 sf" d="M28 58q4-20 22-18t18 16q-12 12-42 2z"/><path class="s" d="M36 52q10 6 20 2M34 60q14 6 26 0"/>'},
+{id:"reindeer-lichen",cat:"mushrooms",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Reindeer lichen",fr:"Lichen des rennes"},latin:"Cladonia rangiferina",
+origin:{en:"Lapland and boreal heath",fr:"Laponie et landes boréales"},season:[],
+flavor:["earthy","mild","toasty"],
+story:{en:"It is not a plant but a fungus farming an alga, and it grows only a few millimetres a year, so a handful lifted off the heath is older than the cook holding it. Northern kitchens long took it pre-digested, scraped from the stomach of the reindeer that had grazed it.",
+fr:"Ce n’est pas une plante mais un champignon qui cultive une algue, et il ne pousse que de quelques millimètres par an : une poignée ramassée sur la lande est plus vieille que le cuisinier qui la tient. Les cuisines du Nord l’ont longtemps prise prédigérée, raclée dans la panse du renne qui l’avait broutée."},
+tip:{en:"Soak it through three changes of water with a pinch of bicarbonate to leach the acids, dry it completely, then fry at 180°C for about ten seconds. Untreated it is bitter and hard on the stomach; damp, it will never crisp.",
+fr:"Faites-le dégorger dans trois eaux additionnées d’une pincée de bicarbonate pour en lessiver les acides, séchez-le complètement, puis frite à 180 °C une dizaine de secondes. Non traité, il est amer et lourd ; humide, il ne croustillera jamais."},
+pairs:["renne","mushroom","cream","butter","egg","scallop"],
+svg:'<path class="s" d="M48 82V58M48 58l-11-12M48 58l11-12M37 46l-8-10M37 46l4-12M59 46l8-10M59 46l-4-12M29 36l-4-8M29 36l6-6M67 36l4-8M67 36l-6-6M41 34l-4-8M41 34l6-6M55 34l4-8M55 34l-6-6"/><path class="f1 sf" d="M36 82q12-5 24 0-12 4-24 0z"/><circle class="dot" cx="25" cy="26" r="2"/><circle class="dot" cx="71" cy="26" r="2"/>'}
 ]);

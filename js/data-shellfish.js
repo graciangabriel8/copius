@@ -239,7 +239,7 @@ fr:"Tout le trésor est dans les pattes, presque toujours vendues cuites : ne le
 pairs:["butter","lemon","ginger","chives"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="12"/><path class="s" d="M38 44l-10-8M36 52H22M38 60l-10 8M58 44l10-8M60 52h14M58 60l10 8"/><path class="s" d="M28 36l-2-5M68 36l2-5"/>'},
 
-{id:"kumamoto-oyster",cat:"shellfish",price:3,pk:"25–45 €/douzaine",name:{en:"Kumamoto oyster",fr:"Huître kumamoto"},latin:"Crassostrea sikamea",
+{id:"kumamoto-oyster",cat:"shellfish",price:3,pk:"25–45 €/douzaine",name:{en:"Kumamoto oyster",fr:"Huître kumamoto"},latin:"Magallana sikamea",
 origin:{en:"Kumamoto, Japan; farmed on the US Pacific coast",fr:"Kumamoto, Japon ; élevée sur la côte pacifique américaine"},season:[],
 flavor:["sweet","fruity","marine","mild"],
 story:{en:"It reached Seattle in 1946 by accident: Japan could not fill an American order for Pacific oyster seed and made up the shortfall with sikamea from Kumamoto. By 1994 researchers believed the species extinct in its home waters, until it was found again in the Ariake Sea in 1996 and confirmed by DNA.",

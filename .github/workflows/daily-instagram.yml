@@ -41,13 +41,14 @@ jobs:
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "Today: $ID ($DATE)"
           test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: python3 tools/build-schedule.py && sh tools/build-social.sh && git add social && git commit && git push"; exit 1; }
-          # warn while there is still time to extend the schedule
-          LEFT="$(python3 -c 'import json,datetime; s=json.load(open("social/schedule.json")); print(len(s["days"]) - (datetime.date.today() - datetime.date.fromisoformat(s["start"])).days)')"
+          # warn while there is still time to build more cards: count the days
+          # until the first scheduled ingredient that has no jpg yet
+          LEFT="$(python3 -c 'import json,datetime,os; s=json.load(open("social/schedule.json")); t=(datetime.date.today()-datetime.date.fromisoformat(s["start"])).days; d=s["days"]; print(next((n for n in range(len(d)-t) if not os.path.exists("social/%s.jpg" % d[t+n])), len(d)-t))')"
           # An `if`, not `[ ] && echo` — under set -e a false test makes the
           # && chain return non-zero, and as the step's last command that
           # fails the whole job. The warning fired by not firing.
           if [ "$LEFT" -lt 40 ]; then
-            echo "::warning::only $LEFT days left in the schedule — run: python3 tools/build-schedule.py && sh tools/build-social.sh"
+            echo "::warning::only $LEFT days of cards left — run: sh tools/build-social.sh && git add social && git commit && git push"
           fi
 
       - name: Publish
