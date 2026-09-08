@@ -44,7 +44,7 @@
     lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: localStorage.getItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
-    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", sort: "name",
+    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", flavour: "all", sort: "name",
     techQ: "", techGroup: "all", dishQ: "", dishRegion: "all"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
@@ -225,6 +225,13 @@
     el("lang-fr").classList.toggle("active", state.lang === "fr");
     var t2 = t;
     fillSel("priceBand", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceBand);
+    /* Built from the tags that exist rather than a hand-kept list, so a new
+       flavour on an entry appears here by itself. */
+    var flavourOpts = Object.keys(ING.reduce(function (m, x) {
+      x.flavor.forEach(function (f) { m[f] = 1; }); return m;
+    }, {})).map(function (f) { return [f, t2.flavors[f] || f]; })
+      .sort(function (a, b) { return a[1].localeCompare(b[1], state.lang); });
+    fillSel("flavour", [["all", t2.fAllFlavours]].concat(flavourOpts), state.flavour);
     var sort = el("sort");
     sort.innerHTML = '<option value="name">' + esc(t.sortName) + '</option><option value="family">' + esc(t.sortFamily) + "</option>";
     sort.value = state.sort;
@@ -257,6 +264,7 @@
       if (state.rareOnly && !i.rare) return false;
       if (state.luxeOnly && !i.luxe) return false;
       if (state.priceBand !== "all" && (i.price || 2) !== +state.priceBand) return false;
+      if (state.flavour !== "all" && i.flavor.indexOf(state.flavour) === -1) return false;
       if (!q) return true;
       /* Names only: the latin name used to be searchable, so "rosa" returned
          nine unrelated entries. Family and flavour still match, because the
@@ -1036,6 +1044,7 @@
   el("rareOnly").addEventListener("change", function (e) { state.rareOnly = e.target.checked; renderGrid(); });
   el("luxeOnly").addEventListener("change", function (e) { state.luxeOnly = e.target.checked; renderGrid(); });
   el("priceBand").addEventListener("change", function (e) { state.priceBand = e.target.value; renderGrid(); });
+  el("flavour").addEventListener("change", function (e) { state.flavour = e.target.value; renderGrid(); });
   el("sort").addEventListener("change", function (e) { state.sort = e.target.value; renderGrid(); });
   el("random").addEventListener("click", function () {
     openModal(ING[Math.floor(Math.random() * ING.length)].id);
