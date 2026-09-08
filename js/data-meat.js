@@ -559,16 +559,6 @@ fr:"Elle est séchée, pas cuite : elle réclame toujours de la chaleur. Posez l
 pairs:["rice","ginger","spring-onion","soy-sauce","choy-sum","shiitake"],
 svg:'<path class="s" d="M20 24h56"/><path class="f3 sf" d="M34 26q7 0 7 7v32q0 7-7 7t-7-7V33q0-7 7-7z"/><path class="f2 sf" d="M48 26q6 0 6 6v25q0 6-6 6t-6-6V32q0-6 6-6z"/><path class="f3 sf" d="M62 26q7 0 7 7v32q0 7-7 7t-7-7V33q0-7 7-7z"/><path class="s" d="M28 40h13M28 52h13M56 40h13M56 52h13"/>'},
 
-{id:"lardo",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Lardo",fr:"Lardo"},latin:"Lardo di Colonnata IGP",
-origin:{en:"Colonnata, Tuscany",fr:"Colonnata, Toscane"},season:[],
-flavor:["rich","salty","herbal","creamy"],
-story:{en:"Cured in basins carved from the same Carrara marble Michelangelo used, packed with salt, rosemary and garlic, and left for months. The marble's porosity and constant cool are the point — the quarrymen who invented it ate it on bread for lunch.",
-fr:"Affiné dans des bassins taillés dans le même marbre de Carrare que Michel-Ange employait, tassé avec sel, romarin et ail, et laissé des mois. La porosité et la fraîcheur constante du marbre font tout — les carriers qui l’ont inventé le mangeaient sur du pain à midi."},
-tip:{en:"Slice it almost transparent and lay it on warm bread or hot potatoes. The heat is what makes it melt and release its perfume.",
-fr:"Tranchez-le presque transparent et posez-le sur du pain tiède ou des pommes de terre chaudes. C’est la chaleur qui le fait fondre et libérer son parfum."},
-pairs:["rosemary","flour-t65","black-pepper","garlic","potato","fig","sage","olive-oil"],
-svg:'<path class="f3 sf" d="M28 46h40v20H28z"/><path class="s" d="M28 56h40"/><path class="s" d="M36 46v20M52 46v20"/>'},
-
 {id:"lardo-di-colonnata",cat:"meat",price:3,pk:"35–60 €/kg",name:{en:"Lardo di Colonnata",fr:"lardo di Colonnata"},latin:"Sus scrofa (backfat, cured)",
 origin:{en:"Colonnata, Carrara",fr:"Colonnata, Carrare"},season:[],
 flavor:["rich","buttery","herbal","salty"],
@@ -879,7 +869,7 @@ fr:"Marinez-le, puis grillez-le à plat sous un poids. Sa vertu est la rapidité
 pairs:["lemon","garlic","thyme","olive-oil","harissa","paprika","rosemary","butter"],
 svg:'<path class="f3 sf" d="M36 60q0-16 14-16t14 16q-12 10-28 0z"/><path class="s" d="M50 44q6-8 12-6"/>'},
 
-{id:"prosciutto",cat:"meat",price:2,pk:"25–45 €/kg",name:{en:"Prosciutto",fr:"Jambon cru"},latin:"Perna (dry-cured)",
+{id:"prosciutto",cat:"meat",price:2,pk:"25–45 €/kg",name:{en:"Prosciutto di Parma",fr:"Jambon de Parme"},latin:"Perna (dry-cured)",
 origin:{en:"Parma, Italy",fr:"Parme, Italie"},season:[],
 flavor:["salty","sweet","umami","delicate"],
 story:{en:"Cato the Elder wrote down the method twenty-two centuries ago: salt, air, time — nothing else has been added since. The hills around Parma sell their very wind: hams hang in tall shuttered houses so the breeze off the Apennines can finish what the salt began.",
