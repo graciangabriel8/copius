@@ -57,6 +57,22 @@ jobs:
           CAPTION="$(python3 tools/make-card.py --caption "$DATE")"
           test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
 
+          # 0. has today already gone out? The job posts whatever the date picks,
+          # every time it runs, so a manual run plus the cron would put the same
+          # card up twice on a public profile. Ask Instagram for the newest post
+          # and compare dates. An unreadable answer yields an empty string, which
+          # never equals $DATE, so the day's post still goes out — a missed day is
+          # invisible and this check exists only to stop a visible duplicate.
+          LATEST="$(curl -sS -G "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "fields=timestamp" --data-urlencode "limit=1" \
+            --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys,json; d=(json.load(sys.stdin).get("data") or [{}]); print((d[0].get("timestamp") or "")[:10])')"
+          echo "last post: ${LATEST:-<none>} | today: $DATE"
+          if [ "$LATEST" = "$DATE" ]; then
+            echo "::notice::already posted today ($DATE) — nothing to do"
+            exit 0
+          fi
+
           # 1. container
           CREATE="$(curl -sS -X POST "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
             --data-urlencode "image_url=$IMG" \
