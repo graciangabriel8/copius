@@ -596,7 +596,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .m-price .price-kg{font-size:13px;color:var(--ink-2)}
 .price-hint{font-size:11px;color:var(--ink-3)}
 
-/* ---------- techniques & dishes ---------- */
+/* ---------- techniques & bases ---------- */
 .tech-list{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));padding:0 20px 40px}
 .tech-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px 14px;
   cursor:pointer;min-height:150px;display:flex;flex-direction:column;transition:border-color .12s,transform .12s}
@@ -610,26 +610,26 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .tech-body h4.warn{color:var(--warn)}
 .tech-body p{margin:0;font-size:13.5px;line-height:1.6}
 
-/* Dish cards are a summary: name, place, one line, a taste of the contents.
+/* Base cards are a summary: name, ratio, one line, what goes in.
    Everything else lives in the modal, the way an ingredient does — the first
    version put the whole entry on the card and averaged 1,299px of text. */
-.dish-list{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));padding:0 20px 40px}
-.dish-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px 16px;
+.base-list{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));padding:0 20px 40px}
+.base-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px 16px;
   cursor:pointer;display:flex;flex-direction:column;min-height:210px;transition:border-color .12s,transform .12s}
-.dish-card:hover,.dish-card:focus-visible{border-color:var(--ink-3);transform:translateY(-1px);outline:none}
-.dish-meta{margin:0;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
-.dish-card h3{margin:6px 0 2px;font-size:22px;line-height:1.15}
-.dish-era{margin:0 0 8px;font-size:12px;font-style:italic;color:var(--ink-3)}
-.dish-sum{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-2);
+.base-card:hover,.base-card:focus-visible{border-color:var(--ink-3);transform:translateY(-1px);outline:none}
+.base-meta{margin:0;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3)}
+.base-card h3{margin:6px 0 2px;font-size:22px;line-height:1.15}
+.base-era{margin:0 0 8px;font-size:12px;font-style:italic;color:var(--ink-3)}
+.base-sum{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-2);
   display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-.dish-foot{margin:auto 0 0;padding-top:12px;display:flex;justify-content:space-between;gap:10px;
+.base-foot{margin:auto 0 0;padding-top:12px;display:flex;justify-content:space-between;gap:10px;
   align-items:baseline;border-top:1px solid var(--border);font-size:11px;color:var(--ink-3)}
-.dish-ings{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.dish-counts{white-space:nowrap;letter-spacing:.5px}
+.base-ings{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.base-counts{white-space:nowrap;letter-spacing:.5px}
 
-/* dish modal */
-.dm-head{margin-bottom:10px}
-.dm-head h2{margin:6px 0 2px}
+/* base modal */
+.bm-head{margin-bottom:10px}
+.bm-head h2{margin:6px 0 2px}
 .dm-sum{margin:0 0 4px;font-size:15px;line-height:1.6;color:var(--ink-2)}
 
 /* Same species. Sits above the pairings because it answers a different question:

@@ -1,4 +1,4 @@
-window.DISHES = [
+window.BASES = [
 {id:"aligot",group:"france",name:{en:"Aligot",fr:"Aligot"},
 region:{en:"Aubrac, Aveyron and Lozère",fr:"Aubrac, Aveyron et Lozère"},era:{en:"Pilgrim food from the twelfth century; potato replaced bread in the eighteenth",fr:"Nourriture de pèlerins depuis le XIIe siècle ; la pomme de terre a remplacé le pain au XVIIIe"},
 summary:{en:"A potato purée beaten with fresh Aubrac curd until it pulls into long elastic ribbons. It is eaten on its own or under a sausage, and it is judged on nothing but how far it stretches.",

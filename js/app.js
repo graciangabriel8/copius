@@ -5,10 +5,10 @@
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
   var LS_MYINGS = "atlas-my-ingredients", LS_VIEW = "copius-view";
   var BASE = window.INGREDIENTS, TRIOS = window.TRIOS, I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
-  var TECHNIQUES = window.TECHNIQUES || [], DISHES = window.DISHES || [];
-  var techById = {}, dishById = {};
+  var TECHNIQUES = window.TECHNIQUES || [], BASES = window.BASES || [];
+  var techById = {}, baseById = {};
   TECHNIQUES.forEach(function (x) { techById[x.id] = x; });
-  DISHES.forEach(function (x) { dishById[x.id] = x; });
+  BASES.forEach(function (x) { baseById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
 
   // User creations, persisted in this browser.
@@ -45,7 +45,7 @@
     view: localStorage.getItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
     cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", flavour: "all", sort: "name",
-    techQ: "", techGroup: "all", dishQ: "", dishRegion: "all"
+    techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
   };
   var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
   var modalStack = [];
@@ -214,10 +214,10 @@
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabTech").textContent = t.tabTech;
-    el("tabDishes").textContent = t.tabDishes;
+    el("tabBases").textContent = t.tabBases;
     /* a tab with nothing behind it reads as broken — hide it until it has data */
     el("tabTech").hidden = TECHNIQUES.length === 0;
-    el("tabDishes").hidden = DISHES.length === 0;
+    el("tabBases").hidden = BASES.length === 0;
     el("tabChefs").textContent = t.tabChefs;
     el("creationsTitle").textContent = t.myCreations;
     el("creationsHint").textContent = t.myCreationsHint;
@@ -531,8 +531,8 @@
   function setView(v) {
     state.view = v;
     try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
-    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", dishes: "dishesView" };
-    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", dishes: "tabDishes" };
+    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView" };
+    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases" };
     Object.keys(views).forEach(function (k) {
       el(views[k]).hidden = v !== k;
       el(tabs[k]).classList.toggle("active", v === k);
@@ -540,7 +540,7 @@
     });
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
-    if (v === "dishes") renderDishes();
+    if (v === "bases") renderBases();
   }
 
   /* ---------- techniques ---------- */
@@ -578,63 +578,63 @@
   function renderTechModal(id) {
     var t = T(), x = techById[id];
     if (!x) return;
-    var used = DISHES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
+    var used = BASES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
       .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
     el("modalBody").innerHTML =
-      '<div class="dm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
+      '<div class="bm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
       "<h2>" + esc(x.name[state.lang]) + "</h2>" +
-      '<p class="dish-era">' + esc(state.lang === "en" ? x.name.fr : x.name.en) + "</p></div>" +
+      '<p class="base-era">' + esc(state.lang === "en" ? x.name.fr : x.name.en) + "</p></div>" +
       '<p class="dm-sum">' + esc(x.summary[state.lang]) + "</p>" +
       "<h3>" + esc(t.techHow) + '</h3><p class="tm-body">' + esc(x.how[state.lang]) + "</p>" +
       '<div class="m-note warn"><h3>' + esc(t.techWatch) + "</h3><p>" + esc(x.watch[state.lang]) + "</p></div>" +
       (used.length ? "<h3>" + esc(t.techUsedIn) + '</h3><div class="chip-row">' +
         used.map(function (d) {
-          return '<button type="button" class="chip-link" data-dishlink="' + esc(d.id) + '">' + esc(d.name[state.lang]) + "</button>";
+          return '<button type="button" class="chip-link" data-baselink="' + esc(d.id) + '">' + esc(d.name[state.lang]) + "</button>";
         }).join("") + "</div>" : "");
     el("backBtn").hidden = true;
   }
   function openTech(id) {
     if (!techById[id]) return;
-    openTechId = id; openDishId = null;
+    openTechId = id; openBaseId = null;
     renderTechModal(id);
     el("overlay").hidden = false;
     document.body.style.overflow = "hidden";
   }
   var openTechId = null;
 
-  /* ---------- dishes ---------- */
-  function renderDishes() {
+  /* ---------- bases ---------- */
+  function renderBases() {
     var t = T();
-    el("dishesTitle").textContent = t.dishesTitle;
-    el("dishesHint").textContent = t.dishesHint;
-    el("dishSearch").placeholder = t.dishSearchPh;
+    el("basesTitle").textContent = t.basesTitle;
+    el("basesHint").textContent = t.basesHint;
+    el("baseSearch").placeholder = t.baseSearchPh;
     var regions = [];
-    DISHES.forEach(function (d) { if (regions.indexOf(d.group) === -1) regions.push(d.group); });
-    fillSel("dishRegion", [["all", t.fAllRegions]].concat(regions.map(function (r) {
+    BASES.forEach(function (d) { if (regions.indexOf(d.group) === -1) regions.push(d.group); });
+    fillSel("baseGroup", [["all", t.fAllRegions]].concat(regions.map(function (r) {
       return [r, t["r" + r.charAt(0).toUpperCase() + r.slice(1)] || r];
-    })), state.dishRegion);
-    var q = norm(state.dishQ.trim());
-    var list = DISHES.filter(function (d) {
-      if (state.dishRegion !== "all" && d.group !== state.dishRegion) return false;
+    })), state.baseGroup);
+    var q = norm(state.baseQ.trim());
+    var list = BASES.filter(function (d) {
+      if (state.baseGroup !== "all" && d.group !== state.baseGroup) return false;
       if (!q) return true;
       return norm(d.name.en + " " + d.name.fr + " " + d.region.fr + " " + d.region.en + " " +
         d.summary[state.lang]).indexOf(q) !== -1;
     }).sort(function (x, y) {
       return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
     });
-    el("dishCount").textContent = t.dishCountTpl.replace("{n}", list.length);
+    el("baseCount").textContent = t.baseCountTpl.replace("{n}", list.length);
     var anyWine = false;
-    el("dishList").innerHTML = list.map(function (d) {
+    el("baseList").innerHTML = list.map(function (d) {
       if (d.wines && d.wines.length) anyWine = true;
       var top = d.ingredients.filter(function (i) { return byId[i]; }).slice(0, 4)
         .map(function (i) { return esc(name(byId[i])); }).join(" · ");
-      return '<article class="dish-card" data-dish="' + esc(d.id) + '" tabindex="0" role="button">' +
-        '<p class="dish-meta">' + esc(d.region[state.lang]) + "</p>" +
+      return '<article class="base-card" data-base="' + esc(d.id) + '" tabindex="0" role="button">' +
+        '<p class="base-meta">' + esc(d.region[state.lang]) + "</p>" +
         "<h3>" + esc(d.name[state.lang]) + "</h3>" +
-        '<p class="dish-era">' + esc(d.era[state.lang]) + "</p>" +
-        '<p class="dish-sum">' + esc(d.summary[state.lang]) + "</p>" +
-        '<p class="dish-foot"><span class="dish-ings">' + top + "</span>" +
-        '<span class="dish-counts">' + d.techniques.length + " · " +
+        '<p class="base-era">' + esc(d.era[state.lang]) + "</p>" +
+        '<p class="base-sum">' + esc(d.summary[state.lang]) + "</p>" +
+        '<p class="base-foot"><span class="base-ings">' + top + "</span>" +
+        '<span class="base-counts">' + d.techniques.length + " · " +
           (d.wines ? d.wines.length : 0) + " \u25cf</span></p>" +
         "</article>";
     }).join("");
@@ -768,7 +768,7 @@
   }
   function closeModal() {
     modalStack = [];
-    openDishId = null;
+    openBaseId = null;
     openTechId = null;
     el("overlay").hidden = true;
     document.body.style.overflow = "";
@@ -781,8 +781,8 @@
     else closeModal();
   }
 
-  function renderDishModal(id) {
-    var t = T(), d = dishById[id];
+  function renderBaseModal(id) {
+    var t = T(), d = baseById[id];
     if (!d) return;
     var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
       return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + art(byId[i]) + "<span>" + esc(name(byId[i])) + "</span></button>";
@@ -797,25 +797,25 @@
         '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
     }).join("");
     el("modalBody").innerHTML =
-      '<div class="dm-head"><p class="dish-meta">' + esc(d.region[state.lang]) + "</p>" +
+      '<div class="bm-head"><p class="base-meta">' + esc(d.region[state.lang]) + "</p>" +
       "<h2>" + esc(d.name[state.lang]) + "</h2>" +
-      '<p class="dish-era">' + esc(d.era[state.lang]) + "</p></div>" +
+      '<p class="base-era">' + esc(d.era[state.lang]) + "</p></div>" +
       '<p class="dm-sum">' + esc(d.summary[state.lang]) + "</p>" +
-      '<div class="m-note"><h3>' + esc(t.dishBalance) + "</h3><p>" + esc(d.balance[state.lang]) + "</p></div>" +
-      (ings ? "<h3>" + esc(t.dishIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
-      (techs ? "<h3>" + esc(t.dishTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "") +
-      (wines ? "<h3>" + esc(t.dishWines) + '</h3><ul class="wine-list">' + wines + "</ul>" +
+      '<div class="m-note"><h3>' + esc(t.baseFailure) + "</h3><p>" + esc(d.balance[state.lang]) + "</p></div>" +
+      (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
+      (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "") +
+      (wines ? "<h3>" + esc(t.baseWines) + '</h3><ul class="wine-list">' + wines + "</ul>" +
         '<p class="alcohol-warn">' + esc(t.alcoholWarning) + "</p>" : "");
     el("backBtn").hidden = true;
   }
-  function openDish(id) {
-    if (!dishById[id]) return;
-    openDishId = id;
-    renderDishModal(id);
+  function openBase(id) {
+    if (!baseById[id]) return;
+    openBaseId = id;
+    renderBaseModal(id);
     el("overlay").hidden = false;
     document.body.style.overflow = "hidden";
   }
-  var openDishId = null;
+  var openBaseId = null;
 
   /* ---------- pairing lab ---------- */
   function fillLabSelects() {
@@ -994,7 +994,7 @@
     renderCreations();
     /* every non-atlas view has to re-render too, or a language switch leaves it
        in the old language — keyed off state.view so a new view cannot be missed */
-    var render = { chefs: renderChefs, tech: renderTech, dishes: renderDishes };
+    var render = { chefs: renderChefs, tech: renderTech, bases: renderBases };
     if (render[state.view]) render[state.view]();
   }
 
@@ -1004,7 +1004,7 @@
     renderAll();
     var current = modalStack[modalStack.length - 1];
     if (current && !el("overlay").hidden) renderModal(current);
-    else if (openDishId && !el("overlay").hidden) renderDishModal(openDishId);
+    else if (openBaseId && !el("overlay").hidden) renderBaseModal(openBaseId);
     else if (openTechId && !el("overlay").hidden) renderTechModal(openTechId);
   }
 
@@ -1116,28 +1116,28 @@
   el("tabAtlas").addEventListener("click", function () { setView("atlas"); });
   el("tabChefs").addEventListener("click", function () { setView("chefs"); });
   el("tabTech").addEventListener("click", function () { setView("tech"); });
-  el("tabDishes").addEventListener("click", function () { setView("dishes"); });
+  el("tabBases").addEventListener("click", function () { setView("bases"); });
   el("techSearch").addEventListener("input", function (e) { state.techQ = e.target.value; renderTech(); });
   el("techGroup").addEventListener("change", function (e) { state.techGroup = e.target.value; renderTech(); });
-  el("dishSearch").addEventListener("input", function (e) { state.dishQ = e.target.value; renderDishes(); });
-  el("dishRegion").addEventListener("change", function (e) { state.dishRegion = e.target.value; renderDishes(); });
-  /* a dish's ingredient chip opens the ingredient; a technique chip jumps to it */
-  el("dishList").addEventListener("click", function (e) {
-    var card = e.target.closest("[data-dish]");
-    if (card) { openDish(card.getAttribute("data-dish")); return; }
+  el("baseSearch").addEventListener("input", function (e) { state.baseQ = e.target.value; renderBases(); });
+  el("baseGroup").addEventListener("change", function (e) { state.baseGroup = e.target.value; renderBases(); });
+  /* a base's ingredient chip opens the ingredient; a technique chip jumps to it */
+  el("baseList").addEventListener("click", function (e) {
+    var card = e.target.closest("[data-base]");
+    if (card) { openBase(card.getAttribute("data-base")); return; }
   });
-  el("dishList").addEventListener("keydown", function (e) {
+  el("baseList").addEventListener("keydown", function (e) {
     if (e.key !== "Enter" && e.key !== " ") return;
-    var card = e.target.closest("[data-dish]");
-    if (card) { e.preventDefault(); openDish(card.getAttribute("data-dish")); }
+    var card = e.target.closest("[data-base]");
+    if (card) { e.preventDefault(); openBase(card.getAttribute("data-base")); }
   });
   el("modalBody").addEventListener("click", function (e) {
     var o = e.target.closest("[data-open]"),
         k = e.target.closest("[data-tech]"),
-        d = e.target.closest("[data-dishlink]");
+        d = e.target.closest("[data-baselink]");
     if (o) { closeModal(); openModal(o.getAttribute("data-open")); return; }
     if (k) { openTech(k.getAttribute("data-tech")); return; }
-    if (d) { openDish(d.getAttribute("data-dishlink")); }
+    if (d) { openBase(d.getAttribute("data-baselink")); }
   });
   el("techList").addEventListener("click", function (e) {
     var c = e.target.closest("[data-tech-card]");
