@@ -631,6 +631,13 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .dm-head{margin-bottom:10px}
 .dm-head h2{margin:6px 0 2px}
 .dm-sum{margin:0 0 4px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+
+/* Same species. Sits above the pairings because it answers a different question:
+   pairings are what it goes with, kin is what it is. */
+.kin-n{display:inline-block;min-width:20px;padding:1px 7px;border-radius:999px;
+  background:var(--chip);color:var(--ink-3);font-size:12px;font-weight:600;vertical-align:2px}
+.kin-latin{margin:-2px 0 8px;font-style:italic;color:var(--ink-3);font-size:13px}
+.kin-more{margin:6px 0 0;font-size:12.5px;color:var(--ink-3)}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
 .chip-link{display:inline-flex;align-items:center;gap:6px;
   border:1px solid var(--border);background:var(--chip);border-radius:999px;

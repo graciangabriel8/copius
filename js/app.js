@@ -278,6 +278,57 @@
     });
   }
 
+
+    /* Same plant or animal. Derived from the latin binomial rather than stored,
+       so it needs no upkeep and covers all 203 clusters at once: the parenthetical
+       in "Coregonus albula (roe)" names the part, not a different species. */
+    function kinKey(lat) {
+      if (!lat) return null;
+      var w = lat.replace(/\(.*?\)/g, " ").replace(/[\u00d7x]\s+/g, " ")
+               .match(/[A-Za-z\u00c0-\u00ff.-]+/g) || [];
+      w = w.filter(function (x) { return !/^(spp|var|subsp|cv)\.?$/i.test(x); });
+      if (w.length < 2) return null;
+      var g = w[0], sp = w[1];
+      if (!(g[0] === g[0].toUpperCase() && sp[0] === sp[0].toLowerCase() && /^[a-z]+$/i.test(sp))) return null;
+      return (g + " " + sp).toLowerCase();
+    }
+
+    var KIN = (function () {
+      var m = {};
+      ING.forEach(function (i) {
+        var k = kinKey(i.latin);
+        if (!k) return;
+        (m[k] = m[k] || []).push(i.id);
+      });
+      return m;
+    })();
+
+
+    var KIN_SHOWN = 12;
+    function kinBlock(i) {
+      var k = kinOf(i);
+      if (!k.length) return "";
+      var t = T();
+      var sorted = k.slice().sort(function (a, b) {
+        return name(byId[a]).localeCompare(name(byId[b]), state.lang);
+      });
+      var shown = sorted.slice(0, KIN_SHOWN);
+      var more = sorted.length - shown.length;
+      return "<h3>" + esc(t.sameSpecies) + ' <span class="kin-n">' + sorted.length + "</span></h3>" +
+        '<p class="kin-latin">' + esc(i.latin) + "</p>" +
+        '<div class="chip-row">' + shown.map(function (x) {
+          return '<button type="button" class="chip-link" data-open="' + esc(x) + '">' +
+            art(byId[x]) + "<span>" + esc(name(byId[x])) + "</span></button>";
+        }).join("") + "</div>" +
+        (more ? '<p class="kin-more">' + esc(t.andMore.replace("{n}", more)) + "</p>" : "");
+    }
+
+    function kinOf(i) {
+      var k = kinKey(i.latin);
+      if (!k || !KIN[k]) return [];
+      return KIN[k].filter(function (x) { return x !== i.id && byId[x]; });
+    }
+
   function matchRank(i, q) {
     var n = norm(name(i));
     if (n.indexOf(q) === 0) return 0;                                  // name starts with it
@@ -684,6 +735,7 @@
         '<p class="m-story">' + esc(i.story[state.lang]) + "</p>" : "") +
       (i.tip[state.lang] ? '<div class="m-note"><h3>' + esc(t.chefNote) + "</h3><p>" + esc(i.tip[state.lang]) + "</p></div>" : "") +
       renderTree(i) +
+      kinBlock(i) +
       "<h3>" + esc(t.pairsWith) + "</h3>" +
       '<div class="pair-grid">' + pairs.map(pairChip).join("") + "</div>" +
       (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
