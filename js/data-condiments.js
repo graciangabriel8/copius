@@ -769,16 +769,6 @@ fr:"Rincez le vinaigre avant de les mettre dans un plat cuisiné, faute de quoi 
 pairs:["feta","oregano","olive-oil","red-wine-vinegar","lemon","cucumber","lamb","tomato"],
 svg:'<path class="f2 sf" d="M26 30q14-4 20 4-10 8-20-4Z"/><path class="f3 sf" d="M62 26q7 14-5 30t-27 15q-7-14 5-30t27-15Z"/><path class="s" d="M52 38q-8 4-14 14M62 26l7-7"/>'},
 
-{id:"agar-agar-kanten",cat:"condiments",price:2,pk:"60–120 €/kg",name:{en:"Kanten (agar-agar)",fr:"Agar-agar (kanten)"},latin:"Gelidium amansii",
-origin:{en:"Japan, from red algae",fr:"Japon, à partir d'algues rouges"},season:[],
-flavor:["mild","marine"],
-story:{en:"The story goes that a Kyoto innkeeper set out leftover tokoroten jelly on a winter night in the 1650s and found it freeze-dried by morning, which is still exactly how kanten is made. Two centuries later Fanny Hesse suggested it to Robert Koch's laboratory as a culture medium that would not melt in a warm incubator, and bacteriology has grown on it ever since.",
-fr:"L'histoire veut qu'un aubergiste de Kyoto ait laissé dehors, une nuit d'hiver des années 1650, un reste de gelée de tokoroten et l'ait retrouvé lyophilisé au matin — c'est encore exactement ainsi que se fabrique le kanten. Deux siècles plus tard, Fanny Hesse le suggérait au laboratoire de Robert Koch comme milieu de culture qui ne fondrait pas dans une étuve tiède, et la bactériologie pousse dessus depuis."},
-tip:{en:"It has to reach a full rolling boil for two minutes or it never hydrates and never sets. Count on about 1 g of powder per 150 ml for a set you can slice; it firms at around 40 °C and will not melt again below 85 °C, so it holds on a warm plate where gelatine would already be a puddle.",
-fr:"Il doit atteindre une pleine ébullition pendant deux minutes, faute de quoi il ne s'hydrate pas et ne prend jamais. Comptez environ 1 g de poudre pour 150 ml pour une gelée que l'on tranche ; elle prend vers 40 °C et ne refond qu'à partir de 85 °C, si bien qu'elle tient sur une assiette tiède où la gélatine serait déjà une flaque."},
-pairs:["sugar","adzuki","matcha","coconut-milk","kokuto","lemon","honey"],
-svg:'<path class="f1 sf" d="M28 44h16v28H28z"/><path class="s" d="M33 44v28M38.5 44v28"/><path class="f2 sf" d="M52 52h18v20H52z"/><path class="s" d="M52 52 58 46h18l-6 6M70 52l6-6v20l-6 6"/>'},
-
 {id:"kanzuri",cat:"condiments",rare:true,price:3,pk:"100–160 €/kg",name:{en:"Kanzuri",fr:"Kanzuri"},latin:"Capsicum annuum",
 origin:{en:"Myoko, Niigata",fr:"Myōkō, Niigata"},season:[],
 flavor:["hot","citrus","umami","floral"],

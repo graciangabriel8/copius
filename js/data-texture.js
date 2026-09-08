@@ -259,6 +259,16 @@ fr:"Dispersez-le dans le liquide froid, puis montez au-dessus de 80 °C, sinon i
 pairs:["cream","coconut-milk","vanilla","sugar","cocoa-powder-natural","agar-agar-kanten"],
 svg:'<path class="f1 sf" d="M32 38h24v30q0 6-6 6H38q-6 0-6-6z"/><path class="s" d="M38 30h12v8H38z"/><path class="s" d="M32 54q12 4 24 0"/><path class="f2 sf" d="M62 62h14v14H62z"/><path class="s" d="M66 62l4 8-3 6"/>'},
 
+{id:"agar-agar-kanten",cat:"texture",price:2,pk:"60–120 €/kg",name:{en:"Kanten (agar-agar)",fr:"Agar-agar (kanten)"},latin:"Gelidium amansii",
+origin:{en:"Japan, from red algae",fr:"Japon, à partir d'algues rouges"},season:[],
+flavor:["mild","marine"],
+story:{en:"The story goes that a Kyoto innkeeper set out leftover tokoroten jelly on a winter night in the 1650s and found it freeze-dried by morning, which is still exactly how kanten is made. Two centuries later Fanny Hesse suggested it to Robert Koch's laboratory as a culture medium that would not melt in a warm incubator, and bacteriology has grown on it ever since.",
+fr:"L'histoire veut qu'un aubergiste de Kyoto ait laissé dehors, une nuit d'hiver des années 1650, un reste de gelée de tokoroten et l'ait retrouvé lyophilisé au matin — c'est encore exactement ainsi que se fabrique le kanten. Deux siècles plus tard, Fanny Hesse le suggérait au laboratoire de Robert Koch comme milieu de culture qui ne fondrait pas dans une étuve tiède, et la bactériologie pousse dessus depuis."},
+tip:{en:"It has to reach a full rolling boil for two minutes or it never hydrates and never sets. Count on about 1 g of powder per 150 ml for a set you can slice; it firms at around 40 °C and will not melt again below 85 °C, so it holds on a warm plate where gelatine would already be a puddle.",
+fr:"Il doit atteindre une pleine ébullition pendant deux minutes, faute de quoi il ne s'hydrate pas et ne prend jamais. Comptez environ 1 g de poudre pour 150 ml pour une gelée que l'on tranche ; elle prend vers 40 °C et ne refond qu'à partir de 85 °C, si bien qu'elle tient sur une assiette tiède où la gélatine serait déjà une flaque."},
+pairs:["sugar","adzuki","matcha","coconut-milk","kokuto","lemon","honey"],
+svg:'<path class="f1 sf" d="M28 44h16v28H28z"/><path class="s" d="M33 44v28M38.5 44v28"/><path class="f2 sf" d="M52 52h18v20H52z"/><path class="s" d="M52 52 58 46h18l-6 6M70 52l6-6v20l-6 6"/>'},
+
 {id:"spores-de-koji",cat:"texture",rare:true,price:3,pk:"0,50–1 €/g",name:{en:"Koji spores (tane-koji)",fr:"Spores de koji"},latin:"Aspergillus oryzae",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["earthy","nutty","mild"],
