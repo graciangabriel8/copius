@@ -4,7 +4,12 @@ name: Daily ingredient to Instagram
 # caption are pre-built and committed, so this job only calls the API.
 on:
   schedule:
-    - cron: "0 8 * * *"      # 08:00 UTC — 10:00 Paris in summer, 09:00 in winter
+    # 08:17 UTC, not 08:00. GitHub: "High load times include the start of every
+    # hour… To decrease the chance of delay, schedule your workflow to run at a
+    # different time of the hour." Yesterday's run at the top of the hour was
+    # delayed to 13:45. Cron here is UTC, so this is 10:17 Paris in summer and
+    # 09:17 in winter.
+    - cron: "17 8 * * *"
   workflow_dispatch:          # lets you run it by hand from the Actions tab
 
 concurrency:
