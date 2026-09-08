@@ -99,16 +99,6 @@ fr:"Infusez chaud mais ne faites jamais bouillir : deux minutes hors du feu dans
 pairs:["blackcurrant","raspberry","strawberry","honey","verjus","gooseberry"],
 svg:'<path class="f2 sf" d="M48 24q4 8 3 14 6-8 14-8-2 8-8 12 8 0 13 5-7 5-14 4 6 5 6 12-8-1-13-7-1 8-5 14-4-6-5-14-5 6-13 7 0-7 6-12-7 1-14-4 5-5 13-5-6-4-8-12 8 0 14 8-1-6 3-14z"/><path class="s" d="M48 30v40M48 44l10-6M48 44l-10-6M48 56l10-4M48 56l-10-4"/><path class="s" d="M48 68v10"/>'},
 
-{id:"bladder-campion",cat:"herbs",rare:true,price:1,pk:"12–20 €/kg",name:{en:"Bladder campion",fr:"Silène enflé"},latin:"Silene vulgaris",
-origin:{en:"Romagna and Tuscan field edges",fr:"Bords de champs de Romagne et de Toscane"},season:[3,4,5,6],
-flavor:["sweet","grassy","mild"],
-story:{en:"Half its Italian names are noises: stridoli for the squeak of two leaves rubbed together, schioppettini for the pop children make bursting the inflated calyx against the back of a hand. The shoots taste of raw peas, which is why Romagna puts them into tortelli filling rather than into a pan of bitter greens.",
-fr:"La moitié de ses noms italiens sont des bruits : stridoli pour le grincement de deux feuilles frottées, schioppettini pour le claquement des calices gonflés que les enfants font éclater sur le dos de la main. La pousse a le goût du petit pois cru, d’où sa place dans la farce des tortelli de Romagne plutôt que dans une poêlée d’amères."},
-tip:{en:"Take the top hand-span only and cook it like peas: a minute in butter, no blanching. Blanched and wrung out, it loses the pea note completely and becomes an anonymous green.",
-fr:"Ne gardez que les dix centimètres de tête et traitez-les en petits pois : une minute au beurre, sans blanchir. Blanchies puis pressées, elles perdent tout le goût de pois et ne sont plus qu’un vert anonyme."},
-pairs:["arborio","parmesan","butter","egg","ricotta","prosciutto"],
-svg:'<path class="f1 sf" d="M48 38q17 3 17 19 0 12-17 12t-17-12q0-16 17-19z"/><path class="s" d="M40 42q3 14 3 26M56 42q-3 14-3 26M32 56h32"/><path class="f2 sf" d="M48 38q-9-2-12-9 7-2 12 3 5-5 12-3-3 7-12 9z"/><path class="s" d="M48 69v11"/>'},
-
 {id:"blue-fenugreek",cat:"herbs",rare:true,price:2,pk:"4–8 €/100 g",name:{en:"Blue fenugreek",fr:"Fenugrec bleu"},latin:"Trigonella caerulea",
 origin:{en:"Caucasus & the Alps",fr:"Caucase & Alpes"},season:[],
 flavor:["herbal","sweet","nutty","grassy"],

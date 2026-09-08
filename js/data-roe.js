@@ -259,16 +259,6 @@ fr:"Râpez-la, ne la tranchez pas : le bloc est plus grossier et plus sec que le
 pairs:["olive-oil","garlic","lemon","chili","parsley","tomato","olive-taggiasca","celery"],
 svg:'<path class="f3 sf" d="M24 38l38-10q4-1 5 3l7 24q1 4-3 5l-38 10q-4 1-5-3l-7-24q-1-4 3-5z"/><path class="s" d="M30 42l36-9M33 54l36-9"/><path class="s" d="M28 76q10-6 20-2M34 82q10-5 20-1"/>'},
 
-{id:"oeufs-de-coregone",cat:"roe",rare:true,price:3,pk:"200–400 €/kg",name:{en:"Vendace roe",fr:"Œufs de corégone"},latin:"Coregonus albula (roe)",
-origin:{en:"Bothnian Bay, Sweden",fr:"Golfe de Botnie, Suède"},season:[9,10],
-flavor:["sweet","delicate","briny","mild"],
-story:{en:"Kalix löjrom took a European protected designation in 2010, one of a handful Sweden holds, and the fishery runs for a regulated five weeks from around the twentieth of September. The brackish water of the Bothnian Bay is what makes it orange — vendace caught in fresh water give roe that is plainly yellow.",
-fr:"Le kalix löjrom a obtenu une appellation d’origine protégée européenne en 2010, l’une des rares que possède la Suède, et la pêche ne dure que cinq semaines réglementées à partir du 20 septembre environ. C’est l’eau saumâtre du golfe de Botnie qui le rend orange — le corégone pris en eau douce donne une rogue franchement jaune."},
-tip:{en:"Serve it cold on a warm blini with sour cream and finely diced red onion, and cut the onion at the last second so its juice never sits on the grain.",
-fr:"Servez-le froid sur un blini tiède avec crème aigre et oignon rouge en dés minuscules, et taillez l’oignon à la dernière seconde pour que son jus ne séjourne jamais sur le grain."},
-pairs:["creme-fraiche","red-onion","dill","potato","butter","rye","lemon"],
-svg:'<ellipse class="f1 sf" cx="48" cy="66" rx="26" ry="9"/><path class="f2 sf" d="M26 64q4-18 22-18t22 18q-10 6-22 6t-22-6z"/><circle class="s" cx="48" cy="40" r="7"/><circle class="dot" cx="40" cy="56" r="1.6"/><circle class="dot" cx="48" cy="53" r="1.6"/><circle class="dot" cx="56" cy="56" r="1.6"/>'},
-
 {id:"vendace-roe",cat:"roe",luxe:true,price:4,pk:"400–800 €/kg",name:{en:"Vendace roe (Kalix löjrom)",fr:"Œufs de corégone (Kalix löjrom)"},latin:"Coregonus albula",
 origin:{en:"Bothnian Bay, Kalix",fr:"Golfe de Botnie, Kalix"},season:[9,10],
 flavor:["nutty","briny","delicate","creamy"],

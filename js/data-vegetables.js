@@ -2309,13 +2309,4 @@ fr:"Retirez l'étamine ou le pistil à l'intérieur : ils sont amers et retienne
 pairs:["ricotta","mozzarella-di-bufala-campana","anchovy","basil","olive-oil","lemon","parmesan","mint"],
 svg:'<path class="f1 sf" d="M40 44q-8-14-4-20 4 4 6 2-2-8 6-10 8 2 6 10 2 2 6-2 4 6-4 20z"/><path class="f2 sf" d="M40 44h16l-2 26q0 6-6 6t-6-6z"/><path class="s" d="M48 48v22M44 50l1 18M52 50l-1 18"/>'},
 
-{id:"golden-needles",cat:"vegetables",rare:true,price:1,pk:"3–6 €/100 g",name:{en:"Dried lily buds (golden needles)",fr:"Fleurs de lys séchées (aiguilles d’or)"},latin:"Hemerocallis citrina",
-origin:{en:"Datong, Shanxi, China",fr:"Datong, Shanxi, Chine"},season:[],
-flavor:["musky","earthy","honeyed"],
-story:{en:"Daylily buds must be picked in the few hours before they open, which is why the Shanxi harvest starts before dawn; they are then steamed and sun-dried into amber strands. The stomach upset caused by raw buds was blamed on colchicine for decades, until the plant’s genome was sequenced and turned out to lack the pathway for it entirely.",
-fr:"Les boutons d’hémérocalle doivent être cueillis dans les quelques heures qui précèdent leur ouverture, d’où une récolte qui commence avant l’aube dans le Shanxi ; ils sont ensuite étuvés et séchés au soleil en filaments ambrés. Les troubles digestifs provoqués par les boutons crus furent attribués pendant des décennies à la colchicine, jusqu’au séquençage du génome de la plante, qui n’en possède pas du tout la voie de biosynthèse."},
-tip:{en:"Soak twenty minutes in warm water, then snap off the pale hard base of each bud — that end never softens and is what gets mistaken for the ingredient being tough. Knot them in pairs before they go into hot and sour soup so they stay findable in the bowl.",
-fr:"Trempez vingt minutes à l’eau tiède, puis cassez la base pâle et dure de chaque bouton : cette extrémité ne s’attendrit jamais et c’est elle que l’on prend pour un défaut de l’ingrédient. Nouez-les deux à deux avant de les mettre dans la soupe aigre-piquante, elles resteront repérables dans le bol."},
-pairs:["wood-ear","dried-shiitake-donko","chinkiang-vinegar","white-pepper","egg","pork","silken-tofu"],
-svg:'<path class="s" d="M24 74q12-30 24-46M32 76q10-30 18-46M42 78q6-30 10-48M52 78q0-30 2-48M62 76q-4-30-8-46"/><path class="f2 sf" d="M44 78q4-30 8-48h4q-4 18-8 48z"/><circle class="s" cx="46" cy="52" r="5"/>'}
 ]);

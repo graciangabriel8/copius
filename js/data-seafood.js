@@ -519,16 +519,6 @@ fr:"Épongez-les, salez à la dernière seconde et donnez-leur une poêle très 
 pairs:["butter","lemon","saffron","leek","chorizo","parsley","olive-oil","thyme"],
 svg:'<circle class="f1 sf" cx="48" cy="50" r="20"/><circle class="s" cx="48" cy="50" r="13"/><path class="s" d="M35 44l26 14M35 56l26-14"/>'},
 
-{id:"ankimo",cat:"seafood",price:3,pk:"40–90 €/kg",name:{en:"Monkfish liver (ankimo)",fr:"Foie de lotte (ankimo)"},latin:"Lophius litulon",
-origin:{en:"Cold northern Japanese waters",fr:"Eaux froides du nord du Japon"},season:[11,12,1,2],
-flavor:["rich","creamy","umami"],
-story:{en:"Monkfish liver is graded much like foie gras — the winter livers landed in Aomori run to a kilo and are sorted by colour before sale. In Japan it is not a fish course but a sakana, a thing eaten to make the sake taste better.",
-fr:"Le foie de lotte se trie comme un foie gras : les foies d’hiver débarqués à Aomori atteignent le kilo et sont classés à la couleur avant la vente. Au Japon ce n’est pas un plat de poisson mais un sakana — ce qu’on mange pour que le saké ait meilleur goût."},
-tip:{en:"Soak the liver in salted water, then draw out every vein with tweezers while it is still cold; the veins are what make it bitter. Roll it tight in foil, steam 30 minutes, chill overnight and slice it cold with ponzu.",
-fr:"Faites dégorger le foie en eau salée, puis retirez chaque veine à la pince tant qu’il est froid : ce sont les veines qui rendent amer. Roulez-le serré dans une feuille d’aluminium, vapeur 30 minutes, une nuit au froid, et tranchez-le glacé avec du ponzu."},
-pairs:["ponzu","daikon","negi","sudachi","junmai-sake","koikuchi-shoyu","wasabi"],
-svg:'<path class="f2 sf" d="M26 38h32a12 12 0 0 1 0 24H26a12 12 0 0 1 0-24z"/><ellipse class="f1 sf" cx="26" cy="50" rx="7" ry="12"/><path class="s" d="M40 38v24M50 38v24"/><path class="s" d="M22 45q4 4 8 1M22 55q4-4 8-1"/>'},
-
 {id:"hirame",cat:"seafood",price:3,pk:"45–80 €/kg",name:{en:"Olive flounder (hirame)",fr:"Cardeau hirame"},latin:"Paralichthys olivaceus",
 origin:{en:"Cold Japanese coast, winter",fr:"Côtes froides du Japon, en hiver"},season:[11,12,1,2],
 flavor:["delicate","mild","sweet"],
