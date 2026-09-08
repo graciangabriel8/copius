@@ -603,46 +603,42 @@
   var openTechId = null;
 
   /* ---------- bases ---------- */
-  function renderBases() {
-    var t = T();
-    el("basesTitle").textContent = t.basesTitle;
-    el("basesHint").textContent = t.basesHint;
-    el("baseSearch").placeholder = t.baseSearchPh;
-    var regions = [];
-    BASES.forEach(function (d) { if (regions.indexOf(d.group) === -1) regions.push(d.group); });
-    fillSel("baseGroup", [["all", t.fAllRegions]].concat(regions.map(function (r) {
-      return [r, t["r" + r.charAt(0).toUpperCase() + r.slice(1)] || r];
-    })), state.baseGroup);
-    var q = norm(state.baseQ.trim());
-    var list = BASES.filter(function (d) {
-      if (state.baseGroup !== "all" && d.group !== state.baseGroup) return false;
-      if (!q) return true;
-      return norm(d.name.en + " " + d.name.fr + " " + d.region.fr + " " + d.region.en + " " +
-        d.summary[state.lang]).indexOf(q) !== -1;
-    }).sort(function (x, y) {
-      return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
-    });
-    el("baseCount").textContent = t.baseCountTpl.replace("{n}", list.length);
-    var anyWine = false;
-    el("baseList").innerHTML = list.map(function (d) {
-      if (d.wines && d.wines.length) anyWine = true;
-      var top = d.ingredients.filter(function (i) { return byId[i]; }).slice(0, 4)
-        .map(function (i) { return esc(name(byId[i])); }).join(" · ");
-      return '<article class="base-card" data-base="' + esc(d.id) + '" tabindex="0" role="button">' +
-        '<p class="base-meta">' + esc(d.region[state.lang]) + "</p>" +
-        "<h3>" + esc(d.name[state.lang]) + "</h3>" +
-        '<p class="base-era">' + esc(d.era[state.lang]) + "</p>" +
-        '<p class="base-sum">' + esc(d.summary[state.lang]) + "</p>" +
-        '<p class="base-foot"><span class="base-ings">' + top + "</span>" +
-        '<span class="base-counts">' + d.techniques.length + " · " +
-          (d.wines ? d.wines.length : 0) + " \u25cf</span></p>" +
-        "</article>";
-    }).join("");
-    /* loi Evin, CSP art. L3323-4: the health message is mandatory wherever a
-       page carries content that names an alcoholic drink. */
-    var warn = el("alcoholWarn");
-    if (warn) warn.textContent = anyWine ? t.alcoholWarning : "";
-  }
+  var BASE_ORDER = ["fonds","sauces","liaisons","emulsions","aigredoux","salaisons","sucre"];
+    function renderBases() {
+      var t = T();
+      el("basesTitle").textContent = t.basesTitle;
+      el("basesHint").textContent = t.basesHint;
+      el("baseSearch").placeholder = t.baseSearchPh;
+      var groups = [];
+      BASES.forEach(function (d) { if (groups.indexOf(d.group) === -1) groups.push(d.group); });
+      groups.sort(function (a, b) { return BASE_ORDER.indexOf(a) - BASE_ORDER.indexOf(b); });
+      fillSel("baseGroup", [["all", t.fAllGroups]].concat(groups.map(function (r) {
+        return [r, t.baseGroups[r] || r];
+      })), state.baseGroup);
+      var q = norm(state.baseQ.trim());
+      var list = BASES.filter(function (d) {
+        if (state.baseGroup !== "all" && d.group !== state.baseGroup) return false;
+        if (!q) return true;
+        return norm(d.name.en + " " + d.name.fr + " " + d.ratio[state.lang] + " " +
+          d.summary[state.lang]).indexOf(q) !== -1;
+      }).sort(function (a, b) {
+        if (a.group !== b.group) return BASE_ORDER.indexOf(a.group) - BASE_ORDER.indexOf(b.group);
+        return a.name[state.lang].localeCompare(b.name[state.lang], state.lang);
+      });
+      el("baseCount").textContent = t.baseCountTpl.replace("{n}", list.length);
+      el("baseList").innerHTML = list.map(function (d) {
+        var top = d.ingredients.filter(function (i) { return byId[i]; })
+          .slice(0, 4).map(function (i) { return esc(name(byId[i])); }).join(" \u00b7 ");
+        return '<article class="base-card" data-base="' + esc(d.id) + '" tabindex="0" role="button">' +
+          '<p class="base-meta">' + esc(t.baseGroups[d.group] || d.group) + "</p>" +
+          "<h3>" + esc(d.name[state.lang]) + "</h3>" +
+          '<p class="base-ratio">' + esc(d.ratio[state.lang]) + "</p>" +
+          '<p class="base-sum">' + esc(d.summary[state.lang]) + "</p>" +
+          '<p class="base-foot"><span class="base-ings">' + top + "</span>" +
+          '<span class="base-counts">' + d.techniques.length + " \u00b7 " + d.ingredients.length +
+          "</span></p></article>";
+      }).join("");
+    }
 
   var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","FO","SI","US","PE","CO","GH","JP","KR","HK","TH"];
 
@@ -781,33 +777,29 @@
     else closeModal();
   }
 
-  function renderBaseModal(id) {
-    var t = T(), d = baseById[id];
-    if (!d) return;
-    var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
-      return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + art(byId[i]) + "<span>" + esc(name(byId[i])) + "</span></button>";
-    }).join("");
-    var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
-      return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' + esc(techById[x].name[state.lang]) + "</button>";
-    }).join("");
-    var wines = (d.wines || []).map(function (w) {
-      return '<li><span class="w-app">' + esc(w.appellation) + "</span>" +
-        ' <span class="w-band">' + "\u20ac".repeat(w.band || 2) + "</span>" +
-        '<span class="w-style">' + esc(w.style) + "</span>" +
-        '<span class="w-why">' + esc(w.why[state.lang]) + "</span></li>";
-    }).join("");
-    el("modalBody").innerHTML =
-      '<div class="bm-head"><p class="base-meta">' + esc(d.region[state.lang]) + "</p>" +
-      "<h2>" + esc(d.name[state.lang]) + "</h2>" +
-      '<p class="base-era">' + esc(d.era[state.lang]) + "</p></div>" +
-      '<p class="dm-sum">' + esc(d.summary[state.lang]) + "</p>" +
-      '<div class="m-note"><h3>' + esc(t.baseFailure) + "</h3><p>" + esc(d.balance[state.lang]) + "</p></div>" +
-      (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
-      (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "") +
-      (wines ? "<h3>" + esc(t.baseWines) + '</h3><ul class="wine-list">' + wines + "</ul>" +
-        '<p class="alcohol-warn">' + esc(t.alcoholWarning) + "</p>" : "");
-    el("backBtn").hidden = true;
-  }
+    function renderBaseModal(id) {
+      var t = T(), d = baseById[id];
+      if (!d) return;
+      var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
+        return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + art(byId[i]) +
+          "<span>" + esc(name(byId[i])) + "</span></button>";
+      }).join("");
+      var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
+        return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' +
+          esc(techById[x].name[state.lang]) + "</button>";
+      }).join("");
+      el("modalBody").innerHTML =
+        '<div class="bm-head"><p class="base-meta">' + esc(t.baseGroups[d.group] || d.group) + "</p>" +
+        "<h2>" + esc(d.name[state.lang]) + "</h2>" +
+        '<p class="base-ratio big">' + esc(d.ratio[state.lang]) + "</p></div>" +
+        '<p class="bm-sum">' + esc(d.summary[state.lang]) + "</p>" +
+        "<h3>" + esc(t.baseMethod) + "</h3>" + '<p class="bm-sum">' + esc(d.method[state.lang]) + "</p>" +
+        "<h3>" + esc(t.baseUses) + "</h3>" + '<p class="bm-sum">' + esc(d.uses[state.lang]) + "</p>" +
+        '<div class="m-note"><h3>' + esc(t.baseFailure) + "</h3><p>" + esc(d.failure[state.lang]) + "</p></div>" +
+        (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
+        (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "");
+      el("backBtn").hidden = true;
+    }
   function openBase(id) {
     if (!baseById[id]) return;
     openBaseId = id;

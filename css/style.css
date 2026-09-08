@@ -627,6 +627,13 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .base-ings{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .base-counts{white-space:nowrap;letter-spacing:.5px}
 
+
+/* The ratio is the reason this section exists, so it is set like a heading and
+   not like metadata: a cook who reads only this line can work. */
+.base-ratio{margin:6px 0 8px;font:400 15px/1.45 var(--serif);color:var(--ink);
+  padding-left:11px;border-left:2px solid var(--border-strong)}
+.base-ratio.big{font-size:18px;margin:10px 0 0;border-left-width:3px}
+.bm-sum{margin:0 0 10px;font-size:15px;line-height:1.62;color:var(--ink-2)}
 /* base modal */
 .bm-head{margin-bottom:10px}
 .bm-head h2{margin:6px 0 2px}
