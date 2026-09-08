@@ -12,6 +12,7 @@ Run:  python3 tools/build-pages.py
 """
 import datetime
 import html
+import json
 import pathlib
 import re
 import shutil
@@ -39,19 +40,45 @@ MONTHS = {
            "août", "septembre", "octobre", "novembre", "décembre"],
 }
 
-FAMILY = {
-    "cellar": ("Cellar", "Cave"), "condiments": ("Condiments", "Condiments"),
-    "cuts": ("Cuts", "Morceaux"), "dairy": ("Dairy", "Crèmerie"),
-    "fats": ("Fats", "Matières grasses"), "flowers": ("Flowers", "Fleurs"), "fruits": ("Fruit", "Fruits"),
-    "grains": ("Grains", "Céréales"), "herbs": ("Herbs", "Herbes"),
-    "infusions": ("Infusions", "Infusions"), "legumes": ("Pulses", "Légumineuses"),
-    "meat": ("Meat", "Viandes"), "mushrooms": ("Mushrooms", "Champignons"),
-    "nuts": ("Nuts", "Fruits secs"), "roe": ("Roe & caviar", "Œufs de poisson & caviar"),
-    "seafood": ("Fish", "Poissons"), "seaweed": ("Seaweed", "Algues"),
-    "shellfish": ("Shellfish", "Coquillages & crustacés"), "spices": ("Spices", "Épices"),
-    "sweet": ("Sweet", "Sucré"), "texture": ("Texture", "Texture"),
-    "vegetables": ("Vegetables", "Légumes"),
-}
+I18N_FILE = "js/i18n.js"
+
+
+def load_i18n():
+    """Family and flavour labels, per language, from the file the atlas itself
+    uses — one copy, so a page never files an ingredient under a name the atlas
+    does not. Returns {"en": {"categories": {...}, "flavors": {...}}, "fr": ...}
+    and the family order of the filter bar."""
+    text = (ROOT / I18N_FILE).read_text()
+    out = {}
+    for lang in ("en", "fr"):
+        m = re.search(r"^  %s: \{(.*?)^  \}" % lang, text, re.S | re.M)
+        if not m:
+            sys.exit("no %s block in %s — has the atlas moved its strings?" % (lang, I18N_FILE))
+        out[lang] = {}
+        for key in ("categories", "flavors"):
+            blk = re.search(r"\b%s: \{(.*?)\}" % key, m.group(1), re.S)
+            if not blk:
+                sys.exit("no %s.%s in %s" % (lang, key, I18N_FILE))
+            out[lang][key] = dict(re.findall(r'([a-z]+)\s*:\s*"([^"]*)"', blk.group(1)))
+    order = re.search(r"CAT_ORDER = \[([^\]]*)\]", text)
+    if not order:
+        sys.exit("no CAT_ORDER in %s" % I18N_FILE)
+    return out, re.findall(r'"([a-z]+)"', order.group(1))
+
+
+I18N, CAT_ORDER, VERSION = {}, [], 0   # filled by main(); module-level so the templates can read them
+
+
+def family(cat, lang):
+    return I18N[lang]["categories"].get(cat, cat)
+
+
+def family_order(cats):
+    """Families in the order the atlas filter bar shows them; anything the atlas
+    does not know goes last, alphabetically."""
+    rank = {c: n for n, c in enumerate(CAT_ORDER)}
+    return sorted(cats, key=lambda c: (rank.get(c, len(rank)), c))
+
 
 UI = {
     "en": {"latin": "Latin name", "family": "Family", "origin": "Origin",
@@ -61,6 +88,7 @@ UI = {
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
            "index": "All ingredients", "about": "About",
+           "count": "%d ingredients · %d families",
            "fixLbl": "Something wrong here, or missing?",
            "fixCta": "Tell us",
            "fixSubj": "Correction — %s",
@@ -72,6 +100,7 @@ UI = {
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
            "index": "Tous les ingrédients", "about": "À propos",
+           "count": "%d ingrédients · %d familles",
            "fixLbl": "Une erreur ici, ou un oubli ?",
            "fixCta": "Dites-le nous",
            "fixSubj": "Correction — %s",
@@ -81,6 +110,16 @@ UI = {
 
 def unescape(s):
     return re.sub(r"\\+(.)", r"\1", s or "")
+
+
+def version():
+    """The ?v=N the atlas stamps on its assets. page.css carries the same number
+    so a cache-first service worker lets a changed stylesheet through on the
+    next bump, like every other asset."""
+    m = re.search(r"\?v=(\d+)", (ROOT / APP).read_text())
+    if not m:
+        sys.exit("no ?v= marker in %s — has the asset versioning moved?" % APP)
+    return int(m.group(1))
 
 
 def load():
@@ -156,12 +195,30 @@ def head_extra(title, desc, url, lang):
         '<meta property="og:image" content="%s/og/copius.jpg">\n'
         '<meta property="og:image:width" content="1200">\n'
         '<meta property="og:image:height" content="630">\n'
-        '<meta name="twitter:card" content="summary_large_image">'
-        % (title, desc, url, "fr_FR" if lang == "fr" else "en_GB", SITE))
+        '<meta name="twitter:card" content="summary_large_image">\n'
+        % (title, desc, url, "fr_FR" if lang == "fr" else "en_GB", SITE)
+        + THEME_COLOR)
+
+
+# Applied before first paint, so a visitor who chose dark in the atlas never sees
+# a white flash here. The atlas stores the choice under this key.
+THEME_SCRIPT = ('<script>try{var t=localStorage.getItem("copius-theme");'
+                'if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}'
+                'catch(e){}</script>')
+
+# Browser chrome follows the page: the two --bg values of page.css.
+THEME_COLOR = ('<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">\n'
+               '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">')
 
 
 def e(s):
     return html.escape(s or "", quote=True)
+
+
+def json_ld(obj):
+    """Structured data is JSON, not HTML: json.dumps escapes it, and the one
+    sequence that could end the <script> early is neutralised by hand."""
+    return json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
 
 
 def season_text(months, lang):
@@ -189,7 +246,7 @@ def season_text(months, lang):
 def page(i, lang, by_id, count):
     t, other = UI[lang], ("fr" if lang == "en" else "en")
     name, alt_name = i["name"][lang], i["name"][other]
-    fam = FAMILY.get(i["cat"], (i["cat"], i["cat"]))[0 if lang == "en" else 1]
+    fam = family(i["cat"], lang)
     here = "%s/i/%s/" % (SITE, i["id"]) if lang == "en" else "%s/fr/i/%s/" % (SITE, i["id"])
     there = "%s/fr/i/%s/" % (SITE, i["id"]) if lang == "en" else "%s/i/%s/" % (SITE, i["id"])
     up = "../../" if lang == "en" else "../../../"
@@ -202,7 +259,7 @@ def page(i, lang, by_id, count):
             (t["family"], e(fam)),
             (t["origin"], e(i["origin"][lang] or i["origin"][other])) if i["origin"][lang] or i["origin"][other] else None,
             (t["season"], e(season_text(i["season"], lang))),
-            (t["flavour"], " · ".join(e(f) for f in i["flavor"])) if i["flavor"] else None,
+            (t["flavour"], " · ".join(e(I18N[lang]["flavors"].get(f, f)) for f in i["flavor"])) if i["flavor"] else None,
             (t["price"], e(i["pk"])) if i["pk"] else None]
     facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v)
                     for k, v in filter(None, rows))
@@ -215,10 +272,14 @@ def page(i, lang, by_id, count):
                     for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k])
 
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    ld = json_ld({"@context": "https://schema.org", "@type": "Thing", "name": name,
+                  "alternateName": alt_name, "description": desc, "url": here,
+                  "isPartOf": {"@type": "WebSite", "name": "Copius", "url": SITE}})
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
+%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(name)s — %(fam)s · Copius</title>
 <meta name="description" content="%(desc)s">%(robots)s
@@ -227,10 +288,8 @@ def page(i, lang, by_id, count):
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 <link rel="alternate" hreflang="x-default" href="%(xdef)s">
 %(og)s
-<link rel="stylesheet" href="%(up)scss/page.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Thing","name":"%(jname)s","alternateName":"%(jalt)s","description":"%(jdesc)s","url":"%(here)s","isPartOf":{"@type":"WebSite","name":"Copius","url":"%(site)s"}}
-</script>
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script type="application/ld+json">%(ld)s</script>
 </head>
 <body>
 <header>
@@ -267,8 +326,7 @@ def page(i, lang, by_id, count):
         "fam": e(fam), "desc": e(desc), "robots": robots,
         "here": here, "there": there,
         "xdef": "%s/i/%s/" % (SITE, i["id"]),
-        "up": up, "app": APP, "site": SITE,
-        "jname": e(name), "jalt": e(alt_name), "jdesc": e(desc),
+        "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT, "ld": ld,
         "svg": i["svg"], "marks": marks, "facts": facts,
         "storylbl": e(t["story"]), "story": e(story),
         "tipblock": ("<h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))) if tip else "",
@@ -276,7 +334,7 @@ def page(i, lang, by_id, count):
                       % (e(t["pairs"]), " ".join(links))) if links else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]),
-        "tagline": e(t["tagline"]), "count": count,
+        "tagline": e(t["tagline"]), "count": e(t["count"] % count),
     }
 
 
@@ -287,20 +345,22 @@ def index_page(rows, lang):
     for i in rows:
         by_fam.setdefault(i["cat"], []).append(i)
     blocks = []
-    for cat in sorted(by_fam, key=lambda c: FAMILY.get(c, (c, c))[0 if lang == "en" else 1]):
+    for cat in family_order(by_fam):
         items = sorted(by_fam[cat], key=lambda x: x["name"][lang].lower())
         blocks.append("<h2>%s <small>%d</small></h2><p class=\"pairs\">%s</p>" % (
-            e(FAMILY.get(cat, (cat, cat))[0 if lang == "en" else 1]), len(items),
+            e(family(cat, lang)), len(items),
             " ".join('<a href="%s/">%s</a>' % (i["id"], e(i["name"][lang])) for i in items)))
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%s">
 <head>
 <meta charset="utf-8">
+%s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — Copius</title>
 <meta name="description" content="%s: %d %s.">%s
-<link rel="stylesheet" href="%scss/page.css">
+%s
+<link rel="stylesheet" href="%scss/page.css?v=%d">
 </head>
 <body>
 <header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav></header>
@@ -308,8 +368,9 @@ def index_page(rows, lang):
 <footer>Copius — %s</footer>
 </body>
 </html>
-""" % (lang, e(t["index"]), e(t["tagline"]), len(rows), e(t["index"]).lower(), robots,
-       up, up, up, APP, e(t["back"]), e(t["index"]), "".join(blocks), e(t["tagline"]))
+""" % (lang, THEME_SCRIPT, e(t["index"]), e(t["tagline"]), len(rows), e(t["index"]).lower(),
+       robots, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
+       "".join(blocks), e(t["tagline"]))
 
 
 SLUG = {
@@ -330,7 +391,12 @@ SEASON_UI = {
            "lastNote": "In season now and gone in %s.",
            "all": "Everything in season in %s",
            "prev": "%s", "next": "%s", "months": "Every month",
-           "none": "Nothing starts or ends this month."},
+           "none": "Nothing starts or ends this month.",
+           "idxTitle": "What is in season, month by month",
+           "idxLede": ("Twelve pages, one per month: what has a short season — three "
+                       "months or less — and is at its best then in France, with what "
+                       "arrives and what leaves."),
+           "idxCount": "%d ingredients"},
     "fr": {"h1": "Produits de saison en %s",
            "title": "Produits de saison en %s — fruits, légumes, poissons et champignons",
            "lede": ("%d ingrédients à saison courte — trois mois ou moins — sont à leur "
@@ -342,7 +408,12 @@ SEASON_UI = {
            "lastNote": "De saison maintenant, plus en %s.",
            "all": "Tout ce qui est de saison en %s",
            "prev": "%s", "next": "%s", "months": "Tous les mois",
-           "none": "Rien ne commence ni ne finit ce mois-ci."},
+           "none": "Rien ne commence ni ne finit ce mois-ci.",
+           "idxTitle": "Les produits de saison, mois par mois",
+           "idxLede": ("Douze pages, une par mois : ce qui a une saison courte — trois "
+                       "mois ou moins — et est à son meilleur à ce moment-là en France, "
+                       "avec ce qui arrive et ce qui s’en va."),
+           "idxCount": "%d ingrédients"},
 }
 
 
@@ -393,9 +464,9 @@ def season_page(month, lang, rows):
     for r in now:
         by_fam.setdefault(r["cat"], []).append(r)
     fam_blocks = []
-    for cat in sorted(by_fam, key=lambda c: FAMILY.get(c, (c, c))[0 if lang == "en" else 1]):
+    for cat in family_order(by_fam):
         fam_blocks.append('<h3>%s <small>%d</small></h3><p class="pairs">%s</p>' % (
-            e(FAMILY.get(cat, (cat, cat))[0 if lang == "en" else 1]),
+            e(family(cat, lang)),
             len(by_fam[cat]), chips(by_fam[cat], rel)))
 
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
@@ -403,6 +474,7 @@ def season_page(month, lang, rows):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
+%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
 <meta name="description" content="%(lede)s">%(robots)s
@@ -410,7 +482,7 @@ def season_page(month, lang, rows):
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 %(og)s
-<link rel="stylesheet" href="%(up)scss/page.css">
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
 </head>
 <body>
 <header>
@@ -429,15 +501,15 @@ def season_page(month, lang, rows):
 </main>
 
 <footer>
-  <a href="%(prevurl)s">← %(prev)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
+  <a href="%(prevurl)s">← %(prev)s</a> · <a href="../">%(months)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
   <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
 </footer>
 </body>
 </html>
 """ % {
         "og": head_extra(e(t["title"] % name), e(t["lede"] % (len(now), name)), here, lang),
-        "lang": lang, "other": other, "up": up, "app": APP,
-        "title": e(t["title"] % name), "h1": e(t["h1"] % name),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
+        "title": e(t["title"] % name), "h1": e(t["h1"] % name), "months": e(t["months"]),
         "lede": e(t["lede"] % (len(now), name)),
         "robots": robots, "here": here, "there": there,
         "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]),
@@ -449,14 +521,73 @@ def season_page(month, lang, rows):
     }
 
 
+def season_index(lang, rows):
+    """The twelve months, so the header's season link has somewhere to land
+    before the script points it at the current month."""
+    t, other = SEASON_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    here = "%s/season/" % SITE if lang == "en" else "%s/fr/saison/" % SITE
+    there = "%s/fr/saison/" % SITE if lang == "en" else "%s/season/" % SITE
+    up = "../" if lang == "en" else "../../"
+    months = " ".join(
+        '<a href="%s/">%s <small>%s</small></a>'
+        % (SLUG[lang][m], e(MONTHS[lang][m]),
+           e(t["idxCount"] % sum(1 for r in rows if m in r["season"]
+                                 and 0 < len(r["season"]) <= SEASON_MAX_MONTHS)))
+        for m in range(1, 13))
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+%(theme)s
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(title)s · Copius</title>
+<meta name="description" content="%(lede)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+%(og)s
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav>
+</header>
+
+<main>
+  <h1>%(title)s</h1>
+  <p class="lede">%(lede)s</p>
+  <p class="pairs">%(months)s</p>
+</main>
+
+<footer>
+  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
+</footer>
+</body>
+</html>
+""" % {
+        "og": head_extra(e(t["idxTitle"]), e(t["idxLede"]), here, lang),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
+        "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "robots": robots,
+        "here": here, "there": there, "months": months, "about": e(ui["about"]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
+    }
+
+
 CSS = """/* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
 :root{--bg:#fafafa;--card:#fff;--border:#e7e7e5;--ink:#1f1f1e;--ink-2:#55554f;
   --ink-3:#8a8a84;--plate:#f1f1f0;--line:#585853;
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-@media (prefers-color-scheme:dark){:root{--bg:#141413;--card:#1c1c1a;--border:#2c2c29;
-  --ink:#eceae5;--ink-2:#b6b3ac;--ink-3:#87847d;--plate:#242422;--line:#b8b5ae}}
+/* Dark twice: once for the system setting, once for the choice made in the atlas,
+   which wins either way. */
+:root[data-theme="dark"]{--bg:#141413;--card:#1c1c1a;--border:#2c2c29;
+  --ink:#eceae5;--ink-2:#b6b3ac;--ink-3:#87847d;--plate:#242422;--line:#b8b5ae}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1c1c1a;
+  --border:#2c2c29;--ink:#eceae5;--ink-2:#b6b3ac;--ink-3:#87847d;--plate:#242422;--line:#b8b5ae}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 var(--sans);
   -webkit-font-smoothing:antialiased}
@@ -526,9 +657,12 @@ h3 small{text-transform:none;letter-spacing:0}
 
 
 def main():
+    global I18N, CAT_ORDER, VERSION
+    I18N, CAT_ORDER = load_i18n()
+    VERSION = version()
     rows = load()
     by_id = {i["id"]: i for i in rows}
-    count = "%d ingredients · %d families" % (len(rows), len({i["cat"] for i in rows}))
+    count = (len(rows), len({i["cat"] for i in rows}))
 
     for d in ("i", "fr"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
@@ -557,10 +691,13 @@ def main():
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(season_page(m, lang, rows))
             months += 1
+    (ROOT / "season" / "index.html").write_text(season_index("en", rows))
+    (ROOT / "fr" / "saison" / "index.html").write_text(season_index("fr", rows))
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
-    urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE]
+    urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
+            "%s/season/" % SITE, "%s/fr/saison/" % SITE]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
                  "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]
@@ -572,7 +709,7 @@ def main():
         + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, today) for u in urls)
         + "</urlset>\n")
 
-    print('{"ingredientPages": %d, "seasonPages": %d, "indexes": 2, '
+    print('{"ingredientPages": %d, "seasonPages": %d, "indexes": 4, '
           '"sitemapUrls": %d, "indexable": %s}'
           % (written, months, len(urls), "true" if INDEXABLE else "false"))
     if not INDEXABLE:

@@ -11,7 +11,11 @@ import pathlib, re
 p = pathlib.Path("atlas.html"); t = p.read_text()
 cur = int(re.search(r'\?v=(\d+)', t).group(1))
 new = cur + 1
-p.write_text(re.sub(r'\?v=\d+', '?v=%d' % new, t))
+# The static pages link css/page.css with the same number; the generated pages
+# read it from atlas.html at build time and need no rewrite.
+for f in ("atlas.html", "about/index.html", "confidentialite/index.html", "404.html"):
+    p = pathlib.Path(f)
+    p.write_text(re.sub(r'\?v=\d+', '?v=%d' % new, p.read_text()))
 print("asset version %d -> %d" % (cur, new))
 PY
 python3 tools/build-sw.py

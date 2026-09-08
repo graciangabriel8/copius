@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Copius — an illustrated atlas of cooking</title>
-<meta name="description" content="An illustrated bilingual atlas of ingredients, techniques, dishes and the people who cooked them. In progress.">
+<meta name="description" content="An illustrated bilingual atlas of ingredients, techniques, bases and the people who cooked them. In progress.">
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Copius">
 <meta property="og:title" content="Copius — an illustrated atlas of cooking">
-<meta property="og:description" content="1 857 ingredients, 135 techniques, 59 dishes and 81 chefs, written in English and French. In progress.">
+<meta property="og:description" content="1 857 ingredients, 135 techniques, 59 bases and 81 chefs, written in English and French. In progress.">
 <meta property="og:url" content="https://copius.fr/">
 <meta property="og:image" content="https://copius.fr/og/copius.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,7 +19,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
-<meta name="theme-color" content="#fafafa">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
 <style>
@@ -30,8 +32,14 @@
     --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   }
+  /* Dark twice: once for the system setting, once for the choice made in the
+     atlas, which wins either way. */
+  :root[data-theme="dark"]{
+    --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --ink:#eceae5;
+    --ink-2:#b6b3ac; --ink-3:#87847d; --plate:#242422; --rule:#3d3d39;
+  }
   @media (prefers-color-scheme:dark){
-    :root{
+    :root:not([data-theme="light"]){
       --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --ink:#eceae5;
       --ink-2:#b6b3ac; --ink-3:#87847d; --plate:#242422; --rule:#3d3d39;
     }
@@ -121,7 +129,7 @@
   <div class="counts">
     <div><b>1 852</b><span>ingredients</span></div>
     <div><b>135</b><span>techniques</span></div>
-    <div><b>59</b><span>dishes</span></div>
+    <div><b>59</b><span>bases</span></div>
     <div><b>81</b><span>chefs</span></div>
   </div>
 
@@ -138,7 +146,7 @@
     <p class="enter"><a href="atlas.html">Entrer dans l’atlas, tel qu’il est aujourd’hui →</a></p>
   </div>
 
-  <p class="sign">
+  <p class="sign" lang="fr">
     Une question, une correction, une envie d’en voir plus —<br>
     <a href="mailto:contact@copius.fr">contact@copius.fr</a>
     &nbsp;·&nbsp; <a href="about/">À propos · About</a>

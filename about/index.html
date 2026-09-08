@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About Copius — who writes it, and how</title>
 <meta name="description" content="Who writes Copius, how the entries are made, where the seasons and prices come from, and what is still missing.">
@@ -18,7 +19,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../css/page.css">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
+<link rel="stylesheet" href="../css/page.css?v=81">
 <style>
   .lede{margin:0 0 22px;font:400 19px/1.5 var(--serif);color:var(--ink-2)}
   .sep{border:0;border-top:1px solid var(--border);margin:38px 0 30px}
