@@ -41,6 +41,18 @@ td{color:var(--ink)}
 .pairs a{background:var(--card);border:1px solid var(--border);border-radius:999px;
   padding:4px 12px;font-size:14px;text-decoration:none;color:var(--ink-2)}
 .pairs a:hover{border-color:var(--ink-3);color:var(--ink)}
+/* the little drawing inside a chip: same line art as the entry page, at 22px,
+   where stroke-width has to grow or the strokes vanish */
+.ci{width:22px;height:22px;flex:none;margin:-2px 6px -2px -4px;vertical-align:-5px}
+.ci .f1,.ci .f2,.ci .sf{fill:var(--plate);stroke:var(--ink-3);stroke-width:5;
+  stroke-linejoin:round}
+.ci .f2{fill:var(--border)}
+.ci .s{fill:none;stroke:var(--ink-3);stroke-width:5;stroke-linecap:round}
+.ci .dot{fill:var(--ink-3)}
+.pairs a{display:inline-flex;align-items:center}
+.pairs a:hover .ci .f1,.pairs a:hover .ci .f2,.pairs a:hover .ci .sf,
+.pairs a:hover .ci .s{stroke:var(--ink)}
+.pairs a:hover .ci .dot{fill:var(--ink)}
 h2 small{color:var(--ink-3);font-size:14px}
 .ig-link{display:inline-flex;align-items:center;vertical-align:-6px;margin-left:9px;
   padding:4px;border-radius:8px;line-height:0;text-decoration:none}
