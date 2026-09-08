@@ -7,11 +7,11 @@
 <title>Copius — Ingredient Dictionary · Dictionnaire des ingrédients</title>
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
-<meta name="description" content="1 857 ingredients, 135 techniques, 59 dishes and 81 chefs — origin, season, flavour, price and a kitchen note for each, in English and French.">
+<meta name="description" content="1 857 ingredients, 135 techniques, 45 bases and 81 chefs — origin, season, flavour, price and a kitchen note for each, in English and French.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Copius">
 <meta property="og:title" content="Copius — the atlas">
-<meta property="og:description" content="1 857 ingredients, 135 techniques, 59 dishes and 81 chefs — origin, season, flavour, price and a kitchen note for each, in English and French.">
+<meta property="og:description" content="1 857 ingredients, 135 techniques, 45 bases and 81 chefs — origin, season, flavour, price and a kitchen note for each, in English and French.">
 <meta property="og:url" content="https://copius.fr/atlas.html">
 <meta property="og:image" content="https://copius.fr/og/copius.jpg">
 <meta property="og:image:width" content="1200">
@@ -47,8 +47,8 @@
   <div class="head-tools">
     <input id="search" type="search" autocomplete="off">
     <button id="createBtn" class="create-btn" type="button"></button>
-    <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a>
-      <button id="themeBtn" class="theme-btn" type="button" aria-label="Theme"></button>
+    <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" data-i18n-aria="igLink"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a>
+      <button id="themeBtn" class="theme-btn" type="button" data-i18n-aria="ariaTheme"></button>
     <div class="lang-toggle" role="group" aria-label="Language / Langue">
       <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
     </div>
@@ -56,17 +56,17 @@
 </header>
 
 <main>
-  <nav class="view-tabs" aria-label="Views">
-    <button id="tabAtlas" class="view-tab" type="button"></button>
-    <button id="tabChefs" class="view-tab" type="button"></button>
-    <button id="tabTech" class="view-tab" type="button"></button>
-    <button id="tabBases" class="view-tab" type="button"></button>
+  <nav class="view-tabs" role="tablist" data-i18n-aria="ariaViews">
+    <button id="tabAtlas" class="view-tab" type="button" role="tab" aria-controls="atlasView"></button>
+    <button id="tabChefs" class="view-tab" type="button" role="tab" aria-controls="chefsView"></button>
+    <button id="tabTech" class="view-tab" type="button" role="tab" aria-controls="techView"></button>
+    <button id="tabBases" class="view-tab" type="button" role="tab" aria-controls="basesView"></button>
   </nav>
 
-  <div id="atlasView">
-  <section id="daily" class="daily"></section>
+  <div id="atlasView" role="tabpanel">
+  <section id="daily" class="daily" role="button" tabindex="0"></section>
 
-  <nav id="cats" class="cats" aria-label="Families"></nav>
+  <nav id="cats" class="cats" data-i18n-aria="ariaFamilies"></nav>
 
   <div class="toolbar">
     <label class="check"><input type="checkbox" id="seasonNow"><span id="seasonNowLbl"></span></label>
@@ -74,14 +74,14 @@
     <label class="check"><input type="checkbox" id="favsOnly"><span id="favsOnlyLbl"></span></label>
     <label class="check"><input type="checkbox" id="rareOnly"><span id="rareOnlyLbl"></span></label>
     <label class="check"><input type="checkbox" id="luxeOnly"><span id="luxeOnlyLbl"></span></label>
-    <select id="priceBand" aria-label="Price"></select>
-    <select id="flavour" aria-label="Taste"></select>
-    <select id="sort" aria-label="Sort"></select>
+    <select id="priceBand" data-i18n-aria="priceLabel"></select>
+    <select id="flavour" data-i18n-aria="ariaTaste"></select>
+    <select id="sort" data-i18n-aria="ariaSort"></select>
     <button id="random" class="linkish" type="button"></button>
-    <span id="stats" class="stats"></span>
+    <span id="stats" class="stats" aria-live="polite"></span>
   </div>
 
-  <section id="grid" class="grid" aria-live="polite"></section>
+  <section id="grid" class="grid"></section>
   <p id="empty" class="empty" hidden></p>
 
   <section class="lab" id="lab">
@@ -108,62 +108,61 @@
   </div>
 
 
-  <div id="chefsView" hidden>
+  <div id="chefsView" role="tabpanel" hidden>
     <div class="chefs-head">
       <h2 id="chefsTitle"></h2>
       <p id="chefsHint" class="muted"></p>
     </div>
     <div class="chef-filters">
       <input id="chefSearch" type="search" autocomplete="off">
-      <select id="chefGender" aria-label="Gender"></select>
-      <select id="chefStars" aria-label="Stars"></select>
-      <select id="chefCountry" aria-label="Country"></select>
-      <select id="chefEra" aria-label="Era"></select>
+      <select id="chefGender" data-i18n-aria="ariaGender"></select>
+      <select id="chefStars" data-i18n-aria="ariaStars"></select>
+      <select id="chefCountry" data-i18n-aria="ariaCountry"></select>
+      <select id="chefEra" data-i18n-aria="ariaEra"></select>
       <button id="chefReset" class="linkish" type="button"></button>
       <span id="chefCount" class="stats"></span>
     </div>
     <div id="chefsTimeline" class="timeline"></div>
   </div>
 
-  <div id="techView" hidden>
+  <div id="techView" role="tabpanel" hidden>
     <div class="chefs-head">
       <h2 id="techTitle"></h2>
       <p id="techHint" class="muted"></p>
     </div>
     <div class="chef-filters">
       <input id="techSearch" type="search" autocomplete="off">
-      <select id="techGroup" aria-label="Group"></select>
+      <select id="techGroup" data-i18n-aria="ariaGroup"></select>
       <span id="techCount" class="stats"></span>
     </div>
     <div id="techList" class="tech-list"></div>
   </div>
 
-  <div id="basesView" hidden>
+  <div id="basesView" role="tabpanel" hidden>
     <div class="chefs-head">
       <h2 id="basesTitle"></h2>
       <p id="basesHint" class="muted"></p>
     </div>
     <div class="chef-filters">
       <input id="baseSearch" type="search" autocomplete="off">
-      <select id="baseGroup" aria-label="Region"></select>
+      <select id="baseGroup" data-i18n-aria="ariaGroup"></select>
       <span id="baseCount" class="stats"></span>
     </div>
     <div id="baseList" class="base-list"></div>
-    <p id="alcoholWarn" class="alcohol-warn"></p>
   </div>
 </main>
 
 <footer class="site-foot"><span id="footNote"></span><span class="foot-contact"><a href="about/" id="aboutLink"></a></span><span id="contactLine" class="foot-contact"></span><span id="disclaimer" class="foot-legal"></span></footer>
 
 <div id="createOverlay" class="overlay" hidden>
-  <div class="modal" id="createModal"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="createTitle" id="createModal"></div>
 </div>
 
 <div id="overlay" class="overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modal">
     <div class="modal-bar">
-      <button id="backBtn" class="ghost" type="button" hidden>&#8592;</button>
-      <button id="closeBtn" class="ghost" type="button" aria-label="Close / Fermer">&#10005;</button>
+      <button id="backBtn" class="ghost" type="button" data-i18n-aria="back" data-i18n-title="back" hidden>&#8592;</button>
+      <button id="closeBtn" class="ghost" type="button" data-i18n-aria="close" data-i18n-title="close">&#10005;</button>
     </div>
     <div id="modalBody" class="modal-body"></div>
   </div>

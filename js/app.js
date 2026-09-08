@@ -11,8 +11,21 @@
   BASES.forEach(function (x) { baseById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
 
-  // User creations, persisted in this browser.
-  var myIngs = JSON.parse(localStorage.getItem(LS_MYINGS) || "[]");
+  /* Storage can be unreadable (cookies blocked) or hold a value that is not the
+     array we wrote (a hand-edited '{', a stray '5'); either used to throw here
+     and leave the atlas blank. Anything but a clean array reads as empty.
+     Manual check: DevTools > Application > Local Storage, set atlas-favs to "{",
+     reload — the grid renders and the console is clean. */
+  function readList(k) {
+    try { var v = JSON.parse(localStorage.getItem(k) || "[]"); return Array.isArray(v) ? v : []; }
+    catch (e) { return []; }
+  }
+  function readItem(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+  // User creations, persisted in this browser. A stored entry is always a
+  // creation, whatever its JSON says: the flag and the drawn art are ours.
+  var myIngs = readList(LS_MYINGS).filter(function (i) { return i && typeof i.id === "string"; });
+  myIngs.forEach(function (i) { i.custom = true; i.svg = ""; });
 
   var ING, byId, PAIRS, EDGE_COUNT;
   function rebuildIndex() {
@@ -41,14 +54,19 @@
   rebuildIndex();
 
   var state = {
-    lang: localStorage.getItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
-    view: localStorage.getItem(LS_VIEW) || "atlas",
+    lang: readItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
+    view: readItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
     cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", flavour: "all", sort: "name",
     techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
   };
-  var favs = new Set(JSON.parse(localStorage.getItem(LS_FAVS) || "[]"));
+  var favs = new Set(readList(LS_FAVS));
+  /* Everything opened in the dialog, oldest first: {kind: ing|tech|base, id}.
+     ← pops it, whatever the chain (ingredient → base → technique…); closing
+     empties it. */
   var modalStack = [];
+  function modalTop() { return modalStack[modalStack.length - 1]; }
+  function currentIng() { var c = modalTop(); return c && c.kind === "ing" ? c.id : null; }
 
   /* ---------- photos (drag & drop or picker, stored in IndexedDB) ---------- */
   var photosMap = {};
@@ -109,8 +127,7 @@
   }
 
   function refreshOpenModal() {
-    var cur = modalStack[modalStack.length - 1];
-    if (cur && !el("overlay").hidden) renderModal(cur);
+    if (modalTop() && !el("overlay").hidden) showModal();
   }
   function attachPhoto(id, file) {
     fileToPhoto(file, function (dataURL) {
@@ -138,13 +155,16 @@
     return s.toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
-  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  // The only guard between data and markup, attribute values included — all five.
+  var ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return ESC[c]; }); }
   function el(id) { return document.getElementById(id); }
+  function reducedMotion() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
 
   function monogramSvg(ch, label) {
     return '<svg class="art" viewBox="0 0 96 96" role="img" aria-label="' + esc(label || ch) + '">' +
       '<circle cx="48" cy="50" r="42" fill="var(--plate)"/>' +
-      '<circle cx="48" cy="50" r="32" fill="none" stroke="#c9c9c4" stroke-width="1.6" stroke-dasharray="4 5"/>' +
+      '<circle cx="48" cy="50" r="32" fill="none" stroke="var(--border-strong)" stroke-width="1.6" stroke-dasharray="4 5"/>' +
       '<text x="48" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="var(--ink-3)">' + esc(ch) + "</text></svg>";
   }
   function monogram(i) {
@@ -162,8 +182,11 @@
   /* Prices are French retail, in euros. The English view keeps the euro — these
      are euro figures, and converting them would date instantly — but writes them
      the English way: symbol first, no space. "12–18 €/kg" -> "€12–18/kg". */
-  var UNIT_EN = { "pièce": "each", "botte": "bunch", "barquette": "punnet",
-                  "flacon": "bottle", "pot": "pot", "botte de": "bunch of" };
+  var UNIT_EN = { "pièce": "each", "botte de": "bunch of", "botte": "bunch", "barquette": "punnet",
+                  "flacon": "bottle", "pot": "pot", "feuilles": "leaves", "feuille": "leaf",
+                  "douzaine": "dozen", "paquet": "pack", "bocal": "jar" };
+  // Longest key first, so "feuilles" is a whole word and never "leaf" + "s".
+  var UNIT_RE = new RegExp("\\b(" + Object.keys(UNIT_EN).sort(function (a, b) { return b.length - a.length; }).join("|") + ")\\b", "g");
   function priceText(s) {
     if (state.lang !== "en") return s;
     var out = s.replace(/([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*[\u2013-]\s*([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*\u20ac\s*\/\s*/g,
@@ -174,21 +197,32 @@
     out = out.replace(/([\d][\d\s\u00a0\u202f]*(?:,\d+)?)\s*\u20ac\s*\/\s*/g, function (m, v) {
       return "\u20ac" + v.replace(/[\s\u00a0\u202f]/g, "").replace(",", ".") + "/";
     });
-    Object.keys(UNIT_EN).forEach(function (k) {
-      out = out.replace(new RegExp(k, "g"), UNIT_EN[k]);
-    });
-    return out.replace(/\bde\b/g, "of");
+    return out.replace(UNIT_RE, function (m) { return UNIT_EN[m]; }).replace(/\bde\b/g, "of");
   }
 
   function catLabel(c) { return T().categories[c]; }
   function inSeasonNow(i) { return i.season.length === 0 || i.season.indexOf(new Date().getMonth() + 1) !== -1; }
 
   /* ---------- static labels ---------- */
+  // A search field's placeholder is also its name for assistive tech.
+  function placeholder(id, text) {
+    el(id).placeholder = text;
+    el(id).setAttribute("aria-label", text);
+  }
   function applyStatic() {
     var t = T();
     document.documentElement.lang = state.lang;
     el("tagline").textContent = t.tagline;
-    el("search").placeholder = t.searchPh;
+    placeholder("search", t.searchPh);
+    /* Static markup names its controls by key, so they switch with the rest. */
+    [["data-i18n-aria", "aria-label"], ["data-i18n-title", "title"]].forEach(function (p) {
+      Array.prototype.forEach.call(document.querySelectorAll("[" + p[0] + "]"), function (n) {
+        n.setAttribute(p[1], t[n.getAttribute(p[0])]);
+      });
+    });
+    paintThemeBtn();
+    el("labA").setAttribute("aria-label", t.labA);
+    el("labB").setAttribute("aria-label", t.labB);
     el("seasonNowLbl").textContent = t.inSeasonNow;
     /* The filter narrows this grid; the link goes to the month's own page, which
        carries what arrives and what leaves — something a checkbox cannot say. */
@@ -235,10 +269,20 @@
     var sort = el("sort");
     sort.innerHTML = '<option value="name">' + esc(t.sortName) + '</option><option value="family">' + esc(t.sortFamily) + "</option>";
     sort.value = state.sort;
-    el("stats").textContent = t.statsTpl
-      .replace("{n}", ING.length)
-      .replace("{f}", CAT_ORDER.filter(function (c) { return ING.some(function (i) { return i.cat === c; }); }).length)
-      .replace("{p}", EDGE_COUNT);
+  }
+
+  /* The stats line answers the question of the moment: the whole atlas when
+     nothing narrows it, "312 of 1,852" as soon as a search or filter does. */
+  function fmt(n) { return n.toLocaleString(state.lang === "fr" ? "fr-FR" : "en-GB"); }
+  function renderStats(shown) {
+    var t = T(), s = state;
+    var narrowed = s.cat !== "all" || s.q.trim() || s.seasonNow || s.favsOnly || s.rareOnly ||
+      s.luxeOnly || s.priceBand !== "all" || s.flavour !== "all";
+    el("stats").textContent = narrowed
+      ? t.statsFiltered.replace("{n}", fmt(shown)).replace("{t}", fmt(ING.length))
+      : t.statsTpl.replace("{n}", fmt(ING.length))
+          .replace("{f}", CAT_ORDER.filter(function (c) { return ING.some(function (i) { return i.cat === c; }); }).length)
+          .replace("{p}", fmt(EDGE_COUNT));
   }
 
   /* ---------- category chips ---------- */
@@ -250,7 +294,8 @@
     CAT_ORDER.forEach(function (c) { if (pop[c]) html += chip(c, t.categories[c]); });
     el("cats").innerHTML = html;
     function chip(v, label) {
-      return '<button type="button" class="chip' + (state.cat === v ? " active" : "") + '" data-cat="' + v + '">' + esc(label) + "</button>";
+      var on = state.cat === v;
+      return '<button type="button" class="chip' + (on ? " active" : "") + '" data-cat="' + v + '" aria-pressed="' + on + '">' + esc(label) + "</button>";
     }
   }
 
@@ -288,17 +333,18 @@
 
 
     /* Same plant or animal. Derived from the latin binomial rather than stored,
-       so it needs no upkeep and covers all 203 clusters at once: the parenthetical
-       in "Coregonus albula (roe)" names the part, not a different species. */
+       so it needs no upkeep and covers every cluster at once: the parenthetical
+       in "Coregonus albula (roe)" names the part, not a different species.
+       Only a real binomial keys \u2014 capitalised ASCII genus, lowercase ASCII
+       species (hyphens allowed: "uva-crispa"), an optional \u00d7 between, and
+       nothing but a space, a comma, a parenthesis or the end after it \u2014 so
+       "B\u0153uf \u2014 cuisse", "Lait ferment\u00e9" and "Halite (NaCl)" get no group rather
+       than a bogus one, and "Musa spp." names a genus, not a species. */
     function kinKey(lat) {
       if (!lat) return null;
-      var w = lat.replace(/\(.*?\)/g, " ").replace(/[\u00d7x]\s+/g, " ")
-               .match(/[A-Za-z\u00c0-\u00ff.-]+/g) || [];
-      w = w.filter(function (x) { return !/^(spp|var|subsp|cv)\.?$/i.test(x); });
-      if (w.length < 2) return null;
-      var g = w[0], sp = w[1];
-      if (!(g[0] === g[0].toUpperCase() && sp[0] === sp[0].toLowerCase() && /^[a-z]+$/i.test(sp))) return null;
-      return (g + " " + sp).toLowerCase();
+      var m = lat.replace(/\u00d7(?=\S)/g, "\u00d7 ").match(/^([A-Z][a-z]+) (?:\u00d7 )?([a-z]+(?:-[a-z]+)?)(?=$|[\s(,])/);
+      if (!m || /^(spp|var|subsp|cv)$/.test(m[2])) return null;
+      return (m[1] + " " + m[2]).toLowerCase();
     }
 
     var KIN = (function () {
@@ -349,13 +395,18 @@
     var t = T(), list = filtered();
     el("empty").hidden = list.length > 0;
     el("empty").textContent = t.empty;
+    renderStats(list.length);
+    /* The star is a sibling of the keyboard target, not a child: a button
+       inside a role=button is one control to assistive tech. The whole card
+       still opens on click through the grid's delegated handler. */
     el("grid").innerHTML = list.map(function (i) {
       var seasonDot = (i.season.length > 0 && inSeasonNow(i)) ? '<span class="in-season" title="' + esc(t.inSeasonNow) + '"></span>' : "";
-      return '<article class="card" data-id="' + i.id + '" tabindex="0" role="button">' +
+      return '<article class="card" data-id="' + i.id + '">' +
         seasonDot +
         (i.custom ? '<span class="creation-tag">' + esc(t.creationLabel) + "</span>" : "") +
         '<button type="button" class="fav' + (favs.has(i.id) ? " on" : "") + '" data-fav="' + i.id +
           '" title="' + esc(favs.has(i.id) ? t.favRemove : t.favAdd) + '" aria-label="' + esc(favs.has(i.id) ? t.favRemove : t.favAdd) + '">&#9733;</button>' +
+        '<div class="card-main" tabindex="0" role="button">' +
         '<div class="card-art">' + art(i) + "</div>" +
         "<h3>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
         '<p class="latin">' + esc(i.custom ? t.creationLabel : i.latin) + "</p>" +
@@ -365,7 +416,7 @@
         '<div class="tags">' + i.flavor.slice(0, 3).map(function (f) {
           return '<span class="tag">' + esc(t.flavors[f]) + "</span>";
         }).join("") + "</div>" +
-        "</article>";
+        "</div></article>";
     }).join("");
   }
 
@@ -493,7 +544,9 @@
                '<text class="tw-lbl" y="' + (NR + 17) + '">' + esc(b.name[state.lang]) + "</text></g>";
     });
 
-    var svg = '<svg class="tw-svg" viewBox="0 0 460 404" role="img" aria-label="' + esc(name(ing)) + '">' +
+    // role=group, not img: an image's children are presentational, and the
+    // branch nodes are buttons.
+    var svg = '<svg class="tw-svg" viewBox="0 0 460 404" role="group" aria-labelledby="treeTitle">' +
       links +
       '<g class="tw-core"><circle class="tw-core-disc" r="' + CR + '" cx="' + CX + '" cy="' + CY + '"/>' +
       '<g transform="translate(' + (CX - 34) + ' ' + (CY - 34) + ') scale(0.71)">' + (ing.svg || "") + "</g></g>" +
@@ -510,7 +563,7 @@
       '<div class="pair-grid tw-pairs">' + sel.pairs.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
       "</div>";
 
-    return '<section class="tw" id="treeSec"><h3 class="tw-title">' + esc(t.preparations) + "</h3>" +
+    return '<section class="tw" id="treeSec"><h3 class="tw-title" id="treeTitle">' + esc(t.preparations) + "</h3>" +
            '<p class="tw-hint">' + esc(t.preparationsHint) + "</p>" +
            '<div class="tw-stage">' + svg + "</div>" + panel + "</section>";
   }
@@ -553,7 +606,7 @@
     var t = T();
     el("techTitle").textContent = t.techTitle;
     el("techHint").textContent = t.techHint;
-    el("techSearch").placeholder = t.techSearchPh;
+    placeholder("techSearch", t.techSearchPh);
     fillSel("techGroup", [["all", t.fAllGroups]].concat(TECH_GROUPS.map(function (g) {
       return [g, groupLabel(g)];
     })), state.techGroup);
@@ -582,7 +635,7 @@
       .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
     el("modalBody").innerHTML =
       '<div class="bm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
-      "<h2>" + esc(x.name[state.lang]) + "</h2>" +
+      '<h2 id="modalTitle">' + esc(x.name[state.lang]) + "</h2>" +
       '<p class="base-era">' + esc(state.lang === "en" ? x.name.fr : x.name.en) + "</p></div>" +
       '<p class="dm-sum">' + esc(x.summary[state.lang]) + "</p>" +
       "<h3>" + esc(t.techHow) + '</h3><p class="tm-body">' + esc(x.how[state.lang]) + "</p>" +
@@ -591,16 +644,8 @@
         used.map(function (d) {
           return '<button type="button" class="chip-link" data-baselink="' + esc(d.id) + '">' + esc(d.name[state.lang]) + "</button>";
         }).join("") + "</div>" : "");
-    el("backBtn").hidden = true;
   }
-  function openTech(id) {
-    if (!techById[id]) return;
-    openTechId = id; openBaseId = null;
-    renderTechModal(id);
-    el("overlay").hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-  var openTechId = null;
+  function openTech(id) { openItem("tech", id); }
 
   /* ---------- bases ---------- */
   var BASE_ORDER = ["fonds","sauces","liaisons","emulsions","aigredoux","salaisons","sucre"];
@@ -608,7 +653,7 @@
       var t = T();
       el("basesTitle").textContent = t.basesTitle;
       el("basesHint").textContent = t.basesHint;
-      el("baseSearch").placeholder = t.baseSearchPh;
+      placeholder("baseSearch", t.baseSearchPh);
       var groups = [];
       BASES.forEach(function (d) { if (groups.indexOf(d.group) === -1) groups.push(d.group); });
       groups.sort(function (a, b) { return BASE_ORDER.indexOf(a) - BASE_ORDER.indexOf(b); });
@@ -668,7 +713,7 @@
 
   function renderChefFilters() {
     var t = T();
-    el("chefSearch").placeholder = t.chefSearchPh;
+    placeholder("chefSearch", t.chefSearchPh);
     el("chefReset").textContent = t.chefReset;
     fillSel("chefGender", [["all", t.fAllGender], ["f", t.fWomen], ["m", t.fMen]], state.chefGender);
     fillSel("chefStars", [["all", t.fAllStars], ["3", "★★★"], ["2", "★★"], ["1", "★"], ["0", t.fNoStars]], state.chefStars);
@@ -726,7 +771,7 @@
       '</div><p class="drop-hint">' + esc(t.dropHint) + "</p></div>" +
       "<div>" +
       '<p class="m-cat">' + esc(catLabel(i.cat)) + (i.custom ? " · " + esc(t.creationLabel) : "") + "</p>" +
-      "<h2>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h2>" +
+      '<h2 id="modalTitle">' + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h2>" +
       '<p class="m-latin">' + (i.custom ? esc(other) : esc(i.latin) + " · " + esc(other)) + "</p>" +
       (i.origin[state.lang] ? '<p class="m-origin">' + esc(t.origin) + " — " + esc(i.origin[state.lang]) + "</p>" : "") +
       (i.price ? '<p class="m-price"><span class="price-band">' + "\u20ac".repeat(i.price) + "</span>" +
@@ -748,32 +793,45 @@
       }).join("") : "") +
       '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>";
     el("modalBody").innerHTML = html;
-    el("backBtn").hidden = modalStack.length < 2;
-    el("closeBtn").title = t.close;
-    el("backBtn").title = t.back;
   }
 
-  function openModal(id, push) {
+  /* One dialog, three kinds of entry. showModal draws whatever is on top of
+     the stack; openItem pushes, backModal pops, closeModal empties. Focus goes
+     to ✕ on open and back to the control that opened the dialog on close. */
+  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal };
+  var LOOKUP = { ing: function (id) { return byId[id]; }, tech: function (id) { return techById[id]; },
+                 base: function (id) { return baseById[id]; } };
+  var opener = null;
+  function showModal() {
+    var top = modalTop();
+    RENDER[top.kind](top.id);
+    el("backBtn").hidden = modalStack.length < 2;
+    if (history.replaceState) {
+      history.replaceState(null, "", top.kind === "ing" ? "#" + top.id : location.pathname + location.search);
+    }
+  }
+  function openItem(kind, id) {
+    if (!LOOKUP[kind](id)) return;
     treeSel = null;
-    if (!byId[id]) return;
-    if (push !== false) modalStack.push(id);
-    renderModal(id);
+    if (el("overlay").hidden) { modalStack = []; opener = document.activeElement; }
+    modalStack.push({ kind: kind, id: id });
+    showModal();
     el("overlay").hidden = false;
     document.body.style.overflow = "hidden";
-    if (history.replaceState) history.replaceState(null, "", "#" + id);
+    el("closeBtn").focus();
   }
+  function openModal(id) { openItem("ing", id); }
   function closeModal() {
     modalStack = [];
-    openBaseId = null;
-    openTechId = null;
     el("overlay").hidden = true;
     document.body.style.overflow = "";
     if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    if (opener && opener.focus) opener.focus();
+    opener = null;
   }
   function backModal() {
     modalStack.pop();
-    var prev = modalStack[modalStack.length - 1];
-    if (prev) { renderModal(prev); if (history.replaceState) history.replaceState(null, "", "#" + prev); }
+    if (modalStack.length) { treeSel = null; showModal(); el("closeBtn").focus(); }
     else closeModal();
   }
 
@@ -790,7 +848,7 @@
       }).join("");
       el("modalBody").innerHTML =
         '<div class="bm-head"><p class="base-meta">' + esc(t.baseGroups[d.group] || d.group) + "</p>" +
-        "<h2>" + esc(d.name[state.lang]) + "</h2>" +
+        '<h2 id="modalTitle">' + esc(d.name[state.lang]) + "</h2>" +
         '<p class="base-ratio big">' + esc(d.ratio[state.lang]) + "</p></div>" +
         '<p class="bm-sum">' + esc(d.summary[state.lang]) + "</p>" +
         "<h3>" + esc(t.baseMethod) + "</h3>" + '<p class="bm-sum">' + esc(d.method[state.lang]) + "</p>" +
@@ -798,16 +856,8 @@
         '<div class="m-note"><h3>' + esc(t.baseFailure) + "</h3><p>" + esc(d.failure[state.lang]) + "</p></div>" +
         (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
         (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "");
-      el("backBtn").hidden = true;
     }
-  function openBase(id) {
-    if (!baseById[id]) return;
-    openBaseId = id;
-    renderBaseModal(id);
-    el("overlay").hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-  var openBaseId = null;
+  function openBase(id) { openItem("base", id); }
 
   /* ---------- pairing lab ---------- */
   function fillLabSelects() {
@@ -864,13 +914,17 @@
   function openCreate() {
     createState = { type: "ing", picked: [], editId: null, notes: "", coeur: false };
     renderCreateForm();
+    opener = document.activeElement;
     el("createOverlay").hidden = false;
     document.body.style.overflow = "hidden";
+    el("createClose").focus();
   }
   function closeCreate() {
     el("createOverlay").hidden = true;
     document.body.style.overflow = "";
     createState = null;
+    if (opener && opener.focus) opener.focus();
+    opener = null;
   }
 
   function renderCreateForm() {
@@ -891,10 +945,10 @@
         "</select></label>" +
         '<div class="cf-label">' + esc(t.flavorNotes) + "</div>" +
         '<div class="fchips" id="cFlavors">' +
-        Object.keys(t.flavors).map(function (f) { return '<button type="button" class="tag" data-fl="' + f + '">' + esc(t.flavors[f]) + "</button>"; }).join("") +
+        Object.keys(t.flavors).map(function (f) { return '<button type="button" class="tag" data-fl="' + f + '" aria-pressed="false">' + esc(t.flavors[f]) + "</button>"; }).join("") +
         "</div>" + picker + common;
     el("createModal").innerHTML =
-      '<div class="modal-bar"><span class="cform-title">' + esc(t.createTitle) + "</span>" +
+      '<div class="modal-bar"><span class="cform-title" id="createTitle">' + esc(t.createTitle) + "</span>" +
       '<button type="button" class="ghost" id="createClose" aria-label="' + esc(t.close) + '">&#10005;</button></div>' +
       '<div class="modal-body cform">' + body + "</div>";
     renderPicked();
@@ -902,11 +956,12 @@
 
   function renderPicked() {
     if (!el("cPairs")) return;
+    var t = T();
     var html = createState.picked.map(function (id) {
       var i = byId[id];
       if (!i) return "";
       return '<span class="pair-chip">' + art(i) + "<span>" + esc(name(i)) + '</span>' +
-        '<button type="button" class="rm" data-rm="' + id + '" aria-label="&times;">&#10005;</button></span>';
+        '<button type="button" class="rm" data-rm="' + id + '" aria-label="' + esc(t.removePick.replace("{name}", name(i))) + '">&#10005;</button></span>';
     }).join("");
     el("cPairs").innerHTML = html;
   }
@@ -961,14 +1016,16 @@
 
   function renderCreations() {
     var t = T(), out = [];
+    // Same shape as a grid card: the delete button beside the keyboard target, not inside it.
     myIngs.forEach(function (i) {
       out.push('<div class="creation-card cc-ing" data-open="' + i.id + '">' +
-        '<button type="button" class="cc-del" data-del-ing="' + i.id + '" title="' + esc(t.deleteConfirm) + '">&#10005;</button>' +
+        '<button type="button" class="cc-del" data-del-ing="' + i.id + '" title="' + esc(t.deleteConfirm) + '" aria-label="' + esc(t.deleteConfirm) + '">&#10005;</button>' +
+        '<div class="cc-main" tabindex="0" role="button">' +
         '<div class="trio-arts">' + art(i) + "</div>" +
         "<h3>" + esc(name(i)) + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
         '<p class="cc-type">' + esc(catLabel(i.cat)) + " · " + esc(t.creationLabel) + "</p>" +
         (i.story[state.lang] ? '<p class="trio-note">' + esc(i.story[state.lang].slice(0, 110)) + "</p>" : "") +
-        "</div>");
+        "</div></div>");
     });
     el("creationsGrid").innerHTML = out.length ? out.join("") :
       '<p class="empty" style="grid-column:1/-1">' + esc(t.emptyCreations) + "</p>";
@@ -994,10 +1051,7 @@
     state.lang = l;
     localStorage.setItem(LS_LANG, l);
     renderAll();
-    var current = modalStack[modalStack.length - 1];
-    if (current && !el("overlay").hidden) renderModal(current);
-    else if (openBaseId && !el("overlay").hidden) renderBaseModal(openBaseId);
-    else if (openTechId && !el("overlay").hidden) renderTechModal(openTechId);
+    refreshOpenModal();
   }
 
   /* ---------- events ---------- */
@@ -1009,10 +1063,13 @@
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
   function paintThemeBtn() {
-    var dark = currentTheme() === "dark";
+    var dark = currentTheme() === "dark", t = T();
     el("themeBtn").textContent = dark ? "\u2600" : "\u263D";
     el("themeBtn").setAttribute("aria-pressed", dark ? "true" : "false");
-    el("themeBtn").title = dark ? "Light" : "Dark";
+    el("themeBtn").title = dark ? t.themeLight : t.themeDark;
+    // Browser chrome follows the page ground, whichever way the theme was set.
+    document.querySelector('meta[name="theme-color"]').content =
+      getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
   }
   el("themeBtn").addEventListener("click", function () {
     var next = currentTheme() === "dark" ? "light" : "dark";
@@ -1025,7 +1082,6 @@
       if (!document.documentElement.getAttribute("data-theme")) paintThemeBtn();
     });
   }
-  paintThemeBtn();
 
   el("lang-en").addEventListener("click", function () { setLang("en"); });
   el("lang-fr").addEventListener("click", function () { setLang("fr"); });
@@ -1061,12 +1117,10 @@
     var c = e.target.closest(".card");
     if (c) openModal(c.getAttribute("data-id"));
   });
-  el("grid").addEventListener("keydown", function (e) {
-    if (e.key !== "Enter") return;
-    var c = e.target.closest(".card");
-    if (c) openModal(c.getAttribute("data-id"));
-  });
 
+  /* Every element that opens or switches an entry — chips in the grid, the
+     trios, a chef, the dialog itself — is handled here, once. A second handler
+     on #modalBody used to open the same entry twice per click. */
   document.body.addEventListener("click", function (e) {
     var pp = e.target.closest("[data-photo-pick]");
     if (pp) { photoTarget = pp.getAttribute("data-photo-pick"); el("photoFile").click(); return; }
@@ -1074,13 +1128,17 @@
     if (pd) { deletePhoto(pd.getAttribute("data-photo-del")); return; }
     var o = e.target.closest("[data-open]");
     if (o) { openModal(o.getAttribute("data-open")); return; }
+    var k = e.target.closest("[data-tech]");
+    if (k) { openTech(k.getAttribute("data-tech")); return; }
+    var d = e.target.closest("[data-baselink]");
+    if (d) { openBase(d.getAttribute("data-baselink")); return; }
     var br = e.target.closest("[data-branch]");
     if (br) {
       treeSel = br.getAttribute("data-branch");
       var host = el("treeSec");
       if (host) {
         var tmp = document.createElement("div");
-        tmp.innerHTML = renderTree(byId[modalStack[modalStack.length - 1]]);
+        tmp.innerHTML = renderTree(byId[currentIng()]);
         host.replaceWith(tmp.firstChild);
       }
       return;
@@ -1091,9 +1149,19 @@
       closeModal();
       el("labA").value = id;
       renderLabResult();
-      el("lab").scrollIntoView({ behavior: "smooth" });
+      el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
       el("labB").focus();
     }
+  });
+  /* Cards, the daily block, creation cards and tree branches are role=button
+     on a div or an svg group: Enter and Space act as a click, and the click
+     handlers above do the rest. Native buttons already do this themselves. */
+  document.body.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var n = e.target;
+    if (!n.matches || !n.matches('[role="button"]:not(button)')) return;
+    e.preventDefault();
+    n.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
   });
 
   el("closeBtn").addEventListener("click", closeModal);
@@ -1118,27 +1186,9 @@
     var card = e.target.closest("[data-base]");
     if (card) { openBase(card.getAttribute("data-base")); return; }
   });
-  el("baseList").addEventListener("keydown", function (e) {
-    if (e.key !== "Enter" && e.key !== " ") return;
-    var card = e.target.closest("[data-base]");
-    if (card) { e.preventDefault(); openBase(card.getAttribute("data-base")); }
-  });
-  el("modalBody").addEventListener("click", function (e) {
-    var o = e.target.closest("[data-open]"),
-        k = e.target.closest("[data-tech]"),
-        d = e.target.closest("[data-baselink]");
-    if (o) { closeModal(); openModal(o.getAttribute("data-open")); return; }
-    if (k) { openTech(k.getAttribute("data-tech")); return; }
-    if (d) { openBase(d.getAttribute("data-baselink")); }
-  });
   el("techList").addEventListener("click", function (e) {
     var c = e.target.closest("[data-tech-card]");
     if (c) openTech(c.getAttribute("data-tech-card"));
-  });
-  el("techList").addEventListener("keydown", function (e) {
-    if (e.key !== "Enter" && e.key !== " ") return;
-    var c = e.target.closest("[data-tech-card]");
-    if (c) { e.preventDefault(); openTech(c.getAttribute("data-tech-card")); }
   });
   el("chefSearch").addEventListener("input", function (e) { state.chefQ = e.target.value; renderChefs(); });
   ["chefGender","chefStars","chefCountry","chefEra"].forEach(function (id) {
@@ -1164,7 +1214,7 @@
     var n = node.closest(".card[data-id], [data-open], #modal");
     if (!n) return null;
     if (n.id === "modal") {
-      var cur = modalStack[modalStack.length - 1];
+      var cur = currentIng();
       return (cur && !el("overlay").hidden) ? { id: cur, el: n } : null;
     }
     var id = n.getAttribute("data-id") || n.getAttribute("data-open");
@@ -1193,7 +1243,7 @@
     if (!createState) return;
     if (e.target.closest("#createClose")) { closeCreate(); return; }
     var fl = e.target.closest("[data-fl]");
-    if (fl) { fl.classList.toggle("on"); return; }
+    if (fl) { fl.setAttribute("aria-pressed", fl.classList.toggle("on")); return; }
     if (e.target.closest("#cPickAdd")) { addPick(); return; }
     var rm = e.target.closest("[data-rm]");
     if (rm) {
@@ -1213,7 +1263,25 @@
   }
   el("creationsGrid").addEventListener("click", creationGridClick);
 
+  /* Tab stays inside whichever dialog is open, wrapping at either end. */
+  var FOCUSABLE = 'button:not([hidden]),[href],input,select,textarea,[tabindex="0"]';
+  function trapTab(e, box) {
+    var list = Array.prototype.filter.call(box.querySelectorAll(FOCUSABLE), function (n) {
+      return !n.disabled && n.getClientRects().length;
+    });
+    if (!list.length) return;
+    var first = list[0], last = list[list.length - 1], cur = document.activeElement;
+    if (e.shiftKey ? (cur === first || !box.contains(cur)) : (cur === last || !box.contains(cur))) {
+      e.preventDefault();
+      (e.shiftKey ? last : first).focus();
+    }
+  }
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Tab") {
+      if (!el("createOverlay").hidden) trapTab(e, el("createModal"));
+      else if (!el("overlay").hidden) trapTab(e, el("modal"));
+      return;
+    }
     if (e.key === "Escape" && !el("createOverlay").hidden) { closeCreate(); return; }
     if (e.key === "Escape" && !el("overlay").hidden) {
       if (modalStack.length > 1) backModal(); else closeModal();
@@ -1234,6 +1302,8 @@
     photosMap = all;
     if (Object.keys(all).length) { renderAll(); refreshOpenModal(); }
   }).catch(function () { /* photos unavailable — Copius works without them */ });
-  var hash = decodeURIComponent(location.hash.replace("#", ""));
+  // A shared link with a bad percent-escape (#%E0) must not throw.
+  var hash = "";
+  try { hash = decodeURIComponent(location.hash.replace("#", "")); } catch (e) {}
   if (hash && byId[hash]) { setView("atlas"); openModal(hash); }
 })();
