@@ -190,6 +190,16 @@
     el("tagline").textContent = t.tagline;
     el("search").placeholder = t.searchPh;
     el("seasonNowLbl").textContent = t.inSeasonNow;
+    /* The filter narrows this grid; the link goes to the month's own page, which
+       carries what arrives and what leaves — something a checkbox cannot say. */
+    var months = ["january","february","march","april","may","june","july","august",
+                  "september","october","november","december"],
+        moisFr = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout",
+                  "septembre","octobre","novembre","decembre"],
+        m = new Date().getMonth(),
+        sl = el("seasonLink");
+    sl.href = state.lang === "fr" ? "fr/saison/" + moisFr[m] + "/" : "season/" + months[m] + "/";
+    sl.textContent = t.seasonPage;
     el("favsOnlyLbl").textContent = t.favsOnly;
     el("rareOnlyLbl").textContent = t.rareOnly + " ✦";
     el("luxeOnlyLbl").textContent = t.luxeOnly + " ◆";
@@ -713,7 +723,7 @@
     var t = T(), d = dishById[id];
     if (!d) return;
     var ings = d.ingredients.filter(function (i) { return byId[i]; }).map(function (i) {
-      return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + esc(name(byId[i])) + "</button>";
+      return '<button type="button" class="chip-link" data-open="' + esc(i) + '">' + art(byId[i]) + "<span>" + esc(name(byId[i])) + "</span></button>";
     }).join("");
     var techs = d.techniques.filter(function (x) { return techById[x]; }).map(function (x) {
       return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' + esc(techById[x].name[state.lang]) + "</button>";

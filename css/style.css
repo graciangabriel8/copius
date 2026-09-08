@@ -82,6 +82,9 @@ input,select{font:inherit}
 .ig-dot{fill:var(--ink-3);stroke:none}
 .ig-link:hover .ig{stroke:var(--ink)}
 .ig-link:hover .ig-dot{fill:var(--ink)}
+.season-link{align-self:center;font-size:13px;color:var(--ink-3);
+  text-underline-offset:3px;text-decoration-color:var(--border);white-space:nowrap}
+.season-link:hover{color:var(--ink);text-decoration-color:var(--ink-3)}
 .site-head{
   position:sticky;top:0;z-index:40;
   display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
@@ -625,8 +628,11 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .dm-head h2{margin:6px 0 2px}
 .dm-sum{margin:0 0 4px;font-size:15px;line-height:1.6;color:var(--ink-2)}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
-.chip-link{border:1px solid var(--border);background:var(--chip);border-radius:999px;padding:4px 11px;
-  font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--ink-1)}
+.chip-link{display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--border);background:var(--chip);border-radius:999px;
+  padding:3px 11px 3px 5px;font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--ink-1)}
+.chip-link svg,.chip-link img{width:22px;height:22px;flex:none}
+.chip-link img{border-radius:50%;object-fit:cover}
 .chip-link:hover{background:var(--border);border-color:var(--ink-3)}
 .wine-list{margin:0;padding:0;list-style:none;display:grid;gap:12px}
 .wine-list li{font-size:13.5px;line-height:1.55;padding-left:12px;border-left:2px solid var(--border)}
