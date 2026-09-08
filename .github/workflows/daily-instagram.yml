@@ -7,9 +7,13 @@ on:
     # 08:17 UTC, not 08:00. GitHub: "High load times include the start of every
     # hour… To decrease the chance of delay, schedule your workflow to run at a
     # different time of the hour." Yesterday's run at the top of the hour was
-    # delayed to 13:45. Cron here is UTC, so this is 10:17 Paris in summer and
-    # 09:17 in winter.
-    - cron: "17 8 * * *"
+    # delayed to 13:45.
+    #
+    # timezone pins it to Paris, so the clocks going back in October no longer
+    # move the post an hour earlier. GA since 19 March 2026, and an unrecognised
+    # key here fails workflow validation rather than being ignored.
+    - cron: "17 10 * * *"
+      timezone: "Europe/Paris"
   workflow_dispatch:          # lets you run it by hand from the Actions tab
 
 concurrency:
