@@ -1,0 +1,10 @@
+# GitHub Pages builds this repo with Jekyll and honours this list: the tooling,
+# the developer docs and the plans stay off the published site. brand/ is
+# served on purpose (robots.txt and the profile PDF point at it).
+exclude:
+  - tools
+  - docs
+  - PLAN-1500.md
+  - PLAN-ingredients-500.md
+  - ROADMAP.md
+  - .github

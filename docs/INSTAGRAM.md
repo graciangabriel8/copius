@@ -1,20 +1,26 @@
 # Daily ingredient → Instagram
 
-The site already picks one ingredient per day from a pure function of the date.
-This posts that same ingredient, automatically, with no server.
+One ingredient a day, in an order fixed in advance, posted automatically with
+no server.
 
 ## How it works
 
-1. `tools/build-social.sh` renders a rolling window of days to 1080×1080 JPEGs.
-   Run it on the Mac — the rasteriser is `qlmanage` — and commit `social/`.
-2. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
+1. `social/schedule.json` says which ingredient goes out on which day: a start
+   date and one id per day, written once by `tools/build-schedule.py` as a
+   seeded shuffle of every ingredient (no two consecutive days from the same
+   family). Re-running it only appends ingredients that are new to the data;
+   a day already scheduled never moves.
+2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
+   JPEGs. Run it on the Mac — the rasteriser is `qlmanage` — and commit
+   `social/`.
+3. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
    Instagram's API requires, since it fetches the image rather than accepting an
    upload.
-3. `.github/workflows/daily-instagram.yml` runs at 08:00 UTC, works out today's
-   ingredient with the same formula the site uses, and publishes it. The
-   bilingual caption is produced there and then by `make-card.py --caption`,
-   which needs nothing but Python — so an edit to the caption reaches the next
-   post without a regeneration step to forget.
+4. `.github/workflows/daily-instagram.yml` runs at 10:17 Paris, reads today's
+   id from the schedule, and publishes it. The bilingual caption is produced
+   there and then by `make-card.py --caption`, which needs nothing but Python —
+   so an edit to the caption reaches the next post without a regeneration step
+   to forget.
 
 The picture is never generated at post time, so the daily job cannot fail on
 rendering. To read a caption before it goes out:
@@ -68,20 +74,28 @@ Run workflow**. Check Instagram before leaving it on the schedule.
 ## The one thing that will break it
 
 Long-lived tokens last **60 days** and, once expired, cannot be revived — you
-have to issue a new one. The `refresh-token` job renews it weekly and writes the
-new value straight back into the repository secret, but only if `SECRETS_PAT`
+have to issue a new one. The `refresh-token` job renews it on Mondays (Meta
+refuses to refresh a token under 24 h old, so not daily) and writes the new
+value straight back into the repository secret, but only if `SECRETS_PAT`
 exists. If it doesn't, the job logs a warning and the integration dies silently
 about two months later.
 
-## After adding ingredients
+## When the cards run out
+
+Data edits never invalidate a card: the schedule pins each date to an id, and
+an entry merged away is skipped forward to the next scheduled one that still
+exists (the job logs a warning naming both). The only maintenance is extending
+the window before the last built card is posted — the job warns 40 days out,
+and fails with this exact command once the schedule itself is exhausted:
 
 ```sh
-sh tools/build-social.sh
-git add social && git commit -m "Social: rebuild cards" && git push
+python3 tools/build-schedule.py     # appends any ingredient not yet scheduled
+sh tools/build-social.sh            # the next 400 scheduled days
+git add social && git commit -m "Social: extend the schedule" && git push
 ```
 
-The rotation is a full cycle: every ingredient appears exactly once before any
-repeats. At 510 entries that is a 17-month cycle; at 1,857 it is 5.1 years.
+Every ingredient appears once before any repeats: 1,852 entries is a five-year
+schedule. Adding an ingredient puts it at the end, not in tomorrow's slot.
 
 ## Limits worth knowing
 
