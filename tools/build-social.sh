@@ -1,13 +1,14 @@
 #!/bin/sh
 # Rebuild the Instagram cards. macOS only — qlmanage is the rasteriser.
-# Renders a rolling window of days rather than all 1,857 entries: the daily
-# rotation is a pure function of the date, so cards years out are dead weight
-# in the repository. Re-run when the window runs low, or after adding entries.
+# Renders the next N scheduled days (social/schedule.json) rather than all
+# 1,857 entries: cards years out are dead weight in the repository. The
+# schedule is fixed, so a data edit never invalidates a card; re-run when the
+# window runs low, or after tools/build-schedule.py has appended days.
 #   sh tools/build-social.sh [days]        (default 400)
 set -eu
 cd "$(dirname "$0")/.."
 DAYS="${1:-400}"
-rm -rf social
+rm -f social/*.jpg social/*.svg
 python3 tools/make-card.py --window "$DAYS"
 qlmanage -t -s 1080 -o social social/*.svg >/dev/null 2>&1
 cd social

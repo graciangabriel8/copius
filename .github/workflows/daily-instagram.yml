@@ -1,7 +1,7 @@
 name: Daily ingredient to Instagram
 
-# Posts the same ingredient the website shows that day. The picture and the
-# caption are pre-built and committed, so this job only calls the API.
+# Posts the day's ingredient from social/schedule.json. The picture is
+# pre-built and committed, so this job only calls the API.
 on:
   schedule:
     # 08:17 UTC, not 08:00. GitHub: "High load times include the start of every
@@ -40,14 +40,14 @@ jobs:
           echo "id=$ID" >> "$GITHUB_OUTPUT"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "Today: $ID ($DATE)"
-          test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: sh tools/build-social.sh 400 && git add social && git commit && git push"; exit 1; }
-          # warn while there is still time to rebuild
-          LEFT=$(ls -1 social/*.jpg | wc -l | tr -d " ")
+          test -f "social/$ID.jpg" || { echo "::error::social/$ID.jpg is missing — the card window has run out. Run: python3 tools/build-schedule.py && sh tools/build-social.sh && git add social && git commit && git push"; exit 1; }
+          # warn while there is still time to extend the schedule
+          LEFT="$(python3 -c 'import json,datetime; s=json.load(open("social/schedule.json")); print(len(s["days"]) - (datetime.date.today() - datetime.date.fromisoformat(s["start"])).days)')"
           # An `if`, not `[ ] && echo` — under set -e a false test makes the
           # && chain return non-zero, and as the step's last command that
           # fails the whole job. The warning fired by not firing.
           if [ "$LEFT" -lt 40 ]; then
-            echo "::warning::only $LEFT cards left in the window — rerun tools/build-social.sh"
+            echo "::warning::only $LEFT days left in the schedule — run: python3 tools/build-schedule.py && sh tools/build-social.sh"
           fi
 
       - name: Publish
@@ -118,12 +118,20 @@ jobs:
           printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
 
   # Long-lived tokens die after 60 days and cannot be revived. This refreshes
-  # weekly and writes the new one straight back into the repository secret.
+  # on Mondays and writes the new one straight back into the repository secret.
   refresh-token:
     runs-on: ubuntu-latest
     if: github.event_name == 'schedule'
     steps:
+      # The cron is daily and Meta refuses to refresh a token under 24 h old,
+      # so a delayed run followed by an on-time one would go red every time.
+      - name: Only on Mondays
+        run: |
+          if [ "$(date -u +%u)" != "1" ]; then echo "::notice::refresh runs on Mondays"; exit 0; fi
+          echo "MONDAY=1" >> "$GITHUB_ENV"
+
       - name: Refresh the access token
+        if: env.MONDAY == '1'
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           GH_TOKEN: ${{ secrets.SECRETS_PAT }}
