@@ -59,16 +59,6 @@ fr:"Essuyez-le, ne le lavez jamais : la poudre blanche est du mannitol, sa douce
 pairs:["katsuobushi","sea-bream","hamo","usukuchi-shoyu","mitsuba","shiitake"],
 svg:'<path class="f2 sf" d="M32 20q16 8 32 0 6 28-4 56-12 6-24 0-10-28-4-56z"/><path class="s" d="M48 26v46"/><circle class="dot" cx="40" cy="40" r="1.6"/><circle class="dot" cx="56" cy="54" r="1.6"/><circle class="dot" cx="44" cy="62" r="1.6"/>'},
 
-{id:"moshio-salt",cat:"seaweed",rare:true,price:2,pk:"50–100 €/kg",name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
-origin:{en:"Kamagari, Seto Inland Sea",fr:"Kamagari, mer intérieure de Seto"},season:[],
-flavor:["salty","marine","umami"],
-story:{en:"Before Japan had salt pans it had moshio: seawater steeped with hondawara seaweed, then boiled down in clay pots. Excavated shards around the Seto Inland Sea let salt-makers on Kamagari island rebuild the method in the 1980s, and the beige crystals carry the seaweed's glutamate along with its salt.",
-fr:"Avant les marais salants, le Japon avait le moshio : de l’eau de mer infusée d’algue hondawara, puis réduite dans des jarres de terre. Des tessons exhumés en mer intérieure de Seto ont permis aux sauniers de l’île de Kamagari de reconstituer la méthode dans les années 1980, et les cristaux beiges portent le glutamate de l’algue autant que son sel."},
-tip:{en:"Use it where soy sauce would darken the plate — a pinch on white sashimi, tempura or chilled tofu supplies the salt and the savour together. Do not dissolve it into a stock; nothing survives that a cheaper salt would not do.",
-fr:"Employez-le là où la sauce soja noircirait l’assiette : une pincée sur un sashimi blanc, une tempura ou un tofu froid apporte le sel et le goût. Ne le dissolvez pas dans un bouillon, rien n’y survit qu’un sel ordinaire ne ferait aussi bien."},
-pairs:["silken-tofu","sea-bream","squid","rice","egg","cucumber","scallop","sea-urchin"],
-svg:'<path class="f1 sf" d="M28 56l6 18h28l6-18z"/><path class="f2 sf" d="M36 56q6-14 12-14t12 14z"/><path class="s" d="M28 56h40"/><path class="s" d="M66 26q-6 10-4 20M66 26q-8 2-8 8M66 26q0 10 6 12"/>'},
-
 {id:"mozuku",cat:"seaweed",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[4,5,6],
 flavor:["briny","marine","delicate","mild"],

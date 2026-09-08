@@ -1737,5 +1737,15 @@ fr:"Les cuisiniers yéménites l’appellent sahawiq ; il gagne Israël en 1949 
 tip:{en:"Pound it, do not blitz it — a blender heats the coriander and turns it grey and bitter within the hour. Made cold and covered with a film of oil it keeps five days; after that the garlic dominates everything.",
 fr:"Pilez-le, ne le mixez pas : le blender chauffe la coriandre, qui vire au gris et à l’amer en moins d’une heure. Monté à froid et couvert d’un film d’huile, il tient cinq jours ; ensuite l’ail écrase tout."},
 pairs:["chili","cilantro","garlic","cardamom","lemon","chickpeas","lamb","egg"],
-svg:'<path class="f2 sf" d="M26 54h44q-3 20-16 22h-12q-13-2-16-22z"/><path class="s" d="M21 54h54"/><path class="s" d="M58 24 47 50"/><circle class="f3 sf" cx="61" cy="20" r="7"/><path class="s" d="M26 40q6-8 14-6M26 40q10 2 12-6M26 40q-2-10 6-12"/>'}
+svg:'<path class="f2 sf" d="M26 54h44q-3 20-16 22h-12q-13-2-16-22z"/><path class="s" d="M21 54h54"/><path class="s" d="M58 24 47 50"/><circle class="f3 sf" cx="61" cy="20" r="7"/><path class="s" d="M26 40q6-8 14-6M26 40q10 2 12-6M26 40q-2-10 6-12"/>'},
+
+{id:"moshio-salt",cat:"condiments",rare:true,price:2,pk:"50–100 €/kg",name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
+origin:{en:"Kamagari, Seto Inland Sea",fr:"Kamagari, mer intérieure de Seto"},season:[],
+flavor:["salty","marine","umami"],
+story:{en:"Before Japan had salt pans it had moshio: seawater steeped with hondawara seaweed, then boiled down in clay pots. Excavated shards around the Seto Inland Sea let salt-makers on Kamagari island rebuild the method in the 1980s, and the beige crystals carry the seaweed's glutamate along with its salt.",
+fr:"Avant les marais salants, le Japon avait le moshio : de l’eau de mer infusée d’algue hondawara, puis réduite dans des jarres de terre. Des tessons exhumés en mer intérieure de Seto ont permis aux sauniers de l’île de Kamagari de reconstituer la méthode dans les années 1980, et les cristaux beiges portent le glutamate de l’algue autant que son sel."},
+tip:{en:"Use it where soy sauce would darken the plate — a pinch on white sashimi, tempura or chilled tofu supplies the salt and the savour together. Do not dissolve it into a stock; nothing survives that a cheaper salt would not do.",
+fr:"Employez-le là où la sauce soja noircirait l’assiette : une pincée sur un sashimi blanc, une tempura ou un tofu froid apporte le sel et le goût. Ne le dissolvez pas dans un bouillon, rien n’y survit qu’un sel ordinaire ne ferait aussi bien."},
+pairs:["silken-tofu","sea-bream","squid","rice","egg","cucumber","scallop","sea-urchin"],
+svg:'<path class="f1 sf" d="M28 56l6 18h28l6-18z"/><path class="f2 sf" d="M36 56q6-14 12-14t12 14z"/><path class="s" d="M28 56h40"/><path class="s" d="M66 26q-6 10-4 20M66 26q-8 2-8 8M66 26q0 10 6 12"/>'}
 ]);
