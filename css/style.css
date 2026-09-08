@@ -396,7 +396,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   /* The search field spans the row above; leaving the controls packed left
      ended the second row 72px short of it and read as unfinished. Push the
      language and theme group to the right edge so the two rows align. */
-  .head-tools .lang-toggle{margin-left:auto}
+  .head-tools .theme-btn{margin-left:auto}
   /* Search shared a row with Créer and both toggles and was cut to "Recherc".
      Give it the full width and let the buttons sit under it. */
   .head-tools{flex-wrap:wrap}
@@ -650,8 +650,11 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .m-note.warn{border-left-color:var(--warn-line)}
 .m-note.warn h3{color:var(--warn)}
 
-.theme-btn{border:1px solid var(--border);background:var(--card);color:var(--ink-2);
-  border-radius:999px;width:34px;height:34px;line-height:1;font-size:15px;padding:0;
+/* Its own control, not a third language. It used to sit inside .lang-toggle,
+   which put a bordered pill inside a bordered pill and made the sun read as an
+   option beside EN and FR. */
+.theme-btn{border:1px solid var(--border-strong);background:var(--card);color:var(--ink-2);
+  border-radius:999px;width:38px;height:38px;line-height:1;font-size:16px;padding:0;
   display:inline-flex;align-items:center;justify-content:center;transition:background .12s,border-color .12s}
 .theme-btn:hover{border-color:var(--ink-3);background:var(--chip)}
 
