@@ -54,7 +54,7 @@ UI = {
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
-           "index": "All ingredients",
+           "index": "All ingredients", "about": "About",
            "fixLbl": "Something wrong here, or missing?",
            "fixCta": "Tell us",
            "fixSubj": "Correction — %s",
@@ -65,7 +65,7 @@ UI = {
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
-           "index": "Tous les ingrédients",
+           "index": "Tous les ingrédients", "about": "À propos",
            "fixLbl": "Une erreur ici, ou un oubli ?",
            "fixCta": "Dites-le nous",
            "fixSubj": "Correction — %s",
@@ -250,7 +250,7 @@ def page(i, lang, by_id, count):
 </main>
 
 <footer>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a><br>
+  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
 </body>
@@ -268,7 +268,7 @@ def page(i, lang, by_id, count):
         "tipblock": ("<h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))) if tip else "",
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
-        "fix": correction_link(name, here, lang),
+        "fix": correction_link(name, here, lang), "about": e(t["about"]),
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]),
         "tagline": e(t["tagline"]), "count": count,
     }
@@ -417,7 +417,7 @@ def season_page(month, lang, rows):
 
 <footer>
   <a href="%(prevurl)s">← %(prev)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a>
+  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
 </footer>
 </body>
 </html>
@@ -431,7 +431,7 @@ def season_page(month, lang, rows):
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
         "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
-        "fix": correction_link(t["h1"] % name, here, lang),
+        "fix": correction_link(t["h1"] % name, here, lang), "about": e(UI[lang]["about"]),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
     }
 
@@ -535,7 +535,7 @@ def main():
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
-    urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE]
+    urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
                  "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]

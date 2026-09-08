@@ -83,6 +83,8 @@ window.I18N = {
     back: "Back",
     footNote: "Copius — an illustrated atlas of ingredients, techniques, dishes and the people who cooked them.",
     contactLine: "contact@copius.fr",
+    aboutLink: "\u00c0 propos",
+    aboutLink: "About Copius",
     disclaimer: "Copius is an independent project with no affiliation to, or endorsement by, the MICHELIN Guide, the World's 50 Best Restaurants, or any restaurant or chef named here. Star counts and awards are reported as public facts. MICHELIN is a trademark of its owner. Corrections welcome.",
     favAdd: "Add to favorites",
     favRemove: "Remove from favorites",
