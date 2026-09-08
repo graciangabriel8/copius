@@ -60,9 +60,12 @@ INGREDIENTS.forEach(function (i) {
   if (!i.pairs || i.pairs.length < 3) errors.push(i.id + ": fewer than 3 pairings");
 });
 INGREDIENTS.forEach(function (i) {
+  var seen = {};
   i.pairs.forEach(function (p) {
     if (!ids[p]) errors.push(i.id + ": pairing ref '" + p + "' does not exist");
     if (p === i.id) errors.push(i.id + ": pairs with itself");
+    if (seen[p]) errors.push(i.id + ": pairing '" + p + "' listed twice");
+    seen[p] = true;
   });
 });
 TRIOS.forEach(function (t) {

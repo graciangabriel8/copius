@@ -449,7 +449,7 @@ fr:"Ne le rincez jamais : le gel qui l'enrobe est précisément ce que vous ache
 pairs:["miso","kombu","silken-tofu","negi","katsuobushi","daikon","mitsuba"],
 svg:'<path class="f2 sf" d="M22 44q2-10 12-10t12 10q-6 5-12 5t-12-5z"/><path class="f2 sf" d="M50 48q2-11 13-11t13 11q-7 5-13 5t-13-5z"/><path class="f1 sf" d="M30 48h8l-2 22h-5zM60 53h6l-2 18h-5z"/><path class="s" d="M26 50q1 6 3 8M46 52q1 5 3 7M56 56q1 5 3 7"/>'},
 
-{id:"orange-birch-bolete",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Orange birch bolete",fr:"Bolet roux"},latin:"Leccinum aurantiacum",
+{id:"orange-birch-bolete",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Orange oak bolete",fr:"Bolet roux"},latin:"Leccinum aurantiacum",
 origin:{en:"Birch and aspen woods",fr:"Bois de bouleaux et de trembles"},season:[6,7,8,9,10],
 flavor:["earthy","meaty","woody"],
 story:{en:"Its white flesh runs wine-grey and then near-black within minutes of being cut, and no amount of lemon or acidulated water prevents it. Northern and eastern Europe never fought the reaction: the mushroom went into dark stews and pickling jars where colour was never the point.",

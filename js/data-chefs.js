@@ -579,7 +579,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  fr:"Formé en Argentine puis en France chez Bernard Loiseau, Alain Passard et Alain Ducasse. Il ouvrit Mirazur en 2006 dans un bâtiment au-dessus de la mer, à la frontière italienne, avec des jardins en terrasses qui fournissent une grande part de la cuisine. Les menus s’organisent selon le calendrier lunaire et les cycles du jardin."},
  legacy:{en:"Mirazur was the first restaurant certified plastic-free, in 2020.",
  fr:"Mirazur fut en 2020 le premier restaurant certifié sans plastique."},
- ingredients:["beetroot","lemon","olive-oil","sea-bass","fava-bean","lemon","artichoke","honey"]},
+ ingredients:["beetroot","lemon","olive-oil","sea-bass","fava-bean","artichoke","honey"]},
 
 {id:"kofoed", name:"Rasmus Kofoed", born:1974,
  url:"https://www.geranium.dk",
