@@ -258,11 +258,14 @@
       if (state.luxeOnly && !i.luxe) return false;
       if (state.priceBand !== "all" && (i.price || 2) !== +state.priceBand) return false;
       if (!q) return true;
-      var hay = norm(i.name.en + " " + i.name.fr + " " + i.latin + " " + catLabel(i.cat) + " " +
+      /* Names only: the latin name used to be searchable, so "rosa" returned
+         nine unrelated entries. Family and flavour still match, because the
+         placeholder offers them. */
+      var hay = norm(i.name.en + " " + i.name.fr + " " + catLabel(i.cat) + " " +
         i.flavor.map(function (f) { return t.flavors[f]; }).join(" "));
       return hay.indexOf(q) !== -1;
     }).sort(function (a, b) {
-      // With a query, a name match outranks a match on latin, family or flavour —
+      // With a query, a name match outranks a match on family or flavour —
       // otherwise searching "oeuf" buries Œuf under every "Laitages & œufs" entry.
       if (q) {
         var ra = matchRank(a, q), rb = matchRank(b, q);
@@ -280,8 +283,7 @@
     if (n.indexOf(q) === 0) return 0;                                  // name starts with it
     if (n.indexOf(q) !== -1) return 1;                                 // name contains it
     if (norm(i.name.en + " " + i.name.fr).indexOf(q) !== -1) return 2; // the other language
-    if (norm(i.latin || "").indexOf(q) !== -1) return 3;               // latin
-    return 4;                                                          // family or flavour only
+    return 3;                                                          // family or flavour only
   }
 
   function renderGrid() {
