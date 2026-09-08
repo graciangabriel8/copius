@@ -26,6 +26,12 @@ SITE = "https://copius.fr"
 # opens and rebuild: it is the only thing standing between these pages and Google.
 INDEXABLE = False
 
+# A month page lists only genuinely narrow seasons. Mont d'Or runs September to May
+# and the goat cheeses March to October — real seasons, but naming them as "what is
+# in season in September" says almost nothing. Three months or fewer is the window
+# where the month actually means something.
+SEASON_MAX_MONTHS = 3
+
 MONTHS = {
     "en": [None, "January", "February", "March", "April", "May", "June", "July",
            "August", "September", "October", "November", "December"],
@@ -316,9 +322,9 @@ SLUG = {
 SEASON_UI = {
     "en": {"h1": "What is in season in %s",
            "title": "What is in season in %s — fruit, vegetables, fish and mushrooms",
-           "lede": ("%d of the ingredients in this atlas are in season in %s in France — "
-                    "not only fruit and vegetables, but the fish, mushrooms, game and "
-                    "cheeses that have a season too."),
+           "lede": ("%d ingredients with a short season — three months or less — are at "
+                    "their best in %s in France. Not only fruit and vegetables: the fish, "
+                    "the mushrooms, the game and the cheeses have a season too."),
            "new": "New this month", "last": "Last month for",
            "newNote": "In season now and not in %s.",
            "lastNote": "In season now and gone in %s.",
@@ -327,9 +333,10 @@ SEASON_UI = {
            "none": "Nothing starts or ends this month."},
     "fr": {"h1": "Produits de saison en %s",
            "title": "Produits de saison en %s — fruits, légumes, poissons et champignons",
-           "lede": ("%d ingrédients de cet atlas sont de saison en %s en France — pas "
-                    "seulement des fruits et des légumes, mais aussi les poissons, les "
-                    "champignons, le gibier et les fromages, qui ont une saison eux aussi."),
+           "lede": ("%d ingrédients à saison courte — trois mois ou moins — sont à leur "
+                    "meilleur en %s en France. Pas seulement des fruits et des légumes : "
+                    "les poissons, les champignons, le gibier et les fromages ont une "
+                    "saison eux aussi."),
            "new": "Nouveau ce mois-ci", "last": "Dernier mois pour",
            "newNote": "De saison maintenant, pas en %s.",
            "lastNote": "De saison maintenant, plus en %s.",
@@ -358,7 +365,8 @@ def season_page(month, lang, rows):
     up = "../../" if lang == "en" else "../../../"
     rel = "../../i/"
 
-    now = [r for r in rows if month in r["season"]]
+    now = [r for r in rows if month in r["season"]
+           and 0 < len(r["season"]) <= SEASON_MAX_MONTHS]
     arriving = [r for r in now if prev_m not in r["season"]]
     leaving = [r for r in now if next_m not in r["season"]]
 
