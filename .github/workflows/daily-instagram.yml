@@ -9,15 +9,15 @@ on:
     # different time of the hour." A run at the top of the hour was once
     # delayed by 90 minutes.
     #
-    # 19h Paris straddles the French mobile peak (Médiamétrie: 18h42) and New
-    # York lunchtime, and catches a cook before the coup de feu. Instagram
-    # publishes no time-of-day signal on the surfaces that reach non-followers,
-    # so this is a constant to leave alone, not a dial to turn.
+    # 18h45 Paris is the last quiet moment before the coup de feu, on the
+    # French mobile peak (Médiamétrie: 18h42) and at lunchtime in New York.
+    # Instagram publishes no time-of-day signal on the surfaces that reach
+    # non-followers, so this is a constant to set once, not a dial to turn.
     #
     # timezone pins it to Paris, so the clocks going back in October no longer
     # move the post an hour earlier. GA since 19 March 2026, and an unrecognised
     # key here fails workflow validation rather than being ignored.
-    - cron: "07 19 * * *"
+    - cron: "45 18 * * *"
       timezone: "Europe/Paris"
   workflow_dispatch:          # lets you run it by hand from the Actions tab
 
