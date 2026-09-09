@@ -4,7 +4,7 @@ name: Daily ingredient to Instagram
 # pre-built and committed, so this job only calls the API.
 on:
   schedule:
-    # 19:07, not 19:00. GitHub: "High load times include the start of every
+    # 18:45, and off the top of the hour. GitHub: "High load times include the start of every
     # hour… To decrease the chance of delay, schedule your workflow to run at a
     # different time of the hour." A run at the top of the hour was once
     # delayed by 90 minutes.
