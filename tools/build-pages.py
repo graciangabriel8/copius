@@ -25,7 +25,7 @@ SITE = "https://copius.fr"
 
 # The atlas is closed while it is being finished. Flip this to True on the day it
 # opens and rebuild: it is the only thing standing between these pages and Google.
-INDEXABLE = False
+INDEXABLE = True
 
 # A month page lists only genuinely narrow seasons. Mont d'Or runs September to May
 # and the goat cheeses March to October — real seasons, but naming them as "what is
