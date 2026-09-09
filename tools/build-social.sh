@@ -16,4 +16,4 @@ for f in *.svg.png; do
   sips -s format jpeg -s formatOptions 40 "$f" --out "${f%.svg.png}.jpg" >/dev/null 2>&1
 done
 rm -f -- *.svg.png *.svg
-echo "built $(ls -1 ./*.jpg | wc -l | tr -d ' ') cards covering $DAYS days"
+echo "built $(ls -1 ./*.jpg | wc -l | tr -d ' ') slides ($(ls -1 ./*.2.jpg | wc -l | tr -d ' ') posts) covering $DAYS days"

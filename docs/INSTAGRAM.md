@@ -11,13 +11,15 @@ no server.
    family). Re-running it only appends ingredients that are new to the data;
    a day already scheduled never moves.
 2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
-   JPEGs. Run it on the Mac — the rasteriser is `qlmanage` — and commit
-   `social/`.
+   JPEGs, two per day: `<id>.jpg` is the illustrated card, `<id>.2.jpg` sets the
+   handling note as type. Run it on the Mac — the rasteriser is `qlmanage` — and
+   commit `social/`. A tip never gets cut: the type steps down a size instead.
 3. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
    Instagram's API requires, since it fetches the image rather than accepting an
    upload.
-4. `.github/workflows/daily-instagram.yml` runs at 10:17 Paris, reads today's
-   id from the schedule, and publishes it. The bilingual caption is produced
+4. `.github/workflows/daily-instagram.yml` runs at 19:07 Paris, reads today's
+   id from the schedule, and publishes both slides as one carousel: a container
+   per slide, then a parent holding their ids. The bilingual caption is produced
    there and then by `make-card.py --caption`, which needs nothing but Python —
    so an edit to the caption reaches the next post without a regeneration step
    to forget.
@@ -102,7 +104,8 @@ schedule. Adding an ingredient puts it at the end, not in tomorrow's slot.
 - 100 API-published posts per rolling 24 hours. This uses one.
 - JPEG only. Instagram will not accept SVG or PNG, and will not accept bytes —
   the image must be reachable at a public URL.
-- A carousel counts as one post and holds up to 10 slides, which is the natural
-  home for an EN slide plus an FR slide if you ever want that.
+- A carousel counts as one post and holds up to 10 slides. Two are used; the
+  caption goes on the parent container only, and one set on a child is accepted
+  and then ignored.
 - Captions carry no clickable link. The only clickable link on Instagram is the
   one in the profile bio, so put the site there.

@@ -37,6 +37,7 @@ def load():
                 "svg": field(r"svg:'(.*?)'\s*\}"),
                 "story_en": field(r'story:\{en:"((?:[^"\\]|\\.)*)"'),
                 "story_fr": field(r'story:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"'),
+                "tip_en": field(r'tip:\{en:"((?:[^"\\]|\\.)*)"'),
             })
     # Say so rather than dividing by zero three frames later: this returned an
     # empty list for an afternoon after the app moved off index.html, and the
@@ -130,6 +131,43 @@ def card(i):
 <text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
 </svg>'''
 
+
+def tip_card(i):
+    """Slide two: the handling note, set as type. The picture says what the
+    ingredient is; this says what to do with it, which is the half a cook
+    actually keeps."""
+    e = lambda s: html.escape(s or "", quote=True)
+    tip = re.sub(r"\\+(.)", r"\1", i["tip_en"] or "")
+    # Step the type down rather than cut the text: a tip's second sentence is
+    # usually the one carrying the warning. The longest tip in the data (351
+    # characters) settles on the third pair; the last is headroom.
+    for size, cols in ((38, 40), (34, 45), (31, 50), (28, 55)):
+        lines = wrap(tip, cols)
+        if len(lines) * size * 1.45 <= 360:
+            break
+    lh = round(size * 1.45)
+    # Centre the whole stack, not the tip alone: a two-line tip under a fixed
+    # header hangs in a void, and this is the same page either way.
+    head = 288                                   # name to first line of tip
+    s = 555 - (head + (len(lines) - 1) * lh) / 2  # baseline of the name
+    body = "".join(
+        '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+        'font-size="%d" fill="#55524d">%s</text>' % (s + head + n * lh, size, e(l))
+        for n, l in enumerate(lines))
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+{STYLE}
+<rect width="1080" height="1080" fill="#faf9f7"/>
+<rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#e2ded7" stroke-width="2"/>
+<text x="540" y="{s}" text-anchor="middle" font-family="Georgia,serif" font-size="52" fill="#1c1a17">{e(i["en"])}</text>
+<text x="540" y="{s + 52}" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-style="italic" fill="#8a857d">{e(i["fr"])}</text>
+<line x1="470" y1="{s + 126}" x2="610" y2="{s + 126}" stroke="#e2ded7" stroke-width="2"/>
+<text x="540" y="{s + 188}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">IN THE KITCHEN</text>
+{body}
+<text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
+<text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
+</svg>'''
+
+
 # loi Evin, CSP art. L3323-4: a communication in favour of an alcoholic drink
 # carries the health message. The site already does this (js/app.js), and a post
 # is the same communication. It goes in before publishing because it cannot go in
@@ -180,6 +218,7 @@ def build_all(rows, outdir):
     done = set()
     for i in rows:
         (outdir / (i["id"] + ".svg")).write_text(card(i))
+        (outdir / (i["id"] + ".2.svg")).write_text(tip_card(i))
         done.add(i["id"])
     return len(done)
 
