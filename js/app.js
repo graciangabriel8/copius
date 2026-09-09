@@ -11,6 +11,41 @@
   BASES.forEach(function (x) { baseById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
 
+  /* A data file that fails to load says nothing: its family is simply absent and
+     the count quietly drops, which is how one bad fetch of data-vegetables.js
+     turned into an atlas with no vegetables in it and a search that could not
+     find a courgette. The service worker is cache-first, so a bad response stays
+     cached until the next version bump — it does not heal on a reload. Compare
+     the families the app expects against the ones that arrived, and if any are
+     missing, drop the caches and reload once. Once: a family that is genuinely
+     empty must not put the page in a loop. */
+  (function () {
+    var missing = (CAT_ORDER || []).filter(function (c) {
+      return !BASE.some(function (i) { return i.cat === c; });
+    });
+    if (!missing.length) return;
+    var KEY = "copius-reloaded-for-missing-data";
+    try {
+      if (sessionStorage.getItem(KEY)) {
+        console.error("Copius: still missing after a cache reset: " + missing.join(", "));
+        return;
+      }
+      sessionStorage.setItem(KEY, "1");
+    } catch (e) { return; }        /* no session storage means no loop guard */
+    console.warn("Copius: " + missing.join(", ") + " failed to load — clearing the cache and reloading");
+    var reload = function () { location.reload(); };
+    var caches_ = self.caches
+      ? caches.keys().then(function (k) { return Promise.all(k.map(function (n) { return caches.delete(n); })); })
+      : Promise.resolve();
+    caches_.then(function () {
+      return navigator.serviceWorker
+        ? navigator.serviceWorker.getRegistrations().then(function (rs) {
+            return Promise.all(rs.map(function (r) { return r.unregister(); }));
+          })
+        : null;
+    }).then(reload, reload);
+  })();
+
   /* Storage can be unreadable (cookies blocked) or hold a value that is not the
      array we wrote (a hand-edited '{', a stray '5'); either used to throw here
      and leave the atlas blank. Anything but a clean array reads as empty.
