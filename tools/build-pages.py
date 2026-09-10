@@ -84,8 +84,8 @@ def family_order(cats):
 
 UI = {
     "en": {"latin": "Latin name", "family": "Family", "origin": "Origin",
-           "season": "Season", "flavour": "Flavour", "story": "What it is",
-           "tip": "In the kitchen", "pairs": "Goes with", "price": "Typical price",
+           "season": "Season (France)", "flavour": "Flavour", "story": "What it is",
+           "tip": "In the kitchen", "pairs": "Goes with", "price": "Typical price (France)",
            "kin": "Same species", "near": "In season alongside", "alsoUsed": "Also used with",
            "altImg": "%s, drawn for Copius",
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
