@@ -271,11 +271,18 @@ def page(i, lang, by_id, count, G):
                     for k, v in filter(None, rows))
 
     # Both trees put siblings next to each other, so one relative path serves both.
-    links = ['<a href="../%s/">%s</a>' % (pid, e(by_id[pid]["name"][lang]))
-             for pid in i["pairs"] if pid in by_id]
+    # Same chip as the season pages and the atlas: the drawing is how an entry
+    # is recognised before the name is read.
+    def chip(x):
+        r = by_id[x]
+        return ('<a href="../%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
+                '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
+                % (x, r["svg"], e(r["name"][lang])))
+
+    links = [chip(pid) for pid in i["pairs"] if pid in by_id]
 
     def linkrow(ids):
-        return " ".join('<a href="../%s/">%s</a>' % (x, e(by_id[x]["name"][lang])) for x in ids)
+        return " ".join(chip(x) for x in ids)
     kin_ids, near_ids, back_ids = related(i, G)
     extra = "".join('<h2>%s</h2><p class="pairs">%s</p>' % (e(t[k]), linkrow(v))
                     for k, v in (("kin", kin_ids), ("alsoUsed", back_ids), ("near", near_ids)) if v)
