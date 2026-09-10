@@ -281,7 +281,7 @@ def page(i, lang, by_id, count):
 <meta charset="utf-8">
 %(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>%(name)s — %(fam)s · Copius</title>
+<title>%(title)s</title>
 <meta name="description" content="%(desc)s">%(robots)s
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
@@ -315,13 +315,17 @@ def page(i, lang, by_id, count):
 </main>
 
 <footer>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
 </body>
 </html>
 """ % {
-        "og": head_extra(e("%s — %s · Copius" % (name, fam)), e(desc), here, lang),
+        # The other language's name belongs in the title: someone searching
+        # "agretti" in France must be able to find the French page, which
+        # otherwise never contains the word.
+        "title": e(page_title(name, alt_name, fam)),
+        "og": head_extra(e(page_title(name, alt_name, fam)), e(desc), here, lang),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
         "fam": e(fam), "desc": e(desc), "robots": robots,
         "here": here, "there": there,
@@ -333,9 +337,23 @@ def page(i, lang, by_id, count):
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
-        "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]),
+        "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
         "tagline": e(t["tagline"]), "count": e(t["count"] % count),
     }
+
+
+# The path from anywhere back to that language's own index. It was "i/" for
+# both, so every French page's "Tous les ingrédients" resolved to the ENGLISH
+# index and /fr/i/ — the sole hub for 1 835 French pages — was linked from
+# nothing on the whole site.
+def page_title(name, alt_name, fam):
+    if alt_name and alt_name.lower() != name.lower():
+        return "%s (%s) — %s · Copius" % (name, alt_name, fam)
+    return "%s — %s · Copius" % (name, fam)
+
+
+def index_href(lang):
+    return "i/" if lang == "en" else "fr/i/"
 
 
 def index_page(rows, lang):
@@ -502,7 +520,7 @@ def season_page(month, lang, rows):
 
 <footer>
   <a href="%(prevurl)s">← %(prev)s</a> · <a href="../">%(months)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
 </footer>
 </body>
 </html>
@@ -517,7 +535,7 @@ def season_page(month, lang, rows):
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
         "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
         "fix": correction_link(t["h1"] % name, here, lang), "about": e(UI[lang]["about"]),
-        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
     }
 
 
@@ -563,7 +581,7 @@ def season_index(lang, rows):
 </main>
 
 <footer>
-  <a href="%(up)si/">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
 </footer>
 </body>
 </html>
@@ -572,7 +590,7 @@ def season_index(lang, rows):
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
         "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "robots": robots,
         "here": here, "there": there, "months": months, "about": e(ui["about"]),
-        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
     }
 
 
@@ -696,7 +714,7 @@ def main():
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
-    urls = ["%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
+    urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
             "%s/season/" % SITE, "%s/fr/saison/" % SITE]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
