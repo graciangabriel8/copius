@@ -87,6 +87,7 @@ UI = {
            "season": "Season", "flavour": "Flavour", "story": "What it is",
            "tip": "In the kitchen", "pairs": "Goes with", "price": "Typical price",
            "kin": "Same species", "near": "In season alongside", "alsoUsed": "Also used with",
+           "altImg": "%s, drawn for Copius",
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
@@ -100,6 +101,7 @@ UI = {
            "season": "Saison", "flavour": "Goût", "story": "Ce que c’est",
            "tip": "En cuisine", "pairs": "S’accorde avec", "price": "Prix courant",
            "kin": "Même espèce", "near": "De saison en même temps", "alsoUsed": "Entre aussi avec",
+           "altImg": "%s, dessiné pour Copius",
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
@@ -308,7 +310,7 @@ def page(i, lang, by_id, count, G):
 </header>
 
 <main>
-  <figure><svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="50" r="42" fill="#f1f1f0"/>%(svg)s</svg></figure>
+  <figure><img src="%(art)s" alt="%(alt_img)s" width="104" height="104" decoding="async"></figure>
   <h1>%(name)s%(marks)s</h1>
   <p class="alt">%(alt)s</p>
 
@@ -337,6 +339,8 @@ def page(i, lang, by_id, count, G):
         # otherwise never contains the word.
         "title": e(page_title(name, alt_name, fam)),
         "og": head_extra(e(page_title(name, alt_name, fam)), e(desc), here, lang),
+        "art": "%simg/%s.svg" % (up, i["id"]),
+        "alt_img": e(t["altImg"] % name),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
         "fam": e(fam), "desc": e(desc), "robots": robots,
         "here": here, "there": there,
@@ -368,6 +372,34 @@ def page(i, lang, by_id, count, G):
 # has the fewest inbound links rather than alphabetically rescues 848 pages
 # instead of 742, for exactly the same number of links.
 KIN_MAX = NEAR_MAX = BACK_MAX = 6
+
+
+# The illustrations were inline <svg>, which Google cannot index: its image
+# documentation lists SVG among supported formats but indexes only what an
+# <img src> points at, and says outright "Google doesn't index CSS images".
+# So 1 835 original drawings were invisible to the one click channel an AI
+# answer cannot intercept. Each is now also written as a standalone file.
+#
+# A file loaded through <img> cannot see the page's stylesheet, so it carries
+# its own — including the dark variant. Strokes use --line, which the dark
+# theme never overrides, so only the fills need swapping.
+ART_STYLE = (
+    "<style>"
+    ".s{fill:none;stroke:#585853;stroke-width:3;stroke-linecap:round}"
+    ".f1,.f3,.sf{fill:#f1f1f0;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
+    ".f2{fill:#e7e7e5;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
+    ".dot{fill:#585853}.bg{fill:#f1f1f0}"
+    "@media(prefers-color-scheme:dark){"
+    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.bg{fill:#242422}}"
+    "</style>")
+
+
+def art_file(i):
+    """One standalone, self-styled copy of the entry's drawing."""
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" '
+            'width="104" height="104" role="img" aria-label="%s">%s'
+            '<circle class="bg" cx="48" cy="50" r="42"/>%s</svg>'
+            % (e(i["name"]["en"]), ART_STYLE, i["svg"]))
 
 
 def genus_of(latin):
@@ -756,6 +788,12 @@ def main():
         shutil.rmtree(ROOT / d, ignore_errors=True)
     (ROOT / "css").mkdir(exist_ok=True)
     (ROOT / "css" / "page.css").write_text(CSS)
+
+    art = ROOT / "img"
+    shutil.rmtree(art, ignore_errors=True)
+    art.mkdir(exist_ok=True)
+    for i in rows:
+        (art / ("%s.svg" % i["id"])).write_text(art_file(i))
 
     written = 0
     for i in rows:
