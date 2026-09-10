@@ -15,8 +15,10 @@ import html
 import json
 import pathlib
 import re
+from collections import Counter, defaultdict
 import shutil
 import sys
+import unicodedata
 import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -84,6 +86,7 @@ UI = {
     "en": {"latin": "Latin name", "family": "Family", "origin": "Origin",
            "season": "Season", "flavour": "Flavour", "story": "What it is",
            "tip": "In the kitchen", "pairs": "Goes with", "price": "Typical price",
+           "kin": "Same species", "near": "In season alongside", "alsoUsed": "Also used with",
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
@@ -96,6 +99,7 @@ UI = {
     "fr": {"latin": "Nom latin", "family": "Famille", "origin": "Origine",
            "season": "Saison", "flavour": "Goût", "story": "Ce que c’est",
            "tip": "En cuisine", "pairs": "S’accorde avec", "price": "Prix courant",
+           "kin": "Même espèce", "near": "De saison en même temps", "alsoUsed": "Entre aussi avec",
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
@@ -243,7 +247,7 @@ def season_text(months, lang):
     return ", ".join(out)
 
 
-def page(i, lang, by_id, count):
+def page(i, lang, by_id, count, G):
     t, other = UI[lang], ("fr" if lang == "en" else "en")
     name, alt_name = i["name"][lang], i["name"][other]
     fam = family(i["cat"], lang)
@@ -267,6 +271,12 @@ def page(i, lang, by_id, count):
     # Both trees put siblings next to each other, so one relative path serves both.
     links = ['<a href="../%s/">%s</a>' % (pid, e(by_id[pid]["name"][lang]))
              for pid in i["pairs"] if pid in by_id]
+
+    def linkrow(ids):
+        return " ".join('<a href="../%s/">%s</a>' % (x, e(by_id[x]["name"][lang])) for x in ids)
+    kin_ids, near_ids, back_ids = related(i, G)
+    extra = "".join('<h2>%s</h2><p class="pairs">%s</p>' % (e(t[k]), linkrow(v))
+                    for k, v in (("kin", kin_ids), ("alsoUsed", back_ids), ("near", near_ids)) if v)
 
     marks = "".join(' <span class="mk" title="%s">%s</span>' % (e(t[k]), s)
                     for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k])
@@ -310,6 +320,7 @@ def page(i, lang, by_id, count):
   %(tipblock)s
 
   %(pairblock)s
+  %(extra)s
 
   %(fix)s
 </main>
@@ -334,6 +345,7 @@ def page(i, lang, by_id, count):
         "svg": i["svg"], "marks": marks, "facts": facts,
         "storylbl": e(t["story"]), "story": e(story),
         "tipblock": ("<h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))) if tip else "",
+        "extra": extra,
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
@@ -346,6 +358,63 @@ def page(i, lang, by_id, count):
 # both, so every French page's "Tous les ingrédients" resolved to the ENGLISH
 # index and /fr/i/ — the sole hub for 1 835 French pages — was linked from
 # nothing on the whole site.
+# Three link blocks computed from fields the entries already carry. Half the
+# atlas sat on a single inbound link — from /i/, a flat page of 1 835 — which
+# is a list, not a graph.
+#
+# "Also used with" does the most work, and not for the obvious reason: it links
+# a page to everything that pairs WITH it, so butter (paired by 477 entries)
+# becomes a hub pointing back out at the obscure ones. Choosing the six by who
+# has the fewest inbound links rather than alphabetically rescues 848 pages
+# instead of 742, for exactly the same number of links.
+KIN_MAX = NEAR_MAX = BACK_MAX = 6
+
+
+def genus_of(latin):
+    """First word of a real binomial, accents folded. None for anything that is
+    not one — 'Halite (NaCl)' and 'Bœuf — cuisse' must not form a family."""
+    s = unicodedata.normalize("NFD", latin or "")
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    m = re.match(r"([A-Z][a-z]+)\s+(?:x\s+)?[a-z]", s)
+    return m.group(1).lower() if m else None
+
+
+def link_graph(rows):
+    """Everything the three blocks need, computed once for the whole build."""
+    by_id = {i["id"]: i for i in rows}
+    inbound, back, genus, month = Counter(), defaultdict(list), defaultdict(list), defaultdict(set)
+    for i in rows:
+        for p in i["pairs"]:
+            if p in by_id and p != i["id"]:
+                inbound[p] += 1
+                back[p].append(i["id"])
+        g = genus_of(i["latin"])
+        if g:
+            genus[g].append(i["id"])
+        for m in i["season"]:
+            month[m].add(i["id"])
+    return {"by_id": by_id, "inbound": inbound, "back": back, "genus": genus, "month": month}
+
+
+def related(i, G):
+    """(kin, near, back) — ids only, deterministic, never the page itself."""
+    by_id = G["by_id"]
+    g = genus_of(i["latin"])
+    kin = sorted(x for x in G["genus"].get(g, []) if x != i["id"])[:KIN_MAX] if g else []
+
+    near = []
+    flav, months = set(i["flavor"]), set(i["season"])
+    if flav and months:
+        cand = set().union(*[G["month"][m] for m in months]) - {i["id"]} - set(kin)
+        scored = [(len(flav & set(by_id[c]["flavor"])), c) for c in cand]
+        near = [c for s, c in sorted(scored, key=lambda x: (-x[0], x[1])) if s >= 2][:NEAR_MAX]
+
+    seen = set(kin) | set(near) | set(i["pairs"])
+    back = [x for x in sorted(G["back"].get(i["id"], []), key=lambda x: (G["inbound"][x], x))
+            if x not in seen][:BACK_MAX]
+    return kin, near, back
+
+
 def page_title(name, alt_name, fam):
     if alt_name and alt_name.lower() != name.lower():
         return "%s (%s) — %s · Copius" % (name, alt_name, fam)
@@ -681,6 +750,7 @@ def main():
     rows = load()
     by_id = {i["id"]: i for i in rows}
     count = (len(rows), len({i["cat"] for i in rows}))
+    G = link_graph(rows)
 
     for d in ("i", "fr"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
@@ -692,7 +762,7 @@ def main():
         for lang in ("en", "fr"):
             out = ROOT / ("i/%s" % i["id"] if lang == "en" else "fr/i/%s" % i["id"])
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(page(i, lang, by_id, count))
+            (out / "index.html").write_text(page(i, lang, by_id, count, G))
             written += 1
 
     (ROOT / "i" / "index.html").write_text(index_page(rows, "en"))
