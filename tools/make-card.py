@@ -8,7 +8,8 @@ Defaults to today and social/<id>.svg. The day -> ingredient map is
 social/schedule.json (tools/build-schedule.py), fixed in advance so that a data
 edit never changes which card a date needs.
 """
-import re, sys, json, pathlib, datetime, html
+import re
+import unicodedata, sys, json, pathlib, datetime, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -190,12 +191,62 @@ def is_alcohol(i):
             or i["id"] in DRINKS_ELSEWHERE)
 
 
+# Family labels in French, read from the app rather than retyped here, so a
+# family renamed in one place is not stale in the other.
+def fr_families():
+    src = (ROOT / "js" / "i18n.js").read_text()
+    fr = src[src.index("fr:"):]
+    block = re.search(r"categories:\s*\{(.*?)\}", fr, re.S).group(1)
+    return dict(re.findall(r'(\w+):\s*"([^"]*)"', block))
+
+_FR_FAM = None
+
+def tagify(s):
+    """A hashtag from a name: accents folded, everything else dropped."""
+    s = unicodedata.normalize("NFD", s or "")
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return "#" + re.sub(r"[^A-Za-z0-9]", "", s).lower()
+
+# Head words that are true of a thousand things and so identify none: they cost
+# a tag slot and bring nobody. "thes" is the accent-folded half of "Thés &
+# infusions", where "infusions" is the half worth keeping.
+GENERIC = {"#water", "#sauce", "#green", "#black", "#white", "#sweet",
+           "#dried", "#fresh", "#wild", "#thes", "#huile", "#poudre"}
+
+
+def hashtags(i):
+    """The ingredient's own names first: they are the only terms anyone
+    actually searches. The generic giants (#cuisine, #chef, #cooking) are won
+    by six-figure accounts and a small one never surfaces in them — narrow
+    tags are where a new account is findable at all."""
+    global _FR_FAM
+    if _FR_FAM is None:
+        _FR_FAM = fr_families()
+    out = [tagify(i["en"]), tagify(i["fr"])]
+    # the bare first word too, when the name is compound: "amande" as well as
+    # "amandelargueta", because that is the shorter thing people type
+    for n in (i["en"], i["fr"]):
+        head = tagify(n.split()[0]) if n.split() else ""
+        if len(head) - 1 >= 5 and head not in out and head not in GENERIC:
+            out.append(head)
+    fam = _FR_FAM.get(i["cat"], "")
+    for part in re.split(r"\s*&\s*", fam):          # "Noix & graines" -> both
+        tag = tagify(part)
+        if len(tag) - 1 >= 4 and tag not in out and tag not in GENERIC:
+            out.append(tag)
+    out.append("#copius")
+    seen, uniq = set(), []
+    for tg in out:
+        if tg not in seen and len(tg) - 1 >= 4:
+            seen.add(tg); uniq.append(tg)
+    return uniq[:10]
+
+
 def caption(i):
     """Bilingual caption. Instagram captions carry no clickable link, so the
     site is named rather than linked."""
     un = lambda s: re.sub(r"\\+(.)", r"\1", s or "")
-    tags = ["#copius", "#ingredients", "#cuisine", "#gastronomie",
-            "#chef", "#cooking", "#terroir", "#" + i["cat"]]
+    tags = hashtags(i)
     # A flag opens each story, so a reader scrolling past knows which paragraph
     # is theirs without reading into it. The title line is already both languages.
     # High in the caption, not buried: Instagram hides everything past the first
