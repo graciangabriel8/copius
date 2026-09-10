@@ -543,6 +543,14 @@ SEASON_UI = {
 }
 
 
+# What each month actually feels like in a kitchen, written by hand. The month
+# pages were 200 links and not one sentence — a list to crawl past, not a page
+# to read. Kept out of this file because it is content, not code: edit
+# tools/season-notes.json and rebuild. A month with no entry renders as before.
+SEASON_NOTES = json.loads((ROOT / "tools" / "season-notes.json").read_text()) \
+    if (ROOT / "tools" / "season-notes.json").exists() else {}
+
+
 def season_page(month, lang, rows):
     """One month. The arrivals and departures are the part no calendar page has:
     they need every ingredient's whole season, not a list of what is available."""
@@ -619,6 +627,7 @@ def season_page(month, lang, rows):
 <main>
   <h1>%(h1)s</h1>
   <p class="lede">%(lede)s</p>
+  %(note)s
   %(blocks)s
   <h2>%(alllbl)s</h2>
   %(fams)s
@@ -637,6 +646,9 @@ def season_page(month, lang, rows):
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
         "title": e(t["title"] % name), "h1": e(t["h1"] % name), "months": e(t["months"]),
         "lede": e(t["lede"] % (len(now), name)),
+        "note": ("<p class=\"month-note\">%s</p>"
+                 % e(SEASON_NOTES.get(str(month), {}).get(lang, ""))
+                 if SEASON_NOTES.get(str(month), {}).get(lang) else ""),
         "robots": robots, "here": here, "there": there,
         "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]),
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
