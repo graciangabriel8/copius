@@ -698,8 +698,15 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
    colour crossfades once and the page's own timings are untouched otherwise. */
 html.theme-switching,html.theme-switching *,html.theme-switching *::before,html.theme-switching *::after{
   transition:background-color .45s ease,color .45s ease,border-color .45s ease,fill .45s ease,
-    stroke .45s ease,box-shadow .45s ease,transform .5s cubic-bezier(.2,.7,.2,1)!important}
-.theme-btn{transition:background .12s,border-color .12s,transform .5s cubic-bezier(.2,.7,.2,1)}
+    stroke .45s ease,box-shadow .45s ease!important}
+.theme-btn{transition:background .12s,border-color .12s}
+/* The button turns a half circle on each switch and always comes to rest
+   upright. It used to add 180deg to an inline transform every time it was
+   clicked, which meant the rest position alternated between 0 and 180: every
+   other switch left the crescent sitting upside down, and it stayed that way
+   until the page was reloaded. An animation has nowhere to accumulate. */
+.theme-btn.roll{animation:roll .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes roll{from{transform:rotate(-180deg)}to{transform:rotate(0)}}
 
 /* Ingredient of the day. The drawing floats; each new entry — a new day, a
    language switch — rises in. */
@@ -716,5 +723,6 @@ html.theme-switching,html.theme-switching *,html.theme-switching *::before,html.
 @media (prefers-reduced-motion:reduce){
   .daily .d-art,.daily .d-art svg,.daily .d-art img,.daily>div{animation:none}
   #search,.theme-btn{transition:none}
+  .theme-btn.roll{animation:none}
   html.theme-switching,html.theme-switching *{transition:none!important}
 }
