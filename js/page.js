@@ -27,9 +27,9 @@
     });
     svg.classList.add("draw");
     img.parentNode.appendChild(svg);
-    /* The animation is a known length: .62s of stroke, and a fill that starts at
-       .26s and runs .5s. A background tab runs none of it and this still fires —
+    /* The animation is a known length: 1.05s of stroke, and a fill that starts
+       at .46s and runs .58s. A background tab runs none of it and this still fires —
        then the copy simply vanishes off a drawing that was never hidden. */
-    setTimeout(function () { svg.parentNode && svg.parentNode.removeChild(svg); }, 1000);
+    setTimeout(function () { svg.parentNode && svg.parentNode.removeChild(svg); }, 1400);
   }).catch(function () { /* the <img> is already on screen — nothing lost */ });
 })();

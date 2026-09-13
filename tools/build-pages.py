@@ -746,7 +746,7 @@ a:hover{color:var(--ink);text-decoration-color:var(--ink-3)}
 main{padding-top:26px;padding-bottom:10px}
 figure{margin:0 0 14px;width:104px;height:104px;position:relative}
 /* The drawing draws itself on arrival: js/page.js lays an identical copy of the
-   svg over the <img> for the 760 ms it takes, then takes the copy away. The
+   svg over the <img> for the second it takes, then takes the copy away. The
    <img> itself never leaves the page — inline svg is not something Google Images
    can index, and 1 835 drawings are the one click channel an answer engine
    cannot stand in front of. The copy keeps the colours baked into the file, so
@@ -760,12 +760,12 @@ figure svg.draw{position:absolute;left:0;top:0;background:var(--bg)}
    Fills that are only fills come first; anything that strokes is set afterwards
    and carries both animations explicitly. */
 figure svg.draw .f1:not(.sf),figure svg.draw .f2:not(.sf),
-figure svg.draw .f3:not(.sf),figure svg.draw .dot{animation:art-fill .5s ease .26s both}
+figure svg.draw .f3:not(.sf),figure svg.draw .dot{animation:art-fill .58s ease .46s both}
 figure svg.draw .s{stroke-dasharray:1;stroke-dashoffset:1;
-  animation:art-draw .62s cubic-bezier(.65,0,.35,1) forwards}
+  animation:art-draw 1.05s cubic-bezier(.65,0,.35,1) forwards}
 figure svg.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
-  animation:art-draw .62s cubic-bezier(.65,0,.35,1) forwards,
-            art-fill .5s ease .26s both}
+  animation:art-draw 1.05s cubic-bezier(.65,0,.35,1) forwards,
+            art-fill .58s ease .46s both}
 @keyframes art-draw{to{stroke-dashoffset:0}}
 @keyframes art-fill{from{opacity:0}to{opacity:1}}
 h1{font:400 34px/1.15 var(--serif);margin:0 0 2px}

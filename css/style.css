@@ -351,12 +351,12 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
    is set afterwards and carries both animations explicitly. */
 .m-art .art.draw .f1:not(.sf),.m-art .art.draw .f2:not(.sf),
 .m-art .art.draw .f3:not(.sf),.m-art .art.draw .dot{
-  animation:fill-in .5s ease .26s both}
+  animation:fill-in .58s ease .46s both}
 .m-art .art.draw .s{stroke-dasharray:1;stroke-dashoffset:1;
-  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards}
+  animation:draw 1.05s cubic-bezier(.65,0,.35,1) forwards}
 .m-art .art.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
-  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards,
-            fill-in .5s ease .26s both}
+  animation:draw 1.05s cubic-bezier(.65,0,.35,1) forwards,
+            fill-in .58s ease .46s both}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fill-in{from{opacity:0}to{opacity:1}}
 /* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. */
