@@ -784,10 +784,19 @@
         "<p>" + esc(c.contribution[state.lang]) + "</p>" +
         '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
         (c.dishes ? c.dishes.map(function (d) {
-          return '<div class="tl-dish"><p class="tw-sub">' + esc(t.chefDishes) + "</p>" +
+          /* Two kinds, and the difference is a claim. "memorable" says the dish
+             moved something and history has had time to agree; "signature" says
+             only that this is the plate the cook is known for. A chef with no
+             settled dish carries neither, which is why 51 of 81 show nothing. */
+          var memorable = d.kind === "memorable";
+          return '<div class="tl-dish' + (memorable ? " tl-dish-mem" : "") + '">' +
+            '<p class="tw-sub">' + esc(memorable ? t.chefMemorable : t.chefSignature) + "</p>" +
             '<p class="tl-dish-name">' + esc(d.name[state.lang]) +
-              ' <span class="tl-dish-year">' + esc(d.year[state.lang]) + "</span></p>" +
+              (d.year[state.lang] === "\u2014" ? "" :
+                ' <span class="tl-dish-year">' + esc(d.year[state.lang]) + "</span>") + "</p>" +
             "<p>" + esc(d.note[state.lang]) + "</p>" +
+            (d.why ? '<p class="tl-why"><span class="tl-why-lbl">' + esc(t.chefWhy) + "</span> " +
+              esc(d.why[state.lang]) + "</p>" : "") +
             '<div class="pair-grid">' +
               d.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") +
             "</div></div>";
