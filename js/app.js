@@ -1175,7 +1175,7 @@
     if (!reducedMotion()) {
       root.classList.add("theme-switching");
       clearTimeout(themeTimer);
-      themeTimer = setTimeout(function () { root.classList.remove("theme-switching"); }, 500);
+      themeTimer = setTimeout(function () { root.classList.remove("theme-switching"); }, 350);
       // Strip and re-add so a second click restarts the turn rather than being
       // ignored; reading offsetWidth between the two is what forces that.
       var b = el("themeBtn");
