@@ -1036,7 +1036,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  fr:"L’accord thés comme service à part entière, et non comme un supplément, est largement son apport à Paris."},
  ingredients:["ginger","soy-sauce","pak-choi","scallop","sesame-oil","star-anise","duck","shiitake"]},
 
-{id:"grebaut", name:"Bertrand Grébaut", born:1981,
+{id:"grebaut", name:"Bertrand Grébaut", born:1981, died:2026,
  url:"https://www.septime-charonne.fr",
  gender:"m", country:"FR", discipline:"cuisine",
  place:{en:"Septime, Paris 11e",fr:"Septime, Paris 11e"},
