@@ -789,6 +789,7 @@
              only that this is the plate the cook is known for. A chef with no
              settled dish carries neither, which is why 51 of 81 show nothing. */
           var memorable = d.kind === "memorable";
+          var known = d.ingredients.filter(function (x) { return byId[x]; });
           return '<div class="tl-dish' + (memorable ? " tl-dish-mem" : "") + '">' +
             '<p class="tw-sub">' + esc(memorable ? t.chefMemorable : t.chefSignature) + "</p>" +
             '<p class="tl-dish-name">' + esc(d.name[state.lang]) +
@@ -797,9 +798,13 @@
             "<p>" + esc(d.note[state.lang]) + "</p>" +
             (d.why ? '<p class="tl-why"><span class="tl-why-lbl">' + esc(t.chefWhy) + "</span> " +
               esc(d.why[state.lang]) + "</p>" : "") +
-            '<div class="pair-grid">' +
-              d.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") +
-            "</div></div>";
+            '<div class="pair-grid">' + known.map(pairChip).join("") + "</div>" +
+            /* Two ingredients is one pair and worth asking about; one is not a
+               question, so the button does not appear. */
+            (known.length > 1 ? '<button type="button" class="m-lab-btn" data-dishlab="' +
+              esc(known.join(",")) + '" data-dishname="' + esc(d.name[state.lang]) + '">' +
+              esc(t.dishLab) + "</button>" : "") +
+            "</div>";
         }).join("") : "") +
         '<p class="tw-sub">' + esc(t.chefIngredients) + "</p>" +
         '<div class="pair-grid">' + c.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
@@ -962,6 +967,42 @@
     }
     if (bridges.length) html += '<div class="bridge-grid">' + bridges.map(pairChip).join("") + "</div>";
     box.innerHTML = html;
+  }
+
+  /* The same verdict, for one pair, without the DOM: renderLabResult reads the
+     two selects, and a set has no selects to read. */
+  function verdict(a, b) {
+    if (PAIRS[a].has(b)) return "ok";
+    return Array.from(PAIRS[a]).some(function (x) { return x !== b && PAIRS[b].has(x); }) ? "mid" : "none";
+  }
+
+  /* A dish, judged as a set: every pair among its ingredients, and what the
+     12 778 recorded accords say about each one. Four ingredients is six pairs.
+     Touching either select afterwards returns the box to pair mode on its own,
+     because the change listeners overwrite exactly this element. */
+  function renderLabSet(ids, dishName) {
+    var t = T(), box = el("labResult");
+    ids = ids.filter(function (x) { return byId[x]; });
+    if (ids.length < 2) { box.innerHTML = ""; return; }
+    var rows = [], i, j;
+    for (i = 0; i < ids.length; i++) {
+      for (j = i + 1; j < ids.length; j++) rows.push([ids[i], ids[j], verdict(ids[i], ids[j])]);
+    }
+    var order = { ok: 0, mid: 1, none: 2 };
+    rows.sort(function (x, y) { return order[x[2]] - order[y[2]]; });
+    var label = { ok: t.labDirect, mid: t.labBridge, none: t.labNone };
+    var direct = rows.filter(function (r) { return r[2] === "ok"; }).length;
+    box.innerHTML =
+      '<p class="lab-set-head">' + esc(dishName) +
+        ' <span class="lab-set-count">' +
+        esc(t.labSetCount.replace("{n}", direct).replace("{t}", rows.length)) + "</span></p>" +
+      '<ul class="lab-set">' + rows.map(function (r) {
+        return '<li class="lab-set-row"><span class="lab-set-pair">' +
+          esc(name(byId[r[0]])) + ' <span class="lab-x" aria-hidden="true">×</span> ' +
+          esc(name(byId[r[1]])) + "</span>" +
+          '<span class="verdict ' + r[2] + '">' +
+          (r[2] === "ok" ? "&#10003;&nbsp; " : "") + esc(label[r[2]]) + "</span></li>";
+      }).join("") + "</ul>";
   }
 
   /* ---------- trios section ---------- */
@@ -1271,10 +1312,25 @@
     if (lab) {
       var id = lab.getAttribute("data-lab");
       closeModal();
+      // The lab lives inside #atlasView, which setView hides outright while the
+      // chefs, techniques or bases tab is up. Without this the button scrolled
+      // to a hidden element and looked broken from every tab but one.
+      setView("atlas");
       el("labA").value = id;
       renderLabResult();
       el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
       el("labB").focus();
+      return;
+    }
+    /* A dish carries more than two ingredients, and the lab's two slots hold a
+       pair. Rather than seed two and drop the rest, open it on the whole set:
+       every pair among them, which is the question the dish actually poses. */
+    var dishLab = e.target.closest("[data-dishlab]");
+    if (dishLab) {
+      setView("atlas");
+      renderLabSet(dishLab.getAttribute("data-dishlab").split(","),
+                   dishLab.getAttribute("data-dishname") || "");
+      el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
     }
   });
   /* Cards, the daily block, creation cards and tree branches are role=button

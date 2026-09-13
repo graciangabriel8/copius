@@ -282,6 +282,20 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 }
 .lab-x{font-family:var(--serif);font-size:22px;color:var(--ink-3)}
 .lab-result{margin-top:20px}
+/* A dish read as a set: one row per pair, the recorded ones first. The verdict
+   keeps its own classes from the pair view, so the two modes agree on colour;
+   here it is a chip at the end of a row rather than a banner, because there are
+   six of them and six banners is a wall. */
+.lab-set-head{margin:0 0 12px;font-family:var(--serif);font-size:18px;color:var(--ink)}
+.lab-set-count{font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.lab-set{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.lab-set-row{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.lab-set-row:last-child{border-bottom:0;padding-bottom:0}
+.lab-set-pair{font-size:14.5px;color:var(--ink)}
+.lab-set-row .lab-x{font-size:16px}
+.lab-set-row .verdict{margin-bottom:0;padding:6px 12px;font-size:13px;flex:none}
 .verdict{
   display:flex;align-items:center;gap:10px;
   padding:13px 16px;border-radius:12px;font-size:14.5px;margin-bottom:14px;
@@ -613,6 +627,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 /* Why it works is the part a cook can use, so it reads as the note it is. */
 .tl-why{border-top:1px solid var(--border);padding-top:9px;color:var(--ink-2)}
 .tl-why-lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.tl-dish .m-lab-btn{margin-top:13px;width:auto;padding:8px 14px;font-size:13px}
 
 @media (max-width:720px){
   .timeline{padding-left:0}
