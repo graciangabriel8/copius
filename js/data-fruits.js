@@ -229,6 +229,16 @@ fr:"L’un des trois yeux est mou. Percez-le d’une brochette pour vider l’ea
 pairs:["lime","chili","mango","dark-chocolate","ginger","pineapple","vanilla","cilantro"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="20"/><circle class="dot" cx="42" cy="46" r="2.5"/><circle class="dot" cx="52" cy="45" r="2.5"/><circle class="dot" cx="47" cy="52" r="2.5"/><path class="s" d="M30 60q18 8 36 0"/>'},
 
+{id:"coconut-milk",cat:"fruits",price:1,pk:"3–6 €/L",name:{en:"Coconut milk",fr:"Lait de coco"},latin:"Cocos nucifera",
+origin:{en:"Indo-Pacific coasts",fr:"Côtes indo-pacifiques"},season:[],
+flavor:["creamy","sweet","rich","milky"],
+story:{en:"Not the water that sloshes inside the nut, but the cream pressed from its grated flesh — the invention of every coconut coast at once. In Thai and Indian kitchens it plays the role butter and cream play in France: the velvet that carries the spices.",
+fr:"Non pas l’eau qui clapote dans la noix, mais la crème pressée de sa chair râpée — l’invention simultanée de toutes les côtes à cocotiers. Dans les cuisines thaïes et indiennes, il joue le rôle du beurre et de la crème en France : le velours qui porte les épices."},
+tip:{en:"Don’t shake the tin: the thick cream on top is for frying your curry paste, the thin milk below for simmering.",
+fr:"Ne secouez pas la boîte : la crème épaisse du dessus sert à frire la pâte de curry, le lait clair du dessous à mijoter."},
+pairs:["chili","cilantro","ginger","rice","mango","shrimp","turmeric"],
+svg:'<circle class="f3 sf" cx="48" cy="54" r="19"/><path class="f1 sf" d="M48 54a19 19 0 010-38v19z" transform="rotate(30 48 45)"/><path class="f1 sf" d="M34 46a19 14 0 0128 0 22 22 0 01-28 0z"/><path class="s" d="M42 30l2 4M52 30l-2 4"/>'},
+
 {id:"poire-comice",cat:"fruits",price:1,pk:"3–5,50 €/kg",name:{en:"Comice pear",fr:"Poire Doyenné du Comice"},latin:"Pyrus communis 'Doyenné du Comice'",
 origin:{en:"Angers, Anjou",fr:"Angers, Anjou"},season:[1,10,11,12],
 flavor:["sweet","buttery","floral","honeyed"],

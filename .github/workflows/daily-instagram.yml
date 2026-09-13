@@ -4,21 +4,25 @@ name: Daily ingredient to Instagram
 # pre-built and committed, so this job only calls the API.
 on:
   schedule:
-    # 18:45, and off the top of the hour. GitHub: "High load times include the start of every
-    # hour… To decrease the chance of delay, schedule your workflow to run at a
-    # different time of the hour." A run at the top of the hour was once
-    # delayed by 90 minutes.
+    # This cron is UTC, it is deliberately early, and the job waits for the
+    # wall clock rather than trusting the cron to land on it.
     #
-    # 18h45 Paris is the last quiet moment before the coup de feu, on the
-    # French mobile peak (Médiamétrie: 18h42) and at lunchtime in New York.
-    # Instagram publishes no time-of-day signal on the surfaces that reach
-    # non-followers, so this is a constant to set once, not a dial to turn.
+    # The timezone: key was here and does nothing. Four scheduled runs after it
+    # was added were created at 19:28, 19:14, 19:16 and 18:44 UTC — that is
+    # -1 to +43 minutes around 18:45 UTC, which is GitHub's ordinary jitter, and
+    # +119 to +163 around 16:45 UTC, which is what "18:45 Europe/Paris" means in
+    # summer. A run a minute before 18:45 UTC cannot be a late 16:45 one. The
+    # posts were landing at 21:00, mid-service.
     #
-    # timezone pins it to Paris, so the clocks going back in October no longer
-    # move the post an hour earlier. GA since 19 March 2026, and an unrecognised
-    # key here fails workflow validation rather than being ignored.
-    - cron: "45 18 * * *"
-      timezone: "Europe/Paris"
+    # Off the top of the hour on purpose. GitHub: "High load times include the
+    # start of every hour… schedule your workflow to run at a different time of
+    # the hour." A run at the top of the hour was once delayed by 90 minutes.
+    #
+    # 13:35 UTC is 15:35 in Paris in summer and 14:35 in winter; the jitter can
+    # add three quarters of an hour to either. Both leave the job waiting, which
+    # is the point: waiting is the only thing that holds one Paris time across
+    # the October change.
+    - cron: "35 13 * * *"
   workflow_dispatch:          # lets you run it by hand from the Actions tab
 
 concurrency:
@@ -33,6 +37,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 17:00 in Paris, whatever the cron managed. date reads the zone from
+      # tzdata, so the October change is handled by the same line. A run started
+      # by hand posts immediately — waiting is for the scheduled one.
+      - name: Hold until 17:00 in Paris
+        if: github.event_name == 'schedule'
+        run: |
+          set -euo pipefail
+          target="$(TZ=Europe/Paris date -d 'today 17:00' +%s)"
+          now="$(date +%s)"
+          wait=$(( target - now ))
+          echo "now      $(TZ=Europe/Paris date -d "@$now" '+%F %H:%M %Z')"
+          echo "posting  $(TZ=Europe/Paris date -d "@$target" '+%F %H:%M %Z')"
+          if [ "$wait" -le 0 ]; then
+            echo "::warning::started at or after 17:00 Paris — posting now, $(( -wait / 60 )) min late"
+            exit 0
+          fi
+          # Nothing legitimate waits four hours. If the cron ever moves, or the
+          # timezone: key starts being honoured, this stops rather than burning
+          # a runner until the job limit.
+          if [ "$wait" -gt 14400 ]; then
+            echo "::error::$(( wait / 60 )) min until 17:00 Paris — the schedule has moved, fix the cron"
+            exit 1
+          fi
+          echo "waiting $(( wait / 60 )) min"
+          sleep "$wait"
 
       - name: Work out today's ingredient
         id: pick

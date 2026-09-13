@@ -898,6 +898,7 @@ def main():
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
+            "%s/confidentialite/" % SITE,
             "%s/season/" % SITE, "%s/fr/saison/" % SITE]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
