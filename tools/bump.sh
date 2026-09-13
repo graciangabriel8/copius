@@ -24,4 +24,7 @@ python3 tools/build-sw.py
 # a missing language or a pairing to an ingredient that does not exist, which
 # stops any of those reaching a built page.
 osascript -l JavaScript tools/dump-dishes.js
+# The share card carries the counts. It drifted to 1 857 ingredients against a
+# real 1 835 because it was a hand-made jpg with nothing pointing at the data.
+python3 tools/build-og.py
 echo "done — commit and push to publish"
