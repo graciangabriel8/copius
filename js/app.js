@@ -837,9 +837,27 @@
   var LOOKUP = { ing: function (id) { return byId[id]; }, tech: function (id) { return techById[id]; },
                  base: function (id) { return baseById[id]; } };
   var opener = null;
+  /* Give every stroke the same nominal length so one animation duration suits
+     a two-stroke leaf and a twenty-stroke artichoke. Cheap: one modal's worth
+     of paths, only when the drawing is an inline svg. */
+  function primeArt() {
+    var art = document.querySelector(".m-art .art");
+    if (!art) return;
+    /* Only ask for the animation when the viewer has not asked for less of it. */
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var n = art.querySelectorAll("path,circle,ellipse,rect");
+    for (var k = 0; k < n.length; k++) {
+      if (n[k].getTotalLength) { try { n[k].setAttribute("pathLength", "1"); } catch (e) {} }
+    }
+    /* The class carries the hidden starting state, so a drawing is only ever
+       hidden by the same code that is about to reveal it. */
+    art.classList.add("draw");
+  }
+
   function showModal() {
     var top = modalTop();
     RENDER[top.kind](top.id);
+    if (top.kind === "ing") primeArt();
     el("backBtn").hidden = modalStack.length < 2;
     if (history.replaceState) {
       history.replaceState(null, "", top.kind === "ing" ? "#" + top.id : location.pathname + location.search);

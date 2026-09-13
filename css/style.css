@@ -335,6 +335,20 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   animation:pop .18s ease;
 }
 @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+
+/* The drawing sketches itself in when an entry opens — every illustration is
+   stroke paths, so it is the one animation the material actually asks for.
+   The hidden starting state is applied by app.js, never by this stylesheet:
+   CSS that begins at stroke-dashoffset:1 leaves the art INVISIBLE anywhere the
+   animation does not run — a frozen preview, a print, an old engine. Default
+   visible, animation added on top. Modal only; 1 835 cards drawing themselves
+   would be a fairground, not a reference. */
+.m-art .art.draw .s,.m-art .art.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards}
+.m-art .art.draw .f1,.m-art .art.draw .f2,.m-art .art.draw .f3,.m-art .art.draw .dot{
+  animation:fill-in .5s ease .26s both}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fill-in{from{opacity:0}to{opacity:1}}
 /* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. */
 .modal-bar{display:flex;justify-content:space-between;padding:12px 14px 6px;
   position:sticky;top:0;z-index:1;background:var(--card);border-radius:22px 22px 0 0}
@@ -527,6 +541,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   .tw-panel{padding:14px 14px 4px}
 }
 @media (prefers-reduced-motion:reduce){
+  .m-art .art.draw .s,.m-art .art.draw .sf{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+  .m-art .art.draw .f1,.m-art .art.draw .f2,.m-art .art.draw .f3,.m-art .art.draw .dot{animation:none}
   html{scroll-behavior:auto}
   .modal,.tw-panel{animation:none}
   .daily:hover,.card:hover{transform:none}

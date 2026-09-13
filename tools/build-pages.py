@@ -346,7 +346,9 @@ def page(i, lang, by_id, count, G):
         # otherwise never contains the word.
         "title": e(page_title(name, alt_name, fam)),
         "og": head_extra(e(page_title(name, alt_name, fam)), e(desc), here, lang),
-        "art": "%simg/%s.svg" % (up, i["id"]),
+        # Versioned like the stylesheets: the service worker is cache-first, so
+        # an unversioned drawing would strand a returning visitor on the old one.
+        "art": "%simg/%s.svg?v=%d" % (up, i["id"], VERSION),
         "alt_img": e(t["altImg"] % name),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
         "fam": e(fam), "desc": e(desc), "robots": robots,
@@ -396,6 +398,10 @@ ART_STYLE = (
     ".f1,.f3,.sf{fill:#f1f1f0;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
     ".f2{fill:#e7e7e5;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
     ".dot{fill:#585853}.bg{fill:#f1f1f0}"
+    # No animation in these files: a static renderer — Google Images'
+    # thumbnailer among them — shows the first frame, and the first frame
+    # of a draw-on is an empty circle. The atlas animates its own inline
+    # copy instead, where the document is live.
     "@media(prefers-color-scheme:dark){"
     ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.bg{fill:#242422}}"
     "</style>")
