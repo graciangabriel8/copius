@@ -628,17 +628,6 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .tl-why{border-top:1px solid var(--border);padding-top:9px;color:var(--ink-2)}
 .tl-why-lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .tl-dish .m-lab-btn{margin-top:13px;width:auto;padding:8px 14px;font-size:13px}
-/* Sober on purpose. This is a record of what was printed and what was said
-   back, not a verdict, and it should not look like one — no red, no warning
-   colour, the same card the rest of the biography sits in. */
-.tl-record{margin:16px 0 4px;padding:13px 15px 11px;background:var(--bg);
-  border:1px solid var(--border);border-radius:14px}
-.tl-record .tw-sub{margin:0 0 6px!important}
-.tl-record p{margin:0 0 9px;font-size:13.5px;color:var(--ink-2)}
-.tl-record-said{border-top:1px solid var(--border);padding-top:9px}
-.tl-record-src{margin-bottom:0!important;font-size:12px;color:var(--ink-3)}
-.tl-record-src a{color:var(--ink-3)}
-.tl-record-src a:hover{color:var(--ink-2)}
 
 @media (max-width:720px){
   .timeline{padding-left:0}
