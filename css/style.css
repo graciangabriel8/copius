@@ -597,6 +597,16 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .tl-role{margin:0 0 11px;font-size:13px;color:var(--ink-3)}
 .tl-card>p{margin:0 0 11px;color:var(--ink-2)}
 .tl-legacy{border-left:2px solid var(--border-strong);padding-left:13px;font-size:13.5px}
+/* The one dish. Set apart from the biography around it, because it is the
+   thing the chef is read for — a plate, not a paragraph. */
+.tl-dish{margin:16px 0 4px;padding:13px 15px 11px;background:var(--bg);
+  border:1px solid var(--border);border-radius:14px}
+.tl-dish .tw-sub{margin:0 0 6px!important}
+.tl-dish p{margin:0 0 9px;font-size:13.5px}
+.tl-dish .pair-grid{margin-top:2px}
+.tl-dish-name{font-family:var(--serif);font-size:17px;color:var(--ink)}
+.tl-dish-year{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 
 @media (max-width:720px){
   .timeline{padding-left:0}

@@ -783,6 +783,15 @@
         (c.phrase ? '<blockquote class="tl-phrase">“' + esc(c.phrase.text) + '”<cite>' + esc(c.phrase.by) + "</cite></blockquote>" : "") +
         "<p>" + esc(c.contribution[state.lang]) + "</p>" +
         '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
+        (c.dishes ? c.dishes.map(function (d) {
+          return '<div class="tl-dish"><p class="tw-sub">' + esc(t.chefDishes) + "</p>" +
+            '<p class="tl-dish-name">' + esc(d.name[state.lang]) +
+              ' <span class="tl-dish-year">' + esc(d.year[state.lang]) + "</span></p>" +
+            "<p>" + esc(d.note[state.lang]) + "</p>" +
+            '<div class="pair-grid">' +
+              d.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") +
+            "</div></div>";
+        }).join("") : "") +
         '<p class="tw-sub">' + esc(t.chefIngredients) + "</p>" +
         '<div class="pair-grid">' + c.ingredients.filter(function (x) { return byId[x]; }).map(pairChip).join("") + "</div>" +
         (c.url ? '<p class="tl-link"><a href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' +
