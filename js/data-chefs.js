@@ -1009,7 +1009,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  fr:"Son âge à la première étoile reste le record en France."},
  ingredients:["red-mullet","olive-oil","basil","chickpea-flour","tomato","anchovy","lemon","fennel"]},
 
-{id:"fleury", name:"Manon Fleury", born:1990,
+{id:"fleury", name:"Manon Fleury", born:1991,
  url:"https://www.datil-restaurant.fr",
  gender:"f", country:"FR", discipline:"cuisine",
  place:{en:"Datil, Paris 3e",fr:"Datil, Paris 3e"},
