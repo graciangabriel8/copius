@@ -19,4 +19,9 @@ for f in ("atlas.html", "about/index.html", "confidentialite/index.html", "404.h
 print("asset version %d -> %d" % (cur, new))
 PY
 python3 tools/build-sw.py
+# The dish pages are generated from this sidecar rather than from the JS, so it
+# has to be rewritten whenever the data moves. It refuses to write on a bad id,
+# a missing language or a pairing to an ingredient that does not exist, which
+# stops any of those reaching a built page.
+osascript -l JavaScript tools/dump-dishes.js
 echo "done — commit and push to publish"

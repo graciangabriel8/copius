@@ -1,0 +1,1095 @@
+[
+ {
+  "id": "assoluto-d-oignons",
+  "kind": "signature",
+  "name": {
+   "en": "Assoluto di cipolle",
+   "fr": "Assoluto d’oignons"
+  },
+  "year": {
+   "en": "2010",
+   "fr": "2010"
+  },
+  "note": {
+   "en": "Onion, parmesan and saffron, and nothing else declared. Romito subtracts until only the vegetable is left to carry the plate.",
+   "fr": "Oignon, parmesan et safran, et rien d’autre annoncé. Romito retranche jusqu’à ce que le légume seul porte l’assiette."
+  },
+  "why": {
+   "en": "Long slow cooking converts the onion's sulphur compounds to sugars, so the sweetness is the vegetable's own; the parmesan supplies salt and glutamate that the onion cannot.",
+   "fr": "Une cuisson longue et douce convertit les composés soufrés de l’oignon en sucres : la douceur est celle du légume ; le parmesan apporte le sel et le glutamate qu’il n’a pas."
+  },
+  "ingredients": [
+   "onion",
+   "parmesan",
+   "saffron"
+  ],
+  "chef": {
+   "id": "romito",
+   "name": "Niko Romito",
+   "born": 1974,
+   "died": null,
+   "country": "IT",
+   "place": {
+    "en": "Reale, Castel di Sangro, Abruzzo",
+    "fr": "Reale, Castel di Sangro, Abruzzes"
+   }
+  }
+ },
+ {
+  "id": "berlingots",
+  "kind": "signature",
+  "name": {
+   "en": "Berlingots",
+   "fr": "Berlingots"
+  },
+  "year": {
+   "en": "v. 2012",
+   "fr": "v. 2012"
+  },
+  "note": {
+   "en": "Pasta folded into sweet-shop pyramids around a running cheese, opened at the table by a broth poured over them.",
+   "fr": "Des pâtes pliées en pyramides de confiserie autour d’un fromage coulant, ouvertes à table par un bouillon versé dessus."
+  },
+  "why": {
+   "en": "The filling is held just below setting, so the heat of the poured broth is what finishes it; the shape exists to give the broth somewhere to pool.",
+   "fr": "La farce est tenue juste en deçà de la prise : c’est la chaleur du bouillon versé qui l’achève ; la forme n’existe que pour donner au bouillon où se loger."
+  },
+  "ingredients": [
+   "parmesan",
+   "cream",
+   "black-trumpet",
+   "butter"
+  ],
+  "chef": {
+   "id": "pic",
+   "name": "Anne-Sophie Pic",
+   "born": 1969,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Maison Pic, Valence",
+    "fr": "Maison Pic, Valence"
+   }
+  }
+ },
+ {
+  "id": "betterave-en-croute-de-sel",
+  "kind": "signature",
+  "name": {
+   "en": "Beetroot in salt crust",
+   "fr": "Betterave en croûte de sel"
+  },
+  "year": {
+   "en": "v. 2015",
+   "fr": "v. 2015"
+  },
+  "note": {
+   "en": "One beetroot from the garden above Menton, baked in salt for hours and served with a caviar cream.",
+   "fr": "Une betterave du jardin au-dessus de Menton, cuite des heures dans le sel et servie avec une crème au caviar."
+  },
+  "why": {
+   "en": "The crust seals the root so it cooks in its own water and loses nothing; the salt seasons through the skin at the rate the flesh can take it, which no seasoning afterwards can imitate.",
+   "fr": "La croûte scelle la racine : elle cuit dans sa propre eau et ne perd rien ; le sel assaisonne au travers de la peau au rythme où la chair l’accepte, ce qu’aucun assaisonnement après cuisson n’imite."
+  },
+  "ingredients": [
+   "beetroot",
+   "caviar",
+   "cream",
+   "fleur-de-sel-guerande"
+  ],
+  "chef": {
+   "id": "colagreco",
+   "name": "Mauro Colagreco",
+   "born": 1976,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Mirazur, Menton — born in La Plata, Argentina",
+    "fr": "Mirazur, Menton — né à La Plata, Argentine"
+   }
+  }
+ },
+ {
+  "id": "boeuf-bourguignon",
+  "kind": "signature",
+  "name": {
+   "en": "Bœuf bourguignon",
+   "fr": "Bœuf bourguignon"
+  },
+  "year": {
+   "en": "1961",
+   "fr": "1961"
+  },
+  "note": {
+   "en": "Not her invention, but the version that made French cooking reproducible in a home kitchen abroad — written out step by step with nothing assumed.",
+   "fr": "Pas son invention, mais la version qui rendit la cuisine française reproductible dans une cuisine domestique à l’étranger : écrite pas à pas, sans rien supposer d’acquis."
+  },
+  "why": {
+   "en": "The meat is dried and browned in batches, because a crowded pan steams instead of colouring, and that colour is most of the finished flavour.",
+   "fr": "La viande est épongée et colorée par petites quantités : une poêle surchargée fait vapeur au lieu de colorer, et cette coloration fait l’essentiel du goût final."
+  },
+  "ingredients": [
+   "beef-cheek",
+   "red-wine-vinegar",
+   "shallot",
+   "butter"
+  ],
+  "chef": {
+   "id": "child",
+   "name": "Julia Child",
+   "born": 1912,
+   "died": 2004,
+   "country": "US",
+   "place": {
+    "en": "Paris, then Cambridge, Massachusetts",
+    "fr": "Paris, puis Cambridge, Massachusetts"
+   }
+  }
+ },
+ {
+  "id": "charlotte-russe",
+  "kind": "memorable",
+  "name": {
+   "en": "Charlotte russe",
+   "fr": "Charlotte russe"
+  },
+  "year": {
+   "en": "c. 1815",
+   "fr": "v. 1815"
+  },
+  "note": {
+   "en": "A cold dessert set in a mould and turned out whole. Carême built desserts the way he drew buildings, and this one proved a sweet course could hold a shape of its own on the table rather than arriving as a heap.",
+   "fr": "Un entremets froid moulé et démoulé entier. Carême composait ses desserts comme il dessinait ses édifices, et celui-ci montra qu’un dessert pouvait tenir sa forme sur la table au lieu d’y être déposé en masse."
+  },
+  "why": {
+   "en": "The bavaroise carries just enough gelatine to hold a wall and not enough to bounce; the biscuit lining drinks the moisture that would otherwise weep out and slacken the shape.",
+   "fr": "La bavaroise ne porte que la gélatine nécessaire à tenir la paroi, jamais assez pour rebondir ; le biscuit qui la chemise boit l’humidité qui, sinon, ressuerait et relâcherait la forme."
+  },
+  "ingredients": [
+   "cream",
+   "vanilla",
+   "egg",
+   "gelatine-en-feuilles"
+  ],
+  "chef": {
+   "id": "careme",
+   "name": "Marie-Antoine Carême",
+   "born": 1784,
+   "died": 1833,
+   "country": "FR",
+   "place": {
+    "en": "Paris — Talleyrand, later foreign courts",
+    "fr": "Paris — Talleyrand, puis cours étrangères"
+   }
+  }
+ },
+ {
+  "id": "coulant-au-chocolat",
+  "kind": "memorable",
+  "name": {
+   "en": "Coulant au chocolat",
+   "fr": "Coulant au chocolat"
+  },
+  "year": {
+   "en": "1981",
+   "fr": "1981"
+  },
+  "note": {
+   "en": "A chocolate cake with a centre that runs, got by baking around a frozen ganache core. Within ten years it was on menus on every continent, usually under a name Bras did not give it.",
+   "fr": "Un gâteau au chocolat dont le cœur coule, obtenu en cuisant autour d’une ganache congelée. Dix ans plus tard il figurait aux cartes de tous les continents, le plus souvent sous un nom que Bras ne lui avait pas donné."
+  },
+  "why": {
+   "en": "The centre goes in frozen, so the outside bakes while the middle only thaws. The cake is done in the minute where the two meet, and not after it.",
+   "fr": "Le cœur part congelé : l’extérieur cuit pendant que le milieu ne fait que dégeler. Le gâteau est prêt dans la minute où les deux se rejoignent, et pas après."
+  },
+  "ingredients": [
+   "dark-chocolate",
+   "butter",
+   "egg",
+   "sugar"
+  ],
+  "chef": {
+   "id": "bras",
+   "name": "Michel Bras",
+   "born": 1946,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Laguiole, Aubrac",
+    "fr": "Laguiole, Aubrac"
+   }
+  }
+ },
+ {
+  "id": "ecosystemes",
+  "kind": "signature",
+  "name": {
+   "en": "Ecosystems",
+   "fr": "Écosystèmes"
+  },
+  "year": {
+   "en": "v. 2013",
+   "fr": "v. 2013"
+  },
+  "note": {
+   "en": "Plates built from one altitude of Peru at a time, from the sea floor to four thousand metres, using only what grows at that height.",
+   "fr": "Des assiettes bâties sur une seule altitude du Pérou à la fois, du fond de mer à quatre mille mètres, avec les seuls produits qui y poussent."
+  },
+  "why": {
+   "en": "Things that evolved at the same altitude tend to share the soil, the water and the growing season, which is a reason they agree on the plate that has nothing to do with tradition.",
+   "fr": "Ce qui a évolué à la même altitude partage le sol, l’eau et la saison, ce qui explique l’accord dans l’assiette sans rien devoir à la tradition."
+  },
+  "ingredients": [
+   "potato",
+   "quinoa",
+   "aji-amarillo"
+  ],
+  "chef": {
+   "id": "martinez",
+   "name": "Virgilio Martínez",
+   "born": 1977,
+   "died": null,
+   "country": "PE",
+   "place": {
+    "en": "Central, Lima; Mil, Cusco",
+    "fr": "Central, Lima ; Mil, Cuzco"
+   }
+  }
+ },
+ {
+  "id": "escalope-de-saumon-a-l-oseille",
+  "kind": "memorable",
+  "name": {
+   "en": "Salmon escalope with sorrel",
+   "fr": "Escalope de saumon à l’oseille"
+  },
+  "year": {
+   "en": "1963",
+   "fr": "1963"
+  },
+  "note": {
+   "en": "Salmon cut thin across the fillet, in the pan for seconds, on a sorrel cream sharpened with wine. Cooking less rather than more — the dish nouvelle cuisine is usually dated from.",
+   "fr": "Un saumon taillé fin en travers du filet, quelques secondes à la poêle, sur une crème d’oseille tendue au vin. Cuire moins plutôt que davantage : le plat dont on date ordinairement la nouvelle cuisine."
+  },
+  "why": {
+   "en": "Sorrel's oxalic acid does the work of lemon, but from inside a leaf that also wilts into the cream; the salmon is barely set, so its fat stays liquid and carries that acid.",
+   "fr": "L’acide oxalique de l’oseille fait le travail du citron, mais depuis une feuille qui fond aussi dans la crème ; le saumon est à peine pris, sa graisse reste liquide et porte cette acidité."
+  },
+  "ingredients": [
+   "salmon",
+   "sorrel",
+   "cream",
+   "shallot"
+  ],
+  "chef": {
+   "id": "troisgros",
+   "name": "Jean et Pierre Troisgros",
+   "born": 1926,
+   "died": 2020,
+   "country": "FR",
+   "place": {
+    "en": "Roanne, Loire",
+    "fr": "Roanne, Loire"
+   }
+  }
+ },
+ {
+  "id": "feuille-d-automne",
+  "kind": "memorable",
+  "name": {
+   "en": "Feuille d’automne",
+   "fr": "Feuille d’automne"
+  },
+  "year": {
+   "en": "1960s",
+   "fr": "années 1960"
+  },
+  "note": {
+   "en": "Chocolate mousse and meringue under a canopy of chocolate shavings. Lenôtre worked out how to make pastry of this standard in quantity and send it out, which is why the rest of France could suddenly buy it.",
+   "fr": "Mousse et meringue au chocolat sous un feuillage de copeaux. Lenôtre trouva comment produire une pâtisserie de ce niveau en quantité et la faire voyager, et c’est ainsi que le reste de la France put soudain en acheter."
+  },
+  "why": {
+   "en": "Meringue gives the crack, mousse gives the melt, and the shavings are the first resistance the spoon meets — the order of textures is the recipe.",
+   "fr": "La meringue donne le craquant, la mousse le fondant, et les copeaux sont la première résistance que rencontre la cuillère : l’ordre des textures est la recette."
+  },
+  "ingredients": [
+   "dark-chocolate",
+   "cream",
+   "sugar"
+  ],
+  "chef": {
+   "id": "lenotre",
+   "name": "Gaston Lenôtre",
+   "born": 1920,
+   "died": 2009,
+   "country": "FR",
+   "place": {
+    "en": "Paris, from Normandy",
+    "fr": "Paris, depuis la Normandie"
+   }
+  }
+ },
+ {
+  "id": "fruit-trompe-l-oeil",
+  "kind": "memorable",
+  "name": {
+   "en": "Trompe-l’œil fruit",
+   "fr": "Fruit trompe-l’œil"
+  },
+  "year": {
+   "en": "c. 2016",
+   "fr": "v. 2016"
+  },
+  "note": {
+   "en": "A dessert moulded and painted as the fruit it is made of, cut open to show it is not one. The first pastry judged as much by photograph as by taste, for better and for worse.",
+   "fr": "Un dessert moulé et peint comme le fruit dont il est fait, tranché pour montrer qu’il n’en est pas un. La première pâtisserie jugée autant sur photographie qu’au goût, pour le meilleur et pour le pire."
+  },
+  "why": {
+   "en": "The shell is thin enough to give under a spoon and flavoured with the fruit it imitates, so the eye is wrong and the mouth is right.",
+   "fr": "La coque est assez fine pour céder sous la cuillère et parfumée du fruit qu’elle imite : l’œil se trompe, la bouche a raison."
+  },
+  "ingredients": [
+   "hazelnut",
+   "sugar",
+   "vanilla"
+  ],
+  "chef": {
+   "id": "grolet",
+   "name": "Cédric Grolet",
+   "born": 1985,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Le Meurice, Paris",
+    "fr": "Le Meurice, Paris"
+   }
+  }
+ },
+ {
+  "id": "gateau-de-foies-blonds",
+  "kind": "signature",
+  "name": {
+   "en": "Gâteau de foies blonds",
+   "fr": "Gâteau de foies blonds"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "A Lyonnais custard of blond chicken livers, unmoulded and sauced. Chapel inherited it and refined it into something weightless.",
+   "fr": "Un flan lyonnais de foies blonds de volaille, démoulé et sauce à part. Chapel en hérita et l’affina jusqu’à l’apesanteur."
+  },
+  "why": {
+   "en": "Liver is mostly protein and sets hard if it is pushed; the custard is cooked in a bain-marie so the outside never gets far above the inside.",
+   "fr": "Le foie est surtout protéinique et se serre s’il est brusqué ; l’appareil cuit au bain-marie, de sorte que l’extérieur ne dépasse jamais beaucoup l’intérieur."
+  },
+  "ingredients": [
+   "poularde",
+   "cream",
+   "egg",
+   "truffle"
+  ],
+  "chef": {
+   "id": "chapel",
+   "name": "Alain Chapel",
+   "born": 1937,
+   "died": 1990,
+   "country": "FR",
+   "place": {
+    "en": "Mionnay, Ain",
+    "fr": "Mionnay, Ain"
+   }
+  }
+ },
+ {
+  "id": "gateau-marjolaine",
+  "kind": "memorable",
+  "name": {
+   "en": "Gâteau marjolaine",
+   "fr": "Gâteau marjolaine"
+  },
+  "year": {
+   "en": "c. 1945",
+   "fr": "v. 1945"
+  },
+  "note": {
+   "en": "Nut meringue layered with three creams, cut in a long rectangle. Point assembled rather than baked, and the entremets that fill French pastry windows today are all built the same way.",
+   "fr": "Une meringue aux fruits secs montée avec trois crèmes, taillée en long rectangle. Point assemblait au lieu de cuire, et les entremets qui garnissent aujourd’hui les vitrines sont tous bâtis ainsi."
+  },
+  "why": {
+   "en": "The dacquoise is dry and sweet, the creams are fat and barely sweet, and the layers are thin enough that no mouthful is only one or the other.",
+   "fr": "La dacquoise est sèche et sucrée, les crèmes grasses et à peine sucrées, et les couches sont assez minces pour qu’aucune bouchée ne soit l’une sans l’autre."
+  },
+  "ingredients": [
+   "hazelnut",
+   "almond",
+   "cream",
+   "dark-chocolate"
+  ],
+  "chef": {
+   "id": "point",
+   "name": "Fernand Point",
+   "born": 1897,
+   "died": 1955,
+   "country": "FR",
+   "place": {
+    "en": "La Pyramide, Vienne",
+    "fr": "La Pyramide, Vienne"
+   }
+  }
+ },
+ {
+  "id": "insalata-21-31-41",
+  "kind": "signature",
+  "name": {
+   "en": "Insalata 21…31…41",
+   "fr": "Insalata 21…31…41"
+  },
+  "year": {
+   "en": "v. 2009",
+   "fr": "v. 2009"
+  },
+  "note": {
+   "en": "A salad counted by how many leaves, herbs and flowers are in it that morning. The number in the name is not decoration.",
+   "fr": "Une salade comptée selon le nombre de feuilles, d’herbes et de fleurs du matin même. Le chiffre du nom n’est pas un ornement."
+  },
+  "why": {
+   "en": "No single leaf is present enough to dominate, so what you taste is the shape of the whole garden rather than any one plant — the opposite of how a garnish works.",
+   "fr": "Aucune feuille n’est assez présente pour dominer : ce qu’on goûte est la forme du jardin entier plutôt qu’une plante en particulier, à l’inverse d’une garniture."
+  },
+  "ingredients": [
+   "mizuna",
+   "shiso",
+   "borage",
+   "olive-oil"
+  ],
+  "chef": {
+   "id": "crippa",
+   "name": "Enrico Crippa",
+   "born": 1971,
+   "died": null,
+   "country": "IT",
+   "place": {
+    "en": "Piazza Duomo, Alba, Piedmont",
+    "fr": "Piazza Duomo, Alba, Piémont"
+   }
+  }
+ },
+ {
+  "id": "ispahan",
+  "kind": "memorable",
+  "name": {
+   "en": "Ispahan",
+   "fr": "Ispahan"
+  },
+  "year": {
+   "en": "1997",
+   "fr": "1997"
+  },
+  "note": {
+   "en": "Rose, lychee and raspberry between two macaron shells. Hermé composed flavour the way a perfumer does and the macaron stopped being a petit four.",
+   "fr": "Rose, litchi et framboise entre deux coques de macaron. Hermé composa le goût comme un parfumeur, et le macaron cessa d’être un petit four."
+  },
+  "why": {
+   "en": "Rose is aroma with almost no acid, raspberry is acid with little aroma, and lychee sits between them — together they read as one fruit that does not exist.",
+   "fr": "La rose est un arôme presque sans acidité, la framboise une acidité presque sans arôme, et le litchi se tient entre les deux : ensemble ils se lisent comme un fruit qui n’existe pas."
+  },
+  "ingredients": [
+   "rose-water",
+   "lychee",
+   "raspberry",
+   "almond"
+  ],
+  "chef": {
+   "id": "herme",
+   "name": "Pierre Hermé",
+   "born": 1961,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Paris and Tokyo",
+    "fr": "Paris et Tokyo"
+   }
+  }
+ },
+ {
+  "id": "millefeuille-d-anguille-fumee",
+  "kind": "signature",
+  "name": {
+   "en": "Smoked eel, foie gras, spring onion and green apple",
+   "fr": "Millefeuille d’anguille fumée, foie gras, oignon nouveau et pomme verte"
+  },
+  "year": {
+   "en": "1995",
+   "fr": "1995"
+  },
+  "note": {
+   "en": "Four layers, no sauce, eaten in one. It has stayed on the menu unchanged for thirty years, which is its own kind of argument.",
+   "fr": "Quatre couches, aucune sauce, mangées en une fois. Il est resté à la carte sans changer depuis trente ans, ce qui vaut démonstration."
+  },
+  "why": {
+   "en": "Two fat, smoky layers against two that are sharp and watery: the apple and the onion are the acid and the crunch that a sauce would otherwise have to supply.",
+   "fr": "Deux couches grasses et fumées contre deux couches vives et aqueuses : la pomme et l’oignon sont l’acidité et le croquant qu’une sauce devrait sinon apporter."
+  },
+  "ingredients": [
+   "eel",
+   "foie-gras",
+   "spring-onion",
+   "apple"
+  ],
+  "chef": {
+   "id": "berasategui",
+   "name": "Martín Berasategui",
+   "born": 1960,
+   "died": null,
+   "country": "ES",
+   "place": {
+    "en": "Lasarte-Oria, Basque Country",
+    "fr": "Lasarte-Oria, Pays basque"
+   }
+  }
+ },
+ {
+  "id": "olive-spherique",
+  "kind": "memorable",
+  "name": {
+   "en": "Spherical olive",
+   "fr": "Olive sphérique"
+  },
+  "year": {
+   "en": "2005",
+   "fr": "2005"
+  },
+  "note": {
+   "en": "An olive taken apart and rebuilt as a thin membrane holding its own juice. Spherification, and with it the claim that technique could return something familiar to you as though you had never had it.",
+   "fr": "Une olive défaite et refaite en une fine membrane tenant son propre jus. La sphérification, et avec elle l’idée qu’une technique peut vous rendre le familier comme si vous n’y aviez jamais goûté."
+  },
+  "why": {
+   "en": "Alginate sets only where it meets calcium, so the skin forms at the surface and stops there. The inside stays liquid because nothing has reached it.",
+   "fr": "L’alginate ne prend qu’au contact du calcium : la peau se forme en surface et s’arrête là. L’intérieur reste liquide parce que rien ne l’a atteint."
+  },
+  "ingredients": [
+   "olive-cerignola",
+   "chlorure-de-calcium"
+  ],
+  "chef": {
+   "id": "adria",
+   "name": "Ferran Adrià",
+   "born": 1962,
+   "died": null,
+   "country": "ES",
+   "place": {
+    "en": "elBulli, Cala Montjoi, Catalonia",
+    "fr": "elBulli, Cala Montjoi, Catalogne"
+   }
+  }
+ },
+ {
+  "id": "oops-i-dropped-the-lemon-tart",
+  "kind": "memorable",
+  "name": {
+   "en": "Oops! I dropped the lemon tart",
+   "fr": "Oops! I dropped the lemon tart"
+  },
+  "year": {
+   "en": "2012",
+   "fr": "2012"
+  },
+  "note": {
+   "en": "A lemon tart plated as it landed when one broke in the kitchen. Bottura served the accident on purpose, and imperfection became something a three-star kitchen could mean rather than hide.",
+   "fr": "Une tarte au citron dressée telle qu’elle était tombée lorsqu’une s’est brisée en cuisine. Bottura servit l’accident à dessein, et l’imperfection devint une intention possible en trois étoiles plutôt qu’un défaut à cacher."
+  },
+  "why": {
+   "en": "A broken shell has more edges than a cut slice, so every spoonful takes crust, curd and cream at once — which an intact tart cannot do.",
+   "fr": "Une coque brisée offre plus d’arêtes qu’une part coupée : chaque cuillerée prend la pâte, la crème et le citron ensemble, ce qu’une tarte intacte ne peut pas faire."
+  },
+  "ingredients": [
+   "lemon",
+   "sugar",
+   "egg"
+  ],
+  "chef": {
+   "id": "bottura",
+   "name": "Massimo Bottura",
+   "born": 1962,
+   "died": null,
+   "country": "IT",
+   "place": {
+    "en": "Osteria Francescana, Modena",
+    "fr": "Osteria Francescana, Modène"
+   }
+  }
+ },
+ {
+  "id": "oysters-and-pearls",
+  "kind": "memorable",
+  "name": {
+   "en": "Oysters and Pearls",
+   "fr": "Oysters and Pearls"
+  },
+  "year": {
+   "en": "c. 1994",
+   "fr": "v. 1994"
+  },
+  "note": {
+   "en": "Oysters and caviar over a tapioca sabayon. The luxury sits on a cheap starch, and the whole dish argues that what a thing costs and what it is worth on the plate are separate questions.",
+   "fr": "Huîtres et caviar sur un sabayon de tapioca. Le luxe repose sur un féculent bon marché, et le plat tout entier soutient que ce qu’un produit coûte et ce qu’il vaut dans l’assiette sont deux questions distinctes."
+  },
+  "why": {
+   "en": "Tapioca holds the liquid without thickening it into a sauce, so the oyster's own brine stays loose, and the caviar salts from above rather than through the mix.",
+   "fr": "Le tapioca tient le liquide sans l’épaissir en sauce : l’eau de l’huître reste libre, et le caviar sale par-dessus plutôt qu’à travers."
+  },
+  "ingredients": [
+   "oyster",
+   "caviar",
+   "tapioca-starch"
+  ],
+  "chef": {
+   "id": "keller",
+   "name": "Thomas Keller",
+   "born": 1955,
+   "died": null,
+   "country": "US",
+   "place": {
+    "en": "The French Laundry, Yountville; Per Se, New York",
+    "fr": "The French Laundry, Yountville ; Per Se, New York"
+   }
+  }
+ },
+ {
+  "id": "peche-melba",
+  "kind": "memorable",
+  "name": {
+   "en": "Peach Melba",
+   "fr": "Pêche Melba"
+  },
+  "year": {
+   "en": "1893",
+   "fr": "1893"
+  },
+  "note": {
+   "en": "Poached peach, raspberry purée, vanilla ice cream, and nothing hidden. Written at the Savoy for the singer Nellie Melba, it set the pattern for the named dessert built from three things that are allowed to taste of themselves.",
+   "fr": "Pêche pochée, purée de framboise, glace vanille, et rien de dissimulé. Composée au Savoy pour la cantatrice Nellie Melba, elle fixa le modèle du dessert signé, bâti sur trois éléments qu’on laisse avoir leur propre goût."
+  },
+  "why": {
+   "en": "The raspberry's acidity cuts the sugar of the poached peach, the vanilla sits under both as a bridge, and the cold of the ice cream stops the whole thing cloying. Three elements, one job each.",
+   "fr": "L’acidité de la framboise coupe le sucre de la pêche pochée, la vanille se tient dessous et fait le lien, et le froid de la glace empêche l’ensemble d’écœurer. Trois éléments, une fonction chacun."
+  },
+  "ingredients": [
+   "peach",
+   "raspberry",
+   "vanilla",
+   "cream"
+  ],
+  "chef": {
+   "id": "escoffier",
+   "name": "Auguste Escoffier",
+   "born": 1846,
+   "died": 1935,
+   "country": "FR",
+   "place": {
+    "en": "Savoy and Carlton hotels, London",
+    "fr": "Hôtels Savoy et Carlton, Londres"
+   }
+  }
+ },
+ {
+  "id": "pierres-comestibles",
+  "kind": "signature",
+  "name": {
+   "en": "Edible stones",
+   "fr": "Pierres comestibles"
+  },
+  "year": {
+   "en": "2009",
+   "fr": "2009"
+  },
+  "note": {
+   "en": "Potatoes coated in kaolin clay and served as a bowl of pebbles. You are told they are food and you still hesitate, which is the dish.",
+   "fr": "Des pommes de terre enrobées de kaolin et servies comme un bol de galets. On vous dit que c’est comestible et vous hésitez encore : c’est cela, le plat."
+  },
+  "why": {
+   "en": "The clay is inert and sets to a dull mineral crust, so the eye reads stone while the tooth goes through into steamed potato — the gap between the two is the whole effect.",
+   "fr": "L’argile est inerte et sèche en une croûte minérale mate : l’œil lit la pierre, la dent traverse jusqu’à la pomme de terre vapeur, et l’écart entre les deux fait tout l’effet."
+  },
+  "ingredients": [
+   "potato",
+   "chlorure-de-calcium"
+  ],
+  "chef": {
+   "id": "aduriz",
+   "name": "Andoni Luis Aduriz",
+   "born": 1971,
+   "died": null,
+   "country": "ES",
+   "place": {
+    "en": "Mugaritz, Errenteria, Basque Country",
+    "fr": "Mugaritz, Errenteria, Pays basque"
+   }
+  }
+ },
+ {
+  "id": "pomme-de-terre-et-oeufs-de-poisson",
+  "kind": "signature",
+  "name": {
+   "en": "Potato and roe",
+   "fr": "Pomme de terre et œufs de poisson"
+  },
+  "year": {
+   "en": "v. 2017",
+   "fr": "v. 2017"
+  },
+  "note": {
+   "en": "A single charlotte potato, slow-cooked, under trout roe and a dulse butter sauce. The cheapest thing on the plate is the subject.",
+   "fr": "Une seule pomme de terre charlotte, cuite lentement, sous des œufs de truite et un beurre à la dulse. Le moins cher de l’assiette en est le sujet."
+  },
+  "why": {
+   "en": "Slow cooking sets the potato's starch without collapsing it, so it stays sliceable; the seaweed butter and the roe supply the salt and the sea the potato has none of.",
+   "fr": "La cuisson lente prend l’amidon sans l’effondrer : la pomme de terre reste tranchable ; le beurre d’algue et les œufs apportent le sel et l’iode qu’elle n’a pas."
+  },
+  "ingredients": [
+   "potato",
+   "vendace-roe",
+   "beurre-de-baratte",
+   "dulse"
+  ],
+  "chef": {
+   "id": "smyth",
+   "name": "Clare Smyth",
+   "born": 1978,
+   "died": null,
+   "country": "GB",
+   "place": {
+    "en": "Core, Notting Hill, London",
+    "fr": "Core, Notting Hill, Londres"
+   }
+  }
+ },
+ {
+  "id": "poularde-demi-deuil",
+  "kind": "signature",
+  "name": {
+   "en": "Poularde demi-deuil",
+   "fr": "Poularde demi-deuil"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Truffle slid in black discs under the skin of a Bresse hen, then poached. The dish is Mère Fillioux's; Brazier trained under her and carried it into two three-star houses of her own.",
+   "fr": "Des disques noirs de truffe glissés sous la peau d’une poularde de Bresse, puis pochée. Le plat est celui de la Mère Fillioux ; Brazier fut son élève et le porta dans ses deux maisons trois étoiles."
+  },
+  "why": {
+   "en": "The fat layer under the skin is the carrier: truffle aroma is fat-soluble, and poaching keeps the bird below the temperature that would drive it off.",
+   "fr": "La couche de gras sous la peau est le véhicule : l’arôme de truffe est liposoluble, et le pochage tient la volaille sous la température qui le chasserait."
+  },
+  "ingredients": [
+   "bresse-chicken",
+   "truffle",
+   "beurre-de-baratte"
+  ],
+  "chef": {
+   "id": "brazier",
+   "name": "Eugénie Brazier, la Mère Brazier",
+   "born": 1895,
+   "died": 1977,
+   "country": "FR",
+   "place": {
+    "en": "Lyon and col de la Luère",
+    "fr": "Lyon et col de la Luère"
+   }
+  }
+ },
+ {
+  "id": "poulet-de-bresse-a-la-creme",
+  "kind": "signature",
+  "name": {
+   "en": "Bresse chicken with cream",
+   "fr": "Poulet de Bresse à la crème"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "The Mère Blanc's dish at Vonnas, and the one that made the Lyonnaise mères a destination rather than a local habit.",
+   "fr": "Le plat de la Mère Blanc à Vonnas, celui qui fit des mères lyonnaises une destination et non plus une habitude locale."
+  },
+  "why": {
+   "en": "The bird is cooked in its own fat and the cream goes in off the heat: above a simmer the cream would break, and the sauce is the cooking liquid rather than an addition to it.",
+   "fr": "La volaille cuit dans sa propre graisse et la crème entre hors du feu : au-delà du frémissement elle trancherait, et la sauce est le jus de cuisson plutôt qu’un ajout."
+  },
+  "ingredients": [
+   "bresse-chicken",
+   "cream",
+   "beurre-de-baratte"
+  ],
+  "chef": {
+   "id": "blanc",
+   "name": "Élisa Blanc, la Mère Blanc",
+   "born": 1883,
+   "died": 1949,
+   "country": "FR",
+   "place": {
+    "en": "Vonnas, Ain",
+    "fr": "Vonnas, Ain"
+   }
+  }
+ },
+ {
+  "id": "puree-de-pommes-de-terre",
+  "kind": "memorable",
+  "name": {
+   "en": "Potato purée",
+   "fr": "Purée de pommes de terre"
+  },
+  "year": {
+   "en": "c. 1981",
+   "fr": "v. 1981"
+  },
+  "note": {
+   "en": "Ratte potatoes, passed fine, with something near a quarter of their weight in butter. It made a side dish the reason to book the table, and reset what a cook is allowed to mean by simple.",
+   "fr": "Des rattes, passées fin, avec près du quart de leur poids en beurre. Elle fit d’un accompagnement la raison de réserver la table, et redéfinit ce qu’un cuisinier peut entendre par simple."
+  },
+  "why": {
+   "en": "Ratte flesh is waxy and low in starch, which is why it takes that much butter without turning to glue; passed fine and beaten warm it emulsifies instead of developing.",
+   "fr": "La chair de la ratte est ferme et pauvre en amidon : c’est pourquoi elle accepte tant de beurre sans virer à la colle ; passée fin et travaillée tiède, elle s’émulsionne au lieu de se développer."
+  },
+  "ingredients": [
+   "ratte-potato",
+   "beurre-de-baratte",
+   "cream"
+  ],
+  "chef": {
+   "id": "robuchon",
+   "name": "Joël Robuchon",
+   "born": 1945,
+   "died": 2018,
+   "country": "FR",
+   "place": {
+    "en": "Jamin, Paris; later L’Atelier, worldwide",
+    "fr": "Jamin, Paris ; puis L’Atelier, dans le monde"
+   }
+  }
+ },
+ {
+  "id": "radis-terre-et-herbes",
+  "kind": "memorable",
+  "name": {
+   "en": "Radishes, soil and grass",
+   "fr": "Radis, terre et herbes"
+  },
+  "year": {
+   "en": "2010",
+   "fr": "2010"
+  },
+  "note": {
+   "en": "Radishes standing upright in a malt and hazelnut soil, pulled up to eat. It showed the growing rather than the cooking, and a decade of vegetable-led menus followed.",
+   "fr": "Des radis plantés debout dans une terre de malt et de noisette, qu’on arrache pour les manger. Il montrait la culture plutôt que la cuisson, et une décennie de cartes menées par le végétal a suivi."
+  },
+  "why": {
+   "en": "Roasted malt and hazelnut are bitter, which is what soil smells like. The radish is pulled up through them, so the bitterness arrives before its own pepper.",
+   "fr": "Le malt et la noisette torréfiés sont amers, et c’est l’odeur de la terre. Le radis est arraché au travers : l’amertume arrive avant son propre piquant."
+  },
+  "ingredients": [
+   "radish",
+   "malt-diastasique",
+   "hazelnut"
+  ],
+  "chef": {
+   "id": "redzepi",
+   "name": "René Redzepi",
+   "born": 1977,
+   "died": null,
+   "country": "DK",
+   "place": {
+    "en": "Noma, Copenhagen",
+    "fr": "Noma, Copenhague"
+   }
+  }
+ },
+ {
+  "id": "salade-du-jardin-de-chez-panisse",
+  "kind": "signature",
+  "name": {
+   "en": "Chez Panisse garden salad",
+   "fr": "Salade du jardin de Chez Panisse"
+  },
+  "year": {
+   "en": "1971",
+   "fr": "1971"
+  },
+  "note": {
+   "en": "Mixed young leaves, picked that day, dressed simply. It sounds like nothing now because this dish is the reason it sounds like nothing.",
+   "fr": "Un mélange de jeunes pousses, cueillies le jour même, simplement assaisonnées. Cela semble aujourd’hui n’être rien, et c’est ce plat qui en est la cause."
+  },
+  "why": {
+   "en": "Young leaves carry water and bitterness in a narrow window; picked that morning and dressed at the last second, the oil coats before the salt can draw anything out.",
+   "fr": "Les jeunes pousses ne tiennent leur eau et leur amertume qu’un temps très court ; cueillies le matin et assaisonnées à la seconde, l’huile enrobe avant que le sel ne tire quoi que ce soit."
+  },
+  "ingredients": [
+   "salad-burnet",
+   "olive-oil",
+   "red-wine-vinegar",
+   "shallot"
+  ],
+  "chef": {
+   "id": "waters",
+   "name": "Alice Waters",
+   "born": 1944,
+   "died": null,
+   "country": "US",
+   "place": {
+    "en": "Chez Panisse, Berkeley, California",
+    "fr": "Chez Panisse, Berkeley, Californie"
+   }
+  }
+ },
+ {
+  "id": "salade-gourmande",
+  "kind": "memorable",
+  "name": {
+   "en": "Salade gourmande",
+   "fr": "Salade gourmande"
+  },
+  "year": {
+   "en": "1970s",
+   "fr": "années 1970"
+  },
+  "note": {
+   "en": "Foie gras and green beans dressed together and plated as a salad. A first course that is neither cooked to order nor sauced, which until then was not what a luxury restaurant served.",
+   "fr": "Foie gras et haricots verts assaisonnés ensemble et dressés en salade. Une entrée ni cuite à la commande ni saucée, ce qui jusque-là n’était pas ce que servait une grande maison."
+  },
+  "why": {
+   "en": "Foie gras is fat with no acid and no crunch. The beans bring both, and the vinaigrette does cold what a sauce would have done hot.",
+   "fr": "Le foie gras est gras, sans acidité ni croquant. Les haricots apportent les deux, et la vinaigrette fait à froid ce qu’une sauce aurait fait à chaud."
+  },
+  "ingredients": [
+   "foie-gras",
+   "green-bean",
+   "truffle"
+  ],
+  "chef": {
+   "id": "guerard",
+   "name": "Michel Guérard",
+   "born": 1933,
+   "died": 2024,
+   "country": "FR",
+   "place": {
+    "en": "Eugénie-les-Bains, Landes",
+    "fr": "Eugénie-les-Bains, Landes"
+   }
+  }
+ },
+ {
+  "id": "sound-of-the-sea",
+  "kind": "memorable",
+  "name": {
+   "en": "Sound of the Sea",
+   "fr": "Sound of the Sea"
+  },
+  "year": {
+   "en": "2007",
+   "fr": "2007"
+  },
+  "note": {
+   "en": "Shellfish and sea vegetables over an edible sand, eaten with the sound of waves through headphones. The measurements behind it showed that what you hear changes what you taste.",
+   "fr": "Coquillages et végétaux marins sur un sable comestible, mangés au bruit des vagues dans un casque. Les mesures qui l’accompagnent ont montré que ce qu’on entend modifie ce qu’on goûte."
+  },
+  "why": {
+   "en": "The sound of the sea raises the perceived saltiness of the same plate. It is an ingredient the tongue never touches, and it is measurable.",
+   "fr": "Le bruit de la mer augmente la salinité perçue d’une assiette identique. C’est un ingrédient que la langue ne touche jamais, et il se mesure."
+  },
+  "ingredients": [
+   "oyster",
+   "kombu",
+   "nori"
+  ],
+  "chef": {
+   "id": "blumenthal",
+   "name": "Heston Blumenthal",
+   "born": 1966,
+   "died": null,
+   "country": "GB",
+   "place": {
+    "en": "The Fat Duck, Bray, Berkshire",
+    "fr": "The Fat Duck, Bray, Berkshire"
+   }
+  }
+ },
+ {
+  "id": "soupe-aux-truffes-noires-vge",
+  "kind": "memorable",
+  "name": {
+   "en": "Black truffle soup V.G.E.",
+   "fr": "Soupe aux truffes noires V.G.E."
+  },
+  "year": {
+   "en": "1975",
+   "fr": "1975"
+  },
+  "note": {
+   "en": "A consommé of truffle and foie gras sealed under a dome of puff pastry, broken open at the table. Written for the Élysée lunch where Bocuse received the Légion d’honneur, it made the moment of serving part of the dish.",
+   "fr": "Un consommé de truffe et de foie gras scellé sous un dôme de feuilletage, brisé à table. Composée pour le déjeuner de l’Élysée où Bocuse reçut la Légion d’honneur, elle fit du service lui-même une partie du plat."
+  },
+  "why": {
+   "en": "Truffle aroma is volatile and would be gone from an open bowl in a minute. The pastry dome holds it until the table breaks it, which is when the dish is actually served.",
+   "fr": "L’arôme de truffe est volatil : dans une assiette ouverte il aurait disparu en une minute. Le dôme de feuilletage le retient jusqu’à ce que la table le brise, et c’est là que le plat est servi."
+  },
+  "ingredients": [
+   "truffle",
+   "foie-gras",
+   "flour-t55"
+  ],
+  "chef": {
+   "id": "bocuse",
+   "name": "Paul Bocuse",
+   "born": 1926,
+   "died": 2018,
+   "country": "FR",
+   "place": {
+    "en": "Collonges-au-Mont-d’Or",
+    "fr": "Collonges-au-Mont-d’Or"
+   }
+  }
+ },
+ {
+  "id": "tagliatelle-d-huitres-au-caviar",
+  "kind": "signature",
+  "name": {
+   "en": "Tagliatelle of oysters with caviar",
+   "fr": "Tagliatelle d’huîtres au caviar"
+  },
+  "year": {
+   "en": "v. 1988",
+   "fr": "v. 1988"
+  },
+  "note": {
+   "en": "The dish that ran through Harveys and made a young English cook the argument that London could hold three stars.",
+   "fr": "Le plat qui traversa Harveys et fit d’un jeune cuisinier anglais l’argument que Londres pouvait tenir trois étoiles."
+  },
+  "why": {
+   "en": "Oyster liquor is salt and iodine with no fat; the butter sauce gives it a body to cling to the pasta, and the caviar repeats the salt as texture rather than seasoning.",
+   "fr": "L’eau d’huître est sel et iode, sans gras ; la sauce au beurre lui donne le corps qui accroche aux pâtes, et le caviar répète le sel en texture plutôt qu’en assaisonnement."
+  },
+  "ingredients": [
+   "oyster",
+   "caviar",
+   "beurre-de-baratte",
+   "flour-t55"
+  ],
+  "chef": {
+   "id": "white",
+   "name": "Marco Pierre White",
+   "born": 1961,
+   "died": null,
+   "country": "GB",
+   "place": {
+    "en": "Harveys, then The Restaurant, London",
+    "fr": "Harveys, puis The Restaurant, Londres"
+   }
+  }
+ }
+]

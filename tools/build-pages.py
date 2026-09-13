@@ -354,7 +354,7 @@ def page(i, lang, by_id, count, G):
 </main>
 
 <footer>
-  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(dishidx)s">%(dishes)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
 <script src="%(up)sjs/page.js?v=%(v)d" defer></script>
@@ -372,6 +372,8 @@ def page(i, lang, by_id, count, G):
         "alt_img": e(t["altImg"] % name),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
         "fam": e(fam), "desc": e(desc), "robots": robots,
+        "dishidx": "dish/" if lang == "en" else "fr/plat/",
+        "dishes": e(DISH_UI[lang]["idx"]),
         "here": here, "there": there,
         "xdef": "%s/i/%s/" % (SITE, i["id"]),
         "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT, "ld": ld,
@@ -578,6 +580,182 @@ SEASON_UI = {
 # pages were 200 links and not one sentence — a list to crawl past, not a page
 # to read. Kept out of this file because it is content, not code: edit
 # tools/season-notes.json and rebuild. A month with no entry renders as before.
+# Dishes come from tools/dishes.json, written by tools/dump-dishes.js — the JS
+# engine parses the JS, because a chef record nests its dishes and a regex over
+# that would be luck rather than a reader. bump.sh rewrites it.
+DISHES = json.loads((ROOT / "tools" / "dishes.json").read_text()) \
+    if (ROOT / "tools" / "dishes.json").exists() else []
+
+DISH_UI = {
+    "en": {"seg": "dish", "memorable": "The dish that changed something",
+           "signature": "Signature dish", "why": "Why it works",
+           "ing": "What is in it", "chef": "The cook",
+           "idx": "Dishes", "idxLede": "%d plates that moved cooking, or that a cook is known for — what each one is, and why the combination works.",
+           "all": "All dishes", "desc": "%s — %s. What it is, why the combination works, and every ingredient in it.",
+           "openAtlas": "See it in the atlas"},
+    "fr": {"seg": "plat", "memorable": "Le plat qui a changé quelque chose",
+           "signature": "Plat signature", "why": "Pourquoi ça marche",
+           "ing": "Ce qu\u2019il y a dedans", "chef": "Le cuisinier",
+           "idx": "Plats", "idxLede": "%d assiettes qui ont déplacé la cuisine, ou pour lesquelles un cuisinier est connu — ce qu\u2019elles sont, et pourquoi l\u2019accord tient.",
+           "all": "Tous les plats", "desc": "%s — %s. Ce que c\u2019est, pourquoi l\u2019accord tient, et tout ce qu\u2019il y a dedans.",
+           "openAtlas": "Le voir dans l\u2019atlas"},
+}
+
+
+def dish_url(did, lang):
+    return ("%s/dish/%s/" % (SITE, did) if lang == "en"
+            else "%s/fr/plat/%s/" % (SITE, did))
+
+
+def dish_chips(ids, by_id, lang, rel):
+    """Same chip as the season and entry pages: the drawing carries the name."""
+    out = []
+    for iid in ids:
+        r = by_id.get(iid)
+        if not r:
+            continue
+        out.append('<a href="%s%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
+                   '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
+                   % (rel, r["id"], r["svg"], e(r["name"][lang])))
+    return " ".join(out)
+
+
+def dish_page(d, lang, by_id):
+    """One plate. The note says what it moved; the why says what a cook can use.
+    Both were written for the atlas, where nothing is indexable."""
+    t, other = DISH_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    # /dish/<id>/ is two deep, /fr/plat/<id>/ is three. Entry pages are ../../i/
+    # from both, exactly as on the season pages.
+    up = "../../" if lang == "en" else "../../../"
+    rel = "../../i/"
+    here, there = dish_url(d["id"], lang), dish_url(d["id"], other)
+    name = d["name"][lang]
+    kind = t[d["kind"]]
+    year = d["year"][lang]
+    years = "%s–%s" % (d["chef"]["born"], d["chef"]["died"]) if d["chef"]["died"] else str(d["chef"]["born"])
+    desc = t["desc"] % (name, d["chef"]["name"])
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+%(theme)s
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(name)s — %(chef)s · Copius</title>
+<meta name="description" content="%(desc)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+%(og)s
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a></nav>
+</header>
+
+<main>
+  <h3>%(kind)s%(year)s</h3>
+  <h1>%(name)s</h1>
+  <p class="alt">%(chef)s · %(years)s · %(place)s</p>
+
+  <p class="lede">%(note)s</p>
+
+  <h2>%(whylbl)s</h2>
+  <p>%(why)s</p>
+
+  <h2>%(inglbl)s</h2>
+  <p class="pairs">%(chips)s</p>
+
+  <p class="fix"><a href="%(up)s%(app)s">%(openatlas)s</a></p>
+</main>
+
+<footer>
+  <a href="../">%(all)s</a> · <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
+  Copius — %(tagline)s
+</footer>
+</body>
+</html>
+""" % {
+        "og": head_extra(e("%s — %s" % (name, d["chef"]["name"])), e(desc), here, lang),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
+        "theme": THEME_SCRIPT, "robots": robots,
+        "here": here, "there": there, "desc": e(desc),
+        "name": e(name), "kind": e(kind),
+        "year": (" · %s" % e(year)) if year != "\u2014" else "",
+        "chef": e(d["chef"]["name"]), "years": e(years),
+        "place": e(d["chef"]["place"][lang]),
+        "note": e(d["note"][lang]), "why": e(d["why"][lang]),
+        "whylbl": e(t["why"]), "inglbl": e(t["ing"]),
+        "chips": dish_chips(d["ingredients"], by_id, lang, rel),
+        "openatlas": e(t["openAtlas"]), "all": e(t["all"]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]),
+        "idx": "i/" if lang == "en" else "fr/i/",
+        "index": e(ui["index"]), "about": e(ui["about"]), "tagline": e(ui["tagline"]),
+    }
+
+
+def dish_index(lang, by_id):
+    t, other = DISH_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    up = "../" if lang == "en" else "../../"
+    here = "%s/dish/" % SITE if lang == "en" else "%s/fr/plat/" % SITE
+    there = "%s/fr/plat/" % SITE if lang == "en" else "%s/dish/" % SITE
+    lede = t["idxLede"] % len(DISHES)
+    groups = []
+    for kind in ("memorable", "signature"):
+        got = [d for d in DISHES if d["kind"] == kind]
+        if not got:
+            continue
+        got.sort(key=lambda d: d["name"][lang].lower())
+        groups.append("<h2>%s <small>%d</small></h2><p class=\"pairs\">%s</p>" % (
+            e(t[kind]), len(got),
+            " ".join('<a href="%s/">%s</a>' % (d["id"], e(d["name"][lang])) for d in got)))
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+%(theme)s
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(title)s · Copius</title>
+<meta name="description" content="%(lede)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+%(og)s
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a></nav>
+</header>
+
+<main>
+  <h1>%(title)s</h1>
+  <p class="lede">%(lede)s</p>
+  %(groups)s
+</main>
+
+<footer>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a>
+</footer>
+</body>
+</html>
+""" % {
+        "og": head_extra(e(t["idx"]), e(lede), here, lang),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
+        "theme": THEME_SCRIPT, "robots": robots, "here": here, "there": there,
+        "title": e(t["idx"]), "lede": e(lede), "groups": "\n  ".join(groups),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]),
+        "idx": "i/" if lang == "en" else "fr/i/",
+        "index": e(ui["index"]), "about": e(ui["about"]),
+    }
+
+
 SEASON_NOTES = json.loads((ROOT / "tools" / "season-notes.json").read_text()) \
     if (ROOT / "tools" / "season-notes.json").exists() else {}
 
@@ -895,11 +1073,31 @@ def main():
     (ROOT / "season" / "index.html").write_text(season_index("en", rows))
     (ROOT / "fr" / "saison" / "index.html").write_text(season_index("fr", rows))
 
+    # Thirty plates, written for a view that carries noindex. These are the same
+    # words on a surface a search engine reads.
+    shutil.rmtree(ROOT / "dish", ignore_errors=True)
+    shutil.rmtree(ROOT / "fr" / "plat", ignore_errors=True)
+    dishes = 0
+    for d in DISHES:
+        for lang in ("en", "fr"):
+            out = (ROOT / "dish" / d["id"] if lang == "en"
+                   else ROOT / "fr" / "plat" / d["id"])
+            out.mkdir(parents=True, exist_ok=True)
+            (out / "index.html").write_text(dish_page(d, lang, by_id))
+            dishes += 1
+    if DISHES:
+        (ROOT / "dish" / "index.html").write_text(dish_index("en", by_id))
+        (ROOT / "fr" / "plat" / "index.html").write_text(dish_index("fr", by_id))
+
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
             "%s/confidentialite/" % SITE,
             "%s/season/" % SITE, "%s/fr/saison/" % SITE]
+    if DISHES:
+        urls += ["%s/dish/" % SITE, "%s/fr/plat/" % SITE]
+        for d in DISHES:
+            urls += [dish_url(d["id"], "en"), dish_url(d["id"], "fr")]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
                  "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]
@@ -911,9 +1109,10 @@ def main():
         + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, today) for u in urls)
         + "</urlset>\n")
 
-    print('{"ingredientPages": %d, "seasonPages": %d, "indexes": 4, '
+    print('{"ingredientPages": %d, "seasonPages": %d, "dishPages": %d, "indexes": %d, '
           '"sitemapUrls": %d, "indexable": %s}'
-          % (written, months, len(urls), "true" if INDEXABLE else "false"))
+          % (written, months, dishes, 6 if DISHES else 4, len(urls),
+             "true" if INDEXABLE else "false"))
     if not INDEXABLE:
         print("# every page carries noindex — flip INDEXABLE in this file when the atlas opens")
 
