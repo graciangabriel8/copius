@@ -168,9 +168,13 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .card{
   position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;
   padding:18px 16px 16px;text-align:center;cursor:pointer;
-  box-shadow:var(--shadow);transition:box-shadow .2s ease, transform .2s ease, border-color .2s;
+  box-shadow:var(--shadow);transition:box-shadow .2s ease, transform .2s ease;
 }
-.card:hover{box-shadow:var(--shadow-lift);transform:translateY(-3px);border-color:var(--border-strong)}
+/* border-color eases on the way into a hover and nowhere else. Left on the
+   resting rule it also caught the theme switch, and 1 835 card borders easing
+   between the two palettes is 1 835 hairlines sitting on an in-between grey. */
+.card:hover{box-shadow:var(--shadow-lift);transform:translateY(-3px);border-color:var(--border-strong);
+  transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease}
 .card-art svg,.card-art img{width:96px;height:96px}
 .card-art img{border-radius:50%;object-fit:cover}
 .card h3{margin:10px 0 1px;font-size:18.5px}
@@ -182,10 +186,13 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   position:absolute;top:4px;right:4px;border:0;background:none;
   font-size:17px;color:var(--border-strong);line-height:1;padding:0;
   min-width:40px;min-height:40px;display:grid;place-items:center;
-  transition:color .15s ease, transform .15s ease;
+  transition:transform .15s ease;
 }
 .fav:hover{transform:scale(1.2)}
-.fav.on{color:var(--ink-3)}
+/* The colour eases onto a star being marked, which is the only time it should.
+   On the resting rule it also caught the theme switch, and there is one of
+   these in every card — 1 835 of them crossing between the palettes together. */
+.fav.on{color:var(--ink-3);transition:color .15s ease, transform .15s ease}
 .empty{color:var(--ink-3);text-align:center;padding:40px 0;font-style:italic}
 .rare-mark{font-size:.55em;color:var(--ink-3);vertical-align:.35em;cursor:help}
 .luxe-mark{font-size:.5em;color:var(--ink-3);vertical-align:.4em;cursor:help}
@@ -694,20 +701,14 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
 
 /* ---------- motion (v84): theme, ingredient of the day, search ---------- */
-/* Theme. app.js arms this class for the length of a switch only, so the colours
-   crossfade once and the page's own timings are untouched otherwise.
+/* Theme. The switch is instant, and that is the considered choice rather than
+   the lazy one: a crossfade interpolates every colour through its midpoint, and
+   the midpoint between this palette's two grounds is the same grey as the
+   midpoint between its two inks. Body text measured 1.03:1 against the page
+   halfway through — the words disappear. There is no duration that avoids it,
+   because the midpoint is where the fade goes, so the fade goes.
 
-   The list is the surfaces that paint an area, not *. The atlas holds 40 080
-   elements, 9 221 of them inside drawings, and arming a transition on every one
-   of them cost 370 ms of frozen main thread per click — on top of the ~110 ms
-   the recolour costs anyway — so the button did nothing for half a second after
-   you pressed it. These eight selectors match 1 865 elements and the switch is
-   back at the floor. The drawings snap rather than fade; at a quarter second
-   nobody can see which. */
-html.theme-switching body,html.theme-switching header,html.theme-switching footer,
-html.theme-switching #search,html.theme-switching .card,html.theme-switching .chip,
-html.theme-switching .daily,html.theme-switching .modal{
-  transition:background-color .25s ease,color .25s ease,border-color .25s ease}
+   The button still turns. One element, no interpolation, nothing to go muddy. */
 .theme-btn{transition:background .12s,border-color .12s}
 /* The button turns a half circle on each switch and always comes to rest
    upright. It used to add 180deg to an inline transform every time it was

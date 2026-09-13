@@ -1169,13 +1169,9 @@
      transition on everything for the 500 ms of the switch only, so the rest of
      the time each control keeps its own timing. The button turns half a circle
      per press, so the moon rolls into the sun and back. */
-  var themeTimer = null;
   el("themeBtn").addEventListener("click", function () {
     var next = currentTheme() === "dark" ? "light" : "dark", root = document.documentElement;
     if (!reducedMotion()) {
-      root.classList.add("theme-switching");
-      clearTimeout(themeTimer);
-      themeTimer = setTimeout(function () { root.classList.remove("theme-switching"); }, 350);
       // Strip and re-add so a second click restarts the turn rather than being
       // ignored; reading offsetWidth between the two is what forces that.
       var b = el("themeBtn");
