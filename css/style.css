@@ -343,10 +343,20 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
    animation does not run — a frozen preview, a print, an old engine. Default
    visible, animation added on top. Modal only; 1 835 cards drawing themselves
    would be a fairground, not a reference. */
-.m-art .art.draw .s,.m-art .art.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
-  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards}
-.m-art .art.draw .f1,.m-art .art.draw .f2,.m-art .art.draw .f3,.m-art .art.draw .dot{
+/* Order and :not() matter here. 1 814 of 1 835 drawings carry a combined class
+   like "f2 sf" — both an outline and a fill. Written the obvious way, the fill
+   rule's `animation` shorthand replaces the outline's on every one of them, and
+   since stroke-dasharray:1 survives, the line is dashed with nothing to draw it:
+   invisible forever. Fills that are only fills come first; anything that strokes
+   is set afterwards and carries both animations explicitly. */
+.m-art .art.draw .f1:not(.sf),.m-art .art.draw .f2:not(.sf),
+.m-art .art.draw .f3:not(.sf),.m-art .art.draw .dot{
   animation:fill-in .5s ease .26s both}
+.m-art .art.draw .s{stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards}
+.m-art .art.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw .62s cubic-bezier(.65,0,.35,1) forwards,
+            fill-in .5s ease .26s both}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fill-in{from{opacity:0}to{opacity:1}}
 /* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. */
@@ -543,6 +553,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 @media (prefers-reduced-motion:reduce){
   .m-art .art.draw .s,.m-art .art.draw .sf{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
   .m-art .art.draw .f1,.m-art .art.draw .f2,.m-art .art.draw .f3,.m-art .art.draw .dot{animation:none}
+  /* belt and braces: nothing may be left dashed with no animation to draw it */
   html{scroll-behavior:auto}
   .modal,.tw-panel{animation:none}
   .daily:hover,.card:hover{transform:none}
