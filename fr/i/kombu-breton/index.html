@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kombu breton (Breton kombu) — Algues · Copius</title>
 <meta name="description" content="Les goémoniers bretons le prennent encore depuis le bateau au scoubidou, une tige d&#x27;acier crochue qui dévisse le stipe du rocher, un outil dessiné dans…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../../css/page.css?v=87">
+<link rel="stylesheet" href="../../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Kombu breton", "alternateName": "Breton kombu", "description": "Les goémoniers bretons le prennent encore depuis le bateau au scoubidou, une tige d'acier crochue qui dévisse le stipe du rocher, un outil dessiné dans…", "url": "https://copius.fr/fr/i/kombu-breton/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../../img/kombu-breton.svg?v=87" alt="Kombu breton, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../../img/kombu-breton.svg?v=88" alt="Kombu breton, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
   <h1>Kombu breton</h1>
   <p class="alt">Breton kombu</p>
 
@@ -55,6 +55,6 @@
   <a href="../../../fr/i/">Tous les ingrédients</a> · <a href="../../../atlas.html">Ouvrir l’atlas</a> · <a href="../../../about/">À propos</a><br>
   Copius — Un atlas illustré de la cuisine · 1835 ingrédients · 22 familles
 </footer>
-<script src="../../../js/page.js?v=87" defer></script>
+<script src="../../../js/page.js?v=88" defer></script>
 </body>
 </html>

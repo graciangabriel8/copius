@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Muscade de Provence squash (Courge musquée de Provence) — Vegetables · Copius</title>
 <meta name="description" content="The nineteenth-century Vilmorin catalogue already described it and it has barely changed: a flat wheel of deep ribs running ten to twenty kilos, which is…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Muscade de Provence squash", "alternateName": "Courge musquée de Provence", "description": "The nineteenth-century Vilmorin catalogue already described it and it has barely changed: a flat wheel of deep ribs running ten to twenty kilos, which is…", "url": "https://copius.fr/i/musquee-de-provence-squash/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/musquee-de-provence-squash.svg?v=87" alt="Muscade de Provence squash, drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/musquee-de-provence-squash.svg?v=88" alt="Muscade de Provence squash, drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Muscade de Provence squash</h1>
   <p class="alt">Courge musquée de Provence</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>

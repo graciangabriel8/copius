@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cicerchia (Gesse (pois carré)) — Legumes &amp; pulses · Copius</title>
 <meta name="description" content="Cicerchia carries a neurotoxin, β-ODAP, that caused outbreaks of lathyrism in Europe whenever it became the only thing left to eat — and it became that…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Cicerchia", "alternateName": "Gesse (pois carré)", "description": "Cicerchia carries a neurotoxin, β-ODAP, that caused outbreaks of lathyrism in Europe whenever it became the only thing left to eat — and it became that…", "url": "https://copius.fr/i/cicerchia/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/cicerchia.svg?v=87" alt="Cicerchia, drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/cicerchia.svg?v=88" alt="Cicerchia, drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Cicerchia <span class="mk" title="Little known">✦</span></h1>
   <p class="alt">Gesse (pois carré)</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Olive cassée de la vallée des Baux (Cracked olive of the Vallée des Baux) — Condiments &amp; ferments · Copius</title>
 <meta name="description" content="Les olives sont frappées au maillet de bois alors qu’elles sont encore vertes et dures, puis tenues en saumure renouvelée chaque jour pour que l’amertume…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../../css/page.css?v=87">
+<link rel="stylesheet" href="../../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Olive cassée de la vallée des Baux", "alternateName": "Cracked olive of the Vallée des Baux", "description": "Les olives sont frappées au maillet de bois alors qu’elles sont encore vertes et dures, puis tenues en saumure renouvelée chaque jour pour que l’amertume…", "url": "https://copius.fr/fr/i/olive-cassee-baux/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../../img/olive-cassee-baux.svg?v=87" alt="Olive cassée de la vallée des Baux, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../../img/olive-cassee-baux.svg?v=88" alt="Olive cassée de la vallée des Baux, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
   <h1>Olive cassée de la vallée des Baux <span class="mk" title="Méconnu">✦</span></h1>
   <p class="alt">Cracked olive of the Vallée des Baux</p>
 
@@ -55,6 +55,6 @@
   <a href="../../../fr/i/">Tous les ingrédients</a> · <a href="../../../atlas.html">Ouvrir l’atlas</a> · <a href="../../../about/">À propos</a><br>
   Copius — Un atlas illustré de la cuisine · 1835 ingrédients · 22 familles
 </footer>
-<script src="../../../js/page.js?v=87" defer></script>
+<script src="../../../js/page.js?v=88" defer></script>
 </body>
 </html>

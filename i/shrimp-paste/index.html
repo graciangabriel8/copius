@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fermented shrimp paste (belacan) (Pâte de crevette fermentée (belacan)) — Condiments &amp; ferments · Copius</title>
 <meta name="description" content="Belacan is made from Acetes, a shrimp barely a centimetre long, salted, left to break down in the sun and pressed into blocks that ferment for weeks — the…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Fermented shrimp paste (belacan)", "alternateName": "Pâte de crevette fermentée (belacan)", "description": "Belacan is made from Acetes, a shrimp barely a centimetre long, salted, left to break down in the sun and pressed into blocks that ferment for weeks — the…", "url": "https://copius.fr/i/shrimp-paste/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/shrimp-paste.svg?v=87" alt="Fermented shrimp paste (belacan), drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/shrimp-paste.svg?v=88" alt="Fermented shrimp paste (belacan), drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Fermented shrimp paste (belacan)</h1>
   <p class="alt">Pâte de crevette fermentée (belacan)</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>

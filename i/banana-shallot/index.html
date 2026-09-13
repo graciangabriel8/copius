@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Banana shallot (Échalote banane) — Vegetables · Copius</title>
 <meta name="description" content="It is raised from seed rather than from a mother bulb, and that is why French growers spent the 2000s in court trying to stop it being sold as échalote -…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Banana shallot", "alternateName": "Échalote banane", "description": "It is raised from seed rather than from a mother bulb, and that is why French growers spent the 2000s in court trying to stop it being sold as échalote -…", "url": "https://copius.fr/i/banana-shallot/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/banana-shallot.svg?v=87" alt="Banana shallot, drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/banana-shallot.svg?v=88" alt="Banana shallot, drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Banana shallot</h1>
   <p class="alt">Échalote banane</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>

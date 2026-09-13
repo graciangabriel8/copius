@@ -208,8 +208,14 @@ def head_extra(title, desc, url, lang):
 
 # Applied before first paint, so a visitor who chose dark in the atlas never sees
 # a white flash here. The atlas stores the choice under this key.
-THEME_SCRIPT = ('<script>try{var t=localStorage.getItem("copius-theme");'
-                'if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}'
+THEME_SCRIPT = ('<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;'
+                'if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);'
+                # The drawing is an <img>: a file loaded that way sees the browser's
+                # setting and can never see this one. When the two disagree it is
+                # the wrong colours, so js/page.js lays a themed copy over it and
+                # leaves it there.
+                'if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))'
+                'r.setAttribute("data-art","swap")}}'
                 'catch(e){}</script>')
 
 # Browser chrome follows the page: the two --bg values of page.css.
@@ -403,8 +409,13 @@ ART_STYLE = (
     # thumbnailer among them — shows the first frame, and the first frame
     # of a draw-on is an empty circle. The atlas animates its own inline
     # copy instead, where the document is live.
+    # Dark flips the ink too, not only the fills. It used to change the four
+    # fills and leave stroke and dots at #585853 — the light-mode ink — which
+    # put a 2.17:1 line on a 2.17:1 plate. The same drawing gets 6.33:1 in
+    # light. --line is what the atlas has always used here: 7.60:1.
     "@media(prefers-color-scheme:dark){"
-    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.bg{fill:#242422}}"
+    ".s,.f1,.f2,.f3,.sf{stroke:#b8b5ae}"
+    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.dot{fill:#b8b5ae}.bg{fill:#242422}}"
     "</style>")
 
 
@@ -745,25 +756,34 @@ a{color:var(--ink-2);text-underline-offset:3px;text-decoration-color:var(--borde
 a:hover{color:var(--ink);text-decoration-color:var(--ink-3)}
 main{padding-top:26px;padding-bottom:10px}
 figure{margin:0 0 14px;width:104px;height:104px;position:relative}
-/* The drawing draws itself on arrival: js/page.js lays an identical copy of the
-   svg over the <img> for the second it takes, then takes the copy away. The
-   <img> itself never leaves the page — inline svg is not something Google Images
-   can index, and 1 835 drawings are the one click channel an answer engine
-   cannot stand in front of. The copy keeps the colours baked into the file, so
-   it is the <img>'s twin and the hand-off at the end is invisible: nothing below
-   sets a fill or a stroke, only what moves. */
-figure svg.draw{position:absolute;left:0;top:0;background:var(--bg)}
+/* js/page.js lays a copy of the svg over the <img>. The <img> itself never
+   leaves the page — inline svg is not something Google Images can index, and
+   1 835 drawings are the one click channel an answer engine cannot stand in
+   front of. Two jobs for the copy: it draws itself on arrival, and it is the
+   only one of the two that can be themed, because a file loaded through <img>
+   sees the browser's colour scheme and never the choice made in the atlas.
+   Where the two agree the copy goes at the end of the draw and these colours
+   are the ones baked into the file anyway, so the hand-off is invisible; where
+   they disagree the copy stays, and it is the one that is right. */
+figure svg.ink{position:absolute;left:0;top:0;background:var(--bg)}
+figure svg.ink .s{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}
+figure svg.ink .f1,figure svg.ink .f3,figure svg.ink .sf{fill:var(--plate);
+  stroke:var(--line);stroke-width:3;stroke-linejoin:round}
+figure svg.ink .f2{fill:var(--border);stroke:var(--line);stroke-width:3;
+  stroke-linejoin:round}
+figure svg.ink .dot{fill:var(--line)}
+figure svg.ink .bg{fill:var(--plate)}
 /* Order and :not() matter. 1 814 of 1 835 drawings carry a combined class like
    "f2 sf" — both an outline and a fill — and a plain fill rule written after the
    stroke rule replaces its animation shorthand on every one of them. The
    stroke-dasharray survives with nothing left to draw it: invisible, forever.
    Fills that are only fills come first; anything that strokes is set afterwards
    and carries both animations explicitly. */
-figure svg.draw .f1:not(.sf),figure svg.draw .f2:not(.sf),
-figure svg.draw .f3:not(.sf),figure svg.draw .dot{animation:art-fill .58s ease .46s both}
-figure svg.draw .s{stroke-dasharray:1;stroke-dashoffset:1;
+figure svg.ink.draw .f1:not(.sf),figure svg.ink.draw .f2:not(.sf),
+figure svg.ink.draw .f3:not(.sf),figure svg.ink.draw .dot{animation:art-fill .58s ease .46s both}
+figure svg.ink.draw .s{stroke-dasharray:1;stroke-dashoffset:1;
   animation:art-draw 1.05s cubic-bezier(.65,0,.35,1) forwards}
-figure svg.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
+figure svg.ink.draw .sf{stroke-dasharray:1;stroke-dashoffset:1;
   animation:art-draw 1.05s cubic-bezier(.65,0,.35,1) forwards,
             art-fill .58s ease .46s both}
 @keyframes art-draw{to{stroke-dashoffset:0}}

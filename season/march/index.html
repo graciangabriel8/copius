@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What is in season in March — fruit, vegetables, fish and mushrooms · Copius</title>
 <meta name="description" content="43 ingredients with a short season — three months or less — are at their best in March in France. Not only fruit and vegetables: the fish, the mushrooms, the game and the cheeses have a season too.">
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 </head>
 <body>
 <header>

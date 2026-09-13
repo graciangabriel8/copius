@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Williams pear (Poire Williams) — Fruits · Copius</title>
 <meta name="description" content="The tree turned up in a schoolmaster’s garden at Aldermaston in Berkshire before 1770; the nurseryman Richard Williams attached his name to it in 1814,…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Williams pear", "alternateName": "Poire Williams", "description": "The tree turned up in a schoolmaster’s garden at Aldermaston in Berkshire before 1770; the nurseryman Richard Williams attached his name to it in 1814,…", "url": "https://copius.fr/i/poire-williams/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/poire-williams.svg?v=87" alt="Williams pear, drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/poire-williams.svg?v=88" alt="Williams pear, drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Williams pear</h1>
   <p class="alt">Poire Williams</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>

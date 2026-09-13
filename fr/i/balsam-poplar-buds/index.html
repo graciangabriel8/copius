@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bourgeons de peuplier baumier (Balsam poplar buds) — Épices · Copius</title>
 <meta name="description" content="Les abeilles trouvent ces bourgeons bien avant les cuisiniers : la résine qu’elles y prélèvent est la base de la propolis, la colle dont la ruche scelle…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../../css/page.css?v=87">
+<link rel="stylesheet" href="../../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Bourgeons de peuplier baumier", "alternateName": "Balsam poplar buds", "description": "Les abeilles trouvent ces bourgeons bien avant les cuisiniers : la résine qu’elles y prélèvent est la base de la propolis, la colle dont la ruche scelle…", "url": "https://copius.fr/fr/i/balsam-poplar-buds/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../../img/balsam-poplar-buds.svg?v=87" alt="Bourgeons de peuplier baumier, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../../img/balsam-poplar-buds.svg?v=88" alt="Bourgeons de peuplier baumier, dessiné pour Copius" width="104" height="104" decoding="async"></figure>
   <h1>Bourgeons de peuplier baumier <span class="mk" title="Méconnu">✦</span></h1>
   <p class="alt">Balsam poplar buds</p>
 
@@ -55,6 +55,6 @@
   <a href="../../../fr/i/">Tous les ingrédients</a> · <a href="../../../atlas.html">Ouvrir l’atlas</a> · <a href="../../../about/">À propos</a><br>
   Copius — Un atlas illustré de la cuisine · 1835 ingrédients · 22 familles
 </footer>
-<script src="../../../js/page.js?v=87" defer></script>
+<script src="../../../js/page.js?v=88" defer></script>
 </body>
 </html>

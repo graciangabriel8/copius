@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))r.setAttribute("data-art","swap")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cocoa nibs (Grué de cacao) — Sweet pantry · Copius</title>
 <meta name="description" content="Roasted cocoa beans cracked into fragments, before any sugar or grinding — this is what chocolate is made from, and it is unrecognisably bitter. The…">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
-<link rel="stylesheet" href="../../css/page.css?v=87">
+<link rel="stylesheet" href="../../css/page.css?v=88">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Thing", "name": "Cocoa nibs", "alternateName": "Grué de cacao", "description": "Roasted cocoa beans cracked into fragments, before any sugar or grinding — this is what chocolate is made from, and it is unrecognisably bitter. The…", "url": "https://copius.fr/i/cocoa-nibs/", "isPartOf": {"@type": "WebSite", "name": "Copius", "url": "https://copius.fr"}}</script>
 </head>
 <body>
@@ -34,7 +34,7 @@
 </header>
 
 <main>
-  <figure><img src="../../img/cocoa-nibs.svg?v=87" alt="Cocoa nibs, drawn for Copius" width="104" height="104" decoding="async"></figure>
+  <figure><img src="../../img/cocoa-nibs.svg?v=88" alt="Cocoa nibs, drawn for Copius" width="104" height="104" decoding="async"></figure>
   <h1>Cocoa nibs</h1>
   <p class="alt">Grué de cacao</p>
 
@@ -55,6 +55,6 @@
   <a href="../../i/">All ingredients</a> · <a href="../../atlas.html">Open the atlas</a> · <a href="../../about/">About</a><br>
   Copius — An illustrated atlas of cooking · 1835 ingredients · 22 families
 </footer>
-<script src="../../js/page.js?v=87" defer></script>
+<script src="../../js/page.js?v=88" defer></script>
 </body>
 </html>
