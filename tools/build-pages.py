@@ -206,21 +206,34 @@ def head_extra(title, desc, url, lang):
         + THEME_COLOR)
 
 
+# Browser chrome follows the page. The same two values are --bg in the page.css
+# constant below; they are written here rather than read from it because this
+# pair is markup, not stylesheet.
+BG_LIGHT, BG_DARK = "#fafafa", "#141413"
+
 # Applied before first paint, so a visitor who chose dark in the atlas never sees
 # a white flash here. The atlas stores the choice under this key.
 THEME_SCRIPT = ('<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;'
                 'if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);'
+                # The two theme-color metas further down the head are matched
+                # against the browser's setting, not this one, so the chrome
+                # ends up the other colour from the page. A meta carrying no
+                # media always matches, and the browser takes the first match in
+                # tree order — the parser has not reached theirs yet, so this one
+                # is ahead of both.
+                'var m=document.createElement("meta");m.name="theme-color";'
+                'm.content=t==="dark"?"%s":"%s";document.head.appendChild(m);'
                 # The drawing is an <img>: a file loaded that way sees the browser's
                 # setting and can never see this one. When the two disagree it is
                 # the wrong colours, so js/page.js lays a themed copy over it and
                 # leaves it there.
                 'if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))'
                 'r.setAttribute("data-art","swap")}}'
-                'catch(e){}</script>')
+                'catch(e){}</script>') % (BG_DARK, BG_LIGHT)
 
-# Browser chrome follows the page: the two --bg values of page.css.
-THEME_COLOR = ('<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">\n'
-               '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">')
+THEME_COLOR = ('<meta name="theme-color" media="(prefers-color-scheme: light)" content="%s">\n'
+               '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="%s">'
+               % (BG_LIGHT, BG_DARK))
 
 
 def e(s):
