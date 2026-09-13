@@ -783,6 +783,24 @@
         (c.phrase ? '<blockquote class="tl-phrase">“' + esc(c.phrase.text) + '”<cite>' + esc(c.phrase.by) + "</cite></blockquote>" : "") +
         "<p>" + esc(c.contribution[state.lang]) + "</p>" +
         '<p class="tl-legacy">' + esc(c.legacy[state.lang]) + "</p>" +
+        /* What was reported, and what the person said back. Nothing here is
+           Copius's own characterisation: the first line attributes an allegation
+           to the outlet that published it, the second quotes the answer in the
+           subject's own words, and both sources are on the page. An adjective
+           would be an imputation; a citation is a fact about what was printed.
+           This block exists only in the atlas, which carries noindex. */
+        (c.record ? '<div class="tl-record">' +
+          '<p class="tw-sub">' + esc(t.chefRecord) + "</p>" +
+          "<p>" + esc(c.record.what[state.lang]) + "</p>" +
+          '<p class="tl-record-said"><span class="tl-why-lbl">' + esc(t.chefRecordSaid) +
+            "</span> " + esc(c.record.said[state.lang]) + "</p>" +
+          (c.record.then ? "<p>" + esc(c.record.then[state.lang]) + "</p>" : "") +
+          '<p class="tl-record-src">' + esc(t.chefRecordSrc) + ": " +
+            c.record.src.map(function (x) {
+              return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer">' +
+                esc(x.label) + "</a>";
+            }).join(" · ") + "</p>" +
+        "</div>" : "") +
         (c.dishes ? c.dishes.map(function (d) {
           /* Two kinds, and the difference is a claim. "memorable" says the dish
              moved something and history has had time to agree; "signature" says
