@@ -8,3 +8,6 @@
 # daily job publishes.
 User-agent: *
 Allow: /
+
+# 3 763 urls, and nothing links to most of them from outside.
+Sitemap: https://copius.fr/sitemap.xml
