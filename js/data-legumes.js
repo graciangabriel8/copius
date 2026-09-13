@@ -27,7 +27,7 @@ fr:"Nommée d’après le caviar qu’elle évoque une fois cuite — petite, br
 tip:{en:"Serve it where the colour shows — under white fish, beside a poached egg. Buried in a brown stew you have wasted the point.",
 fr:"Servez-la là où la couleur se voit — sous un poisson blanc, à côté d’un œuf poché. Noyée dans un ragoût brun, l’intérêt est perdu."},
 pairs:["salmon","creme-fraiche","shallot","lemon","dill","olive-oil","egg","chives"],
-svg:'<circle class="f1 sf" cx="40" cy="52" r="6.5"/><circle class="f1 sf" cx="55" cy="55" r="6.5"/><circle class="f1 sf" cx="46" cy="65" r="6.5"/><circle class="f1 sf" cx="59" cy="66" r="5.5"/>'},
+svg:'<g transform="translate(-8.64 -9.0) scale(1.18)"><path class="f1 sf" d="M23 53q2 14 25 14t25-14q-5-5-25-5t-25 5z"/><path class="dot" d="M32 50q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M44 47q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M56 50q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M38 42q3-3 7 0t-4 5-4-2 1-3z"/><path class="dot" d="M51 41q3-3 7 0t-4 5-4-2 1-3z"/></g>'},
 
 {id:"black-bean",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Black bean",fr:"Haricot noir"},latin:"Phaseolus vulgaris",
 origin:{en:"Mexico & Central America",fr:"Mexique & Amérique centrale"},season:[],
@@ -37,7 +37,7 @@ fr:"L’ossature de la feijoada brésilienne et des moros y cristianos cubains, 
 tip:{en:"Keep the cooking liquid and reduce it. It is where the flavour and the body of the dish live.",
 fr:"Gardez l’eau de cuisson et faites-la réduire. C’est là que résident le goût et le corps du plat."},
 pairs:["cumin","lime","cilantro","chili","garlic","onion","avocado","orange"],
-svg:'<ellipse class="f1 sf" cx="41" cy="54" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="56" cy="56" rx="8.5" ry="6"/><ellipse class="f1 sf" cx="47" cy="67" rx="8.5" ry="6"/>'},
+svg:'<g transform="translate(-6.19 -6.45) scale(1.129)"><path class="f2 sf" d="M25 63q-5-10 6-14 13-5 18 3 3 8-7 13-13 4-17-2z"/><path class="f2 sf" d="M50 51q-4-10 7-13 12-3 15 5 2 8-8 12-11 3-14-4z"/><path class="f2 sf" d="M36 38q-3-9 7-11 11-2 14 5 2 7-7 10-11 2-14-4z"/><path class="s" d="M32 60q7-4 13-3M56 48q6-3 11-2M42 36q6-3 10-1" stroke-width="1.6"/></g>'},
 
 {id:"black-chickpea",cat:"legumes",price:1,pk:"7–12 €/kg",name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
 origin:{en:"Murgia Carsica, Puglia",fr:"Murgia Carsica, Pouilles"},season:[],
@@ -57,7 +57,7 @@ fr:"Le haricot cornille est un Vigna, domestiqué en Afrique de l’Ouest puis e
 tip:{en:"Cook it dry and unsoaked, thirty-five to forty-five minutes, salting from the start so the skins hold. Soak it and you get puree.",
 fr:"Cuisez-le sec, sans trempage, trente-cinq à quarante-cinq minutes, en salant dès le départ pour que les peaux tiennent. Trempé, il part en purée."},
 pairs:["rice","pork-belly","thyme","tomato","spring-onion","chili"],
-svg:'<ellipse class="f1 sf" cx="44" cy="42" rx="22" ry="15"/><ellipse class="f3" cx="44" cy="42" rx="6" ry="3.5"/><ellipse class="f2 sf" cx="54" cy="66" rx="18" ry="12"/><ellipse class="f3" cx="54" cy="66" rx="5" ry="3"/>'},
+svg:'<path class="f1 sf" d="M26 47q2-15 22-15t21 15q-1 14-21 14T26 47z"/><path class="f3 sf" d="M36 47q2-8 11-8t11 8q0 7-11 7t-11-7z"/><path class="dot" d="M42 47q1-4 6-4t6 4q0 4-6 4t-6-4z"/><path class="f1 sf" d="M29 70q-4-8 6-10 10-2 12 3 1 6-7 8-9 2-11-1z"/><path class="f1 sf" d="M52 72q-3-7 6-8 9-2 11 3 1 4-6 6-9 1-11-1z"/>'},
 
 {id:"lentille-blonde",cat:"legumes",rare:true,price:2,pk:"8–14 €/kg",name:{en:"Blond lentil",fr:"Lentille blonde de Saint-Flour"},latin:"Lens culinaris",
 origin:{en:"Planeze de Saint-Flour, Cantal",fr:"Planèze de Saint-Flour, Cantal"},season:[],
@@ -77,7 +77,7 @@ fr:"La cosse et le grain éclaboussés de rouge sont spectaculaires crus et perd
 tip:{en:"Cook them with a whole peeled onion, a carrot and a stick of celery, then discard all three. It is the Italian way and it works.",
 fr:"Cuisez-les avec un oignon épluché entier, une carotte et une branche de céleri, puis jetez les trois. C’est la méthode italienne et elle fonctionne."},
 pairs:["sage","olive-oil","garlic","tomato","rosemary","pecorino","guanciale","cavolo-nero"],
-svg:'<ellipse class="f2 sf" cx="41" cy="54" rx="9" ry="6.5"/><ellipse class="f2 sf" cx="56" cy="57" rx="9" ry="6.5"/><ellipse class="f2 sf" cx="47" cy="68" rx="9" ry="6.5"/><circle class="dot" cx="39" cy="53" r="1.4"/><circle class="dot" cx="57" cy="56" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M22 59q11-19 31-25 15-4 21 1 3 5-5 10-16 11-31 18-12 6-16-4z"/><path class="s" d="M29 57q9-10 19-15M37 62q9-10 20-15M45 65q8-8 17-13" stroke-width="1.6"/><path class="f2 sf" d="M33 73q-4-8 6-10 10-2 12 3 1 5-6 8-10 2-12-1z"/><path class="dot" d="M40 72q3-2 4 1t-3 3-1-4z"/>'},
 
 {id:"cannellini",cat:"legumes",price:1,pk:"4–8 €/kg",name:{en:"Cannellini bean",fr:"Haricot cannellini"},latin:"Phaseolus vulgaris",
 origin:{en:"Tuscany, Italy",fr:"Toscane, Italie"},season:[],
@@ -87,7 +87,7 @@ fr:"On surnomme les Toscans mangiafagioli, mangeurs de haricots, et c’est de c
 tip:{en:"Save a ladle of the cooking liquid to loosen any purée. It emulsifies with olive oil far better than water does.",
 fr:"Réservez une louche d’eau de cuisson pour détendre une purée. Elle s’émulsionne avec l’huile d’olive bien mieux que l’eau."},
 pairs:["sage","olive-oil","garlic","rosemary","tomato","cavolo-nero","parmesan","escarole"],
-svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="9" ry="6"/><ellipse class="f3 sf" cx="56" cy="57" rx="9" ry="6"/><ellipse class="f3 sf" cx="47" cy="68" rx="9" ry="6"/>'},
+svg:'<path class="f3 sf" d="M24 52q0-13 14-15 15-2 20 8 4 11-7 16-13 5-22-2-5-3-5-7z"/><path class="s" d="M31 48q8-7 19-5" stroke-width="1.7"/><path class="f3 sf" d="M50 70q1-8 11-8 11 0 12 7 0 7-8 8-14 1-15-7z"/><path class="s" d="M56 68q6-4 12-2" stroke-width="1.5"/>'},
 
 {id:"chana-dal",cat:"legumes",price:1,pk:"3–5 €/kg",name:{en:"Chana dal",fr:"Chana dal (pois chiche cassé)"},latin:"Cicer arietinum",
 origin:{en:"Northern India",fr:"Inde du Nord"},season:[],
@@ -167,7 +167,7 @@ fr:"Cueilli avant maturité, d’où sa couleur vert pâle plutôt que blanche �
 tip:{en:"It is the classic bean for gigot d'agneau, and it wants nothing more than butter, garlic and parsley. Do not overwhelm it.",
 fr:"C’est le haricot classique du gigot d’agneau, et il ne demande que du beurre, de l’ail et du persil. Ne le noyez pas."},
 pairs:["lamb","garlic","butter","parsley","cream","thyme","shallot","rosemary"],
-svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="9" ry="6"/><ellipse class="f3 sf" cx="55" cy="58" rx="9" ry="6"/><ellipse class="f3 sf" cx="47" cy="68" rx="9" ry="6"/>'},
+svg:'<path class="f3 sf" d="M20 44q10-9 28-9t28 9q-8 11-28 11t-28-11z"/><path class="f3 sf" d="M28 58q2-7 8-7t8 6q0 7-8 7-9 0-8-6z"/><path class="f3 sf" d="M42 61q2-7 8-7t8 6q0 7-8 7-9 0-8-6z"/><path class="f3 sf" d="M56 58q2-7 8-7t8 6q0 7-8 7-9 0-8-6z"/><path class="s" d="M26 42q18-6 40 0" stroke-width="1.5"/>'},
 
 {id:"judion",cat:"legumes",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Judión bean",fr:"Judión (haricot géant d’Espagne)"},latin:"Phaseolus coccineus",
 origin:{en:"La Granja de San Ildefonso, Segovia",fr:"La Granja de San Ildefonso, Ségovie"},season:[],
@@ -257,7 +257,7 @@ fr:"Ce que le monde appelle germes de soja est en réalité ce haricot, germé q
 tip:{en:"It is the one pulse that genuinely needs no soaking. Twenty-five minutes from dry and it is soft.",
 fr:"C’est la seule légumineuse qui ne demande réellement aucun trempage. Vingt-cinq minutes depuis le sec et il est tendre."},
 pairs:["ginger","turmeric","cumin","ghee","cilantro","chili","coconut-milk","lime"],
-svg:'<ellipse class="f2 sf" cx="41" cy="55" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="53" cy="52" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="47" cy="64" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="58" cy="63" rx="6" ry="4.5"/>'},
+svg:'<path class="f2 sf" d="M52 28q10-2 12 6 2 9-6 12-9 3-13-4-3-8 7-14z"/><path class="s" d="M54 46q-6 10-16 14-8 4-14 2" stroke-width="3"/><path class="s" d="M24 62q-4 2-6 6" stroke-width="1.8"/><path class="f2 sf" d="M30 70q-3-6 5-7 8-1 9 3 0 4-6 5-7 1-8-1z"/><path class="f2 sf" d="M47 72q-2-5 5-6 7-1 8 3 0 3-5 4-6 1-8-1z"/>'},
 
 {id:"natto",cat:"legumes",price:1,pk:"15–30 €/kg",name:{en:"Natto",fr:"Natto"},latin:"Bacillus subtilis var. natto",
 origin:{en:"Ibaraki, Japan",fr:"Ibaraki, Japon"},season:[],
@@ -307,7 +307,7 @@ fr:"C’est une lentille brune décortiquée, d’où sa couleur orange plutôt 
 tip:{en:"Use it when you want it to disappear — dal, soup, a thickener. If you need lentils to stay whole, this is the wrong one.",
 fr:"Employez-la quand vous voulez qu’elle disparaisse — dal, soupe, liant. S’il faut des lentilles entières, ce n’est pas la bonne."},
 pairs:["cumin","turmeric","ghee","ginger","garlic","cilantro","coconut-milk","chili"],
-svg:'<circle class="f2 sf" cx="41" cy="54" r="7"/><circle class="f2 sf" cx="56" cy="52" r="7"/><circle class="f2 sf" cx="48" cy="66" r="7"/>'},
+svg:'<path class="s" d="M22 50q3 20 26 20t26-20" stroke-width="3"/><path class="f2 sf" d="M28 44q1-9 10-9t10 8q0 9-9 9-11 0-11-8z"/><path class="f2 sf" d="M48 47q1-8 9-8t9 7q0 8-8 8-10 0-10-7z"/><path class="s" d="M30 44q9-3 18 0M50 47q8-2 16 0" stroke-width="1.5"/><path class="f2 sf" d="M39 32q1-7 8-7t8 6q0 7-7 7-9 0-9-6z"/>'},
 
 {id:"santorini-fava",cat:"legumes",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Santorini fava",fr:"Fava de Santorin"},latin:"Lathyrus clymenum",
 origin:{en:"Santorini and the Cyclades",fr:"Santorin et les Cyclades"},season:[6,7],

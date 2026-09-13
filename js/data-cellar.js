@@ -37,7 +37,7 @@ fr:"Le mutage — arrêter la fermentation à l’alcool pendant que le sucre es
 tip:{en:"Reduce it with a duck fond and a strip of orange peel, and stop while it still coats a spoon — pushed further the sugar catches and turns acrid. It is the one wine that will stand up to both Roquefort and dark chocolate.",
 fr:"Réduisez-le avec un fond de canard et un zeste d’orange, et arrêtez tant qu’il nappe la cuillère : plus loin, le sucre accroche et tourne à l’âcre. C’est le seul vin qui tienne à la fois devant le roquefort et le chocolat noir."},
 pairs:["duck","dark-chocolate","roquefort","walnut","orange","fig"],
-svg:'<circle class="f1 sf" cx="44" cy="58" r="21"/><path class="f3 sf" d="M38 39h12v-10H38z"/><path class="s" d="M25 56q19 9 38 0"/><circle class="s" cx="72" cy="24" r="7"/>'},
+svg:'<g transform="translate(6.96 7.25) scale(0.855)"><circle class="f1 sf" cx="44" cy="58" r="21"/><path class="f3 sf" d="M38 39h12v-10H38z"/><path class="s" d="M25 56q19 9 38 0"/><circle class="s" cx="72" cy="24" r="7"/></g>'},
 
 {id:"brandy-de-jerez",cat:"cellar",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
@@ -257,7 +257,7 @@ fr:"Le « Venise » du nom est le Comtat Venaissin, la terre papale autour d’A
 tip:{en:"Never boil it: those terpenes are volatile and the first minute of heat takes them. Spoon it cold over melon, or fold it into a sabayon once the pan is off the flame.",
 fr:"Ne le faites jamais bouillir : ses terpènes sont volatils et la première minute de chaleur les emporte. Arrosez-en le melon bien froid, ou incorporez-le au sabayon une fois la casserole hors du feu."},
 pairs:["cantaloupe","peach","apricot","lychee","raspberry","egg"],
-svg:'<path class="f1 sf" d="M44 24h8v13q13 8 13 22a17 17 0 0 1-34 0q0-14 13-22z"/><path class="s" d="M32 56q16 9 32 0"/><path class="s" d="M70 33v9"/><circle class="f2 sf" cx="70" cy="29" r="4"/><circle class="f1 sf" cx="64" cy="23" r="4"/><circle class="f1 sf" cx="75" cy="23" r="4"/>'},
+svg:'<g transform="translate(5.62 5.85) scale(0.883)"><path class="f1 sf" d="M44 24h8v13q13 8 13 22a17 17 0 0 1-34 0q0-14 13-22z"/><path class="s" d="M32 56q16 9 32 0"/><path class="s" d="M70 33v9"/><circle class="f2 sf" cx="70" cy="29" r="4"/><circle class="f1 sf" cx="64" cy="23" r="4"/><circle class="f1 sf" cx="75" cy="23" r="4"/></g>'},
 
 {id:"oloroso",cat:"cellar",price:2,pk:"14–30 €/L",name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
@@ -287,7 +287,7 @@ fr:"Paul Ricard met son pastis sur le marché en 1932, dix-sept ans après l’i
 tip:{en:"Reduce it before any liquid goes in, because the sugar in pastis will catch and burn in a dry, hot pan. For a bouillabaisse or a rouille, 20 ml for four people alongside the saffron; beyond that the fish disappears behind the anise.",
 fr:"Réduisez-le avant d’ajouter le moindre liquide : le sucre du pastis attache et brûle dans une poêle sèche et chaude. Pour une bouillabaisse ou une rouille, 20 ml pour quatre personnes, en même temps que le safran ; au-delà, le poisson disparaît derrière l’anis."},
 pairs:["fennel","saffron","tomato","mussel","monkfish","garlic","red-mullet","orange"],
-svg:'<path class="f1 sf" d="M36 26h24l-3 46q-1 6-9 6t-9-6z"/><path class="f2" d="M36 46h24l-3 26q-1 6-9 6t-9-6z"/><path class="s" d="M35 44h26"/><path class="f3 sf" d="M48 6l4 7 8-1-4 7 4 7-8-1-4 7-4-7-8 1 4-7-4-7 8 1z"/>'},
+svg:'<g transform="translate(5.81 6.05) scale(0.879)"><path class="f1 sf" d="M36 26h24l-3 46q-1 6-9 6t-9-6z"/><path class="f2" d="M36 46h24l-3 26q-1 6-9 6t-9-6z"/><path class="s" d="M35 44h26"/><path class="f3 sf" d="M48 6l4 7 8-1-4 7 4 7-8-1-4 7-4-7-8 1 4-7-4-7 8 1z"/></g>'},
 
 {id:"pedro-ximenez",cat:"cellar",price:2,pk:"16–35 €/L",name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
 origin:{en:"Montilla-Moriles, Andalusia",fr:"Montilla-Moriles, Andalousie"},season:[],
@@ -377,7 +377,7 @@ fr:"Les dix, vingt ou quarante ans d’une étiquette de tawny désignent l’â
 tip:{en:"It is already oxidised, so an opened bottle holds a month or more in the fridge. Add it at the end of a veal or mushroom jus, off the heat — its aromatics are the finish, not the base.",
 fr:"Déjà oxydé, il tient un mois ou plus au réfrigérateur une fois ouvert. Ajoutez-le en fin de course à un jus de veau ou de champignons, hors du feu : ses arômes sont la finition, pas la base."},
 pairs:["foie-gras","walnut","mushroom","dried-apricot","blue-cheese","quasi-de-veau"],
-svg:'<path class="f1 sf" d="M40 34h16l9 33a6 6 0 0 1-6 8H37a6 6 0 0 1-6-8z"/><path class="f3 sf" d="M43 22h10v12H43z"/><circle class="f2 sf" cx="48" cy="18" r="6"/><circle class="f2 sf" cx="74" cy="36" r="9"/><path class="s" d="M74 27v18M66 33q8 6 16 0"/>'},
+svg:'<g transform="translate(3.74 3.9) scale(0.922)"><path class="f1 sf" d="M40 34h16l9 33a6 6 0 0 1-6 8H37a6 6 0 0 1-6-8z"/><path class="f3 sf" d="M43 22h10v12H43z"/><circle class="f2 sf" cx="48" cy="18" r="6"/><circle class="f2 sf" cx="74" cy="36" r="9"/><path class="s" d="M74 27v18M66 33q8 6 16 0"/></g>'},
 
 {id:"umeshu",cat:"cellar",price:2,pk:"20–35 €/L",name:{en:"Umeshu",fr:"Umeshu"},latin:"Prunus mume",
 origin:{en:"Wakayama and across Japan",fr:"Wakayama et tout le Japon"},season:[],

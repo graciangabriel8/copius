@@ -227,7 +227,7 @@ fr:"Le sukang iloko fermente à partir du basi, le vin de canne ilocano, dans le
 tip:{en:"Rounder and milder than rice or coconut vinegar, it goes into a Filipino adobo undiluted: pour it in and leave it unstirred for the first few minutes of simmering so the raw acetic edge boils off. In kinilaw it needs its acidity propped up with calamansi.",
 fr:"Plus rond et plus doux que le vinaigre de riz ou de coco, il se verse pur dans un adobo : ne remuez pas pendant les premières minutes de frémissement, le temps que l’arête acétique s’évapore. Dans un kinilaw, il faut lui remonter l’acidité au calamansi."},
 pairs:["garlic","soy-sauce","black-pepper","pork","bay-leaf","ginger"],
-svg:'<path class="f2 sf" d="M43 24h10v8c12 4 17 14 17 22 0 12-9 18-22 18s-22-6-22-18c0-8 5-18 17-22z"/><path class="f3 sf" d="M40 18h16v7H40z"/><path class="f1 sf" d="M26 34q-11-8-16-2 6 10 16 5z"/><path class="s" d="M30 58h36"/>'},
+svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f2 sf" d="M43 24h10v8c12 4 17 14 17 22 0 12-9 18-22 18s-22-6-22-18c0-8 5-18 17-22z"/><path class="f3 sf" d="M40 18h16v7H40z"/><path class="f1 sf" d="M26 34q-11-8-16-2 6 10 16 5z"/><path class="s" d="M30 58h36"/></g>'},
 
 {id:"caper-berries",cat:"condiments",price:2,pk:"12–24 €/kg",name:{en:"Caper berries",fr:"Câprons (câpres à queue)"},latin:"Capparis spinosa",
 origin:{en:"Mediterranean scrub and old walls",fr:"Garrigues et vieux murs méditerranéens"},season:[7,8,9],
@@ -297,7 +297,7 @@ fr:"Les caractères disent « tirée crue » : c’est le liquide prélevé en s
 tip:{en:"Light for salt, dark for colour, and never one for the other: a tablespoon of dark soy in place of light leaves a dish black and undersalted. In a stir-fry, pour it down the hot side of the wok rather than onto the food, so it sizzles for a second before it lands.",
 fr:"La claire pour le sel, la foncée pour la couleur, et jamais l’une pour l’autre : une cuillère de foncée à la place de la claire laisse un plat noir et fade. Au wok, versez-la sur la paroi brûlante plutôt que sur les aliments, pour qu’elle grésille une seconde avant de retomber."},
 pairs:["ginger","spring-onion","shaoxing-wine","sesame-oil","dark-soy-sauce","white-pepper","garlic","chinese-rock-sugar"],
-svg:'<path class="f3 sf" d="M38 16h14v8H38z"/><path class="f1 sf" d="M38 24h14q6 6 6 14v32q0 6-6 6H38q-6 0-6-6V38q0-8 6-14z"/><path class="f2 sf" d="M32 44h26v14H32z"/><ellipse class="f2 sf" cx="68" cy="72" rx="11" ry="6"/><path class="s" d="M59 72q9 6 18 0"/>'},
+svg:'<g transform="translate(3.65 3.8) scale(0.924)"><path class="f3 sf" d="M38 16h14v8H38z"/><path class="f1 sf" d="M38 24h14q6 6 6 14v32q0 6-6 6H38q-6 0-6-6V38q0-8 6-14z"/><path class="f2 sf" d="M32 44h26v14H32z"/><ellipse class="f2 sf" cx="68" cy="72" rx="11" ry="6"/><path class="s" d="M59 72q9 6 18 0"/></g>'},
 
 {id:"chinkiang-vinegar",cat:"condiments",price:1,pk:"5–10 €/L",name:{en:"Chinkiang vinegar",fr:"Vinaigre noir de Chinkiang"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Zhenjiang, Jiangsu",fr:"Zhenjiang, Jiangsu"},season:[],
@@ -387,7 +387,7 @@ fr:"Le nom lao chou, « vieux tirage », dit l'ordre de la cuve : le sheng chou,
 tip:{en:"Dose it by the teaspoon and put it in early, into the hot oil or the braising liquid, so the sugars caramelise instead of tasting raw. Swapping it one-for-one for light soy is the standard failure: the dish comes out black and underseasoned.",
 fr:"Dosez-la à la cuillère à café et mettez-la tôt, dans l'huile chaude ou le liquide de braisage, pour que les sucres caramélisent au lieu de rester crus. L'erreur classique est de la substituer volume pour volume à la sauce claire : le plat ressort noir et sous-assaisonné."},
 pairs:["sheng-chou","star-anise","ginger","pork-belly","sugar","shaoxing-wine","spring-onion","garlic"],
-svg:'<path class="f3 sf" d="M44 26h8v8q10 6 10 20v18q0 6-6 6H40q-6 0-6-6V54q0-14 10-20z"/><path class="s" d="M44 26q-7-2-9-7"/><circle class="dot" cx="32" cy="15" r="2.5"/><path class="f1 sf" d="M40 58h16v12H40z"/>'},
+svg:'<g transform="translate(3.65 3.8) scale(0.924)"><path class="f3 sf" d="M44 26h8v8q10 6 10 20v18q0 6-6 6H40q-6 0-6-6V54q0-14 10-20z"/><path class="s" d="M44 26q-7-2-9-7"/><circle class="dot" cx="32" cy="15" r="2.5"/><path class="f1 sf" d="M40 58h16v12H40z"/></g>'},
 
 {id:"dijon-mustard",cat:"condiments",price:1,pk:"4–9 €/kg",name:{en:"Dijon mustard",fr:"Moutarde de Dijon"},latin:"Brassica juncea",
 origin:{en:"Dijon, Burgundy",fr:"Dijon, Bourgogne"},season:[],
@@ -1387,7 +1387,7 @@ fr:"Jusqu’à la fin de l’époque d’Edo, seules les familles de prêtres du
 tip:{en:"Slice it whole, leaves included, and serve it cold with rice — the leaf is where the sharpest sourness sits. Never rinse it: the water takes the surface lactic bacteria and the flavour with them.",
 fr:"Tranchez-le entier, feuilles comprises, et servez-le froid avec du riz : c’est dans la feuille que l’acidité est la plus vive. Ne le rincez jamais — l’eau emporterait les bactéries lactiques de surface et le goût avec elles."},
 pairs:["rice","sencha","sesame-oil","salt","katsuobushi","koikuchi-shoyu"],
-svg:'<ellipse class="f3 sf" cx="48" cy="18" rx="16" ry="7"/><path class="s" d="M48 46V26M48 34q-9-6-15-4M48 32q9-8 15-6"/><path class="f1 sf" d="M48 44q14 0 14 14 0 12-14 20-14-8-14-20 0-14 14-14z"/>'},
+svg:'<g transform="translate(4.08 4.25) scale(0.915)"><ellipse class="f3 sf" cx="48" cy="18" rx="16" ry="7"/><path class="s" d="M48 46V26M48 34q-9-6-15-4M48 32q9-8 15-6"/><path class="f1 sf" d="M48 44q14 0 14 14 0 12-14 20-14-8-14-20 0-14 14-14z"/></g>'},
 
 {id:"olive-taggiasca",cat:"condiments",price:3,pk:"18–30 €/kg",name:{en:"Taggiasca olive",fr:"Olive taggiasche"},latin:"Olea europaea 'Taggiasca'",
 origin:{en:"Riviera di Ponente, Liguria",fr:"Riviera di Ponente, Ligurie"},season:[],
@@ -1527,7 +1527,7 @@ fr:"Des marchands de Fuchū, aujourd’hui Shizuoka, l’ont mis au point quand 
 tip:{en:"The heat is volatile and rises through the nose: serve it cold, straight from the jar, and never cook it. A teaspoon on white fish, on grilled pork or on a slice of cheese; stirred into a hot sauce it is gone within a minute.",
 fr:"Le piquant est volatil et monte au nez : servez-le froid, sorti du bocal, et ne le cuisez jamais. Une cuillère à café sur un poisson blanc, sur du porc grillé ou sur une tranche de fromage ; fondu dans une sauce chaude, il n’en reste rien en une minute."},
 pairs:["sake-kasu","junmai-sake","rice","sea-bream","squid","butter"],
-svg:'<path class="sf" d="M28 44h40l-4 28H32z"/><path class="f2 sf" d="M31 44q6-11 17-11t17 11z"/><path class="s" d="M40 52q7-4 14 0"/><circle class="f3 sf" cx="72" cy="60" r="11"/>'},
+svg:'<g transform="translate(2.59 2.7) scale(0.946)"><path class="sf" d="M28 44h40l-4 28H32z"/><path class="f2 sf" d="M31 44q6-11 17-11t17 11z"/><path class="s" d="M40 52q7-4 14 0"/><circle class="f3 sf" cx="72" cy="60" r="11"/></g>'},
 
 {id:"white-balsamic-condiment",cat:"condiments",price:2,pk:"8–18 €/L",name:{en:"White balsamic condiment",fr:"Condiment balsamique blanc"},latin:"Vitis vinifera (condimento bianco)",
 origin:{en:"Modena & Reggio Emilia",fr:"Modène & Reggio d’Émilie"},season:[],
@@ -1627,7 +1627,7 @@ fr:"Les cuisiniers yéménites l’appellent sahawiq ; il gagne Israël en 1949 
 tip:{en:"Pound it, do not blitz it — a blender heats the coriander and turns it grey and bitter within the hour. Made cold and covered with a film of oil it keeps five days; after that the garlic dominates everything.",
 fr:"Pilez-le, ne le mixez pas : le blender chauffe la coriandre, qui vire au gris et à l’amer en moins d’une heure. Monté à froid et couvert d’un film d’huile, il tient cinq jours ; ensuite l’ail écrase tout."},
 pairs:["chili","cilantro","garlic","cardamom","lemon","chickpeas","lamb","egg"],
-svg:'<path class="f2 sf" d="M26 54h44q-3 20-16 22h-12q-13-2-16-22z"/><path class="s" d="M21 54h54"/><path class="s" d="M58 24 47 50"/><circle class="f3 sf" cx="61" cy="20" r="7"/><path class="s" d="M26 40q6-8 14-6M26 40q10 2 12-6M26 40q-2-10 6-12"/>'},
+svg:'<g transform="translate(3.98 4.15) scale(0.917)"><path class="f2 sf" d="M26 54h44q-3 20-16 22h-12q-13-2-16-22z"/><path class="s" d="M21 54h54"/><path class="s" d="M58 24 47 50"/><circle class="f3 sf" cx="61" cy="20" r="7"/><path class="s" d="M26 40q6-8 14-6M26 40q10 2 12-6M26 40q-2-10 6-12"/></g>'},
 
 {id:"moshio-salt",cat:"condiments",rare:true,price:2,pk:"50–100 €/kg",name:{en:"Moshio seaweed salt",fr:"Sel d’algues moshio"},latin:"Sargassum fulvellum",
 origin:{en:"Kamagari, Seto Inland Sea",fr:"Kamagari, mer intérieure de Seto"},season:[],

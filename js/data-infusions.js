@@ -37,7 +37,7 @@ fr:"L’île vivait du café jusqu’à ce que la rouille Hemileia vastatrix an�
 tip:{en:"It is the tea for anything served cold or set: brew double strength and cool it fast over ice rather than slowly, and it will not cloud. For a clear jelly use 2 g per 200 ml with gelatine, never a longer steep — the cloud is tannin, not concentration.",
 fr:"C’est le thé de tout ce qui se sert froid ou se prend en gelée : infuser à double dose et refroidir vite sur glace plutôt que lentement, il ne se trouble pas. Pour une gelée claire, 2 g pour 200 ml et de la gélatine, jamais une infusion plus longue : le trouble vient du tanin, pas de la concentration."},
 pairs:["lemon","mint","peach","ginger","redcurrant","sugar"],
-svg:'<path class="f1 sf" d="M33 20h30l-4 55q-1 6-11 6t-11-6z"/><path class="s" d="M35 36h26"/><path class="f2 sf" d="M39 50l10-5 8 6-10 5z"/><circle class="f3 sf" cx="66" cy="26" r="9"/><path class="s" d="M57 26h18M66 17v18"/>'},
+svg:'<g transform="translate(4.46 4.65) scale(0.907)"><path class="f1 sf" d="M33 20h30l-4 55q-1 6-11 6t-11-6z"/><path class="s" d="M35 36h26"/><path class="f2 sf" d="M39 50l10-5 8 6-10 5z"/><circle class="f3 sf" cx="66" cy="26" r="9"/><path class="s" d="M57 26h18M66 17v18"/></g>'},
 
 {id:"coffee-extract",cat:"infusions",price:2,pk:"25–50 €/L",name:{en:"Coffee extract",fr:"Extrait de café"},latin:"Coffea arabica",
 origin:{en:"French pastry kitchens",fr:"Pâtisserie française"},season:[],
@@ -227,7 +227,7 @@ fr:"Le Blocus continental prive la France de café à partir de 1806 et la racin
 tip:{en:"It has no caffeine and more body than coffee: cut the ground coffee with 15 to 30 percent chicory and the cup thickens and sweetens. Above that it turns to burnt caramel and wood, and it over-extracts fast, so pull it shorter than you would a straight coffee.",
 fr:"Sans caféine et plus corsée en bouche que le café : coupez la mouture de 15 à 30 % de chicorée et la tasse s’épaissit et se sucre. Au-delà, elle vire au caramel brûlé et au bois ; elle s’extrait vite, donc tirez plus court qu’un café seul."},
 pairs:["cassonade","cream","dark-chocolate","cassia","vergeoise","date-syrup"],
-svg:'<path class="f2 sf" d="M38 30q10-6 20 0l-5 24q-3 20-5 26-2-6-5-26z"/><path class="s" d="M45 54l-10 6M53 60l10 5M48 68l-8 5"/><path class="f1 sf" d="M58 28q10-12 18-8-2 11-12 13-6 1-6-5z"/><path class="s" d="M39 35q9 4 18 0"/>'},
+svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="f2 sf" d="M38 30q10-6 20 0l-5 24q-3 20-5 26-2-6-5-26z"/><path class="s" d="M45 54l-10 6M53 60l10 5M48 68l-8 5"/><path class="f1 sf" d="M58 28q10-12 18-8-2 11-12 13-6 1-6-5z"/><path class="s" d="M39 35q9 4 18 0"/></g>'},
 
 {id:"rooibos",cat:"infusions",price:1,pk:"25–50 €/kg",name:{en:"Rooibos",fr:"Rooibos"},latin:"Aspalathus linearis",
 origin:{en:"Cederberg mountains, South Africa",fr:"Montagnes du Cederberg, Afrique du Sud"},season:[],
@@ -247,7 +247,7 @@ fr:"La feuille est fixée au wok, séchée au soleil et non au four, puis étuv�
 tip:{en:"Rinse the broken cake once with boiling water and throw that first pour away, then infuse in short bursts of ten to twenty seconds. Its astringency is the reason to braise fatty pork in it — a litre of strong sheng replacing a third of the stock cuts the fat the way a dry wine would.",
 fr:"Rincer la galette brisée une fois à l’eau bouillante et jeter ce premier jus, puis infuser par courtes passes de dix à vingt secondes. Son astringence en fait un liquide de braisage pour le porc gras : un litre de sheng corsé à la place d’un tiers du bouillon coupe le gras comme le ferait un vin sec."},
 pairs:["apricot","dried-chrysanthemum-flower","ginger","pork-belly","jujube","dried-fig"],
-svg:'<circle class="f1 sf" cx="48" cy="50" r="30"/><circle class="f2 sf" cx="48" cy="50" r="15"/><circle class="dot" cx="48" cy="50" r="3.5"/><path class="s" d="M26 36q14 6 30-1M28 66q16-5 33 2"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><circle class="f1 sf" cx="48" cy="50" r="30"/><circle class="f2 sf" cx="48" cy="50" r="15"/><circle class="dot" cx="48" cy="50" r="3.5"/><path class="s" d="M26 36q14 6 30-1M28 66q16-5 33 2"/></g>'},
 
 {id:"shou-puerh",cat:"infusions",price:2,pk:"60–150 €/kg",name:{en:"Shou pu-erh",fr:"Pu-erh cuit (shou)"},latin:"Camellia sinensis var. assamica",
 origin:{en:"Menghai and Kunming, Yunnan",fr:"Menghai et Kunming, Yunnan"},season:[],

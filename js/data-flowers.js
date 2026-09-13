@@ -37,7 +37,7 @@ fr:"Linné a nommé le genre Tropaeolum d’après le trophée romain, ce mât o
 tip:{en:"Pick the pods green and firm and brine them for a week for something very close to a caper. Leaf heat tracks the plant's thirst — a nasturtium in dry soil is markedly hotter than the same plant watered.",
 fr:"Cueillez les capsules encore vertes et fermes et laissez-les une semaine en saumure : on obtient quelque chose de très proche de la câpre. L’ardeur des feuilles suit la soif de la plante — une capucine en terre sèche pique nettement plus que la même arrosée."},
 pairs:["olive-oil","goat-cheese","cucumber","lemon","radish","white-wine-vinegar","egg","butter"],
-svg:'<circle class="f2 sf" cx="37" cy="58" r="20"/><path class="s" d="M37 58L23 48M37 58l3-19M37 58l17-8M37 58l15 11M37 58l-6 19M37 58l-14 6"/><path class="f1 sf" d="M60 32q11-7 15 0 4 7-5 11-9 4-13-3-2-4 3-8z"/><path class="s" d="M75 32l5-5"/>'},
+svg:'<g transform="translate(3.65 3.8) scale(0.924)"><circle class="f2 sf" cx="37" cy="58" r="20"/><path class="s" d="M37 58L23 48M37 58l3-19M37 58l17-8M37 58l15 11M37 58l-6 19M37 58l-14 6"/><path class="f1 sf" d="M60 32q11-7 15 0 4 7-5 11-9 4-13-3-2-4 3-8z"/><path class="s" d="M75 32l5-5"/></g>'},
 
 {id:"sweet-violet",cat:"flowers",price:2,pk:"5–10 €/barquette (20 g)",name:{en:"Sweet violet",fr:"Violette"},latin:"Viola odorata",
 origin:{en:"Toulouse and its glasshouses",fr:"Toulouse et ses serres"},season:[2,3],
@@ -47,7 +47,7 @@ fr:"Son parfum tient aux ionones, qui anesthésient brièvement les récepteurs 
 tip:{en:"Crystallise them the day they are picked; a cut violet loses its perfume within about a day. Brush with barely beaten egg white, dip in caster sugar and dry at 50 °C rather than in open air, or they grey.",
 fr:"Confisez-les le jour même de la cueillette : une violette coupée perd son parfum en une journée environ. Passez-les au blanc d'œuf à peine battu, roulez-les dans le sucre semoule et séchez à 50 °C plutôt qu'à l'air libre, sinon elles grisent."},
 pairs:["sugar","dark-chocolate","cream","raspberry","almond","honey","blackcurrant"],
-svg:'<circle class="f3 sf" cx="40" cy="32" r="9"/><circle class="f3 sf" cx="57" cy="32" r="9"/><circle class="f3 sf" cx="32" cy="47" r="9"/><circle class="f3 sf" cx="64" cy="47" r="9"/><circle class="f2 sf" cx="48" cy="57" r="9"/><circle class="dot" cx="48" cy="42" r="3"/>'},
+svg:'<g transform="translate(-6.96 -7.25) scale(1.145)"><path class="f3 sf" d="M40 34q1-10 8-10t8 9q0 8-8 8-8 0-8-7z"/><path class="f3 sf" d="M24 46q5-9 12-5 7 4 4 11-4 7-11 3-7-4-5-9z"/><path class="f3 sf" d="M72 46q-5-9-12-5-7 4-4 11 4 7 11 3 7-4 5-9z"/><path class="f3 sf" d="M32 62q3-9 11-7 8 3 6 11-3 8-11 6-8-3-6-10z"/><path class="f3 sf" d="M64 62q-3-9-11-7-8 3-6 11 3 8 11 6 8-3 6-10z"/><path class="dot" d="M44 48q1-4 4-4t4 4q0 4-4 4t-4-4z"/></g>'},
 
 {id:"calendula",cat:"flowers",price:2,pk:"6–12 €/100 g",name:{en:"Calendula",fr:"Souci officinal"},latin:"Calendula officinalis",
 origin:{en:"Southern Europe",fr:"Europe du Sud"},season:[6,7,8,9,10],

@@ -57,7 +57,7 @@ fr:"L’orge germée est touraillée, puis empâtée pour que ses propres enzyme
 tip:{en:"Check whether it is diastatic before buying: the enzyme-active kind is dosed at 0.5 to 1 % of flour weight and will slacken a dough badly beyond that, while the deactivated kind is only flavour and colour. Warm the jar in water before weighing, since cold it will not leave the spoon.",
 fr:"Vérifier s’il est diastasique avant d’acheter : la version enzymatique se dose à 0,5 à 1 % du poids de farine et relâche fortement la pâte au-delà, tandis que la version inactivée n’apporte que du goût et de la couleur. Tiédir le pot au bain-marie avant de peser : froid, il ne quitte pas la cuillère."},
 pairs:["flour-t65","rye-flour","yeast","sesame","tahini","oats"],
-svg:'<path class="f2 sf" d="M55 44h19v28a5 5 0 0 1-5 5H60a5 5 0 0 1-5-5z"/><path class="s" d="M53 40h23v4H53z"/><path class="f1 sf" d="M30 30q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 50q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 70q7 4 7 10t-7 6q-7-2-7-6t7-10z"/><path class="s" d="M30 30v-8M24 34l-3-7M36 34l3-7"/>'},
+svg:'<g transform="translate(2.59 2.7) scale(0.946)"><path class="f2 sf" d="M55 44h19v28a5 5 0 0 1-5 5H60a5 5 0 0 1-5-5z"/><path class="s" d="M53 40h23v4H53z"/><path class="f1 sf" d="M30 30q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 50q7 4 7 10t-7 8q-7-4-7-8t7-10zM30 70q7 4 7 10t-7 6q-7-2-7-6t7-10z"/><path class="s" d="M30 30v-8M24 34l-3-7M36 34l3-7"/></g>'},
 
 {id:"bee-pollen",cat:"sweet",price:2,pk:"30–60 €/kg",name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
 origin:{en:"Hives, spring and summer flowering",fr:"Ruches, floraisons de printemps"},season:[4,5,6,7],
@@ -227,7 +227,7 @@ fr:"Ouvrez une cabosse criollo et les fèves sont blanches ou violet pâle, non 
 tip:{en:"Roast it low, around 110–120 °C, well under what a forastero blend takes: there is no astringency to burn off, and the nut-and-caramel notes flatten above that. If you are only melting it, keep the bowl under 45 °C.",
 fr:"Torréfiez bas, vers 110–120 °C, bien en dessous de ce qu’encaisse un assemblage forastero : il n’y a pas d’astringence à brûler, et les notes de noisette et de caramel s’effacent au-delà. Pour une simple fonte, ne dépassez pas 45 °C."},
 pairs:["hazelnut","vanilla","butter","cream","almond","honey","orange","pistachio"],
-svg:'<path class="f2 sf" d="M48 16q16 10 18 32T48 84Q34 70 30 48t18-32z"/><path class="s" d="M40 24q-5 24 2 52M48 18v64M56 24q5 24-2 52"/><path class="s" d="M48 16q2-6 8-8"/>'},
+svg:'<g transform="translate(4.66 4.85) scale(0.903)"><path class="f2 sf" d="M48 16q16 10 18 32T48 84Q34 70 30 48t18-32z"/><path class="s" d="M40 24q-5 24 2 52M48 18v64M56 24q5 24-2 52"/><path class="s" d="M48 16q2-6 8-8"/></g>'},
 
 {id:"dark-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Dark chocolate",fr:"Chocolat noir"},latin:"Theobroma cacao",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
@@ -737,7 +737,7 @@ fr:"Les jujubiers du Wadi Do’an, dans l’Hadramaout, ne fleurissent qu’une 
 tip:{en:"It is thick enough to hold a spoon upright; warm the jar in your hand, never on the stove, or the butterscotch depth that justifies the price goes flat. Eat it on its own, on labneh or with dates — baked into a pastry it disappears under the sugar.",
 fr:"Il est assez épais pour tenir la cuillère droite : réchauffez le pot dans la main, jamais sur le feu, sinon la profondeur caramel-beurre qui justifie son prix s’efface. Mangez-le nature, sur du labneh ou avec des dattes — noyé dans une pâtisserie, il ne sert à rien."},
 pairs:["date","almond","yogurt","cardamom","tahini","walnut"],
-svg:'<path class="f3 sf" d="M42 28h12v6q12 5 12 20 0 18-18 18t-18-18q0-15 12-20z"/><path class="f1 sf" d="M38 28h20v5H38z"/><path class="s" d="M38 58q10 6 20 0"/><path class="s" d="M58 24q10-6 12-14-12 0-12 14z"/>'},
+svg:'<g transform="translate(7.15 7.45) scale(0.851)"><path class="f3 sf" d="M42 28h12v6q12 5 12 20 0 18-18 18t-18-18q0-15 12-20z"/><path class="f1 sf" d="M38 28h20v5H38z"/><path class="s" d="M38 58q10 6 20 0"/><path class="s" d="M58 24q10-6 12-14-12 0-12 14z"/></g>'},
 
 {id:"sorghum-syrup",cat:"sweet",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
 origin:{en:"Upland American South",fr:"Sud appalachien des États-Unis"},season:[9,10],
@@ -807,7 +807,7 @@ fr:"Fabriqué à Tokushima et Kagawa à partir d’une canne locale fine, le chi
 tip:{en:"The crystal is fine enough to melt on the tongue and heat destroys the point of it: keep it for higashi, dusted over fruit or whisked into cold cream, never boiled into a syrup. If you have to substitute, icing sugar comes closer than caster.",
 fr:"Son cristal est assez fin pour fondre sur la langue, et la chaleur en supprime tout l’intérêt : réservez-le aux higashi, saupoudré sur un fruit ou fouetté dans une crème froide, jamais cuit en sirop. À défaut, le sucre glace en approche mieux que le sucre semoule."},
 pairs:["matcha","adzuki","kinako","black-sesame","yuzu","sencha"],
-svg:'<circle class="f1 sf" cx="48" cy="34" r="9"/><circle class="f1 sf" cx="64" cy="46" r="9"/><circle class="f1 sf" cx="58" cy="64" r="9"/><circle class="f1 sf" cx="38" cy="64" r="9"/><circle class="f1 sf" cx="32" cy="46" r="9"/><circle class="f3 sf" cx="48" cy="52" r="6"/>'},
+svg:'<path class="f1 sf" d="M28 30q20-4 40 0 4 20 0 38-20 4-40 0-4-19 0-38z"/><path class="s" d="M48 38q6 4 6 10t-6 10q-6-4-6-10t6-10z" stroke-width="1.8"/><path class="s" d="M38 48q4-6 10-6M58 48q-4-6-10-6" stroke-width="1.5"/><path class="dot" d="M26 70q4-3 7 0t-3 5-5-1 1-4z"/><path class="dot" d="M38 76q4-3 7 0t-3 5-5-1 1-4z"/><path class="dot" d="M64 72q4-3 7 0t-3 5-5-1 1-4z"/>'},
 
 {id:"white-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"White chocolate",fr:"Chocolat blanc"},latin:"Theobroma cacao — beurre de cacao",
 origin:{en:"Switzerland, 1930s",fr:"Suisse, années 1930"},season:[],

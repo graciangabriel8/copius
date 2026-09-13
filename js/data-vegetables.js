@@ -147,7 +147,7 @@ fr:"L’amertume vient de la momordicine et constitue toute la raison d’être 
 tip:{en:"Halve, scrape out the seeds and the spongy core — the harshest part — then slice, salt at about a tablespoon per large melon, wait twenty minutes and press dry. That takes the edge off without removing the point of it.",
 fr:"Fendez, retirez les graines et la moelle spongieuse, la partie la plus âpre, puis émincez, salez à raison d’une cuillère à soupe par gros fruit, attendez vingt minutes et pressez. Cela adoucit l’attaque sans supprimer ce qui fait l’intérêt du légume."},
 pairs:["black-bean","egg","pork","garlic","douchi","turmeric","chili","ginger"],
-svg:'<path class="f2 sf" d="M44 18q10 4 12 18 3 20 0 34-2 12-8 12t-8-12q-3-14 0-34 2-14 4-18z"/><path class="s" d="M40 26q6 4 12 0M39 40q7 5 14 0M39 56q7 5 14 0M40 70q6 4 12 0"/><path class="s" d="M37 32q-3 2 0 4M36 46q-3 2 0 4M36 60q-3 2 0 4M57 34q3 2 0 4M58 48q3 2 0 4M57 62q3 2 0 4"/><path class="s" d="M44 18q0-6-5-8"/>'},
+svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="f2 sf" d="M44 18q10 4 12 18 3 20 0 34-2 12-8 12t-8-12q-3-14 0-34 2-14 4-18z"/><path class="s" d="M40 26q6 4 12 0M39 40q7 5 14 0M39 56q7 5 14 0M40 70q6 4 12 0"/><path class="s" d="M37 32q-3 2 0 4M36 46q-3 2 0 4M36 60q-3 2 0 4M57 34q3 2 0 4M58 48q3 2 0 4M57 62q3 2 0 4"/><path class="s" d="M44 18q0-6-5-8"/></g>'},
 
 {id:"respountchous",cat:"vegetables",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Black bryony shoots",fr:"Respountchous"},latin:"Dioscorea communis",
 origin:{en:"Hedgerows of the Tarn and Aveyron",fr:"Haies du Tarn et de l’Aveyron"},season:[3,4,5],
@@ -247,7 +247,7 @@ fr:"Les textes japonais mentionnent le gobō comme aliment dès l’époque de H
 tip:{en:"Scrape the skin with the back of a knife rather than peeling — the flavour sits just underneath — and drop each piece straight into acidulated water, because the cut surface browns within a minute. Twenty minutes of simmering is the minimum before it stops tasting woody.",
 fr:"Grattez la peau au dos du couteau plutôt que de l’éplucher, le goût est juste dessous, et jetez chaque morceau aussitôt dans une eau citronnée : la coupe brunit en une minute. Comptez vingt minutes de cuisson au minimum avant qu’elle cesse d’être ligneuse."},
 pairs:["carrot","sesame-oil","soy-sauce","hon-mirin","sesame","chicken"],
-svg:'<path class="f2 sf" d="M22 76q14-16 30-32t26-24q4 2 2 6-10 10-26 26T26 80z"/><path class="s" d="M40 58l-8-2M52 46l-8-3M64 34l-7-3M46 52l7 5M58 40l6 4"/><path class="s" d="M76 22q4-4 8-2"/>'},
+svg:'<g transform="translate(8.35 8.7) scale(0.826)"><path class="f2 sf" d="M22 76q14-16 30-32t26-24q4 2 2 6-10 10-26 26T26 80z"/><path class="s" d="M40 58l-8-2M52 46l-8-3M64 34l-7-3M46 52l7 5M58 40l6 4"/><path class="s" d="M76 22q4-4 8-2"/></g>'},
 
 {id:"butternut",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Butternut squash",fr:"Butternut"},latin:"Cucurbita moschata",
 origin:{en:"Massachusetts, 1944",fr:"Massachusetts, 1944"},season:[9,10,11,12,1],
@@ -317,7 +317,7 @@ fr:"Les variétés amères portent des hétérosides cyanogènes dans toute leur
 tip:{en:"Peel deep, since the toxin sits mostly in the thick pink underskin, split the root and pull out the woody central cord, then boil hard in plenty of water until it splits and turns translucent. Never microwave it and never cook it gently: a genuine rolling boil drives the cyanide off, warmth does not.",
 fr:"Épluchez profond, la toxine logeant surtout dans l’épaisse sous-peau rosée, fendez la racine et ôtez le cordon ligneux central, puis faites bouillir à gros bouillons dans beaucoup d’eau jusqu’à ce qu’elle éclate et devienne translucide. Jamais au micro-ondes ni à feu doux : c’est l’ébullition franche qui chasse le cyanure, pas la chaleur."},
 pairs:["coconut-milk","lime","chili","garlic","peanut","pork"],
-svg:'<path class="f3 sf" d="M34 16q10-3 14 8l14 38q4 12-6 15t-14-8L26 30q-3-11 8-14z"/><path class="f1 sf" d="M34 16q10-3 14 8-10 5-14-8z"/><path class="s" d="M36 32l14 34M44 28l13 32"/><circle class="f1 sf" cx="70" cy="70" r="8"/><circle class="dot" cx="70" cy="70" r="2"/>'},
+svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="f3 sf" d="M34 16q10-3 14 8l14 38q4 12-6 15t-14-8L26 30q-3-11 8-14z"/><path class="f1 sf" d="M34 16q10-3 14 8-10 5-14-8z"/><path class="s" d="M36 32l14 34M44 28l13 32"/><circle class="f1 sf" cx="70" cy="70" r="8"/><circle class="dot" cx="70" cy="70" r="2"/></g>'},
 
 {id:"castelfranco-chicory",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Castelfranco chicory",fr:"Chicorée de Castelfranco"},latin:"Cichorium intybus",
 origin:{en:"Castelfranco Veneto, Italy",fr:"Castelfranco Veneto, Italie"},season:[11,12,1,2],
@@ -497,7 +497,7 @@ fr:"Le nom vient du crapaud : la peau se fend en plaques sombres et rugueuses à
 tip:{en:"Roast it whole and unpeeled, buried in coarse salt at 180°C for an hour and a half, or straight in the embers; the skin turns to a shell you crack off. Boiling is the one thing to avoid — the dry flesh takes on water and everything that justifies the price goes into the pan.",
 fr:"Rôtissez-la entière et non pelée, enfouie dans une croûte de gros sel à 180 °C pendant une heure et demie, ou directement sous la cendre : la peau devient une coque que l’on casse. À éviter absolument, la cuisson à l’eau — la chair sèche se gorge de liquide et tout ce qui justifie son prix part dans la casserole."},
 pairs:["fleur-de-sel-guerande","goat-cheese","walnut","horseradish","butter","sherry-vinegar"],
-svg:'<path class="f3 sf" d="M36 24q12-6 24 0 2 18-4 34t-8 20q-2-4-8-20t-4-34z"/><path class="s" d="M36 34q12 5 24 0M38 46q10 5 20 0M40 58q8 4 16 0M42 70q6 3 12 0"/><path class="s" d="M46 30v46M52 28v44"/><path class="f2 sf" d="M42 24q-8-9-5-14 8 4 10 14zM54 24q8-9 5-14-8 4-10 14z"/><path class="s" d="M48 78q2 6 1 10"/>'},
+svg:'<g transform="translate(3.26 3.4) scale(0.932)"><path class="f3 sf" d="M36 24q12-6 24 0 2 18-4 34t-8 20q-2-4-8-20t-4-34z"/><path class="s" d="M36 34q12 5 24 0M38 46q10 5 20 0M40 58q8 4 16 0M42 70q6 3 12 0"/><path class="s" d="M46 30v46M52 28v44"/><path class="f2 sf" d="M42 24q-8-9-5-14 8 4 10 14zM54 24q8-9 5-14-8 4-10 14z"/><path class="s" d="M48 78q2 6 1 10"/></g>'},
 
 {id:"crosnes",cat:"vegetables",rare:true,price:2,pk:"14–25 €/kg",name:{en:"Crosnes",fr:"Crosne"},latin:"Stachys affinis",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[1,2,11,12],
@@ -677,7 +677,7 @@ fr:"On arrache la racine à son sixième automne, quand la teneur en ginsénosid
 tip:{en:"Scrub it, do not peel it — the aroma sits in the skin. Simmered whole in samgyetang, one root per bird for an hour is plenty; sliced raw into honey it is startlingly bitter, so keep the slices paper-thin.",
 fr:"Brossez-la, ne la pelez pas : l’arôme est dans la peau. En samgyetang, une racine entière par volaille et une heure de frémissement suffisent largement ; crue et tranchée dans du miel, elle est franchement amère, alors coupez des lamelles très fines."},
 pairs:["chicken","jujube","garlic","glutinous-rice","honey","chestnut"],
-svg:'<path class="f2 sf" d="M48 22q7 0 8 8l-2 12q6 4 6 12t-6 12q0 10-6 16-6-6-6-16-6-4-6-12t6-12l-2-12q1-8 8-8z"/><path class="s" d="M40 54q-10 6-14 16M56 54q10 6 14 16M42 66q-6 6-8 14M54 66q6 6 8 14"/><path class="s" d="M46 21q-2-8 2-13M50 21q2-8-2-13"/>'},
+svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f2 sf" d="M48 22q7 0 8 8l-2 12q6 4 6 12t-6 12q0 10-6 16-6-6-6-16-6-4-6-12t6-12l-2-12q1-8 8-8z"/><path class="s" d="M40 54q-10 6-14 16M56 54q10 6 14 16M42 66q-6 6-8 14M54 66q6 6 8 14"/><path class="s" d="M46 21q-2-8 2-13M50 21q2-8-2-13"/></g>'},
 
 {id:"frisee",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Frisée",fr:"Frisée"},latin:"Cichorium endivia var. crispum",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[9,10,11,12],
@@ -797,7 +797,7 @@ fr:"Tom Wagner a croisé quatre variétés dans son jardin d’Everett, dans l�
 tip:{en:"Judge ripeness by feel, not colour — it stays green, so look for slight give under the thumb and an amber flush at the blossom end. Salt it later than a red tomato: the acidity already pulls water and it goes slack within ten minutes.",
 fr:"Jugez la maturité au toucher, pas à la couleur : elle reste verte, on cherche donc une légère souplesse sous le pouce et une nuance ambrée côté fleur. Salez-la plus tard qu’une tomate rouge — son acidité fait déjà sortir l’eau et elle s’avachit en dix minutes."},
 pairs:["olive-oil","basil","goat-cheese","shallot","sherry-vinegar","cucumber","tarragon","fleur-de-sel-guerande"],
-svg:'<circle class="f2 sf" cx="48" cy="56" r="26"/><path class="s" d="M28 40q6 9 4 23M40 33q4 15 2 31M56 33q-4 15-2 31M68 40q-6 9-4 23"/><path class="f3 sf" d="M48 30q-10-2-14-8 6 0 10 2-2-6 4-8 6 2 4 8 4-2 10-2-4 6-14 8z"/>'},
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><circle class="f2 sf" cx="48" cy="56" r="26"/><path class="s" d="M28 40q6 9 4 23M40 33q4 15 2 31M56 33q-4 15-2 31M68 40q-6 9-4 23"/><path class="f3 sf" d="M48 30q-10-2-14-8 6 0 10 2-2-6 4-8 6 2 4 8 4-2 10-2-4 6-14 8z"/></g>'},
 
 {id:"grey-shallot",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"Grey shallot",fr:"Échalote grise"},latin:"Allium oschaninii",
 origin:{en:"Central Asian foothills",fr:"Piémonts d’Asie centrale"},season:[8,9,10,11,12,1],
@@ -1007,7 +1007,7 @@ fr:"Il figure sur la table du Nouvel An pour un jeu de mots : le corme pousse un
 tip:{en:"Peel the corm into six flat faces up to the sprout, leaving three centimetres of shoot standing, then soak it in water with rice bran or a little vinegar to draw out the bitterness. Simmer it in dashi, sugar and light soy at a bare tremble: a real boil knocks the sprout off.",
 fr:"Pelez le corme en six faces plates jusqu’au germe, en laissant trois centimètres de pousse debout, puis dégorgez-le à l’eau additionnée de son de riz ou de vinaigre pour ôter l’amertume. Mijotez ensuite au dashi, sucre et sauce soja claire, à peine frémissant : une vraie ébullition détache le germe."},
 pairs:["kombu","katsuobushi","hon-mirin","soy-sauce","sugar","yuzu"],
-svg:'<path class="f2 sf" d="M48 42q18 1 18 19t-18 21-18-21 18-19z"/><path class="s" d="M48 42q-3-8 0-14M34 58q6 7 14 7t16-7"/><path class="f1 sf" d="M48 28q-6-16 0-22 6 6 0 22z"/><path class="f3 sf" d="M70 42q8-14 2-20-10 8-8 20z"/>'},
+svg:'<g transform="translate(5.62 5.85) scale(0.883)"><path class="f2 sf" d="M48 42q18 1 18 19t-18 21-18-21 18-19z"/><path class="s" d="M48 42q-3-8 0-14M34 58q6 7 14 7t16-7"/><path class="f1 sf" d="M48 28q-6-16 0-22 6 6 0 22z"/><path class="f3 sf" d="M70 42q8-14 2-20-10 8-8 20z"/></g>'},
 
 {id:"mache",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Lamb’s lettuce",fr:"Mâche"},latin:"Valerianella locusta",
 origin:{en:"Europe",fr:"Europe"},season:[10,11,12,1,2,3],
@@ -1207,7 +1207,7 @@ fr:"Le Japon se partage à son sujet : à l’est, on butte la terre le long de 
 tip:{en:"Char the whole white shaft black over a flame or under a grill, then peel the burnt layers away; the centre inside will have gone to jelly. Sliced raw as a garnish, soak the shreds ten minutes in iced water to lose the sulphur bite.",
 fr:"Carbonisez le fût entier à la flamme ou sous le gril, puis pelez les couches brûlées : le cœur aura tourné à la gelée. Émincé cru en garniture, faites tremper les filaments dix minutes à l’eau glacée pour perdre le mordant soufré."},
 pairs:["miso","soy-sauce","chicken","pork","ginger","sesame-oil","katsuobushi","hon-mirin"],
-svg:'<path class="f1 sf" d="M40 84V44h16v40z"/><path class="f3 sf" d="M41 46q-7-24-3-32 7 10 8 32zM55 46q7-24 5-32-9 10-10 32z"/><path class="s" d="M46 48v34M52 48v34M43 84l-3 7M53 84l3 7"/>'},
+svg:'<g transform="translate(3.65 3.8) scale(0.924)"><path class="f1 sf" d="M40 84V44h16v40z"/><path class="f3 sf" d="M41 46q-7-24-3-32 7 10 8 32zM55 46q7-24 5-32-9 10-10 32z"/><path class="s" d="M46 48v34M52 48v34M43 84l-3 7M53 84l3 7"/></g>'},
 
 {id:"nettle",cat:"vegetables",price:1,pk:"8–15 €/kg",name:{en:"Nettle",fr:"Ortie"},latin:"Urtica dioica",
 origin:{en:"Temperate hedgerows",fr:"Haies et friches tempérées"},season:[3,4,5],
@@ -1617,7 +1617,7 @@ fr:"Rocambole est un mot allemand francisé, Rockenbolle, « bulbe de seigle »,
 tip:{en:"Pickle the bulbils in a light vinegar brine and serve them whole like capers, at the end of cooking. Cut the scapes while they are still curled - once the stem has straightened it is fibrous.",
 fr:"Confisez les bulbilles dans une saumure vinaigrée légère et servez-les entières comme des câpres, en fin de cuisson. Coupez les hampes tant qu'elles sont encore enroulées : une fois la tige redressée, elle est filandreuse."},
 pairs:["butter","olive-oil","potato","egg","cream","lemon","parsley","goat-cheese"],
-svg:'<path class="s" d="M48 80q0-16 8-24t-4-18"/><ellipse class="f2 sf" cx="52" cy="26" rx="14" ry="13"/><circle class="dot" cx="46" cy="23" r="2.5"/><circle class="dot" cx="57" cy="22" r="2.5"/><circle class="dot" cx="51" cy="32" r="2.5"/>'},
+svg:'<g transform="translate(2.93 3.05) scale(0.939)"><path class="s" d="M48 80q0-16 8-24t-4-18"/><ellipse class="f2 sf" cx="52" cy="26" rx="14" ry="13"/><circle class="dot" cx="46" cy="23" r="2.5"/><circle class="dot" cx="57" cy="22" r="2.5"/><circle class="dot" cx="51" cy="32" r="2.5"/></g>'},
 
 {id:"rock-samphire",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Rock samphire",fr:"Criste marine"},latin:"Crithmum maritimum",
 origin:{en:"Atlantic and Mediterranean sea cliffs",fr:"Falaises atlantiques et méditerranéennes"},season:[6,7,8,9],
@@ -1667,7 +1667,7 @@ fr:"Dès 1828, des cultivateurs bretons traversaient la Manche pour le vendre en
 tip:{en:"Braise it whole, split through the root, in butter and a little cider - it keeps its shape where a yellow onion would fall apart. It is a poor keeper: bought in autumn it will not see out the spring.",
 fr:"Braisez-le entier, fendu par la racine, au beurre et à un peu de cidre : il tient sa forme là où un oignon jaune se déferait. Il se garde mal — acheté à l'automne, il ne passera pas le printemps."},
 pairs:["beurre-demi-sel","cider-vinegar","potato","mackerel","cream","thyme","pork","bay-leaf"],
-svg:'<path class="s" d="M20 20h56"/><path class="f2 sf" d="M36 26q12 0 12 15t-12 17-12-17 12-15z"/><path class="f2 sf" d="M62 30q11 0 11 14t-11 16-11-16 11-14z"/><path class="s" d="M36 26v-6M62 30v-10M31 36q4 14 5 22M67 40q-4 12-5 20"/>'},
+svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="s" d="M20 20h56"/><path class="f2 sf" d="M36 26q12 0 12 15t-12 17-12-17 12-15z"/><path class="f2 sf" d="M62 30q11 0 11 14t-11 16-11-16 11-14z"/><path class="s" d="M36 26v-6M62 30v-10M31 36q4 14 5 22M67 40q-4 12-5 20"/></g>'},
 
 {id:"salsify",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Salsify",fr:"Salsifis"},latin:"Tragopogon porrifolius",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,2,10,11,12],
@@ -1957,7 +1957,7 @@ fr:"Son nom chinois repose sur le caractère qui signifie s’affaisser : le tat
 tip:{en:"The spoon-shaped leaves are thicker than mizuna and take heat well, but unevenly: put the ribs in the pan thirty seconds before the leaves, or the leaves go grey while the ribs are still raw. Dress a raw salad at the table — dressed early, the rosettes weep.",
 fr:"Les feuilles en cuillère sont plus épaisses que celles du mizuna et supportent bien la chaleur, mais inégalement : mettez les côtes à la poêle trente secondes avant les feuilles, sinon les feuilles grisent quand les côtes sont encore crues. En salade, assaisonnez à table — assaisonnées à l’avance, les rosettes rendent leur eau."},
 pairs:["sesame-oil","soy-sauce","ginger","rice-vinegar","garlic","shiitake","egg"],
-svg:'<path class="f2 sf" d="M48 20q8 0 10 6 8-4 13 2t1 13q7 3 6 10t-8 9q2 8-4 12t-13-1q-3 6-10 6t-10-6q-7 5-13 1t-4-12q-7-2-8-9t6-10q-6-7-1-13t13-2q2-6 10-6z"/><path class="f1 sf" d="M48 34q6 0 8 5t6 3 4 8-2 8-8 4-8 3-8-3-8-4-2-8 4-8 8-3z"/><circle class="dot" cx="48" cy="50" r="2.5"/>'},
+svg:'<g transform="translate(3.36 3.5) scale(0.93)"><path class="f2 sf" d="M48 20q8 0 10 6 8-4 13 2t1 13q7 3 6 10t-8 9q2 8-4 12t-13-1q-3 6-10 6t-10-6q-7 5-13 1t-4-12q-7-2-8-9t6-10q-6-7-1-13t13-2q2-6 10-6z"/><path class="f1 sf" d="M48 34q6 0 8 5t6 3 4 8-2 8-8 4-8 3-8-3-8-4-2-8 4-8 8-3z"/><circle class="dot" cx="48" cy="50" r="2.5"/></g>'},
 
 {id:"tomatillo",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Tomatillo",fr:"Tomatille"},latin:"Physalis philadelphica",
 origin:{en:"Mexico",fr:"Mexique"},season:[7,8,9,10],
@@ -2037,7 +2037,7 @@ fr:"Le japonais a une expression pour ce qui est grand et bon à rien — udo no
 tip:{en:"Peel it thickly and drop the strips straight into water with a splash of rice vinegar — a cut face browns within a minute in air. The peel is not waste: shredded and fried as kinpira, it is the more interesting half of the vegetable.",
 fr:"Épluchez épais et jetez aussitôt les bâtonnets dans de l’eau vinaigrée au vinaigre de riz — à l’air, la coupe brunit en une minute. La peau n’est pas un déchet : taillée en fils et sautée en kinpira, c’est la moitié la plus intéressante du légume."},
 pairs:["rice-vinegar","miso","sesame","kombu","yuzu","karashi"],
-svg:'<path class="f1 sf" d="M42 78q-4-2-4-8V34h12v36q0 6-4 8z"/><path class="s" d="M42 34V22M50 34V22"/><path class="f2 sf" d="M46 22q-8-8-14-8 2 10 10 12zM50 22q8-10 16-10-2 12-12 14z"/><path class="s" d="M38 50h12M38 62h12"/>'},
+svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f1 sf" d="M42 78q-4-2-4-8V34h12v36q0 6-4 8z"/><path class="s" d="M42 34V22M50 34V22"/><path class="f2 sf" d="M46 22q-8-8-14-8 2 10 10 12zM50 22q8-10 16-10-2 12-12 14z"/><path class="s" d="M38 50h12M38 62h12"/></g>'},
 
 {id:"ulluco",cat:"vegetables",rare:true,price:3,pk:"20–40 €/kg",name:{en:"Ulluco",fr:"Ulluque"},latin:"Ullucus tuberosus",
 origin:{en:"Andes",fr:"Andes"},season:[10,11,12],
@@ -2107,7 +2107,7 @@ fr:"Les États-Unis le classent parmi les mauvaises herbes nuisibles fédérales
 tip:{en:"Cut the stems away from the leaves and give the stems a forty-second head start in the wok. Thrown in together, the leaves are grey slime before the stems have lost their raw taste.",
 fr:"Séparez les tiges des feuilles et donnez quarante secondes d’avance aux tiges dans le wok. Jetées ensemble, les feuilles sont en bouillie grise avant que la tige ait perdu son goût cru."},
 pairs:["garlic","chili","fish-sauce","shrimp-paste","sesame-oil","lime"],
-svg:'<path class="s" d="M24 78q15-4 23-15 8-11 23-15"/><path class="f2 sf" d="M44 38q7 7 7 17-3 6-7 6t-7-6q0-10 7-17zM37 59q-6 3-7 9 7 1 9-5zM51 59q6 3 7 9-7 1-9-5z"/><path class="f1 sf" d="M66 24q7 7 7 17-3 6-7 6t-7-6q0-10 7-17z"/><circle class="s" cx="24" cy="78" r="4"/>'},
+svg:'<g transform="translate(4.37 4.55) scale(0.909)"><path class="s" d="M24 78q15-4 23-15 8-11 23-15"/><path class="f2 sf" d="M44 38q7 7 7 17-3 6-7 6t-7-6q0-10 7-17zM37 59q-6 3-7 9 7 1 9-5zM51 59q6 3 7 9-7 1-9-5z"/><path class="f1 sf" d="M66 24q7 7 7 17-3 6-7 6t-7-6q0-10 7-17z"/><circle class="s" cx="24" cy="78" r="4"/></g>'},
 
 {id:"watercress",cat:"vegetables",price:1,pk:"6–10 €/kg",name:{en:"Watercress",fr:"Cresson"},latin:"Nasturtium officinale",
 origin:{en:"Europe & Central Asia",fr:"Europe & Asie centrale"},season:[3,4,5,9,10,11],

@@ -17,7 +17,7 @@ fr:"Chaque meule est frottée pendant des mois d’affinage avec une saumure d�
 tip:{en:"Eat the rind — it is where the Sulz is, and the paste alone tastes like an ordinary mountain cheese. Melted it bullies everything around it, so cut a gratin half and half with Gruyère rather than letting it stand on its own.",
 fr:"Mangez la croûte : c’est là qu’est la Sulz, et la pâte seule a le goût d’un fromage de montagne quelconque. Fondu, il écrase tout ce qui l’entoure — coupez un gratin moitié appenzeller, moitié gruyère plutôt que de le laisser seul."},
 pairs:["potato","onion","cider-vinegar","black-pepper","rye","apple","cumin","pear"],
-svg:'<circle class="f2 sf" cx="44" cy="56" r="20"/><path class="s" d="M30 48q14 8 28 0"/><rect class="f3 sf" x="58" y="26" width="12" height="9" rx="2" transform="rotate(20 64 30)"/><path class="s" d="M68 26l6-8"/>'},
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><circle class="f2 sf" cx="44" cy="56" r="20"/><path class="s" d="M30 48q14 8 28 0"/><rect class="f3 sf" x="58" y="26" width="12" height="9" rx="2" transform="rotate(20 64 30)"/><path class="s" d="M68 26l6-8"/></g>'},
 
 {id:"asiago-d-allevo",cat:"dairy",price:2,pk:"18–28 €/kg",name:{en:"Asiago d'allevo",fr:"Asiago d’allevo"},latin:"Asiago d’allevo DOP",
 origin:{en:"Altopiano di Asiago, Veneto",fr:"Plateau d’Asiago, Vénétie"},season:[],
@@ -67,7 +67,7 @@ fr:"Des moines savoyards auraient apporté la recette à l’abbaye de Saint-Cla
 tip:{en:"Its blue is faint and its bitterness real, so use it where a Roquefort would flatten everything: a thin slice melted off the heat into a Jura sauce of cream and vin jaune.",
 fr:"Son bleu est discret et son amertume réelle : employez-le là où un roquefort écraserait tout, une lame fondue hors du feu dans une sauce jurassienne à la crème et au vin jaune."},
 pairs:["vin-jaune","cream","chicken","potato","walnut","morel","comte","onion"],
-svg:'<circle class="f1 sf" cx="48" cy="50" r="29"/><circle class="s" cx="48" cy="50" r="23"/><path class="f3 sf" d="M48 40 58 50 48 60 38 50z"/><path class="s" d="M30 40q6 4 11 1M56 63q6-4 11-1"/>'},
+svg:'<g transform="translate(2.83 2.95) scale(0.941)"><circle class="f1 sf" cx="48" cy="50" r="29"/><circle class="s" cx="48" cy="50" r="23"/><path class="f3 sf" d="M48 40 58 50 48 60 38 50z"/><path class="s" d="M30 40q6 4 11 1M56 63q6-4 11-1"/></g>'},
 
 {id:"bleu-de-termignon",cat:"dairy",rare:true,luxe:true,price:3,pk:"55–100 €/kg",name:{en:"Bleu de Termignon",fr:"Bleu de Termignon"},latin:"Bleu de Termignon",
 origin:{en:"Termignon, Vanoise, Savoie",fr:"Termignon, Vanoise, Savoie"},season:[10,11,12,1],
@@ -147,7 +147,7 @@ fr:"Le caillé est moulé en couches, à la main, à la pelle à brie — une pe
 tip:{en:"Ripe means the paste bulges but still stands. A chalky white line down the centre means another week at 10 °C, wrapped in paper — never film, which suffocates the rind.",
 fr:"À point, la pâte bombe mais tient encore. Un trait blanc crayeux au cœur réclame une semaine de plus à 10 °C, sous papier — jamais sous film, qui étouffe la croûte."},
 pairs:["butter","apple","walnut","flour-t65","grape","truffle","black-pepper","cider-vinegar"],
-svg:'<path class="f1 sf" d="M48 50 72 36a28 28 0 1 1-2 30z"/><path class="s" d="M66 40a21 21 0 1 1-1 22"/><path class="f2 sf" d="M62 48q9 3 10 10-9 4-13-3z"/>'},
+svg:'<path class="f1 sf" d="M46 27a22 22 0 1 0 18 32l-18-9z"/><path class="f2 sf" d="M53 60l17-8q4 8 1 16z"/><path class="s" d="M32 40q6-6 13-7" stroke-width="1.5"/>'},
 
 {id:"brie-de-melun",cat:"dairy",price:2,pk:"22–32 €/kg",name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
 origin:{en:"Melun, Seine-et-Marne",fr:"Melun, Seine-et-Marne"},season:[],
@@ -257,7 +257,7 @@ fr:"Elle commence en metton : le caillé du lait écrémé qui reste après le b
 tip:{en:"Reheat it gently and never let it boil — above a simmer the metton grains separate and it turns stringy. A spoonful of the potato cooking water loosens it better than more butter.",
 fr:"Réchauffez-la doucement, sans jamais la faire bouillir : au-delà du frémissement, les grains de metton se séparent et elle file. Une cuillère d’eau de cuisson des pommes de terre la détend mieux qu’un surcroît de beurre."},
 pairs:["potato","garlic","vin-jaune","saucisse-de-morteau","white-wine-vinegar","cumin","shallot","butter"],
-svg:'<path class="f2 sf" d="M30 44v22q0 8 18 8t18-8V44z"/><ellipse class="f1 sf" cx="48" cy="44" rx="18" ry="6"/><path class="s" d="M56 40 66 30"/><ellipse class="f1 sf" cx="70" cy="26" rx="7" ry="4.5"/><path class="s" d="M64 32q-2 6 1 9"/>'},
+svg:'<g transform="translate(2.5 2.6) scale(0.948)"><path class="f2 sf" d="M30 44v22q0 8 18 8t18-8V44z"/><ellipse class="f1 sf" cx="48" cy="44" rx="18" ry="6"/><path class="s" d="M56 40 66 30"/><ellipse class="f1 sf" cx="70" cy="26" rx="7" ry="4.5"/><path class="s" d="M64 32q-2 6 1 9"/></g>'},
 
 {id:"cantal",cat:"dairy",price:2,pk:"13–22 €/kg",name:{en:"Cantal",fr:"Cantal"},latin:"Cantal AOP",
 origin:{en:"Auvergne, France",fr:"Auvergne, France"},season:[],
@@ -537,7 +537,7 @@ fr:"Il a sa propre ligne dans le cahier des charges DOP : quatre-vingts jours mi
 tip:{en:"Treat it as a seasoning rather than a cheese: mash 30 g into a hot pan sauce for four, or crumble it into polenta, and taste for salt only once it has gone in.",
 fr:"Traitez-le en assaisonnement plutôt qu’en fromage : écrasez-en 30 g dans une sauce chaude pour quatre, ou émiettez-le dans la polenta, et ne rectifiez le sel qu’ensuite."},
 pairs:["polenta-bramata","walnut","pear","celery","honey","ruby-port"],
-svg:'<path class="f2 sf" d="M26 70V42l22-14 22 14v28z"/><path class="s" d="M34 48v18M44 44v22M54 46v20M64 50v16"/><path class="s" d="M74 26 56 44"/><circle class="dot" cx="76" cy="24" r="2.5"/>'},
+svg:'<g transform="translate(3.55 3.7) scale(0.926)"><path class="f2 sf" d="M26 70V42l22-14 22 14v28z"/><path class="s" d="M34 48v18M44 44v22M54 46v20M64 50v16"/><path class="s" d="M74 26 56 44"/><circle class="dot" cx="76" cy="24" r="2.5"/></g>'},
 
 {id:"grana-padano",cat:"dairy",price:2,pk:"18–26 €/kg",name:{en:"Grana Padano",fr:"Grana Padano"},latin:"Grana Padano DOP",
 origin:{en:"Po Valley, Italy",fr:"Plaine du Pô, Italie"},season:[],
@@ -757,7 +757,7 @@ fr:"Des moines irlandais s’installèrent dans les vallées vosgiennes au VIIe 
 tip:{en:"Alsace eats it with a saucer of cumin seed alongside, not mixed in. The seed cuts the barnyard and the two arrive together.",
 fr:"L’Alsace le mange avec une soucoupe de cumin à côté, non mélangé. La graine coupe le côté étable et les deux arrivent ensemble."},
 pairs:["cumin","potato","onion","black-pepper","caraway","flour-t65","butter","apple"],
-svg:'<circle class="f1 sf" cx="48" cy="52" r="21"/><circle class="s" cx="48" cy="52" r="14"/><circle class="dot" cx="40" cy="46" r="1.6"/><circle class="dot" cx="56" cy="56" r="1.6"/><circle class="dot" cx="48" cy="62" r="1.6"/>'},
+svg:'<path class="f2 sf" d="M20 48q0-13 28-13t28 13v7q0 12-28 12T20 55z"/><path class="s" d="M20 48q6 11 28 11t28-11" stroke-width="2.5"/><path class="f1 sf" d="M30 44q4-5 18-5t18 5q-6 6-18 6t-18-6z"/><path class="s" d="M24 66q10 5 24 5t24-5" stroke-width="1.6"/>'},
 
 {id:"neufchatel",cat:"dairy",price:2,pk:"18–28 €/kg",name:{en:"Neufchâtel",fr:"Neufchâtel"},latin:"Neufchâtel AOP",
 origin:{en:"Pays de Bray, Normandy",fr:"Pays de Bray, Normandie"},season:[],
@@ -937,7 +937,7 @@ fr:"Son nom vient de reblocher — traire une seconde fois. Les tenanciers savoy
 tip:{en:"The whole point of a tartiflette is that it melts without splitting. Split the wheel through its waist, rind up, and let it collapse into the potatoes.",
 fr:"Tout l’intérêt de la tartiflette est qu’il fond sans trancher. Coupez la meule dans l’épaisseur, croûte au-dessus, et laissez-le s’affaisser sur les pommes de terre."},
 pairs:["potato","onion","guanciale","cream","black-pepper","white-wine-vinegar","garlic","thyme"],
-svg:'<circle class="f2 sf" cx="48" cy="52" r="22"/><circle class="s" cx="48" cy="52" r="15"/><circle class="dot" cx="48" cy="52" r="3"/>'},
+svg:'<g transform="translate(-6.19 -6.45) scale(1.129)"><path class="f1 sf" d="M22 47q0-14 26-14t26 14v6q0 13-26 13T22 53z"/><path class="s" d="M22 47q6 12 26 12t26-12" stroke-width="2.5"/><path class="f2 sf" d="M40 40h16v9H40z"/><path class="s" d="M44 44h8" stroke-width="1.6"/></g>'},
 
 {id:"ricotta",cat:"dairy",price:1,pk:"6–12 €/kg",name:{en:"Ricotta",fr:"Ricotta"},latin:"Ricotta — recooked",
 origin:{en:"Italy",fr:"Italie"},season:[],
@@ -1197,7 +1197,7 @@ fr:"C’est ce qui restait. Les fermes savoyardes écrémaient le lait pour le b
 tip:{en:"Do not trim the rind away entirely — most of the cellar smell lives there, and the paste alone is quiet.",
 fr:"Ne parez pas toute la croûte — l’odeur de cave y loge, et la pâte seule est muette."},
 pairs:["potato","apple","walnut","onion","black-pepper","grape","butter","thyme"],
-svg:'<circle class="f1 sf" cx="48" cy="52" r="22"/><circle class="s" cx="48" cy="52" r="16"/><circle class="dot" cx="38" cy="44" r="1.4"/><circle class="dot" cx="58" cy="48" r="1.4"/><circle class="dot" cx="44" cy="62" r="1.4"/><circle class="dot" cx="58" cy="60" r="1.4"/>'},
+svg:'<path class="f2 sf" d="M22 44q0-13 26-13t26 13v10q0 13-26 13T22 54z"/><path class="f1 sf" d="M30 46q5-5 18-5t18 5v7q-6 5-18 5t-18-5z"/><path class="s" d="M22 44q7 11 26 11t26-11" stroke-width="2.5"/><path class="s" d="M34 62q6 3 14 3t14-3" stroke-width="1.5"/>'},
 
 {id:"torta-del-casar",cat:"dairy",rare:true,price:3,pk:"45–70 €/kg",name:{en:"Torta del Casar",fr:"Torta del Casar"},latin:"Ovis aries",
 origin:{en:"Casar de Cáceres, Extremadura",fr:"Casar de Cáceres, Estrémadure"},season:[3,4,5,6],

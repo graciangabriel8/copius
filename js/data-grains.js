@@ -17,7 +17,7 @@ fr:"Le crémeux d’un risotto n’est pas de la crème mais de l’amylopectine
 tip:{en:"Never rinse it. Washing removes exactly the surface starch that makes the dish work.",
 fr:"Ne le rincez jamais. Le lavage ôte précisément l’amidon de surface qui fait tout le plat."},
 pairs:["parmesan","butter","onion","white-wine-vinegar","saffron","porcini","black-pepper","thyme"],
-svg:'<ellipse class="f3 sf" cx="40" cy="52" rx="5" ry="9"/><ellipse class="f3 sf" cx="54" cy="50" rx="5" ry="9"/><ellipse class="f3 sf" cx="47" cy="66" rx="5" ry="9"/>'},
+svg:'<path class="f3 sf" d="M28 38q9-3 12 5 5 13 1 23-4 9-10 6-6-5-5-16 0-14 2-18z"/><path class="s" d="M34 50q3 5 2 12" stroke-width="1.5"/><path class="f3 sf" d="M45 48q9-2 11 5 3 11 0 19-4 7-9 4-5-4-4-14 0-11 2-14z"/><path class="f3 sf" d="M62 36q8-2 10 6 3 11 1 19-4 7-9 4-4-4-4-14 0-12 2-15z"/><path class="s" d="M67 47q2 6 1 12" stroke-width="1.5"/>'},
 
 {id:"barley",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Barley",fr:"Orge"},latin:"Hordeum vulgare",
 origin:{en:"Fertile Crescent",fr:"Croissant fertile"},season:[],
@@ -57,7 +57,7 @@ fr:"La tradition chinoise l’appelle riz interdit, réservé à l’empereur et
 tip:{en:"It bleeds violet into everything it touches. Cook it separately if you want the rest of the plate to keep its colour.",
 fr:"Il déteint en violet sur tout ce qu’il touche. Cuisez-le à part si vous voulez que le reste de l’assiette garde sa couleur."},
 pairs:["coconut-milk","mango","lime","ginger","sesame","honey","chili","cilantro"],
-svg:'<ellipse class="f1 sf" cx="40" cy="54" rx="4.5" ry="9"/><ellipse class="f1 sf" cx="53" cy="52" rx="4.5" ry="9"/><ellipse class="f1 sf" cx="46" cy="67" rx="4.5" ry="9"/>'},
+svg:'<path class="dot" d="M30 36q7-2 9 6 3 13 0 22-4 8-8 4-4-5-3-16 0-14 2-16z"/><path class="dot" d="M46 48q7-2 9 5 3 11 0 19-4 7-8 3-4-4-3-14 0-11 2-13z"/><path class="dot" d="M62 38q7-2 9 6 3 12 0 20-4 7-8 3-4-4-3-14 0-13 2-15z"/><path class="dot" d="M38 66q5-4 9 0t-4 7-6-2 1-5z"/>'},
 
 {id:"blue-corn",cat:"grains",rare:true,price:2,pk:"8–18 €/kg",name:{en:"Blue corn",fr:"Maïs bleu"},latin:"Zea mays (Hopi blue)",
 origin:{en:"Hopi and Rio Grande pueblos, American Southwest",fr:"Pueblos hopi et du Rio Grande, Sud-Ouest américain"},season:[9,10],
@@ -77,7 +77,7 @@ fr:"Il absorbe environ trois fois son volume de liquide en restant détaché —
 tip:{en:"Spread it in a thin layer and do not touch it. The prized socarrat is the crust that forms only if the rice is left alone.",
 fr:"Étalez-le en couche mince et n’y touchez pas. Le socarrat, cette croûte convoitée, ne se forme que si le riz est laissé tranquille."},
 pairs:["saffron","paprika","shrimp","chicken","olive-oil","piquillo","garlic","green-bean"],
-svg:'<ellipse class="f3 sf" cx="40" cy="52" rx="5" ry="8"/><ellipse class="f3 sf" cx="53" cy="50" rx="5" ry="8"/><ellipse class="f3 sf" cx="46" cy="64" rx="5" ry="8"/><ellipse class="f3 sf" cx="58" cy="62" rx="5" ry="8"/>'},
+svg:'<path class="f3 sf" d="M27 42q10-5 14 3 4 9-3 14-9 5-14-3-4-9 3-14z"/><path class="f3 sf" d="M46 32q10-4 13 4 3 9-4 13-9 4-13-4-3-9 4-13z"/><path class="f3 sf" d="M58 52q10-4 13 4 3 8-4 12-9 4-13-4-3-8 4-12z"/><path class="f3 sf" d="M38 62q9-4 12 3 3 8-4 11-8 4-11-3-3-8 3-11z"/><path class="s" d="M33 47q4-2 6 1M52 37q4-2 6 1" stroke-width="1.5"/>'},
 
 {id:"buckwheat-flour",cat:"grains",price:1,pk:"3–7 €/kg",name:{en:"Buckwheat flour",fr:"Farine de sarrasin"},latin:"Fagopyrum esculentum",
 origin:{en:"Yunnan, China",fr:"Yunnan, Chine"},season:[],
@@ -127,7 +127,7 @@ fr:"Les cuisiniers italiens l’appellent le roi des riz à risotto. Il porte pl
 tip:{en:"Toast the dry grains in fat until they turn translucent at the edges before any liquid goes in. That step sets the texture.",
 fr:"Nacrez les grains à sec dans la matière grasse jusqu’à ce que les bords deviennent translucides avant tout liquide. Cette étape fixe la texture."},
 pairs:["parmesan","butter","porcini","saffron","shallot","white-wine-vinegar","black-pepper","scallop"],
-svg:'<ellipse class="f3 sf" cx="40" cy="50" rx="4.5" ry="10"/><ellipse class="f3 sf" cx="53" cy="52" rx="4.5" ry="10"/><ellipse class="f3 sf" cx="46" cy="66" rx="4.5" ry="10"/>'},
+svg:'<path class="f3 sf" d="M30 33q8-2 10 6 4 14 1 25-4 9-9 6-5-5-4-17 0-16 2-20z"/><path class="f3 sf" d="M47 38q8-2 10 6 3 13 0 22-4 8-8 5-5-4-4-15 0-14 2-18z"/><path class="f3 sf" d="M63 35q7-2 9 6 3 12 1 21-4 7-8 4-4-4-4-14 0-13 2-17z"/><path class="s" d="M35 44q1 12 0 20M52 49q1 10 0 17" stroke-width="1.4"/>'},
 
 {id:"carolina-gold-rice",cat:"grains",rare:true,price:3,pk:"20–40 €/kg",name:{en:"Carolina Gold rice",fr:"Riz Carolina Gold"},latin:"Oryza sativa",
 origin:{en:"Lowcountry, South Carolina",fr:"Lowcountry, Caroline du Sud"},season:[],
@@ -177,7 +177,7 @@ fr:"Le domyojiko est né comme hoshii, du riz cuit et séché dur pour la conser
 tip:{en:"It swells hard: soak it in about one and a half times its weight of warm water for twenty minutes, then steam fifteen. Under-hydrate it and you get gritty cores that no amount of extra steaming will soften.",
 fr:"Il gonfle fort : trempez-le dans une fois et demie son poids d’eau tiède pendant vingt minutes, puis cuisez à la vapeur un quart d’heure. Trop peu d’eau et il reste des cœurs sableux qu’aucune vapeur supplémentaire ne rattrapera."},
 pairs:["sakura-leaf","salted-cherry-blossom","adzuki","sugar","yomogi","shrimp"],
-svg:'<ellipse class="f1 sf" cx="34" cy="42" rx="9" ry="5.5"/><ellipse class="f2 sf" cx="53" cy="36" rx="9" ry="5.5"/><ellipse class="f1 sf" cx="61" cy="53" rx="9" ry="5.5"/><ellipse class="f2 sf" cx="39" cy="59" rx="9" ry="5.5"/><ellipse class="f3 sf" cx="48" cy="48" rx="9" ry="5.5"/>'},
+svg:'<path class="f1 sf" d="M22 66q4-16 15-22 12-7 22-1 12 7 15 23-26 5-52 0z"/><path class="s" d="M33 55q4-4 9-3M46 47q5-3 9 0M56 57q4-4 8-2M40 63q5-3 9-1M52 65q4-3 8-1" stroke-width="1.6"/><path class="f2 sf" d="M30 72q4-3 8 0t-3 5-6-1 1-4z"/><path class="f2 sf" d="M57 72q4-3 8 0t-4 5-5-1 1-4z"/>'},
 
 {id:"einkorn",cat:"grains",price:2,pk:"5–10 €/kg",name:{en:"Einkorn",fr:"Petit épeautre"},latin:"Triticum monococcum",
 origin:{en:"Fertile Crescent",fr:"Croissant fertile"},season:[],
@@ -207,7 +207,7 @@ fr:"Le décret de 1993 sur le pain de tradition française n’autorise que troi
 tip:{en:"Dose at 0.5 to 1% of flour weight rather than the legal 2% — the higher rate whitens the crumb but strips the wheat smell and leaves a green-bean edge. It works only through oxygen, so it does almost nothing in a gently hand-mixed dough.",
 fr:"Dosez à 0,5 à 1 % du poids de farine plutôt qu’aux 2 % légaux : le taux fort blanchit la mie mais efface l’odeur de blé et laisse une pointe de haricot vert. Elle n’agit que par l’oxygène — dans une pâte pétrie doucement à la main, elle ne fait presque rien."},
 pairs:["flour-t65","flour-t55","yeast","salt","olive-oil","butter"],
-svg:'<path class="f1 sf" d="M34 45h28q6 14 6 22a10 10 0 0 1-10 10H38a10 10 0 0 1-10-10q0-8 6-22z"/><path class="f3 sf" d="M33 38h30v7H33z"/><path class="s" d="M40 32q8-7 16 0"/><ellipse class="f2 sf" cx="24" cy="76" rx="7" ry="4.5"/>'},
+svg:'<g transform="translate(5.33 5.55) scale(0.889)"><path class="f1 sf" d="M34 45h28q6 14 6 22a10 10 0 0 1-10 10H38a10 10 0 0 1-10-10q0-8 6-22z"/><path class="f3 sf" d="M33 38h30v7H33z"/><path class="s" d="M40 32q8-7 16 0"/><ellipse class="f2 sf" cx="24" cy="76" rx="7" ry="4.5"/></g>'},
 
 {id:"fonio",cat:"grains",rare:true,price:2,pk:"8–16 €/kg",name:{en:"Fonio",fr:"Fonio"},latin:"Digitaria exilis",
 origin:{en:"Fouta Djallon, Guinea",fr:"Fouta-Djalon, Guinée"},season:[],
@@ -257,7 +257,7 @@ fr:"La première mention écrite date de 1660, dans les registres de l’abbaye 
 tip:{en:"It never softens to a mush, so give it about thirty minutes in three times its volume of stock and stop there. Buy it cracked only if you want the classic dumplings — the grits go pasty in a soup.",
 fr:"Il ne se délite jamais : comptez trois volumes de bouillon pour un de grain, une trentaine de minutes, pas davantage. Ne prenez le concassé que pour les boulettes traditionnelles — il empâte les soupes."},
 pairs:["leek","carrot","celeriac","mushroom","parsley","butter"],
-svg:'<path class="s" d="M48 84V58"/><path class="f2 sf" d="M48 22q13 8 11 22t-11 14q-9-2-11-14t11-22z"/><path class="s" d="M48 26v32M40 34q8 4 16 0M39 43q9 5 18 0M40 52q8 4 16 0"/><path class="s" d="M62 32q7-4 4-10t4-7"/>'},
+svg:'<g transform="translate(3.12 3.25) scale(0.935)"><path class="s" d="M48 84V58"/><path class="f2 sf" d="M48 22q13 8 11 22t-11 14q-9-2-11-14t11-22z"/><path class="s" d="M48 26v32M40 34q8 4 16 0M39 43q9 5 18 0M40 52q8 4 16 0"/><path class="s" d="M62 32q7-4 4-10t4-7"/></g>'},
 
 {id:"gruau-flour",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Gruau flour",fr:"Farine de gruau"},latin:"Triticum aestivum",
 origin:{en:"Strength wheat, France and Canada",fr:"Blés de force, France et Canada"},season:[],
@@ -297,7 +297,7 @@ fr:"Nommé pour la couleur du grain usiné plutôt que pour un parfum de jasmin 
 tip:{en:"Use less water than the packet says, roughly one and a quarter to one. It is stickier than basmati and floods easily.",
 fr:"Mettez moins d’eau que le paquet ne l’indique, environ un et quart pour un. Il est plus collant que le basmati et se noie facilement."},
 pairs:["coconut-milk","lemongrass","chili","fish-sauce","cilantro","lime","ginger","garlic"],
-svg:'<ellipse class="f3 sf" cx="40" cy="54" rx="4" ry="10"/><ellipse class="f3 sf" cx="52" cy="52" rx="4" ry="10"/><ellipse class="f3 sf" cx="46" cy="68" rx="4" ry="10"/>'},
+svg:'<path class="f3 sf" d="M30 44q6-2 8 5 3 14 0 24-3 8-7 5-4-5-3-17 0-14 2-17z"/><path class="f3 sf" d="M46 48q6-2 8 5 2 13 0 22-3 7-7 4-4-4-3-15 0-13 2-16z"/><path class="f3 sf" d="M62 45q6-2 8 5 2 13 0 22-3 7-7 4-4-4-3-15 0-13 2-16z"/><path class="s" d="M38 32q-4-5 0-9M50 30q-4-5 0-9M62 32q-4-5 0-9" stroke-width="1.8"/>'},
 
 {id:"jobs-tears",cat:"grains",rare:true,price:2,pk:"8–16 €/kg",name:{en:"Job's tears",fr:"Larmes de Job (coix)"},latin:"Coix lacryma-jobi",
 origin:{en:"Monsoon Asia",fr:"Asie des moussons"},season:[],
@@ -417,7 +417,7 @@ fr:"La pâte de riz est étalée sur une toile tendue au-dessus d’une marmite,
 tip:{en:"One second in warm water per sheet and no more: pull it out while it still feels stiff and let it finish softening on the plate while you fill it. A sheet that felt ready in the bowl will be torn by the time you roll it.",
 fr:"Une seconde d’eau tiède par galette, pas plus : sortez-la encore raide et laissez-la finir de s’assouplir sur l’assiette pendant que vous garnissez. Une galette qui semblait prête dans le bol sera déchirée au moment de rouler."},
 pairs:["shrimp","pork-belly","mint","vietnamese-coriander","peanut","fish-sauce","lettuce"],
-svg:'<circle class="f1 sf" cx="48" cy="48" r="30"/><path class="s" d="M28 34l40 28M34 26l28 44M22 44l52 8M26 60l44-24"/>'},
+svg:'<g transform="translate(5.71 5.95) scale(0.881)"><circle class="f1 sf" cx="48" cy="48" r="30"/><path class="s" d="M28 34l40 28M34 26l28 44M22 44l52 8M26 60l44-24"/></g>'},
 
 {id:"rye",cat:"grains",price:1,pk:"2–5 €/kg",name:{en:"Rye berries",fr:"Grains de seigle"},latin:"Secale cereale",
 origin:{en:"Anatolia",fr:"Anatolie"},season:[],
@@ -447,7 +447,7 @@ fr:"Rimacinata ne veut dire que « remoulue » : la semoule de blé dur repasse 
 tip:{en:"It absorbs slowly: mix, rest thirty minutes, and only then judge the hydration, or you will add water the dough never needed. For orecchiette, warm water and no egg, at roughly half the flour weight.",
 fr:"Elle absorbe lentement : mélangez, laissez reposer trente minutes, et jugez l’hydratation seulement ensuite, sinon vous ajouterez une eau dont la pâte n’avait pas besoin. Pour les orecchiette, eau tiède et pas d’œuf, à environ la moitié du poids de semoule."},
 pairs:["olive-oil","cime-di-rapa","anchovy","garlic","pecorino","chili","tipo-00-flour"],
-svg:'<path class="f1 sf" d="M22 50h52a26 26 0 0 1-52 0z"/><path class="f2 sf" d="M22 50q26-13 52 0z"/><path class="s" d="M58 45l14-14"/><circle class="f3 sf" cx="74" cy="28" r="6"/>'},
+svg:'<g transform="translate(4.37 4.55) scale(0.909)"><path class="f1 sf" d="M22 50h52a26 26 0 0 1-52 0z"/><path class="f2 sf" d="M22 50q26-13 52 0z"/><path class="s" d="M58 45l14-14"/><circle class="f3 sf" cx="74" cy="28" r="6"/></g>'},
 
 {id:"semolina",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Semolina",fr:"Semoule"},latin:"Triticum durum",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[],

@@ -77,7 +77,7 @@ fr:"C’est la graine de la plante même que l’on cultive pour ses feuilles, b
 tip:{en:"Hydrate them apart in cold water — a teaspoon to 250 ml, five minutes — and spoon them into the drink afterwards. Dropped in dry they clump and float in a raft, and no amount of stirring will separate them again.",
 fr:"Hydratez-les à part dans de l’eau froide — une cuillerée à café pour 250 ml, cinq minutes — puis versez-les à la cuillère dans la boisson. Jetées sèches, elles s’agglutinent en radeau à la surface, et aucun remuage ne les séparera plus."},
 pairs:["rose-water","lime","coconut-milk","lychee","palm-sugar","mint","lemon","watermelon"],
-svg:'<circle class="f1 sf" cx="44" cy="44" r="16"/><circle class="f3 sf" cx="44" cy="44" r="7"/><circle class="f1 sf" cx="64" cy="64" r="10"/><circle class="f3 sf" cx="64" cy="64" r="4.5"/>'},
+svg:'<path class="s" d="M48 26a24 24 0 1 1-.1 0z" stroke-width="1.4" stroke-dasharray="4 4"/><path class="f3 sf" d="M34 50q1-9 10-9t10 8q0 9-9 9-11 0-11-8z"/><path class="dot" d="M40 50q1-4 5-4t5 4q0 4-5 4t-5-4z"/><path class="f3 sf" d="M58 62q1-7 8-7t8 6q0 7-7 7-9 0-9-6z"/><path class="dot" d="M63 62q0-3 4-3t4 3q0 3-4 3t-4-3z"/>'},
 
 {id:"beechnut",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Beechnut",fr:"Faîne"},latin:"Fagus sylvatica",
 origin:{en:"European beech woods",fr:"Hêtraies d’Europe"},season:[9,10],
@@ -107,7 +107,7 @@ fr:"La capsule mûre s’ouvre d’un claquement net, et l’on raconte que « S
 tip:{en:"You cannot judge them by colour, so go by sound: dry pan, medium heat, shaking, and pull them the moment they start to jump and smell — two to three minutes. Grind them warm in a suribachi; cold, the oil will not release and you are left with grit.",
 fr:"La couleur ne dit rien : fiez-vous au bruit — poêle sèche, feu moyen, en secouant, et retirez dès qu’elles sautent et embaument, deux à trois minutes. Broyez-les tièdes au suribachi ; froides, l’huile ne sort pas et il ne reste que du sable."},
 pairs:["rice","soy-sauce","sugar","spinach","silken-tofu","honey","salt","kabocha"],
-svg:'<ellipse class="f3 sf" cx="40" cy="40" rx="6" ry="4"/><ellipse class="f3 sf" cx="57" cy="45" rx="6" ry="4"/><ellipse class="f3 sf" cx="46" cy="55" rx="6" ry="4"/><ellipse class="f3 sf" cx="62" cy="60" rx="6" ry="4"/><ellipse class="f3 sf" cx="35" cy="58" rx="6" ry="4"/>'},
+svg:'<path class="dot" d="M28 50q10-6 19-3 5 2 3 5-3 4-11 4-9 0-11-6z"/><path class="dot" d="M47 63q10-6 18-3 5 2 3 5-3 4-10 4-9 0-11-6z"/><path class="dot" d="M44 36q10-6 18-3 5 2 3 5-3 4-10 4-9 0-11-6z"/><path class="dot" d="M27 68q8-5 15-2 4 1 2 4-3 3-9 3-7 0-8-5z"/>'},
 
 {id:"black-sesame-paste",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Black sesame paste",fr:"Pâte de sésame noir"},latin:"Sesamum indicum",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[],
@@ -227,7 +227,7 @@ fr:"L’une des premières plantes domestiquées, et pendant presque toute l’h
 tip:{en:"Whole seeds pass straight through you. Grind them just before use — ground flax goes rancid within days.",
 fr:"Les graines entières traversent sans être digérées. Moulez-les juste avant emploi — le lin moulu rancit en quelques jours."},
 pairs:["oats","yogurt","honey","flour-complete","raisin","banana","cinnamon","sunflower-seed"],
-svg:'<ellipse class="f1 sf" cx="40" cy="52" rx="7" ry="4"/><ellipse class="f1 sf" cx="55" cy="58" rx="7" ry="4"/><ellipse class="f1 sf" cx="45" cy="66" rx="7" ry="4"/>'},
+svg:'<path class="f1 sf" d="M24 54q12-7 24-4 6 2 4 6-3 5-13 5-12 0-15-7z"/><path class="f1 sf" d="M46 66q12-7 23-4 6 2 4 6-3 5-13 5-11 0-14-7z"/><path class="f1 sf" d="M42 38q12-6 23-3 6 2 4 6-4 5-14 4-10 0-13-7z"/><path class="s" d="M30 53q9-3 16-1M52 65q9-3 15-1" stroke-width="1.4"/>'},
 
 {id:"fresh-hazelnut",cat:"nuts",price:2,pk:"8–15 €/kg",name:{en:"Fresh green hazelnut",fr:"Noisette fraîche"},latin:"Corylus avellana",
 origin:{en:"Orchards, late summer",fr:"Vergers, fin d'été"},season:[8,9],
@@ -317,7 +317,7 @@ fr:"La même espèce que la plante à drogue mais un autre cultivar, sélectionn
 tip:{en:"Never cook it — the oil oxidises fast and turns fishy. Scatter it raw over a finished dish.",
 fr:"Ne la cuisez jamais — l’huile s’oxyde vite et prend un goût de poisson. Parsemez-la crue sur un plat terminé."},
 pairs:["yogurt","honey","oats","banana","flax","spinach","olive-oil","lemon"],
-svg:'<circle class="f2 sf" cx="41" cy="54" r="5"/><circle class="f2 sf" cx="54" cy="52" r="5"/><circle class="f2 sf" cx="47" cy="65" r="5"/><circle class="f2 sf" cx="59" cy="63" r="4"/>'},
+svg:'<path class="f2 sf" d="M24 50q1-14 15-14t15 13q1 14-14 14-16 0-16-13z"/><path class="s" d="M28 42q10 10 22 5" stroke-width="1.8"/><path class="f3 sf" d="M34 54q1-6 7-6t7 5q0 6-7 6-8 0-7-5z"/><path class="f2 sf" d="M56 62q1-10 11-10t11 9q0 10-10 10-12 0-12-9z"/><path class="s" d="M59 56q9 7 18 3" stroke-width="1.6"/>'},
 
 {id:"japanese-chestnut",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Japanese chestnut",fr:"Châtaigne japonaise (kuri)"},latin:"Castanea crenata",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[9,10],
@@ -487,7 +487,7 @@ fr:"L’Europe centrale les broie en pâte sucrée pour le strudel et le beigli,
 tip:{en:"Grind them or soak them in hot milk before baking. Whole and dry they contribute crunch and almost no flavour.",
 fr:"Broyez-les ou faites-les tremper dans du lait chaud avant cuisson. Entières et sèches elles n’apportent que du croquant et presque aucun goût."},
 pairs:["lemon","honey","butter","flour-t45","cream","orange","almond","sugar"],
-svg:'<circle class="dot" cx="40" cy="50" r="2.5"/><circle class="dot" cx="50" cy="48" r="2.5"/><circle class="dot" cx="58" cy="54" r="2.5"/><circle class="dot" cx="44" cy="60" r="2.5"/><circle class="dot" cx="54" cy="62" r="2.5"/><circle class="dot" cx="46" cy="70" r="2.5"/>'},
+svg:'<path class="f1 sf" d="M40 22q9 0 11 8 2 9-4 14-8 5-14-1-5-6-2-14 3-7 9-7z"/><path class="s" d="M44 20v-6M38 46q6 4 13 1" stroke-width="2"/><path class="dot" d="M28 62q4-3 6 0t-2 4-5-1 1-3z"/><path class="dot" d="M40 68q4-3 6 0t-2 4-5-1 1-3z"/><path class="dot" d="M53 63q4-3 6 0t-2 4-5-1 1-3z"/><path class="dot" d="M64 69q4-3 6 0t-2 4-5-1 1-3z"/>'},
 
 {id:"pumpkin-seed",cat:"nuts",price:1,pk:"8–14 €/kg",name:{en:"Pumpkin seed",fr:"Graine de courge"},latin:"Cucurbita pepo",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
@@ -537,7 +537,7 @@ fr:"Domestiquée dans l’actuelle Amérique du Nord il y a quelque quatre mille
 tip:{en:"Toast them and they stop tasting like birdseed. Untoasted they contribute texture and very little else.",
 fr:"Torréfiées, elles cessent d’avoir un goût de graine pour oiseaux. Crues elles n’apportent que de la texture et guère plus."},
 pairs:["honey","flour-t65","yogurt","raisin","oats","dark-chocolate","salt","pumpkin-seed"],
-svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="5" ry="9"/><ellipse class="f1 sf" cx="54" cy="58" rx="5" ry="9"/><ellipse class="f1 sf" cx="47" cy="68" rx="5" ry="9"/>'},
+svg:'<g transform="translate(-6.19 -6.45) scale(1.129)"><path class="f1 sf" d="M34 32q9-3 12 8 4 15-2 26-5 8-9 1-4-9-3-20 1-13 2-15z"/><path class="s" d="M37 39q2 15 1 25M43 38q1 14 0 24" stroke-width="1.5"/><path class="f1 sf" d="M56 42q8-2 10 7 3 12-2 21-4 6-7 0-3-8-2-16 1-11 1-12z"/><path class="s" d="M59 48q1 12 0 20" stroke-width="1.5"/></g>'},
 
 {id:"tahini",cat:"nuts",price:2,pk:"8–16 €/kg",name:{en:"Tahini",fr:"Tahini"},latin:"طحينة",
 origin:{en:"Levant",fr:"Levant"},season:[],

@@ -7,7 +7,7 @@ fr:"Un esturgeon béluga peut mettre vingt ans avant de frayer une première foi
 tip:{en:"Hold the tin between 0 and 4 °C and open it only at the table. Never a steel spoon: the membrane is thin enough to burst under the edge, and the metal leaves an iron taste — use nacre, horn or bone.",
 fr:"Gardez la boîte entre 0 et 4 °C et ne l'ouvrez qu'à table. Jamais de cuillère en acier : la membrane est assez fine pour éclater dessous, et le métal laisse un goût ferreux — nacre, corne ou os."},
 pairs:["creme-fraiche","beurre-de-baratte","egg","potato","chives","lemon"],
-svg:'<circle class="f2 sf" cx="48" cy="50" r="27"/><circle class="f3" cx="48" cy="50" r="21"/><circle class="f1 sf" cx="40" cy="44" r="5"/><circle class="f1 sf" cx="52" cy="47" r="5"/><circle class="f1 sf" cx="44" cy="57" r="5"/><circle class="f1 sf" cx="56" cy="58" r="5"/>'},
+svg:'<path class="f2 sf" d="M22 48q0-14 26-14t26 14q0 16-26 16T22 48z"/><path class="dot" d="M32 46q5-5 10 0t-5 8-7-3 2-5z"/><path class="dot" d="M47 43q5-5 10 0t-5 8-7-3 2-5z"/><path class="dot" d="M61 47q5-4 9 0t-4 7-6-2 1-5z"/><path class="s" d="M30 64q10 6 22 4" stroke-width="1.8"/><path class="f1 sf" d="M56 70q8-6 14-1t-6 10-10-3 2-6z"/>'},
 
 {id:"bottarga",cat:"roe",price:3,pk:"200–350 €/kg",name:{en:"Bottarga",fr:"Poutargue"},latin:"Mugil cephalus (roe)",
 origin:{en:"Sardinia & Provence",fr:"Sardaigne & Provence"},season:[],
@@ -157,7 +157,7 @@ fr:"L’esturgeon de l’Amour porte le nom du fleuve qui sépare la Russie de l
 tip:{en:"The grain has an unusually tough membrane, which makes it the caviar that survives a warm base — a quenelle on hot potato or a just-set custard reaches the table intact. Serve it at 8-10 °C, never colder, or the taste closes up.",
 fr:"Le grain a une membrane exceptionnellement résistante : c’est le caviar qui supporte un support tiède — une quenelle sur une pomme de terre chaude ou un flan tout juste pris arrive intacte à table. Servez-le entre 8 et 10 °C, jamais plus froid, sinon le goût se referme."},
 pairs:["potato","creme-fraiche","egg","chives","butter","scallop","vin-jaune"],
-svg:'<circle class="f2 sf" cx="48" cy="52" r="24"/><circle class="s" cx="48" cy="52" r="18"/><circle class="dot" cx="42" cy="46" r="2.6"/><circle class="dot" cx="53" cy="47" r="2.6"/><circle class="dot" cx="47" cy="56" r="2.6"/><circle class="dot" cx="57" cy="57" r="2.6"/>'},
+svg:'<path class="f1 sf" d="M20 44h56v6q0 16-28 16T20 50z"/><path class="s" d="M20 44q6-6 28-6t28 6" stroke-width="2.5"/><path class="dot" d="M31 52q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M44 55q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M57 52q4-4 8 0t-4 6-5-2 1-4z"/>'},
 
 {id:"caviar-sevruga",cat:"roe",luxe:true,price:4,pk:"2–4 €/g",name:{en:"Sevruga caviar",fr:"Caviar sévruga"},latin:"Acipenser stellatus (roe)",
 origin:{en:"Caspian & Black Sea",fr:"Caspienne et mer Noire"},season:[],
@@ -237,7 +237,7 @@ fr:"La truite arc-en-ciel est un poisson californien, expédié aux écloseries 
 tip:{en:"The cure is light and holds far less salt than salmon roe, so spoon it in where ikura would be too oily — into a hot potato, over a soft-boiled egg, across a beurre blanc. Once opened it lasts about four days, and do not salt it further: it is already at the limit.",
 fr:"La salaison est légère et retient bien moins de sel que la rogue de saumon : servez-la à la cuillère là où l’ikura serait trop grasse — dans une pomme de terre chaude, sur un œuf mollet, sur un beurre blanc. Une fois ouverte elle tient environ quatre jours, et ne la salez pas davantage : elle est déjà à la limite."},
 pairs:["egg","potato","creme-fraiche","chives","cucumber","butter","dill"],
-svg:'<circle class="f1 sf" cx="36" cy="42" r="11"/><circle class="f1 sf" cx="58" cy="40" r="10"/><circle class="f1 sf" cx="46" cy="62" r="12"/><circle class="f1 sf" cx="66" cy="60" r="9"/><circle class="dot" cx="34" cy="40" r="2.4"/><circle class="dot" cx="44" cy="60" r="2.4"/>'},
+svg:'<path class="f3 sf" d="M26 46q1-11 12-11t12 10q1 11-11 12-12 1-13-11z"/><path class="dot" d="M33 45q3-3 6 0t-3 5-4-2 1-3z"/><path class="f3 sf" d="M52 40q1-10 11-10t11 9q0 10-10 11-11 1-12-10z"/><path class="dot" d="M58 39q3-3 6 0t-3 5-4-2 1-3z"/><path class="f3 sf" d="M38 66q1-10 11-10t11 9q0 10-10 11-11 1-12-10z"/><path class="dot" d="M44 65q3-3 6 0t-3 5-4-2 1-3z"/>'},
 
 {id:"poutargue-de-thon",cat:"roe",price:3,pk:"120–250 €/kg",name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
 origin:{en:"Sicily & Sardinia",fr:"Sicile et Sardaigne"},season:[],
@@ -257,7 +257,7 @@ fr:"Le golfe de Botnie est assez saumâtre pour rendre les œufs orange — le m
 tip:{en:"Keep it away from heat and from vinegar entirely: build it cold on the plate with sour cream, finely diced raw red onion and dill, and salt nothing further. If it was frozen, thaw it overnight in the fridge — a fast thaw bursts the eggs and leaves a milky pool.",
 fr:"Tenez-le à l’écart de la chaleur et de tout vinaigre : dressez-le froid avec crème acidulée, oignon rouge cru en brunoise et aneth, sans rien resaler. S’il a été congelé, décongelez-le une nuit au réfrigérateur : une décongélation rapide fait éclater les grains et laisse une flaque laiteuse."},
 pairs:["creme-fraiche","red-onion","dill","potato","butter","rye","lemon"],
-svg:'<path class="s" d="M60 46q14-8 24-18"/><ellipse class="f1 sf" cx="44" cy="54" rx="19" ry="13"/><circle class="dot" cx="38" cy="49" r="2"/><circle class="dot" cx="48" cy="47" r="2"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="52" cy="55" r="2"/>'},
+svg:'<g transform="translate(4.08 4.25) scale(0.915)"><path class="s" d="M60 46q14-8 24-18"/><ellipse class="f1 sf" cx="44" cy="54" rx="19" ry="13"/><circle class="dot" cx="38" cy="49" r="2"/><circle class="dot" cx="48" cy="47" r="2"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="52" cy="55" r="2"/></g>'},
 
 {id:"caviar-esturgeon-blanc",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"White sturgeon caviar",fr:"Caviar d’esturgeon blanc"},latin:"Acipenser transmontanus (roe)",
 origin:{en:"Sacramento valley, California",fr:"Vallée du Sacramento, Californie"},season:[],
@@ -267,7 +267,7 @@ fr:"Le plus grand poisson d’eau douce d’Amérique du Nord a donné le premie
 tip:{en:"Serve it at 8–10 °C from a nacre or horn spoon; steel oxidises the grain within seconds and leaves a tinny edge you cannot wash out. Being low in iodine it holds its own under cream and warm blini — but never under lemon, which flattens it.",
 fr:"Servez-le entre 8 et 10 °C à la cuillère de nacre ou de corne : l’acier oxyde le grain en quelques secondes et y laisse un goût de métal. Peu iodé, il tient sous la crème et le blini tiède sans disparaître — mais jamais sous le citron, qui l’aplatit."},
 pairs:["creme-fraiche","egg","potato","chives","butter","cream"],
-svg:'<ellipse class="f2 sf" cx="70" cy="34" rx="13" ry="7"/><ellipse class="f1 sf" cx="46" cy="56" rx="24" ry="16"/><ellipse class="f3 sf" cx="46" cy="56" rx="18" ry="11"/><circle class="dot" cx="40" cy="53" r="2.2"/><circle class="dot" cx="50" cy="59" r="2.2"/><circle class="dot" cx="48" cy="51" r="2.2"/>'},
+svg:'<path class="f1 sf" d="M22 52q0-14 22-14t22 14q0 14-22 14T22 52z"/><path class="dot" d="M32 50q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M44 54q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M54 49q4-4 8 0t-4 6-5-2 1-4z"/><path class="f2 sf" d="M68 34q10 4 8 16-1 11-10 14-5-14-2-30z"/>'},
 
 {id:"caviar-baeri",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Baerii caviar",fr:"Caviar baeri"},latin:"Acipenser baerii",
 origin:{en:"Ponds of Aquitaine and Sologne",fr:"Étangs d’Aquitaine et de Sologne"},season:[],
@@ -287,5 +287,5 @@ fr:"L’esturgeon adriatique a disparu du Pô et de ses affluents — l’espèc
 tip:{en:"Serve at 8–10 °C on the back of the hand or a nacre spoon; metal turns the almond note metallic within seconds. Keep lemon away from it — the acid erases exactly the sweetness you paid for.",
 fr:"Servez-le à 8–10 °C sur le dos de la main ou à la cuillère de nacre : le métal métallise la note d’amande en quelques secondes. Pas de citron — l’acide efface précisément la douceur que vous avez payée."},
 pairs:["creme-fraiche","potato","egg","chives","butter","oyster"],
-svg:'<ellipse class="f2 sf" cx="48" cy="52" rx="26" ry="19"/><ellipse class="s" cx="48" cy="52" rx="20" ry="13"/><circle class="dot" cx="42" cy="47" r="2.4"/><circle class="dot" cx="53" cy="47" r="2.4"/><circle class="dot" cx="46" cy="56" r="2.4"/><circle class="dot" cx="56" cy="55" r="2.2"/>'}
+svg:'<g transform="translate(-11.28 -11.75) scale(1.235)"><path class="f2 sf" d="M24 50q0-15 24-15t24 15q0 15-24 15t-24-15z"/><path class="dot" d="M34 48q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M46 52q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M57 47q4-4 8 0t-4 6-5-2 1-4z"/><path class="s" d="M28 38q9-8 22-6" stroke-width="1.8"/></g>'}
 ]);

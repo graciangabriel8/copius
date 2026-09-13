@@ -47,7 +47,7 @@ fr:"L’essentiel du chlorure de calcium mondial est un sous-produit : le procé
 tip:{en:"Keep it strictly in the bath — 0.5 to 1 % in cold water — and rinse each sphere in clean water the moment it comes out, because the bitter metallic taste transfers in seconds. It pulls water from the air fast enough to turn to syrup in an open jar, so buy small and close it hard.",
 fr:"Gardez-le strictement dans le bain — 0,5 à 1 % en eau froide — et rincez chaque sphère à l’eau claire dès la sortie : l’amertume métallique passe en quelques secondes. Il capte l’humidité de l’air assez vite pour tourner en sirop dans un bocal ouvert : achetez petit et refermez fort."},
 pairs:["mango","olive","yogurt","tomato","cucumber","lemon"],
-svg:'<path class="f1 sf" d="M18 48h56q-3 24-16 28H34q-13-4-16-28z"/><path class="s" d="M24 58q12 6 24 0t22 2"/><path class="f2 sf" d="M56 20 72 14l6 14-14 8z"/><circle class="dot" cx="58" cy="37" r="2.5"/><circle class="dot" cx="51" cy="43" r="2"/>'},
+svg:'<g transform="translate(5.04 5.25) scale(0.895)"><path class="f1 sf" d="M18 48h56q-3 24-16 28H34q-13-4-16-28z"/><path class="s" d="M24 58q12 6 24 0t22 2"/><path class="f2 sf" d="M56 20 72 14l6 14-14 8z"/><circle class="dot" cx="58" cy="37" r="2.5"/><circle class="dot" cx="51" cy="43" r="2"/></g>'},
 
 {id:"lactate-de-calcium",cat:"texture",price:2,pk:"30–60 €/kg",name:{en:"Calcium lactate",fr:"Lactate de calcium"},latin:"Calcium lactate (E327)",
 origin:{en:"Fermented lactic acid, industrial",fr:"Acide lactique de fermentation, industriel"},season:[],
@@ -67,7 +67,7 @@ fr:"Ce n’est pas un sel mais deux fondus en un sel double, le calcium lié à 
 tip:{en:"Weigh 1.5 to 2 % into the base, blend, and rest it until every bubble has risen — trapped air floats a sphere and sets it flat on one side. Past about 3 % the mouth turns chalky, and the answer is a longer bath, not more salt.",
 fr:"Pesez 1,5 à 2 % dans la base, mixez, et laissez reposer jusqu’à ce que toutes les bulles soient remontées : l’air emprisonné fait flotter la sphère, qui prend plate d’un côté. Au-delà de 3 % environ la bouche devient crayeuse, et la réponse est un bain plus long, pas plus de sel."},
 pairs:["yogurt","cream","mango","dark-chocolate","coffee","cognac","raspberry"],
-svg:'<circle class="f1 sf" cx="46" cy="52" r="24"/><circle class="f3 sf" cx="46" cy="52" r="18"/><path class="s" d="M46 34a18 18 0 0118 18"/><circle class="f1 sf" cx="74" cy="30" r="7"/>'},
+svg:'<g transform="translate(4.46 4.65) scale(0.907)"><circle class="f1 sf" cx="46" cy="52" r="24"/><circle class="f3 sf" cx="46" cy="52" r="18"/><path class="s" d="M46 34a18 18 0 0118 18"/><circle class="f1 sf" cx="74" cy="30" r="7"/></g>'},
 
 {id:"sulfate-de-calcium",cat:"texture",price:2,pk:"15–35 €/kg",name:{en:"Calcium sulfate",fr:"Sulfate de calcium"},latin:"Calcii sulfas dihydricus",
 origin:{en:"Gypsum quarries",fr:"Carrières de gypse"},season:[],

@@ -87,7 +87,7 @@ fr:"Le bouquet se pêche à pied, à la balance, un filet cerclé glissé dans l
 tip:{en:"Court-bouillon salted to the strength of seawater, prawns dropped in live, two minutes counted from the return to the boil for a large one, then left to cool in their own liquid. Peel them before cooking and you lose the coral colour and half the flavour; the shell is the point.",
 fr:"Court-bouillon salé comme l’eau de mer, bouquets jetés vivants, deux minutes comptées à la reprise de l’ébullition pour les gros, puis refroidissement dans la cuisson. Décortiqués avant cuisson, ils perdent la couleur corail et la moitié du goût : la carapace fait tout."},
 pairs:["lemon","butter","fleur-de-sel-guerande","dill","parsley","shallot","white-wine-vinegar","fennel"],
-svg:'<path class="f2 sf" d="M64 30q7 15-3 28-10 13-25 11-8-1-8-8t9-8q12-2 16-12 3-9 11-11z"/><path class="f1 sf" d="M32 61q-9 1-13 8 9 5 16 0z"/><path class="s" d="M64 30q4-9 1-15M64 30q9-6 12-13M57 40q-2 11-11 17M50 42q-1 12-11 18"/><circle class="dot" cx="60" cy="35" r="2"/>'},
+svg:'<g transform="translate(5.04 5.25) scale(0.895)"><path class="f2 sf" d="M64 30q7 15-3 28-10 13-25 11-8-1-8-8t9-8q12-2 16-12 3-9 11-11z"/><path class="f1 sf" d="M32 61q-9 1-13 8 9 5 16 0z"/><path class="s" d="M64 30q4-9 1-15M64 30q9-6 12-13M57 40q-2 11-11 17M50 42q-1 12-11 18"/><circle class="dot" cx="60" cy="35" r="2"/></g>'},
 
 {id:"tomalley",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Crab tomalley (kani miso)",fr:"Crème de crabe (kani miso)"},latin:"Brachyura / Nephropidae (hepatopancreas)",
 origin:{en:"Inside the crab shell",fr:"Sous la carapace du crabe"},season:[],
@@ -207,7 +207,7 @@ fr:"On l’achète pour ses œufs, dans une fenêtre de quelques semaines d’au
 tip:{en:"Tie it and steam it belly up, twelve to fifteen minutes, with a perilla leaf on the shell, so the roe stays in the carapace instead of running into the basket. Eat it hot with Zhenjiang vinegar and a heap of shredded ginger — the roe sets waxy as it cools.",
 fr:"Ficelez-le et cuisez-le à la vapeur ventre en l’air, douze à quinze minutes, une feuille de périlla posée sur la carapace, pour que les œufs restent dedans plutôt que de couler dans le panier. Mangez-le chaud avec du vinaigre de Zhenjiang et du gingembre en fine julienne : le corail fige et devient cireux en refroidissant."},
 pairs:["chinkiang-vinegar","ginger","shaoxing-wine","shiso","spring-onion","soy-sauce","dried-chrysanthemum-flower"],
-svg:'<path class="f3 sf" d="M34 40h28q5 0 5 5v14q0 6-6 6H35q-6 0-6-6V45q0-5 5-5z"/><path class="f1 sf" d="M29 45q-11-2-15-11 7-2 11 2 0-6 6-6 0 9 5 11zM67 45q11-2 15-11-7-2-11 2 0-6-6-6 0 9-5 11z"/><path class="s" d="M18 33l-5-5M23 31l-3-6M78 33l5-5M73 31l3-6"/><path class="s" d="M34 65 26 77M44 66l-4 12M52 66l4 12M62 65l8 12"/><path class="s" d="M40 41v-5M56 41v-5"/>'},
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f3 sf" d="M34 40h28q5 0 5 5v14q0 6-6 6H35q-6 0-6-6V45q0-5 5-5z"/><path class="f1 sf" d="M29 45q-11-2-15-11 7-2 11 2 0-6 6-6 0 9 5 11zM67 45q11-2 15-11-7-2-11 2 0-6-6-6 0 9-5 11z"/><path class="s" d="M18 33l-5-5M23 31l-3-6M78 33l5-5M73 31l3-6"/><path class="s" d="M34 65 26 77M44 66l-4 12M52 66l4 12M62 65l8 12"/><path class="s" d="M40 41v-5M56 41v-5"/></g>'},
 
 {id:"hotate",cat:"shellfish",price:3,pk:"40–75 €/kg",name:{en:"Hotate scallop",fr:"Hotate (Saint-Jacques du Japon)"},latin:"Mizuhopecten yessoensis",
 origin:{en:"Hokkaido and Mutsu Bay",fr:"Hokkaidō et baie de Mutsu"},season:[],
@@ -367,7 +367,7 @@ fr:"On ramasse le bigorneau sur les côtes de l’Atlantique Nord depuis la pré
 tip:{en:"Five to seven minutes in water salted like the sea with thyme and a bay leaf, then let them cool in that liquid — boiled longer they retract hard into the spiral and no pin will reach them. Flick off the operculum first, then discard the dark coil at the tip.",
 fr:"Cinq à sept minutes dans une eau salée comme la mer, avec du thym et du laurier, puis laissez-les refroidir dans cette cuisson — cuits plus longtemps, ils se rétractent au fond de la spirale et aucune épingle ne les rattrape. Ôtez d’abord l’opercule, puis jetez la spire sombre du bout."},
 pairs:["butter","garlic","parsley","fleur-de-sel-guerande","lemon","thyme","bay-leaf","shallot"],
-svg:'<path class="f2 sf" d="M48 22q18 12 18 32 0 18-18 20t-18-20q0-20 18-32z"/><path class="s" d="M34 45q14 6 28 0M32 57q16 6 32 0M40 33q8 4 16 0"/><ellipse class="f1 sf" cx="48" cy="71" rx="9" ry="5"/><path class="s" d="M48 71 70 79"/><circle class="dot" cx="72" cy="80" r="3"/>'},
+svg:'<g transform="translate(4.46 4.65) scale(0.907)"><path class="f2 sf" d="M48 22q18 12 18 32 0 18-18 20t-18-20q0-20 18-32z"/><path class="s" d="M34 45q14 6 28 0M32 57q16 6 32 0M40 33q8 4 16 0"/><ellipse class="f1 sf" cx="48" cy="71" rx="9" ry="5"/><path class="s" d="M48 71 70 79"/><circle class="dot" cx="72" cy="80" r="3"/></g>'},
 
 {id:"conch",cat:"shellfish",price:2,pk:"18–30 €/kg",name:{en:"Queen conch",fr:"Lambi"},latin:"Lobatus gigas",
 origin:{en:"Caribbean seagrass beds",fr:"Herbiers des Antilles"},season:[],
@@ -717,5 +717,5 @@ fr:"Un escargot d’élevage pond cinquante à cent œufs par an, chacun une per
 tip:{en:"Never cook them: heat hardens the shell and the pearl turns to grit. Set them on something warm rather than in it — a potato, a beurre blanc, a still-warm brioche — and at the last second, at the table.",
 fr:"Ne les cuisez jamais : la chaleur durcit la coque et la perle devient du gravier. Posez-les sur quelque chose de chaud plutôt que dedans — une pomme de terre, un beurre blanc, une brioche encore tiède — et au dernier moment, à table."},
 pairs:["butter","garlic","parsley","potato","mushroom","chervil","creme-fraiche"],
-svg:'<path class="f2 sf" d="M40 34q16 0 16 16t-14 16q-12 0-12-10 0-8 8-8 6 0 6 5"/><path class="s" d="M56 62q8 6 16 4"/><circle class="f1 sf" cx="62" cy="72" r="5"/><circle class="f1 sf" cx="74" cy="66" r="5"/><circle class="f1 sf" cx="70" cy="78" r="4"/>'}
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f2 sf" d="M40 34q16 0 16 16t-14 16q-12 0-12-10 0-8 8-8 6 0 6 5"/><path class="s" d="M56 62q8 6 16 4"/><circle class="f1 sf" cx="62" cy="72" r="5"/><circle class="f1 sf" cx="74" cy="66" r="5"/><circle class="f1 sf" cx="70" cy="78" r="4"/></g>'}
 ]);

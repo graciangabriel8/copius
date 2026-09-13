@@ -17,7 +17,7 @@ fr:"Les Péruviens l’appellent jaune alors que la gousse mûre est d’un oran
 tip:{en:"The bitterness sits in the skin: boil the pods three times in fresh water, then peel them before blending and the sauce comes out sweet and clean. From the jar, a heaped tablespoon of paste per two portions is the working dose — it behaves like a purée, not like a spice.",
 fr:"L’amertume est dans la peau : faites bouillir les gousses trois fois en changeant l’eau, puis pelez-les avant de mixer, et la sauce sort douce et nette. En pot, une cuillère à soupe bombée de pâte pour deux portions est la dose de travail — il se comporte en purée, pas en épice."},
 pairs:["potato","lime","chicken","garlic","red-onion","cilantro","peanut","corn"],
-svg:'<path class="f2 sf" d="M40 28q16 6 22 22t-10 24q-10-2-10-14t2-22-4-10z"/><path class="f3 sf" d="M40 28l-3-8 9 1 3 7z"/><path class="s" d="M46 38q8 12 6 28"/><path class="s" d="M38 21q-5-7-12-6"/>'},
+svg:'<g transform="translate(3.12 3.25) scale(0.935)"><path class="f2 sf" d="M40 28q16 6 22 22t-10 24q-10-2-10-14t2-22-4-10z"/><path class="f3 sf" d="M40 28l-3-8 9 1 3 7z"/><path class="s" d="M46 38q8 12 6 28"/><path class="s" d="M38 21q-5-7-12-6"/></g>'},
 
 {id:"aji-panca",cat:"spices",price:2,pk:"40–80 €/kg",name:{en:"Ají panca",fr:"Ají panca"},latin:"Capsicum chinense",
 origin:{en:"Peruvian coast",fr:"Côte péruvienne"},season:[],
@@ -567,7 +567,7 @@ fr:"Garam veut dire « chaud » au sens ayurvédique de ce qui réchauffe le cor
 tip:{en:"Add it in the last two minutes, or off the heat entirely, at half a teaspoon for four people. Cooked from the start, its volatile oils are gone before the dish reaches the table.",
 fr:"Ajoutez-le dans les deux dernières minutes, ou hors du feu, à raison d’une demi-cuillère à café pour quatre. Cuit dès le départ, ses huiles volatiles ont disparu avant que le plat n’arrive à table."},
 pairs:["onion","tomato","ginger","yogurt","lamb","cream","chickpeas","cilantro"],
-svg:'<circle class="f1 sf" cx="48" cy="50" r="27"/><circle class="s" cx="48" cy="50" r="22"/><circle class="f3 sf" cx="48" cy="37" r="8"/><circle class="f3 sf" cx="38" cy="58" r="8"/><circle class="f3 sf" cx="58" cy="58" r="8"/>'},
+svg:'<path class="f2 sf" d="M20 68q5-22 28-22t28 22q-28 6-56 0z"/><path class="s" d="M34 60q5-5 10-4M52 58q5-4 9-1" stroke-width="1.5"/><path class="f1 sf" d="M26 36q7-8 12 0 3 6-2 9-7 3-10-3-1-4 0-6z"/><path class="s" d="M31 27v-5" stroke-width="1.8"/><path class="f1 sf" d="M56 28q12-2 14 4 2 5-6 7-11 2-13-4-1-5 5-7z"/><path class="s" d="M58 31q6-2 10 0" stroke-width="1.4"/>'},
 
 {id:"ginger",cat:"spices",price:1,pk:"5–10 €/kg",name:{en:"Ginger",fr:"Gingembre"},latin:"Zingiber officinale",
 origin:{en:"Maritime Southeast Asia",fr:"Asie du Sud-Est insulaire"},season:[],
@@ -757,7 +757,7 @@ fr:"Le piquant n’existe pas dans la graine intacte — il se fabrique à l’i
 tip:{en:"Pop the whole seeds in hot oil until they jump, for Indian dishes. For a paste, crush them into cold liquid and wait ten minutes.",
 fr:"Faites éclater les graines entières dans l’huile chaude jusqu’à ce qu’elles sautent, pour les plats indiens. Pour une pâte, écrasez-les dans un liquide froid et attendez dix minutes."},
 pairs:["turmeric","curry-leaf","cider-vinegar","cabbage","potato","honey","chili","cumin"],
-svg:'<circle class="f2 sf" cx="41" cy="52" r="5"/><circle class="f2 sf" cx="54" cy="50" r="5"/><circle class="f2 sf" cx="47" cy="62" r="5"/><circle class="f2 sf" cx="59" cy="62" r="5"/><circle class="f2 sf" cx="38" cy="64" r="4"/>'},
+svg:'<path class="f1 sf" d="M56 22q7 0 8 7 2 13-2 24-3 8-7 2-3-8-2-18 1-14 3-15z"/><path class="s" d="M60 30q1 13 0 21" stroke-width="1.4"/><path class="f2 sf" d="M26 58q1-8 9-8t9 7q0 8-9 8-9 0-9-7z"/><path class="f2 sf" d="M40 68q1-7 8-7t8 6q0 7-8 7-8 0-8-6z"/><path class="f2 sf" d="M25 72q1-6 7-6t7 5q0 6-7 6-7 0-7-5z"/>'},
 
 {id:"nigella",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Nigella seed",fr:"Nigelle"},latin:"Nigella sativa",
 origin:{en:"Southwest Asia",fr:"Asie du Sud-Ouest"},season:[],
@@ -1117,7 +1117,7 @@ fr:"L’Europe médiévale l’achetait à la livre : il traverse les listes d�
 tip:{en:"Slice it raw and thin into a pounded paste, and do not treat it as turmeric, which colours and sweetens where this one brings bitterness. A thumb-length piece is enough for a paste for six, and long cooking only concentrates it.",
 fr:"Le trancher cru et fin dans une pâte pilée, et ne pas le traiter comme le curcuma, qui colore et adoucit là où celui-ci apporte de l’amertume. Un morceau de la longueur du pouce suffit pour une pâte pour six, et une cuisson longue ne fait que la concentrer."},
 pairs:["galangal","lemongrass","kaffir-lime-leaf","shrimp-paste","coconut-milk","turmeric"],
-svg:'<path class="f1 sf" d="M20 62q-2-10 8-12t12 4q2-12 10-12t10 10q6-8 14-4t2 16-14 12-20 4-20-6-2-12z"/><path class="s" d="M28 56q2 8 0 14M44 52q3 8 1 16M60 56q2 8 0 12"/><circle class="f2 sf" cx="66" cy="76" r="9"/><circle class="s" cx="66" cy="76" r="4"/>'},
+svg:'<g transform="translate(6.0 6.25) scale(0.875)"><path class="f1 sf" d="M20 62q-2-10 8-12t12 4q2-12 10-12t10 10q6-8 14-4t2 16-14 12-20 4-20-6-2-12z"/><path class="s" d="M28 56q2 8 0 14M44 52q3 8 1 16M60 56q2 8 0 12"/><circle class="f2 sf" cx="66" cy="76" r="9"/><circle class="s" cx="66" cy="76" r="4"/></g>'},
 
 {id:"nora-pepper",cat:"spices",price:2,pk:"35–70 €/kg",name:{en:"Ñora pepper",fr:"Piment ñora"},latin:"Capsicum annuum",
 origin:{en:"Guardamar del Segura, Alicante",fr:"Guardamar del Segura, Alicante"},season:[],

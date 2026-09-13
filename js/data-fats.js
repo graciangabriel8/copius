@@ -177,7 +177,7 @@ fr:"La graisse d’oie fige plus dur et fond plus haut que celle de canard, quel
 tip:{en:"Par-boil the potatoes, dry them completely, then drop them into fat already at 180 °C — wet potatoes and cold fat each give you a soft crust. A tablespoon per person is plenty; more and they poach.",
 fr:"Précuisez les pommes de terre à l’eau, séchez-les complètement, puis jetez-les dans la graisse déjà à 180 °C : pommes humides et graisse froide donnent l’une comme l’autre une croûte molle. Une cuillère à soupe par personne suffit — au-delà, elles pochent."},
 pairs:["potato","garlic","thyme","white-beans","cabbage","onion"],
-svg:'<path class="f2 sf" d="M28 30h40v8H28z"/><path class="f1 sf" d="M30 38h36v30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="s" d="M36 50q12 5 24 0M36 60q12 5 24 0"/><path class="s" d="M60 30l8-8"/><ellipse class="f2 sf" cx="71" cy="19" rx="5" ry="4"/>'},
+svg:'<g transform="translate(6.53 6.8) scale(0.864)"><path class="f2 sf" d="M28 30h40v8H28z"/><path class="f1 sf" d="M30 38h36v30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="s" d="M36 50q12 5 24 0M36 60q12 5 24 0"/><path class="s" d="M60 30l8-8"/><ellipse class="f2 sf" cx="71" cy="19" rx="5" ry="4"/></g>'},
 
 {id:"grapeseed-oil",cat:"fats",price:1,pk:"5–9 €/L",name:{en:"Grapeseed oil",fr:"Huile de pépins de raisin"},latin:"Vitis vinifera",
 origin:{en:"Wine regions of Europe",fr:"Régions viticoles d’Europe"},season:[],

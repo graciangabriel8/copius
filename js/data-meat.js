@@ -27,7 +27,7 @@ fr:"La version de Guémené est bâtie de couches concentriques de chaudins enfi
 tip:{en:"It is eaten cold and thinly sliced, as a starter. Andouillette is a different and much stronger thing — do not confuse them.",
 fr:"Elle se mange froide et finement tranchée, en entrée. L’andouillette est autre chose, et bien plus forte — ne les confondez pas."},
 pairs:["mustard","cider-vinegar","apple","flour-t65","beurre-demi-sel","cornichon","onion","black-pepper"],
-svg:'<circle class="f1 sf" cx="48" cy="56" r="20"/><circle class="s" cx="48" cy="56" r="14"/><circle class="s" cx="48" cy="56" r="8"/><circle class="dot" cx="48" cy="56" r="3"/>'},
+svg:'<path class="f1 sf" d="M17 50q0-20 31-20t31 20q0 20-31 20T17 50z"/><path class="s" d="M25 50q1-13 23-13t23 13q0 13-23 13T25 50z" stroke-width="2"/><path class="s" d="M33 50q1-7 15-7t15 7q0 7-15 7t-15-7z" stroke-width="2"/><path class="f2 sf" d="M42 50q1-3 6-3t6 3q0 3-6 3t-6-3z"/><path class="s" d="M21 40q12-5 25-3M23 61q13 4 26 0" stroke-width="1.4"/>'},
 
 {id:"andouillette",cat:"meat",price:2,pk:"14–25 €/kg",name:{en:"Andouillette",fr:"andouillette"},latin:"Sus scrofa (chitterlings, cased)",
 origin:{en:"Troyes, Champagne",fr:"Troyes, Champagne"},season:[],
@@ -347,7 +347,7 @@ fr:"Le daim n’est pas un indigène d’Europe : il vient d’Anatolie et de M
 tip:{en:"The loin is big enough to roast whole but carries no fat cap: bard it, or take it to 52 °C and no further, because it dries out between 55 and 60. Rest it for as long as it roasted.",
 fr:"La longe est assez grosse pour être rôtie entière mais n’a aucune couverture de gras : bardez-la, ou menez-la à 52 °C et pas au-delà, car elle se dessèche entre 55 et 60. Laissez-la reposer aussi longtemps qu’elle a rôti."},
 pairs:["juniper","blackcurrant","chestnut","celeriac","red-wine-vinegar","thyme","pear","butter"],
-svg:'<path class="f2 sf" d="M38 50q0-12 10-12t10 12-2 20-8 8-8-8z"/><path class="f1 sf" d="M38 44q-10-2-14-12t-2-14q8 4 10 12t8 8zM58 44q10-2 14-12t2-14q-8 4-10 12t-8 8z"/><path class="s" d="M36 50q-8 0-12 4M60 50q8 0 12 4"/><circle class="dot" cx="43" cy="52" r="1.6"/><circle class="dot" cx="53" cy="52" r="1.6"/><path class="s" d="M44 70q4 3 8 0"/>'},
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f2 sf" d="M38 50q0-12 10-12t10 12-2 20-8 8-8-8z"/><path class="f1 sf" d="M38 44q-10-2-14-12t-2-14q8 4 10 12t8 8zM58 44q10-2 14-12t2-14q-8 4-10 12t-8 8z"/><path class="s" d="M36 50q-8 0-12 4M60 50q8 0 12 4"/><circle class="dot" cx="43" cy="52" r="1.6"/><circle class="dot" cx="53" cy="52" r="1.6"/><path class="s" d="M44 70q4 3 8 0"/></g>'},
 
 {id:"figatellu",cat:"meat",price:2,pk:"25–40 €/kg",name:{en:"Figatellu",fr:"figatellu"},latin:"Sus scrofa (Nustrale, liver sausage)",
 origin:{en:"Corsica",fr:"Corse"},season:[11,12,1,2,3],
@@ -667,7 +667,7 @@ fr:"Elle est devenue IGP en 2018, au terme de vingt-cinq ans de querelle sur l�
 tip:{en:"Fry thick slices in a dry pan, two minutes a side without touching them, then break them up; moved too early it turns to paste. Or crumble it in raw with rice or beans and let it dissolve.",
 fr:"Faites-la dorer en tranches épaisses à sec, deux minutes par face sans y toucher, puis brisez-la : remuée trop tôt, elle tourne en purée. Ou émiettez-la crue dans un riz ou des haricots et laissez-la fondre."},
 pairs:["chickpeas","piquillo","onion","olive-oil","apple","rice","pimenton-de-la-vera","egg"],
-svg:'<circle class="f3 sf" cx="48" cy="50" r="22"/><circle class="f1 sf" cx="48" cy="50" r="9"/><ellipse class="dot" cx="40" cy="35" rx="2.8" ry="1.3"/><ellipse class="dot" cx="59" cy="60" rx="2.8" ry="1.3"/><ellipse class="dot" cx="35" cy="59" rx="2.8" ry="1.3"/>'},
+svg:'<path class="dot" d="M18 50q0-19 30-19t30 19q0 19-30 19T18 50z"/><path class="f1 sf" d="M28 44q5-3 7 1t-4 6-5-2 2-5z"/><path class="f1 sf" d="M42 38q5-3 7 1t-4 6-5-2 2-5z"/><path class="f1 sf" d="M57 45q5-3 7 1t-4 6-5-2 2-5z"/><path class="f1 sf" d="M35 58q5-3 7 1t-4 6-5-2 2-5z"/><path class="f1 sf" d="M52 59q5-3 7 1t-4 6-5-2 2-5z"/>'},
 
 {id:"mortadella",cat:"meat",price:2,pk:"15–28 €/kg",name:{en:"Mortadella",fr:"mortadelle"},latin:"Sus scrofa (emulsified, cooked)",
 origin:{en:"Bologna, Emilia",fr:"Bologne, Émilie"},season:[],
@@ -1127,7 +1127,7 @@ fr:"Le code des usages de la charcuterie fixe son hachage : la viande passe dans
 tip:{en:"For a cassoulet, brown the coil whole in duck fat and cut it only afterwards; pricking or slicing it first lets out the fat that was supposed to season the beans.",
 fr:"Pour le cassoulet, faites-la colorer entière dans la graisse de canard et ne la coupez qu’ensuite : la piquer ou la trancher avant, c’est laisser filer le gras qui devait assaisonner les haricots."},
 pairs:["haricot-tarbais","duck-fat","garlic","confit-de-canard","black-pepper","onion","thyme","white-beans"],
-svg:'<path class="f2 sf" d="M53 77a27 27 0 1 0 16-10L60 60a15 15 0 1 1-9 5z"/><path class="s" d="M21 50h12M48 23v12M63 50h12"/><circle class="dot" cx="30" cy="36" r="2"/><circle class="dot" cx="34" cy="64" r="2"/>'},
+svg:'<path class="s" d="M73 50q0-14-11-22-12-6-24-1-11 6-12 19 0 14 11 22 12 6 23 0 9-6 9-15-1-8-8-10-6-1-9 3" stroke-width="9" stroke-linejoin="round"/><path class="s" d="M60 26q2-5 6-6" stroke-width="2.5"/>'},
 
 {id:"turkey",cat:"meat",price:1,pk:"7–14 €/kg",name:{en:"Turkey",fr:"Dinde"},latin:"Meleagris gallopavo",
 origin:{en:"Mexico",fr:"Mexique"},season:[11,12],
@@ -1147,7 +1147,7 @@ fr:"La Vendée est trop humide pour un long séchage à l’air : on désosse do
 tip:{en:"Cut it thick, three or four millimetres. Shaved to a veil like a serrano, the pale soft flesh collapses and all that is left is the herb crust.",
 fr:"Tranchez-le épais, trois ou quatre millimètres. Taillé en voile comme un serrano, la chair pâle et souple s’effondre et il ne reste que le goût des aromates."},
 pairs:["butter","cornichon","mogette","parsley","shallot","cantaloupe","thyme","bay-leaf"],
-svg:'<path class="f2 sf" d="M58 32q14 6 14 20 0 14-14 20 -14 6-24-2 -10-8-6-24 4-16 30-14z"/><path class="s" d="M58 32 66 25"/><circle class="s" cx="69" cy="22" r="4"/><circle class="dot" cx="44" cy="48" r="2.2"/><circle class="dot" cx="54" cy="60" r="2.2"/><circle class="dot" cx="40" cy="62" r="2.2"/>'},
+svg:'<g transform="translate(2.4 2.5) scale(0.95)"><path class="f2 sf" d="M58 32q14 6 14 20 0 14-14 20 -14 6-24-2 -10-8-6-24 4-16 30-14z"/><path class="s" d="M58 32 66 25"/><circle class="s" cx="69" cy="22" r="4"/><circle class="dot" cx="44" cy="48" r="2.2"/><circle class="dot" cx="54" cy="60" r="2.2"/><circle class="dot" cx="40" cy="62" r="2.2"/></g>'},
 
 {id:"venison",cat:"meat",price:3,pk:"22–40 €/kg",name:{en:"Venison",fr:"Venaison"},latin:"Cervidae",
 origin:{en:"Europe",fr:"Europe"},season:[9,10,11,12,1],

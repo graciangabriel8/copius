@@ -47,7 +47,7 @@ fr:"Il vit dans les eaux douces les plus froides du globe, plus au nord qu’auc
 tip:{en:"Cook it barely — it is at its best still translucent at the centre. It goes from perfect to chalky in under a minute.",
 fr:"Cuisez-le à peine — il est à son meilleur encore translucide au cœur. Il passe du parfait au crayeux en moins d’une minute."},
 pairs:["butter","lemon","dill","creme-fraiche","hazelnut","chives","beetroot","horseradish"],
-svg:'<path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="38" cy="53" r="1.8"/><circle class="dot" cx="52" cy="57" r="1.8"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="38" cy="53" r="1.8"/><circle class="dot" cx="52" cy="57" r="1.8"/></g>'},
 
 {id:"black-scabbardfish",cat:"seafood",price:2,pk:"9–16 €/kg",name:{en:"Black scabbardfish",fr:"Sabre noir"},latin:"Aphanopus carbo",
 origin:{en:"Madeira & the Portuguese slope",fr:"Madère & le talus portugais"},season:[],
@@ -207,7 +207,7 @@ fr:"Le nom latin enregistre une odeur : Thymallus, le thym, c’est bien ce que 
 tip:{en:"Cook it on the bank or not at all - hours matter here, not days. Butter and nothing acid: a squeeze of lemon flattens the thyme note that is the only reason to prefer it to a trout.",
 fr:"Cuisez-le au bord de l’eau ou pas du tout : ce sont des heures qui comptent, pas des jours. Beurre et rien d’acide — un filet de citron écrase la note de thym, seule raison de le préférer à une truite."},
 pairs:["butter","thyme","parsley","almond","potato","chervil","watercress","cream"],
-svg:'<path class="f1 sf" d="M22 58q14-12 34-10t22 10q-6 12-24 12T22 58z"/><path class="f2 sf" d="M36 46q6-18 26-20-2 12-4 20z"/><path class="f1 sf" d="M78 58l10-8-3 8 3 8z"/><circle class="dot" cx="32" cy="55" r="2"/><path class="s" d="M40 62q10 4 20 0"/>'},
+svg:'<g transform="translate(4.85 5.05) scale(0.899)"><path class="f1 sf" d="M22 58q14-12 34-10t22 10q-6 12-24 12T22 58z"/><path class="f2 sf" d="M36 46q6-18 26-20-2 12-4 20z"/><path class="f1 sf" d="M78 58l10-8-3 8 3 8z"/><circle class="dot" cx="32" cy="55" r="2"/><path class="s" d="M40 62q10 4 20 0"/></g>'},
 
 {id:"kanpachi",cat:"seafood",price:3,pk:"40–70 €/kg",name:{en:"Greater amberjack (kanpachi)",fr:"Sériole couronnée (kanpachi)"},latin:"Seriola dumerili",
 origin:{en:"Kyushu & the western Pacific",fr:"Kyūshū & Pacifique occidental"},season:[6,7,8,9],
@@ -217,7 +217,7 @@ fr:"Le nom japonais se lit sur la tête : une bande sombre court de chaque œil 
 tip:{en:"It holds a slice better than buri, so cut sashimi thicker, eight to ten millimetres, and let the texture carry it. Salt and sudachi suit it better than the fatty soy treatments that flatter winter yellowtail.",
 fr:"Elle tient la tranche mieux que le buri : taillez les sashimis plus épais, huit à dix millimètres, et laissez la texture parler. Le sel et le sudachi lui vont mieux que les apprêts gras au soja qui flattent la sériole d’hiver."},
 pairs:["soy-sauce","wasabi","sudachi","daikon","shiso","ponzu","junmai-sake","salt"],
-svg:'<path class="f2 sf" d="M20 52q18-12 40-10t18 10q-4 12-22 13T20 52z"/><path class="f1 sf" d="M78 52l10-9-3 9 3 9z"/><path class="f3 sf" d="M28 44l6-2 8 18-6 2z"/><circle class="dot" cx="31" cy="50" r="1.8"/>'},
+svg:'<g transform="translate(3.36 3.5) scale(0.93)"><path class="f2 sf" d="M20 52q18-12 40-10t18 10q-4 12-22 13T20 52z"/><path class="f1 sf" d="M78 52l10-9-3 9 3 9z"/><path class="f3 sf" d="M28 44l6-2 8 18-6 2z"/><circle class="dot" cx="31" cy="50" r="1.8"/></g>'},
 
 {id:"grey-mullet",cat:"seafood",price:1,pk:"6–12 €/kg",name:{en:"Grey mullet",fr:"Mulet"},latin:"Mugil cephalus",
 origin:{en:"Estuaries and coastal lagoons",fr:"Estuaires et lagunes côtières"},season:[9,10,11,12],
@@ -267,7 +267,7 @@ fr:"L’Espagne en mange plus que quiconque et tient la gorge — la kokotxa —
 tip:{en:"Its flesh is fragile and falls apart if turned twice. Cook it on one side only and finish it under the grill.",
 fr:"Sa chair est fragile et se défait si on la retourne deux fois. Cuisez-la d’un seul côté et finissez au gril."},
 pairs:["garlic","olive-oil","parsley","clam","chili","potato","lemon","white-wine-vinegar"],
-svg:'<path class="f3 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="53" r="2"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f3 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="53" r="2"/></g>'},
 
 {id:"sayori",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Halfbeak (sayori)",fr:"Demi-bec du Japon (sayori)"},latin:"Hyporhamphus sajori",
 origin:{en:"Coastal Japan, spring shoals",fr:"Côtes japonaises, bancs de printemps"},season:[2,3,4,5],
@@ -297,7 +297,7 @@ fr:"Le poisson qui a bâti des villes. La Ligue hanséatique vivait du hareng sa
 tip:{en:"Smoked, salted or soused, it wants something starchy and something sour alongside — potato and onion, or apple and cream.",
 fr:"Fumé, salé ou mariné, il appelle un féculent et un acide à côté — pomme de terre et oignon, ou pomme et crème."},
 pairs:["potato","onion","cream","apple","dill","cider-vinegar","rye-flour","black-pepper"],
-svg:'<path class="f3 sf" d="M18 56q18-12 42-8t18 8q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="54" r="2"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f3 sf" d="M18 56q18-12 42-8t18 8q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="54" r="2"/></g>'},
 
 {id:"honkarebushi",cat:"seafood",price:3,pk:"120–250 €/kg",name:{en:"Honkarebushi",fr:"Honkarebushi (katsuobushi affiné à la moisissure)"},latin:"Katsuwonus pelamis",
 origin:{en:"Kagoshima and Shizuoka, Japan",fr:"Kagoshima et Shizuoka, Japon"},season:[],
@@ -317,7 +317,7 @@ fr:"Sur les séchoirs de Yongdae-ri, à Inje, les lieus d’Alaska pendent tout 
 tip:{en:"Beat the dried fish or roll it hard to open the fibres, soak twenty minutes and squeeze — the squeezed water is bitter, the fish is not. Fry it in sesame oil before you add any liquid and the soup comes out milky instead of thin.",
 fr:"Battez le poisson sec ou roulez-le fermement pour ouvrir les fibres, trempez vingt minutes puis pressez : l’eau de pressage est amère, le poisson non. Faites-le revenir à l’huile de sésame avant de mouiller et le bouillon sortira laiteux au lieu de clair."},
 pairs:["doenjang","gochugaru","egg","sesame-oil","garlic","daikon","spring-onion"],
-svg:'<path class="f1 sf" d="M48 18q14 6 16 22t-2 30l-6 16q-2 6-8 6t-8-6l-6-16q-4-14-2-30T48 18z"/><path class="s" d="M48 24v56"/><path class="s" d="M40 36q8 4 16 0M38 48q10 4 20 0M40 60q8 4 16 0"/><circle class="dot" cx="42" cy="27" r="1.8"/>'},
+svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f1 sf" d="M48 18q14 6 16 22t-2 30l-6 16q-2 6-8 6t-8-6l-6-16q-4-14-2-30T48 18z"/><path class="s" d="M48 24v56"/><path class="s" d="M40 36q8 4 16 0M38 48q10 4 20 0M40 60q8 4 16 0"/><circle class="dot" cx="42" cy="27" r="1.8"/></g>'},
 
 {id:"buri",cat:"seafood",price:3,pk:"35–60 €/kg",name:{en:"Japanese amberjack (buri)",fr:"Sériole du Japon (buri)"},latin:"Seriola quinqueradiata",
 origin:{en:"Sea of Japan, winter",fr:"Mer du Japon, en hiver"},season:[11,12,1,2],
@@ -437,7 +437,7 @@ fr:"Il n’a pas de vessie natatoire et doit nager sans cesse pour ne pas couler
 tip:{en:"Buy it the day it was landed or not at all. Its acidity partners — gooseberry, rhubarb, mustard — are not decoration but necessity.",
 fr:"Achetez-le le jour du débarquement ou pas du tout. Ses partenaires acides — groseille à maquereau, rhubarbe, moutarde — ne sont pas décoratifs mais nécessaires."},
 pairs:["gooseberry","mustard","rhubarb","lemon","horseradish","cider-vinegar","black-pepper","beetroot"],
-svg:'<path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><path class="s" d="M30 48q8 4 16 0M38 62q8 4 16 0"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><path class="s" d="M30 48q8 4 16 0M38 62q8 4 16 0"/></g>'},
 
 {id:"maguro-bushi",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Maguro-bushi",fr:"Maguro-bushi (thon séché)"},latin:"Thunnus spp. (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -527,7 +527,7 @@ fr:"Les cuisiniers japonais distinguent les deux poissons plats par une règle 
 tip:{en:"Hirame is too firm and too lean to slice thick. Cure the fillet two hours in kombu, then cut usuzukuri thin enough to read through, on one long draw of the blade rather than a sawing motion.",
 fr:"Le hirame est trop ferme et trop maigre pour être tranché épais. Faites-le maturer deux heures dans le kombu, puis coupez en usuzukuri assez fin pour lire au travers, d’un seul tiré de lame et jamais en sciant."},
 pairs:["kombu","ponzu","sudachi","wasabi","koikuchi-shoyu","shiso","junmai-sake","salt"],
-svg:'<path class="f2 sf" d="M30 50q4-20 20-22t22 18q2 20-20 24T30 50z"/><path class="s" d="M34 34q20-2 34 8M34 66q20 2 34-8"/><path class="f1 sf" d="M20 68l10 3-10 4zM22 76l10 2-10 4z"/><circle class="dot" cx="42" cy="38" r="1.8"/><circle class="dot" cx="48" cy="34" r="1.8"/>'},
+svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f2 sf" d="M30 50q4-20 20-22t22 18q2 20-20 24T30 50z"/><path class="s" d="M34 34q20-2 34 8M34 66q20 2 34-8"/><path class="f1 sf" d="M20 68l10 3-10 4zM22 76l10 2-10 4z"/><circle class="dot" cx="42" cy="38" r="1.8"/><circle class="dot" cx="48" cy="34" r="1.8"/></g>'},
 
 {id:"sanma",cat:"seafood",price:2,pk:"12–20 €/kg",name:{en:"Pacific saury (sanma)",fr:"Balaou du Japon (sanma)"},latin:"Cololabis saira",
 origin:{en:"Northwest Pacific, autumn run",fr:"Pacifique nord-ouest, passage d’automne"},season:[9,10,11],
@@ -597,7 +597,7 @@ fr:"Pendant des décennies ce fut l’alternative bon marché dont personne ne v
 tip:{en:"It is drier than cod, so brine it briefly — twenty minutes in salted water before cooking makes a visible difference.",
 fr:"Il est plus sec que le cabillaud : saumurez-le brièvement — vingt minutes en eau salée avant cuisson font une différence visible."},
 pairs:["butter","parsley","potato","lemon","cream","leek","black-pepper","mustard"],
-svg:'<path class="f2 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f2 sf" d="M78 56l10-8v16z"/><path class="s" d="M40 44q6 4 14 2"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f2 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f2 sf" d="M78 56l10-8v16z"/><path class="s" d="M40 44q6 4 14 2"/></g>'},
 
 {id:"poutine",cat:"seafood",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Poutine (Niçoise whitebait)",fr:"Poutine"},latin:"Sardina pilchardus / Engraulis encrasicolus (fry)",
 origin:{en:"Riviera, Cagnes to Menton",fr:"Riviera, de Cagnes à Menton"},season:[2,3],
@@ -887,7 +887,7 @@ fr:"La truite au bleu exige un poisson tué juste avant cuisson — un film de m
 tip:{en:"Stuff the cavity with lemon and herbs and bake it whole. Fillets of trout dry out faster than almost any other fish.",
 fr:"Garnissez la cavité de citron et d’herbes et cuisez-la entière. Les filets de truite sèchent plus vite que presque tout autre poisson."},
 pairs:["almond","butter","lemon","parsley","white-wine-vinegar","dill","cream","hazelnut"],
-svg:'<path class="f2 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f2 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="36" cy="52" r="1.6"/><circle class="dot" cx="48" cy="58" r="1.6"/><circle class="dot" cx="56" cy="51" r="1.6"/>'},
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f2 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f2 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="36" cy="52" r="1.6"/><circle class="dot" cx="48" cy="58" r="1.6"/><circle class="dot" cx="56" cy="51" r="1.6"/></g>'},
 
 {id:"tuna",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Tuna",fr:"Thon"},latin:"Thunnus thynnus",
 origin:{en:"Mediterranean & open oceans",fr:"Méditerranée & océans"},season:[5,6,7,8,9],
@@ -997,5 +997,5 @@ fr:"Une perche qui se comporte en brochet, et le poisson d’eau douce que les r
 tip:{en:"The skin is thin and crisps beautifully, unlike most freshwater fish. Cook it skin-side down and leave it alone.",
 fr:"La peau est fine et croustille superbement, contrairement à la plupart des poissons d’eau douce. Cuisez-le côté peau et n’y touchez pas."},
 pairs:["butter","white-wine-vinegar","shallot","cream","chives","leek","lemon","morel"],
-svg:'<path class="f3 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><path class="s" d="M34 44q6 4 12 2"/>'}
+svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f3 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><path class="s" d="M34 44q6 4 12 2"/></g>'}
 ]);

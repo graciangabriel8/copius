@@ -567,7 +567,7 @@ fr:"L’Alsace et l’Allemagne le saumurent et le servent sur la choucroute ; l
 tip:{en:"Simmer it first, then roast it hard for twenty minutes. Roasting from raw gives leather outside and raw within.",
 fr:"Pochez-le d’abord, puis rôtissez-le fort vingt minutes. Rôti cru il donne du cuir dehors et du cru dedans."},
 pairs:["sauerkraut","juniper","mustard","potato","caraway","bay-leaf","onion","black-pepper"],
-svg:'<path class="f2 sf" d="M32 40q18-4 24 10t-4 26-24-6 4-30z"/><path class="s" d="M52 70l8 8"/>'},
+svg:'<path class="f1 sf" d="M47 24q9-4 19 3 10 4 12 18c3 9-1 17-8 20q-14 6-28 1-11 3-13-6-9-4-4-13-4-9 9-14 4-8 13-9z"/><path class="f2 sf" d="M47 24q-9 1-13 9-13 5-9 14-5 9 4 13 2 9 13 6 14-2 13-14 6-16-8-28z"/><path class="s" d="M27 46q7-6 14-4M66 33q6 9 4 20" stroke-width="1.5"/><path class="f1 sf" d="M36 48q-8 6-13 14c-3 3 5 10 8 7q6-8 13-14z"/><path class="f2 sf" d="M23 62c3-3 11 4 8 7-3 3-11-4-8-7z" stroke-width="1.5"/><path class="dot" d="M25 64q3-1 4 1-1 3-4 2-2-1 0-3z"/>'},
 
 {id:"foie-de-porc",cat:"cuts",price:1,pk:"4–8 €/kg",name:{en:"Pork liver",fr:"Foie de porc"},latin:"Sus scrofa domesticus (hepar)",
 origin:{en:"Farmhouse charcuterie, France",fr:"Charcuterie fermière, France"},season:[],

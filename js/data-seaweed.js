@@ -197,5 +197,5 @@ fr:"Les lanières ne sont pas la plante mais ses organes reproducteurs : l’Him
 tip:{en:"Cook it like a green bean, not like a dried seaweed: fifteen minutes' soaking and twenty at a simmer, until it snaps instead of squeaking on the tooth. Undercooked it stays rubbery and no dressing hides it.",
 fr:"Cuisez-la comme un haricot vert, pas comme une algue séchée : quinze minutes de trempage et vingt minutes de frémissement, jusqu’à ce qu’elle casse au lieu de crisser sous la dent. Insuffisamment cuite, elle reste caoutchouteuse et aucune sauce ne le rattrape."},
 pairs:["olive-oil","garlic","lemon","cod","potato","sesame","chorizo"],
-svg:'<path class="f3 sf" d="M43 74q5-5 10 0 2 6-5 6t-5-6z"/><path class="s" d="M46 74q-9-20-5-34t-7-22M48 74q0-24 5-36t2-18M51 74q7-18 11-30t2-18"/><path class="s" d="M34 18q-4-6-9-5M55 20q3-6 9-5"/>'}
+svg:'<g transform="translate(5.23 5.45) scale(0.891)"><path class="f3 sf" d="M43 74q5-5 10 0 2 6-5 6t-5-6z"/><path class="s" d="M46 74q-9-20-5-34t-7-22M48 74q0-24 5-36t2-18M51 74q7-18 11-30t2-18"/><path class="s" d="M34 18q-4-6-9-5M55 20q3-6 9-5"/></g>'}
 ]);

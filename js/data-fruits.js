@@ -77,7 +77,7 @@ fr:"La tradition anglaise veut qu’on ne cueille pas de mûres après la Saint-
 tip:{en:"Never wash them until the moment you use them. They absorb water instantly and collapse.",
 fr:"Ne les lavez qu’au moment de les utiliser. Elles absorbent l’eau instantanément et s’effondrent."},
 pairs:["apple","cream","vanilla","dark-chocolate","hazelnut","honey","thyme","black-pepper"],
-svg:'<circle class="f1 sf" cx="42" cy="52" r="6"/><circle class="f1 sf" cx="54" cy="50" r="6"/><circle class="f1 sf" cx="48" cy="62" r="6"/><circle class="f1 sf" cx="38" cy="63" r="5"/><circle class="f1 sf" cx="58" cy="61" r="5"/>'},
+svg:'<path class="f2 sf" d="M34 40q14-8 26 2 9 8 4 20-6 13-19 12-14-1-16-15-2-13 5-19z"/><path class="s" d="M40 44q6 8 5 18M56 44q-4 9-3 19M36 55q12 4 24 0M38 64q10 4 20 0" stroke-width="1.5"/><path class="s" d="M42 34q4-8 8-10M48 32q3-8 8-9" stroke-width="2"/><path class="f1 sf" d="M36 32q10-6 20-1-9 5-20 1z"/>'},
 
 {id:"blackcurrant",cat:"fruits",price:2,pk:"12–22 €/kg",name:{en:"Blackcurrant",fr:"Cassis"},latin:"Ribes nigrum",
 origin:{en:"Northern Europe & Asia",fr:"Europe du Nord & Asie"},season:[7,8],
@@ -797,7 +797,7 @@ fr:"C’est la banane qui n’est jamais devenue un dessert : trop amylacée et 
 tip:{en:"Score the skin lengthways along the ridges and lever it off with your thumb; a plantain does not peel like a banana, and a green one will not peel at all under running water. Green plantain fries twice: once at 150 °C to cook it through, then flatten, then again at 190 °C to crisp.",
 fr:"Incisez la peau dans la longueur, le long des arêtes, et soulevez-la au pouce ; une plantain ne s’épluche pas comme une banane, et une verte refuse de s’ouvrir sous l’eau courante. La plantain verte se frit deux fois : d’abord à 150 °C pour la cuire à cœur, puis on l’aplatit, puis à 190 °C pour la croustiller."},
 pairs:["garlic","lime","chili","coconut-oil","black-pepper","pork","red-palm-oil","onion"],
-svg:'<path class="f2 sf" d="M28 26q-3 30 18 43 12 7 17-1-14-3-24-13T35 25q-4-3-7 1z"/><path class="s" d="M33 40q9 16 22 25M39 33q7 17 20 27"/><circle class="f1 sf" cx="70" cy="68" r="9"/><circle class="s" cx="70" cy="68" r="4"/>'},
+svg:'<g transform="translate(2.93 3.05) scale(0.939)"><path class="f2 sf" d="M28 26q-3 30 18 43 12 7 17-1-14-3-24-13T35 25q-4-3-7 1z"/><path class="s" d="M33 40q9 16 22 25M39 33q7 17 20 27"/><circle class="f1 sf" cx="70" cy="68" r="9"/><circle class="s" cx="70" cy="68" r="4"/></g>'},
 
 {id:"plum",cat:"fruits",price:1,pk:"3–6 €/kg",name:{en:"Plum",fr:"Prune"},latin:"Prunus domestica",
 origin:{en:"Caucasus & Central Asia",fr:"Caucase & Asie centrale"},season:[7,8,9],
@@ -1187,7 +1187,7 @@ fr:"Presque toujours sucrée avant séchage, car une canneberge séchée non suc
 tip:{en:"Their acidity cuts fat, which is why they work in a stuffing or a grain salad far better than raisins do.",
 fr:"Leur acidité coupe le gras, ce qui les rend bien meilleures qu’un raisin sec dans une farce ou une salade de céréales."},
 pairs:["turkey","pecan","orange","wild-rice","goat-cheese","walnut","sage","hazelnut"],
-svg:'<ellipse class="f1 sf" cx="42" cy="55" rx="6" ry="5"/><ellipse class="f1 sf" cx="55" cy="58" rx="6" ry="5"/><ellipse class="f1 sf" cx="47" cy="66" rx="6" ry="5"/>'},
+svg:'<path class="f2 sf" d="M26 54q2-11 14-10 13 1 13 10 0 10-13 10-15 0-14-10z"/><path class="s" d="M31 52q6 5 15 2M33 60q6-4 14-3" stroke-width="1.5"/><path class="f2 sf" d="M54 42q2-9 12-8 11 1 11 8 0 8-11 8-13 0-12-8z"/><path class="s" d="M58 41q5 4 12 1" stroke-width="1.5"/><path class="f2 sf" d="M50 70q2-8 11-7 10 1 10 7 0 7-10 7-12 0-11-7z"/>'},
 
 {id:"deglet-nour",cat:"fruits",price:1,pk:"6–12 €/kg",name:{en:"Deglet Nour date",fr:"Datte Deglet Nour"},latin:"Phoenix dactylifera",
 origin:{en:"Tolga oases, Algeria",fr:"Oasis de Tolga, Algérie"},season:[],
@@ -1247,5 +1247,5 @@ fr:"Cultivée en Chine depuis des siècles comme ingrédient médicinal des soup
 tip:{en:"Simmer them in a broth or a congee the way Chinese cooks do. Eaten dry by the handful they are leathery and sour.",
 fr:"Faites-les mijoter dans un bouillon ou un congee comme les cuisiniers chinois. Sèches à la poignée elles sont coriaces et acides."},
 pairs:["ginger","rice","goat-cheese","honey","chicken","jasmine-rice","sesame","almond"],
-svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="5" ry="8"/><ellipse class="f1 sf" cx="54" cy="58" rx="5" ry="8"/><ellipse class="f1 sf" cx="47" cy="68" rx="5" ry="8"/>'}
+svg:'<path class="f2 sf" d="M30 32q8-2 10 7 3 15-1 25-4 9-8 4-4-7-3-19 1-15 2-17z"/><path class="s" d="M34 40q2 14 0 24" stroke-width="1.4"/><path class="f2 sf" d="M50 40q8-2 10 6 3 13-1 21-4 8-7 3-4-6-3-16 1-13 1-14z"/><path class="s" d="M54 47q2 12 0 19" stroke-width="1.4"/><path class="f2 sf" d="M66 36q7-2 9 6 2 12-1 19-4 7-7 2-3-5-2-14 1-12 1-13z"/>'}
 ]);
