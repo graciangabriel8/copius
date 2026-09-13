@@ -692,3 +692,29 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .theme-btn:hover{border-color:var(--ink-3);background:var(--chip)}
 
 .foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+
+/* ---------- motion (v84): theme, ingredient of the day, search ---------- */
+/* Theme. app.js arms this class for the 500 ms of a switch only, so every
+   colour crossfades once and the page's own timings are untouched otherwise. */
+html.theme-switching,html.theme-switching *,html.theme-switching *::before,html.theme-switching *::after{
+  transition:background-color .45s ease,color .45s ease,border-color .45s ease,fill .45s ease,
+    stroke .45s ease,box-shadow .45s ease,transform .5s cubic-bezier(.2,.7,.2,1)!important}
+.theme-btn{transition:background .12s,border-color .12s,transform .5s cubic-bezier(.2,.7,.2,1)}
+
+/* Ingredient of the day. The drawing floats; each new entry — a new day, a
+   language switch — rises in. */
+.daily .d-art{animation:d-float 4.5s ease-in-out infinite}
+.daily .d-art svg,.daily .d-art img,.daily>div{animation:d-in .6s ease both}
+@keyframes d-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes d-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Search. Focus widens the field; app.js types the placeholder while it idles. */
+#search{transition:width .4s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
+#search:focus{width:min(520px,100%)}
+@media (max-width:720px){#search:focus{width:100%}}
+
+@media (prefers-reduced-motion:reduce){
+  .daily .d-art,.daily .d-art svg,.daily .d-art img,.daily>div{animation:none}
+  #search,.theme-btn{transition:none}
+  html.theme-switching,html.theme-switching *{transition:none!important}
+}

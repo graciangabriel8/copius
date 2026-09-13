@@ -338,6 +338,7 @@ def page(i, lang, by_id, count, G):
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
+<script src="%(up)sjs/page.js?v=%(v)d" defer></script>
 </body>
 </html>
 """ % {

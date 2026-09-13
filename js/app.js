@@ -249,6 +249,7 @@
     document.documentElement.lang = state.lang;
     el("tagline").textContent = t.tagline;
     placeholder("search", t.searchPh);
+    startTypewriter();
     /* Static markup names its controls by key, so they switch with the rest. */
     [["data-i18n-aria", "aria-label"], ["data-i18n-title", "title"]].forEach(function (p) {
       Array.prototype.forEach.call(document.querySelectorAll("[" + p[0] + "]"), function (n) {
@@ -1107,6 +1108,46 @@
     refreshOpenModal();
   }
 
+  /* ---------- motion ---------- */
+  /* The search placeholder types out what the field understands — an
+     ingredient, a flavour, a family — while the field is empty and nobody is
+     in it. Focus restores the full sentence at once; the aria-label is never
+     touched, so assistive tech reads one stable name. */
+  var TW = { timer: null };
+  function startTypewriter() {
+    stopTypewriter();
+    var input = el("search"), t = T();
+    if (reducedMotion() || document.activeElement === input || input.value) return;
+    var words = t.searchPhrases || (state.lang === "fr"
+      ? ["un ingrédient", "une saveur", "une famille"]
+      : ["an ingredient", "a flavour", "a family"]);
+    var lead = t.searchLead || (state.lang === "fr" ? "Rechercher " : "Search ");
+    var w = 0, n = 0, phase = "type";
+    function tick() {
+      var word = words[w], delay = 70;
+      if (phase === "type") { n++; if (n >= word.length) { phase = "hold"; delay = 1600; } }
+      else if (phase === "hold") { phase = "erase"; delay = 40; }
+      else { n--; if (n <= 0) { phase = "type"; w = (w + 1) % words.length; delay = 260; } }
+      input.placeholder = lead + word.slice(0, Math.max(0, n)) + (phase === "hold" ? "\u2026" : "");
+      TW.timer = setTimeout(tick, delay);
+    }
+    TW.timer = setTimeout(tick, 900);
+  }
+  function stopTypewriter() {
+    if (TW.timer) { clearTimeout(TW.timer); TW.timer = null; }
+    el("search").placeholder = T().searchPh;
+  }
+  el("search").addEventListener("focus", stopTypewriter);
+  el("search").addEventListener("blur", function () { if (!el("search").value) startTypewriter(); });
+
+  /* A tab left open past midnight gets the new day's ingredient without a
+     reload; the fresh card rises in through the .daily rules in style.css. */
+  var dailyKey = new Date().toDateString();
+  setInterval(function () {
+    var k = new Date().toDateString();
+    if (k !== dailyKey) { dailyKey = k; renderDaily(); }
+  }, 60000);
+
   /* ---------- events ---------- */
   /* ---------- theme ---------- */
   var LS_THEME = "copius-theme";
@@ -1124,9 +1165,21 @@
     document.querySelector('meta[name="theme-color"]').content =
       getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
   }
+  /* Paper and ink crossfade instead of snapping. The class arms a colour
+     transition on everything for the 500 ms of the switch only, so the rest of
+     the time each control keeps its own timing. The button turns half a circle
+     per press, so the moon rolls into the sun and back. */
+  var themeTurns = 0, themeTimer = null;
   el("themeBtn").addEventListener("click", function () {
-    var next = currentTheme() === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
+    var next = currentTheme() === "dark" ? "light" : "dark", root = document.documentElement;
+    if (!reducedMotion()) {
+      root.classList.add("theme-switching");
+      clearTimeout(themeTimer);
+      themeTimer = setTimeout(function () { root.classList.remove("theme-switching"); }, 500);
+      themeTurns++;
+      el("themeBtn").style.transform = "rotate(" + themeTurns * 180 + "deg)";
+    }
+    root.setAttribute("data-theme", next);
     try { localStorage.setItem(LS_THEME, next); } catch (e) {}
     paintThemeBtn();
   });
