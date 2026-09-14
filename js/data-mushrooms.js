@@ -487,7 +487,7 @@ fr:"Il est carnivore — le mycélium chasse et digère des vers nématodes dans
 tip:{en:"Tear it rather than cutting it, and sear it hard. Cooked gently in its own moisture it turns slimy.",
 fr:"Déchirez-le plutôt que de le couper, et saisissez-le fort. Cuit doucement dans son eau il devient gluant."},
 pairs:["garlic","parsley","soy-sauce","butter","thyme","spring-onion","sesame-oil","cream"],
-svg:'<path class="f3 sf" d="M22 56q6-18 26-16t20 14q-14 10-46 2z"/><path class="s" d="M30 52q14 4 28 0M28 58q16 4 32 0"/>'},
+svg:'<path class="f2 sf" d="M36 27q8-8 19-7q9 1 9 6q-8-4-17-3q-8 1-11 4z"/><path class="f1 sf" d="M27 71q-9-18-4-33q10-12 23-12q11-1 18 5q8 5 6 12q-2 6-9 8q-8 4-17 7q-9 3-17 13z"/><path class="f1 sf" d="M31 65q-7 0-8 4q-1 4 5 4q5 0 7-3z"/><path class="s" d="M29 68q-5-11-4-21M29 68q3-16 7-30M29 68q9-16 19-29M29 68q14-12 30-22M29 68q13-5 27-12" stroke-width="2"/>'},
 
 {id:"parasol-mushroom",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Parasol mushroom",fr:"Coulemelle"},latin:"Macrolepiota procera",
 origin:{en:"Woodland edges and pasture",fr:"Lisières et pâtures"},season:[7,8,9,10],

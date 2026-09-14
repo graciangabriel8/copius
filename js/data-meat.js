@@ -437,7 +437,7 @@ fr:"Le lièvre à la royale est le plat le plus exigeant du répertoire classiqu
 tip:{en:"Far stronger and darker than rabbit, and not interchangeable with it. If a recipe says hare, rabbit will taste thin.",
 fr:"Bien plus fort et plus sombre que le lapin, et non interchangeable. Si une recette dit lièvre, le lapin paraîtra maigre."},
 pairs:["red-wine-vinegar","juniper","foie-gras","shallot","thyme","dark-chocolate","bay-leaf","lard"],
-svg:'<path class="f1 sf" d="M34 64q2-18 16-18t14 16q-12 12-30 2z"/><path class="s" d="M42 46q-4-16 0-18 4 4 4 18M52 46q4-16 8-16-2 6-4 16"/>'},
+svg:'<path class="f1 sf" d="M40 38q-6-9-5-16q3-4 6 1q2 6 3 13zM46 36q0-11 4-16q4-4 6-1q0 6-4 12z"/><path class="f1 sf" d="M40 52q11 1 15 10q4 9 1 14q-4 5-12 5q-10 0-13-8q-3-8 2-15q2-5 7-6z"/><path class="f2 sf" d="M47 70q-10 1-15 5q-2 3 3 4q10 1 15-3q2-4 1-6zM36 58q-4 6-4 11q1 3 4 2q2-6 3-12z"/><path class="f1 sf" d="M43 36q7 1 8 8q1 8-7 10q-9 2-13-4q-3-6 3-11q4-3 9-3z"/><path class="dot" d="M37 18q5-2 5 2q0 3-4 3q-4-1-1-5zM51 17q5-1 4 3q-1 3-4 2q-4-1 0-5zM37 41q3-1 3 2q0 2-3 2q-3 0-3-2q0-3 3-2z"/>'},
 
 {id:"fromage-de-tete",cat:"meat",price:1,pk:"10–18 €/kg",name:{en:"Head cheese",fr:"fromage de tête"},latin:"Sus scrofa (head, set in aspic)",
 origin:{en:"France",fr:"France"},season:[],
@@ -767,7 +767,7 @@ fr:"La tradition française distingue le perdreau, oiseau de l’année, de la p
 tip:{en:"Ask which one you have. Roasting an old partridge produces something closer to leather than to dinner.",
 fr:"Demandez lequel vous tenez. Rôtir une vieille perdrix produit quelque chose de plus proche du cuir que du dîner."},
 pairs:["cabbage","lard","juniper","thyme","grape","bay-leaf","chestnut","shallot"],
-svg:'<path class="f2 sf" d="M34 62q0-16 15-16t15 16q-13 10-30 0z"/><path class="s" d="M50 46q6-8 12-6"/><circle class="dot" cx="44" cy="55" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M70 33q-10-7-17 1q-18 2-25 14l-11 6l12 5q4 14 21 14q18 0 22-14q4-15-2-26z"/><path class="f2" d="M70 31l8 4l-8 3z"/><path class="f2 sf" d="M58 44q-16 0-22 8q-4 6 3 10q14 4 20-6q4-7-1-12z"/><path class="s" d="M36 62q3 5 2 9M44 65q3 4 2 8M52 65q3 4 2 7" stroke-width="1.5"/><path class="s" d="M44 73v7M40 81h8M56 71v9M52 81h8" stroke-width="2"/><path class="dot" d="M63 32q2-2 4 0t-2 3-2-3z"/>'},
 
 {id:"pastrami",cat:"meat",price:2,pk:"30–50 €/kg",name:{en:"Pastrami",fr:"pastrami"},latin:"Bos taurus (navel, smoked)",
 origin:{en:"Romania, by way of New York",fr:"Roumanie, via New York"},season:[],
@@ -867,7 +867,7 @@ fr:"Un poulet abattu vers quatre semaines et sous les cinq cents grammes — un 
 tip:{en:"Marinate it, then grill it flat under a weight. Its virtue is speed and crisp skin, not depth of flavour.",
 fr:"Marinez-le, puis grillez-le à plat sous un poids. Sa vertu est la rapidité et la peau croustillante, non la profondeur."},
 pairs:["lemon","garlic","thyme","olive-oil","harissa","paprika","rosemary","butter"],
-svg:'<path class="f3 sf" d="M36 60q0-16 14-16t14 16q-12 10-28 0z"/><path class="s" d="M50 44q6-8 12-6"/>'},
+svg:'<path class="f1 sf" d="M16 54q2-14 16-18q16-5 26 4q8 7 6 17q-2 12-16 15q-14 3-24-4q-9-7-8-14z"/><path class="f2 sf" d="M48 44q3-9 12-10q6-1 8-6q2-4 5-2q3 2 1 5q-3 5-8 6q-6 2-9 8q-9 1-9-1z"/><path class="f2 sf" d="M52 56q6-8 15-6q6 1 8-4q3-4 6 0q2 3-2 5q-4 4-10 4q-7 2-12 9q-6 1-5-8z"/><path class="f2 sf" d="M24 58q8-6 17-2q3 2 1 5q-7 5-14 3q-5-1-4-6z"/><path class="s" d="M38 36q-7 18 0 36M56 48q-3 6-1 11" stroke-width="2"/>'},
 
 {id:"prosciutto",cat:"meat",price:2,pk:"25–45 €/kg",name:{en:"Prosciutto di Parma",fr:"Jambon de Parme"},latin:"Perna (dry-cured)",
 origin:{en:"Parma, Italy",fr:"Parme, Italie"},season:[],
@@ -907,7 +907,7 @@ fr:"Les Hébreux de l’Exode sont nourris de cailles poussées par le vent, ce 
 tip:{en:"Spatchcock it and cook it fast and hot. A whole quail roasted slowly is dry breast and raw thigh at the same moment.",
 fr:"Ouvrez-la en crapaudine et cuisez-la vite et fort. Une caille entière rôtie doucement donne un blanc sec et une cuisse crue au même instant."},
 pairs:["grape","thyme","lard","fig","honey","juniper","sage","hazelnut"],
-svg:'<path class="f2 sf" d="M36 60q0-16 14-16t14 16q-12 10-28 0z"/><path class="s" d="M50 44q5-10 12-8"/><circle class="dot" cx="45" cy="54" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M28 28q10-1 16 6q10 4 12 13l10 3l-11 4q-4 10-16 10q-14 0-17-10q-3-9 3-14l-9-2l9-4q-1-6 3-6z"/><path class="f2 sf" d="M48 42q-12-1-17 6q-3 6 3 9q11 3 16-5q2-6-2-10z"/><path class="s" d="M32 54q6 3 13 2M36 60q6 2 12 0" stroke-width="1.5"/><path class="f1 sf" d="M64 58q7 4 7 10q0 6-7 6q-7 0-7-6q0-6 7-10zM51 66q7 4 7 10q0 6-7 6q-7 0-7-6q0-6 7-10z"/><path class="dot" d="M26 33q2-2 4 0t-2 3-2-3zM61 62l3 3l-3 3l-3-3zM67 69l3 3l-3 3l-3-3zM48 71l3 3l-3 3l-3-3zM53 78l3 3l-3 3l-3-3z"/>'},
 
 {id:"rabbit",cat:"meat",price:2,pk:"12–18 €/kg",name:{en:"Rabbit",fr:"Lapin"},latin:"Oryctolagus cuniculus",
 origin:{en:"Iberian peninsula",fr:"Péninsule ibérique"},season:[],
@@ -917,7 +917,7 @@ fr:"L’Espagne lui doit peut-être son nom — une hypothèse fait venir Hispan
 tip:{en:"The saddle and the legs cook completely differently — the saddle in fifteen minutes, the legs in an hour. Separate them.",
 fr:"Le râble et les cuisses ne cuisent pas du tout pareil — le râble en quinze minutes, les cuisses en une heure. Séparez-les."},
 pairs:["mustard","thyme","lard","white-wine-vinegar","bay-leaf","shallot","cream","tarragon"],
-svg:'<path class="f3 sf" d="M34 64q2-16 16-16t14 14q-12 12-30 2z"/><path class="s" d="M42 48q-3-14 0-16 3 3 3 16M52 48q3-14 6-15-2 5-3 15"/>'},
+svg:'<path class="f1 sf" d="M40 70q-6-10-1-19q5-9 15-9q12 0 17 9q5 9 1 17q-4 7-15 7q-12 0-17-5z"/><path class="f1 sf" d="M70 60q5-1 6 4q0 5-5 5q-5 0-5-5q0-4 4-4z"/><path class="f1 sf" d="M33 36q-4-7-2-11q3-4 6 1q2 4 3 9zM41 34q-1-8 2-12q4-2 5 3q0 5-3 10z"/><path class="f1 sf" d="M39 33q9 1 10 10q1 9-8 11q-10 2-14-6q-3-8 4-13q3-2 8-2z"/><path class="f1 sf" d="M39 72q-7 1-9 4q-1 3 4 3q7 0 9-3z"/><path class="dot" d="M33 42q3-1 3 2q0 2-3 2q-3 0-3-2q0-3 3-2z"/>'},
 
 {id:"grouse-ecosse",cat:"meat",luxe:true,price:3,pk:"30–60 €/pièce",name:{en:"Red grouse",fr:"Grouse d’Écosse"},latin:"Lagopus lagopus scotica",
 origin:{en:"Heather moorland, Scotland and northern England",fr:"Landes à bruyère, Écosse et nord de l’Angleterre"},season:[8,9,10,11,12],

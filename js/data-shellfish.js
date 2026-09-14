@@ -67,7 +67,7 @@ fr:"Elles vivent enfouies dans le sable et filtrent l’eau par un siphon, ce qu
 tip:{en:"Purge them in salted water, never fresh — fresh water kills them and they open and spoil.",
 fr:"Dégorgez-les en eau salée, jamais douce — l’eau douce les tue, elles s’ouvrent et s’abîment."},
 pairs:["garlic","parsley","olive-oil","chili","white-wine-vinegar","hake","tomato","lemon"],
-svg:'<path class="f3 sf" d="M28 58q0-16 20-16t20 16q-16 12-40 0z"/><path class="s" d="M34 50q14 8 28 0M38 56q10 6 20 0"/>'},
+svg:'<path class="f2 sf" d="M27 57q10 13 27 12q13-1 20-10q0 7-9 12q-14 6-27 0q-10-5-11-14z"/><path class="f1 sf" d="M42 22q-12 5-20 16q-5 7 0 14q9 11 24 13q15 2 24-6q9-8 7-17q-3-11-18-17q-9-4-17-3z"/><path class="s" d="M25 48q6 12 21 14q14 2 22-6q6-6 6-13M30 44q5 9 17 11q11 2 17-5q4-4 4-10M35 41q4 7 12 8q8 1 12-4q3-3 3-7" stroke-width="1.6"/><path class="s" d="M37 26q6-3 13 1" stroke-width="2"/>'},
 
 {id:"cockle",cat:"shellfish",price:2,pk:"6–12 €/kg",name:{en:"Cockle",fr:"Coque"},latin:"Cerastoderma edule",
 origin:{en:"Atlantic sandflats",fr:"Estrans sableux de l’Atlantique"},season:[1,2,3,4,10,11,12],

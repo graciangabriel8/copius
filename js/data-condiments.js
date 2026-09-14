@@ -117,7 +117,7 @@ fr:"Fait à partir du banyuls, vin doux naturel des terrasses surplombant la Mé
 tip:{en:"Its sweetness lets it stand alone — a spoonful on a warm salad of duck or foie gras needs no oil at all.",
 fr:"Sa douceur lui permet de se suffire — une cuillerée sur une salade tiède de canard ou de foie gras n’appelle aucune huile."},
 pairs:["foie-gras","duck","walnut","olive-oil","fig","shallot","blue-cheese","hazelnut"],
-svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16M44 62h8"/><path class="f1 sf" d="M44 36V25h8v11z"/>'},
+svg:'<path class="f2 sf" d="M41 24q5-2 9 0q0 8 0 16q10 8 10 20v14q0 4-4 4H35q-4 0-4-4V60q0-12 10-20q0-8 0-16z"/><path class="f1 sf" d="M39 20q7-3 13 0q0 6-1 9q-6 2-11 0q-1-4-1-9z"/><path class="f1 sf" d="M32 60q14-3 27 0q1 6 0 12q-14 3-27 0q-1-6 0-12z"/><path class="s" d="M37 65q8-1 17 0M38 70q6-1 11 0M66 51q1 3 0 5" stroke-width="1.6"/><path class="f2 sf" d="M66 56q5-1 5 4q0 5-5 5q-5 0-5-5q0-4 5-4zM71 64q5 0 5 5q-1 5-6 4q-4-1-4-5q0-4 5-4zM63 67q5-1 5 4q0 5-5 5q-5 0-5-5q0-4 5-4z" stroke-width="2"/>'},
 
 {id:"barley-koji",cat:"condiments",price:2,pk:"15–30 €/kg",name:{en:"Barley koji",fr:"Koji d'orge (mugi-kōji)"},latin:"Aspergillus oryzae",
 origin:{en:"Kyushu, Japan",fr:"Kyūshū, Japon"},season:[],
@@ -327,7 +327,7 @@ fr:"Le voile trouble qui se forme dans une bouteille non filtrée est la mère �
 tip:{en:"It is gentler than wine vinegar, so use a little more. It suits pork, cabbage and anything with apple in it.",
 fr:"Il est plus doux que le vinaigre de vin : forcez un peu la dose. Il va au porc, au chou et à tout ce qui contient de la pomme."},
 pairs:["apple","pork","red-cabbage","mustard","honey","onion","thyme","black-pepper"],
-svg:'<path class="f2 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><circle class="f2 sf" cx="48" cy="30" r="6"/>'},
+svg:'<path class="f1 sf" d="M38 24h8v9q12 5 12 14v25q0 4-4 4H30q-4 0-4-4V47q0-9 12-14z"/><path class="f2" d="M27 53q14 4 30 0v19q0 4-4 4H31q-4 0-4-4z"/><path class="f1 sf" d="M36 18h12v6H36z" stroke-width="2"/><path class="dot" d="M33 69q4-2 5 1t-4 3-2-2 1-2zM42 71q4-2 5 1t-4 3-2-2 1-2zM50 68q3-2 4 1t-3 2-2-1 1-2z"/><path class="f1 sf" d="M68 54q-4-4-8 1-3 4-1 10 3 6 9 6t9-6q2-6-1-10-4-5-8-1z"/><path class="s" d="M68 54v-6q5-3 8 0-2 4-8 4" stroke-width="2"/>'},
 
 {id:"coconut-vinegar",cat:"condiments",price:1,pk:"6–12 €/L",name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
 origin:{en:"The Philippines",fr:"Philippines"},season:[],
@@ -727,7 +727,7 @@ fr:"Le kimjang, fabrication collective du kimchi d’hiver, figure au patrimoine
 tip:{en:"Old, sour kimchi is not spoiled — it is the cooking grade. Young kimchi is for eating raw; the sour one is for stews and pancakes.",
 fr:"Un kimchi vieux et acide n’est pas gâté — c’est la qualité à cuire. Le jeune se mange cru ; l’acide va aux ragoûts et aux galettes."},
 pairs:["pork","rice","sesame-oil","spring-onion","egg","garlic","gochujang","soy-sauce"],
-svg:'<path class="f1 sf" d="M32 70q4-24 16-24t16 24z"/><path class="s" d="M40 56q8 4 16 0M38 64q10 4 20 0"/>'},
+svg:'<path class="f1 sf" d="M20 58Q21 71 33 77 48 82 63 77 75 71 76 58Z"/><path class="f2 sf" d="M23 59Q17 50 26 46 24 37 33 38 36 29 44 33 50 25 57 32 67 30 66 40 75 44 71 53 74 58 71 59Z"/><path class="f1 sf" d="M30 58Q22 56 20 62 25 66 32 63 40 60 44 52 40 44 32 46 26 52 30 58Z"/><path class="s" d="M36 58Q33 49 38 44M57 58Q55 48 61 43M47 57Q46 50 50 46" stroke-width="1.5"/><path class="dot" d="M51 42q8 2 7 5t-9-1-2-4 4 0zM63 50q7 1 6 4t-8-1-1-3 3 0zM38 36q7 2 6 5t-8-2-1-3 3 0z"/>'},
 
 {id:"kkaennip-jangajji",cat:"condiments",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Kkaennip-jangajji",fr:"Kkaennip-jangajji"},latin:"Perilla frutescens var. frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[],
@@ -1057,7 +1057,7 @@ fr:"Le sel tire l’eau et l’amertume avec elle, et après un mois l’écorce
 tip:{en:"The peel is the ingredient, not the pulp — scrape the flesh out and discard it. And rinse the rind unless the dish wants salt.",
 fr:"C’est l’écorce l’ingrédient, non la pulpe — raclez la chair et jetez-la. Et rincez le zeste si le plat n’appelle pas de sel."},
 pairs:["olive","chicken","cumin","cilantro","olive-oil","garlic","saffron","harissa"],
-svg:'<path class="f2 sf" d="M40 74V38h16v36z"/><path class="s" d="M40 46h16"/><circle class="f2 sf" cx="44" cy="58" r="5"/><circle class="f2 sf" cx="53" cy="66" r="5"/>'},
+svg:'<path class="s" d="M33 33q15-4 30 0M32 33v8M64 33v8" stroke-width="2"/><path class="f2 sf" d="M32 39q0-5 16-5t16 5q0 3-16 3t-16-3z"/><path class="f1 sf" d="M35 42q-3 12-2 22 0 10 2 12 2 2 13 2t13-2q2-2 2-12 1-10-2-22z"/><path class="f2 sf" d="M34 57q3-9 11-9 8 0 12 6 3 1 3 2-1 1-3 1-2 6-9 7-13 0-14-7zM39 67q8-3 13 3-2 6-8 7-6-2-5-10z"/><path class="s" d="M35 47q13 4 26 0M36 59q10 4 19-2M41 71q5 3 10 0" stroke-width="1.5"/><path class="dot" d="M55 74q2-1 3 1t-3 2-1-3zM36 74q2-1 3 1t-3 2-1-3z"/>'},
 
 {id:"rakkyo",cat:"condiments",price:2,pk:"25–40 €/kg",name:{en:"Rakkyo",fr:"Rakkyo"},latin:"Allium chinense",
 origin:{en:"Tottori sand dunes",fr:"Dunes de Tottori"},season:[],
@@ -1087,7 +1087,7 @@ fr:"Le mot est une description sans détour — vin aigre — et pendant presque
 tip:{en:"Deglaze a pan with it rather than wine when you want the acidity to survive reduction. Wine loses its edge, vinegar keeps it.",
 fr:"Déglacez à sa place plutôt qu’au vin quand vous voulez que l’acidité survive à la réduction. Le vin s’émousse, le vinaigre tient."},
 pairs:["shallot","olive-oil","oyster","black-pepper","mustard","garlic","thyme","onion"],
-svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><path class="f1 sf" d="M44 36V26h8v10z"/>'},
+svg:'<path class="f1 sf" d="M44 18q-1 12-2 17-6 6-6 15v26q0 4 5 4h14q5 0 5-4V50q0-9-6-15-1-5-2-17z"/><path class="dot" d="M42 36q-3 5-3 13v25q0 2 3 2h12q3 0 3-2V49q0-8-3-13z"/><path class="dot" d="M44 18h8v10q-4 2-8 0z"/><path class="f1 sf" d="M38 56q10-2 20 0v15q-10 2-20 0z"/><path class="s" d="M43 62h10M43 67h7" stroke-width="1.5"/>'},
 
 {id:"red-yeast-rice",cat:"condiments",rare:true,price:2,pk:"30–70 €/kg",name:{en:"Red yeast rice",fr:"Riz rouge fermenté (levure de riz rouge)"},latin:"Monascus purpureus",
 origin:{en:"Fujian, China",fr:"Fujian, Chine"},season:[],
@@ -1117,7 +1117,7 @@ fr:"Bien plus doux que tout vinaigre européen — environ moitié moins acide �
 tip:{en:"Check whether it is seasoned. Sushi vinegar already contains sugar and salt, and using it as plain vinegar wrecks a dressing.",
 fr:"Vérifiez s’il est assaisonné. Le vinaigre à sushi contient déjà sucre et sel, et l’employer comme vinaigre nature détruit une vinaigrette."},
 pairs:["soy-sauce","ginger","sesame-oil","rice","cucumber","spring-onion","chili","sesame"],
-svg:'<path class="f3 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><ellipse class="f3 sf" cx="48" cy="30" rx="7" ry="5"/>'},
+svg:'<path class="f1 sf" d="M36 22h8v12q6 3 6 10v28q0 4-4 4H34q-4 0-4-4V44q0-7 6-10z"/><path class="f1 sf" d="M34 18h12v4H34z" stroke-width="2"/><path class="f2" d="M30 50q10 3 20 0v14q-10 3-20 0z"/><path class="f1 sf" d="M55 44q8-5 15 0-8 5-15 0zM63 53q8-5 14 0-8 5-14 0zM54 62q8-5 15 0-8 5-15 0z" stroke-width="1.5"/><path class="f1 sf" d="M62 71q8-5 14 0-8 5-14 0zM56 34q7-4 13 1-7 4-13-1z" stroke-width="1.5"/>'},
 
 {id:"rose-water",cat:"condiments",price:1,pk:"8–18 €/L",name:{en:"Rose water",fr:"Eau de rose"},latin:"Rosa damascena",
 origin:{en:"Qamsar, Iran",fr:"Qamsar, Iran"},season:[],
@@ -1277,7 +1277,7 @@ fr:"Vieilli en solera, la même cascade de fûts empilés que pour le vin : chaq
 tip:{en:"It is strong enough to use by the teaspoon. A few drops finish a lentil soup or a gazpacho better than a whole lemon.",
 fr:"Il est assez puissant pour s’employer à la cuillère à café. Quelques gouttes finissent une soupe de lentilles ou un gaspacho mieux qu’un citron entier."},
 pairs:["olive-oil","almond","iberico-ham","lentils","garlic","tomato","chickpeas","paprika"],
-svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16M44 60h8"/><path class="f2 sf" d="M44 36V26h8v10z"/>'},
+svg:'<path class="f1 sf" d="M58 49q-5-3-7-6q-1-5 0-9q-7-6-15-12q-2-1-4 1q-7 6-11 14q0 2 2 3q6 6 14 12q4 1 8 0q3 3 7 5z"/><path class="f2 sf" d="M58 49l4 1l-8 9l-2-4z" stroke-width="2"/><path class="f2 sf" d="M47 31q-4-3-7-6q-8 8-14 16q3 3 7 6q7-8 14-16z"/><path class="s" d="M55 56q4 6 3 11" stroke-width="2.5"/><path class="dot" d="M45 72q12-6 23 0q-10 5-23 0z"/>'},
 
 {id:"shibazuke",cat:"condiments",price:2,pk:"30–60 €/kg",name:{en:"Shibazuke",fr:"Shibazuke"},latin:"Solanum melongena",
 origin:{en:"Ōhara, Kyoto",fr:"Ōhara, Kyoto"},season:[7,8,9],
@@ -1427,7 +1427,7 @@ fr:"À l’origine le liquide qui s’accumulait sur le miso en fermentation —
 tip:{en:"Use it where soy sauce would dominate — as a dipping sauce, or brushed on grilled fish. It seasons without shouting.",
 fr:"Employez-le là où la sauce soja domineriez — en sauce à tremper, ou au pinceau sur un poisson grillé. Il assaisonne sans crier."},
 pairs:["ginger","sesame-oil","rice","tuna","spring-onion","wasabi","shiitake","sesame"],
-svg:'<path class="f1 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><path class="f1 sf" d="M44 36V26h8v10z"/><circle class="dot" cx="48" cy="60" r="3"/>'},
+svg:'<path class="f1 sf" d="M42 37q-2 12-8 21-6 9-6 17v2q0 2 3 2h34q3 0 3-2v-2q0-8-6-17-6-9-8-21z"/><path class="dot" d="M45 46q-3 7-8 14-5 8-5 12v1q0 2 3 2h26q3 0 3-2v-1q0-4-5-12-5-7-8-14z"/><path class="f1 sf" d="M43 37q-1-6 0-9h10q1 3 0 9z"/><path class="dot" d="M39 27q-1-9 9-9h1q10 0 9 9z"/><path class="f1 sf" d="M45 61q3-1 6 0l2 4-2 4q-3 1-6 0l-2-4z"/>'},
 
 {id:"tamarind-paste",cat:"condiments",price:1,pk:"6–12 €/kg",name:{en:"Tamarind paste",fr:"Pâte de tamarin"},latin:"Tamarindus indica",
 origin:{en:"East Africa & India",fr:"Afrique de l’Est & Inde"},season:[],
@@ -1547,7 +1547,7 @@ fr:"Orléans devint la capitale française du vinaigre par géographie : les bar
 tip:{en:"The Orléans method ferments slowly in oak over weeks. Industrial vinegar is made in hours and tastes only of acid.",
 fr:"La méthode orléanaise fermente lentement en chêne sur des semaines. Le vinaigre industriel se fait en heures et n’a que le goût de l’acide."},
 pairs:["shallot","mustard","tarragon","olive-oil","egg","black-pepper","butter","chives"],
-svg:'<path class="f3 sf" d="M40 76V40h16v36z"/><path class="s" d="M40 48h16"/><path class="f3 sf" d="M44 36V26h8v10z"/>'},
+svg:'<path class="f1 sf" d="M44 33q0 6-1 9-12 6-12 21 0 16 17 16t17-16q0-15-12-21-1-3-1-9z"/><path class="f2 sf" d="M58 46q7 6 7 17 0 16-17 16 12-4 14-17 2-11-4-16z"/><path class="f2 sf" d="M45 33q-5-3-4-7 1-5 7-5t7 5q1 4-4 7z"/><path class="s" d="M34 57q14 4 28 0" stroke-width="1.5"/><path class="s" d="M42 38h12M39 63q-2 7 1 11" stroke-width="1.5"/>'},
 
 {id:"wholegrain-mustard",cat:"condiments",price:1,pk:"5–10 €/kg",name:{en:"Wholegrain mustard",fr:"Moutarde à l’ancienne"},latin:"Brassica juncea",
 origin:{en:"Meaux, France",fr:"Meaux, France"},season:[],

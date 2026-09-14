@@ -77,7 +77,7 @@ fr:"La feuille sent le cassis sans rien de son sucre ni de sa couleur : verte, s
 tip:{en:"Infuse hot but never boil: two minutes off the heat in syrup or cream is enough, and a hard boil turns the aroma into cooked spinach. Ten leaves to a litre, then strain and chill straight away.",
 fr:"Infusez chaud mais ne faites jamais bouillir : deux minutes hors du feu dans un sirop ou une crème suffisent, une ébullition franche transforme l’arôme en épinard cuit. Dix feuilles au litre, puis passez et refroidissez aussitôt."},
 pairs:["blackcurrant","raspberry","strawberry","honey","verjus","gooseberry"],
-svg:'<path class="f2 sf" d="M48 24q4 8 3 14 6-8 14-8-2 8-8 12 8 0 13 5-7 5-14 4 6 5 6 12-8-1-13-7-1 8-5 14-4-6-5-14-5 6-13 7 0-7 6-12-7 1-14-4 5-5 13-5-6-4-8-12 8 0 14 8-1-6 3-14z"/><path class="s" d="M48 30v40M48 44l10-6M48 44l-10-6M48 56l10-4M48 56l-10-4"/><path class="s" d="M48 68v10"/>'},
+svg:'<path class="f1 sf" d="M51 23.5L54 28L52.5 30Q51 32 54.5 34L58 36L56 38.5Q54 41 58.5 37L63 33L62.5 36Q62 39 68 36.5L74 34L71.5 37.5Q69 41 72.5 44L76 47L71 48Q66 49 69 52.5L72 56L67.5 56.5Q63 57 61 60L59 63L55.5 64.5Q52 66 50 64.5L48 63L46 64.5Q44 66 40.5 64.5L37 63L35 60Q33 57 28.5 56.5L24 56L27 52.5Q30 49 25 48L20 47L23.5 44Q27 41 24.5 37.5L22 34L28 36.5Q34 39 33.5 36L33 33L37.5 37Q42 41 40 38.5L38 36L41.5 34Q45 32 43.5 30L42 28L45 23.5L48 19L51 23.5Z"/><path class="s" d="M48 30v30M47 42l-13-5M49 42l13-5M47 52l-11 1M49 52l11 1" stroke-width="1.5"/><path class="s" d="M48 62q1 10 0 18"/><path class="f2 sf" d="M48 63l-4 3-7-3-4-6-9-1 6-7z"/><path class="dot" d="M45.6 72.2Q47.2 72.8 47.8 74.4Q48.5 76 47.8 77.6Q47.2 79.2 45.6 79.8Q44 80.5 42.4 79.8Q40.8 79.2 40.2 77.6Q39.5 76 40.2 74.4Q40.8 72.8 42.4 72.2Q44 71.5 45.6 72.2ZM54.3 75.9Q55.5 76.5 56.1 77.7Q56.6 79 56.1 80.3Q55.5 81.5 54.3 82.1Q53 82.6 51.7 82.1Q50.5 81.5 49.9 80.3Q49.4 79 49.9 77.7Q50.5 76.5 51.7 75.9Q53 75.4 54.3 75.9Z"/>'},
 
 {id:"blue-fenugreek",cat:"herbs",rare:true,price:2,pk:"4–8 €/100 g",name:{en:"Blue fenugreek",fr:"Fenugrec bleu"},latin:"Trigonella caerulea",
 origin:{en:"Caucasus & the Alps",fr:"Caucase & Alpes"},season:[],
@@ -217,7 +217,7 @@ fr:"Les cuisiniers mexicains la mettent dans les haricots noirs pour la même ra
 tip:{en:"One sprig for a whole pot, added in the last ten minutes. It is not an herb you scatter generously.",
 fr:"Une branche pour toute une casserole, ajoutée dans les dix dernières minutes. Ce n’est pas une herbe que l’on parsème généreusement."},
 pairs:["black-bean","chili","corn","onion","garlic","tomatillo","cilantro","lime"],
-svg:'<path class="s" d="M48 76V32"/><path class="f1 sf" d="M46 40q-14-2-16 6 12 8 16 0zM50 54q14-2 16 6-12 8-16 0z"/>'},
+svg:'<path class="s" d="M50 80q-3-14-1-24 1-14-1-26"/><path class="f1 sf" d="M47 52L45 46 42 41 36 43 33 37 28 39 24 35 19 40 20 45 23 50 29 49 31 54 37 52 40 57Z"/><path class="f1 sf" d="M48 58L51 53 54 48 60 50 63 45 68 48 71 44 76 50 74 55 71 60 66 57 63 62 57 60 54 64Z"/><path class="f1 sf" d="M49 66L43 63 38 62 34 67 29 65 26 73 32 75 37 77 41 72 46 73Z"/><path class="s" d="M48 43q-7-1-10-6M48 37q7-1 10-6M48 32q-6-2-8-7M48 27q5-2 7-6" stroke-width="1.5"/><path class="dot" d="M35 37q3-3 4 1t-4 3-0-4zM58 31q3-3 4 1t-4 3 0-4zM38 24q3-3 4 1t-4 3 0-4zM55 20q3-3 4 1t-4 3 0-4zM47 23q3-3 4 1t-4 3 0-4z"/>'},
 
 {id:"fig-leaf",cat:"herbs",price:1,pk:"0,50–1 €/pièce",name:{en:"Fig leaf",fr:"Feuille de figuier"},latin:"Ficus carica",
 origin:{en:"Mediterranean orchards",fr:"Vergers méditerranéens"},season:[5,6,7,8,9],
@@ -487,7 +487,7 @@ fr:"La sœur plus douce de l’origan — même genre, mais plus sucrée et plus
 tip:{en:"Add it at the end, never at the start. Unlike oregano it is fragile and long cooking flattens it completely.",
 fr:"Ajoutez-la à la fin, jamais au début. Contrairement à l’origan elle est fragile et une cuisson longue l’efface entièrement."},
 pairs:["tomato","olive-oil","lamb","garlic","mozzarella","zucchini","lemon","thyme"],
-svg:'<path class="s" d="M48 76V34"/><circle class="f2 sf" cx="41" cy="44" r="4"/><circle class="f2 sf" cx="55" cy="48" r="4"/><circle class="f2 sf" cx="42" cy="58" r="4"/><circle class="f2 sf" cx="55" cy="62" r="4"/>'},
+svg:'<path class="s" d="M48 81q1-14 1-24M49 57q-10-6-17-14M49 57q10-6 17-14M49 57v-21"/><path class="f1 sf" d="M34.5 32.5Q37 34 37.5 37Q38 40 36.5 42.5Q35 45 32 45Q29 45 27.5 42.5Q26 40 26.5 37Q27 34 29.5 32.5Q32 31 34.5 32.5ZM68.5 32.5Q71 34 71.5 37Q72 40 70.5 42.5Q69 45 66 45Q63 45 61.5 42.5Q60 40 60.5 37Q61 34 63.5 32.5Q66 31 68.5 32.5Z"/><path class="f2 sf" d="M51.5 24.5Q54 26 54.5 29Q55 32 53.5 34.5Q52 37 49 37Q46 37 44.5 34.5Q43 32 43.5 29Q44 26 46.5 24.5Q49 23 51.5 24.5Z"/><path class="s" d="M28 38q4 2 8 0M29 34q3 2 6 0M62 38q4 2 8 0M63 34q3 2 6 0M45 30q4 2 8 0M46 26q3 2 6 0" stroke-width="1.5"/><path class="f1 sf" d="M45 66q-11-9-19-4 3 9 19 4zM52 66q11-9 19-4-3 9-19 4zM43 52q-9-7-15-3 3 8 15 3zM55 52q9-7 15-3-3 8-15 3zM45 75q-10-8-17-3 3 8 17 3zM52 75q10-8 17-3-3 8-17 3z"/>'},
 
 {id:"mexican-oregano",cat:"herbs",price:2,pk:"8–16 €/100 g",name:{en:"Mexican oregano",fr:"Origan mexicain"},latin:"Lippia graveolens",
 origin:{en:"Mexico and Guatemala, largely wild-gathered",fr:"Mexique et Guatemala, surtout cueilli sauvage"},season:[],
@@ -537,7 +537,7 @@ fr:"Les cuisines allemandes l'appellent Beifuss et en garnissent l'oie rôtie, o
 tip:{en:"For yomogi, blanch only the young leaves with a pinch of bicarbonate of soda to hold the green, squeeze them hard and pound. For goose, use whole stems and pull them out before carving — they are inedible.",
 fr:"Pour le yomogi, blanchissez seulement les jeunes feuilles avec une pincée de bicarbonate pour fixer le vert, pressez-les fortement et pilez. Pour l'oie, employez les tiges entières et retirez-les avant de découper : elles ne se mangent pas."},
 pairs:["goose","duck","wild-boar","adzuki","kinako","glutinous-rice-flour","pork"],
-svg:'<path class="f2 sf" d="M48 22q7 6 5 12 8-5 13 1-8 5-11 11 10 0 11 8-10 3-14 9-2 6-4 11-2-5-4-11-4-6-14-9 1-8 11-8-3-6-11-11 5-6 13-1-2-6 5-12z"/><path class="s" d="M48 30v34M48 42l-9-6M48 42l9-6M48 54l-11-5M48 54l11-5"/><path class="s" d="M48 64v12"/>'},
+svg:'<path class="f1 sf" d="M51 20Q54 24 56 28.5Q58 33 65 29.5L72 26L66.5 32Q61 38 60.5 42.5Q60 47 67.5 46L75 45L68.5 49Q62 53 60 56Q58 59 62 61.5L66 64L60 63Q54 62 51 65Q48 68 45 65Q42 62 36.5 63L31 64L34.5 61Q38 58 30 52L22 46L29.5 46.5Q37 47 37.5 42Q38 37 31.5 32L25 27L33.5 25Q42 23 45 19.5L48 16L51 20Z"/><path class="f2 sf" d="M36.5 63L31 64L34.5 61Q38 58 42 58Q46 58 44 60Q42 62 36.5 63Z"/><path class="s" d="M48 21v45M48 34l-7 3M48 34l7 3M48 47l-8 2M48 47l8 2" stroke-width="1.5"/><path class="s" d="M48 66q0 8-1 14"/><path class="f1 sf" d="M45 70q-7 0-8 5 6 2 9-3zM51 70q7 0 8 5-6 2-9-3z"/>'},
 
 {id:"myrtle",cat:"herbs",price:2,pk:"40–90 €/kg",name:{en:"Myrtle",fr:"Myrte"},latin:"Myrtus communis",
 origin:{en:"Corsican and Sardinian maquis",fr:"Maquis corse et sarde"},season:[10,11,12,1],
@@ -617,7 +617,7 @@ fr:"Plus giroflé et anisé que le basilic vert, et à la feuille nettement plus
 tip:{en:"It does not make good pesto — the colour turns muddy brown. Use it whole in salads or steep it in vinegar.",
 fr:"Il ne fait pas un bon pesto — la couleur vire au brun boueux. Employez-le entier en salade ou faites-le infuser dans du vinaigre."},
 pairs:["tomato","white-wine-vinegar","olive-oil","peach","mozzarella","garlic","strawberry","lemon"],
-svg:'<path class="s" d="M48 76V38"/><path class="f1 sf" d="M46 44q-14-6-16 2 12 10 16 2zM50 56q14-6 16 2-12 10-16 2z"/>'},
+svg:'<path class="f2 sf" d="M52 78q-16-10-18-29-2-21 10-31 7 6 10 14 4 7 5 15 1 7 0 14-1 8-3 13-1 2-4 4z"/><path class="f2 sf" d="M46 70q-14 4-22-4-9-9-2-17 13 3 19 11 5 6 5 10z"/><path class="s" d="M50 74q-9-13-10-25-1-14 4-29" stroke-width="2"/><path class="s" d="M42 63q5 1 8 4M41 52q5 0 8 3M42 42q5 0 8 3M45 32q4 1 6 3" stroke-width="1.5"/><path class="s" d="M50 76q1 4 2 5"/>'},
 
 {id:"red-shiso",cat:"herbs",price:2,pk:"4–8 €/paquet (20 feuilles)",name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
 origin:{en:"Japan, Korea and highland China",fr:"Japon, Corée et hautes terres chinoises"},season:[6,7],
@@ -697,7 +697,7 @@ fr:"Salvia vient de salvare, « sauver » — l’école de Salerne demandait au
 tip:{en:"Fry whole leaves in butter until crisp: the butter turns nutty and the leaves become savoury chips.",
 fr:"Faites frire les feuilles entières au beurre jusqu’à croustiller : le beurre prend un goût de noisette et les feuilles deviennent des chips salées."},
 pairs:["pork","butter","onion","apple","white-beans","chestnut"],
-svg:'<path class="s" d="M48 78V32"/><path class="f2 sf" d="M46 50q-14 4-18-8 12-8 19 3zM50 50q14 4 18-8-12-8-19 3zM46 34q-10 0-12-8 10-4 13 3z"/>'},
+svg:'<path class="s" d="M48 82q1-14 0-24 0-8 0-14"/><path class="f1 sf" d="M46 62C38 55 29 48 23 52 18 57 32 67 46 62z"/><path class="f2 sf" d="M51 59C58 52 67 45 72 49 77 54 64 64 51 59z"/><path class="f1 sf" d="M47 48C40 42 33 33 28 36 23 40 35 52 47 48z"/><path class="f2 sf" d="M51 45C58 39 64 30 69 34 74 39 62 50 51 45z"/><path class="s" d="M42 60q-6-4-12-6M55 57q6-4 12-5M43 46q-5-4-10-7M55 43q5-4 9-6M34 57l-1 4M28 55l-1 4M62 54l1 4M68 52l1 4" stroke-width="1.5"/>'},
 
 {id:"salad-burnet",cat:"herbs",price:1,pk:"3–6 €/pot",name:{en:"Salad burnet",fr:"Pimprenelle"},latin:"Sanguisorba minor",
 origin:{en:"European chalk grassland",fr:"Pelouses calcaires d'Europe"},season:[3,4,5,6,10,11],
@@ -717,7 +717,7 @@ fr:"L’Allemagne l’appelle Bohnenkraut, l’herbe aux haricots, parce qu’el
 tip:{en:"Put a sprig in the water with any dried bean or lentil. It is the oldest trick in European bean cookery and it works.",
 fr:"Mettez une branche dans l’eau de tout haricot ou lentille sec. C’est la plus vieille astuce de la cuisine européenne des légumineuses, et elle fonctionne."},
 pairs:["white-beans","goat-cheese","fava-bean","lamb","olive-oil","thyme","green-bean","garlic"],
-svg:'<path class="s" d="M48 76V32"/><path class="f2 sf" d="M46 40q-10-2-12 4 8 6 12 0zM50 50q10-2 12 4-8 6-12 0zM46 60q-10-2-12 4 8 6 12 0z"/>'},
+svg:'<path class="s" d="M47 82q-1-15 1-27 1-14 1-21"/><path class="f1 sf" d="M48 74q-12-7-20-4 8 7 20 4zM48 64q-12-7-19-5 7 7 19 5zM48 54q-11-7-18-5 7 7 18 5zM48 44q-10-7-16-5 6 7 16 5z"/><path class="f1 sf" d="M48 69q12-7 20-4-8 7-20 4zM48 59q12-7 19-5-7 7-19 5zM49 49q11-7 18-5-7 7-18 5zM49 39q10-7 16-5-6 7-16 5z"/><path class="dot" d="M53 45q3-2 4 1-1 4-4 3-3-2 0-4zM41 56q3-2 4 1-1 4-4 3-3-2 0-4zM53 66q3-2 4 1-1 4-4 3-3-2 0-4zM43 34q3-2 4 1-1 4-4 3-3-2 0-4z"/>'},
 
 {id:"scurvy-grass",cat:"herbs",rare:true,price:2,pk:"6–12 €/100 g",name:{en:"Scurvy grass",fr:"Cranson officinal"},latin:"Cochlearia officinalis",
 origin:{en:"Northern saltmarshes and cliffs",fr:"Prés salés et falaises du Nord"},season:[2,3,4,5,6],

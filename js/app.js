@@ -494,6 +494,23 @@
     return "<span>" + esc(t.season) + '</span><span class="dots">' + dots + "</span>";
   }
 
+  /* Butter is paired by 479 entries, garlic by 413. Rendering all of them buried
+     the rest of the card under a wall of chips — 347 entries (19%) had more than
+     ten. Show ten, keep the rest in the DOM but hidden so the reveal costs no
+     re-render and the chips stay findable by the browser's own page search. */
+  var PAIR_SHOWN = 10;
+
+  function pairBlock(list) {
+    if (list.length <= PAIR_SHOWN) {
+      return '<div class="pair-grid">' + list.map(pairChip).join("") + "</div>";
+    }
+    return '<div class="pair-grid">' + list.slice(0, PAIR_SHOWN).map(pairChip).join("") +
+      '</div><div class="pair-grid pair-rest" hidden>' +
+      list.slice(PAIR_SHOWN).map(pairChip).join("") + "</div>" +
+      '<button type="button" class="linkish pair-more" data-morepairs>' +
+      esc(T().morePairs.replace("%d", list.length)) + "</button>";
+  }
+
   function pairChip(id) {
     var i = byId[id];
     return '<button type="button" class="pair-chip" data-open="' + id + '">' + art(i) + "<span>" + esc(name(i)) + "</span></button>";
@@ -845,7 +862,7 @@
       renderTree(i) +
       kinBlock(i) +
       "<h3>" + esc(t.pairsWith) + "</h3>" +
-      '<div class="pair-grid">' + pairs.map(pairChip).join("") + "</div>" +
+      pairBlock(pairs) +
       (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
         return '<p class="m-story" style="font-size:14px">· <strong>' + esc(tr.name[state.lang]) + "</strong> — " +
           tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
@@ -1287,6 +1304,13 @@
      trios, a chef, the dialog itself — is handled here, once. A second handler
      on #modalBody used to open the same entry twice per click. */
   document.body.addEventListener("click", function (e) {
+    var mp = e.target.closest("[data-morepairs]");
+    if (mp) {
+      var rest = mp.parentNode.querySelector(".pair-rest");
+      if (rest) rest.hidden = false;
+      mp.remove();
+      return;
+    }
     var pp = e.target.closest("[data-photo-pick]");
     if (pp) { photoTarget = pp.getAttribute("data-photo-pick"); el("photoFile").click(); return; }
     var pd = e.target.closest("[data-photo-del]");

@@ -97,7 +97,7 @@ fr:"Le pourpre vient des anthocyanes, que l’arbre ne fabrique que si les nuits
 tip:{en:"Segment it over a bowl to catch the juice, and use that juice in the dressing. Nothing else gives that colour.",
 fr:"Levez les suprêmes au-dessus d’un bol pour recueillir le jus, et mettez ce jus dans l’assaisonnement. Rien d’autre ne donne cette couleur."},
 pairs:["fennel","olive-oil","olive","red-onion","dark-chocolate","almond","mint","black-pepper"],
-svg:'<circle class="f1 sf" cx="48" cy="54" r="20"/><path class="s" d="M48 34v40M28 54h40M34 40l28 28M62 40L34 68"/>'},
+svg:'<path class="f1 sf" d="M48 20Q70 21 76 40 80 60 61 72 42 82 29 67 16 52 23 36 30 20 48 20Z"/><path class="f2 sf" d="M48 27Q66 28 70 42 73 57 58 66 42 74 32 62 22 50 28 38 34 27 48 27Z"/><path class="dot" d="M48 50 69 41Q73 54 61 64Z"/><path class="dot" d="M48 50 31 35Q43 26 56 30Z"/><path class="s" d="M48 50Q49 62 46 72M48 50Q60 41 67 33M48 50Q38 47 26 44M48 50Q40 58 31 61" stroke-width="1.5"/>'},
 
 {id:"blueberry",cat:"fruits",price:2,pk:"15–30 €/kg",name:{en:"Blueberry",fr:"Myrtille"},latin:"Vaccinium spp.",
 origin:{en:"North America & Europe",fr:"Amérique du Nord & Europe"},season:[7,8,9],
@@ -267,7 +267,7 @@ fr:"Récoltée en inondant la tourbière et en détachant les fruits — chaque 
 tip:{en:"Stop cooking as soon as they pop. Past that the skins break down and the pectin that would have set the sauce is destroyed.",
 fr:"Arrêtez la cuisson dès qu’elles éclatent. Au-delà, les peaux se défont et la pectine qui aurait fait prendre la sauce est détruite."},
 pairs:["orange","cinnamon","clove","turkey","honey","walnut","ginger","maple-syrup"],
-svg:'<ellipse class="f1 sf" cx="42" cy="56" rx="8" ry="10"/><ellipse class="f1 sf" cx="56" cy="58" rx="8" ry="10"/><path class="s" d="M42 46v-6M56 48v-6"/>'},
+svg:'<path class="s" d="M24 62q10-7 17-11 8-6 12-13"/><path class="f1 sf" d="M53 39q-5-9 1-15 8 4 6 14-3 3-7 1z"/><path class="f2 sf" d="M34 50q-4-8 1-11 6 2 5 9-2 3-6 2z"/><path class="f1 sf" d="M35 45q13 2 13 13 0 13-13 13-13-1-13-13 0-12 13-13z"/><path class="f1 sf" d="M64 36q13 2 13 14-1 13-13 13-13-1-13-13 0-13 13-14z"/><path class="s" d="M28 55q2 6 5 9M57 41q2-4 4-6M64 63l-3 5M64 63l3 5M64 63v5" stroke-width="1.5"/>'},
 
 {id:"camarine",cat:"fruits",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Crowberry",fr:"Camarine noire"},latin:"Empetrum nigrum",
 origin:{en:"Arctic tundra & Greenland",fr:"Toundra arctique & Groenland"},season:[8,9,10],
@@ -287,7 +287,7 @@ fr:"Nommée d’après Damas, où les marchands romains la trouvèrent, et bien 
 tip:{en:"Do not try to stone them raw. Cook them whole and lift the stones out with a slotted spoon as they float free.",
 fr:"N’essayez pas de les dénoyauter crues. Cuisez-les entières et retirez les noyaux à l’écumoire à mesure qu’ils se détachent."},
 pairs:["cinnamon","clove","honey","juniper","almond","vanilla","black-pepper","bay-leaf"],
-svg:'<circle class="f1 sf" cx="48" cy="58" r="16"/><path class="s" d="M48 42v32"/><path class="s" d="M48 42q5-9 11-9"/>'},
+svg:'<path class="f2 sf" d="M42 37q11 4 12 18 2 15-3 20-8 6-14 1-9-6-9-21 0-14 14-18z"/><path class="f2 sf" d="M67 26q9 3 10 14 0 12-7 14-9 1-11-11-2-13 8-17z"/><path class="s" d="M42 38q6 10 5 22-1 12-5 19" stroke-width="2"/><path class="s" d="M42 38q0-8 7-10 8-3 16 0"/><path class="f1 sf" d="M47 28q-7-6-16-3 3 8 11 9 4 0 5-6z"/><path class="s" d="M32 26q7 2 12 4" stroke-width="1.5"/>'},
 
 {id:"date",cat:"fruits",price:2,pk:"8–20 €/kg",name:{en:"Date",fr:"Datte"},latin:"Phoenix dactylifera",
 origin:{en:"Mesopotamia & the Gulf",fr:"Mésopotamie & Golfe"},season:[10,11,12],
@@ -357,7 +357,7 @@ fr:"La forêt australienne a gardé ce secret des millénaires : un agrume en fo
 tip:{en:"Halve it and squeeze gently — the pearls flow out intact. Spoon them over oysters or scallops at the very last second; heat collapses the caviar.",
 fr:"Coupez-le en deux et pressez doucement — les perles s’écoulent intactes. Déposez-les sur huîtres ou Saint-Jacques à la toute dernière seconde ; la chaleur fait s’effondrer le caviar."},
 pairs:["oyster","scallop","shrimp","salmon"],
-svg:'<path class="f2 sf" d="M32 40q16-10 32 8 8 10-2 16-16 8-30-10-6-9 0-14z" transform="rotate(-10 48 52)"/><path class="dot" d="M42 50a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M49 52a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M45 57a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M54 56a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/>'},
+svg:'<path class="f1 sf" d="M27 68q-6-6 1-14 8-12 18-21 11-8 18-5 6 4 1 13-7 12-18 21-10 8-17 8-4 0-3-2z"/><path class="f2 sf" d="M33 64q-3-5 2-11 7-10 16-17 8-6 13-4 3 3-2 10-6 9-15 16-9 7-14 7-2 0 0-1z"/><path class="dot" d="M34 63.4q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM33.3 55.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40.8 56.7q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40 49.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM47.5 49.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM46.7 42.5q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM54.2 43.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM53.4 35.7q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM33.7 59.6q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40.4 52.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM47.1 46.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM53.8 39.5q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7z"/><path class="f2 sf" d="M21.6 74q0 -3.4 3.4 -3.4q3.4 0 3.4 3.4q0 3.4 -3.4 3.4q-3.4 0 -3.4 -3.4zM29.6 79q0 -3.4 3.4 -3.4q3.4 0 3.4 3.4q0 3.4 -3.4 3.4q-3.4 0 -3.4 -3.4z"/><path class="s" d="M63 27q4-3 7-1" stroke-width="2"/>'},
 
 {id:"fraise-gariguette",cat:"fruits",price:2,pk:"12–22 €/kg",name:{en:"Gariguette strawberry",fr:"Fraise Gariguette"},latin:"Fragaria × ananassa 'Gariguette'",
 origin:{en:"Montfavet, Provence",fr:"Montfavet, Provence"},season:[3,4,5],
@@ -427,7 +427,7 @@ fr:"Nommée en français pour Claude de France, épouse de François Ier, et en 
 tip:{en:"Ignore the colour. A ripe greengage stays green — judge it by give under the thumb and by scent alone.",
 fr:"Ne vous fiez pas à la couleur. Une reine-claude mûre reste verte — jugez à la souplesse sous le pouce et au parfum."},
 pairs:["almond","vanilla","honey","cream","pistachio","butter","cinnamon","hazelnut"],
-svg:'<circle class="f3 sf" cx="48" cy="57" r="17"/><path class="s" d="M48 40v34"/><path class="s" d="M48 40q5-9 11-9"/>'},
+svg:'<path class="f1 sf" d="M38 36q13 0 17 10 5 12-3 19-11 9-21 1-9-8-6-19 3-10 13-11z"/><path class="s" d="M38 37q5 8 4 17-1 10-5 15" stroke-width="2"/><path class="f1 sf" d="M68 31q10 2 11 12 1 12-9 14-12 1-13-12-1-12 11-14z"/><path class="f2 sf" d="M68 37q5 2 5 7t-5 7q-6-2-6-7t6-7z"/><path class="s" d="M38 35q0-7 5-9"/><path class="f1 sf" d="M45 26q-7-7-16-3 3 8 11 9 4 0 5-6z"/>'},
 
 {id:"guava",cat:"fruits",price:2,pk:"8–15 €/kg",name:{en:"Guava",fr:"Goyave"},latin:"Psidium guajava",
 origin:{en:"Central America",fr:"Amérique centrale"},season:[],
@@ -557,7 +557,7 @@ fr:"La Royal Navy troqua les citrons contre les limes des Antilles dans les ann�
 tip:{en:"Roll it hard on the counter before juicing and take the zest first. Once cut, the zest is impossible to get cleanly.",
 fr:"Roulez-le fermement sur le plan de travail avant de presser, et zestez d’abord. Une fois coupé, le zeste est impossible à prélever proprement."},
 pairs:["chili","coconut-milk","cilantro","fish-sauce","ginger","mint","avocado","shrimp"],
-svg:'<circle class="f2 sf" cx="48" cy="54" r="20"/><path class="s" d="M48 34v40M28 54h40M34 40l28 28M62 40L34 68"/>'},
+svg:'<path class="f1 sf" d="M38 26Q54 20 64 30 74 42 68 55 62 66 50 68 49 74 45 68 32 64 28 52 25 38 38 26Z"/><path class="f1 sf" d="M59 27Q62 20 69 21 70 28 63 31 58 33 59 27Z"/><path class="s" d="M67 23 60 29" stroke-width="1.5"/><path class="f2 sf" d="M50 64Q63 60 73 67 69 79 57 77 49 74 50 64Z"/><path class="s" d="M61 66 56 76M61 66 64 77M61 66 69 73" stroke-width="1.5"/><path class="s" d="M70 69Q71 76 60 75" stroke-width="1.5"/>'},
 
 {id:"airelle-rouge",cat:"fruits",price:2,pk:"15–30 €/kg",name:{en:"Lingonberry",fr:"Airelle rouge"},latin:"Vaccinium vitis-idaea",
 origin:{en:"Nordic & alpine heaths",fr:"Landes nordiques et alpines"},season:[8,9,10],
@@ -1137,7 +1137,7 @@ fr:"Le pruneau d’Agen vient de la prune d’ente, greffée d’une variété r
 tip:{en:"It belongs with pork and rabbit as much as with dessert. Southwest France has always treated it as a savoury ingredient.",
 fr:"Il va avec le porc et le lapin autant qu’avec le dessert. Le Sud-Ouest l’a toujours traité comme un ingrédient salé."},
 pairs:["rabbit","thyme","pork","cream","bay-leaf","dark-chocolate","orange","lard"],
-svg:'<path class="f1 sf" d="M34 56q0-16 14-16t14 16-14 16-14-16z"/><path class="s" d="M40 48q8 8 16 2M42 64q6 4 12 0"/>'},
+svg:'<path class="f2 sf" d="M50 21Q63 24 68 33 74 43 71 53 70 65 57 72 46 78 35 72 27 63 23 52 27 40 35 28Z"/><path class="s" d="M46 24Q39 34 41 43 43 51 39 57 36 63 39 71" stroke-width="2"/><path class="s" d="M57 27Q52 35 55 43 58 51 54 59 52 65 55 70M65 39q-7 3-6 11M30 45q7 1 8 8M31 61q6-2 9 3" stroke-width="1.5"/><path class="dot" d="M49 22q6 0 6 4t-7 3-4-4 5-3z"/>'},
 
 {id:"raisin",cat:"fruits",price:1,pk:"5–10 €/kg",name:{en:"Raisin",fr:"Raisin sec"},latin:"Vitis vinifera",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
@@ -1147,7 +1147,7 @@ fr:"Des raisins séchés sur pied furent presque certainement le premier fruit s
 tip:{en:"Plump them in warm liquid — rum, tea, wine — for twenty minutes before baking. Dry, they steal moisture from the crumb.",
 fr:"Faites-les gonfler vingt minutes dans un liquide tiède — rhum, thé, vin — avant cuisson. Secs, ils volent l’humidité de la mie."},
 pairs:["cinnamon","almond","flour-t55","pine-nut","swiss-chard","butter","honey","orange"],
-svg:'<circle class="f1 sf" cx="41" cy="52" r="6"/><circle class="f1 sf" cx="55" cy="55" r="6"/><circle class="f1 sf" cx="46" cy="64" r="6"/><circle class="f1 sf" cx="58" cy="66" r="5"/><path class="s" d="M38 48q4-3 8 0"/>'},
+svg:'<path class="f2 sf" d="M27 39.5Q30 35 35 34Q40 33 43 35.5Q46 38 50 34.5Q54 31 59 31.5Q64 32 68 35Q72 38 74 42.5Q76 47 73 51Q70 55 65 56.5Q60 58 56 61Q52 64 47 63Q42 62 37.5 62Q33 62 29.5 58Q26 54 25 49Q24 44 27 39.5Z"/><path class="s" d="M33 44q11-4 19 1M32 52q12 3 21-2M39 60q10-1 17-5M63 41q4 7 2 14M58 68q6-2 11 1" stroke-width="2"/><path class="dot" d="M27 43q6 2 5 8-1 6-6 7-4-8-2-15z"/><path class="s" d="M41 33q-3-6 2-8" stroke-width="2"/><path class="f2 sf" d="M58 68.5Q60 66 63.5 65Q67 64 70 65.5Q73 67 73.5 70Q74 73 71.5 75.5Q69 78 65 78Q61 78 58 76.5Q55 75 55.5 73Q56 71 58 68.5Z"/>'},
 
 {id:"raisin-de-corinthe",cat:"fruits",price:1,pk:"8–14 €/kg",name:{en:"Zante currant",fr:"Raisin de Corinthe"},latin:"Vitis vinifera 'Black Corinth'",
 origin:{en:"Ionian islands, Greece",fr:"Îles Ioniennes, Grèce"},season:[],

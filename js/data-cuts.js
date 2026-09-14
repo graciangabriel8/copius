@@ -37,7 +37,7 @@ fr:"Un muscle qui a travaillé chaque heure éveillée de la vie de l’animal, 
 tip:{en:"Don’t trim the silverskin obsessively — that gelatine is the future body of your sauce. It is better the next day, and better still the day after.",
 fr:"Ne chassez pas obsessionnellement les parures — cette gélatine est le futur corps de votre sauce. Elle est meilleure le lendemain, et encore meilleure le surlendemain."},
 pairs:["carrot","onion","bay-leaf","orange","clove"],
-svg:'<path class="f3 sf" d="M34 44q12-10 24-2 8 6 4 16-4 12-18 10-12-2-14-12-1-7 4-12z"/><path class="s" d="M40 50q8-4 16 0" stroke-width="1.4"/>'},
+svg:'<path class="f1 sf" d="M17 61q-2-10 5-17 6-8 16-8 9-5 19-2 13 3 17 11 5 10-4 17-6 5-13 6-4 4-9 1-6 3-11 0-6 2-11-2-6 1-9-6z"/><path class="f1 sf" d="M21 55q12-8 26-7 11 1 18 6-10 6-23 5-14-1-21-4z" stroke-width="2"/><path class="s" d="M25 61q13-3 26-2M32 66q11-2 20-1" stroke-width="2.2"/><path class="s" d="M27 45q13-6 26-5M36 39q12-4 21-2" stroke-width="2.2"/><path class="dot" d="M61 45q6-2 7 1t-5 3-3-2 1-2zM29 38q5-2 6 1t-4 3-3-2 1-2z"/>'},
 
 {id:"jarret-de-boeuf",cat:"cuts",price:1,pk:"9–14 €/kg",name:{en:"Beef shin",fr:"Jarret de bœuf"},latin:"Bœuf — jarret",
 origin:{en:"France",fr:"France"},season:[],

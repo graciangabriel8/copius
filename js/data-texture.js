@@ -607,7 +607,7 @@ fr:"Inventée en 1842 par Thomas Kingsford, qui cherchait un amidon pour la blan
 tip:{en:"Slake it in cold liquid first, always. Tipped into anything hot it seizes into lumps that will never dissolve.",
 fr:"Délayez-la d’abord au liquide froid, toujours. Jetée dans du chaud, elle prend en grumeaux qui ne se dissoudront jamais."},
 pairs:["cream","sugar","vanilla","egg","lemon","dark-chocolate","butter"],
-svg:'<path class="f3 sf" d="M36 70q0-16 12-20 12 4 12 20z"/><path class="s" d="M40 62q8 4 16 0"/>'},
+svg:'<path class="f1 sf" d="M21 62q1-11 13-11 11 0 13 10 13-3 27-6 5-1 5 2t-5 3q-13 3-27 1-2 10-13 10-12 0-13-9z"/><path class="f1 sf" d="M20 58q2-7 8-7 2-7 9-6 6 0 8 5 7 0 8 6 1 4-1 6-16 5-32-4z"/><path class="s" d="M26 55q3-4 8-4" stroke-width="1.6"/><path class="f1 sf" d="M25 78q7-5 15-3 5 2 5 4-12 3-20-1z"/><path class="dot" d="M24 70q4-2 5 1t-4 3-2-2 1-2zM37 72q3-2 4 1t-3 2-2-1 1-2zM51 67q3-2 4 1t-3 2-2-1 1-2z"/>'},
 
 {id:"arrowroot",cat:"texture",price:2,pk:"15–30 €/kg",name:{en:"Arrowroot starch",fr:"Arrow-root"},latin:"Maranta arundinacea",
 origin:{en:"Caribbean and northern South America",fr:"Caraïbes et nord de l’Amérique du Sud"},season:[],

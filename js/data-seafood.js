@@ -47,7 +47,7 @@ fr:"Il vit dans les eaux douces les plus froides du globe, plus au nord qu’auc
 tip:{en:"Cook it barely — it is at its best still translucent at the centre. It goes from perfect to chalky in under a minute.",
 fr:"Cuisez-le à peine — il est à son meilleur encore translucide au cœur. Il passe du parfait au crayeux en moins d’une minute."},
 pairs:["butter","lemon","dill","creme-fraiche","hazelnut","chives","beetroot","horseradish"],
-svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f1 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f1 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="38" cy="53" r="1.8"/><circle class="dot" cx="52" cy="57" r="1.8"/></g>'},
+svg:'<path class="f1 sf" d="M25 35q15-2 28 6 14 8 27 12l-1 8q-16-2-30 2-14 4-24 0-5-14 0-28z"/><path class="f1 sf" d="M26 62q9 5 18 2-8 7-17 7-2-4-1-9z"/><path class="f2 sf" d="M27 63q10 3 22 0 14-4 30-2l-1-4q-15-2-29 2-12 3-21 0z"/><path class="s" d="M31 35q7 8 6 15t-5 14M40 37q7 7 6 14t-5 13M49 40q6 6 5 12t-4 11M58 45q5 4 4 8t-3 8M67 49q4 3 3 6t-2 5" stroke-width="1.5"/>'},
 
 {id:"black-scabbardfish",cat:"seafood",price:2,pk:"9–16 €/kg",name:{en:"Black scabbardfish",fr:"Sabre noir"},latin:"Aphanopus carbo",
 origin:{en:"Madeira & the Portuguese slope",fr:"Madère & le talus portugais"},season:[],
@@ -267,7 +267,7 @@ fr:"L’Espagne en mange plus que quiconque et tient la gorge — la kokotxa —
 tip:{en:"Its flesh is fragile and falls apart if turned twice. Cook it on one side only and finish it under the grill.",
 fr:"Sa chair est fragile et se défait si on la retourne deux fois. Cuisez-la d’un seul côté et finissez au gril."},
 pairs:["garlic","olive-oil","parsley","clam","chili","potato","lemon","white-wine-vinegar"],
-svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f3 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="53" r="2"/></g>'},
+svg:'<path class="f1 sf" d="M13 50q6-16 24-16 18 0 27 5 8 4 9 8l8-5v16l-8-5q-1 4-9 8-9 5-27 5-18 0-24-16z"/><path class="f2 sf" d="M37 34q3-11 8-11 1 6 0 12z"/><path class="f2 sf" d="M46 34q12 0 21 8-9-3-21-3zM46 66q12 0 21-8-9 3-21 3z"/><path class="s" d="M36 35q4 10 1 21M13 50q13 7 24 5" stroke-width="2"/><path class="s" d="M50 51q10 0 17-1" stroke-width="1.5"/><path class="dot" d="M23 41q5-3 7 1t-5 6-2-7z"/>'},
 
 {id:"sayori",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Halfbeak (sayori)",fr:"Demi-bec du Japon (sayori)"},latin:"Hyporhamphus sajori",
 origin:{en:"Coastal Japan, spring shoals",fr:"Côtes japonaises, bancs de printemps"},season:[2,3,4,5],
@@ -297,7 +297,7 @@ fr:"Le poisson qui a bâti des villes. La Ligue hanséatique vivait du hareng sa
 tip:{en:"Smoked, salted or soused, it wants something starchy and something sour alongside — potato and onion, or apple and cream.",
 fr:"Fumé, salé ou mariné, il appelle un féculent et un acide à côté — pomme de terre et oignon, ou pomme et crème."},
 pairs:["potato","onion","cream","apple","dill","cider-vinegar","rye-flour","black-pepper"],
-svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f3 sf" d="M18 56q18-12 42-8t18 8q-8 12-32 12T18 56z"/><path class="f3 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="32" cy="54" r="2"/></g>'},
+svg:'<path class="f1 sf" d="M16 50q3-11 16-14 22-6 38 3l8-6q-8 18 0 36l-8-6q-16 9-38 3-13-3-16-12z"/><path class="f2 sf" d="M16 50q3-11 16-14-7 7-7 14t7 14q-13-3-16-14z"/><path class="s" d="M32 50q20 2 40-1" stroke-width="2"/><path class="s" d="M36 48q3-6 4-10M44 46q3-7 5-10M52 45q3-7 5-9M60 46q3-6 5-8" stroke-width="1.5"/><path class="s" d="M36 52q3 6 4 10M44 54q3 7 5 10M52 55q3 7 5 9M60 54q3 6 5 8" stroke-width="1.5"/><path class="dot" d="M20 46q4-3 5 1t-4 5-1-6z"/>'},
 
 {id:"honkarebushi",cat:"seafood",price:3,pk:"120–250 €/kg",name:{en:"Honkarebushi",fr:"Honkarebushi (katsuobushi affiné à la moisissure)"},latin:"Katsuwonus pelamis",
 origin:{en:"Kagoshima and Shizuoka, Japan",fr:"Kagoshima et Shizuoka, Japon"},season:[],
@@ -697,7 +697,7 @@ fr:"La France l’appelle bar au nord et loup en Méditerranée — le loup, pou
 tip:{en:"Its skin crisps better than almost any fish. Dry it thoroughly, press it flat in the pan for the first minute, and do not move it.",
 fr:"Sa peau croustille mieux que celle de presque tout poisson. Séchez-la bien, pressez-la à plat la première minute, et ne la bougez pas."},
 pairs:["fennel","lemon","olive-oil","thyme","white-wine-vinegar","tomato","butter","dill"],
-svg:'<path class="f3 sf" d="M20 56q16-16 40-12t16 12q-8 12-30 12T20 56z"/><path class="f3 sf" d="M76 56l10-8v16z"/><circle class="dot" cx="34" cy="52" r="2"/>'},
+svg:'<path class="f1 sf" d="M13 50q10-12 25-13 22-1 33 10l8-7q-4 12 0 24l-8-7q-11 11-33 10Q23 62 13 50z"/><path class="f2 sf" d="M36 38l3-12 3 11 3-13 3 12 3-11 3 11 2-8 1 8z"/><path class="f2 sf" d="M60 39q7 0 10 6-6 2-10-1zM52 64q7 1 11-4-6-3-11 0z"/><path class="s" d="M30 38q5 10 2 21M14 52q7 3 12 2" stroke-width="2"/><path class="s" d="M34 47q17 1 33-2" stroke-width="1.5"/><path class="dot" d="M22 44q5-3 6 1t-5 5-1-6z"/>'},
 
 {id:"sea-trout",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
 origin:{en:"Atlantic rivers and estuaries",fr:"Rivières et estuaires atlantiques"},season:[4,5,6,7,8],
@@ -887,7 +887,7 @@ fr:"La truite au bleu exige un poisson tué juste avant cuisson — un film de m
 tip:{en:"Stuff the cavity with lemon and herbs and bake it whole. Fillets of trout dry out faster than almost any other fish.",
 fr:"Garnissez la cavité de citron et d’herbes et cuisez-la entière. Les filets de truite sèchent plus vite que presque tout autre poisson."},
 pairs:["almond","butter","lemon","parsley","white-wine-vinegar","dill","cream","hazelnut"],
-svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f2 sf" d="M18 56q18-14 42-10t18 10q-8 12-32 12T18 56z"/><path class="f2 sf" d="M78 56l10-8v16z"/><circle class="dot" cx="36" cy="52" r="1.6"/><circle class="dot" cx="48" cy="58" r="1.6"/><circle class="dot" cx="56" cy="51" r="1.6"/></g>'},
+svg:'<path class="f1 sf" d="M16 56q3-13 19-19 20-7 34 3l10-9q-3 10 1 20l-11-5q-13 14-33 13-17-1-20-3z"/><path class="f2 sf" d="M43 34q7-9 14-1z"/><path class="f2 sf" d="M62 39q3-4 6-1z"/><path class="dot" d="M27 47q0-2 2-2t2 2-2 2-2-2zM35 43q0-2 2-2t2 2-2 2-2-2zM43 40q0-2 2-2t2 2-2 2-2-2zM51 41q0-2 2-2t2 2-2 2-2-2zM59 45q0-2 2-2t2 2-2 2-2-2zM33 53q0-2 2-2t2 2-2 2-2-2zM43 50q0-2 2-2t2 2-2 2-2-2zM53 51q0-2 2-2t2 2-2 2-2-2zM39 57q0-2 2-2t2 2-2 2-2-2zM61 52q0-2 2-2t2 2-2 2-2-2z"/><path class="s" d="M26 45q4 7 3 13M17 54q5 3 9 2" stroke-width="2"/><path class="dot" d="M21 48q3-2 4 1t-3 3-1-4z"/>'},
 
 {id:"tuna",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Tuna",fr:"Thon"},latin:"Thunnus thynnus",
 origin:{en:"Mediterranean & open oceans",fr:"Méditerranée & océans"},season:[5,6,7,8,9],

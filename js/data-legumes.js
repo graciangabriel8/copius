@@ -107,7 +107,7 @@ fr:"Nice en fait la socca et Gênes la farinata — la même pâte de farine, d�
 tip:{en:"Let the batter rest at least an hour so the flour hydrates fully, or the socca tastes raw and chalky in the middle.",
 fr:"Laissez reposer la pâte au moins une heure pour que la farine s’hydrate, sinon la socca a un goût cru et crayeux au centre."},
 pairs:["olive-oil","black-pepper","rosemary","cumin","onion","chickpeas","turmeric","chili"],
-svg:'<path class="f2 sf" d="M34 70q0-18 14-24 14 6 14 24z"/><circle class="f3 sf" cx="44" cy="58" r="4"/><circle class="f3 sf" cx="53" cy="62" r="4"/>'},
+svg:'<path class="f1 sf" d="M32 38q16-4 32 0 2 18 1 34-1 4-17 4t-17-4q-1-16 1-34z"/><path class="f2 sf" d="M31 38q17-5 34 0-2 6-17 6t-17-6z"/><path class="f2 sf" d="M35 37q1-6 6-7 3-5 7-2 4-4 8 1 5 1 5 8-13 4-26 0z"/><path class="f1 sf" d="M25 70q-1-6 6-7 6-1 7 5 1 6-5 7-7 1-8-5zM38 74q-1-5 5-6 5-1 6 4 1 5-4 6-6 1-7-4z"/><path class="s" d="M28 66q2-3 6-3M41 71q2-3 5-2M40 52h16M40 59h11" stroke-width="1.5"/>'},
 
 {id:"chickpeas",cat:"legumes",price:1,pk:"3–5 €/kg",name:{en:"Chickpeas",fr:"Pois chiches"},latin:"Cicer arietinum",
 origin:{en:"Fertile Crescent & Anatolia",fr:"Croissant fertile & Anatolie"},season:[],

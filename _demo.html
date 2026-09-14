@@ -1,0 +1,175 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Copius — demo reel</title>
+<style>
+  html,body{margin:0;height:100%;background:#0d0d0c;display:grid;place-items:center;
+    font:15px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  /* 9:16 at iPhone logical size — the atlas renders its own mobile layout inside */
+  #stage{position:relative;width:390px;height:844px;overflow:hidden;background:#fafafa;
+    box-shadow:0 0 0 1px #222}
+  #app{width:390px;height:844px;border:0;display:block}
+  /* caption band for muted viewing — most Reels are watched with sound off */
+  #cap{position:absolute;left:0;right:0;bottom:0;padding:26px 22px 34px;
+    background:linear-gradient(to top,rgba(10,10,9,.97) 55%,rgba(10,10,9,.88) 78%,transparent);
+    color:#fff;font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.25;
+    opacity:0;transition:opacity .35s ease;text-wrap:balance;pointer-events:none}
+  #cap.on{opacity:1}
+  #cap small{display:block;font-size:15px;font-weight:400;opacity:.75;margin-top:6px}
+  #end{position:absolute;inset:0;background:#141413;color:#f1f1f0;display:grid;
+    place-content:center;text-align:center;gap:10px;opacity:0;transition:opacity .5s ease;
+    pointer-events:none;padding:0 30px}
+  #end.on{opacity:1}
+  #end b{font-size:44px;font-weight:600;letter-spacing:-.02em}
+  #end span{font-size:19px;opacity:.72}
+  #end i{font-style:normal;font-size:17px;opacity:.55;margin-top:14px}
+  /* a soft tap ring, so a viewer reads it as someone using it */
+  #tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;
+    border:2px solid rgba(20,20,19,.5);opacity:0;pointer-events:none}
+  #tap.go{animation:tap .5s ease-out}
+  @keyframes tap{0%{opacity:.9;transform:scale(.4)}100%{opacity:0;transform:scale(1.15)}}
+  #hud{position:fixed;left:12px;top:12px;color:#666;font-size:12px}
+  #hud button{font:inherit;background:#1c1c1a;color:#ddd;border:1px solid #333;
+    border-radius:6px;padding:5px 11px;cursor:pointer}
+</style>
+
+<div id="hud"><button id="again">replay</button> <span id="state">loading…</span></div>
+
+<div id="stage">
+  <iframe id="app" src="atlas.html?v=113"></iframe>
+  <div id="tap"></div>
+  <div id="cap"></div>
+  <div id="end">
+    <b>Copius</b>
+    <span>1,835 ingredients, drawn and explained</span>
+    <i>copius.fr — free</i>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var app = document.getElementById("app"), cap = document.getElementById("cap"),
+      end = document.getElementById("end"), tap = document.getElementById("tap"),
+      state = document.getElementById("state");
+
+  var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+  var D = function () { return app.contentDocument; };
+  var q = function (s) { return D().querySelector(s); };
+
+  function say(text, sub) {
+    cap.innerHTML = text + (sub ? "<small>" + sub + "</small>" : "");
+    cap.classList.add("on");
+  }
+  function hush() { cap.classList.remove("on"); }
+
+  function ring(el) {
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    tap.style.left = (r.left + r.width / 2) + "px";
+    tap.style.top = (r.top + r.height / 2) + "px";
+    tap.classList.remove("go"); void tap.offsetWidth; tap.classList.add("go");
+  }
+
+  async function type(sel, text, per) {
+    var el = q(sel); if (!el) return;
+    el.focus();
+    for (var i = 1; i <= text.length; i++) {
+      el.value = text.slice(0, i);
+      el.dispatchEvent(new app.contentWindow.Event("input", {bubbles: true}));
+      await wait(per || 85);
+    }
+  }
+
+  async function openEntry(id) {
+    var card = q('.card[data-id="' + id + '"]');
+    if (!card) return false;
+    card.scrollIntoView({block: "center"});
+    await wait(240);
+    ring(card);
+    await wait(180);
+    card.click();
+    return true;
+  }
+
+  async function closeEntry() {
+    var b = q("#closeBtn");
+    if (b) { ring(b); await wait(140); b.click(); }
+    await wait(320);
+  }
+
+  // the modal is the hero; scroll it so the facts come into view under the drawing
+  async function revealFacts() {
+    var box = q("#overlay .modal") || q("#overlay > div") || q("#overlay");
+    if (!box) return;
+    var target = Math.min(box.scrollHeight - box.clientHeight, 230);
+    var start = box.scrollTop, t0 = performance.now(), dur = 900;
+    await new Promise(function (done) {
+      (function step(now) {
+        var k = Math.min(1, (now - t0) / dur);
+        box.scrollTop = start + (target - start) * (k < .5 ? 2*k*k : 1 - Math.pow(-2*k+2, 2)/2);
+        k < 1 ? requestAnimationFrame(step) : done();
+      })(t0);
+    });
+  }
+
+  async function show(term, id, line, sub, hold) {
+    await type("#search", term, 80);
+    await wait(430);
+    if (!await openEntry(id)) return false;
+    say(line, sub);
+    await wait(1500);          // let the drawing draw itself — this is the distinctive bit
+    await revealFacts();
+    await wait(hold || 1600);
+    hush();
+    await closeEntry();
+    var s = q("#search");
+    if (s) { s.value = ""; s.dispatchEvent(new app.contentWindow.Event("input", {bubbles: true})); }
+    await wait(240);
+    return true;
+  }
+
+  async function run() {
+    end.classList.remove("on"); hush();
+    state.textContent = "playing";
+
+    // an empty "add a photo" slot reads as unfinished on camera. Hide it for the
+    // recording only — this file is not served as part of the site.
+    var hide = D().createElement("style");
+    hide.textContent = ".photo-actions,.drop-hint{display:none!important}.m-art{margin-bottom:10px}";
+    D().head.appendChild(hide);
+
+    // the app remembers a language; pin it so the recording is reproducible
+    var en = q("#lang-en");
+    if (en) { en.click(); await wait(600); }
+
+    // start at the grid, not the filter panel — nobody is sold by a filter panel
+    app.contentWindow.scrollTo(0, 0);
+    await wait(500);
+
+    say("1,835 ingredients.", "Each one drawn, each one explained");
+    await wait(1900); hush(); await wait(250);
+
+    await show("saffron", "saffron", "What it is, and what it costs.", "Season · price · origin", 1700);
+    await show("morel",   "morel",   "And what is easy to get wrong.", "One note on handling it", 1600);
+    await show("yuzu",    "yuzu",    "And what it goes with.",         "12,778 recorded pairings", 1800);
+
+    end.classList.add("on");
+    state.textContent = "done";
+  }
+
+  var started = false;
+  app.addEventListener("load", function () {
+    // the atlas loads 3.6 MB of data; wait for cards to exist rather than guess
+    var tries = 0;
+    (function poll() {
+      if (D() && q(".card")) { if (!started) { started = true; run(); } return; }
+      if (++tries > 120) { state.textContent = "atlas did not load"; return; }
+      setTimeout(poll, 120);
+    })();
+  });
+
+  document.getElementById("again").addEventListener("click", function () {
+    if (state.textContent !== "playing") run();
+  });
+})();
+</script>

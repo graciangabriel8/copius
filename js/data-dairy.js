@@ -777,7 +777,7 @@ fr:"Fait du lait des brebis manech et basco-béarnaises, que les bergers montent
 tip:{en:"If you cannot find black cherry jam, quince paste does the same job: the sheep's milk needs something sweet and slightly tart against it.",
 fr:"À défaut de confiture de cerise noire, la pâte de coing fait le même office : ce lait de brebis appelle un sucré légèrement acidulé."},
 pairs:["cherry","quince","walnut","honey","fig","almond","grape","espelette"],
-svg:'<path class="f2 sf" d="M26 64q-3-12 0-24h44q3 12 0 24z"/><path class="s" d="M34 40v24M48 40v24M62 40v24"/>'},
+svg:'<path class="f1 sf" d="M22 30q7-11 26-11t26 11q-7 11-26 11t-26-11z"/><path class="f2 sf" d="M22 30v13q0 12 26 12t26-12V30q-7 11-26 11t-26-11z"/><path class="f1 sf" d="M48 30l-12 9v12q5 6 12 6t12-6V39z"/><path class="s" d="M48 30v27M27 38v10M32 42v10M64 42v10M69 38v10" stroke-width="2"/><path class="dot" d="M54 44q3-3 4 0t-3 4-1-4zM55 52q2-2 3 0t-2 3-1-3z"/>'},
 
 {id:"parmesan",cat:"dairy",price:2,pk:"25–40 €/kg",name:{en:"Parmesan",fr:"Parmesan"},latin:"Parmigiano Reggiano",
 origin:{en:"Emilia-Romagna, Italy",fr:"Émilie-Romagne, Italie"},season:[],
@@ -797,7 +797,7 @@ fr:"Les légionnaires romains en portaient une ration quotidienne — environ vi
 tip:{en:"Salt the pasta water lightly when pecorino is coming. It seasons the dish on its own and there is no way back.",
 fr:"Salez l’eau des pâtes légèrement quand le pecorino arrive. Il assaisonne le plat à lui seul, et il n’y a pas de retour en arrière."},
 pairs:["black-pepper","guanciale","egg","fava-bean","olive-oil","tomato","basil","garlic"],
-svg:'<path class="f1 sf" d="M24 66q-3-13 0-26h48q3 13 0 26z"/><path class="s" d="M32 40v26M48 40v26M64 40v26"/>'},
+svg:'<path class="f1 sf" d="M22 68L62 40q8 9 6 22-24 8-46 6z"/><path class="f2 sf" d="M62 40q8 9 6 22-8 2-7-11t1-11z"/><path class="dot" d="M35 63q2-2 3 0t-2 3-1-3zM45 58q2-2 3 0t-2 3-1-3zM41 68q2-2 3 0t-2 3-1-3zM52 52q2-2 3 0t-2 3-1-3zM30 66q2-2 3 0t-2 3-1-3z"/><path class="f1 sf" d="M19 48q2-8 7-7 1-6 7-5 3-5 8-2 5 1 5 7 2 5-3 7-14 5-24 0z"/><path class="f1 sf" d="M21 35q6-5 12-1-6 5-12 1zM33 26q6-4 11 0-6 4-11 0zM45 34q5-4 9-1-5 4-9 1z" stroke-width="2"/>'},
 
 {id:"pecorino-sardo",cat:"dairy",price:2,pk:"20–33 €/kg",name:{en:"Pecorino Sardo",fr:"Pecorino Sardo"},latin:"Pecorino Sardo DOP",
 origin:{en:"Sardinia, Italy",fr:"Sardaigne, Italie"},season:[],
@@ -947,7 +947,7 @@ fr:"Pas un fromage à proprement parler — elle est faite du petit-lait resté 
 tip:{en:"Drain it in a sieve for an hour before it goes into a filling, or the water comes out in the oven and ruins the pastry.",
 fr:"Égouttez-la une heure dans une passoire avant de la mettre en garniture, sinon l’eau ressort au four et ruine la pâte."},
 pairs:["honey","lemon","spinach","basil","dark-chocolate","orange","pistachio","tomato"],
-svg:'<path class="f3 sf" d="M30 64q0-20 18-26 18 6 18 26z"/><path class="s" d="M36 56q12-6 24 0"/>'},
+svg:'<path class="f1 sf" d="M27 47q2 18 6 26 3 5 15 5t15-5q4-8 6-26z"/><path class="dot" d="M35 55q2 0 2 2t-2 2-2-2 2-2zM43 56q2 0 2 2t-2 2-2-2 2-2zM51 56q2 0 2 2t-2 2-2-2 2-2zM59 55q2 0 2 2t-2 2-2-2 2-2zM37 65q2 0 2 2t-2 2-2-2 2-2zM45 66q2 0 2 2t-2 2-2-2 2-2zM53 66q2 0 2 2t-2 2-2-2 2-2zM61 65q2 0 2 2t-2 2-2-2 2-2z"/><path class="s" d="M28 51q20 5 40 0" stroke-width="2"/><path class="f1 sf" d="M22 46q3-8 11-9 3-8 11-7 5-6 12-1 8-3 11 5 9 2 8 12-8 6-27 6t-26-6z"/><path class="s" d="M31 40q6-4 11-1M52 33q6 0 8 5" stroke-width="1.6"/>'},
 
 {id:"ricotta-salata",cat:"dairy",price:2,pk:"18–30 €/kg",name:{en:"Ricotta salata",fr:"Ricotta salata"},latin:"Ricotta salata",
 origin:{en:"Sicily, Italy",fr:"Sicile, Italie"},season:[],
@@ -1047,7 +1047,7 @@ fr:"La Bretagne était exemptée de la gabelle, l’impôt sur le sel qui écras
 tip:{en:"Reduce the salt elsewhere in the recipe, especially in baking. Demi-sel carries enough to matter in a cake.",
 fr:"Réduisez le sel ailleurs dans la recette, surtout en pâtisserie. Le demi-sel en apporte assez pour compter dans un gâteau."},
 pairs:["flour-t65","maple-syrup","radish","dark-chocolate","apple","buckwheat","honey","potato"],
-svg:'<path class="f3 sf" d="M32 68V52h32v16z"/><path class="s" d="M32 58h32"/><circle class="dot" cx="40" cy="63" r="1.4"/><circle class="dot" cx="50" cy="63" r="1.4"/><circle class="dot" cx="58" cy="63" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M34 50q10-7 21-12q12 5 23 10q-10 8-21 13q-12-6-23-11z"/><path class="f3 sf" d="M34 50v13q11 5 23 11V61q-12-6-23-11z"/><path class="f2 sf" d="M78 48v12q-10 8-21 14V61q11-5 21-13z"/><path class="f1 sf" d="M18 56q8-5 15-1v9q-7 5-15 1z"/><path class="s" d="M40 63q11 5 22 10" stroke-width="1.5"/><path class="dot" d="M44 45l2 2l-2 2l-2-2zM53 42l2 2l-2 2l-2-2zM61 46l2 2l-2 2l-2-2zM49 50l2 2l-2 2l-2-2zM67 49l2 2l-2 2l-2-2zM24 57l2 2l-2 2l-2-2zM40 69l2 2l-2 2l-2-2z"/>'},
 
 {id:"salted-duck-egg",cat:"dairy",price:1,pk:"1–2 €/pièce",name:{en:"Salted duck egg",fr:"Œuf de cane salé"},latin:"Anas platyrhynchos domesticus",
 origin:{en:"Gaoyou, Jiangsu, China",fr:"Gaoyou, Jiangsu, Chine"},season:[],

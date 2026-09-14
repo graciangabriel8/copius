@@ -227,7 +227,7 @@ fr:"Ils poussent en spirale le long d’une tige unique, des dizaines par pied, 
 tip:{en:"Halve and roast them cut-side down until properly browned. Boiling is what gave them their reputation.",
 fr:"Coupez-les en deux et rôtissez-les face coupée dessous jusqu’à belle coloration. C’est l’eau bouillante qui leur a fait leur réputation."},
 pairs:["lard","chestnut","hazelnut","balsamic","garlic","butter","black-pepper","maple-syrup"],
-svg:'<path class="s" d="M48 80V26"/><circle class="f2 sf" cx="36" cy="40" r="8"/><circle class="f2 sf" cx="60" cy="48" r="8"/><circle class="f2 sf" cx="36" cy="60" r="8"/><circle class="f2 sf" cx="60" cy="70" r="7"/>'},
+svg:'<path class="f1 sf" d="M40.5 22Q46 24 49 28.5Q52 33 52 38.5Q52 44 49 48.5Q46 53 40.5 55Q35 57 30 55Q25 53 22 48.5Q19 44 19 38.5Q19 33 22.5 28.5Q26 24 30.5 22Q35 20 40.5 22ZM29 54q8 4 14 0l-1 9q-6 4-12 0z"/><path class="s" d="M25 45q3-17 19-21M30 53q4-14 18-18" stroke-width="2"/><path class="f2 sf" d="M66.5 40Q72 42 75 47Q78 52 77.5 57.5Q77 63 73 67.5Q69 72 63.5 73Q58 74 53 71.5Q48 69 46 64Q44 59 45.5 53Q47 47 50 43.5Q53 40 57 39Q61 38 66.5 40Z"/><path class="s" d="M52 47q12-3 21 5M49 56q13-5 25 1M51 65q11-6 23-2" stroke-width="2"/><path class="f1 sf" d="M55 70q6-5 12-2-2 6-8 7-4-1-4-5z"/>'},
 
 {id:"bucks-horn-plantain",cat:"vegetables",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Buck’s-horn plantain",fr:"Plantain corne-de-cerf"},latin:"Plantago coronopus",
 origin:{en:"European coasts",fr:"Littoraux européens"},season:[10,11,12,1,2,3,4],
@@ -267,7 +267,7 @@ fr:"Caton l’Ancien consacra des pages de son manuel d’agriculture au chou, p
 tip:{en:"Cook it fast and hot or long and slow — never in between. The middle ground is where the sulphur smell lives.",
 fr:"Cuisez-le vite et fort, ou longtemps et doucement — jamais entre les deux. C’est dans l’entre-deux que loge l’odeur de soufre."},
 pairs:["butter","juniper","caraway","lard","apple","black-pepper","onion","potato"],
-svg:'<circle class="f2 sf" cx="48" cy="54" r="22"/><path class="s" d="M48 32v44M30 44q18 10 36 0M30 64q18-10 36 0"/>'},
+svg:'<path class="f2 sf" d="M34 61Q24 60 20 64 16 69 22 72 29 74 35 70 40 66 42 62Z"/><path class="f2 sf" d="M62 61Q72 60 76 64 80 69 74 72 67 74 61 70 56 66 54 62Z"/><path class="f1 sf" d="M46 22Q56 19 60 26 72 30 72 44 74 58 62 64 48 71 36 64 24 58 24 46 23 33 32 27 38 21 46 22Z"/><path class="s" d="M27 42Q37 31 51 31 63 32 70 42" stroke-width="2"/><path class="s" d="M32 53Q40 43 53 43 63 44 68 53M40 62Q42 50 38 42M54 63Q54 50 58 44M48 66v8" stroke-width="1.5"/>'},
 
 {id:"calcot",cat:"vegetables",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Calçot",fr:"Calçot"},latin:"Allium cepa",
 origin:{en:"Valls, Catalonia (IGP)",fr:"Valls, Catalogne (IGP)"},season:[12,1,2,3],
@@ -557,7 +557,7 @@ fr:"Le nom français est une observation médicale sans détour sur son effet di
 tip:{en:"Pick or buy it before the plant flowers. Once the yellow head appears the leaves turn harshly bitter and stay that way.",
 fr:"Cueillez-le ou achetez-le avant la floraison. Dès que la fleur jaune paraît, les feuilles deviennent durement amères et le restent."},
 pairs:["lard","egg","white-wine-vinegar","garlic","shallot","walnut","mustard","black-pepper"],
-svg:'<path class="s" d="M48 78V44"/><path class="f2 sf" d="M46 48q-16-2-18 6 12 8 18 0zM50 58q16-2 18 6-12 8-18 0zM46 66q-14-2-16 5 11 7 16 1z"/>'},
+svg:'<path class="s" d="M47 72q1-16 1-26"/><path class="f1 sf" d="M47 76l-9-3 2-6-9-4 3-6-9-4 3-6-8-6C30 50 40 62 47 76z"/><path class="f1 sf" d="M49 76l9-3-2-6 9-4-3-6 9-4-3-6 8-6C66 50 56 62 49 76z"/><path class="f2 sf" d="M40 40q8 4 16 0 1 6-8 7-9-1-8-7z"/><path class="f1 sf" d="M34 36q-1-10 6-13 3-4 8-3 6-1 9 3 7 3 7 13-7 5-15 5-14 0-15-5z"/><path class="s" d="M38 26l-4-5M44 22l-2-6M52 22l2-6M58 26l4-5M34 32l-6-3M62 32l6-3" stroke-width="2"/>'},
 
 {id:"datterino-tomato",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Datterino tomato",fr:"Tomate datterino"},latin:"Solanum lycopersicum",
 origin:{en:"Sicily and Puglia",fr:"Sicile et Pouilles"},season:[6,7,8,9],
@@ -1157,7 +1157,7 @@ fr:"La plante qui donne la graine de moutarde brune produit une feuille au même
 tip:{en:"Heat destroys the pungency, so decide which you want. Raw in a salad it bites; braised twenty minutes it turns sweet and mild.",
 fr:"La chaleur détruit le piquant : choisissez ce que vous voulez. Crue en salade elle mord ; braisée vingt minutes elle devient douce."},
 pairs:["garlic","lard","cider-vinegar","chili","sesame","soy-sauce","onion","black-pepper"],
-svg:'<path class="s" d="M48 78V32"/><path class="f2 sf" d="M46 38q-18-4-20 8 14 8 20-2zM50 46q18-4 20 8-14 8-20-2zM46 58q-15-3-17 7 12 6 17-2z"/>'},
+svg:'<path class="f1 sf" d="M48 74q-14-1-12-9-13-2-10-12-9-6-3-14-2-11 9-13 7-7 16-4 10-3 16 4 8 4 5 13 4 9-2 14-2 10-11 12-4 8-8 9z"/><path class="s" d="M48 72q-1-24 0-46"/><path class="s" d="M47 64q-9-4-12-12M47 50q-12-3-16-12M47 38q-7-2-10-8M49 62q9-5 11-13M49 48q11-4 14-13M49 37q7-3 9-8" stroke-width="1.5"/><path class="f2 sf" d="M43 72q-2 6 0 10 3 3 8 1 2-5 1-11z"/>'},
 
 {id:"myoga",cat:"vegetables",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Myoga",fr:"Myoga"},latin:"Zingiber mioga",
 origin:{en:"Japanese woodland shade",fr:"Sous-bois japonais"},season:[7,8,9,10],
@@ -1437,7 +1437,7 @@ fr:"La France s’en méfia jusqu’aux années 1780, quand Parmentier fit garde
 tip:{en:"Waxy varieties hold their shape for salads; floury ones collapse into the silkiest purées. Never chase both in one potato.",
 fr:"Les variétés fermes tiennent en salade ; les farineuses s’effondrent en purées soyeuses. Ne demandez jamais les deux à la même pomme de terre."},
 pairs:["butter","cream","leek","rosemary","egg","cod","nutmeg","paprika"],
-svg:'<path class="f2 sf" d="M30 52q0-14 18-14 20 0 18 16-2 14-18 14-18 0-18-16z"/><path class="dot" d="M40 48a1.7 1.7 0 103.4 0 1.7 1.7 0 10-3.4 0M52 46a1.7 1.7 0 103.4 0 1.7 1.7 0 10-3.4 0M46 58a1.7 1.7 0 103.4 0 1.7 1.7 0 10-3.4 0M57 56a1.7 1.7 0 103.4 0 1.7 1.7 0 10-3.4 0"/>'},
+svg:'<path class="f1 sf" d="M20 58q-3-10 6-16 6-5 13-4 5-5 13-4 10 0 16 6 8 7 7 15-1 10-10 14-10 5-21 4-12-1-18-8-5-3-6-7z"/><path class="f2 sf" d="M62 34q7 2 11 8 5 7 3 15-1 9-9 13 4-9 2-19-2-11-7-17z"/><path class="dot" d="M32 47q5-3 6 2-1 5-6 3-3-3 0-5zM51 38q5-3 6 2-1 5-6 3-3-3 0-5zM43 63q5-3 6 2-1 5-6 3-3-3 0-5zM60 57q4-3 5 2-1 4-5 2-3-2 0-4z"/><path class="s" d="M29 43q4-5 9-2M48 34q4-5 9-1M40 59q4-5 9-2" stroke-width="1.5"/><path class="s" d="M26 62q7 4 15 5M34 68q8 3 17 2" stroke-width="1.5"/>'},
 
 {id:"aspergette",cat:"vegetables",rare:true,price:2,pk:"15–25 €/kg",name:{en:"Prussian asparagus",fr:"Aspergette"},latin:"Ornithogalum pyrenaicum",
 origin:{en:"Woodland edges, southwest France",fr:"Lisières de bois du Sud-Ouest"},season:[5,6],
@@ -1497,7 +1497,7 @@ fr:"La plupart du monde l’arrache comme mauvaise herbe ; la Grèce, la Turquie
 tip:{en:"Eat it raw for the lemony snap. The stems are as good as the leaves — do not strip them out.",
 fr:"Mangez-le cru pour son croquant citronné. Les tiges valent les feuilles — ne les ôtez pas."},
 pairs:["cucumber","tomato","feta","olive-oil","lemon","yogurt","garlic","mint"],
-svg:'<path class="s" d="M48 76V40"/><path class="f2 sf" d="M46 46q-12 0-14 8 10 6 14-2zM50 56q12 0 14 8-10 6-14-2zM46 62q-10 0-12 7 9 5 12-1z"/>'},
+svg:'<path class="s" d="M46 82q1-14 1-24 0-8 1-12"/><path class="f1 sf" d="M45 69C38 59 29 57 25 62 21 68 33 77 45 69z"/><path class="f2 sf" d="M50 66C57 56 66 54 70 59 74 65 62 74 50 66z"/><path class="f1 sf" d="M45 54C39 45 31 41 27 45 22 50 33 61 45 54z"/><path class="f2 sf" d="M51 50C58 41 65 37 69 41 74 46 62 56 51 50z"/><path class="f1 sf" d="M41 31q0-5 5-5 1-5 6-4 6-1 6 4 5 3 2 8-3 5-8 3-6 3-10-1-2-3-1-5z"/>'},
 
 {id:"radicchio",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Radicchio",fr:"Trévise"},latin:"Cichorium intybus var. foliosum",
 origin:{en:"Veneto, Italy",fr:"Vénétie, Italie"},season:[10,11,12,1,2],
@@ -1577,7 +1577,7 @@ fr:"Sa couleur est un pH-mètre : les anthocyanes virent au bleu en milieu alcal
 tip:{en:"Add the acid at the start, not the end. Vinegar or apple early keeps it crimson; added late it never recovers the colour.",
 fr:"Ajoutez l’acide au début, pas à la fin. Vinaigre ou pomme dès le départ le gardent pourpre ; ajoutés tard, la couleur ne revient pas."},
 pairs:["apple","juniper","cider-vinegar","clove","onion","chestnut","duck","cinnamon"],
-svg:'<circle class="f1 sf" cx="48" cy="54" r="22"/><path class="s" d="M48 32v44M30 46q18 8 36 0M30 62q18-8 36 0"/>'},
+svg:'<path class="f2 sf" d="M48 20Q70 21 75 40 80 59 62 70 43 79 30 65 17 50 24 35 31 20 48 20Z"/><path class="f1 sf" d="M41 75Q43 55 48 48 54 55 56 75Z"/><path class="s" d="M37 73Q27 64 25 50 24 40 32 34 40 28 48 30 58 26 66 34 73 41 71 53 69 66 58 73" stroke-width="2"/><path class="s" d="M41 72Q33 63 34 52 34 44 40 40 46 36 50 38 57 34 62 41 66 47 64 55 63 64 56 72" stroke-width="1.5"/><path class="s" d="M29 42q6 0 8 4M67 44q-6 0-8 4M44 32q3 3 3 7" stroke-width="1.5"/>'},
 
 {id:"potimarron",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Red kuri squash",fr:"Potimarron"},latin:"Cucurbita maxima",
 origin:{en:"Japan",fr:"Japon"},season:[9,10,11,12,1],
@@ -1637,7 +1637,7 @@ fr:"Rome la cultivait comme aphrodisiaque, et c’est précisément pour cela qu
 tip:{en:"Add it to hot pasta off the heat and let it wilt from the residual warmth. Cooked directly, the pepper vanishes entirely.",
 fr:"Ajoutez-la aux pâtes chaudes hors du feu et laissez-la tomber à la chaleur résiduelle. Cuite directement, le poivré disparaît tout à fait."},
 pairs:["parmesan","olive-oil","lemon","prosciutto","balsamic","pine-nut","fig","tomato"],
-svg:'<path class="s" d="M48 76V32"/><path class="f2 sf" d="M46 40q-14-6-16 2 10 8 16 2zM50 48q14-6 16 2-10 8-16 2zM46 58q-12-5-14 2 9 7 14 2z"/>'},
+svg:'<path class="f1 sf" d="M46 79q-2-8-1-15-12 2-16-5 7-3 15-5v-4q-13 1-17-6 8-2 17-4v-4q-6-4-5-10 6 1 9 6 0-7 3-11 4 4 4 11 5-4 11-5-2 7-10 10v4q10 1 17 4-5 6-17 5v4q9 1 16 5-5 6-16 4 1 7-1 15z"/><path class="s" d="M48 74q-1-24 0-46" stroke-width="1.5"/><path class="s" d="M46 61q-6 0-9-2M46 45q-7 0-10-3" stroke-width="1.5"/><path class="s" d="M50 62q6 0 10-2M50 46q7-1 11-3" stroke-width="1.5"/><path class="f2 sf" d="M45 78q-1-5 1-7 2-1 4 0 1 3 0 7z"/>'},
 
 {id:"romanesco",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Romanesco",fr:"Chou romanesco"},latin:"Brassica oleracea var. botrytis",
 origin:{en:"Lazio, Italy",fr:"Latium, Italie"},season:[9,10,11,12],
@@ -1837,7 +1837,7 @@ fr:"La Perse le cultiva, les agronomes arabes le saluèrent comme « prince des 
 tip:{en:"A mountain of leaves melts to a handful: buy more than seems reasonable, and finish with butter and a whisper of nutmeg.",
 fr:"Une montagne de feuilles fond en une poignée : achetez-en plus que de raison, et finissez au beurre avec un soupçon de muscade."},
 pairs:["butter","nutmeg","egg","garlic","cream","lemon","chickpeas"],
-svg:'<path class="f2 sf" d="M48 30q14 6 12 22-2 14-12 18-10-4-12-18-2-16 12-22z"/><path class="s" d="M48 34v32M48 42l-7-4M48 42l7-4M48 52l-8-4M48 52l8-4"/><path class="s" d="M48 70v8"/>'},
+svg:'<path class="f2 sf" d="M67.5 25.5Q72 29 74 34.5Q76 40 75 45Q74 50 70 54.5Q66 59 62 59.5Q58 60 56 54Q54 48 54.5 41Q55 34 59 28Q63 22 67.5 25.5Z"/><path class="f1 sf" d="M53 18Q58 20 61.5 24Q65 28 66 32.5Q67 37 65 40Q63 43 64.5 47Q66 51 62 55Q58 59 53.5 61.5Q49 64 46.5 61.5L44 59L41 61Q38 63 34 59.5Q30 56 27.5 52Q25 48 27.5 44.5Q30 41 28 37Q26 33 29.5 28Q33 23 36.5 20.5Q40 18 44 17Q48 16 53 18Z"/><path class="s" d="M44 59q2-20 5-36"/><path class="s" d="M46 33l-9-5M46 43l-10 0M48 24l7-2M45 51l9 3M50 36l8-3" stroke-width="1.5"/><path class="s" d="M43 61q-2 9-5 17"/>'},
 
 {id:"spring-onion",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Spring onion",fr:"Cébette"},latin:"Allium fistulosum",
 origin:{en:"China",fr:"Chine"},season:[3,4,5,6,7,8],
@@ -2117,7 +2117,7 @@ fr:"Il pousse dans l’eau vive, non dans la terre, d’où les cressonnières d
 tip:{en:"Never boil it. Blanch for fifteen seconds at most, or blend it raw — the pepper is destroyed by sustained heat.",
 fr:"Ne le faites jamais bouillir. Quinze secondes de blanchiment au plus, ou mixez-le cru — le poivré est détruit par une chaleur prolongée."},
 pairs:["potato","cream","egg","lemon","butter","shallot","salmon","black-pepper"],
-svg:'<path class="s" d="M48 76V36"/><circle class="f2 sf" cx="38" cy="42" r="7"/><circle class="f2 sf" cx="58" cy="48" r="7"/><circle class="f2 sf" cx="40" cy="58" r="6"/><circle class="f2 sf" cx="57" cy="64" r="6"/>'},
+svg:'<path class="s" d="M22 75q11-14 22-24 9-9 16-15"/><path class="f1 sf" d="M30.9 55.2Q30.2 57.5 29.3 59.2Q28.5 61 27 63.2Q25.6 65.3 22.9 65.5Q20.3 65.7 18.3 64.5Q16.4 63.2 15.9 60.9Q15.4 58.7 16.6 56.3Q17.7 53.9 20.1 52.3Q22.4 50.7 25.1 50.5Q27.7 50.3 29.7 51.5Q31.6 52.8 30.9 55.2ZM50.2 70.4Q49.6 72.6 48.8 74.1Q48.1 75.7 46.8 77.7Q45.4 79.6 43 79.8Q40.6 80 38.9 78.8Q37.1 77.7 36.7 75.6Q36.3 73.6 37.3 71.4Q38.3 69.3 40.5 67.8Q42.6 66.4 45 66.2Q47.4 66 49.1 67.2Q50.9 68.3 50.2 70.4Z"/><path class="f1 sf" d="M42.3 42Q41.6 44.5 40.7 46.3Q39.8 48.2 38.3 50.5Q36.7 52.8 33.9 53Q31 53.3 29 51.9Q26.9 50.5 26.4 48.1Q25.9 45.7 27.1 43.1Q28.3 40.6 30.8 38.9Q33.3 37.2 36.1 37Q39 36.7 41 38.1Q43.1 39.5 42.3 42ZM62.6 58.3Q61.9 60.6 61.1 62.2Q60.3 63.9 58.9 65.9Q57.5 68 55 68.2Q52.4 68.4 50.6 67.2Q48.7 66 48.3 63.8Q47.8 61.6 48.9 59.3Q50 57 52.2 55.5Q54.5 54 57 53.8Q59.6 53.6 61.4 54.8Q63.3 56 62.6 58.3Z"/><path class="f1 sf" d="M71.5 27.2Q70.5 30.5 69.4 32.8Q68.3 35.2 66.3 38.3Q64.3 41.3 60.7 41.5Q57 41.8 54.3 39.9Q51.6 38.1 50.9 34.9Q50.2 31.8 51.7 28.4Q53.3 25.1 56.5 22.9Q59.7 20.7 63.3 20.5Q67 20.2 69.7 22.1Q72.4 23.9 71.5 27.2Z"/><path class="s" d="M31 66l-3-2M35 63l5 4M44 52l-3-2M47 49l5 4M57 39l-2 3" stroke-width="1.5"/>'},
 
 {id:"watermelon-radish",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Watermelon radish",fr:"Radis red meat"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"Northern China",fr:"Nord de la Chine"},season:[10,11,12,1,2],

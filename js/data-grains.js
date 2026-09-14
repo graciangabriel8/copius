@@ -157,7 +157,7 @@ fr:"Non un grain mais une pâte — de la semoule roulée à la main avec de l�
 tip:{en:"Instant couscous rehydrated in a bowl is a different food from steamed. If you have a couscoussier, three steamings is the whole point.",
 fr:"Le couscous instantané réhydraté dans un bol est un autre aliment que le couscous vapeur. Si vous avez un couscoussier, les trois passages sont tout l’intérêt."},
 pairs:["lamb","harissa","cumin","carrot","chickpeas","preserved-lemon","cilantro","turnip"],
-svg:'<path class="f3 sf" d="M30 68q0-18 18-22 18 4 18 22z"/><circle class="dot" cx="40" cy="58" r="1.6"/><circle class="dot" cx="48" cy="55" r="1.6"/><circle class="dot" cx="56" cy="59" r="1.6"/><circle class="dot" cx="44" cy="64" r="1.6"/><circle class="dot" cx="53" cy="64" r="1.6"/>'},
+svg:'<path class="f1 sf" d="M23 57q3 17 25 17q22 0 25-17q-25 5-50 0z"/><path class="f1 sf" d="M25 57q-1-8 5-12q3 3 6 0q2-5 6-3q2-5 6-2q3-5 6 0q3-3 6 1q3-2 5 2q6 4 6 14z"/><path class="s" d="M24 57q24 6 48 0" stroke-width="1.6"/><path class="dot" d="M33 52q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM40 48q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM47 51q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM54 47q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM61 52q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM37 56q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM51 56q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5z"/><path class="dot" d="M76 61q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM72 69q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5z"/>'},
 
 {id:"dangmyeon",cat:"grains",price:2,pk:"8–15 €/kg",name:{en:"Dangmyeon",fr:"Dangmyeon (vermicelles de patate douce)"},latin:"Ipomoea batatas",
 origin:{en:"Korea",fr:"Corée"},season:[],
@@ -357,7 +357,7 @@ fr:"Il nourrissait la Chine du Nord avant l’arrivée du riz et nourrit encore 
 tip:{en:"Toast the grains dry in the pan before adding water. Untoasted millet tastes of nothing much at all.",
 fr:"Grillez les grains à sec avant d’ajouter l’eau. Non grillé, le millet n’a pour ainsi dire aucun goût."},
 pairs:["butter","onion","cumin","carrot","parsley","olive-oil","almond","turmeric"],
-svg:'<path class="s" d="M48 76V38"/><circle class="f2 sf" cx="42" cy="42" r="4"/><circle class="f2 sf" cx="54" cy="46" r="4"/><circle class="f2 sf" cx="43" cy="54" r="4"/><circle class="f2 sf" cx="54" cy="58" r="4"/>'},
+svg:'<path class="f2 sf" d="M51 22.5Q54 25 52.5 27Q51 29 53 31.5Q55 34 53 36Q51 38 53 40.5Q55 43 53 45Q51 47 53 49.5Q55 52 53 54Q51 56 52.5 58.5Q54 61 51 63Q48 65 45 63Q42 61 43.5 58.5Q45 56 43 54Q41 52 43 49.5Q45 47 43 45Q41 43 43 40.5Q45 38 43 36Q41 34 43 31.5Q45 29 43.5 27Q42 25 45 22.5Q48 20 51 22.5Z"/><path class="s" d="M55 26l8-7M55 34l9-6M55 43l9-5M55 52l9-4M54 61l9-3M41 26l-8-7M41 34l-9-6M41 43l-9-5M41 52l-9-4M42 61l-9-3M48 20v-7M51 21l4-6M45 21l-4-6" stroke-width="1.5"/><path class="s" d="M48 65q0 5-2 8"/><path class="f1 sf" d="M46 70q-14-1-21 10 14 4 21-10z"/><path class="f1 sf" d="M60.6 67.9Q62.2 68.8 63.3 70.4Q64.5 72 63.5 73.8Q62.5 75.5 60.8 76.1Q59 76.8 57.1 76.2Q55.3 75.7 54.6 73.9Q54 72 54.9 70.4Q55.8 68.8 57.4 67.9Q59 67 60.6 67.9ZM71.6 61.8Q73.3 62.7 73.7 64.4Q74.1 66 73.7 67.6Q73.3 69.3 71.6 69.9Q70 70.6 68.5 69.8Q66.9 69.1 66 67.5Q65.2 66 66 64.4Q66.7 62.7 68.4 61.8Q70 60.9 71.6 61.8ZM53.6 76.2Q55.3 76.7 55.8 78.4Q56.4 80 55.6 81.4Q54.8 82.8 53.4 83.6Q52 84.4 50.4 83.8Q48.9 83.1 48 81.6Q47.2 80 48 78.4Q48.9 76.9 50.4 76.2Q52 75.6 53.6 76.2Z"/>'},
 
 {id:"kirimochi",cat:"grains",price:2,pk:"10–20 €/kg",name:{en:"Mochi (kirimochi)",fr:"Mochi (galette de riz gluant)"},latin:"Oryza sativa glutinosa",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -427,7 +427,7 @@ fr:"Le seigle a commencé comme une mauvaise herbe dans le blé et l’orge, et 
 tip:{en:"Soak the berries overnight before cooking. Without it they take well over an hour and stay stubbornly hard in the centre.",
 fr:"Faites tremper les grains une nuit avant cuisson. Sans cela ils prennent plus d’une heure et restent obstinément durs au centre."},
 pairs:["mushroom","butter","onion","thyme","caraway","beetroot","dill","walnut"],
-svg:'<path class="s" d="M48 76V32"/><path class="f1 sf" d="M46 38q-8-4-9 1 8 6 9 0zM50 48q8-4 9 1-8 6-9 0zM46 58q-8-4-9 1 8 6 9 0z"/>'},
+svg:'<path class="s" d="M41 84q2-10 5-16"/><path class="f2 sf" d="M44 76q-11-2-15-9 10-1 17 5z"/><path class="f1 sf" d="M47 68q-9 0-11-6 6-6 12 0zM46 60q-9 0-11-6 6-6 12 0zM46 52q-9 0-11-6 6-6 12 0zM47 44q-8 0-10-6 6-6 11 0z"/><path class="f1 sf" d="M49 65q9 0 11-6-6-6-12 0zM49 57q9 0 11-6-6-6-12 0zM49 49q9 0 11-6-6-6-12 0zM49 41q8 0 10-6-6-6-11 0z"/><path class="s" d="M48 38v-19M45 39l-6-16M52 39l6-16M42 42l-8-12M55 42l8-12" stroke-width="1.5"/>'},
 
 {id:"rye-flour",cat:"grains",price:1,pk:"2–5 €/kg",name:{en:"Rye flour",fr:"Farine de seigle"},latin:"Secale cereale",
 origin:{en:"Anatolia & Central Europe",fr:"Anatolie & Europe centrale"},season:[],
@@ -437,7 +437,7 @@ fr:"Le seigle supporte le froid et les sols pauvres qui tueraient le blé, d’o
 tip:{en:"Its gluten is weak and its pentosans make dough sticky. Wet your hands rather than adding flour, or you will make a brick.",
 fr:"Son gluten est faible et ses pentosanes rendent la pâte collante. Mouillez-vous les mains plutôt que d’ajouter de la farine, sinon vous ferez une brique."},
 pairs:["caraway","honey","butter","salmon","flour-t65","walnut","beurre-demi-sel","juniper"],
-svg:'<path class="f1 sf" d="M32 72q0-22 16-30 16 8 16 30z"/><path class="s" d="M38 62q10 4 20 0M42 52q6 3 12 0"/><circle class="dot" cx="48" cy="68" r="1.6"/>'},
+svg:'<path class="f2 sf" d="M23 71q0-13 11-18 12-5 20 3 6 6 6 15-19 6-37 0z"/><path class="s" d="M28 66q8-7 16-6" stroke-width="1.6"/><path class="dot" d="M34 61q3-1 3 1t-3 2-1-2 1-1z"/><path class="s" d="M52.7 61.8L59.4 59.3M44.1 55.6L44.2 48.4M56.7 55.5L63.9 52.5M48.7 49.8L49.1 42M60.6 49.3L68.4 45.7M53.3 44L54.1 35.5M64.6 43L72.9 38.9M57.9 38.2L59.1 29.1M66.4 33.4L73.8 25.3" stroke-width="1.5"/><path class="f1 sf" d="M43.3 60.1Q41.4 54.2 46.1 53Q46 48.4 50.8 47.2Q50.6 42.6 55.4 41.4Q55.2 36.8 60 35.6Q62.4 34.4 66.4 33.4Q66.8 37.6 66.4 40.2Q67.2 45.3 62.4 46.4Q63.2 51.6 58.4 52.7Q59.2 57.8 54.4 58.9Q55.2 64 50.4 65.1Z"/><path class="s" d="M44.9 52.1L55.7 59.8M49.5 46.3L59.7 53.6M54.1 40.5L63.7 47.3" stroke-width="1.5"/>'},
 
 {id:"semola-rimacinata",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Semola rimacinata",fr:"Semoule de blé dur remoulue"},latin:"Triticum turgidum subsp. durum",
 origin:{en:"Puglia and Sicily",fr:"Pouilles et Sicile"},season:[],
@@ -457,7 +457,7 @@ fr:"Moulue à partir du blé dur, une espèce différente et bien plus dure que 
 tip:{en:"A scattering on the peel stops a pizza sticking better than flour, because the granules act as ball bearings.",
 fr:"Une pincée sur la pelle empêche une pizza de coller mieux que la farine, les grains agissant comme des roulements."},
 pairs:["olive-oil","egg","butter","honey","orange","almond","pistachio","cinnamon"],
-svg:'<path class="f2 sf" d="M34 70q0-18 14-24 14 6 14 24z"/><circle class="dot" cx="42" cy="58" r="1.8"/><circle class="dot" cx="50" cy="55" r="1.8"/><circle class="dot" cx="54" cy="63" r="1.8"/><circle class="dot" cx="45" cy="65" r="1.8"/>'},
+svg:'<path class="f1 sf" d="M25 56q3 16 13 20 10 4 21 0 10-4 13-20z"/><path class="f2 sf" d="M27 56q0-5 5-6 1-5 6-4 2-5 7-3 3-5 8-2 4-3 7 2 5-1 6 5 5 0 5 8z"/><path class="f2 sf" d="M31 56q2-4 6-4 3-4 7-2 4-3 7 1 4 0 5 5z"/><path class="dot" d="M33 52q2-1 3 1t-3 2-1-3zM41 48q2-1 3 1t-3 2-1-3zM49 51q2-1 3 1t-3 2-1-3zM57 49q2-1 3 1t-3 2-1-3zM63 54q2-1 3 1t-3 2-1-3z"/><path class="dot" d="M21 65q2-1 3 1t-3 2-1-3zM74 63q2-1 3 1t-3 2-1-3zM34 79q2-1 3 1t-3 2-1-3zM62 78q2-1 3 1t-3 2-1-3z"/>'},
 
 {id:"shiratamako",cat:"grains",price:2,pk:"20–35 €/kg",name:{en:"Shiratamako",fr:"Shiratamako"},latin:"Oryza sativa glutinosa",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -487,7 +487,7 @@ fr:"La cinquième céréale mondiale, et presque inconnue des tables européenne
 tip:{en:"The whole grains pop like tiny popcorn in a dry pan. It is the fastest way to see what it actually tastes of.",
 fr:"Les grains entiers éclatent comme un minuscule pop-corn dans une poêle sèche. C’est le moyen le plus rapide de découvrir son vrai goût."},
 pairs:["peanut","chili","onion","tomato","cilantro","lime","garlic","cumin"],
-svg:'<path class="s" d="M48 76V40"/><path class="f1 sf" d="M48 26q-12 6-10 18 10 4 12-6zM48 26q12 6 10 18-10 4-12-6z"/>'},
+svg:'<path class="f1 sf" d="M42 19q8-2 10 5 4 3 5 9 4 5 3 11 3 6-4 10-3 6-9 4-7 3-9-4-5-3-6-9-4-5-3-11-3-6 4-10 3-6 9-4z"/><path class="dot" d="M41 26q0-3 2-3t3 3-3 3-2-3zM50 28q0-3 2-3t3 3-3 3-2-3zM38 35q0-3 2-3t3 3-3 3-2-3zM47 36q0-3 2-3t3 3-3 3-2-3zM55 39q0-3 2-3t3 3-3 3-2-3zM42 44q0-3 2-3t3 3-3 3-2-3zM51 45q0-3 2-3t3 3-3 3-2-3zM46 52q0-3 2-3t3 3-3 3-2-3zM55 48q0-3 2-3t3 3-3 3-2-3z"/><path class="s" d="M50 58q3 11 2 17 0 4 1 5"/><path class="f1 sf" d="M51 66q-14-10-29-6 12 11 29 12z"/><path class="f1 sf" d="M53 73q10-9 22-7-7 9-22 12z"/><path class="s" d="M24 62q13 4 24 8M73 68q-11 3-19 8" stroke-width="1.5"/>'},
 
 {id:"spelt",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Spelt",fr:"Épeautre"},latin:"Triticum spelta",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
@@ -497,7 +497,7 @@ fr:"Un blé ancien tombé en désuétude parce que sa balle coriace exige une é
 tip:{en:"It has gluten, but a fragile kind. Knead it less than wheat and stop as soon as the dough comes together.",
 fr:"Il contient du gluten, mais fragile. Pétrissez-le moins que le blé et arrêtez dès que la pâte se rassemble."},
 pairs:["honey","walnut","mushroom","butter","thyme","comte","onion","hazelnut"],
-svg:'<path class="s" d="M48 76V34"/><path class="f2 sf" d="M46 40q-8-4-10 2 8 6 10 0zM50 48q8-4 10 2-8 6-10 0zM46 56q-8-4-10 2 8 6 10 0z"/>'},
+svg:'<path class="s" d="M48 84q-1-14 0-22 1-14 0-28"/><path class="f1 sf" d="M48 66q-10 3-14-2-4-5 0-9 8-2 14 4zM47 54q-10 3-14-2-4-5 0-9 8-2 14 4zM46 42q-9 3-13-2-4-5 0-9 8-2 13 4z"/><path class="f2 sf" d="M49 72q10 3 14-2 4-5 0-9-8-2-14 4zM49 60q10 3 14-2 4-5 0-9-8-2-14 4zM49 48q9 3 13-2 4-5 0-9-8-2-13 4z"/><path class="s" d="M34 55l-7-6M34 43l-7-6M62 49l7-6M62 37l7-6M48 32l-2-9M50 33l5-9" stroke-width="1.5"/><path class="f2 sf" d="M27 74q-7-3-6-8 6-3 10 2 2 5-4 6zM36 79q-7-2-7-7 6-4 10 1 2 5-3 6z"/>'},
 
 {id:"polenta-bramata",cat:"grains",price:1,pk:"4–8 €/kg",name:{en:"Stone-ground polenta",fr:"Polenta bramata"},latin:"Zea mays",
 origin:{en:"Veneto and Lombardy",fr:"Vénétie et Lombardie"},season:[],
@@ -537,7 +537,7 @@ fr:"Le chiffre T français mesure les cendres restant après combustion de cent 
 tip:{en:"Use it for viennoiserie and delicate cakes, never for bread — it has too little protein to build a proper gluten network.",
 fr:"Réservez-la à la viennoiserie et aux gâteaux délicats, jamais au pain — elle a trop peu de protéines pour bâtir un vrai réseau de gluten."},
 pairs:["butter","egg","cream","sugar","vanilla","beurre-de-baratte","almond"],
-svg:'<path class="f3 sf" d="M32 72q0-22 16-30 16 8 16 30z"/><path class="s" d="M40 60q8 4 16 0"/><circle class="dot" cx="44" cy="52" r="1.4"/><circle class="dot" cx="53" cy="55" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M26 26q5-8 20-8t20 8q-5 8-20 8t-20-8z"/><path class="f2 sf" d="M26 26v6q5 8 20 8t20-8v-6q-5 8-20 8t-20-8zM65 24q7-2 8 1-1 4-8 2z"/><path class="s" d="M38 19v13M54 19v13M28 23q18 6 36 0M31 29q15 5 30 0" stroke-width="1.5"/><path class="f1 sf" d="M26 78q4-14 14-16 4-1 7 1 5-2 10 1 8 4 11 14-21 6-42 0z"/><path class="dot" d="M41 46q3-3 4 0t-3 4-1-4zM53 50q3-3 4 0t-3 4-1-4zM36 54q3-3 4 0t-3 4-1-4zM48 61q3-3 4 0t-3 4-1-4zM58 58q2-2 3 0t-2 3-1-3z"/>'},
 
 {id:"flour-t55",cat:"grains",price:1,pk:"1–3 €/kg",name:{en:"T55 flour",fr:"Farine T55"},latin:"Triticum aestivum",
 origin:{en:"France",fr:"France"},season:[],
@@ -547,7 +547,7 @@ fr:"La farine par défaut de la cuisine française et l’équivalent le plus pr
 tip:{en:"It is the compromise flour: adequate for pastry, adequate for bread, ideal for neither. Keep it for tarts, sauces and pancakes.",
 fr:"C’est la farine de compromis : correcte en pâtisserie, correcte en panification, idéale nulle part. Gardez-la pour les tartes, les sauces et les crêpes."},
 pairs:["butter","egg","cream","sugar","salt","yeast","vanilla"],
-svg:'<path class="f3 sf" d="M32 72q0-22 16-30 16 8 16 30z"/><path class="s" d="M38 62q10 4 20 0M42 52q6 3 12 0"/>'},
+svg:'<path class="f1 sf" d="M33 31q-3 20 0 37 9 3 18 3t18-3q3-17 0-37z"/><path class="f2 sf" d="M33 31q8-8 18-8t18 8q-8 7-18 7t-18-7z"/><path class="s" d="M42 27q7 4 14 0" stroke-width="1.6"/><path class="s" d="M46 40q-2 14 0 28" stroke-width="1.6"/><path class="f1 sf" d="M23 74q5-7 13-5 6 1 9 5-14 4-22 0z"/><path class="dot" d="M25 62q4-2 5 1t-4 3-2-2 1-2zM32 57q3-2 4 1t-3 2-2-1 1-2z"/>'},
 
 {id:"flour-t65",cat:"grains",price:1,pk:"1–3 €/kg",name:{en:"T65 bread flour",fr:"Farine T65"},latin:"Triticum aestivum",
 origin:{en:"France",fr:"France"},season:[],
@@ -557,7 +557,7 @@ fr:"La farine légale de la baguette de tradition française, un décret de 1993
 tip:{en:"Its extra bran feeds fermentation, so doughs rise faster and taste more. Hold back a little water at first — it drinks less than it looks.",
 fr:"Son son supplémentaire nourrit la fermentation : les pâtes lèvent plus vite et ont plus de goût. Retenez un peu d’eau au départ — elle en boit moins qu’il n’y paraît."},
 pairs:["yeast","salt","butter","olive-oil","rye-flour","walnut","honey","beurre-demi-sel"],
-svg:'<path class="f2 sf" d="M32 72q0-22 16-30 16 8 16 30z"/><path class="s" d="M38 62q10 4 20 0"/><circle class="dot" cx="42" cy="54" r="1.6"/><circle class="dot" cx="54" cy="57" r="1.6"/>'},
+svg:'<path class="f2 sf" d="M23 39q16 5 32 0l-2-6q-14 4-28 0z"/><path class="f1 sf" d="M25 44q-5 15-4 30 16 5 32 0 1-15-4-30-13 5-24 0z"/><path class="s" d="M29 44l-5-5M51 44l4-5M26 57q14 4 26 0" stroke-width="2"/><path class="f1 sf" d="M66 53q-9-1-9-8 8 1 9 8zM66 53q9-1 9-8-8 1-9 8zM66 44q-9-1-9-8 8 1 9 8zM66 44q9-1 9-8-8 1-9 8zM66 35q-8-2-8-8 7 1 8 8zM66 35q8-2 8-8-7 1-8 8zM66 35q-4-6-2-11 5 5 2 11z"/><path class="s" d="M67 54q1 12 2 21" stroke-width="2"/>'},
 
 {id:"t80-flour",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"T80 flour",fr:"Farine bise T80"},latin:"Triticum aestivum",
 origin:{en:"French milling",fr:"Meunerie française"},season:[],

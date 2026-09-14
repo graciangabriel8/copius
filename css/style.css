@@ -415,6 +415,14 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   margin-top:10px;border-left:3px solid var(--border-strong);
   padding:2px 0 2px 16px;color:var(--ink-2);font-size:14px;
 }
+/* The pair grid is capped at ten; this reveals the rest in place. Sits under the
+   grid rather than inline so it does not read as another ingredient chip. */
+.pair-more{display:block;margin:8px 0 0;padding:0;border:0;background:none;
+  font:inherit;font-size:14px;color:var(--ink-3);cursor:pointer;text-decoration:underline;
+  text-underline-offset:3px}
+.pair-more:hover{color:var(--ink)}
+.pair-rest{margin-top:8px}
+
 .pair-grid{display:flex;flex-wrap:wrap;gap:8px}
 .m-lab-btn{
   margin-top:26px;width:100%;padding:12px;border-radius:12px;

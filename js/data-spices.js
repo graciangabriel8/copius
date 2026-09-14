@@ -47,7 +47,7 @@ fr:"Une baie qui a de façon convaincante le goût du clou de girofle, de la can
 tip:{en:"It is the backbone of jerk and of most Caribbean marinades. Use the whole berries in braises and grind only what you need.",
 fr:"C’est l’ossature du jerk et de la plupart des marinades caraïbes. Employez les baies entières dans les braisés et ne moulez que le nécessaire."},
 pairs:["thyme","chili","clove","ginger","pork","cinnamon","onion","black-pepper"],
-svg:'<circle class="f1 sf" cx="42" cy="52" r="8"/><circle class="f1 sf" cx="57" cy="57" r="8"/><circle class="f1 sf" cx="46" cy="67" r="7"/><path class="s" d="M42 44v-5M57 49v-5"/>'},
+svg:'<path class="f2 sf" d="M35 29q13 1 13 13 0 13-12 14-14 1-15-13 0-13 14-14z"/><path class="f2 sf" d="M64 34q12 1 12 12 0 13-13 13-12-1-12-13 1-11 13-12z"/><path class="f1 sf" d="M47 52q13 1 13 13 0 12-13 13-13-1-13-13 0-12 13-13z"/><path class="s" d="M31 31q5-4 10-1M34 29v-3M38 28l1-3M62 35q5-3 9 0M65 32v-3M43 56q5-4 10-1M46 54v-3M50 53l1-3" stroke-width="1.5"/><path class="s" d="M39 42q4-3 7 0 2 4-2 6-5 1-6-3 0-2 1-3z" stroke-width="1.5"/>'},
 
 {id:"amchur",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Amchur",fr:"Amchoor (poudre de mangue verte)"},latin:"Mangifera indica",
 origin:{en:"Northern India",fr:"Nord de l’Inde"},season:[],
@@ -727,7 +727,7 @@ fr:"La dentelle écarlate qui enveloppe la noix de muscade dans le fruit — un 
 tip:{en:"It is nutmeg's more delicate sibling — use it where nutmeg would be too heavy, in a béchamel or a pale potted meat.",
 fr:"C’est le frère plus délicat de la muscade — employez-le là où la muscade pèserait trop, dans une béchamel ou une terrine claire."},
 pairs:["cream","butter","potato","nutmeg","white-pepper","spinach","chicken","comte"],
-svg:'<path class="f1 sf" d="M48 30q-16 8-14 26t14 18 14-18-14-26z"/><path class="s" d="M40 42q8 6 16 0M38 56q10 6 20 0"/>'},
+svg:'<path class="f2 sf" d="M58 58Q67 58 69 66 71 73 64 74 57 74 55 67 54 60 58 58Z"/><path class="s" d="M61 63q4 3 4 8" stroke-width="1.5"/><path class="f1 sf" d="M22 42Q23 31 34 25 46 19 58 24 72 30 70 44 68 52 63 61 60 51 57 46 53 54 51 64 45 63 45 51 42 46 38 55 36 64 30 61 33 50 30 43 26 50 24 57 20 52 22 42Z"/><path class="f2 sf" d="M26 34Q35 25 48 24 61 23 68 32 62 30 50 30 40 32 32 38Z"/><path class="s" d="M40 36q6 2 10 7M56 34q4 3 6 8" stroke-width="1.5"/>'},
 
 {id:"mahleb",cat:"spices",rare:true,price:2,pk:"60–120 €/kg",name:{en:"Mahleb",fr:"Mahleb"},latin:"Prunus mahaleb",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[],
@@ -867,7 +867,7 @@ fr:"Le nom signifie tête de la boutique — le meilleur que possède un marchan
 tip:{en:"Bloom it in fat at the start, never sprinkle it on at the end. Half the blend is woody spices that need heat to open.",
 fr:"Faites-le revenir dans le gras au départ, ne le saupoudrez jamais à la fin. La moitié du mélange est faite d’épices ligneuses qui ont besoin de chaleur pour s’ouvrir."},
 pairs:["lamb","couscous","carrot","chickpeas","preserved-lemon","almond","onion","date"],
-svg:'<path class="f2 sf" d="M32 68q0-18 16-22 16 4 16 22z"/><circle class="dot" cx="41" cy="58" r="1.8"/><circle class="dot" cx="50" cy="55" r="1.8"/><circle class="dot" cx="55" cy="63" r="1.8"/><circle class="dot" cx="44" cy="65" r="1.8"/>'},
+svg:'<path class="f2 sf" d="M30 74q0-14 6-24q4-8 10-16q3 3 5 8q3 5 7 10q7 10 8 22q-18 5-36 0z"/><path class="f1 sf" d="M28 72l15-3q3-1 4 2q1 3-2 4l-15 3q-3 1-4-2q-1-3 2-4z"/><path class="f1 sf" d="M69 60q5 3 4 8q-1 4-5 4q-4 0-5-4q-1-5 6-8z"/><path class="s" d="M30 73q3 1 3 3M66 67q3-5 6-2M44 54q3-2 5-1M50 64q3-2 5-1M43 44q2-2 4-1" stroke-width="1.6"/><path class="dot" d="M40 60q3-1 3 2q0 2-3 2q-3 0-3-2q0-3 3-2zM53 50q2-1 2 1.6q0 2-2 2q-2 0-2-2q0-2 2-1.6zM52 70q3-1 3 2q0 2-3 2q-3 0-3-2q0-3 3-2z"/>'},
 
 {id:"safflower",cat:"spices",price:2,pk:"40–90 €/kg",name:{en:"Safflower",fr:"Carthame"},latin:"Carthamus tinctorius",
 origin:{en:"Egypt and the Nile valley",fr:"Égypte et vallée du Nil"},season:[],
@@ -987,7 +987,7 @@ fr:"Une graine noire et fripée qui sent à la fois la vanille, l’amande amèr
 tip:{en:"Use it like nutmeg, in whispers: three strokes of the grater into a warm cream, then stop. Its perfume expands as the dish cools.",
 fr:"Utilisez-la comme la muscade, en murmures : trois coups de râpe dans une crème tiède, puis arrêtez. Son parfum se déploie quand le plat refroidit."},
 pairs:["dark-chocolate","cream","coffee","hazelnut","cherry","vanilla"],
-svg:'<path class="f3 sf" d="M36 44q8-10 22-6 10 3 6 14-4 12-18 10-14-3-10-18z" transform="rotate(-12 48 52)"/><path class="s" d="M40 48q6 8 16 6" transform="rotate(-12 48 52)"/>'},
+svg:'<path class="dot" d="M26 34q10-11 30-8-8 13-30 8z"/><path class="f2 sf" d="M18 60q10-13 32-9-9 14-32 9z"/><path class="s" d="M23 56q4 2 10 0 5-2 11-3M25 61q5 2 11 0 5-2 10-3" stroke-width="1.6"/><path class="f2 sf" d="M46 74q6-15 26-18-4 15-26 18z"/><path class="s" d="M51 71q1-5 4-8 4-4 12-6M55 74q1-4 5-8 4-3 10-5" stroke-width="1.6"/><path class="dot" d="M60 44q4-2 5 1t-4 3-2-2 1-2zM68 38q3-2 4 1t-3 2-2-1 1-2z"/>'},
 
 {id:"turmeric",cat:"spices",price:1,pk:"10–20 €/kg",name:{en:"Turmeric",fr:"Curcuma"},latin:"Curcuma longa",
 origin:{en:"India",fr:"Inde"},season:[],
@@ -1067,7 +1067,7 @@ fr:"La même baie que le poivre noir, mais trempée une semaine en eau courante 
 tip:{en:"Use it where black specks would be visible and unwanted — béchamel, a white fish sauce, a pale soup. That is its real job.",
 fr:"Employez-le là où des points noirs se verraient — béchamel, sauce de poisson blanc, potage clair. C’est sa vraie fonction."},
 pairs:["cream","butter","potato","scallop","turbot","nutmeg","chicken","comte"],
-svg:'<circle class="f3 sf" cx="42" cy="52" r="7"/><circle class="f3 sf" cx="56" cy="56" r="7"/><circle class="f3 sf" cx="47" cy="66" r="7"/><path class="s" d="M38 50q4-3 8 0"/>'},
+svg:'<path class="f2 sf" d="M38.3 27.7Q41.6 29.4 43.6 32.7Q45.6 36 43.8 39.5Q42.1 43.1 38.5 44.3Q35 45.5 31.2 44.5Q27.4 43.6 26.2 39.8Q25 36 26.6 32.6Q28.2 29.2 31.6 27.6Q35 26 38.3 27.7ZM61.2 24.1Q64.4 25.6 65.4 28.8Q66.5 32 65.4 35.2Q64.4 38.4 61.2 39.7Q58 41 55 39.5Q52 38 50.2 35Q48.5 32 50 28.8Q51.6 25.6 54.8 24.1Q58 22.5 61.2 24.1ZM73 40Q76 41 76.8 44Q77.6 47 76.6 49.8Q75.7 52.7 72.8 54Q70 55.4 67.2 54Q64.3 52.7 63.4 49.8Q62.5 47 63.4 44.2Q64.3 41.3 67.2 40.2Q70 39 73 40Z"/><path class="f1 sf" d="M46.7 47.2Q50.4 48.6 52.2 52.3Q54 56 52.2 59.7Q50.4 63.4 46.7 64.7Q43 66 39.3 64.7Q35.6 63.4 33.7 59.7Q31.9 56 33.7 52.3Q35.6 48.6 39.3 47.2Q43 45.9 46.7 47.2Z"/><path class="f1 sf" d="M65 50.5Q68 52 69.5 55Q71 58 69.9 61.4Q68.7 64.7 65.4 65.6Q62 66.5 58.8 65.4Q55.6 64.4 54.3 61.2Q53 58 54.2 54.7Q55.3 51.3 58.7 50.2Q62 49 65 50.5ZM29 48.5Q32 50 33 53Q34.1 56 33 59Q32 62 29 63.3Q26 64.5 22.9 63.4Q19.7 62.3 18.8 59.1Q17.9 56 19 53Q20 50 23 48.5Q26 47 29 48.5Z"/><path class="s" d="M31 31q5-4 10-1M38 51q5-4 10-1M56 54q4-3 8-1" stroke-width="1.5"/><path class="dot" d="M46.8 57Q47.7 57.3 48 58.2Q48.4 59 48 59.8Q47.7 60.7 46.8 61Q46 61.4 45.2 61Q44.3 60.7 44 59.8Q43.6 59 44 58.2Q44.3 57.3 45.2 57Q46 56.6 46.8 57ZM33.8 33.1Q34.6 33.4 34.9 34.2Q35.2 35 34.9 35.8Q34.6 36.6 33.8 36.9Q33 37.2 32.2 36.9Q31.4 36.6 31.1 35.8Q30.8 35 31.1 34.2Q31.4 33.4 32.2 33.1Q33 32.8 33.8 33.1ZM60.7 59.2Q61.5 59.5 61.8 60.3Q62.1 61 61.8 61.7Q61.5 62.5 60.7 62.8Q60 63.1 59.3 62.8Q58.5 62.5 58.2 61.7Q57.9 61 58.2 60.3Q58.5 59.5 59.3 59.2Q60 58.9 60.7 59.2ZM48.8 74Q49.6 74.4 50 75.2Q50.3 76 50 76.8Q49.6 77.6 48.8 78Q48 78.3 47.2 78Q46.4 77.6 46 76.8Q45.7 76 46 75.2Q46.4 74.4 47.2 74Q48 73.7 48.8 74ZM58.7 77.4Q59.3 77.7 59.6 78.3Q59.9 79 59.6 79.7Q59.3 80.3 58.7 80.6Q58 80.9 57.3 80.6Q56.7 80.3 56.4 79.7Q56.1 79 56.4 78.3Q56.7 77.7 57.3 77.4Q58 77.1 58.7 77.4ZM37.6 75.5Q38.3 75.7 38.5 76.4Q38.8 77 38.5 77.6Q38.3 78.3 37.6 78.5Q37 78.8 36.4 78.5Q35.7 78.3 35.5 77.6Q35.2 77 35.5 76.4Q35.7 75.7 36.4 75.5Q37 75.2 37.6 75.5Z"/>'},
 
 {id:"wood-avens-root",cat:"spices",rare:true,price:2,pk:"40–80 €/kg",name:{en:"Wood avens root",fr:"Racine de benoîte"},latin:"Geum urbanum",
 origin:{en:"European woodland edges",fr:"Lisières des bois d’Europe"},season:[3,4,9,10,11],
@@ -1136,5 +1136,5 @@ fr:"L’Australie compte près de mille espèces d’acacias dont une poignée s
 tip:{en:"Infuse it, do not stir it in: a tablespoon steeped twenty minutes in a litre of hot cream or milk, then strained, behaves exactly like coffee grounds. Left in the mix the grounds stay gritty and never dissolve, and a custard made that way is unpleasant on the tongue.",
 fr:"Infusez-la, ne l’incorporez pas : une cuillerée à soupe laissée vingt minutes dans un litre de crème ou de lait chaud, puis passée, se conduit exactement comme du marc de café. Laissée dans l’appareil, la mouture reste sableuse et ne se dissout jamais — une crème anglaise ainsi faite est désagréable en bouche."},
 pairs:["cream","dark-chocolate","coffee","vanilla","macadamia","honey","milk-chocolate"],
-svg:'<path class="f2 sf" d="M26 30q26 6 44 40-4 4-9 4-12-26-38-36z"/><path class="dot" d="M34 38a2 2 0 104 0 2 2 0 10-4 0M44 46a2 2 0 104 0 2 2 0 10-4 0M53 56a2 2 0 104 0 2 2 0 10-4 0M60 66a2 2 0 104 0 2 2 0 10-4 0"/>'}
+svg:'<path class="f1 sf" d="M23 32q5-6 11-3 1 6 6 8 6 1 9 5 4 5 10 5 5 1 6 6-5 5-11 3-6-2-10-6-4-4-10-5-7-2-10-7-3-3-1-6z"/><path class="s" d="M28 35q5 5 11 6 6 2 10 6 5 3 10 4" stroke-width="1.5"/><path class="dot" d="M32 36q5-3 6 2-1 5-6 3-3-3 0-5zM44 43q5-3 6 2-1 5-6 3-3-3 0-5zM56 49q5-3 6 2-1 5-6 3-3-3 0-5z"/><path class="f2 sf" d="M26 76q0-5 5-6 1-6 7-6 2-6 8-4 4-5 10-2 5-2 8 3 6 0 7 6 4 1 4 9z"/><path class="dot" d="M34 71q5-3 6 2-1 5-6 3-3-3 0-5zM46 67q5-3 6 2-1 5-6 3-3-3 0-5zM57 71q5-3 6 2-1 5-6 3-3-3 0-5zM40 77q5-3 6 2-1 5-6 3-3-3 0-5zM52 77q5-3 6 2-1 5-6 3-3-3 0-5z"/>'}
 ]);

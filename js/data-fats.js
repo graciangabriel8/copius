@@ -187,7 +187,7 @@ fr:"Un sous-produit de la vinification — le marc laissé après pressage conti
 tip:{en:"Its very high smoke point and clean taste make it the right oil for mayonnaise and for searing, where olive oil would dominate.",
 fr:"Son point de fumée très élevé et son goût net en font l’huile juste pour la mayonnaise et les saisies, là où l’olive dominerait."},
 pairs:["lemon","egg","mustard","garlic","black-pepper","thyme","shallot","white-wine-vinegar"],
-svg:'<path class="f3 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><circle class="dot" cx="44" cy="62" r="2"/><circle class="dot" cx="52" cy="66" r="2"/>'},
+svg:'<path class="f1 sf" d="M53 24q5-2 10 0l-1 12q7 5 7 12v24q0 4-5 4H51q-5 0-5-4V48q0-7 7-12z"/><path class="f2 sf" d="M52 19q6-2 12 0v5q-6 2-12 0z"/><path class="f2 sf" d="M46 56q11 4 23 0v16q0 4-5 4H51q-5 0-5-4z"/><path class="f1 sf" d="M20 54q-1-7 6-8 6 0 6 7 0 7-6 7-5 0-6-6z"/><path class="f1 sf" d="M30 50q0-8 7-7 6 1 5 8 0 7-6 6-6 0-6-7zM25 67q1-7 6-6 6 0 5 7 0 6-5 6-6 0-6-7z"/><path class="s" d="M37 43v-4M37 39q-8-5-12-1 3 6 12 1z" stroke-width="2"/>'},
 
 {id:"tengjiao-oil",cat:"fats",rare:true,price:2,pk:"40–80 €/L",name:{en:"Green Sichuan pepper oil",fr:"Huile de poivre de Sichuan vert"},latin:"Zanthoxylum armatum",
 origin:{en:"Hongya, Sichuan",fr:"Hongya, Sichuan"},season:[],
@@ -377,7 +377,7 @@ fr:"Si sombre qu’elle paraît noire en bouteille et vert vif en film mince —
 tip:{en:"Austrians pour it over vanilla ice cream, and it is not a joke — the toasted, salty note against cold cream works.",
 fr:"Les Autrichiens la versent sur la glace vanille, et ce n’est pas une plaisanterie — la note grillée et salée contre la crème froide fonctionne."},
 pairs:["vanilla","pumpkin","cider-vinegar","potato","cream","honey","walnut","lettuce"],
-svg:'<path class="f1 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><ellipse class="f3 sf" cx="48" cy="34" rx="6" ry="8"/>'},
+svg:'<path class="f1 sf" d="M49 22q7-2 13 0l-1 18q11 5 12 18 2 14-6 20-9 7-22 2-10-5-10-18 0-15 14-22z"/><path class="f2 sf" d="M48 17q7-2 14 0v5q-7 2-14 0z"/><path class="dot" d="M38 58q17 6 34 0-1 12-6 17-9 6-21 2-6-5-7-19z"/><path class="f1 sf" d="M18 62q-1-9 6-11 3-1 5 1 3-2 5-1 7 2 6 11-1 9-7 10-3 0-4-2-2 2-4 2-6-1-7-10z"/><path class="s" d="M26 52q-3 10-1 19M32 52q3 9 2 18M29 51q-1-5 0-6 2-2 4-1" stroke-width="2"/>'},
 
 {id:"rapeseed-oil",cat:"fats",price:1,pk:"4–8 €/L",name:{en:"Rapeseed oil",fr:"Huile de colza"},latin:"Brassica napus",
 origin:{en:"Europe",fr:"Europe"},season:[],
@@ -457,7 +457,7 @@ fr:"Deux produits entièrement différents partagent le nom : l’huile claire d
 tip:{en:"Add it at the very end, by the half-teaspoon. Heated, its whole aroma burns off within seconds.",
 fr:"Ajoutez-la tout à la fin, à la demi-cuillère. Chauffée, tout son arôme s’évapore en quelques secondes."},
 pairs:["soy-sauce","ginger","garlic","spring-onion","chili","sesame","fish-sauce","shiitake"],
-svg:'<path class="f1 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><ellipse class="f2 sf" cx="44" cy="34" rx="4" ry="3"/><ellipse class="f2 sf" cx="53" cy="36" rx="4" ry="3"/>'},
+svg:'<path class="f1 sf" d="M44 46q-10 1-11 8-1 2-1 5v13q0 5 5 6 11 3 22 0 5-1 5-6V59q0-3-1-5-1-7-11-8z"/><path class="f1 sf" d="M45 26q5-2 10 0l-1 20h-8z"/><path class="f2 sf" d="M43 21q7-2 13 0v6q-6 2-13 0z"/><path class="f2 sf" d="M32 62q16 5 32 0v10q0 5-5 6-11 3-22 0-5-1-5-6z"/><path class="f1 sf" d="M17 64q4-5 8-2-3 5-8 2zM22 73q4-5 8-2-3 5-8 2zM31 80q4-5 8-2-3 5-8 2zM43 83q4-5 8-2-3 5-8 2zM55 81q4-5 8-2-3 5-8 2z" stroke-width="2"/>'},
 
 {id:"truffle-oil",cat:"fats",price:3,pk:"80–150 €/L",name:{en:"Truffle oil",fr:"Huile de truffe"},latin:"C3H8S2 (2,4-dithiapentane)",
 origin:{en:"Flavour houses, Italy",fr:"Maisons d'arômes, Italie"},season:[],

@@ -347,7 +347,7 @@ fr:"Inventé par un chimiste russe pendant le blocus napoléonien, quand le sucr
 tip:{en:"It is what keeps sorbet scoopable and caramel smooth. A spoonful is a technical decision, not a sweetening one.",
 fr:"C’est lui qui garde un sorbet malléable et un caramel lisse. Une cuillerée est une décision technique, non un ajout de sucre."},
 pairs:["sugar","cream","butter","vanilla","dark-chocolate","lemon","raspberry","honey"],
-svg:'<path class="f3 sf" d="M40 74V40h16v34z"/><path class="s" d="M40 48h16"/><circle class="dot" cx="48" cy="60" r="2"/>'},
+svg:'<path class="f1 sf" d="M31 45q1 16 4 25 1 5 13 5t13-5q3-9 4-25z"/><path class="f2 sf" d="M29 45q0-5 19-5t19 5q0 4-19 4t-19-4z"/><path class="f2 sf" d="M36 41q-3 10-2 16 1 7 5 7 5 0 5-6 0-7-3-17z"/><path class="s" d="M53 47q3-6 5-8 4-6 8-11"/><path class="s" d="M50 44q6-1 11-2" stroke-width="1.5"/>'},
 
 {id:"golden-syrup",cat:"sweet",price:2,pk:"8–14 €/kg",name:{en:"Golden syrup",fr:"Golden syrup"},latin:"Saccharum officinarum",
 origin:{en:"Plaistow, London",fr:"Plaistow, Londres"},season:[],
@@ -547,7 +547,7 @@ fr:"Daniel Peter passa huit ans à échouer à marier lait et chocolat — l’e
 tip:{en:"It burns and seizes far more easily than dark. Melt it over water that is barely steaming, never simmering.",
 fr:"Il brûle et fige bien plus facilement que le noir. Faites-le fondre sur une eau à peine frémissante, jamais bouillante."},
 pairs:["hazelnut","maple-syrup","banana","almond","coffee","cream","salt","orange"],
-svg:'<path class="f2 sf" d="M28 44h40v24H28z"/><path class="s" d="M28 56h40M42 44v24M56 44v24"/>'},
+svg:'<path class="f2 sf" d="M20 32q28-4 56 0q3 12 0 24q-28 4-56 0q-3-12 0-24z"/><path class="s" d="M19 44q29 3 58 0M34 30q-2 14 0 28M48 30q-1 14 0 28M62 30q2 14 0 28" stroke-width="2"/><path class="f2 sf" d="M52 62q8 1 16 4q-1 8-4 15q-8-1-16-4q1-8 4-15z"/><path class="s" d="M55 70q6 2 11 3" stroke-width="1.5"/><path class="dot" d="M29 68l3 3l-3 3l-3-3zM74 60l3 3l-3 3l-3-3z"/>'},
 
 {id:"mizuame",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -577,7 +577,7 @@ fr:"Un sucre dont on n’a retiré aucune mélasse — la forme la plus sombre, 
 tip:{en:"It clumps into rock. Keep a piece of bread or a terracotta disc in the jar and it stays workable.",
 fr:"Il durcit en bloc. Gardez un morceau de pain ou un disque de terre cuite dans le pot et il reste souple."},
 pairs:["dark-chocolate","coffee","ginger","butter","cream","banana","cinnamon","pecan"],
-svg:'<path class="f1 sf" d="M32 68V48h32v20z"/><path class="s" d="M32 58h32"/><circle class="dot" cx="42" cy="63" r="1.6"/><circle class="dot" cx="54" cy="53" r="1.6"/>'},
+svg:'<path class="f1 sf" d="M22 54q0 14 11 19q16 6 33 0q11-5 11-19q-28 8-55 0z"/><path class="f2 sf" d="M22 54q3-10 12-13q4-6 9-3q4-7 11-3q6-4 10 3q10 4 12 16q-28 8-54 0z"/><path class="f1 sf" d="M40 74q8 3 16 0l-2 6q-6 2-12 0z"/><path class="s" d="M28 52q6-4 12-2M40 57q8-4 14-1M56 50q6-3 11 0" stroke-width="1.5"/><path class="dot" d="M30 49l2 2l-2 2l-2-2zM38 45l2 2l-2 2l-2-2zM46 42l2 2l-2 2l-2-2zM55 44l2 2l-2 2l-2-2zM63 48l2 2l-2 2l-2-2zM34 56l2 2l-2 2l-2-2zM45 52l2 2l-2 2l-2-2zM57 54l2 2l-2 2l-2-2zM68 53l2 2l-2 2l-2-2zM16 60l2 2l-2 2l-2-2zM19 68l2 2l-2 2l-2-2z"/>'},
 
 {id:"nacional-arriba-cacao",cat:"sweet",price:3,pk:"40–80 €/kg",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
 origin:{en:"Guayas river basin, Ecuador",fr:"Bassin du Guayas, Équateur"},season:[],
@@ -817,7 +817,7 @@ fr:"Du beurre de cacao, du sucre et du lait sans aucune matière sèche de cacao
 tip:{en:"Check the label says cocoa butter and not vegetable fat. That single line separates the real thing from confectionery.",
 fr:"Vérifiez que l’étiquette dit beurre de cacao et non matière grasse végétale. Cette seule ligne sépare le vrai du produit de confiserie."},
 pairs:["raspberry","passion-fruit","pistachio","lime","cardamom","matcha","vanilla","timut-pepper"],
-svg:'<path class="f3 sf" d="M28 44h40v24H28z"/><path class="s" d="M28 56h40M42 44v24M56 44v24"/>'},
+svg:'<path class="f1 sf" d="M18 36q9-3 20-2l-2 7l5 5l-4 6l4 7l-3 6q-11 2-20-1q-3-13 0-28z"/><path class="s" d="M17 50q10 2 20 1M28 34q-2 14 0 30M54 45q11 2 22 0" stroke-width="2"/><path class="f2 sf" d="M52 36q12-4 24-2l2 9l-5 5l3 6q-12 4-24 0l3-9l-3-9z"/><path class="f3 sf" d="M52 61q10-3 19 0l1 7l-4 4l2 5q-9 3-18 0l2-8l-2-8z"/><path class="dot" d="M26 72l3 3l-3 3l-3-3zM45 76l3 3l-3 3l-3-3z"/>'},
 
 {id:"sugar",cat:"sweet",price:1,pk:"1–2 €/kg",name:{en:"White sugar",fr:"Sucre blanc"},latin:"Saccharum officinarum",
 origin:{en:"New Guinea, via India",fr:"Nouvelle-Guinée, via l’Inde"},season:[],
