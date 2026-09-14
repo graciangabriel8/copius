@@ -887,7 +887,7 @@ fr:"Chaque fleur de crocus donne trois filaments rouges, cueillis à la main à 
 tip:{en:"Steep the threads in warm water or stock for twenty minutes before using — thrown in dry, half their perfume never wakes up.",
 fr:"Laissez infuser les filaments dans une eau ou un bouillon tiède vingt minutes avant usage — jetés à sec, la moitié de leur parfum ne se réveille jamais."},
 pairs:["rice","shrimp","cod","chicken","cardamom","orange","honey"],
-svg:'<path class="s" d="M22 66c8-2 14-8 19-15 4-6 8-10 13-13"/><path class="s" d="M28 76c9-3 15-9 20-17 4-6 9-11 15-14"/><path class="s" d="M18 52c9 0 16-3 23-8 6-5 12-8 19-9"/><path class="s" d="M35 79c6-6 10-13 13-21 3-7 7-13 12-17" stroke-width="2.6"/><path class="s" d="M20 41c8 2 14 6 19 12 4 5 9 9 15 11" stroke-width="2.6"/><path class="dot" d="M54 38q9-6 13-1-5 7-13 6-2-2 0-5zM63 45q9-3 12 3-7 4-14 2-1-3 2-5zM60 35q7-7 13-3-5 7-13 8-2-3 0-5zM54 64q9 1 11 7-8 2-13-2-1-3 2-5z"/>'},
+svg:'<path class="dot" d="M36 84C32 70 23 56 23 40L26 44L29 40C29 56 34 70 38 84Z"/><path class="dot" d="M47 86C47 72 45 52 45 36L48 40L51 36C51 52 49 72 49 86Z"/><path class="dot" d="M58 84C62 70 67 56 67 40L70 44L73 40C73 56 64 70 60 84Z"/><path class="s" d="M40 82q8 4 16 0" stroke-width="1.6"/>'},
 
 {id:"sand-ginger",cat:"spices",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Sand ginger (kencur)",fr:"Kencur (gingembre des sables)"},latin:"Kaempferia galanga",
 origin:{en:"Southern China and island Southeast Asia",fr:"Chine du Sud et Asie du Sud-Est insulaire"},season:[],

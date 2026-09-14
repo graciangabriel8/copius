@@ -216,6 +216,13 @@
     var en = q("#lang-en");
     if (en) { en.click(); await wait(600); }
 
+    // Pin the THEME too. The atlas follows prefers-color-scheme unless a choice is
+    // stored, and this machine is in dark mode, so without this the reel records dark
+    // whatever the site's palette is. data-theme beats the media query in the CSS.
+    try { app.contentWindow.localStorage.setItem("copius-theme", "light"); } catch (e) {}
+    D().documentElement.setAttribute("data-theme", "light");
+    await wait(400);
+
     // start at the grid, not the filter panel — nobody is sold by a filter panel
     app.contentWindow.scrollTo(0, 0);
     await wait(500);
