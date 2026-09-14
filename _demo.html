@@ -35,7 +35,7 @@
 <div id="hud"><button id="again">replay</button> <span id="state">loading…</span></div>
 
 <div id="stage">
-  <iframe id="app" src="atlas.html?v=113"></iframe>
+  <iframe id="app" src="atlas.html?v=114"></iframe>
   <div id="tap"></div>
   <div id="cap"></div>
   <div id="end">
@@ -97,19 +97,40 @@
     await wait(320);
   }
 
+  // Scroll the modal until something is in view, at a readable speed.
+  // Deliberately NOT requestAnimationFrame: rAF does not fire when the window is
+  // not compositing (a hidden pane, a background tab), which silently froze every
+  // scroll at zero. setTimeout runs regardless, so the same file records and tests.
+  async function scrollTo(box, target, dur) {
+    var start = box.scrollTop, steps = Math.max(2, Math.round(dur / 16));
+    for (var n = 1; n <= steps; n++) {
+      var k = n / steps;
+      box.scrollTop = start + (target - start) * (k < .5 ? 2*k*k : 1 - Math.pow(-2*k+2, 2)/2);
+      await wait(16);
+    }
+  }
+
+  // the pairing reveal — one tap turns ten chips into hundreds. This is the only
+  // real motion in the product, so it carries the end of the reel.
+  async function revealPairs() {
+    var box = q("#overlay"), btn = q("#overlay .pair-more");
+    if (!box || !btn) return false;
+    var delta = btn.getBoundingClientRect().top - box.getBoundingClientRect().top;
+    await scrollTo(box, box.scrollTop + delta - box.clientHeight + 150, 1100);
+    await wait(700);
+    ring(btn);
+    await wait(260);
+    btn.click();
+    await wait(500);
+    await scrollTo(box, box.scrollTop + 420, 1400);   // drift down through the flood
+    return true;
+  }
+
   // the modal is the hero; scroll it so the facts come into view under the drawing
   async function revealFacts() {
-    var box = q("#overlay .modal") || q("#overlay > div") || q("#overlay");
+    var box = q("#overlay");
     if (!box) return;
-    var target = Math.min(box.scrollHeight - box.clientHeight, 230);
-    var start = box.scrollTop, t0 = performance.now(), dur = 900;
-    await new Promise(function (done) {
-      (function step(now) {
-        var k = Math.min(1, (now - t0) / dur);
-        box.scrollTop = start + (target - start) * (k < .5 ? 2*k*k : 1 - Math.pow(-2*k+2, 2)/2);
-        k < 1 ? requestAnimationFrame(step) : done();
-      })(t0);
-    });
+    await scrollTo(box, Math.min(box.scrollHeight - box.clientHeight, 230), 900);
   }
 
   async function show(term, id, line, sub, hold) {
@@ -149,9 +170,22 @@
     say("1,835 ingredients.", "Each one drawn, each one explained");
     await wait(1900); hush(); await wait(250);
 
-    await show("saffron", "saffron", "What it is, and what it costs.", "Season · price · origin", 1700);
-    await show("morel",   "morel",   "And what is easy to get wrong.", "One note on handling it", 1600);
-    await show("yuzu",    "yuzu",    "And what it goes with.",         "12,778 recorded pairings", 1800);
+    await show("saffron", "saffron", "What it is, and what it costs.", "Season · price · origin", 1500);
+    await show("morel",   "morel",   "And what is easy to get wrong.", "One note on handling it", 1400);
+
+    // the finale: open butter, walk down to the pairings, tap, flood the screen
+    await type("#search", "butter", 80);
+    await wait(430);
+    if (await openEntry("butter")) {
+      say("And what it goes with.", "479 ingredients pair with butter");
+      await wait(1400);
+      await revealFacts();
+      await wait(600);
+      await revealPairs();
+      await wait(1900);
+      hush();
+      await closeEntry();
+    }
 
     end.classList.add("on");
     state.textContent = "done";
