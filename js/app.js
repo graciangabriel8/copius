@@ -898,9 +898,8 @@
   function showModal() {
     var top = modalTop();
     RENDER[top.kind](top.id);
-    // .overlay is the scroll container and nothing else resets it, so a card
-    // opened from a pair chip inherited the scroll of the card you were reading
-    // and started halfway down. Every card starts at its own top.
+    // Every card starts at its own top. This covers the already-visible cases —
+    // a pair chip, the back button — where the write actually sticks.
     el("overlay").scrollTop = 0;
     if (top.kind === "ing") primeArt();
     el("backBtn").hidden = modalStack.length < 2;
@@ -915,6 +914,11 @@
     modalStack.push({ kind: kind, id: id });
     showModal();
     el("overlay").hidden = false;
+    // A hidden overflow:auto element ignores scrollTop writes and restores its
+    // previous position when shown again, so showModal's reset one line above is
+    // a no-op on this path. Reset again after the unhide, or every card after
+    // the first opens wherever the last one was left.
+    el("overlay").scrollTop = 0;
     document.body.style.overflow = "hidden";
     el("closeBtn").focus();
   }

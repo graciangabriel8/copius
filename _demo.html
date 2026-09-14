@@ -88,6 +88,11 @@
     ring(card);
     await wait(180);
     card.click();
+    await wait(120);
+    // Zero it here rather than trusting the app: the reel scrolls each card down
+    // to show its facts, and the next card must not inherit that.
+    var box = q("#overlay");
+    if (box) box.scrollTop = 0;
     return true;
   }
 
@@ -133,20 +138,29 @@
     await scrollTo(box, Math.min(box.scrollHeight - box.clientHeight, 230), 900);
   }
 
-  async function show(term, id, line, sub, hold) {
+  // One beat, identical for every card: open at the top, hold while the drawing
+  // draws itself, scroll down to the facts, hold. Only butter continues past this.
+  async function beat(term, id, line, sub) {
     await type("#search", term, 80);
     await wait(430);
     if (!await openEntry(id)) return false;
     say(line, sub);
-    await wait(1500);          // let the drawing draw itself — this is the distinctive bit
+    await wait(1500);          // the drawing draws itself — the distinctive bit
     await revealFacts();
-    await wait(hold || 1600);
+    await wait(1500);
+    return true;
+  }
+
+  async function closeAndClear() {
     hush();
     await closeEntry();
     var s = q("#search");
     if (s) { s.value = ""; s.dispatchEvent(new app.contentWindow.Event("input", {bubbles: true})); }
     await wait(240);
-    return true;
+  }
+
+  async function show(term, id, line, sub) {
+    if (await beat(term, id, line, sub)) await closeAndClear();
   }
 
   async function run() {
@@ -170,21 +184,14 @@
     say("1,835 ingredients.", "Each one drawn, each one explained");
     await wait(1900); hush(); await wait(250);
 
-    await show("saffron", "saffron", "What it is, and what it costs.", "Season · price · origin", 1500);
-    await show("morel",   "morel",   "And what is easy to get wrong.", "One note on handling it", 1400);
+    await show("saffron", "saffron", "What it is, and what it costs.", "Season · price · origin");
+    await show("morel",   "morel",   "And what is easy to get wrong.", "One note on handling it");
 
-    // the finale: open butter, walk down to the pairings, tap, flood the screen
-    await type("#search", "butter", 80);
-    await wait(430);
-    if (await openEntry("butter")) {
-      say("And what it goes with.", "479 ingredients pair with butter");
-      await wait(1400);
-      await revealFacts();
-      await wait(600);
+    // same beat, then butter alone continues down into the pairing reveal
+    if (await beat("butter", "butter", "And what it goes with.", "479 ingredients pair with butter")) {
       await revealPairs();
       await wait(1900);
-      hush();
-      await closeEntry();
+      await closeAndClear();
     }
 
     end.classList.add("on");
