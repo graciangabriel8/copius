@@ -424,6 +424,9 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .pair-rest{margin-top:8px}
 
 .pair-grid{display:flex;flex-wrap:wrap;gap:8px}
+/* a class with display: beats the UA [hidden] rule, so the hidden half of a
+   capped pair list painted anyway. Same fix as .overlay[hidden] above. */
+.pair-grid[hidden]{display:none}
 .m-lab-btn{
   margin-top:26px;width:100%;padding:12px;border-radius:12px;
   border:1px solid var(--border-strong);background:var(--bg);color:var(--ink-2);
