@@ -169,7 +169,6 @@
       photosMap[id] = dataURL;
       if (idb) idbPut(id, dataURL).catch(function () {});
       renderAll();
-  setView(state.view);
       refreshOpenModal();
     }, function () { alert(T().photoError); });
   }
@@ -1507,6 +1506,9 @@
 
   /* ---------- init ---------- */
   renderAll();
+  /* state.view defaults to "atlas" but nothing applied it to the DOM, so a first
+     load showed the atlas with no tab marked selected. */
+  setView(state.view);
   idbOpen().then(function (db) {
     idb = db;
     return idbLoadAll();
