@@ -4,26 +4,41 @@
 <style>
   html,body{margin:0;height:100%;background:#0d0d0c;display:grid;place-items:center;
     font:15px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  /* 9:16 at iPhone logical size — the atlas renders its own mobile layout inside */
-  #stage{position:relative;width:390px;height:844px;overflow:hidden;background:#fafafa;
+  /* The app lays out at 387x688 — exactly 9:16 (387/9=43, 43x16=688), so the crop
+     fills 1080x1920 with no letterbox. The first cut used a 390x844 stage: 0.462
+     wide-to-tall against 9:16's 0.5625, which cost 96px of dark bar down each side.
+     The stage is then 540x960, which on a 2x display is exactly 1080x1920 device
+     pixels — so the crop is copied 1:1 into the Reel with no resampling at all.
+     The iframe keeps its 387px layout width (every atlas breakpoint is
+     max-width:720px, and the card grid stays one column at both sizes) and is
+     scaled up to fill the stage. */
+  :root{--k:1.3953488}  /* 540/387: the iframe scale, and the scale for everything
+                           drawn over it that was sized against the old stage */
+  #stage{position:relative;width:540px;height:960px;overflow:hidden;background:#F7F6F1;
     box-shadow:0 0 0 1px #222}
-  #app{width:390px;height:844px;border:0;display:block}
+  #app{width:387px;height:688px;border:0;display:block;
+    transform:scale(var(--k));transform-origin:0 0}
   /* caption band for muted viewing — most Reels are watched with sound off */
-  #cap{position:absolute;left:0;right:0;bottom:0;padding:26px 22px 34px;
+  #cap{position:absolute;left:0;right:0;bottom:0;
+    padding:calc(26px*var(--k)) calc(22px*var(--k)) calc(34px*var(--k));
     background:linear-gradient(to top,rgba(10,10,9,.97) 55%,rgba(10,10,9,.88) 78%,transparent);
-    color:#fff;font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.25;
+    color:#fff;font-size:calc(23px*var(--k));font-weight:600;letter-spacing:-.01em;line-height:1.25;
     opacity:0;transition:opacity .35s ease;text-wrap:balance;pointer-events:none}
   #cap.on{opacity:1}
-  #cap small{display:block;font-size:15px;font-weight:400;opacity:.75;margin-top:6px}
-  #end{position:absolute;inset:0;background:#141413;color:#f1f1f0;display:grid;
-    place-content:center;text-align:center;gap:10px;opacity:0;transition:opacity .5s ease;
-    pointer-events:none;padding:0 30px}
+  #cap small{display:block;font-size:calc(15px*var(--k));font-weight:400;opacity:.75;
+    margin-top:calc(6px*var(--k))}
+  #end{position:absolute;inset:0;background:#14160F;color:#f1f1f0;display:grid;
+    place-content:center;text-align:center;gap:calc(10px*var(--k));opacity:0;
+    transition:opacity .5s ease;pointer-events:none;padding:0 calc(30px*var(--k))}
   #end.on{opacity:1}
-  #end .endmark{margin:0 auto 4px;display:block}#end .endmark .bl-f{fill:#e2e2df;stroke:#585853;stroke-width:2.6;stroke-linejoin:round}#end .endmark .bl-s{fill:none;stroke:#585853;stroke-width:2.6;stroke-linecap:round}#end .endmark .bl-d{fill:#585853}#end b{font-size:44px;font-weight:600;letter-spacing:-.02em}
-  #end span{font-size:19px;opacity:.72}
-  #end i{font-style:normal;font-size:17px;opacity:.55;margin-top:14px}
+  #end .endmark{margin:0 auto calc(4px*var(--k));display:block;
+    width:calc(104px*var(--k));height:auto}#end .endmark .bl-f{fill:#e2e2df;stroke:#585853;stroke-width:2.6;stroke-linejoin:round}#end .endmark .bl-s{fill:none;stroke:#585853;stroke-width:2.6;stroke-linecap:round}#end .endmark .bl-d{fill:#585853}#end b{font-size:calc(44px*var(--k));font-weight:600;letter-spacing:-.02em}
+  #end span{font-size:calc(19px*var(--k));opacity:.72}
+  #end i{font-style:normal;font-size:calc(17px*var(--k));opacity:.55;
+    margin-top:calc(14px*var(--k))}
   /* a soft tap ring, so a viewer reads it as someone using it */
-  #tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;
+  #tap{position:absolute;width:calc(46px*var(--k));height:calc(46px*var(--k));
+    margin:calc(-23px*var(--k)) 0 0 calc(-23px*var(--k));border-radius:50%;
     border:2px solid rgba(20,20,19,.5);opacity:0;pointer-events:none}
   #tap.go{animation:tap .5s ease-out}
   @keyframes tap{0%{opacity:.9;transform:scale(.4)}100%{opacity:0;transform:scale(1.15)}}
@@ -51,6 +66,7 @@
   var app = document.getElementById("app"), cap = document.getElementById("cap"),
       end = document.getElementById("end"), tap = document.getElementById("tap"),
       state = document.getElementById("state");
+  var K = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--k")) || 1;
 
   var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
   var D = function () { return app.contentDocument; };
@@ -65,8 +81,8 @@
   function ring(el) {
     if (!el) return;
     var r = el.getBoundingClientRect();
-    tap.style.left = (r.left + r.width / 2) + "px";
-    tap.style.top = (r.top + r.height / 2) + "px";
+    tap.style.left = ((r.left + r.width / 2) * K) + "px";
+    tap.style.top = ((r.top + r.height / 2) * K) + "px";
     tap.classList.remove("go"); void tap.offsetWidth; tap.classList.add("go");
   }
 
@@ -103,16 +119,39 @@
   }
 
   // Scroll the modal until something is in view, at a readable speed.
-  // Deliberately NOT requestAnimationFrame: rAF does not fire when the window is
-  // not compositing (a hidden pane, a background tab), which silently froze every
-  // scroll at zero. setTimeout runs regardless, so the same file records and tests.
-  async function scrollTo(box, target, dur) {
-    var start = box.scrollTop, steps = Math.max(2, Math.round(dur / 16));
-    for (var n = 1; n <= steps; n++) {
-      var k = n / steps;
-      box.scrollTop = start + (target - start) * (k < .5 ? 2*k*k : 1 - Math.pow(-2*k+2, 2)/2);
-      await wait(16);
-    }
+  //
+  // Driven off the display's own refresh, and eased on the CLOCK rather than on a step
+  // count: a fixed "steps = dur/16" loop assumes every setTimeout(16) lands on 16ms, so
+  // whenever one ran long the scroll both stuttered and finished late. Reading the real
+  // timestamp makes the motion frame-rate independent — it covers the same distance in
+  // the same time whatever the machine does.
+  //
+  // rAF does not fire at all when the window is not compositing (a hidden pane, a
+  // background tab), which silently froze every scroll at zero the first time this ran
+  // headless. A real recording IS compositing, so rAF fires there; the timer below is
+  // the fallback for the headless case, running the same easing.
+  function scrollTo(box, target, dur) {
+    return new Promise(function (done) {
+      var W = app.contentWindow, start = box.scrollTop, delta = target - start;
+      var t0 = null, raf = 0;
+      function ease(k) { return k < .5 ? 2*k*k : 1 - Math.pow(-2*k+2, 2)/2; }
+      function frame(now) {
+        if (t0 === null) t0 = now;
+        var k = Math.min(1, (now - t0) / dur);
+        box.scrollTop = start + delta * ease(k);
+        if (k < 1) raf = W.requestAnimationFrame(frame); else done();
+      }
+      raf = W.requestAnimationFrame(frame);
+      setTimeout(function () {
+        if (t0 !== null) return;            // rAF is alive; leave it alone
+        W.cancelAnimationFrame(raf);
+        var n = 0, steps = Math.max(2, Math.round(dur / 16));
+        (function tick() {
+          box.scrollTop = start + delta * ease(Math.min(1, ++n / steps));
+          if (n < steps) setTimeout(tick, 16); else done();
+        })();
+      }, 120);
+    });
   }
 
   // the pairing reveal — one tap turns ten chips into hundreds. This is the only
@@ -197,6 +236,29 @@
     end.classList.add("on");
     state.textContent = "done";
   }
+
+  // The crop is only 1:1 if the stage lands on exactly 1080x1920 device pixels and all
+  // of it is on screen. Both are easy to lose — a stray browser zoom, a window too short
+  // for a 960px stage — and both are invisible until the recording is already made. Say
+  // so before the take. This sits outside the stage, so it is never in the crop.
+  var warn = null;
+  function readyCheck() {
+    var r = document.getElementById("stage").getBoundingClientRect(), dpr = window.devicePixelRatio;
+    var w = Math.round(r.width * dpr), h = Math.round(r.height * dpr), bad = [];
+    if (w !== 1080 || h !== 1920) bad.push("stage is " + w + "\u00d7" + h +
+      " device px, not 1080\u00d71920 \u2014 set browser zoom back to 100%");
+    if (r.top < 0 || r.bottom > window.innerHeight) bad.push("stage is cut off \u2014 make the window taller, or full screen");
+    if (!bad.length) { if (warn) { warn.remove(); warn = null; } return; }
+    if (!warn) {
+      warn = document.createElement("div");
+      warn.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:9;max-width:330px;" +
+        "background:#7a1f1f;color:#fff;padding:9px 13px;border-radius:7px;line-height:1.35";
+      document.body.appendChild(warn);
+    }
+    warn.textContent = "Not ready to record \u2014 " + bad.join("; ");
+  }
+  readyCheck();
+  window.addEventListener("resize", readyCheck);
 
   var started = false;
   app.addEventListener("load", function () {
