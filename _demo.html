@@ -76,7 +76,7 @@
     for (var i = 1; i <= text.length; i++) {
       el.value = text.slice(0, i);
       el.dispatchEvent(new app.contentWindow.Event("input", {bubbles: true}));
-      await wait(per || 85);
+      await wait(per || 150);
     }
   }
 
@@ -141,8 +141,8 @@
   // One beat, identical for every card: open at the top, hold while the drawing
   // draws itself, scroll down to the facts, hold. Only butter continues past this.
   async function beat(term, id, line, sub) {
-    await type("#search", term, 80);
-    await wait(430);
+    await type("#search", term, 150);
+    await wait(620);
     if (!await openEntry(id)) return false;
     say(line, sub);
     await wait(1500);          // the drawing draws itself — the distinctive bit
