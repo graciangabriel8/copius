@@ -319,7 +319,7 @@ fr:"Elle parfume sans sucrer : deux cuillères à café pour un litre de base à
 pairs:["raspberry","dark-chocolate","cream","peach","vanilla","almond","redcurrant","fromage-blanc"],
 svg:'<path class="f2 sf" d="M34 28q14-10 28 0 2 16-14 22-16-6-14-22z"/><path class="s" d="M41 30q7 18 14 0M34 38h28"/><path class="f1 sf" d="M42 24q6-6 12 0-6 3-12 0z"/><path class="f1 sf" d="M34 56h28q0 16-14 20-14-4-14-20z"/><path class="s" d="M48 76v6M40 84h16"/>'},
 
-{id:"rhum-agricole",cat:"cellar",sign:"AOP",price:2,pk:"28–50 €/L",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
+{id:"rhum-agricole",cat:"cellar",price:2,pk:"28–50 €/L",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
 origin:{en:"Martinique & Guadeloupe",fr:"Martinique et Guadeloupe"},season:[],
 flavor:["grassy","fruity","warm","briny"],
 story:{en:"Cane juice begins fermenting on its own within hours of pressing, so an agricole distillery runs only during the harvest and stands idle the rest of the year - molasses, by contrast, keeps indefinitely, which is why most of the world's rum is made from it. Martinique's rhum has held an appellation of origin since 1996, the only one of its kind for a rum.",
@@ -419,7 +419,7 @@ fr:"Achetez la bouteille que l’on boit, pas celle étiquetée vin de cuisine :
 pairs:["ginger","spring-onion","soy-sauce","pork-belly","chicken","star-anise","crab"],
 svg:'<path class="f2 sf" d="M36 36q-11 10-11 22t11 16q12 4 24 0t11-16-11-22z"/><path class="f2 sf" d="M42 26h12v10H42z"/><path class="f1 sf" d="M37 27q11-9 22 0-11 5-22 0z"/><path class="s" d="M42 31h12"/>'},
 
-{id:"vin-de-paille",cat:"cellar",sign:"AOP",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
+{id:"vin-de-paille",cat:"cellar",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
 origin:{en:"Jura, dried in unheated lofts",fr:"Jura, séché en greniers non chauffés"},season:[],
 flavor:["sweet","honeyed","fruity"],
 story:{en:"The bunches are laid on straw or hung in an unheated loft for at least six weeks and pressed between Christmas and late February; a hundred kilos of shrivelled grapes yield fifteen to eighteen litres of must. Nothing is added at any point — the sweetness is only the water that left.",
@@ -429,7 +429,7 @@ fr:"Déglacez hors du feu et ne réduisez pas de plus de moitié : à gros bouil
 pairs:["foie-gras","apricot","pear","walnut","blue-cheese","fig"],
 svg:'<path class="f2 sf" d="M48 24c6 0 10 4 10 9 5 2 7 8 4 12 2 6-2 12-6 14-2 6-6 9-8 9s-6-3-8-9c-4-2-8-8-6-14-3-4-1-10 4-12 0-5 4-9 10-9z"/><path class="s" d="M39 34q9 4 18 0M37 46q11 5 22 0M42 58q6 3 12 0"/><path class="s" d="M28 74h40M24 80h48"/><path class="s" d="M48 24V13"/>'},
 
-{id:"vin-jaune",cat:"cellar",sign:"AOP",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
+{id:"vin-jaune",cat:"cellar",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
 flavor:["nutty","warm","umami"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",

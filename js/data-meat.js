@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"nduja",cat:"meat",sign:"IGP",price:2,pk:"25–45 €/kg",name:{en:"'Nduja",fr:"’Nduja"},latin:"Sus scrofa & Capsicum (cured)",
+{id:"nduja",cat:"meat",price:2,pk:"25–45 €/kg",name:{en:"'Nduja",fr:"’Nduja"},latin:"Sus scrofa & Capsicum (cured)",
 origin:{en:"Spilinga, Calabria",fr:"Spilinga, Calabre"},season:[],
 flavor:["hot","smoky","rich","meaty"],
 story:{en:"Calabria’s spreadable firebomb: pork fat kneaded with enough local chili to cure it scarlet, aged in casings until it softens into a paste. Born around the village of Spilinga as poor mountain charcuterie, cousin to Mallorca’s sobrasada, it now sets menus alight from London to Tokyo.",
@@ -39,7 +39,7 @@ fr:"Incisez le boyau en deux ou trois endroits avant la cuisson, sinon il éclat
 pairs:["dijon-mustard","shallot","potato","cider-vinegar","onion","parsley"],
 svg:'<path class="f1 sf" d="M24 50q0-13 26-13t26 13q0 13-26 13t-26-13z"/><ellipse class="f2 sf" cx="26" cy="50" rx="5" ry="11"/><path class="s" d="M24 42v16M28 41v18M32 42v16"/><path class="s" d="M70 39q5 11 0 22"/>'},
 
-{id:"boeuf-aubrac",cat:"meat",sign:"IGP",price:2,pk:"15–35 €/kg",name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
+{id:"boeuf-aubrac",cat:"meat",price:2,pk:"15–35 €/kg",name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
 origin:{en:"Aubrac plateau, Aveyron",fr:"Plateau de l’Aubrac, Aveyron"},season:[],
 flavor:["meaty","rich","earthy","umami"],
 story:{en:"The Aubrac was a dairy breed first: it filled the burons of the plateau with milk for Laguiole cheese and aligot, and the beef was what was left over — when the mountain dairies emptied in the twentieth century the breed nearly went with them. What survived is a very late-maturing animal, finished well past thirty months, with dense muscle and deep yellow grass fat.",
@@ -109,7 +109,7 @@ fr:"Cuisez-le doucement et ne percez jamais la peau. Une chaleur vive fend le bo
 pairs:["apple","onion","potato","cider-vinegar","butter","thyme","mustard","cream"],
 svg:'<path class="f2 sf" d="M34.3 70Q56.8 63.5 73.1 46.6Q80.4 42.3 76.6 32.9Q70.2 25.1 62.9 29.4Q46.3 45.8 23.7 52Q16 56.5 20 66.3Q26.6 74.6 34.3 70Z"/><path class="dot" d="M33.1 58.4C35.5 62.5 35.9 66.7 33.9 67.9C31.9 69.1 28.3 66.7 25.9 62.6C23.5 58.5 23.1 54.3 25.1 53.1C27.1 51.9 30.7 54.3 33.1 58.4ZM70.8 36.6C73.1 40.5 73.5 44.5 71.7 45.6C69.9 46.6 66.5 44.3 64.2 40.4C61.9 36.5 61.5 32.5 63.3 31.4C65.1 30.4 68.5 32.7 70.8 36.6Z"/><path class="s" d="M44 61 Q39 53 35 46M36 49 q-5-2-7 1" stroke-width="2"/><path class="f1 sf" d="M44 67 q0-13 13-13 14 0 14 13 0 13-14 13-13 0-13-13 z"/><path class="dot" d="M49 67 q0-8 8-8 9 0 9 8 0 8-9 8-8 0-8-8 z"/>'},
 
-{id:"boeuf-blonde-aquitaine",cat:"meat",sign:"IGP",price:2,pk:"15–30 €/kg",name:{en:"Blonde d’Aquitaine beef",fr:"Bœuf Blonde d’Aquitaine"},latin:"Bos taurus",
+{id:"boeuf-blonde-aquitaine",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Blonde d’Aquitaine beef",fr:"Bœuf Blonde d’Aquitaine"},latin:"Bos taurus",
 origin:{en:"South-west France",fr:"Sud-Ouest de la France"},season:[],
 flavor:["meaty","mild","delicate","fresh"],
 story:{en:"The breed is younger than most of the cheeses it shares a table with: on 20 February 1962 three blond draught breeds of the south-west — the Garonnaise, the Blonde de Quercy and the Blonde des Pyrénées — were merged into a single herd book. They had been bred to pull carts rather than to fatten, and sixty years of selection for meat has piled on muscle without ever adding marbling.",
@@ -189,7 +189,7 @@ fr:"Plus sèche et plus maigre que la bresaola, coupez-la un peu plus épaisse e
 pairs:["olive-oil","black-pepper","manchego","piquillo","walnut","fig"],
 svg:'<circle class="s" cx="48" cy="18" r="4"/><path class="s" d="M48 22v6"/><path class="f3 sf" d="M40 28h16l7 24-4 26H37l-4-26z"/><path class="s" d="M62 44q7-6 3-12t3-10"/>'},
 
-{id:"boeuf-charolais",cat:"meat",sign:"IGP",price:2,pk:"15–30 €/kg",name:{en:"Charolais beef",fr:"Bœuf Charolais"},latin:"Bos taurus",
+{id:"boeuf-charolais",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Charolais beef",fr:"Bœuf Charolais"},latin:"Bos taurus",
 origin:{en:"Charolles, Burgundy",fr:"Charolles, Bourgogne"},season:[],
 flavor:["meaty","rich","mild","umami"],
 story:{en:"Burgundy registered the breed early — the first Charolais herd book opened at Nevers in 1864 — and it has since gone to dozens of countries, almost always as a sire, bought to put muscle on other people's cows rather than to be eaten where it lands. At home it is a carcass breed with white fat and broad, coarse-grained muscles that reward long slow wet cooking far more than a hot fast fire.",
@@ -199,7 +199,7 @@ fr:"La fibre grossière est un atout en braisé : taillez le paleron ou le gît
 pairs:["red-wine-vinegar","carrot","onion","bay-leaf","thyme","garlic","bone-marrow","mushroom"],
 svg:'<path class="f1 sf" d="M24 40l24-12 24 12-24 12z"/><path class="f2 sf" d="M24 40v22l24 12V52z"/><path class="f3 sf" d="M72 40v22L48 74V52z"/><path class="s" d="M36 34l24 12M36 68V46M60 68V46"/>'},
 
-{id:"boeuf-chianina",cat:"meat",sign:"IGP",price:3,pk:"30–60 €/kg",name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
+{id:"boeuf-chianina",cat:"meat",price:3,pk:"30–60 €/kg",name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
 origin:{en:"Val di Chiana, Tuscany",fr:"Val di Chiana, Toscane"},season:[],
 flavor:["meaty","mild","umami","rich"],
 story:{en:"The Chianina is among the largest cattle in the world — a mature bull stands over 1.7 metres at the shoulder — and the white oxen of the Val di Chiana were draught animals for two thousand years before anyone bred them for meat. That scale is the whole point of a fiorentina: only a loin this broad yields a T-bone cut five centimetres thick that is still a steak and not a roast.",
@@ -349,7 +349,7 @@ fr:"La longe est assez grosse pour être rôtie entière mais n’a aucune couve
 pairs:["juniper","blackcurrant","chestnut","celeriac","red-wine-vinegar","thyme","pear","butter"],
 svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f2 sf" d="M38 50q0-12 10-12t10 12-2 20-8 8-8-8z"/><path class="f1 sf" d="M38 44q-10-2-14-12t-2-14q8 4 10 12t8 8zM58 44q10-2 14-12t2-14q-8 4-10 12t-8 8z"/><path class="s" d="M36 50q-8 0-12 4M60 50q8 0 12 4"/><circle class="dot" cx="43" cy="52" r="1.6"/><circle class="dot" cx="53" cy="52" r="1.6"/><path class="s" d="M44 70q4 3 8 0"/></g>'},
 
-{id:"figatellu",cat:"meat",sign:"AOP",price:2,pk:"25–40 €/kg",name:{en:"Figatellu",fr:"figatellu"},latin:"Sus scrofa (Nustrale, liver sausage)",
+{id:"figatellu",cat:"meat",sign:"IGP",price:2,pk:"25–40 €/kg",name:{en:"Figatellu",fr:"figatellu"},latin:"Sus scrofa (Nustrale, liver sausage)",
 origin:{en:"Corsica",fr:"Corse"},season:[11,12,1,2,3],
 flavor:["smoky","meaty","rich","earthy"],
 story:{en:"It is made only in the cold months, from the Nustrale pig fattened on the island's chestnuts and acorns, and smoked over chestnut wood — the wood lends a faint sweetness that offsets the liver, which dominates the mix rather than accompanying it. The name comes from figatu, Corsican for liver.",
@@ -569,7 +569,7 @@ fr:"Tranchez-le presque transparent et posez-le sur quelque chose de chaud — u
 pairs:["rosemary","black-pepper","potato","fig","sage","scallop","garlic"],
 svg:'<path class="f1 sf" d="M26 46h44l-5 26H31z"/><path class="f2 sf" d="M33 51h30l-2 13H35z"/><path class="s" d="M48 44V28M48 36l-7-5M48 40l7-5M48 32l-6-5"/>'},
 
-{id:"boeuf-limousin",cat:"meat",sign:"IGP",price:2,pk:"15–30 €/kg",name:{en:"Limousin beef",fr:"Bœuf Limousin"},latin:"Bos taurus (Limousine)",
+{id:"boeuf-limousin",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Limousin beef",fr:"Bœuf Limousin"},latin:"Bos taurus (Limousine)",
 origin:{en:"Limousin plateau, central France",fr:"Plateau limousin, France centrale"},season:[],
 flavor:["meaty","mild","earthy"],
 story:{en:"The Limousin pulled ploughs across the granite soils of its plateau long before anyone selected it for meat — the herd book opened in 1886 and turned a draught ox into a butcher's breed. Its thin hide and light bone are why the carcass yields more sellable meat than almost any other animal in France.",
@@ -749,7 +749,7 @@ fr:"Faites-le couper à la commande vers 2 mm plutôt que rasé à la machine : 
 pairs:["butter","gruyere","cornichon","dijon-mustard","emmentaler","parsley","comte"],
 svg:'<path class="f1 sf" d="M28 38q20-6 40 0v24q-20 6-40 0z"/><path class="f2 sf" d="M28 38l-7-6v36l7-6zM68 38l7-6v36l-7-6z"/><path class="s" d="M28 38v24M68 38v24"/><path class="s" d="M38 47q10 4 20 0"/>'},
 
-{id:"jambon-persille",cat:"meat",sign:"IGP",price:2,pk:"22–35 €/kg",name:{en:"Parsleyed Burgundy ham",fr:"jambon persillé de Bourgogne"},latin:"Sus scrofa (ham in aspic)",
+{id:"jambon-persille",cat:"meat",price:2,pk:"22–35 €/kg",name:{en:"Parsleyed Burgundy ham",fr:"jambon persillé de Bourgogne"},latin:"Sus scrofa (ham in aspic)",
 origin:{en:"Côte-d'Or, Burgundy",fr:"Côte-d’Or, Bourgogne"},season:[],
 flavor:["herbal","salty","tangy","meaty"],
 story:{en:"Made for Easter in the Côte-d'Or since at least the fourteenth century: hock simmered with a calf's foot for its gelatine in a broth of Burgundy white wine and vinegar, then broken into chunks and set in a jelly thick with parsley. The vinegar is not decoration — its acidity is what stops the jelly tasting of nothing but fat.",
@@ -989,7 +989,7 @@ fr:"Servez-le entre 18 et 20 °C, coupé en biais à 2 mm environ : sorti du fro
 pairs:["manchego","olive-oil","marcona-almond","oloroso","tomato","black-pepper","pate-de-coing"],
 svg:'<path class="f2 sf" d="M22 62q-4-5 0-9l30-22q5-3 9 2t-2 9L28 64q-5 3-6-2z"/><ellipse class="f1 sf" cx="61" cy="35" rx="7" ry="9" transform="rotate(35 61 35)"/><path class="dot" d="M58 31a2 2 0 104 0 2 2 0 10-4 0M62 39a2 2 0 104 0 2 2 0 10-4 0M56 37a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0"/>'},
 
-{id:"boeuf-salers",cat:"meat",sign:"IGP",price:2,pk:"18–35 €/kg",name:{en:"Salers beef",fr:"Bœuf Salers"},latin:"Bos taurus (Salers)",
+{id:"boeuf-salers",cat:"meat",price:2,pk:"18–35 €/kg",name:{en:"Salers beef",fr:"Bœuf Salers"},latin:"Bos taurus (Salers)",
 origin:{en:"Cantal, Auvergne",fr:"Cantal, Auvergne"},season:[],
 flavor:["meaty","earthy","rich"],
 story:{en:"A Salers cow will not let her milk down without her calf beside her, which is why the herds that make Salers cheese still bring the calf to the parlour twice a day. The meat comes mostly from those cows at the end of their working life: dark, close-grained, and far more strongly flavoured than a young bull's.",
@@ -1119,7 +1119,7 @@ fr:"Huit à dix minutes à 240 °C poitrine dessus, puis dix minutes de repos : 
 pairs:["turnip","orange","juniper","butter","cognac","celeriac","black-pepper"],
 svg:'<path class="f2 sf" d="M26 58q4-12 22-12t24 8q4 6-2 10-16 6-34 2t-10-8z"/><path class="f1 sf" d="M60 46q-2-12 8-13t8 9q0 5-6 6z"/><path class="s" d="M76 40 84 42 76 45M20 70q10-4 20 0t20 0 16-2"/><circle class="dot" cx="70" cy="38" r="1.6"/>'},
 
-{id:"saucisse-de-toulouse",cat:"meat",sign:"IGP",price:1,pk:"10–16 €/kg",name:{en:"Toulouse sausage",fr:"Saucisse de Toulouse"},latin:"Sus scrofa domesticus",
+{id:"saucisse-de-toulouse",cat:"meat",price:1,pk:"10–16 €/kg",name:{en:"Toulouse sausage",fr:"Saucisse de Toulouse"},latin:"Sus scrofa domesticus",
 origin:{en:"Toulouse, Haute-Garonne",fr:"Toulouse, Haute-Garonne"},season:[],
 flavor:["meaty","rich","peppery","mild"],
 story:{en:"The charcutiers' code des usages fixes its grind: the pork must pass a plate of at least 8 mm, so the fat stays in visible dice instead of emulsifying. Nothing is added to keep it — no nitrite, no smoke — which is why it is sold as a coil, by length, to be cooked within the week.",

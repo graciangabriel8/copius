@@ -489,7 +489,7 @@ fr:"Fouettez-le à la fourchette avant de servir, il s’allège complètement. 
 pairs:["honey","strawberry","chives","shallot","raspberry","cream","black-pepper","dill"],
 svg:'<path class="f1 sf" d="M22 40q0-9 9-13 5-6 13-3 11-3 15 5 10 4 11 11-22 9-48 0z"/><path class="f2 sf" d="M22 40h52l-6 28q-4 6-22 6-18 0-22-6z"/><path class="s" d="M24 48q22 7 46 0" stroke-width="1.5"/><path class="dot" d="M30 56 Q30 53.7 32 54 Q34.2 54 34 56.2 Q34 58 31.8 58.1 Q29.8 57.9 30 56zM42 59 Q42 56.7 44 57 Q46.2 57 46 59.2 Q46 61 43.8 61.1 Q41.8 60.9 42 59zM54 59 Q54 56.7 56 57 Q58.2 57 58 59.2 Q58 61 55.8 61.1 Q53.8 60.9 54 59zM64 55 Q64 52.7 66 53 Q68.2 53 68 55.2 Q68 57 65.8 57.1 Q63.8 56.9 64 55zM36.2 68 Q36.2 65.9 38 66.2 Q40 66.2 39.8 68.2 Q39.8 69.8 37.8 69.9 Q36 69.7 36.2 68zM51.2 69 Q51.2 66.9 53 67.2 Q55 67.2 54.8 69.2 Q54.8 70.8 52.8 70.9 Q51 70.7 51.2 69z"/><path class="s" d="M26 78q22 7 44 0"/>'},
 
-{id:"gaperon",cat:"dairy",sign:"IGP",price:2,pk:"20–30 €/kg",name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
+{id:"gaperon",cat:"dairy",price:2,pk:"20–30 €/kg",name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
 origin:{en:"Limagne, Auvergne",fr:"Limagne, Auvergne"},season:[],
 flavor:["pungent","peppery","milky","salty"],
 story:{en:"The name comes from gape, the Auvergnat word for the buttermilk left in the churn, which is what the cheese was originally made from. Farms hung the domes from the kitchen beam to dry, and the story goes that a suitor's family counted the ones hanging there to judge the size of the dowry.",
@@ -1069,7 +1069,7 @@ fr:"Ne râpez pas les vieilles meules : détachez des copeaux au couteau court e
 pairs:["pear","honey","walnut","grape","black-pepper","prosciutto","apple","butter"],
 svg:'<path class="f2 sf" d="M20 56q28-10 56 0v10q-28 10-56 0z"/><path class="f1 sf" d="M30 46q8-11 17-6-7 2-9 9-5 4-8-3z"/><path class="f1 sf" d="M54 44q9-9 16-2-7 1-9 8-5 3-7-6z"/>'},
 
-{id:"schabziger",cat:"dairy",sign:"AOP",rare:true,price:2,pk:"35–55 €/kg",name:{en:"Schabziger",fr:"Schabziger"},latin:"Glarner Schabziger",
+{id:"schabziger",cat:"dairy",rare:true,price:2,pk:"35–55 €/kg",name:{en:"Schabziger",fr:"Schabziger"},latin:"Glarner Schabziger",
 origin:{en:"Glarus, Switzerland",fr:"Glaris, Suisse"},season:[],
 flavor:["herbal","pungent","salty","grassy"],
 story:{en:"At the Landsgemeinde of 24 April 1463 the citizens of Glarus voted a law requiring every maker to stamp the cones with a mark of origin — the first branded product in Switzerland. The green comes from powdered blue fenugreek, an alpine herb, and not from mould or dye.",
@@ -1089,7 +1089,7 @@ fr:"Son caillage lactique est court : il reste humide et doux — c'est le chèv
 pairs:["walnut","mache","radish","apple","walnut-oil","chives","honey","sorrel"],
 svg:'<path class="f3 sf" d="M34 42h28l8 22H26z"/><ellipse class="f3 sf" cx="48" cy="42" rx="14" ry="5"/><path class="f1 sf" d="M48 43h10l-5 21h-5z"/>'},
 
-{id:"shropshire-blue",cat:"dairy",sign:"PDO",price:2,pk:"30–45 €/kg",name:{en:"Shropshire Blue",fr:"Shropshire Blue"},latin:"Shropshire Blue",
+{id:"shropshire-blue",cat:"dairy",price:2,pk:"30–45 €/kg",name:{en:"Shropshire Blue",fr:"Shropshire Blue"},latin:"Shropshire Blue",
 origin:{en:"Inverness, then Nottinghamshire",fr:"Inverness, puis Nottinghamshire"},season:[],
 flavor:["salty","rich","sweet","umami"],
 story:{en:"It has never been made in Shropshire. Andy Williamson developed it at Castle Stuart near Inverness in the 1970s as Inverness-shire Blue; when the Scottish creamery closed in 1980 two Nottinghamshire dairies took the recipe on, and it was the marketing name that survived.",

@@ -89,7 +89,7 @@ fr:"Gardez-le au froid et mangez-le jeune : sans gochugaru, rien ne masque une f
 pairs:["napa-cabbage","nashi","jujube","chestnut","garlic","ginger","saeujeot","daikon"],
 svg:'<path class="f1 sf" d="M48 20q13 6 13 27t-13 31q-13-10-13-31t13-27Z"/><path class="s" d="M48 24v50M40 34q7 9 0 18M56 34q-7 9 0 18"/><path class="f3 sf" d="M39 72q9 7 18 0-2 8-9 8t-9-8Z"/><circle class="dot" cx="48" cy="48" r="2.2"/>'},
 
-{id:"balsamic",cat:"condiments",sign:"IGP",price:1,pk:"5–12 €/L",name:{en:"Balsamic vinegar",fr:"Vinaigre balsamique"},latin:"Aceto balsamico",
+{id:"balsamic",cat:"condiments",price:1,pk:"5–12 €/L",name:{en:"Balsamic vinegar",fr:"Vinaigre balsamique"},latin:"Aceto balsamico",
 origin:{en:"Modena, Italy",fr:"Modène, Italie"},season:[],
 flavor:["sweet","sour","woody","rich"],
 story:{en:"In Modena’s attics, cooked grape must sleeps through decades in a diminishing row of barrels — oak, chestnut, cherry — each lending its wood to the dream. Families started a battery of barrels at a daughter’s birth: her dowry, aged twenty-five years.",
