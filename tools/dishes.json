@@ -330,42 +330,6 @@
   }
  },
  {
-  "id": "fruit-trompe-l-oeil",
-  "kind": "memorable",
-  "name": {
-   "en": "Trompe-l’œil fruit",
-   "fr": "Fruit trompe-l’œil"
-  },
-  "year": {
-   "en": "c. 2016",
-   "fr": "v. 2016"
-  },
-  "note": {
-   "en": "A dessert moulded and painted as the fruit it is made of, cut open to show it is not one. The first pastry judged as much by photograph as by taste, for better and for worse.",
-   "fr": "Un dessert moulé et peint comme le fruit dont il est fait, tranché pour montrer qu’il n’en est pas un. La première pâtisserie jugée autant sur photographie qu’au goût, pour le meilleur et pour le pire."
-  },
-  "why": {
-   "en": "The shell is thin enough to give under a spoon and flavoured with the fruit it imitates, so the eye is wrong and the mouth is right.",
-   "fr": "La coque est assez fine pour céder sous la cuillère et parfumée du fruit qu’elle imite : l’œil se trompe, la bouche a raison."
-  },
-  "ingredients": [
-   "hazelnut",
-   "sugar",
-   "vanilla"
-  ],
-  "chef": {
-   "id": "grolet",
-   "name": "Cédric Grolet",
-   "born": 1985,
-   "died": null,
-   "country": "FR",
-   "place": {
-    "en": "Le Meurice, Paris",
-    "fr": "Le Meurice, Paris"
-   }
-  }
- },
- {
   "id": "gateau-de-foies-blonds",
   "kind": "signature",
   "name": {
