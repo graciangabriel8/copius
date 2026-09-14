@@ -272,7 +272,12 @@
     el("favsOnlyLbl").textContent = t.favsOnly;
     el("rareOnlyLbl").textContent = t.rareOnly + " ✦";
     el("luxeOnlyLbl").textContent = t.luxeOnly + " ◆";
-    el("signOnlyLbl").textContent = t.signOnly + " AOP";
+    var signs = [];
+    INGREDIENTS.forEach(function (i) {
+      if (i.sign && signs.indexOf(i.sign) === -1) signs.push(i.sign);
+    });
+    signs.sort();
+    el("signOnlyLbl").textContent = t.signOnly + (signs.length ? " (" + signs.join(", ") + ")" : "");
     el("random").textContent = t.random;
     el("labTitle").textContent = t.labTitle;
     el("labHint").textContent = t.labHint;
