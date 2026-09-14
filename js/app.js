@@ -443,7 +443,7 @@
           '" title="' + esc(favs.has(i.id) ? t.favRemove : t.favAdd) + '" aria-label="' + esc(favs.has(i.id) ? t.favRemove : t.favAdd) + '">&#9733;</button>' +
         '<div class="card-main" tabindex="0" role="button">' +
         '<div class="card-art">' + art(i) + "</div>" +
-        "<h3>" + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
+        "<h3>" + esc(name(i)) + signMark(i) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h3>" +
         '<p class="latin">' + esc(i.custom ? t.creationLabel : i.latin) + "</p>" +
         '<p class="cat-line">' + esc(catLabel(i.cat)) + "</p>" +
         '<p class="price-line"><span class="price-band" title="' + esc(T().priceLabel) + '">' +
@@ -508,6 +508,14 @@
       list.slice(PAIR_SHOWN).map(pairChip).join("") + "</div>" +
       '<button type="button" class="linkish pair-more" data-morepairs>' +
       esc(T().morePairs.replace("%d", list.length)) + "</button>";
+  }
+
+  /* Protected designation. Card and modal header only — never a chip: butter alone
+     renders 479 of them and a grid speckled red and blue is unreadable. */
+  function signMark(i) {
+    if (!i.sign) return "";
+    var igp = i.sign === "IGP" || i.sign === "PGI";
+    return ' <span class="sign sign-' + (igp ? "igp" : "aop") + '">' + esc(i.sign) + "</span>";
   }
 
   function pairChip(id) {
@@ -846,7 +854,7 @@
       '</div><p class="drop-hint">' + esc(t.dropHint) + "</p></div>" +
       "<div>" +
       '<p class="m-cat">' + esc(catLabel(i.cat)) + (i.custom ? " · " + esc(t.creationLabel) : "") + "</p>" +
-      '<h2 id="modalTitle">' + esc(name(i)) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h2>" +
+      '<h2 id="modalTitle">' + esc(name(i)) + signMark(i) + (i.rare ? ' <span class="rare-mark" title="' + esc(t.rareMark) + '">✦</span>' : "") + (i.luxe ? ' <span class="luxe-mark" title="' + esc(t.luxeMark) + '">◆</span>' : "") + (i.coeur ? ' <span class="coeur-mark" title="' + esc(t.coeurMark) + '">♥</span>' : "") + "</h2>" +
       '<p class="m-latin">' + (i.custom ? esc(other) : esc(i.latin) + " · " + esc(other)) + "</p>" +
       (i.origin[state.lang] ? '<p class="m-origin">' + esc(t.origin) + " — " + esc(i.origin[state.lang]) + "</p>" : "") +
       (i.price ? '<p class="m-price"><span class="price-band">' + "\u20ac".repeat(i.price) + "</span>" +

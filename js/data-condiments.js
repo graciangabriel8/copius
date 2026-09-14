@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"aceto-balsamico-tradizionale",cat:"condiments",luxe:true,price:4,pk:"600–1 200 €/L (flacon de 100 ml)",name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
+{id:"aceto-balsamico-tradizionale",cat:"condiments",sign:"DOP",luxe:true,price:4,pk:"600–1 200 €/L (flacon de 100 ml)",name:{en:"Aceto Balsamico Tradizionale DOP",fr:"Vinaigre balsamique traditionnel de Modène DOP"},latin:"Vitis vinifera",
 origin:{en:"Modena and Reggio Emilia, Italy",fr:"Modène et Reggio d’Émilie, Italie"},season:[],
 flavor:["sweet","sour","woody","rich"],
 story:{en:"Cooked grape must works its way down a battery of casks — oak, cherry, chestnut, mulberry, juniper — each year giving a little to the barrel below and taking a little from the one above, for twelve years at the very least. Every bottle the tasting panel passes is sold in the same 100 ml bulb, a shape drawn by the car designer Giorgetto Giugiaro.",
@@ -89,7 +89,7 @@ fr:"Gardez-le au froid et mangez-le jeune : sans gochugaru, rien ne masque une f
 pairs:["napa-cabbage","nashi","jujube","chestnut","garlic","ginger","saeujeot","daikon"],
 svg:'<path class="f1 sf" d="M48 20q13 6 13 27t-13 31q-13-10-13-31t13-27Z"/><path class="s" d="M48 24v50M40 34q7 9 0 18M56 34q-7 9 0 18"/><path class="f3 sf" d="M39 72q9 7 18 0-2 8-9 8t-9-8Z"/><circle class="dot" cx="48" cy="48" r="2.2"/>'},
 
-{id:"balsamic",cat:"condiments",price:1,pk:"5–12 €/L",name:{en:"Balsamic vinegar",fr:"Vinaigre balsamique"},latin:"Aceto balsamico",
+{id:"balsamic",cat:"condiments",sign:"IGP",price:1,pk:"5–12 €/L",name:{en:"Balsamic vinegar",fr:"Vinaigre balsamique"},latin:"Aceto balsamico",
 origin:{en:"Modena, Italy",fr:"Modène, Italie"},season:[],
 flavor:["sweet","sour","woody","rich"],
 story:{en:"In Modena’s attics, cooked grape must sleeps through decades in a diminishing row of barrels — oak, chestnut, cherry — each lending its wood to the dream. Families started a battery of barrels at a daughter’s birth: her dowry, aged twenty-five years.",
@@ -489,7 +489,7 @@ fr:"Écrasez-le entre le pouce et l’index au-dessus de l’assiette : il est f
 pairs:["cote-de-boeuf","dark-chocolate","tomato","butter","potato","oyster"],
 svg:'<path class="f1 sf" d="M48 30L66 62H30z"/><path class="s" d="M48 30v32M48 62l-13-7M48 62l13-7"/><path class="f2 sf" d="M28 56L36 70H20z"/><path class="f2 sf" d="M68 58L76 72H60z"/>'},
 
-{id:"fleur-de-sel-guerande",cat:"condiments",price:2,pk:"20–40 €/kg",name:{en:"Fleur de sel de Guérande",fr:"Fleur de sel de Guérande"},latin:"Natrii chloridum",
+{id:"fleur-de-sel-guerande",cat:"condiments",sign:"IGP",price:2,pk:"20–40 €/kg",name:{en:"Fleur de sel de Guérande",fr:"Fleur de sel de Guérande"},latin:"Natrii chloridum",
 origin:{en:"Guérande marshes, Brittany",fr:"Marais salants de Guérande, Bretagne"},season:[6,7,8,9],
 flavor:["salty","marine","delicate"],
 story:{en:"Fleur de sel sets as a thin crust on the surface of the pan on dry days with a light easterly, and the paludier lifts it with a flat wooden board called a lousse without ever touching the clay floor — grey salt is what is raked off the bottom afterwards. The marshes have been worked since the ninth century, and it is the clay that keeps the salt damp: it never fully dries.",
@@ -559,7 +559,7 @@ fr:"Achetez-les non dénoyautées : la machine meurtrit un canal dans la chair o
 pairs:["anchovy","guindilla","manchego","almond","sherry-vinegar","piquillo","thyme","olive-oil"],
 svg:'<ellipse class="f1 sf" cx="48" cy="52" rx="19" ry="25"/><ellipse class="f3 sf" cx="48" cy="36" rx="8" ry="5"/><path class="s" d="M33 48q3 14 15 20M63 48q-3 14-15 20"/>'},
 
-{id:"sel-gris-guerande",cat:"condiments",price:1,pk:"2–5 €/kg",name:{en:"Grey sea salt (sel gris)",fr:"Sel gris de Guérande"},latin:"Natrii chloridum marinum",
+{id:"sel-gris-guerande",cat:"condiments",sign:"IGP",price:1,pk:"2–5 €/kg",name:{en:"Grey sea salt (sel gris)",fr:"Sel gris de Guérande"},latin:"Natrii chloridum marinum",
 origin:{en:"Guérande, Brittany",fr:"Guérande, Bretagne"},season:[6,7,8,9],
 flavor:["salty","briny","marine"],
 story:{en:"The paludiers move seawater by gravity alone through clay basins laid out in the Middle Ages, and let sun and wind take it to saturation. Grey salt is what settles on the clay floor and is raked up damp; fleur de sel is only the thin crust that forms on the surface on a dry, windy afternoon.",
@@ -669,7 +669,7 @@ fr:"Ajoutez-le hors du feu, en fin de course : les composés soufrés qui porten
 pairs:["chickpeas","cucumber","lime","cilantro","cumin","yogurt","tamarind-paste","silken-tofu"],
 svg:'<path class="f1 sf" d="M28 54h40q-2 18-20 18T28 54z"/><path class="f3 sf" d="M34 54q6-16 14-16t14 16z"/><path class="s" d="M40 48q8-4 16 0"/><circle class="dot" cx="72" cy="66" r="2"/>'},
 
-{id:"olive-kalamata",cat:"condiments",price:2,pk:"10–18 €/kg",name:{en:"Kalamata olive",fr:"Olive Kalamata"},latin:"Olea europaea 'Kalamon'",
+{id:"olive-kalamata",cat:"condiments",sign:"PDO",price:2,pk:"10–18 €/kg",name:{en:"Kalamata olive",fr:"Olive Kalamata"},latin:"Olea europaea 'Kalamon'",
 origin:{en:"Messenia, Peloponnese",fr:"Messénie, Péloponnèse"},season:[],
 flavor:["briny","tangy","meaty","fruity"],
 story:{en:"The cultivar is Kalamon, and the name on the label was contested for years between the protected appellation around Kalamata and growers of the same variety elsewhere, until a 2024 Greek supreme court ruling let both use it. The fruit is picked fully ripe and finished in red wine vinegar, which is where the wine note comes from rather than from the olive itself.",
@@ -779,7 +779,7 @@ fr:"Il est plus rond et bien moins agressif que le vinaigre de riz : employez-le
 pairs:["honey","ginger","soy-sauce","pork","cucumber","sesame-oil","rice","hon-mirin"],
 svg:'<path class="f3 sf" d="M42 26h12l-2 8q14 8 14 24t-18 20-18-20 14-24z"/><path class="s" d="M39 26h18"/><path class="s" d="M34 56q14 6 28 0M35 64q13 5 26 0"/>'},
 
-{id:"olive-lucques",cat:"condiments",price:2,pk:"16–28 €/kg",name:{en:"Lucques olive",fr:"Olive lucques"},latin:"Olea europaea 'Lucques'",
+{id:"olive-lucques",cat:"condiments",sign:"AOP",price:2,pk:"16–28 €/kg",name:{en:"Lucques olive",fr:"Olive lucques"},latin:"Olea europaea 'Lucques'",
 origin:{en:"Herault and Aude, Languedoc",fr:"Hérault et Aude, Languedoc"},season:[9,10],
 flavor:["buttery","nutty","delicate"],
 story:{en:"The Lucques is hand-picked green in late September and October and sold within weeks as olives nouvelles, under an appellation covering the Hérault and the Aude. Its crescent comes from the fruit's own shape, and the flesh is soft enough to leave the stone whole: it is never cracked before curing.",
@@ -949,7 +949,7 @@ fr:"Torréfiez les flocons à sec une minute avant usage, la note de noisette do
 pairs:["cashew","garlic","kale","corn","potato","mustard","black-pepper","tomato"],
 svg:'<path class="f1 sf" d="M28 54q0-12 14-12t14 12-14 12-14-12z"/><path class="f2 sf" d="M32 46q10-10 20 0z"/><path class="s" d="M56 48l14-12"/><circle class="dot" cx="64" cy="58" r="2"/><circle class="dot" cx="70" cy="64" r="2"/>'},
 
-{id:"olive-nyons",cat:"condiments",price:2,pk:"18–30 €/kg",name:{en:"Nyons olive",fr:"Olive de Nyons"},latin:"Olea europaea 'Tanche'",
+{id:"olive-nyons",cat:"condiments",sign:"AOP",price:2,pk:"18–30 €/kg",name:{en:"Nyons olive",fr:"Olive de Nyons"},latin:"Olea europaea 'Tanche'",
 origin:{en:"Nyons, Drome",fr:"Nyons, Drôme"},season:[],
 flavor:["fruity","sweet","salty"],
 story:{en:"The Tanche of the Baronnies became the first French olive to win an appellation, in 1994, and it grows to any purpose almost nowhere else. It is left on the tree until it is fully black and wrinkled, then cured in dry salt rather than brine, which is why it tastes nearer a prune than a pickle.",

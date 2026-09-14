@@ -469,7 +469,7 @@ fr:"Pour l’huile pimentée, concassez-les gros et versez l’huile de colza à
 pairs:["doubanjiang","sichuan-pepper","rapeseed-oil","star-anise","cassia","black-cardamom","garlic"],
 svg:'<path class="f2 sf" d="M38 22q5 1 5 7 0 26 8 36 8 10 18 4 6-4 7 1t-8 8q-16 4-24-8Q36 56 36 30q0-6 2-8z"/><path class="s" d="M38 18q0-5 6-5"/><path class="s" d="M41 32q0 22 8 32"/>'},
 
-{id:"espelette",cat:"spices",price:3,pk:"200–400 €/kg",name:{en:"Espelette pepper",fr:"Piment d’Espelette"},latin:"Capsicum annuum 'Gorria'",
+{id:"espelette",cat:"spices",sign:"AOP",price:3,pk:"200–400 €/kg",name:{en:"Espelette pepper",fr:"Piment d’Espelette"},latin:"Capsicum annuum 'Gorria'",
 origin:{en:"Basque Country, France",fr:"Pays basque, France"},season:[],
 flavor:["fruity","warm","hot","smoky"],
 story:{en:"Brought back from the Americas in the 16th century, the pepper found its terroir in ten Basque villages, where autumn façades disappear under garlands of drying red pods. Protected like a great wine, it long replaced black pepper in Basque kitchens — warmth with a sunset colour.",

@@ -129,7 +129,7 @@ fr:"Une seule noix peut porter plus d’une journée de sélénium. C’est une 
 pairs:["dark-chocolate","honey","coffee","vanilla","cream","banana","coconut-milk","date"],
 svg:'<path class="f2 sf" d="M30 24q10 10 13 26 4 12 2 24-12 5-20 1-4-16-1-27 2-14 6-24z"/><path class="f2 sf" d="M30 24q10 10 13 26 4 12 2 24-6 2-10 1 2-28-5-51z"/><path class="f1 sf" d="M64 22q9 11 11 27 2 12 0 21-11 4-17 0-3-13 0-23 1-14 6-25z"/><path class="f2 sf" d="M64 22q9 11 11 27 2 12 0 21-8 3-12 2 3-35 1-50z"/><path class="s" d="M34 32q-2 18-1 36M60 32q-2 17-1 32M68 38q3 13 2 26" stroke-width="1.5"/>'},
 
-{id:"bronte-pistachio",cat:"nuts",luxe:true,price:4,pk:"90–180 €/kg",name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
+{id:"bronte-pistachio",cat:"nuts",sign:"DOP",luxe:true,price:4,pk:"90–180 €/kg",name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
 origin:{en:"Bronte, Sicily",fr:"Bronte, Sicile"},season:[8,9],
 flavor:["resinous","herbal","nutty","rich"],
 story:{en:"The trees grow out of fissures in Etna's lava, grafted onto wild terebinth, and they crop in odd years only: growers strip the buds in the even year so the whole harvest arrives at once. Nothing mechanical holds on that ground, which is why the crop still comes down the mountain in baskets.",
@@ -279,7 +279,7 @@ fr:"Mettez des gants et n'utilisez pas de planche en bois : la juglone du brou t
 pairs:["sugar","clove","cinnamon","lemon","vanilla","dark-rum"],
 svg:'<circle class="f2 sf" cx="46" cy="54" r="20"/><path class="f1 sf" d="M46 34q4-14 18-16-2 14-16 18z"/><path class="f1 sf" d="M42 34q-6-12-18-12 4 12 16 16z"/><path class="s" d="M20 60h52"/><circle class="dot" cx="75" cy="60" r="2"/>'},
 
-{id:"grenoble-walnut",cat:"nuts",price:2,pk:"9–16 €/kg",name:{en:"Grenoble walnut",fr:"Noix de Grenoble"},latin:"Juglans regia (Franquette)",
+{id:"grenoble-walnut",cat:"nuts",sign:"AOP",price:2,pk:"9–16 €/kg",name:{en:"Grenoble walnut",fr:"Noix de Grenoble"},latin:"Juglans regia (Franquette)",
 origin:{en:"Isère, Drôme and Savoie",fr:"Isère, Drôme et Savoie"},season:[9,10,11],
 flavor:["nutty","buttery","mild"],
 story:{en:"Three varieties are permitted and Franquette is nearly all of it: walnuts from the valleys around Grenoble took an appellation in 1938, among the first granted to anything that was not wine. The rule that carries it is that they are sold in the shell and dated by harvest, and that date is the only real information on the sack — walnut oil turns rancid inside the shell as readily as out.",
@@ -429,7 +429,7 @@ fr:"Incorporez la poudre hors du feu, tout à la fin : maintenue à ébullition,
 pairs:["doenjang","sesame-oil","garlic","spinach","napa-cabbage","soy-sauce","pork"],
 svg:'<path class="f2 sf" d="M26 52h44q-2 18-22 18T26 52z"/><path class="f1 sf" d="M32 52q6-11 16-11t16 11z"/><path class="s" d="M48 41V30"/><path class="f2 sf" d="M48 30q-14 0-16-12 14-2 16 12z"/>'},
 
-{id:"piedmont-hazelnut",cat:"nuts",price:3,pk:"30–55 €/kg",name:{en:"Piedmont hazelnut",fr:"Noisette du Piémont"},latin:"Corylus avellana (Tonda Gentile Trilobata)",
+{id:"piedmont-hazelnut",cat:"nuts",sign:"IGP",price:3,pk:"30–55 €/kg",name:{en:"Piedmont hazelnut",fr:"Noisette du Piémont"},latin:"Corylus avellana (Tonda Gentile Trilobata)",
 origin:{en:"Langhe, Piedmont",fr:"Langhe, Piémont"},season:[9,10],
 flavor:["nutty","toasty","buttery","rich"],
 story:{en:"The Tonda Gentile's distinction is mechanical before it is aromatic: roast it and the pellicle lets go completely, where most hazelnuts leave shreds of bitter skin welded to the kernel. Turin's confectioners settled on it for that while stretching scarce cocoa with ground nut under Napoleon's blockade, and gianduja still specifies it.",

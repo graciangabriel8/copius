@@ -269,7 +269,7 @@ fr:"Cuisez-le vite et fort, ou longtemps et doucement — jamais entre les deux.
 pairs:["butter","juniper","caraway","lard","apple","black-pepper","onion","potato"],
 svg:'<path class="f2 sf" d="M34 61Q24 60 20 64 16 69 22 72 29 74 35 70 40 66 42 62Z"/><path class="f2 sf" d="M62 61Q72 60 76 64 80 69 74 72 67 74 61 70 56 66 54 62Z"/><path class="f1 sf" d="M46 22Q56 19 60 26 72 30 72 44 74 58 62 64 48 71 36 64 24 58 24 46 23 33 32 27 38 21 46 22Z"/><path class="s" d="M27 42Q37 31 51 31 63 32 70 42" stroke-width="2"/><path class="s" d="M32 53Q40 43 53 43 63 44 68 53M40 62Q42 50 38 42M54 63Q54 50 58 44M48 66v8" stroke-width="1.5"/>'},
 
-{id:"calcot",cat:"vegetables",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Calçot",fr:"Calçot"},latin:"Allium cepa",
+{id:"calcot",cat:"vegetables",sign:"IGP",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Calçot",fr:"Calçot"},latin:"Allium cepa",
 origin:{en:"Valls, Catalonia (IGP)",fr:"Valls, Catalogne (IGP)"},season:[12,1,2,3],
 flavor:["sweet","smoky","mild"],
 story:{en:"Calçar means to earth up, and that is the whole trick: an onion is replanted and soil heaped around the shoot all winter so it runs long and white. Valls in Catalonia credits the invention to a nineteenth-century farmer nicknamed Xat de Benaiges, and holds a calçotada every winter to say so.",
@@ -529,7 +529,7 @@ fr:"Salez le concombre émincé vingt minutes et égouttez-le avant d’assaison
 pairs:["dill","yogurt","mint","garlic","lemon","feta","tomato","white-wine-vinegar"],
 svg:'<path class="f2 sf" d="M36 26q10-2 14 8t2 34q-2 10-10 8t-8-14 0-28 2-8z"/><path class="s" d="M42 36v34"/><circle class="dot" cx="38" cy="46" r="1.5"/><circle class="dot" cx="46" cy="58" r="1.5"/>'},
 
-{id:"cevennes-sweet-onion",cat:"vegetables",price:2,pk:"3,50–6 €/kg",name:{en:"Cévennes sweet onion",fr:"Oignon doux des Cévennes"},latin:"Allium cepa",
+{id:"cevennes-sweet-onion",cat:"vegetables",sign:"AOP",price:2,pk:"3,50–6 €/kg",name:{en:"Cévennes sweet onion",fr:"Oignon doux des Cévennes"},latin:"Allium cepa",
 origin:{en:"Cévennes terraces, Gard",fr:"Bancels des Cévennes, Gard"},season:[8,9,10,11],
 flavor:["sweet","mild","fresh"],
 story:{en:"It is grown on bancels, the dry-stone terraces monks began cutting into the Cévennes hillsides in the Middle Ages, and a tithe record of 1409 already mentions the local onion. It took the first AOC ever granted to an onion in 2003 and the European AOP in 2008.",
@@ -1029,7 +1029,7 @@ fr:"Épluchez-les et laissez-les tremper une journée à l'eau froide, changée 
 pairs:["olive-oil","red-wine-vinegar","garlic","egg","pork","chili","parsley","potato"],
 svg:'<path class="f2 sf" d="M48 40q16 0 16 17t-16 17-16-17 16-17z"/><path class="s" d="M48 40V20M43 30q5-10 11-13M53 30q-5-10-11-13"/><circle class="dot" cx="41" cy="16" r="2.5"/><circle class="dot" cx="55" cy="15" r="2.5"/><path class="s" d="M44 74v6M52 74v6"/>'},
 
-{id:"lautrec-pink-garlic",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Lautrec pink garlic",fr:"Ail rose de Lautrec"},latin:"Allium sativum",
+{id:"lautrec-pink-garlic",cat:"vegetables",sign:"IGP",price:2,pk:"12–20 €/kg",name:{en:"Lautrec pink garlic",fr:"Ail rose de Lautrec"},latin:"Allium sativum",
 origin:{en:"Lautrec, Tarn",fr:"Lautrec, Tarn"},season:[7,8,9,10,11,12],
 flavor:["sweet","pungent","mild"],
 story:{en:"It took Label Rouge in 1966, among the very first French agricultural products to hold one, and the IGP thirty years later. The pink is only the tunic over the cloves — the clove itself is white — and the trade sells it plaited into manouilles because the braid keeps the necks dry.",
@@ -1659,7 +1659,7 @@ fr:"Ne l’émincez pas : c’est la rose que vous payez. Ne détachez les feuil
 pairs:["olive-oil","pancetta","egg","walnut","balsamic","polenta-bramata"],
 svg:'<path class="f1 sf" d="M48 20q22 4 26 24t-26 32-26-32 26-24z"/><path class="f2 sf" d="M48 32q16 3 18 17t-18 22-18-22 18-17z"/><path class="f3 sf" d="M48 44q10 2 11 11t-11 13-11-13 11-11z"/><path class="s" d="M28 40q10 6 20 4t20-4M34 62q8-6 14-6t14 6"/><path class="s" d="M48 76v8"/>'},
 
-{id:"roscoff-pink-onion",cat:"vegetables",price:2,pk:"4–7 €/kg",name:{en:"Roscoff pink onion",fr:"Oignon rosé de Roscoff"},latin:"Allium cepa",
+{id:"roscoff-pink-onion",cat:"vegetables",sign:"AOP",price:2,pk:"4–7 €/kg",name:{en:"Roscoff pink onion",fr:"Oignon rosé de Roscoff"},latin:"Allium cepa",
 origin:{en:"Roscoff, Brittany (AOP)",fr:"Roscoff, Bretagne (AOP)"},season:[8,9,10,11,12,1,2,3,4],
 flavor:["sweet","mild","fresh"],
 story:{en:"From 1828 Breton growers sailed to Britain with this onion and sold it door to door from bicycles, strings across the handlebars - the Onion Johnnies, who gave the English their picture of a Frenchman in a beret. It took AOC status in 2009, the first French onion to be given one.",

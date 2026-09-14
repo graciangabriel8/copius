@@ -9,7 +9,7 @@ fr:"Une cuillère à café fait une dose entière dans une sauce de coquillages 
 pairs:["oyster","scallop","fennel","cream","lobster","mussel","butter","shallot"],
 svg:'<path class="f1 sf" d="M34 34h28l-4 26q-1 6-10 6t-10-6z"/><path class="f2" d="M39 52h18l-2 8q-1 4-7 4t-7-4z"/><path class="s" d="M48 66v12M38 80h20"/><path class="s" d="M28 30h40"/><path class="f3 sf" d="M42 22h12v8H42z"/>'},
 
-{id:"amontillado",cat:"cellar",price:2,pk:"16–30 €/L",name:{en:"Amontillado",fr:"Amontillado"},latin:"Vitis vinifera 'Palomino'",
+{id:"amontillado",cat:"cellar",sign:"DOP",price:2,pk:"16–30 €/L",name:{en:"Amontillado",fr:"Amontillado"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["nutty","woody","rich"],
 story:{en:"The name means in the manner of Montilla, the neighbouring region whose wines aged without a flor veil. An amontillado begins as a fino, then the veil is killed — by a further dose of spirit, or simply by starving it — and the wine spends years exposed to air, so it carries the yeast notes of its first life and hazelnut oxidation from its second.",
@@ -19,7 +19,7 @@ fr:"Il est sec, si profond que soit son nez : goûtez avant de sucrer quoi que c
 pairs:["jamon-serrano","porc-iberique-bellota","mushroom","almond","onion","chicken"],
 svg:'<ellipse class="f1 sf" cx="34" cy="62" rx="14" ry="12"/><ellipse class="f1 sf" cx="62" cy="62" rx="14" ry="12"/><ellipse class="f2 sf" cx="48" cy="36" rx="14" ry="12"/><path class="s" d="M34 50v24M62 50v24M48 24v24"/><circle class="dot" cx="48" cy="36" r="3"/>'},
 
-{id:"armagnac",cat:"cellar",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
+{id:"armagnac",cat:"cellar",sign:"AOP",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
 origin:{en:"Gascony, southwest France",fr:"Gascogne, Sud-Ouest de la France"},season:[],
 flavor:["fruity","woody","warm","rich"],
 story:{en:"Baco 22A is a hybrid, crossed at the end of the nineteenth century in the wake of phylloxera, and Armagnac is the one French appellation still allowed to keep a hybrid in the vineyard. A single low-strength run through the alambic armagnacais leaves in the heavy aromatics that a second distillation would strip, which is why it reads as prune and violet where Cognac reads as flowers.",
@@ -29,7 +29,7 @@ fr:"Ces composés lourds tiennent la chaleur là où le cognac disparaît : une 
 pairs:["prune","foie-gras","duck","magret","walnut","dark-chocolate","pork","pear"],
 svg:'<path class="f2 sf" d="M22 48q0-16 15-16t15 16v18q0 8-8 8H30q-8 0-8-8z"/><path class="s" d="M22 62h30M37 32V22"/><path class="s" d="M37 22h22q9 0 9 11v13"/><path class="f1 sf" d="M60 46h16v10q0 10-8 10t-8-10z"/>'},
 
-{id:"banyuls-wine",cat:"cellar",price:2,pk:"13–25 €/L",name:{en:"Banyuls",fr:"Banyuls"},latin:"Vitis vinifera 'Grenache noir'",
+{id:"banyuls-wine",cat:"cellar",sign:"AOP",price:2,pk:"13–25 €/L",name:{en:"Banyuls",fr:"Banyuls"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Banyuls, Roussillon",fr:"Banyuls, Roussillon"},season:[],
 flavor:["sweet","nutty","rich"],
 story:{en:"Mutage — killing the ferment with spirit while the sugar is still the grape's own — is credited to Arnaud de Villeneuve, physician at Montpellier around 1285, and it underlies every vin doux naturel. At Banyuls the wine then spends years in glass bonbonnes left out in the sun and in old foudres, deliberately oxidising into the walnut-and-cocoa note the trade calls rancio.",
@@ -39,7 +39,7 @@ fr:"Réduisez-le avec un fond de canard et un zeste d’orange, et arrêtez tant
 pairs:["duck","dark-chocolate","roquefort","walnut","orange","fig"],
 svg:'<g transform="translate(6.96 7.25) scale(0.855)"><circle class="f1 sf" cx="44" cy="58" r="21"/><path class="f3 sf" d="M38 39h12v-10H38z"/><path class="s" d="M25 56q19 9 38 0"/><circle class="s" cx="72" cy="24" r="7"/></g>'},
 
-{id:"brandy-de-jerez",cat:"cellar",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
+{id:"brandy-de-jerez",cat:"cellar",sign:"IGP",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["sweet","woody","nutty","rich"],
 story:{en:"The wine is Airen from La Mancha, but the spirit only becomes Brandy de Jerez by ageing inside the sherry triangle, in butts that already held oloroso or Pedro Ximenez: here the appellation is the cask, not the vineyard. It moves down through criaderas and a solera exactly as the sherry does, so no bottle is ever of one single year.",
@@ -49,7 +49,7 @@ fr:"Il arrive déjà chargé de raisin sec et de sucre oxydé : réduisez le suc
 pairs:["pork","oloroso","raisin","almond","jamon-serrano","rognons","dark-chocolate","orange"],
 svg:'<path class="f2 sf" d="M22 54q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="f2 sf" d="M50 54q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="f1 sf" d="M36 28q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="s" d="M28 55v16M40 55v16M56 55v16M68 55v16M42 29v16M54 29v16"/>'},
 
-{id:"calvados",cat:"cellar",price:2,pk:"28–55 €/L",name:{en:"Calvados",fr:"Calvados"},latin:"Malus domestica",
+{id:"calvados",cat:"cellar",sign:"AOP",price:2,pk:"28–55 €/L",name:{en:"Calvados",fr:"Calvados"},latin:"Malus domestica",
 origin:{en:"Normandy",fr:"Normandie"},season:[],
 flavor:["fruity","warm","woody"],
 story:{en:"Calvados Domfrontais must be at least thirty percent pear, which is why it smells of orchard rather than of apple alone, and the Pays d'Auge is distilled twice in a pot still where the rest of Normandy runs once through a column. The cider apples behind it are bitter, tannic varieties no one would eat out of hand - they were bred for tannin, not for the fruit bowl.",
@@ -79,7 +79,7 @@ fr:"Une cuillère à café pour 500 g de porc est la juste mesure au char siu ; 
 pairs:["pork","honey","soy-sauce","star-anise","chinese-five-spice","garlic","ginger","hoisin-sauce"],
 svg:'<path class="f2 sf" d="M42 34h12v6q10 6 10 18v14q0 6-6 6H38q-6 0-6-6V58q0-12 10-18z"/><path class="s" d="M32 62h32"/><path class="f1 sf" d="M48 12q9 0 9 8t-9 10q-9-2-9-10t9-8z"/><path class="s" d="M43 20q5-4 10 0M48 30v4"/>'},
 
-{id:"cognac",cat:"cellar",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
+{id:"cognac",cat:"cellar",sign:"AOP",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
 origin:{en:"Charente & Charente-Maritime",fr:"Charente et Charente-Maritime"},season:[],
 flavor:["fruity","floral","warm","woody"],
 story:{en:"Ugni blanc makes a wine too thin and too acid to drink, around nine percent, which is precisely what the charentais still wants - and it is now very nearly all that Cognac plants. The angels' share, two or three percent of each cask lost to the air every year, feeds a black fungus called Baudoinia on the town's walls, so the ageing cellars can be found by their soot.",
@@ -89,7 +89,7 @@ fr:"Flambez hors du feu et loin de la hotte : versez, laissez tiédir quelques s
 pairs:["lobster","foie-gras","cream","shallot","butter","prune","tarragon","chestnut"],
 svg:'<path class="f1 sf" d="M32 26h32q4 20-16 30-20-10-16-30z"/><path class="f2" d="M34 40q14 6 28 0-4 12-14 16-10-4-14-16z"/><path class="s" d="M48 56v16M36 74h24"/>'},
 
-{id:"creme-de-cassis",cat:"cellar",price:2,pk:"18–32 €/L",name:{en:"Crème de cassis de Dijon",fr:"Crème de cassis de Dijon"},latin:"Ribes nigrum",
+{id:"creme-de-cassis",cat:"cellar",sign:"IGP",price:2,pk:"18–32 €/L",name:{en:"Crème de cassis de Dijon",fr:"Crème de cassis de Dijon"},latin:"Ribes nigrum",
 origin:{en:"Côte-d'Or, Burgundy",fr:"Côte-d’Or, Bourgogne"},season:[],
 flavor:["sweet","fruity","sour","rich"],
 story:{en:"European law reserves the word creme for a minimum of 250 grams of sugar a litre, and raises it to 400 for blackcurrant alone, because the fruit's acidity demands it. The aperitif took the name of Felix Kir, a canon and post-war mayor of Dijon who served blanc-cassis at his receptions - the drink itself was a good deal older than he was.",
@@ -109,7 +109,7 @@ fr:"Pour un baba, imbibez autour de 55 °C et ajoutez le rhum au sirop hors du f
 pairs:["vanilla","raisin","dark-chocolate","banana","coffee","pineapple","butter","cinnamon"],
 svg:'<path class="f3 sf" d="M40 28h16v10q12 8 12 20v16q0 6-6 6H34q-6 0-6-6V58q0-12 12-20z"/><path class="f1 sf" d="M30 56h36v14H30z"/><path class="s" d="M34 63h28"/><path class="f2 sf" d="M38 20h20v8H38z"/>'},
 
-{id:"fino-sherry",cat:"cellar",price:2,pk:"12–22 €/L",name:{en:"Fino sherry",fr:"Xérès fino"},latin:"Vitis vinifera 'Palomino'",
+{id:"fino-sherry",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"Fino sherry",fr:"Xérès fino"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez de la Frontera, Andalusia",fr:"Jerez de la Frontera, Andalousie"},season:[],
 flavor:["nutty","briny","delicate"],
 story:{en:"Fortify Palomino to about fifteen degrees and a film of yeast, the flor, grows across the surface of the butt and lives there, eating the last sugar and glycerol and sealing the wine from air. Push the spirit half a degree higher and the veil dies, which is the whole difference between a fino and an amontillado.",
@@ -119,7 +119,7 @@ fr:"Traitez-le comme un produit vivant, pas comme un vin muté : bouteille ouver
 pairs:["jamon-serrano","almond","olive-gordal","anchovy","manchego","shrimp"],
 svg:'<path class="f1 sf" d="M36 24h24q0 24-12 30-12-6-12-30z"/><path class="s" d="M48 54v16M38 72h20"/><path class="s" d="M37 32h22"/><circle class="dot" cx="42" cy="29" r="1.8"/><circle class="dot" cx="48" cy="28" r="1.8"/><circle class="dot" cx="54" cy="29" r="1.8"/>'},
 
-{id:"floc-de-gascogne",cat:"cellar",price:2,pk:"13–24 €/L",name:{en:"Floc de Gascogne",fr:"Floc de Gascogne"},latin:"Vitis vinifera",
+{id:"floc-de-gascogne",cat:"cellar",sign:"AOP",price:2,pk:"13–24 €/L",name:{en:"Floc de Gascogne",fr:"Floc de Gascogne"},latin:"Vitis vinifera",
 origin:{en:"Gascony, Gers",fr:"Gascogne, Gers"},season:[],
 flavor:["sweet","fruity","warm"],
 story:{en:"Lo floc is Gascon for a bouquet of flowers, and the appellation, recognised in 1990, is the region's own mistelle: fresh must muted with Armagnac from the same estate. Armagnac is distilled once, at low strength, and keeps more of the grape than Cognac does — which is why Floc arrives with prune and rancio weight where Pineau stays bright.",
@@ -129,7 +129,7 @@ fr:"Déglacez un magret avec, en y jetant deux pruneaux qui gonfleront dans la r
 pairs:["duck","prune","foie-gras","armagnac","walnut","cantaloupe"],
 svg:'<path class="f2 sf" d="M36 22h12v10q10 6 10 16v28a5 5 0 0 1-5 5H31a5 5 0 0 1-5-5V48q0-10 10-16z"/><path class="f3 sf" d="M36 19h12v6H36z"/><circle class="f1 sf" cx="70" cy="40" r="5"/><circle class="f1 sf" cx="70" cy="52" r="5"/><circle class="f1 sf" cx="76" cy="46" r="5"/><circle class="dot" cx="70" cy="46" r="2.5"/>'},
 
-{id:"grappa",cat:"cellar",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
+{id:"grappa",cat:"cellar",sign:"IGP",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
 origin:{en:"Italy (Friuli, Veneto, Piedmont)",fr:"Italie (Frioul, Vénétie, Piémont)"},season:[],
 flavor:["floral","fruity","warm","pungent"],
 story:{en:"Grappa was sold by the demijohn as a peasant spirit until 1973, when the Nonino distillery ran a single grape variety, Picolit, on its own and bottled it like a wine; every single-varietal grappa since dates from that one decision. The law asks for Italian pomace distilled in Italy, and the fresher the marc reaches the still, the more flowers and the less earth end up in the glass.",
@@ -159,7 +159,7 @@ fr:"Dans la fondue, ce n’est pas un arôme mais une mécanique : une cuilleré
 pairs:["cherry","dark-chocolate","gruyere","emmentaler","cream","almond","apricot","griotte"],
 svg:'<path class="f1 sf" d="M44 14h8v20q8 8 8 20v20q0 4-4 4H40q-4 0-4-4V54q0-12 8-20z"/><path class="s" d="M36 62h24"/><circle class="f3 sf" cx="26" cy="66" r="8"/><circle class="f2 sf" cx="70" cy="68" r="7"/><path class="s" d="M26 58q2-14 14-18M70 61q0-12-12-16"/>'},
 
-{id:"macvin-du-jura",cat:"cellar",rare:true,price:2,pk:"20–32 €/L",name:{en:"Macvin du Jura",fr:"Macvin du Jura"},latin:"Vitis vinifera",
+{id:"macvin-du-jura",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"20–32 €/L",name:{en:"Macvin du Jura",fr:"Macvin du Jura"},latin:"Vitis vinifera",
 origin:{en:"Jura, France",fr:"Jura, France"},season:[],
 flavor:["sweet","warm","woody"],
 story:{en:"Macvin is the only French appellation whose mistelle is muted with marc — oak-aged pomace brandy — rather than with a wine brandy, and the name carries it: mac, for marc. Recognised in 1991, it is the youngest of the Jura appellations and the one that tastes least like wine, all pressed skins and warm spice.",
@@ -169,7 +169,7 @@ fr:"Une cuillerée dans une sauce à la crème, hors du feu, apporte une note é
 pairs:["comte","walnut","cream","morel","pear","chestnut"],
 svg:'<path class="f2 sf" d="M26 56a18 18 0 0 1 36 0v14a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6z"/><path class="f1 sf" d="M36 42h16v10H36z"/><path class="s" d="M52 44q14 0 16 12t0 18"/><circle class="dot" cx="68" cy="80" r="2"/>'},
 
-{id:"madeira-malmsey",cat:"cellar",price:2,pk:"20–45 €/L",name:{en:"Malmsey Madeira",fr:"Madère Malvoisie"},latin:"Vitis vinifera 'Malvasia'",
+{id:"madeira-malmsey",cat:"cellar",sign:"DOP",price:2,pk:"20–45 €/L",name:{en:"Malmsey Madeira",fr:"Madère Malvoisie"},latin:"Vitis vinifera 'Malvasia'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
 flavor:["sweet","rich","nutty","warm"],
 story:{en:"Malmsey is an English mangling of Monemvasia, the Peloponnesian port that shipped Malvasia wine across medieval Europe long before the vine reached Madeira. Chroniclers record that the Duke of Clarence, condemned in 1478, was allowed to choose his death and asked to be drowned in a butt of it — a story repeated for five centuries with no way left to check it.",
@@ -179,7 +179,7 @@ fr:"C’est son acidité qui empêche le sucre d’écœurer : réduisez douceme
 pairs:["dark-chocolate","dried-fig","walnut","medjool-date","orange","cream"],
 svg:'<path class="f2 sf" d="M28 30h40q7 20 0 40H28q-7-20 0-40z"/><path class="s" d="M25 42h46M25 58h46"/><path class="f3 sf" d="M45 70h6v6h-6z"/><circle class="dot" cx="48" cy="82" r="2"/>'},
 
-{id:"manzanilla-sherry",cat:"cellar",price:2,pk:"12–22 €/L",name:{en:"Manzanilla",fr:"Manzanilla"},latin:"Vitis vinifera 'Palomino'",
+{id:"manzanilla-sherry",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"Manzanilla",fr:"Manzanilla"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Sanlúcar de Barrameda, Cádiz",fr:"Sanlúcar de Barrameda, Cadix"},season:[],
 flavor:["briny","delicate","fresh"],
 story:{en:"Same grape and same flor as a fino, but only wine aged in Sanlúcar's bodegas at the mouth of the Guadalquivir may be called manzanilla: Atlantic humidity keeps the yeast veil thick through the summer, when it thins and lets air in further inland. The result is lighter and openly saline, which is why the sherry towns pour it with shellfish and with little else.",
@@ -199,7 +199,7 @@ fr:"C’est une liqueur sèche, qui ne sucrera pas un sirop à elle seule : dans
 pairs:["cherry","griotte","amarena","cream","vanilla","dark-chocolate","peach","pistachio"],
 svg:'<path class="f2 sf" d="M44 14h8v14q16 8 16 26t-20 22-20-22 16-26z"/><path class="f1 sf" d="M30 52q4-8 18-8t18 8q2 22-18 24T30 52z"/><path class="s" d="M32 52l32 14M64 52l-32 14M48 44v32"/>'},
 
-{id:"marc-de-bourgogne",cat:"cellar",price:3,pk:"35–65 €/L",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
+{id:"marc-de-bourgogne",cat:"cellar",sign:"AOP",price:3,pk:"35–65 €/L",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
 origin:{en:"Burgundy",fr:"Bourgogne"},season:[],
 flavor:["earthy","woody","warm","pungent"],
 story:{en:"It is made from what the press leaves behind - skins, pips and stalks, wetted down and fermented a second time - which is why it was the grower's own drink rather than the merchant's. Epoisses and Ami du Chambertin are washed with it through their ripening, so a good part of what you smell in the cheese is the spirit.",
@@ -209,7 +209,7 @@ fr:"Pour laver une pâte molle, comptez environ une part de marc pour cinq ou si
 pairs:["epoisses","cream","mushroom","chicken","butter","shallot","grape","comte"],
 svg:'<path class="f2 sf" d="M26 44h44v26a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6z"/><path class="s" d="M36 44v32M48 44v32M60 44v32"/><path class="f3 sf" d="M30 34h36v10H30z"/><path class="s" d="M48 34V18M38 18h20"/>'},
 
-{id:"marsala-dolce",cat:"cellar",price:2,pk:"10–20 €/L",name:{en:"Marsala dolce",fr:"Marsala doux"},latin:"Vitis vinifera 'Grillo'",
+{id:"marsala-dolce",cat:"cellar",sign:"DOP",price:2,pk:"10–20 €/L",name:{en:"Marsala dolce",fr:"Marsala doux"},latin:"Vitis vinifera 'Grillo'",
 origin:{en:"Marsala, Sicily",fr:"Marsala, Sicile"},season:[],
 flavor:["sweet","rich","toasty","fruity"],
 story:{en:"The sweetness is added rather than fermented in: producers stop the wine with mosto cotto, must boiled down to caramel, and with sifone, a mistelle of must muted with spirit. That is why dolce and secco stand on different shelves in a Sicilian kitchen and are never poured from the same bottle by mistake.",
@@ -219,7 +219,7 @@ fr:"Pour le sabayon, par jaune d’œuf : une demi-coquille de sucre, une de mar
 pairs:["egg","sugar","mascarpone","coffee","dark-chocolate","almond"],
 svg:'<path class="f1 sf" d="M24 44h48q-5 28-24 28T24 44z"/><path class="f2 sf" d="M26 44q5-9 12-5t10 0 12 1 8 4z"/><path class="s" d="M70 20L58 40"/><path class="s" d="M62 34q-8 8-4 14M67 37q-6 6-3 12"/>'},
 
-{id:"marsala-secco",cat:"cellar",price:2,pk:"10–20 €/L",name:{en:"Marsala secco",fr:"Marsala sec"},latin:"Vitis vinifera 'Grillo'",
+{id:"marsala-secco",cat:"cellar",sign:"DOP",price:2,pk:"10–20 €/L",name:{en:"Marsala secco",fr:"Marsala sec"},latin:"Vitis vinifera 'Grillo'",
 origin:{en:"Marsala, Sicily",fr:"Marsala, Sicile"},season:[],
 flavor:["bitter","nutty","woody"],
 story:{en:"John Woodhouse, a Liverpool merchant sheltering at Marsala in 1773, fortified the local wine for the voyage home and found that England would buy it; a quarter-century later Nelson's fleet was ordering it by the pipe. The dry bottling, from Grillo grown on the western Sicilian plain, finishes on bitter almond — the note that reads as savoury depth in a pan sauce.",
@@ -229,7 +229,7 @@ fr:"Prenez la bouteille marquée secco ou vergine : la version douce transforme 
 pairs:["quasi-de-veau","chicken","mushroom","sage","butter","parmesan"],
 svg:'<path class="f1 sf" d="M22 46h40v10a12 12 0 0 1-12 12H34a12 12 0 0 1-12-12z"/><path class="s" d="M62 50l16-6"/><path class="s" d="M26 46q8-9 16-3t18-3"/><path class="f2 sf" d="M70 60q6 4 6 9t-6 7q-5-2-5-7t5-9z"/>'},
 
-{id:"maury",cat:"cellar",rare:true,price:2,pk:"12–24 €/L",name:{en:"Maury",fr:"Maury"},latin:"Vitis vinifera 'Grenache noir'",
+{id:"maury",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–24 €/L",name:{en:"Maury",fr:"Maury"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Agly valley, Roussillon",fr:"Vallée de l’Agly, Roussillon"},season:[],
 flavor:["sweet","fruity","rich"],
 story:{en:"Maury's Grenache grows on a band of black schist in the Agly valley, under the ruined Cathar fortress of Quéribus — rock that holds heat and almost no water. Most of it is bottled young in the grenat style, sealed against air, so where Banyuls goes nutty Maury stays black-fruited and tight.",
@@ -249,7 +249,7 @@ fr:"Tiédissez-la dans la main avant de flamber une tarte ou une omelette souffl
 pairs:["mirabelle","cream","almond","vanilla","butter","apricot","honey","quetsche"],
 svg:'<circle class="f2 sf" cx="40" cy="50" r="18"/><path class="s" d="M40 32v36M40 32v-8"/><path class="f1 sf" d="M40 28q10-9 18-5-4 11-18 5z"/><path class="f1 sf" d="M62 58h16q0 12-8 12t-8-12z"/><path class="s" d="M70 70v8M64 78h12"/>'},
 
-{id:"muscat-beaumes-de-venise",cat:"cellar",price:2,pk:"20–32 €/L",name:{en:"Muscat de Beaumes-de-Venise",fr:"Muscat de Beaumes-de-Venise"},latin:"Vitis vinifera 'Muscat à petits grains'",
+{id:"muscat-beaumes-de-venise",cat:"cellar",sign:"AOP",price:2,pk:"20–32 €/L",name:{en:"Muscat de Beaumes-de-Venise",fr:"Muscat de Beaumes-de-Venise"},latin:"Vitis vinifera 'Muscat à petits grains'",
 origin:{en:"Beaumes-de-Venise, Vaucluse",fr:"Beaumes-de-Venise, Vaucluse"},season:[],
 flavor:["sweet","floral","fruity","citrus"],
 story:{en:"The Venise in the name is the Comtat Venaissin, the papal territory around Avignon, not the Italian city; the appellation was recognised in 1945 and remains the Rhône valley's only vin doux naturel. It is made to keep air out rather than let it in, so the grape's own terpenes — rose, lychee, orange flower — survive into the glass.",
@@ -259,7 +259,7 @@ fr:"Ne le faites jamais bouillir : ses terpènes sont volatils et la première m
 pairs:["cantaloupe","peach","apricot","lychee","raspberry","egg"],
 svg:'<g transform="translate(5.62 5.85) scale(0.883)"><path class="f1 sf" d="M44 24h8v13q13 8 13 22a17 17 0 0 1-34 0q0-14 13-22z"/><path class="s" d="M32 56q16 9 32 0"/><path class="s" d="M70 33v9"/><circle class="f2 sf" cx="70" cy="29" r="4"/><circle class="f1 sf" cx="64" cy="23" r="4"/><circle class="f1 sf" cx="75" cy="23" r="4"/></g>'},
 
-{id:"oloroso",cat:"cellar",price:2,pk:"14–30 €/L",name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
+{id:"oloroso",cat:"cellar",sign:"DOP",price:2,pk:"14–30 €/L",name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["nutty","rich","woody"],
 story:{en:"Oloroso is fortified to seventeen degrees or more at the outset, above what the flor yeast can survive, so it never grows a veil and oxidises from its first year in cask. Oloroso means fragrant, and the confusion follows from there: it smells of raisin and walnut and is, in the classic style, bone dry — the sweet supermarket bottle is oloroso with syrup added afterwards.",
@@ -289,7 +289,7 @@ fr:"Réduisez-le avant d’ajouter le moindre liquide : le sucre du pastis attac
 pairs:["fennel","saffron","tomato","mussel","monkfish","garlic","red-mullet","orange"],
 svg:'<g transform="translate(5.81 6.05) scale(0.879)"><path class="f1 sf" d="M36 26h24l-3 46q-1 6-9 6t-9-6z"/><path class="f2" d="M36 46h24l-3 26q-1 6-9 6t-9-6z"/><path class="s" d="M35 44h26"/><path class="f3 sf" d="M48 6l4 7 8-1-4 7 4 7-8-1-4 7-4-7-8 1 4-7-4-7 8 1z"/></g>'},
 
-{id:"pedro-ximenez",cat:"cellar",price:2,pk:"16–35 €/L",name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
+{id:"pedro-ximenez",cat:"cellar",sign:"DOP",price:2,pk:"16–35 €/L",name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
 origin:{en:"Montilla-Moriles, Andalusia",fr:"Montilla-Moriles, Andalousie"},season:[],
 flavor:["sweet","rich","fruity","toasty"],
 story:{en:"The grapes are laid out on esparto mats in the September sun for a week or more — the soleo — until they are raisins, and the press yields a must so sugary that yeast can barely work on it. What is bottled carries around 400 grams of sugar a litre, black as treacle, tasting of raisin, fig and liquorice.",
@@ -299,7 +299,7 @@ fr:"C’est une sauce plus qu’un vin : une cuillerée sur une glace vanille, o
 pairs:["vanilla","dark-chocolate","blue-cheese","raisin","fig","walnut"],
 svg:'<ellipse class="f3 sf" cx="44" cy="56" rx="21" ry="11"/><path class="s" d="M64 52L76 34"/><path class="f2 sf" d="M36 43q7-3 10 2t-3 8q-8 1-9-4t2-6z"/><path class="f2 sf" d="M52 41q8-2 9 4t-6 7q-7 0-8-5t5-6z"/><circle class="dot" cx="24" cy="72" r="3"/>'},
 
-{id:"pineau-des-charentes",cat:"cellar",price:2,pk:"14–24 €/L",name:{en:"Pineau des Charentes",fr:"Pineau des Charentes"},latin:"Vitis vinifera",
+{id:"pineau-des-charentes",cat:"cellar",sign:"AOP",price:2,pk:"14–24 €/L",name:{en:"Pineau des Charentes",fr:"Pineau des Charentes"},latin:"Vitis vinifera",
 origin:{en:"Charente, France",fr:"Charentes, France"},season:[],
 flavor:["sweet","fruity","honeyed","warm"],
 story:{en:"Pineau is a mistelle, not a wine: unfermented Charentais grape must muted with young Cognac, so the sugar in the bottle is grape sugar that never met a yeast. Legend has it a sixteenth-century vigneron poured must into a cask still holding eau-de-vie and left the mistake in the cellar for years before tasting it.",
@@ -319,7 +319,7 @@ fr:"Elle parfume sans sucrer : deux cuillères à café pour un litre de base à
 pairs:["raspberry","dark-chocolate","cream","peach","vanilla","almond","redcurrant","fromage-blanc"],
 svg:'<path class="f2 sf" d="M34 28q14-10 28 0 2 16-14 22-16-6-14-22z"/><path class="s" d="M41 30q7 18 14 0M34 38h28"/><path class="f1 sf" d="M42 24q6-6 12 0-6 3-12 0z"/><path class="f1 sf" d="M34 56h28q0 16-14 20-14-4-14-20z"/><path class="s" d="M48 76v6M40 84h16"/>'},
 
-{id:"rhum-agricole",cat:"cellar",price:2,pk:"28–50 €/L",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
+{id:"rhum-agricole",cat:"cellar",sign:"AOP",price:2,pk:"28–50 €/L",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
 origin:{en:"Martinique & Guadeloupe",fr:"Martinique et Guadeloupe"},season:[],
 flavor:["grassy","fruity","warm","briny"],
 story:{en:"Cane juice begins fermenting on its own within hours of pressing, so an agricole distillery runs only during the harvest and stands idle the rest of the year - molasses, by contrast, keeps indefinitely, which is why most of the world's rum is made from it. Martinique's rhum has held an appellation of origin since 1996, the only one of its kind for a rum.",
@@ -329,7 +329,7 @@ fr:"Il est vert et haut de ton : il se met à la fin - une cuillerée dans une m
 pairs:["lime","banana","pineapple","mango","coconut","passion-fruit","ginger","vanilla"],
 svg:'<path class="f2 sf" d="M30 78l6-56 8 1-6 55z"/><path class="s" d="M31 64h8M33 50h8M35 36h8"/><path class="f2 sf" d="M52 78l8-52 8 2-8 50z"/><path class="s" d="M53 64h9M56 50h9M59 36h9"/><path class="f1 sf" d="M44 24q14-10 24-4-12 10-24 4z"/>'},
 
-{id:"rivesaltes-ambre",cat:"cellar",rare:true,price:2,pk:"12–25 €/L",name:{en:"Rivesaltes ambré",fr:"Rivesaltes ambré"},latin:"Vitis vinifera 'Grenache blanc'",
+{id:"rivesaltes-ambre",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–25 €/L",name:{en:"Rivesaltes ambré",fr:"Rivesaltes ambré"},latin:"Vitis vinifera 'Grenache blanc'",
 origin:{en:"Rivesaltes, Roussillon",fr:"Rivesaltes, Roussillon"},season:[],
 flavor:["sweet","nutty","honeyed","fruity"],
 story:{en:"Rivesaltes is the largest vin doux naturel appellation in France, and ambré is its white face: Grenache blanc and Macabeu, muted with spirit and then held at least two years in deliberately oxidative conditions, often in demijohns left outdoors. What comes out smells of dried apricot, hazelnut and candied peel, with none of the red-fruit weight of its Grenache noir neighbours.",
@@ -339,7 +339,7 @@ fr:"Servez-le frais mais non glacé, vers 12 °C : sorti du réfrigérateur, il 
 pairs:["foie-gras","apricot","hazelnut","poularde","peach","orange"],
 svg:'<path class="f1 sf" d="M34 30h28q2 16-14 24-16-8-14-24z"/><path class="s" d="M48 54v14M38 70h20"/><circle class="f2 sf" cx="70" cy="44" r="11"/><path class="s" d="M70 33v22"/>'},
 
-{id:"ruby-port",cat:"cellar",price:2,pk:"13–22 €/L",name:{en:"Ruby port",fr:"Porto ruby"},latin:"Vitis vinifera 'Touriga Nacional'",
+{id:"ruby-port",cat:"cellar",sign:"DOP",price:2,pk:"13–22 €/L",name:{en:"Ruby port",fr:"Porto ruby"},latin:"Vitis vinifera 'Touriga Nacional'",
 origin:{en:"Douro valley, Portugal",fr:"Vallée du Douro, Portugal"},season:[],
 flavor:["sweet","fruity","rich","warm"],
 story:{en:"Ruby is held in vats large enough that almost no air reaches the wine, then bottled young — the opposite intention to tawny, which is left in small casks precisely so that it oxidises. What it brings a sauce is colour and grip: anthocyanin and tannin from Touriga Nacional skins, trodden in the best lodges still by foot in granite lagares.",
@@ -349,7 +349,7 @@ fr:"Réduisez-le des deux tiers à part, avant de le joindre au fond : ajouté t
 pairs:["venison","fig","blue-cheese","black-pepper","cherry","orange"],
 svg:'<path class="f3 sf" d="M32 26h22v12q0 12-11 15-11-3-11-15z"/><path class="s" d="M43 53v14M35 69h16"/><path class="f2 sf" d="M68 34q8 6 8 16t-8 12q-8-2-8-12t8-16z"/><path class="s" d="M68 34v-6M60 52h16"/>'},
 
-{id:"madeira-sercial",cat:"cellar",price:2,pk:"20–45 €/L",name:{en:"Sercial Madeira",fr:"Madère Sercial"},latin:"Vitis vinifera 'Esgana Cão'",
+{id:"madeira-sercial",cat:"cellar",sign:"DOP",price:2,pk:"20–45 €/L",name:{en:"Sercial Madeira",fr:"Madère Sercial"},latin:"Vitis vinifera 'Esgana Cão'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
 flavor:["sour","briny","nutty"],
 story:{en:"Casks shipped to the Indies as ballast came back better than they left, so Madeira's growers reproduced the tropical crossing on land: estufagem, months of gentle heat that cook the wine and leave it nearly indestructible. Sercial is the driest of the noble grapes, known on the island as Esgana Cão, dog-strangler, for an acidity that scrapes the mouth clean.",
@@ -369,7 +369,7 @@ fr:"Versez-le en début de braisage et laissez-le réduire avec le fond ; ajout�
 pairs:["beef-cheek","orange","juniper","bay-leaf","dark-chocolate","shallot"],
 svg:'<path class="f2 sf" d="M27 33h42a21 19 0 0 1-42 0z"/><path class="s" d="M48 52v16"/><path class="s" d="M36 70q12 4 24 0"/><path class="s" d="M60 26a7 7 0 1 0 4 9"/>'},
 
-{id:"tawny-port",cat:"cellar",price:2,pk:"15–32 €/L",name:{en:"Tawny port",fr:"Porto tawny"},latin:"Vitis vinifera 'Touriga Nacional'",
+{id:"tawny-port",cat:"cellar",sign:"DOP",price:2,pk:"15–32 €/L",name:{en:"Tawny port",fr:"Porto tawny"},latin:"Vitis vinifera 'Touriga Nacional'",
 origin:{en:"Vila Nova de Gaia, Portugal",fr:"Vila Nova de Gaia, Portugal"},season:[],
 flavor:["sweet","nutty","rich","toasty"],
 story:{en:"The ten, twenty or forty years on a tawny label is the average age of the blend, not a vintage — the house holds parcels in small casks and marries young wine into old to keep the style constant. Decades of that slow oxidation drop the colour out and put walnut, caramel and dried apricot in its place.",
@@ -389,7 +389,7 @@ fr:"Les ume verts ne se mangent pas crus, et la macération demande trois mois a
 pairs:["pork","duck","shiso","ginger","soy-sauce","apricot","honey","plum"],
 svg:'<path class="f1 sf" d="M30 34h36v34a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M26 26h44v8H26z"/><circle class="f2 sf" cx="42" cy="52" r="8"/><circle class="f2 sf" cx="58" cy="63" r="6"/><path class="s" d="M42 44v16M58 57v12"/>'},
 
-{id:"white-port",cat:"cellar",price:2,pk:"12–22 €/L",name:{en:"White port",fr:"Porto blanc"},latin:"Vitis vinifera 'Malvasia Fina'",
+{id:"white-port",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"White port",fr:"Porto blanc"},latin:"Vitis vinifera 'Malvasia Fina'",
 origin:{en:"Douro valley, Portugal",fr:"Vallée du Douro, Portugal"},season:[],
 flavor:["citrus","nutty","warm"],
 story:{en:"White port is fortified exactly like the red — spirit into fermenting must — but from Douro whites such as Malvasia Fina and Gouveio, and it is bottled dry to off-dry rather than sweet. In the Douro itself almost none of it is drunk neat: the summer drink is porto tónico, half white port, half tonic, over ice with a strip of lemon.",
@@ -419,7 +419,7 @@ fr:"Achetez la bouteille que l’on boit, pas celle étiquetée vin de cuisine :
 pairs:["ginger","spring-onion","soy-sauce","pork-belly","chicken","star-anise","crab"],
 svg:'<path class="f2 sf" d="M36 36q-11 10-11 22t11 16q12 4 24 0t11-16-11-22z"/><path class="f2 sf" d="M42 26h12v10H42z"/><path class="f1 sf" d="M37 27q11-9 22 0-11 5-22 0z"/><path class="s" d="M42 31h12"/>'},
 
-{id:"vin-de-paille",cat:"cellar",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
+{id:"vin-de-paille",cat:"cellar",sign:"AOP",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
 origin:{en:"Jura, dried in unheated lofts",fr:"Jura, séché en greniers non chauffés"},season:[],
 flavor:["sweet","honeyed","fruity"],
 story:{en:"The bunches are laid on straw or hung in an unheated loft for at least six weeks and pressed between Christmas and late February; a hundred kilos of shrivelled grapes yield fifteen to eighteen litres of must. Nothing is added at any point — the sweetness is only the water that left.",
@@ -429,7 +429,7 @@ fr:"Déglacez hors du feu et ne réduisez pas de plus de moitié : à gros bouil
 pairs:["foie-gras","apricot","pear","walnut","blue-cheese","fig"],
 svg:'<path class="f2 sf" d="M48 24c6 0 10 4 10 9 5 2 7 8 4 12 2 6-2 12-6 14-2 6-6 9-8 9s-6-3-8-9c-4-2-8-8-6-14-3-4-1-10 4-12 0-5 4-9 10-9z"/><path class="s" d="M39 34q9 4 18 0M37 46q11 5 22 0M42 58q6 3 12 0"/><path class="s" d="M28 74h40M24 80h48"/><path class="s" d="M48 24V13"/>'},
 
-{id:"vin-jaune",cat:"cellar",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
+{id:"vin-jaune",cat:"cellar",sign:"AOP",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
 flavor:["nutty","warm","umami"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",
@@ -439,7 +439,7 @@ fr:"Réduisez-le beaucoup moins qu’un blanc sec : le sotolon, qui porte la not
 pairs:["morel","cream","bresse-chicken","comte","walnut","butter"],
 svg:'<path class="f2 sf" d="M43 19h10v9c0 6 9 8 9 18v28a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V46c0-10 9-12 9-18z"/><path class="s" d="M34 56h28M34 68h28"/><path class="f3 sf" d="M42 14h12v6H42z"/>'},
 
-{id:"vin-santo",cat:"cellar",price:3,pk:"40–80 €/L",name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
+{id:"vin-santo",cat:"cellar",sign:"DOP",price:3,pk:"40–80 €/L",name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
 origin:{en:"Tuscany",fr:"Toscane"},season:[],
 flavor:["nutty","sweet","woody"],
 story:{en:"The dried must goes into caratelli — fifty-litre casks that are sealed shut and never topped up — each carrying a madre, a sludge of yeast and lees held back from the previous batch to start the next. Years of that, under a roof that freezes in winter and bakes in summer, is what turns it oxidative where a straw wine stays fruity.",

@@ -659,7 +659,7 @@ fr:"Attendez qu’elle soit brune et molle — c’est mûr, non gâté. Prélev
 pairs:["cream","honey","cinnamon","clove","apple","walnut","quince","vanilla"],
 svg:'<path class="f1 sf" d="M48 32C63 32 75 43 75 56C75 70 63 82 48 82C33 82 21 70 21 56C21 43 33 32 48 32Z"/><path class="f2 sf" d="M34 49q2-8 12-9 11-2 16 4 5 6 1 12-4 7-14 6-12-1-14-6-3-4-2-7z"/><path class="f2 sf" d="M42 39q-3-8 0-15 6 6 6 15zM33 44q-10-5-15-12 10-4 18 5zM63 43q10-6 15-13-10-4-18 5zM34 60q-10 2-15 8 8 6 18-3zM62 61q9 3 14 9-9 5-18-4z"/><path class="dot" d="M53 48C54 48 55 49 55 50C55 51 54 52 53 52C52 52 51 51 51 50C51 49 52 48 53 48ZM49 54C50 54 51 55 51 56C51 57 50 58 49 58C48 58 47 57 47 56C47 55 48 54 49 54ZM43 51C44 51 45 52 45 53C45 54 44 55 43 55C42 55 41 54 41 53C41 52 42 51 43 51ZM43 44C44 44 45 45 45 46C45 47 44 48 43 48C42 48 41 47 41 46C41 45 42 44 43 44ZM50 42C51 42 52 43 52 44C52 45 51 46 50 46C49 46 48 45 48 44C48 43 49 42 50 42Z"/><path class="s" d="M28 65q7 7 15 8M69 44q4 6 4 13" stroke-width="1.5"/>'},
 
-{id:"citron-de-menton",cat:"fruits",price:2,pk:"10–20 €/kg",name:{en:"Menton lemon",fr:"Citron de Menton"},latin:"Citrus limon",
+{id:"citron-de-menton",cat:"fruits",sign:"IGP",price:2,pk:"10–20 €/kg",name:{en:"Menton lemon",fr:"Citron de Menton"},latin:"Citrus limon",
 origin:{en:"Menton, Alpes-Maritimes",fr:"Menton, Alpes-Maritimes"},season:[12,1,2,3],
 flavor:["citrus","sweet","floral","sour"],
 story:{en:"Lemons have been grown on the terraces above Menton since the fourteenth century, the town has held its Fête du Citron every year since 1934, and the IGP was granted in 2015. The fruit is elliptical rather than round, modest in acid and heavy in essential oil: the peel is what you are buying.",

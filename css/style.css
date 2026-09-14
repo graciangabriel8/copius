@@ -452,6 +452,20 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .art .s{fill:none;stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .art .sf{stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .art .dot{fill:var(--art-line)}
+/* Protected designation, shown beside the name. Deliberately NOT on pairing chips: a dense
+   grid speckled with red and blue is unreadable, and butter alone renders 479 of them.
+   Red follows the AOP/DOP convention, blue the IGP one, both muted so the page keeps one
+   accent colour rather than three shouting ones. */
+.sign{font-size:9.5px;letter-spacing:.12em;font-weight:600;border-radius:999px;
+  padding:2px 6px;vertical-align:middle;white-space:nowrap}
+.sign-aop{color:#8A3A30;background:#F2DFDB;border:1px solid #DBB8B1}
+.sign-igp{color:#2F5273;background:#DCE5EF;border:1px solid #B3C6DA}
+:root[data-theme="dark"] .sign-aop{color:#E8B3A8;background:#3A2320;border-color:#5C3A34}
+:root[data-theme="dark"] .sign-igp{color:#A8C4E0;background:#1E2B38;border-color:#33485E}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sign-aop{
+  color:#E8B3A8;background:#3A2320;border-color:#5C3A34}
+  :root:not([data-theme="light"]) .sign-igp{
+  color:#A8C4E0;background:#1E2B38;border-color:#33485E}}
 
 /* ---------- responsive ---------- */
 @media (max-width:720px){

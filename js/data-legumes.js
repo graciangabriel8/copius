@@ -129,7 +129,7 @@ fr:"Faites tremper 12 à 24 heures en changeant l’eau trois fois, jetez chaque
 pairs:["rosemary","olive-oil","garlic","sage","chestnut","guanciale","bay-leaf","pecorino"],
 svg:'<path class="f1 sf" d="M20 42 Q26 30 35 24 L47 33 Q41 45 37 52 Z"/><path class="f2 sf" d="M50 30 L67 22 Q75 30 72 41 L56 44 Z"/><path class="f3 sf" d="M56 56 L74 50 Q79 60 74 68 L60 71 Z"/><path class="f2 sf" d="M24 62 L42 54 Q49 62 48 72 L32 77 Z"/><path class="s" d="M35 24 37 37M67 22 62 34M74 50 67 59M42 54 38 65" stroke-width="1.5"/><path class="dot" d="M28 40q4-2 5 2t-4 3-1-5zM62 60q4-2 5 2t-4 3-1-5z"/>'},
 
-{id:"coco-de-paimpol",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Coco de Paimpol",fr:"Coco de Paimpol"},latin:"Phaseolus vulgaris",
+{id:"coco-de-paimpol",cat:"legumes",sign:"AOP",price:1,pk:"4–7 €/kg",name:{en:"Coco de Paimpol",fr:"Coco de Paimpol"},latin:"Phaseolus vulgaris",
 origin:{en:"Côtes-d’Armor, Brittany",fr:"Côtes-d’Armor, Bretagne"},season:[8,9,10],
 flavor:["creamy","sweet","mild","earthy"],
 story:{en:"A fresh shelling bean rather than a dried one, sold still in its marbled pod and podded by hand — Brittany calls the work le plumage. It holds an AOC, and the season is short enough that most of the country never sees it.",
@@ -239,7 +239,7 @@ fr:"Goûtez-en un avant de servir : la moindre amertume persistante impose de re
 pairs:["lemon","olive-oil","olive-castelvetrano","oregano","garlic","chili","parsley"],
 svg:'<ellipse class="f2 sf" cx="38" cy="44" rx="16" ry="13"/><ellipse class="f1 sf" cx="58" cy="60" rx="16" ry="13"/><path class="s" d="M28 40q10 6 20 0M48 56q10 6 20 0"/><circle class="dot" cx="53" cy="47" r="2"/><circle class="dot" cx="73" cy="63" r="2"/>'},
 
-{id:"mogette",cat:"legumes",price:2,pk:"9–15 €/kg",name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
+{id:"mogette",cat:"legumes",sign:"IGP",price:2,pk:"9–15 €/kg",name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
 origin:{en:"Vendée, western France",fr:"Vendée"},season:[7,8,9],
 flavor:["creamy","mild","buttery"],
 story:{en:"Physicians were already recording bean fields in the Vendée at the end of the seventeenth century, and the name is usually traced to the mounges — the monks of the local abbeys. Picked half-dry in late summer, the bean skips the drying yard entirely and goes to market as a fresh vegetable.",
@@ -289,7 +289,7 @@ fr:"Pas de trempage, et pas d’acide avant la fin : départ à froid avec un oi
 pairs:["quail","chorizo","piquillo","green-bean","onion","olive-oil","garlic","clam"],
 svg:'<path class="f1 sf" d="M24 60q4-24 22-32t26 4q-6 16-22 26t-26 2z"/><path class="s" d="M28 58q8-20 24-28"/><circle class="f2 sf" cx="38" cy="52" r="7"/><circle class="f2 sf" cx="52" cy="42" r="7"/><circle class="f1 sf" cx="64" cy="34" r="6"/><path class="f2 sf" d="M26 68q12 2 16 12-12 4-18-4z"/>'},
 
-{id:"lentille-du-puy",cat:"legumes",price:2,pk:"8–14 €/kg",name:{en:"Puy lentil",fr:"Lentille verte du Puy"},latin:"Lens culinaris",
+{id:"lentille-du-puy",cat:"legumes",sign:"AOP",price:2,pk:"8–14 €/kg",name:{en:"Puy lentil",fr:"Lentille verte du Puy"},latin:"Lens culinaris",
 origin:{en:"Haute-Loire, Auvergne",fr:"Haute-Loire, Auvergne"},season:[],
 flavor:["earthy","peppery","nutty","mild"],
 story:{en:"The first vegetable in France to be granted an AOC, in 1996. It grows on volcanic soil at altitude where the summers are dry, and the lack of water is what keeps the skin thin and stops the lentil bursting — scarcity as a quality control.",
@@ -369,7 +369,7 @@ fr:"Il mousse énormément à la première ébullition. Écumez une fois et la s
 pairs:["lard","onion","carrot","bay-leaf","mint","thyme","black-pepper","butter"],
 svg:'<path class="f1 sf" d="M44 22 Q47 30 44 34 Q47 38 44 46 Q26 46 25 34 Q26 22 44 22 Z"/><path class="f2 sf" d="M52 22 Q49 30 52 34 Q49 38 52 46 Q70 46 71 34 Q70 22 52 22 Z"/><path class="f2 sf" d="M22 62 Q30 59 34 62 Q38 59 46 62 Q46 76 34 76 Q22 75 22 62 Z"/><path class="f1 sf" d="M52 64 Q58 61 62 64 Q66 61 74 64 Q74 76 62 76 Q52 76 52 64 Z"/><path class="s" d="M41 24 Q44 34 41 44M55 24 Q52 34 55 44M25 64 Q34 61 43 64M55 66 Q62 63 71 66" stroke-width="1.5"/>'},
 
-{id:"haricot-tarbais",cat:"legumes",price:2,pk:"15–28 €/kg",name:{en:"Tarbais bean",fr:"Haricot tarbais"},latin:"Phaseolus vulgaris",
+{id:"haricot-tarbais",cat:"legumes",sign:"IGP",price:2,pk:"15–28 €/kg",name:{en:"Tarbais bean",fr:"Haricot tarbais"},latin:"Phaseolus vulgaris",
 origin:{en:"Hautes-Pyrénées, France",fr:"Hautes-Pyrénées, France"},season:[],
 flavor:["creamy","mild","earthy","nutty"],
 story:{en:"Traditionally grown climbing up maize stalks, which act as living stakes — the two crops were planted together for two centuries. Its skin is unusually fine, so it absorbs the fat of a cassoulet without disintegrating, which is why the dish specifies it.",
