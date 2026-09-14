@@ -92,7 +92,7 @@
     lang: readItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: readItem(LS_VIEW) || "atlas",
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
-    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, priceBand: "all", flavour: "all", sort: "name",
+    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, signOnly: false, priceBand: "all", flavour: "all", sort: "name",
     techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
   };
   var favs = new Set(readList(LS_FAVS));
@@ -272,6 +272,7 @@
     el("favsOnlyLbl").textContent = t.favsOnly;
     el("rareOnlyLbl").textContent = t.rareOnly + " ✦";
     el("luxeOnlyLbl").textContent = t.luxeOnly + " ◆";
+    el("signOnlyLbl").textContent = t.signOnly + " AOP";
     el("random").textContent = t.random;
     el("labTitle").textContent = t.labTitle;
     el("labHint").textContent = t.labHint;
@@ -312,7 +313,7 @@
   function renderStats(shown) {
     var t = T(), s = state;
     var narrowed = s.cat !== "all" || s.q.trim() || s.seasonNow || s.favsOnly || s.rareOnly ||
-      s.luxeOnly || s.priceBand !== "all" || s.flavour !== "all";
+      s.luxeOnly || s.signOnly || s.priceBand !== "all" || s.flavour !== "all";
     el("stats").textContent = narrowed
       ? t.statsFiltered.replace("{n}", fmt(shown)).replace("{t}", fmt(ING.length))
       : t.statsTpl.replace("{n}", fmt(ING.length))
@@ -343,6 +344,7 @@
       if (state.favsOnly && !favs.has(i.id)) return false;
       if (state.rareOnly && !i.rare) return false;
       if (state.luxeOnly && !i.luxe) return false;
+      if (state.signOnly && !i.sign) return false;
       if (state.priceBand !== "all" && (i.price || 2) !== +state.priceBand) return false;
       if (state.flavour !== "all" && i.flavor.indexOf(state.flavour) === -1) return false;
       if (!q) return true;
@@ -1288,6 +1290,7 @@
   el("favsOnly").addEventListener("change", function (e) { state.favsOnly = e.target.checked; renderGrid(); });
   el("rareOnly").addEventListener("change", function (e) { state.rareOnly = e.target.checked; renderGrid(); });
   el("luxeOnly").addEventListener("change", function (e) { state.luxeOnly = e.target.checked; renderGrid(); });
+  el("signOnly").addEventListener("change", function (e) { state.signOnly = e.target.checked; renderGrid(); });
   el("priceBand").addEventListener("change", function (e) { state.priceBand = e.target.value; renderGrid(); });
   el("flavour").addEventListener("change", function (e) { state.flavour = e.target.value; renderGrid(); });
   el("sort").addEventListener("change", function (e) { state.sort = e.target.value; renderGrid(); });
