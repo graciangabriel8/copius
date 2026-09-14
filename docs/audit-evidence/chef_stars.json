@@ -1,0 +1,314 @@
+[
+ {
+  "id": "munk",
+  "claim": "2* 2020",
+  "verdict": "CONFIRMED",
+  "found": "raw article text states two stars and gives no award year; 'seven months after its opening' (July 2019) lands in Feb 2020, matching the atlas",
+  "source": "https://en.wikipedia.org/wiki/Alchemist_(restaurant)",
+  "quote": "Alchemist is a two Michelin-star restaurant founded and run by chef Rasmus Munk, in Copenhagen, Denmark.",
+  "note": "the first pass's summarised answer asserted 2019; the article itself does not say that"
+ },
+ {
+  "id": "ros",
+  "claim": "3* 2023",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Hi%C5%A1a_Franko",
+  "quote": "In 2023, it became the first Slovenian restaurant to earn three Michelin stars"
+ },
+ {
+  "id": "kofoed",
+  "claim": "3* 2016",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Geranium_(restaurant)",
+  "quote": "On February 24, 2016, Geranium was the first Danish restaurant to receive three Michelin stars."
+ },
+ {
+  "id": "aduriz",
+  "claim": "2* 2005",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Mugaritz",
+  "quote": "in 2005, the Michelin Guide awarded it a second one"
+ },
+ {
+  "id": "smyth",
+  "claim": "3* 2021",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Clare_Smyth",
+  "quote": "Core was awarded three Michelin stars in the 2021 Michelin Guide."
+ },
+ {
+  "id": "redzepi",
+  "claim": "3* 2021",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Noma_(restaurant)",
+  "quote": "2021-2025: Michelin Guide - three stars"
+ },
+ {
+  "id": "colagreco",
+  "claim": "3* 2019",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Mirazur",
+  "quote": "In 2019, Colagreco became the first chef not born in France to be awarded three stars"
+ },
+ {
+  "id": "roca",
+  "claim": "3* 2009",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/El_Celler_de_Can_Roca",
+  "quote": "was awarded three star status in 2009"
+ },
+ {
+  "id": "alleno",
+  "claim": "3* 2015 / 2017",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Yannick_All%C3%A9no",
+  "quote": "Alleno Paris: 3 stars since 2015; 1947: 3 stars since 2017"
+ },
+ {
+  "id": "donckele",
+  "claim": "3* 2013 / 2022",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Arnaud_Donckele",
+  "quote": "His Saint-Tropez restaurant was awarded 3 Michelin stars in 2013 ... his Parisian restaurant in 2022"
+ },
+ {
+  "id": "renaut",
+  "claim": "3* 2012",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Emmanuel_Renaut",
+  "quote": "his third in 2012"
+ },
+ {
+  "id": "marcon",
+  "claim": "3* 2005",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/R%C3%A9gis_Marcon",
+  "quote": "awarded three stars by the Guide Michelin since 2005."
+ },
+ {
+  "id": "berasategui",
+  "claim": "3* 2001",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Mart%C3%ADn_Berasategui",
+  "quote": "It was awarded a third Michelin star in the 2001 Michelin Guide."
+ },
+ {
+  "id": "arzak",
+  "claim": "3* 1989",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Arzak",
+  "quote": "1989-present, Michelin Guide Three Stars"
+ },
+ {
+  "id": "pic",
+  "claim": "3* 2007",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Anne-Sophie_Pic",
+  "quote": "In 2007, she regained Maison Pic's three Michelin stars."
+ },
+ {
+  "id": "bras",
+  "claim": "3* 1999",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Michel_Bras",
+  "quote": "rated three stars in the Guide Michelin since 1999"
+ },
+ {
+  "id": "romito",
+  "claim": "3* 2014",
+  "verdict": "CONFIRMED",
+  "source": "https://it.wikipedia.org/wiki/Niko_Romito",
+  "quote": "2014 - Tre Stelle Michelin Ristorante Reale, Castel di Sangro"
+ },
+ {
+  "id": "blumenthal",
+  "claim": "3* 2004",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/The_Fat_Duck",
+  "quote": "In 2004, the Fat Duck became the third restaurant in the UK to receive three Michelin stars"
+ },
+ {
+  "id": "keller",
+  "claim": "3* 2006",
+  "verdict": "INCOMPLETE",
+  "found": "Per Se 2005, The French Laundry 2006",
+  "source": "https://en.wikipedia.org/wiki/Thomas_Keller",
+  "quote": "In 2005 ... for Per Se ... in 2006 ... for the French Laundry."
+ },
+ {
+  "id": "veyrat",
+  "claim": "3* 1995 / 2001",
+  "verdict": "CONFIRMED_INCOMPLETE",
+  "found": "1995 and 2001 confirmed; he also took three stars a third time in 2018 and lost them in the 2019 edition",
+  "source": "https://fr.wikipedia.org/wiki/Marc_Veyrat",
+  "quote": "Le 6 mars 1995, il obtient sa troisieme etoile ... Le 23 fevrier 2001 ... La Ferme de mon Pere ... couronnee de trois etoiles"
+ },
+ {
+  "id": "frantzen",
+  "claim": "3* 2018",
+  "verdict": "CONFIRMED",
+  "found": "page states three stars but no year for Stockholm; Zen Singapore third star 2021",
+  "source": "https://en.wikipedia.org/wiki/Frantz%C3%A9n",
+  "quote": "in 2018 it became the first Swedish restaurant to receive a third Michelin star."
+ },
+ {
+  "id": "bottura",
+  "claim": "3* 2012",
+  "verdict": "CONFIRMED",
+  "found": "November 2011 announcement = the 2012 guide, matching the atlas convention",
+  "source": "https://it.wikipedia.org/wiki/Osteria_Francescana",
+  "quote": "Dal novembre 2011 l'Osteria Francescana vanta tre stelle sulla Guida Michelin"
+ },
+ {
+  "id": "gagnaire",
+  "claim": "3* 1993 / 1998",
+  "verdict": "PARTLY_CONFIRMED",
+  "found": "Saint-Etienne 1993 confirmed; the Paris year is not stated",
+  "source": "https://fr.wikipedia.org/wiki/Pierre_Gagnaire",
+  "quote": "il obtient pour la premiere fois trois etoiles au Guide Michelin en 1993"
+ },
+ {
+  "id": "crenn",
+  "claim": "3* 2018",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Dominique_Crenn",
+  "quote": "In 2018, Crenn earned her third Michelin star."
+ },
+ {
+  "id": "darroze",
+  "claim": "3* 2021",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/H%C3%A9l%C3%A8ne_Darroze",
+  "quote": "then a second star in 2011 and a third in 2021."
+ },
+ {
+  "id": "white",
+  "claim": "3* 1995-1999",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Marco_Pierre_White",
+  "quote": "In 1995, White became the first British chef ... to earn three Michelin stars ... He also returned all his Michelin stars [1999]."
+ },
+ {
+  "id": "adria",
+  "claim": "3* 1997-2011",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/ElBulli",
+  "quote": "in 1997 its third ... The restaurant closed 30 July 2011"
+ },
+ {
+  "id": "grattard",
+  "claim": "1* 2010",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Adeline_Grattard",
+  "quote": "qui recoit une etoile au Guide Michelin un an apres son ouverture [2009]"
+ },
+ {
+  "id": "brazier",
+  "claim": "3* 1933",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Eug%C3%A9nie_Brazier",
+  "quote": "in 1933, became the first person awarded six Michelin stars, three each at two restaurants"
+ },
+ {
+  "id": "bocuse",
+  "claim": "3* 1965-2019",
+  "verdict": "CONFIRMED",
+  "source": "https://en.wikipedia.org/wiki/Paul_Bocuse",
+  "quote": "from 1965, it held its 3-star rating ... for a record 55 years ... lost ... in the 2020 Michelin Guide"
+ },
+ {
+  "id": "bise",
+  "claim": "3* 1951",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Marguerite_Bise",
+  "quote": "les trois etoiles au Guide Michelin, en 1951, avec son restaurant l'Auberge du Pere Bise"
+ },
+ {
+  "id": "point",
+  "claim": "3* 1933-1955",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Fernand_Point",
+  "quote": "le premier chef a obtenir trois etoiles au Guide Michelin en 1933 (jusqu'en 1955)"
+ },
+ {
+  "id": "dumaine",
+  "claim": "3* 1935-1964",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Alexandre_Dumaine",
+  "quote": "Trois etoiles au Guide Michelin de 1935 a 1964"
+ },
+ {
+  "id": "verge",
+  "claim": "3* 1974",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Roger_Verg%C3%A9",
+  "quote": "la consecration arrive en 1974 avec la troisieme etoile."
+ },
+ {
+  "id": "guerard",
+  "claim": "3* 1977",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Michel_Gu%C3%A9rard",
+  "quote": "En 1977 ... obtient 3 etoiles au Guide Michelin"
+ },
+ {
+  "id": "troisgros",
+  "claim": "3* 1968",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Troisgros",
+  "quote": "leur troisieme etoile en 1968"
+ },
+ {
+  "id": "chapel",
+  "claim": "3* 1973",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Alain_Chapel",
+  "quote": "En 1973, il obtient les 3 etoiles au Guide Michelin."
+ },
+ {
+  "id": "ducasse",
+  "claim": "3* 1990",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Alain_Ducasse",
+  "quote": "Le Louis XV a l'hotel de Paris Monte-Carlo en 1990"
+ },
+ {
+  "id": "robuchon",
+  "claim": "3* 1984",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Jo%C3%ABl_Robuchon",
+  "quote": "Jamin ... les trois etoiles au Guide Michelin en 1984"
+ },
+ {
+  "id": "oliver",
+  "claim": "3* 1953-1983",
+  "verdict": "CONFIRMED",
+  "source": "https://fr.wikipedia.org/wiki/Le_Grand_V%C3%A9four",
+  "quote": "En 1953, Raymond Oliver obtient trois etoiles Michelin, qu'il gardera pendant trente ans."
+ },
+ {
+  "id": "ono",
+  "claim": "3* 2007-2019",
+  "verdict": "UNVERIFIED",
+  "found": "page confirms first sushi restaurant with three stars, gives no years",
+  "source": "https://en.wikipedia.org/wiki/Sukiyabashi_Jiro"
+ },
+ {
+  "id": "crippa",
+  "claim": "3* 2012",
+  "verdict": "UNVERIFIED",
+  "found": "no Wikipedia article located under the titles tried"
+ },
+ {
+  "id": "hasegawa",
+  "claim": "2* 2011",
+  "verdict": "UNVERIFIED",
+  "found": "no Wikipedia article located under the titles tried"
+ },
+ {
+  "id": "pic-andre",
+  "claim": "3* 1934",
+  "verdict": "UNVERIFIED",
+  "found": "no French Wikipedia article for Andre Pic"
+ }
+]

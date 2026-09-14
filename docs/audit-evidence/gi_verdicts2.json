@@ -1,0 +1,2830 @@
+[
+ {
+  "id": "abondance",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Abondance",
+   "Abondance"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Abondance",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "aceto-balsamico-tradizionale",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Vinaigre balsamique traditionnel de Modène DOP",
+   "Aceto Balsamico Tradizionale DOP"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "agneau-de-pauillac",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Agneau de Pauillac",
+   "Pauillac lamb"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Agneau de Pauillac",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "agneau-de-pre-sale",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Agneau de pré-salé",
+   "Salt marsh lamb"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Gower Salt Marsh Lamb",
+    "code": "PDO",
+    "country": "United Kingdom"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "agneau-de-sisteron",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Agneau de Sisteron",
+   "Sisteron lamb"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Agneau de Sisteron",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "amontillado",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Amontillado",
+   "Amontillado"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "armagnac",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Armagnac",
+   "Armagnac"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI"
+  ],
+  "register_name": "Armagnac",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "asiago-d-allevo",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Asiago d’allevo",
+   "Asiago d'allevo"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "balsamic",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Vinaigre balsamique",
+   "Balsamic vinegar"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "banon",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Banon",
+   "Banon"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Banon",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "banyuls-wine",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Banyuls",
+   "Banyuls"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Banyuls",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "beaufort",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Beaufort",
+   "Beaufort"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Beaufort",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bitto",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Bitto",
+   "Bitto"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Bitto",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bleu-d-auvergne",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Bleu d’Auvergne",
+   "Bleu d’Auvergne"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Bleu d'Auvergne",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bleu-de-gex",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Bleu de Gex Haut-Jura",
+   "Bleu de Gex Haut-Jura"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Bleu de Gex Haut-Jura / Bleu de Septmoncel",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bleu-des-causses",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Bleu des Causses",
+   "Bleu des Causses"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Bleu des Causses",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bleu-du-vercors-sassenage",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Bleu du Vercors-Sassenage",
+   "Bleu du Vercors-Sassenage"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Bleu du Vercors-Sassenage",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "boeuf-aubrac",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Aubrac",
+   "Aubrac beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "boeuf-blonde-aquitaine",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Blonde d’Aquitaine",
+   "Blonde d’Aquitaine beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "boeuf-charolais",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Charolais",
+   "Charolais beef"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Bœuf charolais du Bourbonnais",
+    "code": "PGI",
+    "country": "France"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "boeuf-chianina",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Chianina",
+   "Chianina beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "boeuf-limousin",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Limousin",
+   "Limousin beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "boeuf-rouge-des-pres",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Bœuf Rouge des Prés",
+   "Rouge des Prés beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "boeuf-salers",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Bœuf Salers",
+   "Salers beef"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "brandy-de-jerez",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Brandy de Jerez",
+   "Brandy de Jerez"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI"
+  ],
+  "register_name": "Brandy de Jerez",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bresaola",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "bresaola",
+   "Bresaola"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Bresaola della Valtellina",
+    "code": "PGI",
+    "country": "Italy"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "bresse-chicken",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Poulet de Bresse",
+   "Bresse chicken"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Volaille de Bresse / Poulet de Bresse / Poularde de Bresse / Chapon de Bresse",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "brie-de-meaux",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Brie de Meaux",
+   "Brie de Meaux"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Brie de Meaux",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "brie-de-melun",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Brie de Melun",
+   "Brie de Melun"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Brie de Melun",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "brocciu",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Brocciu",
+   "Brocciu"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Brocciu Corse / Brocciu",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "bronte-pistachio",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Pistache de Bronte",
+   "Bronte pistachio"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "brousse-du-rove",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Brousse du Rove",
+   "Brousse du Rove"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Brousse du Rove",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cabrales",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Cabrales",
+   "Cabrales"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Cabrales",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "caciocavallo-silano",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Caciocavallo Silano",
+   "Caciocavallo Silano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Caciocavallo Silano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "calcot",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Calçot",
+   "Calçot"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Calçot de Valls",
+    "code": "PGI",
+    "country": "Spain"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "calvados",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Calvados",
+   "Calvados"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI",
+   "PGI"
+  ],
+  "register_name": "Calvados",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cancoillotte",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Cancoillotte",
+   "Cancoillotte"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Cancoillotte",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cantal",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Cantal",
+   "Cantal"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Cantal / Fourme de Cantal",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "castelmagno",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Castelmagno",
+   "Castelmagno"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Castelmagno",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cecina-de-leon",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "cecina de León",
+   "Cecina de León"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Cecina de León",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cevennes-sweet-onion",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Oignon doux des Cévennes",
+   "Cévennes sweet onion"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Oignon doux des Cévennes",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "chabichou-du-poitou",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Chabichou du Poitou",
+   "Chabichou du Poitou"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Chabichou du Poitou",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "chaource",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Chaource",
+   "Chaource"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Chaource",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "charolais",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Charolais",
+   "Charolais"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Charolais",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "chevrotin",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Chevrotin",
+   "Chevrotin"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Chevrotin",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "ciauscolo",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "ciauscolo",
+   "Ciauscolo"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Ciauscolo",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "citron-de-menton",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Citron de Menton",
+   "Menton lemon"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Citron de Menton",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "coco-de-paimpol",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Coco de Paimpol",
+   "Coco de Paimpol"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Coco de Paimpol",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "cognac",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Cognac",
+   "Cognac"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI"
+  ],
+  "register_name": "Eau-de-vie de Cognac / Eau-de-vie des Charentes / Cognac",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "comte",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Comté",
+   "Comté"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Comté",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "coppa",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "coppa",
+   "Coppa"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Coppa Piacentina",
+    "code": "PDO",
+    "country": "Italy"
+   },
+   {
+    "name": "Coppa di Parma",
+    "code": "PGI",
+    "country": "Italy"
+   },
+   {
+    "name": "Coppa de Corse / Coppa de Corse - Coppa di Corsica",
+    "code": "PDO",
+    "country": "France"
+   }
+  ],
+  "n_matches": 3
+ },
+ {
+  "id": "cotechino",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "cotechino",
+   "Cotechino"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Cotechino Modena",
+    "code": "PGI",
+    "country": "Italy"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "creme-de-cassis",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Crème de cassis de Dijon",
+   "Crème de cassis de Dijon"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "crottin-de-chavignol",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Crottin de Chavignol",
+   "Crottin de Chavignol"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Crottin de Chavignol / Chavignol",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "culatello-di-zibello",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "culatello de Zibello",
+   "Culatello di Zibello"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Culatello di Zibello",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "emmentaler",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Emmental suisse (Emmentaler AOP)",
+   "Emmentaler"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Allgäuer Emmentaler",
+    "code": "PDO",
+    "country": "Germany"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "epoisses",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Époisses",
+   "Époisses"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Époisses",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "espelette",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Piment d’Espelette",
+   "Espelette pepper"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Piment d'Espelette / Piment d'Espelette - Ezpeletako Biperra",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "feta",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Feta",
+   "Feta"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Φέτα / Feta",
+  "country": "Greece",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "figatellu",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "figatellu",
+   "Figatellu"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Figatelli de l'Ile de Beauté / Figatellu de l'Ile de Beauté",
+    "code": "PGI",
+    "country": "France"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "fino-sherry",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Xérès fino",
+   "Fino sherry"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "finocchiona",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "finocchiona",
+   "Finocchiona"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Finocchiona",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "fiore-sardo",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Fiore Sardo",
+   "Fiore Sardo"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Fiore Sardo",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "fleur-de-sel-guerande",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Fleur de sel de Guérande",
+   "Fleur de sel de Guérande"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Sel de Guérande / Fleur de sel de Guérande",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "floc-de-gascogne",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Floc de Gascogne",
+   "Floc de Gascogne"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Floc de Gascogne",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "fontina",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Fontina",
+   "Fontina Valle d’Aosta"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Fontina",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "fourme-d-ambert",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Fourme d’Ambert",
+   "Fourme d’Ambert"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Fourme d'Ambert",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "fourme-de-montbrison",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Fourme de Montbrison",
+   "Fourme de Montbrison"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Fourme de Montbrison",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "gaperon",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Gaperon",
+   "Gaperon"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "gorgonzola-dolce",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Gorgonzola dolce",
+   "Gorgonzola dolce"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "gorgonzola-piccante",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Gorgonzola piccante",
+   "Gorgonzola piccante"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "grana-padano",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Grana Padano",
+   "Grana Padano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Grana Padano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "grappa",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Grappa",
+   "Grappa"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI"
+  ],
+  "register_name": "Grappa",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "grenoble-walnut",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Noix de Grenoble",
+   "Grenoble walnut"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Noix de Grenoble",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "gruyere",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Gruyère",
+   "Gruyère"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Gruyère",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "halloumi",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Halloumi",
+   "Halloumi"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Χαλλούμι / Halloumi / Hellim",
+  "country": "Cyprus",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "haricot-tarbais",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Haricot tarbais",
+   "Tarbais bean"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Haricot tarbais",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "idiazabal",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Idiazábal",
+   "Idiazábal"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Idiazabal",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "jambon-de-bayonne",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Jambon de Bayonne",
+   "Bayonne ham"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Jambon de Bayonne",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "jambon-de-vendee",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Jambon de Vendée",
+   "Vendée ham"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Jambon de Vendée",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "jambon-noir-de-bigorre",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "jambon noir de Bigorre",
+   "Bigorre black ham"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Jambon noir de Bigorre",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "jambon-persille",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "jambon persillé de Bourgogne",
+   "Parsleyed Burgundy ham"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "l-etivaz",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "L’Etivaz",
+   "L’Etivaz"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "laguiole",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Laguiole",
+   "Laguiole"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Laguiole",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "langres",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Langres",
+   "Langres"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Langres",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "lardo-di-colonnata",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "lardo di Colonnata",
+   "Lardo di Colonnata"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Lardo di Colonnata",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "lautrec-pink-garlic",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Ail rose de Lautrec",
+   "Lautrec pink garlic"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Ail rose de Lautrec",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "lentille-du-puy",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Lentille verte du Puy",
+   "Puy lentil"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Lentille verte du Puy",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "livarot",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Livarot",
+   "Livarot"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Livarot",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "lonzu",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "lonzu",
+   "Lonzu"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Lonzo de Corse / Lonzo de Corse - Lonzu",
+    "code": "PDO",
+    "country": "France"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "macvin-du-jura",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Macvin du Jura",
+   "Macvin du Jura"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Macvin du Jura",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "madeira-malmsey",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Madère Malvoisie",
+   "Malmsey Madeira"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "madeira-sercial",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Madère Sercial",
+   "Sercial Madeira"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "manchego",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Manchego",
+   "Manchego"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Queso Manchego",
+    "code": "PDO",
+    "country": "Spain"
+   },
+   {
+    "name": "Cordero Manchego",
+    "code": "PGI",
+    "country": "Spain"
+   }
+  ],
+  "n_matches": 2
+ },
+ {
+  "id": "manouri",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Manouri",
+   "Manouri"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Μανούρι / Manouri",
+  "country": "Greece",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "manzanilla-sherry",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Manzanilla",
+   "Manzanilla"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Manzanilla de Sanlúcar / Manzanilla de Sanlúcar de Barrameda / Manzanilla-Sanlúcar de Barrameda / Manzanilla",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "marc-de-bourgogne",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Marc de Bourgogne",
+   "Marc de Bourgogne"
+  ],
+  "verdict": "WRONG_SCHEME",
+  "register_codes": [
+   "GI"
+  ],
+  "register_name": "Marc de Bourgogne / Eau-de-vie de marc de Bourgogne",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "maroilles",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Maroilles",
+   "Maroilles"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Maroilles / Marolles",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "marsala-dolce",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Marsala doux",
+   "Marsala dolce"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "marsala-secco",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Marsala sec",
+   "Marsala secco"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "maury",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Maury",
+   "Maury"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Maury",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "mogette",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Mogette de Vendée",
+   "Mogette de Vendée"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Mogette de Vendée",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "mont-dor",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Mont d’Or (vacherin du Haut-Doubs)",
+   "Mont d’Or"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Mont d'Or / Vacherin du Haut-Doubs",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "montasio",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Montasio",
+   "Montasio"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Montasio",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "morbier",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Morbier",
+   "Morbier"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Morbier",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "mortadella",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "mortadelle",
+   "Mortadella"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Mortadella Bologna",
+    "code": "PGI",
+    "country": "Italy"
+   },
+   {
+    "name": "Mortadella di Prato",
+    "code": "PGI",
+    "country": "Italy"
+   }
+  ],
+  "n_matches": 2
+ },
+ {
+  "id": "mozzarella-di-bufala-campana",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Mozzarella di bufala campana",
+   "Mozzarella di bufala campana"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Mozzarella di Bufala Campana",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "munster",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Munster",
+   "Munster"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Munster / Munster-Géromé",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "muscat-beaumes-de-venise",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Muscat de Beaumes-de-Venise",
+   "Muscat de Beaumes-de-Venise"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Muscat de Beaumes-de-Venise",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "nduja",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "’Nduja",
+   "'Nduja"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "neufchatel",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Neufchâtel",
+   "Neufchâtel"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Neufchâtel",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "olive-kalamata",
+  "claimed": "PDO",
+  "want": "PDO",
+  "names": [
+   "Olive Kalamata",
+   "Kalamata olive"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "olive-lucques",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Olive lucques",
+   "Lucques olive"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "olive-nyons",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Olive de Nyons",
+   "Nyons olive"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Huile d'olive de Nyons",
+    "code": "PDO",
+    "country": "France"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "oloroso",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Oloroso",
+   "Oloroso"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "ossau-iraty",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Ossau-Iraty",
+   "Ossau-Iraty"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Ossau-Iraty",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "parmesan",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Parmesan",
+   "Parmesan"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "pecorino",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Pecorino romano",
+   "Pecorino Romano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pecorino Romano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "pecorino-sardo",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Pecorino Sardo",
+   "Pecorino Sardo"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pecorino Sardo",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "pecorino-toscano",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Pecorino Toscano",
+   "Pecorino Toscano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pecorino Toscano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "pedro-ximenez",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Pedro Ximénez (PX)",
+   "Pedro Ximénez"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "pelardon",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Pélardon",
+   "Pélardon"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pélardon",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "piave",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Piave",
+   "Piave"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Piave",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "picodon",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Picodon",
+   "Picodon"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Picodon",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "piedmont-hazelnut",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Noisette du Piémont",
+   "Piedmont hazelnut"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "pineau-des-charentes",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Pineau des Charentes",
+   "Pineau des Charentes"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pineau des Charentes",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "pont-l-eveque",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Pont-l'Évêque",
+   "Pont-l'Évêque"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pont-l'Évêque",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "porc-kintoa",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Porc Kintoa",
+   "Kintoa pork"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "porc-noir-de-bigorre",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Porc noir de Bigorre",
+   "Noir de Bigorre pork"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Porc noir de Bigorre",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "pouligny-saint-pierre",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Pouligny-Saint-Pierre",
+   "Pouligny-Saint-Pierre"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Pouligny-Saint-Pierre",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "prosciutto",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Jambon de Parme",
+   "Prosciutto di Parma"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Prosciutto di Parma",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "prosciutto-di-san-daniele",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "jambon de San Daniele",
+   "Prosciutto di San Daniele"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Prosciutto di San Daniele",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "provolone-del-monaco",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Provolone del Monaco",
+   "Provolone del Monaco"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Provolone del Monaco",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "puzzone-di-moena",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Puzzone di Moena",
+   "Puzzone di Moena"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Puzzone di Moena / Spretz Tzaorì",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "raclette-du-valais",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Raclette du Valais",
+   "Raclette du Valais"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "ragusano",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Ragusano",
+   "Ragusano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Ragusano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "reblochon",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Reblochon",
+   "Reblochon"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Reblochon / Reblochon de Savoie",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "rhum-agricole",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Rhum agricole",
+   "Rhum agricole"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "rivesaltes-ambre",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Rivesaltes ambré",
+   "Rivesaltes ambré"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "robiola-di-roccaverano",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Robiola di Roccaverano",
+   "Robiola di Roccaverano"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Robiola di Roccaverano / Roccaverano",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "rocamadour",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Rocamadour",
+   "Rocamadour"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Rocamadour",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "roncal",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Roncal",
+   "Roncal"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Roncal",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "roquefort",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Roquefort",
+   "Roquefort"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Roquefort",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "roscoff-pink-onion",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Oignon rosé de Roscoff",
+   "Roscoff pink onion"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "ruby-port",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Porto ruby",
+   "Ruby port"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "saint-marcellin",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Saint-Marcellin",
+   "Saint-Marcellin"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Saint-Marcellin",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "saint-nectaire",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Saint-Nectaire",
+   "Saint-Nectaire"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Saint-Nectaire",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "sainte-maure-de-touraine",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Sainte-Maure de Touraine",
+   "Sainte-Maure de Touraine"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Sainte-Maure de Touraine",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "salers",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Salers",
+   "Salers"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Salers",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "saucisse-de-montbeliard",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "saucisse de Montbéliard",
+   "Montbéliard sausage"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Saucisse de Montbéliard",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "saucisse-de-morteau",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "saucisse de Morteau",
+   "Morteau sausage"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Saucisse de Morteau / Jésus de Morteau",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "saucisse-de-toulouse",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Saucisse de Toulouse",
+   "Toulouse sausage"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "sbrinz",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Sbrinz",
+   "Sbrinz"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "schabziger",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Schabziger",
+   "Schabziger"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "sel-gris-guerande",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Sel gris de Guérande",
+   "Grey sea salt (sel gris)"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "selles-sur-cher",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Selles-sur-Cher",
+   "Selles-sur-Cher"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Selles-sur-Cher",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "serra-da-estrela",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Serra da Estrela",
+   "Queijo Serra da Estrela"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Queijo Serra da Estrela",
+  "country": "Portugal",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "shropshire-blue",
+  "claimed": "PDO",
+  "want": "PDO",
+  "names": [
+   "Shropshire Blue",
+   "Shropshire Blue"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "sobrasada",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "sobrasada",
+   "Sobrasada"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Sobrasada de Mallorca",
+    "code": "PGI",
+    "country": "Spain"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "soppressata",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "soppressata",
+   "Soppressata"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Soppressata di Calabria",
+    "code": "PDO",
+    "country": "Italy"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "speck-alto-adige",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "speck",
+   "Speck Alto Adige"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Speck Alto Adige / Südtiroler Markenspeck / Südtiroler Speck",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "squacquerone-di-romagna",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Squacquerone di Romagna",
+   "Squacquerone di Romagna"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Squacquerone di Romagna",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "stilton",
+  "claimed": "PDO",
+  "want": "PDO",
+  "names": [
+   "Stilton",
+   "Blue Stilton"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "White Stilton cheese / Blue Stilton cheese",
+    "code": "PDO",
+    "country": "United Kingdom"
+   }
+  ],
+  "n_matches": 1
+ },
+ {
+  "id": "taleggio",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Taleggio",
+   "Taleggio"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Taleggio",
+  "country": "Italy",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "tawny-port",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Porto tawny",
+   "Tawny port"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "tete-de-moine",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Tête de Moine",
+   "Tête de Moine"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "tome-des-bauges",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Tome des Bauges",
+   "Tome des Bauges"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Tome des Bauges",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "tomme-de-savoie",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "Tomme de Savoie",
+   "Tomme de Savoie"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PGI"
+  ],
+  "register_name": "Tomme de Savoie",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "torta-del-casar",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Torta del Casar",
+   "Torta del Casar"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Torta del Casar",
+  "country": "Spain",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "vacherin-fribourgeois",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Vacherin fribourgeois",
+   "Vacherin Fribourgeois"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "valencay",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Valençay",
+   "Valençay"
+  ],
+  "verdict": "CONFIRMED",
+  "register_codes": [
+   "PDO"
+  ],
+  "register_name": "Valençay",
+  "country": "France",
+  "status": [
+   "Registered"
+  ]
+ },
+ {
+  "id": "viande-des-grisons",
+  "claimed": "IGP",
+  "want": "PGI",
+  "names": [
+   "viande des Grisons",
+   "Bündnerfleisch"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "vin-de-paille",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Vin de paille",
+   "Vin de paille"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "vin-jaune",
+  "claimed": "AOP",
+  "want": "PDO",
+  "names": [
+   "Vin jaune",
+   "Vin jaune"
+  ],
+  "verdict": "ABSENT"
+ },
+ {
+  "id": "vin-santo",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Vin santo",
+   "Vin Santo"
+  ],
+  "verdict": "GENERIC_NAME",
+  "register_matches": [
+   {
+    "name": "Vin Santo del Chianti",
+    "code": "PDO",
+    "country": "Italy"
+   },
+   {
+    "name": "Vin Santo di Montepulciano",
+    "code": "PDO",
+    "country": "Italy"
+   },
+   {
+    "name": "Vin Santo del Chianti Classico",
+    "code": "PDO",
+    "country": "Italy"
+   },
+   {
+    "name": "Vin Santo di Carmignano",
+    "code": "PDO",
+    "country": "Italy"
+   }
+  ],
+  "n_matches": 4
+ },
+ {
+  "id": "white-port",
+  "claimed": "DOP",
+  "want": "PDO",
+  "names": [
+   "Porto blanc",
+   "White port"
+  ],
+  "verdict": "ABSENT"
+ }
+]

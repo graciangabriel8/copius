@@ -1,0 +1,121 @@
+[
+ {
+  "id": "vin-jaune",
+  "file": "js/data-cellar.js",
+  "from": "AOP",
+  "to": null,
+  "why": "no vin jaune appellation; made under Chateau-Chalon PDO and Cotes du Jura PDO"
+ },
+ {
+  "id": "vin-de-paille",
+  "file": "js/data-cellar.js",
+  "from": "AOP",
+  "to": null,
+  "why": "no register entry containing paille"
+ },
+ {
+  "id": "rhum-agricole",
+  "file": "js/data-cellar.js",
+  "from": "AOP",
+  "to": null,
+  "why": "no Rhum agricole entry; Rhum de la Martinique is a spirit-drink GI"
+ },
+ {
+  "id": "balsamic",
+  "file": "js/data-condiments.js",
+  "from": "IGP",
+  "to": null,
+  "why": "generic balsamic vinegar is unprotected; Aceto Balsamico di Modena PGI is the registered name"
+ },
+ {
+  "id": "gaperon",
+  "file": "js/data-dairy.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry containing Gaperon"
+ },
+ {
+  "id": "shropshire-blue",
+  "file": "js/data-dairy.js",
+  "from": "PDO",
+  "to": null,
+  "why": "no register entry containing Shropshire; Buxton Blue PDO is the nearby one"
+ },
+ {
+  "id": "schabziger",
+  "file": "js/data-dairy.js",
+  "from": "AOP",
+  "to": null,
+  "why": "absent from the Swiss federal register of 42 AOP/IGP"
+ },
+ {
+  "id": "boeuf-aubrac",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry; nearest is Génisse Fleur d'Aubrac PGI"
+ },
+ {
+  "id": "boeuf-blonde-aquitaine",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry under any Blonde d'Aquitaine name"
+ },
+ {
+  "id": "boeuf-chianina",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "breed covered by Vitellone Bianco dell'Appennino Centrale PGI, not by this name"
+ },
+ {
+  "id": "boeuf-limousin",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry; Veau/Porc/Agneau du Limousin are registered, beef is not"
+ },
+ {
+  "id": "boeuf-salers",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "Salers PDO (PDO-FR-0134) is the cheese, not beef"
+ },
+ {
+  "id": "boeuf-charolais",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "Charolais PDO (PDO-FR-0838) is the goat cheese; the beef PGI is Boeuf charolais du Bourbonnais"
+ },
+ {
+  "id": "saucisse-de-toulouse",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry containing Toulouse"
+ },
+ {
+  "id": "jambon-persille",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry containing persille"
+ },
+ {
+  "id": "nduja",
+  "file": "js/data-meat.js",
+  "from": "IGP",
+  "to": null,
+  "why": "no register entry containing Nduja"
+ },
+ {
+  "id": "figatellu",
+  "file": "js/data-meat.js",
+  "from": "AOP",
+  "to": "IGP",
+  "why": "Figatelli de l'Ile de Beaute / Figatellu de l'Ile de Beaute is PGI-FR, not PDO"
+ }
+]
