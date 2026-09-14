@@ -119,7 +119,7 @@ def card(i):
         for n, l in enumerate(lines))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
-<rect width="1080" height="1080" fill="#faf9f7"/>
+<rect width="1080" height="1080" fill="#F7F6F1"/>
 <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#e2ded7" stroke-width="2"/>
 <g transform="translate(330,150) scale(4.375)">
   <circle cx="48" cy="50" r="42" fill="#f1f1f0"/>{i["svg"]}
@@ -157,7 +157,7 @@ def tip_card(i):
         for n, l in enumerate(lines))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
-<rect width="1080" height="1080" fill="#faf9f7"/>
+<rect width="1080" height="1080" fill="#F7F6F1"/>
 <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#e2ded7" stroke-width="2"/>
 <text x="540" y="{s}" text-anchor="middle" font-family="Georgia,serif" font-size="52" fill="#1c1a17">{e(i["en"])}</text>
 <text x="540" y="{s + 52}" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-style="italic" fill="#8a857d">{e(i["fr"])}</text>

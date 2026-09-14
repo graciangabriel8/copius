@@ -209,7 +209,7 @@ def head_extra(title, desc, url, lang):
 # Browser chrome follows the page. The same two values are --bg in the page.css
 # constant below; they are written here rather than read from it because this
 # pair is markup, not stylesheet.
-BG_LIGHT, BG_DARK = "#fafafa", "#141413"
+BG_LIGHT, BG_DARK = "#F7F6F1", "#14160F"
 
 # Applied before first paint, so a visitor who chose dark in the atlas never sees
 # a white flash here. The atlas stores the choice under this key.
@@ -925,16 +925,16 @@ def season_index(lang, rows):
 
 CSS = """/* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
-:root{--bg:#fafafa;--card:#fff;--border:#e7e7e5;--ink:#1f1f1e;--ink-2:#55554f;
-  --ink-3:#8a8a84;--plate:#f1f1f0;--line:#585853;
+:root{--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
+  --ink-3:#6A6E5F;--plate:#F0F1E7;--line:#585853;
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
 /* Dark twice: once for the system setting, once for the choice made in the atlas,
    which wins either way. */
-:root[data-theme="dark"]{--bg:#141413;--card:#1c1c1a;--border:#2c2c29;
-  --ink:#eceae5;--ink-2:#b6b3ac;--ink-3:#87847d;--plate:#242422;--line:#b8b5ae}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1c1c1a;
-  --border:#2c2c29;--ink:#eceae5;--ink-2:#b6b3ac;--ink-3:#87847d;--plate:#242422;--line:#b8b5ae}}
+:root[data-theme="dark"]{--bg:#14160F;--card:#1C1E16;--border:#2C2F24;
+  --ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14160F;--card:#1C1E16;
+  --border:#2C2F24;--ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 var(--sans);
   -webkit-font-smoothing:antialiased}

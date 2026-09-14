@@ -1,26 +1,33 @@
 /* Copius — illustrated ingredient dictionary. Neutral white/grey palette. */
 :root{
-  --bg:#fafafa;
-  --card:#ffffff;
-  --border:#e7e7e5;
-  --border-strong:#d6d6d3;
-  --ink:#1f1f1e;
-  --ink-2:#55554f;
-  --ink-3:#8a8a84;
-  --chip:#f1f1ef;
-  --chip-ink:#4a4a45;
-  --plate:#f1f1f0;
-  --accent:#2b2b29;
+  --bg:#F7F6F1;
+  --card:#FFFEFC;
+  --border:#E5E7DA;
+  --border-strong:#D1D5C3;
+  --ink:#1E211A;
+  --ink-2:#565A4C;
+  /* raised from #8a8a84: that was 3.33:1 on the old ground and 3.10:1 on this one,
+     both under the 4.5:1 AA floor for the Latin names and category labels it sets. */
+  --ink-3:#6A6E5F;
+  --chip:#EDEFE3;
+  --chip-ink:#4A5140;
+  --plate:#F0F1E7;
+  /* two greens, so selection has a hierarchy: deep olive carries primary actions,
+     the soft green carries selected filters. */
+  --accent:#4F5B3F;
+  --accent-soft:#DCE4CB;
+  --accent-soft-ink:#3F4A31;
+  --accent-soft-bd:#BECBA4;
   --art-1:#e9e9e6;
   --art-2:#d7d7d3;
   --art-3:#bcbcb6;
   --art-line:#585853;
   --warn:#8a6d3b;
   --warn-line:#c8a869;
-  --ring:#ececea;
+  --ring:#E3E8D6;
   --on-accent:#ffffff;
-  --head-bg:rgba(250,250,250,.92);
-  --scrim:rgba(28,28,26,.45);
+  --head-bg:rgba(247,246,241,.92);
+  --scrim:rgba(26,28,22,.45);
   --shadow:0 1px 2px rgba(30,30,28,.05);
   --shadow-lift:0 10px 30px rgba(30,30,28,.10);
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
@@ -29,39 +36,43 @@
 
 /* ---------- dark ---------- */
 :root[data-theme="dark"]{
-  --bg:#141413;
-  --card:#1c1c1a;
-  --border:#2c2c29;
-  --border-strong:#3d3d39;
-  --ink:#eceae5;
-  --ink-2:#b6b3ac;
-  --ink-3:#87847d;
-  --chip:#262624;
-  --chip-ink:#c9c6bf;
-  --plate:#242422;
-  --accent:#eceae5;
-  --on-accent:#141413;
+  --bg:#14160F;
+  --card:#1C1E16;
+  --border:#2C2F24;
+  --border-strong:#3C4033;
+  --ink:#ECEBE2;
+  --ink-2:#B4B7A6;
+  --ink-3:#8E9280;
+  --chip:#252820;
+  --chip-ink:#C7CBB9;
+  --plate:#242619;
+  --accent:#AEB994;
+  --accent-soft:#2E3626;
+  --accent-soft-ink:#C2CFA6;
+  --accent-soft-bd:#46523A;
+  --on-accent:#191A14;
   --art-1:#2f2f2c;
   --art-2:#3a3a36;
   --art-3:#4a4a45;
   --art-line:#b8b5ae;
   --warn:#d1b276;
   --warn-line:#7a6435;
-  --ring:#33332f;
-  --head-bg:rgba(20,20,19,.92);
+  --ring:#33362B;
+  --head-bg:rgba(20,22,15,.92);
   --scrim:rgba(0,0,0,.6);
   --shadow:0 1px 2px rgba(0,0,0,.35);
   --shadow-lift:0 10px 30px rgba(0,0,0,.45);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --border-strong:#3d3d39;
-    --ink:#eceae5; --ink-2:#b6b3ac; --ink-3:#87847d; --chip:#262624; --chip-ink:#c9c6bf;
-    --plate:#242422; --accent:#eceae5; --on-accent:#141413;
+    --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --border-strong:#3C4033;
+    --ink:#ECEBE2; --ink-2:#B4B7A6; --ink-3:#8E9280; --chip:#252820; --chip-ink:#C7CBB9;
+    --plate:#242619; --accent:#AEB994; --on-accent:#191A14;
+    --accent-soft:#2E3626; --accent-soft-ink:#C2CFA6; --accent-soft-bd:#46523A;
     --art-1:#2f2f2c; --art-2:#3a3a36; --art-3:#4a4a45; --art-line:#b8b5ae;
-    --warn:#d1b276; --warn-line:#7a6435; --ring:#33332f;
+    --warn:#d1b276; --warn-line:#7a6435; --ring:#33362B;
     --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lift:0 10px 30px rgba(0,0,0,.45);
-    --head-bg:rgba(20,20,19,.92); --scrim:rgba(0,0,0,.6);
+    --head-bg:rgba(20,22,15,.92); --scrim:rgba(0,0,0,.6);
   }
 }
 *{box-sizing:border-box}
@@ -139,7 +150,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   transition:all .15s ease;
 }
 .cats .chip:hover{border-color:var(--ink-3)}
-.cats .chip.active{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.cats .chip.active{background:var(--accent-soft);border-color:var(--accent-soft-bd);color:var(--accent-soft-ink)}
 
 /* ---------- toolbar ---------- */
 .toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--ink-2);font-size:13.5px}
@@ -241,7 +252,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .fchips{display:flex;flex-wrap:wrap;gap:6px}
 .fchips .tag{cursor:pointer;border:1px solid transparent;font:inherit;font-size:11.5px}
 .fchips .tag:hover{border-color:var(--border-strong)}
-.fchips .tag.on{background:var(--accent);color:var(--on-accent)}
+.fchips .tag.on{background:var(--accent-soft);color:var(--accent-soft-ink)}
 .picker{display:flex;gap:8px}
 .picker input{flex:1;margin-top:0 !important}
 .picker button{padding:0 16px;border-radius:10px;border:1px solid var(--border-strong);background:var(--card);color:var(--ink-2)}

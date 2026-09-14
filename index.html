@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);var m=document.createElement("meta");m.name="theme-color";m.content=t==="dark"?"#141413":"#fafafa";document.head.appendChild(m)}}catch(e){}</script>
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);var m=document.createElement("meta");m.name="theme-color";m.content=t==="dark"?"#14160F":"#F7F6F1";document.head.appendChild(m)}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Copius — an illustrated atlas of cooking</title>
 <meta name="description" content="An illustrated bilingual atlas of ingredients, techniques, bases and the people who cooked them. In progress.">
@@ -23,29 +23,29 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141413">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
 <style>
   /* Self-contained on purpose: the atlas stylesheet is 100 KB of app, and this
      page has to appear instantly on a phone. Same tokens, copied not imported. */
   :root{
-    --bg:#fafafa; --card:#ffffff; --border:#e7e7e5; --ink:#1f1f1e;
-    --ink-2:#55554f; --ink-3:#8a8a84; --plate:#f1f1f0; --rule:#d6d6d3;
+    --bg:#F7F6F1; --card:#FFFEFC; --border:#E5E7DA; --ink:#1E211A;
+    --ink-2:#565A4C; --ink-3:#6A6E5F; --plate:#F0F1E7; --rule:#D1D5C3;
     --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   }
   /* Dark twice: once for the system setting, once for the choice made in the
      atlas, which wins either way. */
   :root[data-theme="dark"]{
-    --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --ink:#eceae5;
-    --ink-2:#b6b3ac; --ink-3:#87847d; --plate:#242422; --rule:#3d3d39;
+    --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --ink:#ECEBE2;
+    --ink-2:#B4B7A6; --ink-3:#8E9280; --plate:#242619; --rule:#3C4033;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#141413; --card:#1c1c1a; --border:#2c2c29; --ink:#eceae5;
-      --ink-2:#b6b3ac; --ink-3:#87847d; --plate:#242422; --rule:#3d3d39;
+      --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --ink:#ECEBE2;
+      --ink-2:#B4B7A6; --ink-3:#8E9280; --plate:#242619; --rule:#3C4033;
     }
   }
   *{box-sizing:border-box}

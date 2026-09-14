@@ -33,12 +33,12 @@ line = "%d INGREDIENTS · %d TECHNIQUES · %d CHEFS" % (len(ing), tech, chefs)
 # out zoomed and clipped. Authoring it square and cropping the middle band back
 # out is what keeps the proportions honest.
 SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
-  <rect width="1200" height="1200" fill="#faf9f7"/>
+  <rect width="1200" height="1200" fill="#F7F6F1"/>
   <g transform="translate(0 285)">
-    <rect x="30" y="30" width="1140" height="570" fill="none" stroke="#e3e2de" stroke-width="2"/>
+    <rect x="30" y="30" width="1140" height="570" fill="none" stroke="#E5E7DA" stroke-width="2"/>
     <g transform="translate(600 175) scale(1.15) translate(-48 -48)">
       <path d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"
-            fill="#faf9f7" stroke="#1f1f1e" stroke-width="3.4" stroke-linejoin="round"/>
+            fill="#F7F6F1" stroke="#1E211A" stroke-width="3.4" stroke-linejoin="round"/>
       <path d="M52 24c9 4 14 11 14 20" fill="none" stroke="#1f1f1e" stroke-width="3.4" stroke-linecap="round"/>
       <circle cx="62" cy="20" r="7.5" fill="#1f1f1e"/>
       <circle cx="75" cy="30" r="6" fill="#1f1f1e"/>
@@ -49,7 +49,7 @@ SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" view
     <text x="600" y="420" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
           font-style="italic" font-size="30" fill="#6b6a64">An illustrated atlas of cooking · Un atlas illustré de la cuisine</text>
     <text x="600" y="497" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-          font-size="22" letter-spacing="3" fill="#8a8a84">%s</text>
+          font-size="22" letter-spacing="3" fill="#6A6E5F">%s</text>
     <text x="600" y="551" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
           font-size="19" fill="#a3a29b">copius.fr</text>
   </g>
