@@ -17,7 +17,7 @@ fr:"Son parfum est phénolique et bitumineux — goudron, iode, puis une finale 
 tip:{en:"Do not shave it over anything. Weigh two or three grams into a terrine farce or a sauce and let it cook in — dosed like a black winter truffle it takes the whole plate, and the bitterness is not a flaw to be cooked away.",
 fr:"Ne la râpez sur rien. Pesez deux ou trois grammes dans une farce à terrine ou dans une sauce et laissez-la cuire dedans : dosée comme une truffe noire d’hiver, elle mange toute l’assiette, et son amertume n’est pas un défaut à faire disparaître."},
 pairs:["butter","egg","potato","pork","chicken","cream","chestnut","foie-gras"],
-svg:'<path class="f3 sf" d="M32 44q4-12 16-12t18 12q4 12-6 20t-22 2q-10-8-6-22z"/><path class="s" d="M46 40q-6 6-2 12t10 2"/><path class="s" d="M36 56q6 2 8 8M58 46q4 6 0 12"/>'},
+svg:'<path class="f1 sf" d="M70 38Q80 49 70 60Q68 74 54 73Q50 65 44 71Q38 76 32 68Q19 63 23 49Q19 35 32 30Q41 18 54 25Q68 24 70 38Z"/><path class="f2 sf" d="M40 74q-5-8 2-13 7-5 13 1 5 6 1 12-8 5-16 0z"/><path class="s" d="M25 45q9 4 14-1 5-6 13-2M26 58q5-3 9-1M60 55q5 2 8 6" stroke-width="2"/><path class="s" d="M34 32q-1 7 2 11 3 5 0 10M58 30q3 7 1 12-2 5 2 9" stroke-width="2"/><path class="dot" d="M41 68q6-8 14-3-6-1-10 3-3 3-4 0z"/>'},
 
 {id:"bamboo-fungus",cat:"mushrooms",rare:true,price:3,pk:"60–140 €/kg",name:{en:"Bamboo fungus",fr:"Satyre voilé (champignon bambou)"},latin:"Phallus indusiatus",
 origin:{en:"Bamboo groves, southern China",fr:"Bambouseraies du sud de la Chine"},season:[],
@@ -77,7 +77,7 @@ fr:"Brillat-Savarin la nommait « le diamant de la cuisine ». Des siècles dura
 tip:{en:"Never cook it hard: shave it over warm eggs, pasta or potatoes at the last second. Store it with your eggs — the perfume passes through the shell.",
 fr:"Ne la cuisez jamais fort : râpez-la sur des œufs chauds, des pâtes ou des pommes de terre à la dernière seconde. Rangez-la avec vos œufs — le parfum traverse la coquille."},
 pairs:["egg","potato","rice","parmesan","cream","chicken"],
-svg:'<path class="f3 sf" d="M33 50q-2-14 13-17 16-3 18 11 2 12-8 17-11 5-19-2-4-4-4-9z"/><path class="s" d="M40 44l6 5-2 7M52 42l3 8-7 4"/>'},
+svg:'<path class="f1 sf" d="M58 41Q63 47 58 55Q57 62 50 65Q44 72 38 69Q31 71 26 65Q19 62 18 55Q13 49 18 41Q19 34 26 31Q30 24 38 27Q45 25 50 31Q57 34 58 41Z"/><path class="s" d="M24 42q6 1 8-3M24 54q7 1 9 4M36 34q2 5-1 8M40 60q5-2 8-5M30 62q4 3 8 2" stroke-width="2"/><path class="f2 sf" d="M60 38q10-5 17 3 5 9 2 18-5 9-14 9-10-1-13-10-3-10 2-17 2-3 6-3z"/><path class="s" d="M62 42q-8 6-9 15-1 9 5 15" stroke-width="2"/><path class="s" d="M58 48q6 2 9 7 4 5 11 3M60 58q6-1 10 3 3 4 8 3M66 44q2 6-1 10-2 5 2 9" stroke-width="1.5"/>'},
 
 {id:"black-trumpet",cat:"mushrooms",price:3,pk:"25–45 €/kg",name:{en:"Black trumpet",fr:"Trompette de la mort"},latin:"Craterellus cornucopioides",
 origin:{en:"European & American woodlands",fr:"Forêts d’Europe & d’Amérique"},season:[9,10,11],
@@ -87,7 +87,7 @@ fr:"Son nom lugubre est une pure calomnie pour l’un des meilleurs champignons 
 tip:{en:"Split each trumpet lengthwise to evict hidden needles and sand. Dried and ground, it becomes a black seasoning powder that electrifies eggs and cream sauces.",
 fr:"Fendez chaque trompette en long pour déloger aiguilles et sable cachés. Séchée et moulue, elle devient une poudre noire qui électrise les œufs et les sauces crémées."},
 pairs:["egg","cream","chestnut","parmesan","garlic"],
-svg:'<path class="f3 sf" d="M40 26q4 10 0 22-3 10-8 14 8 4 16 0t16 0q-5-4-8-14-4-12 0-22-8 6-16 0z" transform="scale(.9) translate(6 8)"/>'},
+svg:'<path class="f1 sf" d="M22 32Q28 40 35 33Q42 40 47 30Q50 26 53 25C59 42 54 62 47 79q-3 4-6 0C33 62 20 46 22 32Z"/><path class="dot" d="M24 33Q29 41 36 34Q42 41 48 31Q51 27 54 26Q48 44 38 46Q28 43 24 33Z"/><path class="f2 sf" d="M57 38Q62 45 68 39Q73 35 78 34C81 48 74 62 66 74q-3 3-5 0C58 60 54 48 57 38Z"/><path class="dot" d="M58 39Q63 46 69 40Q73 36 77 35Q72 49 65 50Q60 47 58 39Z"/><path class="s" d="M31 46q3 14 9 30M43 46q1 14 2 30M63 52q0 10 2 18" stroke-width="1.5"/>'},
 
 {id:"blonde-morel",cat:"mushrooms",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Blonde morel",fr:"Morille blonde"},latin:"Morchella esculenta",
 origin:{en:"Ash and elm woods, spring",fr:"Bois de frênes et d'ormes, au printemps"},season:[4,5,6],
@@ -137,7 +137,7 @@ fr:"Génétiquement, c’est la même espèce que la truffe d’été, et les my
 tip:{en:"Unlike the Périgord truffle it takes brief cooking, so it can go into a hot sauce at the very end rather than only raw over fat. Store it in a sealed jar with eggs, not buried in rice — rice pulls out the water its aroma depends on.",
 fr:"Contrairement à la truffe du Périgord, elle supporte une cuisson brève : elle peut entrer dans une sauce chaude en toute fin plutôt que seulement crue sur un corps gras. Conservez-la en bocal fermé avec des œufs, jamais enfouie dans du riz — le riz lui prend l’eau dont dépend son parfum."},
 pairs:["egg","butter","potato","comte","hazelnut","cream"],
-svg:'<path class="f3 sf" d="M26 50q0-20 22-20t22 20-22 22-22-22z"/><path class="f1 sf" d="M48 30q22 0 22 20t-22 22z"/><path class="s" d="M52 38q6 6 4 14M60 42q4 8 0 16M56 58q6 2 8 8"/><path class="s" d="M30 42q4-4 8-2M32 56q5-3 9 0"/>'},
+svg:'<path class="f1 sf" d="M20 41C19 30 28 22 38 23C48 24 54 32 53 42C52 51 45 58 36 57C27 56 21 51 20 41Z"/><path class="f2 sf" d="M26 41C25 33 32 27 39 28C46 29 50 35 49 42C48 49 43 53 37 52C30 51 26 47 26 41Z"/><path class="f1 sf" d="M45 60C44 49 53 41 63 42C73 43 79 51 78 61C77 71 70 78 61 77C51 76 46 70 45 60Z"/><path class="f2 sf" d="M51 60C50 52 57 46 64 47C71 48 75 54 74 61C73 68 68 72 62 71C55 70 51 66 51 60Z"/><path class="s" d="M29 35q7-1 9 4 2 5 8 2M30 45q7 1 10-3 3-4 8-1M36 31q-1 6-3 9M55 57q8-2 10 3 2 4 8 1M56 65q6 2 10-2 3-4 7-1M66 49q-2 6-1 10" stroke-width="1.5"/>'},
 
 {id:"mushroom",cat:"mushrooms",price:1,pk:"4–8 €/kg",name:{en:"Button mushroom",fr:"Champignon de Paris"},latin:"Agaricus bisporus",
 origin:{en:"Cultivated in France",fr:"Cultivé en France"},season:[],
@@ -197,7 +197,7 @@ fr:"Trompettes dorées au léger parfum d’abricot, les girolles n’ont jamais
 tip:{en:"Never soak them — brush them clean. Butter, a little cream, and they need nothing else.",
 fr:"Ne les trempez jamais — brossez-les. Du beurre, un peu de crème, et elles n’ont besoin de rien d’autre."},
 pairs:["butter","egg","cream","chives","chicken","hazelnut"],
-svg:'<path class="f2 sf" d="M36 32q12 8 24 0-2 10-8 16l-2 22q0 4-2 4t-2-4l-2-22q-6-6-8-16z"/><path class="s" d="M42 40q6 4 12 0M44 50q4 3 8 0"/>'},
+svg:'<path class="f1 sf" d="M22 34Q28 25 35 29Q42 35 48 34Q55 35 61 29Q68 25 74 34C73 45 67 55 60 59q-1 9-3 16-1 5-8 5-7 0-8-5-2-7-3-16C29 55 23 45 22 34Z"/><path class="f2 sf" d="M61 29Q68 25 74 34C73 45 67 55 60 59q-3-7 2-12 6-6 4-18z"/><path class="s" d="M26 42q7 7 14 11M35 45q5 6 9 10M44 59q0 11 1 20M52 59q0 11-1 19M62 46q-5 6-10 10M71 42q-7 7-14 12" stroke-width="2"/><path class="s" d="M37 38q11 5 22-2" stroke-width="2"/><path class="s" d="M28 30q4 3 8 1M62 31q4 3 8-1" stroke-width="1.5"/>'},
 
 {id:"charcoal-burner-russula",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Charcoal burner",fr:"Russule charbonnière"},latin:"Russula cyanoxantha",
 origin:{en:"European broadleaf forest",fr:"Forêts de feuillus d’Europe"},season:[6,7,8,9,10],
@@ -367,7 +367,7 @@ fr:"Il pousse sur les racines du panicaut, le chardon bleu — d’où son nom f
 tip:{en:"Slice the stem into thick discs, score them in a lattice and sear both sides. That is where the scallop illusion comes from.",
 fr:"Taillez le pied en épais médaillons, incisez-les en croisillons et saisissez les deux faces. C’est de là que vient l’illusion de saint-jacques."},
 pairs:["butter","garlic","thyme","soy-sauce","black-pepper","parsley","sesame-oil","lemon"],
-svg:'<path class="f2 sf" d="M36 40q0-8 12-8t12 8q-10 6-24 0z"/><path class="f3 sf" d="M40 40h16v34H40z"/>'},
+svg:'<path class="f1 sf" d="M37 32q11-2 22 0 3 13 2 24-1 12-3 20-2 5-9 5-7 0-9-5-2-8-3-20-1-11 0-24z"/><path class="f2 sf" d="M28 34q-1-7 9-10 10-5 23-3 11 2 13 9 2 6-6 8-18 4-31 0-8-1-8-4z"/><path class="s" d="M34 39q2 4 4 6M41 41q0 6 0 9M48 41q0 6 0 10M55 41q0 6 0 9M62 39q-2 4-4 6" stroke-width="1.5"/><path class="f1 sf" d="M60 60q10-3 15 3 2 6-4 10-10 4-14-2-3-7 3-11z"/><path class="s" d="M62 66q7-3 10 1" stroke-width="1.5"/>'},
 
 {id:"lions-mane",cat:"mushrooms",price:3,pk:"25–45 €/kg",name:{en:"Lion's mane",fr:"Hydne hérisson"},latin:"Hericium erinaceus",
 origin:{en:"Standing beech and oak",fr:"Hêtres et chênes sur pied"},season:[8,9,10,11],
@@ -397,7 +397,7 @@ fr:"Son nom japonais signifie champignon qui danse, censé décrire la joie de c
 tip:{en:"Roast it in large pieces at high heat until the frilled edges crisp. Sliced small it loses everything that makes it distinctive.",
 fr:"Rôtissez-le en gros morceaux à feu vif jusqu’à ce que les bords frangés croustillent. Émincé fin il perd tout ce qui le distingue."},
 pairs:["soy-sauce","butter","garlic","thyme","sesame-oil","black-pepper","spring-onion","cream"],
-svg:'<path class="f1 sf" d="M26 58q8-14 22-12t22 12q-16 10-44 0z"/><path class="s" d="M32 50q6 6 4 12M44 46q4 8 2 14M56 48q4 8 2 12"/>'},
+svg:'<path class="f1 sf" d="M46 68C36 66 24 62 18 54C14 50 15 44 19 42C26 44 36 50 46 56ZM48 62C42 52 38 38 40 26C44 22 52 22 57 26C60 38 56 52 50 62ZM50 66C60 64 72 60 78 52C81 48 80 43 76 42C68 46 58 52 50 58Z"/><path class="f2 sf" d="M46 64C40 56 30 44 26 34C28 28 34 27 38 30C42 40 48 52 50 60ZM50 64C56 56 64 44 68 34C66 28 60 27 56 30C54 40 48 52 46 60Z"/><path class="f1 sf" d="M41 60q5 12 3 18-2 4-5 3t-2-5q1-8-2-16zM53 60q-3 12-1 18 1 4 4 3t2-5q-1-8 1-16z"/><path class="s" d="M40 58q-8-2-16-8M44 54q-1-10-3-22M52 54q3-10 8-20M56 58q9-3 17-9" stroke-width="1.5"/><path class="s" d="M40 62q8 3 16 0" stroke-width="2"/>'},
 
 {id:"march-hygrophorus",cat:"mushrooms",rare:true,price:2,pk:"15–30 €/kg",name:{en:"March hygrophorus",fr:"Hygrophore de mars"},latin:"Hygrophorus marzuolus",
 origin:{en:"Montane fir and beech, 1000-2000 m",fr:"Sapinières et hêtraies d'altitude"},season:[2,3,4,5],
@@ -547,7 +547,7 @@ fr:"Les Italiens les nomment porcini — « petits cochons » — pour leur pied
 tip:{en:"Dried porcini are a pantry treasure: their soaking water is a broth in itself — never pour it away.",
 fr:"Les cèpes séchés sont un trésor de garde-manger : leur eau de trempage est un bouillon à elle seule — ne la jetez jamais."},
 pairs:["garlic","parsley","parmesan","rice","olive-oil","thyme","beef"],
-svg:'<path class="f3 sf" d="M26 50q0-20 22-20t22 20q0 4-5 4H31q-5 0-5-4z"/><path class="f1 sf" d="M39 54h18l-1 8q-1 14-8 14t-8-14z"/>'},
+svg:'<path class="f2 sf" d="M19 46q1-15 18-20 17-5 28 4 13 6 12 17-24 8-58-1z"/><path class="f1 sf" d="M19 46q34 9 58 1-2 8-8 10-20 6-40 0-8-3-10-11z"/><path class="f1 sf" d="M37 55q11 3 22 0 4 7 4 13 0 8-3 11-12 4-24 0-3-4-3-11 0-6 4-13z"/><path class="s" d="M37 58l7 5M45 57l7 5M53 58l7 5M39 66l6 4M47 65l6 4M55 65l5 4M44 58l-6 5M52 57l-6 5M60 58l-6 5" stroke-width="1.5"/><path class="s" d="M27 36q10-8 23-7" stroke-width="2"/>'},
 
 {id:"lactaire",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Saffron milk cap",fr:"Lactaire délicieux"},latin:"Lactarius deliciosus",
 origin:{en:"European pine forests",fr:"Pinèdes d’Europe"},season:[9,10,11],
@@ -577,7 +577,7 @@ fr:"Depuis mille ans, cultivateurs japonais et chinois font naître le shiitaké
 tip:{en:"The stems are tough but full of flavour: keep them for stock, and score the caps to help them drink the sauce.",
 fr:"Les pieds sont coriaces mais pleins de goût : gardez-les pour le bouillon, et incisez les chapeaux pour qu’ils boivent la sauce."},
 pairs:["soy-sauce","ginger","rice","miso","garlic","sesame"],
-svg:'<path class="f3 sf" d="M26 54q2-22 22-22t22 22q0 3-4 3H30q-4 0-4-3z"/><path class="f1" d="M40 40a2 2 0 104 0 2 2 0 10-4 0M50 36a2 2 0 104 0 2 2 0 10-4 0M56 44a2 2 0 104 0 2 2 0 10-4 0M36 46a2 2 0 104 0 2 2 0 10-4 0"/><path class="f1 sf" d="M43 57h10l-1 12q0 4-4 4t-4-4z"/>'},
+svg:'<path class="f1 sf" d="M40 56q8 1 13 0 1 8 0 14-1 6-6 6-6 0-7-6-1-7 0-14z"/><path class="f2 sf" d="M17 46q2-17 21-21 21-4 29 13 6 8 5 13-2 6-10 7-21 4-38 0-7-2-7-12z"/><path class="s" d="M20 50q8 7 26 7 18 0 26-7" stroke-width="2"/><path class="s" d="M27 40q7-3 11 2 4 5 12 3M34 30q1 6-2 10-3 4-1 9M51 28q-1 7 2 11 3 4 1 9M58 36q5 2 8 6M40 48q7-2 12 1" stroke-width="2"/><path class="s" d="M44 62q0 8 0 12M50 62q0 8 0 12" stroke-width="1.5"/>'},
 
 {id:"shimeji",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"Shimeji",fr:"Shimeji"},latin:"Hypsizygus marmoreus",
 origin:{en:"Beech wood, Japan",fr:"Bois de hêtre, Japon"},season:[],
@@ -627,7 +627,7 @@ fr:"Il paraît vers la Saint-Georges, fin avril, d’où son nom anglais, et pou
 tip:{en:"One of the very few good spring mushrooms, which is most of its value. Pair it with the other things in season — asparagus, peas.",
 fr:"L’un des très rares bons champignons de printemps, et c’est là son intérêt. Associez-le à ce qui est de saison — asperge, petits pois."},
 pairs:["asparagus","butter","cream","pea","chervil","shallot","egg","chicken"],
-svg:'<path class="f3 sf" d="M28 54q0-16 20-16t20 16q-18 10-40 0z"/><path class="f3 sf" d="M42 54h12v20h-12z"/>'},
+svg:'<path class="f1 sf" d="M32 48q10-2 17 0 2 12 1 22-1 7-8 7-8 0-9-7-1-10-1-22z"/><path class="f1 sf" d="M20 48q-2-17 18-20 19-3 23 12 3 8-4 11-15 5-25 2-10-2-12-5z"/><path class="s" d="M23 47q13 6 28 1" stroke-width="2"/><path class="f1 sf" d="M56 58q6-1 9 0 1 8 0 14-1 4-5 4-4 0-5-4-1-6 1-14z"/><path class="f2 sf" d="M52 46q6-9 16-7 11 2 12 10 0 5-7 6-10 2-17-1-6-2-4-8z"/><path class="s" d="M52 55q0 4 1 7M68 57q0 5 1 8M73 56q-1 5-1 8M77 53q-1 4-2 7" stroke-width="1.5"/>'},
 
 {id:"straw-mushroom",cat:"mushrooms",price:1,pk:"6–12 €/kg",name:{en:"Straw mushroom",fr:"Champignon de paille"},latin:"Volvariella volvacea",
 origin:{en:"Rice straw beds, southern China",fr:"Lits de paille de riz, sud de la Chine"},season:[],
@@ -657,7 +657,7 @@ fr:"Une fraction du prix de la truffe noire d’hiver et une fraction du parfum 
 tip:{en:"Do not cook it and do not pay winter prices. Shave it raw over something warm and fatty at the last moment.",
 fr:"Ne la cuisez pas et ne la payez pas au prix de l’hiver. Râpez-la crue sur quelque chose de chaud et de gras au dernier moment."},
 pairs:["egg","butter","parmesan","cream","potato","arborio","olive-oil","chicken"],
-svg:'<circle class="f1 sf" cx="48" cy="56" r="18"/><path class="s" d="M36 46l6 6-6 4M56 44l6 8-8 4M42 64l8 4"/>'},
+svg:'<path class="f1 sf" d="M70 43Q77 55 66 65Q61 77 47 75Q34 79 27 66Q16 58 21 46Q21 32 34 28Q44 19 55 27Q69 29 70 43Z"/><path class="s" d="M22 48q10 5 16-1 6-6 13-1M25 62q10 3 15-2 5-6 12-2" stroke-width="2"/><path class="s" d="M34 34q-3 8 0 12 3 5-1 10M52 46q3 7 0 11-3 5 0 9" stroke-width="2"/><path class="f2 sf" d="M34 28Q44 19 55 27Q69 29 70 43Q54 48 44 38Q34 34 34 28Z"/><path class="s" d="M41 27q6 4 8 9M52 24q3 6 3 12M61 31q1 5 0 9M45 36q8 0 13 3" stroke-width="1.5"/>'},
 
 {id:"termite-mushroom",cat:"mushrooms",price:4,pk:"200–500 €/kg",name:{en:"Termite mushroom (jizong)",fr:"Champignon des termitières (jizong)"},latin:"Termitomyces spp.",
 origin:{en:"Termite mounds, Yunnan",fr:"Termitières du Yunnan"},season:[6,7,8,9],
@@ -677,7 +677,7 @@ fr:"La truffe noire s’est pliée aux vergers depuis longtemps ; la blanche d�
 tip:{en:"It must never see the pan: shave it raw, at the table, over hot silk — buttered pasta, risotto, a fried egg. The heat below is what unlocks it.",
 fr:"Elle ne doit jamais voir la poêle : rasez-la crue, à table, sur une soie chaude — pâtes au beurre, risotto, œuf au plat. C’est la chaleur du dessous qui l’ouvre."},
 pairs:["egg","rice","butter","parmesan","potato"],
-svg:'<path class="f1 sf" d="M34 50q-2-13 12-16 15-3 17 10 2 11-7 16-10 5-18-2-4-4-4-8z"/><path class="s" d="M42 44l5 4-2 6M53 42l2 7-6 3" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M32 64C23 60 18 55 19 48C18 39 25 31 34 28C39 26 43 30 45 35C48 29 55 24 62 27C71 30 75 35 74 42C72 47 68 48 63 47C68 50 73 52 73 58C73 66 68 71 61 70C55 69 51 67 48 63C46 68 41 73 35 71C32 70 30 67 32 64Z"/><path class="f2 sf" d="M63 47C68 50 73 52 73 58C73 66 68 71 61 70C55 69 51 67 48 63C53 58 58 52 63 47Z"/><path class="s" d="M24 46C26 52 30 56 36 58M28 38C32 34 37 33 42 35" stroke-width="1.5"/><path class="f1 sf" d="M28 77C36 72 46 70 56 72C59 73 59 76 55 77C46 79 34 79 28 78C27 78 27 77 28 77Z"/><path class="s" d="M31 76q11-3 20-1" stroke-width="1.5"/>'},
 
 {id:"winter-chanterelle",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
 origin:{en:"Mossy conifer woods, northern Europe",fr:"Sous-bois moussus de conifères, Europe du Nord"},season:[9,10,11,12],
@@ -697,7 +697,7 @@ fr:"Ses noms français et latin viennent d’une légende médiévale selon laqu
 tip:{en:"Soak the dried ones twenty minutes and they swell to five times their size. Never eat them raw.",
 fr:"Trempez les séchées vingt minutes et elles gonflent à cinq fois leur volume. Ne les mangez jamais crues."},
 pairs:["soy-sauce","ginger","sesame-oil","spring-onion","garlic","rice-vinegar","chili","tamari"],
-svg:'<path class="f1 sf" d="M28 58q4-20 22-18t18 16q-12 12-42 2z"/><path class="s" d="M36 52q10 6 20 2M34 60q14 6 26 0"/>'},
+svg:'<path class="f1 sf" d="M24 68C16 58 16 44 24 34C29 27 37 22 45 22C43 27 47 30 52 28C57 24 64 26 68 31C66 36 69 40 74 39C79 42 82 47 79 52C74 54 74 59 77 63C70 68 62 71 56 73C44 77 31 76 24 68Z"/><path class="f2 sf" d="M30 65C24 56 24 45 30 37C35 31 41 27 48 27C46 31 49 34 53 32C58 29 63 31 66 35C64 39 67 42 71 41C75 44 77 48 74 52C71 54 71 57 73 60C67 64 60 67 55 68C45 71 34 70 30 65Z"/><path class="s" d="M34 60C31 52 32 43 37 36M41 64C37 55 38 45 44 38M49 66C45 57 46 47 52 39" stroke-width="1.5"/><path class="s" d="M45 23C44 28 48 31 53 29C58 25 64 27 68 32" stroke-width="2"/><path class="f2 sf" d="M24 68C20 66 19 62 22 60C26 62 27 66 24 68Z"/>'},
 {id:"reindeer-lichen",cat:"mushrooms",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Reindeer lichen",fr:"Lichen des rennes"},latin:"Cladonia rangiferina",
 origin:{en:"Lapland and boreal heath",fr:"Laponie et landes boréales"},season:[],
 flavor:["earthy","mild","toasty"],

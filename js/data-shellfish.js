@@ -7,7 +7,7 @@ fr:"Un escargot de mer dans une oreille de nacre, décollé des roches aux plus 
 tip:{en:"Tenderise or braise — there is no middle path: pound the escalopes and flash them in butter, or steam it hours with kombu until it slices like a wild mushroom.",
 fr:"Attendrir ou braiser — pas de voie médiane : battez les escalopes et saisissez-les au beurre, ou cuisez-le des heures à la vapeur de kombu jusqu’à ce qu’il se tranche comme un champignon sauvage."},
 pairs:["butter","kombu","soy-sauce","shiitake"],
-svg:'<path class="f1 sf" d="M32 56q-2-18 16-20 20-2 18 14-2 18-20 18-12 0-14-12z"/><path class="s" d="M38 48q10-6 22-2M40 58q10 4 20 0" stroke-width="1.6"/><path class="dot" d="M36 44a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0M42 40a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0M49 38a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0"/>'},
+svg:'<path class="f2 sf" d="M30 70q14 7 30 1 6-2 10-6 1 7-10 10-16 4-26-2-6-2-4-3z"/><path class="f1 sf" d="M20 60q-4-12 6-19 10-8 24-9 16-2 25 6 8 8 4 17-4 11-18 15-16 5-28 0-13-4-13-10z"/><path class="s" d="M26 50q4-8 14-12 12-6 24-6" stroke-width="2"/><path class="s" d="M28 56q6-8 16-12 12-5 22-5M31 62q6-8 16-11 12-4 22-4M36 68q6-7 15-10 10-3 18-3" stroke-width="1.5"/><path class="dot" d="M30 45q6-1 7 3-1 4-7 3-3-2 0-6zM36 40q6-1 7 3-1 4-7 3-3-2 0-6zM43 37q6-1 7 3-1 4-7 3-3-2 0-6zM51 35q6-1 7 3-1 4-7 3-3-2 0-6zM59 35q6-1 7 3-1 4-7 3-3-2 0-6z"/>'},
 
 {id:"american-lobster",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"American lobster",fr:"Homard américain (canadien)"},latin:"Homarus americanus",
 origin:{en:"Northwest Atlantic, Maine to Nova Scotia",fr:"Atlantique Nord-Ouest, du Maine à la Nouvelle-Écosse"},season:[11,12,1,2,3,4],
@@ -267,7 +267,7 @@ fr:"Le plus impatient des crustacés : il meurt vite hors de l’eau et boude vi
 tip:{en:"Seconds, not minutes: flash them in foaming butter or poach them barely, and serve while they still remember the sea. The heads make a ten-minute sauce that outclasses most week-long ones.",
 fr:"Des secondes, pas des minutes : passez-les dans un beurre mousseux ou pochez-les à peine, et servez tant qu’elles se souviennent de la mer. Les têtes font en dix minutes une sauce qui surclasse bien des sauces d’une semaine."},
 pairs:["butter","lemon","garlic","finger-lime","chervil"],
-svg:'<path class="f1 sf" d="M46 34q3-3 6 0l1 22q2 9-4.5 12-6.5-3-4.5-12z"/><path class="s" d="M46 34q-4-8-2-14M52 34q4-8 2-14M44 44l-7 1M44 52l-7 3M54 44l7 1M54 52l7 3"/>'},
+svg:'<path class="s" d="M41 28q-10 0-17 10M55 28q10 0 17 10"/><path class="f1 sf" d="M24 38q-6-1-8 3 2 3 7 2-5 2-3 5 5 0 7-4zM72 38q6-1 8 3-2 3-7 2 5 2 3 5-5 0-7-4z"/><path class="f1 sf" d="M48 18q3 8 4 14 1 8-1 12-6 3-12 0-2-4-1-12 1-6 4-14z"/><path class="f2 sf" d="M39 45q9 3 18 0l-2 20q7 6 7 11-6 3-14 3-8 0-14-3-1-5 7-11z"/><path class="s" d="M40 51q8 3 16 0M41 57q7 3 14 0M42 63q6 2 12 0M45 22q-4-3-6-6M51 22q4-3 6-6" stroke-width="1.5"/><path class="dot" d="M42 24q4-1 5 1-1 3-5 2-2-2 0-3zM52 24q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"lobster",cat:"shellfish",luxe:true,price:3,pk:"45–80 €/kg",name:{en:"Lobster",fr:"Homard"},latin:"Homarus gammarus",
 origin:{en:"North Atlantic; Brittany prizes the blue",fr:"Atlantique Nord ; la Bretagne vénère le bleu"},season:[5,6,7,8,9],
@@ -307,7 +307,7 @@ fr:"Les moules de bouchot poussent sur des pieux de bois plantés dans l’estra
 tip:{en:"Discard any that stay open when tapped before cooking, and any that stay shut after. Both rules matter.",
 fr:"Jetez celles qui restent ouvertes au tapotement avant cuisson, et celles qui restent fermées après. Les deux règles comptent."},
 pairs:["white-wine-vinegar","shallot","parsley","cream","garlic","butter","leek","celery"],
-svg:'<path class="f1 sf" d="M26 62q4-22 22-22t22 22q-18 10-44 0z"/><path class="s" d="M48 40v22M36 52q12 8 24 0"/>'},
+svg:'<path class="f1 sf" d="M20 71Q31 52 46 42Q62 32 74 40Q82 46 78 56Q72 66 56 70Q37 75 20 71Z"/><path class="f2 sf" d="M20 71q4-14 14-22 3 5 1 12-6 8-13 10-3 1-2 0z"/><path class="s" d="M56 40q8 8 8 22M66 41q6 7 6 16" stroke-width="1.5"/><path class="s" d="M32 72q-4 3-7 4M38 73q-4 3-7 4" stroke-width="2"/><path class="dot" d="M24 68q5-1 6 2-1 3-6 2-2-2 0-4z"/>'},
 
 {id:"bay-scallop",cat:"shellfish",rare:true,luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Nantucket bay scallop",fr:"Pétoncle de baie"},latin:"Argopecten irradians",
 origin:{en:"Nantucket eelgrass beds",fr:"Herbiers de zostère de Nantucket"},season:[1,2,3,11,12],
@@ -357,7 +357,7 @@ fr:"Rome construisit des routes pour les transporter vivantes sous la neige ; le
 tip:{en:"The old “months with an R” rule is about summer spawning, not safety — they are simply fuller and firmer in cold months. A turn of pepper beats any heavy sauce.",
 fr:"La vieille règle des « mois en R » concerne le frai d’été, pas la sécurité — elles sont simplement plus pleines et fermes aux mois froids. Un tour de poivre vaut mieux que toute sauce lourde."},
 pairs:["lemon","black-pepper","chives","butter"],
-svg:'<path class="f2 sf" d="M30 52q0-16 18-16t18 16q0 12-18 12T30 52z"/><path class="s" d="M32 46q16-8 32 0M34 58q14 6 28 0" stroke-width="1.6"/><circle class="f1 sf" cx="48" cy="52" r="4"/>'},
+svg:'<path class="f1 sf" d="M18 56q-3-8 3-12 7-3 10-8 5-6 12-5 6-5 14-2 9 0 13 6 8 3 9 11 3 8-2 14-6 9-15 10-9 5-18 2-9-1-14-6-5-4-6-9-2-4 1-5z"/><path class="f2 sf" d="M30 36q14-8 30-4 14 4 18 14 3 12-2 22-10-4-6-16-10-14-30-16z"/><path class="s" d="M26 46q18-8 30 4 8 8 6 16M24 56q14-2 22 6 8 8 6 12" stroke-width="2"/><path class="f2 sf" d="M18 56q-5 2-4 6 3 3 7 1-3-3-1-4 1-2-2-3z"/><path class="dot" d="M36 50q4-1 5 1-1 3-5 2-2-2 0-3zM34 61q4-1 5 1-1 3-5 2-2-2 0-3zM46 66q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"periwinkle",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Periwinkle",fr:"Bigorneau"},latin:"Littorina littorea",
 origin:{en:"North Atlantic rocky shores",fr:"Estrans rocheux de l’Atlantique Nord"},season:[1,2,3,10,11,12],
@@ -397,7 +397,7 @@ fr:"Ils s’enfouissent à une vitesse stupéfiante, d’où la méthode traditi
 tip:{en:"Ninety seconds and no more. They go from tender to rubber faster than any other shellfish.",
 fr:"Quatre-vingt-dix secondes, pas davantage. Ils passent du tendre au caoutchouc plus vite que tout autre coquillage."},
 pairs:["garlic","parsley","olive-oil","lemon","chili","butter","paprika","white-wine-vinegar"],
-svg:'<path class="f3 sf" d="M22 62l48-14 4 8-48 14z"/><path class="s" d="M24 60l48-14"/>'},
+svg:'<path class="f1 sf" d="M20 68q-3-3 0-6 16-12 30-22 12-8 22-12 4-1 5 3 1 4-3 6-12 6-24 14-14 9-26 19-3 2-4-2z"/><path class="f2 sf" d="M24 70q26-20 51-36 2 4-2 6-24 16-46 32-2-1-3-2z"/><path class="s" d="M29 58l5 8M41 49l5 8M53 41l5 8M65 33l5 8" stroke-width="1.5"/><path class="s" d="M22 62q26-20 50-33" stroke-width="2"/><path class="dot" d="M22 62q4-2 6 1-2 3-6 2-1-2 0-3z"/>'},
 
 {id:"gamba-rouge",cat:"shellfish",luxe:true,price:4,pk:"100–200 €/kg",name:{en:"Red prawn of Palamós",fr:"Gamba rouge de Palamós"},latin:"Aristeus antennatus",
 origin:{en:"La Fonera canyon, Catalonia",fr:"Canyon de La Fonera, Catalogne"},season:[],
@@ -417,7 +417,7 @@ fr:"Les pèlerins de Saint-Jacques-de-Compostelle cousaient sa coquille sur leur
 tip:{en:"Dry them obsessively, then ninety seconds a side in a screaming pan: mahogany crust, translucent heart. Moving them early is the only way to fail.",
 fr:"Séchez-les obsessionnellement, puis quatre-vingt-dix secondes par face dans une poêle hurlante : croûte acajou, cœur translucide. Les bouger trop tôt est la seule façon d’échouer."},
 pairs:["butter","chives","saffron","cream","lemon"],
-svg:'<path class="f1 sf" d="M48 30L30 58q0 8 18 8t18-8z"/><path class="s" d="M48 32L38 58M48 32v32M48 32l10 26"/><path class="f2 sf" d="M40 66h16l-2 6H42z"/>'},
+svg:'<path class="f2 sf" d="M36 28q-12-1-14 5 6 4 14 2zM60 28q12-1 14 5-6 4-14 2z"/><path class="f1 sf" d="M36 28q12-3 24 0 14 6 18 20 1 9-4 14-4 8-10 7-6 5-12 4-6 1-12 0-6-1-12-4-6-2-9-7-5-5-1-14 4-14 18-20z"/><path class="s" d="M48 32v40M41 33l-11 36M55 33l11 36M33 36l-13 26M63 36l13 26" stroke-width="2"/><path class="s" d="M28 56q20 6 40 0" stroke-width="1.5"/><path class="dot" d="M43 27q5-2 10 0-1 4-5 4-4 0-5-4z"/>'},
 
 {id:"corail-saint-jacques",cat:"shellfish",price:1,pk:"5–12 €/kg",name:{en:"Scallop coral",fr:"Corail de Saint-Jacques"},latin:"Pecten maximus (coral)",
 origin:{en:"Normandy & Brittany",fr:"Normandie et Bretagne"},season:[10,11,12,1,2,3,4],
@@ -437,7 +437,7 @@ fr:"Sous la coquille hostile attendent cinq langues de corail au goût d’iode,
 tip:{en:"Fold the tongues into scrambled eggs or warm butter off the heat — past sixty degrees the perfume flees. Winter urchins are the fullest.",
 fr:"Glissez les langues dans des œufs brouillés ou un beurre tiède, hors du feu — passé soixante degrés, le parfum s’enfuit. Les oursins d’hiver sont les plus pleins."},
 pairs:["egg","butter","rice","lemon","cream"],
-svg:'<circle class="f3 sf" cx="48" cy="54" r="14"/><path class="s" d="M48 40V28M58 44l8-8M62 54h12M58 64l8 8M48 68v12M38 64l-8 8M34 54H22M38 44l-8-8" stroke-width="1.8"/>'},
+svg:'<path class="s" d="M63 50h16M59 61l11 11M48 65v16M37 61l-11 11M33 50h-16M37 39l-11-11M48 35v-16M59 39l11-11"/><path class="s" d="M62 56l10 4M54 64l4 10M42 64l-4 10M34 56l-10 4M34 44l-10-4M42 36l-4-10M54 36l4-10M62 44l10-4" stroke-width="2"/><path class="s" d="M63 53l12 2M56 62l8 11M45 65l-2 12M36 58l-11 8M33 47l-13-2M40 38l-7-11M51 35l2-12M60 42l11-7" stroke-width="1.5"/><path class="f2 sf" d="M33 50q-1-9 7-13 8-5 15-1 8 4 9 13 1 9-7 14-8 5-16 0-8-5-8-13z"/><path class="dot" d="M38 46q4-1 5 1-1 3-5 2-2-2 0-3zM56 44q4-1 5 1-1 3-5 2-2-2 0-3zM40 59q4-1 5 1-1 3-5 2-2-2 0-3zM56 58q4-1 5 1-1 3-5 2-2-2 0-3zM47 51q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"shrimp",cat:"shellfish",price:2,pk:"15–25 €/kg",name:{en:"Shrimp",fr:"Crevette"},latin:"Penaeus spp.",
 origin:{en:"All the world’s coasts",fr:"Toutes les côtes du monde"},season:[],
@@ -497,7 +497,7 @@ fr:"La Bretagne la tient pour plus fine que le tourteau et elle coûte moins che
 tip:{en:"There is far less meat than the size suggests and picking it is slow. Do it once, in company, with a glass of something cold.",
 fr:"Il y a bien moins de chair que la taille ne le laisse croire et le décorticage est lent. Faites-le une fois, à plusieurs, avec un verre de quelque chose de frais."},
 pairs:["lemon","chives","olive-oil","shallot","white-wine-vinegar","tomato","parsley","black-pepper"],
-svg:'<ellipse class="f2 sf" cx="48" cy="56" rx="14" ry="16"/><path class="s" d="M34 48l-14-8M62 48l14-8M34 58l-16 2M62 58l16 2M36 66l-12 10M60 66l12 10"/>'},
+svg:'<path class="s" d="M32 38l-14-4l-3 4M28 48l-14 1l-1 7M30 58l-11 7l2 8M36 64l-8 8l3 6M64 38l14-4l3 4M68 48l14 1l1 7M66 58l11 7l-2 8M60 64l8 8l-3 6M40 30l-8-5M56 30l8-5"/><path class="f2 sf" d="M48 20q4 5 5 10 7 2 10 8 5 4 5 11 0 9-6 14-7 6-14 6-7 0-14-6-6-5-6-14 0-7 5-11 3-6 10-8 1-5 5-10z"/><path class="f1 sf" d="M32 25q-5-2-7 1 2 2 5 2-4 1-2 4 4 0 5-3zM64 25q5-2 7 1-2 2-5 2 4 1 2 4-4 0-5-3z"/><path class="s" d="M67 44l4-2M66 58l3 3M56 66l1 4M40 66l-1 4M30 58l-3 3M29 44l-4-2M36 33l-3-3M60 33l3-3M46 21l-2-6M50 21l2-6" stroke-width="2"/><path class="dot" d="M43 28q4-1 5 1-1 3-5 2-2-2 0-3zM51 28q4-1 5 1-1 3-5 2-2-2 0-3zM36 42q4-1 5 1-1 3-5 2-2-2 0-3zM56 42q4-1 5 1-1 3-5 2-2-2 0-3zM46 50q4-1 5 1-1 3-5 2-2-2 0-3zM36 56q4-1 5 1-1 3-5 2-2-2 0-3zM56 56q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"spiny-lobster",cat:"shellfish",luxe:true,price:3,pk:"60–130 €/kg",name:{en:"Spiny lobster",fr:"Langouste rouge"},latin:"Palinurus elephas",
 origin:{en:"Brittany & the western Mediterranean",fr:"Bretagne & Méditerranée occidentale"},season:[4,5,6,7,8,9],
@@ -517,7 +517,7 @@ fr:"Son muscle est presque sans gras et très riche en collagène, d’où exact
 tip:{en:"Score the inside of the tube in a diamond pattern before it hits the pan. It curls decoratively and cooks evenly.",
 fr:"Incisez l’intérieur du manteau en croisillons avant la poêle. Il s’enroule joliment et cuit régulièrement."},
 pairs:["garlic","chili","lemon","olive-oil","parsley","squid-ink","tomato","paprika"],
-svg:'<path class="f3 sf" d="M40 26q14 0 14 18t-4 20H42q-4-8-4-20 0-18 2-18z"/><path class="s" d="M42 64q-4 12-8 14M46 64q-2 12-4 16M50 64q2 12 4 16M54 64q4 12 8 14"/>'},
+svg:'<path class="f2 sf" d="M48 18q12 6 18 16 2 6-3 10-8-6-12-14-2-6-3-12zM48 18q-12 6-18 16-2 6 3 10 8-6 12-14 2-6 3-12z"/><path class="f1 sf" d="M48 16q8 12 10 26 2 12 1 18-11 4-22 0-1-6 1-18 2-14 10-26z"/><path class="f1 sf" d="M37 60q11 4 22 0 1 6-2 9-9 3-18 0-3-3-2-9z"/><path class="s" d="M40 69l-9 13M44 70l-5 13M48 70v13M52 70l4 13M56 69l9 13M50 70l2 14"/><path class="dot" d="M41 62q5-1 6 2-1 3-6 2-2-2 0-4z"/>'},
 
 {id:"stone-crab-claw",cat:"shellfish",luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Stone crab claw",fr:"Pince de crabe de pierre"},latin:"Menippe mercenaria",
 origin:{en:"Gulf coast of Florida",fr:"Côte du golfe, Floride"},season:[10,11,12,1,2,3,4],

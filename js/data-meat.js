@@ -77,7 +77,7 @@ fr:"La légende anglaise veut qu’un roi, ravi par une pièce de bœuf, l’ait
 tip:{en:"Take it out of the fridge an hour ahead, sear it hard, rest it as long as you cooked it. The resting is not optional; it is half the recipe.",
 fr:"Sortez-le une heure avant, saisissez-le fort, laissez-le reposer aussi longtemps qu’il a cuit. Le repos n’est pas une option ; c’est la moitié de la recette."},
 pairs:["black-pepper","mushroom","onion","mustard","blue-cheese","thyme","soy-sauce"],
-svg:'<path class="f2 sf" d="M32 44q10-10 26-6 10 3 8 14-2 12-16 14-14 2-18-8-3-8 0-14z"/><path class="f1 sf" d="M54 44q8 2 6 10-1 6-8 8" fill="none"/><path class="s" d="M54 44q8 2 6 10-1 6-8 8"/>'},
+svg:'<path class="f2 sf" d="M28 30 Q50 22 68 32 Q80 40 76 54 Q70 70 50 74 Q30 77 23 62 Q17 47 28 30 Z"/><path class="f1 sf" d="M26 34 Q40 30 56 33 Q60 34 58 39 Q50 41 45 40 L44 62 Q44 67 39 67 Q34 67 35 62 L34 40 Q28 40 25 39 Q22 36 26 34 Z"/><path class="f1 sf" d="M68 32 Q80 40 76 55 Q71 68 52 74 Q66 66 70 53 Q73 41 68 32 Z"/><path class="s" d="M52 48 q6 2 6 8M54 62 q5-2 8 1M58 44 q5-2 8 1M64 56 q3 3 2 7M28 52 q3 3 2 6" stroke-width="1.5"/><path class="dot" d="M40 35 q3-1 4 2-1 3-4 2-2-1-2-2 z"/>'},
 
 {id:"jambon-noir-de-bigorre",cat:"meat",luxe:true,price:3,pk:"100–180 €/kg",name:{en:"Bigorre black ham",fr:"jambon noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon, cured)",
 origin:{en:"Hautes-Pyrénées, Gascony",fr:"Hautes-Pyrénées, Gascogne"},season:[],
@@ -107,7 +107,7 @@ fr:"Homère le décrit dans l’Odyssée — une panse emplie de gras et de sang
 tip:{en:"Cook it gently and never pierce the skin. High heat splits the casing and the whole thing empties into the pan.",
 fr:"Cuisez-le doucement et ne percez jamais la peau. Une chaleur vive fend le boyau et tout se vide dans la poêle."},
 pairs:["apple","onion","potato","cider-vinegar","butter","thyme","mustard","cream"],
-svg:'<path class="f1 sf" d="M28 56q0-14 20-14t20 14-20 16-20-16z"/><path class="s" d="M28 56q20 8 40 0"/>'},
+svg:'<path class="f2 sf" d="M34.3 70Q56.8 63.5 73.1 46.6Q80.4 42.3 76.6 32.9Q70.2 25.1 62.9 29.4Q46.3 45.8 23.7 52Q16 56.5 20 66.3Q26.6 74.6 34.3 70Z"/><path class="dot" d="M33.1 58.4C35.5 62.5 35.9 66.7 33.9 67.9C31.9 69.1 28.3 66.7 25.9 62.6C23.5 58.5 23.1 54.3 25.1 53.1C27.1 51.9 30.7 54.3 33.1 58.4ZM70.8 36.6C73.1 40.5 73.5 44.5 71.7 45.6C69.9 46.6 66.5 44.3 64.2 40.4C61.9 36.5 61.5 32.5 63.3 31.4C65.1 30.4 68.5 32.7 70.8 36.6Z"/><path class="s" d="M44 61 Q39 53 35 46M36 49 q-5-2-7 1" stroke-width="2"/><path class="f1 sf" d="M44 67 q0-13 13-13 14 0 14 13 0 13-14 13-13 0-13-13 z"/><path class="dot" d="M49 67 q0-8 8-8 9 0 9 8 0 8-9 8-8 0-8-8 z"/>'},
 
 {id:"boeuf-blonde-aquitaine",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Blonde d’Aquitaine beef",fr:"Bœuf Blonde d’Aquitaine"},latin:"Bos taurus",
 origin:{en:"South-west France",fr:"Sud-Ouest de la France"},season:[],
@@ -177,7 +177,7 @@ fr:"Un coq castré et engraissé lentement, pratique née à Rome comme contourn
 tip:{en:"It is the one bird that genuinely rewards a long, slow roast — the internal fat bastes it from within.",
 fr:"C’est la seule volaille qui récompense réellement un rôtissage long et doux — le gras interne l’arrose de l’intérieur."},
 pairs:["truffle","butter","chestnut","morel","cream","thyme","foie-gras","shallot"],
-svg:'<path class="f2 sf" d="M28 62q0-24 22-24t20 22q-16 14-42 2z"/><path class="f1 sf" d="M52 38q8-10 14-4-6 8-14 4z"/><circle class="dot" cx="44" cy="54" r="1.6"/>'},
+svg:'<path class="f1 sf" d="M20 54 Q20 38 40 33 Q60 29 71 41 Q80 52 68 62 Q50 74 34 69 Q21 63 20 54 Z"/><path class="f2 sf" d="M27 50 Q39 44 48 53 Q54 63 45 69 Q32 72 27 63 Q24 56 27 50 Z"/><path class="f1 sf" d="M56 48.2Q60.9 39.3 65.7 30.4Q67.7 28 65.4 25.3Q62.3 23.3 60.3 25.6Q52.1 31.7 44 37.8Q39.5 42.9 44.8 49Q51.6 53.4 56 48.2ZM63.2 56.1Q68.8 48.4 74.3 40.7Q76.7 38.7 74.7 35.7Q72 33.3 69.7 35.3Q61.2 39.6 52.8 43.9Q47.6 48.4 51.9 55.2Q58 60.5 63.2 56.1Z"/><path class="f1 sf" d="M64 23 q5 0 5 5 0 5-5 5-5 0-5-5 0-5 5-5 zM73 33 q5 0 5 5 0 5-5 5-5 0-5-5 0-5 5-5 z"/><path class="s" d="M51 45 Q59 39 66 43M55 52 q6-3 10 1" stroke-width="2"/>'},
 
 {id:"cecina-de-leon",cat:"meat",price:3,pk:"50–80 €/kg",name:{en:"Cecina de León",fr:"cecina de León"},latin:"Bos taurus (hind leg, smoked and cured)",
 origin:{en:"León, Castile",fr:"León, Castille"},season:[],
@@ -217,7 +217,7 @@ fr:"Tout poulet descend d’un timide oiseau des jungles d’Asie du Sud-Est. He
 tip:{en:"Salt it the night before and let it dry uncovered in the fridge: the skin will roast to glass. The carcass owes you a stock — collect the debt.",
 fr:"Salez-le la veille et laissez-le sécher à découvert au réfrigérateur : la peau rôtira comme du verre. La carcasse vous doit un bouillon — réclamez votre dû."},
 pairs:["lemon","garlic","tarragon","thyme","mustard","paprika","mushroom","rosemary"],
-svg:'<path class="f1 sf" d="M36 40q-8 10-2 20t18 8q14-2 14-16 0-8-8-12-12-6-22 0z"/><path class="f1 sf" d="M60 48l10-4-4 8z"/><path class="s" d="M40 46q4-2 8 0"/>'},
+svg:'<path class="f1 sf" d="M28 31 Q28 22 36 22 Q45 22 45 31 Q45 39 50 45 Q62 43 70 53 Q75 63 66 70 Q52 78 42 72 Q31 66 31 57 Q31 49 35 45 Q28 39 28 31 Z"/><path class="f1 sf" d="M29 23 Q31 17 34 20 Q37 16 39 20 Q43 18 43 23 Q36 20 29 23 ZM27 30 Q20 29 19 33 Q23 36 28 35 ZM29 36 Q27 42 30 43 Q33 41 32 36 Z"/><path class="f2 sf" d="M40 53 Q52 48 62 56 Q54 66 44 62 Q38 58 40 53 Z"/><path class="f2 sf" d="M64 51 Q72 43 76 34 Q80 45 74 57 Q68 59 64 51 Z"/><path class="s" d="M48 74 v5M44 79 h8M58 73 v5" stroke-width="2"/><path class="dot" d="M34 29 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
 {id:"chorizo",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Chorizo",fr:"chorizo"},latin:"Sus scrofa & Capsicum annuum (cured)",
 origin:{en:"Spain",fr:"Espagne"},season:[],
@@ -307,7 +307,7 @@ fr:"La fleur blanche sur le boyau est une moisissure introduite volontairement, 
 tip:{en:"Peel the casing only on the piece you are cutting. Stripped entirely, the whole sausage dries out within a day.",
 fr:"Ne pelez le boyau que sur la portion que vous coupez. Entièrement dénudé, le saucisson sèche en un jour."},
 pairs:["cornichon","flour-t65","beurre-demi-sel","black-pepper","comte","red-wine-vinegar","mustard","olive"],
-svg:'<path class="f1 sf" d="M34 30q12 0 12 14v28q0 8-12 8t-12-8V44q0-14 12-14z" transform="translate(14 0)"/><path class="s" d="M36 44h24M36 58h24"/>'},
+svg:'<path class="f1 sf" d="M34 74 Q25 66 32 55 Q42 41 54 30 Q62 22 70 27 Q77 33 69 43 Q57 57 47 68 Q41 77 34 74 Z"/><path class="f2 sf" d="M34 74 Q25 66 32 55 Q40 59 44 66 Q42 73 34 74 Z"/><path class="dot" d="M34 66 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM39 62 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM33 59 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM38 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/><path class="s" d="M36 52 Q45 60 51 54M50 38 Q59 46 65 40" stroke-width="2"/><path class="s" d="M70 29 Q74 25 72 22 Q69 20 67 23" stroke-width="2"/><path class="s" d="M44 44 q5 5 8 5" stroke-width="1.5"/>'},
 
 {id:"duck",cat:"meat",price:2,pk:"10–18 €/kg",name:{en:"Duck",fr:"Canard"},latin:"Anas platyrhynchos domesticus",
 origin:{en:"Domesticated in China",fr:"Domestiqué en Chine"},season:[10,11,12,1],
@@ -377,7 +377,7 @@ fr:"Les bas-reliefs de Saqqarah montrent des Égyptiens engraissant des oies il 
 tip:{en:"Terrine barely set and eaten with a spoon’s edge, or escalopes seared in a dry, screaming pan for a minute a side — the fat it releases is a sauce in itself. Sweetness beside it, never sugar on it.",
 fr:"En terrine à peine prise, mangée au bord de la cuillère, ou en escalopes saisies une minute par face à la poêle sèche et brûlante — la graisse rendue est une sauce à elle seule. Du sucré à côté, jamais du sucre dessus."},
 pairs:["fig","quince","honey","grape","black-pepper"],
-svg:'<path class="f1 sf" d="M32 52q0-14 16-14 20 0 18 14-1 10-10 12l-6-6-4 8q-12-2-14-14z"/><path class="s" d="M40 48q6-4 14-2" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M23 43 Q19 32 30 29 Q37 27 41 33 Q51 23 63 29 Q75 36 72 49 Q69 61 55 63 Q38 65 28 55 Q22 50 23 43 Z"/><path class="f2 sf" d="M48 58 Q58 52 67 57 Q75 64 68 71 Q57 77 48 70 Q42 63 48 58 Z"/><path class="s" d="M32 42 Q44 49 57 44M44 47 q3 7-2 11M57 44 q4 3 8 3" stroke-width="2"/><path class="s" d="M32 34 q9-3 14 1M35 55 q6 3 10 1" stroke-width="1.5"/><path class="s" d="M55 62 q6-1 9 4" stroke-width="1.5"/>'},
 
 {id:"goose",cat:"meat",price:2,pk:"14–25 €/kg",name:{en:"Goose",fr:"Oie"},latin:"Anser anser domesticus",
 origin:{en:"Europe & Egypt",fr:"Europe & Égypte"},season:[11,12,1],
@@ -417,7 +417,7 @@ fr:"La joue de porc — guancia signifie joue — salée, poivrée et suspendue 
 tip:{en:"Start it in a cold pan and let the fat melt slowly to glass-crisp — that rendered gold is the sauce; never add oil beside it.",
 fr:"Démarrez-le à poêle froide et laissez le gras fondre doucement jusqu’au croustillant — cet or fondu est la sauce ; n’ajoutez jamais d’huile à côté."},
 pairs:["egg","parmesan","tomato","black-pepper","white-beans"],
-svg:'<path class="f1 sf" d="M32 40q16-8 32 0l-2 28q-14 6-28 0z"/><path class="f2 sf" d="M32 40q16-8 32 0l-1 8q-15-7-30 0z"/><path class="s" d="M40 56q8 4 16 0" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M25 30 Q52 32 73 46 Q79 50 73 57 Q56 71 40 77 Q31 79 28 71 Q22 50 25 30 Z"/><path class="f2 sf" d="M25 30 Q52 32 73 46 Q79 50 73 57 Q65 46 47 39 Q34 34 26 38 Z"/><path class="s" d="M30 46 Q48 49 66 59M31 58 Q45 61 57 68M28 36 q11 3 19 8" stroke-width="2"/><path class="dot" d="M36 35 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM50 42 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM62 50 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM28 62 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM40 68 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/><path class="s" d="M29 71 q5 4 9 5" stroke-width="2"/>'},
 
 {id:"guinea-fowl",cat:"meat",price:2,pk:"10–16 €/kg",name:{en:"Guinea fowl",fr:"Pintade"},latin:"Numida meleagris",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
@@ -427,7 +427,7 @@ fr:"Domestiquée en Afrique de l’Ouest et élevée par les Grecs et les Romain
 tip:{en:"Bard it with fat or cook it under a lid with liquid. Roasted naked like a chicken it will disappoint every time.",
 fr:"Bardez-la de gras ou cuisez-la à couvert avec du liquide. Rôtie nue comme un poulet, elle décevra à tous les coups."},
 pairs:["lard","cabbage","thyme","cream","mushroom","bay-leaf","shallot","juniper"],
-svg:'<path class="f2 sf" d="M32 62q0-20 18-20t18 20q-14 12-36 0z"/><path class="s" d="M50 42q6-12 14-10"/><circle class="dot" cx="42" cy="54" r="1.6"/><circle class="dot" cx="54" cy="56" r="1.6"/>'},
+svg:'<path class="f1 sf" d="M30 24 Q24 26 26 33 Q28 39 34 43 Q24 51 27 61 Q32 73 47 76 Q64 79 72 66 Q78 52 66 43 Q54 35 40 35 Q36 27 30 24 Z"/><path class="f1 sf" d="M26 29 Q20 29 20 33 Q24 36 27 34 ZM30 24 Q29 18 33 19 Q36 22 34 26 ZM25 34 Q23 39 26 40 Q29 38 28 34 Z"/><path class="f2 sf" d="M40 50 Q54 44 66 52 Q66 64 54 68 Q42 68 38 60 Q36 53 40 50 Z"/><path class="dot" d="M31 28 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM36 46 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM45 42 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM56 46 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM64 56 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM52 58 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM43 56 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM33 58 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM38 68 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM50 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM61 66 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/><path class="s" d="M48 76 v4M55 75 v4" stroke-width="2"/>'},
 
 {id:"hare",cat:"meat",price:3,pk:"20–35 €/kg",name:{en:"Hare",fr:"Lièvre"},latin:"Lepus europaeus",
 origin:{en:"Europe",fr:"Europe"},season:[10,11,12,1],
@@ -697,7 +697,7 @@ fr:"Un mâle barbarie croisé avec une femelle pékin donne un oiseau stérile �
 tip:{en:"Lattice the magret fat, start it skin down in a cold dry pan, and let ten minutes of fat run out before the heat goes up. Confit the legs in that fat at 85 °C and never hotter, or the meat falls off the bone before it is confit.",
 fr:"Quadrillez le gras du magret, démarrez-le à sec dans une poêle froide côté peau et laissez dix minutes de graisse s’écouler avant de monter le feu. Confisez les cuisses dans cette graisse à 85 °C, jamais plus, sinon la chair se défait avant d’être confite."},
 pairs:["duck-fat","orange","fig","juniper","armagnac","black-pepper","turnip","garlic"],
-svg:'<path class="f3 sf" d="M26 52q6-16 22-16t22 14q2 12-10 18t-26 0q-9-6-8-16z"/><path class="f1 sf" d="M26 52q6-16 22-16t22 14q-10 6-22 6t-22-4z"/><path class="s" d="M32 40l14 12M40 36l14 12M48 36l12 10M34 50l10-12M42 54l12-14M50 56l12-13"/>'},
+svg:'<path class="f1 sf" d="M38 52 Q40 42 54 40 Q70 40 76 50 Q80 56 72 58 Q78 62 70 68 Q56 78 44 72 Q34 66 38 52 Z"/><path class="f1 sf" d="M30 24 Q40 25 42 34 Q43 44 50 50 Q42 56 35 47 Q27 40 26 33 Q25 25 30 24 Z"/><path class="f1 sf" d="M27 31 Q20 29 20 33 Q21 38 28 38 Q31 35 27 31 Z"/><path class="f2 sf" d="M46 54 Q58 48 70 54 Q62 65 50 63 Q44 59 46 54 Z"/><path class="dot" d="M31 29 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
 {id:"canard-de-barbarie",cat:"meat",price:2,pk:"12–20 €/kg",name:{en:"Muscovy duck",fr:"Canard de Barbarie"},latin:"Cairina moschata",
 origin:{en:"Tropical South America",fr:"Amérique du Sud tropicale"},season:[],
@@ -807,7 +807,7 @@ fr:"Son nom latin renvoie au fleuve Phase en Colchide, sur la mer Noire, où les
 tip:{en:"The hen is smaller and more tender than the cock. If you are given a choice, take the hen.",
 fr:"La poule est plus petite et plus tendre que le coq. Si l’on vous laisse le choix, prenez la poule."},
 pairs:["cabbage","lard","apple","thyme","juniper","cream","mushroom","chestnut"],
-svg:'<path class="f2 sf" d="M30 60q2-18 18-18t16 16q-12 12-34 2z"/><path class="s" d="M64 52q12 4 18 14M64 56q12 6 16 16"/>'},
+svg:'<path class="f1 sf" d="M26 30 Q19 32 20 37 Q23 42 29 41 Q31 50 37 55 Q28 64 34 72 Q47 80 58 70 Q66 60 58 50 Q48 41 33 39 Q32 31 26 30 Z"/><path class="f2 sf" d="M56 55 Q65 43 74 30 Q78 34 72 45 Q65 58 60 64 Q55 61 56 55 Z"/><path class="s" d="M63 50 q4 3 5 0M59 58 q4 3 5 0M67 42 q4 3 5 0M33 42 q5 3 9 2" stroke-width="1.5"/><path class="f2 sf" d="M38 54 Q50 49 59 57 Q51 67 41 64 Q35 60 38 54 Z"/><path class="dot" d="M28 34 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/><path class="s" d="M44 76 v4M51 75 v5" stroke-width="2"/>'},
 
 {id:"pigeon",cat:"meat",price:3,pk:"15–25 €/pièce",name:{en:"Pigeon",fr:"Pigeon"},latin:"Columba livia domestica",
 origin:{en:"Mediterranean & Near East",fr:"Méditerranée & Proche-Orient"},season:[],
@@ -817,7 +817,7 @@ fr:"Chaque château français avait son colombier, et le droit d’en tenir un �
 tip:{en:"Serve the breast pink, closer to duck than chicken. Cooked through it turns liverish and grey.",
 fr:"Servez le filet rosé, plus proche du canard que du poulet. Cuit à cœur il devient gris et goûte le foie."},
 pairs:["foie-gras","cherry","beetroot","thyme","red-wine-vinegar","juniper","pea","hazelnut"],
-svg:'<path class="f1 sf" d="M32 60q2-18 18-18t16 16q-12 12-34 2z"/><path class="s" d="M48 44q8-12 16-8"/><path class="s" d="M40 58q10 6 20 0"/>'},
+svg:'<path class="f1 sf" d="M36 29 Q28 31 29 39 Q31 45 37 46 Q30 53 32 62 Q39 74 52 73 Q64 71 68 60 Q71 48 60 42 Q49 38 43 39 Q43 29 36 29 Z"/><path class="f1 sf" d="M30 36 Q23 35 22 39 Q26 42 31 40 Z"/><path class="f2 sf" d="M40 50 Q52 46 62 53 Q58 64 47 65 Q40 61 40 50 Z"/><path class="f2 sf" d="M65 55 Q75 57 79 63 Q71 69 63 65 Q61 59 65 55 Z"/><path class="s" d="M35 44 Q41 48 46 46M44 55 q7 1 10 4M42 61 q7 0 10 3" stroke-width="1.5"/><path class="dot" d="M35 35 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
 {id:"porchetta",cat:"meat",price:2,pk:"18–30 €/kg",name:{en:"Porchetta",fr:"porchetta"},latin:"Sus scrofa (boned middle, roasted)",
 origin:{en:"Ariccia, Lazio",fr:"Ariccia, Latium"},season:[],
@@ -837,7 +837,7 @@ fr:"« Dans le cochon, tout est bon, de la tête à la queue », dit le proverbe
 tip:{en:"Modern pork is lean and unforgiving: brine chops an hour before cooking, and pull them off the heat while still blushing at the bone.",
 fr:"Le porc moderne est maigre et impitoyable : saumurez les côtes une heure avant cuisson, et retirez-les du feu quand l’os rosit encore."},
 pairs:["apple","sage","mustard","maple-syrup","fennel","clove","lentils","chestnut"],
-svg:'<path class="f1 sf" d="M30 54q0-14 18-14t18 14q0 12-18 12T30 54z"/><ellipse class="f2 sf" cx="60" cy="54" rx="6" ry="7"/><path class="dot" d="M58 52a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0M58 57a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0"/><path class="s" d="M34 42q-4-4-2-8 4 0 6 5"/>'},
+svg:'<path class="f1 sf" d="M22 42 Q26 31 40 29 Q57 25 68 33 Q78 41 76 54 Q74 64 68 68 Q68 75 64 75 Q60 75 60 68 Q48 72 38 68 Q38 75 34 75 Q30 75 30 68 Q22 62 19 52 Q17 46 22 42 Z"/><path class="f2 sf" d="M20 43 Q14 47 16 53 Q21 58 26 52 Q27 45 20 43 Z"/><path class="f2 sf" d="M38 31 Q35 20 44 21 Q51 24 48 33 Z"/><path class="s" d="M76 46 Q84 42 81 36 Q79 32 75 35" stroke-width="2"/><path class="dot" d="M31 40 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM18 48 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM23 48 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/><path class="s" d="M62 72 v3M36 72 v3" stroke-width="1.5"/>'},
 
 {id:"rillettes",cat:"meat",price:1,pk:"12–22 €/kg",name:{en:"Pork rillettes",fr:"rillettes"},latin:"Sus scrofa (potted, shredded)",
 origin:{en:"Touraine and Maine",fr:"Touraine et Maine"},season:[],
@@ -877,7 +877,7 @@ fr:"Caton l’Ancien en consigna la méthode il y a vingt-deux siècles : sel, a
 tip:{en:"Sliced so thin you can read through it, served at room temperature — never cooked into oblivion. Its salt loves sweet fruit: figs, melon, peaches.",
 fr:"Tranché si fin qu’on lit au travers, servi à température ambiante — jamais cuit à l’oubli. Son sel adore les fruits doux : figues, melon, pêches."},
 pairs:["fig","mozzarella","asparagus","peach","parmesan","balsamic"],
-svg:'<path class="f2 sf" d="M30 44q10-8 22-4-6 8 2 10 10-8 14 2 2 8-8 12-16 6-26-2-8-8-4-18z"/><path class="f1" d="M36 48q8-4 14 0" fill="none"/><path class="s" d="M36 48q8-4 14 0M40 58q8-4 16-1" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M26 68 Q17 57 24 43 Q31 31 45 32 Q55 33 60 41 Q64 45 68 40 Q71 35 73 32 Q77 29 76 34 Q72 39 69 44 Q65 49 63 55 Q59 70 46 76 Q33 80 26 68 Z"/><path class="f2 sf" d="M63 55 Q59 70 46 76 Q34 80 27 70 Q39 76 50 70 Q60 64 60 53 Z"/><path class="s" d="M31 48 Q41 42 51 47M28 60 Q38 55 49 60" stroke-width="1.5"/><path class="s" d="M68 36 Q69 28 75 31" stroke-width="2"/><path class="dot" d="M72 31 q4-1 5 2-1 3-4 3-3-1-3-3 z"/>'},
 
 {id:"prosciutto-di-san-daniele",cat:"meat",price:3,pk:"40–70 €/kg",name:{en:"Prosciutto di San Daniele",fr:"jambon de San Daniele"},latin:"Sus scrofa (leg, dry-cured)",
 origin:{en:"San Daniele del Friuli",fr:"San Daniele del Friuli"},season:[],
@@ -1127,7 +1127,7 @@ fr:"Le code des usages de la charcuterie fixe son hachage : la viande passe dans
 tip:{en:"For a cassoulet, brown the coil whole in duck fat and cut it only afterwards; pricking or slicing it first lets out the fat that was supposed to season the beans.",
 fr:"Pour le cassoulet, faites-la colorer entière dans la graisse de canard et ne la coupez qu’ensuite : la piquer ou la trancher avant, c’est laisser filer le gras qui devait assaisonner les haricots."},
 pairs:["haricot-tarbais","duck-fat","garlic","confit-de-canard","black-pepper","onion","thyme","white-beans"],
-svg:'<path class="s" d="M73 50q0-14-11-22-12-6-24-1-11 6-12 19 0 14 11 22 12 6 23 0 9-6 9-15-1-8-8-10-6-1-9 3" stroke-width="9" stroke-linejoin="round"/><path class="s" d="M60 26q2-5 6-6" stroke-width="2.5"/>'},
+svg:'<path class="f1 sf" d="M49 64.9Q38.8 60 33 50.3Q27.5 45.3 20.6 50.9Q15.6 58.2 21.1 63.3Q27 73 37.1 77.9Q42.6 83 49.5 77.4Q54.5 70 49 64.9Z"/><path class="f2 sf" d="M35.7 58.6Q34.7 47.3 40 37.3Q41.5 30 33.2 26.9Q24.3 26.5 22.8 33.8Q17.5 43.8 18.5 55Q17 62.4 25.3 65.4Q34.2 65.9 35.7 58.6Z"/><path class="f1 sf" d="M34.3 43.9Q43.5 37.2 54.8 36.6Q61.8 34.1 60.1 25.4Q55.9 17.5 48.9 20Q37.6 20.6 28.5 27.3Q21.4 29.8 23.1 38.5Q27.3 46.4 34.3 43.9Z"/><path class="f2 sf" d="M46.2 35.1Q56.6 39.5 62.9 48.9Q68.7 53.7 75.3 47.7Q79.9 40.1 74.1 35.3Q67.8 26 57.4 21.5Q51.6 16.8 45 22.7Q40.5 30.4 46.2 35.1Z"/><path class="s" d="M32.2 55.1Q26.3 54.5 21.9 58.5M35.5 39.1Q33 33.8 27.3 32M50.9 33.7Q54.2 28.8 52.8 23" stroke-width="2"/>'},
 
 {id:"turkey",cat:"meat",price:1,pk:"7–14 €/kg",name:{en:"Turkey",fr:"Dinde"},latin:"Meleagris gallopavo",
 origin:{en:"Mexico",fr:"Mexique"},season:[11,12],
@@ -1157,7 +1157,7 @@ fr:"Presque sans gras, parce qu’un animal sauvage qui court ne stocke pas de p
 tip:{en:"Serve it rare and rest it long. There is no fat to keep it moist and no forgiveness past medium.",
 fr:"Servez-le saignant et laissez-le reposer longtemps. Il n’a pas de gras pour le garder moelleux et aucune indulgence au-delà du rosé."},
 pairs:["juniper","red-wine-vinegar","blackberry","chestnut","cubeb","thyme","celeriac","dark-chocolate"],
-svg:'<path class="f1 sf" d="M30 64q4-22 20-22t18 20q-14 12-38 2z"/><path class="s" d="M40 42l-6-12 8 6M56 42l6-12-8 6"/>'},
+svg:'<path class="f1 sf" d="M38 47 Q38 38 48 36 Q58 38 58 47 Q58 56 56 64 Q54 75 48 78 Q42 75 40 64 Q38 56 38 47 Z"/><path class="f2 sf" d="M42 65 Q48 61 54 65 Q55 74 48 78 Q41 74 42 65 Z"/><path class="f1 sf" d="M39 47 Q30 42 25 46 Q29 53 39 53 ZM57 47 Q66 42 71 46 Q67 53 57 53 Z"/><path class="s" d="M43 38 Q37 29 28 23M41 33 Q35 31 30 33M38 28 Q33 25 27 26M31 25 Q29 21 30 18M53 38 Q59 29 68 23M55 33 Q61 31 66 33M58 28 Q63 25 69 26M65 25 Q67 21 66 18"/><path class="dot" d="M43 49 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM53 49 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM45 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM50 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
 {id:"wagyu",cat:"meat",luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Wagyu beef",fr:"Bœuf wagyu"},latin:"Bos taurus (wagyū)",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -1167,7 +1167,7 @@ fr:"Des lignées japonaises fermées, sélectionnées un siècle durant jusqu’
 tip:{en:"Forget the steakhouse slab: cut thin, sear seconds on cast iron, salt only. A little goes far — this is meat to eat by the slice, like a great ham.",
 fr:"Oubliez la pièce de steakhouse : tranchez fin, saisissez quelques secondes sur fonte, salez seulement. Il en faut peu — c’est une viande à manger à la tranche, comme un grand jambon."},
 pairs:["soy-sauce","rice","black-pepper","garlic"],
-svg:'<path class="f2 sf" d="M32 42q14-8 30-2 8 3 6 12-2 12-16 14-14 2-20-8-4-9 0-16z"/><path class="f1" d="M38 48q6-4 12-2M42 58q7-3 14-3M52 46q5-1 8 2" fill="none"/><path class="s" d="M38 48q6-4 12-2M42 58q7-3 14-3M52 46q5-1 8 2" stroke-width="1.4"/>'},
+svg:'<path class="f2 sf" d="M24 38 Q40 29 60 31 Q75 33 77 46 Q78 61 66 69 Q45 77 29 69 Q19 60 24 38 Z"/><path class="f1 sf" d="M50 30 Q66 31 75 40 Q79 45 75 48 Q69 38 56 36 Q48 35 43 37 Q45 30 50 30 Z"/><path class="s" d="M32 48 q4 4 2 8M40 43 q3 5 0 7M48 50 q5 3 3 8M57 45 q2 5-1 7M64 52 q4 3 2 7M36 60 q4 3 2 7M45 63 q4 2 2 6M54 60 q5 3 2 7M62 64 q4 2 2 5M28 57 q4 3 3 6M70 58 q3 3 1 6M50 40 q4 2 3 5" stroke-width="1.5"/><path class="s" d="M35 52 q7 5 5 13M60 38 q5 5 3 12" stroke-width="2"/><path class="s" d="M30 68 Q47 76 64 69" stroke-width="2"/>'},
 
 {id:"wild-boar",cat:"meat",price:2,pk:"14–25 €/kg",name:{en:"Wild boar",fr:"Sanglier"},latin:"Sus scrofa",
 origin:{en:"Eurasia",fr:"Eurasie"},season:[10,11,12,1,2],

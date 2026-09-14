@@ -7,7 +7,7 @@ fr:"Issu du robinier faux-acacia, qui ne fleurit qu’une quinzaine de jours à 
 tip:{en:"It is the neutral honey — use it where you want sweetness without the honey announcing itself.",
 fr:"C’est le miel neutre — employez-le quand vous voulez du sucré sans que le miel s’annonce."},
 pairs:["goat-cheese","yogurt","lemon","almond","apple","cream","walnut","honey"],
-svg:'<path class="f3 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f2 sf" d="M42 58l4-6 4 6-4 6z"/>'},
+svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path class="f1 sf" d="M33 56q8 5 15 5t15-5l1 19q0 7-8 7H40q-8 0-8-7z"/><path class="f2 sf" d="M29 40q-1-6 19-6t19 6q0 5-19 5t-19-5z"/><path class="s" d="M36 70q-9-10-12-20t-2-16" stroke-width="2"/><path class="f1 sf" d="M13 63q5-8 14-3-6 8-14 3zM31 59q5-8 14-3-6 8-14 3zM12 50q5-8 14-3-6 8-14 3zM29 46q5-8 14-3-6 8-14 3zM17 35q5-8 14-3-6 8-14 3z" stroke-width="2"/>'},
 
 {id:"agave-syrup",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Agave syrup",fr:"Sirop d’agave"},latin:"Agave tequilana",
 origin:{en:"Jalisco, Mexico",fr:"Jalisco, Mexique"},season:[],
@@ -67,7 +67,7 @@ fr:"L’abeille agglomère le pollen avec une goutte de nectar et le tasse dans 
 tip:{en:"Heat turns it bitter and gluey - fold it into cold yogurt or scatter it at the moment of serving. Fresh pollen keeps in the freezer; dried keeps in the cupboard but has lost half its perfume.",
 fr:"La chaleur le rend amer et gluant : incorporez-le froid, dans un yaourt, ou au dressage. Le pollen frais se garde au congélateur ; le séché tient à température ambiante mais a perdu la moitié de son parfum."},
 pairs:["yogurt","honey","fromage-blanc","raspberry","hazelnut","fig"],
-svg:'<path class="f2 sf" d="M24 52h48a24 20 0 0 1-48 0z"/><path class="f1 sf" d="M28 52q6-14 20-14t20 14z"/><circle class="dot" cx="40" cy="46" r="2.5"/><circle class="dot" cx="48" cy="42" r="2.5"/><circle class="dot" cx="56" cy="46" r="2.5"/>'},
+svg:'<path class="f2 sf" d="M25 57q0-9 9-9t9 9-9 9-9-9zM40 54q0-9 9-9t9 9-9 9-9-9zM54 58q0-9 9-9t9 9-9 9-9-9z"/><path class="f1 sf" d="M22 69q0-8 8-8t8 8-8 8-8-8zM37 71q0-8 8-8t8 8-8 8-8-8zM52 69q0-8 8-8t8 8-8 8-8-8z"/><path class="f1 sf" d="M51 34q0-7 11-7t11 7-11 7-11-7z"/><path class="dot" d="M51 34q0-6 6-7v14q-6-1-6-7zM60 28q2 0 4 1v11q-2 1-4 1zM67 30q2 1 3 2v5q-1 2-3 3z"/><path class="f1 sf" d="M58 30q0-9 6-10 3 6-1 11zM61 30q5-8 11-6-3 6-9 9z" stroke-width="1.5"/>'},
 
 {id:"birch-syrup",cat:"sweet",rare:true,luxe:true,price:3,pk:"150–350 €/L",name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
 origin:{en:"Alaska, Yukon, Finland",fr:"Alaska, Yukon, Finlande"},season:[],
@@ -107,7 +107,7 @@ fr:"Presque noir, il sent la mélasse, le malt et l’étable — c’est le mie
 tip:{en:"Do not try it on a scone. It belongs in a marinade, a barbecue glaze or a dark gingerbread.",
 fr:"N’en mettez pas sur une tartine. Sa place est dans une marinade, un laquage de barbecue ou un pain d’épices sombre."},
 pairs:["buckwheat-flour","pork","rye-flour","ginger","dark-chocolate","clove","walnut","cider-vinegar"],
-svg:'<path class="f1 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M44 58l4-6 4 6-4 6z"/>'},
+svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path class="dot" d="M33 56q8 5 15 5t15-5l1 19q0 7-8 7H40q-8 0-8-7z"/><path class="f2 sf" d="M29 40q-1-6 19-6t19 6q0 5-19 5t-19-5z"/><path class="f1 sf" d="M15 66q-1-4 1-7l5-11q2-3 4 0l1 19q-7 3-11-1z"/><path class="f2 sf" d="M25 48l5 14q1 3-1 5-3 2-5 0z"/>'},
 
 {id:"angelique-confite",cat:"sweet",price:3,pk:"50–100 €/kg",name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
 origin:{en:"Marais poitevin, Niort",fr:"Marais poitevin, Niort"},season:[],
@@ -157,7 +157,7 @@ fr:"Méfiez-vous du mot : en France la cassonade est un sucre de canne roux non 
 tip:{en:"It is what goes on a crème brûlée because it caramelises faster than white sugar and colours more evenly.",
 fr:"C’est elle qu’on met sur une crème brûlée parce qu’elle caramélise plus vite que le sucre blanc et colore plus régulièrement."},
 pairs:["cream","vanilla","butter","apple","cinnamon","egg","orange","dark-chocolate"],
-svg:'<path class="f2 sf" d="M34 68V50h28v18z"/><path class="s" d="M34 58h28M44 50v18M54 50v18"/>'},
+svg:'<path class="f1 sf" d="M22 49q-4-3-2-8l33-19q5-2 8 3l-4 8-33 19q-5 1-2-3z"/><path class="f2 sf" d="M58 27q8-7 14-5-5 7-14 9z"/><path class="s" d="M29 36l4 9M37 31l4 9M45 27l4 9" stroke-width="1.5"/><path class="f2 sf" d="M26 75q1-9 7-13 3-4 7-2 4-5 8-2 4-4 8-1 5 2 12 17z"/><path class="f1 sf" d="M40 77l5-2 3 4-5 3zM54 78l5-2 3 4-5 3z" stroke-width="2"/>'},
 
 {id:"chestnut-cream",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Chestnut cream",fr:"Crème de marrons"},latin:"Castanea sativa",
 origin:{en:"Ardèche, France",fr:"Ardèche, France"},season:[],
@@ -177,7 +177,7 @@ fr:"Sombre, résineux et franchement amer — le miel que l’on adore ou que l�
 tip:{en:"It is a savoury honey. Put it with blue cheese, game or a duck glaze rather than on toast.",
 fr:"C’est un miel salé. Mettez-le avec un bleu, du gibier ou un laquage de canard plutôt que sur une tartine."},
 pairs:["blue-cheese","pecorino","venison","walnut","duck","fig","ricotta","chestnut"],
-svg:'<path class="f1 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f2 sf" d="M43 60q5-8 10 0z"/>'},
+svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path class="f2 sf" d="M33 56q8 5 15 5t15-5l1 19q0 7-8 7H40q-8 0-8-7z"/><path class="f2 sf" d="M29 40q-1-6 19-6t19 6q0 5-19 5t-19-5z"/><path class="f2 sf" d="M18 72h24q4-11-4-19l-6-6-8 7q-8 8-6 18z"/><path class="f1 sf" d="M20 71q0-5 10-6t10 5q0 3-10 3t-10-2z"/>'},
 
 {id:"chinese-rock-sugar",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Chinese rock sugar",fr:"Sucre candi chinois"},latin:"Saccharum officinarum",
 origin:{en:"Sichuan and Guangdong",fr:"Sichuan et Guangdong"},season:[],
@@ -217,7 +217,7 @@ fr:"Des fèves de cacao torréfiées et concassées, avant tout sucre et tout br
 tip:{en:"Use them as you would a nut, for crunch and bitterness against something sweet. They never soften.",
 fr:"Employez-le comme un fruit sec, pour le croquant et l’amertume contre un élément sucré. Il ne s’attendrit jamais."},
 pairs:["dark-chocolate","cream","raspberry","banana","coffee","honey","hazelnut","orange"],
-svg:'<path class="f1 sf" d="M38 48l6 4-4 6-6-4z"/><path class="f1 sf" d="M52 54l6 4-4 6-6-4z"/><path class="f1 sf" d="M44 64l6 4-4 6-6-4z"/>'},
+svg:'<path class="f1 sf" d="M38 60q-7-8-2-17t18-7q7 5 3 14t-19 10z"/><path class="s" d="M42 54q5-6 12-9M40 60q6-6 13-9" stroke-width="1.5"/><path class="f2 sf" d="M18 38l9-5 6 8-5 7-10-3zM66 64l9-3 4 8-6 5-8-4z"/><path class="f1 sf" d="M24 69l8-2 3 7-6 5-6-6zM70 29l9 2-1 9-8 3-4-9z"/><path class="dot" d="M45 71l5-1 1 5-5 1zM57 21l5 1-1 5-5-1z"/>'},
 
 {id:"criollo-cacao",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
@@ -237,7 +237,7 @@ fr:"Les Aztèques utilisaient les fèves de cacao comme monnaie et buvaient le c
 tip:{en:"A pinch of salt makes chocolate taste more of chocolate. Melt it gently — past 55°C it seizes and sulks, and no apology will bring it back.",
 fr:"Une pincée de sel donne au chocolat un goût plus profond de chocolat. Fondez-le doucement — passé 55 °C il tranche et boude, et aucune excuse ne le ramène."},
 pairs:["raspberry","orange","coffee","chili","hazelnut","cardamom","vanilla","pear"],
-svg:'<rect class="f3 sf" x="32" y="36" width="32" height="36" rx="3"/><path class="s" d="M48 36v36M32 54h32M40 36v36M56 36v36M32 45h32M32 63h32" stroke-width="1.6"/>'},
+svg:'<path class="f2 sf" d="M19 54q-1-4 3-5l26-4 2 4-4 2 4 4-4 2 3 5 1 5q0 4-4 5l-22 3q-4 0-4-4z"/><path class="f1 sf" d="M45 54l18-24q3-3 7 0l9 8q3 3 0 7L61 66l-5-1 1-4-5-1 1-4-5-1 1-4z"/><path class="s" d="M33 50l1 22M21 60l28-2M55 58l17-23M59 39l13 11" stroke-width="1.6"/><path class="dot" d="M55 72l5-1 1 5-5 1zM24 44l5-1 1 5-5 1z"/><path class="f2 sf" d="M45 54l4-3 12 15-4 3z"/>'},
 
 {id:"nolen-gur",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
 origin:{en:"Bengal, date palm groves",fr:"Bengale, palmeraies dattières"},season:[11,12,1,2],
@@ -257,7 +257,7 @@ fr:"La garniture des maamoul et de la kleicha irakienne, et l’un des plus anci
 tip:{en:"Warm it with a spoonful of water and a little butter to make it spreadable. Cold it is unworkable.",
 fr:"Réchauffez-la avec une cuillerée d’eau et un peu de beurre pour la rendre étalable. Froide elle est intravaillable."},
 pairs:["tahini","cardamom","orange","sesame","cinnamon","walnut","butter","coffee"],
-svg:'<path class="f1 sf" d="M32 58q0-16 16-16t16 16-16 14-16-14z"/><path class="s" d="M38 54q10 6 20 0"/>'},
+svg:'<path class="f1 sf" d="M22 48q-5-9 5-15t24-1q7 7-3 13t-26 3z"/><path class="s" d="M29 34q-2 6 0 11M37 31q-2 7 0 12M45 32q-2 6 0 11" stroke-width="1.5"/><path class="dot" d="M21 46q-5-2-8 1 4 3 8 1z"/><path class="f2 sf" d="M30 78q-2-10 6-15 3-6 9-3 5-7 11-2 12 3 12 20z"/><path class="s" d="M38 72q7-4 13-1M48 76q8-3 14 0" stroke-width="1.5"/>'},
 
 {id:"date-syrup",cat:"sweet",price:2,pk:"8–16 €/kg",name:{en:"Date syrup (silan)",fr:"Sirop de dattes (silan)"},latin:"Phoenix dactylifera",
 origin:{en:"Iraq and the Levant",fr:"Irak et Levant"},season:[],
@@ -407,7 +407,7 @@ fr:"Broyé en poudre et coupé de deux ou trois pour cent d’amidon pour l’em
 tip:{en:"Always sift it, without exception. It clumps in the box and a lump will not dissolve in a buttercream.",
 fr:"Tamisez-le toujours, sans exception. Il s’agglomère dans la boîte et un grumeau ne se dissoudra pas dans une crème au beurre."},
 pairs:["butter","vanilla","lemon","cream","strawberry","dark-chocolate","raspberry","almond"],
-svg:'<path class="f3 sf" d="M34 70q0-18 14-22 14 4 14 22z"/><circle class="dot" cx="42" cy="62" r="1.2"/><circle class="dot" cx="52" cy="60" r="1.2"/><circle class="dot" cx="47" cy="68" r="1.2"/>'},
+svg:'<path class="f2 sf" d="M22 36q0 12 26 12t26-12v-2q0-9-26-9t-26 9z"/><path class="f1 sf" d="M22 34q0-11 26-11t26 11q0 8-26 8t-26-8z"/><path class="s" d="M26 30q22-6 44 0M25 36q23-6 46 0M36 25v13M48 24v15M60 25v13" stroke-width="1.5"/><path class="f1 sf" d="M74 34q5-3 9 2t-5 6q-4 0-5-3z"/><path class="dot" d="M34 56l4-1 1 4-4 1zM45 60l4-1 1 4-4 1zM56 58l4-1 1 4-4 1zM39 68l4-1 1 4-4 1zM52 70l4-1 1 4-4 1zM45 78l4-1 1 4-4 1z"/>'},
 
 {id:"invert-sugar",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Invert sugar",fr:"Sucre inverti (trimoline)"},latin:"Saccharum officinarum",
 origin:{en:"Pastry kitchens, from cane or beet sugar",fr:"Laboratoires de pâtisserie, à partir de sucre de canne ou de betterave"},season:[],
@@ -437,7 +437,7 @@ fr:"Les ruches montent en camion sur les plateaux provençaux en juillet quand l
 tip:{en:"Use it where its perfume is the point — over goat's cheese, in an ice cream, with apricots. Cooked hard it is wasted.",
 fr:"Employez-le là où son parfum compte — sur du chèvre, dans une glace, avec des abricots. Trop cuit il est gâché."},
 pairs:["goat-cheese","apricot","peach","almond","cream","fig","lemon","yogurt"],
-svg:'<path class="f3 sf" d="M36 70V44h24v26z"/><path class="s" d="M36 52h24"/><path class="f1 sf" d="M46 62q2-10 4 0z"/><circle class="dot" cx="48" cy="58" r="1.4"/>'},
+svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path class="f2 sf" d="M33 56q8 5 15 5t15-5l1 19q0 7-8 7H40q-8 0-8-7z"/><path class="f2 sf" d="M29 40q-1-6 19-6t19 6q0 5-19 5t-19-5z"/><path class="s" d="M26 78q1-10 2-17" stroke-width="2"/><path class="f1 sf" d="M28 58c-6-2-4-7 0-9c-5-2-3-7 1-9c-4-2-2-7 1-9c-3-2-1-6 4-7c5 1 6 6 3 8c4 2 5 7 1 9c3 2 4 7 0 9c3 2 3 6-2 8z"/><path class="s" d="M27 50q6 1 10-1M28 41q6 1 10-1M29 32q5 1 8-1" stroke-width="1.5"/>'},
 
 {id:"leatherwood-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
 origin:{en:"Rainforest of western Tasmania",fr:"Forêts pluviales de l’ouest de la Tasmanie"},season:[1,2,3],
@@ -527,7 +527,7 @@ fr:"Les peuples autochtones des forêts du Nord-Est apprirent aux colons à lire
 tip:{en:"Darker grades carry more maple character — save “golden” for pancakes and cook with “dark”. It loves pork fat and coffee equally.",
 fr:"Les grades foncés ont plus de caractère — gardez le « doré » pour les crêpes et cuisinez avec l’« ambré foncé ». Il aime autant le gras du porc que le café."},
 pairs:["pork","walnut","apple","oats","butter","coffee"],
-svg:'<path class="f2 sf" d="M48 26l4 8 8-2-2 8 8 4-8 6 2 8-8-2-4 8-4-8-8 2 2-8-8-6 8-4-2-8 8 2z"/><path class="s" d="M48 66v10"/>'},
+svg:'<path class="f1 sf" d="M30 48q-1-8 6-10h24q7 2 6 10l3 21q1 9-9 9H36q-10 0-9-9z"/><path class="s" d="M56 33q7 1 6 6t-7 4"/><path class="f2 sf" d="M42 38q-1-6 6-7h1q7 1 6 7zM41 31q-1-5 7-5t7 5z"/><path class="f2 sf" d="M48 46L49 51 53 49 52 55 57 52 56 57 62 56 59 60 64 63 53 64 55 68 49 67 48 74 47 67 41 68 43 64 32 63 37 60 34 56 40 57 39 52 44 55 43 49 47 51Z" stroke-width="2"/><path class="s" d="M43 28q5-1 10 0M30 74q18 4 36 0" stroke-width="1.5"/>'},
 
 {id:"marzipan",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Marzipan",fr:"Massepain"},latin:"Prunus dulcis",
 origin:{en:"Lübeck and Toledo",fr:"Lübeck et Tolède"},season:[],
@@ -637,7 +637,7 @@ fr:"Récolté sur la hampe florale d’un palmier, non sur un fruit — un grimp
 tip:{en:"It is far less sweet than white sugar and more savoury. Do not substitute it one for one in a Western recipe.",
 fr:"Il sucre bien moins que le sucre blanc et tire vers le salé. Ne le substituez pas au poids dans une recette occidentale."},
 pairs:["fish-sauce","lime","chili","ginger","coconut-milk","lemongrass","garlic","peanut"],
-svg:'<path class="f2 sf" d="M34 66q0-16 14-16t14 16q-14 8-28 0z"/><path class="s" d="M34 60q14 6 28 0"/>'},
+svg:'<path class="f2 sf" d="M24 64q-1-7 18-7 19 0 19 7l1 6q0 6-19 6-20 0-19-6z"/><path class="f1 sf" d="M28 53q-1-7 16-7 17 0 17 7l1 5q0 6-17 6-18 0-17-6z"/><path class="f2 sf" d="M74 77Q80 62 66 55 60 70 74 77z"/><path class="s" d="M24 64q9 4 18 4M28 53q8 4 16 3M72 72q-4-9-3-14" stroke-width="1.5"/><path class="dot" d="M36 50l3-1 1 3-3 1zM52 51l3-1 1 3-3 1zM30 79l4-2 2 4-4 2zM46 80l3-1 1 3-3 1z"/>'},
 
 {id:"persipan",cat:"sweet",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
 origin:{en:"German and Austrian bakeries",fr:"Boulangeries d'Allemagne et d'Autriche"},season:[],
@@ -687,7 +687,7 @@ fr:"Du pur jus de canne réduit et laissé prendre en bloc, puis râpé — rapa
 tip:{en:"It does not dissolve like white sugar. Melt it in a little hot liquid first, or you get gritty pockets.",
 fr:"Elle ne se dissout pas comme le sucre blanc. Faites-la fondre d’abord dans un peu de liquide chaud, sinon vous aurez des grumeaux."},
 pairs:["lime","coffee","cinnamon","dark-chocolate","banana","ginger","coconut-flakes","clove"],
-svg:'<path class="f1 sf" d="M32 44l32 8-4 20-32-8z"/><path class="s" d="M34 56l30 8"/>'},
+svg:'<path class="f2 sf" d="M34 44q14-5 26 0l9 28q-23 8-44 0z"/><path class="f1 sf" d="M34 44q14-5 26 0-13 5-26 0z"/><path class="s" d="M47 48q-1 12-1 24M29 60q9 3 18 3" stroke-width="1.5"/><path class="f1 sf" d="M60 65l10 2q3 4 0 8l-9 2q-4-4-1-12z"/><path class="dot" d="M38 54l3-1 1 3-3 1zM53 57l3-1 1 3-3 1zM41 66l3-1 1 3-3 1zM57 50l3-1 1 3-3 1z"/>'},
 
 {id:"rapeseed-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
 origin:{en:"Oilseed fields of northern Europe",fr:"Champs de colza d’Europe du Nord"},season:[4,5],
@@ -797,7 +797,7 @@ fr:"Un sucre de betterave, non de canne — ce qui la distingue de la cassonade 
 tip:{en:"Blonde and brune are not interchangeable. Brune is caramelised twice and carries most of the flavour.",
 fr:"Blonde et brune ne sont pas interchangeables. La brune est caramélisée deux fois et porte l’essentiel du goût."},
 pairs:["butter","cinnamon","flour-t55","cream","egg","apple","clove","dark-chocolate"],
-svg:'<path class="f2 sf" d="M34 68V50h28v18z"/><path class="s" d="M34 60h28"/><circle class="dot" cx="44" cy="55" r="1.4"/><circle class="dot" cx="54" cy="64" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M46 60q14-2 24-11 6-5 9 0t-6 9q-11 6-25 8z"/><path class="f1 sf" d="M26 72q-8-7-2-15t20-4q8 7 2 15t-20 4z"/><path class="f2 sf" d="M22 64q-2-12 6-18 5-5 10-2 8 3 10 12-12 10-26-2z"/><path class="s" d="M26 57q4-5 9-3M33 48q5-2 8 2" stroke-width="1.5"/><path class="dot" d="M50 74l5-2 2 5-5 2zM60 79l4-2 2 4-4 2z"/>'},
 
 {id:"wasanbon",cat:"sweet",rare:true,price:3,pk:"100–250 €/kg",name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
 origin:{en:"Tokushima and Kagawa, Shikoku",fr:"Tokushima et Kagawa, Shikoku"},season:[],
@@ -827,7 +827,7 @@ fr:"On mâchait la canne en Nouvelle-Guinée il y a neuf mille ans ; l’Inde ap
 tip:{en:"It does far more than sweeten — it holds moisture, browns, and stops gluten forming. Cutting it in a cake changes the texture, not just the taste.",
 fr:"Il fait bien plus que sucrer — il retient l’humidité, colore et freine la formation du gluten. En réduire dans un gâteau change la texture, pas seulement le goût."},
 pairs:["butter","egg","vanilla","flour-t45","lemon","cream","dark-chocolate","cinnamon"],
-svg:'<path class="f3 sf" d="M34 70V50h28v20z"/><path class="s" d="M34 58h28M44 50v20M54 50v20"/>'},
+svg:'<path class="f1 sf" d="M24 56q4-4 7-6 8-1 17-1 0 8 1 17-4 4-7 6-9 0-17 1z"/><path class="f2 sf" d="M46 60q4-4 7-6 9-1 18-1 0 8 1 17-4 4-7 6-9 0-18 1z"/><path class="f1 sf" d="M28 36q4-4 7-6 8-1 17-1 0 8 1 16-4 4-7 6-9 0-17 1z"/><path class="s" d="M24 56q9-1 17-1 1 9 1 17M41 55q3-3 7-5M46 60q9-1 18-1 1 9 1 17M64 59q3-3 7-5M28 36q9-1 17-1 1 8 1 16M45 35q3-3 7-5" stroke-width="2"/><path class="f1 sf" d="M34 79l4-2 3 3-4 2zM56 78l4-2 3 3-4 2z" stroke-width="1.5"/>'},
 
 {id:"yacon-syrup",cat:"sweet",rare:true,price:2,pk:"35–70 €/kg",name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
 origin:{en:"Andes of Peru and Bolivia",fr:"Andes du Pérou et de Bolivie"},season:[],

@@ -7,7 +7,7 @@ fr:"Il a un goût massif de thym, parce qu’il contient le même composé — l
 tip:{en:"Crush it between your palms as it goes in. A tiny amount is enough — used generously it takes over everything.",
 fr:"Écrasez-le entre les paumes au moment de l’ajouter. Une toute petite quantité suffit — généreusement dosé il prend le dessus sur tout."},
 pairs:["chickpea-flour","potato","red-lentil","ghee","turmeric","cumin","chili","garlic"],
-svg:'<path class="f1 sf" d="M40 48q4 10 0 18M48 46q4 11 0 20M56 48q4 10 0 18"/><circle class="dot" cx="40" cy="57" r="1.2"/><circle class="dot" cx="48" cy="56" r="1.2"/>'},
+svg:'<path class="f1 sf" d="M22 44Q25 46 27 46Q29 46 31 46Q32 46 34 45Q36 45 37 44Q38 43 40 42Q41 40 42 38Q43 36 43 33Q43 30 43 30Q43 29 40 28Q38 27 36 27Q34 27 32 28Q31 29 29 29Q28 30 26 31Q25 32 24 33Q22 34 21 36Q20 37 20 40Q19 43 19 42Q19 42 22 44Z"/><path class="f2 sf" d="M52 39Q53 43 54 45Q55 46 56 47Q58 49 59 49Q61 50 62 51Q64 51 66 51Q68 51 70 50Q72 50 74 48Q77 45 77 46Q77 46 76 43Q75 40 74 39Q72 38 71 37Q69 36 68 35Q66 34 65 34Q63 34 61 33Q60 33 58 33Q56 34 54 35Q51 36 51 36Q51 36 52 39Z"/><path class="f1 sf" d="M41 79Q45 79 47 78Q49 77 50 75Q51 74 52 73Q53 71 54 70Q54 68 54 66Q54 64 54 62Q54 60 52 58Q50 55 50 55Q50 55 47 55Q45 56 43 57Q42 58 41 60Q39 61 39 62Q38 64 37 66Q36 67 36 69Q35 70 36 72Q36 74 37 77Q38 79 38 79Q38 79 41 79Z"/><path class="f2 sf" d="M60 64Q61 67 61 68Q62 69 63 70Q64 71 65 72Q66 72 67 73Q68 73 70 73Q71 73 73 72Q74 72 76 70Q78 69 78 69Q78 68 77 67Q77 65 76 64Q75 63 74 62Q73 62 72 61Q71 61 70 60Q69 59 67 59Q66 59 65 59Q64 59 62 60Q60 62 60 61Q60 61 60 64Z"/><path class="s" d="M22 36Q26 35 29 33Q33 31 36 29M25 41Q28 39 32 37Q35 35 38 33M27 45Q31 43 34 42Q37 40 41 38M58 35Q62 36 65 38Q69 39 73 40M56 39Q60 41 63 42Q67 44 71 45M55 44Q58 46 62 47Q65 48 69 49M37 72Q39 69 41 65Q42 62 44 58M41 74Q44 71 45 68Q47 64 48 60M46 77Q48 73 50 70Q51 66 53 63" stroke-width="1.4"/><path class="s" d="M43 30 l6 -3M77 46 l7 2M50 55 l3 -6" stroke-width="2"/>'},
 
 {id:"aji-amarillo",cat:"spices",price:2,pk:"40–80 €/kg",name:{en:"Ají amarillo",fr:"Ají amarillo (piment jaune du Pérou)"},latin:"Capsicum baccatum",
 origin:{en:"Peruvian coast & valleys",fr:"Côte et vallées du Pérou"},season:[],
@@ -97,7 +97,7 @@ fr:"Le goût du pastis, de l’ouzo, du raki et de la sambuca — et la raison p
 tip:{en:"Do not swap it for star anise. They share a compound but not a profile — anise is lighter and sweeter, star anise darker and more medicinal.",
 fr:"Ne le remplacez pas par la badiane. Ils partagent un composé mais pas un profil — l’anis vert est plus léger et plus sucré, la badiane plus sombre et plus médicinale."},
 pairs:["fennel","orange","honey","fig","star-anise","almond","carrot","flour-t55"],
-svg:'<path class="f3 sf" d="M42 48q5 10 0 18M52 46q5 11 0 20"/><path class="s" d="M40 54h6M50 54h6"/><path class="s" d="M47 40q0-8 2-10"/>'},
+svg:'<path class="s" d="M48 82Q46 68 48 54M48 52L25 44M48 52L33 33M48 52L45 28M48 52L59 30M48 52L68 39" stroke-width="2.2"/><path class="f1 sf" d="M24 45Q23 44 23 43Q22 42 21 41Q20 41 18 41Q17 41 16 42Q15 42 14 44Q12 45 12 45Q12 45 13 46Q14 48 15 48Q16 49 17 49Q18 50 19 50Q20 50 21 50Q22 49 24 49Q25 48 25 48Q25 47 24 45ZM31 34Q32 32 31 31Q31 29 31 28Q30 27 29 27Q28 26 27 26Q25 26 23 27Q21 27 21 27Q21 27 21 29Q21 30 22 31Q22 32 23 33Q23 34 24 35Q25 35 26 36Q28 36 29 36Q31 36 31 36Q31 36 31 34ZM43 28Q45 26 45 25Q46 24 46 23Q45 22 45 21Q45 20 44 19Q43 18 41 17Q39 17 39 17Q38 17 38 18Q37 19 37 21Q36 22 37 23Q37 24 37 25Q38 26 38 27Q39 28 41 29Q42 29 42 29Q42 29 43 28ZM57 29Q58 28 60 28Q61 27 61 26Q62 25 62 24Q62 23 62 21Q61 20 60 19Q59 17 59 17Q58 17 57 18Q56 19 55 19Q54 20 54 21Q54 22 53 23Q53 24 53 26Q54 27 54 28Q55 29 55 30Q55 30 57 29ZM68 37Q70 38 71 38Q72 38 73 37Q74 37 75 36Q75 35 76 33Q76 32 76 30Q76 28 76 28Q75 28 74 28Q72 28 71 28Q70 29 69 29Q68 29 68 30Q67 31 66 32Q66 33 66 35Q66 36 66 37Q66 37 68 37Z"/><path class="f2 sf" d="M27 39Q27 36 27 35Q26 34 25 33Q24 33 23 32Q22 32 21 32Q20 32 18 33Q16 34 16 34Q16 34 16 36Q17 37 18 38Q18 39 19 40Q20 40 21 41Q22 41 23 42Q24 42 26 41Q28 40 27 41Q27 41 27 39ZM38 30Q39 28 39 27Q39 25 38 24Q38 23 37 22Q36 22 35 21Q34 20 32 20Q30 20 30 20Q30 20 30 22Q29 23 30 24Q30 25 30 26Q31 27 31 28Q32 29 33 30Q33 31 35 31Q36 32 37 31Q37 31 38 30ZM51 28Q53 27 54 26Q55 24 55 23Q55 22 55 21Q55 20 54 19Q53 18 51 17Q50 16 50 16Q50 16 49 17Q48 18 47 19Q47 20 46 21Q46 22 46 23Q46 24 47 25Q47 26 48 27Q49 29 49 29Q49 29 51 28ZM63 33Q65 33 67 32Q68 32 69 31Q70 31 70 30Q70 28 70 27Q70 26 70 24Q69 22 69 22Q69 22 67 22Q66 23 65 23Q64 24 63 25Q62 25 62 26Q61 27 61 29Q61 30 61 31Q62 33 61 33Q61 33 63 33ZM71 44Q73 45 74 45Q76 46 77 46Q78 45 79 45Q79 44 80 43Q81 42 81 40Q82 38 82 38Q82 38 80 37Q79 36 78 37Q76 37 75 37Q74 37 73 38Q72 38 72 39Q71 40 70 41Q70 43 70 43Q70 43 71 44Z"/><path class="f1 sf" d="M28 77Q30 78 31 79Q32 79 33 79Q34 80 35 79Q36 78 37 77Q38 76 39 74Q39 73 39 72Q39 72 38 72Q37 71 36 71Q34 71 33 71Q32 70 31 71Q30 72 29 72Q28 73 27 74Q27 76 27 76Q27 76 28 77ZM55 78Q56 79 56 80Q57 81 58 82Q59 82 60 82Q61 82 62 81Q63 81 65 79Q66 78 66 78Q66 78 65 77Q64 76 63 75Q62 75 61 74Q61 74 60 74Q59 74 57 74Q56 74 55 75Q54 76 54 76Q54 76 55 78Z"/>'},
 
 {id:"annatto",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Annatto",fr:"Rocou (graines de rocou)"},latin:"Bixa orellana",
 origin:{en:"Amazon basin",fr:"Bassin amazonien"},season:[],
@@ -177,7 +177,7 @@ fr:"L’Europe médiévale payait loyers, dots et rançons en grains de poivre. 
 tip:{en:"Grind it at the last moment — pre-ground pepper is mostly dust and regret. Try it on strawberries: it works.",
 fr:"Moulez-le au dernier moment — le poivre pré-moulu n’est que poussière et regret. Essayez-le sur des fraises : ça fonctionne."},
 pairs:["strawberry","beef","egg","lemon","parmesan","oyster"],
-svg:'<circle class="f3 sf" cx="38" cy="50" r="8"/><circle class="f3 sf" cx="58" cy="46" r="8"/><circle class="f3 sf" cx="48" cy="64" r="8"/><path class="s" d="M35 47l6 6M55 43l6 6M45 61l6 6"/>'},
+svg:'<path class="f2 sf" d="M47 38Q47 48 39 52Q30 52 24 45Q18 39 22 32Q27 26 37 27Q45 30 47 38Z"/><path class="f1 sf" d="M74 42Q73 48 67 51Q60 52 55 48Q52 43 54 37Q59 30 66 31Q72 34 74 42Z"/><path class="f2 sf" d="M58 68Q56 76 48 80Q41 81 36 75Q33 69 36 62Q42 55 50 56Q58 59 58 68Z"/><path class="f1 sf" d="M73 66Q73 72 68 74Q63 74 59 70Q58 67 60 63Q64 59 69 59Q73 62 73 66Z"/><path class="s" d="M31 30q-6 6-6 13M31 30q0 10 3 17M31 30q8 4 10 12M62 34q-6 4-7 10M62 34q0 8 2 14M62 34q7 4 8 11M44 61q-6 5-7 12M44 61q1 9 3 15M44 61q7 5 8 12" stroke-width="1.6"/>'},
 
 {id:"byadgi-chilli",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Byadgi chilli",fr:"Piment byadgi"},latin:"Capsicum annuum",
 origin:{en:"Haveri district, Karnataka",fr:"District de Haveri, Karnataka"},season:[],
@@ -197,7 +197,7 @@ fr:"Constamment confondu avec le cumin, et dans plusieurs langues les deux noms 
 tip:{en:"It is the missing note in most home harissa and in cabbage dishes that taste flat. A pinch changes both completely.",
 fr:"C’est la note manquante de la plupart des harissas maison et des plats de chou qui semblent plats. Une pincée change tout."},
 pairs:["cabbage","rye-flour","sauerkraut","pork","munster","potato","harissa","onion"],
-svg:'<path class="f1 sf" d="M40 44q6 12 0 24M50 42q6 14 0 26"/><path class="s" d="M38 56h5M48 56h5"/><path class="s" d="M58 48q4 8 0 16"/>'},
+svg:'<path class="f1 sf" d="M22 47Q26 49 29 50Q32 50 35 50Q37 50 39 50Q41 49 42 47Q43 45 43 43Q44 40 44 38Q44 35 42 30Q41 26 41 26Q42 26 40 28Q39 29 38 31Q37 32 35 34Q34 35 32 36Q31 37 29 38Q28 39 26 41Q25 42 23 43Q22 44 20 45Q19 46 19 46Q18 46 22 47Z"/><path class="f2 sf" d="M54 37Q56 39 57 40Q59 41 60 42Q62 43 63 44Q65 45 66 46Q68 48 69 49Q71 50 72 51Q73 53 74 54Q75 56 75 56Q76 55 77 51Q77 48 77 45Q78 42 77 39Q77 36 76 35Q75 33 73 32Q71 31 69 31Q66 31 63 32Q60 33 56 35Q53 36 53 36Q52 36 54 37Z"/><path class="f1 sf" d="M33 75Q35 78 38 81Q40 83 42 84Q44 86 46 86Q47 86 49 86Q51 85 53 84Q55 82 56 79Q58 76 59 72Q61 69 61 69Q61 69 59 69Q57 70 55 70Q54 70 52 71Q50 71 48 71Q46 72 44 72Q42 71 41 72Q39 72 37 72Q35 72 33 71Q31 71 31 71Q31 71 33 75Z"/><path class="s" d="M23 44Q29 43 34 40Q37 36 39 31M26 46Q31 45 36 43Q39 39 41 34M28 49Q34 48 38 46Q41 42 43 36M62 33Q68 34 72 36Q75 40 77 46M60 36Q65 37 70 39Q73 43 75 48M57 38Q63 39 68 42Q71 46 73 51M36 72Q41 75 46 75Q51 74 56 71M37 76Q42 78 47 79Q52 78 56 74M37 79Q42 82 47 82Q52 81 57 78" stroke-width="1.4"/>'},
 
 {id:"cardamom",cat:"spices",price:2,pk:"50–100 €/kg",name:{en:"Cardamom",fr:"Cardamome"},latin:"Elettaria cardamomum",
 origin:{en:"Western Ghats, India",fr:"Ghats occidentaux, Inde"},season:[],
@@ -207,7 +207,7 @@ fr:"La « reine des épices » poussait dans les forêts humides de l’Inde, ma
 tip:{en:"Crush the green pods to free the black seeds; grind those only. In coffee, a single crushed pod is a small journey.",
 fr:"Écrasez les gousses vertes pour libérer les graines noires ; ne moulez que celles-ci. Dans le café, une seule gousse écrasée est un petit voyage."},
 pairs:["coffee","orange","honey","rice","dark-chocolate","cinnamon","saffron"],
-svg:'<path class="f1 sf" d="M34 44q0-10 7-10t7 10q0 12-7 16-7-4-7-16z" transform="rotate(-16 41 48)"/><path class="f1 sf" d="M50 46q0-10 7-10t7 10q0 12-7 16-7-4-7-16z" transform="rotate(12 57 50)"/><path class="dot" d="M39 46a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M55 50a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
+svg:'<path class="f1 sf" d="M34 22Q24 30 22 44Q20 60 32 68Q46 70 50 56Q54 38 44 28Q39 23 34 22Z"/><path class="s" d="M30 28q-4 16 0 34M38 26q-2 18 1 38M46 32q3 14 0 28" stroke-width="1.5"/><path class="s" d="M34 22l-2-5"/><path class="s" d="M62 40q-4 12-2 24M70 40q2 12 0 24" stroke-width="1.5"/><path class="f2 sf" d="M64 32Q56 40 56 52Q56 64 64 70Q74 70 76 58Q78 42 70 34Q67 31 64 32Z"/><path class="dot" d="M36 74q5-2 5 3 0 4-5 3-4-1 0-6zM45 78q5-2 5 3 0 4-5 3-4-1 0-6zM54 74q5-2 5 3 0 4-5 3-4-1 0-6z"/>'},
 
 {id:"cassia",cat:"spices",price:1,pk:"12–25 €/kg",name:{en:"Cassia",fr:"Cannelle de Chine"},latin:"Cinnamomum cassia",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
@@ -217,7 +217,7 @@ fr:"L’essentiel de ce qui se vend comme cannelle dans le monde est en réalit�
 tip:{en:"It stands up to long braising where Ceylon cinnamon fades. Use it in savoury stews and Ceylon in delicate pastry.",
 fr:"Elle tient au braisage long là où la cannelle de Ceylan s’efface. Réservez-la aux ragoûts et la Ceylan à la pâtisserie délicate."},
 pairs:["star-anise","clove","beef","orange","soy-sauce","ginger","sugar","black-pepper"],
-svg:'<path class="f1 sf" d="M36 30q14 0 14 24t-14 22q6-22 0-46z"/><path class="s" d="M50 34q10 6 10 20t-10 20"/>'},
+svg:'<path class="f1 sf" d="M29 66Q33 67 35 66Q37 65 38 64Q40 63 42 61Q44 60 45 58Q46 56 48 55Q49 54 51 53Q53 52 54 50Q55 48 57 47Q58 45 60 44Q62 43 63 41Q64 39 64 36Q63 32 63 31Q62 31 58 30Q55 29 53 30Q51 30 49 32Q48 34 47 35Q45 37 43 38Q41 38 40 40Q39 42 37 44Q36 45 34 46Q32 47 31 49Q29 50 28 52Q27 54 25 55Q24 57 25 61Q26 65 25 65Q25 64 29 66Z"/><path class="f2 sf" d="M37 64Q38 68 39 69Q41 70 42 70Q44 70 45 71Q47 72 48 73Q50 73 51 73Q53 73 54 74Q56 75 58 75Q59 75 61 75Q62 76 65 73Q67 70 67 71Q67 72 67 68Q66 64 65 63Q63 63 62 62Q60 61 59 61Q57 61 56 60Q54 59 53 58Q51 58 50 58Q48 58 47 57Q45 56 43 56Q42 56 39 59Q37 61 37 61Q37 61 37 64Z"/><path class="f1 sf" d="M60 26Q58 29 58 30Q59 32 60 33Q61 34 62 36Q62 37 63 39Q64 40 65 41Q66 42 67 44Q68 45 71 45Q74 45 74 45Q75 45 76 42Q78 40 77 38Q76 37 76 35Q75 34 74 32Q74 31 73 29Q72 28 71 26Q71 25 70 24Q68 23 65 23Q61 23 62 23Q62 23 60 26Z"/><path class="s" d="M32 62L54 38M38 68L60 44M46 70L54 78M62 60L70 68M64 26L72 34" stroke-width="1.5"/><path class="f2 sf" d="M26 70q-5-4-1-9 5-5 9 0 4 5 0 9-4 4-8 0z"/>'},
 
 {id:"cassia-buds",cat:"spices",rare:true,price:2,pk:"80–160 €/kg",name:{en:"Cassia buds",fr:"Boutons de casse"},latin:"Cinnamomum cassia",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
@@ -237,7 +237,7 @@ fr:"Elle vient de l’ache, l’ancêtre sauvage du céleri, et sa concentration
 tip:{en:"It turns bitter fast if you overdo it. Start with half what you think, especially in a coleslaw or a court-bouillon.",
 fr:"Elle vire vite à l’amer si l’on force. Commencez par la moitié de ce que vous imaginez, surtout dans une rémoulade ou un court-bouillon."},
 pairs:["tomato","celery","black-pepper","salt","cabbage","potato","onion","cider-vinegar"],
-svg:'<path class="f2 sf" d="M42 50q3 8 0 14M50 48q3 9 0 16M58 52q3 7 0 12"/><path class="s" d="M40 56h5M48 56h5M56 57h5"/>'},
+svg:'<path class="f1 sf" d="M44 15L40 20L44 23L36 23L38 29L30 28L33 35L26 36L32 41L40 42L48 38L53 30L52 20Z"/><path class="s" d="M42 40q2-10 0-18M42 32q-4-3-8-4M42 28q4-3 7-4" stroke-width="1.5"/><path class="s" d="M42 42q3 6 4 11"/><path class="f2 sf" d="M22 72q6-14 16-18 13-4 24 2 11 6 15 16-28 6-55 0z"/><path class="dot" d="M26 68q3-1 3 2t-3 2-3-2 3-4zM36 62q3-1 3 2t-3 2-3-2 3-4zM48 58q3-1 3 2t-3 2-3-2 3-4zM58 62q3-1 3 2t-3 2-3-2 3-4zM32 72q3-1 3 2t-3 2-3-2 3-4zM44 68q3-1 3 2t-3 2-3-2 3-4zM56 72q3-1 3 2t-3 2-3-2 3-4zM66 68q3-1 3 2t-3 2-3-2 3-4zM27 73q3-1 3 2t-3 2-3-2 3-4zM68 73q3-1 3 2t-3 2-3-2 3-4z"/>'},
 
 {id:"chaat-masala",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Chaat masala",fr:"Chaat masala"},latin:"चाट मसाला",
 origin:{en:"Northern India",fr:"Inde du Nord"},season:[],
@@ -327,7 +327,7 @@ fr:"Colomb, en quête de poivre noir, trouva ceci à la place et s’obstina à 
 tip:{en:"The heat lives in the white pith, not the seeds. Milk and yogurt douse the fire; water only spreads it.",
 fr:"Le feu loge dans la membrane blanche, pas dans les graines. Le lait et le yaourt éteignent l’incendie ; l’eau ne fait que l’attiser."},
 pairs:["dark-chocolate","mango","garlic","corn","coconut-milk","cilantro","peanut"],
-svg:'<path class="f2 sf" d="M60 30q4 22-10 36-8 8-16 4 4-2 8-8 10-16 12-32z"/><path class="s" d="M60 30q2-6 8-6"/>'},
+svg:'<path class="f2 sf" d="M52 26Q70 40 64 58Q58 76 34 78Q44 64 46 48Q47 36 44 28Z"/><path class="f1 sf" d="M24 46Q15 58 19 68Q22 76 28 77Q21 64 24 54Z"/><path class="f2 sf" d="M42 26q6-7 12-4 9-2 8 7-9 6-20-3z"/><path class="s" d="M53 23q1-7-4-9"/><path class="s" d="M56 40q5 12 0 24" stroke-width="1.5"/>'},
 
 {id:"chinese-five-spice",cat:"spices",price:1,pk:"15–35 €/kg",name:{en:"Chinese five-spice",fr:"Cinq-épices chinois"},latin:"五香粉",
 origin:{en:"China",fr:"Chine"},season:[],
@@ -387,7 +387,7 @@ fr:"Les courtisans chinois de la dynastie Han gardaient un clou de girofle en bo
 tip:{en:"An onion studded with two or three cloves, dropped into a broth or béchamel, is the old French trick for depth without visible spice.",
 fr:"Un oignon piqué de deux ou trois clous, plongé dans un bouillon ou une béchamel, est la vieille astuce française pour donner du fond sans épice visible."},
 pairs:["onion","apple","orange","pork","rice","honey"],
-svg:'<path class="f3 sf" d="M44 30l8 0-2 26h-4z" transform="rotate(-18 48 44)"/><path class="f3 sf" d="M36 38a5 5 0 108-4z" transform="rotate(-18 48 44)"/><path class="f3 sf" d="M56 44l8 0-2 26h-4z" transform="rotate(14 62 58)"/><path class="f3 sf" d="M50 52a5 5 0 108-4z" transform="rotate(14 62 58)"/>'},
+svg:'<path class="f1 sf" d="M32 36L44 68q2 5-2 6-4 1-6-3L26 39q-2-5 2-6 3-1 4 3z"/><path class="f2 sf" d="M34 30L24 23l2 9zM34 30L32 18l6 8zM34 30L44 19l-1 11zM34 30L47 33l-10 5z"/><path class="f1 sf" d="M33 24q7-1 8 5 0 6-6 6-7 0-7-6 0-4 5-5z"/><path class="f2 sf" d="M66 54L44 66q-4 2-2 6 2 4 6 2l22-12q4-2 2-6-2-3-6-2zM70 50l10-6-9-1zM70 50l6-10-10 4zM70 50l12 3-11 4z"/><path class="f1 sf" d="M68 46q7-2 9 4 1 7-6 7-7 0-8-5 0-5 5-6z"/>'},
 
 {id:"colombo-powder",cat:"spices",price:1,pk:"15–35 €/kg",name:{en:"Colombo powder",fr:"Poudre à colombo"},latin:"Mélange antillais",
 origin:{en:"Martinique & Guadeloupe",fr:"Martinique & Guadeloupe"},season:[],
@@ -407,7 +407,7 @@ fr:"La graine et la feuille viennent d’une même plante et n’ont rien du mê
 tip:{en:"Toast and crush it coarsely rather than grinding to powder. The husk is papery and the fragments give little bursts of citrus.",
 fr:"Grillez-la et concassez-la grossièrement plutôt que de la réduire en poudre. L’enveloppe est parcheminée et les éclats donnent de petites bouffées d’agrume."},
 pairs:["cumin","orange","carrot","lamb","garlic","olive-oil","chickpeas","lemon"],
-svg:'<circle class="f3 sf" cx="42" cy="54" r="8"/><circle class="f3 sf" cx="57" cy="58" r="8"/><path class="s" d="M36 54h12M51 58h12M42 46v16M57 50v16"/>'},
+svg:'<path class="f1 sf" d="M48 41Q45 49 38 54Q29 56 23 51Q19 42 24 34Q30 29 38 30Q46 33 48 41Z"/><path class="f2 sf" d="M75 37Q76 45 70 47Q63 48 57 42Q53 36 57 29Q62 24 69 27Q75 30 75 37Z"/><path class="f1 sf" d="M61 69Q58 76 50 78Q43 80 38 75Q36 68 39 62Q44 56 51 56Q60 61 61 69Z"/><path class="s" d="M30 32q-4 10-2 20M38 30q2 11-1 23M45 34q3 8 1 16M62 26q-4 8-3 19M69 27q2 9 0 19M44 60q-3 8-2 16M52 57q2 9 0 20" stroke-width="1.5"/><path class="s" d="M33 31l-2-5M39 30l3-5" stroke-width="1.8"/>'},
 
 {id:"cubeb",cat:"spices",price:2,pk:"80–150 €/kg",name:{en:"Cubeb pepper",fr:"Poivre cubèbe"},latin:"Piper cubeba",
 origin:{en:"Java, Indonesia",fr:"Java, Indonésie"},season:[],
@@ -417,7 +417,7 @@ fr:"Reconnaissable à la petite queue qui lui reste — le poivre à queue. L’
 tip:{en:"It is closer to allspice and pine than to pepper. Use it in game marinades and in gin-scented dishes, sparingly.",
 fr:"Il est plus proche du piment de la Jamaïque et du pin que du poivre. Employez-le dans les marinades de gibier et les plats genévrés, avec parcimonie."},
 pairs:["juniper","venison","clove","bay-leaf","red-wine-vinegar","onion","black-pepper","thyme"],
-svg:'<circle class="f1 sf" cx="44" cy="54" r="7"/><path class="s" d="M44 61v8"/><circle class="f1 sf" cx="58" cy="58" r="6"/><path class="s" d="M58 64v7"/>'},
+svg:'<path class="f2 sf" d="M46 36Q44 44 37 47Q29 49 24 44Q20 37 25 29Q30 23 37 25Q45 28 46 36Z"/><path class="f1 sf" d="M76 45Q75 52 68 54Q61 55 56 51Q54 45 57 38Q62 32 69 32Q75 36 76 45Z"/><path class="f2 sf" d="M54 66Q53 74 46 77Q40 79 35 74Q32 68 35 61Q39 54 46 55Q53 58 54 66Z"/><path class="s" d="M31 48q-3 6-6 12M63 54q3 5 6 11M39 76q-2 4-2 7" stroke-width="3"/><path class="s" d="M29 31q1 7-2 12M36 27q-3 6-1 12M42 31q-4 5-2 10M61 34q1 6-2 11M68 33q-3 6-1 11M73 38q-4 4-2 9M40 58q1 6-2 11M47 56q-3 6-1 11M52 61q-4 4-2 9" stroke-width="1.5"/>'},
 
 {id:"cumin",cat:"spices",price:1,pk:"12–25 €/kg",name:{en:"Cumin",fr:"Cumin"},latin:"Cuminum cyminum",
 origin:{en:"Eastern Mediterranean & Egypt",fr:"Méditerranée orientale & Égypte"},season:[],
@@ -427,7 +427,7 @@ fr:"Présent dans les tombes des pharaons et sur toutes les tables romaines, où
 tip:{en:"Toast the whole seeds in a dry pan until they smell like a market in Marrakech, then grind — the difference is night and day.",
 fr:"Torréfiez les graines entières à sec jusqu’à ce qu’elles sentent le souk de Marrakech, puis moulez — la différence est le jour et la nuit."},
 pairs:["carrot","chickpeas","lamb","yogurt","lentils","beetroot","cilantro"],
-svg:'<path class="f3 sf" d="M36 44q2-8 8-8-1 8-8 8zM52 38q2-8 8-8-1 8-8 8zM44 58q2-8 8-8-1 8-8 8zM58 54q2-8 8-8-1 8-8 8zM32 62q2-8 8-8-1 8-8 8zM50 70q2-8 8-8-1 8-8 8z"/>'},
+svg:'<path class="f1 sf" d="M20 46Q23 46 25 46Q27 45 29 45Q31 44 33 43Q35 42 36 40Q37 39 38 37Q39 35 40 33Q41 31 42 28Q42 26 42 26Q42 26 40 26Q38 27 36 27Q34 28 32 29Q30 30 28 31Q26 32 25 33Q24 35 23 36Q21 38 20 40Q19 42 19 44Q18 46 18 46Q18 46 20 46Z"/><path class="f2 sf" d="M53 38Q53 40 54 42Q55 44 56 46Q57 48 59 49Q60 50 62 52Q64 53 66 53Q68 54 70 55Q72 55 74 56Q76 57 76 56Q76 56 76 54Q75 51 74 49Q73 47 73 45Q72 43 70 42Q69 40 67 39Q66 38 64 37Q61 37 59 36Q57 36 54 36Q52 36 52 36Q52 36 53 38Z"/><path class="f1 sf" d="M32 73Q34 74 36 75Q38 76 41 77Q43 78 45 77Q47 77 49 77Q51 77 53 76Q54 75 56 73Q58 72 60 70Q62 69 62 69Q62 69 60 68Q58 67 56 66Q54 65 52 65Q50 65 48 65Q46 65 44 65Q42 65 40 66Q38 67 36 68Q34 69 32 70Q30 71 30 71Q30 71 32 73Z"/><path class="s" d="M21 40Q25 37 29 34Q32 31 36 28M25 45Q29 42 33 39Q36 36 40 33M59 37Q63 40 67 43Q70 46 74 49M55 42Q59 45 63 48Q66 51 70 54M36 68Q41 68 46 68Q51 67 55 67M37 74Q42 74 46 74Q51 73 56 73" stroke-width="1.4"/><path class="s" d="M42 26 l5 -4M18 46 l-5 4M43 29 l4 -2M21 48 l-3 4M76 56 l5 4M52 36 l-5 -4M73 58 l3 4M51 39 l-4 -2M62 69 l6 -1M30 71 l-6 1M61 72 l5 1M32 74 l-5 1" stroke-width="1.7"/>'},
 
 {id:"dried-barberry",cat:"spices",rare:true,price:1,pk:"20–40 €/kg",name:{en:"Dried barberry",fr:"Épine-vinette séchée (zereshk)"},latin:"Berberis vulgaris",
 origin:{en:"South Khorasan, Iran",fr:"Khorassan du Sud, Iran"},season:[],
@@ -507,7 +507,7 @@ fr:"Les Grecs appelaient la plante marathon et donnèrent son nom à un champ de
 tip:{en:"Crack the seeds lightly before they go into a sausage or a pork rub. Whole they stay inert; powdered they turn medicinal.",
 fr:"Concassez légèrement les graines avant de les mettre dans une saucisse ou un rub à porc. Entières elles restent inertes ; en poudre elles tournent au médicinal."},
 pairs:["pork","lard","orange","olive-oil","garlic","tomato","chili","fennel"],
-svg:'<path class="f2 sf" d="M40 46q4 10 0 20M48 42q4 12 0 24M56 46q4 10 0 20"/><path class="s" d="M38 56h4M46 56h4M54 56h4"/>'},
+svg:'<path class="f1 sf" d="M20 44Q23 46 26 46Q28 46 30 46Q32 46 34 45Q36 44 38 42Q39 41 40 39Q42 38 43 36Q44 34 44 29Q43 25 44 26Q44 26 41 24Q37 23 35 24Q34 25 32 25Q30 26 28 27Q26 28 24 29Q23 30 21 31Q20 33 18 34Q17 36 17 39Q17 43 16 42Q16 42 20 44Z"/><path class="f2 sf" d="M52 41Q52 44 53 47Q54 49 56 50Q57 52 59 53Q61 54 62 55Q64 56 66 56Q69 56 71 56Q73 56 77 54Q80 52 80 52Q80 51 80 48Q79 45 77 44Q76 42 75 41Q73 39 71 38Q70 37 68 36Q66 35 64 35Q62 34 60 34Q58 34 55 35Q52 36 52 36Q52 37 52 41Z"/><path class="f1 sf" d="M30 75Q33 78 35 79Q37 80 39 81Q41 81 43 81Q45 81 47 81Q49 80 51 79Q53 78 55 77Q57 75 58 72Q60 68 60 68Q60 69 58 66Q55 64 53 63Q51 63 49 63Q47 62 45 62Q43 63 41 63Q39 63 37 64Q35 64 33 65Q32 67 30 69Q28 72 28 72Q28 72 30 75Z"/><path class="s" d="M20 36Q24 33 28 31Q32 28 36 25M23 40Q27 38 31 36Q35 33 39 30M25 45Q30 43 34 40Q38 38 42 35M60 36Q63 38 68 41Q72 43 76 45M57 41Q61 43 65 46Q69 48 74 50M54 45Q58 48 62 51Q67 53 71 54M34 67Q39 67 44 67Q48 66 53 65M35 72Q39 72 44 72Q49 71 54 70M35 78Q40 78 45 77Q50 77 54 76" stroke-width="1.4"/><path class="s" d="M16 42 l6 -4M52 36 l6 3M28 72 l7 -1" stroke-width="2"/>'},
 
 {id:"fenugreek",cat:"spices",price:1,pk:"10–20 €/kg",name:{en:"Fenugreek",fr:"Fenugrec"},latin:"Trigonella foenum-graecum",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
@@ -517,7 +517,7 @@ fr:"C’est l’odeur du curry en poudre du commerce et de l’arôme artificiel
 tip:{en:"Toast it barely, and stop before it darkens. A second too long and the bitterness becomes the only thing you taste.",
 fr:"Grillez-le à peine, et arrêtez avant qu’il ne fonce. Une seconde de trop et l’amertume devient tout ce que l’on goûte."},
 pairs:["turmeric","cumin","ghee","tomato","garlic","ginger","red-lentil","cilantro"],
-svg:'<path class="f2 sf" d="M40 50l8 4-8 4-2-4z"/><path class="f2 sf" d="M54 56l8 4-8 4-2-4z"/><path class="f2 sf" d="M44 64l8 4-8 4-2-4z"/>'},
+svg:'<path class="f1 sf" d="M25 44q0-4 4-5l13-3q4-1 5 3l3 10q1 4-3 5l-13 3q-4 1-5-3z"/><path class="f2 sf" d="M55 33q2-4 6-2l11 7q4 2 2 6l-6 9q-2 4-6 2l-11-7q-4-2-2-6z"/><path class="f1 sf" d="M31 65q-2-4 2-6l12-6q4-2 6 2l4 9q2 4-2 6l-12 6q-4 2-6-2z"/><path class="f2 sf" d="M57 59q0-4 4-4l12-1q4 0 4 4l-1 10q0 4-4 4l-12 1q-4 0-4-4z"/><path class="s" d="M32 42l12 12M60 33l8 15M36 70l12-11M61 57l11 14" stroke-width="1.6"/>'},
 
 {id:"file-powder",cat:"spices",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Filé powder",fr:"Poudre de filé"},latin:"Sassafras albidum",
 origin:{en:"Louisiana",fr:"Louisiane"},season:[],
@@ -577,7 +577,7 @@ fr:"Dans l’Angleterre médiévale, une livre de gingembre valait un mouton, et
 tip:{en:"Peel it with the edge of a teaspoon — it follows the knots better than any knife. Frozen, it grates like a dream.",
 fr:"Pelez-le avec le bord d’une petite cuillère — elle épouse les nœuds mieux qu’aucun couteau. Congelé, il se râpe à merveille."},
 pairs:["carrot","soy-sauce","honey","mango","dark-chocolate","coconut-milk","salmon"],
-svg:'<path class="f2 sf" d="M30 56q-2-10 8-10 4 0 6-4 3-6 10-6 8 0 8 8 0 4 4 6 6 3 4 10-2 8-12 6-4-1-6 2-4 5-11 2-8-3-11-14z"/><path class="s" d="M42 50l4 6M54 44l2 6"/>'},
+svg:'<path class="f1 sf" d="M18 56Q16 46 26 44Q36 42 44 46Q50 49 54 44Q60 34 70 32Q78 30 78 40Q78 48 68 50Q60 52 60 58Q62 66 56 70Q48 74 42 68Q36 62 28 66Q18 68 18 56Z"/><path class="f2 sf" d="M21 55q7-4 10 2 2 6-4 9-8 2-10-4-1-5 4-7z"/><path class="s" d="M32 48q3 7 1 14M44 50q3 6 1 12M62 38q4 3 5 8M54 58q4 3 5 8" stroke-width="1.6"/><path class="s" d="M70 34q4 1 5 5" stroke-width="1.6"/><path class="dot" d="M25 58q4-1 4 3 0 4-4 3-3-1 0-6z"/>'},
 
 {id:"gochugaru",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Gochugaru",fr:"Gochugaru (piment coréen en flocons)"},latin:"Capsicum annuum",
 origin:{en:"Korea",fr:"Corée"},season:[],
@@ -597,7 +597,7 @@ fr:"Les marchands médiévaux juraient que ces graines descendaient les fleuves 
 tip:{en:"Crush it coarsely at the last moment; it flatters lamb, roast chicken and glazed carrots with a warmth black pepper can’t reach.",
 fr:"Concassez-la grossièrement au dernier moment ; elle flatte l’agneau, le poulet rôti et les carottes glacées d’une chaleur que le poivre noir n’atteint pas."},
 pairs:["lamb","chicken","carrot","rice"],
-svg:'<path class="f3" d="M38 42a3 3 0 106 0 3 3 0 10-6 0M52 38a3 3 0 106 0 3 3 0 10-6 0M32 54a3 3 0 106 0 3 3 0 10-6 0M46 52a3 3 0 106 0 3 3 0 10-6 0M60 50a3 3 0 106 0 3 3 0 10-6 0M40 64a3 3 0 106 0 3 3 0 10-6 0M54 62a3 3 0 106 0 3 3 0 10-6 0"/>'},
+svg:'<path class="f1 sf" d="M36 22Q48 26 52 40Q56 56 48 66Q42 73 34 68Q24 60 24 44Q24 28 36 22Z"/><path class="s" d="M34 26q-6 14-4 30M42 28q2 14 0 30M28 34q0 14 4 26" stroke-width="1.5"/><path class="s" d="M36 22l-1-7"/><path class="f2 sf" d="M56 40L66 38L72 46L66 54L56 52L53 46ZM62 60L72 58L77 66L70 74L61 71L58 64ZM40 74L50 72L54 78L48 84L40 82L38 78Z"/><path class="dot" d="M61 46q4-1 4 3 0 4-4 3-3-2 0-6zM67 65q4-1 4 3 0 4-4 3-3-2 0-6z"/>'},
 
 {id:"grains-of-selim",cat:"spices",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Grains of Selim",fr:"Baies de Selim"},latin:"Xylopia aethiopica",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
@@ -617,7 +617,7 @@ fr:"Cueilli vert et arrêté avant séchage — en saumure, lyophilisé ou conse
 tip:{en:"Crush the brined ones with the flat of a knife straight into a cream sauce. Drying them out defeats the purpose entirely.",
 fr:"Écrasez ceux en saumure du plat du couteau directement dans une sauce crème. Les sécher annule tout l’intérêt."},
 pairs:["cream","duck","beef","butter","thyme","shallot","mustard","tenderloin"],
-svg:'<circle class="f2 sf" cx="42" cy="52" r="7"/><circle class="f2 sf" cx="56" cy="55" r="7"/><circle class="f2 sf" cx="47" cy="66" r="7"/><path class="s" d="M42 45v-6"/>'},
+svg:'<path class="s" d="M26 78q3-22 14-34 9-11 20-22"/><path class="f1 sf" d="M44 68q0 8-8 8-8 0-8-8 0-7 8-8 8 0 8 8zM42 48q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7zM56 46q0 8-8 8-8 0-8-8 0-7 8-7 8 0 8 7z"/><path class="f2 sf" d="M36 58q0 7-7 7-7 0-7-7 0-7 7-7 7 0 7 7zM50 36q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7zM62 34q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7z"/><path class="s" d="M32 64q4-3 7-1M31 44q3-2 6 0M45 42q4-2 7 0M53 30q4-2 6 0" stroke-width="1.5"/>'},
 
 {id:"green-sichuan-pepper",cat:"spices",price:3,pk:"150–300 €/kg",name:{en:"Green Sichuan pepper",fr:"Poivre de Sichuan vert"},latin:"Zanthoxylum schinifolium",
 origin:{en:"Sichuan & Chongqing",fr:"Sichuan & Chongqing"},season:[],
@@ -667,7 +667,7 @@ fr:"La seule épice récoltée sur un conifère — chaque « baie » est un min
 tip:{en:"Crush the berries flat before they go in — whole, they stay mute. Three or four suffice for a whole braise; ten make it a pine forest.",
 fr:"Écrasez les baies avant de les jeter dans la marmite — entières, elles restent muettes. Trois ou quatre suffisent à tout un braisé ; dix en font une forêt de pins."},
 pairs:["duck","pork","beef","bay-leaf","black-pepper"],
-svg:'<circle class="f3 sf" cx="42" cy="54" r="8"/><circle class="f3 sf" cx="58" cy="58" r="7"/><path class="s" d="M40 51l4 4M56 55l3 4" stroke-width="1.6"/><path class="s" d="M46 40l6-12M46 40l-2-10M46 40l10-8"/>'},
+svg:'<path class="f2 sf" d="M50 52Q50 63 42 67Q31 69 23 61Q18 52 24 43Q32 36 42 38Q49 42 50 52Z"/><path class="f1 sf" d="M79 55Q78 63 70 66Q63 67 59 62Q56 55 59 49Q65 43 72 44Q79 47 79 55Z"/><path class="f1 sf" d="M70 26Q69 31 64 34Q59 34 55 31Q53 26 56 22Q59 18 64 19Q69 20 70 26Z"/><path class="s" d="M33 48q-1 7-7 9M33 48q5 6 12 5M33 48q-2-6-2-10M69 54q-1 6-6 6M69 54q4 5 9 4" stroke-width="1.7"/><path class="s" d="M20 52Q22 38 34 28M21 46l-6-4M21 46l-1-7M24 38l-7-2M24 38l1-7M29 32l-6 0M29 32l2-7M34 28l-4-5M34 28l5-4" stroke-width="2.2"/>'},
 
 {id:"kala-jeera",cat:"spices",rare:true,price:2,pk:"80–150 €/kg",name:{en:"Kala jeera",fr:"Cumin noir de l’Himalaya (kala jeera)"},latin:"Bunium persicum",
 origin:{en:"Himalaya (Kashmir)",fr:"Himalaya (Cachemire)"},season:[],
@@ -677,7 +677,7 @@ fr:"Ce n’est ni du cumin ni de la nigelle, bien que l’anglais nomme les troi
 tip:{en:"Toast it dry in a bare pan until it smells of woodsmoke, then grind. Bloomed in fat the way cumin is, it stays flat and you lose what you paid for.",
 fr:"Torréfiez-le à sec dans une poêle nue jusqu’à ce qu’il sente le feu de bois, puis moulez. Passé dans la matière grasse comme le cumin, il reste plat et vous perdez ce que vous avez payé."},
 pairs:["lamb","rice","yogurt","onion","black-cardamom","ghee","saffron","clove"],
-svg:'<path class="f3 sf" d="M46 72q-12-8-19-20 13 6 21 18zM49 72q-8-12-8-28 10 12 10 28zM52 72q0-16 6-28 3 16-2 28zM55 72q7-12 18-18-10 12-14 19zM43 72q-14-4-22-12 14 0 24 10z"/><path class="s" d="M38 76h22"/>'},
+svg:'<path class="f1 sf" d="M28 48Q32 50 35 51Q38 52 41 52Q43 53 45 52Q47 51 48 50Q49 48 50 46Q50 43 51 40Q51 37 50 33Q49 28 49 28Q49 29 48 30Q47 31 46 33Q44 35 43 36Q42 37 40 38Q38 39 37 40Q35 41 34 42Q32 43 30 44Q28 44 27 45Q25 46 25 46Q25 45 28 48Z"/><path class="s" d="M30 44Q36 44 41 42Q44 39 46 33M32 47Q38 47 43 45Q46 41 48 36M34 50Q40 50 45 48Q48 44 50 39" stroke-width="1.4"/><path class="dot" d="M57 27Q56 30 56 32Q56 34 57 36Q57 38 58 39Q59 40 60 41Q61 42 63 42Q65 42 67 41Q69 41 72 41Q74 40 75 40Q75 40 73 40Q71 40 69 39Q68 39 66 38Q65 37 64 36Q63 36 62 35Q61 33 60 32Q59 31 59 29Q58 28 58 26Q57 24 57 24Q57 24 57 27ZM66 45Q64 46 62 48Q61 50 60 52Q60 53 59 55Q59 56 60 58Q61 59 62 60Q63 61 65 62Q67 63 70 64Q73 65 72 65Q72 65 71 64Q69 63 68 62Q67 60 67 59Q66 58 66 56Q65 55 65 54Q65 52 65 51Q65 49 65 48Q66 46 67 44Q68 43 68 43Q68 43 66 45ZM21 66Q23 68 25 69Q27 70 29 70Q31 71 32 70Q34 70 35 69Q36 68 37 66Q38 65 38 63Q39 60 39 58Q39 55 39 55Q39 55 39 57Q38 59 37 60Q36 61 35 62Q34 63 32 64Q31 65 30 65Q28 65 27 66Q26 66 24 66Q22 66 20 66Q19 65 19 65Q19 65 21 66Z"/><path class="dot" d="M34 76Q36 78 38 80Q40 81 41 82Q43 83 44 83Q46 83 47 82Q49 82 50 80Q51 79 52 77Q53 75 54 73Q55 70 55 70Q55 70 54 71Q53 73 52 74Q50 75 49 76Q48 76 46 77Q45 77 43 77Q42 77 40 77Q39 77 37 76Q36 76 34 75Q33 74 33 74Q33 74 34 76ZM56 64Q55 66 54 69Q54 71 54 73Q54 75 55 76Q56 77 57 78Q58 79 60 79Q62 80 64 80Q66 80 69 79Q71 79 71 79Q71 79 70 78Q68 78 66 78Q65 77 63 76Q62 75 61 74Q60 73 59 72Q59 71 58 69Q57 68 57 66Q57 65 57 63Q57 61 57 61Q57 61 56 64ZM53 60Q55 60 57 59Q60 58 61 57Q63 56 64 55Q65 54 64 52Q64 51 64 49Q64 47 63 45Q61 44 60 41Q58 39 58 39Q58 39 58 41Q59 43 59 44Q59 46 60 47Q60 49 59 50Q58 52 58 53Q58 54 57 56Q56 57 55 58Q53 59 52 60Q50 61 50 61Q50 61 53 60Z"/>'},
 
 {id:"kashmiri-chilli",cat:"spices",price:1,pk:"20–40 €/kg",name:{en:"Kashmiri chilli",fr:"Piment du Cachemire"},latin:"Capsicum annuum",
 origin:{en:"Kashmir and northern India",fr:"Cachemire et Inde du Nord"},season:[],
@@ -857,7 +857,7 @@ fr:"Poivre blanc, muscade, girofle et gingembre — le mélange du charcutier, e
 tip:{en:"Pepper should dominate, not clove. If yours smells mainly of clove it is out of balance and will overwhelm a pâté.",
 fr:"Le poivre doit dominer, non le girofle. Si le vôtre sent surtout le girofle, il est déséquilibré et écrasera un pâté."},
 pairs:["pork","foie-gras","onion","bay-leaf","thyme","lard","beef","black-pepper"],
-svg:'<path class="f1 sf" d="M34 66q0-16 14-20 14 4 14 20z"/><path class="s" d="M48 46v20M34 60h28"/>'},
+svg:'<path class="f2 sf" d="M22 73Q30 54 40 50Q48 47 53 54Q58 61 67 63Q77 66 76 73Q48 80 22 73Z"/><path class="f1 sf" d="M29 38L36 52q2 4-2 5-4 1-5-3L24 41q-1-4 2-5 2-1 3 2zM28 32l-7-4 1 6zM28 32l-2-9 5 6zM28 32l8-7-1 7zM28 32l9 2-7 4z"/><path class="f1 sf" d="M44 24q9-2 11 6 1 8-7 9-9 1-10-7 0-6 6-8z"/><path class="f2 sf" d="M64 28q8 1 9 10 1 11-7 14-8 1-10-8-1-10 8-16z"/><path class="s" d="M40 28q4 0 6 4M50 32q4-2 7 0M67 34q-3 7-1 14M30 66q6-4 10 0M46 68q6-4 10 0M60 66q5-3 9 0" stroke-width="1.6"/>'},
 
 {id:"ras-el-hanout",cat:"spices",price:1,pk:"25–50 €/kg",name:{en:"Ras el hanout",fr:"Ras el hanout"},latin:"رأس الحانوت",
 origin:{en:"Maghreb",fr:"Maghreb"},season:[],
@@ -887,7 +887,7 @@ fr:"Chaque fleur de crocus donne trois filaments rouges, cueillis à la main à 
 tip:{en:"Steep the threads in warm water or stock for twenty minutes before using — thrown in dry, half their perfume never wakes up.",
 fr:"Laissez infuser les filaments dans une eau ou un bouillon tiède vingt minutes avant usage — jetés à sec, la moitié de leur parfum ne se réveille jamais."},
 pairs:["rice","shrimp","cod","chicken","cardamom","orange","honey"],
-svg:'<path class="s" d="M40 70q-4-16 2-30M48 72q-2-18 2-34M56 70q4-14-2-30"/><path class="f3" d="M40 38a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M47 34a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M52 40a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0"/>'},
+svg:'<path class="s" d="M22 66c8-2 14-8 19-15 4-6 8-10 13-13"/><path class="s" d="M28 76c9-3 15-9 20-17 4-6 9-11 15-14"/><path class="s" d="M18 52c9 0 16-3 23-8 6-5 12-8 19-9"/><path class="s" d="M35 79c6-6 10-13 13-21 3-7 7-13 12-17" stroke-width="2.6"/><path class="s" d="M20 41c8 2 14 6 19 12 4 5 9 9 15 11" stroke-width="2.6"/><path class="dot" d="M54 38q9-6 13-1-5 7-13 6-2-2 0-5zM63 45q9-3 12 3-7 4-14 2-1-3 2-5zM60 35q7-7 13-3-5 7-13 8-2-3 0-5zM54 64q9 1 11 7-8 2-13-2-1-3 2-5z"/>'},
 
 {id:"sand-ginger",cat:"spices",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Sand ginger (kencur)",fr:"Kencur (gingembre des sables)"},latin:"Kaempferia galanga",
 origin:{en:"Southern China and island Southeast Asia",fr:"Chine du Sud et Asie du Sud-Est insulaire"},season:[],
@@ -927,7 +927,7 @@ fr:"Pas un poivre du tout, mais l’écorce d’une baie de la famille des agrum
 tip:{en:"Toast the husks dry, discard the gritty black seeds, grind coarsely. Start with a pinch — the tingle builds like applause.",
 fr:"Torréfiez les écorces à sec, jetez les graines noires et sableuses, moulez grossièrement. Commencez par une pincée — le picotement monte comme des applaudissements."},
 pairs:["chili","duck","dark-chocolate","ginger","soy-sauce"],
-svg:'<path class="f3 sf" d="M40 46a7 7 0 107 7q4 3 8 0a7 7 0 107-7 7 7 0 10-7-7q-4-3-8 0a7 7 0 10-7 7z" transform="scale(.85) translate(9 10)"/><path class="s" d="M44 52q4 4 8 0" transform="scale(.85) translate(9 10)"/>'},
+svg:'<path class="f1 sf" d="M51.6 59.6Q50.3 62.8 48.4 65.6Q46.4 68.4 42.4 68.3Q39.2 70.4 35.8 71.2Q32.5 70.1 29.5 67.7Q26.7 65.7 25.5 62.2Q23.1 59.2 23.1 55.7Q22.3 51.8 25.1 48.9Q26.8 45.5 29.6 43.2Q32.7 41.7 36.6 42.1Q39.7 42.7 42.7 44.4Q46.5 44.7 49.2 46.5Q51.1 49.3 51.6 52.9Q53.3 56.3 51.6 59.6Z"/><path class="f2 sf" d="M72.9 47.5Q70.6 49.4 67.9 50.7Q65 51.8 62 51.6Q58.6 51.7 56.6 48.8Q53.6 47.1 52.1 44.3Q51.6 41.4 53.3 38.1Q54 35.3 55.5 32.9Q57.4 30.5 60.2 29.6Q63 29.4 65.8 29.7Q68.9 29.5 70.8 31.9Q72.6 33.9 73.6 36.5Q75.3 39 74.1 41.8Q74.1 44.9 72.9 47.5Z"/><path class="f2 sf" d="M58.8 79.7Q56.5 81.7 54.1 82.5Q51.3 82.2 49.2 80.1Q48 78 48.1 74.9Q47 72.7 47.3 70.5Q48 68.3 49.4 66.4Q50.2 63.3 52.4 62.1Q54.9 60.7 57.7 62.2Q60 63.1 61.8 65.1Q64.4 66.2 64.9 68.8Q66.9 71.2 66.1 73.8Q65.5 76.2 62.7 77.6Q61.3 79.4 58.8 79.7Z"/><path class="dot" d="M31 47q10-3 15 3-6 4-11 3-5-1-4-6zM58 33q8-3 11 2-4 4-8 4-4-1-3-6zM50 67q6-2 9 3-4 3-7 2-3-1-2-5z"/><path class="s" d="M64 29q1-4 4-5"/><path class="s" d="M29 60q3 1 4 3M35 66q3 1 4 3M44 62q3 1 4 3M70 46q2 1 3 3M60 47q2 1 3 3" stroke-width="1.5"/>'},
 
 {id:"star-anise",cat:"spices",price:2,pk:"25–60 €/kg",name:{en:"Star anise",fr:"Badiane"},latin:"Illicium verum",
 origin:{en:"Southern China & Vietnam",fr:"Chine du Sud & Vietnam"},season:[],
@@ -937,7 +937,7 @@ fr:"Jusqu’à récemment elle était la source industrielle d’acide shikimiqu
 tip:{en:"One whole star is enough for a large pot. Two is too many, and there is no way to take it back out once it has infused.",
 fr:"Une étoile entière suffit pour une grande casserole. Deux est de trop, et il n’y a aucun moyen de revenir en arrière une fois l’infusion faite."},
 pairs:["pork","soy-sauce","cassia","orange","ginger","duck","plum","cinnamon"],
-svg:'<path class="f1 sf" d="M48 28l5 12 13 1-10 8 4 13-12-7-12 7 4-13-10-8 13-1z"/><circle class="dot" cx="48" cy="50" r="3"/>'},
+svg:'<path class="f1 sf" d="M48 18.6Q51.2 24.3 53.6 36.4Q63.8 29.6 69.9 28.1Q68.4 34.2 61.8 44.3Q73.9 46.7 79.5 50Q73.8 53.2 61.6 55.6Q68.7 66.1 70.1 72.1Q63.9 70.7 54 64.6Q51.5 76.5 48 81.2Q44.5 75.7 41.8 65.1Q32.4 70.6 26.8 71.2Q27.9 65.4 33.9 55.8Q22.7 53.3 17.1 50Q21.8 46.6 34 44.2Q27.9 34.6 26.8 28.8Q32.1 29.4 42.2 36.1Q44.6 23.2 48 18.6Z"/><path class="f2 sf" d="M57.8 52.1Q56.6 55.5 54.5 58.3Q51.3 60.5 47.6 60.8Q44.4 59.6 41.6 57.2Q39.1 54.6 37.6 51.5Q37.6 47.8 39.2 44.5Q41.5 41.7 44.8 40.2Q48.2 40 51.5 41.4Q54.3 43 56.1 45.7Q57.6 48.8 57.8 52.1Z"/><path class="s" d="M48 37 48 26M57.2 40.8 65 33M61 50 72 50M57.2 59.2 65 67M48 63 48 74M38.8 59.2 31 67M35 50 24 50M38.8 40.8 31 33" stroke-width="1.5"/><path class="dot" d="M48 66q4-2 6 1 1 4-3 5-5 0-5-3 0-2 2-3zM35 61q4-2 6 1 1 4-3 5-5 0-5-3 0-2 2-3zM60 61q4-2 6 1 1 4-3 5-5 0-5-3 0-2 2-3z"/><path class="s" d="M33 69q-4 4-6 9"/>'},
 
 {id:"sumac",cat:"spices",price:1,pk:"20–40 €/kg",name:{en:"Sumac",fr:"Sumac"},latin:"Rhus coriaria",
 origin:{en:"Middle East & Mediterranean",fr:"Moyen-Orient & Méditerranée"},season:[],
@@ -947,7 +947,7 @@ fr:"Avant que le citron n’atteigne l’Europe, les Romains acidifiaient leurs 
 tip:{en:"Think of it as dry lemon juice: over grilled meat, yogurt or raw onions at the end, never long-cooked. It wakes a dish without wetting it.",
 fr:"Pensez-le comme du jus de citron sec : sur une viande grillée, un yaourt ou des oignons crus, à la fin, jamais en cuisson longue. Il réveille un plat sans le mouiller."},
 pairs:["onion","yogurt","lamb","chickpeas","tomato"],
-svg:'<path class="f3 sf" d="M48 30l14 22q6 12-4 18-10 5-20 0-10-6-4-18z"/><path class="dot" d="M42 48a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M50 46a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M46 56a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M54 54a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
+svg:'<path class="f1 sf" d="M46 17Q49.1 15.8 51 24Q55 23.5 55 31Q61.3 32 59 39Q65 43.1 62 47Q67.2 54.6 63 57Q63.5 65.5 57 65Q54 71.5 48 68Q42.4 72.4 38 66Q31.9 67.2 31 59Q26.1 57.4 29 50Q25.3 46.3 31 41Q28.1 35 34 33Q33 24.6 38 25Q39 18.9 42 20Q43.8 15.6 46 17Z"/><path class="f2 sf" d="M50 35.2Q48.6 37 46.4 38.1Q44.1 39.2 41.8 39.1Q39.8 37.8 38.6 35.5Q37.9 33.3 38.5 31Q39.4 28.7 41.4 27.4Q43.6 26.9 45.9 27.7Q47.7 29 49.1 30.6Q49.9 32.9 50 35.2ZM44.8 53.5Q42.7 55.1 40.4 55.9Q38 54.9 35.8 53.3Q34.9 51.1 35.1 48.5Q35.6 46.1 36.8 44Q39 42.9 41.5 42.8Q44.1 43.4 46.3 44.5Q47.9 46.8 47.9 49.6Q46.9 51.8 44.8 53.5ZM54.1 62.4Q51.8 62.2 49.8 60.6Q48.2 59.1 47.5 57Q47.4 54.8 48.5 52.8Q50.1 51.1 51.9 49.8Q54.4 49.7 56.7 50.7Q58.6 52.5 59.5 54.9Q59.3 57.3 58.1 59.6Q56.4 61.4 54.1 62.4Z"/><path class="dot" d="M53 43q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3zM45 60q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3zM38 39q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3z"/><path class="s" d="M46 68q1 7-5 12"/><path class="f2 sf" d="M40 74q-9-5-15-1 5 8 14 6zM53 75q8-5 14-1-5 8-14 5z"/>'},
 
 {id:"tahitian-vanilla",cat:"spices",luxe:true,price:3,pk:"5–10 €/pièce",name:{en:"Tahitian vanilla",fr:"Vanille de Tahiti"},latin:"Vanilla × tahitensis",
 origin:{en:"French Polynesia",fr:"Polynésie française"},season:[],
@@ -977,7 +977,7 @@ fr:"Pas un poivre mais un cousin himalayen du poivre de Sichuan, et il sent mass
 tip:{en:"Grind it over the finished plate, never into the cooking. Heat destroys the citrus note within a minute.",
 fr:"Moulez-le sur le plat fini, jamais dans la cuisson. La chaleur détruit la note d’agrume en une minute."},
 pairs:["dark-chocolate","scallop","honey","grapefruit","cream","salmon","lime","vanilla"],
-svg:'<circle class="f2 sf" cx="42" cy="54" r="7"/><circle class="f2 sf" cx="56" cy="52" r="6"/><circle class="f2 sf" cx="48" cy="66" r="6"/><path class="s" d="M39 51l6 6M53 49l6 6"/>'},
+svg:'<path class="s" d="M24 72c8-4 14-10 17-18 3-6 8-10 13-12M45 50q6 3 9 7M58 42q6 0 10 2"/><path class="f1 sf" d="M49.8 39.3Q47.6 37.4 47.5 33.9Q45.2 31 45.8 28.1Q46.8 25.2 49.9 23.5Q51.7 20.6 54.7 19.8Q57.6 19.7 60.4 21.7Q63.7 21.9 65.2 24.5Q67.5 26.8 68.1 29.8Q68.5 33 67.3 35.9Q66 39 63.4 41Q60.7 42.6 57.2 41.8Q56 40.5 55.1 36.2Q51.7 38.8 49.8 39.3Z"/><path class="f2 sf" d="M59.8 45.8Q59.7 42.9 61.5 40.5Q63.2 38.6 66.3 38.2Q68.4 36.2 71 37Q73.8 36.8 75.6 38.9Q78.5 40 79.3 42.6Q79.9 45.2 79.3 47.9Q78.9 50.7 77 52.6Q75.3 55.1 72.5 55.6Q69.8 56.4 67.1 55.2Q64.4 54.5 62.4 52.6Q63.2 50.6 65.5 47.6Q61.7 46.8 59.8 45.8Z"/><path class="f2 sf" d="M52.3 59.4Q49.7 59.9 47.1 59.1Q44.2 58.6 42.6 56.3Q41.1 54.3 42 51.2Q41.7 48.9 42.5 46.8Q42.9 44.2 45 42.9Q46.8 40.4 49.5 40.5Q52.2 40.3 54.5 41.8Q56.9 43.1 58.5 45.2Q60.5 47.4 59.7 50.4Q59.4 53 57.4 55Q56 55.2 52.6 53.7Q52.9 57.7 52.3 59.4Z"/><path class="dot" d="M52 36q6-3 8 2 0 5-5 6-6-1-6-4 0-3 3-4zM66 49q5-2 6 2 0 5-4 5-5-1-5-4 0-2 3-3z"/><path class="s" d="M47 24q4 3 9 2M63 39q3 3 8 2" stroke-width="1.5"/>'},
 
 {id:"tonka",cat:"spices",price:3,pk:"300–600 €/kg",name:{en:"Tonka bean",fr:"Fève tonka"},latin:"Dipteryx odorata",
 origin:{en:"Guyana & Venezuela rainforests",fr:"Forêts de Guyane & du Venezuela"},season:[],
@@ -997,7 +997,7 @@ fr:"La racine d’or de l’Inde teint les robes, bénit les mariages — on en 
 tip:{en:"A pinch of black pepper multiplies what your body absorbs from it — the two are old partners. Mind your clothes: the stain is forever.",
 fr:"Une pincée de poivre noir démultiplie ce que le corps en absorbe — les deux sont de vieux associés. Gare à vos vêtements : la tache est éternelle."},
 pairs:["rice","coconut-milk","lentils","chickpeas","ginger","yogurt"],
-svg:'<path class="f3 sf" d="M32 60q-4-8 4-10 6-1 8-6 2-6 8-6t8 6q2 5 8 6-2 10-10 10-4 0-6 4-2 5-8 5t-8-5q-2-4-4-4z"/><path class="dot" d="M60 68a2 2 0 104 0 2 2 0 10-4 0M66 62a2 2 0 104 0 2 2 0 10-4 0"/>'},
+svg:'<path class="f1 sf" d="M22 48q-3-8 5-10 9-2 17-6 9-4 15-11 5-5 9 0 3 6-3 11-8 8-18 12-9 4-17 7-5 2-8-3z"/><path class="f2 sf" d="M36 44q7 3 9 10 2 7-1 11-5 3-8-2-3-7-4-14 0-4 4-5z"/><path class="s" d="M30 43q4 5 9 4M42 38q3 5 8 5M54 32q3 5 8 5M38 52q5 2 7 0" stroke-width="1.5"/><path class="f2 sf" d="M72.4 71.4Q70.9 74.1 68.5 76.2Q65.8 77.9 62.6 78.1Q59.5 77.7 57 75.7Q53.9 74 52.8 70.9Q52.4 67.8 54.2 64.8Q55 61.6 57.5 59.8Q60.2 57.7 63.4 57.5Q66.5 58.3 69.3 60Q72.2 61.9 73.3 65Q73.6 68.3 72.4 71.4Z"/><path class="f1 sf" d="M66.9 72.4Q65.1 73.8 62.9 73.9Q61 73.3 59.6 71.4Q58.4 69.8 57.7 68Q58.2 66.1 59 64.4Q60 62.3 61.9 61.5Q63.9 61.6 65.9 62.4Q67.5 63.5 68.7 65.1Q69.7 67.1 69.7 69.2Q68.7 71.1 66.9 72.4Z"/>'},
 
 {id:"urfa-biber",cat:"spices",rare:true,price:2,pk:"40–80 €/kg",name:{en:"Urfa biber",fr:"Piment d’Urfa"},latin:"Capsicum annuum",
 origin:{en:"Şanlıurfa, south-eastern Turkey",fr:"Şanlıurfa, sud-est de la Turquie"},season:[],
@@ -1057,7 +1057,7 @@ fr:"Le vrai wasabi est un rhizome cultivé dans des ruisseaux de montagne froids
 tip:{en:"Grated fresh, it loses its heat within fifteen minutes. That is why it is grated at the counter in front of you and never in advance.",
 fr:"Râpé frais, il perd son piquant en quinze minutes. C’est pourquoi on le râpe au comptoir devant vous et jamais à l’avance."},
 pairs:["tuna","soy-sauce","rice","tamari","salmon","sesame","spring-onion","scallop"],
-svg:'<path class="f3 sf" d="M40 72V44q-6-8 0-14 10 4 8 14v28z"/><path class="f2 sf" d="M50 40q10-8 14 0-8 8-14 4z"/>'},
+svg:'<path class="f1 sf" d="M28 70q-5-8 2-13 8-6 16-13 8-6 13-12 5-6 10 0 4 6-2 12-7 7-15 13-8 6-16 13-5 4-8 0z"/><path class="f2 sf" d="M28 70q-5-8 2-13 7 1 9 7 1 6-4 8-5 2-7-2z"/><path class="s" d="M35 59q5 4 9 1M41 53q4 4 8 1M47 47q5 4 9 1M53 41q5 4 9 1M59 35q4 3 7 1" stroke-width="1.5"/><path class="s" d="M66 28q1-4-1-7M71 30q2-3 1-6M61 26q-1-4-3-6" stroke-width="2"/><path class="f1 sf" d="M52 74q4-8 12-7 9 1 10 8-11 3-22-1z"/><path class="dot" d="M59 71q4-1 5 2 0 3-4 3-3 0-3-2 0-2 2-3z"/>'},
 
 {id:"white-pepper",cat:"spices",price:2,pk:"25–50 €/kg",name:{en:"White pepper",fr:"Poivre blanc"},latin:"Piper nigrum",
 origin:{en:"Malabar coast, India",fr:"Côte de Malabar, Inde"},season:[],
@@ -1107,7 +1107,7 @@ fr:"Le mot désigne à la fois le mélange et l’hysope sauvage qu’il contien
 tip:{en:"Mix it with olive oil into a paste before spreading on bread. Dry on the surface it just falls off.",
 fr:"Mélangez-le à l’huile d’olive en pâte avant de l’étaler sur le pain. Sec en surface, il tombe simplement."},
 pairs:["olive-oil","sumac","sesame","flour-t65","yogurt","feta","tomato","cucumber"],
-svg:'<path class="f2 sf" d="M32 66q0-16 16-20 16 4 16 20z"/><path class="s" d="M40 58q8-4 16 0M38 64q10-4 20 0"/><circle class="dot" cx="44" cy="54" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M20 58q3 16 26 17 24 1 28-17-27 5-54 0z"/><path class="f2 sf" d="M24 58q6-14 22-14 16 0 24 14-23 5-46 0z"/><path class="dot" d="M34 53q4-2 5 1 0 3-4 3-3-1-3-2 0-2 2-2zM45 49q4-2 5 1 0 3-4 3-3-1-3-2 0-2 2-2zM56 53q4-2 5 1 0 3-4 3-3-1-3-2 0-2 2-2zM40 60q4-2 5 1 0 3-4 3-3-1-3-2 0-2 2-2zM53 61q4-2 5 1 0 3-4 3-3-1-3-2 0-2 2-2z"/><path class="s" d="M60 44q8-8 9-18"/><path class="f2 sf" d="M63 38q-6-2-8-7 7-1 10 5zM66 32q6-2 8-7-7-1-9 5zM67 26q-5-2-6-7 6 0 8 5z"/>'},
 
 {id:"zedoary",cat:"spices",rare:true,price:2,pk:"40–80 €/kg",name:{en:"Zedoary",fr:"Zédoaire"},latin:"Curcuma zedoaria",
 origin:{en:"India and Indonesia",fr:"Inde et Indonésie"},season:[],

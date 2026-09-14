@@ -77,7 +77,7 @@ fr:"On les déterre au printemps avant qu’elles ne percent, car elles poussent
 tip:{en:"Tinned shoots keep a metallic edge. Boil them for five minutes in fresh water before use and it goes.",
 fr:"Les pousses en conserve gardent un goût métallique. Cinq minutes d’ébullition à l’eau claire avant emploi et il disparaît."},
 pairs:["soy-sauce","ginger","sesame","shiitake","chili","spring-onion","garlic","fish-sauce"],
-svg:'<path class="f3 sf" d="M40 76q-4-30 8-48 12 18 8 48z"/><path class="s" d="M41 62h14M43 50h10M45 40h6"/>'},
+svg:'<path class="f1 sf" d="M48 16q10 13 14 33 3 13 3 31-17 5-34 0 0-18 3-31 4-20 14-33z"/><path class="f2 sf" d="M48 16q-10 13-14 33-3 13-3 31 8 3 17 3-5-15-3-33t3-34z"/><path class="f2 sf" d="M62 44q9-6 14-14-2 13-8 21zM34 46q-9-5-13-13 1 13 7 20z"/><path class="s" d="M32 72q17-11 31 2M36 59q11-8 24 2M40 45q8-6 16 2" stroke-width="2"/><path class="s" d="M34 76q13 6 27 0M44 30q5-4 9 1" stroke-width="1.5"/>'},
 
 {id:"banana-shallot",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Banana shallot",fr:"Échalote banane"},latin:"Allium cepa var. aggregatum",
 origin:{en:"Northern Europe, seed-grown",fr:"Europe du Nord, semée en graine"},season:[],
@@ -117,7 +117,7 @@ fr:"Découverte par accident vers 1830, quand un cultivateur bruxellois laissa d
 tip:{en:"Keep it wrapped and in the dark at home too. And cut out the cone at the base, which holds most of the bitterness.",
 fr:"Gardez-la emballée et à l’obscurité chez vous aussi. Et retirez le cône à la base, qui concentre l’amertume."},
 pairs:["walnut","blue-cheese","butter","orange","prosciutto","cream","honey","apple"],
-svg:'<path class="f3 sf" d="M40 76q-6-26 8-48 14 22 8 48z"/><path class="s" d="M48 30v46M42 50q6 4 12 0M43 62q5 4 10 0"/>'},
+svg:'<path class="f1 sf" d="M48 18q10 10 12 26 2 18-2 30-2 8-10 8t-10-8q-4-12-2-30 2-16 12-26z"/><path class="f2 sf" d="M38 40q-6 10-5 24 1 10 5 16-8-2-9-14-1-16 9-26z"/><path class="f2 sf" d="M58 40q6 10 5 24-1 10-5 16 8-2 9-14 1-16-9-26z"/><path class="s" d="M48 22q-7 12-7 28t3 30M48 22q7 12 7 28t-3 30M42 34q6 5 12 0" stroke-width="1.5"/><path class="s" d="M40 78q8 4 16 0" stroke-width="2"/>'},
 
 {id:"bell-pepper",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Bell pepper",fr:"Poivron"},latin:"Capsicum annuum",
 origin:{en:"Central America",fr:"Amérique centrale"},season:[7,8,9,10],
@@ -127,7 +127,7 @@ fr:"C’est un piment qui a perdu son feu — un seul gène récessif éteint en
 tip:{en:"Blister the skin black under a grill and steam it in a covered bowl for ten minutes. The skin then lifts off in sheets.",
 fr:"Faites cloquer la peau au gril jusqu’au noir et laissez suer dix minutes dans un saladier couvert. La peau s’enlève alors en larges bandes."},
 pairs:["olive-oil","garlic","tomato","onion","anchovy","basil","paprika","thyme"],
-svg:'<path class="f1 sf" d="M32 46q0-8 16-8t16 8q2 22-6 28t-20 0-6-28z"/><path class="s" d="M48 38V26M44 38q-6-8-12-8"/>'},
+svg:'<path class="f1 sf" d="M48 28q13-1 19 8 6 9 5 20-1 12-5 19-3 5-8 4-4-1-5-7-4 8-9 8t-9-8q-1 6-5 7-5 1-8-4-4-7-5-19-1-11 5-20 6-9 25-8z"/><path class="f2 sf" d="M60 32q9 8 10 22 1 14-4 24-4 4-8 3 7-11 7-26 0-16-5-23z"/><path class="f2 sf" d="M38 30q4-6 10-6t10 6q-4 5-10 5t-10-5z"/><path class="s" d="M48 26q2-6 5-9"/><path class="s" d="M54 72q3-16 1-30M36 72q-3-16-1-30" stroke-width="1.5"/>'},
 
 {id:"bintje-potato",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Bintje potato",fr:"Bintje"},latin:"Solanum tuberosum",
 origin:{en:"Friesland, Netherlands",fr:"Frise, Pays-Bas"},season:[8,9,10,11],
@@ -177,7 +177,7 @@ fr:"Noir charbon dehors, blanc d’os dedans, et nettement plus féroce que son 
 tip:{en:"Salt the grated flesh for twenty minutes and squeeze it out. That draws off the bitterness and leaves the clean heat.",
 fr:"Salez la chair râpée vingt minutes et pressez-la. Cela évacue l’amertume et laisse un piquant net."},
 pairs:["cream","apple","walnut","chives","lemon","black-pepper","butter","honey"],
-svg:'<path class="f1 sf" d="M34 52q0-14 14-14t14 14q0 18-14 24T34 52z"/><path class="s" d="M48 38V26M44 38q-4-9-10-10"/>'},
+svg:'<path class="f2 sf" d="M46 24q16 1 20 13 4 14 0 26-4 13-11 18-3 2-6 2t-6-2q-7-5-11-18-4-12 0-26 4-12 14-13z"/><path class="f1 sf" d="M48 28q12 2 15 11 3 12 0 23-3 11-9 16-3 2-6 2z"/><path class="s" d="M44 25q-3-6-8-8M48 23q0-5 1-8M53 25q3-6 8-9" stroke-width="2"/><path class="s" d="M36 40q3 3 0 6M34 52q3 3 0 6M36 64q3 3 0 6M42 72q3 2 1 5M41 34q3 2 1 5" stroke-width="1.5"/><path class="s" d="M48 80q2 4 0 6" stroke-width="2"/>'},
 
 {id:"stridoli",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Bladder campion",fr:"Silène enflé"},latin:"Silene vulgaris",
 origin:{en:"Meadows of Emilia-Romagna",fr:"Prairies d’Émilie-Romagne"},season:[3,4,5,6],
@@ -257,7 +257,7 @@ fr:"Fait rare pour un légume, il a un acte de naissance : Charles Leggett l’a
 tip:{en:"The neck is solid flesh and the base is all seed. Cut them apart and treat them as two different vegetables.",
 fr:"Le col est plein de chair, la base pleine de graines. Séparez-les et traitez-les comme deux légumes différents."},
 pairs:["sage","butter","nutmeg","chestnut","cream","ginger","parmesan","hazelnut"],
-svg:'<path class="f1 sf" d="M44 26q8 0 8 10v18q12 4 12 16t-14 14-14-14 8-16V36q0-10 0-10z"/><path class="s" d="M46 24q4-6 8-4"/>'},
+svg:'<path class="f1 sf" d="M37 24C34 36 36 44 38 52 30 58 30 72 38 78c8 6 24 4 28-6C70 62 64 54 54 50 52 42 50 32 47 24Q42 20 37 24z"/><path class="f2 sf" d="M56 52q10 6 10 18-1 10-12 12-8 2-14-2 12 0 16-10 4-8 0-18z"/><path class="dot" d="M49 79q4-2 5 1-1 4-5 2-2-1 0-3z"/><path class="s" d="M41 23q-1-5 2-7"/><path class="s" d="M42 28q-2 12-1 22M45 56q-8 5-8 13" stroke-width="1.5"/>'},
 
 {id:"cabbage",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Cabbage",fr:"Chou"},latin:"Brassica oleracea var. capitata",
 origin:{en:"Coastal Europe",fr:"Côtes d’Europe"},season:[9,10,11,12,1,2,3],
@@ -297,7 +297,7 @@ fr:"L’ancêtre sauvage de l’artichaut, cultivé pour ses côtes plutôt que 
 tip:{en:"String it like celery, blanch it in lemony water, and pair it with anything salty-deep: anchovy, parmesan, marrow. The bitterness is the point, not the flaw.",
 fr:"Effilez-le comme un céleri, blanchissez-le à l’eau citronnée, et mariez-le au salé profond : anchois, parmesan, moelle. L’amertume est le propos, pas le défaut."},
 pairs:["anchovy","garlic","parmesan","butter","cream"],
-svg:'<path class="f1 sf" d="M40 30v38q0 8 8 8t8-8V30l-4 6-4-8-4 8z"/><path class="s" d="M44 38v28M52 38v28"/>'},
+svg:'<path class="f1 sf" d="M28 24q6-1 9 4 5 24 5 50-6 2-12 0-4-27-2-54z"/><path class="f2 sf" d="M45 20q6-1 8 4 3 26 2 56-8 2-13 0 0-30 3-60z"/><path class="f1 sf" d="M68 26q-6-1-9 4-6 24-5 48 6 2 12 0 3-26 2-52z"/><path class="s" d="M35 33q3 23 3 42M48 29q1 25 1 46M61 35q-2 21-2 40" stroke-width="1.5"/><path class="f2 sf" d="M30 60q18 4 36-1 1 5 0 9-18 5-36 1-1-5 0-9z"/><path class="s" d="M42 21q-6-1-9 2 1-4 0-6M55 23q6-2 9 1-2-4-1-6" stroke-width="2"/>'},
 
 {id:"carrot",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Carrot",fr:"Carotte"},latin:"Daucus carota",
 origin:{en:"Persia (Iran, Afghanistan)",fr:"Perse (Iran, Afghanistan)"},season:[6,7,8,9,10,11],
@@ -347,7 +347,7 @@ fr:"Les Toscans vous diront que la ribollita ne se fait pas avant les premières
 tip:{en:"Strip the leaf from the stem by pulling it backwards down the rib. The stem is too fibrous to soften in any reasonable time.",
 fr:"Effeuillez en tirant la feuille à rebours le long de la côte. La tige est trop fibreuse pour s’attendrir en un temps raisonnable."},
 pairs:["garlic","olive-oil","white-beans","flour-t65","parmesan","chili","rosemary","tomato"],
-svg:'<path class="s" d="M48 78V30"/><path class="f1 sf" d="M46 36q-14 2-16 12 12 6 16-4zM50 36q14 2 16 12-12 6-16-4zM46 54q-13 2-15 11 11 6 15-4zM50 54q13 2 15 11-11 6-15-4z"/>'},
+svg:'<path class="f2 sf" d="M48 16q10 13 9 26 2 12-1 21 1 9-3 14-1 3-5 3t-5-3q-4-5-3-14-3-9-1-21-1-13 9-26z"/><path class="f1 sf" d="M27 24q8 2 10 12 3 12 5 21 2 10 5 16 1 4-2 6-5 1-7-3-4-7-6-17-3-10-6-19-3-9 1-16z"/><path class="f1 sf" d="M69 24q-8 2-10 12-3 12-5 21-2 10-5 16-1 4 2 6 5 1 7-3 4-7 6-17 3-10 6-19 3-9-1-16z"/><path class="s" d="M48 24v50M32 34q5 20 11 38M64 34q-5 20-11 38" stroke-width="1.5"/><path class="s" d="M44 34q3 3 6 0M43 46q4 3 8 0M43 58q4 3 8 0M44 68q3 3 6 0M35 46q3 2 5 0M38 60q3 2 5 0M58 46q-3 2-5 0M55 60q-3 2-5 0" stroke-width="1.5"/>'},
 
 {id:"celeriac",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Celeriac",fr:"Céleri-rave"},latin:"Apium graveolens var. rapaceum",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,2,3,9,10,11,12],
@@ -487,7 +487,7 @@ fr:"Il y a neuf mille ans, des paysans mexicains commencèrent à transformer la
 tip:{en:"Sweetness starts fading the hour it is picked: cook fresh cobs the day you buy them, and scrape the milky pulp from spent cobs into soups.",
 fr:"Le sucre décline dès la cueillette : cuisez les épis frais le jour même, et raclez la pulpe laiteuse des épis épuisés dans les soupes."},
 pairs:["butter","chili","black-pepper","cream","paprika","quinoa"],
-svg:'<path class="f1 sf" d="M42 28h12q4 16 0 34-2 10-6 10t-6-10q-4-18 0-34z"/><path class="s" d="M42 38h12M41 48h14M42 58h12M48 30v40"/><path class="f2 sf" d="M40 30q-8 14-4 34 6-2 6-10zM56 30q8 14 4 34-6-2-6-10z"/>'},
+svg:'<path class="f1 sf" d="M48 22q10 8 11 24 2 18-2 29-2 8-9 8t-9-8q-4-11-2-29 1-16 11-24z"/><path class="f2 sf" d="M40 50q-9 5-12 13-3 9 0 14 4-3 6-10 2-11 6-17z"/><path class="f2 sf" d="M57 52q9 5 12 13 3 9 0 13-4-3-6-10-2-10-6-16z"/><path class="s" d="M39 36q9 4 18 0M38 46q10 5 20 0M38 57q10 5 20 0M40 67q8 4 16 0M48 27v48M42 30q-1 22 0 44M54 30q1 22 0 44" stroke-width="1.5"/><path class="s" d="M45 23q-3-2-5-5M47 22q-1-3-1-6M50 22q2-3 5-5M49 22q1-3 2-5" stroke-width="2"/>'},
 
 {id:"crapaudine-beetroot",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Crapaudine beetroot",fr:"Betterave crapaudine"},latin:"Beta vulgaris",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[10,11,12,1,2],
@@ -507,7 +507,7 @@ fr:"Petits tubercules nacrés en forme de bibendum, nommés d’après le villag
 tip:{en:"Don’t peel — shake them in a tea towel with coarse salt to strip the skins, then glaze them in butter barely two minutes. They should still snap.",
 fr:"N’épluchez pas — secouez-les dans un torchon avec du gros sel pour ôter la fine peau, puis glacez-les au beurre deux minutes à peine. Ils doivent encore craquer."},
 pairs:["butter","parsley","cream","chicken"],
-svg:'<path class="f1 sf" d="M34 52a5 5 0 019-2 5 5 0 018 0 5 5 0 018 0 5 5 0 018 4q-2 6-8 4a5 5 0 01-8 0 5 5 0 01-8 0 5 5 0 01-9-6z" transform="rotate(-8 48 52)"/><path class="f1 sf" d="M38 64a4.5 4.5 0 018-2 4.5 4.5 0 018 0 4.5 4.5 0 017 4q-2 5-7 3a4.5 4.5 0 01-8 0 4.5 4.5 0 01-8-5z" transform="rotate(6 52 64)"/>'},
+svg:'<path class="f1 sf" d="M20 66q1-9 10-10 3-8 12-7 4-8 13-6 5-7 13-4 8-2 10 6 2 8-6 12-7 5-14 3-7 4-15 2-8 3-15 1-6 3-8 3z"/><path class="f2 sf" d="M26 34q0-8 9-8 4-6 11-5 5-5 11-3 7-1 7 6 0 7-7 8-6 3-12 2-7 2-12 1-7 0-7-1z"/><path class="f1 sf" d="M52 76q1-6 8-6 5-3 9 0 4 2 3 5-1 5-7 5-6 2-9 0-5-1-4-4z"/><path class="s" d="M31 57q2 6 0 8M44 49q2 6 0 8M57 43q2 6 0 8M38 26q1 5-1 8M50 22q2 5 0 8M61 70q1 4-1 6" stroke-width="1.5"/><path class="s" d="M22 64q-3 1-4 4M76 41q3-1 5 0" stroke-width="1.5"/>'},
 
 {id:"cucamelon",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Cucamelon",fr:"Mélothrie"},latin:"Melothria scabra",
 origin:{en:"Mexico and Central America",fr:"Mexique et Amérique centrale"},season:[7,8,9],
@@ -647,7 +647,7 @@ fr:"La sœur à larges feuilles de la frisée, assez robuste pour que l’Italie
 tip:{en:"Use the dark outer leaves for the pot and keep the pale heart for the salad bowl. They are two different vegetables.",
 fr:"Les feuilles extérieures sombres pour la casserole, le cœur pâle pour le saladier. Ce sont deux légumes différents."},
 pairs:["garlic","anchovy","olive-oil","white-beans","chili","pine-nut","lemon","parmesan"],
-svg:'<path class="f2 sf" d="M28 60q4-22 20-22t20 22q-9 12-20 12t-20-12z"/><path class="s" d="M48 38v34M34 52q14 8 28 0"/>'},
+svg:'<path class="f1 sf" d="M43 70q-12-4-19-13-8-11-8-19 6-3 9 2 1-6 6-2 3-5 6 0 4 10 6 32z"/><path class="f1 sf" d="M53 70q12-4 19-13 8-11 8-19-6-3-9 2-1-6-6-2-3-5-6 0-4 10-6 32z"/><path class="f2 sf" d="M43 70q-5-15-5-28 0-15 5-21 2-4 5-4 3 0 5 4 5 6 5 21 0 13-5 28z"/><path class="s" d="M45 66q-6-11-11-17-4-6-9-8M51 66q6-11 11-17 4-6 9-8M48 66V32" stroke-width="1.5"/><path class="f2 sf" d="M42 68q6 4 12 0 1 6-2 9-4 2-8 0-3-3-2-9z"/>'},
 
 {id:"fennel",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Fennel",fr:"Fenouil"},latin:"Foeniculum vulgare",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[5,6,7,8,9,10],
@@ -687,7 +687,7 @@ fr:"Les maraîchers lient les feuilles extérieures sur le cœur ou le coiffent 
 tip:{en:"It is built for a hot dressing — bacon fat, a poached egg, a splash of vinegar. Its ribs stand up to heat where a soft lettuce collapses.",
 fr:"Elle est faite pour une vinaigrette chaude — lardons, œuf poché, un trait de vinaigre. Ses côtes tiennent à la chaleur là où une laitue tendre s’effondre."},
 pairs:["egg","lard","white-wine-vinegar","mustard","shallot","walnut","black-pepper","garlic"],
-svg:'<path class="f3 sf" d="M26 58q6-20 22-20t22 20q-8 14-22 14t-22-14z"/><path class="s" d="M34 48q6 6 4 12M48 42q3 10 0 18M62 48q-6 6-4 12"/>'},
+svg:'<path class="f1 sf" d="M48 26.3Q54.2 23.2 58.8 27.6Q65.6 27.6 66.3 34.7Q75.3 35.4 75.8 41.6Q81.9 46.7 76.3 52.8Q76.9 58.7 71.6 62.6Q70.8 69 62.8 68.9Q60 75 53.3 73.1Q48 82.3 42 76.1Q34.1 78.8 31.2 71.4Q25.6 68.7 25.5 62Q16.7 59.4 19.9 52.7Q13.8 46.7 20.4 41.7Q22.5 36.4 27.5 32.9Q28.5 25.1 37 27.1Q41.8 22.8 48 26.3z"/><path class="f2 sf" d="M47 42q7-4 11 2 6-1 6 5 4 3 0 7 1 6-5 6-3 5-8 2-6 3-9-2-6 0-5-6-4-4 1-7 0-6 6-5 3-4 3-2z"/><path class="f1 sf" d="M46 51q4-3 7 1 2 4-2 6-5 2-7-2t2-5z"/><path class="s" d="M32 38q5 5 7 9M64 38q-5 5-7 9M31 64q7-3 10-7M65 64q-7-3-10-7M48 30q-2 5 0 9M48 72q-2-5 0-9" stroke-width="1.5"/><path class="s" d="M23 48q6 2 9 0M73 48q-6 2-9 0M38 30q2 4 5 5M58 30q-2 4-5 5M38 70q2-4 5-5M58 70q-2-4-5-5" stroke-width="1.5"/>'},
 
 {id:"fuki",cat:"vegetables",rare:true,price:2,pk:"18–35 €/kg",name:{en:"Fuki (butterbur stalk)",fr:"Pétiole de pétasite du Japon (fuki)"},latin:"Petasites japonicus",
 origin:{en:"Japanese mountain villages",fr:"Villages de montagne, Japon"},season:[3,4,5],
@@ -717,7 +717,7 @@ fr:"Les ouvriers égyptiens en mangeaient pour la force, les athlètes grecs pou
 tip:{en:"Crushed, it roars; sliced, it speaks; whole and roasted, it whispers sweetly. Choose its voice before you cook.",
 fr:"Écrasé, il rugit ; émincé, il parle ; entier et rôti, il murmure doucement. Choisissez sa voix avant de cuisiner."},
 pairs:["olive-oil","parsley","tomato","shrimp","chicken","rosemary","lemon","chili"],
-svg:'<path class="f1 sf" d="M48 28q3 10 12 16 8 6 8 14a20 16 0 01-40 0q0-8 8-14 9-6 12-16z"/><path class="s" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40"/>'},
+svg:'<path class="f1 sf" d="M48 20q4 11 11 18 9 8 10 20 1 14-10 19-11 6-22 0-11-5-10-19 1-12 10-20 7-7 11-18z"/><path class="s" d="M48 24q-7 22-8 50M48 24q7 22 8 50M36 42q-6 16-6 30M60 42q6 16 6 30" stroke-width="1.5"/><path class="f2 sf" d="M34 60q-8 3-10 9-2 6 3 8 6 1 8-5 2-7-1-12z"/><path class="s" d="M31 63q-4 5-4 10" stroke-width="1.5"/><path class="s" d="M41 78q-2 4 0 6M48 79v6M56 78q2 4 0 6" stroke-width="2"/>'},
 
 {id:"garlic-scape",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Garlic scape",fr:"Fleur d’ail"},latin:"Allium sativum",
 origin:{en:"Hardneck garlic fields",fr:"Champs d’ail à tige dure"},season:[5,6],
@@ -837,7 +837,7 @@ fr:"C’est le bourgeon terminal d’un palmier, et le récolter sur un arbre à
 tip:{en:"Rinse tinned hearts well and dry them. The brine is assertive and will otherwise dominate whatever you dress them with.",
 fr:"Rincez bien les cœurs en conserve et séchez-les. La saumure est envahissante et dominerait sinon tout assaisonnement."},
 pairs:["lime","olive-oil","tomato","avocado","black-pepper","parsley","shrimp","lemon"],
-svg:'<path class="f3 sf" d="M40 74V34h16v40z"/><path class="s" d="M40 44h16M40 54h16M40 64h16"/>'},
+svg:'<path class="f1 sf" d="M38 36q0-6 13-6t13 6q2 20 1 40 0 6-14 6t-13-6q-1-20 0-40z"/><path class="s" d="M38 36q0 7 13 7t13-7"/><path class="s" d="M42 37q1 4 9 4t9-4M46 38q0 2 5 2t4-2" stroke-width="1.5"/><path class="f2 sf" d="M20 54q0-5 7-5t8 5q1 10 0 19 0 5-8 5t-7-5q-1-9 0-19z"/><path class="s" d="M20 54q0 5 7 5t8-5M40 50q-1 12 0 24" stroke-width="1.5"/>'},
 
 {id:"hogweed-shoots",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Hogweed shoots",fr:"Berce commune"},latin:"Heracleum sphondylium",
 origin:{en:"European meadows",fr:"Prairies d’Europe"},season:[4,5,8,9],
@@ -897,7 +897,7 @@ fr:"Ni de Jérusalem, ni artichaut — un tubercule de tournesol baptisé d’ap
 tip:{en:"No need to peel: scrub, roast hard, finish with crushed hazelnuts and brown butter. Its inulin rewards moderation at the first tasting.",
 fr:"Inutile de l’éplucher : brossez, rôtissez fort, finissez aux noisettes concassées et au beurre noisette. Son inuline récompense la modération à la première dégustation."},
 pairs:["hazelnut","truffle","cream","chicken","chestnut","parsley"],
-svg:'<path class="f2 sf" d="M34 56q-4-10 6-12 4-1 4-6 0-6 8-6t8 6q0 5 5 7 8 3 4 12-3 7-11 6-4-1-7 2-4 4-10 1-6-3-7-10z"/><path class="dot" d="M42 50a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M53 52a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
+svg:'<path class="f1 sf" d="M17 60Q15 44 30 38Q38 42 43 36Q49 26 59 28Q68 30 72 39Q81 44 78 55Q75 66 64 65Q57 63 51 67Q43 74 33 71Q22 69 17 60z"/><path class="f2 sf" d="M17 60Q22 69 33 71Q43 74 51 67Q57 63 64 65Q75 66 78 55 70 62 62 60 52 58 46 64 34 68 26 62 20 58 17 60z"/><path class="s" d="M43 37q4 12 1 23M71 40q3 8 1 15M30 39q-3 9-1 16" stroke-width="1.5"/><path class="dot" d="M34 54q4-2 5 2-1 3-4 2-3-1-1-4zM56 42q4-2 5 2-1 3-4 2-3-1-1-4zM67 54q3-2 4 1-1 3-3 2-2-1-1-3z"/><path class="s" d="M24 50q4-3 8-1M50 46q5 1 8-1" stroke-width="1.5"/>'},
 
 {id:"jicama",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Jicama",fr:"Jicama"},latin:"Pachyrhizus erosus",
 origin:{en:"Mexico and Central America",fr:"Mexique et Amérique centrale"},season:[11,12,1,2,3],
@@ -947,7 +947,7 @@ fr:"Le kale est le chou qui n’a jamais appris à pommer, et il est plus proche
 tip:{en:"Frost genuinely sweetens it — the plant makes sugars as antifreeze. Massage raw leaves with oil and salt to break them down for a salad.",
 fr:"Le gel le sucre réellement — la plante fabrique des sucres comme antigel. Massez les feuilles crues à l’huile et au sel pour les assouplir en salade."},
 pairs:["garlic","olive-oil","lemon","chili","almond","parmesan","white-beans","onion"],
-svg:'<path class="f2 sf" d="M48 76V34"/><path class="f2 sf" d="M46 40q-16-8-18 4 12 10 18 2zM50 40q16-8 18 4-12 10-18 2zM46 56q-14-6-16 4 10 8 16 1zM50 56q14-6 16 4-10 8-16 1z"/>'},
+svg:'<path class="f1 sf" d="M48 21Q55 18.7 60.9 22.5Q67 25.8 70.4 32Q76.5 36.8 72.4 44.9Q79.1 51.9 70.9 57Q73.4 66.2 64.4 67.2Q61.4 74.4 54.4 74.8Q48 82.6 42 73.1Q34.3 75.2 29.6 69.5Q19.9 68.1 22.4 58.1Q17.6 51.8 18.6 44.3Q21.4 37.5 24.2 31Q28.1 24.7 36.3 25Q41.1 18.9 48 21z"/><path class="f2 sf" d="M48 21Q41.1 18.9 36.3 25Q28.1 24.7 24.2 31Q21.4 37.5 18.6 44.3Q17.6 51.8 22.4 58.1Q19.9 68.1 29.6 69.5Q34.3 75.2 42 73.1Q45 78 48 76q-7-14-7-27t7-28z"/><path class="s" d="M48 76V26M44 68q-11-4-15-13M52 68q11-4 15-13M44 52q-12-4-15-12M52 52q12-4 15-12M45 38q-6-3-8-8M51 38q6-3 8-8" stroke-width="1.5"/><path class="s" d="M48 76q1 5 0 8"/><path class="s" d="M30 28q4 3 7 3M66 28q-4 3-7 3M22 52q5 2 8 0M74 52q-5 2-8 0" stroke-width="1.5"/>'},
 
 {id:"kanpyo",cat:"vegetables",price:2,pk:"40–70 €/kg",name:{en:"Kanpyō",fr:"Kanpyō"},latin:"Lagenaria siceraria var. hispida",
 origin:{en:"Mibu, Tochigi",fr:"Mibu, Tochigi"},season:[],
@@ -977,7 +977,7 @@ fr:"Ni racine ni chou : c’est une tige qui a gonflé hors de terre en spoutnik
 tip:{en:"Eat it raw. Peeled and cut into thin batons it is crisper and sweeter than any cooked version, closer to an apple than a cabbage.",
 fr:"Mangez-le cru. Épluché et taillé en fins bâtonnets, il est plus croquant et plus sucré que cuit, plus proche de la pomme que du chou."},
 pairs:["lemon","chives","cream","apple","black-pepper","dill","butter","mustard"],
-svg:'<circle class="f3 sf" cx="48" cy="58" r="18"/><path class="s" d="M40 42q-4-14 4-16M56 42q4-14-4-16M48 40V26"/>'},
+svg:'<path class="f1 sf" d="M48 40q17 1 21 11 4 11-2 19-7 9-19 9-13 0-19-9-6-8-2-19 5-10 21-11z"/><path class="s" d="M41 42q-6-7-8-11M48 40q-1-8 0-13M56 42q5-7 9-11"/><path class="f2 sf" d="M33 31q-9-1-11-7 6-4 11 1 0-7 6-3 2 5 0 8 4 2 1 5-6 2-7-4zM48 27q-5-6-3-12 6 1 6 6 4-3 4 2-3 2-2 6 0 4-5-2zM65 31q4-7 10-6-1 5 2 6-4 4-7 3-2 4-7 2-3-2 2-5z"/><path class="s" d="M36 47q4 3 9 3M60 49q-4 3-8 3" stroke-width="1.5"/><path class="s" d="M28 52q-5-1-6 2 5 3 8 0M68 54q5-1 6 2-5 3-8 0M48 78q2 5 0 8" stroke-width="2"/>'},
 
 {id:"komatsuna",cat:"vegetables",rare:true,price:2,pk:"7–14 €/kg",name:{en:"Komatsuna",fr:"Komatsuna"},latin:"Brassica rapa var. perviridis",
 origin:{en:"Edogawa, Tokyo",fr:"Edogawa, Tokyo"},season:[11,12,1,2],
@@ -1017,7 +1017,7 @@ fr:"Pendant des siècles ce fut une herbe ramassée dans les champs après la mo
 tip:{en:"Wash it in a large bowl of standing water, never under a tap. The rosettes trap grit at the base and a jet just drives it deeper.",
 fr:"Lavez-la dans un grand volume d’eau, jamais sous le robinet. Les rosettes retiennent le sable à la base et le jet ne fait que l’y enfoncer."},
 pairs:["walnut","beetroot","hazelnut","shallot","goat-cheese","apple","mustard","egg"],
-svg:'<path class="f2 sf" d="M48 70q-14-2-16-14 10-4 16 6zM48 70q14-2 16-14-10-4-16 6zM48 70q-8-14 0-22 8 8 0 22z"/><path class="s" d="M48 70v8"/>'},
+svg:'<path class="f1 sf" d="M46 52q-11-3-17-9-8-7-5-12 6-4 12 3 7 8 12 16zM46 51q-5-9-5-17 0-11 6-11 7 0 6 11 0 8-4 17z"/><path class="f2 sf" d="M50 52q10-4 16-10 7-7 3-12-6-3-11 4-6 8-10 16zM51 57q10-2 19 0 9 2 8 7-3 5-11 3-9-3-18-7z"/><path class="f1 sf" d="M45 57q-10-2-19 0-9 2-8 7 3 5 11 3 9-3 18-7zM47 61q-6 5-10 11-5 8-1 11 5 2 8-6 3-9 5-15z"/><path class="s" d="M31 35q9 8 15 16M47 26q0 13 0 25M65 35q-9 8-14 16M72 60q-12-2-22-3M24 60q12-2 22-3M38 70q5-7 9-11" stroke-width="1.5"/><path class="s" d="M48 62q1 8 0 12M45 74q3 2 6 0" stroke-width="2"/>'},
 
 {id:"lampascione",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Lampascione",fr:"Lampascion"},latin:"Leopoldia comosa",
 origin:{en:"Southern Italy, wild-dug",fr:"Italie du Sud, arrachés sauvages"},season:[12,1,2,3],
@@ -1057,7 +1057,7 @@ fr:"Les peintures des tombes égyptiennes la montrent haute et étroite, consacr
 tip:{en:"Dress it at the very last second. Salt and acid start collapsing the leaf cells within a minute of touching them.",
 fr:"Assaisonnez à la toute dernière seconde. Le sel et l’acide commencent à affaisser les cellules de la feuille en moins d’une minute."},
 pairs:["olive-oil","lemon","chives","shallot","mustard","black-pepper","radish","cucumber"],
-svg:'<path class="f2 sf" d="M26 60q4-24 22-24t22 24q-10 12-22 12t-22-12z"/><path class="s" d="M48 38v34M36 48q10 6 24 2M34 58q14 8 28 0"/>'},
+svg:'<path class="f1 sf" d="M48 26q9-4 14 4 10-2 12 8 8 5 4 14 3 11-8 16-6 8-16 7-12 2-19-6-11-3-11-14-6-8 1-16 1-10 11-9 5-6 12-4z"/><path class="f2 sf" d="M28 47q-8 3-10 11-2 9 5 15 6 5 13 3-9-6-11-14-2-9 3-15z"/><path class="f2 sf" d="M68 47q8 3 10 11 2 9-5 15-6 5-13 3 9-6 11-14 2-9-3-15z"/><path class="s" d="M48 30q-13 8-15 20-2 12 5 20M48 30q13 8 15 20 2 12-5 20M35 44q6 6 13 6t13-6" stroke-width="1.5"/><path class="s" d="M42 74q6 4 12 0"/>'},
 
 {id:"fresh-lily-bulb",cat:"vegetables",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Lily bulb",fr:"Bulbe de lys"},latin:"Lilium brownii",
 origin:{en:"Lanzhou, Gansu, China",fr:"Lanzhou, Gansu, Chine"},season:[9,10,11],
@@ -1347,7 +1347,7 @@ fr:"Son bord festonné lui a donné son nom français — un pâtisson est un pe
 tip:{en:"Buy them small — no wider than your palm. Anything larger has already turned fibrous.",
 fr:"Prenez-les petits — pas plus larges que la paume. Au-delà, ils ont déjà filé."},
 pairs:["thyme","olive-oil","garlic","basil","butter","lemon","black-pepper","parsley"],
-svg:'<path class="f3 sf" d="M26 54q4-10 10-6 2-10 12-6 6-8 14 0 10-4 10 6 8-2 8 8t-16 10-32-4-6-16z"/><path class="s" d="M48 38v10"/>'},
+svg:'<path class="f1 sf" d="M48 36.8Q63.7 34.9 71.3 43.1Q84 49.2 77 57.9Q76.8 67.5 60 68.6Q48 74.7 34.9 70Q19.9 67.1 18.6 57.9Q14.8 49.6 25.4 43.4Q33 35.8 48 36.8z"/><path class="f2 sf" d="M18.6 57.9Q19.9 67.1 34.9 70Q48 74.7 60 68.6 46 70 36 66 24 62 18.6 57.9z"/><path class="f2 sf" d="M38 41q4-6 10-6t10 6q-4 5-10 5t-10-5z"/><path class="s" d="M48 34q1-6 0-9"/><path class="s" d="M32 47q-2 8 0 15M64 47q2 8 0 15M48 47q1 9 0 18" stroke-width="1.5"/>'},
 
 {id:"pea",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Pea",fr:"Petit pois"},latin:"Pisum sativum",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[5,6,7],
@@ -1357,7 +1357,7 @@ fr:"Gregor Mendel établit les lois de l’hérédité sur 28 000 pieds de pois 
 tip:{en:"Sugar turns to starch within hours of picking, which is why frozen peas genuinely beat tired fresh ones.",
 fr:"Le sucre se change en amidon dans les heures qui suivent la cueillette, et c’est pourquoi les petits pois surgelés battent réellement des frais fatigués."},
 pairs:["mint","butter","lettuce","shallot","cream","lard","parmesan","lemon"],
-svg:'<path class="f2 sf" d="M28 56q8-18 40-18-4 24-30 28-12 2-10-10z"/><circle class="f3 sf" cx="40" cy="52" r="5"/><circle class="f3 sf" cx="52" cy="47" r="5"/><circle class="f3 sf" cx="62" cy="43" r="4"/>'},
+svg:'<path class="f2 sf" d="M18 48q4 20 28 22 24 2 32-14-9 5-22 5-15 0-23-4-8-5-15-9z"/><path class="f1 sf" d="M28 52q1-8 8-7 7 1 6 8-1 7-8 7-7-1-6-8zM44 57q1-8 8-7 7 1 6 8-1 7-8 7-7-1-6-8zM60 55q1-7 7-6 6 1 5 7-1 6-7 6-6-1-5-7z"/><path class="s" d="M22 52q6 14 24 16 20 2 28-10" stroke-width="1.5"/><path class="s" d="M78 56q4-8 1-14-3-5-8-3-4 2-1 6"/><path class="f2 sf" d="M18 48q-4-4-2-8 5 1 7 5 2 4-5 3z"/>'},
 
 {id:"pea-shoots",cat:"vegetables",price:2,pk:"20–35 €/kg",name:{en:"Pea shoots",fr:"Pousses de pois"},latin:"Pisum sativum",
 origin:{en:"Market gardens and glasshouses",fr:"Maraîchage et serres"},season:[3,4,5,6],
@@ -1397,7 +1397,7 @@ fr:"Cultivé autour de Lodosa en Navarre et rôti sur braise de bois, jamais à 
 tip:{en:"They come ready to eat in the jar. Stuff them with brandade or goat's cheese and warm them through — cooking them further is wasted work.",
 fr:"Ils sont prêts à l’emploi en bocal. Farcissez-les de brandade ou de chèvre et réchauffez-les — les cuire davantage est peine perdue."},
 pairs:["olive-oil","garlic","cod","goat-cheese","iberico-ham","paprika","almond","sherry-vinegar"],
-svg:'<path class="f1 sf" d="M34 44q0-6 14-6t14 6q2 16-8 28-4 6-8 0-10-12-12-28z"/><path class="s" d="M48 38V28"/>'},
+svg:'<path class="f1 sf" d="M29 44q1-13 15-15t20 12q3 14-4 25-6 10-11 15-4 4-8-3-9-16-12-34z"/><path class="f2 sf" d="M60 37q6 12 1 24-4 12-12 19 3-17 3-26 0-11 8-17z"/><path class="f2 sf" d="M38 28q4-6 12-5 6 1 6 5-5 4-10 3-7 0-8-3z"/><path class="s" d="M44 29q-2-7-9-10"/><path class="s" d="M34 48q9 5 16-2M38 62q7 4 12-2" stroke-width="1.5"/>'},
 
 {id:"pointed-cabbage",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Pointed cabbage",fr:"Chou pointu"},latin:"Brassica oleracea var. capitata",
 origin:{en:"Northern European spring gardens",fr:"Potagers de printemps d’Europe du Nord"},season:[4,5,6,7],
@@ -1507,7 +1507,7 @@ fr:"La variété longue de Trévise est forcée dans l’eau de source tirée du
 tip:{en:"Grill or roast it. Heat and a little sugar or balsamic turn the bitterness into something closer to caramel.",
 fr:"Grillez-la ou rôtissez-la. La chaleur et un peu de sucre ou de balsamique changent l’amertume en quelque chose de proche du caramel."},
 pairs:["balsamic","olive-oil","parmesan","walnut","honey","guanciale","orange","blue-cheese"],
-svg:'<path class="f1 sf" d="M32 62q0-22 16-26t16 26q-8 12-16 12t-16-12z"/><path class="s" d="M48 36v38M38 52q10 6 20 0"/>'},
+svg:'<path class="f2 sf" d="M18 66q-2-16 8-26 8-11 22-11 13 0 21 10 10 9 9 27-14 7-30 7t-30-7z"/><path class="f1 sf" d="M42 72q1-12 6-16 5 4 6 16-6 2-12 0z"/><path class="s" d="M45 70q-12-6-16-18-3-10 3-18M51 70q12-6 16-18 3-10-3-18" stroke-width="2"/><path class="s" d="M39 71q-14-4-19-16-2-8 1-15M57 71q14-4 19-16 2-8-1-15" stroke-width="2"/><path class="s" d="M40 33q3 4 4 9M56 33q-3 4-4 9" stroke-width="1.5"/>'},
 
 {id:"radish",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Radish",fr:"Radis"},latin:"Raphanus sativus",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[4,5,6,7,8,9],
@@ -1677,7 +1677,7 @@ fr:"Les Victoriens l’appelaient « plante huître », jurant que sa chair poch
 tip:{en:"It oxidises in minutes: drop the peeled batons straight into lemon water, then braise in butter. A shaving of truffle makes it hold its own on a tasting menu.",
 fr:"Il s’oxyde en quelques minutes : plongez les bâtonnets pelés aussitôt dans une eau citronnée, puis braisez au beurre. Un copeau de truffe le hisse au niveau d’un menu dégustation."},
 pairs:["butter","cream","truffle","parmesan","chervil"],
-svg:'<path class="f1 sf" d="M44 26l8 2-4 44q-1 6-3 0z" transform="rotate(6 48 50)"/><path class="s" d="M46 28q-4-6-10-6M50 28q2-7 8-8M48 28q0-8-2-12"/>'},
+svg:'<path class="f1 sf" d="M34 22c1 20 5 38 13 56 1 3 3 3 4 0 6-18 5-38 3-56z"/><path class="f2 sf" d="M51 78c6-18 5-38 3-56l-8 2c2 19 3 37 1 54 2 2 3 2 4 0z"/><path class="s" d="M36 44q-7-1-10-5M40 60q-7 1-11-2M55 46q7-1 10-4M52 62q7 0 10-3" stroke-width="1.5"/><path class="s" d="M37 21q-1-3-2-5M43 20q-1-2-1-4M49 21q1-4 3-6M53 23q3-3 5-5" stroke-width="2"/><path class="s" d="M39 34q6 1 10-1M41 52q6 1 10-1" stroke-width="1.5"/>'},
 
 {id:"samphire",cat:"vegetables",price:2,pk:"15–30 €/kg",name:{en:"Samphire",fr:"Salicorne"},latin:"Salicornia europaea",
 origin:{en:"Atlantic & Channel salt marshes",fr:"Marais salants de l’Atlantique & de la Manche"},season:[5,6,7,8],
@@ -1687,7 +1687,7 @@ fr:"Un légume qui pousse les pieds dans la marée, cueilli dans les prés salé
 tip:{en:"Never add salt. Blanch thirty seconds, refresh, toss in butter at the last moment — it should crunch like a green wave.",
 fr:"Ne salez jamais. Blanchissez trente secondes, rafraîchissez, roulez au beurre au dernier moment — elle doit croquer comme une vague verte."},
 pairs:["butter","lemon","cod","salmon","oyster"],
-svg:'<path class="s" d="M48 76V30M48 62l-10-8M48 62l10-8M48 48l-8-7M48 48l8-7" stroke-width="3.4"/><path class="s" d="M38 54v-6M58 54v-6M40 41v-5M56 41v-5" stroke-width="3.4"/>'},
+svg:'<path class="f1 sf" d="M44 82q-3-16-1-26 1-9 2-16 1-7 4-14 4 8 4 15t1 17q1 10-1 24z"/><path class="f2 sf" d="M42 60q-8-10-12-18-3-6-4-12 6 3 9 9 5 8 11 17z"/><path class="f2 sf" d="M53 58q7-9 11-16 3-6 5-12-6 2-10 8-5 8-11 16z"/><path class="f2 sf" d="M45 74q-8-6-13-10-4-4-6-9 7 1 11 6 5 5 9 11z"/><path class="s" d="M43 70q5 3 10 0M43 56q5 3 10 0M45 42q4 2 7 0M31 52q4 2 7-1M60 50q4 2 7-1" stroke-width="1.5"/>'},
 
 {id:"san-marzano-tomato",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"San Marzano tomato",fr:"Tomate San Marzano"},latin:"Solanum lycopersicum",
 origin:{en:"Agro Sarnese-Nocerino, Campania",fr:"Agro Sarnese-Nocerino, Campanie"},season:[7,8,9],
@@ -1707,7 +1707,7 @@ fr:"Ses feuilles gaufrées sont plus lâches et plus fines que celles du chou bl
 tip:{en:"Cut out the thick central rib before rolling. Left in, it springs open and the parcel unwraps itself in the pot.",
 fr:"Ôtez la grosse côte centrale avant de rouler. Laissée en place, elle se détend et le paquet se défait dans la casserole."},
 pairs:["butter","guanciale","chestnut","garlic","cream","nutmeg","onion","potato"],
-svg:'<circle class="f2 sf" cx="48" cy="54" r="22"/><path class="s" d="M34 42q6 6 0 12M48 38q6 8 0 16M62 42q-6 6 0 12M40 62q8 6 16 0"/>'},
+svg:'<path class="f1 sf" d="M18 52q-2-12 8-18 6-10 18-10t20 8q12 5 12 18 2 14-9 22-10 10-23 8-14-1-21-10-6-8-5-18z"/><path class="f2 sf" d="M70 42q10-4 12 4 3 10-4 18-6 8-14 8 8-8 10-16t-4-14z"/><path class="s" d="M46 78q-6-18-4-32M48 78q7-14 11-26M46 78q-13-11-19-21M50 77q15-9 21-19" stroke-width="2"/><path class="s" d="M34 44q4 3 3 9M56 42q-3 5-2 10M44 36q4 3 4 8M62 56q-4 3-5 8M28 58q5 2 6 8" stroke-width="1.5"/><path class="f2 sf" d="M42 78q6-3 11 0 1 5-5 6-7-2-6-6z"/>'},
 
 {id:"scorzonera",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Scorzonera",fr:"Scorsonère"},latin:"Scorzonera hispanica",
 origin:{en:"Southern Europe",fr:"Europe du Sud"},season:[10,11,12,1,2],
@@ -1717,7 +1717,7 @@ fr:"Peau noire, chair blanche, et nommée d’après une vieille croyance qui la
 tip:{en:"Peel it under water and drop it straight into acidulated water. The sap oxidises in seconds and stains hands brown for days.",
 fr:"Épluchez-la sous l’eau et plongez-la aussitôt dans une eau citronnée. Le latex s’oxyde en quelques secondes et tache les mains pour des jours."},
 pairs:["butter","cream","parsley","lemon","nutmeg","hazelnut","black-pepper","chives"],
-svg:'<path class="f1 sf" d="M44 26h8l-3 50q-1 5-2 0z"/><path class="s" d="M44 40h8M45 54h6M46 66h4"/>'},
+svg:'<path class="f2 sf" d="M34 20c-4 20-3 42 4 62 1 3 5 3 6 0 5-20 6-42 3-62z"/><path class="f1 sf" d="M36 58q6-1 11 0 0 12-3 22-1 3-5 3t-5-3q-2-11 2-22z"/><path class="f1 sf" d="M55 62q0-8 8-8t8 8-8 8-8-8z"/><path class="s" d="M36 40q-7 0-10-3M35 50q-7 1-10-1M39 28q1 6 1 10M45 28q0 6 0 10" stroke-width="1.5"/><path class="s" d="M36 19q-1-2-1-3M40 18q0-2 0-3M44 19q1-2 2-4M31 22q-2-2-3-4" stroke-width="2"/>'},
 
 {id:"sea-aster",cat:"vegetables",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Sea aster",fr:"Aster maritime"},latin:"Tripolium pannonicum",
 origin:{en:"Channel salt marshes",fr:"Prés salés de la Manche"},season:[4,5,6,7],
@@ -1827,7 +1827,7 @@ fr:"Cuite, la chair se sépare en longs filaments qui viennent à la fourchette 
 tip:{en:"Roast it halved and cut-side down, then rake it lengthwise. Cutting it into rings first gives you longer strands.",
 fr:"Rôtissez-la coupée en deux, face contre la plaque, puis raclez dans le sens de la longueur. La détailler d’abord en anneaux donne des filaments plus longs."},
 pairs:["parmesan","garlic","olive-oil","basil","tomato","butter","black-pepper","sage"],
-svg:'<ellipse class="f3 sf" cx="48" cy="54" rx="24" ry="16"/><path class="s" d="M28 50q20 4 40 0M28 58q20 4 40 0M28 54q20-4 40 0"/>'},
+svg:'<path class="f1 sf" d="M16 50q0-10 12-14 18-6 38-1 14 4 14 15 0 11-14 15-20 5-38-1-12-4-12-14z"/><path class="f2 sf" d="M24 50q0-7 10-10 16-5 30-1 11 3 11 11t-11 11q-15 4-30-1-10-3-10-10z"/><path class="s" d="M28 44c9-4 16 4 22 0 6-3 13-2 19 2M27 51c9 5 16-3 22 1 6 3 13 2 19-2M30 58c8-4 15 3 20 0 5-3 12-2 17 2" stroke-width="1.5"/><path class="dot" d="M42 48q3-2 4 1t-3 4q-3 0-2-3zM53 46q3-2 4 1t-3 4q-3 0-2-3z"/><path class="s" d="M17 44q-4-3-4-7"/>'},
 
 {id:"spinach",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Spinach",fr:"Épinard"},latin:"Spinacia oleracea",
 origin:{en:"Persia",fr:"Perse"},season:[3,4,5,9,10,11],
@@ -1847,7 +1847,7 @@ fr:"Une espèce différente de l’oignon bulbeux — elle ne gonfle jamais et n
 tip:{en:"White and green are two ingredients. Cook the white with the aromatics, scatter the green raw over the finished plate.",
 fr:"Le blanc et le vert sont deux ingrédients. Cuisez le blanc avec les aromates, parsemez le vert cru sur le plat fini."},
 pairs:["ginger","soy-sauce","sesame","chili","garlic","fish-sauce","egg","shiitake"],
-svg:'<path class="f3 sf" d="M44 76q-4-14 0-24h8q4 10 0 24z"/><path class="f2 sf" d="M46 52q-6-22-2-28 4 8 4 28zM50 52q6-22 4-28-2 10-2 28z"/>'},
+svg:'<path class="f3 sf" d="M41 54h13q2 10 1 16-1 8-8 9t-8-9q-1-6 2-16z"/><path class="f1 sf" d="M44 54q-2-16 0-26 2-8 5-10 2 10 2 20t-1 16z"/><path class="f2 sf" d="M43 56q-10-12-15-22-4-6-2-10 6 4 10 12 6 10 12 20z"/><path class="f2 sf" d="M52 56q9-11 13-21 4-8 2-12-6 4-8 12-5 11-11 20z"/><path class="s" d="M42 58q6 3 12 0M40 64q8 3 16 0M44 79q-2 5-5 6M48 80v5M52 79q2 4 4 5" stroke-width="1.5"/>'},
 
 {id:"sucrine-du-berry",cat:"vegetables",rare:true,price:1,pk:"3–6 €/kg",name:{en:"Sucrine du Berry squash",fr:"Sucrine du Berry"},latin:"Cucurbita moschata",
 origin:{en:"Berry, central France",fr:"Berry"},season:[9,10,11,12],
@@ -1877,7 +1877,7 @@ fr:"Le séchage retire environ neuf dixièmes de l’eau de la tomate, et tout c
 tip:{en:"Treat them as a seasoning rather than a vegetable: 30 g chopped fine into a sauce for four does the work of a spoonful of anchovy. If they are bone dry, soak twenty minutes in warm water and keep the soaking water — it is tomato stock.",
 fr:"Traitez-les en assaisonnement, pas en légume : 30 g finement hachés dans une sauce pour quatre valent une cuillerée d’anchois. Si elles sont très sèches, faites-les tremper vingt minutes à l’eau tiède et gardez l’eau de trempage, c’est un bouillon de tomate."},
 pairs:["olive-oil","garlic","basil","capers","anchovy","parmesan","oregano","pine-nut"],
-svg:'<path class="f3 sf" d="M30 46q5-15 18-15t18 15q3 14-8 21t-20 0-8-21z"/><path class="s" d="M38 42q10 6 20 0M33 54q15 8 30 0M40 65q8 4 16 0"/><circle class="dot" cx="48" cy="34" r="2.2"/>'},
+svg:'<path class="f1 sf" d="M18 50q2-12 12-17 8-6 16-4 4-3 9-1 11-2 16 6 9 6 6 16-2 12-13 17-11 6-23 4-13-1-20-8-6-6-3-13z"/><path class="f2 sf" d="M70 56q2 10-8 15-12 6-24 5 14-2 22-8 8-5 10-12z"/><path class="s" d="M26 46q10-6 21-3 8 2 14 8M24 58q10 5 21 2 9-2 17-7M34 68q10 3 18 0" stroke-width="2"/><path class="s" d="M22 42q4 2 5 5M44 28q0 4 1 6M68 34q-3 3-4 6M74 58q-4 0-6-2M28 66q4-2 6-4" stroke-width="1.5"/><path class="dot" d="M45 35q4-2 5 2t-4 4q-4-1-1-6z"/>'},
 
 {id:"sunflower-shoots",cat:"vegetables",price:2,pk:"40–80 €/kg",name:{en:"Sunflower shoots",fr:"Pousses de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Indoor growing trays",fr:"Germoirs et cultures d’intérieur"},season:[],
@@ -1907,7 +1907,7 @@ fr:"Ni pomme de terre ni même parente proche — c’est un liseron. Sa présen
 tip:{en:"Bake it slowly. An enzyme converts starch to maltose between roughly 60 and 75°C, and a slow oven gives it time to work.",
 fr:"Cuisez-la lentement. Une enzyme convertit l’amidon en maltose entre 60 et 75 °C environ, et un four doux lui laisse le temps d’agir."},
 pairs:["lime","chili","cumin","coconut-milk","butter","paprika","ginger","maple-syrup"],
-svg:'<path class="f1 sf" d="M28 58q6-18 22-18t18 14q-2 14-20 18T28 58z"/><path class="s" d="M36 52q12-4 24 2"/>'},
+svg:'<path class="f2 sf" d="M20 40q6-8 16-9 10-2 16 2-6 7-16 9-10 2-16-2z"/><path class="f1 sf" d="M20 64q-3-6 4-9 12-6 26-13 14-7 22-6 8 1 6 8-2 8-14 13-14 6-26 9-14 4-18-2z"/><path class="f2 sf" d="M24 55q14 4 30-2 12-4 24-9-2 8-14 13-14 6-26 9-14 4-18-2-3-6 4-9z"/><path class="f3 sf" d="M69 44q1-8 5-8t5 8-5 8-5-8z"/><path class="s" d="M40 52q-2 4 0 7M54 47q-2 4 0 6M30 60q-1 3 0 5" stroke-width="1.5"/>'},
 
 {id:"swiss-chard",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Swiss chard",fr:"Blette"},latin:"Beta vulgaris subsp. cicla",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[6,7,8,9,10,11],
@@ -1917,7 +1917,7 @@ fr:"La même espèce que la betterave, sélectionnée pour la feuille au lieu de
 tip:{en:"Stems and leaves cook at completely different rates. Slice the stems, start them five minutes ahead, add the leaves at the end.",
 fr:"Côtes et feuilles ne cuisent pas du tout à la même vitesse. Détaillez les côtes, lancez-les cinq minutes avant, ajoutez les feuilles à la fin."},
 pairs:["garlic","olive-oil","pine-nut","raisin","parmesan","lemon","cream","nutmeg"],
-svg:'<path class="f3 sf" d="M44 78V48h8v30z"/><path class="f2 sf" d="M46 50q-16-4-18-18 16-2 20 12zM50 50q16-4 18-18-16-2-20 12z"/>'},
+svg:'<path class="f1 sf" d="M46 54q-14 0-20-6 7-1 6-6-8-1-10-8 8 0 10-5 2-7 6-9 4-2 9-4 5 1 9 4 4 2 6 9 2 5 10 5-2 7-10 8-1 5 6 6-6 6-22 6z"/><path class="f3 sf" d="M42 52q-2 16-1 30 6 3 12 0 1-16 0-30z"/><path class="s" d="M47 54q0-18 0-34M45 44q-7-2-10-7M50 42q6-2 9-7M46 32q-5-2-7-5" stroke-width="1.5"/><path class="f2 sf" d="M58 80q6-14 4-26-3-1-5 1-3 12-6 25z"/><path class="s" d="M45 80q0-14 0-24M50 80q0-14 0-24" stroke-width="1.5"/>'},
 
 {id:"tara-no-me",cat:"vegetables",price:3,pk:"80–150 €/kg",name:{en:"Tara no me",fr:"Pousse d’aralia"},latin:"Aralia elata",
 origin:{en:"Japanese mountain woodland",fr:"Forêts de montagne japonaises"},season:[3,4,5],
@@ -2187,7 +2187,7 @@ fr:"Dans une grande part de l’Afrique de l’Ouest, l’igname n’est pas un 
 tip:{en:"Wear gloves peeling raw yam. The sap irritates skin, and it must always be cooked — never eaten raw.",
 fr:"Épluchez-la crue avec des gants. Le suc irrite la peau, et elle doit toujours être cuite — jamais crue."},
 pairs:["chili","ginger","peanut","tomato","onion","garlic","coconut-milk","lime"],
-svg:'<path class="f1 sf" d="M34 26q10-4 14 6t10 14q6 12-2 24t-18 4q-8-10-6-24t2-24z"/><path class="s" d="M40 40q6 14 4 28"/>'},
+svg:'<path class="f2 sf" d="M24 70q-4-10 2-18 5-10 14-16 8-7 16-8 9 1 12 8-2 9-10 16-8 8-14 16-6 8-12 8-8 0-6-6z"/><path class="f1 sf" d="M54 28q7-6 13 0 5 5 0 9-8 3-13-2-3-3 0-7z"/><path class="f3 sf" d="M57 29q5-3 8 0 2 3-1 5-6 2-8-1t1-4z"/><path class="s" d="M30 62q6 2 10-3M34 50q6 2 10-3M42 40q6 2 10-3M28 70q5 1 8-3M38 60q6 1 9-3" stroke-width="1.5"/><path class="dot" d="M28 58q3-2 4 1t-3 3q-3 0-1-4zM38 44q3-2 4 1t-3 3q-3 0-1-4zM33 68q3-2 4 1t-3 3q-3 0-1-4z"/>'},
 
 {id:"yardlong-bean",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Yardlong bean",fr:"Haricot kilomètre"},latin:"Vigna unguiculata subsp. sesquipedalis",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[6,7,8,9],

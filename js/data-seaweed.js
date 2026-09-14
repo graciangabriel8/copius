@@ -47,7 +47,7 @@ fr:"En 1908, le chimiste Kikunae Ikeda se demanda pourquoi le bouillon de kombu 
 tip:{en:"Never boil it — bitterness escapes past 60°C. Slide a leaf into bean-cooking water or a stock and remove it before the simmer; it seasons everything invisibly.",
 fr:"Ne le faites jamais bouillir — l’amertume s’échappe au-delà de 60 °C. Glissez une feuille dans l’eau des haricots ou un bouillon et retirez-la avant le frémissement ; il assaisonne tout, invisiblement."},
 pairs:["katsuobushi","shiitake","rice","miso","soy-sauce"],
-svg:'<path class="f2 sf" d="M36 26q10 6 6 18t2 20q4 8-2 14-10-6-6-18t-2-20q-4-8 2-14z" transform="rotate(6 44 50)"/><path class="f2 sf" d="M56 30q8 6 4 16t2 18q3 7-3 12-8-6-4-16t-2-18q-3-7 3-12z" transform="rotate(-4 58 50)"/>'},
+svg:'<path class="f1 sf" d="M20 70C22 54 30 36 42 22C46 18 54 20 54 26C46 38 38 54 36 70C34 76 24 75 20 70Z"/><path class="f2 sf" d="M42 22C46 18 54 20 54 26C50 28 45 27 44 24Z"/><path class="f2 sf" d="M46 76C48 60 54 44 64 32C68 27 76 30 74 36C66 46 60 60 58 76C56 80 48 80 46 76Z"/><path class="s" d="M28 69C30 55 37 39 47 28M54 74C56 60 61 47 69 37" stroke-width="1.5"/><path class="dot" d="M32 54q3-2 4 1t-3 3q-2-1-1-4zM42 32q3-2 4 1t-3 3q-2-1-1-4zM60 58q3-2 4 1t-3 3q-2-1-1-4zM66 40q3-2 4 1t-3 3q-2-1-1-4z"/>'},
 
 {id:"ma-kombu",cat:"seaweed",price:3,pk:"150–300 €/kg",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaido"},season:[],
@@ -77,7 +77,7 @@ fr:"Quand les récoltes de nori s’effondrèrent mystérieusement après la gue
 tip:{en:"Wave a sheet over a flame until it turns emerald and crisps. Crumbled into butter or over eggs, it adds the sea without the fish.",
 fr:"Passez une feuille au-dessus d’une flamme jusqu’à ce qu’elle vire émeraude et croustille. Émiettée dans un beurre ou sur des œufs, elle apporte la mer sans le poisson."},
 pairs:["rice","sesame","egg","butter","salmon","tuna"],
-svg:'<rect class="f3 sf" x="32" y="34" width="32" height="36" rx="2"/><path class="s" d="M36 42h24M36 50h24M36 58h24M36 66h24" stroke-width="1.2"/>'},
+svg:'<path class="f2 sf" d="M28 42C42 38 60 37 74 40C76 50 76 62 74 72C60 75 42 75 28 72C26 62 26 52 28 42Z"/><path class="f1 sf" d="M19 31C28 28 38 30 48 27C55 25 60 29 64 28C67 39 67 51 65 61C56 64 46 62 36 64C29 65 24 61 20 61C17 51 17 41 19 31Z"/><path class="f2 sf" d="M64 28C71 25 76 27 78 33C73 31 69 32 66 37C65 33 64 30 64 28Z"/><path class="s" d="M25 36l2 4M31 35l2 4M37 36l2 4M43 34l2 4M49 35l2 4M55 34l2 4M23 44l2 4M29 43l2 4M35 44l2 4M41 42l2 4M47 43l2 4M53 42l2 4M59 43l2 4M24 51l2 4M30 50l2 4M36 51l2 4M42 49l2 4M48 50l2 4M54 49l2 4M60 50l2 4M26 57l2 4M32 56l2 4M38 57l2 4M44 55l2 4M50 56l2 4M56 55l2 4" stroke-width="2"/><path class="dot" d="M22 55q3-1 3 1t-3 2q-2-1 0-3z"/>'},
 
 {id:"kombu-royal",cat:"seaweed",price:3,pk:"150–280 €/kg",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
 origin:{en:"Brittany",fr:"Bretagne"},season:[4,5,6,7],

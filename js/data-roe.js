@@ -17,7 +17,7 @@ fr:"Des œufs de mulet salés, pressés et séchés à l’air en lingot d’amb
 tip:{en:"Shave it paper-thin or grate it at the very end, never cooked. With lemon, olive oil and raw celery, it needs exactly nothing else.",
 fr:"Tranchez-la en copeaux ou râpez-la tout à la fin, jamais cuite. Avec citron, huile d’olive et céleri cru, elle n’a besoin d’exactement rien d’autre."},
 pairs:["lemon","olive-oil","garlic","celery","egg"],
-svg:'<path class="f2 sf" d="M34 44q14-8 28 0 4 10 0 20-14 8-28 0-4-10 0-20z" transform="rotate(-14 48 54)"/><path class="s" d="M40 46q8-4 16 0M40 60q8 4 16 0" transform="rotate(-14 48 54)" stroke-width="1.6"/>'},
+svg:'<path class="f2 sf" d="M45 23q-8 2-11 13-3 12-3 23 0 12 8 13 7 1 8-10 1-13 0-24-1-13-2-15z"/><path class="f1 sf" d="M51 23q8 2 11 13 3 12 3 23 0 12-8 13-7 1-8-10-1-13 0-24 1-13 2-15z"/><path class="s" d="M44 25q4-3 8 0M38 40q3 12 3 24M58 40q-3 12-3 24" stroke-width="1.5"/><path class="f1 sf" d="M26.5 56.8C33.4 55.3 30.3 55.3 35.6 57.9C40.9 60.4 38.9 58.5 38.3 63.3C37.7 68.2 40 65.9 34 69.2C28 72.4 31.6 71.8 24.6 71.3C17.6 70.7 19.8 71.9 17.4 67.9C15 63.9 15.7 66 19.1 61.6C22.5 57.3 19.5 58.2 26.5 56.8Z"/><path class="dot" d="M22.4 63q.3-2.2 3 .3-.3 2.4-2.9 .3-.3-.2 2.7-.3 zM28.4 66q.3-2.2 3 .3-.3 2.4-2.9 .3-.3-.2 2.7-.3 zM30.4 60q.3-2.2 3 .3-.3 2.4-2.9 .3-.3-.2 2.7-.3 z"/>'},
 
 {id:"caviar",cat:"roe",luxe:true,price:4,pk:"1,2–2,5 €/g",name:{en:"Caviar",fr:"Caviar"},latin:"Acipenser spp. (roe)",
 origin:{en:"Caspian Sea, now farmed worldwide",fr:"Mer Caspienne, désormais élevé partout"},season:[],
@@ -187,7 +187,7 @@ fr:"Laitance de morue, vendue seulement tant que le poisson est en frai — de n
 tip:{en:"Blanch it thirty seconds in salted water with a splash of sake before anything else: the membrane firms so the lobes hold together, and the faint metallic edge goes. Then ponzu, or a hot grill with salt — a long cook curdles it.",
 fr:"Blanchissez-la trente secondes à l’eau salée avec un trait de saké avant toute chose : la membrane se raffermit, les lobes tiennent ensemble et la pointe métallique disparaît. Ensuite ponzu, ou gril brûlant et sel — une cuisson longue la fait cailler."},
 pairs:["ponzu","yuzu","daikon","negi","junmai-sake","chives","shiso"],
-svg:'<path class="f1 sf" d="M26 52q-2-16 14-20 10-3 16 4 12-4 16 8 4 14-10 20-16 8-26 2-8-5-10-14z"/><path class="s" d="M34 44q6 6 2 12 6 2 8 10M50 40q-4 8 2 12-4 6 0 12M60 46q-6 4-2 10 4 4 0 10"/>'},
+svg:'<path class="f2 sf" d="M25 44q-5-12 6-16 9-3 14 3 6-7 15-4 12 4 10 15-2 8-9 9-21 3-32 0-3-2-4-7z"/><path class="f1 sf" d="M20 59q-3-12 8-15 8-3 13 2 6-7 16-4 13 4 11 15-2 9-11 11-11 2-22 1-13-2-15-10z"/><path class="s" d="M32 50q6 3 3 8-4 5 1 9M46 47q-5 5-1 10-4 5 1 9M59 51q-6 2-4 8-3 5 1 8" stroke-width="1.5"/><path class="s" d="M17 67q11 11 31 11t31-11" stroke-width="2.5"/><path class="f2 sf" d="M38 71q10 3 20 0-1 6-10 6.5T38 71z"/>'},
 
 {id:"oeufs-de-cabillaud-fumes",cat:"roe",price:2,pk:"20–40 €/kg",name:{en:"Smoked cod roe",fr:"Œufs de cabillaud fumés"},latin:"Gadus morhua (smoked roe)",
 origin:{en:"North Sea & Baltic",fr:"Mer du Nord et Baltique"},season:[],
@@ -207,7 +207,7 @@ fr:"Avant que la Russie n’atteigne la Caspienne et ses esturgeons géants, le 
 tip:{en:"The grain is thin-skinned and collapses at the first sign of heat, so it goes on cold or barely warm and last of all. Its salt is low, which means it keeps for days rather than weeks — buy it for the meal you are cooking.",
 fr:"Le grain est à peau fine et s’effondre au premier signe de chaleur : il se pose froid ou tout juste tiède, et en dernier. Sa salaison est basse, donc il se garde des jours et non des semaines — achetez-le pour le repas que vous cuisinez."},
 pairs:["creme-fraiche","potato","egg","butter","cucumber","hazelnut","dill"],
-svg:'<path class="f1 sf" d="M34 40h28v26q0 8-14 8t-14-8z"/><path class="s" d="M30 40h36M38 32h20v8H38z"/><circle class="dot" cx="42" cy="52" r="1.8"/><circle class="dot" cx="50" cy="50" r="1.8"/><circle class="dot" cx="57" cy="54" r="1.8"/><circle class="dot" cx="46" cy="60" r="1.8"/>'},
+svg:'<path class="f2 sf" d="M58.3 23.2C65.5 21.4 63 20.9 68.4 23.2C73.8 25.5 72.5 23.9 71.9 28.7C71.3 33.5 73.2 31.3 66.7 34.9C60.1 38.5 63.3 37.8 56.4 37.6C49.4 37.4 51.4 38.5 48.6 34.5C45.8 30.6 46.4 32.6 50.1 28.1C53.8 23.5 51.1 25 58.3 23.2Z"/><path class="s" d="M51 33q4 5 13 5" stroke-width="1.5"/><path class="f1 sf" d="M21 48q1-10 27-10 26 0 27 10 1 12-5 18-7 7-22 7t-22-7q-6-6-5-18z"/><path class="s" d="M21 49q6 8 27 8 21 0 27-8" stroke-width="2"/><path class="dot" d="M30.7 47q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 zM40.7 44q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 zM50.7 45q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 zM59.7 49q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 zM35.7 52q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 zM45.7 51q.5-3.2 4.4 .5-.5 3.4-4.1 .5-.5-.2 3.9-.5 z"/><path class="s" d="M29 64q7 5 19 5 11 0 19-5" stroke-width="1.5"/>'},
 
 {id:"sujiko",cat:"roe",rare:true,price:3,pk:"60–110 €/kg",name:{en:"Sujiko",fr:"Sujiko (œufs de saumon en poche)"},latin:"Oncorhynchus spp. (roe sac)",
 origin:{en:"Hokkaido & Tohoku",fr:"Hokkaidō et Tōhoku"},season:[9,10,11],

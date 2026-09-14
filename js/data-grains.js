@@ -87,7 +87,7 @@ fr:"La Bretagne l’appelle blé noir, bien qu’il ne soit ni blé ni graminée
 tip:{en:"It has no gluten, so a galette batter needs resting overnight for the starch to swell and hold together in the pan.",
 fr:"Sans gluten, la pâte à galette doit reposer une nuit pour que l’amidon gonfle et tienne à la poêle."},
 pairs:["buttermilk","egg","beurre-demi-sel","prosciutto","comte","honey","apple","cider-vinegar"],
-svg:'<path class="f1 sf" d="M34 70q0-18 14-24 14 6 14 24z"/><path class="s" d="M40 60q8 4 16 0"/><path class="s" d="M44 50l4-4 4 4"/>'},
+svg:'<path class="f2 sf" d="M19 71q0-14 10-22 5-5 8-9 3-4 6 0 4 5 8 9 10 8 10 22z"/><path class="dot" d="M26.2 63q.4-2.5 3.4 .4-.4 2.7-3.2 .4-.4-.2 3.1-.4 zM36.2 56q.4-2.5 3.4 .4-.4 2.7-3.2 .4-.4-.2 3.1-.4 zM43.2 66q.4-2.5 3.4 .4-.4 2.7-3.2 .4-.4-.2 3.1-.4 zM32.2 48q.4-2.5 3.4 .4-.4 2.7-3.2 .4-.4-.2 3.1-.4 z"/><path class="f1 sf" d="M72.5 54.5Q74.1 58.1 74.8 62.1Q77.2 70.2 69.4 68.5Q65.6 68.1 62 66.9Q54.2 65.2 59.6 58.8Q61.8 55.5 64.7 52.8Q70.1 46.4 72.5 54.5Z"/><path class="s" d="M67 51q3 9 1 16" stroke-width="1.5"/><path class="s" d="M31 30v3M42 23v3M53 27v3M63 36v3" stroke-width="2"/>'},
 
 {id:"buckwheat",cat:"grains",price:1,pk:"4–8 €/kg",name:{en:"Buckwheat groats",fr:"Kasha"},latin:"Fagopyrum esculentum",
 origin:{en:"Yunnan, China",fr:"Yunnan, Chine"},season:[],
@@ -97,7 +97,7 @@ fr:"Grillé, il devient le kacha, le grain de la table russe et ashkénaze, et l
 tip:{en:"Coat the groats in beaten egg and dry them in the pan before adding liquid. That is the classic trick to keep every grain separate.",
 fr:"Enrobez les grains d’œuf battu et séchez-les à la poêle avant d’ajouter le liquide. C’est l’astuce classique pour garder chaque grain détaché."},
 pairs:["mushroom","onion","butter","egg","parsley","duck-fat","black-pepper","thyme"],
-svg:'<path class="f1 sf" d="M40 46l8-14 8 14z"/><path class="f1 sf" d="M32 66l8-14 8 14zM48 66l8-14 8 14z"/>'},
+svg:'<path class="f1 sf" d="M48.8 46.8Q52.1 50.3 54.7 54.4Q60.9 62.4 51.2 63.6Q46.7 64.7 42 64.8Q32.3 66 35.8 56.7Q37 52.1 39.1 48Q42.6 38.8 48.8 46.8Z"/><path class="f2 sf" d="M35.8 23.2Q39.3 25 42.3 27.4Q49.2 32 41.8 35.4Q38.5 37.4 34.8 38.7Q27.5 42.1 28 34.2Q27.8 30.4 28.5 26.6Q29 18.6 35.8 23.2Z"/><path class="f1 sf" d="M72.3 40.5Q72.4 44.4 71.7 48.3Q71.1 56.5 64.2 51.9Q60.7 50.1 57.7 47.6Q50.7 43 58.3 39.4Q61.6 37.2 65.4 35.9Q72.9 32.3 72.3 40.5Z"/><path class="s" d="M45 45q3 11 1 20M35 22q-4 7-5 12M65 35q5 7 6 12" stroke-width="1.5"/><path class="dot" d="M32.9 61.8Q34 64.9 34.6 68.2Q35.9 73.1 30.8 71.7Q27.3 71.1 24 69.9Q19 68.5 22.8 65Q25.1 62.5 27.8 60.4Q31.6 56.9 32.9 61.8Z"/>'},
 
 {id:"bulgur",cat:"grains",price:1,pk:"2–5 €/kg",name:{en:"Bulgur",fr:"Boulgour"},latin:"Triticum durum",
 origin:{en:"Levant & Anatolia",fr:"Levant & Anatolie"},season:[],
@@ -107,7 +107,7 @@ fr:"Du blé précuit, séché puis concassé — l’un des plus anciens aliment
 tip:{en:"Fine bulgur for tabbouleh needs no cooking at all — the lemon juice and tomato water soften it. Boiling it makes porridge.",
 fr:"Le boulgour fin du taboulé ne se cuit pas — le jus de citron et l’eau des tomates l’attendrissent. Le faire bouillir donne de la bouillie."},
 pairs:["parsley","mint","lemon","tomato","olive-oil","spring-onion","cumin","pomegranate"],
-svg:'<path class="f2 sf" d="M32 68q0-16 16-20 16 4 16 20z"/><circle class="dot" cx="41" cy="60" r="1.8"/><circle class="dot" cx="50" cy="57" r="1.8"/><circle class="dot" cx="55" cy="64" r="1.8"/>'},
+svg:'<path class="f1 sf" d="M27.7 25.8C33.9 22.5 31.4 23.1 37.5 23.5C43.6 24 41.2 23.1 41.7 28C42.3 32.8 44 30.7 39.1 35.2C34.2 39.7 36.4 37.5 29.5 38.8C22.6 40.1 25.4 42.1 21.6 38.7C17.7 35.3 16.7 38.4 19.5 32.7C22.3 27.1 21.5 29.1 27.7 25.8ZM33.1 56.2C37.2 62.8 36.3 60.6 35.7 65.7C35.2 70.8 35.7 68.7 31.3 69.6C27 70.4 29.7 72.1 24.6 67.3C19.4 62.5 20.7 65 19.2 59C17.7 52.9 18.1 55.1 20.4 52C22.7 48.9 20.5 48.5 25.8 50.6C31.2 52.7 29 49.6 33.1 56.2Z"/><path class="f2 sf" d="M65.9 26.5C72.8 29.5 70.9 28 73.6 32.9C76.2 37.8 74.7 35.3 71.7 38.3C68.7 41.3 72.9 42.4 65.3 41C57.7 39.6 61.2 41.1 55.7 36.6C50.2 32 51.9 33.9 51.8 29.7C51.7 25.4 49.9 25.5 55.6 24.6C61.4 23.8 59.1 23.4 65.9 26.5ZM61.6 55.8C66.3 50.9 64.4 50.8 69.4 50.3C74.4 49.7 73.3 49.4 74.8 53C76.3 56.6 76.2 55.1 73.1 60.5C70 66 72.9 64.4 66.9 68C60.8 71.6 63.5 71.1 59.2 69.2C54.9 67.3 56.1 68.8 57 63.5C57.9 58.1 56.9 60.6 61.6 55.8Z"/><path class="f1 sf" d="M47.7 43.2C55.6 44 53.3 42 57.6 46.4C61.9 50.8 61 49 58.7 52.8C56.5 56.7 57.5 54.8 51.1 56.1C44.6 57.4 46.6 58.7 40.8 56.1C34.9 53.4 35 55.3 33.9 50.4C32.9 45.4 32.1 46.9 37.1 44.1C42.1 41.2 39.8 42.4 47.7 43.2ZM43.7 71.5C48.4 70.1 46.6 69.9 50.4 71.1C54.1 72.3 53.4 71.4 53 74.9C52.7 78.4 53.8 76.4 49.4 79.2C44.9 82.1 48 81.7 42.6 82C37.3 82.2 39 81.8 37.2 79.5C35.4 77.2 35 78.1 37.3 74.6C39.7 71 39 72.8 43.7 71.5Z"/><path class="s" d="M36.6 29Q30.2 32 25.7 35.5M30.2 65.1Q26.2 60 23.3 55.2M68.5 35.4Q62.2 33 57.3 31.1M70.2 55.7Q65.2 60 62.3 64.7M53.7 50.7Q46.2 50 40.2 49.9" stroke-width="1.5"/><path class="dot" d="M47.1 20q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 zM71.1 45q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 zM20.1 44q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 z"/>'},
 
 {id:"camargue-red-rice",cat:"grains",price:2,pk:"5–10 €/kg",name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
 origin:{en:"Rhone delta, Camargue",fr:"Delta du Rhône, Camargue"},season:[],
@@ -147,7 +147,7 @@ fr:"En Corse et dans les Cévennes on appelait le châtaignier l’arbre à pain
 tip:{en:"It is naturally sweet, so cut the sugar in any recipe using it. And sift it twice — it clumps more than any other flour.",
 fr:"Elle est naturellement sucrée : réduisez le sucre de la recette. Et tamisez-la deux fois — elle s’agglomère plus que toute autre."},
 pairs:["chestnut","dark-chocolate","cream","honey","ricotta","rosemary","pine-nut","butter"],
-svg:'<path class="f1 sf" d="M34 70q0-18 14-24 14 6 14 24z"/><path class="s" d="M40 62q8 4 16 0"/><path class="f2 sf" d="M44 48q4-6 8 0z"/>'},
+svg:'<path class="f2 sf" d="M17 71q1-13 9-21 5-6 9-10 3-3 6 1 3 5 7 9 10 8 11 21z"/><path class="f1 sf" d="M50 75q-3-11 5-19 5-6 9-9 4 1 6 5 5 9 3 17-1 6-5 7-10 2-16 1-2-1-2-2z"/><path class="s" d="M64 47q1-6 4-8" stroke-width="2"/><path class="f2 sf" d="M51 73q9 4 17-1-3 6-9 6-6 1-8-5z"/><path class="s" d="M30 29v3M41 22v3M52 26v3M62 35v3" stroke-width="2"/>'},
 
 {id:"couscous",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Couscous",fr:"Couscous"},latin:"Triticum durum",
 origin:{en:"Maghreb",fr:"Maghreb"},season:[],
@@ -187,7 +187,7 @@ fr:"Le plus ancien blé cultivé — on en a retrouvé des grains dans l’estom
 tip:{en:"Cook the whole grains like rice, in twice their volume of water. As a flour it barely rises — blend it with a stronger one.",
 fr:"Cuisez les grains entiers comme du riz, dans deux fois leur volume d’eau. En farine il lève à peine — coupez-le avec une farine plus forte."},
 pairs:["olive-oil","thyme","tomato","lamb","honey","almond","mushroom","lemon"],
-svg:'<path class="s" d="M48 76V32"/><path class="f2 sf" d="M46 38q-7-3-8 2 7 5 8 0zM50 46q7-3 8 2-7 5-8 0zM46 54q-7-3-8 2 7 5 8 0zM50 62q7-3 8 2-7 5-8 0z"/>'},
+svg:'<path class="s" d="M48 85q-2-14-1-24 0-7 1-14"/><path class="f2 sf" d="M48 74q-12-2-16-10 11-3 16 6zM48 67q12-2 16-10-11-3-16 6zM48 60q-12-2-16-10 11-3 16 6zM48 53q12-2 16-10-11-3-16 6z"/><path class="s" d="M45 47 37 21M47 45 45 18M50 45 54 19M52 47 61 23" stroke-width="1.5"/><path class="f1 sf" d="M48 76q-13 1-20-8 13-6 20 3z"/><path class="s" d="M45 76q-7-2-13-6" stroke-width="1.5"/>'},
 
 {id:"emmer",cat:"grains",rare:true,price:2,pk:"6–11 €/kg",name:{en:"Emmer wheat",fr:"Blé amidonnier"},latin:"Triticum dicoccum",
 origin:{en:"Fertile Crescent, Tuscany",fr:"Croissant fertile, Toscane"},season:[],
@@ -227,7 +227,7 @@ fr:"Du blé récolté vert puis incendié — l’humidité élevée du grain je
 tip:{en:"Rinse it well and pick it over — charred fragments and small stones are common even in good packets.",
 fr:"Rincez-le bien et triez-le — fragments carbonisés et petits cailloux sont fréquents même dans de bons paquets."},
 pairs:["lamb","yogurt","mint","cumin","pomegranate","olive-oil","almond","cilantro"],
-svg:'<path class="f1 sf" d="M32 68q0-16 16-20 16 4 16 20z"/><path class="s" d="M38 52q4-8 10-8t10 8"/><circle class="dot" cx="44" cy="60" r="1.6"/><circle class="dot" cx="53" cy="62" r="1.6"/>'},
+svg:'<path class="f1 sf" d="M19 73q2-13 12-17 7-5 14-2 7-3 14 2 10 5 10 17z"/><path class="s" d="M26 68q5-4 10-1M38 63q5-4 10-1M50 68q5-4 10-1M32 58q5-4 10-1M45 56q5-4 10-1" stroke-width="1.5"/><path class="s" d="M34 44q-8-6-2-12 7-7 0-13" stroke-width="2"/><path class="s" d="M56 42q-7-5-2-10 6-6 0-11" stroke-width="2"/><path class="dot" d="M19.9 52q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 zM67.9 60q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 zM64.9 45q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 z"/>'},
 
 {id:"glutinous-rice",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Glutinous rice",fr:"Riz gluant"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Laos, Thailand, Japan",fr:"Laos, Thaïlande, Japon"},season:[],
@@ -377,7 +377,7 @@ fr:"Le dictionnaire du Dr Johnson raillait l’avoine, « nourriture des chevaux
 tip:{en:"A pinch of salt is the difference between wallpaper paste and breakfast. Toast the flakes in butter first and the whole bowl changes class.",
 fr:"Une pincée de sel fait la différence entre la colle à papier et le petit-déjeuner. Torréfiez d’abord les flocons au beurre et tout le bol change de classe."},
 pairs:["honey","apple","cinnamon","cream","raspberry","maple-syrup"],
-svg:'<path class="s" d="M48 78q-2-26 0-46"/><path class="f2 sf" d="M46 38q-8-4-8-12 8 0 10 8zM50 38q8-4 8-12-8 0-10 8zM44 52q-8-4-8-12 8 0 10 8zM52 52q8-4 8-12-8 0-10 8z"/>'},
+svg:'<path class="s" d="M48 84q-3-22-1-36 0-8 1-16"/><path class="s" d="M48 36q-12 2-20 8M48 44q13 1 21 7M48 56q-8 2-12 7M48 62q7 2 9 6" stroke-width="1.5"/><path class="f1 sf" d="M28.7 43.5C33.3 50.3 32.5 62.2 27.4 68C23.1 62 23.3 50 28.7 43.5ZM68.5 51.6C73.2 56.3 73.6 67.3 69.6 73C64.9 67.9 64.3 57 68.5 51.6Z"/><path class="f2 sf" d="M37.2 62C41.3 67.6 39.9 77.5 34.8 81.9C31 76.6 31.9 66.7 37.2 62ZM56.1 67.5C60.9 70.5 61.7 78.5 58 82.9C53.5 79.6 52.2 71.7 56.1 67.5Z"/><path class="s" d="M28 68q-1 4-3 6M69 73q1 4 3 5M36 82q-1 2-2 3M57 82q1 2 2 3" stroke-width="1.5"/>'},
 
 {id:"quinoa",cat:"grains",price:2,pk:"5–10 €/kg",name:{en:"Quinoa",fr:"Quinoa"},latin:"Chenopodium quinoa",
 origin:{en:"Andean altiplano",fr:"Altiplano andin"},season:[],
@@ -387,7 +387,7 @@ fr:"Les Incas l’appelaient chisaya mama — « mère de toutes les graines » 
 tip:{en:"Rinse it well — its natural coating is bitter — and toast it dry before adding water for a nuttier result.",
 fr:"Rincez-le bien — son enrobage naturel est amer — et torréfiez-le à sec avant d’ajouter l’eau pour un goût plus noisetté."},
 pairs:["lemon","corn","cilantro","pomegranate","beetroot","yogurt"],
-svg:'<path class="dot" d="M40 44a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M51 44a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M35 53a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M45.5 53a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M56 53a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M40 62a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M51 62a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0"/><circle class="s" cx="48" cy="53" r="21"/>'},
+svg:'<path class="f1 sf" d="M34.7 22.5C40.7 23.6 39 22 41.9 27.4C44.9 32.8 44.8 30.4 42.4 35.9C40.1 41.3 41.9 39.2 35.7 40.9C29.4 42.6 32.6 43.4 27.3 39.7C22 35.9 23.1 38.5 22.7 32.4C22.2 26.4 21.5 28.9 26.3 24.7C31.2 20.6 28.6 21.5 34.7 22.5ZM56.5 21.3C62.3 22.3 60.5 20.4 63.4 25.6C66.3 30.9 66 28.3 63.7 33.6C61.4 38.8 63.7 37.4 57.7 38.9C51.6 40.4 54.6 40.9 49.5 37.4C44.4 34 46.2 36.1 45.8 30.4C45.5 24.6 44.1 27.2 48.8 23.3C53.5 19.3 50.7 20.3 56.5 21.3Z"/><path class="f2 sf" d="M25.5 44.3C31.6 45.4 28.9 43.7 32 48.8C35.1 54 35.4 51.1 33 56.7C30.7 62.3 32.5 60.4 26.7 62C20.9 63.7 23.4 63.9 18.5 60.4C13.5 56.9 15.2 59.3 14.9 53.4C14.6 47.5 13.5 50.4 17.9 46.4C22.4 42.4 19.4 43.3 25.5 44.3ZM47.6 41.7C54.2 42.9 51.7 40.9 54.8 46.4C58 51.9 57.3 49.2 54.9 54.7C52.6 60.2 55.2 58.5 48.7 60.2C42.3 61.8 45.4 62.3 40.3 58.6C35.3 55 36.6 57.3 36.2 51.4C35.8 45.5 34.6 47.8 39.4 43.9C44.3 39.9 41 40.6 47.6 41.7Z"/><path class="f1 sf" d="M67.6 40.9C73.7 41.9 71.1 40.8 74.2 45.7C77.3 50.7 77.5 48.3 75.1 53.8C72.8 59.2 74.6 57.5 68.7 58.9C62.7 60.3 65.5 60.7 60.6 57.3C55.7 53.9 56.9 56.1 56.5 50.4C56.2 44.7 54.9 46.9 59.5 43C64.1 39.1 61.5 39.8 67.6 40.9ZM39.6 62C45.8 63.1 43.4 61.7 46.4 66.6C49.4 71.6 48.8 69.3 46.5 74.5C44.3 79.7 46.7 78.3 40.6 79.8C34.6 81.2 37.1 82.1 32.3 78.7C27.5 75.3 28.7 77 28.3 71.4C28 65.8 27.1 68.1 31.8 64.3C36.5 60.4 33.4 60.9 39.6 62Z"/><path class="s" d="M37.8 33.7C37 35.7 34.9 37 32.7 36.9C30.4 36.7 28.4 35.2 27.9 33.1C27.4 30.9 28.5 28.7 30.5 27.7C32.5 26.6 34.9 27.3 36.4 28.8M54.9 34.3C52.9 34.3 50.9 33.1 50.4 31.2C49.8 29.2 50.8 27.2 52.6 26.2C54.3 25.2 56.6 25.3 58.2 26.7C59.7 28 60.2 30.2 59.3 32M19.7 54.3C19 52.5 19.4 50.3 21.2 49.1C23 47.9 25.4 48.1 27.1 49.4C28.8 50.7 29.3 52.9 28.4 54.8C27.6 56.7 25.5 57.8 23.4 57.5M42.9 47.1C44.7 45.8 47.3 45.7 49.1 47C51 48.3 51.7 50.7 50.9 52.7C50 54.8 47.8 55.8 45.6 55.7C43.5 55.5 41.8 53.9 41.3 51.9M68.7 46.2C70.5 47.3 71.2 49.5 70.5 51.4C69.9 53.3 67.9 54.4 65.9 54.3C63.8 54.3 62 53.1 61.4 51.1C60.9 49.2 61.6 47.1 63.5 46M42.5 72.1C42 74.1 40.3 75.6 38.1 75.6C35.9 75.7 34 74.3 33.4 72.4C32.7 70.4 33.6 68.4 35.4 67.3C37.1 66.2 39.4 66.4 40.9 67.7" stroke-width="1.5"/><path class="dot" d="M17.8 36q.4-3.1 4.2 .4-.4 3.3-4 .4-.4-.2 3.7-.4 zM61.8 72q.4-3.1 4.2 .4-.4 3.3-4 .4-.4-.2 3.7-.4 zM46.8 78q.4-3.1 4.2 .4-.4 3.3-4 .4-.4-.2 3.7-.4 z"/>'},
 
 {id:"rice",cat:"grains",price:1,pk:"2–4 €/kg",name:{en:"Rice",fr:"Riz"},latin:"Oryza sativa",
 origin:{en:"Yangtze valley, China",fr:"Vallée du Yangzi, Chine"},season:[],
@@ -397,7 +397,7 @@ fr:"Domestiqué il y a environ dix mille ans, le riz nourrit aujourd’hui la mo
 tip:{en:"Rinse until the water runs clear for distinct grains; skip the rinse when you want creaminess, as in risotto or rice pudding.",
 fr:"Rincez jusqu’à l’eau claire pour des grains détachés ; ne rincez pas quand vous cherchez le crémeux, comme pour un risotto ou un riz au lait."},
 pairs:["saffron","shiitake","soy-sauce","coconut-milk","egg","sesame","turmeric"],
-svg:'<path class="f1 sf" d="M30 54h36q0 16-18 16t-18-16z"/><path class="f2 sf" d="M38 50q-2-7 3-9 4 3 2 9zM47 48q-2-7 3-9 4 3 2 9zM56 50q-2-7 3-9 4 3 2 9z"/>'},
+svg:'<path class="f1 sf" d="M19 54q29-4 58 0-3 16-12 22-8 6-17 6t-17-6q-9-6-12-22z"/><path class="f2 sf" d="M26 53q2-9 9-12 4-6 10-3 6-4 11 1 10 2 12 14-21 4-42 0z"/><path class="s" d="M35 50q2-5 6-6M47 45q3-4 7-3M56 51q2-5 6-4" stroke-width="1.5"/><path class="s" d="M40 83q8 0 16 0" stroke-width="2"/><path class="s" d="M31 44 71 22M34 50 76 31" stroke-width="2.5"/>'},
 
 {id:"rice-flour",cat:"grains",price:1,pk:"3–7 €/kg",name:{en:"Rice flour",fr:"Farine de riz"},latin:"Oryza sativa",
 origin:{en:"Rice-growing Asia",fr:"Asie rizicole"},season:[],
@@ -417,7 +417,7 @@ fr:"La pâte de riz est étalée sur une toile tendue au-dessus d’une marmite,
 tip:{en:"One second in warm water per sheet and no more: pull it out while it still feels stiff and let it finish softening on the plate while you fill it. A sheet that felt ready in the bowl will be torn by the time you roll it.",
 fr:"Une seconde d’eau tiède par galette, pas plus : sortez-la encore raide et laissez-la finir de s’assouplir sur l’assiette pendant que vous garnissez. Une galette qui semblait prête dans le bol sera déchirée au moment de rouler."},
 pairs:["shrimp","pork-belly","mint","vietnamese-coriander","peanut","fish-sauce","lettuce"],
-svg:'<g transform="translate(5.71 5.95) scale(0.881)"><circle class="f1 sf" cx="48" cy="48" r="30"/><path class="s" d="M28 34l40 28M34 26l28 44M22 44l52 8M26 60l44-24"/></g>'},
+svg:'<path class="f1 sf" d="M42.9 22C56.7 20.9 51.6 17.7 61.7 25.8C71.9 34 68.1 29.6 69.3 43C70.5 56.4 72.8 50.8 64.2 60.5C55.7 70.2 60.6 68.8 47.3 69.9C33.9 71 38.9 72.6 28.2 64.2C17.5 55.8 21.7 59.9 20.5 47.1C19.3 34.2 17.6 40.2 26.1 29.8C34.7 19.4 29.1 23.2 42.9 22Z"/><path class="s" d="M24 33q21-5 42 1M21 45q24-6 48 1M24 57q21-5 42 1" stroke-width="1.5"/><path class="s" d="M33 25q4 20 0 40M45 21q3 24-1 48M57 25q4 20 0 40" stroke-width="1.5"/><path class="f2 sf" d="M58 66q6-4 12-1 4 2 2 6-4 6-11 4-5-3-3-9z"/><path class="s" d="M61 69q4-1 7 1M60 74q3-1 6 1" stroke-width="1.5"/>'},
 
 {id:"rye",cat:"grains",price:1,pk:"2–5 €/kg",name:{en:"Rye berries",fr:"Grains de seigle"},latin:"Secale cereale",
 origin:{en:"Anatolia",fr:"Anatolie"},season:[],
@@ -627,5 +627,5 @@ fr:"Pas du riz mais une graminée aquatique, sacrée pour les Anishinaabe, qui l
 tip:{en:"It takes forty-five minutes and is ready when the grains split open and curl. Undercooked it is simply inedible.",
 fr:"Il demande quarante-cinq minutes et il est prêt quand les grains s’ouvrent et s’enroulent. Insuffisamment cuit, il est simplement immangeable."},
 pairs:["mushroom","hazelnut","cranberry","butter","thyme","duck","onion","walnut"],
-svg:'<path class="f1 sf" d="M36 30q4 26 0 44M44 26q4 28 0 48M52 30q4 26 0 44M60 34q3 22 0 38"/>'}
+svg:'<path class="dot" d="M25.5 28.2C32.7 31.5 39.5 43.7 38.7 52.3C33.2 47.7 25.8 35.8 25.5 28.2ZM39.2 17.6C45.4 23.3 50.5 36.3 50.5 43.9C43.8 39.3 38 26.6 39.2 17.6Z"/><path class="dot" d="M50.2 26.3C57.6 29.8 65.5 41.3 65.8 49.7C60 45.5 51.9 34.1 50.2 26.3ZM33.6 47.8C38.9 53.4 42.8 66.8 42.4 74.3C36 69.2 31.6 55.9 33.6 47.8Z"/><path class="dot" d="M46.2 47.1C53.7 51 60.3 62.2 59.4 70.3C54.3 66.1 47.1 55.3 46.2 47.1ZM61.2 44.3C66 48.4 69.6 59.8 69 66.3C63.1 62.2 58.8 51 61.2 44.3Z"/><path class="f1 sf" d="M38.8 35.3C46.4 39.5 52.3 52.2 51.1 60.6C44.1 56.5 37.6 44.1 38.8 35.3Z"/><path class="s" d="M40 55q4-6 8-11" stroke-width="1.5"/>'}
 ]);

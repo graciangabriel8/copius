@@ -57,7 +57,7 @@ fr:"Sa douceur est du glucose, découpé dans l’amidon du riz par les enzymes 
 tip:{en:"Hold it at 55-60°C for eight hours: below that it sours, and much above 65°C the enzymes die and it never sweetens. Blended smooth it replaces sugar in a dressing or a batter at roughly twice the weight, and it will restart a sluggish sourdough.",
 fr:"Maintenez-le entre 55 et 60 °C pendant huit heures : en dessous il tourne, et bien au-delà de 65 °C les enzymes meurent et il ne sucrera jamais. Mixé lisse, il remplace le sucre d’une vinaigrette ou d’une pâte à raison du double du poids, et relance un levain paresseux."},
 pairs:["ginger","strawberry","yuzu","sesame","cream","lemon"],
-svg:'<path class="f1 sf" d="M32 38h32l-4 30q-1 6-12 6t-12-6z"/><path class="s" d="M32 46q16 6 32 0"/><ellipse class="dot" cx="44" cy="56" rx="3" ry="2"/><ellipse class="dot" cx="54" cy="62" rx="3" ry="2"/><ellipse class="dot" cx="48" cy="50" rx="3" ry="2"/>'},
+svg:'<path class="f1 sf" d="M22 34q2 25 15 42h22q13-17 15-42z"/><path class="f2 sf" d="M22 34q13 8 26 8t26-8q-13-6-26-6t-26 6z"/><path class="dot" d="M33 34q2-2 5 0-3 2-5 0zM44 38q3-2 5 0-2 2-5 0zM56 34q2-2 5 0-3 2-5 0zM49 31q3-2 5 0-2 2-5 0z"/><path class="s" d="M37 76v3q11 4 22 0v-3"/><path class="s" d="M38 31q5-5 0-9t0-6M58 30q5-5 0-9t0-5" stroke-width="2"/>'},
 
 {id:"amba",cat:"condiments",rare:true,price:2,pk:"7–15 €/kg",name:{en:"Amba",fr:"Amba"},latin:"Mangifera indica",
 origin:{en:"Iraq, by way of Bombay",fr:"Irak, via Bombay"},season:[],
@@ -97,7 +97,7 @@ fr:"Dans les greniers de Modène, le moût de raisin cuit dort des décennies da
 tip:{en:"The real thing is syrup-thick and needs no reduction; supermarket balsamic improves simmered down by half. A few drops on strawberries or parmesan — never a flood.",
 fr:"Le vrai est épais comme un sirop et n’a nul besoin de réduction ; celui de supermarché s’améliore réduit de moitié. Quelques gouttes sur des fraises ou du parmesan — jamais un déluge."},
 pairs:["strawberry","tomato","parmesan","fig","onion","beetroot"],
-svg:'<path class="f3 sf" d="M45 24h6v10q8 4 8 14v22q0 8-11 8t-11-8V48q0-10 8-14z"/><path class="f1" d="M40 58h16v8q0 4-8 4t-8-4z"/>'},
+svg:'<path class="f1 sf" d="M40 22h8v10q10 5 10 17v14q0 7-14 7-14 0-14-7V49q0-12 10-17z"/><path class="dot" d="M33 50q0-10 8-14h6q9 4 9 14v12q0 5-11 5t-12-5z"/><path class="f2 sf" d="M39 19q5-2 10 0v5q-5 2-10 0z"/><path class="f1" d="M33 56q11-2 22 0v8q-11 2-22 0z"/><path class="s" d="M37 60q8-1 14 0" stroke-width="1.5"/><path class="dot" d="M53 74q9-6 17-2 4 3 0 6-9 5-17 1-4-2 0-5z"/>'},
 
 {id:"bamboo-salt",cat:"condiments",price:3,pk:"50–200 €/kg",name:{en:"Bamboo salt",fr:"Sel de bambou (jukyeom)"},latin:"Phyllostachys spp.",
 origin:{en:"Jeolla coast, Korea",fr:"Côte du Jeolla, Corée"},season:[],
@@ -187,7 +187,7 @@ fr:"Des têtes d’ail entières tenues au chaud et à l’humide pendant des se
 tip:{en:"No bite remains — use it as a condiment, not a garlic. Crush a clove into butter for a steak, or into mayonnaise for anything fried.",
 fr:"Il ne reste aucun mordant — utilisez-le comme condiment, pas comme ail. Écrasez une gousse dans un beurre pour une viande, ou dans une mayonnaise pour toute friture."},
 pairs:["beef","miso","mushroom","butter","balsamic","dark-chocolate"],
-svg:'<path class="f3 sf" d="M48 28q3 10 12 16 8 6 8 14a20 16 0 01-40 0q0-8 8-14 9-6 12-16z"/><path class="f1" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40" fill="none"/><path class="s" d="M40 46q-3 12-2 26M56 46q3 12 2 26M48 34v40" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M69 48Q70 73 44 73 18 73 18 48 18 23 44 24 68 24 69 48z"/><path class="dot" d="M42 43 Q37 37 35 29 44 25 53 29 51 37 46 43 44 45 42 43zM47 43 Q50 37 55 32 62 37 63 46 56 49 49 48 47 46 47 43zM49 48 Q57 47 65 50 65 60 56 65 50 60 47 53 47 50 49 48zM46 53 Q51 58 52 65 44 70 36 65 37 58 42 53 44 51 46 53zM41 53 Q38 59 33 64 25 59 25 50 32 47 39 48 41 50 41 53zM39 48 Q31 49 24 46 24 37 32 31 38 37 41 43 41 46 39 48z"/><path class="f1" d="M44 44q4 0 4 4t-4 4-4-4 4-4z"/><path class="f1 sf" d="M55 71q8 6 15 1 2 4-3 6t-12-2z"/><path class="dot" d="M66 55q9 5 8 12-1 7-8 7-8 0-9-7 0-7 9-12z"/>'},
 
 {id:"black-koji",cat:"condiments",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Black koji",fr:"Koji noir (kuro-kōji)"},latin:"Aspergillus luchuensis",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[],
@@ -257,7 +257,7 @@ fr:"La câpre est une fleur qui n’a jamais pu éclore : les boutons se cueille
 tip:{en:"Salt-packed capers taste finer than brined — rinse them well. Fried crisp in olive oil, they become little savoury fireworks for fish.",
 fr:"Les câpres au sel sont plus fines que celles en saumure — rincez-les bien. Frites croustillantes à l’huile d’olive, elles deviennent de petits feux d’artifice salés pour le poisson."},
 pairs:["lemon","tomato","anchovy","cod","olive","parsley"],
-svg:'<path class="s" d="M40 68q-2-10 4-16M52 66q0-8 4-12M46 70q-1-6 2-10"/><path class="f2" d="M41 48a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0M53 50a4 4 0 108 0 4 4 0 10-8 0M44 58a3.5 3.5 0 107 0 3.5 3.5 0 10-7 0" transform="translate(0 -6)"/>'},
+svg:'<path class="s" d="M25 70q7-16 20-24t21-18"/><path class="f1 sf" d="M35 52q-6-12-14-8-4 9 2 14 8 4 12-6zM62 41q6-12 14-8 4 9-2 14-8 4-12-6z"/><path class="f1 sf" d="M57 20q9 5 8 13 0 8-8 9-8-1-8-9 0-8 8-13z"/><path class="s" d="M57 23q-3 9-2 18M57 23q4 9 3 18M50 38q7 3 14 0" stroke-width="1.5"/><path class="f2 sf" d="M35 30q7 4 6 10 0 6-6 6-6 0-6-6 0-6 6-10z"/><path class="f1 sf" d="M59 58q9 4 9 11 0 7-9 7-8 0-8-7 0-7 8-11z"/>'},
 
 {id:"olive-castelvetrano",cat:"condiments",price:2,pk:"14–25 €/kg",name:{en:"Castelvetrano olive",fr:"Olive Castelvetrano"},latin:"Olea europaea 'Nocellara del Belice'",
 origin:{en:"Valle del Belice, Sicily",fr:"Valle del Belice, Sicile"},season:[],
@@ -527,7 +527,7 @@ fr:"Le gari se taille dans du gingembre jeune, récolté avant que la peau ne du
 tip:{en:"If you make it, salt the sliced ginger for thirty minutes and squeeze it dry before the vinegar goes on, or the pickle turns watery within a week. Eat it between pieces of fish, never laid on top of one.",
 fr:"Si vous le faites vous-même, salez les lamelles trente minutes et pressez-les bien avant d’ajouter le vinaigre, sinon le pickle rend son eau en une semaine. Mangez-le entre deux bouchées, jamais posé sur le poisson."},
 pairs:["rice","nori","wasabi","soy-sauce","tuna","salmon","rice-vinegar"],
-svg:'<path class="f2 sf" d="M26 56h44q-4 14-22 14T26 56z"/><path class="f1 sf" d="M34 54q6-16 16-16t-2 16z"/><path class="f1 sf" d="M42 54q8-14 18-12t-6 12z"/><path class="s" d="M38 44q6-4 10-2M50 46q6-4 8-2"/>'},
+svg:'<path class="f1 sf" d="M22 64q3 12 14 16 12 5 24 0 11-4 14-16z"/><path class="f2 sf" d="M26 62 Q32 62 36 60 39 56 44 56 49 55 51 50 53 44 56 42 Q58 36 52 34 Q48 37 46 42 44 47 39 48 34 49 31 52 27 55 22 54 Q20 60 26 62z"/><path class="f1 sf" d="M28 70 Q35 72 40 69 45 66 51 65 56 64 60 59 63 53 68 50 Q70 44 64 42 Q59 45 56 51 52 56 47 57 41 58 36 61 31 63 24 62 Q22 68 28 70z"/><path class="f1 sf" d="M28 68 Q33 68 38 64 44 61 49 62 54 64 60 62 65 63 70 66 Q74 62 70 58 Q64 54 59 54 54 55 49 53 43 52 38 55 33 59 28 60 Q24 64 28 68z"/><path class="s" d="M36 56q6-4 12-4M42 62q7-3 14-2" stroke-width="1.5"/>'},
 
 {id:"genmai-miso",cat:"condiments",price:2,pk:"12–22 €/kg",name:{en:"Genmai miso",fr:"Miso de riz complet (genmai miso)"},latin:"Oryza sativa, Glycine max",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -877,7 +877,7 @@ fr:"Les Romains broyaient les graines dans du moût de raisin — mustum ardens,
 tip:{en:"Heat kills its bite: whisk it in off the flame to finish a sauce. It is also nature’s emulsifier — the secret spine of every vinaigrette.",
 fr:"La chaleur tue son mordant : incorporez-la hors du feu pour finir une sauce. C’est aussi l’émulsifiant de la nature — la colonne vertébrale secrète de toute vinaigrette."},
 pairs:["pork","chicken","tarragon","honey","egg","beef","dill"],
-svg:'<path class="f1 sf" d="M38 40h20v26q0 8-10 8t-10-8z"/><path class="f2 sf" d="M36 34h24v6H36z"/><path class="dot" d="M44 52a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M50 58a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M44 62a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
+svg:'<path class="f1 sf" d="M31 47q-2-5 4-6h26q6 1 4 6v22q0 9-17 9t-17-9z"/><path class="f2 sf" d="M34 45q5-5 14-5t14 5q-6 6-14 6t-14-6z"/><path class="f2 sf" d="M34 43q4-12 14-12t14 12q-6 4-14 4t-14-4z"/><path class="s" d="M70 24 57 38" stroke-width="3"/><path class="f1 sf" d="M58 36q-9 2-9 8t8 4q9-2 9-8t-8-4z"/><path class="dot" d="M30 73Q29 76 24 76 20 75 21 72 21 68 26 69 30 70 30 73zM42 76Q43 79 39 80 36 81 34 78 32 75 37 74 41 73 42 76zM70 73Q67 75 64 74 60 72 62 69 64 67 68 68 72 70 70 73z"/>'},
 
 {id:"myeolchi-aekjeot",cat:"condiments",price:2,pk:"8–16 €/L",name:{en:"Myeolchi-aekjeot",fr:"Sauce d’anchois coréenne (myeolchi-aekjeot)"},latin:"Engraulis japonicus",
 origin:{en:"South coast of Korea",fr:"Côte sud de la Corée"},season:[],
@@ -1077,7 +1077,7 @@ fr:"Le nanru est du tofu affiné au sel et au huangjiu avec du riz rouge ferment
 tip:{en:"Mash a cube with a spoonful of its own brine before it meets the meat — dropped in whole it never disperses and leaves pockets of salt. Two cubes season a kilo of pork belly, and no further salt is needed.",
 fr:"Écrasez un cube avec une cuillerée de sa saumure avant de l’ajouter à la viande : entier, il ne se disperse jamais et laisse des poches de sel. Deux cubes assaisonnent un kilo de poitrine de porc, et aucun sel supplémentaire n’est nécessaire."},
 pairs:["pork-belly","taro","peanut","lotus-root","shaoxing-wine","star-anise","garlic","chinese-rock-sugar"],
-svg:'<path class="f1 sf" d="M32 42l16-9 16 9-16 9z"/><path class="f3 sf" d="M32 42v16l16 9V51z"/><path class="f2 sf" d="M64 42v16l-16 9V51z"/>'},
+svg:'<path class="f1 sf" d="M18 56q1-14 16-14 11 0 15 8l23-16q4-2 6 1t-3 6L57 59q-3 8-16 8-22 0-23-11z"/><path class="f2 sf" d="M31 46q6-4 12-5 6 1 11 4-5 5-11 6-7-1-12-5z"/><path class="f2 sf" d="M31 46q-1 6 0 10 6 4 12 5V51q-7-1-12-5zM54 45q1 6 0 10-5 4-11 5V51q6-1 11-6z"/><path class="s" d="M25 61q10 5 21 1" stroke-width="1.5"/><path class="dot" d="M39 44Q39 45 37 46 35 45 35 44 35 42 37 42 39 43 39 44zM49 49Q48 50 46 49 44 49 45 48 46 46 48 46 49 47 49 49zM46 64Q47 66 44 66 41 66 42 64 41 62 44 62 46 62 46 64z"/>'},
 
 {id:"red-wine-vinegar",cat:"condiments",price:1,pk:"2–6 €/L",name:{en:"Red wine vinegar",fr:"Vinaigre de vin rouge"},latin:"Acetum vini rubri",
 origin:{en:"France & Italy",fr:"France & Italie"},season:[],
@@ -1247,7 +1247,7 @@ fr:"Les ouvriers de la Grande Muraille étaient nourris de chou fermenté il y a
 tip:{en:"Rinse it if it is aggressively sour, but keep some of the brine for the pot. Long slow cooking with fat is what mellows it.",
 fr:"Rincez-la si elle est trop acide, mais gardez un peu de saumure pour la casserole. C’est la cuisson longue et grasse qui l’adoucit."},
 pairs:["pork","juniper","lard","potato","caraway","onion","black-pepper","bay-leaf"],
-svg:'<path class="f3 sf" d="M32 70V50h32v20z"/><path class="s" d="M34 56q6 4 12 0t12 0M34 63q6 4 12 0t12 0"/>'},
+svg:'<path class="f1 sf" d="M29 40q0-8 6-9h26q6 1 6 9v32q0 8-19 8t-19-8z"/><path class="f2 sf" d="M33 24q15-3 30 0v8q-15 3-30 0z"/><path class="f2 sf" d="M30 46q10 6 18 3t19-4v26q0 8-19 8t-18-8z"/><path class="s" d="M32 54q7-5 15-2t17-2M31 63q8-5 17-1t17-1M34 71q9-4 16-1t13-1M41 57q3 5 2 10" stroke-width="1.5"/><path class="s" d="M36 34q6 5 13 3t12-4" stroke-width="1.5"/><path class="dot" d="M41 48Q42 50 39 50 36 51 35 50 33 48 37 48 40 47 41 48zM62 53Q61 54 58 53 55 53 56 52 57 50 60 50 63 51 62 53z"/>'},
 
 {id:"senmaizuke",cat:"condiments",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Senmaizuke",fr:"Senmaizuke"},latin:"Brassica rapa",
 origin:{en:"Kyoto",fr:"Kyoto"},season:[1,2,11,12],
@@ -1477,7 +1477,7 @@ fr:"L’ume — cousin de l’abricot, non de la prune — salé des mois durant
 tip:{en:"Use the flesh as a paste: a fingertip’s worth wakes a rice bowl, a dressing or steamed greens with salt and lightning at once.",
 fr:"Utilisez la chair comme une pâte : l’équivalent d’un bout de doigt réveille un bol de riz, une sauce ou des légumes vapeur — sel et éclair à la fois."},
 pairs:["rice","shiso","sesame","honey"],
-svg:'<circle class="f3 sf" cx="48" cy="54" r="15"/><path class="s" d="M42 48q-2 6 1 11M48 39v-6" stroke-width="1.6"/><path class="f2 sf" d="M48 33q6-5 11-3-2 6-9 6z"/>'},
+svg:'<path class="f2 sf" d="M24 40q-5-9 2-13 8-4 16 1 5 4 4 9-3 6-10 7-8 1-12-4z"/><path class="s" d="M26 31q10 5 16 11M32 29q-1 6 1 10" stroke-width="1.5"/><path class="f1 sf" d="M72 57Q68 75 49 73 28 69 34 49 35 27 58 32 77 38 72 57z"/><path class="s" d="M43 45q7 2 9 9M40 58q7-1 11 4M58 66q3-6 10-7M64 42q-6 3-7 9" stroke-width="2"/><path class="dot" d="M49 34q5-3 8 1-4 3-8 1z"/>'},
 
 {id:"umezu",cat:"condiments",price:2,pk:"12–22 €/L",name:{en:"Umezu",fr:"Vinaigre d’umeboshi (umezu)"},latin:"Prunus mume",
 origin:{en:"Japan, the umeboshi barrels",fr:"Japon, les barriques d’umeboshi"},season:[],
@@ -1507,7 +1507,7 @@ fr:"Le jus pressé de raisins verts — l’acide quotidien de l’Europe médi�
 tip:{en:"Deglaze a chicken pan with it, or dress a salad destined to meet a good bottle. It sharpens without stinging.",
 fr:"Déglacez-en une poêle de poulet, ou assaisonnez une salade destinée à croiser une bonne bouteille. Il aiguise sans piquer."},
 pairs:["chicken","mustard","tarragon","scallop","grape"],
-svg:'<path class="f1 sf" d="M44 24h8v12q6 4 6 12v22q0 8-10 8t-10-8V48q0-8 6-12z"/><path class="f2" d="M40 54a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0M47 62a4 4 0 108 0 4 4 0 10-8 0"/>'},
+svg:'<path class="f1 sf" d="M31 51Q30 58 23 57 16 56 17 49 18 42 25 43 33 44 31 51zM44 47Q44 54 37 54 30 54 30 47 30 40 37 40 44 40 44 47zM35 63Q32 70 26 68 18 65 21 58 24 51 30 55 37 57 35 63zM48 58Q49 65 42 66 36 67 34 60 33 53 40 52 46 51 48 58zM40 72Q39 78 32 78 25 77 26 70 27 64 34 64 40 65 40 72z"/><path class="s" d="M32 40q0-6 6-8"/><path class="f2 sf" d="M40 32q-8-9-17-5 1 10 9 12 8 1 8-7z"/><path class="f1 sf" d="M57 38q6-2 12 0v6q5 4 5 12v15q0 8-11 8-11 0-11-8V56q0-8 5-12z"/><path class="f2" d="M52 62q11 5 22 0v9q0 8-11 8t-11-8z"/>'},
 
 {id:"moutarde-violette-brive",cat:"condiments",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Violet mustard of Brive",fr:"Moutarde violette de Brive"},latin:"Brassica nigra & Vitis vinifera",
 origin:{en:"Brive-la-Gaillarde, Correze",fr:"Brive-la-Gaillarde, Corrèze"},season:[],
@@ -1687,7 +1687,7 @@ fr:"Des jarres scellées de haricots noirs fermentés ont été exhumées des to
 tip:{en:"Rinse them a few seconds to take the surface salt off, then crush them roughly under the flat of the knife and drop them into hot oil before anything else — left whole they stay mute. Salt the dish only at the end.",
 fr:"Rincez-les quelques secondes pour ôter le sel de surface, écrasez-les grossièrement sous le plat du couteau et jetez-les dans l'huile chaude avant tout le reste : entiers, ils restent muets. Ne salez le plat qu'à la fin."},
 pairs:["garlic","ginger","chili","pork","sea-bass","doubanjiang","spring-onion","shaoxing-wine"],
-svg:'<path class="f1 sf" d="M28 52h40q-2 18-20 18t-20-18z"/><path class="f3 sf" d="M32 52q4-10 16-10t16 10z"/><circle class="dot" cx="42" cy="46" r="3"/><circle class="dot" cx="53" cy="45" r="3"/><circle class="dot" cx="47" cy="38" r="3"/>'},
+svg:'<path class="f1 sf" d="M18 52q1 15 15 21 16 6 29-3 10-7 12-18z"/><path class="f1" d="M41 74q7 2 14 0v4q-7 3-14 0z"/><path class="s" d="M19 54q14 5 29 4 15-1 27-6" stroke-width="1.5"/><path class="dot" d="M21 52q0-7 7-8 1-6 7-4 2-7 8-4 3-6 8-2 4-5 8 0 6 1 6 7 5 1 6 7 3 1 3 4z"/><path class="dot" d="M25 39Q28 42 23 43 17 44 15 41 13 39 17 37 23 35 25 39zM80 41Q77 45 71 43 65 42 68 38 71 36 77 37 82 38 80 41zM69 24Q70 28 65 28 60 29 58 26 58 23 63 22 68 21 69 24z"/>'},
 
 {id:"furu",cat:"condiments",price:1,pk:"8–15 €/kg",name:{en:"Fermented bean curd",fr:"Tofu fermenté (furu)"},latin:"Glycine max",
 origin:{en:"China",fr:"Chine"},season:[],
@@ -1757,7 +1757,7 @@ fr:"La Corée classe ses crevettes salées par mois de pêche : le yukjeot, mis 
 tip:{en:"Treat it as salt first and seasoning second — two tablespoons per head of napa cabbage, and salt the rest of the dish afterwards. It is also the traditional dip for boiled pork belly, straight from the jar, undiluted.",
 fr:"Traitez-le d’abord comme du sel : deux cuillerées à soupe par chou chinois, et salez le reste du plat ensuite. C’est aussi la sauce traditionnelle du porc bouilli, prise telle quelle dans le pot, sans dilution."},
 pairs:["napa-cabbage","gochugaru","garlic","pork-belly","daikon","ginger","kimchi"],
-svg:'<path class="f1 sf" d="M34 40q-5 14 0 26 4 8 14 8t14-8q5-12 0-26z"/><ellipse class="f2 sf" cx="48" cy="40" rx="14" ry="5"/><path class="s" d="M40 54q7-5 11 0t-3 7"/><path class="s" d="M50 64q7-4 9 1"/>'},
+svg:'<path class="f1 sf" d="M22 56q0 13 8 20 6 5 18 5t18-5q8-7 8-20z"/><path class="f2 sf" d="M22 56q10 6 26 6t26-6q-10-6-26-6t-26 6z"/><path class="f1 sf" d="M24 48 Q30 40 38 44 44 46 46 52 47 56 44 59L40 56 Q32 61 25 56 21 53 24 48zM47 41 Q54 36 59 41 64 44 64 50 64 53 61 55L59 52 Q51 54 46 48 43 44 47 41zM38 58 Q41 50 48 51 55 52 57 56 60 59 58 63L54 61 Q48 67 41 65 36 64 38 58z"/><path class="s" d="M26 45q-6-2-9 1M50 39q-6-2-9 1M38 56q-6-1-9 2" stroke-width="1.5"/><path class="dot" d="M31 48Q31 50 29 50 27 50 27 48 27 47 29 46 31 46 31 48zM53 42Q53 44 51 44 49 44 49 42 49 41 51 41 53 41 53 42zM44 58Q44 59 42 59 40 59 40 58 40 56 42 56 44 56 44 58z"/>'},
 {id:"grape-must",cat:"condiments",price:1,pk:"4–9 €/L",name:{en:"Grape must",fr:"Moût de raisin"},latin:"Vitis vinifera",
 origin:{en:"Wine regions, at harvest",fr:"Vignobles, à la vendange"},season:[9,10],
 flavor:["sweet","fruity","tangy"],

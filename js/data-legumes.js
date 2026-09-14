@@ -7,7 +7,7 @@ fr:"Au Japon et en Chine on le traite en ingrédient de dessert plutôt que sal�
 tip:{en:"Change the water once during cooking if you want a clean sweet paste. The first water carries the bitterness.",
 fr:"Changez l’eau une fois en cours de cuisson pour une pâte sucrée nette. La première eau emporte l’amertume."},
 pairs:["sugar","rice","sesame","vanilla","coconut-milk","ginger","dark-chocolate","honey"],
-svg:'<ellipse class="f1 sf" cx="41" cy="55" rx="6.5" ry="5"/><ellipse class="f1 sf" cx="54" cy="53" rx="6.5" ry="5"/><ellipse class="f1 sf" cx="47" cy="66" rx="6.5" ry="5"/><path class="s" d="M36 55h10M49 53h10"/>'},
+svg:'<path class="f2 sf" d="M24 30 Q36 23 45 31 Q51 39 43 46 Q30 51 25 43 Q21 35 24 30 Z"/><path class="f2 sf" d="M56 33 Q68 28 74 37 Q78 46 69 51 Q57 54 54 45 Q52 37 56 33 Z"/><path class="f2 sf" d="M32 62 Q44 56 51 64 Q56 72 47 77 Q35 80 32 71 Q30 65 32 62 Z"/><path class="f1 sf" d="M27 32 Q35 26 43 32 Q35 30 29 34 Z M59 34 Q67 30 72 38 Q65 34 60 37 Z M35 64 Q43 59 49 65 Q42 62 36 66 Z" stroke-width="1.6"/><path class="f2 sf" d="M62 62 Q71 58 75 64 Q77 71 69 73 Q62 73 61 67 Z"/>'},
 
 {id:"ayocote-bean",cat:"legumes",rare:true,price:2,pk:"18–30 €/kg",name:{en:"Ayocote bean",fr:"Haricot ayocote"},latin:"Phaseolus coccineus",
 origin:{en:"Highland Mexico",fr:"Hauts plateaux du Mexique"},season:[],
@@ -117,7 +117,7 @@ fr:"Le plus grand orateur de Rome, Cicéron, devait son nom au pois chiche (cice
 tip:{en:"Keep the cooking water: whipped, it foams like egg white. A tin of chickpeas plus sesame paste and lemon is a five-minute feast.",
 fr:"Gardez l’eau de cuisson : fouettée, elle monte comme du blanc d’œuf. Une boîte de pois chiches, de la crème de sésame et du citron : festin en cinq minutes."},
 pairs:["sesame","lemon","cumin","garlic","spinach","tomato"],
-svg:'<path class="f1 sf" d="M40 44a8 8 0 11-1 8q-2-4 1-8z"/><path class="f1 sf" d="M56 42a8 8 0 11-1 8q-2-4 1-8z"/><path class="f1 sf" d="M48 58a8 8 0 11-1 8q-2-4 1-8z"/>'},
+svg:'<path class="f1 sf" d="M33 22 Q37 17 40 23 Q52 27 51 39 Q50 51 37 52 Q23 52 21 38 Q21 26 33 22 Z"/><path class="f3 sf" d="M74 44 Q79 42 76 48 Q81 58 72 64 Q61 70 55 60 Q51 49 60 44 Q69 40 74 44 Z"/><path class="f2 sf" d="M28 58 Q31 53 34 59 Q45 60 46 69 Q47 79 36 80 Q25 80 24 70 Q24 61 28 58 Z"/><path class="s" d="M36 27 Q31 35 34 45M68 48 Q63 54 66 62M32 62 Q28 68 31 75" stroke-width="1.5"/><path class="dot" d="M25 42q4-2 5 2t-4 3-1-5zM58 56q4-2 5 2t-4 3-1-5z"/>'},
 
 {id:"cicerchia",cat:"legumes",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Cicerchia",fr:"Gesse (pois carré)"},latin:"Lathyrus sativus",
 origin:{en:"Central Italy and the Mediterranean",fr:"Italie centrale et Méditerranée"},season:[],
@@ -127,7 +127,7 @@ fr:"La gesse renferme une neurotoxine, la β-ODAP, responsable des poussées de 
 tip:{en:"Soak 12 to 24 hours through three changes of water and throw every soak away, then simmer 90 minutes — the water carries off the toxin and the bitterness together. It never firms up the way chickpeas do: expect a loose creamy mass, and dress it while warm.",
 fr:"Faites tremper 12 à 24 heures en changeant l’eau trois fois, jetez chaque eau de trempage, puis laissez frémir 90 minutes : l’eau emporte à la fois la toxine et l’amertume. Elle ne se tient jamais comme le pois chiche — attendez-vous à une masse crémeuse et lâche, à assaisonner tiède."},
 pairs:["rosemary","olive-oil","garlic","sage","chestnut","guanciale","bay-leaf","pecorino"],
-svg:'<path class="f2 sf" d="M28 44l14-9 13 10-8 14z"/><path class="f1 sf" d="M55 33l15 7-5 15-13-11z"/><path class="f3 sf" d="M34 61l13-5 11 7-9 11-13-5z"/><path class="s" d="M40 42l6 6M60 40l4 5"/>'},
+svg:'<path class="f1 sf" d="M20 42 Q26 30 35 24 L47 33 Q41 45 37 52 Z"/><path class="f2 sf" d="M50 30 L67 22 Q75 30 72 41 L56 44 Z"/><path class="f3 sf" d="M56 56 L74 50 Q79 60 74 68 L60 71 Z"/><path class="f2 sf" d="M24 62 L42 54 Q49 62 48 72 L32 77 Z"/><path class="s" d="M35 24 37 37M67 22 62 34M74 50 67 59M42 54 38 65" stroke-width="1.5"/><path class="dot" d="M28 40q4-2 5 2t-4 3-1-5zM62 60q4-2 5 2t-4 3-1-5z"/>'},
 
 {id:"coco-de-paimpol",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Coco de Paimpol",fr:"Coco de Paimpol"},latin:"Phaseolus vulgaris",
 origin:{en:"Côtes-d’Armor, Brittany",fr:"Côtes-d’Armor, Bretagne"},season:[8,9,10],
@@ -147,7 +147,7 @@ fr:"L’Égypte la mange au petit-déjeuner en ful medames, mijotée toute la nu
 tip:{en:"Buy them already skinned if you can. Peeling a kilo of soaked dried favas by hand is an afternoon's work.",
 fr:"Achetez-les décortiquées si possible. Peler un kilo de fèves sèches trempées à la main occupe un après-midi."},
 pairs:["olive-oil","cumin","lemon","garlic","parsley","chili","escarole","onion"],
-svg:'<path class="f2 sf" d="M34 34q-6 22 4 34t18-4q4-16-6-28t-16-2z"/><path class="s" d="M40 46q6 12 8 20"/>'},
+svg:'<path class="f1 sf" d="M20 48 Q17 33 34 28 Q54 22 62 34 Q69 48 52 57 Q32 65 24 55 Q19 52 20 48 Z"/><path class="f3 sf" d="M52 64 Q64 56 73 63 Q79 70 70 75 Q58 79 53 72 Q49 67 52 64 Z"/><path class="s" d="M26 41 Q33 35 41 36M25 50 Q33 45 42 46M30 58 Q37 54 44 55" stroke-width="1.5"/><path class="dot" d="M58 28 Q67 33 66 44 Q61 37 54 32 Z"/><path class="dot" d="M68 59 Q75 61 76 67 Q71 63 66 62 Z"/>'},
 
 {id:"faba-asturiana",cat:"legumes",price:2,pk:"18–35 €/kg",name:{en:"Faba asturiana",fr:"Fabes de la Granja"},latin:"Phaseolus vulgaris",
 origin:{en:"Asturias, northern Spain",fr:"Asturies, Espagne du Nord"},season:[9,10],
@@ -187,7 +187,7 @@ fr:"Crus ou insuffisamment cuits, ils sont réellement toxiques — ils portent 
 tip:{en:"Boil hard for ten full minutes before any slow cooking. This is the one bean where the instruction is a safety rule, not a preference.",
 fr:"Faites bouillir à gros bouillons dix minutes pleines avant toute cuisson lente. C’est le seul haricot où la consigne est une règle de sécurité, non une préférence."},
 pairs:["chili","cumin","onion","tomato","garlic","paprika","rice","cilantro"],
-svg:'<path class="f1 sf" d="M32 56q4-12 16-10t14 12-12 12-18-14z"/><path class="f1 sf" d="M44 70q4-8 14-6t8 10-14 6-8-10z"/>'},
+svg:'<path class="f2 sf" d="M22 64 Q13 40 33 27 Q54 14 71 29 Q80 38 75 48 Q66 41 55 47 Q43 53 41 62 Q37 73 22 64 Z"/><path class="f1 sf" d="M40 78 Q35 68 47 62 Q60 56 70 62 Q77 67 73 73 Q65 67 57 70 Q49 74 47 80 Z"/><path class="s" d="M27 56 Q24 42 36 31" stroke-width="1.5"/><path class="dot" d="M48 50 Q55 47 58 51 Q53 55 47 53 Z"/><path class="dot" d="M56 69 Q61 67 63 70 Q59 73 55 72 Z"/>'},
 
 {id:"kinako",cat:"legumes",price:1,pk:"12–20 €/kg",name:{en:"Kinako",fr:"Kinako (farine de soja grillé)"},latin:"Glycine max",
 origin:{en:"Japan",fr:"Japon"},season:[],
@@ -217,7 +217,7 @@ fr:"Ésaü vendit son droit d’aînesse pour un plat de lentilles — le déjeu
 tip:{en:"Salt them only at the end — salted water toughens their skins. The little green ones from Le Puy hold their shape best in salads.",
 fr:"Ne les salez qu’en fin de cuisson — l’eau salée durcit leur peau. Les petites vertes du Puy tiennent le mieux en salade."},
 pairs:["cumin","bay-leaf","carrot","pork","yogurt","cilantro","turmeric"],
-svg:'<path class="f2 sf" d="M36 46a5.5 5.5 0 100 .1zM52 42a5.5 5.5 0 100 .1zM62 52a5.5 5.5 0 100 .1zM42 58a5.5 5.5 0 100 .1zM54 62a5.5 5.5 0 100 .1zM34 64a5.5 5.5 0 100 .1z"/>'},
+svg:'<path class="f1 sf" d="M19 70 Q21 58 30 55 Q33 46 42 48 Q48 40 56 46 Q66 45 69 55 Q78 59 77 70 Q48 78 19 70 Z"/><path class="f2 sf" d="M25 64 Q26 57 33 57 Q40 57 40 64 Q40 70 33 70 Q25 70 25 64 Z M42 60 Q43 53 50 53 Q57 53 57 60 Q57 66 50 66 Q42 66 42 60 Z M59 64 Q60 57 67 57 Q74 57 74 64 Q74 70 67 70 Q59 70 59 64 Z"/><path class="f3 sf" d="M34 51 Q35 45 41 45 Q47 45 47 51 Q47 56 41 56 Q34 56 34 51 Z"/><path class="s" d="M20 71 Q48 79 78 70"/><path class="f2 sf" d="M21 72 Q29 66 37 72 Q29 77 21 72 Z M60 73 Q68 67 77 72 Q68 78 60 73 Z"/>'},
 
 {id:"lupin-flour",cat:"legumes",price:2,pk:"8–16 €/kg",name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
@@ -267,7 +267,7 @@ fr:"Les fils sont de l’acide polyglutamique, filé par Bacillus subtilis, une 
 tip:{en:"Beat the beans on their own thirty or fifty times before the mustard and the tare go in — liquid added first stops the threads forming. Over rice just off the boil, never scalding.",
 fr:"Battez les fèves seules trente à cinquante fois avant d’ajouter la moutarde et la sauce : versé en premier, le liquide empêche les fils de se former. Sur du riz à peine tiédi, jamais brûlant."},
 pairs:["rice","karashi","negi","soy-sauce","egg","nori","kimchi"],
-svg:'<path class="f1 sf" d="M26 52h44q-3 20-22 20T26 52z"/><ellipse class="f2 sf" cx="40" cy="56" rx="6" ry="4.5"/><ellipse class="f2 sf" cx="54" cy="58" rx="6" ry="4.5"/><path class="s" d="M40 50q1-14 10-22M54 52q0-12 8-18"/>'},
+svg:'<path class="f1 sf" d="M22 55 Q48 60 74 55 L70 76 Q48 81 26 76 Z"/><path class="s" d="M22 55 Q48 61 74 55" stroke-width="2"/><path class="f2 sf" d="M28 55 Q33 45 41 49 Q48 54 39 58 Z M42 51 Q48 42 55 47 Q61 53 51 56 Z M56 53 Q62 45 68 50 Q73 56 64 58 Z"/><path class="s" d="M35 51 Q46 44 55 30M46 48 Q54 42 58 31M59 51 Q60 42 63 34" stroke-width="1.2"/><path class="s" d="M52 33 Q62 27 71 21M56 38 Q66 32 75 27" stroke-width="2.4"/>'},
 
 {id:"pigeon-pea",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Pigeon pea (toor dal)",fr:"Pois d’Angole (toor dal)"},latin:"Cajanus cajan",
 origin:{en:"Indian subcontinent",fr:"Sous-continent indien"},season:[],
@@ -297,7 +297,7 @@ fr:"Le premier légume français à recevoir une AOC, en 1996. Elle pousse sur s
 tip:{en:"Never salt the cooking water at the start. Salt firms the skins and they take twice as long to soften.",
 fr:"Ne salez jamais l’eau de cuisson au départ. Le sel raffermit les peaux et double le temps d’attendrissement."},
 pairs:["sherry-vinegar","shallot","carrot","bay-leaf","duck","mustard","parsley","lard"],
-svg:'<circle class="f2 sf" cx="40" cy="52" r="7"/><circle class="f2 sf" cx="56" cy="56" r="7"/><circle class="f2 sf" cx="47" cy="66" r="7"/><path class="s" d="M36 52h8M52 56h8"/>'},
+svg:'<path class="f2 sf" d="M21 36 Q22 24 34 23 Q47 23 47 36 Q47 49 34 49 Q21 48 21 36 Z"/><path class="f1 sf" d="M52 44 Q53 32 65 31 Q77 31 77 44 Q76 56 64 55 Q52 56 52 44 Z"/><path class="f2 sf" d="M27 69 Q40 58 61 65 Q48 79 27 69 Z"/><path class="s" d="M28 69 Q43 64 60 65" stroke-width="1.5"/><path class="dot" d="M28 32q4-3 6 1t-4 4-2-5zM38 41q4-3 6 1t-4 4-2-5zM37 28q3-2 4 1t-3 3-1-4zM60 37q4-3 6 1t-4 4-2-5zM69 47q4-3 6 1t-4 4-2-5zM59 50q3-2 4 1t-3 3-1-4z"/>'},
 
 {id:"red-lentil",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Red lentil",fr:"Lentille corail"},latin:"Lens culinaris",
 origin:{en:"Near East & South Asia",fr:"Proche-Orient & Asie du Sud"},season:[],
@@ -367,7 +367,7 @@ fr:"Un pois de champ séché, décortiqué et fendu le long de sa suture naturel
 tip:{en:"It foams enormously at first boil. Skim it once and the soup stays clear instead of turning grey.",
 fr:"Il mousse énormément à la première ébullition. Écumez une fois et la soupe reste nette au lieu de grisonner."},
 pairs:["lard","onion","carrot","bay-leaf","mint","thyme","black-pepper","butter"],
-svg:'<path class="f2 sf" d="M32 54a8 8 0 0 1 16 0z"/><path class="f2 sf" d="M48 60a8 8 0 0 1 16 0z"/><path class="f2 sf" d="M38 68a8 8 0 0 1 16 0z"/>'},
+svg:'<path class="f1 sf" d="M44 22 Q47 30 44 34 Q47 38 44 46 Q26 46 25 34 Q26 22 44 22 Z"/><path class="f2 sf" d="M52 22 Q49 30 52 34 Q49 38 52 46 Q70 46 71 34 Q70 22 52 22 Z"/><path class="f2 sf" d="M22 62 Q30 59 34 62 Q38 59 46 62 Q46 76 34 76 Q22 75 22 62 Z"/><path class="f1 sf" d="M52 64 Q58 61 62 64 Q66 61 74 64 Q74 76 62 76 Q52 76 52 64 Z"/><path class="s" d="M41 24 Q44 34 41 44M55 24 Q52 34 55 44M25 64 Q34 61 43 64M55 66 Q62 63 71 66" stroke-width="1.5"/>'},
 
 {id:"haricot-tarbais",cat:"legumes",price:2,pk:"15–28 €/kg",name:{en:"Tarbais bean",fr:"Haricot tarbais"},latin:"Phaseolus vulgaris",
 origin:{en:"Hautes-Pyrénées, France",fr:"Hautes-Pyrénées, France"},season:[],
@@ -377,7 +377,7 @@ fr:"Traditionnellement cultivé grimpant sur des tiges de maïs, qui servent de 
 tip:{en:"Soak twelve hours, then start it in cold water and bring it up slowly. Dropping beans into boiling water splits every skin.",
 fr:"Trempez douze heures, puis démarrez à l’eau froide en montant lentement. Jeter des haricots dans l’eau bouillante fend toutes les peaux."},
 pairs:["duck-fat","garlic","thyme","lard","onion","tomato","bay-leaf","carrot"],
-svg:'<path class="f3 sf" d="M34 32q-8 24 4 38t20-6q4-18-6-30t-18-2z"/><path class="s" d="M40 44q6 14 8 22"/>'},
+svg:'<path class="f2 sf" d="M20 60 Q24 38 44 28 Q66 18 78 34 Q65 28 47 36 Q28 45 24 62 Z"/><path class="f1 sf" d="M18 62 Q30 78 50 76 Q72 74 80 56 Q70 68 48 69 Q26 71 18 62 Z"/><path class="f1 sf" d="M26 62 Q30 53 38 55 Q46 57 44 65 Q41 72 33 71 Q25 69 26 62 Z"/><path class="f3 sf" d="M45 64 Q49 55 58 57 Q66 59 63 67 Q60 74 51 73 Q43 71 45 64 Z"/><path class="f1 sf" d="M63 57 Q67 49 75 51 Q82 54 79 61 Q75 67 68 65 Q62 63 63 57 Z"/><path class="s" d="M78 35 Q80 31 79 28M19 61 Q17 64 17 67" stroke-width="2"/>'},
 
 {id:"tempeh",cat:"legumes",price:1,pk:"12–20 €/kg",name:{en:"Tempeh",fr:"Tempeh"},latin:"Rhizopus oligosporus",
 origin:{en:"Java, Indonesia",fr:"Java, Indonésie"},season:[],
@@ -417,7 +417,7 @@ fr:"Le haricot arriva des Amériques dans les années 1530 ; Catherine de Médic
 tip:{en:"Cook them gently — a hard boil bursts their jackets — and always with a bay leaf and a whole garlic clove. Their broth is liquid silver: keep it.",
 fr:"Cuisez-les doucement — un gros bouillon fait éclater leur peau — et toujours avec du laurier et une gousse d’ail entière. Leur bouillon est de l’argent liquide : gardez-le."},
 pairs:["sage","tomato","rosemary","pork","bay-leaf","olive-oil","onion"],
-svg:'<path class="f1 sf" d="M34 48q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(-14 42 52)"/><path class="f1 sf" d="M50 52q2-8 10-6 6 2 6 8t-8 8q-8 0-8-10z" transform="rotate(10 58 56)"/>'},
+svg:'<path class="f1 sf" d="M22 44 Q20 32 34 28 Q48 25 50 34 Q52 44 38 48 Q24 52 22 44 Z"/><path class="f3 sf" d="M54 30 Q66 24 74 32 Q80 40 70 44 Q58 47 54 40 Q51 34 54 30 Z"/><path class="f2 sf" d="M24 62 Q28 54 40 56 Q52 58 50 66 Q48 74 36 74 Q24 72 24 62 Z"/><path class="f1 sf" d="M56 58 Q68 54 74 60 Q80 68 70 72 Q58 76 55 68 Q53 62 56 58 Z"/><path class="dot" d="M32 46q4-2 4 1t-4 3-1-4zM64 44q4-2 4 1t-4 3-1-4zM33 59q4-2 4 1t-4 3-1-4zM63 72q4-2 4 1t-4 3-1-4z"/>'},
 
 {id:"yuba",cat:"legumes",price:2,pk:"25–45 €/kg",name:{en:"Yuba",fr:"Yuba (peau de soja)"},latin:"Glycine max",
 origin:{en:"Temple kitchens of Kyoto and Nikko, Japan",fr:"Cuisines de temple de Kyoto et Nikko, Japon"},season:[],

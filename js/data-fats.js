@@ -107,7 +107,7 @@ fr:"Le beurre brûle vers 150 °C à cause de ses solides du lait, non de sa mat
 tip:{en:"Melt gently and do not let it colour — that is the difference from ghee. Skim the foam, pour off the gold, leave the milky base.",
 fr:"Fondez doucement sans laisser colorer — c’est ce qui le distingue du ghee. Écumez la mousse, versez l’or, laissez le fond laiteux."},
 pairs:["shallot","lemon","thyme","garlic","scallop","black-pepper","parsley","turbot"],
-svg:'<path class="f3 sf" d="M36 72V48q12-5 24 0v24z"/><path class="s" d="M36 48q12 5 24 0M36 58h24"/>'},
+svg:'<path class="f1 sf" d="M22 42 L26 72 Q28 79 48 79 Q68 79 70 72 L74 42 Z"/><path class="s" d="M22 42 Q48 51 74 42M73 46 Q80 45 82 40M52 31 Q42 27 33 23"/><path class="f2 sf" d="M29 45 Q35 39 42 44 Q48 38 54 44 Q60 39 66 45 Q57 51 44 51 Q33 51 29 45 Z"/><path class="dot" d="M34 68q4-3 6 1t-4 4-2-5zM45 72q4-3 6 1t-4 4-2-5zM56 68q4-3 6 1t-4 4-2-5z"/><path class="f3 sf" d="M50 29 Q58 22 65 28 Q70 34 61 38 Q51 40 50 34 Z"/>'},
 
 {id:"cocoa-butter",cat:"fats",price:2,pk:"25–45 €/kg",name:{en:"Cocoa butter",fr:"Beurre de cacao"},latin:"Theobroma cacao",
 origin:{en:"Cacao pod, the pressed fat",fr:"Cabosse de cacao, la matière grasse pressée"},season:[],
@@ -437,7 +437,7 @@ fr:"La graisse dure prise autour des rognons de bœuf, dont le point de fusion d
 tip:{en:"It must go in cold and grated, never melted. Warm suet blends into the flour and the whole point is lost.",
 fr:"Elle doit entrer froide et râpée, jamais fondue. Tiède, elle se fond dans la farine et tout l’intérêt disparaît."},
 pairs:["flour-t65","beef","onion","black-pepper","thyme","raisin","cinnamon","bay-leaf"],
-svg:'<path class="f3 sf" d="M34 70V48h28v22z"/><path class="s" d="M40 48v22M48 48v22M56 48v22"/>'},
+svg:'<path class="f1 sf" d="M21 52 Q19 40 30 36 Q34 27 45 29 Q56 23 64 32 Q76 36 74 48 Q77 59 67 64 Q60 72 49 68 Q37 71 30 62 Q20 61 21 52 Z"/><path class="f2 sf" d="M74 48 Q77 59 67 64 Q60 72 49 68 Q56 58 57 46 Q68 44 74 48 Z"/><path class="s" d="M32 39 Q38 47 34 57" stroke-width="1.5"/><path class="f2 sf" d="M67 67 L75 65 L77 71 L70 74 L67 71 Z M42 75 L47 71 L51 76 L45 79 Z"/><path class="f3 sf" d="M55 71 L63 69 L65 76 L57 78 Z"/>'},
 
 {id:"sunflower-oil",cat:"fats",price:1,pk:"2–5 €/L",name:{en:"Sunflower oil",fr:"Huile de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Russia & Ukraine",fr:"Russie & Ukraine"},season:[],

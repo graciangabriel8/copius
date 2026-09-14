@@ -117,7 +117,7 @@ fr:"Une seule moisissure fait toute la famille : Penicillium roqueforti, que l�
 tip:{en:"Its salt and power beg for sweetness: pears, figs, honey, sweet wines. Crumbled over a hot steak, it becomes an instant sauce.",
 fr:"Son sel et sa puissance appellent le sucré : poires, figues, miel, vins doux. Émietté sur un steak chaud, il devient une sauce instantanée."},
 pairs:["pear","walnut","honey","fig","celery","grape","beef"],
-svg:'<path class="f1 sf" d="M30 62l18-30 18 30q-18 8-36 0z"/><path class="f3" d="M44 48a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M50 56a2 2 0 104 0 2 2 0 10-4 0M40 58a2 2 0 104 0 2 2 0 10-4 0M47 62a1.7 1.7 0 103.4 0 1.7 1.7 0 10-3.4 0"/>'},
+svg:'<path class="f1 sf" d="M48 22q4 0 6 4l20 40q2 4-2 5-24 6-48 0-4-1-2-5l20-40q2-4 6-4z"/><path class="f2 sf" d="M22 66q26 8 52 0l-2 5q-24 6-48 0z"/><path class="s" d="M38 40q-3 8 1 14M48 32q4 10 0 18M58 46q-3 7 1 12" stroke-width="2"/><path class="s" d="M33 57q-2 5 1 8M63 57q-2 4 1 7" stroke-width="1.5"/><path class="dot" d="M42.6 60 Q42.6 57.2 45 57.6 Q47.7 57.6 47.4 60.2 Q47.4 62.4 44.8 62.5 Q42.4 62.3 42.6 60zM51.8 44 Q51.8 41.5 54 41.8 Q56.5 41.8 56.2 44.2 Q56.2 46.2 53.8 46.3 Q51.6 46.1 51.8 44zM31.9 48 Q31.9 45.6 34 45.9 Q36.4 45.9 36.1 48.2 Q36.1 50.1 33.8 50.2 Q31.7 50 31.9 48zM64 62 Q64 59.7 66 60 Q68.2 60 68 62.2 Q68 64 65.8 64.1 Q63.8 63.9 64 62zM24.2 62 Q24.2 59.9 26 60.2 Q28 60.2 27.8 62.2 Q27.8 63.8 25.8 63.9 Q24 63.7 24.2 62z"/>'},
 
 {id:"stilton",cat:"dairy",price:2,pk:"28–40 €/kg",name:{en:"Blue Stilton",fr:"Stilton"},latin:"Blue Stilton PDO",
 origin:{en:"Derbyshire, Leicestershire, Nottinghamshire",fr:"Derbyshire, Leicestershire, Nottinghamshire"},season:[],
@@ -207,7 +207,7 @@ fr:"Le liquide clair resté dans la baratte une fois le beurre pris — la Breta
 tip:{en:"It tenderises meat as well as it raises cakes. An overnight soak is the classic before frying chicken.",
 fr:"Il attendrit la viande aussi bien qu’il fait lever les gâteaux. Une nuit de trempage est le classique avant de frire un poulet."},
 pairs:["buckwheat","butter","honey","lemon","chives","dill","black-pepper","oats"],
-svg:'<path class="f3 sf" d="M36 68V40h24v28z"/><path class="s" d="M36 40h24M36 50h24"/><path class="s" d="M42 58v6M54 58v6"/>'},
+svg:'<path class="f1 sf" d="M20 36q4-8 10-6 22 8 42 2 4 22 2 34-2 8-23 8-21 0-23-8-3-14 0-30z"/><path class="f1 sf" d="M20 33q-7 3-5 9 6 3 10-3z"/><path class="f2 sf" d="M27 33q10-6 22-5 13 1 22 4-10 8-22 8-12 0-22-7z"/><path class="s" d="M72 40q10 2 9 12-1 9-9 10"/><path class="s" d="M28 54q21 6 41 0" stroke-width="1.5"/><path class="dot" d="M17 45q4 5 2 9-4 2-5-2 0-4 3-7z"/>'},
 
 {id:"cabrales",cat:"dairy",price:2,pk:"30–45 €/kg",name:{en:"Cabrales",fr:"Cabrales"},latin:"Cabrales DOP",
 origin:{en:"Picos de Europa, Asturias",fr:"Picos de Europa, Asturies"},season:[],
@@ -267,7 +267,7 @@ fr:"Pline l’Ancien vantait il y a deux mille ans un fromage de ces montagnes, 
 tip:{en:"Young Cantal is what makes truffade and aligot stretch. Old Cantal will not stretch at all — buy by age, not by name.",
 fr:"C’est le cantal jeune qui fait filer la truffade et l’aligot. Le vieux ne file pas du tout — achetez selon l’âge, pas selon le nom."},
 pairs:["potato","garlic","butter","black-pepper","onion","walnut","apple","thyme"],
-svg:'<path class="f2 sf" d="M24 68V38l24-10 24 10v30z"/><path class="s" d="M24 38l24 10 24-10M48 48v20"/>'},
+svg:'<path class="f2 sf" d="M22 35q5-5 12-7 6-5 14-6 9 1 15 6 8 2 11 7-13 11-26 15-14-5-26-15z"/><path class="f1 sf" d="M22 35l26 15v32q-14-6-26-14z"/><path class="f1 sf" d="M48 50l26-15v32q-12 9-26 15z"/><path class="f2 sf" d="M22 35l26 15 26-15v7l-26 15-26-15z"/><path class="s" d="M34 62v16M62 60v14" stroke-width="1.5"/><path class="dot" d="M29.8 33 Q29.8 30.5 32 30.8 Q34.5 30.8 34.2 33.2 Q34.2 35.2 31.8 35.3 Q29.6 35.1 29.8 33zM45 28 Q45 25.7 47 26 Q49.2 26 49 28.2 Q49 30 46.8 30.1 Q44.8 29.9 45 28zM58.9 34 Q58.9 31.6 61 31.9 Q63.4 31.9 63.1 34.2 Q63.1 36.1 60.8 36.2 Q58.7 36 58.9 34zM45.4 40 Q45.4 38.2 47 38.4 Q48.8 38.4 48.6 40.2 Q48.6 41.6 46.8 41.7 Q45.2 41.5 45.4 40z"/>'},
 
 {id:"castelmagno",cat:"dairy",rare:true,price:3,pk:"35–55 €/kg",name:{en:"Castelmagno",fr:"Castelmagno"},latin:"Castelmagno DOP",
 origin:{en:"Valle Grana, Piedmont",fr:"Val Grana, Piémont"},season:[],
@@ -307,7 +307,7 @@ fr:"Un haut cylindre blanc qui conserve un cœur crayeux, légèrement acidulé,
 tip:{en:"Buy it young if you want the chalk. Fully ripe it is uniformly soft, and the contrast that makes it interesting is gone.",
 fr:"Achetez-le jeune si vous voulez le crayeux. À pleine maturité il est uniformément fondant, et le contraste qui fait son intérêt a disparu."},
 pairs:["strawberry","cream","walnut","apple","chives","black-pepper","grape","butter"],
-svg:'<path class="f3 sf" d="M32 68V40q16-8 32 0v28z"/><path class="s" d="M32 40q16 8 32 0"/><path class="s" d="M40 50v14M56 50v14"/>'},
+svg:'<path class="f1 sf" d="M18 38v24q4 12 30 12 26 0 30-12V38q-12 11-30 11-18 0-30-11z"/><path class="f1 sf" d="M18 38q12-13 30-13 18 0 30 13-12 11-30 11-18 0-30-11z"/><path class="f2 sf" d="M43 49l9 2 10-5-7 24z"/><path class="s" d="M52 52q1 8 3 14" stroke-width="1.5"/><path class="dot" d="M24.2 48 Q24.2 45.9 26 46.2 Q28 46.2 27.8 48.2 Q27.8 49.8 25.8 49.9 Q24 49.7 24.2 48zM29.3 62 Q29.3 60 31 60.3 Q32.9 60.3 32.7 62.2 Q32.7 63.7 30.8 63.8 Q29.1 63.6 29.3 62zM22.5 38 Q22.5 36.3 24 36.5 Q25.7 36.5 25.5 38.1 Q25.5 39.5 23.9 39.6 Q22.4 39.4 22.5 38zM68.3 50 Q68.3 48 70 48.3 Q71.9 48.3 71.7 50.2 Q71.7 51.7 69.8 51.8 Q68.1 51.6 68.3 50zM36.5 32 Q36.5 30.3 38 30.5 Q39.7 30.5 39.5 32.1 Q39.5 33.5 37.9 33.6 Q36.4 33.4 36.5 32z"/>'},
 
 {id:"charolais",cat:"dairy",rare:true,price:2,pk:"7–12 €/pièce",name:{en:"Charolais",fr:"Charolais"},latin:"Charolais AOP",
 origin:{en:"Charolais bocage, Saône-et-Loire",fr:"Bocage charolais, Saône-et-Loire"},season:[5,6,7,8,9,10],
@@ -327,7 +327,7 @@ fr:"Cheddar est un verbe avant d’être un lieu : cheddariser, c’est empiler 
 tip:{en:"Age is everything here. Anything under a year is a sandwich cheese; past two it develops crystals and a genuine sharpness.",
 fr:"Tout est dans l’âge. En dessous d’un an c’est un fromage à sandwich ; passé deux ans il développe des cristaux et une vraie vivacité."},
 pairs:["apple","onion","mustard","potato","black-pepper","chives","flour-t65","butter"],
-svg:'<path class="f2 sf" d="M26 66V40h44v26z"/><path class="s" d="M26 40h44M26 53h44"/>'},
+svg:'<path class="f1 sf" d="M20 36q14-9 30-14 16 5 28 12-14 9-30 14-16-5-28-12z"/><path class="f2 sf" d="M20 36l28 12v20q-16-5-28-12z"/><path class="f1 sf" d="M48 48l30-14v20q-14 9-30 14z"/><path class="s" d="M29 44q2 8 0 14M38 48q2 8 0 13" stroke-width="1.5"/><path class="f1 sf" d="M30 68q12-7 24-9 10 3 18 7v5q-12 7-24 9-10-3-18-7z"/>'},
 
 {id:"chevrotin",cat:"dairy",rare:true,price:2,pk:"30–45 €/kg",name:{en:"Chevrotin",fr:"Chevrotin"},latin:"Chevrotin AOP",
 origin:{en:"Aravis, Haute-Savoie",fr:"Aravis, Haute-Savoie"},season:[6,7,8,9,10],
@@ -347,7 +347,7 @@ fr:"Fabriqué en baratte tournante lente à partir d’une crème laissée matur
 tip:{en:"Keep it for spreading and for finishing sauces, where you can actually taste it. Frying with it is a waste of money.",
 fr:"Gardez-le pour la tartine et pour monter les sauces, là où on le goûte vraiment. Le cuire à la poêle est un gâchis."},
 pairs:["flour-t65","radish","sardine","potato","honey","chives","asparagus","comte"],
-svg:'<path class="f3 sf" d="M32 68V52h32v16z"/><path class="s" d="M32 58h32"/><path class="s" d="M40 52v16M56 52v16"/>'},
+svg:'<path class="f1 sf" d="M19 41q13-7 26-13 17 5 33 10-13 8-26 14-17-5-33-11z"/><path class="f3 sf" d="M19 41l33 11v16q-17-6-33-11z"/><path class="f2 sf" d="M52 52l26-14v16q-13 9-26 14z"/><path class="s" d="M24 40q13 5 26 9M31 36q13 5 26 9M38 33q13 5 26 9" stroke-width="2"/><path class="f2 sf" d="M24 72q7-5 14-6 8 1 14 4-7 5-14 7-8-2-14-5z"/>'},
 
 {id:"comte",cat:"dairy",price:2,pk:"20–35 €/kg",name:{en:"Comté",fr:"Comté"},latin:"Gruyère de Comté AOP",
 origin:{en:"Jura massif, France",fr:"Massif du Jura, France"},season:[],
@@ -397,7 +397,7 @@ fr:"De la crème laissée mûrir avec ses propres bactéries lactiques jusqu’�
 tip:{en:"It is the safe cream for anything acidic — lemon, wine, tomato. Add ordinary cream to those and it will split.",
 fr:"C’est la crème sûre pour tout ce qui est acide — citron, vin, tomate. Une crème ordinaire y trancherait."},
 pairs:["shallot","chives","lemon","mushroom","potato","dill","salmon","black-pepper"],
-svg:'<path class="f3 sf" d="M34 66V44h28v22z"/><path class="s" d="M34 44q14-8 28 0"/><path class="s" d="M38 56q10 4 20 0"/>'},
+svg:'<path class="f1 sf" d="M22 48q-3 16 1 24 3 7 25 7 22 0 25-7 4-8 1-24z"/><path class="f2 sf" d="M18 46q2-16 30-16 28 0 30 16-4 6-10 2-4 5-10 1-5 5-10 0-5 5-10-1-6 4-10-2z"/><path class="s" d="M24 43q24 9 48 0"/><path class="s" d="M34 34q-2 5-4 9M48 31v10M62 34q2 5 4 9" stroke-width="1.5"/><path class="s" d="M25 64q23 6 46 0" stroke-width="1.5"/>'},
 
 {id:"egg",cat:"dairy",price:1,pk:"0,30–0,60 €/pièce",name:{en:"Egg",fr:"Œuf"},latin:"Ovum",
 origin:{en:"Domesticated in Southeast Asia",fr:"Domestiqué en Asie du Sud-Est"},season:[],
@@ -407,7 +407,7 @@ fr:"La légende de cuisine veut que les cent plis de la toque d’un chef repré
 tip:{en:"Old eggs peel easily but poach raggedly; fresh ones hold together in water. Know your egg’s age and give it the job it deserves.",
 fr:"Les œufs vieux s’écalent bien mais pochent mal ; les frais se tiennent dans l’eau. Connaissez l’âge de votre œuf et donnez-lui l’emploi qu’il mérite."},
 pairs:["butter","chives","asparagus","truffle","spinach","mustard","black-pepper","tarragon"],
-svg:'<path class="f1 sf" d="M48 28q16 14 16 30a16 16 0 01-32 0q0-16 16-30z"/><circle class="f2 sf" cx="48" cy="58" r="7"/>'},
+svg:'<path class="f1 sf" d="M32 22q14 8 15 22 0 14-15 15-14-1-15-15 1-14 15-22z"/><path class="s" d="M23 34q-4 9-2 16" stroke-width="1.5"/><path class="f1 sf" d="M40 68q2-10 12-12 8-4 14 2 8 2 8 10-1 8-11 10-14 2-16-10z"/><path class="f2 sf" d="M49 66q0-9 9-10 10 1 10 10 0 8-10 8-9 0-9-8z"/><path class="dot" d="M53.1 62 Q53.1 59.8 55 60.1 Q57.1 60.1 56.9 62.2 Q56.9 63.9 54.8 64 Q52.9 63.8 53.1 62z"/>'},
 
 {id:"emmentaler",cat:"dairy",price:2,pk:"20–28 €/kg",name:{en:"Emmentaler",fr:"Emmental suisse (Emmentaler AOP)"},latin:"Emmentaler AOP",
 origin:{en:"Emmental, canton of Bern",fr:"Emmental, canton de Berne"},season:[],
@@ -427,7 +427,7 @@ fr:"Dans l’Odyssée, le Cyclope fait cailler du lait de brebis dans des panier
 tip:{en:"Rinse it and let it sit in fresh water for ten minutes if it is fiercely salty. Never refrigerate it out of its brine — it dries to chalk.",
 fr:"Rincez-la et laissez-la dix minutes dans l’eau claire si elle est trop salée. Ne la gardez jamais hors de sa saumure au froid — elle se dessèche en craie."},
 pairs:["tomato","cucumber","olive","olive-oil","oregano","watermelon","mint","red-onion"],
-svg:'<path class="f3 sf" d="M28 62V42h40v20z"/><path class="s" d="M28 42h40M28 52h40"/><circle class="dot" cx="38" cy="47" r="1.4"/><circle class="dot" cx="56" cy="57" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M18 40q12-11 28-12 5 4 9 0 12 3 21 12-13 9-29 11-16-2-29-11z"/><path class="f2 sf" d="M18 40l29 11v23q-16-3-29-12z"/><path class="f1 sf" d="M47 51l29-11v10l-6 4 6 4v4q-13 9-29 12z"/><path class="f2 sf" d="M54 72l8-5 5 6-7 5zM66 64l7-3 2 6-6 3z"/><path class="dot" d="M26.2 50 Q26.2 47.9 28 48.2 Q30 48.2 29.8 50.2 Q29.8 51.8 27.8 51.9 Q26 51.7 26.2 50zM36.4 62 Q36.4 60.2 38 60.4 Q39.8 60.4 39.6 62.2 Q39.6 63.6 37.8 63.7 Q36.2 63.5 36.4 62zM58.3 58 Q58.3 56 60 56.3 Q61.9 56.3 61.7 58.2 Q61.7 59.7 59.8 59.8 Q58.1 59.6 58.3 58zM32.5 36 Q32.5 34.3 34 34.5 Q35.7 34.5 35.5 36.1 Q35.5 37.5 33.9 37.6 Q32.4 37.4 32.5 36z"/>'},
 
 {id:"fiore-sardo",cat:"dairy",price:2,pk:"28–40 €/kg",name:{en:"Fiore Sardo",fr:"Fiore Sardo"},latin:"Fiore Sardo DOP",
 origin:{en:"Barbagia, Sardinia",fr:"Barbagia, Sardaigne"},season:[],
@@ -487,7 +487,7 @@ fr:"Du caillé frais égoutté mais jamais affiné, jamais salé, jamais mûri �
 tip:{en:"Whip it with a fork before serving and it lightens completely. Sweet with honey, savoury with shallot and herbs — it goes either way.",
 fr:"Fouettez-le à la fourchette avant de servir, il s’allège complètement. Sucré au miel, salé à l’échalote et aux herbes — il va des deux côtés."},
 pairs:["honey","strawberry","chives","shallot","raspberry","cream","black-pepper","dill"],
-svg:'<path class="f3 sf" d="M34 66V46h28v20z"/><path class="s" d="M34 46q14-6 28 0"/><circle class="dot" cx="42" cy="56" r="1.4"/><circle class="dot" cx="54" cy="58" r="1.4"/>'},
+svg:'<path class="f1 sf" d="M22 40q0-9 9-13 5-6 13-3 11-3 15 5 10 4 11 11-22 9-48 0z"/><path class="f2 sf" d="M22 40h52l-6 28q-4 6-22 6-18 0-22-6z"/><path class="s" d="M24 48q22 7 46 0" stroke-width="1.5"/><path class="dot" d="M30 56 Q30 53.7 32 54 Q34.2 54 34 56.2 Q34 58 31.8 58.1 Q29.8 57.9 30 56zM42 59 Q42 56.7 44 57 Q46.2 57 46 59.2 Q46 61 43.8 61.1 Q41.8 60.9 42 59zM54 59 Q54 56.7 56 57 Q58.2 57 58 59.2 Q58 61 55.8 61.1 Q53.8 60.9 54 59zM64 55 Q64 52.7 66 53 Q68.2 53 68 55.2 Q68 57 65.8 57.1 Q63.8 56.9 64 55zM36.2 68 Q36.2 65.9 38 66.2 Q40 66.2 39.8 68.2 Q39.8 69.8 37.8 69.9 Q36 69.7 36.2 68zM51.2 69 Q51.2 66.9 53 67.2 Q55 67.2 54.8 69.2 Q54.8 70.8 52.8 70.9 Q51 70.7 51.2 69z"/><path class="s" d="M26 78q22 7 44 0"/>'},
 
 {id:"gaperon",cat:"dairy",price:2,pk:"20–30 €/kg",name:{en:"Gaperon",fr:"Gaperon"},latin:"Gaperon d’Auvergne",
 origin:{en:"Limagne, Auvergne",fr:"Limagne, Auvergne"},season:[],
@@ -517,7 +517,7 @@ fr:"On a trait les chèvres avant les vaches — c’est peut-être la plus anci
 tip:{en:"Young and fresh, it loves herbs and olive oil; aged and firm, honey and walnuts. Ten minutes under the grill on bread, and any salad becomes lunch.",
 fr:"Jeune et frais, il aime les herbes et l’huile d’olive ; affiné et ferme, le miel et les noix. Dix minutes sous le gril sur du pain, et toute salade devient déjeuner."},
 pairs:["beetroot","fig","honey","thyme","walnut","spinach"],
-svg:'<path class="f1 sf" d="M34 44h28v20H34z" rx="4"/><ellipse class="f1 sf" cx="48" cy="44" rx="14" ry="5"/><ellipse class="f2 sf" cx="48" cy="64" rx="14" ry="5"/><path class="s" d="M34 44v20M62 44v20" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M24 34h30q10 1 10 15 0 14-10 15h-30q-10-1-10-15 0-14 10-15z"/><path class="f2 sf" d="M54 34q10 1 10 15 0 14-10 15 7-4 7-15 0-11-7-15z"/><path class="s" d="M30 37q-4 6-1 12 3 6 0 13M40 36q-4 6-1 13 3 6 0 12M50 36q-4 6-1 13" stroke-width="1.5"/><path class="f1 sf" d="M42 74q6-7 15-6 11 1 13 7-6 7-15 6-11-1-13-7z"/><path class="s" d="M49 74q4-3 9-2" stroke-width="1.5"/>'},
 
 {id:"gorgonzola-dolce",cat:"dairy",price:2,pk:"16–24 €/kg",name:{en:"Gorgonzola dolce",fr:"Gorgonzola dolce"},latin:"Gorgonzola DOP dolce",
 origin:{en:"Lombardy & Piedmont, Italy",fr:"Lombardie & Piémont, Italie"},season:[],
@@ -577,7 +577,7 @@ fr:"Il résiste à la poêle brûlante parce que le caillé est cuit dans le pet
 tip:{en:"Dry-fry it, no oil, in a very hot pan and do not move it until it releases. Eat it hot; cold halloumi turns to rubber.",
 fr:"Poêlez-le à sec, sans huile, dans une poêle très chaude, sans le bouger tant qu’il n’accroche plus. Mangez-le chaud ; froid, il devient caoutchouteux."},
 pairs:["mint","lemon","watermelon","olive-oil","oregano","tomato","honey","cucumber"],
-svg:'<path class="f2 sf" d="M28 62V42h40v20z"/><path class="s" d="M34 42v20M46 42v20M58 42v20"/><path class="s" d="M28 52h40"/>'},
+svg:'<path class="f2 sf" d="M22 58q14-10 32-14 14 4 26 10v6q-14 10-32 14-14-4-26-10z"/><path class="f1 sf" d="M18 44q14-10 32-14 14 4 26 10v5q-14 10-32 14-14-4-26-10z"/><path class="s" d="M26 47l31-13M34 50l31-13M42 53l30-13"/><path class="s" d="M50 64l22-9M56 69l17-7"/><path class="s" d="M18 49q14 10 32 14" stroke-width="1.5"/>'},
 
 {id:"idiazabal",cat:"dairy",price:2,pk:"30–45 €/kg",name:{en:"Idiazábal",fr:"Idiazábal"},latin:"Idiazabal DOP",
 origin:{en:"Basque Country & Navarre",fr:"Pays basque & Navarre"},season:[],
@@ -657,7 +657,7 @@ fr:"Le zigzag sur son flanc est un fossile. Les meules étaient jadis pressées 
 tip:{en:"Cut it in thin triangles from the wedge, never in cubes. With quince paste and a few almonds it is a finished course.",
 fr:"Coupez-le en triangles fins depuis la pointe, jamais en cubes. Avec de la pâte de coing et quelques amandes, c’est un plat fini."},
 pairs:["quince","almond","olive-oil","fig","honey","iberico-ham","grape","paprika"],
-svg:'<path class="f2 sf" d="M24 66q-3-13 0-26h48q3 13 0 26z"/><path class="s" d="M24 44l8 6-8 6M40 44l8 6-8 6M56 44l8 6-8 6"/>'},
+svg:'<path class="f1 sf" d="M18 58q16-28 40-38 14 12 18 32 2 18-14 32-28-8-44-26z"/><path class="f2 sf" d="M58 20q14 12 18 32 2 18-14 32l-8-5q15-12 13-28-2-15-11-25z"/><path class="s" d="M60 25l6 6-5 6 7 6-5 7 6 6-5 6-4 5" stroke-width="1.5"/><path class="f2 sf" d="M18 58q16-28 40-38 3 3 5 6-24 10-39 36z"/><path class="dot" d="M33.8 52 Q33.8 49.5 36 49.8 Q38.5 49.8 38.2 52.2 Q38.2 54.2 35.8 54.3 Q33.6 54.1 33.8 52zM44.1 62 Q44.1 59.8 46 60.1 Q48.1 60.1 47.9 62.2 Q47.9 63.9 45.8 64 Q43.9 63.8 44.1 62zM26.3 62 Q26.3 60 28 60.3 Q29.9 60.3 29.7 62.2 Q29.7 63.7 27.8 63.8 Q26.1 63.6 26.3 62zM46.2 42 Q46.2 39.9 48 40.2 Q50 40.2 49.8 42.2 Q49.8 43.8 47.8 43.9 Q46 43.7 46.2 42z"/>'},
 
 {id:"manouri",cat:"dairy",rare:true,price:2,pk:"18–28 €/kg",name:{en:"Manouri",fr:"Manouri"},latin:"Manouri PDO",
 origin:{en:"Thessaly & Macedonia, Greece",fr:"Thessalie & Macédoine, Grèce"},season:[],
@@ -687,7 +687,7 @@ fr:"De la crème prise avec un peu d’acide et rien d’autre — ni présure, 
 tip:{en:"Beat it as little as possible. Overworked mascarpone breaks and turns grainy, and it will not come back.",
 fr:"Travaillez-le le moins possible. Trop battu, le mascarpone tranche et devient granuleux, sans retour possible."},
 pairs:["coffee","dark-chocolate","vanilla","lemon","strawberry","honey","egg","raspberry"],
-svg:'<path class="f3 sf" d="M32 64V44q16-8 32 0v20z"/><path class="s" d="M32 44q16 8 32 0"/><path class="s" d="M38 56q10 4 20 0"/>'},
+svg:'<path class="f1 sf" d="M22 42q1 18 5 28 3 8 21 8 18 0 21-8 4-10 5-28z"/><path class="f1 sf" d="M20 36q11-6 28-6 17 0 28 6-2 6-6 7-10 4-22 4-12 0-22-4-4-1-6-7z"/><path class="f2 sf" d="M26 40q9-4 22-4 13 0 22 4-9 5-22 5-13 0-22-5z"/><path class="s" d="M32 41q8-3 17-1" stroke-width="1.5"/><path class="s" d="M26 62q22 7 44 0" stroke-width="1.5"/>'},
 
 {id:"kefir",cat:"dairy",price:1,pk:"3–6 €/L",name:{en:"Milk kefir",fr:"Kéfir de lait"},latin:"Lactobacillus kefiranofaciens",
 origin:{en:"North Caucasus",fr:"Caucase du Nord"},season:[],
@@ -787,7 +787,7 @@ fr:"Boccace, en 1350, imagina un paradis fait d’une montagne de parmesan râp�
 tip:{en:"Never discard the rind: dropped into a soup or a pot of beans, it melts its umami into the broth like a bouillon cube from heaven.",
 fr:"Ne jetez jamais la croûte : glissée dans une soupe ou une marmite de haricots, elle fond son umami dans le bouillon comme un cube doré tombé du ciel."},
 pairs:["balsamic","tomato","rice","egg","asparagus","fennel","porcini","pine-nut"],
-svg:'<path class="f1 sf" d="M30 62l18-30 18 30q-18 8-36 0z"/><path class="s" d="M34 56l28 0" stroke-width="1.6"/><path class="dot" d="M44 52a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M50 58a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M42 60a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M54 50a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/>'},
+svg:'<path class="f1 sf" d="M20 64q1-16 6-30 10-8 22-12 13 5 24 12 3 14 4 26-9 9-18 16-14 1-26-2z"/><path class="f2 sf" d="M48 22q13 5 24 12 3 14 4 26l-8 2q-1-13-3-24-9-6-19-10z"/><path class="dot" d="M53.9 29 Q53.9 26.6 56 26.9 Q58.4 26.9 58.1 29.2 Q58.1 31.1 55.8 31.2 Q53.7 31 53.9 29zM61.9 34 Q61.9 31.6 64 31.9 Q66.4 31.9 66.1 34.2 Q66.1 36.1 63.8 36.2 Q61.7 36 61.9 34zM67.9 44 Q67.9 41.6 70 41.9 Q72.4 41.9 72.1 44.2 Q72.1 46.1 69.8 46.2 Q67.7 46 67.9 44zM69 54 Q69 51.7 71 52 Q73.2 52 73 54.2 Q73 56 70.8 56.1 Q68.8 55.9 69 54z"/><path class="s" d="M30 50q7 3 12-1M32 61q8 2 13-2M32 38q5 3 9 1" stroke-width="1.5"/><path class="dot" d="M32.4 55 Q32.4 53.2 34 53.4 Q35.8 53.4 35.6 55.2 Q35.6 56.6 33.8 56.7 Q32.2 56.5 32.4 55zM44.5 50 Q44.5 48.3 46 48.5 Q47.7 48.5 47.5 50.1 Q47.5 51.5 45.9 51.6 Q44.4 51.4 44.5 50zM38.5 66 Q38.5 64.3 40 64.5 Q41.7 64.5 41.5 66.2 Q41.5 67.5 39.9 67.6 Q38.4 67.4 38.5 66zM50.5 60 Q50.5 58.3 52 58.5 Q53.7 58.5 53.5 60.1 Q53.5 61.5 51.9 61.6 Q50.4 61.4 50.5 60z"/>'},
 
 {id:"pecorino",cat:"dairy",price:2,pk:"20–32 €/kg",name:{en:"Pecorino Romano",fr:"Pecorino romano"},latin:"Pecorino Romano DOP",
 origin:{en:"Lazio & Sardinia, Italy",fr:"Latium & Sardaigne, Italie"},season:[],
@@ -847,7 +847,7 @@ fr:"On attribue la recette à des moines cisterciens du XIIe siècle ; dès 1230
 tip:{en:"Judge it by pressing the centre, not the edge: it should give like a ripe plum. A washed rind dries fast, so keep it in its wooden box, rind upward, and finish it within a week of opening.",
 fr:"Jugez-le en pressant le centre, pas le bord : il doit céder comme une prune mûre. Une croûte lavée sèche vite — gardez-le dans sa boîte en bois, croûte vers le haut, et finissez-le dans la semaine."},
 pairs:["apple","cider-vinegar","calvados","walnut","pear","potato","butter","rye"],
-svg:'<path class="f2 sf" d="M24 26h48v48H24z"/><path class="s" d="M32 34h32M32 42h32M32 50h32M32 58h32M32 66h32"/>'},
+svg:'<path class="f2 sf" d="M16 44l31-22 33 22-32 22z"/><path class="f1 sf" d="M16 44v13l32 22V66z"/><path class="f2 sf" d="M80 44v13L48 79V66z"/><path class="s" d="M22 48l32-22M29 53l31-22M35 57l32-22M42 62l31-22" stroke-width="1.5"/><path class="s" d="M34 44l10 7M52 38l10 7" stroke-width="1.5"/>'},
 
 {id:"pouligny-saint-pierre",cat:"dairy",price:2,pk:"8–12 €/pièce",name:{en:"Pouligny-Saint-Pierre",fr:"Pouligny-Saint-Pierre"},latin:"Pouligny-Saint-Pierre AOP",
 origin:{en:"Brenne, Berry",fr:"La Brenne, Berry"},season:[3,4,5,6,7,8,9,10],
@@ -857,7 +857,7 @@ fr:"En 1972, il devient le premier fromage de chèvre français à obtenir une a
 tip:{en:"Cut it from the tip downward, in thin vertical wedges. The point is drier and far stronger than the base, and a horizontal slice hands you one texture at a time instead of both.",
 fr:"Coupez-le de la pointe vers la base, en fines tranches verticales. La pointe est plus sèche et bien plus forte que le talon, et une coupe horizontale ne vous donne qu'une texture à la fois."},
 pairs:["honey","walnut","chives","radish","sorrel","olive-oil","white-wine-vinegar","apple"],
-svg:'<path class="f1 sf" d="M40 22h16l10 54H30z"/><path class="s" d="M36 46h24M32 62h32"/>'},
+svg:'<path class="f1 sf" d="M38 28l10 4-4 48-22-8z"/><path class="f2 sf" d="M48 32l12-4 12 44-28 8z"/><path class="f1 sf" d="M38 28l12-4 10 4-12 4z"/><path class="s" d="M36 40q6 3 11 4M35 52q6 3 12 4M34 64q6 3 11 4M49 44q10-2 13-4M50 56q10-2 14-4M51 68q10-2 14-4" stroke-width="1.5"/><path class="dot" d="M29.4 44 Q29.4 42.2 31 42.4 Q32.8 42.4 32.6 44.2 Q32.6 45.6 30.8 45.7 Q29.2 45.5 29.4 44zM38.5 58 Q38.5 56.3 40 56.5 Q41.7 56.5 41.5 58.1 Q41.5 59.5 39.9 59.6 Q38.4 59.4 38.5 58zM55.4 50 Q55.4 48.2 57 48.4 Q58.8 48.4 58.6 50.2 Q58.6 51.6 56.8 51.7 Q55.2 51.5 55.4 50zM61.5 64 Q61.5 62.3 63 62.5 Q64.7 62.5 64.5 64.2 Q64.5 65.5 62.9 65.6 Q61.4 65.4 61.5 64z"/>'},
 
 {id:"provolone-del-monaco",cat:"dairy",rare:true,price:3,pk:"35–55 €/kg",name:{en:"Provolone del Monaco",fr:"Provolone del Monaco"},latin:"Provolone del Monaco DOP",
 origin:{en:"Sorrento peninsula, Campania",fr:"Presqu'île de Sorrente, Campanie"},season:[],
@@ -1007,7 +1007,7 @@ fr:"Il figure dans les comptes de la maison de Louis XI dès 1461, première tra
 tip:{en:"Buy it at the stage you want and eat it there: young it is firm and chalky, at four or five weeks it collapses in its crock and is eaten with a spoon. Eight minutes at 160 °C in the crock, poured over potatoes, is the standard Dauphiné use.",
 fr:"Achetez-le au stade voulu et mangez-le là : jeune il est ferme et crayeux ; à quatre ou cinq semaines il s'affale dans son pot et se mange à la cuillère. Huit minutes à 160 °C dans son pot, versé sur des pommes de terre, c'est l'usage dauphinois."},
 pairs:["potato","walnut","chives","lettuce","olive-oil","black-pepper","apple","ratte-potato"],
-svg:'<path class="f2 sf" d="M28 46q2 24 20 24t20-24z"/><ellipse class="f1 sf" cx="48" cy="46" rx="20" ry="8"/><path class="s" d="M33 60h30"/>'},
+svg:'<path class="f1 sf" d="M18 54q2-14 12-20 8-6 18-6 12 0 20 8 8 6 10 18-14 8-30 8-16 0-30-8z"/><path class="f2 sf" d="M16 54q0 12 10 18 8 4 22 4 14 0 22-4 10-6 10-18-14 10-32 10-18 0-32-10z"/><path class="s" d="M16 54q14 10 32 10 18 0 32-10" stroke-width="1.5"/><path class="s" d="M25 44q9-7 19-5M33 34q8 3 15 1M42 48q9-6 19-3M56 38q6 2 10 6" stroke-width="1.5"/><path class="s" d="M24 74q10 4 24 4 14 0 24-4" stroke-width="1.5"/>'},
 
 {id:"saint-nectaire",cat:"dairy",price:2,pk:"20–32 €/kg",name:{en:"Saint-Nectaire",fr:"Saint-Nectaire"},latin:"Saint-Nectaire AOP",
 origin:{en:"Monts Dore, Auvergne",fr:"Monts Dore, Auvergne"},season:[],
@@ -1017,7 +1017,7 @@ fr:"Il s’affine sur paille de seigle dans des caves volcaniques, et prend la c
 tip:{en:"Look for the green casein plate on the rind: oval means farmhouse, square means dairy. The difference is real.",
 fr:"Cherchez la plaque de caséine verte sur la croûte : ovale pour le fermier, carrée pour le laitier. La différence est réelle."},
 pairs:["potato","mushroom","walnut","onion","butter","thyme","apple","black-pepper"],
-svg:'<circle class="f2 sf" cx="48" cy="52" r="22"/><path class="s" d="M30 44h36M30 52h36M30 60h36"/>'},
+svg:'<path class="f1 sf" d="M18 46v10q0 8 8 12 10 6 22 6 12 0 22-6 8-4 8-12V46q-6 16-30 16-24 0-30-16z"/><path class="f2 sf" d="M18 46q6-18 30-18 24 0 30 18-6 16-30 16-24 0-30-16z"/><path class="f1 sf" d="M48 30l-15 5 15 27 14-26z"/><path class="dot" d="M24.6 45 Q24.6 42.2 27 42.6 Q29.7 42.6 29.4 45.2 Q29.4 47.4 26.8 47.5 Q24.4 47.3 24.6 45zM35 53 Q35 50.7 37 51 Q39.2 51 39 53.2 Q39 55 36.8 55.1 Q34.8 54.9 35 53zM62.6 42 Q62.6 39.2 65 39.6 Q67.7 39.6 67.4 42.2 Q67.4 44.4 64.8 44.5 Q62.4 44.3 62.6 42zM67 52 Q67 49.7 69 50 Q71.2 50 71 52.2 Q71 54 68.8 54.1 Q66.8 53.9 67 52zM38.2 34 Q38.2 31.9 40 32.2 Q42 32.2 41.8 34.2 Q41.8 35.8 39.8 35.9 Q38 35.7 38.2 34zM55.2 35 Q55.2 32.9 57 33.2 Q59 33.2 58.8 35.2 Q58.8 36.8 56.8 36.9 Q55 36.7 55.2 35z"/><path class="s" d="M22 58q4 8 10 11M74 58q-4 8-10 11" stroke-width="1.5"/>'},
 
 {id:"sainte-maure-de-touraine",cat:"dairy",price:2,pk:"7–11 €/pièce",name:{en:"Sainte-Maure de Touraine",fr:"Sainte-Maure de Touraine"},latin:"Sainte-Maure de Touraine AOP",
 origin:{en:"Touraine, Loire Valley",fr:"Touraine, Val de Loire"},season:[3,4,5,6,7,8,9,10],
@@ -1177,7 +1177,7 @@ fr:"Les crémeries françaises séparent la crème en deux, et la différence co
 tip:{en:"It will not whip — the fat is already set. For chantilly you need crème liquide entière at 30% or above, and very cold.",
 fr:"Elle ne monte pas — la matière grasse est déjà prise. Pour une chantilly il faut de la crème liquide entière à 30 % au moins, et très froide."},
 pairs:["potato","mushroom","shallot","nutmeg","black-pepper","leek","egg","butter"],
-svg:'<path class="f3 sf" d="M32 66V46q16-8 32 0v20z"/><path class="s" d="M32 46q16 8 32 0"/>'},
+svg:'<path class="f1 sf" d="M22 54q-2 14 2 20 3 6 22 6 19 0 22-6 4-6 2-20-24 8-48 0z"/><path class="f2 sf" d="M22 54q11-9 24-9 13 0 24 9-24 8-48 0z"/><path class="f1 sf" d="M44 50l8-26q1-5 5-4 5 1 4 6l-8 26z"/><path class="s" d="M30 53q8-5 16-3 7 2 10 5" stroke-width="1.5"/><path class="s" d="M26 68q22 6 42 0" stroke-width="1.5"/>'},
 
 {id:"tome-des-bauges",cat:"dairy",price:2,pk:"22–34 €/kg",name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
 origin:{en:"Massif des Bauges, Savoie",fr:"Massif des Bauges, Savoie"},season:[9,10,11,12,1],
@@ -1267,7 +1267,7 @@ fr:"Les nomades le découvrirent par accident : le lait transporté dans des out
 tip:{en:"To cook with it without curdling, temper it: whisk a little hot liquid into the yogurt before the yogurt goes into the pot.",
 fr:"Pour le cuisiner sans qu’il tranche, tempérez-le : fouettez un peu de liquide chaud dans le yaourt avant que le yaourt n’aille dans la marmite."},
 pairs:["honey","mint","cumin","dill","mango","pomegranate","beetroot","chives"],
-svg:'<path class="f1 sf" d="M36 42h24v24q0 8-12 8t-12-8z"/><path class="f2 sf" d="M34 38h28v6H34z"/><path class="s" d="M42 56q6 4 12 0" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M30 39q2 23 7 37 2 4 11 4t11-4q5-14 7-37-8 5-18 5t-18-5z"/><path class="f2 sf" d="M30 39q8-5 18-5t18 5q-8 6-18 6t-18-6z"/><path class="f3 sf" d="M31 40 L22 27 Q26 21 33 24 L45 33 Q43 40 37 42 Z"/><path class="s" d="M28 28 Q35 32 39 39" stroke-width="1.5"/><path class="s" d="M33 58 Q48 63 63 58" stroke-width="2"/>'},
 
 {id:"epoisses",cat:"dairy",price:2,pk:"7–11 €/pièce",name:{en:"Époisses",fr:"Époisses"},latin:"Époisses AOP",
 origin:{en:"Côte-d’Or, Burgundy",fr:"Côte-d’Or, Bourgogne"},season:[],

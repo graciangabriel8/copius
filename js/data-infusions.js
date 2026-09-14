@@ -367,7 +367,7 @@ fr:"Le bleu vient des ternatines, des anthocyanes polyacylées d’une stabilit�
 tip:{en:"Ten flowers per 250 ml of hot water for five minutes and no longer — you are extracting a colour, and time only adds a faint hay taste. Add the lemon at the table, in front of whoever is eating: the violet-to-pink shift is the whole reason the flower is on the plate.",
 fr:"Compter 10 fleurs pour 250 ml d’eau chaude, cinq minutes et pas davantage : on extrait une couleur, et le temps n’ajoute qu’un goût de foin. Ajouter le citron à table, devant le convive : le passage du violet au rose est toute la raison d’être de la fleur dans l’assiette."},
 pairs:["lemon","lime","glutinous-rice","coconut-milk","pandan","lemongrass"],
-svg:'<path class="f2 sf" d="M24 48q5-21 24-21t24 21q-10 13-24 13T24 48z"/><path class="f1 sf" d="M38 60q10 8 20 0-3 13-10 13t-10-13z"/><path class="s" d="M48 28v25"/><path class="s" d="M34 46q14 7 28 0"/>'},
+svg:'<path class="f1 sf" d="M54 58q-16 2-25-6-9-9-4-19 5-10 17-11 4-5 10-2 11 6 12 18 1 13-10 20z"/><path class="f2 sf" d="M54 58q-9-1-11-6-2-6 6-8 9-2 12 3 3 5-1 9-3 3-6 2zM66 70q-10 3-13 11 9 3 14-5 2-4-1-6z"/><path class="s" d="M45 48 33 41M44 42 36 30M50 40 48 26M56 42 61 31" stroke-width="1.5"/><path class="f1 sf" d="M58 57q7 2 8 6t-6 5-8-5 6-6z"/><path class="s" d="M61 63q5 4 6 9"/>'},
 
 {id:"linden-flower",cat:"infusions",price:1,pk:"5–10 €/100 g",name:{en:"Linden blossom",fr:"Fleur de tilleul"},latin:"Tilia cordata",
 origin:{en:"European limes, Drôme",fr:"Tilleuls d’Europe, Drôme"},season:[6,7],
@@ -387,7 +387,7 @@ fr:"Les théiers sont ombrés trois semaines avant la récolte, ce qui les force
 tip:{en:"Never use boiling water — 70 to 80°C at most. Boiling water makes it aggressively bitter within seconds.",
 fr:"N’utilisez jamais d’eau bouillante — 70 à 80 °C au plus. L’eau bouillante le rend agressivement amer en quelques secondes."},
 pairs:["white-chocolate","cream","adzuki","sugar","sesame","vanilla","lemon","rice"],
-svg:'<path class="f2 sf" d="M32 60q0-14 16-14t16 14q-14 10-32 0z"/><path class="s" d="M36 54q12 6 24 0"/><path class="s" d="M48 46v-8"/>'},
+svg:'<path class="f1 sf" d="M20 52q1 16 12 23 16 7 32 0 11-7 12-23z"/><path class="f2 sf" d="M20 52q13 7 28 7t28-7q-13-5-28-5t-28 5z"/><path class="s" d="M38 76q10 4 20 0" stroke-width="2"/><path class="f1 sf" d="M55 18q5-1 7 1l-3 25q-4 2-7 0z"/><path class="s" d="M55 44q-10 3-14 10M56 44q-5 6-6 12M58 44q0 7 2 11M60 44q5 5 9 7" stroke-width="1.5"/><path class="dot" d="M31 52Q31 54 29 54 26 54 27 52 27 50 29 50 31 50 31 52zM39 56Q40 58 37 57 35 58 35 56 34 54 37 54 39 55 39 56zM70 51Q70 53 68 53 65 53 66 51 66 49 68 49 70 49 70 51z"/>'},
 
 {id:"hibiscus-flower",cat:"infusions",price:1,pk:"20–40 €/kg",name:{en:"Hibiscus flower",fr:"Fleur d’hibiscus (karkadé)"},latin:"Hibiscus sabdariffa",
 origin:{en:"West Africa & Mexico",fr:"Afrique de l’Ouest & Mexique"},season:[],

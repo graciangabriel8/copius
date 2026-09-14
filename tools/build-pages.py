@@ -419,7 +419,7 @@ ART_STYLE = (
     ".s{fill:none;stroke:#585853;stroke-width:3;stroke-linecap:round}"
     ".f1,.f3,.sf{fill:#f1f1f0;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
     ".f2{fill:#e7e7e5;stroke:#585853;stroke-width:3;stroke-linejoin:round}"
-    ".dot{fill:#585853}.bg{fill:#f1f1f0}"
+    ".dot{fill:#585853}.bg{fill:#F0F1E7}"
     # No animation in these files: a static renderer — Google Images'
     # thumbnailer among them — shows the first frame, and the first frame
     # of a draw-on is an empty circle. The atlas animates its own inline
@@ -430,7 +430,7 @@ ART_STYLE = (
     # light. --line is what the atlas has always used here: 7.60:1.
     "@media(prefers-color-scheme:dark){"
     ".s,.f1,.f2,.f3,.sf{stroke:#b8b5ae}"
-    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.dot{fill:#b8b5ae}.bg{fill:#242422}}"
+    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.dot{fill:#b8b5ae}.bg{fill:#242619}}"
     "</style>")
 
 

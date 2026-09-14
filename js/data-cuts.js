@@ -7,7 +7,7 @@ fr:"Des boyaux de bœuf cuits des heures dans leur propre graisse jusqu’à ce 
 tip:{en:"Two spoonfuls are enough for a bowl: dropped in at the last second it stays crisp, given two minutes it surrenders its fat to the broth and goes soft. Decide which you want before you add it, because you only get one go.",
 fr:"Deux cuillerées suffisent pour un bol : jetées à la dernière seconde, elles restent croustillantes ; laissées deux minutes, elles rendent leur graisse au bouillon et s’amollissent. Décidez avant de les ajouter, car on n’a droit qu’à un seul essai."},
 pairs:["soba-noodles","kombu","katsuobushi","koikuchi-shoyu","negi","egg","cabbage"],
-svg:'<path class="f2 sf" d="M28 44l8-8 10 4 6-6 8 6-2 10-10 4-8-2-8 4z"/><path class="f2 sf" d="M34 62l6-6 8 4 8-4 6 8-4 8-12 2-10-4z"/><path class="s" d="M38 44l6 4M52 46l4 4M44 66l6 4"/>'},
+svg:'<path class="f2 sf" d="M22 40c9-7 24-8 32-1 7 6 6 16-2 21-9 6-23 6-30 0-6-5-5-15 0-20z"/><path class="f1 sf" d="M29 41c6-5 17-5 22 0 3 3 4 8 1 11-2 2-4 0-6 1-2 1-2 3-4 3-2 0-3-2-5-2-2 0-3 2-5 1-3-1-5-5-5-8 0-3 0-5 2-6z"/><path class="f2 sf" d="M46 30c10-6 24-4 30 4 5 8 1 18-8 22-10 4-22 2-27-5-5-8 0-17 5-21z"/><path class="f1 sf" d="M52 33c6-4 16-4 21 1 3 3 3 7 0 10-2 2-4 0-6 1-2 1-2 3-4 3-2 0-3-2-5-2-2 0-3 2-5 1-3-1-4-5-4-8 0-3 1-5 3-6z"/><path class="f2 sf" d="M26 58c11-6 27-5 33 1 6 5 3 14-7 18-11 4-24 2-29-4-5-6-3-12 3-15z"/><path class="f1 sf" d="M32 60c6-4 16-4 21 1 3 3 3 7 0 10-2 2-4 0-6 1-2 1-2 3-4 3-2 0-3-2-5-2-2 0-3 2-5 1-3-1-4-5-4-8 0-3 1-5 3-6z"/>'},
 
 {id:"aiguillette-baronne",cat:"cuts",price:3,pk:"28–45 €/kg",name:{en:"Aiguillette baronne",fr:"Aiguillette baronne"},latin:"Bœuf — cuisse",
 origin:{en:"France",fr:"France"},season:[],
@@ -17,7 +17,7 @@ fr:"Un muscle long et fin courant le long du rumsteck, et encore un morceau du b
 tip:{en:"Ask for it by name and expect a shrug. Order it a week ahead if your butcher takes whole carcasses.",
 fr:"Demandez-le par son nom et attendez-vous à un haussement d’épaules. Commandez-le une semaine à l’avance si votre boucher travaille en carcasse."},
 pairs:["shallot","butter","thyme","black-pepper","red-wine-vinegar","mushroom","garlic","tarragon"],
-svg:'<path class="f1 sf" d="M24 52q24-12 48-2v10q-24 10-48 2z"/><path class="s" d="M24 56h48"/>'},
+svg:'<path class="f1 sf" d="M20 62c8-10 24-20 40-26 8-3 16-4 18 0 2 4-4 8-12 12-16 8-32 16-40 20-4 2-8-2-6-6z"/><path class="f2 sf" d="M24 60c8-10 23-19 37-25 6-2 12-3 15-1-4 4-14 7-24 12-12 6-23 12-28 14z"/><path class="s" d="M29 54l2 6M39 50l2 6M49 46l2 6M59 41l2 6M69 37l2 6" stroke-width="2.5"/><path class="s" d="M24 64c10-9 24-17 36-22" stroke-width="1.5"/><path class="f2 sf" d="M20 62c-3 2-4 6-2 8 2 2 5 2 8 0-3-2-5-5-6-8z"/>'},
 
 {id:"amourettes",cat:"cuts",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Amourettes (spinal marrow)",fr:"Amourettes"},latin:"Bos taurus / Ovis aries (medulla spinalis)",
 origin:{en:"The spinal canal of veal and lamb",fr:"Le canal rachidien du veau et de l’agneau"},season:[],
@@ -57,7 +57,7 @@ fr:"Le muscle le plus paresseux de l’animal, donc le plus tendre — et le plu
 tip:{en:"It has no fat to protect it: sear hard, finish gently, rest long. Because its voice is quiet, give it a talkative sauce — pepper, truffle, or brown butter.",
 fr:"Aucun gras ne le protège : saisir fort, finir doux, reposer longtemps. Sa voix étant discrète, offrez-lui une sauce bavarde — poivre, truffe ou beurre noisette."},
 pairs:["black-pepper","butter","truffle","foie-gras","mushroom"],
-svg:'<circle class="f2 sf" cx="48" cy="52" r="16"/><path class="s" d="M34 46q14-6 28 0M34 58q14 6 28 0" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M20 58q8-14 21-12 14 2 23-6 10-8 12-8-2 8-11 15-10 8-17 16-8 8-16 9-11 2-12-9-1-8 2-5z"/><path class="f2 sf" d="M28 68q10-6 18-14 8-8 18-14-3 8-13 16-10 8-18 13-6 2-5-1z"/><path class="s" d="M26 58q14 2 26-8M30 66q12 0 24-10" stroke-width="1.5"/><path class="s" d="M42 50q5 9-1 17M60 40q5 8-1 15" stroke-width="2"/><path class="f2 sf" d="M20 58q-5 3-3 9 2 6 8 6-4-6-4-10 0-4-1-5z"/>'},
 
 {id:"tendon-de-boeuf",cat:"cuts",price:1,pk:"5–10 €/kg",name:{en:"Beef tendon",fr:"Tendon de bœuf (nerf)"},latin:"Bos taurus (tendo)",
 origin:{en:"Vietnam, Japan, southern China",fr:"Vietnam, Japon, sud de la Chine"},season:[],
@@ -97,7 +97,7 @@ fr:"Les règles ESB ont redessiné ce morceau : la cervelle de tout bovin de plu
 tip:{en:"Soak it two hours in several changes of cold water with a spoon of vinegar until it goes white, then lift the membrane away under the tap before it firms. Poach it in a court-bouillon that never bubbles — around 80 °C — because a rolling boil breaks it into curds.",
 fr:"Faites-la dégorger deux heures à l’eau froide changée plusieurs fois, avec une cuillerée de vinaigre, jusqu’à ce qu’elle blanchisse, puis ôtez la membrane sous le filet d’eau avant qu’elle ne raffermisse. Pochez-la dans un court-bouillon qui ne bout jamais — 80 °C environ : une ébullition la fait cailler."},
 pairs:["butter","capers","lemon","parsley","white-wine-vinegar","black-pepper","nutmeg","shallot"],
-svg:'<path class="f1 sf" d="M48 28q18-2 22 14t-10 26q-12 6-24 0-14-10-10-26t22-14z"/><path class="s" d="M48 28v42"/><path class="s" d="M34 42q7 5 12-2M34 56q7 5 12-2"/><path class="s" d="M62 42q-7 5-12-2M62 56q-7 5-12-2"/>'},
+svg:'<path class="f1 sf" d="M47 20c-13-1-24 7-28 19-4 13-1 27 9 35 5 4 12 6 19 5z"/><path class="f2 sf" d="M49 20c13-1 24 7 28 19 4 13 1 27-9 35-5 4-12 6-19 5z"/><path class="s" d="M24 34c6 5 13 2 17-3M20 47c8 5 15 2 20-4M24 61c7 5 14 2 18-4" stroke-width="1.5"/><path class="s" d="M72 34c-6 5-13 2-17-3M76 47c-8 5-15 2-20-4M72 61c-7 5-14 2-18-4" stroke-width="1.5"/><path class="f2 sf" d="M39 74c4 6 14 6 18 0 3 3 1 9-9 9s-12-6-9-9z"/>'},
 
 {id:"pied-de-veau",cat:"cuts",price:1,pk:"5–9 €/kg",name:{en:"Calf's foot",fr:"Pied de veau"},latin:"Bos taurus (pes)",
 origin:{en:"The gelatine of the daube pot",fr:"La gélatine de la daube"},season:[],
@@ -167,7 +167,7 @@ fr:"Le japonais l’appelle sunagimo, « gésier de sable », d’après le grav
 tip:{en:"Split each one, rinse out any grit and peel away the silver lining or it stays leathery. Then commit: two minutes over fierce heat for crunch, or two hours in fat for softness — the middle ground is only chewy.",
 fr:"Fendez chaque gésier, rincez le gravier et pelez la peau argentée, sinon elle reste cuir. Puis choisissez : deux minutes sur un feu féroce pour le croquant, ou deux heures dans la graisse pour le fondant — l’entre-deux ne donne que du caoutchouc."},
 pairs:["salt","black-pepper","garlic","lemon","shichimi-togarashi","parsley","duck-fat","sesame-oil"],
-svg:'<path class="f2 sf" d="M48 28q16 0 20 14t-8 26q-12 12-24 0T28 42q4-14 20-14z"/><path class="s" d="M48 28v46"/><path class="s" d="M36 40q6 6 0 14M60 40q-6 6 0 14"/>'},
+svg:'<path class="f1 sf" d="M30 28c9-1 15 6 15 16 0 10-5 18-13 19-9 1-15-5-17-14-2-10 4-20 15-21z"/><path class="f2 sf" d="M17 51c5 6 12 9 19 8-2 5-7 7-13 5-4-2-6-7-6-13z"/><path class="f1 sf" d="M62 44c8 0 14 6 15 14 1 9-4 17-12 19-8 2-15-3-17-12-2-9 4-21 14-21z"/><path class="f1 sf" d="M46 24c6-1 10 3 11 8 1 5-3 9-8 10-5 1-9-3-9-8 0-5 2-9 6-10z"/><path class="s" d="M29 31c-3 7-4 15-1 22M60 47c-3 6-3 13-1 19M46 27c-2 4-2 8 0 11" stroke-width="2.5"/>'},
 
 {id:"foie-de-volaille",cat:"cuts",price:1,pk:"6–12 €/kg",name:{en:"Chicken liver",fr:"Foie de volaille"},latin:"Gallus gallus (hepar)",
 origin:{en:"Bresse and the Dombes",fr:"Bresse et Dombes"},season:[],
@@ -197,7 +197,7 @@ fr:"Les bouchers français la divisent en deux et les traitent en produits disti
 tip:{en:"Say what you are cooking, not which cut you want. The butcher knows which half to hand you.",
 fr:"Dites ce que vous cuisinez, non quel morceau vous voulez. Le boucher sait laquelle des deux vous donner."},
 pairs:["carrot","leek","turnip","bone-marrow","bay-leaf","black-pepper","onion","celery"],
-svg:'<path class="f1 sf" d="M28 42q22-6 40 4v22q-20 8-40 2z"/><path class="s" d="M28 56q20 6 40 0"/>'},
+svg:'<path class="f1 sf" d="M18 60c-3-9 4-17 14-23 12-8 26-12 36-11 5 0 8 4 5 9-6 9-17 16-29 21-11 5-21 7-26 4z"/><path class="f2 sf" d="M26 56c8-7 20-14 32-19 6-3 11-5 15-5-2 4-7 7-14 11-13 7-25 13-33 20z"/><path class="s" d="M28 50c4 3 6 8 6 12M42 43c4 3 6 8 6 12M56 36c4 3 6 7 6 11" stroke-width="1.5"/><path class="f2 sf" d="M20 58c4-3 9-2 10 2 1 3-3 6-8 5-3-1-4-5-2-7z"/><path class="f2 sf" d="M68 26c5-1 8 2 6 6-2 3-6 5-10 6 1-4 2-9 4-12z"/>'},
 
 {id:"rognons-de-coq",cat:"cuts",rare:true,price:3,pk:"35–60 €/kg",name:{en:"Cockerel testicles",fr:"Rognons de coq"},latin:"Gallus gallus (testis)",
 origin:{en:"Classical French garnish",fr:"Garniture financière"},season:[],
@@ -227,7 +227,7 @@ fr:"Une pièce avec un acte de naissance : en 1959, le chef André Daguin, à l�
 tip:{en:"Score the skin in a diamond pattern, start in a cold pan skin-down, and render patiently — most of the cooking happens on that side. Rose inside, mahogany outside.",
 fr:"Quadrillez la peau en losanges, démarrez à poêle froide côté peau, et laissez fondre patiemment — l’essentiel de la cuisson se joue de ce côté. Rosé dedans, acajou dehors."},
 pairs:["honey","orange","cherry","fig","black-pepper"],
-svg:'<path class="f2 sf" d="M32 44q14-10 30-4 6 3 4 10-3 12-18 14-13 1-16-10-2-6 0-10z"/><path class="s" d="M38 46l20-4M40 52l20-4M42 58l18-4" stroke-width="1.2"/>'},
+svg:'<path class="f2 sf" d="M19 66c-4-9 0-19 10-27 10-9 23-15 33-14 9 1 15 7 15 16 0 12-10 23-24 29-13 5-25 4-31-1-2-1-3-2-3-3z"/><path class="f1 sf" d="M24 62c-3-7 1-15 9-21 10-8 21-13 29-12 7 1 11 6 11 13 0 10-8 19-20 24-11 4-21 3-26-1-2-1-3-2-3-3z"/><path class="s" d="M27 54c9 6 20 9 32 8M24 63c11 6 24 8 36 5M36 44c8 5 18 8 28 8" stroke-width="1.5"/><path class="s" d="M38 39c-1 9 0 19 4 27M50 35c-2 9-2 19 1 28M62 38c-3 9-4 17-3 24" stroke-width="1.5"/><path class="f2 sf" d="M19 66c-3 3-1 7 4 8 4 1 9 0 12-2-6 0-12-2-16-6z"/>'},
 
 {id:"coeur-de-canard",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Duck heart",fr:"Cœur de canard"},latin:"Anas platyrhynchos domesticus (cor)",
 origin:{en:"Gascony, foie gras country",fr:"Gascogne, pays du foie gras"},season:[],
@@ -267,7 +267,7 @@ fr:"Ses longues fibres ouvertes sont toute l’histoire : elles boivent les mari
 tip:{en:"Hot pan, short time, long rest — then slice thin against the grain at an angle. Cut with the grain and you will chew your way into regret.",
 fr:"Poêle brûlante, cuisson courte, repos long — puis tranchez fin, en biais, à contre-fibre. Coupez dans le sens du grain et vous mâcherez jusqu’au regret."},
 pairs:["shallot","garlic","soy-sauce","parsley"],
-svg:'<path class="f2 sf" d="M30 44h36q4 8 0 18H30q-4-10 0-18z" transform="rotate(-6 48 53)"/><path class="s" d="M34 48l28-2M34 54l28-2M34 60l28-2" stroke-width="1.2" transform="rotate(-6 48 53)"/>'},
+svg:'<path class="f1 sf" d="M16 56c10-12 26-20 44-22 10-1 18 1 20 6 2 5-4 11-16 16-16 7-32 11-42 10-8-1-10-5-6-10z"/><path class="f2 sf" d="M20 50c10-11 26-18 42-19 6 0 11 1 13 4-8-1-18 0-28 3-12 4-22 9-27 14z"/><path class="s" d="M22 52c9-8 20-13 32-16M24 58c10-9 24-15 38-17M28 64c10-9 24-15 38-17" stroke-width="2"/><path class="f2 sf" d="M74 40c4 1 6 4 5 7-2 3-6 5-10 7 2-5 4-10 5-14z"/><path class="s" d="M18 60c3 4 8 6 15 6" stroke-width="1.5"/>'},
 
 {id:"gras-double",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Gras-double (rumen tripe)",fr:"Gras-double"},latin:"Bos taurus (rumen)",
 origin:{en:"Lyon",fr:"Lyon"},season:[],
@@ -287,7 +287,7 @@ fr:"On l’appelle le morceau du boucher, parce que des générations de boucher
 tip:{en:"Rare or bleu, never beyond — past pink it turns to rope. Slice thick, across the grain, and give it the classic: shallots long-melted in butter.",
 fr:"Saignant ou bleu, jamais au-delà — passé le rosé, il devient corde. Tranchez épais, à contre-fibre, et servez-lui le classique : échalotes longuement fondues au beurre."},
 pairs:["shallot","butter","mustard","black-pepper"],
-svg:'<path class="f3 sf" d="M30 60q4-14 18-18t18 2q4 4 0 10-8 10-22 12-12 1-14-6z"/><path class="s" d="M38 54q10-6 22-6" stroke-width="1.4"/>'},
+svg:'<path class="f1 sf" d="M18 56c1-10 10-16 25-19 15-3 30-2 36 3 4 4 2 11-6 15-11 6-26 9-39 9-13 0-17-3-16-8z"/><path class="f3 sf" d="M24 58c9-6 20-11 31-15 7-3 13-5 18-5-4 3-10 6-18 10-11 5-22 10-28 15-2 1-4 0-3-5z"/><path class="s" d="M27 63c2-4 2-7 1-10M37 59c2-4 2-7 1-10M49 54c2-4 2-6 1-9M61 50c2-4 2-6 1-9" stroke-width="1.5"/><path class="s" d="M30 45c8-3 17-5 26-6M40 40c8-2 15-3 21-3" stroke-width="1.5"/><path class="f2 sf" d="M74 45c4 0 6 3 5 6-2 3-6 5-10 5 2-3 4-7 5-11z"/>'},
 
 {id:"bonnet",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Honeycomb tripe",fr:"Bonnet"},latin:"Bos taurus (reticulum)",
 origin:{en:"Rome and Madrid",fr:"Rome et Madrid"},season:[],
@@ -307,7 +307,7 @@ fr:"Les rognons de veau sont ceux qu’il faut chercher — plus doux et plus fi
 tip:{en:"Sear them fast and serve them pink. Overcooked kidney turns grainy and ammoniac, and there is no recovery.",
 fr:"Saisissez-les vivement et servez-les rosés. Trop cuits ils deviennent granuleux et ammoniaqués, sans retour possible."},
 pairs:["mustard","cream","shallot","white-wine-vinegar","parsley","butter","black-pepper","thyme"],
-svg:'<path class="f1 sf" d="M32 50q10-8 18 0t-2 20-20-6 4-14z"/><path class="f1 sf" d="M52 58q8-6 14 0t-2 14-15-4z"/>'},
+svg:'<path class="f2 sf" d="M62 22q12 2 16 10 4 9-1 16-6 6-12 2-4-8 0-15-3-8-3-13z"/><path class="f1 sf" d="M18 58Q16 42 30 36C36 44 48 42 54 34Q70 34 74 48Q78 62 64 70Q46 78 32 72Q20 68 18 58Z"/><path class="f2 sf" d="M34 38q6 6 16 4 2 6-4 9-10 1-14-5-2-5 2-8z"/><path class="s" d="M24 52q0 10 4 16M44 62q10 6 20 4" stroke-width="1.5"/><path class="dot" d="M38 44q5-1 6 2-1 3-6 2-2-2 0-4z"/>'},
 
 {id:"kinkan",cat:"cuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Kinkan (unlaid egg yolks)",fr:"Kinkan (œufs non pondus)"},latin:"Gallus gallus (ovum immaturum)",
 origin:{en:"Japanese yakitori counters",fr:"Les comptoirs yakitori du Japon"},season:[],
@@ -367,7 +367,7 @@ fr:"Les Français l’appellent la souris, pour la forme ronde et dodue du muscl
 tip:{en:"One shank per person, browned deeply, then hours in a low oven with honey, thyme and garlic — turn it twice and otherwise leave it in peace.",
 fr:"Une souris par personne, bien colorée, puis des heures au four doux avec miel, thym et ail — retournez-la deux fois et sinon fichez-lui la paix."},
 pairs:["honey","thyme","garlic","white-beans","cinnamon"],
-svg:'<path class="f2 sf" d="M38 60q-4-16 8-24 10-6 16 2 4 6-2 12-8 8-14 10 8 2 8 6 0 4-8 4t-8-10z"/><path class="f1 sf" d="M60 34a4 4 0 104-4 4 4 0 10-4 4z"/>'},
+svg:'<path class="f1 sf" d="M48 46c3-7 5-13 7-17 2-4 12 0 10 5-2 4-3 9-5 16z"/><path class="f2 sf" d="M56 29c-3-5 0-11 5-11 4 0 7 3 7 6 3 0 6 3 5 7-1 4-5 6-9 5-4-1-7-4-8-7z"/><path class="f1 sf" d="M52 38c8 2 15 10 18 19 2 8 1 14-4 17-7 4-19 4-30 1-8-2-14-6-15-11-1-6 3-13 11-19 6-5 13-8 20-7z"/><path class="f2 sf" d="M69 62c1 6-1 11-6 13-7 4-19 4-30 1-6-2-11-4-13-7 8 3 18 5 28 4 10-1 18-5 21-11z"/><path class="s" d="M26 60c8 7 20 11 32 10M30 70c8 3 17 4 25 2" stroke-width="1.5"/><path class="dot" d="M60 22c3-2 6 0 5 2-1 2-5 3-6 1-1-1 0-2 1-3z"/>'},
 
 {id:"epaule-agneau",cat:"cuts",price:2,pk:"15–24 €/kg",name:{en:"Lamb shoulder",fr:"Épaule d’agneau"},latin:"Agneau — épaule",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
@@ -377,7 +377,7 @@ fr:"Plus grasse et bien plus indulgente que le gigot, c’est le morceau qui a r
 tip:{en:"Cook it longer than you think. There is no medium here — it is either pink and chewy or falling apart, and the second is the point.",
 fr:"Cuisez-la plus longtemps que vous ne croyez. Il n’y a pas de rosé ici — c’est ferme et rose, ou fondant, et c’est le second qu’on cherche."},
 pairs:["garlic","rosemary","thyme","anchovy","white-beans","lemon","onion","olive-oil"],
-svg:'<path class="f1 sf" d="M28 44q24-8 42 2v20q-22 10-42 2z"/><path class="s" d="M38 46q6 14 4 26"/>'},
+svg:'<path class="f1 sf" d="M24 32c15-7 32-6 43 3 9 7 13 17 8 26-5 9-17 13-30 12-14-1-25-8-29-16-4-9-2-19 8-25z"/><path class="f2 sf" d="M24 32c15-7 32-6 43 3 4 3 7 7 9 11-5-5-11-9-18-11-13-4-26-4-34-3z"/><path class="f1 sf" d="M62 42c5-3 9-5 12-7 3-2 6 1 4 4-2 3-7 5-11 7z"/><path class="f2 sf" d="M73 32c4-2 7 1 6 4-1 3-5 4-7 2-2-2-1-5 1-6z"/><path class="s" d="M35 47c9 6 13 16 12 24M50 41c8 4 14 12 15 20" stroke-width="1.5"/>'},
 
 {id:"ris-agneau",cat:"cuts",price:3,pk:"35–60 €/kg",name:{en:"Lamb sweetbread",fr:"Ris d’agneau"},latin:"Ovis aries (thymus)",
 origin:{en:"The thymus of the lamb",fr:"Le thymus de l’agneau"},season:[],
@@ -387,7 +387,7 @@ fr:"Le thymus d’agneau pèse quelques dizaines de grammes quand celui du veau 
 tip:{en:"No overnight press, no long soak: five minutes in barely simmering acidulated water, slip the membrane off, dry them, then two minutes a side in foaming butter. Held longer they tighten and go rubbery, and nothing carves that back out of them.",
 fr:"Ni pressage d’une nuit, ni long trempage : cinq minutes dans une eau vinaigrée frémissante, on retire la membrane, on éponge, puis deux minutes par face au beurre mousseux. Au-delà, ils se raidissent et deviennent caoutchouteux, sans retour."},
 pairs:["butter","lemon","capers","parsley","hazelnut","raisin","shallot","sherry-vinegar"],
-svg:'<path class="f1 sf" d="M30 52a9 9 0 0116 0 8 8 0 01-16 0z"/><path class="f1 sf" d="M48 58a8 8 0 0114 0 7 7 0 01-14 0z"/><path class="f2 sf" d="M44 42a7 7 0 0113 0 6 6 0 01-13 0z"/>'},
+svg:'<path class="f1 sf" d="M18 57q-2-7 5-10 4-2 7 1 3-5 9-3 6 2 6 7 5 4 2 9-4 6-10 5-8 1-11-4-4-4-3-9z"/><path class="f2 sf" d="M52 40q-3-8 5-10 6-2 9 2 7-3 10 3 4 5-1 9-4 5-11 4-9 1-12-5-2-4-1-9z"/><path class="f1 sf" d="M54 62q-2-6 4-7 5-1 7 2 5 0 6 4 1 5-4 7-6 3-9-1-4-3-2-8z"/><path class="s" d="M26 52q6 5 14 3M60 38q5 4 11 3M60 62q4 2 8 0" stroke-width="1.5"/><path class="dot" d="M33 60q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"langue-agneau",cat:"cuts",price:1,pk:"9–16 €/kg",name:{en:"Lamb tongue",fr:"Langue d’agneau"},latin:"Ovis aries (lingua)",
 origin:{en:"Morocco, Turkey, the Levant",fr:"Maroc, Turquie, Levant"},season:[],
@@ -407,7 +407,7 @@ fr:"La panse d’agneau est plus fine et bien plus souple que celle du bœuf, as
 tip:{en:"No string: cut a small buttonhole in the square, fold the parcel and pull one corner through it — string saws into the tripe over the seven hours these need. Pack them tightly in a narrow pot so they cannot unfold.",
 fr:"Pas de ficelle : pratiquez une petite boutonnière dans le carré, repliez le paquet et passez-y un coin — la ficelle scie la tripe sur les sept heures que cela demande. Serrez-les dans une cocotte étroite pour qu’ils ne puissent pas se déplier."},
 pairs:["petit-sale","garlic","parsley","tomato","carrot","onion","black-pepper","thyme"],
-svg:'<path class="f1 sf" d="M32 40h32v26q-16 8-32 0z"/><path class="s" d="M48 40v26M34 52h28"/><path class="f2 sf" d="M40 32q8-8 16 0-4 8-8 8t-8-8z"/>'},
+svg:'<path class="f1 sf" d="M18 40c10-8 24-12 38-11 12 1 22 5 24 12 2 8-4 18-14 24-11 6-24 8-34 4-11-4-17-12-16-20 0-4 1-7 2-9z"/><path class="f2 sf" d="M18 49c4 8 12 14 22 16-6 4-14 4-19 0-4-3-5-11-3-16z"/><path class="s" d="M28 42l5-3 5 3v6l-5 3-5-3zM42 38l5-3 5 3v6l-5 3-5-3zM56 38l5-3 5 3v6l-5 3-5-3zM34 54l5-3 5 3v6l-5 3-5-3zM48 52l5-3 5 3v6l-5 3-5-3zM62 50l5-3 5 3v6l-5 3-5-3z" stroke-width="1.5"/><path class="f2 sf" d="M28 62l5-3 5 3v6l-5 3-5-3zM44 66l5-3 5 3v6l-5 3-5-3z" stroke-width="1.5"/><path class="s" d="M70 36c6 2 10 6 10 11" stroke-width="1.5"/>'},
 
 {id:"lampredotto",cat:"cuts",rare:true,price:1,pk:"7–13 €/kg",name:{en:"Lampredotto (abomasum)",fr:"Caillette (lampredotto)"},latin:"Bos taurus (abomasum)",
 origin:{en:"Florence",fr:"Florence"},season:[],
@@ -437,7 +437,7 @@ fr:"« Museau » et l’anglais muzzle viennent du même mot d’ancien françai
 tip:{en:"Dress it an hour ahead rather than at the last minute — the cartilage needs that time in the vinegar to go from rubbery to crisp. One part vinegar to three of oil, more shallot than seems reasonable, and serve it at room temperature.",
 fr:"Assaisonnez-le une heure à l’avance plutôt qu’au dernier moment : le cartilage a besoin de ce temps dans le vinaigre pour passer du caoutchouteux au croquant. Un volume de vinaigre pour trois d’huile, plus d’échalote qu’il ne paraît raisonnable, et service à température ambiante."},
 pairs:["shallot","parsley","white-wine-vinegar","dijon-mustard","onion","cornichon","potato","chives"],
-svg:'<path class="f1 sf" d="M32 32q16-6 32 0 6 14 4 26-18 8-40 0-2-12 4-26z"/><circle class="dot" cx="42" cy="48" r="4"/><circle class="dot" cx="56" cy="48" r="4"/><path class="s" d="M48 56v10"/>'},
+svg:'<path class="f1 sf" d="M46 19c16-1 31 10 34 25 3 16-8 30-24 33-16 3-31-7-36-22-5-15 6-32 26-36z"/><path class="f2 sf" d="M20 55c4 12 15 21 28 22 6 0 12-1 17-4-5 6-13 10-22 10-14 0-25-11-24-25 0-1 0-2 1-3z"/><path class="dot" d="M40 43c4-1 6 3 6 8 0 5-3 9-6 8-2-1-2-4-1-8 1-3 1-6-2-7 1-1 2-1 3-1zM56 43c-4-1-6 3-6 8 0 5 3 9 6 8 2-1 2-4 1-8-1-3-1-6 2-7-1-1-2-1-3-1z"/><path class="s" d="M48 40c0-5 0-9-1-13" stroke-width="2"/><path class="s" d="M33 33l2 2M44 28l1 2M58 30l2 2M67 39l2 2M28 46l2 2" stroke-width="2"/>'},
 
 {id:"boyaux-naturels",cat:"cuts",price:2,pk:"10–25 €/kg",name:{en:"Natural casings",fr:"Boyaux naturels"},latin:"Sus scrofa / Ovis aries / Bos taurus (intestinum)",
 origin:{en:"Sheep, pig and beef intestine",fr:"Intestin de mouton, de porc et de bœuf"},season:[],
@@ -457,7 +457,7 @@ fr:"Presque uniquement du muscle sans fibre marquée, d’où sa coupe si nette 
 tip:{en:"Peel the skin off while it is still hot from the pot. Let it cool and it will not come away at all.",
 fr:"Pelez la peau tant qu’elle est brûlante à la sortie du bouillon. Laissez refroidir et elle ne viendra plus du tout."},
 pairs:["cornichon","capers","mustard","parsley","white-wine-vinegar","shallot","carrot","bay-leaf"],
-svg:'<path class="f1 sf" d="M30 62q0-24 18-24t18 22q-16 12-36 2z"/><path class="s" d="M48 40v22"/>'},
+svg:'<path class="f1 sf" d="M19 46c1-10 9-16 20-15 14 1 29 7 38 15 3 3 2 7-2 9-6 4-16 3-27 2-11-1-21 1-27 3-3 1-5-2-4-6 1-3 1-5 2-8z"/><path class="f2 sf" d="M19 46c-2 3-3 7-2 10 1 4 5 5 9 4-3-3-5-7-5-10 0-2 0-3-2-4z"/><path class="s" d="M26 47c14-6 32-4 46 4" stroke-width="2"/><path class="s" d="M34 52c0 2 0 3 1 4M44 50c0 2 0 3 1 4M54 50c0 2 0 3 1 4M64 51c0 2 0 3 1 4" stroke-width="1.5"/><path class="f2 sf" d="M21 60c10-2 22-4 34-3 9 1 16 0 20-4 0 5-4 8-11 9-14 2-30 1-43-2z"/>'},
 
 {id:"oxtail",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
 origin:{en:"The tail, ring by ring",fr:"La queue, anneau par anneau"},season:[],
@@ -487,7 +487,7 @@ fr:"La queue de porc, c’est de la couenne, du cartilage et presque pas de vian
 tip:{en:"Braise ninety minutes, until a skewer passes through the cartilage, then dry them and finish under a hot grill or in a 220 °C oven until the skin blisters. Both stages are compulsory: braised alone they are flabby, roasted alone they stay tough.",
 fr:"Braisez une heure et demie, jusqu’à ce qu’une brochette traverse le cartilage, puis séchez-les et finissez sous un gril brûlant ou au four à 220 °C jusqu’à ce que la couenne cloque. Les deux étapes sont obligatoires : braisées seules elles sont molles, rôties seules elles restent dures."},
 pairs:["savoy-cabbage","potato","onion","bay-leaf","dijon-mustard","black-pepper","mustard-greens","cider-vinegar"],
-svg:'<path class="f1 sf" d="M20 26q9-3 14 5l5 10-11 5-8-13z"/><path class="s" d="M38 38q11 7 10 19t-13 15q-9-1-9-9t10-8q6 2 6 9" stroke-width="3"/>'},
+svg:'<path class="f1 sf" d="M24 30Q40 32 52 42Q68 52 68 64Q68 76 55 77Q41 77 39 65Q38 55 47 52Q53 51 57 57Q53 55 49 59Q44 63 46 68Q49 72 55 72Q62 71 62 63Q62 52 47 48Q35 42 24 44Z"/><path class="f2 sf" d="M24 30q-8 1-8 7 0 6 8 7z"/><path class="dot" d="M19 36q4-1 5 1-1 3-5 2-2-2 0-3z"/><path class="s" d="M32 35q-1 5-1 8M42 38q-1 5-2 8M52 44q-2 4-3 7" stroke-width="1.5"/><path class="s" d="M59 62q6 3 5 9" stroke-width="1.5"/>'},
 
 {id:"pied-de-porc",cat:"cuts",price:1,pk:"3–7 €/kg",name:{en:"Pig's trotter",fr:"Pied de porc"},latin:"Sus scrofa domesticus (pes)",
 origin:{en:"Sainte-Menehould, Marne",fr:"Sainte-Menehould, Marne"},season:[],
@@ -537,7 +537,7 @@ fr:"Le lard avant qu’il ne devienne lard : des strates alternées de gras et d
 tip:{en:"Two acts, always: long and low until a skewer meets no resistance, then fierce heat for the crackling. Score the skin, dry it overnight, salt it like a beach.",
 fr:"Deux actes, toujours : long et doux jusqu’à ce que la brochette n’y trouve aucune résistance, puis feu vif pour la couenne. Incisez la peau, séchez-la une nuit, salez-la comme une plage."},
 pairs:["soy-sauce","ginger","miso","apple","fennel"],
-svg:'<path class="f1 sf" d="M30 42h36v22H30z"/><path class="f2 sf" d="M30 48h36v5H30zM30 58h36v4H30z"/><path class="f3 sf" d="M30 42h36v4H30z"/>'},
+svg:'<path class="f1 sf" d="M16 56c4-12 10-20 18-24 13-7 28-9 38-6 5 1 7 4 5 8-4 8-11 15-21 20-13 6-26 8-36 6-4-1-5-2-4-4z"/><path class="f2 sf" d="M16 56c4-12 10-20 18-24 13-7 28-9 38-6-12-1-25 2-35 7-11 6-18 14-21 23z"/><path class="f2 sf" d="M20 52c4-9 11-15 20-19 9-5 19-7 27-7 3 0 5 1 6 2-9 0-19 2-28 7-10 5-18 11-23 19-1 1-2 0-2-2z"/><path class="f2 sf" d="M22 62c5-8 12-14 21-18 10-5 20-8 28-8 2 0 4 1 4 2-9 1-19 3-28 8-9 4-17 10-22 17-1 1-3 0-3-1z"/><path class="s" d="M28 34c1 3 1 5 1 7M40 30c1 3 1 5 1 7M52 28c1 3 1 5 1 7M64 30c1 2 1 4 1 6" stroke-width="1.5"/>'},
 
 {id:"joue-de-porc",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Pork cheek",fr:"Joue de porc"},latin:"Sus scrofa domesticus (masseter)",
 origin:{en:"The jowl, two per pig",fr:"La joue, deux par porc"},season:[],
@@ -557,7 +557,7 @@ fr:"L’extrémité cou de la longe, et la partie la plus persillée du porc —
 tip:{en:"It is the cheapest good cut in the shop. Roast it whole and slowly; it is far more forgiving than the loin.",
 fr:"C’est le meilleur rapport qualité-prix de la boutique. Rôtissez-la entière et lentement ; elle pardonne bien plus que le filet."},
 pairs:["mustard","sage","apple","garlic","thyme","cider-vinegar","fennel-seed","onion"],
-svg:'<path class="f2 sf" d="M26 46q22-8 44 0v22q-22 8-44 0z"/><path class="f3 sf" d="M36 50q8 12 20 14"/>'},
+svg:'<path class="f1 sf" d="M18 42c5-9 17-13 30-13 14 0 26 4 32 11 4 5 2 13-5 18-9 6-22 9-35 8-12-1-21-5-24-11-2-4-1-9 2-13z"/><path class="f2 sf" d="M18 42c5-9 17-13 30-13 14 0 26 4 32 11-8-4-19-7-32-7-13 0-24 3-30 9z"/><path class="f2 sf" d="M22 56c5 6 13 10 22 11 5 1 9 0 13-1-3 5-11 8-20 7-9-1-15-6-17-12-1-2-1-4 2-5z"/><path class="s" d="M29 48l5 2M38 45l5 1M46 49l5 2M55 46l5 1M33 58l4 2M43 61l5 1M53 58l4 2M62 53l4 1M62 44l4 2" stroke-width="2"/><path class="s" d="M25 52c3 4 7 7 12 9" stroke-width="1.5"/>'},
 
 {id:"jarret-de-porc",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Pork knuckle",fr:"Jarret de porc"},latin:"Porc — jarret",
 origin:{en:"France & Germany",fr:"France & Allemagne"},season:[],
@@ -597,7 +597,7 @@ fr:"Le muscle le moins sollicité du porc et donc le plus tendre, mais aussi le 
 tip:{en:"Take it out at 62°C and let it rest. Pork does not need to be cooked grey, and this cut punishes it more than any other.",
 fr:"Sortez-le à 62 °C et laissez-le reposer. Le porc n’a pas besoin d’être cuit gris, et ce morceau le pardonne moins que tout autre."},
 pairs:["mustard","cream","sage","apple","thyme","cider-vinegar","shallot","honey"],
-svg:'<path class="f3 sf" d="M22 54q26-10 52-2v6q-26 10-52 2z"/><path class="s" d="M30 54h36"/>'},
+svg:'<path class="f1 sf" d="M20 66c-2-8 6-14 16-16 14-3 28-8 38-14 4-2 7 1 5 5-4 7-14 12-26 16-12 4-22 8-27 12-4 3-7 1-6-3z"/><path class="f2 sf" d="M36 50c12-5 26-10 36-16 3-2 6-1 7 1-9 6-22 11-34 15-5 2-9 2-9 0z"/><path class="s" d="M26 60c9-6 20-11 30-15M30 66c9-6 20-11 30-15" stroke-width="1.5"/><path class="f1 sf" d="M56 66c8-1 14 3 14 8 0 4-6 8-13 7-7-1-12-4-12-8 0-4 5-7 11-7z"/><path class="f2 sf" d="M58 70c5-1 8 1 8 3 0 2-3 4-7 3-3-1-4-4-1-6z"/>'},
 
 {id:"kobukuro",cat:"cuts",rare:true,price:1,pk:"8–15 €/kg",name:{en:"Pork uterus (kobukuro)",fr:"Utérus de porc (kobukuro)"},latin:"Sus scrofa domesticus (uterus)",
 origin:{en:"Japanese horumon grills",fr:"Les grillades horumon japonaises"},season:[],
@@ -637,7 +637,7 @@ fr:"Huit côtes grattées jusqu’à l’os — « manchonnées » — jusqu’�
 tip:{en:"Sear the fat cap first, paint with mustard, press on the herb crumbs, then a short hot roast: pink at the bone, rested until the juices settle.",
 fr:"Saisissez d’abord la coiffe de gras, badigeonnez de moutarde, pressez la chapelure d’herbes, puis un rôtissage court et vif : rosé à l’os, reposé jusqu’à ce que les jus se calment."},
 pairs:["rosemary","garlic","mustard","honey","thyme"],
-svg:'<path class="f2 sf" d="M32 58q0-12 16-14t16 10q2 8-6 12-10 5-20 0-6-3-6-8z"/><path class="s" d="M40 44V30M48 42V28M56 44V30" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M26 61q-5-16-6-31 0-3 3-4 3 0 4 3 2 15 5 32zM39 60q-3-17-4-32 0-3 3-4 3 0 3 3 1 15 4 33zM53 59q1-17 3-31 1-3 4-3 3 1 2 4-1 15 0 30zM66 60q4-15 5-29 1-3 4-3 3 1 2 4-2 15-3 28z"/><path class="f1 sf" d="M18 64q0-8 8-10 10-3 22-2 14 1 24 4 6 2 6 8 0 6-9 8-12 3-26 2-14 0-22-3-5-2-5-10z"/><path class="f2 sf" d="M20 68q12 6 27 6 16 1 29-5-1 3-4 4-12 3-23 2-14 0-21-3-5-2-8-4z"/><path class="f2 sf" d="M22 59q-4 4-3 8 2 5 8 5 3 0 3-2-6-3-6-8 0-4-2-3z"/><path class="s" d="M34 62q12 4 24 3M40 68q9 2 18 1" stroke-width="1.5"/>'},
 
 {id:"cote-de-boeuf",cat:"cuts",price:3,pk:"25–45 €/kg",name:{en:"Rib of beef",fr:"Côte de bœuf"},latin:"Bos taurus (rib section)",
 origin:{en:"The rib cage, bone left in",fr:"Le train de côtes, avec son os"},season:[],
@@ -677,7 +677,7 @@ fr:"Des couches alternées de viande, de gras et d’os, architecture idéale po
 tip:{en:"Cook it the day before and chill it. The fat sets on top and lifts off in one sheet, and the meat improves overnight.",
 fr:"Cuisez-le la veille et laissez-le refroidir. Le gras fige en surface et se retire d’un bloc, et la viande gagne à la nuit."},
 pairs:["carrot","leek","turnip","black-pepper","bay-leaf","onion","soy-sauce","garlic"],
-svg:'<path class="f1 sf" d="M24 44h48v24H24z"/><path class="f3 sf" d="M34 44v24M50 44v24M66 44v24"/>'},
+svg:'<path class="f1 sf" d="M18 44c4-8 16-12 30-12 15 0 28 3 33 9 3 5 1 13-5 17-9 6-23 9-36 8-13-1-23-5-26-11-2-4-1-8 4-11z"/><path class="f2 sf" d="M18 44c4-8 16-12 30-12 15 0 28 3 33 9-7-4-17-6-30-6-14 0-26 3-33 9z"/><path class="f2 sf" d="M28 50c6-1 11 3 11 8 0 5-4 9-10 9-6 0-10-4-10-9 0-5 4-8 9-8zM48 54c5-1 9 3 9 7 0 5-4 8-9 8-5 0-9-3-9-8 0-4 4-7 9-7zM66 50c6 0 10 4 10 8 0 4-4 7-9 7-5 0-9-3-9-8 0-4 3-7 8-7z"/><path class="dot" d="M28 54c3 0 5 2 5 4 0 2-2 4-5 4s-5-2-5-4c0-2 2-4 5-4zM48 58c3 0 5 2 5 4 0 2-2 4-5 4s-5-2-5-4c0-2 2-4 5-4zM66 54c3 0 5 2 5 4 0 2-2 4-5 4s-5-2-5-4c0-2 2-4 5-4z"/><path class="s" d="M23 47c13-4 29-5 43-3" stroke-width="1.5"/>'},
 
 {id:"hampe",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Skirt steak",fr:"Hampe"},latin:"Bœuf — diaphragme",
 origin:{en:"France",fr:"France"},season:[],
@@ -687,7 +687,7 @@ fr:"Une partie du diaphragme, et l’un des morceaux du boucher — ces pièces 
 tip:{en:"The grain is coarse and runs lengthways. Slice it hard across the grain or it is unchewable, however rare you cook it.",
 fr:"La fibre est grossière et court dans la longueur. Tranchez franchement en travers, sinon c’est immâchable, si saignant soit-il."},
 pairs:["shallot","red-wine-vinegar","black-pepper","butter","garlic","thyme","mustard","parsley"],
-svg:'<path class="f1 sf" d="M22 48q26-8 52 0v14q-26 8-52 0z"/><path class="s" d="M22 52h52M22 58h52"/>'},
+svg:'<path class="f1 sf" d="M17 62c2-13 13-23 27-28 12-5 23-6 32-4 3 1 4 6 1 9-9 4-19 5-30 9-12 4-20 10-25 18-2 3-6 1-5-4z"/><path class="f2 sf" d="M17 62c2-13 13-23 27-28 12-5 23-6 32-4-11-1-21 1-31 5-12 5-22 14-28 27z"/><path class="s" d="M30 48c1 4 2 7 3 10M40 43c1 4 2 7 3 10M50 39c1 4 2 7 3 10M60 36c1 3 2 6 3 9M69 34c1 3 1 5 2 7" stroke-width="2"/><path class="f2 sf" d="M34 52c10-4 21-7 32-9 4-1 7-1 8 0-8 3-18 5-28 8-5 1-10 2-12 1z"/><path class="f2 sf" d="M70 32c4-1 7 1 6 4-1 3-5 3-7 1z"/>'},
 
 {id:"araignee",cat:"cuts",price:2,pk:"16–26 €/kg",name:{en:"Spider steak",fr:"Araignée"},latin:"Bos taurus",
 origin:{en:"The hip socket, French butchery",fr:"Cavité de la hanche, boucherie française"},season:[],
@@ -717,7 +717,7 @@ fr:"Non pas la cervelle, comme le craignent les inquiets, mais le thymus — un 
 tip:{en:"The pressing overnight under a weight is not optional — it firms the lobe so it sears instead of steaming. Then: brown butter, capers or morels, and conviction.",
 fr:"Le pressage d’une nuit sous un poids n’est pas optionnel — il raffermit la noix pour qu’elle se saisisse au lieu de suer. Ensuite : beurre noisette, câpres ou morilles, et de la conviction."},
 pairs:["morel","cream","butter","capers","lemon"],
-svg:'<path class="f1 sf" d="M36 50a8 8 0 019-6 8 8 0 0110 2 8 8 0 016 10 8 8 0 01-9 8 9 9 0 01-11-2 8 8 0 01-5-12z"/><path class="s" d="M44 52q4 4 9 4" stroke-width="1.4"/>'},
+svg:'<path class="f2 sf" d="M50 36q8-8 18-4 10 4 10 14 0 12-11 14-11 2-16-6-4-8-1-18z"/><path class="f1 sf" d="M16 54q-2-14 12-19 13-4 22 4 8 6 4 17-3 11-15 14-16 4-20-5-4-5-1-12z"/><path class="f1 sf" d="M34 62q10-4 16 2 4 6-2 10-12 4-16-3-2-6 2-9z"/><path class="s" d="M24 46q10 8 24 6M26 60q9 3 16-1" stroke-width="1.5"/><path class="dot" d="M30 50q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"tetine",cat:"cuts",rare:true,price:1,pk:"5–10 €/kg",name:{en:"Udder",fr:"Tétine"},latin:"Bos taurus (uber)",
 origin:{en:"Lyon tripe stalls",fr:"La triperie lyonnaise"},season:[],
@@ -737,7 +737,7 @@ fr:"L’extrémité cartilagineuse des côtes, qui devient après deux heures qu
 tip:{en:"The cartilage is the good part, not a defect to trim. Cook it long enough and it becomes translucent and unctuous.",
 fr:"Le cartilage est le meilleur, non un défaut à parer. Cuisez-le assez longtemps et il devient translucide et onctueux."},
 pairs:["carrot","onion","white-wine-vinegar","tarragon","cream","mushroom","bay-leaf","lemon"],
-svg:'<path class="f3 sf" d="M24 48h48v20H24z"/><path class="f1 sf" d="M34 48v20M50 48v20M64 48v20"/>'},
+svg:'<path class="f1 sf" d="M17 46q1-7 9-8 24-5 48-1 6 1 7 7 1 8-1 15-1 7-8 8-24 5-48 1-6-1-7-8-1-7 0-14z"/><path class="f2 sf" d="M17 58q22 6 46 3 10-1 17-4l-1 5q-1 7-8 8-24 5-48 1-6-1-7-8z"/><path class="f3 sf" d="M30 43q7-1 8 6 0 6-7 6-8-1-8-6 1-5 7-6zM48 43q7-1 8 6 0 6-7 6-8-1-8-6 1-5 7-6zM66 45q7-1 8 6 0 6-7 6-8-1-8-6 1-5 7-6z"/><path class="s" d="M22 63q22 5 48 1M24 67q20 4 42 0" stroke-width="1.5"/><path class="s" d="M20 56q26 5 57 0" stroke-width="1.5"/>'},
 
 {id:"coeur-de-veau",cat:"cuts",price:1,pk:"9–15 €/kg",name:{en:"Veal heart",fr:"Cœur de veau"},latin:"Bos taurus (cor)",
 origin:{en:"Veal offal, France",fr:"Abats de veau, France"},season:[],
@@ -767,7 +767,7 @@ fr:"Le haut de la cuisse à la jonction de la longe, et le morceau que choisisse
 tip:{en:"Roast it to just pink and rest it twenty minutes. Veal cooked through is the commonest way to waste an expensive piece of meat.",
 fr:"Rôtissez-le juste rosé et laissez-le reposer vingt minutes. Un veau cuit à cœur est la façon la plus courante de gâcher une pièce chère."},
 pairs:["morel","cream","tarragon","butter","shallot","white-wine-vinegar","lemon","asparagus"],
-svg:'<path class="f3 sf" d="M26 46q22-8 42 2v18q-20 10-42 2z"/><path class="s" d="M26 56q22 6 42 0"/>'},
+svg:'<path class="f1 sf" d="M18 52c0-8 6-13 16-15 12-2 26-2 38 1 8 2 12 7 12 13 0 9-7 15-18 17-12 3-26 2-36-2-8-3-12-8-12-14z"/><path class="f2 sf" d="M18 52c0-8 6-13 16-15 6-1 12-2 18-2-10 1-19 4-25 8-5 4-8 8-8 12-1-1-1-2-1-3z"/><path class="s" d="M36 37c-2 11-2 22 0 31M56 36c-1 11-1 22 0 32" stroke-width="2.5"/><path class="s" d="M36 37c-2-3-5-4-8-3M56 36c2-3 5-4 8-2M36 68c-1 3-3 4-6 4M56 68c1 3 4 4 7 3" stroke-width="1.5"/><path class="f2 sf" d="M77 43c4 3 7 6 7 10 0 5-4 9-10 12 2-7 3-15 3-22z"/>'},
 
 {id:"ris-de-veau-noix",cat:"cuts",luxe:true,price:3,pk:"55–95 €/kg",name:{en:"Veal sweetbread heart (noix)",fr:"Ris de veau — noix (pomme)"},latin:"Bos taurus (thymus, thoracic lobe)",
 origin:{en:"The thoracic lobe of the calf's thymus",fr:"Le lobe thoracique du thymus de veau"},season:[],
@@ -787,7 +787,7 @@ fr:"La gorge est le lobe allongé qui remonte le long de la trachée vers la mâ
 tip:{en:"Buy it for anything bound in a sauce, never for a whole roast. Blanch, cut into thumb-sized pieces and braise 25 minutes in stock and cream; seared hard like a noix, the strips shrink and go stringy.",
 fr:"Achetez-la pour tout ce qui se lie en sauce, jamais pour un rôti entier. Blanchissez, taillez en morceaux gros comme le pouce et braisez 25 minutes dans un fond crémé ; saisis vivement comme une noix, les lambeaux se rétractent et filandrent."},
 pairs:["cream","butter","mushroom","chicken","white-wine-vinegar","shallot","nutmeg","parsley"],
-svg:'<path class="f1 sf" d="M28 56q2-10 10-10 6 0 9 5 4-6 11-5 9 2 10 10 1 9-9 11-10 2-16 0-14-3-15-11z"/><path class="s" d="M38 58q6 5 14 3"/><path class="s" d="M50 51v6"/>'},
+svg:'<path class="f1 sf" d="M22 70q-6-8 0-14 5-5 10-3 0-8 7-11 6-3 10 1 3-7 11-8 8-1 10 6 8 1 9 8 1 8-6 11-6 3-12-1-3 7-11 7-8 0-10-6-5 5-12 4-7 4-8 6z"/><path class="f2 sf" d="M62 58q10-3 14 2 3 6-4 10-12 3-14-4 0-8 4-8z"/><path class="s" d="M40 44q-2 9 0 16M56 38q-3 10-1 18M66 42q1 8-1 14" stroke-width="1.5"/><path class="s" d="M28 58q9 3 16-1" stroke-width="1.5"/><path class="dot" d="M30 50q4-1 5 1-1 3-5 2-2-2 0-3z"/>'},
 
 {id:"langue-de-veau",cat:"cuts",price:2,pk:"15–25 €/kg",name:{en:"Veal tongue",fr:"Langue de veau"},latin:"Bos taurus (lingua)",
 origin:{en:"France",fr:"France"},season:[],
@@ -797,5 +797,5 @@ fr:"Une langue de veau pèse six ou sept cents grammes contre deux kilos et demi
 tip:{en:"Peel it the moment it leaves the pot, starting at the tip with a small knife — the skin lifts in one sheet while hot and welds itself on as it cools. If you are not serving at once, let it cool in its own broth or it dries and greys.",
 fr:"Pelez-la dès la sortie du bouillon, en partant de la pointe avec un petit couteau : la peau vient d’un seul tenant tant qu’elle est brûlante et se soude en refroidissant. Si vous ne servez pas aussitôt, laissez-la refroidir dans son bouillon, sinon elle sèche et grise."},
 pairs:["capers","chervil","tarragon","shallot","white-wine-vinegar","parsley","carrot","cornichon"],
-svg:'<path class="f2 sf" d="M26 56q0-14 14-18t26 6q6 8-2 14-14 10-30 6-8-2-8-8z"/><path class="s" d="M34 52q14-6 26 2"/><path class="s" d="M28 62q16 8 34 0"/>'}
+svg:'<path class="f1 sf" d="M22 34c1-8 8-12 17-11 12 1 24 6 32 13 2 2 2 6-2 7-5 3-13 2-22 2-11-1-19 1-24 2-3 1-4-1-3-5 1-2 1-5 2-8z"/><path class="f2 sf" d="M22 34c-2 3-2 6-1 8 1 3 4 4 7 4-2-3-4-5-4-8 0-2 0-3-2-4z"/><path class="s" d="M29 36c11-5 25-2 35 5" stroke-width="2"/><path class="f1 sf" d="M31 56c8 0 14 4 14 9 0 5-6 8-14 8-8 0-13-3-13-8 0-5 5-9 13-9z"/><path class="f2 sf" d="M31 61c5 0 8 2 8 4 0 2-3 4-8 4-5 0-8-2-8-4 0-2 3-4 8-4z"/><path class="f2 sf" d="M57 60c8 0 13 4 13 8 0 5-5 8-13 8-7 0-12-3-12-8 0-4 5-8 12-8z"/>'}
 ]);

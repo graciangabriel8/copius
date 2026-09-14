@@ -627,7 +627,7 @@ fr:"Elle épaissit à plus basse température que la maïzena et donne un résul
 tip:{en:"Never boil it hard. Unlike cornstarch it breaks down and thins again if held at a rolling boil.",
 fr:"Ne la faites jamais bouillir fort. Contrairement à la maïzena, elle se dégrade et redevient liquide si on la maintient à gros bouillons."},
 pairs:["lemon","cream","egg","sugar","vanilla","apple","butter","raspberry"],
-svg:'<path class="f3 sf" d="M36 70q0-16 12-20 12 4 12 20z"/><circle class="dot" cx="43" cy="60" r="1.5"/><circle class="dot" cx="52" cy="62" r="1.5"/>'},
+svg:'<path class="f1 sf" d="M34 72q4-15 15-20 11-5 17 2 5 6 6 18-18 5-38 0z"/><path class="f2 sf" d="M18 58q-2-10 6-14 10-5 18-1 8 4 8 13 0 10-9 14-11 4-18-1-5-4-5-11z"/><path class="s" d="M28 73q22 5 46 0" stroke-width="2"/><path class="dot" d="M27 50q3-2 4 1t-3 3q-3 0-1-4zM39 54q3-2 4 1t-3 3q-3 0-1-4zM33 44q3-2 4 1t-3 3q-3 0-1-4z"/><path class="dot" d="M54 40q3-2 4 1t-3 3q-3 0-1-4zM66 44q3-2 4 1t-3 3q-3 0-1-4z"/>'},
 
 {id:"tapioca-starch",cat:"texture",price:1,pk:"4–8 €/kg",name:{en:"Tapioca starch",fr:"Fécule de tapioca"},latin:"Manihot esculenta",
 origin:{en:"Amazonian cassava",fr:"Manioc amazonien"},season:[],
@@ -637,7 +637,7 @@ fr:"Le mot vient du tupi tipi’óka, le dépôt exprimé du manioc râpé : la 
 tip:{en:"It thickens at a lower temperature than cornstarch and slackens if you boil it hard, so add it at the end and pull the pan off as soon as the sauce clears. For pão de queijo and chewy breads it must be scalded — pour the boiling liquid onto the starch, never the reverse.",
 fr:"Elle épaissit à plus basse température que la maïzena et se relâche à gros bouillons : ajoutez-la en fin de cuisson et retirez la casserole dès que la sauce devient translucide. Pour le pão de queijo et les pains élastiques, elle doit être ébouillantée — versez le liquide bouillant sur la fécule, jamais l’inverse."},
 pairs:["coconut-milk","palm-sugar","pandan","mango","shrimp","black-sesame"],
-svg:'<path class="f1 sf" d="M28 44q0-12 14-12t14 12q0 12-14 12T28 44z"/><path class="s" d="M56 44l14 14"/><circle class="dot" cx="38" cy="42" r="3"/><circle class="dot" cx="46" cy="40" r="3"/><circle class="dot" cx="42" cy="49" r="3"/><circle class="f3 sf" cx="50" cy="48" r="3"/>'},
+svg:'<path class="f1 sf" d="M18 70q0-6 6-9 1-7 7-7t7 6q2-7 8-7t7 7q2-6 8-6t7 7q6 2 8 9-4 8-28 8t-30-8z"/><path class="f2 sf" d="M33 58q0-5 5-5t5 5-5 5-5-5zM52 57q0-5 5-5t5 5-5 5-5-5z"/><path class="f3 sf" d="M24 66q0-6 6-6t6 6-6 6-6-6zM42 68q0-6 6-6t6 6-6 6-6-6zM60 66q0-6 6-6t6 6-6 6-6-6z"/><path class="f2 sf" d="M25 76q0-5 5-5t5 5-5 5-5-5zM59 76q0-5 5-5t5 5-5 5-5-5z"/><path class="s" d="M38 64q3 3 3 6M56 63q3 3 3 6" stroke-width="1.5"/>'},
 
 {id:"kuzu",cat:"texture",price:3,pk:"80–160 €/kg",name:{en:"Kuzu",fr:"Kuzu"},latin:"Pueraria montana",
 origin:{en:"Yoshino, Nara",fr:"Yoshino, Nara"},season:[],
@@ -657,7 +657,7 @@ fr:"Le pain a levé pendant des millénaires sans que nul en sache la raison. Pa
 tip:{en:"Never let it touch salt directly in the bowl — salt kills it on contact. Put the flour between them.",
 fr:"Ne la laissez jamais toucher le sel directement dans le bol — le sel la tue au contact. Mettez la farine entre les deux."},
 pairs:["flour-t65","salt","butter","honey","rye-flour","olive-oil","cream","flour-t55"],
-svg:'<path class="f2 sf" d="M34 70V48h28v22z"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="52" cy="56" r="2"/><circle class="dot" cx="47" cy="64" r="2"/>'},
+svg:'<path class="f1 sf" d="M18 46q14-10 30-16 16 6 30 15-14 10-30 15-16-5-30-14z"/><path class="f2 sf" d="M18 46q-1 9 0 18 14 10 30 14 1-9 0-18-16-5-30-14z"/><path class="f2 sf" d="M78 45q1 9 0 17-14 10-30 16 1-9 0-18 16-5 30-15z"/><path class="s" d="M26 56q6 4 12 6M30 66q5 3 11 5M58 68q6-3 12-6M62 58q5-2 10-5" stroke-width="1.5"/><path class="f1 sf" d="M54 76q4-5 8-3 4 2 3 5-4 4-8 2-4-2-3-4z"/><path class="dot" d="M22 70q3-3 5 1t-3 4q-4 0-2-5zM66 72q3-3 5 1t-3 4q-4 0-2-5zM38 80q3-3 5 1t-3 4q-4 0-2-5z"/>'},
 {id:"warabiko",cat:"texture",price:3,pk:"60–200 €/kg",name:{en:"Warabi-ko (bracken starch)",fr:"Fécule de fougère (warabi-ko)"},latin:"Pteridium aquilinum",
 origin:{en:"Japan, mountain woodland",fr:"Japon, sous-bois de montagne"},season:[],
 flavor:["mild","earthy","delicate"],

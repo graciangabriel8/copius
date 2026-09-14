@@ -17,7 +17,7 @@ fr:"L’amandier fleurit avant de feuiller — une promesse blanche dans les ver
 tip:{en:"Toast them always — raw almonds are only a rumour of themselves. Ground with sugar, they become frangipane, the soul of French tarts.",
 fr:"Torréfiez-les toujours — l’amande crue n’est qu’une rumeur d’elle-même. Moulue avec du sucre, elle devient la frangipane, âme des tartes françaises."},
 pairs:["peach","raspberry","dark-chocolate","honey","cherry","saffron"],
-svg:'<path class="f2 sf" d="M48 30q14 14 12 30-1 14-12 14t-12-14q-2-16 12-30z"/><path class="dot" d="M43 50a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M50 44a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M50 58a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0M43 62a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/>'},
+svg:'<path class="f1 sf" d="M42 19q-13 14-14 32-1 17 22 28 10-16 10-31 1-18-18-29z"/><path class="f2 sf" d="M64 32q-6 8-5 18 1 9 9 12 8-5 7-16-1-10-11-14z"/><path class="f1 sf" d="M24 54q10 3 13 12 4 10-3 14-10 0-13-11-2-11 3-15z"/><path class="s" d="M38 34q-3 14 1 30M46 29q-3 16 0 35M54 36q3 13-2 26M64 34q-2 13 0 26M26 57q5 11 4 20" stroke-width="1.5"/><path class="s" d="M36 72q7 5 15 3" stroke-width="1.5"/>'},
 
 {id:"almond-flour",cat:"nuts",price:2,pk:"16–28 €/kg",name:{en:"Almond flour",fr:"Poudre d'amande"},latin:"Prunus dulcis",
 origin:{en:"Nut mills, Spain and California",fr:"Moulins à fruits secs, Espagne et Californie"},season:[],
@@ -127,7 +127,7 @@ fr:"Elle ne peut être cultivée — l’arbre dépend d’une seule abeille des
 tip:{en:"One nut can carry more than a day's selenium. That is a real limit, not a health-food claim — do not eat handfuls.",
 fr:"Une seule noix peut porter plus d’une journée de sélénium. C’est une limite réelle, non un argument diététique — n’en mangez pas des poignées."},
 pairs:["dark-chocolate","honey","coffee","vanilla","cream","banana","coconut-milk","date"],
-svg:'<path class="f1 sf" d="M36 38l16 4 6 26-18 8-8-24z"/><path class="s" d="M40 46l12 18"/>'},
+svg:'<path class="f2 sf" d="M30 24q10 10 13 26 4 12 2 24-12 5-20 1-4-16-1-27 2-14 6-24z"/><path class="f2 sf" d="M30 24q10 10 13 26 4 12 2 24-6 2-10 1 2-28-5-51z"/><path class="f1 sf" d="M64 22q9 11 11 27 2 12 0 21-11 4-17 0-3-13 0-23 1-14 6-25z"/><path class="f2 sf" d="M64 22q9 11 11 27 2 12 0 21-8 3-12 2 3-35 1-50z"/><path class="s" d="M34 32q-2 18-1 36M60 32q-2 17-1 32M68 38q3 13 2 26" stroke-width="1.5"/>'},
 
 {id:"bronte-pistachio",cat:"nuts",luxe:true,price:4,pk:"90–180 €/kg",name:{en:"Bronte pistachio",fr:"Pistache de Bronte"},latin:"Pistacia vera",
 origin:{en:"Bronte, Sicily",fr:"Bronte, Sicile"},season:[8,9],
@@ -157,7 +157,7 @@ fr:"Elle pousse suspendue sous un faux-fruit charnu, et sa coque contient une hu
 tip:{en:"Soaked and blended it makes a cream that behaves like dairy. It is the base of half the vegan sauces that actually work.",
 fr:"Trempée et mixée elle donne une crème qui se comporte comme un laitage. C’est la base de la moitié des sauces véganes qui fonctionnent vraiment."},
 pairs:["coconut-milk","chili","lime","cilantro","ginger","garlic","curry-leaf","honey"],
-svg:'<path class="f2 sf" d="M34 50q14-12 24 0t-6 20-22-4 4-16z"/><path class="s" d="M40 56q10 4 14 10"/>'},
+svg:'<path class="f2 sf" d="M22 54q10-2 16 6 5 7 0 13-6 5-13 2 7-6 5-12-2-6-8-9z"/><path class="f1 sf" d="M35 21q18 4 30 22 8 12-3 22-8 9-22 7 12-10 9-24-3-16-14-27z"/><path class="f2 sf" d="M40 72q12-10 9-24-3-16-14-27 2 20 5 29 3 12 0 22z"/><path class="s" d="M44 66q9-5 14-13M58 32q6 5 8 11" stroke-width="1.5"/>'},
 
 {id:"cervione-hazelnut",cat:"nuts",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Cervione hazelnut",fr:"Noisette de Cervione"},latin:"Corylus avellana (Fertile de Coutard)",
 origin:{en:"Cervione, Corsica",fr:"Cervione, Corse"},season:[9],
@@ -177,7 +177,7 @@ fr:"Des siècles durant, les villages de montagne, de la Corse aux Cévennes, v�
 tip:{en:"Score a cross before roasting or they explode — every fireside learns this once. Their sweetness loves mushrooms, pork and dark chocolate.",
 fr:"Incisez une croix avant de les rôtir, sinon elles explosent — chaque coin du feu l’apprend une fois. Leur douceur aime les champignons, le porc et le chocolat noir."},
 pairs:["mushroom","pork","cream","dark-chocolate","honey","sage"],
-svg:'<path class="f2 sf" d="M48 30q16 10 16 26 0 12-16 12T32 56q0-16 16-26z"/><path class="f3 sf" d="M38 64q10 6 20 0l-2 6H40z"/><path class="s" d="M48 30v-4"/>'},
+svg:'<path class="f1 sf" d="M28 40q-13 6-13 20 0 10 11 12h10q10-2 10-12-2-13-18-20z"/><path class="f2 sf" d="M54 24q-21 10-22 30 0 12 15 14h15q15-2 15-14-2-20-23-30z"/><path class="f1 sf" d="M38 62q16 8 32 0 0 4-1 7-15 7-31 0 0-3 0-7z"/><path class="s" d="M54 24q-4-6-8-9M54 24q0-8-1-9M54 24q5-6 9-7M28 40q-2-6-4-7" stroke-width="2"/><path class="s" d="M44 34q-7 8-7 18" stroke-width="1.5"/>'},
 
 {id:"chia-seed",cat:"nuts",price:1,pk:"7–13 €/kg",name:{en:"Chia seed",fr:"Graine de chia"},latin:"Salvia hispanica",
 origin:{en:"Central Mexico",fr:"Mexique central"},season:[],
@@ -207,7 +207,7 @@ fr:"C’est le séchage qui a permis à la coco de quitter les tropiques — la 
 tip:{en:"Toast it in a dry pan before it goes into anything. Raw desiccated coconut tastes of cardboard.",
 fr:"Torréfiez-la à sec avant de l’incorporer. Crue, la coco râpée a un goût de carton."},
 pairs:["dark-chocolate","lime","mango","sugar","vanilla","cardamom","pineapple","coconut-milk"],
-svg:'<path class="f3 sf" d="M32 52h32v4H32zM30 60h34v4H30zM34 68h28v4H34z"/>'},
+svg:'<path class="f1 sf" d="M18 46q14-13 32-5-2 4-7 3-13-4-22 7-4 0-3-5zM22 70q16-12 36-4-2 4-8 3-15-4-25 7-4 0-3-6zM46 48q16-6 30 4-3 4-9 1-11-6-20 1-3-1-1-6z"/><path class="f2 sf" d="M24 58q16-11 34-3-2 4-7 3-14-4-24 6-4-1-3-6zM40 34q16-8 32 2-2 4-8 2-13-6-22 2-3 0-2-6zM44 62q16-6 32 4-3 4-9 1-13-6-22 1-3-1-1-6z"/><path class="f1 sf" d="M30 26q10-6 20-2-2 4-7 3-8-2-12 3-2-1-1-4zM54 72q10-4 18 2-3 3-8 1-7-3-11 1-2-1 1-4z"/><path class="s" d="M32 52q10-5 18-3M30 66q11-5 20-2M50 42q10-2 16 2" stroke-width="1.5"/><path class="dot" d="M38 44q3-1 4 1-1 2-4 1-1-1 0-2zM62 60q3-1 4 1-1 2-4 1-1-1 0-2z"/>'},
 
 {id:"egusi-seed",cat:"nuts",rare:true,price:2,pk:"12–22 €/kg",name:{en:"Egusi",fr:"Graines d’egusi"},latin:"Citrullus mucosospermus",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
@@ -347,7 +347,7 @@ fr:"Chez les Igbo, la noix se casse et se partage avant toute conversation séri
 tip:{en:"Freeze it and grate it on a microplane — dried kola is too hard to cut and far too astringent for a heavy hand. Two grams infused twenty minutes in a litre of cream or milk gives a bitter aromatic backbone; always pair it with fat, which is the only thing that blunts the tannin.",
 fr:"Congelez-la et râpez-la à la microplane : sèche, elle est trop dure à couper et bien trop astringente pour la main lourde. Deux grammes infusés vingt minutes dans un litre de crème ou de lait donnent une amertume aromatique de fond ; associez-la toujours au gras, seul à émousser le tanin."},
 pairs:["dark-chocolate","coffee","ginger","molasses","orange","vanilla","cocoa-nibs"],
-svg:'<path class="f2 sf" d="M48 24q18 10 18 28T48 76 30 52 48 24z"/><path class="s" d="M48 24v52M48 50l-18 2M48 50l18 2"/>'},
+svg:'<path class="f2 sf" d="M30 26q16-2 22 10 5 12-4 20-14 8-24-2-8-10-4-20 2-6 10-8z"/><path class="f2 sf" d="M72 34q9 8 8 20-1 13-10 18-6-6-5-18 1-13 7-20z"/><path class="f1 sf" d="M56 38q10 6 11 18 1 14-8 20-9-4-10-18-1-14 7-20z"/><path class="f1 sf" d="M30 62q11-2 15 6 3 8-4 12-11 3-15-5-2-9 4-13z"/><path class="s" d="M57 42q-2 14-1 28M71 40q2 14 1 26M34 32q6 9 5 20" stroke-width="1.5"/>'},
 
 {id:"korean-pine-nut",cat:"nuts",price:3,pk:"40–70 €/kg",name:{en:"Korean pine nut",fr:"Pignon de pin de Corée"},latin:"Pinus koraiensis",
 origin:{en:"Northeast Asia",fr:"Asie du Nord-Est"},season:[],
@@ -357,7 +357,7 @@ fr:"Les cônes du pin de Corée sont encore descendus arbre par arbre, à la cor
 tip:{en:"They are half fat and turn rancid within weeks at room temperature — keep the bag in the freezer. Toast them dry over medium heat and do not walk away: they go from pale to burnt in about thirty seconds.",
 fr:"Ils sont à moitié gras et rancissent en quelques semaines à température ambiante — gardez le sachet au congélateur. Torréfiez-les à sec à feu moyen sans vous éloigner : ils passent du blond au brûlé en une trentaine de secondes."},
 pairs:["honey","jujube","rice","sesame-oil","chicken","spinach","doenjang"],
-svg:'<path class="f2 sf" d="M48 22q13 9 13 26 0 20-13 26-13-6-13-26 0-17 13-26z"/><path class="s" d="M35 36q13 6 26 0M34 48q14 6 28 0M36 60q12 6 24 0M48 24v50"/>'},
+svg:'<path class="f2 sf" d="M54 22q15 7 17 23 2 17-12 24-17-3-19-20-2-19 14-27zM28 32q12 5 14 19 2 14-10 20-14-3-16-17-1-15 12-22zM38 64q9 3 10 10 1 7-7 9-9-1-10-9 0-7 7-10z"/><path class="f1 sf" d="M70 56q7 4 6 13-1 8-8 10-6-4-6-12 0-8 8-11z"/><path class="s" d="M54 24q-3 22 0 42M28 34q-3 18 0 35M70 58q-2 10 0 18" stroke-width="1.5"/><path class="dot" d="M50 23q6-3 9 2 0 4-5 5-6-1-4-7zM25 32q6-3 9 2 0 4-5 5-6-1-4-7z"/>'},
 
 {id:"largueta-almond",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Largueta almond",fr:"Amande Largueta"},latin:"Prunus dulcis (Desmayo Largueta)",
 origin:{en:"Ebro valley, Aragón",fr:"Vallée de l'Èbre, Aragon"},season:[8,9],
@@ -407,7 +407,7 @@ fr:"Pas une noix, mais une légumineuse qui enterre elle-même ses gousses. Née
 tip:{en:"Ground with a little of its own oil, it becomes sauce for half of West African and Southeast Asian cooking — chili and lime are its best friends.",
 fr:"Broyée avec un peu de sa propre huile, elle devient sauce pour la moitié des cuisines ouest-africaines et d’Asie du Sud-Est — piment et citron vert sont ses meilleurs amis."},
 pairs:["chili","coconut-milk","soy-sauce","dark-chocolate","ginger"],
-svg:'<path class="f1 sf" d="M42 32q10-2 12 6 1 4 5 6 8 4 6 14-2 12-14 10-8-1-10-8-1-4-5-7-6-5-2-13 3-7 8-8z"/><path class="s" d="M40 42q6 4 6 10M52 44q4 4 4 9"/>'},
+svg:'<path class="f1 sf" d="M54 17q10 2 12 17 0 10-10 14 6 6 4 18-2 14-16 16-14-2-15-18 1-12 11-17-4-9 2-17 2-11 12-13z"/><path class="s" d="M47 24q-5 11-4 21M59 28q2 9-1 14M37 58q-3 11 2 19M55 57q2 12-3 18" stroke-width="1.5"/><path class="s" d="M43 32q9 4 16-1M35 62q10 4 19-2" stroke-width="1.5"/><path class="f2 sf" d="M24 40q11 3 10 12-1 10-9 12-10-2-9-12 1-10 8-12z"/><path class="s" d="M24 41q4 11 1 22" stroke-width="1.5"/>'},
 
 {id:"pecan",cat:"nuts",price:2,pk:"20–35 €/kg",name:{en:"Pecan",fr:"Noix de pécan"},latin:"Carya illinoinensis",
 origin:{en:"Mississippi valley",fr:"Vallée du Mississippi"},season:[10,11,12],
@@ -417,7 +417,7 @@ fr:"Une noix d’Amérique du Nord que les peuples autochtones récoltaient bien
 tip:{en:"Sweeter and softer than a walnut, with none of its bitterness. They are not interchangeable in baking despite the resemblance.",
 fr:"Plus sucrée et plus tendre que la noix, sans son amertume. Elles ne sont pas interchangeables en pâtisserie malgré la ressemblance."},
 pairs:["maple-syrup","butter","vanilla","dark-chocolate","honey","cream","cinnamon","coffee"],
-svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="12" ry="18"/><path class="s" d="M48 38v36M42 44q4 12 0 24M54 44q-4 12 0 24"/>'},
+svg:'<path class="f1 sf" d="M50 18q17 8 18 24 2 20-18 36-20-16-18-36 2-16 18-24z"/><path class="s" d="M50 22q-3 26 0 52" stroke-width="2"/><path class="s" d="M42 30q-6 9-3 17-4 8 1 19M58 31q6 9 2 17 5 9 0 18M45 40q-4 6-1 11-3 6 0 10M55 41q4 6 1 11 3 6 0 10" stroke-width="1.5"/><path class="f2 sf" d="M28 50q9 4 10 13 1 9-7 13-10-2-10-11-1-11 7-15z"/><path class="s" d="M29 53q4 11 2 22" stroke-width="1.5"/>'},
 
 {id:"perilla-seed",cat:"nuts",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Perilla seed",fr:"Graine de périlla"},latin:"Perilla frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[],
@@ -447,7 +447,7 @@ fr:"La coque est si dure qu’on la fend une noix à la fois, d’un coup de lam
 tip:{en:"It carries more fat than any other nut in the trade and it roasts fast — 140 °C for eight to ten minutes, and stop while it is still pale. Do not wait for a crunch: a properly roasted pili melts rather than snaps, and by the time it is crisp it is burnt.",
 fr:"Il est le plus gras des fruits à coque du commerce et grille vite : 140 °C, huit à dix minutes, et l’on arrête tant qu’il reste blond. N’attendez pas le croquant : un pili bien grillé fond au lieu de casser, et lorsqu’il croque il est déjà brûlé."},
 pairs:["dark-chocolate","coconut","palm-sugar","vanilla","honey","salt","butter","cocoa-nibs"],
-svg:'<path class="f3 sf" d="M48 18q16 16 16 32t-16 28q-16-12-16-28t16-32z"/><path class="f1 sf" d="M48 30q7 10 7 20t-7 16q-7-6-7-16t7-20z"/>'},
+svg:'<path class="f1 sf" d="M48 18L60 42q5 12 0 24L48 78 36 66q-5-12 0-24z"/><path class="f2 sf" d="M48 18L60 42q5 12 0 24L48 78z"/><path class="f1 sf" d="M22 44q12 4 12 14 0 10-8 14-10 0-12-12-2-12 8-16z"/><path class="s" d="M36 43L48 47 60 43M36 66L48 62 60 66M23 47q5 12 3 24" stroke-width="1.5"/><path class="dot" d="M44 22L48 14 52 22 48 26z"/>'},
 
 {id:"pine-nut",cat:"nuts",price:3,pk:"40–80 €/kg",name:{en:"Pine nut",fr:"Pignon de pin"},latin:"Pinus pinea",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
@@ -457,7 +457,7 @@ fr:"Les légionnaires romains emportaient des pignons comme ration de marche, et
 tip:{en:"They burn treacherously fast: toast them in a dry pan and never take your eyes off. Golden is perfect; brown is bitter.",
 fr:"Ils brûlent traîtreusement vite : torréfiez-les à sec sans les quitter des yeux. Dorés, c’est parfait ; bruns, c’est amer."},
 pairs:["basil","parmesan","spinach","zucchini","fig","honey"],
-svg:'<path class="f1 sf" d="M42 42q-4-8 3-12 5 4 3 12-3 3-6 0zM54 46q-4-8 3-12 5 4 3 12-3 3-6 0zM40 60q-4-8 3-12 5 4 3 12-3 3-6 0zM52 62q-4-8 3-12 5 4 3 12-3 3-6 0z"/>'},
+svg:'<path class="f2 sf" d="M48 18q7 5 8 12 5 4 5 11 3 5 1 11-7 4-15 4-8 0-14-4-2-6 1-11 0-7 5-11 6-7 9-12z"/><path class="s" d="M36 28q6 4 12 0 6 4 12 0M34 38q7 5 14 0 7 5 13 0M34 47q7 5 14 0 7 5 13 0" stroke-width="1.5"/><path class="f1 sf" d="M26 46q6 6 3 14-3 8-10 8-4-7 0-14 3-6 7-8zM58 50q10 4 10 13 0 10-8 14-8-5-7-15 0-8 5-12z"/><path class="f2 sf" d="M40 56q9 4 8 14-1 10-9 12-7-6-5-16 1-7 6-10zM74 52q7 5 4 13-3 7-9 7-3-6 1-13 2-5 4-7z"/><path class="s" d="M26 48q-3 9-2 17M40 58q-2 10 0 19M58 52q-2 10 0 20M74 54q-3 7-2 13" stroke-width="1.5"/>'},
 
 {id:"pinyon-pine-nut",cat:"nuts",price:3,pk:"80–150 €/kg",name:{en:"Pinyon pine nut",fr:"Pignon pinyon"},latin:"Pinus edulis",
 origin:{en:"American Southwest",fr:"Sud-ouest américain"},season:[9,10,11],
@@ -477,7 +477,7 @@ fr:"La reine de Saba, dit-on, réservait à sa cour toute la récolte de pistach
 tip:{en:"The greener the kernel, the finer the pistachio — Sicily’s Bronte and Iran’s best are almost emerald. Crushed, they finish anything creamy with style.",
 fr:"Plus le cerneau est vert, plus la pistache est fine — celles de Bronte en Sicile et les meilleures d’Iran sont presque émeraude. Concassée, elle finit avec panache tout ce qui est crémeux."},
 pairs:["cherry","dark-chocolate","honey","yogurt","cardamom"],
-svg:'<path class="f1 sf" d="M36 50q0-14 12-14t12 14q0 8-6 12l-6-10-6 10q-6-4-6-12z"/><path class="f3 sf" d="M44 52q4-6 8 0 2 8-4 14-6-6-4-14z"/>'},
+svg:'<path class="f2 sf" d="M28 58q9 3 10 10 1 8-6 10-9 0-10-9 0-8 6-11z"/><path class="f2 sf" d="M48 22q8 8 7 26-1 16-7 28-6-12-7-28-1-18 7-26z"/><path class="f1 sf" d="M40 20q-15 10-14 28 1 22 6 30-4-30-6-58z"/><path class="f1 sf" d="M56 22q15 10 15 26 0 22-19 30 1-28 4-56z"/><path class="s" d="M33 34q-4 12-3 24M63 36q4 12 2 22M30 61q4 8 2 15" stroke-width="1.5"/>'},
 
 {id:"poppy-seed",cat:"nuts",price:1,pk:"10–20 €/kg",name:{en:"Poppy seed",fr:"Graine de pavot"},latin:"Papaver somniferum",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[],
@@ -517,7 +517,7 @@ fr:"Le fruit de la liane sèche en une étoile ligneuse à quatre ou cinq branch
 tip:{en:"Never cook with the oil. It oxidises at gentle heat and turns fishy within minutes in a hot pan; dress with it cold, keep the bottle in the fridge and finish it within a month of opening.",
 fr:"Ne cuisinez jamais à cette huile. Elle s’oxyde à feu doux et tourne au poisson en quelques minutes dans une poêle chaude : assaisonnez à froid, gardez le flacon au réfrigérateur et finissez-le dans le mois qui suit l’ouverture."},
 pairs:["quinoa","lime","cocoa-nibs","avocado","honey","salt","chili","sweet-potato"],
-svg:'<path class="f2 sf" d="M48 24q6 18 24 24-18 6-24 24-6-18-24-24 18-6 24-24z"/><ellipse class="f1 sf" cx="48" cy="48" rx="8" ry="6"/>'},
+svg:'<path class="f1 sf" d="M48 16q6 10 9 20 13-4 21 2-6 12-16 15 6 7 5 21-9 0-19-11-10 11-19 11-1-12 5-21-10-3-16-15 8-6 21-2 3-10 9-20z"/><path class="s" d="M48 48L57 36M48 48L62 53M48 48L48 63M48 48L34 53M48 48L39 36" stroke-width="1.5"/><path class="f2 sf" d="M43 45q5-5 10 0 5 5 0 10-5 5-10 0-5-5 0-10z"/><path class="f2 sf" d="M36 68q8-2 10 4 2 7-5 9-9 0-10-6 0-6 5-7zM54 68q9-2 11 4 2 7-5 9-9 0-10-6 0-6 4-7z"/>'},
 
 {id:"sesame",cat:"nuts",price:1,pk:"5–10 €/kg",name:{en:"Sesame",fr:"Sésame"},latin:"Sesamum indicum",
 origin:{en:"India & Africa",fr:"Inde & Afrique"},season:[],
@@ -527,7 +527,7 @@ fr:"« Sésame, ouvre-toi ! » — la formule magique d’Ali Baba fait écho à
 tip:{en:"Toasted and ground with salt, it becomes gomasio; toasted and pressed, tahini. Raw seeds on bread are decoration — toasted, they are flavour.",
 fr:"Torréfié et broyé avec du sel, il devient gomasio ; torréfié et pressé, tahini. Cru sur le pain, il décore — torréfié, il parfume."},
 pairs:["chickpeas","honey","soy-sauce","ginger","eggplant","rice","tuna"],
-svg:'<path class="f2 sf" d="M40 42q3-6 6 0 2 5-3 8-5-3-3-8zM52 38q3-6 6 0 2 5-3 8-5-3-3-8zM34 56q3-6 6 0 2 5-3 8-5-3-3-8zM48 54q3-6 6 0 2 5-3 8-5-3-3-8zM60 52q3-6 6 0 2 5-3 8-5-3-3-8zM42 68q3-6 6 0 2 5-3 8-5-3-3-8z"/>'},
+svg:'<path class="f1 sf" d="M30 58q-4-14 1-26 3-9 12-12 9 3 12 12 5 12 1 26-12 5-26 0z"/><path class="s" d="M43 20q1-5 3-7M37 26q-3 15-2 31M43 24q0 16 0 34M49 26q3 15 2 31" stroke-width="2"/><path class="f2 sf" d="M58 38q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM68 46q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM72 58q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM46 70q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM24 58q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4z"/><path class="f1 sf" d="M58 52q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM62 66q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM68 68q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM34 72q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4z"/><path class="dot" d="M52 50q4-1 5 2 0 3-3 3-4 0-4-3 0-2 2-2z"/>'},
 
 {id:"sunflower-seed",cat:"nuts",price:1,pk:"4–8 €/kg",name:{en:"Sunflower seed",fr:"Graine de tournesol"},latin:"Helianthus annuus",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[],
@@ -547,7 +547,7 @@ fr:"Du sésame broyé et rien d’autre, avec un comportement contre-intuitif : 
 tip:{en:"Keep adding the water through the seizing stage. It always comes back, and it takes far more water than seems possible.",
 fr:"Continuez d’ajouter l’eau pendant la phase de figeage. Elle revient toujours, et il en faut bien plus qu’on ne l’imagine."},
 pairs:["lemon","garlic","chickpeas","cumin","olive-oil","date","honey","parsley"],
-svg:'<path class="f3 sf" d="M36 70V48q12-4 24 0v22z"/><path class="s" d="M36 48q12 4 24 0"/><ellipse class="dot" cx="44" cy="60" rx="2" ry="1.4"/><ellipse class="dot" cx="53" cy="63" rx="2" ry="1.4"/>'},
+svg:'<path class="f1 sf" d="M24 44q24 6 48 0v26q0 9-24 9t-24-9z"/><path class="f2 sf" d="M27 45q21-6 42 0-21 6-42 0z"/><path class="s" d="M24 44q24-8 48 0M52 44L65 27M34 47q8 4 16 1 8-3 14 1"/><path class="f1 sf" d="M62 22q7-2 8 3 1 5-5 7-7 0-7-5 0-4 4-5z"/><path class="dot" d="M22 30q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM44 24q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4zM74 44q7-1 8 3 1 4-4 5-7 0-8-4 0-4 4-4z"/>'},
 
 {id:"tiger-nut",cat:"nuts",price:2,pk:"10–18 €/kg",name:{en:"Tiger nut",fr:"Souchet"},latin:"Cyperus esculentus",
 origin:{en:"Valencia & the Sahel",fr:"Valence & le Sahel"},season:[],
@@ -577,7 +577,7 @@ fr:"Les Romains l’appelaient Jovis glans — « gland de Jupiter », nourritur
 tip:{en:"Buy them in the shell — shelled kernels go rancid fast. Ten seconds in a hot pan and they taste twice as much of themselves.",
 fr:"Achetez-les en coque — les cerneaux nus rancissent vite. Dix secondes dans une poêle chaude et elles ont deux fois plus de goût."},
 pairs:["blue-cheese","pear","fig","beetroot","honey","coffee","grape","celery"],
-svg:'<circle class="f2 sf" cx="48" cy="52" r="18"/><path class="s" d="M48 36v32M42 42q-4 10 0 20M54 42q4 10 0 20"/>'},
+svg:'<path class="f2 sf" d="M34 30q16 0 18 18 2 18-14 22-18 0-20-18-2-18 16-22z"/><path class="f1 sf" d="M64 26q14 6 15 22 1 18-14 26-14-8-14-26 0-16 13-22z"/><path class="s" d="M34 31q-5 20 3 39M34 30q-2-5 0-7" stroke-width="2"/><path class="s" d="M64 28q-3 22 1 42" stroke-width="2"/><path class="s" d="M57 34q7 5 0 11-8 5 0 11-7 5 0 10M73 34q-7 5 0 11 8 5 0 11 7 5 0 10" stroke-width="1.5"/>'},
 
 {id:"water-caltrop",cat:"nuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Water caltrop",fr:"Mâcre"},latin:"Trapa natans",
 origin:{en:"Eurasian still waters",fr:"Eaux dormantes d’Eurasie"},season:[8,9,10],
@@ -587,7 +587,7 @@ fr:"Elle doit son nom à la chausse-trape, ce fer à pointes jeté au sol pour e
 tip:{en:"Never eat it raw: in its Asian growing waters it can carry the fluke Fasciolopsis buski, and the horns are sharp enough to be a hazard in themselves. Boil twenty-five to thirty minutes in salted water, then peel with a knife — the flesh should be chalky, never squeaky.",
 fr:"Ne la mangez jamais crue : dans ses eaux de culture asiatiques elle peut porter la douve Fasciolopsis buski, et les cornes coupent à elles seules. Faites-la bouillir vingt-cinq à trente minutes à l’eau salée, puis pelez au couteau — la chair doit être farineuse, jamais crissante."},
 pairs:["pork","soy-sauce","ginger","shiitake","chicken","star-anise","shaoxing-wine"],
-svg:'<path class="f3 sf" d="M30 34q10 10 18 10t18-10q2 12-4 20t-14 10q-8-2-14-10t-4-20z"/><path class="s" d="M40 50q8 4 16 0"/><path class="dot" d="M46.4 64a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
+svg:'<path class="f1 sf" d="M48 20q12 4 18 20 8 14 10 28-12-4-22-10h-12q-10 6-22 10 2-14 10-28 6-16 18-20z"/><path class="f2 sf" d="M66 40q8 14 10 28-12-4-22-10 8-6 12-18z"/><path class="f2 sf" d="M44 24q4-6 8 0 2 6-4 8-6-2-4-8z"/><path class="s" d="M60 40q8 11 11 23M36 40q-8 11-11 23M40 30q8 3 16 0" stroke-width="1.5"/><path class="s" d="M48 32q-2 12 0 22" stroke-width="1.5"/>'},
 
 {id:"white-poppy-seed",cat:"nuts",price:2,pk:"15–25 €/kg",name:{en:"White poppy seed",fr:"Pavot blanc"},latin:"Papaver somniferum",
 origin:{en:"Bengal & the Deccan",fr:"Bengale & Deccan"},season:[],

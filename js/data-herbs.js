@@ -7,7 +7,7 @@ fr:"Niort, dans les Deux-Sèvres, en confit les tiges creuses depuis le XVIIIe s
 tip:{en:"The candied stem is the usable form for most cooks — dice it into a cake or a fruit compote where you would use citrus peel.",
 fr:"La tige confite est la forme utilisable pour la plupart — taillez-la en dés dans un gâteau ou une compote, là où vous mettriez de l’écorce d’agrume."},
 pairs:["rhubarb","apple","honey","cream","almond","gooseberry","sugar","juniper"],
-svg:'<path class="f3 sf" d="M44 78V38h8v40z"/><path class="s" d="M48 38q-14-4-16-14 14-2 18 10M48 38q14-4 16-14-14-2-18 10"/>'},
+svg:'<path class="s" d="M48 49q-4-8-21-14M48 49q-4-11-12-21M48 49q1-12 0-25M48 49q5-11 13-21M48 49q5-8 21-14" stroke-width="2"/><path class="f1 sf" d="M20 34q0 -2 1 -4q1 -2 3 -2q1 0 3 3q2 -3 3 -4q1 1 1 4q1 3 -1 5q-1 0 -4 -1q-1 3 -1 4q-3 -2 -5 -5zM29 24q1 -2 2 -4q2 -1 4 -1q1 1 2 4q3 -2 4 -2q1 2 0 4q-1 3 -4 4q-1 0 -3 -2q-2 2 -3 3q-2 -3 -2 -6zM42 21q0 -2 1 -3q2 -2 4 -3q1 1 2 4q3 -3 4 -4q1 2 1 5q0 3 -3 4q-1 1 -3 -1q-1 3 -2 4q-3 -2 -4 -6zM56 27q-1 -2 -1 -4q1 -2 3 -3q1 0 3 2q2 -3 2 -4q2 1 3 4q1 3 -1 5q-1 1 -3 0q-1 3 -1 4q-3 -1 -5 -4zM64 32q0 -2 2 -3q1 -2 4 -2q1 1 2 4q2 -2 4 -3q1 2 0 5q-1 2 -3 4q-2 0 -3 -2q-2 3 -3 3q-2 -2 -3 -6z"/><path class="f2 sf" d="M44 50q-3 15-2 30 4 3 9 0 1-15-1-30z"/><path class="s" d="M48 54q-1 12-1 24" stroke-width="1.5"/><path class="f2 sf" d="M42 68q-2 2 -5 3q-2 1 -5 2q0 -1 -1 -3q-2 2 -4 4q-1 -2 -1 -5q-2 1 -4 1q1 -2 3 -4q-3 -1 -5 -2q2 -1 5 -2q-1 -2 -1 -4q2 1 4 3q1 -3 2 -4q1 1 2 4q2 -2 4 -2q2 2 3 5q2 2 3 4z"/>'},
 
 {id:"anise-hyssop",cat:"herbs",rare:true,price:2,pk:"3–6 €/botte",name:{en:"Anise hyssop",fr:"Agastache (hysope anisée)"},latin:"Agastache foeniculum",
 origin:{en:"Northern plains of North America",fr:"Grandes plaines d’Amérique du Nord"},season:[7,8,9],
@@ -57,7 +57,7 @@ fr:"Daphné se changea en laurier pour échapper à Apollon, et le dieu en porta
 tip:{en:"One leaf per pot is plenty — two is a statement, three is a mistake. Dried is often better than fresh, and it needs time to speak.",
 fr:"Une feuille par marmite suffit — deux, c’est une déclaration ; trois, une erreur. Sec, il est souvent meilleur que frais, et il lui faut du temps pour parler."},
 pairs:["onion","tomato","lentils","white-beans","beef","potato"],
-svg:'<path class="f2 sf" d="M48 24q16 14 12 34-3 16-12 20-9-4-12-20-4-20 12-34z"/><path class="s" d="M48 30v42M48 40l-6-3M48 40l6-3M48 52l-7-3M48 52l7-3M48 64l-6-3M48 64l6-3"/>'},
+svg:'<path class="f2 sf" d="M30 34q-8 13-3 26 5 11 14 17 2-13-3-24-3-11-8-19z"/><path class="f1 sf" d="M59 21q8 15 0 31-7 14-20 26-5-16 0-31 4-15 20-26z"/><path class="s" d="M56 26q-5 13-7 24-2 11-8 26" stroke-width="2"/><path class="s" d="M53 36l5 3M50 47l6 2M46 59l6 1M53 36l-6-2M50 47l-7-1M46 59l-6 0" stroke-width="1.5"/><path class="s" d="M39 77l-3 6"/>'},
 
 {id:"blackcurrant-buds",cat:"herbs",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Blackcurrant buds",fr:"Bourgeons de cassis"},latin:"Ribes nigrum",
 origin:{en:"Burgundy, France",fr:"Bourgogne, France"},season:[12,1,2],
@@ -117,7 +117,7 @@ fr:"La plus fragile des fines herbes — le quatuor français classique avec per
 tip:{en:"Never chop it hard, never cook it: pluck the lacy leaves whole over eggs, carrots or a cream soup at the moment of serving.",
 fr:"Ne le hachez jamais fort, ne le cuisez jamais : effeuillez ses pluches entières sur des œufs, des carottes ou un velouté au moment de servir."},
 pairs:["egg","carrot","asparagus","cream","tarragon","chives","parsley"],
-svg:'<path class="s" d="M48 78V36M40 60q8-3 8-12M56 60q-8-3-8-12"/><path class="f1 sf" d="M36 42a5 5 0 106-5 5 5 0 10-6 5zM54 37a5 5 0 106 5 5 5 0 10-6-5zM45 28a4.5 4.5 0 107 0 4.5 4.5 0 10-7 0z"/>'},
+svg:'<path class="s" d="M48 81q-3-16-2-24M46 60q-5 1-9-1M50 60q5 1 9-1"/><path class="f1 sf" d="M48 42q-4 0 -7 -3q2 0 4 -3q-5 0 -8 -3q2 0 6 -1q-5 -3 -7 -6q3 0 8 1q-2 -5 -4 -8q3 1 7 5q2 -5 3 -8q2 3 3 8q3 -2 5 -3q-1 3 -5 8q4 2 6 4q-2 2 -6 2q1 4 1 5q-3 2 -6 2z"/><path class="f1 sf" d="M34 60q-1 3 -4 5q1 -1 -1 -4q-2 5 -4 7q0 -2 0 -6q-4 4 -6 5q0 -2 2 -7q-5 2 -7 2q1 -2 5 -4q-4 -3 -6 -4q3 -1 7 -1q-1 -4 -1 -5q2 2 5 6q3 -4 5 -5q1 2 0 6q3 -1 4 0q2 2 1 5z"/><path class="f1 sf" d="M62 60q-1 -3 1 -6q1 1 3 3q0 -5 1 -8q1 2 3 5q1 -5 3 -7q1 2 1 7q3 -3 5 -4q0 2 -2 6q4 0 6 1q-1 2 -5 4q2 3 3 4q-3 -1 -7 -3q-2 4 -3 6q-2 -2 -3 -5q-2 1 -3 1q-3 -1 -3 -4z"/><path class="s" d="M48 57v-15M37 59l-4-2M59 59l4-2" stroke-width="1.5"/>'},
 
 {id:"chives",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Chives",fr:"Ciboulette"},latin:"Allium schoenoprasum",
 origin:{en:"Europe & Asia",fr:"Europe & Asie"},season:[4,5,6,7,8,9],
@@ -127,7 +127,7 @@ fr:"Le membre le plus doux du clan des oignons, cueilli sauvage en Europe depuis
 tip:{en:"Scissors beat the knife: snip it directly over eggs, potatoes or cream, and its purple pompom flowers are edible too.",
 fr:"Les ciseaux battent le couteau : taillez-la directement sur les œufs, les pommes de terre ou la crème ; ses fleurs en pompons mauves se mangent aussi."},
 pairs:["egg","potato","cream","scallop","asparagus","cod","yogurt"],
-svg:'<path class="s" d="M40 78Q38 46 36 30M46 78Q46 44 46 26M52 78Q54 48 56 30M58 78Q60 52 62 38"/><path class="f3" d="M34 28a3 3 0 106 0 3 3 0 10-6 0M44 24a3 3 0 106 0 3 3 0 10-6 0M54 28a3 3 0 106 0 3 3 0 10-6 0"/>'},
+svg:'<path class="s" d="M46 81q-14-7-18-15M47 81q14-6 18-14" stroke-width="2"/><path class="s" d="M45 81q-10-17-13-31M46 81q-5-21-6-35M47 81q0-21 1-41M48 81q6-19 9-31M49 81q11-13 17-21"/><path class="f1 sf" d="M39 28q0 -3 3 -5q1 -4 4 -5q2 0 4 4q3 -3 4 -3q2 1 1 5q3 2 3 4q0 2 -4 3q0 4 -3 4q-2 0 -4 -3q-3 3 -4 3q-3 -1 -3 -4q-2 -1 -1 -3z"/><path class="s" d="M48 37q-5-5-7-10M48 37q-2-6-1-11M48 37q5-5 8-9" stroke-width="1.5"/><path class="f2 sf" d="M63 59q4-2 6 2-2 3-6 1-2-2 0-3z" stroke-width="2"/>'},
 
 {id:"cilantro",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Cilantro / Coriander",fr:"Coriandre"},latin:"Coriandrum sativum",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[5,6,7,8,9],
@@ -137,7 +137,7 @@ fr:"Des graines de coriandre furent trouvées dans la tombe de Toutânkhamon —
 tip:{en:"Leaves and seeds are two different ingredients: the leaf is a finishing herb, the seed a warm spice. Never swap one for the other.",
 fr:"Feuilles et graines sont deux ingrédients différents : la feuille se cisèle au dernier moment, la graine est une épice chaude. Ne troquez jamais l’une pour l’autre."},
 pairs:["chili","coconut-milk","ginger","mango","cumin","shrimp","rice"],
-svg:'<path class="s" d="M48 78V38M40 60q8-2 8-10M56 60q-8-2-8-10"/><path class="f1 sf" d="M40 40q-10 0-10-9 8-3 12 4zM56 40q10 0 10-9-8-3-12 4zM44 30q-2-8 4-10 6 2 4 10-4 3-8 0z"/>'},
+svg:'<path class="s" d="M48 82q-2-14-1-22M46 62q-5 1-9-2M50 62q5 1 9-2"/><path class="f1 sf" d="M48 45q-4 1 -7 -4q-5 -1 -5 -6q-2 0 3 -2q0 1 5 0q-6 -3 -5 -7q-1 -4 3 -4q1 -1 5 3q-1 -7 -1 -7q2 -4 5 -1q2 0 2 6q4 -4 5 -2q3 0 1 5q0 1 -5 4q6 2 6 3q2 5 -1 5q-1 4 -5 3q-3 5 -6 4z"/><path class="f1 sf" d="M36 62q1 4 -4 4q-1 5 -5 3q-1 2 -1 -3q1 2 1 -4q-4 5 -6 2q-4 1 -2 -3q-2 0 3 -2q-6 -1 -5 -1q-4 -3 0 -4q-1 -2 4 0q-2 -5 0 -4q1 -3 4 1q1 -2 1 4q4 -5 4 -4q4 -1 3 2q4 1 1 4q5 3 2 5z"/><path class="f1 sf" d="M60 62q-3 -3 1 -5q-1 -5 3 -6q0 -2 3 2q-2 -1 0 4q2 -6 5 -5q3 -3 3 1q2 0 -1 4q5 -3 4 -2q5 1 2 3q2 2 -4 3q5 3 3 3q1 3 -3 2q0 1 -4 -3q0 6 -1 5q-3 4 -4 0q-4 2 -3 -3q-5 0 -4 -3z"/><path class="s" d="M48 60v-16M38 61l-4-2M58 61l4-2" stroke-width="1.5"/>'},
 
 {id:"clary-sage",cat:"herbs",rare:true,price:2,pk:"5–10 €/100 g",name:{en:"Clary sage",fr:"Sauge sclarée"},latin:"Salvia sclarea",
 origin:{en:"Provence and the Caucasus",fr:"Provence et Caucase"},season:[5,6,7,8],
@@ -167,7 +167,7 @@ fr:"Rien à voir avec le curry en poudre, qui n’en contient pas. La feuille es
 tip:{en:"Dried curry leaves are close to worthless. Buy them fresh and freeze what you do not use — they freeze perfectly.",
 fr:"Les feuilles de curry séchées ne valent presque rien. Achetez-les fraîches et congelez le reste — elles se congèlent parfaitement."},
 pairs:["mustard-seed","coconut-milk","turmeric","ghee","chili","red-lentil","ginger","lime"],
-svg:'<path class="s" d="M48 74V30"/><path class="f2 sf" d="M46 38q-12-4-14 2 10 8 14 2zM50 46q12-4 14 2-10 8-14 2zM46 54q-12-4-14 2 10 8 14 2zM50 62q12-4 14 2-10 8-14 2z"/>'},
+svg:'<path class="s" d="M26 73q11-9 19-21 7-11 19-22"/><path class="f1 sf" d="M33 65q-6-9-15-7 3 9 14 9zM41 56q-6-9-15-7 3 9 14 9zM49 46q-6-9-15-7 3 9 14 9zM57 36q-6-9-15-7 3 9 14 9z"/><path class="f1 sf" d="M37 61q6 9 15 7-3-9-14-9zM45 51q6 9 15 7-3-9-14-9zM53 41q6 9 15 7-3-9-14-9z"/><path class="f2 sf" d="M62 31q0-8 7-10 2 8-4 13-4 2-3-3z"/><path class="s" d="M32 64l-11-3M40 55l-11-3M48 45l-11-3M39 61l11 4M47 51l11 4" stroke-width="1.5"/>'},
 
 {id:"curry-plant",cat:"herbs",rare:true,price:1,pk:"3–6 €/pot",name:{en:"Curry plant",fr:"Hélichryse italienne (immortelle)"},latin:"Helichrysum italicum",
 origin:{en:"Mediterranean scrub, Corsica",fr:"Maquis méditerranéen, Corse"},season:[5,6,7,8,9],
@@ -227,7 +227,7 @@ fr:"L’odeur verte de la feuille de figuier vient surtout de la coumarine, le c
 tip:{en:"Toast a leaf briefly over a flame or in a dry pan until it smells of coconut, then steep it in hot cream or milk for fifteen minutes and take it out. Left in to cool, it turns bitter and grassy.",
 fr:"Passez la feuille quelques secondes sur la flamme ou dans une poêle sèche jusqu’à ce qu’elle sente la noix de coco, puis infusez-la quinze minutes dans la crème ou le lait chaud et retirez-la. Laissée à refroidir dedans, elle devient amère et herbacée."},
 pairs:["cream","almond","apricot","goat-cheese","sea-bream","honey"],
-svg:'<path class="f2 sf" d="M48 56q-6-10-16-10 4-8 0-14 8 2 12-4-2-10 4-14 6 4 4 14 8 6 12 4-4 6 0 14-10 0-16 10z"/><path class="s" d="M48 84V52M48 62l-10-8M48 62l10-8M48 46l-8-8M48 46l8-8"/>'},
+svg:'<path class="f1 sf" d="M48 66q-12 2-22-8 2-6 10-10-11-2-14-14 6-2 17 4 0-9 9-18 7 7 9 18 5-8 17-4-4 10-14 14 7 2 10 10-8 8-22 8z"/><path class="f2 sf" d="M60 48q7 2 10 10-7 5-14 3 5-6 4-13z"/><path class="s" d="M48 64q1 10 0 20"/><path class="s" d="M48 62L32 55M48 62L31 41M48 62L48 27M48 62L65 41M48 62L61 52" stroke-width="1.5"/><path class="s" d="M40 52l-5-4M56 52l5-4M38 58l-4 2" stroke-width="1.5"/>'},
 
 {id:"fish-mint",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Fish mint (diếp cá)",fr:"Houttuynie (menthe-poisson)"},latin:"Houttuynia cordata",
 origin:{en:"Southeast and East Asia",fr:"Asie du Sud-Est et de l’Est"},season:[],
@@ -427,7 +427,7 @@ fr:"Rapportée des Andes au XVIIIe siècle et nommée en l’honneur d’une rei
 tip:{en:"Infuse it in warm cream or syrup off the heat, covered, ten minutes — boiling murders its perfume. Transcendent with peaches and apricots.",
 fr:"Infusez-la dans une crème ou un sirop tiède, hors du feu, à couvert, dix minutes — l’ébullition assassine son parfum. Transcendante avec pêches et abricots."},
 pairs:["peach","strawberry","cream","honey","raspberry"],
-svg:'<path class="s" d="M48 78V30"/><path class="f1 sf" d="M46 44q-14 0-16-12 14-2 17 8zM50 44q14 0 16-12-14-2-17 8zM46 60q-12 0-14-10 12-2 15 7zM50 60q12 0 14-10-12-2-15 7z"/>'},
+svg:'<path class="s" d="M48 82q-3-26-1-54"/><path class="f1 sf" d="M46 62q-13 2-22-6 10-6 22-1zM50 62q13 2 22-6-10-6-22-1z"/><path class="f1 sf" d="M46 45q-11 1-19-6 9-5 19-1zM50 45q11 1 19-6-9-5-19-1z"/><path class="f2 sf" d="M48 30q-6-7-3-13 7 4 6 13z"/><path class="s" d="M45 61L27 57M51 61L69 57M45 44L30 40M51 44L66 40" stroke-width="1.5"/>'},
 
 {id:"lemongrass",cat:"herbs",price:1,pk:"8–15 €/kg",name:{en:"Lemongrass",fr:"Citronnelle"},latin:"Cymbopogon citratus",
 origin:{en:"Maritime Southeast Asia",fr:"Asie du Sud-Est insulaire"},season:[],
@@ -437,7 +437,7 @@ fr:"Une herbe qui a décidé d’être un agrume : ses tiges portent le citral, 
 tip:{en:"Use only the pale lower third; bruise it flat with the knife’s spine to crack the perfume open before it goes in the pot.",
 fr:"N’utilisez que le tiers inférieur, pâle ; écrasez-le du dos du couteau pour fendre le parfum avant la marmite."},
 pairs:["coconut-milk","ginger","chili","shrimp","chicken","cilantro"],
-svg:'<path class="f1 sf" d="M44 76V40q0-8 4-14 4 6 4 14v36z"/><path class="s" d="M44 48q-6-2-8-8M52 48q6-2 8-8M44 60q-6-2-9-7M52 60q6-2 9-7" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M33 71q2-14 7-24 4-11 7-22 1-4 5-3l8 3q1 3-1 6-5 11-8 22-3 10-5 20-2 5-7 4-6-1-6-6z"/><path class="f2 sf" d="M34 69q-5 5-2 9 5 4 12 1 4-3 2-8-7-3-12-2z"/><path class="f2 sf" d="M47 25q6-5 13-1-5 5-13 1z"/><path class="s" d="M38 71q4-16 9-30M43 73q4-17 9-31M35 66q6 4 12 1" stroke-width="1.5"/><path class="s" d="M36 78q-2 3-3 4M40 79q0 3 0 4M43 78q2 3 3 4" stroke-width="1.5"/>'},
 
 {id:"lolot-leaf",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Lolot leaf",fr:"Feuille de lolot (lá lốt)"},latin:"Piper sarmentosum",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
@@ -467,7 +467,7 @@ fr:"Charlemagne ordonna sa culture dans tous les jardins impériaux, et les cuis
 tip:{en:"Ferociously potent: one leaf perfumes a whole pot of broth or a potato salad. Its hollow stems make edible straws for a tomato juice.",
 fr:"Férocement puissante : une feuille parfume toute une marmite de bouillon ou une salade de pommes de terre. Ses tiges creuses font des pailles comestibles pour un jus de tomate."},
 pairs:["potato","chicken","tomato","cream","lentils"],
-svg:'<path class="s" d="M48 78V34M48 60q-10-2-12-10M48 60q10-2 12-10"/><path class="f2 sf" d="M32 50q-2-8 6-10 4 6-1 11zM64 50q2-8-6-10-4 6 1 11zM44 34q-2-8 4-10 6 2 4 10-4 3-8 0z"/>'},
+svg:'<path class="s" d="M48 82q-2-14-1-22M46 62q-5 1-9-2M50 62q5 1 9-2"/><path class="f2 sf" d="M48 46q-3 -2 -5 -6q-3 -3 -5 -7q1 -1 4 -3q-5 -2 -7 -5q2 -1 7 -2q-3 -3 -4 -5q3 0 8 2q0 -5 1 -7q2 2 4 6q4 -2 6 -2q-1 2 -3 6q5 0 7 1q-2 2 -5 5q3 3 4 5q-3 4 -7 6q-2 4 -5 6z"/><path class="f2 sf" d="M35 62q-2 2 -5 3q-2 2 -6 2q0 -1 -1 -3q-3 3 -5 3q0 -1 0 -4q-3 1 -4 1q0 -2 2 -5q-3 -1 -5 -2q2 -1 6 -2q-1 -3 -1 -4q2 0 4 2q1 -3 2 -4q1 1 2 5q3 -2 5 -2q2 2 2 5q3 3 4 5z"/><path class="f2 sf" d="M61 62q1 -2 4 -5q0 -3 3 -4q1 0 3 2q1 -4 2 -6q1 1 3 4q2 -2 3 -3q1 2 0 6q4 -1 5 -1q0 2 -4 5q3 2 3 3q-2 0 -5 0q1 3 0 4q-1 0 -4 -3q-1 3 -3 4q-3 -1 -5 -3q-3 -1 -5 -3z"/><path class="s" d="M48 60v-16M38 61l-4-2M58 61l4-2" stroke-width="1.5"/>'},
 
 {id:"kaffir-lime-leaf",cat:"herbs",price:2,pk:"10–20 €/100 g",name:{en:"Makrut lime leaf",fr:"Feuille de combava"},latin:"Citrus hystrix",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
@@ -567,7 +567,7 @@ fr:"« Joie de la montagne » en grec, il parfumait les collines bien avant l’
 tip:{en:"One of the rare herbs that is stronger dried than fresh. Bloom it in warm oil to release its perfume before it touches the dish.",
 fr:"L’une des rares herbes plus puissante sèche que fraîche. Réveillez-le dans une huile tiède pour libérer son parfum avant qu’il ne touche le plat."},
 pairs:["tomato","olive-oil","lemon","chicken","eggplant","olive","mozzarella"],
-svg:'<path class="s" d="M48 78V30M40 62q8-2 8-10M56 62q-8-2-8-10M42 44q6-2 6-8M54 44q-6-2-6-8"/><path class="f2" d="M36 60a3 3 0 106 0 3 3 0 10-6 0M54 60a3 3 0 106 0 3 3 0 10-6 0M38 42a3 3 0 106 0 3 3 0 10-6 0M52 42a3 3 0 106 0 3 3 0 10-6 0M45 28a3 3 0 106 0 3 3 0 10-6 0"/>'},
+svg:'<path class="s" d="M48 82q-4-19-2-32 1-12 0-22"/><path class="f1 sf" d="M45 68q-11-1-15-8 10-4 16 4zM50 66q11-2 14-9-10-4-15 5z"/><path class="f1 sf" d="M45 54q-10-1-13-8 9-3 14 4zM50 52q10-2 13-9-9-3-14 5z"/><path class="f2 sf" d="M46 40q-8-1-11-7 8-3 12 4zM50 38q8-2 10-8-8-2-12 4z"/><path class="f2 sf" d="M47 30q-6-2-6-8 4-5 8-1 5 3 3 8-2 3-5 1z"/><path class="s" d="M38 63l6 3M40 49l5 3M56 61l-6 3M55 47l-5 3" stroke-width="1.5"/>'},
 
 {id:"oxalis",cat:"herbs",rare:true,price:1,pk:"4–7 €/barquette (30 g)",name:{en:"Oxalis",fr:"Oxalis (surelle)"},latin:"Oxalis acetosella",
 origin:{en:"Shaded temperate woodland",fr:"Sous-bois tempérés ombragés"},season:[4,5,6],
@@ -607,7 +607,7 @@ fr:"Les Grecs plantaient le persil sur les tombes et en couronnaient les vainque
 tip:{en:"Flat-leaf for flavour, curly for looks. The stems carry more taste than the leaves — tie them into every stock.",
 fr:"Le plat pour le goût, le frisé pour l’œil. Les tiges ont plus de goût que les feuilles — glissez-les dans tous les bouillons."},
 pairs:["garlic","lemon","mushroom","cod","chickpeas","egg","potato"],
-svg:'<path class="s" d="M48 78V40M38 62q10-4 10-14M58 62q-10-4-10-14"/><path class="f2 sf" d="M34 44a7 7 0 108-6 7 7 0 10-8 6zM54 38a7 7 0 108 6 7 7 0 10-8-6zM43 30a6 6 0 1010 0 6 6 0 10-10 0z"/>'},
+svg:'<path class="s" d="M48 82q-1-12-1-18M47 66q-8-2-11-6M49 66q8-2 11-6"/><path class="f2 sf" d="M44 42q-4 0 -6 -3q0 -1 3 -4q-5 -1 -6 -3q0 -1 5 -3q-4 -3 -4 -5q2 -2 7 -1q0 -5 1 -5q3 0 6 4q3 -4 5 -4q2 1 1 6q5 0 5 2q0 2 -5 5q4 3 4 5q-2 1 -7 0q1 5 -1 6q-4 2 -8 0z"/><path class="f1 sf" d="M32 62q-4 2 -6 -1q-1 0 1 -4q-5 1 -6 -1q-1 -1 3 -4q-5 -1 -5 -3q1 -2 5 -3q-2 -4 0 -5q2 -1 6 2q2 -5 3 -6q2 1 3 5q4 -1 5 0q1 2 -3 6q5 2 5 3q0 2 -5 2q2 5 1 6q-3 3 -7 3z"/><path class="f1 sf" d="M57 59q-4 -1 -4 -5q0 0 4 -2q-4 -2 -4 -5q1 -1 5 -1q-2 -4 -1 -5q2 -1 6 1q1 -4 3 -4q2 1 3 6q5 -2 6 -2q1 2 -1 6q4 1 3 3q-1 2 -6 3q3 4 2 5q-2 1 -6 -2q-1 4 -3 5q-4 0 -7 -3z"/><path class="s" d="M34 54q3 3 2 6M40 50q-1 4 2 6M58 54q-3 3-2 6M52 50q1 4-2 6M45 34q1 4 4 5M53 36q-2 3-4 3" stroke-width="1.5"/>'},
 
 {id:"purple-basil",cat:"herbs",price:1,pk:"3–5 €/pot",name:{en:"Purple basil",fr:"Basilic pourpre"},latin:"Ocimum basilicum var. purpurascens",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
@@ -677,7 +677,7 @@ fr:"Son nom signifie « rosée de mer », pour les falaises côtières où il s�
 tip:{en:"Its needles survive long cooking where soft herbs die — throw a sprig under roasting potatoes or lamb and remove it before serving.",
 fr:"Ses aiguilles survivent aux longues cuissons où les herbes tendres meurent — glissez une branche sous des pommes de terre ou un agneau au four, retirez-la avant de servir."},
 pairs:["lamb","potato","garlic","chicken","olive-oil","honey","lemon"],
-svg:'<path class="s" d="M48 78V26"/><path class="s" d="M48 68l-10-6M48 68l10-6M48 58l-11-6M48 58l11-6M48 48l-10-6M48 48l10-6M48 38l-8-5M48 38l8-5"/>'},
+svg:'<path class="s" d="M48 82q-3-20-2-32 0-14 0-25"/><path class="s" d="M47 58q6-3 11-9 5-5 9-8" stroke-width="2"/><path class="s" d="M47 74l-12-5M48 74l11-6M46 66l-13-3M47 66l12-5M46 58l-12-3M45 48l-12-2M46 48l11-4M45 40l-10-4M46 40l10-5M46 32l-8-4M47 32l8-5" stroke-width="2"/><path class="s" d="M53 55l-4-8M57 51l-3-8M62 46l-3-8M52 56l3 8M57 52l3 7" stroke-width="2"/><path class="f1 sf" d="M46 26q-3-6-1-10 4 4 3 10zM49 26q3-6 2-10-5 3-4 10z"/>'},
 
 {id:"rue",cat:"herbs",rare:true,price:1,pk:"5–10 €/100 g",name:{en:"Rue",fr:"Rue officinale (herbe de grâce)"},latin:"Ruta graveolens",
 origin:{en:"Mediterranean rocky ground",fr:"Rocailles méditerranéennes"},season:[5,6,7,8,9],
@@ -757,7 +757,7 @@ fr:"La feuille dentelée près de vos sashimis n’est pas un décor mais un rin
 tip:{en:"Roll several leaves and slice them into needles at the last second — bruising blackens them. Magnificent scattered over rice, tuna or strawberries.",
 fr:"Roulez plusieurs feuilles et taillez-les en aiguilles à la dernière seconde — meurtries, elles noircissent. Magnifique sur un riz, un thon ou des fraises."},
 pairs:["tuna","rice","umeboshi","salmon","ginger"],
-svg:'<path class="f2 sf" d="M48 26q18 8 14 28-3 16-14 20-11-4-14-20-4-20 14-28z"/><path class="s" d="M48 32v36M48 42l-8-4M48 42l8-4M48 54l-9-4M48 54l9-4M36 36l-3-2M60 36l3-2M34 48l-3-1M62 48l3-1" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M65 54q1 2 4 3q0 0 1 -2q1 2 2 2q1 0 1 -1q2 1 4 1q0 -1 0 -2q2 0 3 -1q0 0 -1 -2q2 0 2 -1q1 -1 0 -2q0 -1 0 -2q1 -2 1 -4q-2 -1 -5 0q0 -1 -1 0q0 -2 -1 -2q-1 0 -2 1q-1 -1 -2 -1q-1 1 -1 3q-2 -2 -3 -1q0 1 0 3q-2 0 -2 0q0 1 1 3q-2 0 -2 1q0 2 1 4z"/><path class="f2 sf" d="M48 64q5 -1 10 -4q-1 -1 -1 -4q3 0 6 -2q0 -2 -2 -4q4 -2 6 -5q-1 -1 -4 -3q3 -3 3 -6q-1 -1 -5 -1q1 -4 0 -6q-2 -1 -4 -1q-1 -2 -3 -2q-3 -5 -6 -8q-3 4 -7 9q-1 1 -2 3q-3 -1 -4 0q-1 2 1 5q-4 1 -5 2q0 3 3 5q-4 2 -5 4q2 2 6 4q-2 3 -2 4q3 2 6 2q0 4 -1 5q5 2 10 3z"/><path class="s" d="M48 62q0-19 1-36" stroke-width="2"/><path class="s" d="M48 52l11 3M48 52l-12 2M48 42l10 2M48 42l-11 2M48 33l8 2M48 33l-9 2" stroke-width="1.5"/><path class="s" d="M48 63q0 11 0 20"/>'},
 
 {id:"sorrel",cat:"herbs",price:1,pk:"2–4 €/botte",name:{en:"Sorrel",fr:"Oseille"},latin:"Rumex acetosa",
 origin:{en:"Europe & Western Asia",fr:"Europe & Asie occidentale"},season:[4,5,6,7,8,9],
@@ -767,7 +767,7 @@ fr:"Une feuille au goût de citron vert, pilier des soupes paysannes pendant des
 tip:{en:"It melts to khaki in seconds of heat — that’s normal. Add half in the pan for flavour, the rest raw at the end for colour and bite.",
 fr:"Elle fond et vire au kaki en quelques secondes de feu — c’est normal. Mettez-en la moitié à la poêle pour le goût, le reste cru à la fin pour la couleur et le mordant."},
 pairs:["salmon","egg","cream","potato","lentils","butter"],
-svg:'<path class="f1 sf" d="M48 28q14 10 10 30-2 12-10 16-8-4-10-16-4-20 10-30z"/><path class="s" d="M48 34v38M43 74l5 4 5-4" stroke-width="1.8"/>'},
+svg:'<path class="f2 sf" d="M33 64q3 0 4 -1q5 0 6 -1q-2 -1 -6 -3q-1 -4 -3 -6q-4 -4 -8 -4q-5 -3 -9 -4q0 4 2 10q0 4 3 8q2 3 6 4q1 5 2 7q0 -2 1 -6q2 -1 2 -4z"/><path class="f1 sf" d="M48 58q4 3 7 3q5 4 8 6q-1 -4 -5 -11q3 -6 3 -12q-1 -8 -5 -13q-4 -9 -8 -15q-4 6 -8 15q-4 5 -5 13q0 6 3 12q-4 7 -5 11q3 -2 8 -6q3 0 7 -3z"/><path class="s" d="M48 22q1 19 0 36" stroke-width="2"/><path class="s" d="M48 34l7 8M48 34l-7 8M48 46l9 9M48 46l-9 9" stroke-width="1.5"/><path class="s" d="M48 58q1 13 0 25"/>'},
 
 {id:"spignel",cat:"herbs",rare:true,price:2,pk:"8–15 €/100 g",name:{en:"Spignel",fr:"Cistre"},latin:"Meum athamanticum",
 origin:{en:"Mountain pastures of Auvergne and the Alps",fr:"Estives d’Auvergne et des Alpes"},season:[4,5,6,7],
@@ -847,7 +847,7 @@ fr:"Son nom signifie « petit dragon » — les guérisseurs médiévaux le disa
 tip:{en:"It overwhelms fast: a few leaves perfume a whole chicken. With eggs and mustard, it is the most French of accents.",
 fr:"Il domine vite : quelques feuilles parfument un poulet entier. Avec des œufs et de la moutarde, c’est le plus français des accents."},
 pairs:["chicken","egg","mustard","mushroom","cream","lemon"],
-svg:'<path class="s" d="M48 78V28"/><path class="f1 sf" d="M48 66q-14-2-16-10 12-2 16 6zM48 66q14-2 16-10-12-2-16 6zM48 50q-12-2-14-9 11-2 14 5zM48 50q12-2 14-9-11-2-14 5zM48 36q-9-2-10-8 9-1 10 5zM48 36q9-2 10-8-9-1-10 5z"/>'},
+svg:'<path class="s" d="M48 82q-3-24-1-40 1-10 0-18"/><path class="f1 sf" d="M47 68q-13-5-24-6 9 7 24 5zM46 56q-12-5-21-5 8 7 21 4zM46 44q-10-5-17-5 7 6 17 4z"/><path class="f1 sf" d="M50 62q13-5 24-6-9 7-24 5zM49 50q12-5 21-5-8 7-21 4zM49 38q10-5 17-5-7 6-17 4z"/><path class="f2 sf" d="M47 30q-6-4-8-10 8 1 10 8zM49 28q5-5 6-11-7 2-8 9z"/><path class="s" d="M46 67l-18-5M45 55l-15-4M50 61l18-5M49 49l15-4" stroke-width="1.5"/>'},
 
 {id:"thai-basil",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thai basil",fr:"Basilic thaï (horapha)"},latin:"Ocimum basilicum var. thyrsiflora",
 origin:{en:"Thai and Lao kitchen gardens",fr:"Jardins potagers thaïs et laotiens"},season:[6,7,8,9],
@@ -877,7 +877,7 @@ fr:"Les dames du Moyen Âge brodaient une abeille survolant un brin de thym sur 
 tip:{en:"Strip the leaves by sliding your fingers down the stem against the grain. Whole sprigs can simmer and be fished out like bay leaves.",
 fr:"Effeuillez-le en glissant les doigts à rebrousse-tige. Les branches entières peuvent mijoter puis se repêcher comme le laurier."},
 pairs:["onion","chicken","mushroom","carrot","honey","lemon","white-beans","duck"],
-svg:'<path class="s" d="M48 78Q44 50 48 26"/><path class="f2" d="M44 64a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M50 56a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M41 50a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M49 42a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M43 36a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M46 28a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0"/>'},
+svg:'<path class="s" d="M48 82q-5-20-3-33 1-13 1-23"/><path class="s" d="M46 62q7-2 12-7 5-4 9-6" stroke-width="2"/><path class="f1 sf" d="M45 74q-6-1-8-5 6-2 9 2zM49 72q6-1 8-5-6-2-9 2zM44 64q-6-1-8-5 6-2 9 2zM45 54q-6-1-7-5 6-2 8 2zM49 52q6-1 7-5-6-2-8 2zM45 44q-5-1-6-5 5-2 7 2zM48 42q5-1 6-5-5-2-7 2zM46 33q-5-1-6-5 5-2 7 2z"/><path class="f1 sf" d="M53 61q-2-6 1-9 4 4 2 9zM57 57q4 2 8 0-2-5-7-3zM62 54q-2-6 2-9 3 5 1 9z"/><path class="f2 sf" d="M48 28q-4-3-3-7 5 0 6 4 0 4-3 3z"/>'},
 
 {id:"turmeric-leaf",cat:"herbs",rare:true,price:1,pk:"15–30 €/kg",name:{en:"Turmeric leaf",fr:"Feuille de curcuma"},latin:"Curcuma longa",
 origin:{en:"Sumatra, South India, Southeast Asia",fr:"Sumatra, Inde du Sud, Asie du Sud-Est"},season:[],

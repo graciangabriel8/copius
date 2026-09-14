@@ -27,7 +27,7 @@ fr:"Rome carburait au garum — sauce d’anchois fermentés négociée comme le
 tip:{en:"One or two fillets, melted in warm olive oil at the start of a tomato sauce or a lamb braise, is seasoning, not fish. Nobody will know; everybody will notice.",
 fr:"Un ou deux filets, fondus dans l’huile tiède au départ d’une sauce tomate ou d’un agneau braisé, c’est de l’assaisonnement, pas du poisson. Personne ne saura ; tout le monde remarquera."},
 pairs:["garlic","tomato","capers","olive","lemon","olive-oil"],
-svg:'<path class="f3 sf" d="M28 50q12-6 28-5l10-4-2 5 2 5-10-4q-16 1-28 3z"/><path class="f3 sf" d="M34 62q10-5 22-4l8-3-2 4 2 4-8-3q-12 1-22 2z"/><path class="dot" d="M34 48a1.2 1.2 0 102.4 0 1.2 1.2 0 10-2.4 0"/>'},
+svg:'<path class="f1 sf" d="M 15.6 56.3q 4.4-9 17.9-12.7 15.3-5 28.1-2.4 6.3 0.8 10 4.2-2.2 4.5-7.7 7.6-10.8 7.2-26.9 8.3-13.9 1.7-21.3-5z"/><path class="f2 sf" d="M 71.6 45.4l 8.3-9.8-1.4 8.4 4.5 7.3z"/><path class="f2 sf" d="M 38.6 43.7q 5.5-8.2 13-6.6-2.2 4.5-2.6 7.6z"/><path class="f2 sf" d="M 51.5 57.5q 9 4.4 14.7 2.2-4.7-3.2-6.2-5.9z"/><path class="s" d="M 24.1 47.5q 4.1 5.3 3.1 10.6M 20.7 56.3q 14.5 1.3 29.6-4.7 7.7-2.5 13.2-5.6" stroke-width="1.8"/><path class="dot" d="M 21.9 52q 3.5-2.7 5.3 1 0.8 3.9-3.2 4.7-4.1-0.2-4.5-2.2-0.6-2.9 2.4-3.5z"/>'},
 
 {id:"foie-de-lotte",cat:"seafood",price:3,pk:"25–50 €/kg",name:{en:"Ankimo",fr:"Foie de lotte (ankimo)"},latin:"Lophius litulon",
 origin:{en:"Cold Japanese coastal waters",fr:"Eaux côtières froides du Japon"},season:[11,12,1,2],
@@ -107,7 +107,7 @@ fr:"Le poisson qui bâtit des nations : les Vikings le séchaient en biscuit de 
 tip:{en:"Salt the fillets twenty minutes before cooking: the flesh firms and the flakes hold. It carries bold friends — chorizo, capers, saffron — with grace.",
 fr:"Salez les filets vingt minutes avant cuisson : la chair se raffermit et les écailles de chair se tiennent. Il porte avec grâce des amis puissants — chorizo, câpres, safran."},
 pairs:["potato","leek","olive-oil","garlic","capers","parsley","saffron"],
-svg:'<path class="f1 sf" d="M26 54q12-12 32-10l10-6-2 8 2 8-10-6q-20 4-32 6z" transform="translate(0 2)"/><path class="s" d="M30 56q4 4 8 4M40 48q0 8-2 10" transform="translate(0 2)"/><path class="dot" d="M32 52a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0" transform="translate(0 1)"/>'},
+svg:'<path class="f1 sf" d="M 16 52.5q 7.4-12.1 21.2-14.1 17.8-2.5 30.5 1.8 4.2 1.4 4.8 5.4-1.6 3.2-5.2 5.8-12 7.8-26.9 9.8-15.8 2.2-24.4-8.7z"/><path class="f2 sf" d="M 27.5 40.8q 2.7-9.5 9.8-9.5 4.5 3.4 6.1 7.2-8.6 3.2-15.8 2.2zM 45.2 37.3q 3.8-8.6 10.1-7.5 2.5 3.7 3.9 6.5-7.8 2.1-14 1zM 61.6 39q 4-7.6 8.2-6.2 1.4 2.8 1.8 5.8-4.8 1.7-10 0.4z"/><path class="f2 sf" d="M 43.5 60.7q 4.2 8.5 10.2 7.7-1.7-4.8-3.2-8.6zM 58.2 57.7q 4.9 6.4 8.9 5.8-1.5-3.8-2-6.8z"/><path class="f2 sf" d="M 71.6 38.6l 7.5-4.1q 2.4 9.8 2.6 18.8l-8.3-1.9z"/><path class="s" d="M 22.1 59.7q-1.1 6.2-4.7 9.7M 22.7 42.4q 6.9 6.1 5.2 15.4M 26.8 50q 17.8 4.6 32.8-3.6" stroke-width="1.6"/><path class="dot" d="M 24.4 47.3q 4.7-2.7 6.2 1.1 0.7 5-3.3 5.5-5.1-0.3-5.5-3.3-0.4-3 2.6-3.4z"/>'},
 
 {id:"foie-de-morue",cat:"seafood",price:2,pk:"20–35 €/kg",name:{en:"Cod liver",fr:"Foie de morue"},latin:"Gadus morhua (liver)",
 origin:{en:"Iceland, Norway and the Barents Sea",fr:"Islande, Norvège et mer de Barents"},season:[],
@@ -147,7 +147,7 @@ fr:"Nommée d’après le port qui la précipitait vers les tables de Londres, e
 tip:{en:"Its firm, sweet flesh peels from the bone in four perfect fillets — but cook it whole and skin-on for the true meunière. The pan does the sauce: butter, lemon, and the fond it leaves behind.",
 fr:"Sa chair ferme et douce se détache de l’arête en quatre filets parfaits — mais cuisez-la entière pour la vraie meunière. La poêle fait la sauce : beurre, citron, et les sucs qu’elle abandonne."},
 pairs:["butter","lemon","parsley","capers"],
-svg:'<path class="f1 sf" d="M30 54q6-16 24-16 14 0 12 14-2 16-20 16-14 0-16-14z" transform="rotate(-8 48 52)"/><path class="dot" d="M36 46a1.4 1.4 0 102.8 0 1.4 1.4 0 10-2.8 0"/><path class="s" d="M64 50l8-4-2 8" stroke-width="1.8"/>'},
+svg:'<path class="f1 sf" d="M 19 57.8Q 20.4 53.2 22.7 48.5Q 26.4 44.6 31.1 41.1Q 36.1 38.2 42.4 37Q 48.7 35.8 54.6 35.8Q 60.6 36.2 64.5 38.3Q 68.2 39.7 69.7 42.1Q 69.9 46.3 67.9 50.9Q 65.1 54.6 60.5 58Q 55.8 61.5 49.4 63.1Q 43.3 64.3 37.3 64.2Q 31.2 64.3 26.6 63Q 22.1 60.7 19 57.8Z"/><path class="s" d="M 23.5 47.3 23.2 43.2M 28.5 42.8 28.2 38.7M 33.8 39.3 33.5 35.3M 39.4 37.1 39.1 33M 45.2 35.8 45 31.8M 51.4 35.6 51.1 31.6M 57.7 36 57.4 31.9M 63.6 38.6 63.3 34.5M 27.9 63.7 28.1 67.8M 34.4 65 34.7 69.1M 40.7 65.4 41 69.5M 46.7 64.5 47 68.6M 52.4 62.7 52.7 66.8M 57.9 59.8 58.1 63.9M 63.1 56.3 63.4 60.4M 66.9 51.1 67.2 55.2" stroke-width="1.3"/><path class="f2 sf" d="M 65.8 39q 7.7-2.1 12.9 1.7-2.3 6.8-9.8 9.9-3.5-5.3-3.1-11.6z"/><path class="s" d="M 22 61.1q 5.6 1.6 9-1.4M 30 48.6q 5 7 4.6 13.3" stroke-width="1.5"/><path class="dot" d="M 26.7 51.6q 4.3-3.2 6.3 0.4 1.3 4.8-2.6 5.9-5.1 0.3-5.9-2.6-0.8-2.9 2.1-3.7zM 34.6 46.3q 3.3-3 5.3 0.6 1 3.9-2.8 4.9-4.1 0.1-4.6-1.9-0.8-2.9 2.1-3.7z"/>'},
 
 {id:"eel",cat:"seafood",price:3,pk:"20–35 €/kg",name:{en:"Eel",fr:"Anguille"},latin:"Anguilla anguilla",
 origin:{en:"Sargasso Sea",fr:"Mer des Sargasses"},season:[9,10,11,12],
@@ -377,7 +377,7 @@ fr:"Une bonite pochée, fumée des semaines et séchée sous une noble moisissur
 tip:{en:"Buy the flakes in small bags — the perfume fades fast once opened. A handful over hot rice with soy sauce is Japan’s simplest luxury; watch the petals dance in the steam.",
 fr:"Achetez les copeaux en petits sachets — le parfum s’évente vite. Une poignée sur un riz chaud avec de la sauce soja est le luxe le plus simple du Japon ; regardez les pétales danser dans la vapeur."},
 pairs:["kombu","rice","soy-sauce","egg","shiitake"],
-svg:'<path class="f2 sf" d="M30 56q14-10 30-6l8-4-1 6 1 6-8-4q-16 4-30 2z"/><path class="f1 sf" d="M36 40q8-4 14 0l-2 6q-6-3-10 0z"/>'},
+svg:'<path class="f2 sf" d="M18 58q9-16 26-23 14-6 24 1 6 6 0 12-10 7-24 10-15 3-24 3-4 1-2-3z"/><path class="s" d="M24 56q10-13 25-19M28 61q12-11 25-15" stroke-width="1.5"/><path class="f1 sf" d="M65 36q8 5 8 12t-8 10q-3-10-3-16 0-4 3-6z"/><path class="f1 sf" d="M44 68q13-3 23-10 4 7-5 12-11 5-18 2z"/><path class="f1 sf" d="M38 78q13-2 24-8 3 7-6 11-12 4-18 1z"/><path class="s" d="M50 72q8-3 14-7" stroke-width="1.4"/>'},
 
 {id:"kokotxas",cat:"seafood",luxe:true,price:3,pk:"40–80 €/kg",name:{en:"Kokotxas (hake throat)",fr:"Kokotxas (gorges de merlu)"},latin:"Merluccius merluccius (throat)",
 origin:{en:"Basque Country",fr:"Pays basque"},season:[],
@@ -657,7 +657,7 @@ fr:"Son nom latin viendrait de salire, « bondir » — le poisson qui remonte l
 tip:{en:"Cook it less than you dare — the centre should still be silk. Skin-side down almost the whole way, and the skin becomes the best part.",
 fr:"Cuisez-le moins que vous n’osez — le cœur doit rester soyeux. Côté peau presque tout du long, et la peau devient le meilleur morceau."},
 pairs:["dill","lemon","fennel","soy-sauce","ginger","miso","cream"],
-svg:'<path class="f2 sf" d="M26 52q12-12 30-10l12-8-2 10 2 10-12-8q-18 2-30 6z" transform="translate(0 4)"/><path class="s" d="M36 50q0 8-2 12M46 48q0 10-2 14" transform="translate(0 2)"/><path class="dot" d="M32 52a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0" transform="translate(0 2)"/>'},
+svg:'<path class="f1 sf" d="M22 41q2-3 8-3 14 1 30 5 13 3 22 7-15 4-32 6-13 2-23 2-5 0-5-4 0-6 0-13z"/><path class="f2 sf" d="M22 53q10 2 23 0 17-2 37-3-15 4-32 6-13 2-23 2-5 0-5-5z"/><path class="s" d="M33 40q5 6 3 13M44 42q6 6 3 12M55 44q6 5 3 11M66 47q5 4 3 8" stroke-width="1.8"/><path class="f3 sf" d="M23 39q4-2 7 1 1 7 0 14-4 3-8 0-1-8 1-15z"/><path class="s" d="M26 45q9-3 20-3 12 0 24 3" stroke-width="1.5"/>'},
 
 {id:"morue-salee",cat:"seafood",price:2,pk:"15–30 €/kg",name:{en:"Salt cod",fr:"Morue salée"},latin:"Gadus morhua (salted)",
 origin:{en:"North Atlantic banks",fr:"Bancs de l’Atlantique Nord"},season:[],
@@ -687,7 +687,7 @@ fr:"Nommée d’après la Sardaigne, dont les eaux en regorgeaient, et immortali
 tip:{en:"Fresh, they want nothing but a grill, coarse salt and lemon. Tinned, they improve with age like wine — collectors cellar good vintages.",
 fr:"Fraîches, elles ne demandent qu’un gril, du gros sel et du citron. En boîte, elles se bonifient avec l’âge comme le vin — les amateurs cavent les bons millésimes."},
 pairs:["lemon","tomato","olive-oil","fennel","oregano"],
-svg:'<path class="f1 sf" d="M28 48q10-8 24-7l8-5-1 6 1 6-8-5q-14 1-24 5z"/><path class="f1 sf" d="M32 62q10-8 24-7l8-5-1 6 1 6-8-5q-14 1-24 5z"/><path class="dot" d="M33 46a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0M37 60a1.3 1.3 0 102.6 0 1.3 1.3 0 10-2.6 0"/>'},
+svg:'<path class="f1 sf" d="M 17.2 46.2q 9.3-9.9 23.2-8.2 17.9 2.2 29 9.6 4.7 2.6 4.2 6.6-2.4 2.7-7.7 5.1-12.6 4.5-28.5 2.5-13.9-1.7-20.3-15.6z"/><path class="f2 sf" d="M 72.7 54l 10-7.8-4.1 8.6 1.9 9.3z"/><path class="f2 sf" d="M 39.4 37.9q 9.8-5.9 17.5-2.9-3.6 4.6-5.9 7.3z"/><path class="s" d="M 27.3 38.4q 3.1 7.4 0.2 15.1M 24.1 56.1q 13.2 7.7 29.5 5.6" stroke-width="1.8"/><path class="dot" d="M 36.7 43.6q 4.2-1.5 4.8 1.6-0.5 4-4.5 3.5-3-0.4-2.6-3.3 0.2-2 2.2-1.7zM 48.9 43.1q 4.2-1.5 4.8 1.6-0.5 4-4.5 3.5-3-0.4-2.6-3.3 0.2-2 2.2-1.7zM 60.5 46.5q 4.2-1.5 4.8 1.6-0.5 4-4.5 3.5-3-0.4-2.6-3.3 0.2-2 2.2-1.7z"/><path class="dot" d="M 25.7 43.2q 5.2-1.4 5.7 2.7-0.6 5-5.6 4.4-3.8-1.5-3.5-4.5 0.4-3 3.3-2.6z"/>'},
 
 {id:"sea-bass",cat:"seafood",price:2,pk:"15–30 €/kg",name:{en:"Sea bass",fr:"Bar"},latin:"Dicentrarchus labrax",
 origin:{en:"Northeast Atlantic & Mediterranean",fr:"Atlantique Nord-Est & Méditerranée"},season:[9,10,11,12,1,2],

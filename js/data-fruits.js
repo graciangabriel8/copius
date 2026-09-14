@@ -37,7 +37,7 @@ fr:"Il a évolué pour être avalé entier par des paresseux terrestres géants 
 tip:{en:"The stone does nothing to stop guacamole browning. Only acid and keeping air off the surface actually work.",
 fr:"Le noyau n’empêche en rien le guacamole de noircir. Seuls l’acide et l’absence d’air au contact fonctionnent réellement."},
 pairs:["lime","cilantro","chili","tomato","red-onion","olive-oil","black-pepper","shrimp"],
-svg:'<path class="f3 sf" d="M48 28q14 6 14 24t-14 22-14-22 14-24z"/><circle class="f1 sf" cx="48" cy="58" r="8"/>'},
+svg:'<path class="f2 sf" d="M47 20q-9 3-9 13 0 9-6 16-6 8-5 17 2 13 21 14 19-1 21-14 1-9-5-17-6-7-6-16 0-10-11-13z"/><path class="f1 sf" d="M47 27q-6 2-6 10 0 8-5 14-5 7-4 15 2 11 16 12 14-1 16-12 1-8-4-15-5-6-5-14 0-8-8-10z"/><path class="f2 sf" d="M36 58q0-12 12-12t12 12-12 13-12-13z"/><path class="s" d="M40 54q2-6 8-6" stroke-width="1.5"/><path class="f1 sf" d="M44 21q0-6 5-5 4 1 2 5z"/>'},
 
 {id:"banana",cat:"fruits",price:1,pk:"1,50–3 €/kg",name:{en:"Banana",fr:"Banane"},latin:"Musa acuminata",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
@@ -47,7 +47,7 @@ fr:"Presque toutes les bananes exportées dans le monde sont des Cavendish, un c
 tip:{en:"Keep them off the fruit bowl. They give off enough ethylene to ripen everything within reach days early.",
 fr:"Tenez-les à l’écart de la corbeille. Elles dégagent assez d’éthylène pour faire mûrir tout ce qui les entoure avec des jours d’avance."},
 pairs:["dark-chocolate","vanilla","cinnamon","peanut","hazelnut","cream","honey","coconut-milk"],
-svg:'<path class="f2 sf" d="M28 42q4 30 32 32 8-2 4-8-22-4-28-26-4-6-8 2z"/><path class="s" d="M32 40l-2-8"/>'},
+svg:'<path class="f1 sf" d="M34 26c-6 3-6 14-4 24 3 14 12 25 25 29 7 2 14 0 15-5 1-5-5-8-12-9-11-2-18-10-21-21-2-8-2-17 0-21 1-4-2-6-6-4z"/><path class="f2 sf" d="M42 36q1 13 7 21 7 10 18 13 3-3-1-7-10-3-16-11-5-8-6-17z"/><path class="f2 sf" d="M33 24q-3-5 1-7 5-2 6 3z"/><path class="s" d="M38 44q3 11 9 18" stroke-width="1.5"/><path class="dot" d="M64 65q9 1 7 7-7 1-11-5z"/>'},
 
 {id:"bergamot",cat:"fruits",price:2,pk:"10–20 €/kg",name:{en:"Bergamot",fr:"Bergamote"},latin:"Citrus bergamia",
 origin:{en:"Calabria, Italy",fr:"Calabre, Italie"},season:[1,2,11,12],
@@ -57,7 +57,7 @@ fr:"Une étroite bande de côte calabraise produit presque toute la bergamote du
 tip:{en:"Treat the zest like a spice and the juice like a vinegar. A drop transforms a crème brûlée, a vinaigrette or a dark chocolate ganache into something people can’t name.",
 fr:"Traitez le zeste comme une épice et le jus comme un vinaigre. Une goutte transforme une crème brûlée, une vinaigrette ou une ganache au chocolat noir en quelque chose que personne ne sait nommer."},
 pairs:["dark-chocolate","honey","cream","almond","olive-oil"],
-svg:'<path class="f2 sf" d="M48 36q18 0 18 18 0 16-18 16t-18-16q0-18 18-18z"/><path class="s" d="M48 36q-1-6 3-10"/><path class="dot" d="M48 54a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
+svg:'<path class="f1 sf" d="M44 33q-16 1-20 13-4 11 0 21 5 12 20 12 15 0 20-12 4-10 0-21-4-12-20-13z"/><path class="f2 sf" d="M56 39q8 9 7 20-1 12-11 16 12-3 13-16 1-13-9-20z"/><path class="s" d="M44 33q-2-9 2-14"/><path class="f1 sf" d="M48 26q10-8 20-5 1 11-10 13-8 1-10-8z"/><path class="dot" d="M33 50C34 50 35 51 35 52C35 53 34 54 33 54C32 54 31 53 31 52C31 51 32 50 33 50ZM39 60C40 60 41 61 41 62C41 63 40 64 39 64C38 64 37 63 37 62C37 61 38 60 39 60ZM30 59C31 59 32 60 32 61C32 62 31 63 30 63C29 63 28 62 28 61C28 60 29 59 30 59Z"/>'},
 
 {id:"abricot-bergeron",cat:"fruits",price:2,pk:"5–9 €/kg",name:{en:"Bergeron apricot",fr:"Abricot Bergeron"},latin:"Prunus armeniaca 'Bergeron'",
 origin:{en:"Saint-Cyr-au-Mont-d'Or, Rhône",fr:"Saint-Cyr-au-Mont-d’Or, Rhône"},season:[7,8],
@@ -87,7 +87,7 @@ fr:"Interdit dans une grande partie des États-Unis durant presque tout le XXe s
 tip:{en:"The leaves are as useful as the fruit — infuse a few in cream or syrup for a green, resinous note nothing else gives.",
 fr:"Les feuilles valent le fruit — infusez-en quelques-unes dans une crème ou un sirop pour une note verte et résineuse inimitable."},
 pairs:["dark-chocolate","cream","vanilla","mint","almond","honey","duck","black-pepper"],
-svg:'<path class="s" d="M48 26v14"/><circle class="f1 sf" cx="41" cy="50" r="7"/><circle class="f1 sf" cx="56" cy="52" r="7"/><circle class="f1 sf" cx="47" cy="64" r="7"/><path class="s" d="M48 40l-7 3M48 40l8 5"/>'},
+svg:'<path class="f1 sf" d="M46 44Q40 42 36 44Q28 48 22 44Q26 40 25 36Q19 34 19 28Q26 28 29 30Q27 21 34 18Q40 22 41 27Q48 23 53 26Q50 37 46 44Z"/><path class="s" d="M46 45q1 5 2 9M48 54l-10 7M48 54l13 3M48 54l1 15"/><path class="dot" d="M37 58C41 58 45 62 45 66C45 71 41 74 37 74C33 74 29 71 29 66C29 62 33 58 37 58ZM62 54C66 54 70 58 70 62C70 67 66 70 62 70C58 70 54 67 54 62C54 58 58 54 62 54ZM50 70C54 70 58 74 58 78C58 82 54 86 50 86C46 86 43 82 43 78C43 74 46 70 50 70Z"/><path class="f1 sf" d="M49 56C54 56 58 60 58 65C58 70 54 74 49 74C44 74 40 70 40 65C40 60 44 56 49 56Z"/><path class="s" d="M46 61q3 3 6 0" stroke-width="1.5"/>'},
 
 {id:"blood-orange",cat:"fruits",price:2,pk:"3,50–7 €/kg",name:{en:"Blood orange",fr:"Orange sanguine"},latin:"Citrus × sinensis",
 origin:{en:"Sicily",fr:"Sicile"},season:[1,2,3,4],
@@ -137,7 +137,7 @@ fr:"Un croisement de kumquat et de mandarine, vert dehors et orange dedans, et l
 tip:{en:"Squeeze it gently. Press too hard and you crush the peel oils into the juice, which turns it bitter fast.",
 fr:"Pressez-le doucement. Trop fort, vous écrasez les huiles de l’écorce dans le jus, qui devient vite amer."},
 pairs:["soy-sauce","chili","garlic","fish-sauce","ginger","cilantro","honey","coconut-milk"],
-svg:'<circle class="f2 sf" cx="48" cy="56" r="17"/><path class="s" d="M48 39v34M31 56h34M37 45l22 22M59 45L37 67"/>'},
+svg:'<path class="f1 sf" d="M38 37C48 37 57 45 57 55C57 65 48 74 38 74C28 74 19 65 19 55C19 45 28 37 38 37Z"/><path class="f2 sf" d="M38 42C45 42 51 48 51 55C51 62 45 68 38 68C31 68 25 62 25 55C25 48 31 42 38 42Z"/><path class="s" d="M38 55l-12 2M38 55l-4-12M38 55l7-10M38 55l12 3M38 55l-5 12M38 55l8 9" stroke-width="2"/><path class="dot" d="M35 51q3-2 4 1t-3 3-4-1 3-3zM43 58q3-2 4 1t-3 3-4-1 3-3z"/><path class="f1 sf" d="M66 29C72 29 76 34 76 39C76 44 72 49 66 49C60 49 56 44 56 39C56 34 60 29 66 29Z"/><path class="f2 sf" d="M34 34q-4-10 4-16 8 5 6 15-4 4-10 1z"/>'},
 
 {id:"cantaloupe",cat:"fruits",price:1,pk:"2–4 €/pièce",name:{en:"Cantaloupe melon",fr:"Melon"},latin:"Cucumis melo var. cantalupensis",
 origin:{en:"Persia & Armenia",fr:"Perse & Arménie"},season:[6,7,8,9],
@@ -147,7 +147,7 @@ fr:"Nommé d’après Cantalupo, un domaine pontifical près de Rome où la grai
 tip:{en:"Judge it by weight and by the scent at the stem end. A heavy melon that smells of nothing was picked far too early.",
 fr:"Jugez au poids et au parfum côté pédoncule. Un melon lourd qui ne sent rien a été cueilli bien trop tôt."},
 pairs:["prosciutto","mint","black-pepper","basil","lime","goat-cheese","olive-oil","honey"],
-svg:'<circle class="f2 sf" cx="48" cy="56" r="20"/><path class="s" d="M34 42q6 14 0 28M48 36v40M62 42q-6 14 0 28"/>'},
+svg:'<path class="f1 sf" d="M39 22C51 22 61 32 61 44C61 56 51 66 39 66C27 66 17 56 17 44C17 32 27 22 39 22Z"/><path class="s" d="M19 36q10 7 19 0 9-6 18 1M18 51q10 6 18 0 9-7 19 1M30 23q-6 9-1 16 5 8-2 14-6 7 0 12M48 24q4 9 0 16-5 8 2 15" stroke-width="2"/><path class="f2 sf" d="M46 80l24-26q8 10 0 18-9 9-24 8z"/><path class="s" d="M52 76q11 1 16-5 4-6 2-11" stroke-width="1.5"/><path class="dot" d="M55 70q4-1 4 2t-4 2-4-2 4-2zM60 64q4-1 4 2t-4 2-4-2 4-2z"/>'},
 
 {id:"pomme-chantecler",cat:"fruits",price:1,pk:"2,50–4,50 €/kg",name:{en:"Chantecler apple",fr:"Pomme Chantecler"},latin:"Malus domestica",
 origin:{en:"INRA Angers, Anjou",fr:"INRA d’Angers, Anjou"},season:[1,2,3,10,11,12],
@@ -167,7 +167,7 @@ fr:"Ses fleurs s’ouvrent femelles près d’une journée, puis passent mâles 
 tip:{en:"Cut it and it browns within minutes: squeeze lime over the flesh the moment it is open, and chill the whole fruit beforehand or the custard slumps to liquid and takes the perfume with it. Pick the seeds out rather than blitzing them — they are toxic.",
 fr:"Coupée, elle brunit en quelques minutes : citronnez la chair dès l’ouverture, et rafraîchissez le fruit entier avant de l’ouvrir, faute de quoi la crème s’effondre en liquide et le parfum part avec. Retirez les pépins un à un plutôt que de les mixer : ils sont toxiques."},
 pairs:["lime","cream","vanilla","passion-fruit","dark-rum","pineapple"],
-svg:'<path class="f1 sf" d="M48 74q-22-12-22-28 0-12 11-14 7-1 11 6 4-7 11-6 11 2 11 14 0 16-22 28z"/><path class="s" d="M34 44q14 6 28 0M32 54q16 8 32 0M40 64q8 4 16 0"/><path class="s" d="M48 38v34"/><path class="s" d="M48 30v6"/>'},
+svg:'<path class="f1 sf" d="M48 22q-19 2-25 15-7 13-4 26 4 13 19 15 17 2 23-14 6-14 0-27-6-14-14-16z"/><path class="s" d="M23 40q10 10 19 1 10 10 19 1M20 58q11 10 20 1 11 10 20 1M29 75q9 8 17 1 7 6 11-1" stroke-width="2"/><path class="s" d="M21 49q11 10 20 1 11 10 20 1M23 66q11 9 20 1 10 8 18 1" stroke-width="1.5"/><path class="f2 sf" d="M48 21C51 21 54 23 54 26C54 29 51 31 48 31C45 31 42 29 42 26C42 23 45 21 48 21Z"/><path class="s" d="M48 26q0-5-2-8"/>'},
 
 {id:"cherry",cat:"fruits",price:2,pk:"6–14 €/kg",name:{en:"Cherry",fr:"Cerise"},latin:"Prunus avium",
 origin:{en:"Around the Black Sea",fr:"Autour de la mer Noire"},season:[5,6,7],
@@ -347,7 +347,7 @@ fr:"Peut-être la première plante jamais cultivée — des restes de figues dan
 tip:{en:"A fig never ripens off the tree — buy it soft, drooping, almost tearing. Then it needs only good ham or a slice of cheese.",
 fr:"Une figue ne mûrit jamais après la cueillette — achetez-la souple, affaissée, presque fendue. Il ne lui faut alors qu’un bon jambon ou une tranche de fromage."},
 pairs:["prosciutto","goat-cheese","honey","walnut","balsamic","blue-cheese"],
-svg:'<path class="f2 sf" d="M48 34q3 10 10 16 6 6 6 12a16 14 0 01-32 0q0-6 6-12 7-6 10-16z"/><path class="s" d="M48 34q0-6-4-9M48 44v24"/>'},
+svg:'<path class="f1 sf" d="M34 24q-4 5-4 11 0 7-6 13-5 6-5 13 0 11 15 12 15-1 15-12 0-7-5-13-6-6-6-13 0-6-4-11z"/><path class="s" d="M34 24q-1-5 1-7"/><path class="f2 sf" d="M62 32q-3 4-3 9 0 6-5 11-4 5-4 11 0 10 12 10 12 0 12-10 0-6-4-11-5-5-5-11 0-5-3-9z"/><path class="f1 sf" d="M62 39q-2 3-2 7 0 5-4 9-3 4-3 8 0 8 9 8 9 0 9-8 0-4-3-8-4-4-4-9 0-4-2-7z"/><path class="s" d="M62 45v22M55 51l4 15M69 51l-4 15" stroke-width="1.5"/>'},
 
 {id:"finger-lime",cat:"fruits",price:4,pk:"80–180 €/kg",name:{en:"Finger lime",fr:"Citron caviar"},latin:"Citrus australasica",
 origin:{en:"Australian rainforest",fr:"Forêt pluviale australienne"},season:[9,10,11,12],
@@ -457,7 +457,7 @@ fr:"Son nom latin, inodorus, est une critique méritée — contrairement au can
 tip:{en:"Judge it by the skin, which turns waxy and faintly sticky when ripe, and by a slight give at the blossom end.",
 fr:"Jugez-le à la peau, qui devient cireuse et légèrement collante à maturité, et à une souplesse à l’opposé du pédoncule."},
 pairs:["mint","lime","prosciutto","ginger","cucumber","yogurt","basil","honey"],
-svg:'<circle class="f3 sf" cx="48" cy="56" r="20"/><path class="s" d="M30 50q18 6 36 0M30 62q18 6 36 0"/>'},
+svg:'<path class="f2 sf" d="M16 62q6-30 32-30 26 0 32 30h-7q-5-24-25-24t-25 24z"/><path class="f1 sf" d="M23 62q0-24 25-24t25 24z"/><path class="f2 sf" d="M28 62q4-12 20-12t20 12z"/><path class="dot" d="M38 54C39 54 40 55 40 57C40 59 39 60 38 60C37 60 36 59 36 57C36 55 37 54 38 54ZM45 52C46 52 47 53 47 55C47 57 46 58 45 58C44 58 43 57 43 55C43 53 44 52 45 52ZM53 52C54 52 55 53 55 55C55 57 54 58 53 58C52 58 51 57 51 55C51 53 52 52 53 52ZM60 54C61 54 62 55 62 57C62 59 61 60 60 60C59 60 58 59 58 57C58 55 59 54 60 54Z"/><path class="s" d="M30 55q6-13 17-16M66 55q-6-13-17-16" stroke-width="1.5"/>'},
 
 {id:"jabuticaba",cat:"fruits",rare:true,price:3,pk:"40–100 €/kg",name:{en:"Jabuticaba",fr:"Jabuticaba"},latin:"Plinia cauliflora",
 origin:{en:"Minas Gerais, Brazil",fr:"Minas Gerais, Brésil"},season:[8,9,10],
@@ -627,7 +627,7 @@ fr:"L’Inde cultive la mangue depuis quatre mille ans ; Bouddha, dit-on, se rep
 tip:{en:"Ripe mango with chili, salt and lime is a lesson in balance; green mango, shredded, is practically a different — and equally great — ingredient.",
 fr:"La mangue mûre avec piment, sel et citron est une leçon d’équilibre ; la mangue verte, râpée, est presque un autre ingrédient — tout aussi grand."},
 pairs:["chili","coconut-milk","cilantro","lemon","rice","yogurt"],
-svg:'<path class="f2 sf" d="M34 44q6-12 20-10 16 2 14 18-2 14-16 18-14 4-20-8-4-9 2-18z"/><path class="f3 sf" d="M56 32q6-6 12-4-2 7-10 8z"/>'},
+svg:'<path class="f1 sf" d="M38 26q-14 4-16 18-2 14 6 24 8 11 21 12 14 1 20-9 6-10 0-22-6-13-16-19-8-5-15-4z"/><path class="f2 sf" d="M38 26q-14 4-16 18-2 14 6 24 2-16 10-26 8-11 20-15-8-5-20-1z"/><path class="s" d="M40 27q0-6-3-9"/><path class="f1 sf" d="M52 27q8-8 16-5-1 11-13 13-5 1-3-8z"/><path class="s" d="M58 41q7 13 3 27" stroke-width="1.5"/>'},
 
 {id:"mangoustan",cat:"fruits",price:3,pk:"25–50 €/kg",name:{en:"Mangosteen",fr:"Mangoustan"},latin:"Garcinia mangostana",
 origin:{en:"Malay archipelago",fr:"Archipel malais"},season:[5,6,7,8],
@@ -657,7 +657,7 @@ fr:"Elle n’est comestible qu’après avoir à demi blettit sur l’arbre ou d
 tip:{en:"Wait until it is brown and yielding — that is ripe, not spoiled. Then scoop the pulp out with a spoon.",
 fr:"Attendez qu’elle soit brune et molle — c’est mûr, non gâté. Prélevez alors la pulpe à la cuillère."},
 pairs:["cream","honey","cinnamon","clove","apple","walnut","quince","vanilla"],
-svg:'<path class="f1 sf" d="M32 52q0-14 16-14t16 14q0 16-16 20T32 52z"/><path class="s" d="M40 44q8-6 16 0"/><circle class="dot" cx="48" cy="46" r="4"/>'},
+svg:'<path class="f1 sf" d="M48 32C63 32 75 43 75 56C75 70 63 82 48 82C33 82 21 70 21 56C21 43 33 32 48 32Z"/><path class="f2 sf" d="M34 49q2-8 12-9 11-2 16 4 5 6 1 12-4 7-14 6-12-1-14-6-3-4-2-7z"/><path class="f2 sf" d="M42 39q-3-8 0-15 6 6 6 15zM33 44q-10-5-15-12 10-4 18 5zM63 43q10-6 15-13-10-4-18 5zM34 60q-10 2-15 8 8 6 18-3zM62 61q9 3 14 9-9 5-18-4z"/><path class="dot" d="M53 48C54 48 55 49 55 50C55 51 54 52 53 52C52 52 51 51 51 50C51 49 52 48 53 48ZM49 54C50 54 51 55 51 56C51 57 50 58 49 58C48 58 47 57 47 56C47 55 48 54 49 54ZM43 51C44 51 45 52 45 53C45 54 44 55 43 55C42 55 41 54 41 53C41 52 42 51 43 51ZM43 44C44 44 45 45 45 46C45 47 44 48 43 48C42 48 41 47 41 46C41 45 42 44 43 44ZM50 42C51 42 52 43 52 44C52 45 51 46 50 46C49 46 48 45 48 44C48 43 49 42 50 42Z"/><path class="s" d="M28 65q7 7 15 8M69 44q4 6 4 13" stroke-width="1.5"/>'},
 
 {id:"citron-de-menton",cat:"fruits",price:2,pk:"10–20 €/kg",name:{en:"Menton lemon",fr:"Citron de Menton"},latin:"Citrus limon",
 origin:{en:"Menton, Alpes-Maritimes",fr:"Menton, Alpes-Maritimes"},season:[12,1,2,3],
@@ -877,7 +877,7 @@ fr:"Son nom latin, Rubus idaeus, désigne le mont Ida, où la nymphe Ida, dit le
 tip:{en:"Too fragile to wash, too fleeting to keep: eat them the day you buy them, or crush them into a five-minute sauce with a spoon of sugar.",
 fr:"Trop fragile pour être lavée, trop éphémère pour attendre : mangez-les le jour même, ou écrasez-les en sauce de cinq minutes avec une cuillère de sucre."},
 pairs:["dark-chocolate","almond","peach","cream","vanilla","lemon"],
-svg:'<path class="f3 sf" d="M40 46a5 5 0 105 6 5 5 0 105.5 0 5 5 0 105-6 5 5 0 10-3-8 5 5 0 10-9.5 0 5 5 0 10-3 8z"/><path class="f2 sf" d="M42 36l6-2 6 2-3 5h-6z"/><path class="s" d="M48 34v-8"/>'},
+svg:'<path class="f1 sf" d="M67 50Q74 57 67 64Q68 74 58 75Q52 84 43 78Q34 80 31 71Q22 66 26 57Q22 48 31 44Q33 34 43 36Q52 30 57 39Q68 40 67 50Z"/><path class="f2 sf" d="M38 44C42 44 45 47 45 51C45 55 42 58 38 58C34 58 31 55 31 51C31 47 34 44 38 44ZM56 46C60 46 63 49 63 53C63 57 60 60 56 60C52 60 49 57 49 53C49 49 52 46 56 46ZM45 58C49 58 52 61 52 65C52 69 49 72 45 72C41 72 38 69 38 65C38 61 41 58 45 58ZM58 60C61 60 64 63 64 66C64 69 61 72 58 72C55 72 52 69 52 66C52 63 55 60 58 60Z"/><path class="s" d="M34 56q5-7 12-8M50 43q4 5 4 11M40 70q6 3 12-1" stroke-width="1.5"/><path class="f1 sf" d="M47 38q-12-4-19 1 8 7 18 4zM47 38q12-4 19 1-8 7-18 4z"/><path class="s" d="M47 38q-1-10 1-16"/>'},
 
 {id:"redcurrant",cat:"fruits",price:2,pk:"15–25 €/kg",name:{en:"Redcurrant",fr:"Groseille"},latin:"Ribes rubrum",
 origin:{en:"Western Europe",fr:"Europe de l’Ouest"},season:[6,7,8],
@@ -887,7 +887,7 @@ fr:"Bar-le-Duc fabrique encore une confiture de groseilles épépinées une à u
 tip:{en:"They are loaded with pectin, so a jelly sets with nothing added. Strip them from the stalk with a fork, not your fingers.",
 fr:"Elles sont riches en pectine : une gelée prend sans rien ajouter. Égrappez-les à la fourchette, pas aux doigts."},
 pairs:["cream","vanilla","almond","honey","raspberry","mint","dark-chocolate","lemon"],
-svg:'<path class="s" d="M48 26v14"/><circle class="f1 sf" cx="40" cy="48" r="6"/><circle class="f1 sf" cx="55" cy="50" r="6"/><circle class="f1 sf" cx="46" cy="62" r="6"/><path class="s" d="M48 40l-8 2M48 40l7 4M48 40l-2 16"/>'},
+svg:'<path class="s" d="M34 17q3 13 6 23 4 15 9 30"/><path class="s" d="M37 28l-9 3M38 31l10 1M42 46l-11 4M43 44l12 2M47 60l-9 5M48 60l10 2M51 71l-3 4" stroke-width="1.5"/><path class="f1 sf" d="M26 28C30 28 33 30 33 34C33 38 30 41 26 41C22 41 20 38 20 34C20 30 22 28 26 28ZM29 46C33 46 36 48 36 52C36 56 33 59 29 59C25 59 23 56 23 52C23 48 25 46 29 46ZM36 62C40 62 43 64 43 68C43 72 40 75 36 75C32 75 30 72 30 68C30 64 32 62 36 62ZM60 58C64 58 67 60 67 64C67 68 64 71 60 71C56 71 54 68 54 64C54 60 56 58 60 58Z"/><path class="f2 sf" d="M50 28C54 28 57 30 57 34C57 38 54 41 50 41C46 41 44 38 44 34C44 30 46 28 50 28ZM57 42C61 42 64 44 64 48C64 52 61 55 57 55C53 55 51 52 51 48C51 44 53 42 57 42ZM47 72C51 72 54 74 54 78C54 82 51 85 47 85C43 85 41 82 41 78C41 74 43 72 47 72Z"/><path class="dot" d="M26 38C27 38 28 39 28 40C28 41 27 42 26 42C25 42 24 41 24 40C24 39 25 38 26 38ZM50 38C51 38 52 39 52 40C52 41 51 42 50 42C49 42 48 41 48 40C48 39 49 38 50 38ZM29 56C30 56 31 57 31 58C31 59 30 60 29 60C28 60 27 59 27 58C27 57 28 56 29 56ZM57 52C58 52 59 53 59 54C59 55 58 56 57 56C56 56 55 55 55 54C55 53 56 52 57 52ZM36 72C37 72 38 73 38 74C38 75 37 76 36 76C35 76 34 75 34 74C34 73 35 72 36 72ZM60 68C61 68 62 69 62 70C62 71 61 72 60 72C59 72 58 71 58 70C58 69 59 68 60 68ZM47 82C48 82 49 83 49 84C49 85 48 86 47 86C46 86 45 85 45 84C45 83 46 82 47 82Z"/>'},
 
 {id:"reinette-grise-du-canada",cat:"fruits",price:1,pk:"3–6 €/kg",name:{en:"Reinette grise du Canada apple",fr:"Pomme reinette grise du Canada"},latin:"Malus domestica",
 origin:{en:"French orchards, in spite of the name",fr:"Vergers français, malgré le nom"},season:[10,11,12,1,2],
@@ -907,7 +907,7 @@ fr:"Légume pour la botanique, fruit pour la loi — un tribunal américain en d
 tip:{en:"Never the leaves — they are toxic. Roast the stalks rather than stewing them: they keep their shape, their colour, and their proud acidity.",
 fr:"Jamais les feuilles — elles sont toxiques. Rôtissez les tiges plutôt que de les compoter : elles gardent leur tenue, leur couleur et leur fière acidité."},
 pairs:["strawberry","vanilla","ginger","cream","almond","honey"],
-svg:'<path class="f2 sf" d="M38 34l6-2 4 44q-3 4-6 0zM52 30l6 0 0 46q-3 4-6 0z" transform="rotate(-4 48 52)"/><path class="f1 sf" d="M36 32q-8-8-2-14 8 2 8 12z"/>'},
+svg:'<path class="f1 sf" d="M46 45Q57 41 55 33Q60 25 53 22Q50 16 41 17Q35 17 29 21Q22 24 23 30Q17 36 26 40Q32 47 46 45Z"/><path class="s" d="M46 45L30 23M40 39l-2-12M42 42l-10-7M44 37l7-7M45 41l8-3" stroke-width="1.5"/><path class="f1 sf" d="M42 44q-6 17-7 34 4 6 10 1 1-20 6-35z"/><path class="f2 sf" d="M52 44q3 17 5 34-3 6-9 2-1-20-4-36z"/><path class="f1 sf" d="M58 42q7 15 11 30-2 7-9 4-3-18-9-33z"/>'},
 
 {id:"cynorhodon",cat:"fruits",price:2,pk:"10–20 €/kg",name:{en:"Rosehip",fr:"Cynorhodon"},latin:"Rosa canina",
 origin:{en:"European hedgerows",fr:"Haies d’Europe"},season:[9,10,11],
@@ -937,7 +937,7 @@ fr:"Des baies d’un orange incandescent sur un arbuste épineux qui prospère l
 tip:{en:"Pure, it is brutally sour — cut it with honey or fold it into cream. With roasted carrots it performs a duet nobody sees coming.",
 fr:"Pur, il est brutalement acide — adoucissez-le au miel ou glissez-le dans une crème. Avec des carottes rôties, il joue un duo que personne ne voit venir."},
 pairs:["carrot","honey","cream","yogurt","dark-chocolate"],
-svg:'<path class="s" d="M48 78V26M48 60l-14-8M48 60l14-8M48 44l-12-7M48 44l12-7"/><path class="f2" d="M36 50a3 3 0 106 0 3 3 0 10-6 0M54 50a3 3 0 106 0 3 3 0 10-6 0M40 36a3 3 0 106 0 3 3 0 10-6 0M50 36a3 3 0 106 0 3 3 0 10-6 0M45 26a3 3 0 106 0 3 3 0 10-6 0"/>'},
+svg:'<path class="s" d="M27 76q9-15 15-26 9-14 24-26M38 58q-8-2-14-8M50 42q8 1 14-3"/><path class="f1 sf" d="M32 62C35 62 38 65 38 68C38 71 35 74 32 74C29 74 27 71 27 68C27 65 29 62 32 62ZM28 54C31 54 34 56 34 59C34 62 31 65 28 65C25 65 23 62 23 59C23 56 25 54 28 54ZM37 50C40 50 43 53 43 56C43 59 40 62 37 62C34 62 32 59 32 56C32 53 34 50 37 50ZM33 42C36 42 39 45 39 48C39 51 36 54 33 54C30 54 28 51 28 48C28 45 30 42 33 42ZM42 40C45 40 48 43 48 46C48 49 45 52 42 52C39 52 37 49 37 46C37 43 39 40 42 40Z"/><path class="f2 sf" d="M39 60C42 60 45 63 45 66C45 69 42 72 39 72C36 72 34 69 34 66C34 63 36 60 39 60ZM24 62C27 62 30 65 30 68C30 71 27 74 24 74C21 74 19 71 19 68C19 65 21 62 24 62ZM36 34C39 34 42 37 42 40C42 43 39 46 36 46C33 46 31 43 31 40C31 37 33 34 36 34ZM45 32C48 32 51 34 51 37C51 40 48 43 45 43C42 43 40 40 40 37C40 34 42 32 45 32ZM51 40C54 40 57 42 57 45C57 48 54 51 51 51C48 51 46 48 46 45C46 42 48 40 51 40Z"/><path class="f1 sf" d="M57 31q10-6 18-2-7 8-18 6zM40 44q-11-4-19 2 9 6 19 1zM53 33q4-9 1-16-8 7-6 16z"/><path class="dot" d="M32 66C33 66 34 67 34 68C34 69 33 70 32 70C31 70 30 69 30 68C30 67 31 66 32 66ZM37 54C38 54 39 55 39 56C39 57 38 58 37 58C36 58 35 57 35 56C35 55 36 54 37 54ZM42 44C43 44 44 45 44 46C44 47 43 48 42 48C41 48 40 47 40 46C40 45 41 44 42 44ZM45 35C46 35 47 36 47 37C47 38 46 39 45 39C44 39 43 38 43 37C43 36 44 35 45 35ZM24 66C25 66 26 67 26 68C26 69 25 70 24 70C23 70 22 69 22 68C22 67 23 66 24 66Z"/>'},
 
 {id:"bigarade",cat:"fruits",price:2,pk:"4–8 €/kg",name:{en:"Seville orange",fr:"Bigarade"},latin:"Citrus × aurantium",
 origin:{en:"Seville and the Mediterranean coast",fr:"Séville et le pourtour méditerranéen"},season:[1,2],
@@ -1077,7 +1077,7 @@ fr:"Toutes les fraises de jardin descendent d’un croisement réalisé à Brest
 tip:{en:"Never wash them; the flesh is open and takes on water instantly. Hull them with a knife point an hour before serving and leave them at room temperature — cold shuts the aroma down completely.",
 fr:"Ne les lavez jamais : la chair est ouverte et prend l’eau à l’instant. Équeutez-les à la pointe du couteau une heure avant de servir et laissez-les à température ambiante — le froid éteint complètement l’arôme."},
 pairs:["cream","creme-fraiche","lemon-verbena","mint","black-pepper","pistachio","sugar"],
-svg:'<path class="f2 sf" d="M37 46q12-6 23 0 1 17-12 27-12-10-11-27z"/><path class="s" d="M44 55v3M53 55v3M48 65v3"/><path class="f1 sf" d="M48 45q-3-11-15-10 2 12 15 10zM48 45q3-11 15-10-2 12-15 10z"/><path class="s" d="M48 45V29"/><path class="s" d="M42 50q5-3 11 0"/>'},
+svg:'<path class="s" d="M47 39q-7-9-9-19"/><path class="f2 sf" d="M28 44q4-7 20-7t20 7q3 13-5 24-7 11-15 11t-15-11q-8-11-5-24z"/><path class="f1 sf" d="M48 40q-16-4-28 2 10 8 26 4zM48 40q-10-11-23-13 3 14 19 18zM48 40q0-13-5-22-7 10-3 22zM48 40q10-11 23-13-3 14-19 18zM48 40q16-4 28 2-10 8-26 4z"/><path class="f2 sf" d="M48 36C51 36 53 39 53 41C53 43 51 46 48 46C45 46 43 43 43 41C43 39 45 36 48 36Z"/><path class="dot" d="M40 50C41 50 42 51 42 52C42 53 41 54 40 54C39 54 38 53 38 52C38 51 39 50 40 50ZM50 48C51 48 52 49 52 50C52 51 51 52 50 52C49 52 48 51 48 50C48 49 49 48 50 48ZM59 53C60 53 61 54 61 55C61 56 60 57 59 57C58 57 57 56 57 55C57 54 58 53 59 53ZM36 60C37 60 38 61 38 62C38 63 37 64 36 64C35 64 34 63 34 62C34 61 35 60 36 60ZM46 60C47 60 48 61 48 62C48 63 47 64 46 64C45 64 44 63 44 62C44 61 45 60 46 60ZM56 62C57 62 58 63 58 64C58 65 57 66 56 66C55 66 54 65 54 64C54 63 55 62 56 62ZM42 69C43 69 44 70 44 71C44 72 43 73 42 73C41 73 40 72 40 71C40 70 41 69 42 69ZM52 70C53 70 54 71 54 72C54 73 53 74 52 74C51 74 50 73 50 72C50 71 51 70 52 70Z"/>'},
 
 {id:"poire-williams",cat:"fruits",price:1,pk:"2–4 €/kg",name:{en:"Williams pear",fr:"Poire Williams"},latin:"Pyrus communis",
 origin:{en:"Aldermaston, Berkshire, before 1770",fr:"Aldermaston, Berkshire, avant 1770"},season:[8,9],
@@ -1127,7 +1127,7 @@ fr:"On séchait des figues dans la vallée du Jourdain il y a onze mille ans, et
 tip:{en:"The white bloom on the surface is crystallised sugar, not mould. It is a sign of quality rather than a fault.",
 fr:"Le voile blanc en surface est du sucre cristallisé, non une moisissure. C’est un signe de qualité plutôt qu’un défaut."},
 pairs:["walnut","blue-cheese","honey","fennel-seed","almond","prosciutto","orange","red-wine-vinegar"],
-svg:'<path class="f1 sf" d="M48 36q14 10 14 22t-14 14-14-14 14-22z"/><path class="s" d="M48 36v-6"/><path class="s" d="M40 56q8 6 16 0"/>'},
+svg:'<path class="f2 sf" d="M66 32c-7 2-12 6-13 12-1 6 1 11 6 13 5 3 12 3 16 0 5-3 7-7 6-13-1-6-6-10-11-12-2-1-3-1-4 0z"/><path class="f1 sf" d="M38 40Q43 39 48 42Q54 43 57 48Q62 54 61 61Q60 69 54 74Q47 80 38 80Q29 80 22 74Q16 69 15 61Q14 54 19 48Q22 43 28 42Q33 39 38 40Z"/><path class="s" d="M38 40q-2-8 3-12"/><path class="f2 sf" d="M19 58q3 14 19 15 17 1 19-15-4 11-19 11-15 0-19-11z"/><path class="dot" d="M35 71q5-3 6 1t-5 3-5-2 4-2z"/>'},
 
 {id:"prune",cat:"fruits",price:1,pk:"8–16 €/kg",name:{en:"Prune",fr:"Pruneau"},latin:"Prunus domestica",
 origin:{en:"Agen, southwest France",fr:"Agen, Sud-Ouest"},season:[],
@@ -1177,7 +1177,7 @@ fr:"Les orange vif sont traités au dioxyde de soufre pour garder la couleur ; l
 tip:{en:"Soak them in warm tea rather than water before they go into a tagine. It plumps them without washing out the flavour.",
 fr:"Faites-les gonfler dans du thé tiède plutôt que dans l’eau avant un tajine. Cela les regonfle sans lessiver le goût."},
 pairs:["lamb","almond","cinnamon","pistachio","honey","ras-el-hanout","orange","cream"],
-svg:'<path class="f2 sf" d="M34 56q0-14 14-14t14 14q0 12-14 14t-14-14z"/><path class="s" d="M40 50q8 6 16 0M40 62q8 4 16 0"/>'},
+svg:'<path class="f2 sf" d="M74 40Q72 47 65 49Q59 51 52 48Q46 45 45 38Q44 31 49 26Q54 22 61 22Q68 23 72 28Q76 34 74 40Z"/><path class="f1 sf" d="M54 59Q54 66 47 71Q41 76 33 75Q25 75 20 68Q15 63 16 55Q16 48 23 43Q29 38 37 39Q45 39 50 46Q55 51 54 59Z"/><path class="f2 sf" d="M24 52q4-8 12-10 8-1 13 4-9-2-14 2-6 3-11 10z"/><path class="f1 sf" d="M71 74Q68 80 61 81Q55 82 50 78Q45 74 45 67Q45 61 51 57Q56 54 63 55Q69 57 72 63Q74 69 71 74Z"/><path class="s" d="M51 27q10-4 18 4M24 65q9 6 21 2M50 62q9-4 16 4" stroke-width="1.5"/>'},
 
 {id:"dried-cranberry",cat:"fruits",price:1,pk:"9–15 €/kg",name:{en:"Dried cranberry",fr:"Canneberge séchée"},latin:"Vaccinium macrocarpon",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[],
