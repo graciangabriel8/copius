@@ -898,6 +898,10 @@
   function showModal() {
     var top = modalTop();
     RENDER[top.kind](top.id);
+    // .overlay is the scroll container and nothing else resets it, so a card
+    // opened from a pair chip inherited the scroll of the card you were reading
+    // and started halfway down. Every card starts at its own top.
+    el("overlay").scrollTop = 0;
     if (top.kind === "ing") primeArt();
     el("backBtn").hidden = modalStack.length < 2;
     if (history.replaceState) {
