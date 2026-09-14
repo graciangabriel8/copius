@@ -12,33 +12,42 @@
      The iframe keeps its 387px layout width (every atlas breakpoint is
      max-width:720px, and the card grid stays one column at both sizes) and is
      scaled up to fill the stage. */
-  :root{--k:1.3953488}  /* 540/387: the iframe scale, and the scale for everything
-                           drawn over it that was sized against the old stage */
+  /* --k scales the IFRAME up to fill the stage; --cap scales everything drawn OVER it.
+     They are separate on purpose: the overlay was sized against a 390-wide stage and
+     must not move when the app's layout width changes.
+     441 is the widest layout that still gives the card grid ONE column — measured in
+     the real iframe, where 445 is the last that works and 448 breaks to two. (Measuring
+     it by setting body.style.width on the atlas page instead gave 460, which was wrong:
+     that does not reproduce a viewport of that size.) At 441 the app reads about the
+     size it did in the first cut; filling the frame at 387 made every control a fifth
+     too big. */
+  :root{--k:1.2244898;  /* 540/441 */
+        --cap:1.3846}   /* 540/390 */
   #stage{position:relative;width:540px;height:960px;overflow:hidden;background:#F7F6F1;
     box-shadow:0 0 0 1px #222}
-  #app{width:387px;height:688px;border:0;display:block;
+  #app{width:441px;height:784px;border:0;display:block;
     transform:scale(var(--k));transform-origin:0 0}
   /* caption band for muted viewing — most Reels are watched with sound off */
   #cap{position:absolute;left:0;right:0;bottom:0;
-    padding:calc(26px*var(--k)) calc(22px*var(--k)) calc(34px*var(--k));
+    padding:calc(26px*var(--cap)) calc(22px*var(--cap)) calc(34px*var(--cap));
     background:linear-gradient(to top,rgba(10,10,9,.97) 55%,rgba(10,10,9,.88) 78%,transparent);
-    color:#fff;font-size:calc(23px*var(--k));font-weight:600;letter-spacing:-.01em;line-height:1.25;
+    color:#fff;font-size:calc(23px*var(--cap));font-weight:600;letter-spacing:-.01em;line-height:1.25;
     opacity:0;transition:opacity .35s ease;text-wrap:balance;pointer-events:none}
   #cap.on{opacity:1}
-  #cap small{display:block;font-size:calc(15px*var(--k));font-weight:400;opacity:.75;
-    margin-top:calc(6px*var(--k))}
-  #end{position:absolute;inset:0;background:#14160F;color:#f1f1f0;display:grid;
-    place-content:center;text-align:center;gap:calc(10px*var(--k));opacity:0;
-    transition:opacity .5s ease;pointer-events:none;padding:0 calc(30px*var(--k))}
+  #cap small{display:block;font-size:calc(15px*var(--cap));font-weight:400;opacity:.75;
+    margin-top:calc(6px*var(--cap))}
+  #end{position:absolute;inset:0;background:#2E3626;color:#f1f1f0;display:grid;
+    place-content:center;text-align:center;gap:calc(10px*var(--cap));opacity:0;
+    transition:opacity .5s ease;pointer-events:none;padding:0 calc(30px*var(--cap))}
   #end.on{opacity:1}
-  #end .endmark{margin:0 auto calc(4px*var(--k));display:block;
-    width:calc(104px*var(--k));height:auto}#end .endmark .bl-f{fill:#e2e2df;stroke:#585853;stroke-width:2.6;stroke-linejoin:round}#end .endmark .bl-s{fill:none;stroke:#585853;stroke-width:2.6;stroke-linecap:round}#end .endmark .bl-d{fill:#585853}#end b{font-size:calc(44px*var(--k));font-weight:600;letter-spacing:-.02em}
-  #end span{font-size:calc(19px*var(--k));opacity:.72}
-  #end i{font-style:normal;font-size:calc(17px*var(--k));opacity:.55;
-    margin-top:calc(14px*var(--k))}
+  #end .endmark{margin:0 auto calc(4px*var(--cap));display:block;
+    width:calc(104px*var(--cap));height:auto}#end .endmark .bl-f{fill:#e2e2df;stroke:#585853;stroke-width:2.6;stroke-linejoin:round}#end .endmark .bl-s{fill:none;stroke:#585853;stroke-width:2.6;stroke-linecap:round}#end .endmark .bl-d{fill:#585853}#end b{font-size:calc(44px*var(--cap));font-weight:600;letter-spacing:-.02em}
+  #end span{font-size:calc(19px*var(--cap));opacity:.72}
+  #end i{font-style:normal;font-size:calc(17px*var(--cap));opacity:.55;
+    margin-top:calc(14px*var(--cap))}
   /* a soft tap ring, so a viewer reads it as someone using it */
-  #tap{position:absolute;width:calc(46px*var(--k));height:calc(46px*var(--k));
-    margin:calc(-23px*var(--k)) 0 0 calc(-23px*var(--k));border-radius:50%;
+  #tap{position:absolute;width:calc(46px*var(--cap));height:calc(46px*var(--cap));
+    margin:calc(-23px*var(--cap)) 0 0 calc(-23px*var(--cap));border-radius:50%;
     border:2px solid rgba(20,20,19,.5);opacity:0;pointer-events:none}
   #tap.go{animation:tap .5s ease-out}
   @keyframes tap{0%{opacity:.9;transform:scale(.4)}100%{opacity:0;transform:scale(1.15)}}
