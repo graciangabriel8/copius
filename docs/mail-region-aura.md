@@ -7,7 +7,7 @@
 
 Madame, Monsieur,
 
-Je suis étudiant en deuxième année de BTS Management en Hôtellerie-Restauration dans un lycée de la Loire, et l'auteur de Copius (https://copius.fr) : un atlas illustré des produits et des techniques de cuisine, bilingue français-anglais, en accès libre, sans publicité ni traceur. Il réunit 1 835 fiches produits et 135 fiches techniques, chacune illustrée, et reste consultable hors connexion — ce qui compte dans un laboratoire de cuisine, où le réseau passe mal.
+Je suis étudiant en deuxième année de BTS Management en Hôtellerie-Restauration dans un lycée de la Loire, et l'auteur de Copius (https://copius.fr) : un atlas illustré des produits et des techniques de cuisine, bilingue français-anglais, en accès libre, sans publicité ni traceur. Il réunit 1 838 fiches produits et 135 fiches techniques, chacune illustrée, et reste consultable hors connexion — ce qui compte dans un laboratoire de cuisine, où le réseau passe mal.
 
 L'édition précédente de votre appel à projets évoquait, parmi les besoins identifiés, l'insuffisance de l'illustration dans certains manuels. C'est précisément le manque auquel cette ressource a été conçue pour répondre.
 
@@ -16,6 +16,8 @@ Avant d'en parler à mon établissement, je souhaiterais vérifier deux points :
 1. Une édition 2026-2027 de l'appel à projets est-elle prévue, et selon quel calendrier de dépôt ?
 
 2. Une ressource doit-elle disposer d'un identifiant au catalogue LDE / PopLab pour pouvoir figurer dans le dossier déposé par un établissement ? Si oui, ce référencement est-il ouvert à un auteur indépendant, sans structure éditoriale ?
+
+3. L'adhésion au GAR (Gestionnaire d'accès aux ressources) est-elle exigée pour qu'une ressource soit éligible, ou une ressource en accès libre, sans authentification ni compte utilisateur, peut-elle être retenue en l'état ?
 
 Je vous remercie par avance du temps que vous voudrez bien y consacrer.
 
