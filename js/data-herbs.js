@@ -849,7 +849,7 @@ fr:"Il domine vite : quelques feuilles parfument un poulet entier. Avec des œuf
 pairs:["chicken","egg","mustard","mushroom","cream","lemon"],
 svg:'<path class="s" d="M48 82q-3-24-1-40 1-10 0-18"/><path class="f1 sf" d="M47 68q-13-5-24-6 9 7 24 5zM46 56q-12-5-21-5 8 7 21 4zM46 44q-10-5-17-5 7 6 17 4z"/><path class="f1 sf" d="M50 62q13-5 24-6-9 7-24 5zM49 50q12-5 21-5-8 7-21 4zM49 38q10-5 17-5-7 6-17 4z"/><path class="f2 sf" d="M47 30q-6-4-8-10 8 1 10 8zM49 28q5-5 6-11-7 2-8 9z"/><path class="s" d="M46 67l-18-5M45 55l-15-4M50 61l18-5M49 49l15-4" stroke-width="1.5"/>'},
 
-{id:"thai-basil",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thai basil",fr:"Basilic thaï (horapha)"},latin:"Ocimum basilicum var. thyrsiflora",
+{id:"thai-basil",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thai basil",fr:"Basilic thaï (horapha)"},latin:"Ocimum basilicum var. thyrsiflorum",
 origin:{en:"Thai and Lao kitchen gardens",fr:"Jardins potagers thaïs et laotiens"},season:[6,7,8,9],
 flavor:["anise","peppery","floral"],
 story:{en:"Thai kitchens keep three basils apart and never swap them: horapha with its purple stem and anise note, holy basil for stir-fries, lemon basil for soups. Horapha runs on a different balance of aromatics from Genovese basil, and its firmer leaf survives a simmering curry instead of going black.",
@@ -909,7 +909,7 @@ fr:"Cueillez les feuilles fraîches à la fin du printemps, tant que les nervure
 pairs:["rice","lamb","olive-oil","lemon","feta","mint","pine-nut","yogurt"],
 svg:'<path class="f2 sf" d="M48 22q6 8 6 12 6-8 14-8 2 8-4 14 8 0 12 6-6 8-14 8 4 6 2 12-8 2-14-4-2 8-2 12-4-4-4-12-6 6-14 4-2-6 2-12-8 0-14-8 4-6 12-6-6-6-4-14 8 0 14 8 0-4 6-12z"/><path class="s" d="M48 74V38M48 50 34 40M48 50l14-10M48 60 36 56M48 60l12-4"/><path class="s" d="M48 74v6"/>'},
 
-{id:"benitade",cat:"herbs",rare:true,price:2,pk:"150–300 €/kg",name:{en:"Water pepper (tade / benitade)",fr:"Renouée poivre d’eau (tade)"},latin:"Persicaria hydropiper",
+{id:"benitade",cat:"herbs",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Water pepper (tade / benitade)",fr:"Renouée poivre d’eau (tade)"},latin:"Persicaria hydropiper",
 origin:{en:"Japanese wetlands and riverbanks",fr:"Zones humides et berges, Japon"},season:[6,7,8,9],
 flavor:["peppery","hot","bitter","grassy"],
 story:{en:"Water pepper gave Japanese its proverb for taste, tade kuu mushi mo suki-zuki — there are even insects that eat water pepper — first recorded around 1600. The red sprouts sold as benitade are the same plant cut a few days after germination, when the pepperiness is at its sharpest and before any bitterness sets in.",

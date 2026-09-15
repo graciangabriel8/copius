@@ -369,7 +369,7 @@ fr:"Cinq à sept minutes dans une eau salée comme la mer, avec du thym et du la
 pairs:["butter","garlic","parsley","fleur-de-sel-guerande","lemon","thyme","bay-leaf","shallot"],
 svg:'<g transform="translate(4.46 4.65) scale(0.907)"><path class="f2 sf" d="M48 22q18 12 18 32 0 18-18 20t-18-20q0-20 18-32z"/><path class="s" d="M34 45q14 6 28 0M32 57q16 6 32 0M40 33q8 4 16 0"/><ellipse class="f1 sf" cx="48" cy="71" rx="9" ry="5"/><path class="s" d="M48 71 70 79"/><circle class="dot" cx="72" cy="80" r="3"/></g>'},
 
-{id:"conch",cat:"shellfish",price:2,pk:"18–30 €/kg",name:{en:"Queen conch",fr:"Lambi"},latin:"Lobatus gigas",
+{id:"conch",cat:"shellfish",price:2,pk:"18–30 €/kg",name:{en:"Queen conch",fr:"Lambi"},latin:"Aliger gigas",
 origin:{en:"Caribbean seagrass beds",fr:"Herbiers des Antilles"},season:[],
 flavor:["marine","briny","mild"],
 story:{en:"In 1992 the queen conch became the first large-scale fishery product ever listed on CITES Appendix II, so a crate of lambi crossing a border now travels on an export permit, like ivory or orchids. The animal takes three to five years to build the flared lip that marks it as adult, and once that lip forms it stops growing longer.",
@@ -589,7 +589,7 @@ fr:"Départ à froid dans le court-bouillon, vingt minutes à compter de l’éb
 pairs:["butter","shallot","white-wine-vinegar","bay-leaf","black-pepper","parsley","lemon","carrot"],
 svg:'<path class="f2 sf" d="M56 26q14 6 14 24 0 22-22 26-16 2-20-10 6 8 16 4 14-6 12-22-2-14-12-18 6-6 12-4z"/><path class="s" d="M50 36q8 6 8 16t-10 14"/><path class="f3 sf" d="M34 66q-8 4-10 10 10 2 16-4z"/>'},
 
-{id:"akagai",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Ark shell",fr:"Akagai (arche)"},latin:"Scapharca broughtonii",
+{id:"akagai",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Ark shell",fr:"Akagai (arche)"},latin:"Anadara broughtonii",
 origin:{en:"Mud beds of the Seto Inland Sea and Sendai Bay",fr:"Fonds vaseux de la mer intérieure de Seto et de la baie de Sendai"},season:[11,12,1,2,3],
 flavor:["sweet","briny","meaty"],
 story:{en:"Ark shells live in oxygen-poor mud and carry haemoglobin in their blood, which almost no other bivalve does; that iron compound is what turns the foot crimson and leaves the faint note of blood. At the counter the scored slice is slapped once against the board — the muscle contracts and curls, which is at once a texture and a proof the shell was alive a moment earlier.",

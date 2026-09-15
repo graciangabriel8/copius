@@ -839,7 +839,7 @@ fr:"La fumée et le sucre brûlent tous les deux : retirer la poêle du feu, com
 pairs:["chorizo","octopus","potato","chickpeas","olive-oil","garlic"],
 svg:'<path class="f2 sf" d="M26 38h44v34a4 4 0 0 1-4 4H30a4 4 0 0 1-4-4z"/><path class="s" d="M22 32h52v6H22z"/><path class="f1 sf" d="M34 50h28v14H34z"/><path class="s" d="M46 30q-5-6 1-8t1-8"/>'},
 
-{id:"pink-peppercorn",cat:"spices",price:2,pk:"60–120 €/kg",name:{en:"Pink peppercorn",fr:"Baies roses"},latin:"Schinus terebinthifolius",
+{id:"pink-peppercorn",cat:"spices",price:2,pk:"60–120 €/kg",name:{en:"Pink peppercorn",fr:"Baies roses"},latin:"Schinus terebinthifolia",
 origin:{en:"Brazil, grown on Réunion",fr:"Brésil, cultivé à La Réunion"},season:[],
 flavor:["fruity","resinous","floral","sweet"],
 story:{en:"Not a pepper but a cashew relative, which is why the FDA banned imports in 1982 over allergy fears; France protested on behalf of its Réunion growers, produced the toxicology and had the ban lifted. Almost all the aroma sits in the brittle pink shell, and the seed inside is a small hard pip that gives nothing.",

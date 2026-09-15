@@ -19,7 +19,7 @@ fr:"Il est sec, si profond que soit son nez : goûtez avant de sucrer quoi que c
 pairs:["jamon-serrano","porc-iberique-bellota","mushroom","almond","onion","chicken"],
 svg:'<ellipse class="f1 sf" cx="34" cy="62" rx="14" ry="12"/><ellipse class="f1 sf" cx="62" cy="62" rx="14" ry="12"/><ellipse class="f2 sf" cx="48" cy="36" rx="14" ry="12"/><path class="s" d="M34 50v24M62 50v24M48 24v24"/><circle class="dot" cx="48" cy="36" r="3"/>'},
 
-{id:"armagnac",cat:"cellar",sign:"AOP",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
+{id:"armagnac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
 origin:{en:"Gascony, southwest France",fr:"Gascogne, Sud-Ouest de la France"},season:[],
 flavor:["fruity","woody","warm","rich"],
 story:{en:"Baco 22A is a hybrid, crossed at the end of the nineteenth century in the wake of phylloxera, and Armagnac is the one French appellation still allowed to keep a hybrid in the vineyard. A single low-strength run through the alambic armagnacais leaves in the heavy aromatics that a second distillation would strip, which is why it reads as prune and violet where Cognac reads as flowers.",
@@ -39,7 +39,7 @@ fr:"Réduisez-le avec un fond de canard et un zeste d’orange, et arrêtez tant
 pairs:["duck","dark-chocolate","roquefort","walnut","orange","fig"],
 svg:'<g transform="translate(6.96 7.25) scale(0.855)"><circle class="f1 sf" cx="44" cy="58" r="21"/><path class="f3 sf" d="M38 39h12v-10H38z"/><path class="s" d="M25 56q19 9 38 0"/><circle class="s" cx="72" cy="24" r="7"/></g>'},
 
-{id:"brandy-de-jerez",cat:"cellar",sign:"IGP",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
+{id:"brandy-de-jerez",cat:"cellar",sign:"IG",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
 flavor:["sweet","woody","nutty","rich"],
 story:{en:"The wine is Airen from La Mancha, but the spirit only becomes Brandy de Jerez by ageing inside the sherry triangle, in butts that already held oloroso or Pedro Ximenez: here the appellation is the cask, not the vineyard. It moves down through criaderas and a solera exactly as the sherry does, so no bottle is ever of one single year.",
@@ -49,7 +49,7 @@ fr:"Il arrive déjà chargé de raisin sec et de sucre oxydé : réduisez le suc
 pairs:["pork","oloroso","raisin","almond","jamon-serrano","rognons","dark-chocolate","orange"],
 svg:'<path class="f2 sf" d="M22 54q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="f2 sf" d="M50 54q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="f1 sf" d="M36 28q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><path class="s" d="M28 55v16M40 55v16M56 55v16M68 55v16M42 29v16M54 29v16"/>'},
 
-{id:"calvados",cat:"cellar",sign:"AOP",price:2,pk:"28–55 €/L",name:{en:"Calvados",fr:"Calvados"},latin:"Malus domestica",
+{id:"calvados",cat:"cellar",sign:"AOC",price:2,pk:"28–55 €/L",name:{en:"Calvados",fr:"Calvados"},latin:"Malus domestica",
 origin:{en:"Normandy",fr:"Normandie"},season:[],
 flavor:["fruity","warm","woody"],
 story:{en:"Calvados Domfrontais must be at least thirty percent pear, which is why it smells of orchard rather than of apple alone, and the Pays d'Auge is distilled twice in a pot still where the rest of Normandy runs once through a column. The cider apples behind it are bitter, tannic varieties no one would eat out of hand - they were bred for tannin, not for the fruit bowl.",
@@ -79,7 +79,7 @@ fr:"Une cuillère à café pour 500 g de porc est la juste mesure au char siu ; 
 pairs:["pork","honey","soy-sauce","star-anise","chinese-five-spice","garlic","ginger","hoisin-sauce"],
 svg:'<path class="f2 sf" d="M42 34h12v6q10 6 10 18v14q0 6-6 6H38q-6 0-6-6V58q0-12 10-18z"/><path class="s" d="M32 62h32"/><path class="f1 sf" d="M48 12q9 0 9 8t-9 10q-9-2-9-10t9-8z"/><path class="s" d="M43 20q5-4 10 0M48 30v4"/>'},
 
-{id:"cognac",cat:"cellar",sign:"AOP",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
+{id:"cognac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
 origin:{en:"Charente & Charente-Maritime",fr:"Charente et Charente-Maritime"},season:[],
 flavor:["fruity","floral","warm","woody"],
 story:{en:"Ugni blanc makes a wine too thin and too acid to drink, around nine percent, which is precisely what the charentais still wants - and it is now very nearly all that Cognac plants. The angels' share, two or three percent of each cask lost to the air every year, feeds a black fungus called Baudoinia on the town's walls, so the ageing cellars can be found by their soot.",
@@ -129,7 +129,7 @@ fr:"Déglacez un magret avec, en y jetant deux pruneaux qui gonfleront dans la r
 pairs:["duck","prune","foie-gras","armagnac","walnut","cantaloupe"],
 svg:'<path class="f2 sf" d="M36 22h12v10q10 6 10 16v28a5 5 0 0 1-5 5H31a5 5 0 0 1-5-5V48q0-10 10-16z"/><path class="f3 sf" d="M36 19h12v6H36z"/><circle class="f1 sf" cx="70" cy="40" r="5"/><circle class="f1 sf" cx="70" cy="52" r="5"/><circle class="f1 sf" cx="76" cy="46" r="5"/><circle class="dot" cx="70" cy="46" r="2.5"/>'},
 
-{id:"grappa",cat:"cellar",sign:"IGP",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
+{id:"grappa",cat:"cellar",sign:"IG",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
 origin:{en:"Italy (Friuli, Veneto, Piedmont)",fr:"Italie (Frioul, Vénétie, Piémont)"},season:[],
 flavor:["floral","fruity","warm","pungent"],
 story:{en:"Grappa was sold by the demijohn as a peasant spirit until 1973, when the Nonino distillery ran a single grape variety, Picolit, on its own and bottled it like a wine; every single-varietal grappa since dates from that one decision. The law asks for Italian pomace distilled in Italy, and the fresher the marc reaches the still, the more flowers and the less earth end up in the glass.",
@@ -199,7 +199,7 @@ fr:"C’est une liqueur sèche, qui ne sucrera pas un sirop à elle seule : dans
 pairs:["cherry","griotte","amarena","cream","vanilla","dark-chocolate","peach","pistachio"],
 svg:'<path class="f2 sf" d="M44 14h8v14q16 8 16 26t-20 22-20-22 16-26z"/><path class="f1 sf" d="M30 52q4-8 18-8t18 8q2 22-18 24T30 52z"/><path class="s" d="M32 52l32 14M64 52l-32 14M48 44v32"/>'},
 
-{id:"marc-de-bourgogne",cat:"cellar",sign:"AOP",price:3,pk:"35–65 €/L",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
+{id:"marc-de-bourgogne",cat:"cellar",sign:"AOC",price:3,pk:"35–65 €/L",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
 origin:{en:"Burgundy",fr:"Bourgogne"},season:[],
 flavor:["earthy","woody","warm","pungent"],
 story:{en:"It is made from what the press leaves behind - skins, pips and stalks, wetted down and fermented a second time - which is why it was the grower's own drink rather than the merchant's. Epoisses and Ami du Chambertin are washed with it through their ripening, so a good part of what you smell in the cheese is the spirit.",

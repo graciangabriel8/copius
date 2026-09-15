@@ -379,7 +379,7 @@ fr:"0,1 à 0,3 ml par litre de jus brut, deux heures à 45-50 °C ou une nuit au
 pairs:["apple","pear","quince","grape","raspberry","tomato","carrot","cider-vinegar"],
 svg:'<path class="f1 sf" d="M26 30h44L52 54v8h-8v-8z"/><path class="s" d="M36 70h24l-3 14H39z"/><path class="f2" d="M37 76h22l-2 8H39z"/><circle class="dot" cx="48" cy="66" r="2"/>'},
 
-{id:"phycocyanine",cat:"texture",rare:true,price:3,pk:"1–3 €/g",name:{en:"Phycocyanin",fr:"Phycocyanine"},latin:"Arthrospira platensis",
+{id:"phycocyanine",cat:"texture",rare:true,price:4,pk:"1–3 €/g",name:{en:"Phycocyanin",fr:"Phycocyanine"},latin:"Arthrospira platensis",
 origin:{en:"Alkaline lakes",fr:"Lacs alcalins"},season:[],
 flavor:["mild","marine","grassy"],
 story:{en:"The blue is a protein, not a dye: phycocyanin is the antenna spirulina uses to catch the wavelengths chlorophyll lets past, and it fluoresces deep red under UV light. The Aztecs skimmed the same organism off Lake Texcoco and dried it into cakes they called tecuitlatl.",

@@ -159,7 +159,7 @@ fr:"L’utiliser comme un acidulant qui a du corps : il titre bien moins de la m
 pairs:["cucumber","ginger","strawberry","oyster","olive-oil","honey"],
 svg:'<path class="f1 sf" d="M29 30h38v42q0 8-19 8t-19-8z"/><path class="s" d="M26 30h44"/><ellipse class="f2 sf" cx="48" cy="44" rx="17" ry="6"/><path class="s" d="M36 58q6-4 12 0t12 0"/><circle class="dot" cx="40" cy="66" r="2.2"/>'},
 
-{id:"labrador-tea",cat:"infusions",rare:true,price:2,pk:"150–300 €/kg",name:{en:"Labrador tea",fr:"Thé du Labrador"},latin:"Rhododendron groenlandicum",
+{id:"labrador-tea",cat:"infusions",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Labrador tea",fr:"Thé du Labrador"},latin:"Rhododendron groenlandicum",
 origin:{en:"Boreal bogs, Quebec and Labrador",fr:"Tourbières boréales, Québec et Labrador"},season:[6,7,8],
 flavor:["resinous","herbal","woody"],
 story:{en:"It is a rhododendron, not a tea — long placed in the genus Ledum — and it carries ledol, the compound behind the warnings against drinking it daily. R. groenlandicum is the mildest of the three species sharing the name, and it is the one Quebec kitchens use, dried, in creams and game sauces.",

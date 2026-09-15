@@ -1,0 +1,116 @@
+[
+ {
+  "file": "js/data-cellar.js",
+  "why": "armagnac: AOC by the decrees of 1936",
+  "from": "{id:\"armagnac\",cat:\"cellar\",sign:\"AOP\",",
+  "to": "{id:\"armagnac\",cat:\"cellar\",sign:\"AOC\","
+ },
+ {
+  "file": "js/data-cellar.js",
+  "why": "cognac: AOC by decret of 15 May 1936, one of the first six",
+  "from": "{id:\"cognac\",cat:\"cellar\",sign:\"AOP\",",
+  "to": "{id:\"cognac\",cat:\"cellar\",sign:\"AOC\","
+ },
+ {
+  "file": "js/data-cellar.js",
+  "why": "calvados: AOC in 1942",
+  "from": "{id:\"calvados\",cat:\"cellar\",sign:\"AOP\",",
+  "to": "{id:\"calvados\",cat:\"cellar\",sign:\"AOC\","
+ },
+ {
+  "file": "js/data-cellar.js",
+  "why": "marc-de-bourgogne: AOC by decret of 23 February 1942",
+  "from": "{id:\"marc-de-bourgogne\",cat:\"cellar\",sign:\"AOP\",",
+  "to": "{id:\"marc-de-bourgogne\",cat:\"cellar\",sign:\"AOC\","
+ },
+ {
+  "file": "js/data-cellar.js",
+  "why": "grappa: Italian-only protected geographical indication for a spirit",
+  "from": "{id:\"grappa\",cat:\"cellar\",sign:\"IGP\",",
+  "to": "{id:\"grappa\",cat:\"cellar\",sign:\"IG\","
+ },
+ {
+  "file": "js/data-cellar.js",
+  "why": "brandy-de-jerez: spirit-drink GI in the EU register (PGI-ES-01944)",
+  "from": "{id:\"brandy-de-jerez\",cat:\"cellar\",sign:\"IGP\",",
+  "to": "{id:\"brandy-de-jerez\",cat:\"cellar\",sign:\"IG\","
+ },
+ {
+  "file": "js/data-condiments.js",
+  "why": "balsamic: restores the IGP; the entry is the everyday Modena vinegar, paired against the tradizionale DOP entry",
+  "from": "{id:\"balsamic\",cat:\"condiments\",price:1,",
+  "to": "{id:\"balsamic\",cat:\"condiments\",sign:\"IGP\",price:1,"
+ },
+ {
+  "file": "js/data-spices.js",
+  "why": "pink peppercorn: GBIF marks terebinthifolia ACCEPTED (gender agreement)",
+  "from": "latin:\"Schinus terebinthifolius\"",
+  "to": "latin:\"Schinus terebinthifolia\""
+ },
+ {
+  "file": "js/data-herbs.js",
+  "why": "Thai basil: neuter agreement on the varietal epithet",
+  "from": "latin:\"Ocimum basilicum var. thyrsiflora\"",
+  "to": "latin:\"Ocimum basilicum var. thyrsiflorum\""
+ },
+ {
+  "file": "js/data-shellfish.js",
+  "why": "akagai: accepted genus is Anadara",
+  "from": "latin:\"Scapharca broughtonii\"",
+  "to": "latin:\"Anadara broughtonii\""
+ },
+ {
+  "file": "js/data-shellfish.js",
+  "why": "conch: accepted genus is Aliger",
+  "from": "latin:\"Lobatus gigas\"",
+  "to": "latin:\"Aliger gigas\""
+ },
+ {
+  "file": "js/data-texture.js",
+  "why": "phycocyanine: sold by the gram, which is band 4's own definition",
+  "from": "{id:\"phycocyanine\",cat:\"texture\",rare:true,price:3,",
+  "to": "{id:\"phycocyanine\",cat:\"texture\",rare:true,price:4,"
+ },
+ {
+  "file": "js/data-herbs.js",
+  "why": "benitade: 150-300 EUR/kg against a band-2 median of 22",
+  "from": "{id:\"benitade\",cat:\"herbs\",rare:true,price:2,",
+  "to": "{id:\"benitade\",cat:\"herbs\",rare:true,price:3,"
+ },
+ {
+  "file": "js/data-infusions.js",
+  "why": "labrador tea: 150-300 EUR/kg against a band-2 median of 22",
+  "from": "{id:\"labrador-tea\",cat:\"infusions\",rare:true,price:2,",
+  "to": "{id:\"labrador-tea\",cat:\"infusions\",rare:true,price:3,"
+ },
+ {
+  "file": "js/data-condiments.js",
+  "why": "red yeast rice: lovastatin was isolated from Aspergillus terreus, not from this ferment",
+  "from": "a molecule chemically identical to lovastatin — the first statin ever brought to market came out of this ferment.",
+  "to": "a molecule chemically identical to lovastatin — the first statin ever brought to market, though the drug itself was isol"
+ },
+ {
+  "file": "js/data-condiments.js",
+  "why": "red yeast rice (fr): same correction",
+  "from": "molécule chimiquement identique à la lovastatine : la première statine jamais commercialisée sort de cette fermentation.",
+  "to": "molécule chimiquement identique à la lovastatine, première statine jamais commercialisée — le médicament, lui, fut isolé"
+ },
+ {
+  "file": "js/data-chefs.js",
+  "why": "Keller: Per Se took three stars in 2005, The French Laundry in 2006",
+  "from": "stars:{n:3, years:\"2006\",",
+  "to": "stars:{n:3, years:\"2005 · 2006\","
+ },
+ {
+  "file": "js/data-chefs.js",
+  "why": "Keller (en): they were not the same year",
+  "from": "Three stars at both The French Laundry and Per Se in the same year — the first American chef with two three-star restaur",
+  "to": "Three stars at Per Se in 2005 and at The French Laundry in 2006 — the first American chef with two three-star restaurant"
+ },
+ {
+  "file": "js/data-chefs.js",
+  "why": "Keller (fr): same correction",
+  "from": "Trois étoiles à The French Laundry et à Per Se la même année — premier chef américain à deux restaurants trois étoiles.",
+  "to": "Trois étoiles à Per Se en 2005 et à The French Laundry en 2006 — premier chef américain à deux restaurants trois étoiles"
+ }
+]

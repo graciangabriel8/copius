@@ -465,7 +465,7 @@ window.CHEFS = (window.CHEFS || []).concat([
  place:{en:"The French Laundry, Yountville; Per Se, New York",fr:"The French Laundry, Yountville ; Per Se, New York"},
  role:{en:"Chef and restaurateur",fr:"Chef et restaurateur"},
  work:{en:"The French Laundry Cookbook (1999)",fr:"The French Laundry Cookbook (1999)"},
- stars:{n:3, years:"2006", note:{en:"Three stars at both The French Laundry and Per Se in the same year — the first American chef with two three-star restaurants.",fr:"Trois étoiles à The French Laundry et à Per Se la même année — premier chef américain à deux restaurants trois étoiles."}},
+ stars:{n:3, years:"2005 · 2006", note:{en:"Three stars at Per Se in 2005 and at The French Laundry in 2006 — the first American chef with two three-star restaurants.",fr:"Trois étoiles à Per Se en 2005 et à The French Laundry en 2006 — premier chef américain à deux restaurants trois étoiles."}},
  contribution:{en:"Trained in France under Guy Savoy and others before taking over The French Laundry in the Napa Valley in 1994. His tasting menus of many small courses, each finished before its interest fades, and his written insistence on precision made the restaurant a reference for American fine dining.",
  fr:"Formé en France chez Guy Savoy et d’autres avant de reprendre The French Laundry dans la Napa Valley en 1994. Ses menus dégustation en nombreux petits plats, chacun achevé avant que l’intérêt ne retombe, et son insistance écrite sur la précision firent du restaurant une référence de la haute cuisine américaine."},
  legacy:{en:"A large number of American chefs of the following generation passed through his kitchens.",

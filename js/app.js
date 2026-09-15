@@ -521,7 +521,8 @@
      renders 479 of them and a grid speckled red and blue is unreadable. */
   function signMark(i) {
     if (!i.sign) return "";
-    var igp = i.sign === "IGP" || i.sign === "PGI";
+    /* Geographical indications read blue; origin appellations read red. */
+    var igp = i.sign === "IGP" || i.sign === "PGI" || i.sign === "IG";
     return ' <span class="sign sign-' + (igp ? "igp" : "aop") + '">' + esc(i.sign) + "</span>";
   }
 
