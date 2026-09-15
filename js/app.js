@@ -459,6 +459,7 @@
         '<div class="tags">' + i.flavor.slice(0, 3).map(function (f) {
           return '<span class="tag">' + esc(t.flavors[f]) + "</span>";
         }).join("") + "</div>" +
+        evinNote(i, "card") +
         "</div></article>";
     }).join("");
   }
@@ -534,8 +535,10 @@
            DRINKS_ELSEWHERE.indexOf(i.id) !== -1;
   }
 
-  function evinNote(i) {
-    return isAlcohol(i) ? '<p class="alcohol-warn">' + esc(T().alcoholWarning) + "</p>" : "";
+  function evinNote(i, place) {
+    if (!isAlcohol(i)) return "";
+    var cls = place === "card" ? "alcohol-warn alcohol-warn-sm" : "alcohol-warn";
+    return '<p class="' + cls + '">' + esc(T().alcoholWarning) + "</p>";
   }
 
   /* Protected designation. Card and modal header only — never a chip: butter alone
