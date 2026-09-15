@@ -285,6 +285,7 @@
     el("footNote").textContent = t.footNote;
     el("contactLine").textContent = t.contactLine;
     el("aboutLink").textContent = t.aboutLink;
+    el("privacyLink").textContent = t.privacyLink;
     el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
