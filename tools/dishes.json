@@ -36,6 +36,44 @@
   }
  },
  {
+  "id": "aubergine-rotie-sauce-au-babeurre",
+  "kind": "signature",
+  "name": {
+   "en": "Aubergine with buttermilk sauce",
+   "fr": "Aubergine rôtie, sauce au babeurre"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Roast aubergine halves spooned with a buttermilk and yoghurt sauce and scattered with za'atar and pomegranate seeds, from Ottolenghi's 2010 vegetable book Plenty.",
+   "fr": "Des moitiés d’aubergine rôties, nappées d’une sauce au babeurre et au yaourt et parsemées de za’atar et de graines de grenade, tirées de Plenty (2010), le livre de légumes d’Ottolenghi."
+  },
+  "why": {
+   "en": "Roasting collapses the aubergine's air-filled flesh so it drinks up the olive oil, and the lactic acid in the buttermilk and yoghurt cuts that oil on the palate.",
+   "fr": "La cuisson au four fait s’effondrer la chair spongieuse de l’aubergine, qui absorbe alors l’huile d’olive, et l’acide lactique du babeurre et du yaourt vient trancher ce gras en bouche."
+  },
+  "ingredients": [
+   "eggplant",
+   "buttermilk",
+   "pomegranate",
+   "zaatar",
+   "lemon-thyme"
+  ],
+  "chef": {
+   "id": "ottolenghi",
+   "name": "Yotam Ottolenghi",
+   "born": 1968,
+   "died": null,
+   "country": "GB",
+   "place": {
+    "en": "London — born in Jerusalem",
+    "fr": "Londres — né à Jérusalem"
+   }
+  }
+ },
+ {
   "id": "berlingots",
   "kind": "signature",
   "name": {
@@ -110,6 +148,42 @@
   }
  },
  {
+  "id": "biscuit-souffle-au-chocolat",
+  "kind": "signature",
+  "name": {
+   "en": "Chocolate soufflé biscuit",
+   "fr": "Biscuit soufflé au chocolat"
+  },
+  "year": {
+   "en": "1981",
+   "fr": "1981"
+  },
+  "note": {
+   "en": "A chocolate soufflé biscuit Gagnaire adapted from the soufflé omelette in the Escoffier guide, and the only dish that has stayed on his menu since 1981.",
+   "fr": "Un biscuit soufflé au chocolat que Gagnaire a tiré de l’omelette soufflée du guide Escoffier, et le seul plat resté à sa carte depuis 1981."
+  },
+  "why": {
+   "en": "The beaten whites hold air bubbles whose water turns to steam in the oven and inflates the batter, while the egg proteins coagulate and the cocoa butter re-sets on cooling, fixing the foam in place.",
+   "fr": "Les blancs montés emprisonnent des bulles d’air dont l’eau se vaporise au four et fait gonfler l’appareil, tandis que les protéines de l’œuf coagulent et que le beurre de cacao refige en refroidissant, ce qui fixe la mousse."
+  },
+  "ingredients": [
+   "dark-chocolate",
+   "egg",
+   "sugar"
+  ],
+  "chef": {
+   "id": "gagnaire",
+   "name": "Pierre Gagnaire",
+   "born": 1950,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Saint-Étienne, then Paris",
+    "fr": "Saint-Étienne, puis Paris"
+   }
+  }
+ },
+ {
   "id": "boeuf-bourguignon",
   "kind": "signature",
   "name": {
@@ -143,6 +217,44 @@
    "place": {
     "en": "Paris, then Cambridge, Massachusetts",
     "fr": "Paris, puis Cambridge, Massachusetts"
+   }
+  }
+ },
+ {
+  "id": "boudin-de-brochet-richelieu-sauce",
+  "kind": "signature",
+  "name": {
+   "en": "Pike boudin Richelieu with Nantua sauce",
+   "fr": "Boudin de brochet Richelieu, sauce Nantua"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "André Pic's own version of the Lyon pike quenelle, rolled into a sausage instead of being shaped with two spoons and served under Nantua sauce.",
+   "fr": "La version d’André Pic de la quenelle lyonnaise, roulée en boudin au lieu d’être tournée à la cuillère et servie sous une sauce Nantua."
+  },
+  "why": {
+   "en": "The lean pike proteins bind with egg and cream and set firm as they poach, while the crayfish butter in the Nantua sauce carries the shells' fat-soluble pigments and aromas into the béchamel, which water-based cooking would leave behind.",
+   "fr": "Les protéines maigres du brochet, liées à l’œuf et à la crème, coagulent à la pochée en une masse ferme, tandis que le beurre d’écrevisse de la sauce Nantua transporte dans la béchamel les pigments et arômes liposolubles des carapaces, que l’eau seule n’extrait pas."
+  },
+  "ingredients": [
+   "pike",
+   "crayfish",
+   "butter",
+   "cream",
+   "egg"
+  ],
+  "chef": {
+   "id": "pic-andre",
+   "name": "André Pic",
+   "born": 1893,
+   "died": 1984,
+   "country": "FR",
+   "place": {
+    "en": "Valence, Drôme",
+    "fr": "Valence, Drôme"
    }
   }
  },
@@ -217,6 +329,81 @@
    "place": {
     "en": "Laguiole, Aubrac",
     "fr": "Laguiole, Aubrac"
+   }
+  }
+ },
+ {
+  "id": "couteaux-mineraux-et-creme-aigre",
+  "kind": "signature",
+  "name": {
+   "en": "Razor clams, minerals and sour cream",
+   "fr": "Couteaux, minéraux et crème aigre"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "A tartare of diced razor clam bound with crème fraîche and lemon, served inside an edible baked dough 'shell' painted with charcoal and algae powder to look like the real one.",
+   "fr": "Un tartare de couteaux en dés lié à la crème fraîche et au citron, servi dans une fausse coquille de pâte cuite, peinte au charbon et à la poudre d’algues."
+  },
+  "why": {
+   "en": "The lemon juice and zest denature the proteins of the raw diced clam so the flesh firms without any heat, while the fat of the 38% crème fraîche coats the dice and slows the acid's action on them.",
+   "fr": "Le jus et le zeste de citron dénaturent les protéines de la chair crue de couteau, qui raffermit sans cuisson, tandis que la matière grasse de la crème fraîche à 38 % enrobe les dés et freine l’action de l’acide sur eux."
+  },
+  "ingredients": [
+   "razor-clam",
+   "creme-fraiche",
+   "lemon",
+   "parsley"
+  ],
+  "chef": {
+   "id": "kofoed",
+   "name": "Rasmus Kofoed",
+   "born": 1974,
+   "died": null,
+   "country": "DK",
+   "place": {
+    "en": "Geranium, Copenhagen",
+    "fr": "Geranium, Copenhague"
+   }
+  }
+ },
+ {
+  "id": "dentucky-fried-chicken",
+  "kind": "signature",
+  "name": {
+   "en": "Dentucky Fried Chicken",
+   "fr": "Dentucky Fried Chicken"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "A deboned chicken wing stuffed with glutinous rice and a filling that changes with the season, fried and handed over in a red-and-white striped takeaway box printed with Hasegawa's face.",
+   "fr": "Une aile de poulet désossée, farcie de riz gluant et d’une garniture qui change au fil des saisons, frite puis remise dans une boîte à emporter rayée rouge et blanc à l’effigie de Hasegawa."
+  },
+  "why": {
+   "en": "Deboning presses the collagen-rich skin directly against the rice, so in the fryer the skin renders and dries into a crust while the enclosed rice steams in the wing's own moisture and stays soft.",
+   "fr": "Le désossage plaque la peau riche en collagène directement contre le riz : à la friture, la peau fond puis se dessèche en croûte tandis que le riz, enfermé, cuit à la vapeur de l’aile elle-même et reste moelleux."
+  },
+  "ingredients": [
+   "chicken",
+   "glutinous-rice",
+   "plum",
+   "black-sesame",
+   "daikon"
+  ],
+  "chef": {
+   "id": "hasegawa",
+   "name": "Zaiyu Hasegawa",
+   "born": 1978,
+   "died": null,
+   "country": "JP",
+   "place": {
+    "en": "Den, Tokyo",
+    "fr": "Den, Tokyo"
    }
   }
  },
@@ -330,6 +517,41 @@
   }
  },
  {
+  "id": "foie-gras-et-gruau-de-mais",
+  "kind": "signature",
+  "name": {
+   "en": "Foie gras and grits",
+   "fr": "Foie gras et gruau de maïs"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Seared foie gras over slow-cooked corn grits with a red-wine gravy, built from the Southern lunch-counter dish of beef liver and grits.",
+   "fr": "Du foie gras poêlé sur un gruau de maïs cuit lentement, nappé d’une sauce au vin rouge, construit à partir du plat sudiste de foie de bœuf au gruau."
+  },
+  "why": {
+   "en": "Fat rendered from the searing foie gras emulsifies into the starch the slow-cooked corn has released, and the acid in the red-wine gravy cuts through that fat.",
+   "fr": "La graisse rendue par le foie gras à la poêle s’émulsionne dans l’amidon libéré par le maïs cuit lentement, et l’acidité de la sauce au vin rouge vient trancher ce gras."
+  },
+  "ingredients": [
+   "foie-gras",
+   "butter"
+  ],
+  "chef": {
+   "id": "bailey",
+   "name": "Mashama Bailey",
+   "born": 1974,
+   "died": null,
+   "country": "US",
+   "place": {
+    "en": "The Grey, Savannah, Georgia",
+    "fr": "The Grey, Savannah, Géorgie"
+   }
+  }
+ },
+ {
   "id": "gateau-de-foies-blonds",
   "kind": "signature",
   "name": {
@@ -404,6 +626,78 @@
   }
  },
  {
+  "id": "gratin-de-queues-d-ecrevisses",
+  "kind": "signature",
+  "name": {
+   "en": "Gratin of crayfish tails",
+   "fr": "Gratin de queues d’écrevisses"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Shelled crayfish tails bound in a cream sauce built on crayfish butter and browned in the dish, kept on the Auberge du Père Bise menu by later chefs.",
+   "fr": "Des queues d’écrevisses décortiquées, liées d’une sauce à la crème montée au beurre d’écrevisse et gratinées au plat, maintenue à la carte de l’Auberge du Père Bise par ses successeurs."
+  },
+  "why": {
+   "en": "The pigments and aroma compounds of the crayfish shells are fat-soluble, so pounding them into butter and reducing them with cream extracts what water alone leaves in the shell, and the resulting fat-rich sauce browns under the grill instead of splitting.",
+   "fr": "Les pigments et les composés aromatiques des carapaces d’écrevisse sont liposolubles : les piler dans le beurre et les réduire avec la crème extrait ce que l’eau seule laisse dans la carapace, et la sauce grasse ainsi obtenue gratine sous la salamandre au lieu de trancher."
+  },
+  "ingredients": [
+   "crayfish",
+   "butter",
+   "cream",
+   "shallot"
+  ],
+  "chef": {
+   "id": "bise",
+   "name": "Marguerite Bise",
+   "born": 1898,
+   "died": 1965,
+   "country": "FR",
+   "place": {
+    "en": "Talloires, lac d’Annecy",
+    "fr": "Talloires, lac d’Annecy"
+   }
+  }
+ },
+ {
+  "id": "homard-aux-epices-tandoori",
+  "kind": "signature",
+  "name": {
+   "en": "Lobster with tandoori spices, carrot, citrus and coriander",
+   "fr": "Homard aux épices tandoori, mousseline de carottes aux agrumes et coriandre fraîche"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Lobster poached and glazed in a butter sauce spiked with tandoori spices, set against a carrot and candied-citrus purée with fresh coriander; it began as a scallop dish Darroze built after a trip to India and has stayed on the Connaught menu in some form for years.",
+   "fr": "Un homard poché puis glacé dans un beurre relevé d’épices tandoori, accompagné d’une mousseline de carottes aux agrumes confits et de coriandre fraîche ; née d’une version à la Saint-Jacques conçue après un voyage en Inde, la recette figure à la carte du Connaught depuis des années."
+  },
+  "why": {
+   "en": "The aroma compounds of the tandoori blend are fat-soluble, so infusing them into the butter sauce fixes them onto the lean lobster meat, while the acid of the citrus stops the carrot purée's sugar from flattening the shellfish's own sweetness.",
+   "fr": "Les composés aromatiques du mélange tandoori étant liposolubles, leur infusion dans le beurre de la sauce les fixe sur la chair maigre du homard, tandis que l’acidité des agrumes empêche le sucre de la mousseline de carotte d’écraser la douceur propre du crustacé."
+  },
+  "ingredients": [
+   "lobster",
+   "carrot"
+  ],
+  "chef": {
+   "id": "darroze",
+   "name": "Hélène Darroze",
+   "born": 1967,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Paris and London",
+    "fr": "Paris et Londres"
+   }
+  }
+ },
+ {
   "id": "insalata-21-31-41",
   "kind": "signature",
   "name": {
@@ -474,6 +768,43 @@
    "place": {
     "en": "Paris and Tokyo",
     "fr": "Paris et Tokyo"
+   }
+  }
+ },
+ {
+  "id": "kir-breton",
+  "kind": "signature",
+  "name": {
+   "en": "Kir Breton",
+   "fr": "Kir breton"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "An edible version of the Breton aperitif served as the first bite at Atelier Crenn: a thin white chocolate and cocoa butter sphere filled with apple cider and topped with crème de cassis.",
+   "fr": "Une version comestible de l’apéritif breton servie en première bouchée à l’Atelier Crenn : une fine sphère de chocolat blanc et de beurre de cacao remplie de cidre et coiffée de crème de cassis."
+  },
+  "why": {
+   "en": "Cocoa butter melts just below body temperature, so the shell gives way on the tongue instead of being chewed and releases the cider it held as liquid in a single burst.",
+   "fr": "Le beurre de cacao fond juste en dessous de la température du corps : la coque cède sur la langue au lieu d’être mâchée et libère d’un coup le cidre resté liquide à l’intérieur."
+  },
+  "ingredients": [
+   "apple",
+   "white-chocolate",
+   "cocoa-butter",
+   "blackcurrant"
+  ],
+  "chef": {
+   "id": "crenn",
+   "name": "Dominique Crenn",
+   "born": 1965,
+   "died": null,
+   "country": "US",
+   "place": {
+    "en": "Atelier Crenn, San Francisco",
+    "fr": "Atelier Crenn, San Francisco"
    }
   }
  },
@@ -618,6 +949,42 @@
    "place": {
     "en": "The French Laundry, Yountville; Per Se, New York",
     "fr": "The French Laundry, Yountville ; Per Se, New York"
+   }
+  }
+ },
+ {
+  "id": "pates-disparaissantes",
+  "kind": "signature",
+  "name": {
+   "en": "Disappearing pasta",
+   "fr": "Pâtes disparaissantes"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Noodles made with no flour and no egg — strips of melted Beaufort set firm — that dissolve into the broth poured over them at the table.",
+   "fr": "Des pâtes sans farine ni œuf — des lamelles de beaufort fondu puis figées — qui se dissolvent dans le bouillon versé à table."
+  },
+  "why": {
+   "en": "The noodle is pure cheese and holds its shape only while cold: the hot broth takes it past the melting point of the milk fat, the casein network slackens, and the strip collapses into the liquid, which it salts and enriches as it goes.",
+   "fr": "La pâte n’est que du fromage et ne tient sa forme qu’à froid : le bouillon chaud lui fait dépasser le point de fusion de la matière grasse, le réseau de caséine se relâche et la lamelle s’effondre dans le liquide, qu’elle sale et enrichit en disparaissant."
+  },
+  "ingredients": [
+   "beaufort",
+   "saffron",
+   "mushroom"
+  ],
+  "chef": {
+   "id": "veyrat",
+   "name": "Marc Veyrat",
+   "born": 1950,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Annecy, then Megève and Manigod",
+    "fr": "Annecy, puis Megève et Manigod"
    }
   }
  },
@@ -799,6 +1166,43 @@
    "place": {
     "en": "Vonnas, Ain",
     "fr": "Vonnas, Ain"
+   }
+  }
+ },
+ {
+  "id": "poupeton-de-fleur-de-courgette",
+  "kind": "signature",
+  "name": {
+   "en": "Zucchini flower stuffed with black truffle (le poupeton)",
+   "fr": "Poupeton de fleur de courgette aux truffes noires"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "A male zucchini flower stuffed with black truffle and mushrooms, gently cooked and served with a butter sauce built on mushroom fumet; the name comes from the bundled flower's resemblance to a doll.",
+   "fr": "Une fleur de courgette mâle farcie de truffe noire et de champignons, cuite doucement et servie avec un beurre au fumet de champignons ; le nom vient de la ressemblance de la fleur ficelée avec une poupée."
+  },
+  "why": {
+   "en": "Truffle aroma compounds are fat-soluble, so the mushroom-fumet butter dissolves them and carries them through the flower's thin, almost tasteless petal wall, which survives the cooking because the flower steams in its own moisture rather than meeting direct heat.",
+   "fr": "Les composés aromatiques de la truffe sont liposolubles : le beurre au fumet de champignons les dissout et les fait passer à travers la paroi mince et presque insipide de la fleur, qui résiste à la cuisson parce qu’elle s’étuve dans sa propre humidité au lieu d’affronter la chaleur directe."
+  },
+  "ingredients": [
+   "zucchini",
+   "truffle",
+   "mushroom",
+   "butter"
+  ],
+  "chef": {
+   "id": "verge",
+   "name": "Roger Vergé",
+   "born": 1930,
+   "died": 2015,
+   "country": "FR",
+   "place": {
+    "en": "Le Moulin de Mougins, Provence",
+    "fr": "Le Moulin de Mougins, Provence"
    }
   }
  },
@@ -1053,6 +1457,150 @@
    "place": {
     "en": "Harveys, then The Restaurant, London",
     "fr": "Harveys, puis The Restaurant, Londres"
+   }
+  }
+ },
+ {
+  "id": "tartare-de-coeur-d-agneau-sauce",
+  "kind": "signature",
+  "name": {
+   "en": "Lamb heart tartare with blood sauce and an organ donor card",
+   "fr": "Tartare de cœur d’agneau, sauce sang en poche de transfusion, carte de donneur d’organes"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "Raw lamb heart cut as tartare and served in the opened heart, with a cherry-juice and chicken-stock reduction poured over it from a blood transfusion bag and an organ donor registration card set beside the plate; about 1,500 diners went on to register as donors.",
+   "fr": "Un cœur d’agneau cru taillé en tartare et servi dans le cœur ouvert, arrosé d’une réduction de jus de cerise et de fond de volaille versée depuis une poche de transfusion, une carte de donneur d’organes posée à côté ; environ 1 500 convives se sont ensuite inscrits comme donneurs."
+  },
+  "why": {
+   "en": "Heart is a lean, hard-working muscle whose high myoglobin content reads as metallic iron on the palate, so the acid and sugar of the cherry reduction mask those iron notes while the gelatine in the chicken stock gives the raw dice the lubrication its low fat content cannot.",
+   "fr": "Le cœur est un muscle maigre et très sollicité dont la forte teneur en myoglobine donne un goût de fer métallique : l’acidité et le sucre de la réduction de cerise masquent ces notes ferreuses, tandis que la gélatine du fond de volaille apporte au tartare cru l’onctuosité que sa maigreur lui refuse."
+  },
+  "ingredients": [
+   "lamb",
+   "cherry",
+   "chicken"
+  ],
+  "chef": {
+   "id": "munk",
+   "name": "Rasmus Munk",
+   "born": 1991,
+   "died": null,
+   "country": "DK",
+   "place": {
+    "en": "Alchemist, Refshaleøen, Copenhagen",
+    "fr": "Alchemist, Refshaleøen, Copenhague"
+   }
+  }
+ },
+ {
+  "id": "tarte-friande-de-langoustine",
+  "kind": "signature",
+  "name": {
+   "en": "Crisp langoustine tart under oscietra caviar",
+   "fr": "Tarte friande de langoustine recouverte de grains de caviar Osciètre"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "A thin crisp pastry tart of langoustine finished with a layer of oscietra caviar spread over it with a spatula.",
+   "fr": "Une tarte fine et croustillante à la langoustine, recouverte d’une couche de grains de caviar Osciètre étalée à la spatule."
+  },
+  "why": {
+   "en": "The salt of the dish comes from the caviar's own brine, released as the grains burst on the palate and seasoning the langoustine from above, while the baked pastry underneath stays dry and supplies the only crisp texture against two soft layers.",
+   "fr": "Le sel du plat vient de la saumure du caviar, libérée quand les grains éclatent en bouche et qui assaisonne la langoustine par le dessus, tandis que la pâte cuite en dessous reste sèche et apporte la seule texture croustillante face à deux couches molles."
+  },
+  "ingredients": [
+   "langoustine",
+   "caviar",
+   "butter"
+  ],
+  "chef": {
+   "id": "alleno",
+   "name": "Yannick Alléno",
+   "born": 1968,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Pavillon Ledoyen, Paris; Courchevel",
+    "fr": "Pavillon Ledoyen, Paris ; Courchevel"
+   }
+  }
+ },
+ {
+  "id": "timbale-de-pomme-et-foie-gras",
+  "kind": "signature",
+  "name": {
+   "en": "Apple and foie gras timbale with vanilla oil",
+   "fr": "Timbale de pomme et foie gras à l’huile de vanille"
+  },
+  "year": {
+   "en": "1996",
+   "fr": "1996"
+  },
+  "note": {
+   "en": "Alternating layers of caramelised apple and duck foie gras pressed into a timbale and dressed with vanilla-infused oil, on El Celler de Can Roca's menu since 1996 and formally given to the city of Girona in 2009.",
+   "fr": "Couches alternées de pomme caramélisée et de foie gras de canard pressées en timbale et nappées d’une huile infusée à la vanille, à la carte d’El Celler de Can Roca depuis 1996 et offerte à la ville de Gérone en 2009."
+  },
+  "why": {
+   "en": "The malic acid of the caramelised apple cuts the fat film the foie gras leaves on the palate, while vanillin, being fat-soluble, dissolves into that same fat and carries its aroma through every layer.",
+   "fr": "L’acide malique de la pomme caramélisée coupe le film gras que le foie gras laisse en bouche, tandis que la vanilline, liposoluble, se dissout dans cette même graisse et en diffuse l’arôme à chaque couche."
+  },
+  "ingredients": [
+   "foie-gras",
+   "apple",
+   "vanilla",
+   "sugar"
+  ],
+  "chef": {
+   "id": "roca",
+   "name": "Joan, Josep et Jordi Roca",
+   "born": 1964,
+   "died": null,
+   "country": "ES",
+   "place": {
+    "en": "El Celler de Can Roca, Girona",
+    "fr": "El Celler de Can Roca, Gérone"
+   }
+  }
+ },
+ {
+  "id": "tocino-del-cielo-jaune-d-oeuf",
+  "kind": "signature",
+  "name": {
+   "en": "Tocino del cielo (candied egg yolk on a caramelised macaron)",
+   "fr": "Tocino del cielo (jaune d’œuf confit sur macaron caramélisé)"
+  },
+  "year": {
+   "en": "—",
+   "fr": "—"
+  },
+  "note": {
+   "en": "An Andalusian dessert of egg yolk set in sugar syrup, served at Le Chateaubriand as a single caramelised bite sitting on a macaron base.",
+   "fr": "Un dessert andalou de jaune d’œuf pris dans un sirop de sucre, servi au Chateaubriand en une seule bouchée caramélisée posée sur un macaron."
+  },
+  "why": {
+   "en": "The concentrated sugar syrup binds the free water and raises the temperature at which the yolk's proteins coagulate, so the yolk sets into a dense, smooth custard rather than curdling into grains.",
+   "fr": "Le sirop de sucre très concentré retient l’eau libre et élève la température de coagulation des protéines du jaune, qui prend alors en une crème dense et lisse au lieu de grainer."
+  },
+  "ingredients": [
+   "egg",
+   "sugar"
+  ],
+  "chef": {
+   "id": "aizpitarte",
+   "name": "Iñaki Aizpitarte",
+   "born": 1971,
+   "died": null,
+   "country": "FR",
+   "place": {
+    "en": "Le Chateaubriand, Paris 11e",
+    "fr": "Le Chateaubriand, Paris 11e"
    }
   }
  }
