@@ -1,0 +1,930 @@
+{
+ "research": [
+  {
+   "lane": "LANE 1 — THE LAW",
+   "findings": [
+    {
+     "claim": "The LCEN site-identification duty is no longer \"article 6-III\" — since 23 May 2024 it sits in article 1-1 of loi n° 2004-575, and article 6 now covers intermediaries only.",
+     "detail": "The consolidated LCEN page on Légifrance prints the éditeur identification obligation under the heading Article 1-1, marked \"Version en vigueur depuis le 23/05/2024\" (the loi SREN n° 2024-449 of 21 May 2024 restructured the LCEN). The substance is unchanged; only the citation is stale. Any mentions légales page or memo citing \"art. 6-III LCEN\" should now cite art. 1-1.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Les personnes dont l'activité est d'éditer un service de communication au public en ligne mettent à la disposition du public, dans un standard ouvert : 1° S'il s'agit de personnes physiques, leurs nom, prénoms, domicile et numéro de téléphone... — heading \"Article 1-1\", \"Version en vigueur depuis le 23/05/2024\"",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049568614"
+    },
+    {
+     "claim": "(a) The non-professional publisher's anonymity regime survived the renumbering intact: Gabriel may publish only GitHub's name and address, not his own, provided he has given GitHub his identity.",
+     "detail": "This governs the SITE (copius.fr), not the newsletter message. Two conditions: he must edit \"à titre non professionnel\" (true today — nothing for sale), and his identification details must be held by the hosting provider (GitHub holds his account identity). The hébergeur is bound to professional secrecy on those details except before a judicial authority. The moment he sells, he is no longer non-professional and this paragraph stops protecting him.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Les personnes éditant à titre non professionnel un service de communication au public en ligne peuvent ne tenir à la disposition du public, pour préserver leur anonymat, que le nom, la dénomination ou la raison sociale et l'adresse du fournisseur de services d'hébergement, sous réserve d'avoir communiqué à ce fournisseur les éléments d'identification personnelle mentionnés au I du présent article.",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049568614"
+    },
+    {
+     "claim": "(a) The CPCE prospection régime does not bite today: \"prospection directe\" is defined as promoting goods, services, or the image of a person who SELLS goods or provides services. Gabriel sells nothing, so article L34-5's opt-in rule is not triggered by a free editorial letter.",
+     "detail": "This is the pivot of the whole answer. L34-5 transposes the e-privacy consent rule, and its own definition is commercial by construction. A free bilingual culinary atlas newsletter from someone with nothing for sale promotes no seller's goods, services, or image. The GDPR still applies in full (see below) — what falls away is the specific L34-5 prior-consent obligation and its message-content duties.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Constitue une prospection directe l'envoi de tout message destiné à promouvoir, directement ou indirectement, des biens, des services ou l'image d'une personne vendant des biens ou fournissant des services.",
+     "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042155961/"
+    },
+    {
+     "claim": "(a,b) Even where L34-5 DOES apply, it requires \"coordonnées valables\" for opting out and a non-concealed sender identity — it never says \"adresse postale\".",
+     "detail": "The full paragraph names two prohibitions: sending without valid contact details through which the recipient can effectively ask that the messages stop free of charge, and concealing the identity of the person on whose behalf the message is sent (plus no misleading subject line). A working unsubscribe link and a real reply-to address (contact@copius.fr) satisfy \"coordonnées valables\". Version en vigueur depuis le 26 juillet 2020.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Dans tous les cas, il est interdit d'émettre, à des fins de prospection directe, des messages au moyen de système automatisé de communications électroniques au sens du 6° de l'article L. 32, télécopieurs et courriers électroniques, sans indiquer de coordonnées valables auxquelles le destinataire puisse utilement transmettre une demande tendant à obtenir que ces communications cessent sans frais autres que ceux liés à la transmission de celle-ci. Il est également interdit de dissimuler l'identité de la personne pour le compte de laquelle la communication est émise et de mentionner un objet sans rapport avec la prestation ou le service proposé.",
+     "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042155961/"
+    },
+    {
+     "claim": "(a,b) CNIL's own rule for NON-commercial prospection is opt-out, not opt-in: inform the person and let them object simply and free of charge.",
+     "detail": "CNIL's prospection page carves out non-commercial prospection (its example is caritative) and attaches two conditions only — being informed that the address will be used for non-commercial prospection, and being able to object simply and free of charge. Gabriel should still take a real opt-in, because that is the cleanest GDPR consent and the cleanest proof, but he is not standing on the stricter commercial régime.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Si la prospection n'est pas de nature commerciale (exemple : caritative) — la personne doit « être informée » que son adresse électronique ou son numéro de téléphone sera utilisé à des fins de prospection « non commerciale » et « être en mesure de s'opposer » à cette utilisation de manière simple et gratuite",
+     "source_url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel"
+    },
+    {
+     "claim": "(b) What CNIL actually requires INSIDE the message is two things: the sender's identity, and a simple way to refuse. Nothing else.",
+     "detail": "CNIL states it as one sentence covering every solicitation. \"Identité de l'organisation qui l'émet\" is satisfied by \"Copius — copius.fr\" plus a real reply address; it does not require a legal name plus domicile in the message. \"Un moyen simple\" is the unsubscribe link.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "chaque sollicitation doit obligatoirement permettre à la personne concernée de prendre connaissance de l'identité de l'organisation qui l'émet ainsi que d'exprimer, si elle le souhaite et par un moyen simple, son refus",
+     "source_url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
+    },
+    {
+     "claim": "(b) No French text I opened requires a postal address inside a newsletter message. I checked all four candidate homes and none contains one.",
+     "detail": "Checked: CPCE L34-5 (says \"coordonnées valables\", never \"adresse\"); CNIL's two prospection pages (no occurrence of \"adresse postale\" — CNIL treats postal prospection on a separate page); CNIL's \"règles d'or\", which places the controller's contact details on the UNSUBSCRIBE PAGE, not in the message, and says \"coordonnées\" not \"adresse postale\"; LCEN art. 1-1, which governs the site's mentions légales, not message content. This is a negative claim from four opened primary sources, not from absence of search hits.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Indiquez sur la page de désinscription le nom et les coordonnées du responsable du traitement et du propriétaire du fichier source s'il est différent du responsable du traitement.",
+     "source_url": "https://www.cnil.fr/fr/les-regles-dor-de-la-prospection-par-courrier-electronique-0"
+    },
+    {
+     "claim": "The postal-address demand he hit is a US CAN-SPAM rule, not a French one: the FTC requires a valid physical postal address in every commercial email.",
+     "detail": "US-facing ESPs build this into onboarding and footers for all customers regardless of jurisdiction. That explains the Brevo wall without any French law standing behind it. The FTC rule attaches to messages whose primary purpose is commercial advertisement or promotion of a product or service — which a free editorial letter is not, but the platform does not adjudicate that per account.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Your message must include your valid physical postal address.",
+     "source_url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+     "claim": "(c) Selling flips three separate switches at once, and the first is the one he will not see coming: his home address becomes publishable.",
+     "detail": "(1) LCEN art. 1-1 — he stops being \"à titre non professionnel\", so nom, prénoms, domicile and numéro de téléphone go into the mentions légales, plus the hébergeur's details. (2) CPCE L34-5 — the newsletter now promotes \"l'image d'une personne vendant des biens\", so prior express consent becomes mandatory for every B2C address, and every message needs coordonnées valables and an undisguised sender. (3) LCEN art. 19 — as a distance seller he owes \"un accès facile, direct et permanent\" to name, the address where he is established, email, telephone, and registry number. A domiciliation address, not his flat, is the answer to all three; this is the legal reason the domiciliation is the real blocker, not the newsletter.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Toute personne qui exerce l'activité définie à l'article 14 est tenue d'assurer à ceux à qui est destinée la fourniture de biens ou la prestation de services un accès facile, direct et permanent utilisant un standard ouvert aux informations suivantes",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032236011"
+    },
+    {
+     "claim": "(d) The right RGPD basis is consent, article 6(1)(a) — and he must be able to demonstrate it, with withdrawal as easy as giving it.",
+     "detail": "Legitimate interest 6(1)(f) is arguable for a free editorial letter, but consent matches the act the reader actually performs (typing an address into a subscribe box) and is what CNIL's opt-in guidance describes. Article 7(1) puts the burden of proof on him; article 7(3) requires withdrawal to be as simple as consent. Note CNIL's own newsletter runs on 6(1)(e), mission d'intérêt public — a basis unavailable to a private individual, so do not copy CNIL's notice wording.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Article 7(1) : le responsable doit pouvoir « démontrer que la personne concernée a donné son consentement » ; Article 7(3) : « Il est aussi simple de retirer que de donner son consentement »",
+     "source_url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2"
+    },
+    {
+     "claim": "(d) The privacy notice must carry nine items, and his current page — \"no form, no mailing list, no analytics\" — becomes false the day a subscribe box ships.",
+     "detail": "CNIL's required mentions: identity and contact details of the controller; purposes; legal basis; whether providing the data is obligatory or optional; recipients or categories of recipients (this is where the email platform goes, as a sous-traitant); retention period; data subject rights; DPO contact details where one exists (he has none — say so rather than omitting the line); and the right to lodge a complaint with the CNIL. Delivery must be concise, transparent, comprehensible and easily accessible, at the point of collection, with a link to the full notice.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Identité et coordonnées de l'organisme (responsable du traitement de données) ; Finalités ; Base légale du traitement de données ; Caractère obligatoire ou facultatif du recueil des données ; Destinataires ou catégories de destinataires des données ; Durée de conservation des données ; Droits des personnes concernées ; Coordonnées du délégué à la protection des données ; Droit d'introduire une réclamation auprès de la CNIL",
+     "source_url": "https://www.cnil.fr/fr/conformite-rgpd-information-des-personnes-et-transparence"
+    },
+    {
+     "claim": "(d) Yes, he needs a registre des traitements — the small-entity exemption does not cover a standing mailing list, because that processing is not occasional.",
+     "detail": "CNIL states the obligation covers every organisme whatever its size, and that sub-250-employee entities must still register non-occasional processing, risky processing, and sensitive data. A permanent subscriber list is non-occasional by definition. The household exemption in art. 2(2)(c) does not rescue him either: a newsletter published to the public is not a \"activité strictement personnelle ou domestique\", and art. 4(7) makes any natural person who determines purposes and means a responsable du traitement. In practice this is one page: purpose, basis, data (email, subscription date), recipients (the ESP), retention, security. Not a burden — but not optional.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "L'obligation de tenir un registre des traitements concerne tous les organismes, publics comme privés et quelle que soit leur taille. […] les traitements non occasionnels",
+     "source_url": "https://www.cnil.fr/fr/RGDP-le-registre-des-activites-de-traitement"
+    },
+    {
+     "claim": "(e) Double opt-in is not legally required in France. No text imposes it, and none of the CNIL pages I opened uses the term.",
+     "detail": "What the law requires is a consent that is libre, spécifique, éclairé et univoque — a dedicated, non-pre-ticked checkbox or an explicit subscribe action — plus the ability to prove it under art. 7(1). Double opt-in is the cheapest way to discharge that burden and it also blocks someone from subscribing a third party's address, which matters for a static site with no account system. Recommend it on evidentiary grounds, not as a legal obligation. I could not open a CNIL page that names double opt-in either way; sources asserting \"la CNIL recommande fortement le double opt-in\" were commentary sites, which I did not treat as sources.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "Le consentement doit être libre, spécifique, éclairé et univoque. Il requiert, pour être valable, une action positive et spécifique de la personne concernée (exemple : une case à cocher dédiée et qui ne soit pas pré-cochée).",
+     "source_url": "https://www.cnil.fr/fr/cnil-direct/question/opt-opt-out-ca-veut-dire-quoi"
+    },
+    {
+     "claim": "CNIL's opt-in/opt-out explainer independently confirms the non-commercial carve-out by listing \"prospection caritative\" on the opt-out side.",
+     "detail": "A second CNIL page reaching the same conclusion as the prospection page, through different wording. Useful corroboration for the load-bearing claim that the opt-in régime is commercial-only.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "L'opt-out s'applique notamment à la publicité postale, aux communications électroniques pour des produits similaires à ceux déjà achetés, à la prospection B2B, et à la prospection caritative.",
+     "source_url": "https://www.cnil.fr/fr/cnil-direct/question/opt-opt-out-ca-veut-dire-quoi"
+    }
+   ],
+   "unknowns": [
+    "Whether Brevo's onboarding postal address is contractually mandatory or merely a default footer field. I searched Brevo's help centre and found pages on the unsubscribe link but none stating a postal-address requirement; I did not open an authenticated onboarding screen. His first-hand account of the wall stands as the record; the legal cause is CAN-SPAM-shaped, but I did not verify Brevo's own wording.",
+    "Which email platforms accept a French account with no postal address. Not researched here — that is a lane-2 question, and any answer must be dated and quoted from the provider's own terms, never from memory.",
+    "The exact sanction for missing mentions légales under the post-SREN LCEN. Search summaries quoted 1 year / 75,000 EUR for a natural person, but I did not open the penal provision in the renumbered law, so I am not asserting it.",
+    "Whether a free newsletter could ever be recharacterised as promoting \"l'image d'une personne vendant des biens\" during the run-up to a June 2027 launch — for instance a letter that pre-announces a paid product. The definition turns on the message's promotional object, and a waitlist or launch teaser is where the line gets tested. Worth re-checking before any pre-launch campaign.",
+    "Whether CNIL has ever taken a position on double opt-in in a published deliberation or referentiel. My negative is bounded by the pages I opened, not by a full survey of CNIL's sanctions corpus."
+   ],
+   "bottom_line": "Yes, he can run the newsletter now, and French law does not require his home address anywhere in it. Three separate régimes get conflated and they resolve differently for him. (1) The site's mentions légales: the duty is no longer article 6-III — since 23 May 2024 the loi SREN moved it to article 1-1 of the LCEN, and the non-professional anonymity paragraph survived intact, so he may publish GitHub's name and address instead of his own, provided GitHub holds his identity, which it does. (2) The prospection régime: CPCE L34-5 defines prospection directe as promoting goods, services or the image of a person who SELLS — he sells nothing, so the opt-in rule is not triggered, and CNIL's own page puts non-commercial prospection under an inform-and-let-them-object régime. (3) Inside the message, CNIL requires exactly two things: the sender's identity and a simple way to refuse. I checked all four places a postal-address rule could live — L34-5, both CNIL prospection pages, LCEN art. 1-1 — and none contains one; the requirement he hit at Brevo is the US CAN-SPAM rule, \"Your message must include your valid physical postal address\", which US-facing platforms apply to every account regardless of jurisdiction. So the blocker was the platform, not the law. What he does owe: a real opt-in (non-pre-ticked, one clear action), a working unsubscribe in every message, a rewritten privacy page carrying CNIL's nine mentions — his current \"no form, no mailing list\" text becomes false the day a subscribe box ships — consent under art. 6(1)(a) that he can prove under art. 7(1), and a one-page registre des traitements, which the sub-250 exemption does not waive because a standing list is non-occasional processing. Double opt-in is not legally required; recommend it as the cheapest proof of consent and as protection against someone subscribing a third party's address. The moment he sells, all three régimes flip together — his nom, prénoms, domicile and téléphone become publishable under art. 1-1, prior consent becomes mandatory under L34-5, and art. 19 adds the e-commerce disclosure duty. That is the legal reason the domiciliation address is the real prerequisite for June 2027, and why it is a separate problem from the newsletter, which he can start without it."
+  },
+  {
+   "lane": "LANE 2 — THE ADDRESS PROBLEM (domiciliation, association, boîte postale, INSEE/INPI publication rules)",
+   "findings": [
+    {
+     "claim": "(a) A domiciliation commerciale is an administrative/legal address supplied by an approved business centre; having an address is compulsory for any registered business.",
+     "confidence": "high",
+     "detail": "Service-Public (société page, 'Vérifié le 15 septembre 2025') defines it and adds that the provider needs a prefectural licence and that the contract runs 3 months minimum. The same site's individual-business page ('Vérifié le 02 juillet 2026') repeats the obligation for an EI or micro-entreprise. What it provides is an address, mail receipt/forwarding and, in the paid tiers, meeting rooms or secretarial services — not premises you occupy.",
+     "opened": true,
+     "source_quote": "La domiciliation d'une société est obligatoire. Il s'agit de lui donner une adresse administrative. […] Un cabinet (ou société) de domiciliation est un centre d'affaires dont l'activité est de fournir une adresse à des entreprises. Il doit posséder un agrément préfectoral.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F37412"
+    },
+    {
+     "claim": "(a) SeDomicilier, article dated 8 July 2026: 20 €/month HT with no commitment (16 € promo), down to 14 €/month HT on a 3-year commitment (11 € promo).",
+     "confidence": "high",
+     "detail": "Vendor-published price list, dated on the page itself. The article also states the price does not depend on the legal form: 'le tarif de domiciliation ne dépend pas de la forme juridique (SASU, EURL, SARL, micro-entreprise, SCI)'. All figures excl. VAT; mail forwarding and scanning are usually priced on top.",
+     "opened": true,
+     "source_quote": "de 11€ à 16€/mois",
+     "source_url": "https://sedomicilier.fr/articles/tarifs-domiciliation-2026"
+    },
+    {
+     "claim": "(a) LegalPlace, guide 'Dernière mise à jour le 18/05/2026': 17 € HT/month for a micro-entreprise or SCI, 25 € HT/month for a SARL/EURL/SAS/SASU, address in Paris 2e.",
+     "confidence": "high",
+     "detail": "Second named provider with its own dated price. Its market range for a plain address is given as 10–70 €/month depending on city and services — treat that range as vendor editorial, not a measured market survey.",
+     "opened": true,
+     "source_quote": "Les tarifs de domiciliation commerciale chez LegalPlace démarrent à 17 € HT / mois pour une micro-entreprise ou une SCI, et à 25 € HT / mois pour une SARL, une EURL, une SAS ou une SASU.",
+     "source_url": "https://www.legalplace.fr/guides/tarif-domiciliation-commerciale/"
+    },
+    {
+     "claim": "(a) Third named provider, Kandbaz: association address advertised at under 20 €/month, with a 1 €/month 3-month promo.",
+     "confidence": "medium",
+     "detail": "Page carries no visible date, so the figure is dated only by the fetch (15 Sept 2026). Useful mainly because it is an association-specific offer.",
+     "opened": true,
+     "source_quote": "une adresse prestigieuse pour moins de 20 €/mois",
+     "source_url": "https://www.kandbaz.com/domiciliation/domiciliation-association/"
+    },
+    {
+     "claim": "(b) No. A commercial domiciliation contract is sold to a business — existing or in the course of registration — not to a private individual with no entity and no project.",
+     "confidence": "medium",
+     "detail": "Three converging opened sources: Service-Public defines the domiciliataire's activity as supplying an address 'à des entreprises'; the AML rules make the domiciliataire identify 'le client (entreprise)' and its beneficial owner before signing (Kandbaz LCB-FT page, 19 November 2025); and the domiciliation contract's function is to be the justificatif de jouissance filed at the INPI guichet unique. No opened source states an outright legal ban on selling to a person with no entity, so this is 'that is not what the product is', not 'it is forbidden'.",
+     "opened": true,
+     "source_quote": "identifier le client (entreprise) et, le cas échéant, le bénéficiaire effectif",
+     "source_url": "https://www.kandbaz.com/domiciliation/lcb-ft-domiciliation-focus-sur-les-lignes-directrices-dgccrf-tracfin/"
+    },
+    {
+     "claim": "(b) You can sign before the entity exists: the attestation/contrat de domiciliation is what lets you register, and it may carry the mention 'en cours d'immatriculation' instead of a SIREN.",
+     "confidence": "medium",
+     "detail": "LegalPlace guide, 'last updated 13/04/2026'. Practical consequence for Gabriel: the sequence is decide to create the entity → take the address → register with it, not the reverse. He cannot buy the address first and decide later.",
+     "opened": true,
+     "source_quote": "en cours d'immatriculation",
+     "source_url": "https://www.legalplace.fr/guides/attestation-de-domiciliation/"
+    },
+    {
+     "claim": "(b) What a private individual can buy instead is a mail box (domiciliation postale). It is explicitly not a proof of residence and is not a personal address.",
+     "confidence": "medium",
+     "detail": "SeDomicilier's own article for individuals (written 27 Oct 2017, last updated 12 Aug 2025) sells the service to individuals but disclaims its legal value. An older provider blog (abcliv, 05/07/2017) states flatly: 'Il est formellement interdit d'utiliser une adresse postale comme justificatif de domicile.' Whether such a box may be printed as a contact address in a newsletter footer is a contractual question for the provider's CGV, not settled by these pages.",
+     "opened": true,
+     "source_quote": "it is impossible to use the address of your domiciliation box as proof of residence",
+     "source_url": "https://en.sedomicilier.fr/articles/domiciliation-particuliers"
+    },
+    {
+     "claim": "(c) Alternative — attestation d'hébergement from a third party (school, employer, parent). Mechanically possible: a host signs an attestation authorising the business address at their premises.",
+     "confidence": "medium",
+     "detail": "LegalPlace, 13/04/2026, describes the hébergeant route alongside owner and domiciliation-company routes. Service-Public's EI page lists the matching proof: a housing attestation plus a proof of address in the host's name, less than 3 months old. In practice a public lycée hosting a student's business or association siège would need its own decision — no source found either way, so treat a school address as unverified, not as an option on the table.",
+     "opened": true,
+     "source_quote": "A third party providing free accommodation must sign an attestation d'hébergement (hosting attestation) authorizing the business domiciliation at their address.",
+     "source_url": "https://www.legalplace.fr/guides/attestation-de-domiciliation/"
+    },
+    {
+     "claim": "(c) Alternative — La Poste boîte postale (Flexigo). Rentable by individuals, annual or seasonal, but you must prove a home address to get one, and the page publishes no price.",
+     "confidence": "medium",
+     "detail": "La Poste's own page: individuals must present 'une pièce d'identité valide et justifier de votre domicile'. Annual subscriptions renew automatically each January; seasonal rental bills any started month, one month minimum. No 2026 tariff appears on that page and the 2026 tariff PDFs I searched did not surface a BP line. Note also that a BP is refused as an association's siège: Kandbaz states the address 'ne doit pas correspondre à une simple boîte postale'.",
+     "opened": true,
+     "source_quote": "Une boîte postale constitue un espace de stockage personnel situé dans un bureau de Poste.",
+     "source_url": "https://www.laposte.fr/conseils-pratiques/louer-une-boite-aux-lettres-pour-particulier"
+    },
+    {
+     "claim": "(c) Alternative — coworking space or pépinière d'entreprises, listed by Service-Public as valid domiciliation for an EI/micro-entreprise.",
+     "confidence": "high",
+     "detail": "Same EI page, verified 2 July 2026. A pépinière is limited to businesses registered 6 months or less and 48 months of hosting, so it is a creation-stage option only. Both presuppose an entity.",
+     "opened": true,
+     "source_quote": "La domiciliation de votre entreprise (EI ou micro-entreprise) est obligatoire.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2160"
+    },
+    {
+     "claim": "(c) INSEE/INPI rule — whatever address an entrepreneur declares goes into Sirene and the Registre national des entreprises, and is republished on the public Annuaire des entreprises unless he opposes.",
+     "confidence": "high",
+     "detail": "INSEE page dated 02/12/2025: the right to object rests on article R123-232-1 of the code de commerce and article 21 GDPR; for a sole proprietorship (catégorie juridique 1000) the withheld fields are name, first names, pseudonym, business name, exact address within the commune and geolocation. Everything else — activity, Siren/Siret, administrative status — keeps being published.",
+     "opened": true,
+     "source_quote": "Les autres informations concernant l'unité légale restent diffusées",
+     "source_url": "https://www.insee.fr/fr/information/7456564"
+    },
+    {
+     "claim": "(d) An association loi 1901 does give a publishable address — but the declaration publishes that address in the Journal officiel, so it solves nothing if the siège is his home.",
+     "confidence": "high",
+     "detail": "associations.gouv.fr lists the fields of the JOAFE announcement: 'Date de la déclaration en préfecture, Titre de l'association, Objet, Adresse du siège de l'association'. So the association route is only a fix if the siège is somewhere other than his flat — a mairie, a maison des associations, a domiciliation company, or another member's home.",
+     "opened": true,
+     "source_quote": "Date de la déclaration en préfecture, Titre de l'association, Objet, Adresse du siège de l'association",
+     "source_url": "https://associations.gouv.fr/declarer-et-publier-son-association-1901-la-prefecture"
+    },
+    {
+     "claim": "(d) Cost to create: zero. Declaration and Journal officiel publication have both been free since 2019.",
+     "confidence": "high",
+     "detail": "Same page. The receipt arrives within 5 days and publication runs weekly on Tuesdays. The cost that remains is the address itself: free at a member's home or (usually) a mairie, otherwise the ~11–25 €/month domiciliation price above.",
+     "opened": true,
+     "source_quote": "free since 2019",
+     "source_url": "https://associations.gouv.fr/declarer-et-publier-son-association-1901-la-prefecture"
+    },
+    {
+     "claim": "(d) The declaration also files the administrators' names, professions, addresses and nationality with the préfecture — so his home address reaches the administration even when it is not the siège.",
+     "confidence": "high",
+     "detail": "associations.gouv.fr, page dated 16 juin 2025. These fields are declared, not part of the four-field JOAFE announcement, so they are not published in the Journal officiel. Whether they appear in any open-data extract of the RNA I did not verify.",
+     "opened": true,
+     "source_quote": "Names, professions, addresses, and nationality of administrators",
+     "source_url": "https://associations.gouv.fr/lassociation-declaree-regie-par-la-loi-du-1er-juillet-1901"
+    },
+    {
+     "claim": "(d) What the association buys him: legal personality — a bank account, contracts, subsidies — i.e. a legal person that can be the newsletter's data controller instead of him personally.",
+     "confidence": "high",
+     "detail": "Same page: declaration confers 'la capacité juridique'. Obligations it brings, per the opened pages: written statuts naming title, objet and siège; declaration of the siège and of the administrators; and keeping minutes of deliberations, which the page recommends rather than mandates. The 3-month deadline for declaring changes and the 2-member minimum are widely stated elsewhere but appear on neither page I opened — see unknowns.",
+     "opened": true,
+     "source_quote": "la capacité juridique",
+     "source_url": "https://associations.gouv.fr/lassociation-declaree-regie-par-la-loi-du-1er-juillet-1901"
+    },
+    {
+     "claim": "(d) Siège at his own home is lawful — a lease cannot forbid it — but that is exactly the address the Journal officiel would publish.",
+     "confidence": "high",
+     "detail": "associations.gouv.fr, 17 juin 2025: for a tenant, 'Un contrat de location ne peut pas interdire à un locataire l'exercice d'une activité associative'; for an owner outside copropriété, 'vous êtes libre de domicilier le siège social de votre association à votre domicile'. Copropriété requires the other owners' agreement when the activity actually happens there.",
+     "opened": true,
+     "source_quote": "Un contrat de location ne peut pas interdire à un locataire l'exercice d'une activité associative",
+     "source_url": "https://associations.gouv.fr/le-siege-dune-association-au-domicile-dun-de-ses-membres"
+    },
+    {
+     "claim": "(e) Yes — a micro-entreprise declared at home publishes that home address by default, and no, it is not unavoidable: an online opposition makes only the commune public.",
+     "confidence": "high",
+     "detail": "Service-Public's EI page (verified 2 July 2026) is explicit: 'Seule la commune de résidence sera rendue publique sur le Registre national des entreprises.' The dedicated online service (page dated 25 August 2025) is open to 'toute personne physique inscrite au répertoire Sirene comme entrepreneur individuel', needs FranceConnect and the SIREN, and INSEE processes sole-proprietor requests in 48 hours.",
+     "opened": true,
+     "source_quote": "Seule la commune de résidence sera rendue publique sur le Registre national des entreprises.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2160"
+    },
+    {
+     "claim": "(e) Separate, newer protection: décret n° 2025-840 du 22 août 2025 lets company officers hide their personal address on the RCS, and the INPI states the RNE does not diffuse representatives' personal addresses.",
+     "confidence": "medium",
+     "detail": "INPI page on anonymisation. This track is aimed at dirigeants de sociétés and at documents filed at the RCS — for a micro-entrepreneur whose établissement is his flat, the Sirene non-diffusion route above is the operative one. The two should not be conflated.",
+     "opened": true,
+     "source_quote": "Le RNE ne diffuse pas les adresses personnelles des représentants d'entreprises.",
+     "source_url": "https://www.inpi.fr/ressources/formalites-dentreprises/anonymisation-actes-et-donnees-personnelles"
+    },
+    {
+     "claim": "(e) TRAP: registering a micro-entreprise puts his address back on the site itself. LCEN mentions légales for an entrepreneur individuel's website require 'votre nom, prénom et adresse'.",
+     "confidence": "high",
+     "detail": "Service-Public F31228, 'Vérifié le 31 juillet 2023', with the penalty stated as 1 an d'emprisonnement et 75 000 € d'amende. So INSEE non-diffusion protects the registers, not copius.fr: the day he becomes an EI publishing professionally, he must display an address on the page — which makes a non-home domiciliation a precondition of the micro-entreprise route, not an optional extra.",
+     "opened": true,
+     "source_quote": "votre nom, prénom et adresse",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31228"
+    },
+    {
+     "claim": "Today, with no entity, he is not required to publish any address: a non-professional publisher may identify their host instead of themselves.",
+     "confidence": "medium",
+     "detail": "CNIL, page dated 12 June 2009 — old, but the LCEN regime it describes is unchanged and the CNIL restates the LCEN identification duty on its current pages. The rule as written is an either/or, so his current setup (GitHub Pages named as host, contact@copius.fr, no address) is consistent with it. This is the reason the address problem is a newsletter problem, not a website problem.",
+     "opened": true,
+     "source_quote": "Le blogueur doit s'identifier ou indiquer le nom de son hébergeur",
+     "source_url": "https://www.cnil.fr/fr/les-obligations-du-blogueur"
+    },
+    {
+     "claim": "GDPR-side, the controller's 'coordonnées' in a collection notice need not be postal — the CNIL's own model leaves the channel open.",
+     "confidence": "medium",
+     "detail": "CNIL example forms, page dated 26 juillet 2019, print the placeholder '[adresse électronique, postale, coordonnées téléphoniques, etc.]' and warn these are illustrations to adapt, not models valid in every case. So the postal address Brevo demanded is an ESP/anti-spam requirement, not something the CNIL's own template forces.",
+     "opened": true,
+     "source_quote": "[adresse électronique, postale, coordonnées téléphoniques, etc.]",
+     "source_url": "https://www.cnil.fr/fr/exemples-de-formulaire-de-collecte-de-donnees-caractere-personnel"
+    },
+    {
+     "claim": "Side finding — copius.fr itself is not leaking his address: AFNIC hides natural-person holders' data from the public Whois by default.",
+     "confidence": "medium",
+     "detail": "AFNIC expert paper dated 22 April 2021. Worth a 2-minute check that his OVH registration is flagged 'personne physique' rather than published on request, since the default only holds for that flag.",
+     "opened": true,
+     "source_quote": "the personal data of domain name holders who are natural persons are not published in the directory service available to the general public",
+     "source_url": "https://www.afnic.fr/en/observatory-and-resources/expert-papers/personal-data-are-published-in-the-whois-online-directory-is-this-normal/"
+    }
+   ],
+   "bottom_line": "He can run a newsletter as a private individual — nothing in the address rules requires a company, and as a non-professional publisher he owes no published address for the site itself. The blocker is narrower than it looked: Brevo's onboarding, not the law. The address market, though, is closed to him as he stands. A domiciliation commerciale costs 11–25 € HT/month (SeDomicilier, 8 July 2026; LegalPlace, 18 May 2026) but is sold to a business, existing or in registration — with no entity he can only buy a mail box, which its own vendor says is not a valid address. That leaves three real routes. (1) Do nothing structural: keep the newsletter off, or find an ESP that accepts an email-only footer — the CNIL's own model notice does not force a postal address. (2) Association loi 1901: free to create, free to publish, gives a legal person to own the list — but the Journal officiel publishes the siège address, so it only helps if the siège sits at a mairie, a maison des associations or a paid domiciliation, never at his flat. (3) Micro-entreprise: his home would be published by default, and that is avoidable in the registers (only the commune stays public after the INSEE opposition, verified 2 July 2026) — but it backfires on the site, because an entrepreneur individuel's mentions légales must carry 'votre nom, prénom et adresse'. Since he sells nothing before June 2027, the cheapest correct order is: decide the entity question first, take the address second. Buying an address now is not possible, and creating a micro-entreprise now would publish more than it hides.",
+   "unknowns": [
+    "La Poste boîte postale price for 2026 — the rental page carries no figure and the 2026 tariff documents I searched did not surface a BP line. Needs a bureau de poste or the full catalogue PDF.",
+    "Whether Brevo specifically mandates a postal address in the campaign footer, and whether it accepts a domiciliation or mail-box address. I did not open a help.brevo.com page stating the rule; the only Brevo text I saw was a blog post framing it as worldwide anti-spam compliance. Worth one direct check before assuming the blocker is real.",
+    "Whether a mail-forwarding box for individuals may lawfully be printed as the contact address of a newsletter — that is the provider's CGV, not a register rule. No provider CGV opened.",
+    "Whether a public lycée or a BTS school would host an association siège or a business address, and under what convention. No source found either way.",
+    "The loi 1901 minimum of 2 members and the 3-month deadline to declare changes: neither appeared on the government pages I opened, and legifrance refuses WebFetch. Verify before relying on them.",
+    "Whether the mairie / maison des associations route is free in his commune — associations.gouv.fr's page on it 404s at both URLs I tried; the surviving search text says the conseil municipal sets any rent. Ask the mairie directly.",
+    "Whether RNA open data republishes association administrators' addresses (the JOAFE announcement does not, but the declaration files them).",
+    "Article 5 of the e-commerce directive 2000/31 on the 'geographic address at which the service provider is established', and whether a free site with no economic activity falls outside it. EUR-Lex returned empty content on two fetch attempts, so I assert nothing about it."
+   ]
+  },
+  {
+   "lane": "LANE 3 — collecting email addresses from a static GitHub Pages site (mechanisms, RGPD, EU residency, Pages-specific breakage, minimum honest build)",
+   "findings": [
+    {
+     "claim": "GitHub Pages executes no server-side code, so no form handler, no database and no confirmation-link endpoint can live on copius.fr itself.",
+     "detail": "This is the root constraint behind every mechanism below: the address must leave the Pages origin at the moment of submission — to a third-party form service, an embedded provider form, a function he owns elsewhere, or the visitor's own mail client.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.",
+     "source_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"
+    },
+    {
+     "claim": "GitHub Pages cannot set HTTP response headers, so a Content-Security-Policy on copius.fr is only possible through a <meta> tag, and frame-ancestors is ignored that way.",
+     "detail": "GitHub staff (yoannchaudet) answered the standing request in the community discussion; as of comments dated September 2026 it is still unimplemented. Practical effect: if he embeds a third-party form iframe or script, he can restrict it with a meta CSP, but he cannot set header-level CSP, HSTS or CORS policy on his own site.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "We don't support this feature today so a `meta` tag unfortunately is the only way.",
+     "source_url": "https://github.com/orgs/community/discussions/54257"
+    },
+    {
+     "claim": "GitHub's own Pages limits page forbids running an online business or e-commerce site there and warns against sensitive transactions — a free newsletter signup is neither, but the handler must sit off-platform regardless.",
+     "detail": "Same page: repository recommended limit 1 GB, published site no larger than 1 GB, soft bandwidth limit of 100 GB per month, soft limit of 10 builds per hour. Read 2026-09-15. None of these bite for a signup form; the e-commerce clause becomes relevant only if he starts selling (he has ruled that out before June 2027).",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "GitHub Pages is not intended for or allowed to be used as a free web-hosting service to run your online business, e-commerce site",
+     "source_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits"
+    },
+    {
+     "claim": "HTTPS on the custom domain is not a problem: GitHub obtains a Let's Encrypt certificate and 'Enforce HTTPS' redirects all HTTP traffic, so an address typed on copius.fr is encrypted in transit.",
+     "detail": "Caveat from the same docs set: if he uses CAA records at OVH, at least one must allow letsencrypt.org, and extra or wrong DNS records block certificate issuance. The page also states all Pages sites including correctly configured custom domains support HTTPS and HTTPS enforcement.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "GitHub queues a job to request a TLS certificate from [Let's Encrypt](https://letsencrypt.org/).",
+     "source_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https"
+    },
+    {
+     "claim": "Mechanism 1 — third-party form service (Formspree): technically the simplest, but Formspree's published record puts the data in the US and I could not find a DPA, which leaves RGPD Art. 28 and Chapter V unsatisfied on the public record.",
+     "detail": "Formspree's privacy policy mentions GDPR exactly once, as a link to gdpr-info.eu, and names no Standard Contractual Clauses. https://formspree.io/legal/dpa/ returns HTTP 404. A search summary (not opened) additionally says hosting is AWS US. For him this is the weakest option: he would be the responsable de traitement with a US sous-traitant and no contract he can show.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "By using the Services, you acknowledge that Formspree will use your information in the United States and any other country where Formspree operates.",
+     "source_url": "https://formspree.io/legal/privacy-policy/"
+    },
+    {
+     "claim": "Formspree pricing, read 2026-09-15: Free $0/mo with 50 monthly submissions; Personal $10/mo, 200; Professional $20/mo, 2,000.",
+     "detail": "The free tier would cover a first year of a small atlas newsletter on volume alone. Volume is not the objection — the missing DPA and US residency are.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Free: \"$0 /mo\" with \"50\" monthly submissions",
+     "source_url": "https://formspree.io/plans"
+    },
+    {
+     "claim": "Mechanism 2 — embedded/hosted provider form (Tally): stores form data in Europe, free, and its DPA is accepted through the terms rather than signed separately.",
+     "detail": "Two caveats worth naming to him. First, the DPA wording binds 'professional users ... on behalf of their company' — he has no company, so whether that clause reaches a private individual is genuinely unclear. Second, its sub-processor list includes US parties (SendGrid, Mixpanel, Sentry, Stripe) and Cloudflare EU/US, so 'stored in Europe' is not the whole picture. Pricing read 2026-09-15: \"Tally gives you unlimited forms and submissions, completely free, as long as you stay within our fair usage guidelines.\"",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "All Tally form data is encrypted both in transit and at rest, and stored in Europe.",
+     "source_url": "https://tally.so/help/gdpr"
+    },
+    {
+     "claim": "Netlify Forms is not available to a GitHub Pages site: form detection happens when Netlify builds and parses the site's own HTML.",
+     "detail": "Netlify's docs describe detection as a deploy-time parse of the site Netlify itself built. A site served from GitHub Pages is never parsed, so the feature has nothing to attach to. If he wanted Netlify Forms he would have to move hosting off GitHub Pages entirely.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "The Netlify build system finds your forms by parsing the HTML of your site when the build completes.",
+     "source_url": "https://docs.netlify.com/manage/forms/setup/"
+    },
+    {
+     "claim": "Mechanism 3 — serverless function (Cloudflare Workers): free tier is ample and the DPA is real with EU SCCs, but EU-only processing is an Enterprise paid add-on, so he cannot promise the data stays in the EU.",
+     "detail": "Workers free plan: \"100,000 per day\" requests, 10 ms CPU per invocation; Workers Paid has a minimum charge of $5 USD per month (read 2026-09-15). The Cloudflare customer DPA states the customer is Controller and Cloudflare is Processor, with EU SCCs for restricted transfers. But the Data Localization Suite — the thing that pins processing to a region — is an \"Enterprise-only paid add-on\".",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "the Customer is the Controller (or a Processor processing Personal Data on behalf of a third-party Controller), and Cloudflare is a Processor (or sub-Processor, as applicable).",
+     "source_url": "https://www.cloudflare.com/cloudflare-customer-dpa/"
+    },
+    {
+     "claim": "Cloudflare D1 (the obvious store behind a Worker) offers a Western Europe location hint but explicitly does not guarantee it.",
+     "detail": "So a Worker+D1 build cannot honestly carry the sentence 'your address is stored in the EU' on the privacy page. It can carry 'stored by Cloudflare, which we have asked to keep the database in Western Europe'.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "does not guarantee that D1 runs in your preferred location. Instead, it will run in the nearest possible location (by latency) to your preference.",
+     "source_url": "https://developers.cloudflare.com/d1/configuration/data-location/"
+    },
+    {
+     "claim": "Vercel's free Hobby plan is restricted to non-commercial personal use — which fits copius.fr exactly today, and stops fitting the day he sells.",
+     "detail": "Vercel's fair-use page defines commercial usage as any deployment used for the financial gain of anyone involved in producing the project, and explicitly notes \"Asking for Donations does not fall under commercial usage.\" A free atlas with no payments, no ads and no affiliate links is inside Hobby now; a paid learning path in 2027 would require Pro.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Hobby teams are restricted to non-commercial personal use only. All commercial usage of the platform requires either a Pro or Enterprise plan.",
+     "source_url": "https://vercel.com/docs/limits/fair-use-guidelines"
+    },
+    {
+     "claim": "Scaleway Serverless Functions is the EU-native version of the same mechanism: French provider, Paris region, and a free tier far above anything this site will generate.",
+     "detail": "Pricing page read 2026-09-15 with Paris selected: \"1 000 000 requests Free Tier per account and per month\", \"400 000 GB-s Free Tier per account and per month\", then €0.15 per 1M requests. This is the option that lets him write 'the form is handled by a function running in Paris' and have it be true.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "1 000 000 requests Free Tier per account and per month",
+     "source_url": "https://www.scaleway.com/en/pricing/serverless/"
+    },
+    {
+     "claim": "Mechanism 5 — self-hosting the handler on OVH shared hosting, where his mail already lives, costs a couple of euros a month and gives him PHP plus a database in France.",
+     "detail": "Prices displayed 2026-09-15 (promotional, struck-through original shown first): Starter \"2,59 € 1,59 € HT/mois\" with 1 site and \"1 base de données 250 Mo\"; Perso \"5,99 € 2,99 € HT/mois\" with 15 sites and 5 databases. The page did not state the PHP version explicitly, and did not state server location on the hosting plans (it says 'hébergé en France' for the email products), so treat both as probable-not-proven.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "Starter: \"2,59 € 1,59 € HT/mois\" ... \"1 base de données 250 Mo\"",
+     "source_url": "https://www.ovhcloud.com/fr/web-hosting/"
+    },
+    {
+     "claim": "Mechanism 4 — a mailto: link is the only option with no sous-traitant to contract with, because nothing is collected by him: the visitor's own mail client sends to contact@copius.fr.",
+     "detail": "Analysis, not a quoted source. Consequences he should hear: no consent artifact is produced automatically (the email itself is the evidence, which is actually decent proof), the address is exposed to scrapers on a public page, and the list is whatever he curates in his OVH mailbox. It is the honest zero-infrastructure starting point and it breaks nothing on GitHub Pages.",
+     "confidence": "medium",
+     "opened": false
+    },
+    {
+     "claim": "No cookie banner is triggered by a plain HTML form; it is triggered by embedding a third-party provider's script or iframe.",
+     "detail": "CNIL's rule is that anything not strictly necessary to a service the user expressly requested needs prior consent, and the exemption list covers authentication, shopping cart, load balancing, UI personalisation and consent-choice storage — not provider analytics or marketing cookies. So: a form posting to his own endpoint = no banner; a Tally/Brevo embed = check what it drops, and prefer linking out to a provider-hosted page over embedding it in copius.fr.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Tous les cookies n'ayant pas pour finalité exclusive de permettre ou faciliter une communication par voie électronique ou n'étant pas strictement nécessaire à la fourniture d'un service de communication en ligne à la demande expresse de l'utilisateur nécessitent le consentement préalable de l'internaute.",
+     "source_url": "https://www.cnil.fr/fr/cookies-et-autres-traceurs/que-dit-la-loi"
+    },
+    {
+     "claim": "Whichever mechanism he picks, the provider is a sous-traitant and Art. 28 requires a contract — which is why the DPA question, not the price, decides between them.",
+     "detail": "CNIL defines the sous-traitant as the natural or legal person processing data on behalf of the responsable de traitement, and Art. 28 requires the relationship to be governed by a contract setting out object, duration, nature, purpose, data types, categories of persons and the parties' obligations. Scoreboard from what I could open: Cloudflare — DPA published with EU SCCs; Tally — DPA accepted via terms, wording aimed at professional users; Mailjet — DPA on request only; Formspree — none found (404).",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Le sous-traitant est la personne physique ou morale (entreprise ou organisme public) qui traite des données pour le compte d'un autre organisme (« le responsable de traitement »)",
+     "source_url": "https://www.cnil.fr/fr/definition/sous-traitant"
+    },
+    {
+     "claim": "RGPD applies to him despite having no company: the exemption is for strictly personal or domestic activity, and a mailing list attached to a public website is neither.",
+     "detail": "Article 2(2)(c) excludes processing by a natural person 'dans le cadre d'une activité strictement personnelle ou domestique'. Publishing a bilingual public atlas and mailing its readers is outside that. The corollary is the useful part: a private individual can perfectly well be a responsable de traitement — nothing in the definition requires a company, a micro-entreprise or an association.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "par une personne physique dans le cadre d'une activité strictement personnelle ou domestique",
+     "source_url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre1#Article2"
+    },
+    {
+     "claim": "His home address is not legally forced onto the site: CNIL states that some non-professional sites and blogs are not required to reveal the identity of the person responsible, while the host must always be identifiable.",
+     "detail": "This is the direct answer to the Brevo blocker. The postal address demanded at Brevo onboarding was Brevo's own signup requirement, not a French legal condition on running a non-commercial newsletter. He would still name the host — GitHub (for the site) and OVHcloud (for the mailbox) — and give contact@copius.fr as his own contact point.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "Certains sites et blogs non-professionnels ne sont pas tenus par l'obligation de révéler l'identité du responsable du site. Toutefois, l'identification de l'hébergeur est toujours requise",
+     "source_url": "https://www.cnil.fr/fr/retrouver-les-coordonnees-dun-organisme-pour-exercer-vos-droits"
+    },
+    {
+     "claim": "CNIL's mandatory information list asks for the 'identité et coordonnées' of the controller — contact details, with no postal address specified.",
+     "detail": "The full list he must show at the point of collection: identity and contact details, purposes, legal basis, whether providing the address is optional and the consequences, recipients or categories of recipients, retention period or its criteria, the rights (access, rectification, erasure, limitation), DPO contact if any, and the right to complain to the CNIL — in 'termes clairs et simples'. Note this is an absence of a postal-address requirement rather than an explicit permission to omit one.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "Identité et coordonnées de l'organisme (responsable du traitement de données)",
+     "source_url": "https://www.cnil.fr/fr/conformite-rgpd-information-des-personnes-et-transparence"
+    },
+    {
+     "claim": "Prior consent is the rule for electronic prospection, with an exception for non-commercial solicitation — and every message must let the person refuse further contact.",
+     "detail": "CNIL lists two exceptions to prior consent: an existing customer contacted about similar products, and prospection that is not commercial in nature (their example is charitable). A free atlas selling nothing arguably lands in the second, but the exception still requires informing the person at collection, so the practical design is identical: ask, inform, record. Every message must carry a simple means of refusing further solicitation.",
+     "confidence": "high",
+     "opened": true,
+     "source_quote": "La publicité par voie électronique (courrier électronique, SMS-MMS, automate d'appel, etc.) est possible à condition que les personnes aient donné leur consentement avant d'être démarchées.",
+     "source_url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
+    },
+    {
+     "claim": "Consent must be provable, and CNIL itself describes the two-stage collection — a confirmation email the person must act on — which is exactly the double opt-in the minimum build should use.",
+     "detail": "The page describes consent collected in multiple steps, including an email the person must confirm, and places the burden of proof on the controller to demonstrate at any time that consent was validly given. The fetched page returned this in translation, so treat the two-stage wording as paraphrase; the requirement to document the conditions of collection is stated plainly.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "be able to demonstrate at any time that the person has indeed consented, under valid conditions",
+     "source_url": "https://cnil.fr/fr/les-bases-legales/consentement"
+    },
+    {
+     "claim": "On EU residency: Brevo (OVH France/Germany plus Google Cloud Belgium), Tally (stored in Europe), Scaleway (Paris) and OVH (France) keep data in the EU; Cloudflare only with an Enterprise add-on; Formspree does not.",
+     "detail": "The Brevo statement comes from a staff reply on Brevo's community forum, not from a legal document — treat it as good but not contractual evidence. Mailjet's free plan (read 2026-09-15) is 6,000 emails/month, 200/day, 1,000 contacts, and its DPA is request-only ('You can contact us on privacy@mailjet.com should you wish to obtain this DPA'); I could not open its help-centre page on storage location, so its EU hosting is unverified here.",
+     "confidence": "medium",
+     "opened": true,
+     "source_quote": "the servers of our hosting providers (GCP and OVH) are all located in the European Union (Belgium and France)",
+     "source_url": "https://community.brevo.com/t/hosting-data-in-eu/3831"
+    },
+    {
+     "claim": "Minimum honest implementation: a static form on copius.fr posting to a function he owns in France, which records a pending address, emails a confirmation link, and only then writes the address to a list he holds.",
+     "detail": "Concretely: (1) plain HTML form, one email field plus an unticked checkbox whose label is the consent wording, no third-party script, no cookie, so no banner; (2) POST to a Scaleway function in Paris (free tier) or a PHP script on OVH shared hosting (~€1.59–2.99 HT/mo, read 2026-09-15) — either is an endpoint he controls in the EU; (3) the endpoint stores address, timestamp, and the exact consent wording shown, in a pending state, and mails a confirmation link; (4) only a clicked link promotes the row to confirmed — that click is his proof of consent; (5) every newsletter carries an unsubscribe link and contact@copius.fr; (6) the privacy page gets rewritten in both languages the same day the form ships, naming himself as responsable de traitement with contact@copius.fr, the hosts (GitHub for the site, OVHcloud for mail, Scaleway or OVH for the endpoint), the purpose, the legal basis, the retention rule and the rights. Zero-infrastructure fallback if he wants to start this week: a mailto: link and a text file — no processor, no contract, no banner. Note that a cross-origin POST by fetch() needs the endpoint to return Access-Control-Allow-Origin for https://copius.fr, while a classic form submit does not; I did not verify that against a spec page in this pass.",
+     "confidence": "medium",
+     "opened": false
+    }
+   ],
+   "unknowns": [
+    "Brevo's postal-address demand at onboarding: help.brevo.com returns HTTP 403 to WebFetch, so I could not read the account-verification or anti-spam policy page. Gabriel's first-hand account of hitting it in September 2026 stands as the record.",
+    "Whether Tally's DPA binds a non-professional account holder — its GDPR page says 'professional users also agree, on behalf of their company', and he has no company.",
+    "Whether Tally's embedded form drops cookies on the embedding page — their GDPR page says nothing about cookies. Linking out to a Tally-hosted page instead of embedding sidesteps this.",
+    "Mailjet's data storage location: documentation.mailjet.com returns HTTP 403; only a search summary (GCP Frankfurt and Saint-Ghislain) supports EU hosting, and a search summary is not a source.",
+    "Whether Formspree has any DPA at all: https://formspree.io/legal/dpa/ is a 404 and the privacy policy names no SCCs. Absence of evidence, not evidence of absence.",
+    "The CNIL three-year retention rule for prospection data (three years from last contact from the prospect): the référentiel PDF downloaded but its text could not be extracted, so I did not read the sentence. It is widely cited but unquoted here.",
+    "Whether Vercel Hobby lets a function be pinned to the fra1 (Paris) region — not checked.",
+    "Netlify's explicit statement that Forms requires Netlify hosting: inferred from the deploy-time-parse sentence in their docs, not read as a standalone sentence.",
+    "OVH shared hosting: the pricing page did not state the PHP version or the server location for the Eco plans; 'hébergé en France' appeared only against the email products."
+   ],
+   "bottom_line": "Yes, he can run a newsletter right now, as a private individual with no company. Nothing in RGPD requires a legal entity to be a responsable de traitement, and CNIL states that some non-professional sites and blogs need not reveal the identity of the person responsible while the host must always be identifiable — so his home address was Brevo's signup requirement, not French law. What the static site actually forces is only this: GitHub Pages runs no server-side language and cannot set HTTP headers, so the address must leave copius.fr on submission. Of the five mechanisms, a third-party form service is the fastest and worst (Formspree processes in the US with no DPA I could find), Netlify Forms is simply unavailable to a Pages site, Cloudflare Workers has a real DPA but EU residency only on an Enterprise add-on, and the two that let him say something true about where the data lives are a Scaleway function in Paris (1M free requests/month) or PHP on OVH shared hosting alongside the mailbox he already has (~€1.59–2.99 HT/mo, read 2026-09-15). The minimum honest build is a plain HTML form with an unticked consent box, posting to that EU endpoint, which stores the address as pending and mails a confirmation link — the click is the proof of consent CNIL requires him to be able to produce — with an unsubscribe link in every send. No third-party script means no cookie banner. The one thing that must ship the same day as the form is the rewritten privacy page in both languages; leaving 'there is no form, no mailing list' up while a form is live is the only part of this that would be dishonest."
+  },
+  {
+   "lane": "LANE 4 — PROVIDERS",
+   "findings": [
+    {
+     "claim": "Brevo's Terms of Service forbid non-professional use outright — this is the one provider whose terms require a business, and it is why his September 2026 signup stalled.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://www.brevo.com/legal/termsofuse/",
+     "source_quote": "You also agree to use our Services for the sole purpose of your professional activity, excluding any use as a non-professional or consumer.",
+     "detail": "Clause 1.3 'User agreement', in the version the page labels 'Version : October 1st, 2025'. Clause 1.4 adds that you declare you are 'authorized to act on behalf of the legal entity that You represent'. Gabriel has no legal entity and is publishing a free site as a private individual, so he cannot truthfully accept these terms. Note the contradiction with Brevo's own pricing page, which markets the free plan as 'Free forever, no credit card needed Best for individuals and solopreneurs building an online presence' (https://www.brevo.com/pricing/) — the marketing copy invites exactly the user the contract excludes. FLAGGED: Brevo is the only provider of the eight whose terms require a registered business/professional activity."
+    },
+    {
+     "claim": "EmailOctopus explicitly admits consumers — individuals buying for personal, non-business use — as a contracting party.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://emailoctopus.com/legal/terms",
+     "source_quote": "be a business or a consumer able to enter into valid contracts;",
+     "detail": "Terms of Use and Anti-Spam Policy, 'Eligibility' section, page states 'Last updated: 31 March 2022'. The terms go further and define the category: 'You are a consumer if: 1. You are an individual. 2. You are buying a service from us wholly or mainly for your personal use (not for use in connection with your trade, business, craft or profession).' No SIRET, company number, or VAT number is required. EmailOctopus is Three Hearts Digital Ltd, 86-90 Paul Street, London EC2A 4NE, UK."
+    },
+    {
+     "claim": "EmailOctopus is the only provider found that will substitute its own address for his in the sent email, so he gives them his home address privately but subscribers never see it.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://help.emailoctopus.com/article/154-why-do-you-need-my-mailing-address",
+     "source_quote": "If you work from home or simply don't want your subscribers to know your address then with EmailOctopus you can opt to keep the address private in your emails.",
+     "detail": "Page states 'Last updated on April 5, 2026'. The same article sets the condition: 'Make sure you provide your real address in the form, though, we'll need to be able to forward on any correspondence sent to us.' So the real address is disclosed to EmailOctopus only, not published. The setting is called Private Address and lives in the sender info screen. Caveat stated on the page: 'You can only use our Private Address functionality for emails sent through the EmailOctopus platform.' This directly answers the objection that killed the Brevo signup."
+    },
+    {
+     "claim": "EmailOctopus stores subscriber lists in Ireland, inside the EEA.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://emailoctopus.com/legal/privacy",
+     "source_quote": "Your contact lists are stored in Ireland, within the European Economic Area (\"EEA\"), on the secure servers of Amazon Web Services (\"AWS\").",
+     "detail": "The privacy policy separately confirms account data: 'The account details and IP address that we collect from you are stored on our AWS servers in Ireland, inside the UK and European Economic Area (\"EEA\").' It also discloses that staff and sub-processors may operate outside the UK/EEA. This is the best data-residency answer of any hosted provider here bar Brevo (France) and Ghost (Amsterdam)."
+    },
+    {
+     "claim": "EmailOctopus's Data Processing Terms are conditioned on the customer being a business — which leaves a genuine gap for a private individual who is still a GDPR data controller.",
+     "confidence": "medium",
+     "opened": true,
+     "source_url": "https://emailoctopus.com/legal/terms",
+     "source_quote": "Data processing terms To the extent that you are a business and we process personal data on your behalf in providing the Services, the Data Processing Terms shall apply and are incorporated into these Terms.",
+     "detail": "Clause 23. Running a public newsletter is not covered by GDPR's purely-personal-activity exemption, so Gabriel would be a controller and Article 28 would normally require a processor contract. EmailOctopus's own DPA hook only fires 'to the extent that you are a business'. In practice this is a paperwork gap, not a blocker to signing up, and he can ask them to execute the Data Processing Terms anyway. I did not find a separate standalone DPA URL that resolves (emailoctopus.com/legal/data-processing returns 404); there is a 'GDPR' link in their footer I did not open."
+    },
+    {
+     "claim": "Buttondown publishes its own corporate address for customers to use in their newsletter footer, and its signup asks only for username, email and password — no postal address at onboarding.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://buttondown.com/blog/2020-03-01-why-you-need-to-include-a-physical-address-in-your-newsletter",
+     "source_quote": "Use our official newsletter address. Like our friends at ConvertKit, Buttondown offers a physical address:",
+     "detail": "The address given on that page is '304 S. Jones Blvd #3567, Las Vegas NV 89107'. The same page is blunt about the home-address problem: 'Don't use your actual home's address. Rent a P.O. box, an office, or something along those lines.' and notes 'Buttondown doesn't do any enforcement or analysis of your address.' Separately, Buttondown's own getting-started docs (https://docs.buttondown.com/) list the signup inputs as username, email address and password only — no postal address is requested to create the account. Caveat: the blog post is dated 2020-03-01, so the specific Las Vegas address should be re-checked in-app before use."
+    },
+    {
+     "claim": "Mailchimp requires a real mail-receiving postal address in every marketing email and offers no address-substitution feature — the burden is pushed entirely onto the sender.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://mailchimp.com/help/about-campaign-footers/",
+     "source_quote": "Votre adresse postale — Adresse où recevoir des plis postaux ; il ne peut s'agir d'une adresse électronique ou d'un site Web. Si vous travaillez à domicile et ne souhaitez pas partager votre adresse personnelle, nous vous suggérons d'utiliser une boîte postale.",
+     "detail": "Mailchimp geo-redirects to French for a French IP; this is the 'Contenu obligatoire du bas de page' section, which opens 'Conformément aux lois anti-spam et à nos Conditions d'utilisation, vous devez inclure certaines informations dans chaque e-mail que vous envoyez.' Mailchimp's separate article 'Idées d'adresse physique alternative' (https://mailchimp.com/help/alternative-physical-address-ideas/) lists workarounds — a manager's PO box, a studio, a gallery affiliation — and concludes 'Parfois, la seule réponse est d'acheter une boîte postale.' Mailchimp's answer to a home-address objection is therefore 'go rent a PO box', not 'use ours'."
+    },
+    {
+     "claim": "Mailchimp's free tier in 2026 is 250 contacts and 500 sends per month, with a 250/day cap — far tighter than EmailOctopus's free tier.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://mailchimp.com/help/about-mailchimp-pricing-plans/",
+     "source_quote": "The Free plan includes up to 250 contacts and 500 sends per month, with a daily send limit of 250.",
+     "detail": "The free plan also gives 1 audience and 1 seat. Overage behaviour is stated on the same page: 'If you exceed the 250 contact limit in your Free plan, a hold is placed on sending live emails or test emails until you upgrade to a paid plan or reduce your contact total.' The first paid step is Essentials, where 'The starting price includes up to 500 contacts, and the price increases with your contact total.' I could not extract a reliable Essentials euro price — the pricing page renders its numbers via JavaScript and the static HTML contains only an unattached '17'/'38' pair, so I am not asserting a figure."
+    },
+    {
+     "claim": "EmailOctopus's free tier is the most generous of the hosted options — 2,500 subscribers and 10,000 emails/month — but it forces a referral link into every email on top of the address.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://emailoctopus.com/pricing",
+     "source_quote": "STARTER Free 2,500 subscribers 10,000 emails per month EmailOctopus branding on emails Reports available for 30 days Create 1 landing page and 1 form Access for 1 user",
+     "detail": "The first paid step is 'PRO $9 PER MONTH, BILLED YEARLY' which removes branding and gives unlimited landing pages and forms. The free-tier footer obligation is spelled out separately at https://help.emailoctopus.com/article/222-whats-required-in-a-footer (page dated 'Last updated on June 25, 2026'): 'Do you use our free Starter plan? If so, we require all free accounts to add a Rewards link to your campaigns.' The same page confirms the free plan still includes '1 landing page and 1 form' — which is exactly the mechanism a static site needs."
+    },
+    {
+     "claim": "Ghost has no free tier at all; the cheapest hosted plan is $18 USD/month billed yearly, which is the wrong shape for a project with no revenue until June 2027.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://ghost.org/pricing/",
+     "source_quote": "Starter For solo blogs & newsletters $18 USD / mo Billed yearly",
+     "detail": "The Starter plan is capped at 1,000 members; the next step is 'Publisher For custom publications $29 USD / mo Billed yearly'. The 'Try for free' buttons are a trial, not a free tier. Ghost's source code is open and self-hostable at no licence cost, but self-hosting needs a server and a separate bulk-mail relay, which Gabriel does not have. Over 21 months to June 2027, Starter alone is roughly $378."
+    },
+    {
+     "claim": "Ghost hosts its customer data in the EU — Amsterdam — which is the strongest residency answer of the hosted options after Brevo.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://ghost.org/privacy/",
+     "source_quote": "Ghost Foundation's servers are located in Amsterdam, The Netherlands.",
+     "detail": "The same policy notes 'These third party vendors and hosting partners may be located in a country other than The Netherlands or your country of residence.' Ghost's footer links a dedicated 'Data Processing' policy page; the URLs I tried for it (ghost.org/help/data-processing/ and /help/data-processing-addendum/) both 404, so I did not read the DPA itself."
+    },
+    {
+     "claim": "Substack is a US company under California law and takes the reader relationship — the subscriber list is not really his, which is a strategic cost separate from any address question.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://substack.com/tos",
+     "source_quote": "These Terms are governed by and will be construed under applicable federal law and the laws of the State of California, without regard to the conflicts of laws provisions thereof.",
+     "detail": "Terms of Use show 'Effective date: April 21, 2025'. Disputes go to 'arbitration in San Francisco County, California'. The privacy policy (https://substack.com/privacy) shows Substack relies on the EU-U.S. Data Privacy Framework for EU personal data and appoints Bird & Bird as its EU representative at 'Zuid-Hollandplein 22, 2596 AW The Hague, The Netherlands'. Publishing is free and Substack only takes a cut on paid subscriptions, which is moot since he sells nothing. But Substack is a controller in its own right, not a processor working for him, and the newsletter lives on substack.com rather than copius.fr."
+    },
+    {
+     "claim": "I could NOT verify Substack's postal-address behaviour from a primary source — its support site blocks automated fetches.",
+     "confidence": "low",
+     "opened": false,
+     "source_url": "https://support.substack.com/hc/en-us/articles/360056142311-How-do-I-edit-email-headers-and-footers-on-Substack",
+     "detail": "support.substack.com returns HTTP 403 to every fetch I attempted. Search summaries claim Substack shows a mailing address at the bottom of all emails and that it may be a PO Box editable in publication settings, but a search summary is not a source and I am not asserting it. He should check this himself in Substack's settings before relying on it. Treat Substack's answers to (a) and (b) as unverified."
+    },
+    {
+     "claim": "I could NOT verify Brevo's onboarding address screen from a primary source — Brevo's help centre returns 403 to every fetch.",
+     "confidence": "low",
+     "opened": false,
+     "source_url": "https://help.brevo.com/hc/en-us/articles/209502305-Add-your-contact-address-to-your-emails",
+     "detail": "help.brevo.com returned HTTP 403 across en-us, en-gb and fr locales and with browser headers and a referer. Gabriel's own first-hand account — that onboarding demanded a postal address and he abandoned there — stands as the record here, and it is consistent with what I could verify: Brevo's anti-spam policy (https://www.brevo.com/legal/antispampolicy/) makes the customer 'solely responsible for ... complying with all applicable sender-identification, disclosure, and content requirements (including under CAN-SPAM and the TSR)'. But the specific question of whether Brevo prints that address in every message is unverified from source. It is also moot: the professional-use clause rules Brevo out before the address question is reached."
+    },
+    {
+     "claim": "Brevo's free tier is 300 emails/day and its data controller for a French user is a French company, with a DPA built into the terms as Appendix 3.",
+     "confidence": "medium",
+     "opened": true,
+     "source_url": "https://www.brevo.com/pricing/",
+     "source_quote": "When you create an account, you will automatically have a Free plan to upload your contacts. Once we approve your account for sending, you can start sending up to 300 emails per day.",
+     "detail": "Brevo's privacy policy (https://www.brevo.com/legal/privacypolicy/) names the parent as 'Sendinblue, a French société par actions simplifiée, whose registered office is located at 17 rue Salneuve, 75017 Paris, France' and says 'Depending on your location, the data controller may be Sendinblue France (SAS), Sendinblue North-America (Inc.) or Sendinblue Germany (GmbH).' The DPA is Appendix 3 of the Terms of Service, so no separate signature is needed. The first paid step is the Starter plan, 'From 5,000 emails per month' — the price renders via JavaScript and the static HTML says only 'Loading content...', so I am not quoting a figure. All academic given the eligibility bar."
+    },
+    {
+     "claim": "Listmonk is genuinely free and imposes no terms on him at all, but it is the wrong tool for his situation — it needs a server he does not have.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://listmonk.app/",
+     "source_quote": "listmonk is free and open source software licensed under AGPLv3.",
+     "detail": "Self-hosted, 'Performance and features packed into a single binary', installed with './listmonk --install to setup the Postgres DB'. There is no vendor, so questions (a), (b) and (e) do not arise: no onboarding address, no forced footer, no eligibility clause. Question (c) becomes wherever he rents the box. The real cost is not the licence: he would need a VPS, a Postgres database, a separate SMTP relay (which will have its own terms and its own address demands), plus SPF/DKIM alignment and bounce handling, and he would personally become the sender of record. For a student with zero subscribers today, the machinery is larger than the thing it serves."
+    },
+    {
+     "claim": "OVHcloud does offer its own customers a mailing-list feature, but it is a Sympa-style discussion/announce list, not a newsletter platform — and OVH itself warns against using it for mass marketing.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://docs.ovhcloud.com/en/guides/web-cloud/email-and-collaborative-solutions/mx-plan/feature-mailing-list",
+     "source_quote": "A mailing list is not a solution designed for sending spam (advertising emails) en masse. This type of usage is tolerated to a certain degree, provided that it is not used in an abusive manner.",
+     "detail": "Guide 'Managing and using mailing lists', front-matter shows 'lastUpdated: 2025-04-28'. Requirements: 'an MX Plan 100 minimum or web hosting plan eligible for mailing lists'. Gabriel has a mailbox at OVH but the site is on GitHub Pages, so whether his current plan qualifies is unknown. Functionally it manages subscribers and moderation ('A moderated mailing list is useful for sending newsletters, for example') but gives him no signup form, no double opt-in flow, no unsubscribe-link management and no templates — he would still have to build subscription capture himself, which is the exact thing a static site cannot do. No business status is required; it is a hosting feature. OVH email starts at '0,30 € HT/mois/compte' (https://www.ovhcloud.com/fr/emails/)."
+    },
+    {
+     "claim": "French law does not require him to publish a postal address on copius.fr itself — the CNIL states non-professional site publishers are exempt from revealing their identity.",
+     "confidence": "medium",
+     "opened": true,
+     "source_url": "https://www.cnil.fr/fr/retrouver-les-coordonnees-dun-organisme-pour-exercer-vos-droits",
+     "source_quote": "Certains sites et blogs non-professionnels ne sont pas tenus par l'obligation de révéler l'identité du responsable du site. Toutefois, l'identification de l'hébergeur est toujours requise, mais celui-ci - astreint au secret professionnel - ne peut a priori pas vous communiquer d'informations sur le responsable du site.",
+     "detail": "This matters because it separates two things he may be conflating. The address that appears in a newsletter footer is a PROVIDER policy, driven by the US CAN-SPAM Act and written into every ESP's terms — not a French requirement on his website. The site itself, as a free non-professional publication, can name its host (GitHub) without naming him. Note the hedge in the CNIL's own wording: 'Certains sites et blogs non-professionnels' — some, not all. I marked this medium because legifrance is unfetchable and I could not read LCEN article 6 III directly to confirm the exact boundary of the exemption."
+    },
+    {
+     "claim": "Collecting addresses from a static site needs no backend — the provider hosts the form, and EmailOctopus's free tier already includes one.",
+     "confidence": "high",
+     "opened": true,
+     "source_url": "https://help.emailoctopus.com/article/222-whats-required-in-a-footer",
+     "source_quote": "Due to anti-spam laws and our Terms of Use, there are a few things that you must include in there.",
+     "detail": "The mechanism: the ESP gives him either an embeddable HTML form that posts directly to the ESP's own endpoint, or a fully provider-hosted landing page he links to from copius.fr. Neither needs a server, a database, or anything GitHub Pages cannot serve — the subscriber's browser talks to EmailOctopus, not to him. EmailOctopus's free Starter tier includes exactly 'Create 1 landing page and 1 form' (https://emailoctopus.com/pricing), and Pro lifts that to unlimited. Consequence he must not miss: the privacy page on copius.fr currently states in both languages that there is no form, no mailing list and no analytics. The moment a form goes live that statement is false and must be rewritten — new purpose, new legal basis (consent), new processor, new retention period, new withdrawal route."
+    }
+   ],
+   "unknowns": [
+    "Brevo's onboarding flow itself — help.brevo.com returns 403 to all automated fetches, so his first-hand account of the address demand is the only record. Moot anyway: the professional-use clause excludes him before that screen.",
+    "Substack's postal-address behaviour — support.substack.com returns 403. Whether Substack prints an address in every email, and whether a PO box is accepted, is unverified from source.",
+    "Exact euro prices for Brevo Starter, Mailchimp Essentials, and Buttondown above 100 subscribers. All three render prices via JavaScript; the static HTML carries only placeholder text or unattached numbers. Verified prices: EmailOctopus Pro $9/mo billed yearly, Ghost Starter $18 USD/mo billed yearly, OVH email €0.30 HT/mo per account.",
+    "Whether Gabriel's current OVH plan qualifies for mailing lists. The guide requires 'an MX Plan 100 minimum or web hosting plan eligible for mailing lists'; he has a mailbox but the site is on GitHub Pages. He must check his OVH control panel.",
+    "Mailchimp's and Buttondown's data-residency detail and DPA terms. Both are US-domiciled (Intuit; Buttondown LLC, Richmond VA) and Buttondown's privacy policy references a DPA, but I did not open either DPA document.",
+    "Whether EmailOctopus will execute its Data Processing Terms with a customer who is a consumer rather than a business — clause 23 is conditioned on business status. Worth one support email before he commits.",
+    "The exact boundary of the LCEN non-professional publisher exemption. legifrance.gouv.fr refuses automated fetches and the EUR-Lex HTML endpoint returned an empty 202, so I could not read LCEN art. 6 III or e-Commerce Directive 2000/31 art. 5-6 in primary text.",
+    "Whether the Las Vegas address Buttondown published in 2020 is still the address it offers in 2026 — the blog post is six years old and should be confirmed in-app."
+   ],
+   "bottom_line": "Yes, he can run a newsletter right now, as a private individual with no SIRET — and the specific thing that stopped him at Brevo is solvable at two providers.\n\nThe Brevo abandonment was correct, and for a better reason than he knew. Brevo's terms bar him outright: \"You also agree to use our Services for the sole purpose of your professional activity, excluding any use as a non-professional or consumer\" (ToS 1.3, version dated 1 October 2025). That is the only provider of the eight whose terms require a business. He should not go back to it, address problem or not.\n\nRECOMMENDATION: EmailOctopus. It is the only provider that answers all five questions the way he needs. Its terms admit \"a business or a consumer\", defining a consumer as an individual buying \"wholly or mainly for your personal use\" — no SIRET, no company. A postal address is still required in the footer, as it is everywhere, but EmailOctopus is the one provider that will hide it: \"If you work from home or simply don't want your subscribers to know your address then with EmailOctopus you can opt to keep the address private in your emails\" (help article, updated 5 April 2026). He gives them his home address privately; subscribers never see it. Subscriber lists sit in Ireland, inside the EEA. The free tier carries 2,500 subscribers and 10,000 emails/month — more than he will need before June 2027 — and includes one hosted landing page and one form. First paid step $9/month billed yearly.\n\nFALLBACK: Buttondown, which publishes its own address for customers to use in their footer and asks for no postal address at signup. US-hosted, so weaker on data residency, and the published address dates from a 2020 post that needs confirming in-app.\n\nRULED OUT: Brevo (business-only). Mailchimp (250 contacts free, and its answer to the home-address problem is \"go rent a PO box\"). Ghost ($18/month minimum, no free tier — wrong shape with no revenue). Substack (US-controlled, takes the reader relationship, moves his brand off copius.fr). Listmonk (free software, but needs a VPS, Postgres and an SMTP relay he does not have — the machinery outweighs the list). OVHcloud (real feature, but an announce-list, not a newsletter tool: no signup form, no double opt-in, and OVH itself says mass marketing is only \"tolerated to a certain degree\").\n\nON COLLECTION FROM A STATIC SITE: this is a non-problem. The ESP hosts the form; the subscriber's browser posts to the ESP, not to him. GitHub Pages serves an embedded form or a link to a provider-hosted landing page, and no backend is ever involved.\n\nTWO THINGS TO SEPARATE. The footer address is a provider policy driven by the US CAN-SPAM Act, not a French obligation on his website — the CNIL states non-professional sites and blogs \"ne sont pas tenus par l'obligation de révéler l'identité du responsable du site\", though the host must be identifiable. So copius.fr can stay address-free while the newsletter still needs a footer address, and EmailOctopus supplies one.\n\nONE THING HE MUST NOT SKIP: his privacy page says, in both languages, that there is no form, no mailing list and no analytics. The day a signup form goes live that becomes false. It has to be rewritten first — new purpose, consent as legal basis, a named processor, a retention period, and how to withdraw — not after the first subscriber arrives."
+  }
+ ],
+ "audits": [
+  {
+   "verdicts": [
+    {
+     "claim": "The LCEN site-identification duty is no longer \"article 6-III\" — since 23 May 2024 it sits in article 1-1 of loi n° 2004-575, and article 6 now covers intermediaries only.",
+     "verdict": "CONFIRMED",
+     "why": "Légifrance prints Article 1-1 of loi n° 2004-575 with heading \"Version en vigueur depuis le 23/05/2024\", and its section I opens with the éditeur identification duty. The consolidated law confirms article 6 now runs on intermediaries (providers, hosts, platforms, data retention) with no éditeur-identification III. Nothing here is specific to professionals, so it binds him the same way. Stale citation, unchanged substance — exactly as stated.",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049568614"
+    },
+    {
+     "claim": "(a) The non-professional publisher's anonymity regime survived the renumbering intact: Gabriel may publish only GitHub's name and address, not his own, provided he has given GitHub his identity.",
+     "verdict": "OVERSTATED",
+     "why": "The quoted sentence is verbatim and sits in section II of article 1-1, with the secret professionnel clause and the \"non opposable à l'autorité judiciaire\" carve-out both present. But the condition is not 'GitHub holds his account identity' — the text requires him to have communicated \"les éléments d'identification personnelle mentionnés au I\", and section I for a personne physique is literally \"leurs nom, prénoms, domicile et numéro de téléphone\". A default GitHub account holds a username and an email address. Username plus email is not nom, prénoms, domicile and téléphone, so on the face of the text the anonymity option is not yet available to him. Second untested point: article 1-1 imposes French professional secrecy on the hébergeur, and GitHub is a US company that has made him no such undertaking — if GitHub declines to hold or to protect those details, the paragraph has nothing to stand on.",
+     "correction": "Before relying on section II, he must actually give the host nom, prénoms, domicile and numéro de téléphone and keep proof he did. Until then, publish the full mentions légales or move the site to a host that accepts and acknowledges those four items.",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049568614"
+    },
+    {
+     "claim": "(a) The CPCE prospection régime does not bite today: \"prospection directe\" is defined as promoting goods, services, or the image of a person who SELLS goods or provides services. Gabriel sells nothing, so article L34-5's opt-in rule is not triggered by a free editorial letter.",
+     "verdict": "OVERSTATED",
+     "why": "The definition sentence is verbatim in L34-5 (third paragraph; version en vigueur depuis le 26 juillet 2020), and the first paragraph does prohibit prospection directe toward \"une personne physique qui n'a pas exprimé préalablement son consentement\". So the régime is commercial by construction — that much is right, and it is the load-bearing claim of the whole memo. What does not follow is 'not triggered'. The definition catches promotion \"directement ou indirectement\" of \"des biens, des services ou l'image d'une personne vendant des biens\" — it does not say the seller has to be the sender. A culinary letter that names producers, wines, books, shops or restaurants, or links to them, promotes indirectly the goods of persons who sell goods, and that reading is available to a regulator on the text alone. I found no CNIL or DGCCRF decision holding a free third-party-free editorial letter outside L34-5; the conclusion rests on reading, not on authority. Two further points the claim does not carry: enforcement of L34-5 runs through the consumer code agents (L. 511-3, L. 511-21) and the DGCCRF, not only the CNIL, so CNIL's non-commercial doctrine is not a defence before that authority; and his own freemium plan (free atlas, paid learning path) means the premise 'nothing for sale' has a shelf-life measured in months.",
+     "correction": "State it as: L34-5 is commercial by construction and probably does not reach a letter that promotes nobody's goods — and keep the letter genuinely free of third-party sellers, links and product placement, or the 'indirectement' limb reaches it.",
+     "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042155961/"
+    },
+    {
+     "claim": "(a,b) Even where L34-5 DOES apply, it requires \"coordonnées valables\" for opting out and a non-concealed sender identity — it never says \"adresse postale\".",
+     "verdict": "CONFIRMED",
+     "why": "The quoted paragraph is verbatim on the Légifrance page, both prohibitions intact, plus the ban on a subject line unrelated to the service offered. The word adresse does not appear in it. This paragraph opens \"Dans tous les cas\", so it is the one limb of L34-5 that does not depend on consent — worth knowing, because it is the part that would bind him first if the definition question in the previous claim ever went against him. A working unsubscribe link plus a monitored reply-to satisfies it.",
+     "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042155961/"
+    },
+    {
+     "claim": "(a,b) CNIL's own rule for NON-commercial prospection is opt-out, not opt-in: inform the person and let them object simply and free of charge.",
+     "verdict": "CONFIRMED",
+     "why": "The CNIL prospection page carries the carve-out with both conditions: the person must \"être informée\" that the address will be used for prospection \"non commerciale\", and \"être en mesure de s'opposer à cette utilisation de manière simple et gratuite lorsque les données sont collectées, et à tout moment notamment lors de chaque envoi\". Two points the claim's rendering flattens: CNIL's own example is caritative, and it attaches the objection right both at collection and at every send, not just at collection. The advice to take a real opt-in anyway is the right call — it is strictly stronger than what CNIL asks, and it is what he has to prove under article 7(1) regardless.",
+     "source_url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel"
+    },
+    {
+     "claim": "(b) What CNIL actually requires INSIDE the message is two things: the sender's identity, and a simple way to refuse. Nothing else.",
+     "verdict": "CONFIRMED",
+     "why": "Verbatim on the cited page, which resolves and is dated 10 juin 2026: each solicitation must let the person know \"l'identité de l'organisation qui l'émet\" and express \"par un moyen simple, son refus de recevoir de nouvelles sollicitations\". Note this URL and the one cited two claims earlier are the same CNIL page, so the memo's 'two prospection pages' is one page counted twice — relevant to the independence of the negative claim below. 'Nothing else' is true of the message body only: the RGPD information duty still bites at the point of collection, which is the subscribe box, not the letter.",
+     "source_url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
+    },
+    {
+     "claim": "(b) No French text I opened requires a postal address inside a newsletter message. I checked all four candidate homes and none contains one.",
+     "verdict": "CONFIRMED",
+     "why": "Each source checks out: L34-5 says coordonnées valables and never adresse; the CNIL prospection page has no occurrence of adresse postale and treats postal prospection as a separate topic; the règles d'or page requires only \"le nom et les coordonnées du responsable du traitement\" on the désinscription page; article 1-1 LCEN governs the site. Two weaknesses in the evidence, neither fatal. The règles d'or page is dated 16 juin 2009 — it predates the RGPD entirely, so it is a weak authority to rest a negative on. And the four homes are really three, because two of the URLs are the same CNIL page. The conclusion still holds for everything I opened.",
+     "source_url": "https://www.cnil.fr/fr/les-regles-dor-de-la-prospection-par-courrier-electronique-0"
+    },
+    {
+     "claim": "The postal-address demand he hit is a US CAN-SPAM rule, not a French one: the FTC requires a valid physical postal address in every commercial email.",
+     "verdict": "OVERSTATED",
+     "why": "The FTC quote is verbatim, and the diagnosis of why a US-facing platform demands it is sound. Two corrections. First, the FTC guide gives no support for the aside that a free editorial letter is not a commercial message — the guide's test is the message's primary purpose, it says the Act \"covers all commercial messages\" and carves out no exception for newsletters or for informational content. Since the rule reaches any US-resident subscriber on his list, 'CAN-SPAM does not apply to me' is an assertion he would be making, not one the source makes. Second, and this is the practical half: Brevo's demand binds him as a contract term whether or not a law stands behind it. Concluding 'no French law requires this' does not get him past the wall — it only tells him which argument will not work with support.",
+     "correction": "Frame it as: no French text requires it, and the platform requires it under its own terms. If he wants to avoid publishing an address in the footer, the fix is a domiciliation or BP address, or an ESP whose terms do not demand one — not an appeal to French law.",
+     "source_url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+     "claim": "(c) Selling flips three separate switches at once, and the first is the one he will not see coming: his home address becomes publishable.",
+     "verdict": "OVERSTATED",
+     "why": "The direction is right and the first switch is the important one. But the third leg is built on a citation with problems. Article 19 LCEN at the cited LEGIARTI is marked in force from 01/07/2016 only until 01/01/2027 — so it expires before he plausibly starts selling, and a memo that just flagged stale citations should not rest on one with a known end date. The quoted sentence also starts mid-sentence: the article opens \"Sans préjudice des autres obligations d'information prévues par les textes législatifs et réglementaires en vigueur\", which the quote silently drops. The enumerated items (email, telephone, registry number) I did not verify item by item. On the first leg: article 1-1 I 1° says literally \"domicile\" for a personne physique, so a domiciliation address is the practical answer rather than a textually airtight one. And the memo misses the cheap half of the privacy fix — service-public states an entrepreneur individuel \"peut demander la non-diffusion publique de son adresse personnelle\" in the registre, which is free and independent of any domiciliation contract.",
+     "correction": "Re-cite article 19 to its current version and check its end date before relying on it; add the free RNE non-diffusion request alongside the domiciliation, since the two solve different exposures (registre vs. mentions légales).",
+     "source_url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032236011"
+    },
+    {
+     "claim": "(d) The right RGPD basis is consent, article 6(1)(a) — and he must be able to demonstrate it, with withdrawal as easy as giving it.",
+     "verdict": "CONFIRMED",
+     "why": "Both articles are on the CNIL page as quoted. Article 7(3) ends literally \"Il est aussi simple de retirer que de donner son consentement.\" Article 7(1) reads \"le responsable du traitement est en mesure de démontrer\" — indicative, not the \"doit pouvoir\" of the paraphrase; same effect, but quote it as it reads. Two softer points: 'the right basis' is a recommendation rather than a legal finding, and CNIL's own non-commercial carve-out implies opt-out on legitimate interest would also be lawful for him — consent is the better choice, not the only lawful one. The parenthetical that CNIL's own newsletter runs on 6(1)(e) I could not verify; the page that would carry it 404s. The advice not to copy CNIL's wording is sound regardless.",
+     "source_url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2"
+    },
+    {
+     "claim": "(d) The privacy notice must carry nine items, and his current page — \"no form, no mailing list, no analytics\" — becomes false the day a subscribe box ships.",
+     "verdict": "OVERSTATED",
+     "why": "The nine items are on the CNIL page as listed, and the delivery standard is verbatim: \"concise, transparente, compréhensible et aisément accessible, en des termes clairs et simples\". The list is incomplete for his case. CNIL carries a second block of mentions required \"selon les cas\", and one of them is the droit de retrait du consentement — which applies precisely because the previous claim puts him on consent. His notice needs that tenth line, not nine. On the DPO item: CNIL marks it conditional, \"s'il a été désigné\". He has none, so the item does not apply; writing a line to say so is a style preference, not a requirement, and the memo states it as though it were one.",
+     "correction": "Ten items for a consent-based list: the nine, plus the right to withdraw consent at any time. Drop the instruction to write a 'no DPO' line, or mark it as optional.",
+     "source_url": "https://www.cnil.fr/fr/conformite-rgpd-information-des-personnes-et-transparence"
+    },
+    {
+     "claim": "(d) Yes, he needs a registre des traitements — the small-entity exemption does not cover a standing mailing list, because that processing is not occasional.",
+     "verdict": "CONFIRMED",
+     "why": "The CNIL quotes are verbatim: the obligation \"concerne tous les organismes, publics comme privés et quelle que soit leur taille\", and sub-250 entities must still record \"les traitements non occasionnels\", risky processing, and sensitive data. The conclusion holds, but the route is the wrong one and should be fixed before he relies on it. The CNIL page addresses organismes and says nothing about a private individual, so applying it to him is an extrapolation. The cleaner route reaches the same place more firmly: article 30(1) RGPD binds every responsable du traitement, and the 30(5) exemption is drafted for \"une entreprise ou une organisation comptant moins de 250 employés\" — a natural person is arguably neither, so the exemption never opens for him at all. Either way: one page, and it is not optional.",
+     "correction": "Ground it on article 30(1) and 30(5) directly rather than on a CNIL page written for organismes.",
+     "source_url": "https://www.cnil.fr/fr/RGDP-le-registre-des-activites-de-traitement"
+    },
+    {
+     "claim": "(e) Double opt-in is not legally required in France. No text imposes it, and none of the CNIL pages I opened uses the term.",
+     "verdict": "UNVERIFIABLE",
+     "why": "The conclusion is consistent with every source I opened — neither CNIL page mentions double opt-in, and no text I read imposes it. But the supporting quote is not on the cited page. I checked the opt-in/opt-out URL twice: it contains neither \"libre, spécifique, éclairé et univoque\" nor \"case à cocher\" nor \"pré-cochée\". The first half of the quote is real and sits on CNIL's consent definition page (\"Il doit être libre, spécifique, éclairé et univoque.\"); the checkbox half appears elsewhere again. So the memo's quote is stitched from at least two other pages and attributed to a third that carries neither. That is the one citation in this set that would not survive anyone opening the link, and it sits on the claim already marked medium confidence.",
+     "correction": "Cite the consent formula to https://www.cnil.fr/fr/definition/consentement-rgpd and drop the composite quote. The recommendation of double opt-in on evidentiary grounds stands.",
+     "source_url": "https://www.cnil.fr/fr/cnil-direct/question/opt-opt-out-ca-veut-dire-quoi"
+    },
+    {
+     "claim": "CNIL's opt-in/opt-out explainer independently confirms the non-commercial carve-out by listing \"prospection caritative\" on the opt-out side.",
+     "verdict": "CONFIRMED",
+     "why": "The page does list prospection caritative on the opt-out side, alongside postal advertising, electronic advertising for similar products or services, and B2B. The source_quote is a paraphrase written as a quotation — the page's own wording runs \"la publicité adressée par voie postale ainsi que la publicité par voie électronique pour des produits ou services similaires\" and \"la prospection à destination de professionnels (B to B)\", as separate items. Substance holds, wording does not, so do not paste that sentence anywhere as a quote. One live item spotted on the same page and absent from the memo: the loi du 30 juin 2025 made telephone démarchage opt-in from 11 août 2026. It does not touch email, but if he ever collects phone numbers the régime there is now the strict one.",
+     "correction": "Quote the page's actual four items, or present the sentence as a summary rather than a quotation.",
+     "source_url": "https://www.cnil.fr/fr/cnil-direct/question/opt-opt-out-ca-veut-dire-quoi"
+    },
+    {
+     "claim": "(a) A domiciliation commerciale is an administrative/legal address supplied by an approved business centre; having an address is compulsory for any registered business.",
+     "verdict": "CONFIRMED",
+     "why": "F37412 (\"Domicilier une société et son activité\", Vérifié le 15 septembre 2025) carries all three: domiciliation obligatoire, agrément préfectoral, contract of 3 mois minimum. The individual-business page checks out too — F2160, \"Domicilier son entreprise individuelle et son activité\", Vérifié le 02 juillet 2026, domiciliation described as obligatoire and \"un préalable indispensable à la création, avant l'immatriculation\". One thing the memo leaves out that matters for his decision: the same page says he may domicile at his own home — \"Vous pouvez domicilier votre entreprise à votre adresse personnelle d'habitation\" — with no time limit, and may request non-diffusion of that personal address. So a paid provider is the answer to publication on the website, not a legal requirement in itself.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F37412"
+    },
+    {
+     "claim": "(a) SeDomicilier, article dated 8 July 2026: 20 €/month HT with no commitment (16 € promo), down to 14 €/month HT on a 3-year commitment (11 € promo).",
+     "verdict": "OVERSTATED",
+     "why": "The date (8 July 2026), the four figures (20 / 16 / 14 / 11) and the legal-form line all check out — the page's own wording is \"Le tarif ne dépend pas de la forme juridique\", slightly shorter than the memo's rendering. The HT framing is the problem: the page does not state HT or TTC anywhere. The memo asserts \"All figures excl. VAT\" as fact. At 20% that turns 20 €/month into 24 €, and 14 € into 16.80 € — a real gap on a number he is about to budget against. Vendor-published price list either way.",
+     "correction": "Say the page does not state whether the figures are HT or TTC, and confirm with the provider before budgeting.",
+     "source_url": "https://sedomicilier.fr/articles/tarifs-domiciliation-2026"
+    },
+    {
+     "claim": "(a) LegalPlace, guide 'Dernière mise à jour le 18/05/2026': 17 € HT/month for a micro-entreprise or SCI, 25 € HT/month for a SARL/EURL/SAS/SASU, address in Paris 2e.",
+     "verdict": "OVERSTATED",
+     "why": "The date, both prices and the HT marking are verbatim on the page, and the market range is given as \"entre 10 € et 70 € HT par mois\" — the memo is right to call that vendor editorial rather than a survey. The Paris 2e detail is not on this page; it came from somewhere else and is presented as though it were part of the cited quote. Minor, but it is the kind of detail he would repeat to a provider.",
+     "correction": "Drop 'address in Paris 2e' or source it separately.",
+     "source_url": "https://www.legalplace.fr/guides/tarif-domiciliation-commerciale/"
+    },
+    {
+     "claim": "(a) Third named provider, Kandbaz: association address advertised at under 20 €/month, with a 1 €/month 3-month promo.",
+     "verdict": "OVERSTATED",
+     "why": "Both figures are on the page — \"moins de 20 €/mois\" in the FAQ answering the cost of domiciling an association, and \"Domiciliation dès 1€/mois pendant 3 mois avec le code KAND1EU\". Two corrections. The page does carry a visible date, \"Actualisé le 11 février 2026\", so the memo's note that it is dated only by the fetch is wrong. And the 1 € promo sits at the top of the page as a general site-wide offer, not an association-specific one — only the under-20 € figure is association-specific. The memo has it the other way round.",
+     "correction": "Page is dated 11 February 2026; the 1 €/month promo is site-wide, not association-specific.",
+     "source_url": "https://www.kandbaz.com/domiciliation/domiciliation-association/"
+    }
+   ],
+   "overall": "Every URL opened; every source exists. The legal spine is sound: article 1-1 LCEN really did replace article 6-III on 23 May 2024, L34-5's definition of prospection directe really is commercial by construction, CNIL really does run a non-commercial carve-out on opt-out, and no French text I opened puts a postal address inside a message. The Brevo wall really is a CAN-SPAM artefact.\n\nFour things would expose him if he acted on this as written.\n\nThe anonymity option is not available to him yet. Article 1-1 II requires him to have given the host \"les éléments d'identification personnelle mentionnés au I\" — and section I for a personne physique is literally nom, prénoms, domicile et numéro de téléphone. A GitHub account holds a username and an email. Until he actually supplies those four items and keeps proof, the paragraph the memo relies on has no condition satisfied. This is the single most load-bearing error in the set.\n\n\"L34-5 is not triggered\" is a reading, not a finding. The definition catches promotion \"directement ou indirectement\" of the goods of a person who sells — it does not require the seller to be the sender. A culinary letter naming producers, wines or shops is reachable on the text alone, and I found no decision holding otherwise. Enforcement also runs through the DGCCRF, not only the CNIL, so CNIL's non-commercial doctrine is not a defence there. And his own freemium plan retires the premise within months.\n\nOne citation would not survive a click. The double-opt-in claim's quote is not on the page it cites — that page contains neither \"libre, spécifique, éclairé et univoque\" nor \"case à cocher\" nor \"pré-cochée\". The formula is real but lives on CNIL's consent definition page; the quote as given is stitched from two other pages. The conclusion is fine; the evidence is not.\n\nThe nine-item privacy notice is ten for him. CNIL lists the droit de retrait du consentement among the mentions required \"selon les cas\", and the memo's own previous claim puts him on consent. Also: article 19 LCEN is cited at a version that expires 1 January 2027, and the memo omits the free RNE non-diffusion request, which is the cheap half of the address-privacy fix.\n\nThe domiciliation prices are accurate with two exceptions — SeDomicilier's page never says HT (the memo asserts it; at 20% that is 20 € becoming 24 €), and the Kandbaz page is dated 11 February 2026, contradicting the memo's note that it carries no date."
+  },
+  {
+   "verdicts": [
+    {
+     "claim": "(b) No. A commercial domiciliation contract is sold to a business — existing or in the course of registration — not to a private individual with no entity and no project.",
+     "verdict": "CONFIRMED",
+     "why": "The quoted sentence is on the Kandbaz page verbatim (dated 19 November 2025): 'Avant la signature d'un contrat de domiciliation, le domiciliataire doit : identifier le client (entreprise) et, le cas échéant, le bénéficiaire effectif.' But that sentence proves an anti-money-laundering identification duty, not a rule about who may buy. The real anchor is the code de commerce itself: the sub-section governing the regulated activity is titled 'Domiciliation des personnes immatriculées' (L123-10 to L123-11-8), and L123-11-3 subjects domiciliataires to prior agrément. So the claim holds for the regulated business-address product. It does not hold as a general statement about domiciliation companies: the SeDomicilier page cited under claim (b) below states the opposite for the unregulated mail product — 'les services de domiciliation ne sont pas réservés aux entreprises'.",
+     "correction": "Keep the conclusion, change the citation: anchor it on the code de commerce sub-section 'Domiciliation des personnes immatriculées' (L123-10 à L123-11-8) rather than on an AML page, and say 'the regulated business-address contract' rather than 'a commercial domiciliation contract', since a separate unregulated mail-address product is sold to individuals.",
+     "source_url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006178753/"
+    },
+    {
+     "claim": "(b) You can sign before the entity exists: the attestation/contrat de domiciliation is what lets you register, and it may carry the mention 'en cours d'immatriculation' instead of a SIREN.",
+     "verdict": "CONFIRMED",
+     "why": "The phrase is on the LegalPlace guide verbatim, inside the list of what the attestation must contain: 'Le numéro SIREN (ou la mention « en cours d'immatriculation » si l'entreprise n'est pas encore créée).' Page last updated 13/04/2026 as stated. Two caveats: LegalPlace is a commercial guide, not a legal source, and the page nowhere states directly that the contract may be signed pre-incorporation — that follows from the SIREN placeholder and from the attestation being the justificatif de jouissance filed at the guichet unique, which is sound but is an inference. The practical consequence stated for him is right and is the part that matters: he cannot usefully buy the address before deciding to create the entity.",
+     "source_url": "https://www.legalplace.fr/guides/attestation-de-domiciliation/"
+    },
+    {
+     "claim": "(b) What a private individual can buy instead is a mail box (domiciliation postale). It is explicitly not a proof of residence and is not a personal address.",
+     "verdict": "CONFIRMED",
+     "why": "The substance is supported, but the cited page contradicts the reasoning given for it on one material point. The page's actual sentence is 'you cannot use the address of your domiciliation box as a proof of address' — the quoted wording is a paraphrase, not verbatim. And the detail says SeDomicilier 'sells the service to individuals'; the page says the reverse in terms: 'SeDomicilier ne propose pas de service de domiciliation pour les particuliers.' What the page does establish is the general point — 'les services de domiciliation ne sont pas réservés aux entreprises… les particuliers peuvent également bénéficier de ces services' — while noting not all providers offer it. Separately, the 'not a justificatif de domicile' limitation is the wrong test for his actual use: GDPR and LCEN ask for a contact address for the publisher, not for proof of where he sleeps, so a box address failing as a justificatif does not by itself disqualify it from a newsletter footer.",
+     "correction": "Replace the SeDomicilier attribution — it does not sell to individuals, it says the market does. Use the page for the general proposition only, and drop the 'not a proof of residence' point from the newsletter analysis, where it is not the applicable test.",
+     "source_url": "https://en.sedomicilier.fr/articles/domiciliation-particuliers"
+    },
+    {
+     "claim": "(c) Alternative — attestation d'hébergement from a third party (school, employer, parent). Mechanically possible: a host signs an attestation authorising the business address at their premises.",
+     "verdict": "OVERSTATED",
+     "why": "The LegalPlace sentence exists — 'Une attestation d'hébergement signée par la personne qui vous héberge, indiquant qu'elle vous autorise à domicilier votre entreprise à son adresse' — but the claim's English rendering is a translation, not a quote. The Service-Public corroboration asserted in the detail is not there: I searched the cited EI page (F2160) for 'attestation d'hébergement', 'hébergé', 'justificatif de domicile' and '3 mois' and found none, and the page's enumeration of domiciliation options is own home, dedicated premises, société de domiciliation agréée, coworking, pépinière — the third-party-host route is absent. So the route rests on one commercial guide while the government page that lists the options omits it. One further risk the claim does not name: hosting someone else's business address as an activity is precisely what L123-11-3 subjects to agrément, so this is safe as free family hosting and gets legally awkward the moment it looks like a service.",
+     "correction": "Drop the Service-Public attribution (the '3-month justificatif in the host's name' detail is not on F2160) and downgrade the route from 'alternative on the table' to 'stated by a commercial guide, not by the official enumeration'.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2160"
+    },
+    {
+     "claim": "(c) Alternative — La Poste boîte postale (Flexigo). Rentable by individuals, annual or seasonal, but you must prove a home address to get one, and the page publishes no price.",
+     "verdict": "CONFIRMED",
+     "why": "All four checkable facts are on the page: the definition quote verbatim ('Une boîte postale constitue un espace de stockage personnel situé dans un bureau de Poste.'), the requirement to 'présenter une pièce d'identité valide et justifier de votre domicile', the annual/seasonal choice with automatic renewal 'chaque premier janvier', the Flexigo branding, and no tariff anywhere on the page. Two sourcing notes: the association/boîte-postale point attributed to Kandbaz is real but sits on a different Kandbaz page (domiciliation-association), not on either page cited in this claim set; and nothing on the La Poste page addresses whether a BP may be printed as a published contact address, so that remains open. For him the binding constraint is the one the claim already names: a BP requires a home address to obtain, so it conceals his address rather than replacing it.",
+     "source_url": "https://www.laposte.fr/conseils-pratiques/louer-une-boite-aux-lettres-pour-particulier"
+    },
+    {
+     "claim": "(c) Alternative — coworking space or pépinière d'entreprises, listed by Service-Public as valid domiciliation for an EI/micro-entreprise.",
+     "verdict": "CONFIRMED",
+     "why": "F2160 (verified 2 July 2026) carries the quoted sentence verbatim — 'La domiciliation de votre entreprise (EI… ou micro-entreprise) est obligatoire.' — and lists both coworking and pépinière among the options, with the pépinière limits as stated: registered within 6 months maximum, hosting capped at 48 months. The claim's own qualifier is the operative one: both presuppose an entity, so neither is available to him today.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2160"
+    },
+    {
+     "claim": "(c) INSEE/INPI rule — whatever address an entrepreneur declares goes into Sirene and the Registre national des entreprises, and is republished on the public Annuaire des entreprises unless he opposes.",
+     "verdict": "CONFIRMED",
+     "why": "The INSEE page dated 02/12/2025 carries 'Les autres informations concernant l'unité légale restent diffusées' verbatim, cites both article R123-232-1 of the code de commerce and article 21 GDPR, and lists for catégorie juridique 1000 exactly the withheld fields stated: name, first names, pseudonym, enseigne and nom commercial, exact address within the commune, and geolocation variables.",
+     "source_url": "https://www.insee.fr/fr/information/7456564"
+    },
+    {
+     "claim": "(d) An association loi 1901 does give a publishable address — but the declaration publishes that address in the Journal officiel, so it solves nothing if the siège is his home.",
+     "verdict": "CONFIRMED",
+     "why": "The four-field JOAFE list is on the associations.gouv.fr page verbatim — 'Date de la déclaration en préfecture, Titre de l'association, Objet, Adresse du siège de l'association' — so the siège address is published. The conclusion follows: the association only helps if the siège is somewhere other than his flat.",
+     "source_url": "https://www.associations.gouv.fr/declarer-et-publier-son-association-1901-la-prefecture"
+    },
+    {
+     "claim": "(d) Cost to create: zero. Declaration and Journal officiel publication have both been free since 2019.",
+     "verdict": "CONFIRMED",
+     "why": "The page states 'Cette démarche est gratuite depuis 2019', delivers the récépissé 'dans les 5 jours suivant la remise du dossier complet', and publishes extracts 'le mardi de chaque semaine'. The quoted 'free since 2019' is an English rendering of the French sentence, not a verbatim quote.",
+     "source_url": "https://www.associations.gouv.fr/declarer-et-publier-son-association-1901-la-prefecture"
+    },
+    {
+     "claim": "(d) The declaration also files the administrators' names, professions, addresses and nationality with the préfecture — so his home address reaches the administration even when it is not the siège.",
+     "verdict": "CONFIRMED",
+     "why": "The page carries the requirement verbatim in French: 'Noms, professions, domicile et nationalité des personnes qui à un titre quelconque sont chargées de son administration.' The claim's English is a translation. The inference that these fields are filed rather than published is sound, since the JOAFE announcement is the four fields verified above and does not include them; the page itself does not state it either way, which the claim's own caveat already concedes.",
+     "source_url": "https://www.associations.gouv.fr/lassociation-declaree-regie-par-la-loi-du-1er-juillet-1901"
+    },
+    {
+     "claim": "(d) What the association buys him: legal personality — a bank account, contracts, subsidies — i.e. a legal person that can be the newsletter's data controller instead of him personally.",
+     "verdict": "CONFIRMED",
+     "why": "The page states 'Toute association dite loi 1901 qui veut obtenir la capacité juridique doit d'abord effectuer une déclaration préalable', so declaration is what confers capacity. The data-controller consequence is a correct legal inference, not text on the page. Worth naming for him: the association changes who the controller is, not who is identifiable — he is still declared by name and domicile as an administrator, and the siège address is still published, so it is an address fix only when the siège sits somewhere other than his flat.",
+     "source_url": "https://www.associations.gouv.fr/lassociation-declaree-regie-par-la-loi-du-1er-juillet-1901"
+    },
+    {
+     "claim": "(d) Siège at his own home is lawful — a lease cannot forbid it — but that is exactly the address the Journal officiel would publish.",
+     "verdict": "CONFIRMED",
+     "why": "Both quotes are on the page (dated 17 June 2025): 'Un contrat de location ne peut pas interdire à un locataire l'exercice d'une activité associative', and for an owner outside copropriété 'vous êtes libre de domicilier le siège social de votre association à votre domicile. Vous n'avez pas besoin d'autorisation'. The claim omits one condition the page attaches to the tenant case: 'le logement doit bien rester votre lieu d'habitation. Il ne peut pas devenir le lieu de l'activité effective de l'association par la transformation du logement en bureau.' Harmless for a newsletter, but it is the condition, and it should travel with the rule.",
+     "correction": "Add the tenant condition: the home must remain his actual residence and cannot become the association's operating premises.",
+     "source_url": "https://www.associations.gouv.fr/le-siege-dune-association-au-domicile-dun-de-ses-membres"
+    },
+    {
+     "claim": "(e) Yes — a micro-entreprise declared at home publishes that home address by default, and no, it is not unavoidable: an online opposition makes only the commune public.",
+     "verdict": "CONFIRMED",
+     "why": "F2160 (verified 2 July 2026) carries 'Seule la commune de résidence sera rendue publique sur le Registre national des entreprises (RNE)' verbatim and links the online service; the FranceConnect login, the need for the SIREN, and the 48-hour effect are corroborated at statut-diffusion-sirene.insee.fr and the INSEE page. One sequencing trap the claim does not name: the opposition needs a SIREN, so it can only be filed after registration — his address is diffusible for the gap between immatriculation and the change taking effect, and anything scraped by third-party company-data sites during that window is outside INSEE's reach.",
+     "correction": "Add the timing caveat — the masking is retrospective on the registers but not on copies already taken, so the opposition should be filed the same day the SIREN arrives.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2160"
+    },
+    {
+     "claim": "(e) Separate, newer protection: décret n° 2025-840 du 22 août 2025 lets company officers hide their personal address on the RCS, and the INPI states the RNE does not diffuse representatives' personal addresses.",
+     "verdict": "CONFIRMED",
+     "why": "The INPI page (published 27 August 2025) carries 'Le RNE ne diffuse pas les adresses personnelles des représentants d'entreprises.' verbatim and links the décret. The décret's scope matches the claim's warning: it covers dirigeants and associés indéfiniment responsables of legal persons mentioned at article R123-54, filing through the INPI guichet unique, with the greffier acting within five working days, in force 25 August 2025. It does not reach an entrepreneur individuel, so the claim's refusal to conflate the two tracks is correct.",
+     "source_url": "https://www.inpi.fr/ressources/formalites-dentreprises/anonymisation-actes-et-donnees-personnelles"
+    },
+    {
+     "claim": "(e) TRAP: registering a micro-entreprise puts his address back on the site itself. LCEN mentions légales for an entrepreneur individuel's website require 'votre nom, prénom et adresse'.",
+     "verdict": "CONFIRMED",
+     "why": "F31228 (vérifié le 31 juillet 2023) says exactly 'votre nom, prénom et adresse. Si vous êtes entrepreneur individuel (y compris, micro-entrepreneur), vos nom et prénom sont accompagnés de la mention entrepreneur individuel ou des initiales EI', with the penalty stated as one year and 75 000 €. If anything the claim understates the exposure twice over: F31228 also requires the RCS number, a phone number, an email and the host's identity, and the statute behind it (LCEN article 6, III-1) says 'domicile' for a natural person, not 'an address' — which is why a domiciliation address here is market practice rather than a textually watertight cure.",
+     "correction": "State the statutory word: LCEN III-1 requires the natural person's 'domicile', so a domiciliation address is the accepted practice, not a guaranteed substitute — and the mentions légales also drag in his phone number and RCS/SIREN, not just an address.",
+     "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31228"
+    },
+    {
+     "claim": "Today, with no entity, he is not required to publish any address: a non-professional publisher may identify their host instead of themselves.",
+     "verdict": "OVERSTATED",
+     "why": "The CNIL quote is verbatim ('Le blogueur doit s'identifier ou indiquer le nom de son hébergeur'), but the CNIL page is from 12 June 2009 and states the rule without its conditions. The statute is LCEN article 6, III-2: a non-professional natural person may keep anonymity by publishing 'le nom, la dénomination ou la raison sociale et l'adresse du fournisseur de services d'hébergement', on condition that he has communicated his own identifying elements to that host, which is then bound by professional secrecy. So an address must appear on the page — the host's — and 'not required to publish any address' is wrong as written. His current footer, described as naming GitHub Pages with no address, is therefore incomplete under the very provision relied on.",
+     "correction": "Restate as: he need not publish his own address, but he must publish the host's name and postal address and must be identifiable to the host. Add GitHub's published postal address to the footer; the exemption also lapses the day the site is published 'à titre professionnel'.",
+     "source_url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/"
+    },
+    {
+     "claim": "GDPR-side, the controller's 'coordonnées' in a collection notice need not be postal — the CNIL's own model leaves the channel open.",
+     "verdict": "CONFIRMED",
+     "why": "Both elements are on the CNIL page dated 26 juillet 2019 verbatim: the placeholder '[adresse électronique, postale, coordonnées téléphoniques, etc.]' and the warning 'Il s'agit d'une illustration, qu'il vous appartient d'adapter ou de compléter, et non d'un modèle de mention valable dans toutes les hypothèses.' The conclusion holds for him and is reinforced by the definition the commercial-email regime turns on: article L34-5 CPCE bites on 'prospection directe', defined as a message promoting goods, services, or the image of a person selling goods or providing services — which a free newsletter with nothing for sale is not. Brevo's postal-address demand is its own policy, inherited from US anti-spam law, not French or EU law applied to him.",
+     "source_url": "https://www.cnil.fr/fr/exemples-de-formulaire-de-collecte-de-donnees-caractere-personnel"
+    },
+    {
+     "claim": "Side finding — copius.fr itself is not leaking his address: AFNIC hides natural-person holders' data from the public Whois by default.",
+     "verdict": "CONFIRMED",
+     "why": "The AFNIC expert paper dated 22 April 2021 states that 'the personal data of domain name holders who are natural persons are not published in the directory service available to the general public', and that selecting 'natural person' at registration protects the holder's contact details 'by default'. The recommended check on the OVH record is the right one, since the protection follows that flag. One limit worth stating: this is confidentiality from the public Whois, not secrecy — AFNIC still discloses to qualified requesters through its own procedure.",
+     "source_url": "https://www.afnic.fr/en/observatory-and-resources/expert-papers/personal-data-are-published-in-the-whois-online-directory-is-this-normal/"
+    }
+   ],
+   "overall": "Fifteen of seventeen claims survive re-opening the sources; two are overstated and one carries a material error in its supporting reasoning. No claim commits the professionnel/particulier conflation the audit was watching for — the set is careful about it, and claim (e) on the décret of 22 August 2025 explicitly refuses to conflate the dirigeant track with the entrepreneur individuel track, correctly.\n\nThe two findings that change what he should do:\n\nFirst, the claim that he need publish no address today is wrong as written, and it is wrong in the direction that exposes him. LCEN article 6, III-2 lets a non-professional natural person stay anonymous only by publishing the host's name AND postal address, and only if he has given his own identifying details to that host. His described footer — GitHub Pages named, no address — does not satisfy the provision he is relying on. That is a ten-minute fix, and it is the only thing on this list he needs to do now.\n\nSecond, the attestation d'hébergement route is presented as an alternative on the table on the strength of a Service-Public corroboration that is not there. I searched the cited EI page (F2160) for 'attestation d'hébergement', 'hébergé', 'justificatif de domicile' and '3 mois': none appear, and the page's enumeration of domiciliation options — own home, dedicated premises, société de domiciliation agréée, coworking, pépinière — omits the third-party-host route entirely. It rests on one commercial guide.\n\nThe error of reasoning: the claim about mail boxes says SeDomicilier 'sells the service to individuals'. The page says 'SeDomicilier ne propose pas de service de domiciliation pour les particuliers.' The general proposition it does support — domiciliation services are not reserved to businesses — survives; the attribution does not. And the 'not a justificatif de domicile' limitation is the wrong test for the newsletter anyway: what a footer needs is a contact address for the publisher, not proof of residence.\n\nOne structural note on the whole set. Every route costing money or creating an entity is a consequence of registering, not of writing a newsletter. As things stand — private individual, nothing for sale, free newsletter — article L34-5 CPCE does not reach him (it turns on promoting goods, services, or the image of a seller), the CNIL's own template leaves the controller's coordonnées to any channel, and LCEN lets him hide behind his host. The postal address Brevo demanded is Brevo's policy, inherited from US anti-spam law. The cheapest correct answer may be a different ESP, not an address, an association, or a micro-entreprise — and claim (e)'s trap is the reason to be slow about the last of those: the day he registers, the mentions légales put his name, his 'domicile' as the statute words it, his phone number and his SIREN back on the page, and INSEE non-diffusion does nothing about that."
+  }
+ ]
+}
