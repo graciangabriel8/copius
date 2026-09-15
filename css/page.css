@@ -1,3 +1,7 @@
+/* loi Evin health message: legible, not decorative. */
+.alcohol-warn{margin:22px 0 0;padding:8px 10px;border:1px solid var(--border);
+  border-radius:8px;background:var(--chip,#eee);color:var(--ink-2,#444);
+  font-size:12px;line-height:1.45}
 /* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
 :root{--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;

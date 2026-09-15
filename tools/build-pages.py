@@ -268,6 +268,29 @@ def season_text(months, lang):
     return ", ".join(out)
 
 
+# loi Evin, CSP art. L3323-4: a page naming an alcoholic drink carries the health
+# message. The two exception sets are read out of js/app.js rather than retyped,
+# so a bottle added to the cellar is covered in the app and on the page by the
+# same edit.
+EVIN = "L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. \u00c0 consommer avec mod\u00e9ration."
+
+
+def _js_id_set(name):
+    src = (ROOT / "js" / "app.js").read_text(encoding="utf-8")
+    m = re.search(r"var %s = \[(.*?)\];" % name, src, re.S)
+    if not m:
+        raise SystemExit("build-pages: %s not found in js/app.js" % name)
+    return set(re.findall(r'"([a-z0-9-]+)"', m.group(1)))
+
+
+NOT_A_DRINK = _js_id_set("NOT_A_DRINK")
+DRINKS_ELSEWHERE = _js_id_set("DRINKS_ELSEWHERE")
+
+
+def is_alcohol(i):
+    return (i["cat"] == "cellar" and i["id"] not in NOT_A_DRINK) or i["id"] in DRINKS_ELSEWHERE
+
+
 def page(i, lang, by_id, count, G):
     t, other = UI[lang], ("fr" if lang == "en" else "en")
     name, alt_name = i["name"][lang], i["name"][other]
@@ -351,6 +374,7 @@ def page(i, lang, by_id, count, G):
   %(extra)s
 
   %(fix)s
+  %(evin)s
 </main>
 
 <footer>
@@ -384,6 +408,7 @@ def page(i, lang, by_id, count, G):
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
+        "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN)) if is_alcohol(i) else "",
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
         "tagline": e(t["tagline"]), "count": e(t["count"] % count),
     }
@@ -923,7 +948,11 @@ def season_index(lang, rows):
     }
 
 
-CSS = """/* Copius — ingredient pages. Generated pages share this one file rather than
+CSS = """/* loi Evin health message: legible, not decorative. */
+.alcohol-warn{margin:22px 0 0;padding:8px 10px;border:1px solid var(--border);
+  border-radius:8px;background:var(--chip,#eee);color:var(--ink-2,#444);
+  font-size:12px;line-height:1.45}
+/* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
 :root{--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
   --ink-3:#6A6E5F;--plate:#F0F1E7;--line:#585853;

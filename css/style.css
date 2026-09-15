@@ -802,3 +802,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   #search,.theme-btn{transition:none}
   .theme-btn.roll{animation:none}
 }
+
+/* loi Evin health message. Legible, not decorative: it is a legal mention. */
+.alcohol-warn{margin-top:18px;padding:8px 10px;border:1px solid var(--border);
+  border-radius:8px;background:var(--chip);color:var(--chip-ink);
+  font-size:12px;line-height:1.45;letter-spacing:.01em}

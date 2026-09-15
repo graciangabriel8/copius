@@ -518,6 +518,26 @@
       esc(T().morePairs.replace("%d", list.length)) + "</button>";
   }
 
+  /* loi Evin, CSP art. L3323-4: a communication naming an alcoholic drink carries
+     the health message, whatever its purpose — Cass. crim. 3 nov. 2004 defines the
+     offence by effect, so "it is educational" is not a defence. The cellar family
+     IS the drinks cabinet, so it carries the mention by default and the exceptions
+     are listed; a vinegar given one it does not need is the harmless direction to
+     be wrong in. tools/build-pages.py reads these two sets out of this file, so
+     this is their only home in the app. */
+  var NOT_A_DRINK = ["champagne-vinegar", "raspberry-vinegar", "shanxi-vinegar",
+                     "verjus-rouge", "vincotto", "grape-must"];
+  var DRINKS_ELSEWHERE = ["shaoxing-wine", "hon-mirin"];
+
+  function isAlcohol(i) {
+    return (i.cat === "cellar" && NOT_A_DRINK.indexOf(i.id) === -1) ||
+           DRINKS_ELSEWHERE.indexOf(i.id) !== -1;
+  }
+
+  function evinNote(i) {
+    return isAlcohol(i) ? '<p class="alcohol-warn">' + esc(T().alcoholWarning) + "</p>" : "";
+  }
+
   /* Protected designation. Card and modal header only — never a chip: butter alone
      renders 479 of them and a grid speckled red and blue is unreadable. */
   function signMark(i) {
@@ -877,6 +897,7 @@
       (i.tip[state.lang] ? '<div class="m-note"><h3>' + esc(t.chefNote) + "</h3><p>" + esc(i.tip[state.lang]) + "</p></div>" : "") +
       renderTree(i) +
       kinBlock(i) +
+      evinNote(i) +
       "<h3>" + esc(t.pairsWith) + "</h3>" +
       pairBlock(pairs) +
       (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
