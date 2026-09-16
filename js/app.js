@@ -762,8 +762,12 @@
   function renderTechModal(id) {
     var t = T(), x = techById[id];
     if (!x) return;
-    var used = BASES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
-      .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
+    /* Techniques are free and the bases are not, so this list is the one door
+       between them: without the guard, a free visitor opens a technique, reads
+       "used in" and clicks straight through into a paid base. */
+    var used = FREE_MODE ? [] :
+      BASES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
+        .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
     el("modalBody").innerHTML =
       '<div class="bm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
       '<h2 id="modalTitle">' + esc(x.name[state.lang]) + "</h2>" +
@@ -1039,7 +1043,9 @@
         (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
         (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "");
     }
-  function openBase(id) { openItem("base", id); }
+  /* Guarded as well as hidden: a chip left in a stale modal, a restored view or
+     a hand-typed hash all reach this without passing the tab. */
+  function openBase(id) { if (FREE_MODE) return; openItem("base", id); }
 
   /* ---------- pairing lab ---------- */
   function fillLabSelects() {
