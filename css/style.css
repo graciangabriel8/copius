@@ -623,8 +623,13 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 
 
 /* ---------- view tabs ---------- */
+/* The tabs and the version switch share a row: tabs left, switch right. It
+   wraps, so a narrow screen puts the switch on its own line rather than
+   squeezing the tabs. The margin moved to the row. */
+.view-row{display:flex;align-items:center;justify-content:space-between;
+          gap:12px 16px;flex-wrap:wrap;margin-bottom:22px}
 .view-tabs{display:inline-flex;gap:3px;border:1px solid var(--border-strong);border-radius:999px;
-           padding:3px;background:var(--card);margin-bottom:22px}
+           padding:3px;background:var(--card)}
 .view-tab{border:0;background:transparent;padding:9px 20px;border-radius:999px;
           color:var(--ink-2);font-size:13.5px;font-weight:600;cursor:pointer;transition:all .18s ease}
 .view-tab:hover{color:var(--ink)}

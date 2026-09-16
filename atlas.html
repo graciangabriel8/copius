@@ -17,7 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=140">
+<link rel="stylesheet" href="css/style.css?v=141">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -49,9 +49,6 @@
     <button id="createBtn" class="create-btn" type="button"></button>
     <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" data-i18n-aria="igLink"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a>
       <button id="themeBtn" class="theme-btn" type="button" data-i18n-aria="ariaTheme"></button>
-    <div class="lang-toggle tier-toggle" role="group" data-i18n-aria="ariaTier">
-      <button id="tier-free" type="button"></button><button id="tier-full" type="button"></button>
-    </div>
     <div class="lang-toggle" role="group" aria-label="Language / Langue">
       <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
     </div>
@@ -59,12 +56,19 @@
 </header>
 
 <main>
-  <nav class="view-tabs" role="tablist" data-i18n-aria="ariaViews">
-    <button id="tabAtlas" class="view-tab" type="button" role="tab" aria-controls="atlasView"></button>
-    <button id="tabChefs" class="view-tab" type="button" role="tab" aria-controls="chefsView"></button>
-    <button id="tabTech" class="view-tab" type="button" role="tab" aria-controls="techView"></button>
-    <button id="tabBases" class="view-tab" type="button" role="tab" aria-controls="basesView"></button>
-  </nav>
+  <div class="view-row">
+    <nav class="view-tabs" role="tablist" data-i18n-aria="ariaViews">
+      <button id="tabAtlas" class="view-tab" type="button" role="tab" aria-controls="atlasView"></button>
+      <button id="tabChefs" class="view-tab" type="button" role="tab" aria-controls="chefsView"></button>
+      <button id="tabTech" class="view-tab" type="button" role="tab" aria-controls="techView"></button>
+      <button id="tabBases" class="view-tab" type="button" role="tab" aria-controls="basesView"></button>
+    </nav>
+    <!-- Not inside the tablist: it chooses a version, not a view, and a role=tablist
+         holding a non-tab is a lie to assistive tech. -->
+    <div class="lang-toggle tier-toggle" role="group" data-i18n-aria="ariaTier">
+      <button id="tier-free" type="button"></button><button id="tier-full" type="button"></button>
+    </div>
+  </div>
 
   <div id="atlasView" role="tabpanel">
   <p id="tierNote" class="tier-note"></p>
@@ -175,39 +179,39 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/tier.js?v=140"></script>
-<script src="js/i18n.js?v=140"></script>
-<script src="js/photos.js?v=140"></script>
-  <script src="js/data-cellar.js?v=140"></script>
-  <script src="js/data-condiments.js?v=140"></script>
-  <script src="js/data-cuts.js?v=140"></script>
-  <script src="js/data-dairy.js?v=140"></script>
-  <script src="js/data-flowers.js?v=140"></script>
-  <script src="js/data-fats.js?v=140"></script>
-  <script src="js/data-fruits.js?v=140"></script>
-  <script src="js/data-grains.js?v=140"></script>
-  <script src="js/data-herbs.js?v=140"></script>
-  <script src="js/data-infusions.js?v=140"></script>
-  <script src="js/data-legumes.js?v=140"></script>
-  <script src="js/data-meat.js?v=140"></script>
-  <script src="js/data-mushrooms.js?v=140"></script>
-  <script src="js/data-nuts.js?v=140"></script>
-  <script src="js/data-roe.js?v=140"></script>
-  <script src="js/data-seafood.js?v=140"></script>
-  <script src="js/data-seaweed.js?v=140"></script>
-  <script src="js/data-shellfish.js?v=140"></script>
-  <script src="js/data-spices.js?v=140"></script>
-  <script src="js/data-sweet.js?v=140"></script>
-  <script src="js/data-texture.js?v=140"></script>
-  <script src="js/data-vegetables.js?v=140"></script>
-<script src="js/data-bases.js?v=140"></script>
-  <script src="js/data-techniques.js?v=140"></script>
-  <script src="js/data-trees.js?v=140"></script>
-<script src="js/data-chefs.js?v=140"></script>
-<script src="js/trios.js?v=140"></script>
-<script src="js/trios-gastronomy.js?v=140"></script>
-<script src="js/trios-premium.js?v=140"></script>
-<script src="js/app.js?v=140"></script>
+<script src="js/tier.js?v=141"></script>
+<script src="js/i18n.js?v=141"></script>
+<script src="js/photos.js?v=141"></script>
+  <script src="js/data-cellar.js?v=141"></script>
+  <script src="js/data-condiments.js?v=141"></script>
+  <script src="js/data-cuts.js?v=141"></script>
+  <script src="js/data-dairy.js?v=141"></script>
+  <script src="js/data-flowers.js?v=141"></script>
+  <script src="js/data-fats.js?v=141"></script>
+  <script src="js/data-fruits.js?v=141"></script>
+  <script src="js/data-grains.js?v=141"></script>
+  <script src="js/data-herbs.js?v=141"></script>
+  <script src="js/data-infusions.js?v=141"></script>
+  <script src="js/data-legumes.js?v=141"></script>
+  <script src="js/data-meat.js?v=141"></script>
+  <script src="js/data-mushrooms.js?v=141"></script>
+  <script src="js/data-nuts.js?v=141"></script>
+  <script src="js/data-roe.js?v=141"></script>
+  <script src="js/data-seafood.js?v=141"></script>
+  <script src="js/data-seaweed.js?v=141"></script>
+  <script src="js/data-shellfish.js?v=141"></script>
+  <script src="js/data-spices.js?v=141"></script>
+  <script src="js/data-sweet.js?v=141"></script>
+  <script src="js/data-texture.js?v=141"></script>
+  <script src="js/data-vegetables.js?v=141"></script>
+<script src="js/data-bases.js?v=141"></script>
+  <script src="js/data-techniques.js?v=141"></script>
+  <script src="js/data-trees.js?v=141"></script>
+<script src="js/data-chefs.js?v=141"></script>
+<script src="js/trios.js?v=141"></script>
+<script src="js/trios-gastronomy.js?v=141"></script>
+<script src="js/trios-premium.js?v=141"></script>
+<script src="js/app.js?v=141"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
