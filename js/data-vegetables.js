@@ -621,7 +621,7 @@ svg:'<path class="f2 sf" d="M26 62q-4-12 6-22t26-16 14 8-6 22-26 16-14-8z"/><cir
 
 {id:"eggplant",cat:"vegetables",price:1,pk:"2,50–5 €/kg",name:{en:"Eggplant",fr:"Aubergine"},latin:"Solanum melongena",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["mild","earthy","rich"],texture:["firm","airy","dry"],
+flavor:["mild","earthy","rich"],texture:["firm","airy","moist"],
 story:{en:"Medieval Europe called it the “mad apple” and blamed it for insanity; Italian still says melanzana. The Ottomans knew better — a dish of it was so good, they say, that an imam fainted at the taste.",
 fr:"L’Europe médiévale l’appelait la « pomme folle » et l’accusait de rendre insensé ; l’italien dit encore melanzana. Les Ottomans savaient mieux — un plat d’aubergine était si bon, dit-on, qu’un imam s’en évanouit de plaisir."},
 tip:{en:"It drinks oil like a sponge when raw; salt it first or roast it dry, then dress it generously.",

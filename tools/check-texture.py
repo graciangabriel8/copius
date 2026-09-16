@@ -79,7 +79,7 @@ def main(paths):
     if dupes:
         print("  duplicates: " + ", ".join(dupes[:10]))
     spread = collections.Counter(t for r in rows for t in (r.get("texture") or []))
-    print("  tags in use: %d of 22" % len(spread))
+    print("  tags in use: %d of %d" % (len(spread), len(VOCAB)))
     unused = sorted(VOCAB - set(spread))
     if unused:
         print("  never used: " + ", ".join(unused))

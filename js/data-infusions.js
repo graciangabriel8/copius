@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"assam-tea",cat:"infusions",price:3,pk:"40–80 €/kg",name:{en:"Assam tea",fr:"Thé d’Assam"},latin:"Camellia sinensis var. assamica",
 origin:{en:"Brahmaputra valley, Assam",fr:"Vallée du Brahmapoutre, Assam"},season:[],
-flavor:["toasty","rich","bitter"],texture:["granular","dry"],
+flavor:["toasty","rich","bitter"],texture:["granular","hard","dry"],
 story:{en:"The plant is not the Chinese bush but large-leaved assamica, growing wild in Assam and reported to the British in the 1820s by Robert Bruce through the Singpho, who were already drinking it. It is grown low on flooded plain and its flush is heavy in tannin — exactly what a tea needs to survive milk.",
 fr:"La plante n’est pas l’arbuste chinois mais la variété assamica, à grandes feuilles, poussant à l’état sauvage en Assam et signalée aux Britanniques dans les années 1820 par Robert Bruce, par l’intermédiaire des Singpho qui en buvaient déjà. Elle pousse en plaine inondable, à basse altitude, et sa récolte est chargée en tanin — exactement ce qu’il faut à un thé pour survivre au lait."},
 tip:{en:"For chai, boil the leaf in water first with bruised cardamom and ginger, add the milk only at the end and let it rise once — milk from the start blocks extraction and gives a pale, sweet drink. Use CTC granules, not orthodox leaf, if it has to stand up to sugar.",
@@ -51,7 +51,7 @@ svg:'<path class="f3 sf" d="M41 18h14v10H41z"/><path class="sf" d="M43 28h10v12H
 
 {id:"da-hong-pao",cat:"infusions",rare:true,luxe:true,price:4,pk:"300–2 000 €/kg",name:{en:"Da Hong Pao",fr:"Da Hong Pao (oolong de roche des Wuyi)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Wuyi cliffs, Fujian",fr:"Falaises des Wuyi, Fujian"},season:[],
-flavor:["toasty","woody","rich"],texture:["brittle","dry"],
+flavor:["toasty","woody","rich"],texture:["crisp","brittle","dry"],
 story:{en:"Six mother bushes survive on the cliff at Jiulongke; they were picked for the last time in 2005 and harvesting them has been banned since 2006, so everything sold under the name comes from cuttings. Twenty grams of that final harvest went at auction for 208,000 yuan.",
 fr:"Six théiers mères survivent sur la falaise de Jiulongke ; ils ont été récoltés pour la dernière fois en 2005 et la cueillette y est interdite depuis 2006, si bien que tout ce qui porte ce nom vient de boutures. Vingt grammes de cette dernière récolte sont partis aux enchères à 208 000 yuans."},
 tip:{en:"Roasted to charcoal, it behaves like a spice rather than a drink: 8 g infused ten minutes in 200 ml of stock finishes a game sauce, or steep it in warm cream for a ganache. Boiling water is right here — it is one of the few teas that will not turn bitter on it.",
@@ -71,7 +71,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="f1 sf" d="M48 34q-3-12 1-19 5 9
 
 {id:"dried-chrysanthemum-flower",cat:"infusions",price:1,pk:"30–60 €/kg",name:{en:"Dried chrysanthemum flower",fr:"Fleurs de chrysanthème séchées"},latin:"Chrysanthemum morifolium",
 origin:{en:"Tongxiang, Zhejiang; Huangshan, Anhui",fr:"Tongxiang, Zhejiang ; Huangshan, Anhui"},season:[],
-flavor:["floral","honeyed","bitter"],texture:["brittle","dry"],
+flavor:["floral","honeyed","bitter"],texture:["airy","brittle","dry"],
 story:{en:"The heads are steamed or dried whole in late autumn; the white hangbaiju of Tongxiang and the small yellow gongju of Huangshan were both sent as tribute and are still graded on how tightly the head holds together. The vegetable sold as chrysanthemum greens is a different plant, Glebionis coronaria — this is the flower, and it is drunk, not eaten.",
 fr:"Les capitules sont étuvés ou séchés entiers à la fin de l’automne ; le hangbaiju blanc de Tongxiang et le petit gongju jaune du Huangshan étaient tous deux envoyés en tribut et se classent encore selon la tenue du capitule. Le légume vendu comme chrysanthème comestible est une autre plante, Glebionis coronaria : ici c’est la fleur, et elle se boit, elle ne se mange pas."},
 tip:{en:"Infuse at 90 °C for three minutes with a little rock sugar; longer and the bitterness in the receptacle takes over. The classic pairing is ripe pu-erh — a few heads in a pot of shou cut its damp-earth edge.",
@@ -91,7 +91,7 @@ svg:'<circle class="f2 sf" cx="44" cy="56" r="21"/><path class="f1 sf" d="M50 34
 
 {id:"german-chamomile",cat:"infusions",price:1,pk:"30–60 €/kg",name:{en:"German chamomile",fr:"Camomille matricaire"},latin:"Matricaria chamomilla",
 origin:{en:"Europe and western Asia",fr:"Europe et Asie occidentale"},season:[],
-flavor:["floral","honeyed","fruity"],texture:["brittle","dry"],
+flavor:["floral","honeyed","fruity"],texture:["brittle","powdery","dry"],
 story:{en:"Slice a head down the middle and the difference from Roman chamomile is plain: German chamomile has a hollow, conical receptacle, the Roman one is solid and domed. German is the annual grown for the flower and its sweet apple note; Roman is the perennial, and it is the bitter one.",
 fr:"Coupez un capitule en deux et la différence avec la camomille romaine saute aux yeux : la matricaire a un réceptacle conique et creux, celui de la romaine est plein et bombé. La matricaire est l’annuelle cultivée pour la fleur et sa note de pomme ; la romaine est la vivace, et c’est elle l’amère."},
 tip:{en:"Infuse covered, 90 °C, four minutes — the apple aroma is volatile and an open pot loses it to the room. For a sabayon or a poaching syrup, bruise the heads and strain hard; the yellow disc florets carry most of the flavour, and all of the bitterness if oversteeped.",
@@ -101,7 +101,7 @@ svg:'<circle class="f2 sf" cx="48" cy="46" r="8"/><path class="f1 sf" d="M40 48q
 
 {id:"green-coffee-beans",cat:"infusions",price:1,pk:"8–18 €/kg",name:{en:"Green coffee beans",fr:"Café vert"},latin:"Coffea arabica",
 origin:{en:"Coffee highlands of the tropics",fr:"Hauts plateaux caféiers des tropiques"},season:[],
-flavor:["grassy","sour","herbal"],texture:["hard","dry"],
+flavor:["grassy","sour","herbal"],texture:["hard","tough","dry"],
 story:{en:"Roasting destroys chlorogenic acid: the green seed carries roughly five to twelve percent of it by weight, and a dark Italian roast leaves under a tenth of that. Brewed raw it lands closer to a green herbal tea than to coffee, vegetal and sharply acidic, which is why every attempt to sell it as a beverage has failed and it survives as an infusion ingredient instead.",
 fr:"La torréfaction détruit l’acide chlorogénique : le grain vert en contient de cinq à douze pour cent de son poids, et il en reste moins d’un dixième après une torréfaction italienne. Infusée crue, la graine tire vers le thé vert herbacé plus que vers le café, végétale et franchement acide, ce qui explique que toutes les tentatives d’en faire une boisson aient échoué et qu’elle survive comme ingrédient d’infusion."},
 tip:{en:"Crack them coarsely and infuse cold — a week in a neutral oil or in spirit at room temperature pulls a green, hay-like coffee note that heat would cook straight off. Never take them to a burr grinder: raw beans are rubbery and will jam the burrs.",
@@ -121,7 +121,7 @@ svg:'<circle class="f2 sf" cx="38" cy="58" r="12"/><circle class="f3 sf" cx="60"
 
 {id:"honeybush",cat:"infusions",price:1,pk:"30–60 €/kg",name:{en:"Honeybush",fr:"Honeybush"},latin:"Cyclopia intermedia",
 origin:{en:"Cape fynbos, South Africa",fr:"Fynbos du Cap, Afrique du Sud"},season:[],
-flavor:["honeyed","fruity","floral"],texture:["fibrous","dry"],
+flavor:["honeyed","fruity","floral"],texture:["fibrous","brittle","dry"],
 story:{en:"A different Cape legume from rooibos, named for the honey smell of its yellow flowers and still largely cut from wild stands rather than farmed. Oxidising the chopped stems is what develops the apricot note; unfermented honeybush is green and thin.",
 fr:"Autre légumineuse du Cap, distincte du rooibos, nommée pour l’odeur de miel de ses fleurs jaunes et encore largement récoltée à l’état sauvage plutôt que cultivée. C’est l’oxydation des tiges hachées qui développe la note d’abricot ; non fermenté, le honeybush est vert et maigre."},
 tip:{en:"Being naturally sweet, it wants no sugar in a custard: infuse 20 g per litre of milk for 15 minutes and cut the recipe sugar by a fifth. Crush the woody stems before infusing or you extract almost nothing.",
@@ -131,7 +131,7 @@ svg:'<path class="s" d="M34 78q11-21 13-42"/><path class="f1 sf" d="M47 38q11-11
 
 {id:"jasmine-pearl-tea",cat:"infusions",price:2,pk:"80–160 €/kg",name:{en:"Jasmine pearl tea",fr:"Perles de jasmin"},latin:"Camellia sinensis, Jasminum sambac",
 origin:{en:"Fuzhou, Fujian",fr:"Fuzhou, Fujian"},season:[7,8],
-flavor:["floral","fresh","delicate"],texture:["firm","dry"],
+flavor:["floral","fresh","delicate"],texture:["hard","smooth","dry"],
 story:{en:"Jasminum sambac blossoms are picked closed in the afternoon and laid over the tea at night as they open, then screened out and replaced with fresh flowers; a good pearl is scented across five to seven nights, and the flowers left visible in cheap versions are a sign of the opposite. The pearls themselves are rolled by hand from a bud and a leaf, which is why they sink and unfurl slowly.",
 fr:"Les fleurs de Jasminum sambac sont cueillies fermées l’après-midi et couchées la nuit sur le thé, à mesure qu’elles s’ouvrent, puis retirées et remplacées par des fleurs fraîches : une bonne perle est parfumée cinq à sept nuits, et les fleurs visibles dans les qualités bon marché sont le signe du contraire. Les perles elles-mêmes sont roulées à la main à partir d’un bourgeon et d’une feuille, d’où leur façon de couler et de s’ouvrir lentement."},
 tip:{en:"Three or four pearls per 150 ml is enough; they double in volume. To flavour a cream, steep at 70 °C for ten minutes and stop — jasmine turns soapy with heat and time, and once it has there is no fixing it.",
@@ -151,7 +151,7 @@ svg:'<path class="f1 sf" d="M28 42h40l-4 25q-2 8-16 8t-16-8z"/><ellipse class="f
 
 {id:"kombucha",cat:"infusions",price:2,pk:"5–12 €/L",name:{en:"Kombucha",fr:"Kombucha"},latin:"Camellia sinensis + Medusomyces gisevii",
 origin:{en:"Fermented tea, origin disputed",fr:"Thé fermenté, origine incertaine"},season:[],
-flavor:["sour","tangy","fresh"],texture:["smooth","moist"],
+flavor:["sour","tangy","fresh"],texture:["fluid","smooth"],
 story:{en:"The name is a mistake: in Japanese, kombucha is an infusion of powdered kelp, and the fermented tea drink is called kocha kinoko, red-tea mushroom. What ferments is sugared tea, worked by a mat of yeasts and acetic acid bacteria, so the acid it brings is mostly acetic and gluconic with the tea tannin still in it.",
 fr:"Le nom est une erreur : en japonais, le kombucha est une infusion de kombu en poudre, et la boisson fermentée s’appelle kocha kinoko, « champignon de thé rouge ». Ce qui fermente, c’est du thé sucré, travaillé par un voile de levures et de bactéries acétiques : l’acidité apportée est surtout acétique et gluconique, avec le tanin du thé encore dedans."},
 tip:{en:"Use it as an acidulant with body: it carries well under half the acidity of a vinegar, so start at two parts kombucha to one of oil in a dressing and adjust. Reduced by half over low heat it glazes pork or duck — do not boil it hard, and never reduce it in unlined copper or aluminium.",
@@ -181,7 +181,7 @@ svg:'<path class="f3 sf" d="M24 78q7-9 15-9t15 9z"/><path class="s" d="M32 68q17
 
 {id:"longjing-tea",cat:"infusions",luxe:true,price:3,pk:"200–1 000 €/kg",name:{en:"Longjing tea",fr:"Thé Long Jing (Puits du Dragon)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"West Lake hills, Hangzhou",fr:"Collines du lac de l’Ouest, Hangzhou"},season:[3,4],
-flavor:["nutty","buttery","grassy"],texture:["brittle","dry"],
+flavor:["nutty","buttery","grassy"],texture:["crisp","flaky","dry"],
 story:{en:"The leaf is pressed flat by hand against the wall of a hot wok, a single motion that halts oxidation and builds the chestnut note at the same time. Eighteen bushes below Shifeng peak stand fenced off as imperial tribute plants, a title the story says Qianlong gave them in 1751 after the tea was credited with his mother’s recovery.",
 fr:"La feuille est plaquée à la main contre la paroi du wok brûlant : le même geste arrête l’oxydation et installe la note de châtaigne. Dix-huit théiers au pied du pic Shifeng sont clôturés comme plants de tribut impérial, un titre que Qianlong leur aurait accordé en 1751, le thé ayant, dit-on, guéri sa mère."},
 tip:{en:"Infuse at 80 °C, never at a boil — above that the chestnut turns to boiled spinach. For Longjing shrimp, steep 3 g for one minute, tip the softened leaves into the pan with the shrimp and use the liquor as the sauce.",
@@ -201,7 +201,7 @@ svg:'<path class="f2 sf" d="M30 64q3-31 34-36-1 31-34 36z"/><path class="s" d="M
 
 {id:"peppermint",cat:"infusions",price:1,pk:"25–50 €/kg",name:{en:"Peppermint",fr:"Menthe poivrée"},latin:"Mentha × piperita",
 origin:{en:"Sterile hybrid, cultivated",fr:"Hybride stérile, cultivé"},season:[5,6,7,8,9],
-flavor:["fresh","pungent","herbal"],texture:["brittle","dry"],
+flavor:["fresh","pungent","herbal"],texture:["brittle","flaky","dry"],
 story:{en:"It is a sterile cross of watermint and spearmint, so every plant is a cutting of a cutting; the Mitcham clone grown in Surrey from the 1750s is still the reference for oil quality. Its dominant compound, menthol, acts on the cold receptor — the chill is a nerve signal, not a temperature.",
 fr:"C’est un croisement stérile entre menthe aquatique et menthe verte : chaque plant est une bouture de bouture, et le clone de Mitcham, cultivé dans le Surrey depuis les années 1750, reste la référence pour l’huile. Son composé dominant, le menthol, agit sur les récepteurs du froid : la fraîcheur est un signal nerveux, pas une température."},
 tip:{en:"Never boil it: menthol is volatile and above 85 °C you drive off the cold note and keep the bitter herb. It does not stand in for garden mint, which is carvone-led and sweet — swap one for the other in a chocolate and you have made a different confection.",
@@ -211,7 +211,7 @@ svg:'<path class="s" d="M48 80V28"/><path class="f2 sf" d="M46 44q-18 1-24-11 18
 
 {id:"mugicha",cat:"infusions",price:1,pk:"10–25 €/kg",name:{en:"Roasted barley tea",fr:"Thé d’orge grillé (mugicha)"},latin:"Hordeum vulgare",
 origin:{en:"Barley fields of Japan",fr:"Champs d’orge du Japon"},season:[],
-flavor:["toasty","nutty","bitter"],texture:["hard","dry"],
+flavor:["toasty","nutty","bitter"],texture:["hard","crunchy","dry"],
 story:{en:"In Edo the stalls hung lanterns marked mugi-yu, barley hot water, and sold the infusion by the cup long before anyone thought to drink it cold; refrigeration in the 1950s turned it into the summer drink of every household. It is not tea at all — no Camellia leaf, no caffeine — which is why it is the first drink given to infants.",
 fr:"Dans les rues d’Edo, des lanternes portant la mention mugi-yu, « eau chaude d’orge », signalaient les échoppes qui vendaient l’infusion à la tasse, bien avant qu’on la boive glacée ; l’arrivée du réfrigérateur, dans les années 1950, en a fait la boisson d’été de tous les foyers. Ce n’est pas du thé : pas une feuille de Camellia, pas de caféine, et c’est pour cela qu’on en donne aux nourrissons."},
 tip:{en:"Cold-brew it: 30 g of roasted grain per litre, eight hours in the fridge, and it stays clean and sweet. Boiling water pulls a scorched bitterness out of the husk, and the brew sours within two days, so strain the grain out and drink it fast.",
@@ -251,7 +251,7 @@ svg:'<g transform="translate(4.27 4.45) scale(0.911)"><circle class="f1 sf" cx="
 
 {id:"shou-puerh",cat:"infusions",price:2,pk:"60–150 €/kg",name:{en:"Shou pu-erh",fr:"Pu-erh cuit (shou)"},latin:"Camellia sinensis var. assamica",
 origin:{en:"Menghai and Kunming, Yunnan",fr:"Menghai et Kunming, Yunnan"},season:[],
-flavor:["earthy","woody","rich"],texture:["hard","brittle","dry"],
+flavor:["earthy","woody","rich"],texture:["firm","brittle","dry"],
 story:{en:"Wet-piling, wo dui, was worked out in 1973 at the Kunming and Menghai factories to get in weeks the taste of a raw cake aged for decades: damp leaf is heaped a metre high under cloth and turned while the microbes hold the core near 50-60 °C. It is not an older tea than sheng but a different manufacture, and the result — beetroot, damp wood, forest floor — is closer to a savoury ingredient than a drink.",
 fr:"Le wo dui, la mise en tas humide, a été mis au point en 1973 aux usines de Kunming et de Menghai pour obtenir en quelques semaines le goût d’une galette crue vieillie des décennies : la feuille humide est entassée sur un mètre sous une toile et retournée pendant que les micro-organismes maintiennent le cœur autour de 50-60 °C. Ce n’est pas un thé plus vieux que le sheng mais une autre fabrication, et le résultat — betterave, bois humide, sous-bois — tient plus de l’ingrédient salé que de la boisson."},
 tip:{en:"Rinse twice: the first two pours of any ripe cake carry the smell of the pile and are thrown out. Then use it hot and strong, 10 g per litre, as half the braising liquid for pork belly or duck legs with star anise — it deepens colour as much as flavour.",
@@ -261,7 +261,7 @@ svg:'<path class="f3 sf" d="M20 60q0-26 28-26t28 26q-13 9-28 9t-28-9z"/><path cl
 
 {id:"silver-needle-white-tea",cat:"infusions",luxe:true,price:3,pk:"150–500 €/kg",name:{en:"Silver Needle white tea",fr:"Thé blanc Aiguilles d’argent (Yin Zhen)"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Fuding and Zhenghe, Fujian",fr:"Fuding et Zhenghe, Fujian"},season:[3,4],
-flavor:["delicate","honeyed","floral"],texture:["brittle","dry"],
+flavor:["delicate","honeyed","floral"],texture:["soft","airy","dry"],
 story:{en:"Only the unopened bud is picked, and nothing is done to it but withering and drying — no pan, no rolling, no bruising, which is why the silver down is still on the leaf in the cup. A kilo is tens of thousands of buds, all taken in a short window at the start of spring.",
 fr:"On ne cueille que le bourgeon fermé, et on ne lui fait rien d’autre que le flétrissage et le séchage : ni poêle, ni roulage, ni meurtrissure, d’où le duvet argenté encore présent dans la tasse. Un kilo représente des dizaines de milliers de bourgeons, cueillis dans une courte fenêtre au début du printemps."},
 tip:{en:"Cold-infuse it: 6 g per litre of cold water, four hours in the fridge, and you have a melon-scented liquid for dressing raw shellfish or setting a clear jelly. Water above 85 °C strips the down and leaves it flat.",
@@ -271,7 +271,7 @@ svg:'<path class="f2 sf" d="M40 74q-5-18-2-30 5-10 7-1 2 12-1 31z"/><path class=
 
 {id:"tie-guan-yin",cat:"infusions",price:2,pk:"80–200 €/kg",name:{en:"Tie Guan Yin oolong",fr:"Oolong Tie Guan Yin"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Anxi, Fujian",fr:"Anxi, Fujian"},season:[],
-flavor:["floral","creamy","fresh"],texture:["firm","dry"],
+flavor:["floral","creamy","fresh"],texture:["hard","granular","dry"],
 story:{en:"The name means Iron Goddess of Mercy, and legend has it that a farmer in Anxi who kept a neglected temple of Guanyin swept was shown a single shoot in a rock crevice in a dream. The modern style is rolled into tight balls and barely oxidised, so a leaf sold as a dark tea a century ago now brews closer to a green.",
 fr:"Le nom signifie « Guanyin de fer » ; la légende veut qu’un paysan d’Anxi, qui entretenait un temple abandonné de la déesse, ait vu en rêve une pousse dans une faille de rocher. Le style actuel, roulé en billes et à peine oxydé, donne d’un thé vendu comme sombre il y a un siècle une liqueur proche du vert."},
 tip:{en:"Infuse 6 g in 150 ml at 95 °C and reuse the ball five or six times — the orchid aroma peaks on the second and third infusions, not the first. To scent a cream, hold the leaves in it at 60 °C for 20 minutes and never let it boil.",
@@ -281,7 +281,7 @@ svg:'<path class="f2 sf" d="M28 54q0-15 15-15t15 15q0 13-15 13T28 54z"/><path cl
 
 {id:"yerba-mate",cat:"infusions",price:1,pk:"10–25 €/kg",name:{en:"Yerba maté",fr:"Maté (yerba maté)"},latin:"Ilex paraguariensis",
 origin:{en:"Upper Paraná basin",fr:"Bassin du haut Paraná"},season:[],
-flavor:["bitter","grassy","smoky"],texture:["granular","dry"],
+flavor:["bitter","grassy","smoky"],texture:["granular","powdery","dry"],
 story:{en:"It is a holly, and its seed germinates so poorly that wild stands were the only source until Jesuit missions worked out how to raise it in the seventeenth century — the drink was called Jesuit tea for two centuries after. Most yerba is dried over a wood fire before ageing, which is where the smoke in the cup comes from, not from the plant.",
 fr:"C’est un houx, dont la graine germe si mal que seuls les peuplements sauvages ont fourni la matière jusqu’à ce que les missions jésuites apprennent à le cultiver au XVIIe siècle — la boisson s’est appelée « thé des jésuites » deux siècles durant. La plupart des yerbas sont séchées au feu de bois avant vieillissement : le fumé de la tasse vient de là, pas de la plante."},
 tip:{en:"For kitchen work, infuse it cold: 15 g per litre, six hours, strained — hot water pulls a heavy green bitterness that reads as burnt in a cream or an ice cream. Toast it lightly first if you want the smoke forward in a game sauce.",
@@ -291,7 +291,7 @@ svg:'<path class="f2 sf" d="M30 54q0-15 18-15t18 15q0 20-18 20T30 54z"/><path cl
 
 {id:"genmaicha",cat:"infusions",price:2,pk:"40–80 €/kg",name:{en:"Genmaicha",fr:"Genmaicha"},latin:"Camellia sinensis / Oryza sativa",
 origin:{en:"Kyoto, Japan",fr:"Kyoto, Japon"},season:[],
-flavor:["toasty","nutty","grassy"],texture:["crunchy","dry"],
+flavor:["toasty","nutty","grassy"],texture:["crunchy","brittle","dry"],
 story:{en:"The likeliest account puts it in a Kyoto tea shop in the 1920s, where the broken remains of kagami mochi — the New Year rice cakes — were roasted instead of thrown out and blended into cheap bancha. The rice was there to make the tea go further; the toasted-grain smell everyone now buys it for was an accident of thrift.",
 fr:"La version la plus probable le situe dans une boutique de thé de Kyoto, dans les années 1920 : les débris du kagami-mochi du Nouvel An grillés plutôt que jetés, puis mêlés à un bancha bon marché. Le riz servait à faire durer le thé ; l’odeur de céréale grillée qu’on achète aujourd’hui n’était qu’un effet d’économie."},
 tip:{en:"Brew it at 90 °C — near boiling, unlike any other Japanese green — for thirty seconds, or the rice tastes raw. It also works as a savoury liquid: infuse it strong and use it for half the dashi in a clear broth.",
@@ -301,7 +301,7 @@ svg:'<path class="f2 sf" d="M24 44h48c-2 18-12 26-24 26s-22-8-24-26z"/><path cla
 
 {id:"gyokuro",cat:"infusions",price:3,pk:"200–600 €/kg",name:{en:"Gyokuro",fr:"Gyokuro"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Uji, Kyoto prefecture",fr:"Uji, préfecture de Kyoto"},season:[4,5],
-flavor:["umami","sweet","marine"],texture:["brittle","dry"],
+flavor:["umami","sweet","marine"],texture:["fibrous","brittle","dry"],
 story:{en:"The bushes are covered for roughly three weeks before picking. Starved of light the leaf stops building the bitter catechins and stockpiles theanine instead, which is why a cup of gyokuro reads closer to a shellfish stock than to tea.",
 fr:"On couvre les théiers une vingtaine de jours avant la cueillette. Privée de lumière, la feuille cesse de fabriquer les catéchines amères et accumule de la théanine : une tasse de gyokuro se lit alors plus comme un fumet de coquillages que comme un thé."},
 tip:{en:"Brew at 50–60 °C and never hotter — above that the catechins come out and bury the umami. Two minutes, a heavy dose of leaf, very little water; keep the spent leaves, they are edible dressed with soy and vinegar.",
@@ -311,7 +311,7 @@ svg:'<path class="f2 sf" d="M30 47h34c2 9-3 21-13 23H43c-10-2-15-14-13-23z"/><pa
 
 {id:"kukicha",cat:"infusions",price:2,pk:"40–80 €/kg",name:{en:"Kukicha",fr:"Kukicha"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Japan, from the tea sorting table",fr:"Japon, issu de la table de triage"},season:[],
-flavor:["nutty","creamy","mild"],texture:["fibrous","dry"],
+flavor:["nutty","creamy","mild"],texture:["fibrous","brittle","dry"],
 story:{en:"Kukicha is what the sorting machines pull aside: stems and leaf ribs separated from the blade when sencha or gyokuro is graded. Caffeine concentrates in the young buds and barely reaches the stalks, so a tea made from the offcuts brews mild enough for a child and round enough to take milk.",
 fr:"Le kukicha, c’est ce que la trieuse écarte : tiges et nervures séparées du limbe au moment de classer le sencha ou le gyokuro. La caféine se concentre dans les jeunes bourgeons et n’atteint guère les rameaux — un thé fait des chutes infuse assez doux pour un enfant et assez rond pour accepter le lait."},
 tip:{en:"Stems need heat the blade cannot take: 80 °C and two full minutes, otherwise the cup comes out thin and tastes of nothing. Karigane — the same cut taken off gyokuro bushes — is the version worth the extra money.",
@@ -321,7 +321,7 @@ svg:'<path class="s" d="M26 74 45 24M35 76 51 22M45 78 59 26M55 74 67 30"/><path
 
 {id:"sencha",cat:"infusions",price:2,pk:"60–150 €/kg",name:{en:"Sencha",fr:"Sencha"},latin:"Camellia sinensis var. sinensis",
 origin:{en:"Ujitawara, Kyoto prefecture",fr:"Ujitawara, préfecture de Kyoto"},season:[4,5],
-flavor:["grassy","bitter","fresh"],texture:["brittle","dry"],
+flavor:["grassy","bitter","fresh"],texture:["brittle","flaky","dry"],
 story:{en:"Nagatani Soen presented the method in 1738 after fifteen years of trials: steam the picked leaf, then roll and dry it by hand — the step that keeps Japanese green tea green where pan-fired Chinese leaf goes yellow. Nothing shades these bushes, so the catechins that shade would have suppressed are all still there, and the astringency is the subject rather than the fault.",
 fr:"Nagatani Sōen présente sa méthode en 1738, après quinze ans d’essais : étuver la feuille cueillie, puis la rouler et la sécher à la main — le geste qui garde vert le thé japonais quand la feuille chinoise, chauffée à la poêle, jaunit. Rien n’ombre ces théiers : les catéchines que l’ombre aurait bridées sont toutes là, et l’astringence est le sujet, non le défaut."},
 tip:{en:"70–80 °C, sixty seconds, and empty the pot to the last drop — the tail of the infusion is where the bitterness collects. The second steep wants hotter water and half the time.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M34 26c5 8 6 30 0 44-6-14-5-36 0-44z"/><path class="
 
 {id:"hojicha",cat:"infusions",price:2,pk:"40–90 €/kg",name:{en:"Hojicha",fr:"Thé hojicha"},latin:"Camellia sinensis",
 origin:{en:"Kyoto",fr:"Kyoto"},season:[],
-flavor:["toasty","woody","nutty"],texture:["brittle","dry"],
+flavor:["toasty","woody","nutty"],texture:["airy","brittle","dry"],
 story:{en:"A Kyoto merchant in the 1920s put stems and coarse late-season leaf over charcoal rather than throw them out, and the roasting turned the cheapest grade in the shop into a category of its own. The heat drives off most of the caffeine along with all the grassiness, which is why it is the tea poured for children and at the end of a meal.",
 fr:"Un marchand de Kyoto, dans les années 1920, passa tiges et feuilles grossières de fin de saison sur le charbon plutôt que de les jeter : la torréfaction fit du grade le moins cher de la boutique une catégorie à part entière. La chaleur chasse l'essentiel de la caféine en même temps que toute l'herbacée, d'où le thé que l'on sert aux enfants et en fin de repas."},
 tip:{en:"Brew it at 95 °C, near boiling — unlike green tea it cannot turn bitter, and a cool infusion tastes of nothing at all. For a cream or a panna cotta, steep 15 g of leaf per litre off the heat for ten minutes and strain hard; go longer and the roast reads as ash.",
@@ -351,7 +351,7 @@ svg:'<ellipse class="f3 sf" cx="40" cy="48" rx="10" ry="13" transform="rotate(-2
 
 {id:"dried-rosebuds",cat:"infusions",price:2,pk:"60–120 €/kg",name:{en:"Dried rosebuds",fr:"Boutons de rose séchés"},latin:"Rosa damascena",
 origin:{en:"Iran & Turkey",fr:"Iran & Turquie"},season:[],
-flavor:["floral","fruity","delicate"],texture:["brittle","dry"],
+flavor:["floral","fruity","delicate"],texture:["flaky","brittle","dry"],
 story:{en:"Damask roses are picked before dawn in the valleys around Kashan and Isparta, because the aromatic oil in the petals falls away as the sun climbs. The whole buds sold for the kitchen come off that same harvest — they are what the distillers have no use for.",
 fr:"Les roses de Damas se cueillent avant l’aube dans les vallées de Kashan et d’Isparta, parce que l’huile parfumée des pétales s’évanouit à mesure que le soleil monte. Les boutons entiers vendus pour la cuisine viennent de cette même récolte : c’est ce dont les distillateurs n’ont pas l’usage."},
 tip:{en:"Infuse the buds whole, but pull them out at five minutes. Left longer, the sepals and stem give up their tannin and the liquid turns dry and bitter behind the perfume.",
@@ -361,7 +361,7 @@ svg:'<path class="f2 sf" d="M48 22q12 8 12 22t-12 16q-12-2-12-16t12-22z"/><path 
 
 {id:"butterfly-pea-flower",cat:"infusions",price:2,pk:"80–160 €/kg",name:{en:"Butterfly pea flower",fr:"Fleur de pois papillon (pois bleu)"},latin:"Clitoria ternatea",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["mild","earthy","grassy"],texture:["brittle","dry"],
+flavor:["mild","earthy","grassy"],texture:["airy","brittle","dry"],
 story:{en:"The blue comes from ternatins, polyacylated anthocyanins unusually stable for their class, which is why the flower colours rice and jellies where most plant blues collapse. The colour is a pH meter: acid below about 3 turns the infusion pink-red, neutral holds it blue, alkali sends it green.",
 fr:"Le bleu vient des ternatines, des anthocyanes polyacylées d’une stabilité inhabituelle, d’où l’emploi de la fleur pour colorer riz et gelées là où la plupart des bleus végétaux s’effondrent. La couleur est un pH-mètre : en dessous d’environ 3, l’infusion vire au rose-rouge ; neutre, elle reste bleue ; en milieu alcalin, elle passe au vert."},
 tip:{en:"Ten flowers per 250 ml of hot water for five minutes and no longer — you are extracting a colour, and time only adds a faint hay taste. Add the lemon at the table, in front of whoever is eating: the violet-to-pink shift is the whole reason the flower is on the plate.",
@@ -371,7 +371,7 @@ svg:'<path class="f1 sf" d="M54 58q-16 2-25-6-9-9-4-19 5-10 17-11 4-5 10-2 11 6 
 
 {id:"linden-flower",cat:"infusions",price:1,pk:"5–10 €/100 g",name:{en:"Linden blossom",fr:"Fleur de tilleul"},latin:"Tilia cordata",
 origin:{en:"European limes, Drôme",fr:"Tilleuls d’Europe, Drôme"},season:[6,7],
-flavor:["floral","honeyed","delicate"],texture:["brittle","dry"],
+flavor:["floral","honeyed","delicate"],texture:["airy","brittle","dry"],
 story:{en:"The bract — the pale strap of leaf the flowers hang from — is picked and dried with them and counts as part of the product, not a stalk to be thrown out. The window runs about ten days at the start of summer, and Buis-les-Baronnies in the Drôme built a linden market on it that long concentrated most of the French crop.",
 fr:"La bractée — la languette pâle à laquelle les fleurs sont accrochées — se cueille et se sèche avec elles : elle fait partie du produit, ce n’est pas une queue à jeter. La fenêtre dure une dizaine de jours au début de l’été, et Buis-les-Baronnies, dans la Drôme, en a tiré un marché au tilleul qui a longtemps concentré l’essentiel de la récolte française."},
 tip:{en:"Infuse below boiling: at a rolling boil it goes hay-like and bitter, where water around 90 °C gives the honeyed green note. Ten grams to a litre of cream, twenty minutes, then strain without pressing.",
@@ -381,7 +381,7 @@ svg:'<path class="f1 sf" d="M20 30q26-6 44 4-20 8-44-4z"/><path class="s" d="M20
 
 {id:"matcha",cat:"infusions",price:3,pk:"80–250 €/kg",name:{en:"Matcha",fr:"Matcha"},latin:"Camellia sinensis",
 origin:{en:"Uji, Japan",fr:"Uji, Japon"},season:[],
-flavor:["bitter","grassy","umami","earthy"],texture:["smooth","powdery","dry"],
+flavor:["bitter","grassy","umami","earthy"],texture:["powdery","smooth","dry"],
 story:{en:"The bushes are shaded for three weeks before harvest, which forces them to make more chlorophyll and more theanine — that is where the colour and the savoury depth come from. The leaves are then stone-ground, a kilo taking about an hour.",
 fr:"Les théiers sont ombrés trois semaines avant la récolte, ce qui les force à produire plus de chlorophylle et plus de théanine — d’où la couleur et la profondeur umami. Les feuilles sont ensuite broyées à la meule de pierre, un kilo demandant environ une heure."},
 tip:{en:"Never use boiling water — 70 to 80°C at most. Boiling water makes it aggressively bitter within seconds.",

@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M22 54h52q-4 22-26 22T22 54z"/><path class="s" d="M2
 
 {id:"chili-crisp",cat:"condiments",price:2,pk:"20–35 €/kg",name:{en:"Chilli crisp",fr:"Huile pimentée croustillante (chili crisp)"},latin:"Capsicum annuum",
 origin:{en:"Guiyang, Guizhou, China",fr:"Guiyang, Guizhou, Chine"},season:[],
-flavor:["hot","umami","toasty","pungent"],texture:["crunchy","granular"],
+flavor:["hot","umami","toasty","pungent"],texture:["crunchy","viscous"],
 story:{en:"Tao Huabi sold noodles in Guiyang and gave away the chilli oil she made to go with them; when customers began coming only for the oil, she started bottling it in the mid-1990s. She could not read or write, and had her own face printed on the label so buyers would know the jar was hers.",
 fr:"Tao Huabi vendait des nouilles à Guiyang et offrait l’huile pimentée qui les accompagnait ; quand les clients ne sont plus venus que pour l’huile, elle s’est mise à la mettre en pots, au milieu des années 1990. Ne sachant ni lire ni écrire, elle a fait imprimer son propre visage sur l’étiquette pour qu’on reconnaisse le pot."},
 tip:{en:"The crunch is the product and it does not survive the pan, so spoon it over food that is already plated. Keep the solids submerged in the oil and the jar lasts months; a spoon that has touched a hot dish goes back wet and softens it within a week.",
@@ -1161,7 +1161,7 @@ svg:'<path class="f1 sf" d="M30 44h34l-4 22q-1 8-13 8t-13-8z"/><path class="f1 s
 
 {id:"sake-kasu",cat:"condiments",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Sake kasu",fr:"Lie de saké (sake kasu)"},latin:"Oryza sativa (lees)",
 origin:{en:"Sake breweries, Japan",fr:"Brasseries de saké, Japon"},season:[1,2,3,4],
-flavor:["rich","sweet","warm","creamy"],texture:["soft","viscous","moist"],
+flavor:["rich","sweet","warm","creamy"],texture:["soft","moist"],
 story:{en:"What comes off the press at the end of a sake brew is a pale cake still holding around eight percent alcohol and the enzymes that made the sake. Breweries sold it cheap to their neighbours through the cold months, which is how kasujiru soup and narazuke pickles came to exist at all.",
 fr:"Ce qui sort du pressoir à la fin d’un brassage de saké est un gâteau pâle qui contient encore environ huit pour cent d’alcool et les enzymes qui ont fait le saké. Les brasseries le vendaient pour trois fois rien à leurs voisins pendant les mois froids : c’est de là que viennent la soupe kasujiru et les pickles narazuke."},
 tip:{en:"Loosen it in warm water or sake before it goes near a pan; dropped in as a lump it stays a lump. For fish, salt the fillet, pat it dry, bury it in thinned lees for a day or two, and cook it knowing the alcohol has not entirely gone.",

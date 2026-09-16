@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M22 48q-3 16 1 24 3 7 25 7 22 0 25-7 4-8 1-24z"/><pa
 
 {id:"egg",cat:"dairy",price:1,pk:"0,30–0,60 €/pièce",name:{en:"Egg",fr:"Œuf"},latin:"Ovum",
 origin:{en:"Domesticated in Southeast Asia",fr:"Domestiqué en Asie du Sud-Est"},season:[],
-flavor:["mild","rich","creamy"],texture:["viscous","silky","moist"],
+flavor:["mild","rich","creamy"],texture:["viscous","silky"],
 story:{en:"Kitchen lore says the hundred folds of a chef’s toque stand for the hundred ways to cook an egg. It binds, it lifts, it enriches, it clarifies — no single ingredient does more jobs in a kitchen, and none does them more quietly.",
 fr:"La légende de cuisine veut que les cent plis de la toque d’un chef représentent les cent façons de cuire un œuf. Il lie, il fait lever, il enrichit, il clarifie — aucun ingrédient ne remplit plus de rôles en cuisine, et aucun ne le fait plus discrètement."},
 tip:{en:"Old eggs peel easily but poach raggedly; fresh ones hold together in water. Know your egg’s age and give it the job it deserves.",

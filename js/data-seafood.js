@@ -841,7 +841,7 @@ svg:'<path class="f1 sf" d="M28 58q8-16 22-18t22 6q-6 14-20 18t-24-6z"/><path cl
 
 {id:"swordfish",cat:"seafood",price:3,pk:"25–40 €/kg",name:{en:"Swordfish",fr:"Espadon"},latin:"Xiphias gladius",
 origin:{en:"Strait of Messina & warm oceans",fr:"Détroit de Messine & océans chauds"},season:[6,7,8,9],
-flavor:["meaty","mild","rich","marine"],texture:["firm","dry"],
+flavor:["meaty","mild","rich","marine"],texture:["firm","moist"],
 story:{en:"Behind its eyes sits a mass of modified muscle that burns fuel purely as a heater, holding eyes and brain up to fifteen degrees above the cold water it hunts in; those cells carry a higher density of mitochondria than any other known animal cell. The bill is not a spear but a blade — it slashes sideways through a shoal and turns back for whatever it stunned.",
 fr:"Derrière ses yeux se loge une masse de muscle modifié qui ne brûle du carburant que pour chauffer : elle maintient l’œil et le cerveau jusqu’à quinze degrés au-dessus de l’eau froide où il chasse, avec la plus forte densité de mitochondries connue chez un animal. Le rostre n’est pas une lance mais une lame : il fauche le banc de côté, puis revient sur ce qu’il a assommé."},
 tip:{en:"The flesh is dense and low in moisture and there is no fat to buy you time: sear it hard and pull it at 50–52 °C, still pink at the centre. If it must be cooked through, brine it twenty minutes in 5 % salt water first — nothing else keeps a well-done steak from going to rope.",
@@ -941,7 +941,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="54" rx="27" ry="18"/><path class="f2 sf"
 
 {id:"violet-sea-squirt",cat:"seafood",rare:true,price:2,pk:"8–16 €/kg",name:{en:"Violet sea squirt",fr:"Violet (figue de mer)"},latin:"Microcosmus sabatieri",
 origin:{en:"Marseille & Mediterranean rock beds",fr:"Marseille & fonds rocheux de Méditerranée"},season:[10,11,12,1,2,3,4],
-flavor:["briny","marine","bitter","pungent"],texture:["soft","viscous"],
+flavor:["briny","marine","bitter","pungent"],texture:["soft","juicy"],
 story:{en:"It is not a shellfish: tunicates are chordates, and the violet spent its larval life as a swimming tadpole with a notochord before cementing itself head-down onto a rock. Its leathery outer coat is built from cellulose, which no other animal on earth manufactures.",
 fr:"Ce n’est pas un coquillage : les tuniciers sont des cordés, et le violet a passé sa vie larvaire en têtard nageur pourvu d’une corde dorsale avant de se cimenter la tête en bas sur un rocher. Sa tunique coriace est faite de cellulose — aucun autre animal au monde n’en fabrique."},
 tip:{en:"Cut it open across the middle, scoop out the yellow alone and discard the whole leathery envelope with its fluid. Eat it within the hour of opening, at the stall if you can: nothing about it improves on the walk home, and lemon is the only seasoning it will take.",

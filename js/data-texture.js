@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"charbon-vegetal-actif",cat:"texture",price:2,pk:"50–100 €/kg",name:{en:"Activated charcoal",fr:"Charbon végétal activé"},latin:"Carbo activatus",
 origin:{en:"Charred coconut shell",fr:"Coques de coco carbonisées"},season:[],
-flavor:["mild","earthy"],texture:["powdery","dry"],
+flavor:["mild","earthy"],texture:["airy","powdery","dry"],
 story:{en:"The powder that blackens a bun is the same one an emergency room gives to adsorb a swallowed poison - it works by surface area, a single gram carrying hundreds of square metres of it. New York City ordered it off menus in 2018 and the FDA has never approved it as a food colour, while the EU lists it as E153.",
 fr:"La poudre qui noircit une brioche est celle qu’on donne aux urgences pour adsorber un poison avalé : elle travaille par surface, un seul gramme en développant des centaines de mètres carrés. New York l’a fait retirer des cartes en 2018 et la FDA ne l’a jamais autorisée comme colorant, quand l’Union européenne l’inscrit sous le numéro E153."},
 tip:{en:"Half to one percent of the flour weight gives true black; more turns the dough grey, gritty and dry, because the powder drinks water. It adsorbs medication indiscriminately, the contraceptive pill included, so it is not a garnish to be generous with.",
@@ -11,7 +11,7 @@ svg:'<path class="f1 sf" d="M20 62h56q-6 12-28 12T20 62z"/><path class="f3 sf" d
 
 {id:"bicarbonate-d-ammonium",cat:"texture",price:2,pk:"15–40 €/kg",name:{en:"Ammonium bicarbonate",fr:"Bicarbonate d’ammonium"},latin:"Ammonii hydrogenocarbonas",
 origin:{en:"Northern European bakeries",fr:"Boulangeries d’Europe du Nord"},season:[],
-flavor:["pungent","salty","bitter"],texture:["granular","dry"],
+flavor:["pungent","salty","bitter"],texture:["granular","hard","dry"],
 story:{en:"Bakers called it hartshorn because it was once distilled from shavings of deer antler, and German recipes still say Hirschhornsalz. It breaks down completely into ammonia, carbon dioxide and water, so alone among chemical leaveners it leaves no salt behind to taste.",
 fr:"Les boulangers l’appelaient sel de corne de cerf, car on le distillait jadis de copeaux de bois de cerf, et les recettes allemandes disent encore Hirschhornsalz. Il se décompose entièrement en ammoniac, gaz carbonique et eau : seul de tous les levains chimiques, il ne laisse aucun sel derrière lui."},
 tip:{en:"Thin dry biscuits only, under about 7 mm: in anything moist or tall the ammonia is trapped and the crumb keeps its smell. Use 5 g per kilo of flour, dissolved first in a spoonful of the recipe's liquid, and expect the oven to smell alarming for a minute.",
@@ -21,7 +21,7 @@ svg:'<path class="f1 sf" d="M34 38l5-4 5 4 5-4 5 4 5-4 5 4v34H34z"/><path class=
 
 {id:"acide-ascorbique",cat:"texture",price:2,pk:"20–40 €/kg",name:{en:"Ascorbic acid",fr:"Acide ascorbique"},latin:"Acidum ascorbicum",
 origin:{en:"Citrus and paprika",fr:"Agrumes et paprika"},season:[],
-flavor:["mild","sour","fresh"],texture:["powdery","dry"],
+flavor:["mild","sour","fresh"],texture:["granular","dry"],
 story:{en:"Albert Szent-Gyorgyi, who isolated it from paprika and took the 1937 Nobel for it, wanted to name the unidentified sugar ignose, then godnose; his editor refused both. What sells today is not vitamin C the nutrient but vitamin C the tool - a powder bought to stop things browning.",
 fr:"Albert Szent-Györgyi, qui l’a isolée du paprika et en a tiré le Nobel de 1937, voulait appeler ce sucre inconnu « ignose », puis « godnose » ; son éditeur a refusé les deux. Ce qu’on achète aujourd’hui n’est pas la vitamine C nutriment mais la vitamine C outil : une poudre qui empêche de brunir."},
 tip:{en:"One gram in a litre of water, brushed on or dipped, holds cut apple, avocado and artichoke pale for hours. In bread it is a dough conditioner at 20 to 40 ppm, a scant pinch per kilo of flour; past that the dough tightens instead of strengthening.",
@@ -31,7 +31,7 @@ svg:'<path class="f1 sf" d="M33 41h30l-3 29q-1 4-5 4H41q-4 0-5-4z"/><path class=
 
 {id:"levure-chimique",cat:"texture",price:1,pk:"8–20 €/kg",name:{en:"Baking powder",fr:"Levure chimique"},latin:"Pulvis ad fermentandum",
 origin:{en:"Birmingham, 1843",fr:"Birmingham, 1843"},season:[],
-flavor:["salty","mild","bitter"],texture:["powdery","dry"],
+flavor:["salty","mild","bitter"],texture:["powdery","smooth","dry"],
 story:{en:"Alfred Bird mixed the first baking powder in Birmingham in 1843 because his wife could tolerate neither yeast nor egg and he wanted to give her bread. Modern double-acting powders carry a second, slower acid that waits for oven heat, which is why a batter can stand a few minutes and still rise.",
 fr:"Alfred Bird a composé la première levure chimique à Birmingham en 1843 parce que sa femme ne supportait ni la levure ni l’œuf et qu’il voulait lui donner du pain. Les poudres à double effet gardent un second acide, plus lent, qui attend la chaleur du four : c’est pourquoi un appareil peut patienter quelques minutes et lever quand même."},
 tip:{en:"It dies on the shelf: a teaspoon in hot water should foam violently within seconds, and if it merely fizzes, replace it. Dose about a teaspoon per 120 g of flour - overshoot and the crumb tastes soapy and bitter, rises fast, then falls.",
@@ -41,7 +41,7 @@ svg:'<path class="f1 sf" d="M34 46h28v24q0 4-14 4t-14-4z"/><ellipse class="f2 sf
 
 {id:"chlorure-de-calcium",cat:"texture",price:2,pk:"20–40 €/kg",name:{en:"Calcium chloride",fr:"Chlorure de calcium"},latin:"Calcium chloride (CaCl2)",
 origin:{en:"Brine wells and the Solvay process",fr:"Saumures et procédé Solvay"},season:[],
-flavor:["bitter","salty"],texture:["granular","dry"],
+flavor:["bitter","salty"],texture:["granular","hard","dry"],
 story:{en:"Most of the world's calcium chloride is a by-product: the Solvay process makes soda ash and leaves this behind by the tonne, which is why the same salt melts ice on motorway bridges and firms tinned tomatoes. Cheesemakers add a trace to pasteurised milk because heating strips out the calcium that lets rennet knit a curd.",
 fr:"L’essentiel du chlorure de calcium mondial est un sous-produit : le procédé Solvay fabrique du carbonate de soude et en laisse par tonnes, d’où le même sel qui dégèle les ponts d’autoroute et raffermit les tomates en conserve. Les fromagers en ajoutent une trace au lait pasteurisé, car la chauffe emporte le calcium qui permet à la présure de nouer un caillé."},
 tip:{en:"Keep it strictly in the bath — 0.5 to 1 % in cold water — and rinse each sphere in clean water the moment it comes out, because the bitter metallic taste transfers in seconds. It pulls water from the air fast enough to turn to syrup in an open jar, so buy small and close it hard.",
@@ -71,7 +71,7 @@ svg:'<g transform="translate(4.46 4.65) scale(0.907)"><circle class="f1 sf" cx="
 
 {id:"sulfate-de-calcium",cat:"texture",price:2,pk:"15–35 €/kg",name:{en:"Calcium sulfate",fr:"Sulfate de calcium"},latin:"Calcii sulfas dihydricus",
 origin:{en:"Gypsum quarries",fr:"Carrières de gypse"},season:[],
-flavor:["mild","sweet","creamy"],texture:["powdery","dry"],
+flavor:["mild","sweet","creamy"],texture:["powdery","smooth","dry"],
 story:{en:"It is gypsum: the same quarried stone as plaster of Paris and alabaster, ground fine and sold to tofu makers as shigao. Barely soluble, it hangs in the soy milk rather than dissolving into it, and that reluctance is exactly why it sets a gentler curd than nigari.",
 fr:"C’est du gypse : la pierre même dont on tire le plâtre et l’albâtre, broyée fin et vendue aux fabricants de tofu sous le nom de shigao. À peine soluble, elle reste en suspension dans le lait de soja plutôt que de s’y dissoudre, et cette lenteur est précisément ce qui donne un caillé plus doux que le nigari."},
 tip:{en:"Slurry 2 g per litre of soy milk in cold water and keep stirring - it drops out of suspension in under a minute. It holds more water than nigari, so the same beans give roughly a fifth more tofu, sweeter and smoother but blander.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M30 44l12-14 20 6 9 16-10 16-22 2-12-16z"/><path cla
 
 {id:"acide-citrique",cat:"texture",price:1,pk:"8–15 €/kg",name:{en:"Citric acid",fr:"Acide citrique"},latin:"Citric acid (E330)",
 origin:{en:"Aspergillus niger fermentation",fr:"Fermentation d’Aspergillus niger"},season:[],
-flavor:["sour","tangy","citrus"],texture:["granular","dry"],
+flavor:["sour","tangy","citrus"],texture:["granular","hard","dry"],
 story:{en:"Carl Wilhelm Scheele crystallised it out of lemon juice in 1784, and for more than a century the world's supply came from Italian lemons held by a growers' cartel. Then a Pfizer chemist, James Currie, found that the mould Aspergillus niger fed on sugar would excrete it by the vat, and the lemon monopoly was finished within a few years.",
 fr:"Carl Wilhelm Scheele l’a cristallisé à partir du jus de citron en 1784, et pendant plus d’un siècle l’approvisionnement mondial vint des citrons italiens, tenus par un cartel de producteurs. Puis le chimiste de Pfizer James Currie découvrit que la moisissure Aspergillus niger, nourrie de sucre, en excrétait par cuves entières, et le monopole du citron était réglé en quelques années."},
 tip:{en:"One gram in a litre gives roughly the acidity of 20 ml of lemon juice, without the water or the peel oil — you weigh it in for precision, not economy. Dissolve it in a spoon of water and add it off the heat: sprinkled dry into a hot purée it makes local hot spots of acid that curdle dairy and split a sauce.",
@@ -91,7 +91,7 @@ svg:'<path class="f1 sf" d="M20 56a24 24 0 0148 0z"/><path class="s" d="M44 56V3
 
 {id:"creme-de-tartre",cat:"texture",price:2,pk:"25–45 €/kg",name:{en:"Cream of tartar",fr:"Crème de tartre"},latin:"Kalii hydrogenotartras",
 origin:{en:"Wine barrels",fr:"Fûts de vin"},season:[],
-flavor:["sour","tangy","mild"],texture:["powdery","dry"],
+flavor:["sour","tangy","mild"],texture:["granular","powdery","dry"],
 story:{en:"Potassium bitartrate is scraped off the inside of wine barrels, where it crystallises out of the wine as a hard pink or grey crust the trade calls argol. It is the only thing in the baking cupboard that begins life as sediment.",
 fr:"Le bitartrate de potassium se racle sur la paroi des fûts, où il cristallise hors du vin en une croûte dure, rose ou grise, que le métier appelle tartre brut. C’est le seul produit du placard à pâtisserie qui commence sa vie en dépôt de cuve."},
 tip:{en:"An eighth of a teaspoon per egg white, added once the whites are foamy and never before, gives a meringue that holds overnight without weeping. A quarter-teaspoon per 200 g of boiled sugar inverts enough syrup to keep crystals off the pan wall.",
@@ -121,7 +121,7 @@ svg:'<path class="f2 sf" d="M38 44q8 0 8 13t-8 13-8-13 8-13z"/><path class="f1 s
 
 {id:"feuille-d-or",cat:"texture",luxe:true,price:4,pk:"3–7 €/feuille",name:{en:"Edible gold leaf",fr:"Feuille d’or alimentaire"},latin:"Aurum foliatum",
 origin:{en:"Kanazawa and Europe",fr:"Kanazawa et l’Europe"},season:[],
-flavor:["mild","delicate"],texture:["soft","smooth"],
+flavor:["mild","delicate"],texture:["flaky","soft","smooth"],
 story:{en:"A gram of gold beats out to roughly half a square metre, a tenth of a micron thick, between sheets of goldbeater's skin - ox intestine, so airtight that Zeppelin gas cells were built from it in the First World War. Gold passes through the body unchanged and tastes of nothing at all; the EU lists it as E175.",
 fr:"Un gramme d’or se bat en un demi-mètre carré environ, d’un dixième de micron d’épaisseur, entre des baudruches d’intestin de bœuf — si étanches qu’on en a fait les ballonnets des zeppelins pendant la Grande Guerre. L’or traverse le corps sans changer et ne goûte absolument rien ; l’Union européenne l’inscrit sous le numéro E175."},
 tip:{en:"Never touch it with a finger - the moisture takes it instantly. Lift it on a dry sable brush or a knife blade, lay it on last of all, after every glaze and every liquid, and anchor it with a breath of moisture rather than a wet surface.",
@@ -131,7 +131,7 @@ svg:'<path class="f2 sf" d="M24 42l32-12 15 20-32 13z"/><path class="s" d="M32 4
 
 {id:"feuille-d-argent",cat:"texture",price:2,pk:"0,50–1,50 €/feuille",name:{en:"Edible silver leaf",fr:"Feuille d’argent alimentaire"},latin:"Argentum foliatum",
 origin:{en:"Mughal India",fr:"Inde moghole"},season:[],
-flavor:["mild","fresh","delicate"],texture:["soft","smooth"],
+flavor:["mild","fresh","delicate"],texture:["flaky","soft","smooth"],
 story:{en:"Vark has topped Indian sweets since the Mughal courts, beaten between skins until it is thinner than gold leaf and far more fragile. Silver tarnishes: sulphur blackens it, which puts egg, onion, mustard and cabbage out of bounds underneath it.",
 fr:"Le vark couronne les douceurs indiennes depuis les cours mogholes, battu entre des peaux jusqu’à devenir plus mince que la feuille d’or et bien plus fragile. L’argent se ternit : le soufre le noircit, ce qui met hors jeu l’œuf, l’oignon, la moutarde et le chou dès qu’ils passent dessous."},
 tip:{en:"Apply it to dry, sulphur-free surfaces only, and last of all - on an egg-based cream it will brown within hours. Store the booklet away from rubber bands and wool, both of which give off enough sulphur to spoil a whole book.",
@@ -211,7 +211,7 @@ svg:'<path class="f1 sf" d="M33 36h30v34q0 8-8 8H41q-8 0-8-8z"/><path class="s" 
 
 {id:"amidon-de-mais-cireux-modifie",cat:"texture",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Instant modified waxy maize starch",fr:"Amidon de maïs cireux modifié"},latin:"Zea mays var. ceratina",
 origin:{en:"Waxy maize, first found in China",fr:"Maïs cireux, repéré en Chine"},season:[],
-flavor:["mild","creamy"],texture:["powdery","dry"],
+flavor:["mild","creamy"],texture:["airy","powdery","dry"],
 story:{en:"A waxy maize mutant collected in China in 1908 gave a starch that is almost pure amylopectin — no amylose, so nothing that can recrystallise and weep. American mills scaled it when the Pacific war cut off tapioca, and the pre-gelatinised grade, cooked and drum-dried before it is ever sold, is what thickens a cold fruit coulis in thirty seconds.",
 fr:"Un maïs cireux mutant, repéré en Chine en 1908, donne un amidon presque uniquement fait d’amylopectine : sans amylose, rien ne recristallise et rien ne ressue. Les minoteries américaines l’ont industrialisé quand la guerre du Pacifique a coupé le tapioca, et la version prégélatinisée — cuite et séchée sur cylindre avant même la vente — épaissit un coulis froid en trente secondes."},
 tip:{en:"Whisk it into the sugar or the dry ingredients before it meets liquid; dropped straight into water it seizes into lumps no blender will open. One to two percent of the liquid weight gives a nappé, three a paste.",
@@ -231,7 +231,7 @@ svg:'<ellipse class="f1 sf" cx="40" cy="60" rx="18" ry="11"/><path class="s" d="
 
 {id:"kansui",cat:"texture",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Kansui",fr:"Kansui"},latin:"Natrii carbonas",
 origin:{en:"Inner Mongolia, by way of Japan",fr:"Mongolie-Intérieure, via le Japon"},season:[],
-flavor:["bitter","pungent"],texture:["smooth","moist"],
+flavor:["bitter","pungent"],texture:["fluid","smooth"],
 story:{en:"The story goes that noodle makers in Inner Mongolia drew their water from alkaline lakes and found the dough turned springy and yellow; kansui means nothing more than alkaline water. The colour is not dye — at around pH 9 the wheat's own flavones turn yellow, the gluten tightens, and the starch surface goes slippery.",
 fr:"On raconte que des faiseurs de nouilles de Mongolie-Intérieure puisaient l’eau de lacs alcalins et obtenaient une pâte jaune et élastique ; kansui ne veut rien dire d’autre qu’« eau alcaline ». La couleur n’est pas un colorant : vers pH 9, les flavones du blé virent au jaune, le gluten se resserre et l’amidon devient glissant en surface."},
 tip:{en:"Around one percent of the flour weight, dissolved in the water before it ever touches the flour, or the dough streaks. With no kansui in the house, spread baking soda on a tray and hold it at 120 °C for an hour to drive it to sodium carbonate, which is far stronger — use two-thirds the weight.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M28 44h16v28H28z"/><path class="s" d="M33 44v28M38.5
 
 {id:"spores-de-koji",cat:"texture",rare:true,price:3,pk:"0,50–1 €/g",name:{en:"Koji spores (tane-koji)",fr:"Spores de koji"},latin:"Aspergillus oryzae",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["earthy","nutty","mild"],texture:["powdery","dry"],
+flavor:["earthy","nutty","mild"],texture:["airy","powdery","dry"],
 story:{en:"Aspergillus oryzae was named Japan's national fungus in 2006, and the spore houses that sell it - the moyashi-ya - have been selecting strains since the Muromachi period, centuries before anyone could see one. What you buy is a green powder measured in spores per gram, not a food: it is seed for growing koji yourself.",
 fr:"Aspergillus oryzae a été proclamé champignon national du Japon en 2006, et les maisons de spores qui le vendent, les moyashi-ya, sélectionnent des souches depuis l’époque de Muromachi, des siècles avant qu’on puisse en voir une. Ce qu’on achète est une poudre verte comptée en spores par gramme, pas un aliment : c’est la semence pour faire son koji soi-même."},
 tip:{en:"One gram of spores per kilo of dry rice: steam the rice, cool it to 35 C, inoculate, then hold at 30 C for 40 to 48 hours, breaking the mat twice to let its own heat out. Above 40 C the mould kills itself and the batch turns sour instead of sweet.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M32 46h26v24q0 6-6 6H38q-6 0-6-6z"/><path class="s" 
 
 {id:"gelatine-en-feuilles",cat:"texture",price:2,pk:"25–50 €/kg",name:{en:"Leaf gelatine",fr:"Gélatine en feuilles"},latin:"Collagen hydrolysate (E441)",
 origin:{en:"Pork and beef hide collagen",fr:"Collagène de couenne et de peau"},season:[],
-flavor:["mild","delicate"],texture:["brittle","dry"],
+flavor:["mild","delicate"],texture:["brittle","smooth","dry"],
 story:{en:"Sheets are graded in Bloom, the force needed to press a plunger into a standard gel, named for Oscar T. Bloom, who patented the gelometer that measures it in 1925. The clever part of the leaf format is that the grades are cut to different weights — a platinum sheet is lighter than a bronze one — so that one sheet sets the same volume whichever box you open.",
 fr:"Les feuilles sont classées en Bloom, la force nécessaire pour enfoncer un piston dans un gel normalisé, d’après Oscar T. Bloom, qui breveta en 1925 le gélomètre qui la mesure. L’astuce du format feuille est que les qualités sont découpées à des poids différents — une feuille platine pèse moins qu’une feuille bronze — de sorte qu’une feuille prend le même volume, quelle que soit la boîte ouverte."},
 tip:{en:"Soak five to ten minutes in plenty of cold water, squeeze hard, and dissolve into liquid that is warm rather than boiling: past about 85 °C the strands break down and the set weakens. Raw pineapple, kiwi, papaya, fig and ginger carry proteases that digest it completely — scald the fruit a minute first, or use it cooked.",
@@ -341,7 +341,7 @@ svg:'<path class="f1 sf" d="M28 68q0-24 20-24t20 24z"/><path class="s" d="M26 68
 
 {id:"nigari",cat:"texture",price:1,pk:"8–20 €/kg",name:{en:"Nigari",fr:"Nigari"},latin:"Magnesii chloridum",
 origin:{en:"Japanese salt pans",fr:"Marais salants japonais"},season:[],
-flavor:["bitter","briny","marine"],texture:["granular","dry"],
+flavor:["bitter","briny","marine"],texture:["granular","hard","dry"],
 story:{en:"Nigari is what is left when seawater has given up its salt: a magnesium-heavy bittern whose name comes straight from nigai, bitter. Tofu makers were buying the salt trade's waste long before anyone had written down what magnesium chloride does to soy protein.",
 fr:"Le nigari est ce qui reste quand l’eau de mer a rendu son sel : une eau mère chargée de magnésium dont le nom vient tout droit de nigai, amer. Les fabricants de tofu achetaient le rebut des salines bien avant qu’on ait su écrire ce que le chlorure de magnésium fait aux protéines du soja."},
 tip:{en:"About 2.5 g per litre of soy milk, dissolved in a little water and added at 75 C in three goes, with one slow stroke of the paddle between each. Tip it in at once and you get a coarse, grainy curd and a cloudy whey.",
@@ -371,7 +371,7 @@ svg:'<path class="f3 sf" d="M26 46h44v30H26z"/><path class="s" d="M26 61h44M41 4
 
 {id:"pectinase",cat:"texture",rare:true,price:3,pk:"200–500 €/kg",name:{en:"Pectinase",fr:"Pectinase"},latin:"Polygalacturonasum",
 origin:{en:"Aspergillus cultures",fr:"Cultures d’Aspergillus"},season:[],
-flavor:["mild","fresh"],texture:["smooth","moist"],
+flavor:["mild","fresh"],texture:["fluid","smooth"],
 story:{en:"It does the exact opposite of what a jam maker wants: the enzyme cuts pectin chains, and a cloudy juice held with it overnight drops its haze and turns clear enough to read through. Juice presses have used it since the 1930s, which is why bought apple juice is transparent and yours is not.",
 fr:"Elle fait exactement l’inverse de ce que cherche un confiturier : l’enzyme coupe les chaînes de pectine, et un jus trouble laissé une nuit avec elle abandonne son voile et devient limpide. Les presses à jus l’emploient depuis les années 1930, et c’est pourquoi le jus de pomme du commerce est transparent quand le vôtre ne l’est pas."},
 tip:{en:"0.1 to 0.3 ml per litre of raw juice, two hours at 45 to 50 C or overnight in the fridge, then rack off the sediment. Keep it well away from the jam pot - the same enzyme will stop a jelly setting for good - and remember it denatures above 60 C.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M30 36h36v34q0 8-8 8H38q-8 0-8-8z"/><path class="f2 
 
 {id:"presure",cat:"texture",price:2,pk:"30–60 €/L",name:{en:"Rennet",fr:"Présure"},latin:"Chymosinum",
 origin:{en:"Calf abomasum",fr:"Caillette de veau"},season:[],
-flavor:["mild","milky","creamy"],texture:["smooth","moist"],
+flavor:["mild","milky","creamy"],texture:["fluid","smooth"],
 story:{en:"Rennet is an enzyme, chymosin, taken from the fourth stomach of an unweaned calf, where its job is to clot its mother's milk and slow it down for digestion. Since 1990 most of it has been made by fermentation instead - the first genetically engineered enzyme cleared for food, and the reason a great deal of cheese is now vegetarian.",
 fr:"La présure est une enzyme, la chymosine, prélevée dans la caillette du veau non sevré, où elle sert à coaguler le lait de sa mère pour en ralentir la digestion. Depuis 1990 l’essentiel est produit par fermentation — première enzyme génétiquement modifiée autorisée en alimentation, et raison pour laquelle beaucoup de fromages sont aujourd’hui végétariens."},
 tip:{en:"It is sold by strength, usually 1:10,000: about 0.5 ml for 4 litres of milk at 32 C. Stir it in for thirty seconds, then stop completely - any movement after that tears the curd as it forms and the fat runs out into the whey.",
@@ -431,7 +431,7 @@ svg:'<path class="f3 sf" d="M40 18q14 10 10 28t-10 24 4 14q-16-4-14-20t6-24-4-22
 
 {id:"bicarbonate-de-sodium",cat:"texture",price:1,pk:"2–6 €/kg",name:{en:"Sodium bicarbonate",fr:"Bicarbonate de sodium"},latin:"Natrii hydrogenocarbonas",
 origin:{en:"Natron and soda ash",fr:"Natron et soude"},season:[],
-flavor:["salty","bitter","mild"],texture:["powdery","dry"],
+flavor:["salty","bitter","mild"],texture:["granular","powdery","dry"],
 story:{en:"Before it was cheap, cakes were raised with pearlash, a potash leached from wood ashes that Amelia Simmons put into print in 1796; the Solvay process made bicarbonate cheaper than ash by the 1860s. Used without an acid it does not leaven at all, it alkalises - and that is where most of its kitchen work lies.",
 fr:"Avant qu’il ne soit bon marché, on levait les gâteaux à la perlasse, une potasse tirée des cendres de bois qu’Amelia Simmons imprime dès 1796 ; le procédé Solvay a rendu le bicarbonate moins cher que la cendre dans les années 1860. Employé sans acide il ne lève pas, il alcalinise — et c’est là que se trouve l’essentiel de son travail de cuisine."},
 tip:{en:"A quarter-teaspoon per 500 g of sliced onions more than halves the time to deep caramel, because Maillard runs faster at high pH; they will slump and go slippery, so drive the water off afterwards. The same pinch in chickpea soaking water dissolves the skins - past that, everything tastes of soap.",
@@ -461,7 +461,7 @@ svg:'<circle class="f2 sf" cx="40" cy="58" r="7"/><circle class="f2 sf" cx="54" 
 
 {id:"lecithine-de-soja",cat:"texture",price:2,pk:"20–45 €/kg",name:{en:"Soy lecithin",fr:"Lécithine de soja"},latin:"Glycine max (phospholipids)",
 origin:{en:"Soybean oil refining, United States & Brazil",fr:"Raffinage de l’huile de soja, États-Unis et Brésil"},season:[],
-flavor:["nutty","earthy","mild"],texture:["powdery","dry"],
+flavor:["nutty","earthy","mild"],texture:["granular","dry"],
 story:{en:"Théodore Gobley isolated it from egg yolk in the 1840s and named it after lekithos, the Greek for yolk; the soy version arrived a century later as a by-product of degumming crude soybean oil. It is the same class of molecule that builds every cell membrane in your body, sold by the kilo.",
 fr:"Théodore Gobley l’a isolée du jaune d’œuf dans les années 1840 et l’a nommée d’après lekithos, le jaune en grec ; la version de soja est arrivée un siècle plus tard, sous-produit du démucilaginage de l’huile brute. C’est la même famille de molécules qui bâtit toutes les membranes cellulaires du corps, vendue au kilo."},
 tip:{en:"For an air, whisk 0.5 % into the liquid, then run a hand blender at the surface with the blade half out of the water so it drags air in — plunged deep it only mixes. Let the foam stand a minute before you lift it: the wet bubbles drain away and what is left holds on the plate for several minutes.",
@@ -501,7 +501,7 @@ svg:'<ellipse class="f1 sf" cx="40" cy="62" rx="18" ry="8"/><path class="f2 sf" 
 
 {id:"acide-tartrique",cat:"texture",price:2,pk:"20–45 €/kg",name:{en:"Tartaric acid",fr:"Acide tartrique"},latin:"Acidum tartaricum",
 origin:{en:"Wine casks",fr:"Fûts de vin"},season:[],
-flavor:["sour","tangy","fruity"],texture:["granular","dry"],
+flavor:["sour","tangy","fruity"],texture:["granular","hard","dry"],
 story:{en:"Scheele isolated it in 1769 from the crust that settles inside a wine cask, and in 1848 Louis Pasteur sorted its two mirror-image crystals apart by hand under a lens. No other kitchen acid started a whole branch of chemistry.",
 fr:"Scheele l’a isolé en 1769 de la croûte qui se dépose au fond d’un fût de vin, et en 1848 Louis Pasteur a trié à la pince, sous la loupe, ses deux cristaux en miroir. Aucun autre acide de cuisine n’a fait naître une branche entière de la chimie."},
 tip:{en:"A pinch - 0.5 g per kilo of sugar - added at 114 C inverts just enough of a syrup to stop it graining, and no more. Heavier and it will never set at all; it is the harshest of the fruit acids on the palate, so keep it where grape or wine already belongs.",
@@ -591,7 +591,7 @@ svg:'<path class="f2 sf" d="M40 24q7 24 5 46-1 6-5 6t-5-6q2-22-4-45z"/><circle c
 
 {id:"gomme-xanthane",cat:"texture",price:2,pk:"25–50 €/kg",name:{en:"Xanthan gum",fr:"Gomme xanthane"},latin:"Xanthomonas campestris (exopolysaccharide)",
 origin:{en:"Laboratory fermentation, Peoria, Illinois",fr:"Fermentation de laboratoire, Peoria, Illinois"},season:[],
-flavor:["mild","delicate"],texture:["powdery","dry"],
+flavor:["mild","delicate"],texture:["airy","powdery","dry"],
 story:{en:"It was found in the late 1950s at a United States Department of Agriculture laboratory in Peoria, Illinois, by a team under Allene Jeanes screening bacteria for useful polysaccharides. The producer, Xanthomonas campestris, is a plant disease that rots cabbages; the slime it secretes to glue itself to a leaf is what now holds a vinaigrette together.",
 fr:"Elle a été découverte à la fin des années 1950 dans un laboratoire du ministère américain de l’Agriculture, à Peoria dans l’Illinois, par l’équipe d’Allene Jeanes qui criblait des bactéries en quête de polysaccharides utiles. La productrice, Xanthomonas campestris, est une maladie des plantes qui pourrit les choux : le mucus qu’elle sécrète pour se coller aux feuilles est ce qui tient aujourd’hui une vinaigrette."},
 tip:{en:"Weigh it, never spoon it: 0.2% of the liquid's weight gives a sauce that still pours, 0.5% one that mounds, and the gap between them is a few tenths of a gram. Add it with the blender already running, or it clumps into fish eyes that never dissolve.",
@@ -601,7 +601,7 @@ svg:'<rect class="f1 sf" x="28" y="40" width="26" height="32" rx="3"/><rect clas
 
 {id:"cornstarch",cat:"texture",price:1,pk:"3–6 €/kg",name:{en:"Cornstarch",fr:"Maïzena"},latin:"Zea mays",
 origin:{en:"New Jersey, 1840s",fr:"New Jersey, années 1840"},season:[],
-flavor:["mild","delicate","sweet","milky"],texture:["smooth","powdery","dry"],
+flavor:["mild","delicate","sweet","milky"],texture:["powdery","smooth","dry"],
 story:{en:"Invented in 1842 by Thomas Kingsford, who was trying to make starch for laundry rather than food — the culinary use came later and by accident. Its French brand name, Maïzena, has entirely replaced the generic word.",
 fr:"Inventée en 1842 par Thomas Kingsford, qui cherchait un amidon pour la blanchisserie plutôt que pour la cuisine — l’usage culinaire vint plus tard et par accident. Son nom de marque français, Maïzena, a entièrement remplacé le mot générique."},
 tip:{en:"Slake it in cold liquid first, always. Tipped into anything hot it seizes into lumps that will never dissolve.",
@@ -611,7 +611,7 @@ svg:'<path class="f1 sf" d="M21 62q1-11 13-11 11 0 13 10 13-3 27-6 5-1 5 2t-5 3q
 
 {id:"arrowroot",cat:"texture",price:2,pk:"15–30 €/kg",name:{en:"Arrowroot starch",fr:"Arrow-root"},latin:"Maranta arundinacea",
 origin:{en:"Caribbean and northern South America",fr:"Caraïbes et nord de l’Amérique du Sud"},season:[],
-flavor:["mild","delicate"],texture:["smooth","powdery","dry"],
+flavor:["mild","delicate"],texture:["powdery","smooth","dry"],
 story:{en:"It gelatinises around 65 °C, a good fifteen degrees below cornstarch, which is why a sauce thickened with it stays clear and glossy instead of going opaque and pasty. The name is usually explained by the Arawak, who are said to have laid the crushed root on arrow wounds, though it may come from nothing more than their word aru-aru.",
 fr:"Il gélatinise vers 65 °C, une bonne quinzaine de degrés sous l’amidon de maïs, d’où une sauce qui reste claire et brillante au lieu de devenir opaque et pâteuse. On explique en général son nom par les Arawak, qui auraient appliqué la racine écrasée sur les blessures de flèches — mais il vient peut-être simplement de leur mot aru-aru."},
 tip:{en:"Slurry it in cold liquid, add it off the heat at the very end, and stop the moment it thickens: held at a boil it thins back out and cannot be rescued. Around 15 g per litre for a glaze, and unlike cornstarch it comes through freezing without weeping.",
@@ -621,7 +621,7 @@ svg:'<path class="f1 sf" d="M22 68Q26 48 46 42Q66 36 76 30Q70 44 50 54Q30 64 22 
 
 {id:"potato-starch",cat:"texture",price:1,pk:"3–6 €/kg",name:{en:"Potato starch",fr:"Fécule de pomme de terre"},latin:"Solanum tuberosum",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[],
-flavor:["mild","delicate","milky","earthy"],texture:["powdery","dry"],
+flavor:["mild","delicate","milky","earthy"],texture:["granular","powdery","dry"],
 story:{en:"It thickens at a lower temperature than cornstarch and gives a clear, glossy result rather than a cloudy one — which is why it belongs in fruit glazes and clear sauces where cornstarch would look chalky.",
 fr:"Elle épaissit à plus basse température que la maïzena et donne un résultat clair et brillant plutôt que trouble — d’où sa place dans les nappages de fruits et les sauces claires où la maïzena paraîtrait crayeuse."},
 tip:{en:"Never boil it hard. Unlike cornstarch it breaks down and thins again if held at a rolling boil.",
@@ -631,7 +631,7 @@ svg:'<path class="f1 sf" d="M34 72q4-15 15-20 11-5 17 2 5 6 6 18-18 5-38 0z"/><p
 
 {id:"tapioca-starch",cat:"texture",price:1,pk:"4–8 €/kg",name:{en:"Tapioca starch",fr:"Fécule de tapioca"},latin:"Manihot esculenta",
 origin:{en:"Amazonian cassava",fr:"Manioc amazonien"},season:[],
-flavor:["mild","delicate"],texture:["powdery","dry"],
+flavor:["mild","delicate"],texture:["powdery","smooth","dry"],
 story:{en:"The word comes from the Tupi tipi’óka, the sediment squeezed out of grated cassava: the starch was originally a by-product of ridding the root of its cyanide, washed out along with the poison before anyone thought to keep it. It is almost entirely amylopectin, which is why it turns stretchy rather than pasty and comes out of the freezer without weeping.",
 fr:"Le mot vient du tupi tipi’óka, le dépôt exprimé du manioc râpé : la fécule était au départ un sous-produit de l’élimination du cyanure de la racine, lavée avec le poison avant qu’on ne juge bon de la garder. Elle est presque uniquement composée d’amylopectine, d’où sa texture élastique plutôt que pâteuse et sa tenue au congélateur sans exsudat."},
 tip:{en:"It thickens at a lower temperature than cornstarch and slackens if you boil it hard, so add it at the end and pull the pan off as soon as the sauce clears. For pão de queijo and chewy breads it must be scalded — pour the boiling liquid onto the starch, never the reverse.",

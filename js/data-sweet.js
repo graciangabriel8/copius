@@ -541,7 +541,7 @@ svg:'<path class="f1 sf" d="M26 46h44v22q0 4-4 4H30q-4 0-4-4z"/><path class="f2 
 
 {id:"milk-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Milk chocolate",fr:"Chocolat au lait"},latin:"Theobroma cacao",
 origin:{en:"Vevey, Switzerland, 1875",fr:"Vevey, Suisse, 1875"},season:[],
-flavor:["sweet","creamy","milky","rich"],texture:["firm","brittle","dry"],
+flavor:["sweet","creamy","milky","rich"],texture:["firm","smooth","brittle"],
 story:{en:"Daniel Peter spent eight years failing to combine milk and chocolate — the water in milk seizes cocoa butter. His neighbour Henri Nestlé had just invented condensed milk, and the two of them solved it in 1875 by removing the water first.",
 fr:"Daniel Peter passa huit ans à échouer à marier lait et chocolat — l’eau du lait fait figer le beurre de cacao. Son voisin Henri Nestlé venait d’inventer le lait condensé, et à eux deux ils résolurent le problème en 1875 en ôtant l’eau d’abord."},
 tip:{en:"It burns and seizes far more easily than dark. Melt it over water that is barely steaming, never simmering.",

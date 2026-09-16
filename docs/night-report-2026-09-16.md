@@ -44,18 +44,81 @@ summarised:
   of June 2021", which was the original and has since been replaced. The cap is
   right; the reference is out of date.
 
+## Second pass (after the first report)
+
+**The liquid gap is closed.** `fluid` is now the 23rd tag, on the body axis
+opposite `viscous`. A vinegar is thin-flowing; a PX is thick-flowing; neither is
+a damp solid, which is what `moist` means.
+
+**The cellar was re-tagged and it needed it.** 89 of 157 rows changed, and
+distinct tag-sets went 16 to 32 — the largest identical cluster fell from 47
+entries to 35. The agent's own account of what the first pass got wrong:
+clear eaux-de-vie, fino, dry vermouth and sercial are `fluid` where aged
+brandies carrying glycerol are `silky` and a PX or a vin de paille is `viscous`;
+gritty crystals (citric, tartaric, nigari) are granular where charcoal, xanthan
+and koji spores are airy; and three liquids were miscoded as damp solids.
+
+**The 86 doubtful entries were re-judged**, 13 changed. Two error classes, both
+on moisture: thin liquids carrying no moisture tag at all, and a later state
+leaking into the tag — gagome kombu tagged for what it does in water, sake kasu
+for a paste that stays a lump.
+
+**Texture now reads on the plate, with the form taken into account.** Potato
+purée with cream and mascarpone trips *"nothing here resists the teeth"*; the
+same plate with frites does not.
+
+**It is deliberately not scored.** Measured over the trios and the chefs'
+dishes against 4 000 random plates, texture separates real cooking from
+ingredients drawn at random by **minus three points** — random plates score
+*higher*, because a scattered set is texturally various by accident while a real
+dish is focused. That is exactly what the flavour reading does, and the same
+conclusion follows: it tells a cook about their own plate but cannot rank
+plates. The grade stays 40% flavour, 60% accords.
+
+## The three remaining claims
+
+**Rhubarb — verified, but the tense is wrong.** The ruling is real: *C. J. Tower
+& Sons v. United States*, 19 Cust. Ct. 12, C.D. 1060, decided 11 July 1947,
+following *Nix v. Hedden* (the tomato case) and holding that use controls —
+*"The chief use of rhubarb is that of a fruit."* But that construed the Tariff
+Act of 1930, long replaced, and US customs now classes rhubarb as a vegetable
+(CBP ruling NY R02369, 2005). A student repeating the sentence as current US law
+would be wrong. There is a better and still-live version for a French reader:
+Council Directive 2001/113/EC counts rhubarb stalks as fruit, which is why
+rhubarb preserve may be sold as *confiture*.
+
+**Pink peppercorn — the ending is unverified.** The 1982 action is documented
+(New York Times, 31 March 1982) but the grounds in the entry are wrong: the FDA
+said the berries *"can cause a severe toxic reaction"*, not allergy — the
+trigger was a report that *Schinus terebinthifolia* is a poison-ivy relative.
+And there is **no primary record of the ban being lifted at all** — no FDA
+notice, no Federal Register entry, no date. Every account traces back to the
+same 1982 article. Cutting against the tidy ending: the GRAS list at 21 CFR
+182.20 still names only *Schinus molle*, not the Réunion species.
+
+**Cerignola — one half verified, two not.** The DOP name is right: Commission
+Regulation (EC) No 1904/2000 registers *La Bella della Daunia*. But "well under
+140 fruits to the kilo" is **not in the register** — the specification fixes
+fruit weight at 6–30 g, which is 33 to 167 per kilo, so it permits fruit smaller
+than the claim. And "largest table olive in commerce" is a growers' claim only;
+the International Olive Council's world catalogue has no Cerignola entry at all.
+
+Each of the three came back with a suggested rewrite in the same register as
+your prose. They are in the workflow output; I have not touched the entries —
+the writing is yours.
+
 ## Waiting for you
 
-**Wiring texture into the engine.** The data is there; what the lab *says* about
-it is the reviewable half. This is the first thing to do together.
+**Three prose rewrites to accept or refuse** — rhubarb, pink peppercorn,
+Cerignola. All three entries currently say something the sources do not support.
 
-**The vocabulary has no tag for a thin liquid.** The auditor found it and it is
+**~~The vocabulary has no tag for a thin liquid.~~ Closed — see above.** The auditor found it and it is
 a real gap, not carelessness: vinegars, soy sauces, ponzu, verjuice, rose water
 and kombucha all ended up as `moist`, which means a damp solid. A vinegar is
 neither juicy nor dry nor moist. Worth closing before texture drives any
 verdict.
 
-**Six buckets ran on autopilot in places.** The cellar is the worst: 33 spirits
+**~~Six buckets ran on autopilot.~~ The cellar is re-tagged; the rest stand.** The cellar is the worst: 33 spirits
 and fortified wines share an identical `smooth + silky`, so a kirsch, a grappa
 and a vin jaune are indistinguishable. Fifty-one rows there had no
 discrimination attempted. The grains' uniformity I would defend — dried beans
@@ -64,10 +127,6 @@ really are alike in the state met — but the spirits need a second pass.
 **Eighty-four entries the assigning agents flagged as genuine doubts**, listed
 in the workflow output. Offal, sea squirts, honeys, the chocolates, the
 gelling agents. A cook's eye would settle most of them in an hour.
-
-**Three claims still unverified**: rhubarb's 1947 US court ruling, the FDA's
-1982 pink peppercorn ban, and Cerignola's DOP under the name La Bella della
-Daunia.
 
 ## Not done
 

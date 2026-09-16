@@ -441,7 +441,7 @@ svg:'<path class="f1 sf" d="M46 19c16-1 31 10 34 25 3 16-8 30-24 33-16 3-31-7-36
 
 {id:"boyaux-naturels",cat:"cuts",price:2,pk:"10–25 €/kg",name:{en:"Natural casings",fr:"Boyaux naturels"},latin:"Sus scrofa / Ovis aries / Bos taurus (intestinum)",
 origin:{en:"Sheep, pig and beef intestine",fr:"Intestin de mouton, de porc et de bœuf"},season:[],
-flavor:["mild","salty","meaty"],texture:["firm","silky"],
+flavor:["mild","salty","meaty"],texture:["tough","silky","moist"],
 story:{en:"Casings are sold not by weight but by calibre in millimetres, and under their trade names: menu de mouton for merguez, menu de porc for the breakfast sausage, chaudin and baudruche for the big drying saucissons. The number commands everything downstream — a wider casing dries more slowly, so a charcutier chooses the skin before choosing the meat.",
 fr:"Les boyaux se vendent au calibre, en millimètres, et sous leur nom de métier : menu de mouton pour la merguez, menu de porc pour la saucisse, chaudin et baudruche pour les gros saucissons de séchage. Le chiffre commande tout ce qui suit — un boyau large sèche plus lentement, si bien que le charcutier choisit la peau avant de choisir la viande."},
 tip:{en:"They arrive packed in salt: rinse them, soak at least half an hour in tepid water, and run water through the inside so they slide onto the horn. Stuff them slack — a casing filled tight has nowhere to go when you twist the links, and it splits.",

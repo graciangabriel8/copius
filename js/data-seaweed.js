@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M48 80v-16q-14-2-18-14 8-4 14 2-6-10-2-20 8 4 8 16 4
 
 {id:"gagome-kombu",cat:"seaweed",rare:true,price:3,pk:"120–220 €/kg",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaidō"},season:[7,8,9],
-flavor:["marine","mild","umami"],texture:["tough","viscous","dry"],
+flavor:["marine","mild","umami"],texture:["tough","brittle","dry"],
 story:{en:"Gagome names the basket-weave: the blade is embossed all over with a lattice of pits, which is how it is told from every other kelp growing on the same rocks. It holds to a short stretch of sea around Hakodate and almost nowhere else, and it is gathered for the slime rather than in spite of it.",
 fr:"Gagome désigne le vannage : la fronde est gaufrée d'un treillis de creux sur toute sa surface, ce qui la distingue de toutes les autres laminaires poussant sur les mêmes rochers. Elle se cantonne à une courte portion de mer autour de Hakodate et presque nulle part ailleurs, et on la récolte pour son mucilage, non malgré lui."},
 tip:{en:"Shred it fine and steep in cold water for ten minutes; the liquid thickens on its own and binds a dressing with no starch at all. Keep it out of a clear soup — it will never give a transparent dashi.",
