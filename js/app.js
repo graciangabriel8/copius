@@ -363,6 +363,7 @@
     el("tabTech").textContent = t.tabTech;
     el("tabBases").textContent = t.tabBases;
     el("tabLab").textContent = t.tabLab;
+    paintSeg("viewTabs");
     /* a tab with nothing behind it reads as broken — hide it until it has data */
     el("tabTech").hidden = TECHNIQUES.length === 0;
     el("tabBases").hidden = BASES.length === 0;
@@ -775,6 +776,7 @@
     });
     /* Measured from the active button, which is zero-width while the panel is
        hidden — so the pill can only be placed once the panel is up. */
+    paintSeg("viewTabs");
     if (v === "lab") { paintSeg("labModes"); paintSeg("plateModes"); }
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
@@ -1506,16 +1508,29 @@
     if (!g) return;
     var on = g.querySelector("button.active");
     var ind = g.querySelector(".seg-ind");
+    var born = false;
     if (!ind) {
       ind = document.createElement("span");
       ind.className = "seg-ind";
       ind.setAttribute("aria-hidden", "true");
       g.insertBefore(ind, g.firstChild);
+      born = true;
     }
     if (!on || !on.offsetWidth) { ind.style.opacity = "0"; return; }
+
+    var w = on.offsetWidth + "px", x = "translateX(" + on.offsetLeft + "px)";
+    if (born) {
+      /* A brand-new element has no rendered start state, so the browser may
+         collapse the first placement and every later one into a single frame
+         with nothing to animate. Read a layout property to settle it at its
+         CSS start (width 0, untranslated) before moving it for the first
+         time. */
+      /* eslint-disable-next-line no-unused-expressions */
+      ind.offsetWidth;
+    }
     ind.style.opacity = "1";
-    ind.style.width = on.offsetWidth + "px";
-    ind.style.transform = "translateX(" + on.offsetLeft + "px)";
+    ind.style.width = w;
+    ind.style.transform = x;
   }
 
   function renderPlateAll() {
