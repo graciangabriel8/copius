@@ -314,6 +314,7 @@
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabTech").textContent = t.tabTech;
     el("tabBases").textContent = t.tabBases;
+    el("tabLab").textContent = t.tabLab;
     /* a tab with nothing behind it reads as broken — hide it until it has data */
     el("tabTech").hidden = TECHNIQUES.length === 0;
     el("tabBases").hidden = BASES.length === 0;
@@ -710,20 +711,23 @@
      cook is expected to know and the part a school can teach from; the bases,
      the chefs, the lab and the trios are the product. Named here once, because
      setView, renderAll and the tier switch all have to agree. */
-  var PAID_VIEWS = ["chefs", "bases"];
+  var PAID_VIEWS = ["chefs", "bases", "lab"];
   function viewAllowed(v) { return !FREE_MODE || PAID_VIEWS.indexOf(v) === -1; }
 
   function setView(v) {
     if (!viewAllowed(v)) v = "atlas";
     state.view = v;
     try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
-    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView" };
-    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases" };
+    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView" };
+    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab" };
     Object.keys(views).forEach(function (k) {
       el(views[k]).hidden = v !== k;
       el(tabs[k]).classList.toggle("active", v === k);
       el(tabs[k]).setAttribute("aria-selected", v === k);
     });
+    /* Measured from the active button, which is zero-width while the panel is
+       hidden — so the pill can only be placed once the panel is up. */
+    if (v === "lab") { paintSeg("labModes"); paintSeg("plateModes"); }
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
     if (v === "bases") renderBases();
@@ -1659,13 +1663,10 @@
     renderCats();
     renderDaily();
     renderGrid();
-    /* The lab and the trios are the paid product. Hidden rather than emptied:
-       an empty lab invites a bug report, a missing one reads as a tier. */
-    var labEl = el("lab"), triosEl = el("triosSec");
-    if (labEl) labEl.hidden = FREE_MODE;
-    if (triosEl) triosEl.hidden = FREE_MODE;
+    /* The lab and the trios are the paid product and now share a tab of their
+       own, so the tab is the whole gate — nothing inside it needs hiding too. */
     PAID_VIEWS.forEach(function (v) {
-      var tab = el(v === "chefs" ? "tabChefs" : "tabBases");
+      var tab = el({ chefs: "tabChefs", bases: "tabBases", lab: "tabLab" }[v]);
       if (tab) tab.hidden = FREE_MODE;
     });
     /* Switching down to free while standing in a paid view has to move the
@@ -1866,10 +1867,10 @@
     if (lab) {
       var id = lab.getAttribute("data-lab");
       closeModal();
-      // The lab lives inside #atlasView, which setView hides outright while the
-      // chefs, techniques or bases tab is up. Without this the button scrolled
-      // to a hidden element and looked broken from every tab but one.
-      setView("atlas");
+      // setView hides every panel but the current one, so a jump into the lab
+      // has to switch to the lab's tab or it scrolls to a hidden element.
+      setView("lab");
+      setLabMode("pair");
       el("labA").value = id;
       renderLabResult();
       el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
@@ -1881,7 +1882,8 @@
        every pair among them, which is the question the dish actually poses. */
     var dishLab = e.target.closest("[data-dishlab]");
     if (dishLab) {
-      setView("atlas");
+      setView("lab");
+      setLabMode("pair");
       renderLabSet(dishLab.getAttribute("data-dishlab").split(","),
                    dishLab.getAttribute("data-dishname") || "");
       el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
@@ -1921,6 +1923,7 @@
   el("tabChefs").addEventListener("click", function () { setView("chefs"); });
   el("tabTech").addEventListener("click", function () { setView("tech"); });
   el("tabBases").addEventListener("click", function () { setView("bases"); });
+  el("tabLab").addEventListener("click", function () { setView("lab"); });
   el("techSearch").addEventListener("input", function (e) { state.techQ = e.target.value; renderTech(); });
   el("techGroup").addEventListener("change", function (e) { state.techGroup = e.target.value; renderTech(); });
   el("baseSearch").addEventListener("input", function (e) { state.baseQ = e.target.value; renderBases(); });
