@@ -17,7 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=138">
+<link rel="stylesheet" href="css/style.css?v=139">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -49,6 +49,9 @@
     <button id="createBtn" class="create-btn" type="button"></button>
     <a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" data-i18n-aria="igLink"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a>
       <button id="themeBtn" class="theme-btn" type="button" data-i18n-aria="ariaTheme"></button>
+    <div class="lang-toggle tier-toggle" role="group" data-i18n-aria="ariaTier">
+      <button id="tier-free" type="button"></button><button id="tier-full" type="button"></button>
+    </div>
     <div class="lang-toggle" role="group" aria-label="Language / Langue">
       <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
     </div>
@@ -64,6 +67,7 @@
   </nav>
 
   <div id="atlasView" role="tabpanel">
+  <p id="tierNote" class="tier-note"></p>
   <section id="daily" class="daily" role="button" tabindex="0"></section>
 
   <nav id="cats" class="cats" data-i18n-aria="ariaFamilies"></nav>
@@ -171,39 +175,39 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/tier.js?v=138"></script>
-<script src="js/i18n.js?v=138"></script>
-<script src="js/photos.js?v=138"></script>
-  <script src="js/data-cellar.js?v=138"></script>
-  <script src="js/data-condiments.js?v=138"></script>
-  <script src="js/data-cuts.js?v=138"></script>
-  <script src="js/data-dairy.js?v=138"></script>
-  <script src="js/data-flowers.js?v=138"></script>
-  <script src="js/data-fats.js?v=138"></script>
-  <script src="js/data-fruits.js?v=138"></script>
-  <script src="js/data-grains.js?v=138"></script>
-  <script src="js/data-herbs.js?v=138"></script>
-  <script src="js/data-infusions.js?v=138"></script>
-  <script src="js/data-legumes.js?v=138"></script>
-  <script src="js/data-meat.js?v=138"></script>
-  <script src="js/data-mushrooms.js?v=138"></script>
-  <script src="js/data-nuts.js?v=138"></script>
-  <script src="js/data-roe.js?v=138"></script>
-  <script src="js/data-seafood.js?v=138"></script>
-  <script src="js/data-seaweed.js?v=138"></script>
-  <script src="js/data-shellfish.js?v=138"></script>
-  <script src="js/data-spices.js?v=138"></script>
-  <script src="js/data-sweet.js?v=138"></script>
-  <script src="js/data-texture.js?v=138"></script>
-  <script src="js/data-vegetables.js?v=138"></script>
-<script src="js/data-bases.js?v=138"></script>
-  <script src="js/data-techniques.js?v=138"></script>
-  <script src="js/data-trees.js?v=138"></script>
-<script src="js/data-chefs.js?v=138"></script>
-<script src="js/trios.js?v=138"></script>
-<script src="js/trios-gastronomy.js?v=138"></script>
-<script src="js/trios-premium.js?v=138"></script>
-<script src="js/app.js?v=138"></script>
+<script src="js/tier.js?v=139"></script>
+<script src="js/i18n.js?v=139"></script>
+<script src="js/photos.js?v=139"></script>
+  <script src="js/data-cellar.js?v=139"></script>
+  <script src="js/data-condiments.js?v=139"></script>
+  <script src="js/data-cuts.js?v=139"></script>
+  <script src="js/data-dairy.js?v=139"></script>
+  <script src="js/data-flowers.js?v=139"></script>
+  <script src="js/data-fats.js?v=139"></script>
+  <script src="js/data-fruits.js?v=139"></script>
+  <script src="js/data-grains.js?v=139"></script>
+  <script src="js/data-herbs.js?v=139"></script>
+  <script src="js/data-infusions.js?v=139"></script>
+  <script src="js/data-legumes.js?v=139"></script>
+  <script src="js/data-meat.js?v=139"></script>
+  <script src="js/data-mushrooms.js?v=139"></script>
+  <script src="js/data-nuts.js?v=139"></script>
+  <script src="js/data-roe.js?v=139"></script>
+  <script src="js/data-seafood.js?v=139"></script>
+  <script src="js/data-seaweed.js?v=139"></script>
+  <script src="js/data-shellfish.js?v=139"></script>
+  <script src="js/data-spices.js?v=139"></script>
+  <script src="js/data-sweet.js?v=139"></script>
+  <script src="js/data-texture.js?v=139"></script>
+  <script src="js/data-vegetables.js?v=139"></script>
+<script src="js/data-bases.js?v=139"></script>
+  <script src="js/data-techniques.js?v=139"></script>
+  <script src="js/data-trees.js?v=139"></script>
+<script src="js/data-chefs.js?v=139"></script>
+<script src="js/trios.js?v=139"></script>
+<script src="js/trios-gastronomy.js?v=139"></script>
+<script src="js/trios-premium.js?v=139"></script>
+<script src="js/app.js?v=139"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

@@ -68,8 +68,11 @@
      pairing list is worse than none. User creations are never gated; they are
      the visitor's own. */
   var TIER = window.COPIUS_TIER || { MODE: "full", FREE_IDS: [] };
-  var FREE_MODE = TIER.MODE === "free";
-  var FREE_SET = FREE_MODE ? new Set(TIER.FREE_IDS) : null;
+  var LS_TIER = "copius-tier";
+  var FREE_SET = new Set(TIER.FREE_IDS);
+  /* The visitor may look at either version. Nothing is withheld by this switch
+     — it is a showcase, not a gate, and it says so on the label. */
+  var FREE_MODE = (readItem(LS_TIER) || TIER.MODE) === "free";
 
   function tierBase() {
     if (!FREE_MODE) return BASE;
@@ -319,6 +322,11 @@
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
+    el("tier-free").textContent = t.tierFree;
+    el("tier-full").textContent = t.tierFull;
+    el("tier-free").classList.toggle("active", FREE_MODE);
+    el("tier-full").classList.toggle("active", !FREE_MODE);
+    el("tierNote").textContent = FREE_MODE ? t.tierNoteFree : "";
     var t2 = t;
     fillSel("priceBand", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceBand);
     /* Built from the tags that exist rather than a hand-kept list, so a new
@@ -1263,6 +1271,18 @@
     refreshOpenModal();
   }
 
+  /* Switching tier changes which entries exist, so an open modal may be showing
+     one that no longer does. Close it rather than refresh it. */
+  function setTier(mode) {
+    var want = mode === "free";
+    if (want === FREE_MODE) return;
+    FREE_MODE = want;
+    try { localStorage.setItem(LS_TIER, mode); } catch (e) {}
+    closeModal();
+    rebuildIndex();
+    renderAll();
+  }
+
   /* ---------- motion ---------- */
   /* The search placeholder types out what the field understands — an
      ingredient, a flavour, a family — while the field is empty and nobody is
@@ -1346,6 +1366,8 @@
 
   el("lang-en").addEventListener("click", function () { setLang("en"); });
   el("lang-fr").addEventListener("click", function () { setLang("fr"); });
+  el("tier-free").addEventListener("click", function () { setTier("free"); });
+  el("tier-full").addEventListener("click", function () { setTier("full"); });
 
   el("search").addEventListener("input", function (e) { state.q = e.target.value; renderGrid(); });
   el("seasonNow").addEventListener("change", function (e) { state.seasonNow = e.target.checked; renderGrid(); });
