@@ -11,7 +11,7 @@ Je suis étudiant en deuxième année de BTS Management en Hôtellerie-Restaurat
 
 L'édition précédente de votre appel à projets évoquait, parmi les besoins identifiés, l'insuffisance de l'illustration dans certains manuels. C'est précisément le manque auquel cette ressource a été conçue pour répondre.
 
-Avant d'en parler à mon établissement, je souhaiterais vérifier deux points :
+Avant d'en parler à mon établissement, je souhaiterais vérifier trois points :
 
 1. Une édition 2026-2027 de l'appel à projets est-elle prévue, et selon quel calendrier de dépôt ?
 
