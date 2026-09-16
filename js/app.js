@@ -1181,6 +1181,11 @@
   var labMode = "pair";           // pair | plate
   var plateMode = "guided";       // guided | free
   var plateTpl = "main";          // which guided template, when guided
+  /* Suggestions a cook has waved off, keyed by template and role so switching
+     away and back remembers. A skipped slot stops being a gap: it is not what
+     the picker offers next and it does not sit there looking unfinished. */
+  var plateSkip = {};
+  function skipKey(role) { return plateTpl + ":" + role; }
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
   var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
@@ -1225,7 +1230,8 @@
       used[r] = (used[r] || 0) + 1;
     });
     return template().slots.map(function (g) {
-      return { role: g.role, n: g.n, filled: Math.min(used[g.role] || 0, g.n) };
+      return { role: g.role, n: g.n, filled: Math.min(used[g.role] || 0, g.n),
+               skipped: !!plateSkip[skipKey(g.role)] };
     });
   }
   /* One ceiling, both modes. Guided never blocks on its slots. */
@@ -1242,7 +1248,9 @@
     else if (plateMode === "guided") {
       /* Point at the next thing the template is still missing, without
          refusing anything else. */
-      var gap = roleRoom().filter(function (g) { return g.filled < g.n; })[0];
+      var gap = roleRoom().filter(function (g) {
+        return !g.skipped && g.filled < g.n;
+      })[0];
       if (gap) sel.value = gap.role;
     }
   }
@@ -1325,8 +1333,11 @@
       for (var k = 0; k < g.n; k++) {
         pips += '<span class="slot-pip' + (k < g.filled ? " on" : "") + '" aria-hidden="true"></span>';
       }
-      return '<div class="plate-slot' + (g.filled >= g.n ? " done" : "") + '">' +
-        '<span class="slot-role">' + esc(t.roles[g.role]) + "</span>" + pips + "</div>";
+      var cls = "plate-slot" + (g.skipped ? " skipped" : g.filled >= g.n ? " done" : "");
+      return '<button type="button" class="' + cls + '" data-plate-skip="' + g.role + '"' +
+        ' aria-pressed="' + (g.skipped ? "true" : "false") + '"' +
+        ' title="' + esc(g.skipped ? t.plateUnskip : t.plateSkip) + '">' +
+        '<span class="slot-role">' + esc(t.roles[g.role]) + "</span>" + pips + "</button>";
     }).join("");
   }
 
@@ -1891,6 +1902,19 @@
     if (pp) { photoTarget = pp.getAttribute("data-photo-pick"); el("photoFile").click(); return; }
     var pd = e.target.closest("[data-photo-del]");
     if (pd) { deletePhoto(pd.getAttribute("data-photo-del")); return; }
+    var sk = e.target.closest("[data-plate-skip]");
+    if (sk) {
+      var role = sk.getAttribute("data-plate-skip");
+      if (plateSkip[skipKey(role)]) delete plateSkip[skipKey(role)];
+      else {
+        plateSkip[skipKey(role)] = true;
+        /* Waving a slot off while the picker is aimed at it should move the
+           aim, or the next thing offered is the thing just refused. */
+        if (el("plateRole").value === role) el("plateRole").value = "";
+      }
+      renderPlateAll();
+      return;
+    }
     var why = e.target.closest("[data-plate-why]");
     if (why) { plateWhyOpen = !plateWhyOpen; renderPlateVerdict(); return; }
     var px = e.target.closest("[data-plate-del]");

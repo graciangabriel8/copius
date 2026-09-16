@@ -866,8 +866,14 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 /* guided slots: what a plate needs, and how much of it is there */
 .plate-slots{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:16px}
 .plate-slot{display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
-  background:var(--chip);border:1px solid var(--border);font-size:13px;color:var(--ink-2)}
+  background:var(--chip);border:1px solid var(--border);font-size:13px;color:var(--ink-2);
+  font-family:inherit;cursor:pointer;transition:opacity .18s ease,color .18s ease}
 .plate-slot.done{border-color:var(--border-strong);color:var(--ink)}
+/* waved off: still there to put back, no longer asking for anything */
+.plate-slot.skipped{opacity:.45;border-style:dashed}
+.plate-slot.skipped .slot-role{text-decoration:line-through}
+.plate-slot.skipped .slot-pip{opacity:.4}
+.plate-slot:hover{border-color:var(--border-strong)}
 .slot-role{letter-spacing:.02em}
 .slot-pip{width:7px;height:7px;border-radius:50%;border:1px solid var(--border-strong);display:inline-block}
 .slot-pip.on{background:var(--ink);border-color:var(--ink)}

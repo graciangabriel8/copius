@@ -396,14 +396,16 @@
      Sized against the atlas's own 40 trios and 39 chef dishes rather than
      invented. Savoury plates there carry a protein in 65% of cases, a fat in
      57%, a vegetable in 55%, a seasoning in 43%; sweet ones carry fruit or
-     sweet pantry in 100% and average 1.8 of them. The one place these
-     templates knowingly depart from that corpus is the starch, which appears
-     in 12% of records — the records are headline lists that leave out what a
-     cook assumes, and French service teaches the plate with a féculent on it. */
+     sweet pantry in 100% and average 1.8 of them.
+
+     No template asks for a starch. It appears in 12% of the records, and the
+     cook these are written for says the same of the kitchens he has worked in:
+     there is not much féculent in fine dining. It stays one pick away in the
+     role list for anyone who wants one. */
   var TEMPLATES = [
     { id: "main", slots: [
       { role: "protein", n: 1 }, { role: "vegetable", n: 2 },
-      { role: "starch", n: 1 }, { role: "sauce", n: 1 }, { role: "seasoning", n: 1 }
+      { role: "sauce", n: 1 }, { role: "seasoning", n: 1 }
     ] },
     { id: "starter", slots: [
       { role: "vegetable", n: 2 }, { role: "protein", n: 1 },
