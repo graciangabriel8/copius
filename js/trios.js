@@ -1,5 +1,5 @@
 // Curated three-ingredient combinations. ids must exist in INGREDIENTS.
-window.TRIOS = [
+window.TRIOS = (window.TRIOS || []).concat([
 {ids:["tomato","basil","mozzarella"],name:{en:"The Caprese spirit",fr:"L’esprit caprese"},
  note:{en:"Italy’s flag on a plate — sweet, milky, perfumed.",fr:"Le drapeau italien dans l’assiette — sucré, lacté, parfumé."}},
 {ids:["lemon","garlic","parsley"],name:{en:"Gremolata",fr:"Gremolata"},
@@ -36,4 +36,4 @@ window.TRIOS = [
  note:{en:"The smell every kitchen wants to have.",fr:"L’odeur que toute cuisine voudrait avoir."}},
 {ids:["dark-chocolate","orange","cardamom"],name:{en:"The perfumed dark",fr:"Le noir parfumé"},
  note:{en:"Bitter depth lifted by citrus and the queen of spices.",fr:"La profondeur amère relevée par l’agrume et la reine des épices."}}
-];
+]);
