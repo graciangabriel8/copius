@@ -23,15 +23,16 @@ Je vous remercie par avance du temps que vous voudrez bien y consacrer.
 
 Cordialement,
 
-Gabriel Gracian
+Gracian-Leroudier Gabriel
 contact@copius.fr — https://copius.fr
 
 ---
 
 ## Notes avant envoi
 
-- **Le nom.** Le site signe « Gabriel Gracian » ; ta boîte affiche « Gabriel Gracian-Leroudier ». Mets celui que tu veux voir associé au projet, mais garde le même partout.
+- **Le nom — décidé le 16/09/2026 : « Gracian-Leroudier Gabriel ».** Le site signe encore « Gabriel Gracian » sur la page À propos. À aligner, ou à assumer comme un nom de plume.
 - **La phrase sur l'illustration** est volontairement une paraphrase. La citation exacte trouvée en recherche — « illustrations inadaptées dans certains manuels scolaires » — n'a pas été relue à la source. Si tu la retrouves sur leur page, tu peux la citer entre guillemets : c'est plus fort. Sinon, laisse la paraphrase.
 - **Ne joins rien.** Pas de plaquette, pas de dossier. Deux questions courtes se répondent ; une candidature spontanée se classe.
 - **Tu n'engages pas ton lycée.** « Avant d'en parler à mon établissement » est là pour ça : tu te renseignes, tu ne déposes pas.
-- **Si la réponse au point 2 est « oui, et c'est fermé aux indépendants »**, cette voie s'arrête là et il faut le savoir avant d'en parler à qui que ce soit.
+- **Si la réponse au point 2 est « oui, et c'est fermé aux indépendants »**, cette voie s'arrête là et il faut le savoir avant d'en parler à qui que ce soit. Même chose au point 3 : si le GAR est exigé, c'est une adhésion ministérielle plus trois interfaces à construire, pas un réglage.
+- **Vérifié le 16/09/2026 :** aucune édition 2026-2027 n'est publiée sur le site de la Région. L'édition précédente avait ouvert le 22 septembre. La question 1 est donc bien une question, pas une formalité.
