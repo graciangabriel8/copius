@@ -1,5 +1,17 @@
 # Mail — Région Auvergne-Rhône-Alpes, appel à projets ressources numériques
 
+> **ENVOYÉ le 16 septembre 2026**, depuis contact@copius.fr, à
+> gratuite_manuels_scolaires@auvergnerhonealpes.fr. Sans pièce jointe.
+> Signé « Gracian-Leroudier Gabriel ».
+>
+> **Relance :** si aucune réponse au 30 septembre 2026, ou dès que l'édition
+> 2026-2027 paraît sur le site de la Région — l'édition précédente avait ouvert
+> le 22 septembre.
+>
+> **Ce que la réponse décide :** si le GAR est exigé (question 3) ou si le
+> référencement LDE/PopLab est fermé aux indépendants (question 2), cette voie
+> s'arrête et il n'y a pas de dossier à préparer.
+
 **À :** gratuite_manuels_scolaires@auvergnerhonealpes.fr
 **Objet :** Appel à projets « Ressources numériques complémentaires » — édition 2026-2027 : calendrier et conditions de référencement
 
