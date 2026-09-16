@@ -1205,6 +1205,15 @@
     }
     return byId[id] ? byId[id].pairs.slice() : [];
   }
+  /* The branch's own texture where a form is chosen — purée is not a potato. */
+  function itemTexture(id, form) {
+    if (form) {
+      var b = branchesOf(id).filter(function (x) { return x.id === form; })[0];
+      if (b && b.texture && b.texture.length) return b.texture.slice();
+    }
+    return byId[id] && byId[id].texture ? byId[id].texture.slice() : [];
+  }
+
   function formName(id, form) {
     var b = branchesOf(id).filter(function (x) { return x.id === form; })[0];
     return b ? b.name[state.lang] : "";
@@ -1402,7 +1411,11 @@
   function renderPlateVerdict() {
     var t = T(), box = el("plateVerdict");
     if (plate.length < 1) { box.innerHTML = ""; return; }
-    var r = PLATE.judge(plate, { byId: function (id) { return byId[id] || null; }, pairsOf: itemPairs });
+    var r = PLATE.judge(plate, {
+      byId: function (id) { return byId[id] || null; },
+      pairsOf: itemPairs,
+      textureOf: itemTexture
+    });
 
     /* One note may name ingredients; the rest are plain sentences. */
     function noteText(nt) {
@@ -1491,6 +1504,12 @@
             esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
           (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
           (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "")
+        : "") +
+      /* Texture reads beside the tastes, without a score: it earns none. */
+      (r.texture !== null && r.texNotes.length
+        ? "<h3>" + esc(t.plateTexture) + ' <span class="lab-set-count">' +
+            esc(t.plateTextureN.replace("{n}", r.textured).replace("{t}", r.count)) + "</span></h3>" +
+          '<ul class="plate-notes">' + r.texNotes.map(noteLi).join("") + "</ul>"
         : "") +
       (r.structure.length
         ? "<h3>" + esc(t.plateStructure) + "</h3>" +

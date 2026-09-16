@@ -83,6 +83,29 @@
     mild: "quiet", delicate: "quiet"
   };
 
+  /* ---------- texture ----------
+     What the flavour axes cannot see. A plate can be perfectly balanced across
+     the five tastes and still be three soft things in a row, which is the
+     failure every cook is taught to avoid before any other.
+
+     The vocabulary is 23 tags; what the engine needs from them is coarser than
+     the tags themselves — whether a thing RESISTS the teeth or YIELDS to them.
+     Contrast between the two is the whole judgement. */
+  var RESISTS = ["firm", "hard", "tough", "crisp", "crunchy", "brittle",
+                 "chewy", "granular", "fibrous", "flaky"];
+  var YIELDS = ["soft", "tender", "creamy", "silky", "gelatinous", "viscous",
+                "fluid", "airy", "smooth", "powdery"];
+  var WET = ["juicy", "moist", "fluid"];
+
+  /* A form changes texture more than it changes anything else — a purée and a
+     frite are the same potato and nothing about how they eat is shared. The
+     caller knows the form, so it supplies the tags; falling back to the
+     ingredient's own only when there is no form on the plate. */
+  function textureOf(tags) { return tags || []; }
+  function hasAny(tags, list) {
+    return (tags || []).some(function (t) { return list.indexOf(t) !== -1; });
+  }
+
   /* The five the balance wheel is drawn from. */
   var PRIMARY = ["sweet", "salty", "sour", "bitter", "umami"];
   var SUPPORT = ["fat", "heat", "aroma", "depth", "quiet"];
@@ -103,8 +126,10 @@
 
   /* ---------- the verdict ----------
      ctx supplies what the engine cannot know on its own:
-       byId(id)        -> ingredient record, or null
-       pairsOf(id,form) -> array of ids this item pairs with, in this form
+       byId(id)          -> ingredient record, or null
+       pairsOf(id,form)  -> array of ids this item pairs with, in this form
+       textureOf(id,form) -> texture tags in this form (optional; falls back to
+                            the ingredient's own)
 
      A form matters here. Potato purée and potato frites are the same entry and
      not the same ingredient: js/data-trees.js records different pairings for
@@ -229,6 +254,22 @@
        than for flesh threw out most of patisserie, since a coulant is
        chocolate, butter, EGG and sugar. The rules that ask for a savoury
        anchor stand down here, because a charlotte is not missing anything. */
+    /* Texture, gathered the same way as the rest. A plate whose entries carry no
+       texture at all (a tier that strips it, older data) reads as unknown
+       rather than as a fault — `textured` says whether anything can be said. */
+    var textured = 0, nResist = 0, nYield = 0, nWet = 0, texTags = {};
+    items.forEach(function (it) {
+      var ing = ctx.byId(it.id);
+      var tt = ctx.textureOf ? ctx.textureOf(it.id, it.form) : (ing.texture || []);
+      if (!tt.length) return;
+      textured++;
+      if (hasAny(tt, RESISTS)) nResist++;
+      if (hasAny(tt, YIELDS)) nYield++;
+      if (hasAny(tt, WET)) nWet++;
+      tt.forEach(function (t) { texTags[t] = true; });
+    });
+    var texVariety = Object.keys(texTags).length;
+
     var sweetPlate = flesh === 0 && roles.fruit >= Math.max(1, Math.ceil(n / 3)) &&
                      axisCount.sweet >= 2 && axisCount.sweet > savoury * 2;
 
@@ -243,7 +284,9 @@
     S.savoury = n ? savoury / n : 0;
 
     var c = { A: axisCount, S: S, roles: roles, n: n, loud: loudCount, distinct: distinct,
-              savoury: savoury, seasoned: seasoned, tastes: tastes, sweetPlate: sweetPlate };
+              savoury: savoury, seasoned: seasoned, tastes: tastes, sweetPlate: sweetPlate,
+              textured: textured, resist: nResist, yield: nYield, wet: nWet,
+              texVariety: texVariety };
 
     var RULES = [
       /* --- what is missing, heaviest first --- */
@@ -313,10 +356,37 @@
         test: function (c) { return c.S.depth >= 0.34 && c.seasoned >= 1; } }
     ];
 
+    /* Texture reads on its own table. Every rule stands down when the plate
+       carries no texture data, so an entry without the field costs nothing. */
+    var TEXTURE_RULES = [
+      { key: "plateAllSoft", level: "warn", points: -16,
+        test: function (c) { return c.textured >= 3 && c.resist === 0; } },
+      { key: "plateAllHard", level: "warn", points: -12,
+        test: function (c) { return c.textured >= 3 && c.yield === 0; } },
+      { key: "plateAllDry", level: "warn", points: -10,
+        test: function (c) { return c.textured >= 3 && c.wet === 0; } },
+      { key: "plateOneTexture", level: "warn", points: -8,
+        test: function (c) { return c.textured >= 4 && c.texVariety <= 3; } },
+      /* Shares, not presence. "Something resists and something yields" is true
+         of 96% of plates drawn at random from 1 838 ingredients, and a line
+         that appears almost always tells a cook nothing. It has to be a real
+         share of the plate on both sides before it is worth saying. */
+      { key: "plateBite", level: "ok", points: 14,
+        test: function (c) {
+          return c.textured >= 3 &&
+                 c.resist / c.textured >= 0.34 && c.yield / c.textured >= 0.34;
+        } },
+      { key: "plateTextureRange", level: "ok", points: 6,
+        test: function (c) {
+          return c.textured >= 3 && c.texVariety >= Math.ceil(c.textured * 1.8);
+        } }
+    ];
+
     /* A neutral plate that trips nothing sits here. Not a half-mark out of a
        hundred — the score is a reading, and its meaning is the band. */
     var BASE = 55;
-    var flavour = null, cohesion = null, score = null, band = null;
+    var flavour = null, cohesion = null, texture = null, score = null, band = null;
+    var texNotes = [];
 
     if (n >= MIN_JUDGED) {
       RULES.forEach(function (rule) {
@@ -342,6 +412,24 @@
         var bridged = rows.filter(function (x) { return x.verdict === "mid"; }).length;
         cohesion = Math.round(100 * (direct + 0.4 * bridged) / rows.length);
       }
+      /* Scored but not yet weighted into the grade: whether texture separates
+         real cooking from ingredients drawn at random is a measurement, not an
+         assumption, and the flavour reading already failed that test. */
+      if (textured >= MIN_JUDGED) {
+        texture = BASE;
+        TEXTURE_RULES.forEach(function (rule) {
+          if (rule.test(c)) {
+            texNotes.push({ level: rule.level, key: rule.key, points: rule.points });
+            texture += rule.points;
+          }
+        });
+        texture = Math.max(0, Math.min(100, texture));
+        texNotes.sort(function (x, y) {
+          if ((x.points < 0) !== (y.points < 0)) return x.points < 0 ? -1 : 1;
+          return Math.abs(y.points) - Math.abs(x.points);
+        });
+      }
+
       score = Math.round(0.4 * flavour + 0.6 * cohesion);
       score = Math.max(0, Math.min(100, score));
       band = score >= 74 ? "balanced" : score >= 56 ? "sound" : score >= 36 ? "uneven" : "off";
@@ -397,6 +485,9 @@
       score: score,        // null below MIN_JUDGED — too little to read
       flavour: flavour,    // the sixteen readings alone
       cohesion: cohesion,  // how much of the plate the atlas has recorded together
+      texture: texture,    // null when the plate carries no texture data
+      texNotes: texNotes,
+      textured: textured,
       band: band,
       notes: notes,        // the flavour reading, each note carrying its weight
       structure: structure // recorded-together, which earns no points

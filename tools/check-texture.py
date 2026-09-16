@@ -11,13 +11,16 @@ import json, io, sys, collections
 AXES = {
     "yield":    ["soft", "tender", "firm", "hard", "tough"],
     "surface":  ["crisp", "crunchy", "brittle", "smooth"],
-    "body":     ["creamy", "silky", "gelatinous", "viscous", "airy"],
+    # "fluid" closes the gap the audit found: a vinegar is neither juicy nor dry
+    # nor moist, and "moist" means a damp solid. Thin-flowing sits opposite
+    # viscous on the same axis.
+    "body":     ["creamy", "silky", "gelatinous", "viscous", "fluid", "airy"],
     "moisture": ["juicy", "moist", "dry"],
     "grain":    ["fibrous", "granular", "flaky", "powdery", "chewy"],
 }
 AXIS_OF = {t: a for a, ts in AXES.items() for t in ts}
 VOCAB = set(AXIS_OF)
-assert len(VOCAB) == 22, "the vocabulary is 22 tags, found %d" % len(VOCAB)
+assert len(VOCAB) == 23, "the vocabulary is 23 tags, found %d" % len(VOCAB)
 
 
 # What the axes were really guarding against was contradiction, and they were
@@ -31,6 +34,8 @@ CONTRADICTS = [
     ("creamy", "brittle"), ("silky", "granular"), ("smooth", "granular"),
     ("smooth", "fibrous"), ("juicy", "dry"), ("moist", "dry"),
     ("airy", "hard"), ("airy", "viscous"),
+    ("fluid", "viscous"), ("fluid", "hard"), ("fluid", "firm"),
+    ("fluid", "crisp"), ("fluid", "chewy"), ("fluid", "dry"),
 ]
 
 
