@@ -826,3 +826,93 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .tier-note{margin:0 0 18px;padding:10px 14px;border:1px solid var(--accent-soft-bd);
   border-radius:10px;background:var(--accent-soft);color:var(--accent-soft-ink);
   font-size:13px;line-height:1.5}
+
+/* ---------- the plate builder ---------- */
+.lab-modes,.plate-modes{margin:0 0 18px;width:max-content;max-width:100%}
+.plate-modes{margin-top:2px}
+.plate-hint{margin:0 0 16px}
+.plate-add{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.plate-add select{
+  font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);
+  border-radius:10px;background:var(--card);color:var(--ink);max-width:100%}
+.plate-add .btn-primary{flex:0 0 auto}
+.plate-add .btn-primary[disabled]{opacity:.45;cursor:not-allowed}
+
+/* guided slots: what a plate needs, and how much of it is there */
+.plate-slots{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:16px}
+.plate-slot{display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
+  background:var(--chip);border:1px solid var(--border);font-size:13px;color:var(--ink-2)}
+.plate-slot.done{border-color:var(--border-strong);color:var(--ink)}
+.slot-role{letter-spacing:.02em}
+.slot-pip{width:7px;height:7px;border-radius:50%;border:1px solid var(--border-strong);display:inline-block}
+.slot-pip.on{background:var(--ink);border-color:var(--ink)}
+
+.plate-items{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.plate-empty{margin:0 0 22px}
+.plate-chip{display:inline-flex;align-items:center;gap:9px;padding:7px 8px 7px 10px;
+  border:1px solid var(--border-strong);border-radius:12px;background:var(--card)}
+.plate-chip svg{width:26px;height:26px;flex:0 0 auto}
+.plate-chip-name{font-size:14.5px;color:var(--ink)}
+.plate-chip-role{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.plate-x{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;
+  color:var(--ink-3);padding:0 4px;border-radius:6px}
+.plate-x:hover{color:var(--ink)}
+
+/* balance: the axes actually present, strongest first */
+.axis-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+/* On the five-taste wheel a zero is drawn, not skipped — the gap is the reading. */
+.axis-grid.wheel .axis-row.empty .axis-name{color:var(--ink-3)}
+.axis-grid.wheel .axis-row.empty .axis-bar{border:1px dashed var(--border-strong);background:none}
+.axis-grid.wheel .axis-row.empty .axis-n{color:var(--ink-3)}
+.axis-grid.wheel .axis-bar>span{background:var(--ink)}
+.axis-row.support .axis-bar>span{background:var(--ink-3)}
+.axis-row{display:grid;grid-template-columns:132px 1fr 28px;align-items:center;gap:12px}
+.axis-name{font-size:13px;color:var(--ink-2)}
+.axis-bar{height:7px;border-radius:999px;background:var(--chip);overflow:hidden}
+.axis-bar>span{display:block;height:100%;background:var(--ink-2);border-radius:999px}
+.axis-n{font-size:12px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+
+/* the score: one reading, its band, and the weight behind each opinion */
+.score-head{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;
+  padding:16px 18px;margin-bottom:22px;border:1px solid var(--border-strong);
+  border-radius:12px;background:var(--card)}
+.score-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.score-label{font-family:var(--serif);font-size:17px;color:var(--ink)}
+.score-band{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink-2)}
+.score-band.balanced{border-color:var(--ink);color:var(--ink)}
+.score-band.off{border-style:dotted}
+.score-n{grid-row:1;grid-column:2;display:flex;align-items:baseline;gap:4px;
+  font-variant-numeric:tabular-nums}
+.score-n b{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1}
+.score-n span{font-size:12px;color:var(--ink-3)}
+.score-bar{grid-column:1/-1;height:8px;border-radius:999px;background:var(--chip);overflow:hidden}
+.score-bar>span{display:block;height:100%;border-radius:999px;background:var(--ink-2)}
+.score-bar>span.balanced{background:var(--ink)}
+.score-bar>span.off,.score-bar>span.uneven{background:var(--ink-3)}
+
+.plate-notes{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
+.plate-note{font-size:14.5px;line-height:1.55;padding:11px 14px;border-radius:10px;
+  border-left:3px solid var(--border-strong);background:var(--chip);color:var(--ink);
+  display:flex;align-items:flex-start;gap:12px}
+.note-pts{flex:0 0 auto;min-width:34px;font-size:12px;font-variant-numeric:tabular-nums;
+  letter-spacing:.02em;color:var(--ink-3);padding-top:2px}
+.plate-note.warn .note-pts{color:var(--ink)}
+.note-text{flex:1 1 auto}
+.plate-note.warn{border-left-color:var(--ink);}
+.plate-note.ok{border-left-style:solid;color:var(--ink-2);background:var(--bg)}
+.plate-note.info{border-left-style:dotted;color:var(--ink-3);background:var(--bg);font-style:italic}
+.plate-caveat{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+
+@media (max-width:600px){
+  .axis-row{grid-template-columns:96px 1fr 24px;gap:9px}
+  .plate-add select{width:100%}
+  .plate-add .btn-primary{width:100%}
+  /* The verdict is a whole sentence and carries flex:none, so on a narrow screen
+     it pushed the page 100px wider than the viewport rather than wrapping.
+     Stack the row instead — this reaches the dish sets as well, which had the
+     same overflow and nothing wide enough on screen to reveal it. */
+  .lab-set-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .score-head{grid-template-columns:1fr auto}
+  .lab-set-row .verdict{flex:1 1 auto;max-width:100%}
+}

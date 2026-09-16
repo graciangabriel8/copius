@@ -704,7 +704,15 @@
     return (parts[0] || "?").charAt(0) + (parts.length > 1 ? parts[parts.length - 1].charAt(0) : "");
   }
 
+  /* What the free tier does not carry. Ingredients and techniques are the part a
+     cook is expected to know and the part a school can teach from; the bases,
+     the chefs, the lab and the trios are the product. Named here once, because
+     setView, renderAll and the tier switch all have to agree. */
+  var PAID_VIEWS = ["chefs", "bases"];
+  function viewAllowed(v) { return !FREE_MODE || PAID_VIEWS.indexOf(v) === -1; }
+
   function setView(v) {
+    if (!viewAllowed(v)) v = "atlas";
     state.view = v;
     try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
     var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView" };
@@ -1087,7 +1095,9 @@
     }
     var order = { ok: 0, mid: 1, none: 2 };
     rows.sort(function (x, y) { return order[x[2]] - order[y[2]]; });
-    var label = { ok: t.labDirect, mid: t.labBridge, none: t.labNone };
+    /* The long bridge line ends in a colon that expects the bridge chips after
+       it, and a row has no room for them. */
+    var label = { ok: t.labDirect, mid: t.labBridgeShort, none: t.labNone };
     var direct = rows.filter(function (r) { return r[2] === "ok"; }).length;
     box.innerHTML =
       '<p class="lab-set-head">' + esc(dishName) +
@@ -1100,6 +1110,281 @@
           '<span class="verdict ' + r[2] + '">' +
           (r[2] === "ok" ? "&#10003;&nbsp; " : "") + esc(label[r[2]]) + "</span></li>";
       }).join("") + "</ul>";
+  }
+
+  /* ---------- the plate ----------
+     The two-slot lab answers "do these two agree". A plate asks something else:
+     is this balanced, does it hold together, and is anything here on its own.
+     js/plate.js does the judging and knows nothing about the DOM; everything
+     below is what turns its note keys into a page. */
+  var PLATE = window.COPIUS_PLATE;
+  var labMode = "pair";           // pair | plate
+  var plateMode = "guided";       // guided | free
+  var plate = [];                 // [{ id, form }] — form is a branch id, or ""
+
+  /* A form is not a garnish on the name. js/data-trees.js records a different
+     set of pairings for each preparation, because purée and frites do not agree
+     with the same things; when a form is chosen, those are the pairings. */
+  function branchesOf(id) {
+    var tr = treeById[id];
+    return tr ? tr.branches : [];
+  }
+  function itemPairs(id, form) {
+    if (form) {
+      var b = branchesOf(id).filter(function (x) { return x.id === form; })[0];
+      if (b && b.pairs) return b.pairs.filter(function (x) { return byId[x]; });
+    }
+    return byId[id] ? byId[id].pairs.slice() : [];
+  }
+  function formName(id, form) {
+    var b = branchesOf(id).filter(function (x) { return x.id === form; })[0];
+    return b ? b.name[state.lang] : "";
+  }
+  function itemLabel(it) {
+    var f = formName(it.id, it.form);
+    return name(byId[it.id]) + (f ? " · " + f : "");
+  }
+
+  /* Guided mode is a scaffold: the roles a plate needs, and how many of each.
+     A role with every slot filled drops out of the picker rather than being
+     refused after the fact. */
+  function roleRoom() {
+    var used = {};
+    plate.forEach(function (it) {
+      var r = PLATE.roleOf(byId[it.id]);
+      used[r] = (used[r] || 0) + 1;
+    });
+    return PLATE.GUIDED.map(function (g) {
+      return { role: g.role, n: g.n, filled: Math.min(used[g.role] || 0, g.n) };
+    });
+  }
+  function plateFull() {
+    if (plateMode === "free") return plate.length >= PLATE.MAX_FREE;
+    return roleRoom().every(function (g) { return g.filled >= g.n; });
+  }
+
+  function fillPlateRole() {
+    var t = T(), sel = el("plateRole"), prev = sel.value, opts;
+    if (plateMode === "guided") {
+      opts = roleRoom().filter(function (g) { return g.filled < g.n; })
+        .map(function (g) {
+          return '<option value="' + g.role + '">' + esc(t.roles[g.role]) +
+            " (" + g.filled + "/" + g.n + ")</option>";
+        }).join("");
+    } else {
+      opts = '<option value="">' + esc(t.plateRoleAll) + "</option>" +
+        PLATE.ROLES.map(function (r) {
+          return '<option value="' + r + '">' + esc(t.roles[r]) + "</option>";
+        }).join("");
+    }
+    sel.innerHTML = opts;
+    if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
+  }
+
+  function fillPlateIng() {
+    var sel = el("plateIng"), prev = sel.value, role = el("plateRole").value;
+    var t = T();
+    var list = ING.filter(function (i) {
+      if (role && PLATE.roleOf(i) !== role) return false;
+      return !plate.some(function (it) { return it.id === i.id; });
+    }).sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); });
+    sel.innerHTML = '<option value="">' + esc(t.choose) + "</option>" +
+      list.map(function (i) {
+        return '<option value="' + i.id + '">' + esc(name(i)) + " · " + esc(catLabel(i.cat)) + "</option>";
+      }).join("");
+    if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
+    fillPlateForm();
+  }
+
+  function fillPlateForm() {
+    var t = T(), sel = el("plateForm"), id = el("plateIng").value;
+    var br = id ? branchesOf(id) : [];
+    if (!br.length) { sel.hidden = true; sel.innerHTML = ""; return; }
+    sel.hidden = false;
+    sel.setAttribute("aria-label", t.plateFormLabel);
+    sel.innerHTML = '<option value="">' + esc(t.plateFormPlain) + "</option>" +
+      br.map(function (b) {
+        return '<option value="' + b.id + '">' + esc(b.name[state.lang]) + "</option>";
+      }).join("");
+  }
+
+  function renderPlateSlots() {
+    var t = T();
+    if (plateMode !== "guided") {
+      el("plateSlots").innerHTML = "";
+      return;
+    }
+    el("plateSlots").innerHTML = roleRoom().map(function (g) {
+      var pips = "";
+      for (var k = 0; k < g.n; k++) {
+        pips += '<span class="slot-pip' + (k < g.filled ? " on" : "") + '" aria-hidden="true"></span>';
+      }
+      return '<div class="plate-slot' + (g.filled >= g.n ? " done" : "") + '">' +
+        '<span class="slot-role">' + esc(t.roles[g.role]) + "</span>" + pips + "</div>";
+    }).join("");
+  }
+
+  function renderPlateItems() {
+    var t = T();
+    if (!plate.length) {
+      el("plateItems").innerHTML = '<p class="muted plate-empty">' + esc(t.plateEmpty) + "</p>";
+      return;
+    }
+    el("plateItems").innerHTML = plate.map(function (it, k) {
+      var i = byId[it.id];
+      return '<span class="plate-chip">' + art(i) +
+        '<span class="plate-chip-name">' + esc(itemLabel(it)) + "</span>" +
+        '<span class="plate-chip-role">' + esc(t.roles[PLATE.roleOf(i)]) + "</span>" +
+        '<button type="button" class="plate-x" data-plate-del="' + k + '" aria-label="' +
+        esc(t.plateRemove.replace("{name}", itemLabel(it))) + '">\u00d7</button></span>';
+    }).join("");
+  }
+
+  function renderPlateVerdict() {
+    var t = T(), box = el("plateVerdict");
+    if (plate.length < 1) { box.innerHTML = ""; return; }
+    var r = PLATE.judge(plate, { byId: function (id) { return byId[id] || null; }, pairsOf: itemPairs });
+
+    /* One note may name ingredients; the rest are plain sentences. */
+    function noteText(nt) {
+      var txt = t[nt.key] || "";
+      if (nt.key === "plateLonely") {
+        return txt.replace("{name}", itemLabel({ id: nt.ids[0], form: nt.form }));
+      }
+      if (nt.key === "plateSpine") {
+        return txt.replace("{a}", name(byId[nt.ids[0]])).replace("{b}", name(byId[nt.ids[1]]));
+      }
+      return txt;
+    }
+    function noteLi(nt) {
+      var w = typeof nt.points === "number"
+        ? '<span class="note-pts">' + (nt.points > 0 ? "+" : "\u2212") + Math.abs(nt.points) + "</span>"
+        : "";
+      return '<li class="plate-note ' + nt.level + '">' + w +
+        '<span class="note-text">' + esc(noteText(nt)) + "</span></li>";
+    }
+
+    /* The score, and the band that gives it a meaning. Below three ingredients
+       the engine returns null rather than a number nobody should act on. */
+    var head = "";
+    if (r.score !== null) {
+      var bandKey = { balanced: "plateBandBalanced", sound: "plateBandSound",
+                      uneven: "plateBandUneven", off: "plateBandOff" }[r.band];
+      head = '<div class="score-head">' +
+        '<div class="score-line"><span class="score-label">' + esc(t.plateScore) + "</span>" +
+        '<span class="score-band ' + r.band + '">' + esc(t[bandKey]) + "</span></div>" +
+        '<div class="score-bar"><span class="' + r.band + '" style="width:' + r.score + '%"></span></div>' +
+        '<div class="score-n"><b>' + r.score + "</b><span>/ 100</span></div></div>";
+    }
+
+    /* The five tastes are drawn in full, zeroes included: on this wheel an
+       empty spoke is the finding. Sweet, salt, acid, bitter, umami — a cook
+       reads the gap. The supporting axes are drawn only where present, because
+       there a missing bar and an empty one say the same thing. */
+    var topP = Math.max.apply(null, PLATE.PRIMARY.map(function (a) { return r.axes[a]; }).concat([1]));
+    var wheel = PLATE.PRIMARY.map(function (a) {
+      var v = r.axes[a];
+      return '<div class="axis-row' + (v ? "" : " empty") + '">' +
+        '<span class="axis-name">' + esc(t.axes[a]) + "</span>" +
+        '<span class="axis-bar"><span style="width:' + (v ? Math.round(v / topP * 100) : 0) + '%"></span></span>' +
+        '<span class="axis-n">' + v + "</span></div>";
+    }).join("");
+
+    var support = PLATE.SUPPORT.filter(function (a) { return r.axes[a] > 0; })
+      .sort(function (a, b) { return r.axes[b] - r.axes[a]; });
+    var topS = Math.max.apply(null, support.map(function (a) { return r.axes[a]; }).concat([1]));
+    var bars = support.map(function (a) {
+      return '<div class="axis-row support"><span class="axis-name">' + esc(t.axes[a]) + "</span>" +
+        '<span class="axis-bar"><span style="width:' + Math.round(r.axes[a] / topS * 100) + '%"></span></span>' +
+        '<span class="axis-n">' + r.axes[a] + "</span></div>";
+    }).join("");
+
+    var cohesion = "";
+    if (r.rows.length) {
+      var order = { ok: 0, mid: 1, none: 2 };
+      /* The long bridge line ends in a colon that expects the bridge chips
+         after it, and a row has no room for them. */
+      var label = { ok: t.labDirect, mid: t.labBridgeShort, none: t.labNone };
+      cohesion = "<h3>" + esc(t.plateCohesion) + ' <span class="lab-set-count">' +
+        esc(t.labSetCount.replace("{n}", r.direct).replace("{t}", r.rows.length)) + "</span></h3>" +
+        '<ul class="lab-set">' + r.rows.slice().sort(function (x, y) {
+          return order[x.verdict] - order[y.verdict];
+        }).map(function (row) {
+          return '<li class="lab-set-row"><span class="lab-set-pair">' +
+            esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
+            esc(itemLabel(row.b)) + "</span>" +
+            '<span class="verdict ' + row.verdict + '">' +
+            (row.verdict === "ok" ? "&#10003;&nbsp; " : "") + esc(label[row.verdict]) + "</span></li>";
+        }).join("") + "</ul>";
+    }
+
+    box.innerHTML = head +
+      "<h3>" + esc(t.plateTastes) + ' <span class="lab-set-count">' +
+        esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
+      '<div class="axis-grid wheel">' + wheel + "</div>" +
+      (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
+      (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "") +
+      (r.structure.length
+        ? "<h3>" + esc(t.plateStructure) + "</h3>" +
+          '<ul class="plate-notes">' + r.structure.map(noteLi).join("") + "</ul>"
+        : "") +
+      cohesion +
+      '<p class="plate-caveat">' + esc(t.plateNoTexture) + "</p>";
+  }
+
+  function renderPlateAll() {
+    var t = T();
+    el("plateHint").textContent = plateMode === "guided"
+      ? t.plateHintGuided
+      : t.plateHintFree.replace("{n}", PLATE.MAX_FREE);
+    el("plateAdd").textContent = t.plateAddBtn;
+    el("plateAdd").disabled = plateFull();
+    el("plateGuided").textContent = t.plateGuided;
+    el("plateFree").textContent = t.plateFree;
+    el("labModePair").textContent = t.labModePair;
+    el("labModePlate").textContent = t.labModePlate;
+    el("plateGuided").className = plateMode === "guided" ? "on" : "";
+    el("plateFree").className = plateMode === "free" ? "on" : "";
+    el("labModePair").className = labMode === "pair" ? "on" : "";
+    el("labModePlate").className = labMode === "plate" ? "on" : "";
+    fillPlateRole();
+    fillPlateIng();
+    renderPlateSlots();
+    renderPlateItems();
+    renderPlateVerdict();
+  }
+
+  function setLabMode(m) {
+    labMode = m;
+    el("labPair").hidden = m !== "pair";
+    el("labPlate").hidden = m !== "plate";
+    renderPlateAll();
+  }
+  function setPlateMode(m) {
+    if (m === plateMode) return;
+    plateMode = m;
+    if (m === "guided") {
+      /* Guided has room for seven; keep the first seven rather than silently
+         dropping whichever the loop reached last. */
+      var room = {}, kept = [];
+      PLATE.GUIDED.forEach(function (g) { room[g.role] = g.n; });
+      plate.forEach(function (it) {
+        var role = PLATE.roleOf(byId[it.id]);
+        if (room[role] > 0) { room[role]--; kept.push(it); }
+      });
+      plate = kept;
+    }
+    renderPlateAll();
+  }
+
+  function addToPlate() {
+    var id = el("plateIng").value;
+    if (!id || !byId[id] || plateFull()) return;
+    if (plate.some(function (it) { return it.id === id; })) return;
+    plate.push({ id: id, form: el("plateForm").hidden ? "" : el("plateForm").value });
+    el("plateIng").value = "";
+    fillPlateForm();
+    renderPlateAll();
   }
 
   /* ---------- trios section ---------- */
@@ -1252,9 +1537,17 @@
     var labEl = el("lab"), triosEl = el("triosSec");
     if (labEl) labEl.hidden = FREE_MODE;
     if (triosEl) triosEl.hidden = FREE_MODE;
+    PAID_VIEWS.forEach(function (v) {
+      var tab = el(v === "chefs" ? "tabChefs" : "tabBases");
+      if (tab) tab.hidden = FREE_MODE;
+    });
+    /* Switching down to free while standing in a paid view has to move the
+       visitor, not leave them on a tab whose button has just disappeared. */
+    if (!viewAllowed(state.view)) { setView("atlas"); return renderAll(); }
     if (!FREE_MODE) {
       fillLabSelects();
       renderLabResult();
+      renderPlateAll();
       renderTrios();
     }
     renderCreations();
@@ -1417,6 +1710,12 @@
     if (pp) { photoTarget = pp.getAttribute("data-photo-pick"); el("photoFile").click(); return; }
     var pd = e.target.closest("[data-photo-del]");
     if (pd) { deletePhoto(pd.getAttribute("data-photo-del")); return; }
+    var px = e.target.closest("[data-plate-del]");
+    if (px) {
+      plate.splice(parseInt(px.getAttribute("data-plate-del"), 10), 1);
+      renderPlateAll();
+      return;
+    }
     var o = e.target.closest("[data-open]");
     if (o) { openModal(o.getAttribute("data-open")); return; }
     var k = e.target.closest("[data-tech]");
@@ -1476,6 +1775,15 @@
 
   el("labA").addEventListener("change", renderLabResult);
   el("labB").addEventListener("change", renderLabResult);
+
+  /* plate events */
+  el("labModePair").addEventListener("click", function () { setLabMode("pair"); });
+  el("labModePlate").addEventListener("click", function () { setLabMode("plate"); });
+  el("plateGuided").addEventListener("click", function () { setPlateMode("guided"); });
+  el("plateFree").addEventListener("click", function () { setPlateMode("free"); });
+  el("plateRole").addEventListener("change", fillPlateIng);
+  el("plateIng").addEventListener("change", fillPlateForm);
+  el("plateAdd").addEventListener("click", addToPlate);
 
   /* creations events */
   el("createBtn").addEventListener("click", function () { openCreate(); });
