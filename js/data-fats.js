@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"agrumato-lemon-oil",cat:"fats",luxe:true,price:3,pk:"60–110 €/L",name:{en:"Agrumato lemon oil",fr:"Huile d’olive au citron"},latin:"Olea europaea",
 origin:{en:"Lanciano, Abruzzo",fr:"Lanciano, Abruzzes"},season:[11,12,1],
-flavor:["citrus","peppery","fruity"],
+flavor:["citrus","peppery","fruity"],texture:["smooth","silky"],
 story:{en:"The technique began as housekeeping: at the end of the campaign, Abruzzese millers ran citrus through the press to clean it and kept the perfumed oil for the family. Francesco Ricci of Lanciano coined the word agrumato for it in the 1980s and registered it, so the name on most bottles is a trademark rather than a method.",
 fr:"La technique est née d’un geste d’entretien : à la fin de la campagne, les moulins des Abruzzes passaient des agrumes à la presse pour la nettoyer et gardaient l’huile parfumée pour la maison. Francesco Ricci, à Lanciano, a forgé le mot agrumato dans les années 1980 et l’a déposé — sur la plupart des bouteilles, le nom est donc une marque et non un procédé."},
 tip:{en:"Never heat it: the citrus essences that justify the price are gone at frying temperature. Buy the smallest bottle and finish it within three months of opening, because crushed peel oxidises far faster than plain olive oil.",
@@ -11,7 +11,7 @@ svg:'<path class="f1 sf" d="M42 22h12v10q9 7 9 18v24q0 6-6 6H39q-6 0-6-6V50q0-11
 
 {id:"almond-oil",cat:"fats",price:2,pk:"30–45 €/L",name:{en:"Almond oil",fr:"Huile d’amande"},latin:"Prunus dulcis",
 origin:{en:"Mediterranean almond groves",fr:"Amandaies méditerranéennes"},season:[],
-flavor:["nutty","sweet","delicate"],
+flavor:["nutty","sweet","delicate"],texture:["smooth","silky"],
 story:{en:"For most of its history sweet almond oil was sold by pharmacists rather than grocers, pressed for skin and for infants long before it came back into the kitchen. It is not to be confused with bitter almond oil, which is a distillate, is used by the drop, and carries the almond smell that is really benzaldehyde.",
 fr:"Pendant l’essentiel de son histoire, l’huile d’amande douce s’est vendue en pharmacie plutôt qu’en épicerie, pressée pour la peau et pour les nourrissons bien avant de revenir en cuisine. À ne pas confondre avec l’huile d’amande amère, qui est un distillat, s’emploie à la goutte et porte cette odeur d’amande qui est en réalité du benzaldéhyde."},
 tip:{en:"It burns low and turns rancid fast, so buy small, keep it cold and use it raw. Replace a fifth of the butter with it in a pastry cream, but cut it half and half with a neutral oil in a vinaigrette or it cloys.",
@@ -21,7 +21,7 @@ svg:'<path class="f1 sf" d="M44 22h8v12l6 10v26q0 4-4 4H42q-4 0-4-4V44l6-10z"/><
 
 {id:"apricot-kernel-oil",cat:"fats",rare:true,price:2,pk:"25–45 €/L",name:{en:"Apricot kernel oil",fr:"Huile de noyau d’abricot"},latin:"Prunus armeniaca",
 origin:{en:"Apricot orchards, Anatolia and Central Asia",fr:"Vergers d’abricotiers, Anatolie et Asie centrale"},season:[],
-flavor:["nutty","bitter","fruity"],
+flavor:["nutty","bitter","fruity"],texture:["smooth","silky"],
 story:{en:"The oil carries benzaldehyde, the compound that gives bitter almonds their scent, which is why amaretto and persipan were both built on apricot stones rather than on almonds — the stones were the cheap by-product. European rules now confine bitter kernels to industrial processing, so the oil sold for the kitchen is refined or pressed from sweet kernels, and the almond note survives the treatment.",
 fr:"L’huile porte du benzaldéhyde, la molécule qui donne son parfum à l’amande amère : c’est pour cela que l’amaretto et le persipan ont été bâtis sur des noyaux d’abricot plutôt que sur des amandes, les noyaux n’étant qu’un sous-produit bon marché. La réglementation européenne réserve aujourd’hui les noyaux amers à l’usage industriel ; l’huile vendue en cuisine est donc raffinée ou pressée de noyaux doux, et la note d’amande survit au procédé."},
 tip:{en:"Half a teaspoon per 500 g of almond cream is the ceiling — past that it reads as marzipan essence. Add it off the heat: the benzaldehyde is volatile and bakes away if you cook it in.",
@@ -31,7 +31,7 @@ svg:'<path class="f1 sf" d="M36 20h8v8l10 12v22q0 6-6 6H32q-6 0-6-6V40l10-12z"/>
 
 {id:"argan-oil",cat:"fats",price:3,pk:"90–150 €/L",name:{en:"Argan oil",fr:"Huile d’argan"},latin:"Argania spinosa",
 origin:{en:"Souss valley, Morocco",fr:"Vallée du Souss, Maroc"},season:[],
-flavor:["nutty","toasty","rich","earthy"],
+flavor:["nutty","toasty","rich","earthy"],texture:["smooth","viscous"],
 story:{en:"The tree grows nowhere but southwestern Morocco, and the kernels are still cracked by hand between two stones because no machine has managed it. Berber women's cooperatives control most of the production, which is unusual and deliberate.",
 fr:"L’arganier ne pousse qu’au sud-ouest du Maroc, et les amandons se concassent encore à la main entre deux pierres, aucune machine n’y étant parvenue. Des coopératives de femmes berbères contrôlent l’essentiel de la production, ce qui est rare et voulu."},
 tip:{en:"The culinary version is pressed from roasted kernels and is darker. The cosmetic one is raw, paler, and tastes of very little.",
@@ -41,7 +41,7 @@ svg:'<path class="f1 sf" d="M42 76V46h12v30z"/><path class="s" d="M42 54h12"/><p
 
 {id:"avocado-oil",cat:"fats",price:2,pk:"20–35 €/L",name:{en:"Avocado oil",fr:"Huile d’avocat"},latin:"Persea americana",
 origin:{en:"Mexico & New Zealand",fr:"Mexique & Nouvelle-Zélande"},season:[],
-flavor:["mild","grassy","buttery","fresh"],
+flavor:["mild","grassy","buttery","fresh"],texture:["smooth","silky"],
 story:{en:"Pressed from the flesh rather than a seed, which makes it one of the very few fruit oils alongside olive and palm. It also has one of the highest smoke points of any unrefined oil, which is unusual for something pressed cold.",
 fr:"Pressée de la chair plutôt que d’une graine, ce qui en fait l’une des très rares huiles de fruit avec l’olive et le palme. Elle possède aussi l’un des points de fumée les plus élevés parmi les huiles non raffinées, chose rare pour un pressage à froid."},
 tip:{en:"It takes a hard sear without smoking, so use it where you want high heat but a clean, buttery background.",
@@ -51,7 +51,7 @@ svg:'<path class="f3 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><p
 
 {id:"beef-tallow",cat:"fats",price:1,pk:"5–10 €/kg",name:{en:"Beef tallow",fr:"Suif de bœuf"},latin:"Bos taurus",
 origin:{en:"Butchers’ rendering rooms",fr:"Fondoirs des bouchers"},season:[],
-flavor:["rich","meaty","buttery"],
+flavor:["rich","meaty","buttery"],texture:["firm","smooth","dry"],
 story:{en:"Until 1990 McDonald's fried its chips in a blend that was ninety-three per cent beef tallow, and dropped it after a long campaign of full-page newspaper advertisements bought by Phil Sokolof, an Omaha businessman who had survived a heart attack at forty-three. The chain then had to add beef flavouring to the potatoes to win back part of the taste it had given up.",
 fr:"Jusqu’en 1990, McDonald’s frittait ses frites dans un mélange composé à quatre-vingt-treize pour cent de suif de bœuf, abandonné après une longue campagne de pleines pages achetées par Phil Sokolof, homme d’affaires d’Omaha rescapé d’un infarctus à quarante-trois ans. Il a fallu ensuite ajouter un arôme de bœuf aux pommes de terre pour retrouver une part du goût sacrifié."},
 tip:{en:"Its smoke point sits near 200 °C, high enough for chips and roast potatoes where butter would burn. Render your own from suet at low heat with a splash of water and strain it twice: the water carries off the meaty smell that goes rancid first, and the fat then keeps months in the fridge.",
@@ -61,7 +61,7 @@ svg:'<path class="f1 sf" d="M28 40h40l-4 30q-1 4-5 4H37q-4 0-5-4z"/><path class=
 
 {id:"beeswax",cat:"fats",price:2,pk:"20–40 €/kg",name:{en:"Beeswax",fr:"Cire d’abeille"},latin:"Cera alba",
 origin:{en:"Honeycomb cappings",fr:"Opercules de rayon"},season:[],
-flavor:["honeyed","warm","delicate"],
+flavor:["honeyed","warm","delicate"],texture:["hard","brittle","dry"],
 story:{en:"A colony eats something like six to eight kilos of honey to secrete a single kilo of wax, which makes comb the most expensive material in the hive. Kitchens came to it late, for a prosaic reason: beeswax melts at 62-65C, which happens to be poaching temperature.",
 fr:"Une colonie consomme six à huit kilos de miel pour sécréter un seul kilo de cire : le rayon est la matière la plus chère de la ruche. La cuisine s’en est emparée tard, pour une raison prosaïque — la cire fond entre 62 et 65 °C, soit exactement une température de pochage."},
 tip:{en:"Hold the bath at 65-70C and slide in fish or root vegetables for eight to ten minutes; above 85C the wax darkens and is spent. Strain it back into a jar and reuse it - a single drop of water ruins the batch.",
@@ -71,7 +71,7 @@ svg:'<path class="f2 sf" d="M32 24h32l14 26-14 26H32L18 50z"/><path class="s" d=
 
 {id:"nigella-seed-oil",cat:"fats",rare:true,price:2,pk:"40–70 €/L",name:{en:"Black seed oil",fr:"Huile de nigelle"},latin:"Nigella sativa",
 origin:{en:"Egypt and the Levant",fr:"Égypte et Levant"},season:[],
-flavor:["pungent","peppery","herbal","bitter"],
+flavor:["pungent","peppery","herbal","bitter"],texture:["smooth","silky"],
 story:{en:"Nigella seeds were found in the tomb of Tutankhamun, and Arabic still calls the seed habbat al-barakah, the seed of blessing, after a hadith recorded by al-Bukhari describing it as a cure for everything but death. The oil is a modern extraction of a very old seed: pressed cold, it keeps a thymoquinone bite closer to oregano and black pepper than to any other oil on the shelf.",
 fr:"Des graines de nigelle ont été retrouvées dans la tombe de Toutânkhamon, et l’arabe la nomme encore habbat al-baraka, la graine de la bénédiction, d’après un hadith rapporté par al-Bukhârî qui y voit un remède à tout sauf à la mort. L’huile, elle, est une extraction moderne d’une graine très ancienne : pressée à froid, elle garde une morsure de thymoquinone plus proche de l’origan et du poivre noir que de toute autre huile du placard."},
 tip:{en:"Never heat it — in a hot pan it turns harsh and metallic within seconds. Half a teaspoon poured at the table over yoghurt, lentils or roast lamb is a full dose; it is more assertive than any chilli oil.",
@@ -81,7 +81,7 @@ svg:'<circle class="f2 sf" cx="48" cy="58" r="20"/><path class="f1 sf" d="M42 30
 
 {id:"camelina-oil",cat:"fats",rare:true,price:2,pk:"25–40 €/L",name:{en:"Camelina oil",fr:"Huile de cameline"},latin:"Camelina sativa",
 origin:{en:"Northern European flax fields",fr:"Champs de lin du nord de l’Europe"},season:[],
-flavor:["grassy","fresh","nutty"],
+flavor:["grassy","fresh","nutty"],texture:["smooth","silky"],
 story:{en:"Camelina, gold-of-pleasure, was a staple oilseed across Bronze Age Europe — its seeds turn up in the stomachs of the Danish bog bodies — then vanished when rapeseed and sunflower took the fields. It came back in France in the 1990s because it wants almost no water and no treatment, and cooks found it tasted of raw peas.",
 fr:"La cameline, ou sésame d’Allemagne, était un oléagineux courant dans l’Europe de l’âge du bronze — on en a retrouvé les graines jusque dans l’estomac des corps des tourbières danoises — avant de disparaître devant le colza et le tournesol. Elle est revenue en France dans les années 1990 parce qu’elle ne demande presque ni eau ni traitement, et les cuisiniers ont découvert qu’elle avait le goût du petit pois cru."},
 tip:{en:"Never heat it: the perfume is gone above 60 °C and its fats turn quickly. Raw on white asparagus, smoked herring or a warm potato salad, count one spoon of camelina to two of a neutral oil so it does not take the whole dish.",
@@ -91,7 +91,7 @@ svg:'<path class="f2 sf" d="M42 24h12v14l12 22q3 6-3 10H33q-6-4-3-10l12-22z"/><p
 
 {id:"caul-fat",cat:"fats",price:1,pk:"8–15 €/kg",name:{en:"Caul fat",fr:"Crépine"},latin:"Sus scrofa domesticus",
 origin:{en:"Pig, the membrane over the stomach",fr:"Porc, la membrane de l’estomac"},season:[],
-flavor:["rich","meaty","mild"],
+flavor:["rich","meaty","mild"],texture:["tender","silky","moist"],
 story:{en:"Crépine is the omentum, the fat-laced membrane that hangs over a pig's stomach; one animal yields a single sheet, which is why butchers ration it. English and French both borrow the word from birth — the caul, la coiffe, that some babies arrive wearing, once sold to sailors as insurance against drowning.",
 fr:"La crépine est l’épiploon, la membrane veinée de gras qui tombe sur l’estomac du porc ; une bête n’en donne qu’une seule pièce, ce qui explique que les bouchers la rationnent. Le français comme l’anglais empruntent le mot à la naissance — la coiffe que certains enfants portent en venant au monde, jadis vendue aux marins comme assurance contre la noyade."},
 tip:{en:"Soak it in tepid water, sharpened with a splash of vinegar if it is heavily salted, until it unfolds by itself — pull at it cold and it tears. Wrap in one layer only: two and the fat cannot all render, and you get a greasy skin instead of a crisp one.",
@@ -101,7 +101,7 @@ svg:'<path class="f1 sf" d="M22 40q10-12 26-10t26 10q4 16-6 26-12 12-26 8T20 58q
 
 {id:"clarified-butter",cat:"fats",price:2,pk:"15–25 €/kg",name:{en:"Clarified butter",fr:"Beurre clarifié"},latin:"Butyrum clarificatum",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["buttery","rich","delicate","mild"],
+flavor:["buttery","rich","delicate","mild"],texture:["soft","smooth","silky"],
 story:{en:"Butter burns at around 150°C because of its milk solids, not its fat. Remove them and the same fat will take 250°C — which is why every classical French kitchen keeps a pot of it beside the stove for searing.",
 fr:"Le beurre brûle vers 150 °C à cause de ses solides du lait, non de sa matière grasse. Ôtez-les et la même graisse tient 250 °C — d’où le pot que toute cuisine classique française garde près du fourneau pour saisir."},
 tip:{en:"Melt gently and do not let it colour — that is the difference from ghee. Skim the foam, pour off the gold, leave the milky base.",
@@ -111,7 +111,7 @@ svg:'<path class="f1 sf" d="M22 42 L26 72 Q28 79 48 79 Q68 79 70 72 L74 42 Z"/><
 
 {id:"cocoa-butter",cat:"fats",price:2,pk:"25–45 €/kg",name:{en:"Cocoa butter",fr:"Beurre de cacao"},latin:"Theobroma cacao",
 origin:{en:"Cacao pod, the pressed fat",fr:"Cabosse de cacao, la matière grasse pressée"},season:[],
-flavor:["buttery","mild","creamy"],
+flavor:["buttery","mild","creamy"],texture:["hard","brittle"],
 story:{en:"Van Houten built his press in 1828 to obtain cocoa powder; the fat that came out was the by-product, and it took another fifteen years before anyone thought to put it back and make chocolate you could bite. It sets in six different crystal forms and only one of them, the fifth, gives gloss and a snap.",
 fr:"Van Houten a construit sa presse en 1828 pour obtenir de la poudre de cacao ; le beurre qui en sortait n’était qu’un sous-produit, et il a fallu une quinzaine d’années avant que quelqu’un pense à le remettre dedans pour faire du chocolat que l’on croque. Il cristallise sous six formes et une seule, la cinquième, donne le brillant et la casse."},
 tip:{en:"Melt it no higher than 45 °C, take it down to about 27 °C, then bring it back to 31–32 °C before use; skip that and it sets dull and greys over within a day. A spoonful thinned into melted chocolate makes it flow for coating without sweetening it.",
@@ -121,7 +121,7 @@ svg:'<path class="f2 sf" d="M26 38h44v26H26z"/><path class="f1 sf" d="M26 38l8-8
 
 {id:"coconut-oil",cat:"fats",price:1,pk:"10–18 €/kg",name:{en:"Coconut oil",fr:"Huile de coco"},latin:"Cocos nucifera",
 origin:{en:"Indo-Pacific",fr:"Indo-Pacifique"},season:[],
-flavor:["sweet","nutty","creamy","mild"],
+flavor:["sweet","nutty","creamy","mild"],texture:["soft","smooth","creamy"],
 story:{en:"Almost uniquely among plant fats it is solid at room temperature, because it is overwhelmingly saturated — which is also why it keeps for years without turning. Kerala and Sri Lanka have cooked in nothing else for centuries.",
 fr:"Presque unique parmi les graisses végétales, elle est solide à température ambiante parce qu’elle est massivement saturée — ce qui explique aussi qu’elle se garde des années sans rancir. Le Kerala et le Sri Lanka n’ont cuisiné qu’avec elle pendant des siècles."},
 tip:{en:"Virgin coconut oil tastes strongly of coconut; the refined version tastes of nothing. Choose deliberately, they are not interchangeable.",
@@ -131,7 +131,7 @@ svg:'<path class="f3 sf" d="M36 74V46h24v28z"/><path class="s" d="M36 54h24"/><c
 
 {id:"flaxseed-oil",cat:"fats",price:2,pk:"25–45 €/L",name:{en:"Cold-pressed flaxseed oil",fr:"Huile de lin"},latin:"Linum usitatissimum",
 origin:{en:"Northern and Eastern Europe",fr:"Europe du Nord et de l’Est"},season:[],
-flavor:["bitter","grassy","nutty"],
+flavor:["bitter","grassy","nutty"],texture:["smooth","silky"],
 story:{en:"The same oil that dries hard into paint and linoleum is eaten raw in Germany and Russia: Spreewald quark with linseed oil and potatoes is a regional dish, not a health fad. It dries because its fat is triply unsaturated, which is also why it turns bitter within weeks of pressing and is never sold in a clear bottle.",
 fr:"L’huile qui sèche en peinture et en linoléum se mange crue en Allemagne et en Russie : le fromage blanc du Spreewald à l’huile de lin et pommes de terre est un plat régional, pas une lubie diététique. Elle sèche parce que ses acides gras sont trois fois insaturés, ce qui explique aussi qu’elle devienne amère quelques semaines après le pressage et ne se vende jamais en bouteille claire."},
 tip:{en:"Buy the smallest bottle that carries a pressing date, keep it in the fridge, finish it in six weeks and never bring it near a pan. Serve it cold over quark, boiled potatoes or a beetroot salad — if it smells of fish or paint it has oxidised, and it goes out.",
@@ -141,7 +141,7 @@ svg:'<path class="f3 sf" d="M42 30h12v10l4 8v26q0 4-4 4H42q-4 0-4-4V48l4-8z"/><p
 
 {id:"duck-fat",cat:"fats",price:1,pk:"8–14 €/kg",name:{en:"Duck fat",fr:"Graisse de canard"},latin:"Adeps anatis",
 origin:{en:"Southwest France",fr:"Sud-Ouest de la France"},season:[],
-flavor:["rich","meaty","earthy","umami"],
+flavor:["rich","meaty","earthy","umami"],texture:["soft","smooth","creamy"],
 story:{en:"Confit exists because of it: submerge a leg in rendered fat, cook it slowly and store it under the set fat, and it keeps for months without refrigeration. The fat is the preservative, the cooking medium and the seal all at once.",
 fr:"Le confit existe grâce à elle : immerger une cuisse dans la graisse fondue, la cuire lentement et la conserver sous la graisse figée, et elle se garde des mois sans froid. La graisse est à la fois conservateur, milieu de cuisson et opercule."},
 tip:{en:"Nothing makes a better roast potato. Get it smoking hot before the potatoes go in, or they absorb it instead of frying.",
@@ -151,7 +151,7 @@ svg:'<path class="f2 sf" d="M34 72V48q14-6 28 0v24z"/><path class="s" d="M34 48q
 
 {id:"fatback",cat:"fats",price:1,pk:"6–12 €/kg",name:{en:"Fatback (green back fat)",fr:"Bardière (lard gras)"},latin:"Sus scrofa domesticus",
 origin:{en:"The pig's back, uncured",fr:"Le dos du porc, non salé"},season:[],
-flavor:["rich","mild","meaty"],
+flavor:["rich","mild","meaty"],texture:["firm","smooth"],
 story:{en:"Bardière is the hard fat from along the spine, firmer than belly fat because it holds less water and more stearic acid — the only pork fat that keeps a clean dice at room temperature. Old breeds were selected for it, a Mangalitza or a Bigorre pig carrying it a hand deep, and that is exactly what industrial breeding took back out.",
 fr:"La bardière est le gras dur du long de l’échine, plus ferme que celui de poitrine parce qu’il tient moins d’eau et plus d’acide stéarique : c’est le seul gras de porc qui garde un dé net à température ambiante. Les races anciennes étaient sélectionnées pour lui — un mangalitza ou un noir de Bigorre en porte l’épaisseur d’une main — et c’est exactement ce que l’élevage industriel a fait disparaître."},
 tip:{en:"Give it half an hour in the freezer before cutting: warm, it smears and turns a farce greasy instead of binding it. In a pâté count a third fat to two thirds lean by weight, and keep everything, bowl included, below 12 °C while you work.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M22 46q26-10 52 0v16q-26 10-52 0z"/><path class="f3 
 
 {id:"ghee",cat:"fats",price:2,pk:"15–25 €/kg",name:{en:"Ghee",fr:"Ghee"},latin:"Butyrum depuratum",
 origin:{en:"India",fr:"Inde"},season:[],
-flavor:["nutty","rich","toasty","buttery"],
+flavor:["nutty","rich","toasty","buttery"],texture:["soft","smooth","silky"],
 story:{en:"Butter simmered until the water boils off and the milk solids brown at the bottom, then strained — which removes everything that would spoil. In a climate without refrigeration it keeps for a year, and Vedic texts treat it as sacred.",
 fr:"Du beurre mijoté jusqu’à évaporation de l’eau et coloration des solides du lait au fond, puis filtré — ce qui ôte tout ce qui pourrait tourner. Sous un climat sans réfrigération il se garde un an, et les textes védiques le tiennent pour sacré."},
 tip:{en:"Let the solids brown, do not just melt the butter. That browning is the difference between ghee and clarified butter.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M36 72V46q12-6 24 0v26z"/><path class="s" d="M36 46q
 
 {id:"graisse-doie",cat:"fats",price:2,pk:"15–25 €/kg",name:{en:"Goose fat",fr:"Graisse d’oie"},latin:"Anser anser (rendered fat)",
 origin:{en:"South-West France",fr:"Sud-Ouest de la France"},season:[],
-flavor:["rich","mild","buttery"],
+flavor:["rich","mild","buttery"],texture:["soft","smooth","creamy"],
 story:{en:"Goose fat sets harder and melts higher than duck fat, a few degrees of difference that decide everything: it seals a confit crock more reliably and holds around 190 °C in a pan without breaking down. Central Europe and the South-West both built their winter cooking on it because a goose yields far more of it than a duck.",
 fr:"La graisse d’oie fige plus dur et fond plus haut que celle de canard, quelques degrés d’écart qui décident de tout : elle scelle mieux un pot de confit et tient autour de 190 °C sans se dégrader. L’Europe centrale et le Sud-Ouest ont bâti leur cuisine d’hiver dessus parce qu’une oie en donne bien davantage qu’un canard."},
 tip:{en:"Par-boil the potatoes, dry them completely, then drop them into fat already at 180 °C — wet potatoes and cold fat each give you a soft crust. A tablespoon per person is plenty; more and they poach.",
@@ -181,7 +181,7 @@ svg:'<g transform="translate(6.53 6.8) scale(0.864)"><path class="f2 sf" d="M28 
 
 {id:"grapeseed-oil",cat:"fats",price:1,pk:"5–9 €/L",name:{en:"Grapeseed oil",fr:"Huile de pépins de raisin"},latin:"Vitis vinifera",
 origin:{en:"Wine regions of Europe",fr:"Régions viticoles d’Europe"},season:[],
-flavor:["mild","delicate","fresh","grassy"],
+flavor:["mild","delicate","fresh","grassy"],texture:["smooth","silky"],
 story:{en:"A by-product of winemaking — the pomace left after pressing holds seeds that would otherwise be waste, and it takes roughly forty kilos of grapes to yield a single litre. Nothing in a vineyard is thrown away twice.",
 fr:"Un sous-produit de la vinification — le marc laissé après pressage contient des pépins qui seraient sinon perdus, et il faut environ quarante kilos de raisin pour un seul litre. Rien dans une vigne ne se jette deux fois."},
 tip:{en:"Its very high smoke point and clean taste make it the right oil for mayonnaise and for searing, where olive oil would dominate.",
@@ -191,7 +191,7 @@ svg:'<path class="f1 sf" d="M53 24q5-2 10 0l-1 12q7 5 7 12v24q0 4-5 4H51q-5 0-5-
 
 {id:"tengjiao-oil",cat:"fats",rare:true,price:2,pk:"40–80 €/L",name:{en:"Green Sichuan pepper oil",fr:"Huile de poivre de Sichuan vert"},latin:"Zanthoxylum armatum",
 origin:{en:"Hongya, Sichuan",fr:"Hongya, Sichuan"},season:[],
-flavor:["numbing","citrus","fresh","resinous"],
+flavor:["numbing","citrus","fresh","resinous"],texture:["smooth","silky"],
 story:{en:"Tengjiao is Zanthoxylum armatum, a different species from the red huajiao of northern Sichuan, and Hongya county near Meishan calls itself its hometown. The oil is drawn from fresh green berries rather than dried ones, which is why it smells of lime leaf and delivers a higher, brighter buzz than any dried pepper can.",
 fr:"Le tengjiao est Zanthoxylum armatum, espèce distincte du huajiao rouge du nord du Sichuan, et le comté de Hongya, près de Meishan, se dit sa patrie. L’huile est tirée de baies vertes fraîches et non séchées : d’où son parfum de feuille de combava et un picotement plus haut, plus vif, qu’aucun poivre séché ne donne."},
 tip:{en:"It is a finishing oil: heat destroys both the citrus top note and the sanshool tingle, so pour it at the table. Half a teaspoon over cold chicken, cucumber or noodles, and keep the bottle in the fridge — the aroma fades within two months of opening.",
@@ -201,7 +201,7 @@ svg:'<ellipse class="f1 sf" cx="42" cy="54" rx="15" ry="11"/><path class="f2 sf"
 
 {id:"hazelnut-oil",cat:"fats",price:2,pk:"28–45 €/L",name:{en:"Hazelnut oil",fr:"Huile de noisette"},latin:"Corylus avellana",
 origin:{en:"Piedmont & southwest France",fr:"Piémont & Sud-Ouest de la France"},season:[],
-flavor:["nutty","toasty","rich","sweet"],
+flavor:["nutty","toasty","rich","sweet"],texture:["smooth","silky"],
 story:{en:"Sweeter and rounder than walnut oil, and rarer, because hazelnuts give less oil for the same weight. Piedmont uses it where Provence would reach for olive, and it turns a plain green salad into something that tastes cooked.",
 fr:"Plus douce et plus ronde que l’huile de noix, et plus rare, la noisette rendant moins d’huile à poids égal. Le Piémont l’emploie là où la Provence prendrait l’olive, et elle transforme une simple salade verte en quelque chose qui a l’air cuisiné."},
 tip:{en:"A teaspoon at the end of a soup or a purée does more than a whole spoonful of butter. Add it off the heat.",
@@ -211,7 +211,7 @@ svg:'<path class="f2 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><c
 
 {id:"hemp-oil",cat:"fats",price:2,pk:"25–40 €/L",name:{en:"Hemp oil",fr:"Huile de chanvre"},latin:"Cannabis sativa",
 origin:{en:"Northern France & Canada",fr:"Nord de la France & Canada"},season:[],
-flavor:["grassy","nutty","bitter"],
+flavor:["grassy","nutty","bitter"],texture:["smooth","silky"],
 story:{en:"France grows more industrial hemp than any other country in Europe, most of it for paper and insulation; the seed oil is the by-product that found its way into kitchens. Its green is chlorophyll, which is also why a bottle left in the light fades and turns fishy.",
 fr:"La France cultive plus de chanvre industriel que tout autre pays d’Europe, l’essentiel pour le papier et l’isolation ; l’huile de graine en est le sous-produit passé en cuisine. Son vert vient de la chlorophylle, ce qui explique aussi qu’une bouteille laissée à la lumière pâlisse et tourne au poisson."},
 tip:{en:"Never heat it — it breaks down below 165 °C. Keep it in the fridge and finish the bottle within three months of opening; past that it tastes of fish.",
@@ -221,7 +221,7 @@ svg:'<path class="f3 sf" d="M44 20h8v14l6 10v30q0 4-4 4H42q-4 0-4-4V44l6-10z"/><
 
 {id:"iberico-lard",cat:"fats",price:2,pk:"20–35 €/kg",name:{en:"Ibérico lard (manteca ibérica)",fr:"Saindoux ibérique (manteca ibérica)"},latin:"Sus scrofa domesticus",
 origin:{en:"Extremadura & Andalusia, Spain",fr:"Estrémadure & Andalousie, Espagne"},season:[],
-flavor:["rich","nutty","meaty"],
+flavor:["rich","nutty","meaty"],texture:["soft","smooth","creamy"],
 story:{en:"Acorns are so heavy in oleic acid that Extremadura calls the pigs that eat them olive trees on four legs, and the fat takes on the same chemistry. Rendered, it sets to a spreadable cream instead of the hard white block ordinary lard makes.",
 fr:"Le gland est si riche en acide oléique qu’en Estrémadure on appelle les porcs qui s’en nourrissent des oliviers sur pattes, et la graisse en reprend la chimie. Fondue, elle prend en crème tartinable au lieu du bloc blanc et dur du saindoux ordinaire."},
 tip:{en:"Use it where the pork flavour has to survive: roast potatoes, or spread thin on toast with salt. Above 180 °C the aroma burns off and you have paid for nothing.",
@@ -231,7 +231,7 @@ svg:'<path class="f1 sf" d="M30 46h36v22q0 6-8 6H38q-8 0-8-6z"/><path class="f3 
 
 {id:"lamb-tail-fat",cat:"fats",rare:true,price:1,pk:"8–15 €/kg",name:{en:"Lamb tail fat",fr:"Graisse de queue de mouton"},latin:"Ovis aries",
 origin:{en:"Fat-tailed sheep, Levant to Central Asia",fr:"Moutons à queue grasse, du Levant à l’Asie centrale"},season:[],
-flavor:["rich","meaty","musky"],
+flavor:["rich","meaty","musky"],texture:["soft","smooth","creamy"],
 story:{en:"Fat-tailed sheep store energy in the tail the way a camel stores it in the hump, and the tail alone runs to two or five kilos on a grown animal. It carries its own name at every stop along the caravan routes — liyya in Arabic, dumba or kurdyuk from the Caucasus to Uzbekistan — and in plov it is the cooking medium, not a trimming.",
 fr:"Les moutons à queue grasse stockent leur énergie dans la queue comme le chameau dans sa bosse, et cette queue pèse à elle seule deux à cinq kilos sur une bête adulte. Elle porte un nom propre à chaque étape des routes caravanières — liyya en arabe, doumba ou kourdiouk du Caucase à l’Ouzbékistan — et dans le plov elle est le corps gras de cuisson, pas une parure."},
 tip:{en:"Dice it small and render it slowly from cold, then fry the onions in the fat and return the crisp scraps at the end. It sets soft rather than hard, so a plov made with it does not go waxy as it cools — which is exactly what beef or pork fat cannot do.",
@@ -241,7 +241,7 @@ svg:'<path class="f1 sf" d="M22 48q0-18 18-18t18 18q0 16-18 22T22 48z"/><path cl
 
 {id:"lard",cat:"fats",price:1,pk:"4–8 €/kg",name:{en:"Lard",fr:"Saindoux"},latin:"Adeps suillus",
 origin:{en:"Europe & China",fr:"Europe & Chine"},season:[],
-flavor:["rich","meaty","mild","creamy"],
+flavor:["rich","meaty","mild","creamy"],texture:["soft","smooth","creamy"],
 story:{en:"Its large fat crystals coat flour particles better than butter does, which is why lard pastry is flakier than any other and why it dominated baking until vegetable shortening arrived and marketing pushed it out.",
 fr:"Ses gros cristaux de gras enrobent les particules de farine mieux que le beurre, d’où une pâte au saindoux plus feuilletée que toute autre, et sa domination de la boulangerie jusqu’à l’arrivée des graisses végétales et de leur publicité."},
 tip:{en:"Ask for leaf lard, from around the kidneys, if you are baking. The back fat is fine for frying but tastes of pork.",
@@ -251,7 +251,7 @@ svg:'<path class="f3 sf" d="M32 70V50h32v20z"/><path class="s" d="M32 58h32"/><p
 
 {id:"panne-de-porc",cat:"fats",price:1,pk:"5–10 €/kg",name:{en:"Leaf lard",fr:"Panne de porc"},latin:"Sus scrofa domesticus (adeps perirenalis)",
 origin:{en:"Around the pig’s kidneys",fr:"Autour des rognons du porc"},season:[],
-flavor:["mild","creamy","rich"],
+flavor:["mild","creamy","rich"],texture:["firm","granular","dry"],
 story:{en:"Panne is the sheet of fat hanging around the kidneys, and it is not interchangeable with back fat: it renders whiter, firmer and almost without pork flavour, which is why pastry cooks order it by name. Rendered slowly it gives the saindoux that made pie crusts flake long before anyone bought shortening in a tin.",
 fr:"La panne est la nappe de gras qui entoure les rognons, et elle ne remplace pas le lard gras : elle fond plus blanche, plus ferme et presque sans goût de porc, ce qui explique que les pâtissiers la commandent par son nom. Fondue doucement, elle donne le saindoux qui faisait feuilleter les pâtes bien avant qu’on achète de la graisse végétale en boîte."},
 tip:{en:"Render it low: dice it cold, add a splash of water to the pan and hold it under 110 °C until the water has gone and the pieces float pale gold. Push the heat and it browns — and browned lard tastes of pork forever after, which ruins it for pastry.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M48 24q18 6 20 26t-20 26q-20-6-20-26t20-26z"/><path 
 
 {id:"macadamia-oil",cat:"fats",price:2,pk:"40–60 €/L",name:{en:"Macadamia oil",fr:"Huile de macadamia"},latin:"Macadamia integrifolia",
 origin:{en:"Queensland, Australia",fr:"Queensland, Australie"},season:[],
-flavor:["buttery","nutty","creamy"],
+flavor:["buttery","nutty","creamy"],texture:["smooth","silky"],
 story:{en:"The macadamia is the only Australian native to have become a global commercial crop, and most of the world's orchards descend from seed carried to Hawaii in the 1880s. Close to 80% of its fat is monounsaturated, which is why it holds a pan where walnut oil would turn bitter.",
 fr:"La macadamia est la seule plante indigène d’Australie devenue une culture commerciale mondiale, et la plupart des vergers descendent de semences emportées à Hawaï dans les années 1880. Près de 80 % de ses acides gras sont mono-insaturés, ce qui lui permet de tenir la poêle là où l’huile de noix tournerait à l’amer."},
 tip:{en:"It holds to about 200 °C and will take a gentle sear, but treat it as a seasoning: a spoonful over the fish at the end does more than a panful under it.",
@@ -271,7 +271,7 @@ svg:'<path class="f1 sf" d="M46 22h4v20q10 6 10 18t-12 14-12-14 10-18z"/><path c
 
 {id:"mustard-oil",cat:"fats",price:2,pk:"12–25 €/L",name:{en:"Mustard oil",fr:"Huile de moutarde"},latin:"Brassica juncea",
 origin:{en:"Bengal & Punjab",fr:"Bengale & Pendjab"},season:[],
-flavor:["pungent","hot","peppery","nutty"],
+flavor:["pungent","hot","peppery","nutty"],texture:["smooth","viscous"],
 story:{en:"In India it is taken to smoking point before anything else goes in the pan — the moment its allyl isothiocyanate breaks down and the raw horseradish burn turns nutty. In the United States and much of Europe it may only be sold labelled for external use, because of its erucic acid content.",
 fr:"En Inde, on la mène au point de fumée avant tout le reste — le moment où son isothiocyanate d’allyle se décompose et où la brûlure de raifort tourne au noisette. Aux États-Unis et dans une grande partie de l’Europe, elle ne se vend qu’étiquetée pour usage externe, à cause de sa teneur en acide érucique."},
 tip:{en:"Smoke it first, always: take it to the first wisp, cut the heat for thirty seconds, then start the spices. Used raw it overwhelms everything it touches.",
@@ -281,7 +281,7 @@ svg:'<path class="f2 sf" d="M44 18h8v18l4 6v28q0 4-4 4H40q-4 0-4-4V42l4-6z"/><pa
 
 {id:"niter-kibbeh",cat:"fats",rare:true,price:2,pk:"25–45 €/kg",name:{en:"Niter kibbeh",fr:"Niter kibbeh (beurre clarifié épicé éthiopien)"},latin:"Butyrum aromaticum",
 origin:{en:"Ethiopia",fr:"Éthiopie"},season:[],
-flavor:["buttery","warm","herbal","rich"],
+flavor:["buttery","warm","herbal","rich"],texture:["soft","smooth","silky"],
 story:{en:"The butter is simmered rather than merely melted, with korarima, koseret and besobela — three Ethiopian aromatics with no real substitute — until the water has gone and the spices have given their oil up to the fat. What is strained off keeps for months at room temperature, which is the whole point in a kitchen without refrigeration.",
 fr:"Le beurre mijote au lieu de simplement fondre, avec du korarima, du koseret et du besobela — trois aromates éthiopiens sans véritable équivalent — jusqu’à ce que l’eau soit partie et que les épices aient cédé leur huile à la graisse. Ce qu’on filtre se garde des mois à température ambiante, ce qui est tout l’intérêt dans une cuisine sans réfrigérateur."},
 tip:{en:"Start the wot with it rather than finishing with it — the flavour is fat-soluble and needs those first minutes with the onions. One tablespoon per two onions is the working ratio.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M28 40h32v18q0 6-6 6H34q-6 0-6-6z"/><path class="s" 
 
 {id:"olive-oil",cat:"fats",price:1,pk:"8–16 €/L",name:{en:"Olive oil",fr:"Huile d’olive"},latin:"Olea europaea",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
-flavor:["fruity","grassy","peppery","bitter"],
+flavor:["fruity","grassy","peppery","bitter"],texture:["smooth","silky"],
 story:{en:"Athens is named for a bet: Athena offered the olive tree, Poseidon a salt spring, and the citizens chose the tree. Homer called its oil “liquid gold”; athletes wore it, lamps burned it, and the Mediterranean still cooks in it before anything else.",
 fr:"Athènes doit son nom à un pari : Athéna offrit l’olivier, Poséidon une source salée, et les citoyens choisirent l’arbre. Homère appelait son huile « l’or liquide » ; les athlètes s’en oignaient, les lampes la brûlaient, et la Méditerranée cuisine toujours avec elle avant toute chose."},
 tip:{en:"The peppery catch in the throat of a young oil is a virtue, not a flaw. Keep a modest oil for the pan and a great one for the final thread over the plate.",
@@ -301,7 +301,7 @@ svg:'<path class="f1 sf" d="M44 26h8v10l4 6v30q0 6-8 6t-8-6V42l4-6z"/><path clas
 
 {id:"olive-pomace-oil",cat:"fats",price:1,pk:"4–8 €/L",name:{en:"Olive pomace oil",fr:"Huile de grignons d’olive"},latin:"Olea europaea",
 origin:{en:"Andalusia, Spain",fr:"Andalousie, Espagne"},season:[],
-flavor:["mild","delicate"],
+flavor:["mild","delicate"],texture:["smooth","silky"],
 story:{en:"Spent olive paste still holds a few percent of its oil after pressing, enough that hexane is sent in after it; refining then strips the colour, the smell and the polyphenols with it. A little virgin oil is blended back at the end so the tin can say olive at all.",
 fr:"Le grignon retient encore quelques pour cent d’huile après le pressurage, assez pour qu’on aille la chercher à l’hexane ; le raffinage en retire ensuite la couleur, l’odeur et les polyphénols avec. On y remet un peu d’huile vierge à la fin pour que le bidon puisse porter le mot olive."},
 tip:{en:"It holds 220 °C without breaking down, which is why Spanish kitchens fry and confit in it. It brings no flavour of its own, so never buy it to dress anything.",
@@ -311,7 +311,7 @@ svg:'<path class="f2 sf" d="M28 40h40v34H28z"/><path class="s" d="M28 52h40"/><p
 
 {id:"peanut-oil",cat:"fats",price:1,pk:"4–8 €/L",name:{en:"Peanut oil",fr:"Huile d’arachide"},latin:"Arachis hypogaea",
 origin:{en:"South America, via West Africa",fr:"Amérique du Sud, via l’Afrique de l’Ouest"},season:[],
-flavor:["mild","nutty","toasty","delicate"],
+flavor:["mild","nutty","toasty","delicate"],texture:["smooth","silky"],
 story:{en:"Its smoke point is high enough that it fries chips twice without breaking down, which is why chip shops and Chinese kitchens both settled on it. Refined, it carries almost none of the protein that triggers nut allergy.",
 fr:"Son point de fumée est assez haut pour frire deux fois des frites sans se dégrader, d’où son adoption par les friteries comme par les cuisines chinoises. Raffinée, elle ne porte presque rien de la protéine qui déclenche l’allergie."},
 tip:{en:"It can be strained and reused several times for deep frying, which no delicate oil tolerates. Filter it while still warm.",
@@ -321,7 +321,7 @@ svg:'<path class="f2 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><p
 
 {id:"perilla-oil",cat:"fats",rare:true,price:2,pk:"30–55 €/L",name:{en:"Perilla oil",fr:"Huile de périlla"},latin:"Perilla frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[],
-flavor:["nutty","herbal","grassy","rich"],
+flavor:["nutty","herbal","grassy","rich"],texture:["smooth","silky"],
 story:{en:"Pressed from the toasted seed of the plant whose leaves are kkaennip, perilla oil runs about sixty percent alpha-linolenic acid, more than any other common kitchen oil. That is also its weakness: it oxidises within months, which is why a Korean kitchen keeps deulgireum in the fridge and sesame oil in the cupboard.",
 fr:"Pressée à partir de la graine grillée de la plante dont les feuilles sont les kkaennip, l’huile de périlla titre environ soixante pour cent d’acide alpha-linolénique, plus qu’aucune autre huile de cuisine courante. C’est aussi sa faiblesse : elle s’oxyde en quelques mois, raison pour laquelle une cuisine coréenne garde le deulgireum au réfrigérateur et l’huile de sésame dans le placard."},
 tip:{en:"Use it raw. Brush it over laver sheets before toasting them, or fold it into blanched greens off the heat; if the bottle smells of fish or wet paint, it has turned and nothing rescues it.",
@@ -331,7 +331,7 @@ svg:'<path class="f1 sf" d="M44 22h8v12q10 6 10 18v20a4 4 0 0 1-4 4H38a4 4 0 0 1
 
 {id:"pine-nut-oil",cat:"fats",rare:true,luxe:true,price:3,pk:"150–250 €/L",name:{en:"Pine nut oil",fr:"Huile de pignon de pin"},latin:"Pinus pinea",
 origin:{en:"Mediterranean pine forests",fr:"Pinèdes méditerranéennes"},season:[],
-flavor:["resinous","nutty","woody","delicate"],
+flavor:["resinous","nutty","woody","delicate"],texture:["smooth","viscous"],
 story:{en:"A stone pine cone takes three years on the tree to ripen and gives up its kernels one shell at a time, which is why the oil is sold in bottles the size of a perfume flask. It is one of the few oils with a genuine resin note — the tree's own terpenes come through the press.",
 fr:"Une pomme de pin parasol met trois ans à mûrir sur l’arbre et livre ses pignons une coque à la fois, d’où une huile vendue en flacons de la taille d’un parfum. C’est l’une des rares huiles à véritable note résineuse : les terpènes de l’arbre passent au pressoir."},
 tip:{en:"Count it in drops and never heat it — a few drops on raw scallop or cured trout is a dose. Refrigerate once open; it turns within weeks.",
@@ -341,7 +341,7 @@ svg:'<path class="f1 sf" d="M40 42h16v28q0 4-4 4h-8q-4 0-4-4z"/><path class="f3 
 
 {id:"pistachio-oil",cat:"fats",price:3,pk:"90–150 €/L",name:{en:"Pistachio oil",fr:"Huile de pistache"},latin:"Pistacia vera",
 origin:{en:"Iran & the Mediterranean",fr:"Iran & Méditerranée"},season:[],
-flavor:["nutty","toasty","resinous","rich"],
+flavor:["nutty","toasty","resinous","rich"],texture:["smooth","viscous"],
 story:{en:"The kernels are roasted before pressing, which is where the depth comes from — pressed raw the oil is thin and grassy. Its green is chlorophyll and does not last: an open bottle fades to khaki in a couple of months, and the flavour goes with the colour.",
 fr:"Les amandons sont torréfiés avant pressage, c’est de là que vient la profondeur : pressée crue, l’huile reste maigre et herbacée. Son vert est de la chlorophylle et ne tient pas — une bouteille ouverte vire au kaki en deux mois, et le goût s’en va avec la couleur."},
 tip:{en:"Never cook it — past about 120 °C the roast note flattens and turns bitter. In a vinaigrette use one part pistachio oil to two of a neutral oil; alone it is too heavy to coat a leaf.",
@@ -351,7 +351,7 @@ svg:'<path class="f2 sf" d="M44 22h8v14L62 74H34l10-38z"/><path class="s" d="M38
 
 {id:"poppy-seed-oil",cat:"fats",rare:true,price:2,pk:"30–50 €/L",name:{en:"Poppy seed oil",fr:"Huile d’œillette"},latin:"Papaver somniferum",
 origin:{en:"Picardy and the Île-de-France plains",fr:"Picardie et plaines d’Île-de-France"},season:[],
-flavor:["nutty","delicate","mild"],
+flavor:["nutty","delicate","mild"],texture:["smooth","silky"],
 story:{en:"Œillette was the everyday table oil of northern France before groundnut and sunflower arrived, and the crop collapsed after 1945 once the country no longer had to feed itself on what it sowed. The first cold pressing, pale and smelling of almond, went to the kitchen; the pressings after it went to painters, who valued a drying oil that yellows less than linseed.",
 fr:"L’œillette a été l’huile de table courante du Nord de la France avant l’arachide et le tournesol, et la culture s’est effondrée après 1945, quand le pays n’a plus eu à se nourrir de ce qu’il semait. Le premier pressage à froid, pâle et sentant l’amande, allait à la cuisine ; les suivants allaient aux peintres, qui appréciaient une huile siccative jaunissant moins que celle de lin."},
 tip:{en:"Raw only, and buy it in a tin or dark glass: it is very high in polyunsaturates and turns fishy within a couple of months of opening. Keep it in the fridge and use it as a walnut oil, one part to three of a neutral oil in a dressing.",
@@ -361,7 +361,7 @@ svg:'<path class="f2 sf" d="M48 32q15 0 15 18 0 15-15 15t-15-15q0-18 15-18z"/><p
 
 {id:"porcini-oil",cat:"fats",price:2,pk:"50–90 €/L",name:{en:"Porcini oil",fr:"Huile de cèpe"},latin:"Boletus edulis",
 origin:{en:"Alpine and Apennine woodlands",fr:"Forêts alpines et apennines"},season:[],
-flavor:["earthy","woody","umami"],
+flavor:["earthy","woody","umami"],texture:["smooth","silky"],
 story:{en:"Unlike truffle oil, which is almost always built on synthetic 2,4-dithiapentane, porcini oil is usually what the label says: dried Boletus edulis left to steep until the mushroom aroma migrates into the fat. The caps are dried first because drying is what makes the aroma — a fresh porcini gives the oil almost nothing.",
 fr:"Contrairement à l’huile de truffe, presque toujours bâtie sur du 2,4-dithiapentane de synthèse, l’huile de cèpe est en général ce que l’étiquette annonce : des Boletus edulis séchés mis à macérer jusqu’à ce que l’arôme passe dans le corps gras. On sèche les chapeaux d’abord parce que c’est le séchage qui fait l’arôme : un cèpe frais ne cède presque rien à l’huile."},
 tip:{en:"Stir it into risotto or polenta off the heat; cooking drives the aroma off and leaves you with plain oil. If mushroom pieces are still in the bottle, keep it refrigerated and finish it within a month — low-acid solids under oil are a botulism risk at room temperature.",
@@ -371,7 +371,7 @@ svg:'<path class="f1 sf" d="M34 32h28v34q0 6-6 6H40q-6 0-6-6z"/><path class="f3 
 
 {id:"pumpkin-seed-oil",cat:"fats",price:2,pk:"35–60 €/L",name:{en:"Pumpkin seed oil",fr:"Huile de pépins de courge"},latin:"Cucurbita pepo var. styriaca",
 origin:{en:"Styria, Austria",fr:"Styrie, Autriche"},season:[],
-flavor:["nutty","toasty","rich","earthy"],
+flavor:["nutty","toasty","rich","earthy"],texture:["smooth","viscous"],
 story:{en:"So dark it looks black in the bottle and bright green in a thin film — an optical effect called dichromatism, rare in food. Styria protects it with a European designation, and the seeds come from a squash that grows without a husk.",
 fr:"Si sombre qu’elle paraît noire en bouteille et vert vif en film mince — un effet optique appelé dichromatisme, rare en alimentation. La Styrie la protège par une appellation européenne, et les graines viennent d’une courge qui pousse sans coque."},
 tip:{en:"Austrians pour it over vanilla ice cream, and it is not a joke — the toasted, salty note against cold cream works.",
@@ -381,7 +381,7 @@ svg:'<path class="f1 sf" d="M49 22q7-2 13 0l-1 18q11 5 12 18 2 14-6 20-9 7-22 2-
 
 {id:"rapeseed-oil",cat:"fats",price:1,pk:"4–8 €/L",name:{en:"Rapeseed oil",fr:"Huile de colza"},latin:"Brassica napus",
 origin:{en:"Europe",fr:"Europe"},season:[],
-flavor:["grassy","nutty","mild","fresh"],
+flavor:["grassy","nutty","mild","fresh"],texture:["smooth","silky"],
 story:{en:"The original plant made an oil too high in erucic acid to eat safely, and it was sold as a machine lubricant. Canadian breeders bred that compound out in the 1970s and renamed the result canola — a new food invented by subtraction.",
 fr:"La plante d’origine donnait une huile trop riche en acide érucique pour être consommée sans risque, et on la vendait comme lubrifiant. Des sélectionneurs canadiens éliminèrent ce composé dans les années 1970 et rebaptisèrent le résultat canola — un aliment nouveau créé par soustraction."},
 tip:{en:"Buy the cold-pressed version for dressings — it is grassy and bright yellow. The refined one is for heat and nothing else.",
@@ -391,7 +391,7 @@ svg:'<path class="f2 sf" d="M40 76V42h16v34z"/><path class="s" d="M40 50h16"/><p
 
 {id:"red-palm-oil",cat:"fats",rare:true,price:1,pk:"8–16 €/L",name:{en:"Red palm oil (dendê)",fr:"Huile de palme rouge (dendê)"},latin:"Elaeis guineensis",
 origin:{en:"West Africa & Bahia",fr:"Afrique de l’Ouest & Bahia"},season:[],
-flavor:["earthy","rich","warm"],
+flavor:["earthy","rich","warm"],texture:["soft","smooth","viscous"],
 story:{en:"Unrefined palm oil is the richest natural source of carotene there is, several times a carrot's, which is what makes it orange enough to stain a pot. It crossed the Atlantic with the slave trade and Bahian cooking still runs on it as dendê, while the refined white version — same fruit, no colour, no smell — goes into soap and biscuits.",
 fr:"L’huile de palme non raffinée est la source naturelle de carotène la plus riche qui soit, plusieurs fois celle d’une carotte, d’où cet orange qui tache la marmite. Elle a traversé l’Atlantique avec la traite, et la cuisine bahianaise tourne encore au dendê, tandis que la version raffinée — même fruit, sans couleur ni odeur — part au savon et au biscuit."},
 tip:{en:"One tablespoon colours and flavours a whole pot; more turns the dish waxy and cloying. It is semi-solid at room temperature, so warm it gently — it does not need a high flame to go liquid.",
@@ -401,7 +401,7 @@ svg:'<path class="f3 sf" d="M48 20q6 0 6 8t-2 10q10 6 10 20t-14 14-14-14 10-20q-
 
 {id:"rice-bran-oil",cat:"fats",price:1,pk:"6–12 €/L",name:{en:"Rice bran oil",fr:"Huile de son de riz"},latin:"Oryza sativa (bran)",
 origin:{en:"Japan & India",fr:"Japon & Inde"},season:[],
-flavor:["mild","nutty","delicate"],
+flavor:["mild","nutty","delicate"],texture:["smooth","silky"],
 story:{en:"Bran is what is stripped from brown rice to make it white - about eight per cent of the grain, and nearly all of its fat, so the oil is a by-product of polishing. It carries gamma-oryzanol, an antioxidant that slows the oil breaking down in a fryer, which is why tempura counters top the pot up rather than empty it.",
 fr:"Le son est ce que l’on retire du riz complet pour le rendre blanc : environ huit pour cent du grain, et presque toute sa matière grasse — l’huile est donc un sous-produit du polissage. Elle contient du gamma-oryzanol, un antioxydant qui ralentit sa dégradation en friture, d’où l’habitude des comptoirs à tempura de remettre de l’huile plutôt que de tout changer."},
 tip:{en:"Fry tempura at 175-180 °C, with a spoonful of toasted sesame oil per litre for aroma - the sesame flavours without pulling the smoke point down far. It foams very little, so the pot can be filled closer to the rim than with a seed oil.",
@@ -411,7 +411,7 @@ svg:'<path class="f2 sf" d="M42 30h12v8l6 10v28q0 4-4 4H40q-4 0-4-4V48l6-10z"/><
 
 {id:"schmaltz",cat:"fats",price:2,pk:"12–22 €/kg",name:{en:"Schmaltz (rendered chicken fat)",fr:"Graisse de poulet (schmaltz)"},latin:"Gallus gallus domesticus (rendered)",
 origin:{en:"Ashkenazi Central & Eastern Europe",fr:"Europe centrale & orientale ashkénaze"},season:[],
-flavor:["rich","meaty","umami","toasty"],
+flavor:["rich","meaty","umami","toasty"],texture:["soft","smooth","creamy"],
 story:{en:"Where religious law kept lard off the table and butter away from meat, rendered poultry fat was the one cooking fat admitted on both sides of an Ashkenazi kitchen; goose did the work until chicken became the cheaper bird in the twentieth century. The browned skin and onion left in the pan afterwards - gribenes - were the part people actually fought over.",
 fr:"Là où la loi religieuse écartait le saindoux de la table et le beurre des plats de viande, la graisse de volaille fondue était la seule matière grasse admise des deux côtés d’une cuisine ashkénaze ; l’oie tint ce rôle jusqu’à ce que le poulet devienne, au XXe siècle, la volaille la moins chère. La peau et l’oignon dorés restés au fond — les gribenes — étaient la vraie récompense."},
 tip:{en:"Render skin and fat from cold in a heavy pan with a splash of water and a sliced onion, on the lowest heat, about forty-five minutes. Lift the onion out while it is still amber: let it blacken and the whole jar tastes burnt.",
@@ -421,7 +421,7 @@ svg:'<path class="f1 sf" d="M32 40h32v34q0 4-4 4H36q-4 0-4-4z"/><path class="s" 
 
 {id:"smen",cat:"fats",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Smen (fermented Moroccan butter)",fr:"Smen (beurre fermenté marocain)"},latin:"Butyrum fermentatum",
 origin:{en:"Middle Atlas, Morocco",fr:"Moyen Atlas, Maroc"},season:[],
-flavor:["pungent","rich","salty","musky"],
+flavor:["pungent","rich","salty","musky"],texture:["soft","smooth","creamy"],
 story:{en:"Salted butter is packed into an unglazed earthenware jar, sealed and buried, where it ages for months or years; in the Middle Atlas a jar laid down at a daughter's birth is opened at her wedding. What comes out is closer to a washed-rind cheese than to butter, and it is used at that strength.",
 fr:"Le beurre salé est tassé dans une jarre de terre non vernissée, scellée puis enfouie, où il vieillit des mois ou des années ; dans le Moyen Atlas, une jarre mise en terre à la naissance d’une fille s’ouvre à son mariage. Ce qui en sort tient davantage du fromage à croûte lavée que du beurre, et s’emploie à cette puissance."},
 tip:{en:"Work in grams: a piece the size of an almond seasons a tagine for six, and twice that takes the dish over. Melt it into the couscous or stir it into the sauce at the end, where the aroma survives.",
@@ -431,7 +431,7 @@ svg:'<path class="f3 sf" d="M38 36h20q12 10 12 22t-14 20H40q-14-2-14-20t12-22z"/
 
 {id:"suet",cat:"fats",price:1,pk:"4–9 €/kg",name:{en:"Suet",fr:"Graisse de rognon"},latin:"Sebum bovis",
 origin:{en:"Britain",fr:"Grande-Bretagne"},season:[],
-flavor:["rich","meaty","mild","earthy"],
+flavor:["rich","meaty","mild","earthy"],texture:["firm","dry","granular"],
 story:{en:"The hard fat from around beef kidneys, and it melts far higher than butter — so in a steamed pudding it stays solid while the flour sets around it, then melts and leaves the batter airy. British puddings depend entirely on that timing.",
 fr:"La graisse dure prise autour des rognons de bœuf, dont le point de fusion dépasse largement celui du beurre — dans un pudding vapeur elle reste solide le temps que la farine prenne autour, puis fond et laisse la pâte aérée. Les puddings britanniques reposent entièrement sur ce décalage."},
 tip:{en:"It must go in cold and grated, never melted. Warm suet blends into the flour and the whole point is lost.",
@@ -441,7 +441,7 @@ svg:'<path class="f1 sf" d="M21 52 Q19 40 30 36 Q34 27 45 29 Q56 23 64 32 Q76 36
 
 {id:"sunflower-oil",cat:"fats",price:1,pk:"2–5 €/L",name:{en:"Sunflower oil",fr:"Huile de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Russia & Ukraine",fr:"Russie & Ukraine"},season:[],
-flavor:["mild","nutty","delicate","toasty"],
+flavor:["mild","nutty","delicate","toasty"],texture:["smooth","silky"],
 story:{en:"The Russian Orthodox Church banned most fats during Lent but had never heard of the sunflower, so it escaped the list — and by the nineteenth century Russia was pressing it by the shipload. A loophole created an industry.",
 fr:"L’Église orthodoxe russe interdisait la plupart des corps gras pendant le Carême mais ignorait le tournesol, qui échappa donc à la liste — et au XIXe siècle la Russie le pressait par cargaisons entières. Une faille a créé une industrie."},
 tip:{en:"Its neutrality and high smoke point make it the default frying oil. Do not use it where you want the fat to taste of something.",
@@ -451,7 +451,7 @@ svg:'<path class="f2 sf" d="M40 76V44h16v32z"/><path class="s" d="M40 52h16"/><p
 
 {id:"sesame-oil",cat:"fats",price:2,pk:"18–35 €/L",name:{en:"Toasted sesame oil",fr:"Huile de sésame grillé"},latin:"Sesamum indicum",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[],
-flavor:["nutty","toasty","rich","umami"],
+flavor:["nutty","toasty","rich","umami"],texture:["smooth","silky"],
 story:{en:"Two entirely different products share the name: the pale oil from raw seed, used for frying, and the dark oil from toasted seed, which is a seasoning and not a cooking fat at all. Buying the wrong one ruins the dish either way.",
 fr:"Deux produits entièrement différents partagent le nom : l’huile claire de graines crues, pour la friture, et l’huile sombre de graines torréfiées, qui est un assaisonnement et pas du tout une matière grasse de cuisson. Se tromper gâche le plat dans les deux sens."},
 tip:{en:"Add it at the very end, by the half-teaspoon. Heated, its whole aroma burns off within seconds.",
@@ -461,7 +461,7 @@ svg:'<path class="f1 sf" d="M44 46q-10 1-11 8-1 2-1 5v13q0 5 5 6 11 3 22 0 5-1 5
 
 {id:"truffle-oil",cat:"fats",price:3,pk:"80–150 €/L",name:{en:"Truffle oil",fr:"Huile de truffe"},latin:"C3H8S2 (2,4-dithiapentane)",
 origin:{en:"Flavour houses, Italy",fr:"Maisons d'arômes, Italie"},season:[],
-flavor:["pungent","musky","earthy"],
+flavor:["pungent","musky","earthy"],texture:["smooth","silky"],
 story:{en:"The molecule that makes it, 2,4-dithiapentane, was synthesised in a Berlin laboratory in 1941 and only identified in white truffles a quarter of a century later, in Milan. Almost every bottle on sale is neutral oil dosed with the lab version: one note, held at full strength, where a real truffle carries dozens that fade.",
 fr:"La molécule qui la fait, le 2,4-dithiapentane, a été synthétisée dans un laboratoire berlinois en 1941 et n'a été identifiée dans la truffe blanche qu'un quart de siècle plus tard, à Milan. Presque toutes les bouteilles du commerce sont une huile neutre dosée à la version de synthèse : une seule note, tenue à pleine puissance, quand la vraie truffe en porte des dizaines qui s'effacent."},
 tip:{en:"It does not cook off and it does not dilute, so it goes on at the table by the drop, never into the pan and never into hot fat. If a dish tastes of nothing but truffle oil there is no rescue — start the sauce again.",
@@ -471,7 +471,7 @@ svg:'<path class="f1 sf" d="M40 40h16v34q0 4-4 4H44q-4 0-4-4z"/><path class="s" 
 
 {id:"walnut-oil",cat:"fats",price:2,pk:"20–35 €/L",name:{en:"Walnut oil",fr:"Huile de noix"},latin:"Juglans regia",
 origin:{en:"Périgord & Dauphiné",fr:"Périgord & Dauphiné"},season:[],
-flavor:["nutty","rich","toasty","earthy"],
+flavor:["nutty","rich","toasty","earthy"],texture:["smooth","silky"],
 story:{en:"Pressed in stone mills in the Périgord, where the kernels are roasted before crushing — that roasting is the whole flavour. Before it was a condiment it lit lamps and thinned the paints of Renaissance workshops.",
 fr:"Pressée dans des moulins de pierre en Périgord, où les cerneaux sont torréfiés avant broyage — cette torréfaction fait tout le goût. Avant d’être un condiment, elle éclairait les lampes et diluait les peintures des ateliers de la Renaissance."},
 tip:{en:"Never heat it. It turns bitter almost immediately, and it goes rancid fast — keep the bottle in the fridge.",

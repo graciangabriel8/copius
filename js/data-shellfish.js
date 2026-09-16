@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"abalone",cat:"shellfish",luxe:true,price:4,pk:"120–250 €/kg",rare:true,name:{en:"Abalone",fr:"Ormeau"},latin:"Haliotis tuberculata",
 origin:{en:"Brittany, Channel Islands & Japan",fr:"Bretagne, îles Anglo-Normandes & Japon"},season:[1,2,10,11,12],
-flavor:["marine","sweet","meaty","briny"],
+flavor:["marine","sweet","meaty","briny"],texture:["tough","chewy"],
 story:{en:"A sea snail in a mother-of-pearl ear, prised off rocks at the lowest tides. Japan’s ama — women free-divers whose craft is two thousand years old — have gathered them for emperors; in Brittany the ormeau is so coveted that its harvest is rationed to a handful of big-tide days a year.",
 fr:"Un escargot de mer dans une oreille de nacre, décollé des roches aux plus grandes marées basses. Les ama du Japon — plongeuses en apnée dont l’art a deux mille ans — les cueillent depuis les empereurs ; en Bretagne, l’ormeau est si convoité que sa pêche est rationnée à quelques jours de vives-eaux par an.",},
 tip:{en:"Tenderise or braise — there is no middle path: pound the escalopes and flash them in butter, or steam it hours with kombu until it slices like a wild mushroom.",
@@ -11,7 +11,7 @@ svg:'<path class="f2 sf" d="M30 70q14 7 30 1 6-2 10-6 1 7-10 10-16 4-26-2-6-2-4-
 
 {id:"american-lobster",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"American lobster",fr:"Homard américain (canadien)"},latin:"Homarus americanus",
 origin:{en:"Northwest Atlantic, Maine to Nova Scotia",fr:"Atlantique Nord-Ouest, du Maine à la Nouvelle-Écosse"},season:[11,12,1,2,3,4],
-flavor:["sweet","marine","rich"],
+flavor:["sweet","marine","rich"],texture:["firm","juicy"],
 story:{en:"It is a different animal from the European homard, and its year falls in two: after the summer moult a new-shell lobster has taken on seawater to stretch its shell, and yields something like 15 to 18 percent meat where a hard-shell gives 20 to 28. On the docks buyers judge it by squeezing the shell behind the claw, never by weight.",
 fr:"Ce n’est pas le même animal que le homard breton, et son année se coupe en deux : après la mue d’été, un homard à carapace neuve s’est gorgé d’eau de mer pour tendre sa coquille et ne rend guère que 15 à 18 % de chair, contre 20 à 28 % pour une carapace dure. Sur les quais, on le juge en pressant la carapace derrière la pince, jamais au poids."},
 tip:{en:"Press the shell behind the claw: if it flexes, it is a new-shell — poach it briefly and eat it plain, because it will not take a roast or a grill without going to threads. Keep hard-shell for anything that meets direct heat.",
@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M48 32q8 4 8 14l-2 22q-6 6-12 0l-2-22q0-10 8-14z"/><
 
 {id:"belon-flat-oyster",cat:"shellfish",luxe:true,price:3,pk:"20–40 €/douzaine",name:{en:"Belon flat oyster",fr:"Huître plate (belon)"},latin:"Ostrea edulis",
 origin:{en:"Brittany, the Belon estuary",fr:"Bretagne, estuaire du Belon"},season:[9,10,11,12,1,2,3,4],
-flavor:["briny","marine","nutty","bitter"],
+flavor:["briny","marine","nutty","bitter"],texture:["firm","silky","juicy"],
 story:{en:"France was producing close to 30,000 tonnes of flat oysters a year at the end of the 1960s; then came the parasite Marteilia refringens, then Bonamia ostreae in 1979, and output fell below 2,000 tonnes, where it has stayed. What survives is a different species from the cupped oyster on the next tray, and it tastes like one — metallic, hazelnut, faintly bitter at the finish.",
 fr:"La France produisait près de 30 000 tonnes d’huîtres plates par an à la fin des années 1960 ; puis vinrent le parasite Marteilia refringens, puis Bonamia ostreae en 1979, et la production est tombée sous les 2 000 tonnes, où elle est restée. Ce qui subsiste est une espèce différente de la creuse du plateau voisin, et cela se goûte : métallique, noisette, légèrement amère en finale."},
 tip:{en:"Open it flat side up and cut the muscle high, against the flat shell, or you shred it. Serve the first water and no lemon at all — acid flattens the hazelnut note that is the only reason to pay for a flat oyster.",
@@ -31,7 +31,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="52" rx="25" ry="23"/><ellipse class="s" 
 
 {id:"crab",cat:"shellfish",price:2,pk:"8–16 €/kg",name:{en:"Brown crab",fr:"Tourteau"},latin:"Cancer pagurus",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[5,6,7,8,9,10],
-flavor:["sweet","marine","rich","umami"],
+flavor:["sweet","marine","rich","umami"],texture:["tender","fibrous","moist"],
 story:{en:"Two entirely different foods live inside one shell: white claw meat, sweet and fibrous, and brown body meat, soft and intensely savoury. Most people only meet the white and never learn what the brown can do to a sauce.",
 fr:"Deux aliments entièrement différents cohabitent dans une carapace : la chair blanche des pinces, sucrée et fibreuse, et la chair brune du corps, molle et intensément savoureuse. La plupart ne connaissent que la blanche et ignorent ce que la brune fait à une sauce."},
 tip:{en:"Buy it live and heavy for its size. A light crab has recently moulted and its shell is half full of water.",
@@ -41,7 +41,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="20" ry="14"/><path class="s" d="
 
 {id:"brown-shrimp",cat:"shellfish",price:2,pk:"12–22 €/kg",name:{en:"Brown shrimp",fr:"Crevette grise"},latin:"Crangon crangon",
 origin:{en:"North Sea sandflats and estuaries",fr:"Estrans sableux et estuaires de la mer du Nord"},season:[5,6,7,8,9,10],
-flavor:["briny","nutty","marine"],
+flavor:["briny","nutty","marine"],texture:["firm","juicy"],
 story:{en:"At Oostduinkerke on the Belgian coast fishermen still drag their nets through the surf behind Brabant draught horses, a practice UNESCO listed as intangible heritage in December 2013, and the catch goes into the pot on the beach. The shrimp is boiled within minutes because otherwise it goes to mush, which is why it reaches a kitchen already cooked and never raw.",
 fr:"À Oostduinkerke, sur la côte belge, les pêcheurs traînent encore leurs filets dans le ressac derrière des chevaux de trait brabançons, pratique inscrite par l’UNESCO au patrimoine immatériel en décembre 2013, et la pêche passe à la marmite sur la plage. La crevette est cuite en quelques minutes, faute de quoi elle se défait : elle arrive donc en cuisine déjà cuite, jamais crue."},
 tip:{en:"Peel them yourself and keep every head and shell: twenty minutes in melted butter over the lowest heat, then strain, and you have the shrimp butter that justifies the whole job. Never reheat the peeled tails — warm them in the sauce off the heat.",
@@ -51,7 +51,7 @@ svg:'<path class="f2 sf" d="M30 34q26 2 34 24 3 9-4 13t-12-3q7 0 8-8 2-16-14-20-
 
 {id:"carabinero",cat:"shellfish",luxe:true,price:4,pk:"90–180 €/kg",name:{en:"Carabinero prawn",fr:"Gambon écarlate (carabinero)"},latin:"Aristaeopsis edwardsiana",
 origin:{en:"Deep Atlantic off Huelva and the Algarve",fr:"Grands fonds atlantiques au large de Huelva et de l’Algarve"},season:[],
-flavor:["sweet","briny","rich"],
+flavor:["sweet","briny","rich"],texture:["firm","juicy"],
 story:{en:"It is trawled from several hundred metres down, deep enough that red is invisible there — so the scarlet is permanent colour rather than anything cooking produces. The head holds a thick, almost buttery orange liquid, and in Andalusian kitchens the tails are often the offcut: it is the heads that get pressed for the sauce.",
 fr:"On le chalute par plusieurs centaines de mètres de fond, assez bas pour que le rouge y soit invisible : l’écarlate est donc une couleur permanente et non le produit de la cuisson. La tête renferme un liquide orange épais, presque beurré, et dans les cuisines andalouses ce sont souvent les queues qui font le déchet : ce sont les têtes que l’on presse pour la sauce."},
 tip:{en:"Cook it whole and briefly — thirty seconds a side on a very hot plancha with coarse salt — then break the head over the plate and press it with your thumb. Never boil it: the head liquid disperses into the water and what is left is an ordinary prawn.",
@@ -61,7 +61,7 @@ svg:'<path class="f3 sf" d="M30 24q18-2 24 16-12 8-24-2-6-6 0-14z"/><path class=
 
 {id:"clam",cat:"shellfish",price:2,pk:"12–20 €/kg",name:{en:"Clam",fr:"Palourde"},latin:"Ruditapes decussatus",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[9,10,11,12,1,2,3],
-flavor:["briny","sweet","marine","delicate"],
+flavor:["briny","sweet","marine","delicate"],texture:["tender","juicy"],
 story:{en:"They live buried in sand and filter water through a siphon, which means they are full of grit unless purged — a few hours in clean salted water and they spit it out themselves. No amount of rinsing achieves the same thing.",
 fr:"Elles vivent enfouies dans le sable et filtrent l’eau par un siphon, ce qui les emplit de sable si on ne les dégorge pas — quelques heures en eau salée propre et elles le recrachent d’elles-mêmes. Aucun rinçage n’obtient le même résultat."},
 tip:{en:"Purge them in salted water, never fresh — fresh water kills them and they open and spoil.",
@@ -71,7 +71,7 @@ svg:'<path class="f2 sf" d="M27 57q10 13 27 12q13-1 20-10q0 7-9 12q-14 6-27 0q-1
 
 {id:"cockle",cat:"shellfish",price:2,pk:"6–12 €/kg",name:{en:"Cockle",fr:"Coque"},latin:"Cerastoderma edule",
 origin:{en:"Atlantic sandflats",fr:"Estrans sableux de l’Atlantique"},season:[1,2,3,4,10,11,12],
-flavor:["briny","marine","fresh"],
+flavor:["briny","marine","fresh"],texture:["firm","chewy"],
 story:{en:"Cockle shells fill Mesolithic middens along every Atlantic coast, raked and hand-gathered from the same sandflats long before anyone wrote the practice down. The English phrase about warming the cockles of your heart is usually traced to the shell’s shape, though the etymology is disputed and may be nothing more than a pun on the Latin for the heart’s ventricles.",
 fr:"Les amas coquilliers mésolithiques de toute la façade atlantique sont pleins de coques, ratissées et ramassées à la main sur les mêmes estrans bien avant qu’on n’en écrive un mot. L’expression anglaise « réchauffer les coques du cœur » viendrait de la forme du coquillage, même si l’étymologie reste discutée et tient peut-être à un simple jeu de mots sur le latin des ventricules."},
 tip:{en:"They live in sand and they carry it: purge them at least four hours in cold water salted to 35 g per litre, changing the water twice. Cook covered over high heat and pull them the moment they gape, around three minutes — a cockle held past that goes to rubber.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M48 76q-22-12-22-32 0-11 9-13 8-2 13 6 5-8 13-6 9 2 
 
 {id:"common-prawn",cat:"shellfish",price:2,pk:"20–35 €/kg",name:{en:"Common prawn",fr:"Bouquet (crevette rose)"},latin:"Palaemon serratus",
 origin:{en:"Atlantic rockpools",fr:"Rochers de l’Atlantique"},season:[1,2,10,11,12],
-flavor:["marine","sweet","briny"],
+flavor:["marine","sweet","briny"],texture:["firm","juicy"],
 story:{en:"The bouquet is taken from the shore with a balance, a hooped net dropped into rock crevices on the big spring tides, a licensed foot fishery that has changed very little in a century. Its name is said to come from the way a lifted net makes them leap together like a bunch of flowers, though you will be given three other explanations depending on the port.",
 fr:"Le bouquet se pêche à pied, à la balance, un filet cerclé glissé dans les failles de rocher aux grandes marées — une pêche encadrée qui n’a guère changé en un siècle. Son nom viendrait de la façon dont une balance remontée les fait bondir en gerbe, mais on vous donnera trois autres explications selon le port."},
 tip:{en:"Court-bouillon salted to the strength of seawater, prawns dropped in live, two minutes counted from the return to the boil for a large one, then left to cool in their own liquid. Peel them before cooking and you lose the coral colour and half the flavour; the shell is the point.",
@@ -91,7 +91,7 @@ svg:'<g transform="translate(5.04 5.25) scale(0.895)"><path class="f2 sf" d="M64
 
 {id:"tomalley",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Crab tomalley (kani miso)",fr:"Crème de crabe (kani miso)"},latin:"Brachyura / Nephropidae (hepatopancreas)",
 origin:{en:"Inside the crab shell",fr:"Sous la carapace du crabe"},season:[],
-flavor:["rich","briny","umami","marine"],
+flavor:["rich","briny","umami","marine"],texture:["soft","creamy"],
 story:{en:"Kani miso is named for what it looks like: there is no miso in it, only the crab’s hepatopancreas, which does the work of both liver and pancreas. Because that organ filters, it concentrates whatever the water holds — which is why health authorities in red-tide seasons tell people to eat the meat and leave the tomalley.",
 fr:"Le kani miso porte le nom de ce à quoi il ressemble : il n’y a pas de miso dedans, seulement l’hépatopancréas du crabe, qui fait le travail du foie et celui du pancréas. Comme cet organe filtre, il concentre ce que l’eau contient — d’où les avis sanitaires qui, en saison d’eaux rouges, invitent à manger la chair et à laisser la crème."},
 tip:{en:"Scrape it out warm and whisk it into the pan sauce off the heat — it emulsifies like an egg yolk and gives a bisque body without flour. Boiled hard it splits into grains, so add it last.",
@@ -101,7 +101,7 @@ svg:'<path class="f1 sf" d="M20 48q6-16 28-16t28 16q-4 22-28 22T20 48z"/><path c
 
 {id:"crayfish",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"Crayfish",fr:"Écrevisse"},latin:"Astacus astacus",
 origin:{en:"European fresh water",fr:"Eaux douces d’Europe"},season:[7,8,9,10],
-flavor:["sweet","marine","rich","delicate"],
+flavor:["sweet","marine","rich","delicate"],texture:["firm","juicy"],
 story:{en:"The native European species was devastated by a plague carried in with American imports in the nineteenth century, and it has never recovered. Nantua built an entire sauce on it — the shells, pounded into butter, are the dish.",
 fr:"L’espèce européenne indigène fut décimée par une peste apportée avec des importations américaines au XIXe siècle, et ne s’en est jamais remise. Nantua a bâti toute une sauce dessus — les carapaces, pilées en beurre, font le plat."},
 tip:{en:"Never discard the shells. Roasted and pounded into butter or simmered into stock, they are worth more than the meat.",
@@ -111,7 +111,7 @@ svg:'<path class="f1 sf" d="M34 44q14-8 28 0t-4 28-24 0z"/><path class="s" d="M3
 
 {id:"cuttlefish",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Cuttlefish",fr:"Seiche"},latin:"Sepia officinalis",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[3,4,5,6,9,10],
-flavor:["sweet","marine","umami","rich"],
+flavor:["sweet","marine","umami","rich"],texture:["firm","chewy"],
 story:{en:"Its ink was the original sepia — the brown of old photographs and Renaissance drawings is named after this animal, and was made from it for centuries. The internal shell is the cuttlebone sold in birdcages.",
 fr:"Son encre est le sépia d’origine — le brun des vieilles photographies et des dessins de la Renaissance porte le nom de cet animal, et en était tiré depuis des siècles. La coquille interne est l’os de seiche vendu en cage à oiseaux."},
 tip:{en:"Thicker and meatier than squid, and it takes longer. Give it forty minutes of gentle braising rather than a fast sear.",
@@ -121,7 +121,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="46" rx="17" ry="20"/><path class="s" d="
 
 {id:"dog-cockle",cat:"shellfish",price:2,pk:"6–12 €/kg",name:{en:"Dog cockle",fr:"Amande de mer"},latin:"Glycymeris glycymeris",
 origin:{en:"Gravel beds of the Atlantic shelf",fr:"Fonds de graviers du plateau atlantique"},season:[1,2,3,4,9,10,11,12],
-flavor:["marine","nutty","briny"],
+flavor:["marine","nutty","briny"],texture:["firm","crunchy"],
 story:{en:"The shell lays down one growth ring a year and never pauses, which is why researchers off western Scotland have aged dog cockles at close to two hundred years and built dated sea-temperature records out of them. The sclerochronologist reads the shell the cook throws away.",
 fr:"La coquille dépose un anneau par an sans jamais s’interrompre : au large de l’Écosse, on a daté des amandes de mer de près de deux cents ans et reconstitué à partir d’elles des séries de température. Le sclérochronologue lit la coquille que le cuisinier jette."},
 tip:{en:"It never gapes, so go in at the hinge with a stiff blade rather than a flexible oyster knife. Eat it raw within a day of landing: heat sets the adductor hard in under a minute, and nothing brings it back.",
@@ -131,7 +131,7 @@ svg:'<circle class="f2 sf" cx="48" cy="52" r="24"/><path class="s" d="M27 41q21-
 
 {id:"ormeau-seche",cat:"shellfish",rare:true,luxe:true,price:4,pk:"600–2 000 €/kg",name:{en:"Dried abalone",fr:"Ormeau séché"},latin:"Haliotis discus hannai (dried)",
 origin:{en:"Iwate and Aomori, Japan",fr:"Iwate et Aomori, Japon"},season:[],
-flavor:["umami","marine","rich","meaty"],
+flavor:["umami","marine","rich","meaty"],texture:["hard","chewy","dry"],
 story:{en:"Dried abalone is sold by head count — the number of pieces that fill a catty of roughly 600 g — so a two-head abalone from Yoshihama is an enormous animal and priced by the single piece. It is dried and aged for a year or more before anyone cooks it, then braised two or three days until the centre turns to translucent gel, and the sauce left behind is treated as the finer half of the dish.",
 fr:"L'ormeau séché se vend au nombre de têtes, c'est-à-dire de pièces contenues dans un catty d'environ 600 g : un deux-têtes de Yoshihama est un animal énorme, vendu à la pièce. Il sèche et vieillit un an ou plus avant qu'on le cuisine, puis mijote deux ou trois jours jusqu'à ce que le cœur devienne un gel translucide — et l'on tient la sauce obtenue pour la plus belle moitié du plat."},
 tip:{en:"Soak four to seven days in cold water in the fridge, changing it daily, then braise below a simmer with pork and chicken for at least eight hours. A single hard boil tightens it permanently.",
@@ -141,7 +141,7 @@ svg:'<path class="f2 sf" d="M22 52q0-18 22-20t28 12-14 24-32-2-4-14z"/><path cla
 
 {id:"huitres-sechees",cat:"shellfish",rare:true,price:3,pk:"80–200 €/kg",name:{en:"Dried oyster",fr:"Huîtres séchées"},latin:"Magallana gigas (dried)",
 origin:{en:"Guangdong and Fujian coasts",fr:"Côtes du Guangdong et du Fujian"},season:[],
-flavor:["umami","smoky","sweet","marine"],
+flavor:["umami","smoky","sweet","marine"],texture:["firm","chewy","dry"],
 story:{en:"In Cantonese the dried oyster is ho see, close enough to a phrase for good business that the New Year dish pairing it with black moss reads as a wish for prosperity — which is why it barely appears on the table the rest of the year. Drying turns the shellfish dark, dense and smoky-sweet, leaving nothing of the cold saline snap it had raw.",
 fr:"En cantonais, l'huître séchée se dit ho see, assez proche d'une formule signifiant bonnes affaires pour que le plat du Nouvel An qui l'associe au cheveu de mer se lise comme un vœu de prospérité — d'où son absence quasi totale du reste de l'année. Le séchage la rend sombre, dense et fumée-sucrée, sans rien garder de la morsure saline qu'elle avait crue."},
 tip:{en:"Soak them overnight, rinse, and pinch out the dark ring of stomach if you want a clean flavour. Braise them a full hour with pork belly rather than adding them near the end, or they stay rubbery.",
@@ -151,7 +151,7 @@ svg:'<path class="f2 sf" d="M24 48q6-14 20-10t10 16-14 12-18-6 2-12z"/><path cla
 
 {id:"sakura-ebi",cat:"shellfish",price:3,pk:"120–250 €/kg",name:{en:"Dried sakura shrimp",fr:"Sakura ebi séchées"},latin:"Lucensosergia lucens",
 origin:{en:"Suruga Bay, Shizuoka",fr:"Baie de Suruga, Shizuoka"},season:[3,4,5,10,11,12],
-flavor:["sweet","briny","marine"],
+flavor:["sweet","briny","marine"],texture:["brittle","dry"],
 story:{en:"They are bioluminescent — the species name lucens points at the light organs running down the body — and they are netted at night in Suruga Bay, the only commercial fishery for them in Japan. The catch is spread to dry on open gravel flats at Yui, which turns whole fields pink for a few days in spring and again in autumn.",
 fr:"Elles sont bioluminescentes — le nom d'espèce lucens désigne les organes lumineux alignés le long du corps — et se pêchent de nuit au filet dans la baie de Suruga, seule pêcherie commerciale du Japon pour cette crevette. La capture est étendue à sécher sur les terrasses de galets de Yui, ce qui teinte des champs entiers de rose quelques jours au printemps, puis de nouveau à l'automne."},
 tip:{en:"Toast them thirty seconds in a dry pan before use: they go brittle and the aroma lifts sharply. Fold them into a kakiage batter at the last possible moment — left to soak they soften and the whole thing tastes of fish paste.",
@@ -161,7 +161,7 @@ svg:'<path class="f2 sf" d="M60 36q-18 0-24 14t8 22q6 2 8-2-10 0-12-8t8-16q8-6 1
 
 {id:"crevettes-sechees",cat:"shellfish",price:2,pk:"35–70 €/kg",name:{en:"Dried shrimp",fr:"Crevettes séchées"},latin:"Penaeus spp. (dried)",
 origin:{en:"Coastal Asia and the Gulf of Mexico",fr:"Côtes d'Asie et golfe du Mexique"},season:[],
-flavor:["umami","briny","salty","marine"],
+flavor:["umami","briny","salty","marine"],texture:["hard","chewy","dry"],
 story:{en:"Boiled in brine and dried in the sun, shrimp keep for a year and travel where fresh ones cannot, which is why the same ingredient anchors Cantonese steamed dishes, Thai chilli pastes and the Lenten shrimp broths of Oaxaca. Drying here is less preservation than concentration: weight for weight they carry far more savour than the fresh shrimp they came from.",
 fr:"Bouillies en saumure puis séchées au soleil, les crevettes se gardent un an et voyagent là où les fraîches ne vont pas : c'est le même ingrédient qui tient les vapeurs cantonais, les pâtes de piment thaïes et les bouillons de carême d'Oaxaca. Le séchage relève moins de la conservation que de la concentration : à poids égal, elles portent bien plus de saveur que la crevette dont elles viennent."},
 tip:{en:"Soak twenty minutes in warm water or Shaoxing and use the soaking liquid in the dish. Fry them in oil before anything else goes into the pan — that first sizzle is what releases the aroma.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M30 38q13-8 20 2t-8 18-16-6 4-14z"/><path class="s" 
 
 {id:"surume-dried-squid",cat:"shellfish",price:2,pk:"50–100 €/kg",name:{en:"Dried squid (surume)",fr:"Calmar séché (surume)"},latin:"Todarodes pacificus",
 origin:{en:"Hokkaido, Japan",fr:"Hokkaidō, Japon"},season:[],
-flavor:["umami","marine","briny","toasty"],
+flavor:["umami","marine","briny","toasty"],texture:["hard","chewy","dry"],
 story:{en:"Japanese has two names for the same dried squid because of a superstition about the first: suru also means to lose at gambling, so the auspicious substitute atarime, from atari, a win, was coined and stuck. In the yuinō betrothal exchange it is written with characters chosen only for their sound — long life, staying, woman — and the squid itself is not really the point.",
 fr:"Le japonais a deux noms pour ce calmar séché à cause d’une superstition sur le premier : suru signifie aussi perdre au jeu, d’où le substitut de bon augure atarime, formé sur atari, « coup gagnant ». Dans l’échange de fiançailles yuinō, le mot s’écrit avec des caractères choisis pour leur seul son — longue vie, demeurer, femme — et le calmar lui-même n’est pas vraiment le sujet."},
 tip:{en:"Toast it briefly over a flame until it curls and smells sweet before it goes into a stock; untoasted it gives a flat, fishy broth. For braises, soak it 30 minutes in water or rice wine and add the soaking liquid to the pot.",
@@ -181,7 +181,7 @@ svg:'<path class="f1 sf" d="M48 18l22 14H26z"/><path class="f2 sf" d="M32 32h32l
 
 {id:"dungeness-crab",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"Dungeness crab",fr:"Crabe dormeur du Pacifique"},latin:"Metacarcinus magister",
 origin:{en:"US Pacific coast",fr:"Côte pacifique américaine"},season:[1,2,3,4,5,6,11,12],
-flavor:["sweet","nutty","marine","delicate"],
+flavor:["sweet","nutty","marine","delicate"],texture:["tender","fibrous","moist"],
 story:{en:"The crab is named for Dungeness, a spit of sand on the Strait of Juan de Fuca where the commercial fishery began in the 1890s. It is run on three letters — sex, size, season — so only mature males above about sixteen centimetres are landed, and every female goes back over the rail whatever the price is doing.",
 fr:"Le crabe doit son nom à Dungeness, une flèche de sable du détroit de Juan de Fuca où la pêcherie commerciale s’est ouverte dans les années 1890. Elle se gère selon trois règles — sexe, taille, saison — de sorte que seuls les mâles adultes de plus de seize centimètres sont débarqués : les femelles repartent à l’eau quel que soit le cours."},
 tip:{en:"It reaches you already cooked, so never boil it a second time — warm the sections covered with a spoon of butter for three or four minutes, or serve them cold. The mustard-coloured tomalley under the carapace is the best of the animal: scrape it out and beat it into the mayonnaise.",
@@ -191,7 +191,7 @@ svg:'<path class="f2 sf" d="M26 50q5-14 22-14t22 14q2 13-11 17H37q-13-4-11-17z"/
 
 {id:"geoduck",cat:"shellfish",rare:true,luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Geoduck",fr:"Panope (geoduck)"},latin:"Panopea generosa",
 origin:{en:"Puget Sound tideflats",fr:"Estrans du Puget Sound"},season:[],
-flavor:["marine","sweet","fresh"],
+flavor:["marine","sweet","fresh"],texture:["firm","crunchy"],
 story:{en:"The name has nothing to do with a duck: it comes from a Lushootseed word, gwiduq, generally read as dig deep, and the clam does exactly that, sinking about thirty centimetres in its first years and then staying put. The oldest one aged so far was one hundred and sixty-eight.",
 fr:"Rien à voir avec un canard : le nom vient d’un mot lushootseed, gwiduq, qu’on traduit par « creuser profond », et c’est exactement ce que fait la panope — une trentaine de centimètres pendant ses premières années, puis plus rien. Le plus vieux spécimen daté avait cent soixante-huit ans."},
 tip:{en:"Blanch the siphon ten seconds in boiling water, plunge it into ice, and the dark skin peels off in one piece like a sock. Slice the peeled siphon paper-thin across the grain for raw service; the softer mantle is a different meat and wants a fast sauté or a chowder.",
@@ -201,7 +201,7 @@ svg:'<ellipse class="f2 sf" cx="37" cy="64" rx="18" ry="13"/><path class="f1 sf"
 
 {id:"mitten-crab",cat:"shellfish",rare:true,luxe:true,price:3,pk:"20–50 €/pièce",name:{en:"Hairy crab",fr:"Crabe poilu de Shanghai"},latin:"Eriocheir sinensis",
 origin:{en:"Yangtze lakes and estuaries",fr:"Lacs et estuaires du Yangtsé"},season:[9,10,11],
-flavor:["rich","umami","sweet","marine"],
+flavor:["rich","umami","sweet","marine"],texture:["tender","creamy"],
 story:{en:"It is bought for its roe in a window of a few autumn weeks, and Suzhou practice sets the order: females in the ninth lunar month, males in the tenth, each taken when it is at its fullest. The same animal travelled to Europe in ballast water, was first recorded in the German river Aller in 1912, and now sits on the IUCN list of the hundred worst invasive species.",
 fr:"On l’achète pour ses œufs, dans une fenêtre de quelques semaines d’automne, et l’usage de Suzhou fixe l’ordre : les femelles au neuvième mois lunaire, les mâles au dixième, chacun à son plein. Le même animal a gagné l’Europe par les eaux de ballast — première mention dans l’Aller, en Allemagne, en 1912 — et figure aujourd’hui parmi les cent pires espèces envahissantes de l’UICN."},
 tip:{en:"Tie it and steam it belly up, twelve to fifteen minutes, with a perilla leaf on the shell, so the roe stays in the carapace instead of running into the basket. Eat it hot with Zhenjiang vinegar and a heap of shredded ginger — the roe sets waxy as it cools.",
@@ -211,7 +211,7 @@ svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f3 sf" d="M34
 
 {id:"hotate",cat:"shellfish",price:3,pk:"40–75 €/kg",name:{en:"Hotate scallop",fr:"Hotate (Saint-Jacques du Japon)"},latin:"Mizuhopecten yessoensis",
 origin:{en:"Hokkaido and Mutsu Bay",fr:"Hokkaidō et baie de Mutsu"},season:[],
-flavor:["sweet","marine","creamy","delicate"],
+flavor:["sweet","marine","creamy","delicate"],texture:["tender","silky"],
 story:{en:"Hotate-gai means sail-raising shell: the story goes that the scallop lifts one valve like a sail and lets the wind push it across the bay, which it does not do, although it can swim by clapping. Almost all of it now comes from hanging culture in Mutsu Bay and off Hokkaido, where the spat is caught on nets suspended in open water.",
 fr:"Hotate-gai signifie « coquille qui hisse la voile » : la légende veut que le pétoncle dresse une valve comme une voile et se laisse pousser par le vent — ce qu’il ne fait pas, même s’il nage en claquant ses valves. L’essentiel de la production vient aujourd’hui de l’élevage suspendu de la baie de Mutsu et d’Hokkaidō, où le naissain se capte sur des filets immergés en pleine eau."},
 tip:{en:"For sashimi, firm it fifteen minutes in the freezer, then cut the adductor across the grain into three discs — with the grain it shreds. Seared, one face only: ninety seconds in a smoking pan and out; the second face is what turns it into a puck.",
@@ -221,7 +221,7 @@ svg:'<path class="f2 sf" d="M40 30h16l14 31q4 8-4 12H30q-8-4-4-12z"/><path class
 
 {id:"awabi",cat:"shellfish",luxe:true,price:4,pk:"200–450 €/kg",name:{en:"Japanese abalone",fr:"Awabi (ormeau du Japon)"},latin:"Haliotis discus hannai",
 origin:{en:"Northern Japan, dived by ama",fr:"Nord du Japon, pêché par les ama"},season:[6,7,8,9],
-flavor:["marine","umami","briny","mild"],
+flavor:["marine","umami","briny","mild"],texture:["tough","chewy"],
 story:{en:"At Kuzaki in Mie prefecture, elders still slice abalone thin, stretch it and dry it into strips offered at the Ise Shrine three times a year. That dried strip is the origin of the noshi, the folded paper flash printed on Japanese gift envelopes ever since — a stretched abalone standing for good fortune drawn out and prolonged.",
 fr:"À Kuzaki, dans le département de Mie, les anciens tranchent encore l’ormeau très fin, l’étirent et le sèchent en lanières offertes trois fois l’an au sanctuaire d’Ise. Cette lanière est à l’origine du noshi, le motif de papier plié imprimé depuis sur les enveloppes de cadeau au Japon : un ormeau étiré pour dire une chance qui se prolonge."},
 tip:{en:"Scrub it with coarse salt until the grey slime lifts, or nothing you do afterwards will taste clean. Then commit: raw and sliced very thin, or braised four hours in sake, dashi and daikon — anywhere between twenty minutes and three hours it is simply rubber.",
@@ -231,7 +231,7 @@ svg:'<path class="f2 sf" d="M22 54q-2-19 20-22t30 13q3 17-16 23t-34-14z"/><path 
 
 {id:"king-crab",cat:"shellfish",luxe:true,price:3,pk:"60–120 €/kg",name:{en:"King crab",fr:"Crabe royal"},latin:"Paralithodes camtschaticus",
 origin:{en:"Bering Sea & Barents Sea",fr:"Mer de Béring & mer de Barents"},season:[1,10,11,12],
-flavor:["sweet","marine","rich","briny"],
+flavor:["sweet","marine","rich","briny"],texture:["firm","fibrous","juicy"],
 story:{en:"A giant whose legs can span nearly two metres, fished in some of the deadliest waters on Earth. Soviet scientists released it near Murmansk in the 1960s; it marched west into Norwegian fjords, where fishermen — torn between plague and windfall — still call it “Stalin’s crab”.",
 fr:"Un géant dont les pattes frôlent les deux mètres d’envergure, pêché dans certaines des eaux les plus meurtrières du globe. Des scientifiques soviétiques l’ont relâché près de Mourmansk dans les années 1960 ; il a marché vers l’ouest jusqu’aux fjords norvégiens, où les pêcheurs — partagés entre fléau et aubaine — l’appellent encore « le crabe de Staline »."},
 tip:{en:"The legs hold all the treasure and are nearly always sold cooked: never boil them again. Warm them gently in butter or serve them cold with lemon — anything more is vandalism.",
@@ -241,7 +241,7 @@ svg:'<circle class="f2 sf" cx="48" cy="52" r="12"/><path class="s" d="M38 44l-10
 
 {id:"kumamoto-oyster",cat:"shellfish",price:3,pk:"25–45 €/douzaine",name:{en:"Kumamoto oyster",fr:"Huître kumamoto"},latin:"Magallana sikamea",
 origin:{en:"Kumamoto, Japan; farmed on the US Pacific coast",fr:"Kumamoto, Japon ; élevée sur la côte pacifique américaine"},season:[],
-flavor:["sweet","fruity","marine","mild"],
+flavor:["sweet","fruity","marine","mild"],texture:["soft","silky","juicy"],
 story:{en:"It reached Seattle in 1946 by accident: Japan could not fill an American order for Pacific oyster seed and made up the shortfall with sikamea from Kumamoto. By 1994 researchers believed the species extinct in its home waters, until it was found again in the Ariake Sea in 1996 and confirmed by DNA.",
 fr:"Elle est arrivée à Seattle en 1946 par accident : le Japon ne pouvait honorer une commande américaine de naissain d’huître creuse et a complété avec de la sikamea de Kumamoto. En 1994, les chercheurs la croyaient éteinte dans ses eaux d’origine ; on l’a retrouvée en 1996 en mer d’Ariake, et l’ADN l’a confirmée."},
 tip:{en:"The cup is deep and the shell brittle, so enter at the hinge and twist there — levering at the lip shatters it into the meat. Serve it in that deep half with all its liquor and skip the mignonette: vinegar buries the melon note that is the entire reason to buy it.",
@@ -251,7 +251,7 @@ svg:'<path class="f2 sf" d="M24 50q4-19 24-19t24 19q0 17-24 21T24 50z"/><path cl
 
 {id:"kuruma-ebi",cat:"shellfish",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Kuruma prawn",fr:"Crevette kuruma"},latin:"Marsupenaeus japonicus",
 origin:{en:"Coastal Japan, farmed since the 1930s",fr:"Côtes japonaises, élevée depuis les années 1930"},season:[1,2,11,12],
-flavor:["sweet","marine","delicate"],
+flavor:["sweet","marine","delicate"],texture:["firm","juicy"],
 story:{en:"Kuruma means wheel, for the brown and blue bands that close into a ring when the prawn curls on itself. Motosaku Fujinaga spawned and reared it in tanks in 1933, the first penaeid prawn ever farmed, and every warm-water shrimp farm in the world descends from that method.",
 fr:"Kuruma veut dire « roue » : les anneaux bruns et bleus se referment en cercle quand la crevette se recroqueville. Motosaku Fujinaga l’a fait pondre et grandir en bassin dès 1933 — première crevette pénéide élevée au monde — et toutes les fermes crevettières de la planète descendent de cette méthode."},
 tip:{en:"It ships alive in damp sawdust and is killed at the counter, so buy it that way and cook it within the hour — its sweetness is a function of how recently it died. Run a skewer along the belly before poaching so it cooks straight for nigiri, and give it ninety seconds in salted water, no more.",
@@ -261,7 +261,7 @@ svg:'<path class="f2 sf" d="M40 28h16q5 4 3 13l-6 27q-2 6-8 6t-8-6l-6-27q-2-9 3-
 
 {id:"langoustine",cat:"shellfish",luxe:true,price:3,pk:"30–60 €/kg",name:{en:"Langoustine",fr:"Langoustine"},latin:"Nephrops norvegicus",
 origin:{en:"North-East Atlantic",fr:"Atlantique Nord-Est"},season:[4,5,6,7,8],
-flavor:["sweet","delicate","marine"],
+flavor:["sweet","delicate","marine"],texture:["tender","juicy"],
 story:{en:"The most impatient of shellfish: it dies fast out of water and sulks fast on ice, which is why for centuries only port towns ever tasted it at its best. The English called them Dublin Bay prawns after the boats that landed them; chefs simply call them the finest sweetness the Atlantic makes.",
 fr:"Le plus impatient des crustacés : il meurt vite hors de l’eau et boude vite sur la glace — c’est pourquoi, des siècles durant, seules les villes portuaires l’ont connu à son sommet. Les Anglais les nomment « crevettes de la baie de Dublin », d’après les bateaux qui les débarquaient ; les chefs les appellent simplement la plus fine douceur que fabrique l’Atlantique."},
 tip:{en:"Seconds, not minutes: flash them in foaming butter or poach them barely, and serve while they still remember the sea. The heads make a ten-minute sauce that outclasses most week-long ones.",
@@ -271,7 +271,7 @@ svg:'<path class="s" d="M41 28q-10 0-17 10M55 28q10 0 17 10"/><path class="f1 sf
 
 {id:"lobster",cat:"shellfish",luxe:true,price:3,pk:"45–80 €/kg",name:{en:"Lobster",fr:"Homard"},latin:"Homarus gammarus",
 origin:{en:"North Atlantic; Brittany prizes the blue",fr:"Atlantique Nord ; la Bretagne vénère le bleu"},season:[5,6,7,8,9],
-flavor:["sweet","marine","rich","delicate"],
+flavor:["sweet","marine","rich","delicate"],texture:["firm","juicy"],
 story:{en:"Colonial New England fed lobster to prisoners and servants — the story goes that some contracts capped it at three meals a week. The rails and the rich reversed its fortune entirely; Brittany’s cobalt-shelled homard bleu now outranks nearly everything else in the tank.",
 fr:"La Nouvelle-Angleterre coloniale servait le homard aux prisonniers et aux domestiques — certains contrats, raconte-t-on, le limitaient à trois repas par semaine. Le chemin de fer et les riches renversèrent entièrement sa fortune ; le homard bleu breton à carapace de cobalt surclasse aujourd’hui presque tout le vivier."},
 tip:{en:"Undercook rather than over — the flesh turns to eraser past its point. Roast the shells for bisque, and dare the old Senderens pairing: a whisper of vanilla in the butter.",
@@ -281,7 +281,7 @@ svg:'<path class="f2 sf" d="M44 36q4-4 8 0l2 20q3 10-6 14-9-4-6-14z"/><path clas
 
 {id:"corail-de-homard",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Lobster coral",fr:"Corail de homard"},latin:"Homarus gammarus (coral)",
 origin:{en:"Brittany and the North Atlantic",fr:"Bretagne et Atlantique Nord"},season:[5,6,7,8,9],
-flavor:["rich","marine","briny","umami"],
+flavor:["rich","marine","briny","umami"],texture:["soft","creamy"],
 story:{en:"The coral is the hen lobster's unripe eggs, dark green while raw and scarlet only once heat unlocks the protein holding the pigment down — the same reaction that reddens the shell. Escoffier's beurre de corail works it raw into butter so that colour and thickening arrive together, at the last second.",
 fr:"Le corail, ce sont les œufs immatures de la femelle : vert sombre à cru, écarlate seulement quand la chaleur libère la protéine qui retenait le pigment — la réaction même qui rougit la carapace. Le beurre de corail d'Escoffier le travaille cru avec le beurre, pour que couleur et liaison arrivent ensemble, à la dernière seconde."},
 tip:{en:"Work it raw into soft butter and whisk that into the bisque off the heat. Dropped straight into a pot above about 70 °C it seizes into red grains and thickens nothing.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M30 36q18-6 34 0v28q-16 8-34 0z"/><path class="s" d=
 
 {id:"mantis-shrimp",cat:"shellfish",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Mantis shrimp",fr:"Squille (crevette-mante)"},latin:"Squilla mantis",
 origin:{en:"Muddy Mediterranean and Adriatic bottoms",fr:"Fonds vaseux de Méditerranée et d’Adriatique"},season:[1,2,3,11,12],
-flavor:["sweet","marine","delicate","briny"],
+flavor:["sweet","marine","delicate","briny"],texture:["tender","moist"],
 story:{en:"It is neither shrimp nor lobster but a stomatopod, an order that split from the other crustaceans hundreds of millions of years ago and kept a folding spear-claw no shrimp ever had. Two dark false eyespots ride on the tail, which is how you pick Squilla mantis out of an Adriatic crate at a glance.",
 fr:"Ce n’est ni une crevette ni une langouste mais un stomatopode, un ordre séparé des autres crustacés depuis des centaines de millions d’années, qui a gardé une patte-harpon repliable inconnue des crevettes. Deux faux yeux sombres marquent la queue : c’est à cela qu’on repère la squille dans une caisse adriatique."},
 tip:{en:"Run scissors down both edges of the tail and the belly plate lifts away in one piece, legs and all. Steam three minutes and no longer, and buy it within a day of landing — the flesh softens and turns ammoniac faster than anything else on the stall.",
@@ -301,7 +301,7 @@ svg:'<path class="f1 sf" d="M38 28h20q4 0 4 4v32H34V32q0-4 4-4z"/><path class="s
 
 {id:"mussel",cat:"shellfish",price:1,pk:"3–6 €/kg",name:{en:"Mussel",fr:"Moule"},latin:"Mytilus edulis",
 origin:{en:"North Atlantic",fr:"Atlantique Nord"},season:[9,10,11,12,1,2],
-flavor:["briny","marine","sweet","umami"],
+flavor:["briny","marine","sweet","umami"],texture:["tender","juicy"],
 story:{en:"Bouchot mussels are grown on wooden posts driven into tidal flats, a method a shipwrecked Irishman is said to have devised in the Bay of Aiguillon in 1235. The posts keep them off the sand, so they carry no grit.",
 fr:"Les moules de bouchot poussent sur des pieux de bois plantés dans l’estran, méthode qu’un naufragé irlandais aurait imaginée dans la baie de l’Aiguillon en 1235. Les pieux les tiennent hors du sable, si bien qu’elles ne portent pas de grain."},
 tip:{en:"Discard any that stay open when tapped before cooking, and any that stay shut after. Both rules matter.",
@@ -311,7 +311,7 @@ svg:'<path class="f1 sf" d="M20 71Q31 52 46 42Q62 32 74 40Q82 46 78 56Q72 66 56 
 
 {id:"bay-scallop",cat:"shellfish",rare:true,luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Nantucket bay scallop",fr:"Pétoncle de baie"},latin:"Argopecten irradians",
 origin:{en:"Nantucket eelgrass beds",fr:"Herbiers de zostère de Nantucket"},season:[1,2,3,11,12],
-flavor:["sweet","delicate","marine","creamy"],
+flavor:["sweet","delicate","marine","creamy"],texture:["tender","juicy"],
 story:{en:"The commercial season runs from the first of November to the end of March, worked by hand from small boats, and the scallop lives out its two years in eelgrass meadows that hide it from crabs. When wasting disease stripped up to ninety per cent of North Atlantic eelgrass in the 1930s, the bay scallop went with it almost everywhere but here.",
 fr:"La saison commerciale court du 1er novembre à la fin mars, travaillée à la main depuis de petits bateaux, et le pétoncle passe ses deux années de vie dans les herbiers de zostère qui le cachent des crabes. Quand la maladie du dépérissement a emporté jusqu’à quatre-vingt-dix pour cent des zostères de l’Atlantique Nord dans les années 1930, le pétoncle de baie a disparu avec elles presque partout ailleurs."},
 tip:{en:"They are the size of a fingernail and full of water: pat them dry, use a wide pan, work in small batches and give them thirty seconds in foaming butter. Crowd the pan and they release their liquid, poach themselves, and go from sweet to chalky inside the same minute.",
@@ -321,7 +321,7 @@ svg:'<path class="f2 sf" d="M25 50v11q0 7 11 7t11-7V50z"/><ellipse class="f1 sf"
 
 {id:"amaebi",cat:"shellfish",price:3,pk:"40–80 €/kg",name:{en:"Northern sweet shrimp",fr:"Crevette nordique (amaebi)"},latin:"Pandalus borealis",
 origin:{en:"Cold North Atlantic and Sea of Japan",fr:"Eaux froides de l’Atlantique Nord et de la mer du Japon"},season:[1,2,3,11,12],
-flavor:["sweet","marine","delicate","creamy"],
+flavor:["sweet","marine","delicate","creamy"],texture:["soft","silky"],
 story:{en:"Every northern shrimp is born male and turns female at around four years old, so the egg-carrying ones behind a sushi counter are the oldest animals in the case. Its gelatinous sweetness comes from free amino acids that build up in cold water and break down within hours of death, which is why the boats freeze it on board rather than land it fresh.",
 fr:"Toute crevette nordique naît mâle et devient femelle vers quatre ans : celles qui portent leurs œufs derrière un comptoir à sushi sont donc les plus vieilles de la vitrine. Sa douceur gélatineuse vient d’acides aminés libres qui s’accumulent en eau froide et se dégradent en quelques heures après la mort — d’où la congélation à bord plutôt qu’un débarquement en frais."},
 tip:{en:"Do not rinse the peeled tails; brush them and leave them two minutes under a light salt, which firms and concentrates the flesh. Fry the heads separately at 180 °C for forty seconds until they crisp — they are the second half of the dish, not a trimming.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M30 36q11-7 19 0-2 9-10 11t-11-5z"/><path class="f1 
 
 {id:"octopus",cat:"shellfish",price:2,pk:"12–22 €/kg",name:{en:"Octopus",fr:"Poulpe"},latin:"Octopus vulgaris",
 origin:{en:"Mediterranean & eastern Atlantic",fr:"Méditerranée & Atlantique Est"},season:[5,6,7,8,9,10],
-flavor:["sweet","marine","meaty","umami"],
+flavor:["sweet","marine","meaty","umami"],texture:["tough","chewy"],
 story:{en:"Greek fishermen beat it against rocks forty times to break down the collagen, and freezing does exactly the same job — ice crystals rupture the muscle fibres. A frozen octopus is genuinely more tender than a fresh one.",
 fr:"Les pêcheurs grecs le battent quarante fois contre les rochers pour rompre le collagène, et la congélation fait exactement le même travail — les cristaux de glace déchirent les fibres. Un poulpe congelé est réellement plus tendre qu’un frais."},
 tip:{en:"Simmer it with a wine cork in the water if you like — the tradition is harmless. Freezing it first is what actually works.",
@@ -341,7 +341,7 @@ svg:'<path class="f1 sf" d="M32 46q0-16 16-16t16 16-6 18H38q-6-6-6-18z"/><path c
 
 {id:"olympia-oyster",cat:"shellfish",rare:true,price:3,pk:"25–45 €/douzaine",name:{en:"Olympia oyster",fr:"Huître olympia"},latin:"Ostrea lurida",
 origin:{en:"Pacific Northwest bays",fr:"Baies du Nord-Ouest pacifique"},season:[],
-flavor:["marine","briny","bitter"],
+flavor:["marine","briny","bitter"],texture:["soft","silky","juicy"],
 story:{en:"It is the only oyster native to the Pacific coast of North America, and Gold Rush San Francisco ate it down to almost nothing inside thirty years. Unlike the Pacific oyster it broods its larvae inside the shell instead of casting them into the water, and it takes four or five years to reach the size of a coin.",
 fr:"C’est la seule huître indigène de la côte pacifique nord-américaine, et le San Francisco de la ruée vers l’or l’a mangée jusqu’à l’épuisement en trente ans. Contrairement à l’huître creuse, elle couve ses larves dans sa coquille au lieu de les libérer dans l’eau, et met quatre à cinq ans à atteindre la taille d’une pièce."},
 tip:{en:"Serve them on rock salt rather than crushed ice: each holds barely a teaspoon of liquor, and meltwater dilutes it to nothing. Count ten to a person, eat them naked, and let the copper-and-celery finish arrive on its own.",
@@ -351,7 +351,7 @@ svg:'<circle class="f2 sf" cx="48" cy="51" r="19"/><circle class="s" cx="48" cy=
 
 {id:"oyster",cat:"shellfish",price:2,pk:"8–16 €/douzaine",name:{en:"Oyster",fr:"Huître"},latin:"Ostrea edulis / Magallana gigas",
 origin:{en:"Atlantic & Pacific coasts",fr:"Côtes atlantiques & pacifiques"},season:[1,2,3,4,9,10,11,12],
-flavor:["briny","marine","umami","delicate"],
+flavor:["briny","marine","umami","delicate"],texture:["soft","silky","juicy"],
 story:{en:"Rome built roads to move them alive in snow; 19th-century New York sold them on street corners like hot dogs — the poor man’s protein became the rich man’s luxury within two generations. Each one tastes of its exact patch of sea: merroir, as winemakers would say.",
 fr:"Rome construisit des routes pour les transporter vivantes sous la neige ; le New York du XIXe siècle les vendait au coin des rues comme des hot-dogs — la protéine du pauvre devint le luxe du riche en deux générations. Chacune a le goût exact de son coin de mer : le merroir, diraient les vignerons."},
 tip:{en:"The old “months with an R” rule is about summer spawning, not safety — they are simply fuller and firmer in cold months. A turn of pepper beats any heavy sauce.",
@@ -361,7 +361,7 @@ svg:'<path class="f1 sf" d="M18 56q-3-8 3-12 7-3 10-8 5-6 12-5 6-5 14-2 9 0 13 6
 
 {id:"periwinkle",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Periwinkle",fr:"Bigorneau"},latin:"Littorina littorea",
 origin:{en:"North Atlantic rocky shores",fr:"Estrans rocheux de l’Atlantique Nord"},season:[1,2,3,10,11,12],
-flavor:["briny","marine","mild"],
+flavor:["briny","marine","mild"],texture:["firm","chewy"],
 story:{en:"Winkles have been gathered on North Atlantic shores since prehistory and were still sold by the pint on London and Dublin street markets well into the twentieth century. The sharply pointed shoes of the late 1950s were called winkle-pickers after the pin you need to get the animal out of its shell.",
 fr:"On ramasse le bigorneau sur les côtes de l’Atlantique Nord depuis la préhistoire, et on le vendait encore à la pinte sur les marchés de rue de Londres et de Dublin en plein XXe siècle. Les souliers très pointus de la fin des années 1950 se sont appelés winkle-pickers en anglais, du nom de l’épingle avec laquelle on extrait la bête de sa coquille."},
 tip:{en:"Five to seven minutes in water salted like the sea with thyme and a bay leaf, then let them cool in that liquid — boiled longer they retract hard into the spiral and no pin will reach them. Flick off the operculum first, then discard the dark coil at the tip.",
@@ -371,7 +371,7 @@ svg:'<g transform="translate(4.46 4.65) scale(0.907)"><path class="f2 sf" d="M48
 
 {id:"conch",cat:"shellfish",price:2,pk:"18–30 €/kg",name:{en:"Queen conch",fr:"Lambi"},latin:"Aliger gigas",
 origin:{en:"Caribbean seagrass beds",fr:"Herbiers des Antilles"},season:[],
-flavor:["marine","briny","mild"],
+flavor:["marine","briny","mild"],texture:["tough","chewy"],
 story:{en:"In 1992 the queen conch became the first large-scale fishery product ever listed on CITES Appendix II, so a crate of lambi crossing a border now travels on an export permit, like ivory or orchids. The animal takes three to five years to build the flared lip that marks it as adult, and once that lip forms it stops growing longer.",
 fr:"En 1992, le lambi est devenu le premier produit d’une pêcherie de masse inscrit à l’annexe II de la CITES : une caisse qui franchit une frontière voyage désormais avec un permis d’exportation, comme l’ivoire ou les orchidées. L’animal met trois à cinq ans à former la lèvre évasée qui signe l’adulte, et cesse de s’allonger une fois cette lèvre en place."},
 tip:{en:"Cut away the orange operculum and the dark skin, then pound the white foot down to about five millimetres before anything else happens to it. From there it is two windows and nothing in between: forty-five seconds on a hot grill, or ninety minutes in a colombo.",
@@ -381,7 +381,7 @@ svg:'<path class="f2 sf" d="M62 20q9 12 4 27-5 16-17 26-11 8-23 4 9-4 11-12-8 2-
 
 {id:"queen-scallop",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Queen scallop",fr:"Pétoncle"},latin:"Aequipecten opercularis",
 origin:{en:"Irish Sea, Isle of Man",fr:"Mer d’Irlande, île de Man"},season:[6,7,8,9,10,11,12],
-flavor:["sweet","marine","delicate"],
+flavor:["sweet","marine","delicate"],texture:["tender","juicy"],
 story:{en:"The Manx queenie fishery works by provoking the animal: a light chain towed ahead of the trawl makes the scallop clap its valves and swim straight up into the net. That escape response is sluggish in cold water, so the fishery opens only in June, once the sea has warmed enough for the queenies to jump.",
 fr:"La pêcherie mannoise du pétoncle exploite sa fuite : une chaîne légère traînée devant le chalut lui fait claquer les valves et il bondit droit dans le filet. Cette réaction est lente en eau froide, si bien que la pêche ne s’ouvre qu’en juin, quand la mer est assez tiède pour qu’ils sautent."},
 tip:{en:"It weighs a third of a king scallop and cooks in a third of the time: thirty seconds a side in a dry, very hot pan, no more. Sold shucked, it sits in its own water, so drain it on paper first or the pan loses heat and poaches it grey.",
@@ -391,7 +391,7 @@ svg:'<path class="f2 sf" d="M26 45q10-15 26-15t21 13q-15 2-25 6t-22-4z"/><path c
 
 {id:"razor-clam",cat:"shellfish",price:2,pk:"10–20 €/kg",name:{en:"Razor clam",fr:"Couteau"},latin:"Ensis magnus",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[9,10,11,12,1,2],
-flavor:["sweet","briny","marine","delicate"],
+flavor:["sweet","briny","marine","delicate"],texture:["tender","juicy"],
 story:{en:"They burrow at astonishing speed, which is why the traditional way to catch one is to pour salt down its hole — the sudden change in salinity drives it up within seconds. It is a trick, not a technique, and it works every time.",
 fr:"Ils s’enfouissent à une vitesse stupéfiante, d’où la méthode traditionnelle qui consiste à verser du sel dans leur trou — le brusque changement de salinité les fait remonter en quelques secondes. C’est un tour, non une technique, et il marche à tous les coups."},
 tip:{en:"Ninety seconds and no more. They go from tender to rubber faster than any other shellfish.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M20 68q-3-3 0-6 16-12 30-22 12-8 22-12 4-1 5 3 1 4-3
 
 {id:"gamba-rouge",cat:"shellfish",luxe:true,price:4,pk:"100–200 €/kg",name:{en:"Red prawn of Palamós",fr:"Gamba rouge de Palamós"},latin:"Aristeus antennatus",
 origin:{en:"La Fonera canyon, Catalonia",fr:"Canyon de La Fonera, Catalogne"},season:[],
-flavor:["sweet","marine","rich","briny"],
+flavor:["sweet","marine","rich","briny"],texture:["firm","juicy"],
 story:{en:"The boats trawl the flanks of the La Fonera canyon off Palamós between about four hundred and fifty and eight hundred metres, which is why almost nothing else comes up in the same haul. Since 2013 the fleet has run its own co-management plan — closures, effort caps and a mesh wider than European law requires — the first arrangement of its kind in the western Mediterranean.",
 fr:"Les bateaux chalutent les flancs du canyon de La Fonera, au large de Palamós, entre quatre cent cinquante et huit cents mètres environ : c’est pourquoi presque rien d’autre ne remonte dans le même trait. Depuis 2013, la flottille applique son propre plan de cogestion — fermetures, plafond d’effort, maillage plus large que ne l’exige le droit européen — le premier du genre en Méditerranée occidentale."},
 tip:{en:"Twenty seconds a side on a plancha at full heat with nothing but coarse salt, off while the shell is still bright — a full minute turns the flesh to cotton. Suck the heads while they are hot: the juice in there is worth more than the tail.",
@@ -411,7 +411,7 @@ svg:'<path class="f3 sf" d="M28 63q-3-15 10-23t26-4q7 4 4 11-5 10-17 14t-23 2z"/
 
 {id:"scallop",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Scallop",fr:"Coquille Saint-Jacques"},latin:"Pecten maximus",
 origin:{en:"North Atlantic & Channel",fr:"Atlantique Nord & Manche"},season:[1,2,3,10,11,12],
-flavor:["sweet","delicate","marine","buttery"],
+flavor:["sweet","delicate","marine","buttery"],texture:["tender","silky","moist"],
 story:{en:"Pilgrims to Santiago de Compostela sewed its shell onto their cloaks — proof of the journey, drinking cup and begging bowl in one; French still names it after Saint James. Botticelli floated Venus ashore on one: the only ingredient with its own Renaissance masterpiece.",
 fr:"Les pèlerins de Saint-Jacques-de-Compostelle cousaient sa coquille sur leur manteau — preuve du voyage, gobelet et sébile à la fois ; le français la nomme toujours d’après saint Jacques. Botticelli fit aborder Vénus sur l’une d’elles : le seul ingrédient qui possède son chef-d’œuvre de la Renaissance."},
 tip:{en:"Dry them obsessively, then ninety seconds a side in a screaming pan: mahogany crust, translucent heart. Moving them early is the only way to fail.",
@@ -421,7 +421,7 @@ svg:'<path class="f2 sf" d="M36 28q-12-1-14 5 6 4 14 2zM60 28q12-1 14 5-6 4-14 2
 
 {id:"corail-saint-jacques",cat:"shellfish",price:1,pk:"5–12 €/kg",name:{en:"Scallop coral",fr:"Corail de Saint-Jacques"},latin:"Pecten maximus (coral)",
 origin:{en:"Normandy & Brittany",fr:"Normandie et Bretagne"},season:[10,11,12,1,2,3,4],
-flavor:["briny","bitter","rich","marine"],
+flavor:["briny","bitter","rich","marine"],texture:["soft","creamy"],
 story:{en:"The great scallop is a simultaneous hermaphrodite, and the comma of coral is one organ carrying both halves: the orange ovary and the cream-white testis fused along a single curve. American boats shuck it off at sea and throw it away; French kitchens buy it by weight and dry it for powder.",
 fr:"La coquille Saint-Jacques est hermaphrodite simultanée, et la virgule de corail est un seul organe qui porte les deux moitiés : l’ovaire orange et le testicule blanc crème soudés le long d’une même courbe. Les bateaux américains l’ôtent en mer et la jettent ; les cuisines françaises l’achètent au poids et la sèchent pour en faire une poudre."},
 tip:{en:"Salt it, dry it at 70 °C until brittle and grind it — a spoonful of coral powder gives a sauce more scallop flavour than the muscle ever will. Cooked whole it goes grainy, so thirty seconds in a hot pan and no more.",
@@ -431,7 +431,7 @@ svg:'<path class="f1 sf" d="M48 74q-20 0-24-16 4-18 24-18t24 18q-4 16-24 16z"/><
 
 {id:"sea-urchin",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"Sea urchin",fr:"Oursin"},latin:"Paracentrotus lividus",
 origin:{en:"Mediterranean & cold coasts",fr:"Méditerranée & côtes froides"},season:[1,2,3,10,11,12],
-flavor:["marine","sweet","rich","briny"],
+flavor:["marine","sweet","rich","briny"],texture:["soft","creamy"],
 story:{en:"Inside the hostile shell wait five coral tongues tasting of iodine, hazelnut and returning tide — uni to Japan, corail to Provence, where winter villages hold oursinades, festivals of urchins eaten by the dozen on the quay. The sea’s most guarded custard.",
 fr:"Sous la coquille hostile attendent cinq langues de corail au goût d’iode, de noisette et de marée montante — uni au Japon, corail en Provence, où les villages d’hiver tiennent leurs oursinades, fêtes où on les mange à la douzaine sur le quai. La crème dessert la mieux gardée de la mer."},
 tip:{en:"Fold the tongues into scrambled eggs or warm butter off the heat — past sixty degrees the perfume flees. Winter urchins are the fullest.",
@@ -441,7 +441,7 @@ svg:'<path class="s" d="M63 50h16M59 61l11 11M48 65v16M37 61l-11 11M33 50h-16M37
 
 {id:"shrimp",cat:"shellfish",price:2,pk:"15–25 €/kg",name:{en:"Shrimp",fr:"Crevette"},latin:"Penaeus spp.",
 origin:{en:"All the world’s coasts",fr:"Toutes les côtes du monde"},season:[],
-flavor:["sweet","marine","briny","delicate"],
+flavor:["sweet","marine","briny","delicate"],texture:["firm","juicy"],
 story:{en:"Greeks grilled them over coals twenty-five centuries ago and argued about it in comedies. The cook’s secret has not changed since: the sweetness is in the shell — every discarded head is a spoonful of bisque thrown away.",
 fr:"Les Grecs les grillaient sur la braise il y a vingt-cinq siècles et s’en disputaient dans leurs comédies. Le secret du cuisinier n’a pas changé : la douceur loge dans la carapace — chaque tête jetée est une cuillerée de bisque perdue."},
 tip:{en:"They cook in the time it takes to regret walking away — two minutes, until just pink and curled into a loose C. A tight O means overdone.",
@@ -451,7 +451,7 @@ svg:'<path class="f2 sf" d="M60 36q10 8 4 20-6 12-20 14l-8 6 2-8-6-2 8-4q12-4 16
 
 {id:"slipper-lobster",cat:"shellfish",luxe:true,price:3,pk:"60–120 €/kg",name:{en:"Slipper lobster",fr:"Cigale de mer"},latin:"Scyllarides latus",
 origin:{en:"Mediterranean rock and Posidonia beds",fr:"Roches et herbiers de posidonie de Méditerranée"},season:[],
-flavor:["sweet","marine","delicate","briny"],
+flavor:["sweet","marine","delicate","briny"],texture:["firm","juicy"],
 story:{en:"It has no claws and no whip antennae — the front pair is flattened into two shovels it digs with — so the whole edible animal is one broad tail. Taking it has been forbidden in France since a decree of 26 November 1992, after diving pressure emptied the Gulf of Lion, and kitchens here buy it from Italian and Spanish landings instead.",
 fr:"Elle n’a ni pinces ni longues antennes — la première paire est aplatie en deux pelles dont elle se sert pour fouir — si bien que tout le comestible tient dans une large queue. Sa capture est interdite en France par l’arrêté du 26 novembre 1992, après que la plongée eut vidé le golfe du Lion ; les cuisines s’approvisionnent donc sur les débarquements italiens et espagnols."},
 tip:{en:"Split the tail lengthways through the shell and grill it cut side down three minutes, then shell side three — about six minutes total for a two-hundred-gram tail. Push past that and the flesh goes cottony in a way no amount of butter disguises.",
@@ -461,7 +461,7 @@ svg:'<path class="f2 sf" d="M32 36h32q4 0 4 4v12H28V40q0-4 4-4z"/><path class="f
 
 {id:"snow-crab",cat:"shellfish",price:3,pk:"30–60 €/kg",name:{en:"Snow crab",fr:"Crabe des neiges"},latin:"Chionoecetes opilio",
 origin:{en:"Gulf of St Lawrence and Bering Sea",fr:"Golfe du Saint-Laurent et mer de Béring"},season:[4,5,6,7],
-flavor:["sweet","marine","delicate","mild"],
+flavor:["sweet","marine","delicate","mild"],texture:["tender","fibrous","moist"],
 story:{en:"The Bering Sea fishery shut for the first time in its history in 2022, after surveys found the population had fallen by more than ninety per cent; NOAA later put the die-off down to starvation during a marine heatwave that raised the crabs’ metabolism faster than the food supply could follow. Most of what now reaches Europe comes from the Gulf of St Lawrence spring season instead.",
 fr:"La pêcherie de la mer de Béring a fermé pour la première fois de son histoire en 2022, les campagnes scientifiques ayant relevé une chute de plus de quatre-vingt-dix pour cent des effectifs ; la NOAA a ensuite attribué la mortalité à une famine survenue pendant une vague de chaleur marine, qui a accéléré le métabolisme des crabes plus vite que la ressource ne suivait. L’essentiel de ce qui arrive en Europe vient désormais de la campagne de printemps du golfe du Saint-Laurent."},
 tip:{en:"It is sold cooked and frozen: thaw the clusters overnight in the fridge, never in water, which leaches the meat pale and flat. Then steam four minutes, only to bring them to temperature, and open each leg by running scissors along the flat edge underneath.",
@@ -471,7 +471,7 @@ svg:'<path class="f3 sf" d="M31 34q-10 8-10 18t10 18q7-17 7-36z"/><path class="f
 
 {id:"soft-shell-clam",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Soft-shell clam",fr:"Mye"},latin:"Mya arenaria",
 origin:{en:"North Atlantic sand flats",fr:"Estrans sableux de l’Atlantique Nord"},season:[5,6,7,8,9],
-flavor:["briny","marine","sweet","delicate"],
+flavor:["briny","marine","sweet","delicate"],texture:["tender","juicy"],
 story:{en:"Its shell is too small for the animal: the siphon stays permanently outside, the two valves never meet, and you cannot judge it open or shut the way you judge every other bivalve on the stall. Shell fragments dated to the thirteenth century place it in Europe long before Columbus, which is why some archaeologists credit Norse ships with carrying it back across the Atlantic.",
 fr:"Sa coquille est trop petite pour l’animal : le siphon reste dehors en permanence, les deux valves ne se rejoignent jamais, et l’on ne peut pas la juger ouverte ou fermée comme tous les autres bivalves de l’étal. Des fragments datés du XIIIe siècle la placent en Europe bien avant Colomb, ce qui fait porter à certains archéologues le soupçon que des navires scandinaves l’ont rapportée d’Amérique."},
 tip:{en:"Purge them four hours in cold water salted to 20 g per litre; short of that, every mouthful grinds with sand. Then steam them open and peel the black skin off each siphon before serving — it is leathery, and no amount of cooking softens it.",
@@ -481,7 +481,7 @@ svg:'<path class="f2 sf" d="M22 52q6-15 21-15t21 15q-9 10-21 10T22 52z"/><path c
 
 {id:"soft-shell-crab",cat:"shellfish",price:3,pk:"35–60 €/kg",name:{en:"Soft-shell crab",fr:"Crabe mou"},latin:"Callinectes sapidus",
 origin:{en:"Chesapeake Bay & the US Atlantic",fr:"Baie de Chesapeake & côte atlantique américaine"},season:[5,6,7,8,9],
-flavor:["sweet","marine","nutty","rich"],
+flavor:["sweet","marine","nutty","rich"],texture:["soft","moist"],
 story:{en:"Callinectes sapidus translates as beautiful savoury swimmer, and for a few hours a year the swimmer has no armour at all — watermen hold crabs showing a red line on the back paddle in floats and pull them the moment the old shell splits. Twelve hours more in the water and the new shell has hardened, the animal is worth a fraction of the price, and the whole trade turns out to be a business of watching.",
 fr:"Callinectes sapidus se traduit par « beau nageur savoureux », et quelques heures par an ce nageur n’a plus d’armure du tout : les pêcheurs gardent en vivier les crabes dont la nageoire arrière montre un liseré rouge et les sortent à l’instant où l’ancienne carapace se fend. Douze heures de plus dans l’eau et la nouvelle coquille a durci, l’animal ne vaut plus qu’une fraction du prix — tout le métier tient dans cette surveillance."},
 tip:{en:"Clean it raw: snip the face off behind the eyes, lift each shell point and pull out the grey gills, then take the apron off the underside. Dry it hard before it meets the pan — water left under the shell will spit violently in hot fat and steam the crust away.",
@@ -491,7 +491,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="53" rx="19" ry="12"/><path class="s" d="
 
 {id:"spider-crab",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Spider crab",fr:"Araignée de mer"},latin:"Maja squinado",
 origin:{en:"Northeast Atlantic & Mediterranean",fr:"Atlantique Nord-Est & Méditerranée"},season:[4,5,6,7,8],
-flavor:["sweet","marine","delicate","briny"],
+flavor:["sweet","marine","delicate","briny"],texture:["tender","fibrous","moist"],
 story:{en:"Brittany considers it finer than the brown crab and it costs less, which is one of the last genuine bargains at a French fish counter. It migrates in vast columns along the seabed in spring, walking single file.",
 fr:"La Bretagne la tient pour plus fine que le tourteau et elle coûte moins cher, ce qui reste l’une des dernières vraies affaires d’un étal français. Elle migre au printemps en longues colonnes sur le fond, marchant à la file."},
 tip:{en:"There is far less meat than the size suggests and picking it is slow. Do it once, in company, with a glass of something cold.",
@@ -501,7 +501,7 @@ svg:'<path class="s" d="M32 38l-14-4l-3 4M28 48l-14 1l-1 7M30 58l-11 7l2 8M36 64
 
 {id:"spiny-lobster",cat:"shellfish",luxe:true,price:3,pk:"60–130 €/kg",name:{en:"Spiny lobster",fr:"Langouste rouge"},latin:"Palinurus elephas",
 origin:{en:"Brittany & the western Mediterranean",fr:"Bretagne & Méditerranée occidentale"},season:[4,5,6,7,8,9],
-flavor:["sweet","marine","delicate","rich"],
+flavor:["sweet","marine","delicate","rich"],texture:["firm","juicy"],
 story:{en:"It has no claws and defends itself with sound instead, rasping the base of each antenna against a ridge below the eye to produce a rattle audible through a boat’s hull. The langoustiers of Camaret gave up the Breton grounds in the 1920s and sailed down to Mauritania for it, months at a time, in wooden boats fitted with live wells.",
 fr:"Elle n’a pas de pinces et se défend par le son : elle frotte la base de chaque antenne contre une râpe située sous l’œil, un crissement qui s’entend à travers la coque d’un bateau. Les langoustiers de Camaret ont abandonné les fonds bretons dans les années 1920 pour descendre en Mauritanie, des mois durant, sur des bateaux de bois à vivier."},
 tip:{en:"Split the tail along the back rather than through the belly, and take it off the heat at 55 °C in the thickest part — it holds less water than homard and goes cottony a minute later. No claw meat is coming, so build the dish on the tail alone.",
@@ -511,7 +511,7 @@ svg:'<path class="f2 sf" d="M34 36h28l-3 34q-11 6-22 0z"/><path class="s" d="M33
 
 {id:"squid",cat:"shellfish",price:2,pk:"12–20 €/kg",name:{en:"Squid",fr:"Calamar"},latin:"Loligo vulgaris",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[5,6,7,8,9,10],
-flavor:["sweet","marine","delicate","umami"],
+flavor:["sweet","marine","delicate","umami"],texture:["firm","chewy"],
 story:{en:"Its muscle has almost no fat and a great deal of collagen, which is why there are exactly two ways to cook it — under two minutes or over thirty. Anything between those and it is rubber, and no amount of skill rescues it.",
 fr:"Son muscle est presque sans gras et très riche en collagène, d’où exactement deux façons de le cuire — moins de deux minutes ou plus de trente. Entre les deux, c’est du caoutchouc, et aucune habileté ne le sauve."},
 tip:{en:"Score the inside of the tube in a diamond pattern before it hits the pan. It curls decoratively and cooks evenly.",
@@ -521,7 +521,7 @@ svg:'<path class="f2 sf" d="M48 18q12 6 18 16 2 6-3 10-8-6-12-14-2-6-3-12zM48 18
 
 {id:"stone-crab-claw",cat:"shellfish",luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Stone crab claw",fr:"Pince de crabe de pierre"},latin:"Menippe mercenaria",
 origin:{en:"Gulf coast of Florida",fr:"Côte du golfe, Floride"},season:[10,11,12,1,2,3,4],
-flavor:["sweet","briny","marine","delicate"],
+flavor:["sweet","briny","marine","delicate"],texture:["firm","fibrous","moist"],
 story:{en:"The crab is never landed: one claw is taken and the animal goes back over the side to regrow it, which is why the season is written in claw sizes rather than tonnages. Florida research has since put mortality among declawed crabs far above what the fishery long assumed, and the rules now turn on exactly how the claw is broken off.",
 fr:"Le crabe n’est jamais débarqué : on prend une pince et l’animal repart par-dessus bord en refaire une, ce qui explique qu’on écrive la saison en tailles de pinces et non en tonnages. Des travaux menés en Floride ont depuis établi chez les crabes ainsi amputés une mortalité bien supérieure à ce que la pêcherie supposait, et la réglementation porte désormais sur la façon exacte de casser la pince."},
 tip:{en:"It reached you already cooked at sea, so heat is the one thing that can spoil it: serve it cold, straight off the ice, with a mustard sauce. Crack it by tapping the flat of the claw with the back of a spoon and lifting the shell away in plates — a mallet drives splinters into the meat.",
@@ -531,7 +531,7 @@ svg:'<path class="f2 sf" d="M28 72q-4-20 8-30t26-8q9 3 8 11l-13 5q-9 11-15 22z"/
 
 {id:"hokkigai",cat:"shellfish",price:3,pk:"25–50 €/kg",name:{en:"Surf clam",fr:"Hokkigai (mactre)"},latin:"Pseudocardium sachalinense",
 origin:{en:"Hokkaido & northern Honshu",fr:"Hokkaidō & nord de Honshū"},season:[12,1,2,3,4],
-flavor:["sweet","marine","briny","delicate"],
+flavor:["sweet","marine","briny","delicate"],texture:["firm","crunchy"],
 story:{en:"Its official Japanese name is ubagai, old-woman clam, after the pallor of the shell; the northern name hokki that fishmongers actually use comes from the Ainu. The foot is charcoal black inside the shell and turns scarlet the instant it meets hot water, which is why a sushi counter serves it as a blanched slice rather than a raw one.",
 fr:"Son nom japonais officiel est ubagai, « coquille de vieille femme », d’après la pâleur du test ; le nom du nord, hokki, celui qu’emploient les poissonniers, vient de l’aïnou. Le pied est noir de charbon dans la coquille et vire à l’écarlate à l’instant où il touche l’eau chaude — c’est pourquoi le comptoir à sushi en sert une tranche blanchie plutôt que crue."},
 tip:{en:"Three seconds in boiling water, then straight into iced water: the colour turns and the flesh stays crunchy. Held for ten it toughens and the red bleeds pale, and nothing brings either back.",
@@ -541,7 +541,7 @@ svg:'<path class="f3 sf" d="M30 62q4-24 20-28 16 4 20 28-20 8-40 0z"/><path clas
 
 {id:"sydney-rock-oyster",cat:"shellfish",rare:true,price:3,pk:"30–50 €/douzaine",name:{en:"Sydney rock oyster",fr:"Huître de roche de Sydney"},latin:"Saccostrea glomerata",
 origin:{en:"New South Wales estuaries, Australia",fr:"Estuaires de Nouvelle-Galles du Sud, Australie"},season:[],
-flavor:["briny","marine","sweet","rich"],
+flavor:["briny","marine","sweet","rich"],texture:["soft","silky","juicy"],
 story:{en:"It is not a Crassostrea at all but a Saccostrea, and it needs about three years to reach sixty grams where an introduced Pacific gets there in eighteen months. New South Wales growers spent decades scraping the faster oyster off their racks as a pest, which tells you plainly what they think the extra eighteen months buys.",
 fr:"Ce n’est pas une Crassostrea mais une Saccostrea, et il lui faut environ trois ans pour atteindre soixante grammes là où la creuse introduite y parvient en dix-huit mois. Les ostréiculteurs de Nouvelle-Galles du Sud ont passé des décennies à gratter l’huître rapide de leurs tables comme un nuisible — ce qui dit assez ce qu’ils pensent gagner en dix-huit mois de plus."},
 tip:{en:"Shuck at the hinge and tip nothing away — the first liquor carries the long mineral finish those extra years paid for. Skip the mignonette: vinegar flattens exactly the salty tail you are buying, and for some palates even lemon is already too much.",
@@ -551,7 +551,7 @@ svg:'<path class="f2 sf" d="M24 52q4-22 24-22t22 22-14 24-24 2-8-26z"/><path cla
 
 {id:"velvet-crab",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Velvet swimming crab",fr:"Étrille"},latin:"Necora puber",
 origin:{en:"Brittany & Atlantic rock coasts",fr:"Bretagne & côtes rocheuses de l’Atlantique"},season:[9,10,11,12],
-flavor:["marine","sweet","rich","umami"],
+flavor:["marine","sweet","rich","umami"],texture:["firm","fibrous"],
 story:{en:"The shell wears a short felt that traps silt and gives the crab its name, and the eyes behind it are a startling red — Breton coasts call it crabe-cerise, English boats the devil crab, for its temper. There is barely a mouthful of meat in one, so the kilo you buy is not a dish but a stock: crushed whole, shell and all, it is what gives a soupe de poissons its depth.",
 fr:"Sa carapace porte un feutre court qui retient le limon et lui vaut son nom, et les yeux qu’on trouve derrière sont d’un rouge saisissant — on l’appelle crabe-cerise sur les côtes bretonnes, devil crab sur les bateaux anglais, pour le caractère. Une étrille ne donne guère plus d’une bouchée de chair : le kilo qu’on achète n’est pas un plat mais un fond, et c’est lui, concassé entier, qui donne sa profondeur à la soupe de poissons."},
 tip:{en:"Colour the crushed shells hard in oil before any liquid goes in — that browning, not the flesh, is where the depth comes from. Then simmer twenty-five minutes and no longer; past that the shell releases a bitterness no sieve will take out.",
@@ -561,7 +561,7 @@ svg:'<path class="f3 sf" d="M26 48q22-14 44 0 2 16-22 18T26 48z"/><path class="s
 
 {id:"praire",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Warty venus clam",fr:"Praire"},latin:"Venus verrucosa",
 origin:{en:"Atlantic & Mediterranean sands",fr:"Sables de l’Atlantique & de la Méditerranée"},season:[9,10,11,12,1,2,3,4],
-flavor:["briny","marine","sweet","mild"],
+flavor:["briny","marine","sweet","mild"],texture:["firm","chewy"],
 story:{en:"Verrucosa means warty: the concentric ribs break up into blunt tubercles towards the edge of the shell, and nothing else on a plateau de fruits de mer has that texture under the thumb. It takes four to five years to reach the size the dredges may legally keep, which is most of the reason it costs what it does beside a palourde raised in two.",
 fr:"Verrucosa veut dire « verruqueuse » : les côtes concentriques se brisent en tubercules émoussés vers le bord de la coquille, et rien d’autre sur un plateau de fruits de mer n’a cette texture sous le pouce. Il lui faut quatre à cinq ans pour atteindre la taille que les dragues ont le droit de garder, ce qui explique l’essentiel de son prix à côté d’une palourde élevée en deux ans."},
 tip:{en:"Open it raw with a short blade at the hinge and eat it as it is; the meat is dense enough that a minute of heat turns it to eraser. If you want it hot, stuff it and give it ninety seconds under a fierce grill only — the base of the shell should still be cool.",
@@ -571,7 +571,7 @@ svg:'<path class="f2 sf" d="M48 28q20 4 22 22t-22 22-22-22 22-22z"/><path class=
 
 {id:"telline",cat:"shellfish",price:2,pk:"12–25 €/kg",name:{en:"Wedge clam",fr:"Telline"},latin:"Donax trunculus",
 origin:{en:"Camargue & Landes beaches",fr:"Plages de Camargue & des Landes"},season:[5,6,7,8,9],
-flavor:["briny","marine","sweet","delicate"],
+flavor:["briny","marine","sweet","delicate"],texture:["tender","juicy"],
 story:{en:"It lives in the swash zone and reburies itself with every wave, so it is taken by walking backwards through knee-deep surf dragging a wide-mouthed rake called a tellinier. Two centimetres is a normal one and a portion is counted in hundreds, which is why the Camargue limits a hand-gatherer to a kilo a day.",
 fr:"Elle vit dans la zone de déferlement et se renfouit à chaque vague : on la pêche en reculant dans l’eau jusqu’aux genoux, en traînant un large râteau appelé tellinier. Deux centimètres est une taille normale et une portion se compte par centaines — c’est pourquoi la Camargue limite le pêcheur à pied à un kilo par jour."},
 tip:{en:"Purge them a full day in cold sea water changed twice, then cook the whole kilo in one wide pan over the fiercest heat: thirty seconds after the last shell opens, they are done. Pour the juice off through muslin and give it back to the dish — there is always sand in it, and it is also the best thing on the plate.",
@@ -581,7 +581,7 @@ svg:'<path class="f1 sf" d="M28 44l16-6 4 12-16 6z"/><path class="f2 sf" d="M50 
 
 {id:"whelk",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Whelk",fr:"Bulot"},latin:"Buccinum undatum",
 origin:{en:"Baie de Granville & the North Atlantic",fr:"Baie de Granville & Atlantique Nord"},season:[9,10,11,12,1,2],
-flavor:["briny","marine","meaty","mild"],
+flavor:["briny","marine","meaty","mild"],texture:["tough","chewy"],
 story:{en:"It is a hunter rather than a filter feeder: it wedges the lip of its own shell between a bivalve’s valves and pushes its proboscis in, which is why whelk pots are baited with crab instead of being left to fill. Nearly all the French catch comes from a single bay off the Cotentin, and Bulot de la baie de Granville now carries a European protected geographical indication.",
 fr:"C’est un chasseur, pas un filtreur : il coince le bord de sa propre coquille entre les valves d’un bivalve et y glisse sa trompe — d’où des casiers appâtés au crabe plutôt que laissés à se remplir seuls. La quasi-totalité de la pêche française vient d’une seule baie du Cotentin, et le bulot de la baie de Granville porte aujourd’hui une indication géographique protégée."},
 tip:{en:"Start them in cold court-bouillon, count twenty minutes from the boil, then take the pan off the heat and let them cool in their own liquid — that last step, not the timing, is what keeps them tender. Pull the black spiral off the tail before serving, and buy medium sizes; the biggest are always rubber.",
@@ -591,7 +591,7 @@ svg:'<path class="f2 sf" d="M56 26q14 6 14 24 0 22-22 26-16 2-20-10 6 8 16 4 14-
 
 {id:"akagai",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Ark shell",fr:"Akagai (arche)"},latin:"Anadara broughtonii",
 origin:{en:"Mud beds of the Seto Inland Sea and Sendai Bay",fr:"Fonds vaseux de la mer intérieure de Seto et de la baie de Sendai"},season:[11,12,1,2,3],
-flavor:["sweet","briny","meaty"],
+flavor:["sweet","briny","meaty"],texture:["firm","crunchy"],
 story:{en:"Ark shells live in oxygen-poor mud and carry haemoglobin in their blood, which almost no other bivalve does; that iron compound is what turns the foot crimson and leaves the faint note of blood. At the counter the scored slice is slapped once against the board — the muscle contracts and curls, which is at once a texture and a proof the shell was alive a moment earlier.",
 fr:"L’arche vit dans une vase pauvre en oxygène et porte de l’hémoglobine dans son sang, ce que ne fait presque aucun autre bivalve : c’est ce composé ferreux qui rend le pied cramoisi et laisse cette légère note de sang. Au comptoir, la tranche incisée est claquée une fois sur la planche — le muscle se contracte et se recroqueville, ce qui est à la fois une texture et la preuve que le coquillage vivait l’instant d’avant."},
 tip:{en:"Score the foot with fine parallel cuts three-quarters through before the slap, or it curls unevenly. Rub the frill in salt and rinse twice — the grit sits there, and no amount of purging in water will move it.",
@@ -601,7 +601,7 @@ svg:'<path class="f2 sf" d="M22 60q4-26 26-26t26 26q-26 12-52 0z"/><path class="
 
 {id:"conpoy",cat:"shellfish",luxe:true,price:4,pk:"200–600 €/kg",name:{en:"Conpoy",fr:"Conpoy (Saint-Jacques séchées)"},latin:"Mizuhopecten yessoensis (dried adductor)",
 origin:{en:"Hokkaido and the South China coast",fr:"Hokkaido et côtes de Chine du Sud"},season:[],
-flavor:["umami","sweet","marine","rich"],
+flavor:["umami","sweet","marine","rich"],texture:["hard","fibrous","dry"],
 story:{en:"Conpoy is graded like coinage, by the diameter of the disc, and the broad flat ones cost several times the broken grade — which most kitchens buy anyway, since the muscle is shredded before it is used. XO sauce, invented at the Peninsula hotel in Hong Kong in the 1980s, is in essence a way of eating conpoy by the spoonful.",
 fr:"Le conpoy se classe comme une monnaie, au diamètre du disque, et les grandes rondelles plates valent plusieurs fois le grade brisé — que la plupart des cuisines achètent malgré tout, puisque le muscle finit effiloché. La sauce XO, née à l'hôtel Peninsula de Hong Kong dans les années 1980, n'est au fond qu'une façon de manger le conpoy à la cuillère."},
 tip:{en:"Steam them over water with a splash of Shaoxing for twenty to thirty minutes instead of soaking cold — they pull apart into threads. Keep the liquid underneath: it is a finished stock, not waste.",
@@ -611,7 +611,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="36" rx="16" ry="7"/><path class="f2 sf" 
 
 {id:"escargot-de-bourgogne",cat:"shellfish",price:3,pk:"40–70 €/kg",name:{en:"Burgundy snail",fr:"Escargot de Bourgogne"},latin:"Helix pomatia",
 origin:{en:"Burgundy and eastern France",fr:"Bourgogne et est de la France"},season:[9,10,11],
-flavor:["earthy","meaty","mild"],
+flavor:["earthy","meaty","mild"],texture:["tough","chewy"],
 story:{en:"The arrêté of 24 April 1979 forbids gathering Helix pomatia at any time below a shell diameter of 3 cm, and from 1 April to 30 June at any size at all — the wild French population had been collected almost to nothing. Nearly everything sold now comes from central and eastern Europe, and none of it is farmed: the species has never been bred at scale.",
 fr:"L’arrêté du 24 avril 1979 interdit en tout temps le ramassage d’Helix pomatia dont la coquille mesure moins de 3 cm de diamètre, et du 1er avril au 30 juin quelle que soit la taille : la population sauvage française avait été prélevée presque jusqu’à disparition. La quasi-totalité de ce qui se vend vient aujourd’hui d’Europe centrale et orientale, et rien n’en est d’élevage : l’espèce n’a jamais été domestiquée à grande échelle."},
 tip:{en:"Simmer them in court-bouillon for two to three hours before they ever meet butter — an hour leaves them rubbery and no quantity of garlic hides it. Fill the shell with butter first, then the snail, then more butter, so it never sits in a pocket of air.",
@@ -621,7 +621,7 @@ svg:'<circle class="f2 sf" cx="53" cy="42" r="19"/><path class="s" d="M53 42q0-8
 
 {id:"murex",cat:"shellfish",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Murex",fr:"Murex (rocher)"},latin:"Hexaplex trunculus",
 origin:{en:"Mediterranean rock",fr:"Rochers de Méditerranée"},season:[],
-flavor:["bitter","marine","briny"],
+flavor:["bitter","marine","briny"],texture:["tough","chewy"],
 story:{en:"This is the banded dye-murex, whose hypobranchial gland gave Tyre and Sidon their purple; the middens there are heaps of crushed shells, each punched at the same spot to reach that one gland. The dye comes out colourless and turns violet only in sunlight, which is why the dyers worked in the open air.",
 fr:"C’est le murex à bandes, dont la glande hypobranchiale a donné leur pourpre à Tyr et à Sidon ; les amas de coquilles broyées y sont tous percés au même endroit, à l’aplomb de cette glande. Le colorant sort incolore et ne vire au violet qu’à la lumière du jour : les teinturiers travaillaient donc en plein air."},
 tip:{en:"Twenty to twenty-five minutes in water salted like the sea with a bay leaf, then draw the flesh out with a pin, prise off the horny operculum and cut away the dark coil at the tip — that last turn holds most of the bitterness. Serve them warm with aïoli; cold, they tighten.",
@@ -631,7 +631,7 @@ svg:'<path class="f2 sf" d="M52 22q16 7 16 26 0 22-20 27-16 4-20-8-2-8 6-12 10-6
 
 {id:"percebes",cat:"shellfish",luxe:true,price:4,pk:"150–400 €/kg",rare:true,name:{en:"Goose barnacles",fr:"Pouces-pieds"},latin:"Pollicipes pollicipes",
 origin:{en:"Costa da Morte, Galicia",fr:"Costa da Morte, Galice"},season:[],
-flavor:["marine","briny","sweet"],
+flavor:["marine","briny","sweet"],texture:["tender","juicy"],
 story:{en:"Harvested from wave-battered cliffs on Galicia’s “Coast of Death” by percebeiros roped against the swell — Europe’s most expensive seafood partly prices the danger of picking it. Medieval Europe believed barnacle geese hatched from them, which conveniently made goose acceptable dinner during Lent.",
 fr:"Récoltés sur les falaises battues par la houle de la « Côte de la Mort » galicienne par des percebeiros encordés contre les vagues — le fruit de mer le plus cher d’Europe facture en partie le danger de sa cueillette. L’Europe médiévale croyait que les oies bernaches en éclosaient, ce qui rendait commodément l’oie acceptable au carême."},
 tip:{en:"Thirty seconds in boiling seawater — or salted water with a bay leaf — then straight to the table under a cloth. Twist, peel, bite: it tastes of the wave that nearly took the picker.",
@@ -641,7 +641,7 @@ svg:'<path class="f3 sf" d="M40 74q-4-16 2-26l6 4q-4 12-2 22zM52 72q-2-14 4-24l6
 
 {id:"petit-gris",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"Petit-gris snail",fr:"Petit-gris"},latin:"Cornu aspersum",
 origin:{en:"Mediterranean France, and snail farms",fr:"Midi de la France, et héliciculture"},season:[],
-flavor:["earthy","herbal","mild"],
+flavor:["earthy","herbal","mild"],texture:["firm","chewy"],
 story:{en:"In the 1850s a French nurseryman named Delmas turned petit-gris loose among his vines on the banks of the Guadalupe river at San José, because Gold Rush California had no escargot to speak of. They are now among the worst garden and citrus pests on the American West Coast.",
 fr:"Dans les années 1850, un pépiniériste français nommé Delmas a lâché des petits-gris dans ses vignes, au bord de la Guadalupe, à San José : la Californie de la ruée vers l’or n’avait pas d’escargots. Ils comptent aujourd’hui parmi les pires ravageurs des jardins et des agrumes de la côte ouest américaine."},
 tip:{en:"Fast them a week, blanch two minutes, pull them from the shell and cut off the dark spiral tip — that gland is what makes an escargot taste of earth and mud. Then simmer an hour and a half in a white wine court-bouillon before they meet any sauce at all.",
@@ -651,7 +651,7 @@ svg:'<circle class="f2 sf" cx="55" cy="41" r="17"/><path class="s" d="M55 24q-11
 
 {id:"quahog",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Quahog",fr:"Palourde américaine (quahog)"},latin:"Mercenaria mercenaria",
 origin:{en:"US Atlantic sandflats",fr:"Estrans sableux de l’Atlantique américain"},season:[],
-flavor:["briny","marine","umami"],
+flavor:["briny","marine","umami"],texture:["firm","chewy"],
 story:{en:"Linnaeus named it Mercenaria in 1758, from the Latin for wages, having read that the purple rim of its shell was cut into wampum beads by the Narragansett and their neighbours and later taken as payment by colonists. The English name comes from the Narragansett poquauhock.",
 fr:"Linné l’a baptisée Mercenaria en 1758, du latin des gages : il avait lu que le lisseré violet de sa coquille était taillé en perles de wampum par les Narragansetts et leurs voisins, puis accepté comme paiement par les colons. Le nom anglais vient du narragansett poquauhock."},
 tip:{en:"Size decides the method and there is no middle ground: under about five centimetres they go raw on the half shell, and anything bigger is chopped for chowder. Chopped quahog wants either five minutes at the very end of the pot or forty-five minutes of slow simmering — between the two it is leather.",
@@ -661,7 +661,7 @@ svg:'<path class="f1 sf" d="M22 51q0-17 26-19t26 19q0 18-26 24T22 51z"/><path cl
 
 {id:"tairagai",cat:"shellfish",price:3,pk:"60–120 €/kg",name:{en:"Pen shell",fr:"Tairagai (jambonneau)"},latin:"Atrina pectinata",
 origin:{en:"Ariake Sea and Seto Inland Sea",fr:"Mer d’Ariake et mer intérieure de Seto"},season:[1,2,3,12],
-flavor:["sweet","marine","mild"],
+flavor:["sweet","marine","mild"],texture:["tender","silky"],
 story:{en:"The pen shell lives buried point-down and standing upright, anchored by byssus threads with only the fan edge showing, so divers find it by touch rather than by eye. The Ariake Sea fishery that once supplied most of Japan’s tairagai has recorded zero-catch years since 2012, and the price now follows the scarcity rather than the season.",
 fr:"Le jambonneau vit enfoui la pointe en bas, dressé dans le sable et retenu par son byssus, seul le bord de l’éventail affleurant : les plongeurs le trouvent au toucher, pas à l’œil. La pêcherie de la mer d’Ariake, qui fournissait l’essentiel du tairagai japonais, enregistre des campagnes à zéro capture depuis 2012, et le prix suit désormais la rareté plutôt que la saison."},
 tip:{en:"Only the big adductor and the strip of mantle around it are used; the rest goes. Score the muscle in a shallow crosshatch and sear a single face twenty seconds so the centre stays raw — cooked through it turns floury, and no sauce hides that.",
@@ -671,7 +671,7 @@ svg:'<path class="f2 sf" d="M48 80 29 30q9-6 19-6t19 6z"/><path class="s" d="M33
 
 {id:"oursin-murasaki",cat:"shellfish",rare:true,luxe:true,price:4,pk:"800–1500 €/kg",name:{en:"Murasaki uni",fr:"Oursin murasaki"},latin:"Heliocidaris crassispina",
 origin:{en:"Warm coasts of western Japan",fr:"Côtes chaudes de l'ouest du Japon"},season:[6,7,8,9],
-flavor:["creamy","marine","sweet","delicate"],
+flavor:["creamy","marine","sweet","delicate"],texture:["soft","creamy"],
 story:{en:"Murasaki is the long-spined purple urchin of warmer Japanese water, and its tongues of roe come out larger, paler and gentler than the deep orange bafun. Chefs name the species and often the bay, never simply uni, because the two ripen in opposite halves of the year and taste nothing alike.",
 fr:"Le murasaki est l'oursin violet à longues épines des eaux japonaises tempérées, et ses langues de gonade sortent plus grandes, plus pâles et plus douces que celles du bafun, d'un orange soutenu. Les chefs nomment l'espèce, souvent la baie, jamais un simple uni : les deux mûrissent aux saisons opposées et n'ont rien du même goût."},
 tip:{en:"Buy it in the wooden ita trays only if the tongues hold a clean edge. Slumping, weeping uni has been dosed with alum to firm it, and that leaves a metallic bitterness no amount of rice will cover.",
@@ -681,7 +681,7 @@ svg:'<path class="f2 sf" d="M22 50a26 26 0 0 1 52 0q-4 15-26 15T22 50z"/><path c
 
 {id:"oursin-bafun",cat:"shellfish",rare:true,luxe:true,price:4,pk:"600–1200 €/kg",name:{en:"Bafun uni",fr:"Oursin bafun"},latin:"Hemicentrotus pulcherrimus",
 origin:{en:"Rocky shallows of Japan",fr:"Fonds rocheux du Japon"},season:[6,7,8],
-flavor:["umami","briny","marine","sweet"],
+flavor:["umami","briny","marine","sweet"],texture:["soft","creamy"],
 story:{en:"The Japanese name means horse-dung urchin, for a flattened, dull shell that sits on the rock like a dropping. Under it are five short tongues of gonad, darker and far denser than the Mediterranean urchin's, tasting closer to caramel than to sea water.",
 fr:"Son nom japonais, bafun, veut dire crottin de cheval : la coquille est plate et terne, posée sur la roche comme une bouse. Dessous, cinq langues de gonade courtes, plus sombres et bien plus denses que chez l’oursin de Méditerranée, plus proches du caramel que de l’eau de mer."},
 tip:{en:"Buy it in the wooden tray, never loose in brine — the alum used to firm uni in holding water is what makes it taste bitter and metallic. Eat it within a day, at cellar temperature; fridge-cold flattens it.",
@@ -691,7 +691,7 @@ svg:'<circle class="f2 sf" cx="48" cy="52" r="20"/><path class="s" d="M48 32V19M
 
 {id:"holothurie-sechee",cat:"shellfish",rare:true,luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Sea cucumber",fr:"Holothurie séchée (concombre de mer)"},latin:"Apostichopus japonicus (dried)",
 origin:{en:"Northern China, Korea & Japan",fr:"Chine du Nord, Corée et Japon"},season:[],
-flavor:["umami","marine","mild"],
+flavor:["umami","marine","mild"],texture:["hard","brittle","dry"],
 story:{en:"Chinese banquet cooking counts four sea treasures — abalone, shark fin, fish maw and this — and of the four it is the only one that tastes of almost nothing. It is bought for texture and for what it absorbs: no muscle, no bone, no blood, an echinoderm closer kin to a sea urchin than to any fish.",
 fr:"La cuisine de banquet chinoise compte quatre trésors de la mer — l’ormeau, l’aileron de requin, la vessie natatoire et celui-ci — et des quatre, c’est le seul qui ne goûte presque rien. On l’achète pour sa texture et pour ce qu’elle absorbe : ni muscle, ni os, ni sang, un échinoderme plus proche cousin de l’oursin que d’un poisson."},
 tip:{en:"Soak it three to five days in the fridge in changes of cold water, with a brief boil each day, and never let oil near it — a trace of grease turns the body wall to slime. Braise it in a stock that already tastes finished, because it takes everything from the liquid.",
@@ -701,7 +701,7 @@ svg:'<path class="f3 sf" d="M22 56q4-14 26-16 24-2 26 12 2 12-24 14-26 2-28-10z"
 
 {id:"kuchiko",cat:"shellfish",rare:true,luxe:true,price:4,pk:"2–5 €/g",name:{en:"Kuchiko (dried sea cucumber ovaries)",fr:"Kuchiko"},latin:"Apostichopus japonicus (ovary)",
 origin:{en:"Noto peninsula",fr:"Presqu’île de Noto"},season:[12,1,2],
-flavor:["umami","briny","marine","toasty"],
+flavor:["umami","briny","marine","toasty"],texture:["tough","chewy","dry"],
 story:{en:"Dried flat on racks, the ovaries fan out into a triangle that Noto fishermen named bachiko, after the plectrum of a shamisen. It takes the ovaries of dozens of animals to build a single sheet, which is why it is sold by the gram and why it exists only in winter.",
 fr:"Séchés à plat sur des claies, les ovaires s’ouvrent en éventail triangulaire que les pêcheurs de Noto ont baptisé bachiko, du nom du plectre de shamisen. Il faut les ovaires de dizaines de bêtes pour bâtir une seule feuille, d’où la vente au gramme et la saison strictement hivernale."},
 tip:{en:"Wave it over a flame for a few seconds until it perfumes and turns slightly translucent, then tear it rather than cut it. Warm sake poured over a toasted piece makes kuchiko-zake, and the drink is as much the point as the ingredient.",
@@ -711,7 +711,7 @@ svg:'<path class="f2 sf" d="M48 24q14 20 18 46-18 6-36 0 4-26 18-46z"/><path cla
 
 {id:"oeufs-d-escargot",cat:"shellfish",rare:true,price:4,pk:"1,5–3 €/g",name:{en:"Snail eggs",fr:"Œufs d’escargot"},latin:"Cornu aspersum maxima (eggs)",
 origin:{en:"Burgundy & Poland",fr:"Bourgogne et Pologne"},season:[5,6,9,10],
-flavor:["earthy","woody","mild","delicate"],
+flavor:["earthy","woody","mild","delicate"],texture:["firm","granular"],
 story:{en:"A farmed snail lays fifty to a hundred eggs a year, each a white pearl three or four millimetres across with a real calcium shell that crunches. They taste of mushroom and leaf mould rather than of anything marine — the word caviar on the jar is commerce, not zoology.",
 fr:"Un escargot d’élevage pond cinquante à cent œufs par an, chacun une perle blanche de trois ou quatre millimètres avec une vraie coque calcaire qui croque sous la dent. Le goût est champignon et humus, jamais marin — le mot caviar sur le bocal relève du commerce, pas de la zoologie."},
 tip:{en:"Never cook them: heat hardens the shell and the pearl turns to grit. Set them on something warm rather than in it — a potato, a beurre blanc, a still-warm brioche — and at the last second, at the table.",

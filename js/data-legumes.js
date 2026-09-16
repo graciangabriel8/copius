@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"adzuki",cat:"legumes",price:1,pk:"6–10 €/kg",name:{en:"Adzuki bean",fr:"Haricot azuki"},latin:"Vigna angularis",
 origin:{en:"East Asia",fr:"Asie de l’Est"},season:[],
-flavor:["sweet","earthy","nutty","mild"],
+flavor:["sweet","earthy","nutty","mild"],texture:["hard","dry","smooth"],
 story:{en:"In Japan and China it is treated as a dessert ingredient rather than a savoury one — boiled with sugar into anko, the sweet red paste inside almost every traditional confection. Red beans and rice are eaten at celebrations for the auspicious colour.",
 fr:"Au Japon et en Chine on le traite en ingrédient de dessert plutôt que salé — bouilli avec du sucre en anko, la pâte rouge sucrée que renferme presque toute confiserie traditionnelle. Haricots rouges et riz se mangent aux fêtes pour la couleur porte-bonheur."},
 tip:{en:"Change the water once during cooking if you want a clean sweet paste. The first water carries the bitterness.",
@@ -11,7 +11,7 @@ svg:'<path class="f2 sf" d="M24 30 Q36 23 45 31 Q51 39 43 46 Q30 51 25 43 Q21 35
 
 {id:"ayocote-bean",cat:"legumes",rare:true,price:2,pk:"18–30 €/kg",name:{en:"Ayocote bean",fr:"Haricot ayocote"},latin:"Phaseolus coccineus",
 origin:{en:"Highland Mexico",fr:"Hauts plateaux du Mexique"},season:[],
-flavor:["earthy","meaty","nutty","mild"],
+flavor:["earthy","meaty","nutty","mild"],texture:["hard","dry","smooth"],
 story:{en:"Phaseolus coccineus is a different species from the common bean — perennial, regrowing each year from a starchy root — and Europe kept it for two centuries as a garden climber, grown for its scarlet flowers rather than its seed. In Mexico the pot liquor counts as much as the bean: ayocotes are ladled out in their own dark broth as a course, not a side.",
 fr:"Le Phaseolus coccineus est une espèce distincte du haricot commun — vivace, il repart chaque année d’une racine tubéreuse — et l’Europe l’a cultivé deux siècles durant comme grimpante d’ornement, pour ses fleurs écarlates plus que pour sa graine. Au Mexique, le bouillon compte autant que le grain : les ayocotes se servent dans leur jus sombre, en plat à part entière."},
 tip:{en:"Hold the pot below a simmer for two to three hours — a rolling boil bursts these skins long before the chestnut-textured centre gives way. Never drain them; that broth is the sauce.",
@@ -21,7 +21,7 @@ svg:'<path class="f3 sf" d="M36 30q19-4 25 13t-11 27q-17 4-21-11t7-29z"/><path c
 
 {id:"beluga-lentil",cat:"legumes",price:1,pk:"6–10 €/kg",name:{en:"Beluga lentil",fr:"Lentille beluga"},latin:"Lens culinaris",
 origin:{en:"Canada & North America",fr:"Canada & Amérique du Nord"},season:[],
-flavor:["earthy","nutty","mild","umami"],
+flavor:["earthy","nutty","mild","umami"],texture:["hard","dry","granular"],
 story:{en:"Named for the caviar it resembles once cooked — small, glossy and jet black. The colour is anthocyanin and it survives cooking better than most, which is why the lentil stays black rather than turning the muddy brown of its cousins.",
 fr:"Nommée d’après le caviar qu’elle évoque une fois cuite — petite, brillante et noire de jais. La couleur vient des anthocyanes et résiste mieux que la plupart à la cuisson, d’où une lentille qui reste noire au lieu de virer au brun boueux de ses cousines."},
 tip:{en:"Serve it where the colour shows — under white fish, beside a poached egg. Buried in a brown stew you have wasted the point.",
@@ -31,7 +31,7 @@ svg:'<g transform="translate(-8.64 -9.0) scale(1.18)"><path class="f1 sf" d="M23
 
 {id:"black-bean",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Black bean",fr:"Haricot noir"},latin:"Phaseolus vulgaris",
 origin:{en:"Mexico & Central America",fr:"Mexique & Amérique centrale"},season:[],
-flavor:["earthy","sweet","creamy","umami"],
+flavor:["earthy","sweet","creamy","umami"],texture:["hard","dry","smooth"],
 story:{en:"The backbone of Brazilian feijoada and Cuban moros y cristianos, and it colours its cooking liquid deep purple-black — that liquid is not waste but the sauce, and throwing it away is the commonest mistake made with this bean.",
 fr:"L’ossature de la feijoada brésilienne et des moros y cristianos cubains, et il colore son eau de cuisson en noir violacé — ce liquide n’est pas un déchet mais la sauce, et le jeter est l’erreur la plus fréquente avec ce haricot."},
 tip:{en:"Keep the cooking liquid and reduce it. It is where the flavour and the body of the dish live.",
@@ -41,7 +41,7 @@ svg:'<g transform="translate(-6.19 -6.45) scale(1.129)"><path class="f2 sf" d="M
 
 {id:"black-chickpea",cat:"legumes",price:1,pk:"7–12 €/kg",name:{en:"Black chickpea",fr:"Pois chiche noir"},latin:"Cicer arietinum",
 origin:{en:"Murgia Carsica, Puglia",fr:"Murgia Carsica, Pouilles"},season:[],
-flavor:["earthy","nutty","mild"],
+flavor:["earthy","nutty","mild"],texture:["hard","dry","smooth"],
 story:{en:"The black chickpea of the Murgia Carsica, around Cassano delle Murge in Puglia, was nearly abandoned because its thick wrinkled skin demands twelve hours of soaking and two of cooking. It carries roughly three times the fibre of a common chickpea, which is also why it stays whole where the pale ones collapse.",
 fr:"Le pois chiche noir de la Murgia Carsica, autour de Cassano delle Murge dans les Pouilles, a failli disparaître : sa peau épaisse et ridée exige douze heures de trempage et deux heures de cuisson. Il contient environ trois fois plus de fibres qu’un pois chiche ordinaire, ce qui explique aussi qu’il reste entier quand les blonds s’effondrent."},
 tip:{en:"Soak overnight at the very least, then cook two hours at a bare tremble. The skins tint the water grey-violet - keep that broth, most of the flavour has gone into it.",
@@ -51,7 +51,7 @@ svg:'<path class="f3 sf" d="M30 26l16 8a18 18 0 1 1-16-8z"/><path class="f2 sf" 
 
 {id:"cowpea",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Black-eyed pea",fr:"Haricot cornille"},latin:"Vigna unguiculata",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
-flavor:["earthy","creamy","mild"],
+flavor:["earthy","creamy","mild"],texture:["hard","dry","smooth"],
 story:{en:"The black-eyed pea is a Vigna, domesticated in West Africa and carried to the American South, where it became Hoppin' John. It is not a Phaseolus bean at all, which is why it behaves like none of them in the pot.",
 fr:"Le haricot cornille est un Vigna, domestiqué en Afrique de l’Ouest puis emporté vers le Sud des États-Unis, où il est devenu le Hoppin’ John. Ce n’est pas un Phaseolus, et c’est pour cela qu’il ne se comporte comme aucun autre haricot dans la casserole."},
 tip:{en:"Cook it dry and unsoaked, thirty-five to forty-five minutes, salting from the start so the skins hold. Soak it and you get puree.",
@@ -61,7 +61,7 @@ svg:'<path class="f1 sf" d="M26 47q2-15 22-15t21 15q-1 14-21 14T26 47z"/><path c
 
 {id:"lentille-blonde",cat:"legumes",rare:true,price:2,pk:"8–14 €/kg",name:{en:"Blond lentil",fr:"Lentille blonde de Saint-Flour"},latin:"Lens culinaris",
 origin:{en:"Planeze de Saint-Flour, Cantal",fr:"Planèze de Saint-Flour, Cantal"},season:[],
-flavor:["sweet","mild","earthy"],
+flavor:["sweet","mild","earthy"],texture:["hard","dry","granular"],
 story:{en:"Grown on the basalt plateau of the Planeze de Saint-Flour since the Middle Ages, the blond lentil had all but vanished by the 1960s and came back with a Label Rouge in 2009 and an IGP behind it. Production runs to some eighty tonnes a year against six thousand for the green lentil of Le Puy - and the two are opposite tools.",
 fr:"Cultivée depuis le Moyen Âge sur le plateau basaltique de la Planèze de Saint-Flour, la lentille blonde avait presque disparu dans les années 1960 ; elle est revenue avec un Label rouge en 2009, puis une IGP. On en produit quelque quatre-vingts tonnes par an contre six mille pour la verte du Puy — et ce sont deux outils opposés."},
 tip:{en:"It slumps at twenty-five minutes, and that is the point: cook it in milk or stock for a puree or a soup. Do not build a salad on it, the grain will not hold.",
@@ -71,7 +71,7 @@ svg:'<circle class="f1 sf" cx="42" cy="42" r="16"/><circle class="s" cx="42" cy=
 
 {id:"borlotti",cat:"legumes",price:1,pk:"5–9 €/kg",name:{en:"Borlotti bean",fr:"Haricot borlotti"},latin:"Phaseolus vulgaris",
 origin:{en:"Italy, from the Americas",fr:"Italie, depuis les Amériques"},season:[8,9,10],
-flavor:["creamy","nutty","earthy","sweet"],
+flavor:["creamy","nutty","earthy","sweet"],texture:["hard","dry","smooth"],
 story:{en:"The cranberry-splashed pod and bean are spectacular raw and lose every trace of the pattern in the pot — they cook to a uniform brown. Nothing is wrong; the pigment is simply not heat stable, and Italian cooks have never minded.",
 fr:"La cosse et le grain éclaboussés de rouge sont spectaculaires crus et perdent toute trace du motif à la casserole — ils cuisent en brun uniforme. Rien d’anormal : le pigment n’est simplement pas stable à la chaleur, et les cuisiniers italiens ne s’en sont jamais souciés."},
 tip:{en:"Cook them with a whole peeled onion, a carrot and a stick of celery, then discard all three. It is the Italian way and it works.",
@@ -81,7 +81,7 @@ svg:'<path class="f1 sf" d="M22 59q11-19 31-25 15-4 21 1 3 5-5 10-16 11-31 18-12
 
 {id:"cannellini",cat:"legumes",price:1,pk:"4–8 €/kg",name:{en:"Cannellini bean",fr:"Haricot cannellini"},latin:"Phaseolus vulgaris",
 origin:{en:"Tuscany, Italy",fr:"Toscane, Italie"},season:[],
-flavor:["creamy","mild","nutty","earthy"],
+flavor:["creamy","mild","nutty","earthy"],texture:["hard","dry","smooth"],
 story:{en:"Tuscans are nicknamed mangiafagioli, bean-eaters, and this is the bean they mean. The classic preparation is al fiasco — cooked overnight in a wine flask buried in the dying embers of a fire, with oil, garlic and sage.",
 fr:"On surnomme les Toscans mangiafagioli, mangeurs de haricots, et c’est de celui-ci qu’il s’agit. La préparation classique est al fiasco — cuits toute la nuit dans une fiasque à vin enfouie sous les braises mourantes, avec huile, ail et sauge."},
 tip:{en:"Save a ladle of the cooking liquid to loosen any purée. It emulsifies with olive oil far better than water does.",
@@ -91,7 +91,7 @@ svg:'<path class="f3 sf" d="M24 52q0-13 14-15 15-2 20 8 4 11-7 16-13 5-22-2-5-3-
 
 {id:"chana-dal",cat:"legumes",price:1,pk:"3–5 €/kg",name:{en:"Chana dal",fr:"Chana dal (pois chiche cassé)"},latin:"Cicer arietinum",
 origin:{en:"Northern India",fr:"Inde du Nord"},season:[],
-flavor:["nutty","earthy","sweet","toasty"],
+flavor:["nutty","earthy","sweet","toasty"],texture:["hard","dry","granular"],
 story:{en:"It is the small dark desi chickpea, not the pale kabuli, hulled and split, and it carries one of the lowest glycaemic indices of any everyday starch. Dry-roasted whole it becomes daria, the crunchy split pea South Indian cooks drop into hot oil at the start of a tempering.",
 fr:"C’est le petit pois chiche desi, sombre et non le kabuli pâle, décortiqué et cassé ; il affiche l’un des index glycémiques les plus bas parmi les féculents courants. Grillé à sec, il devient le daria, ce pois croquant que les cuisiniers du sud de l’Inde jettent dans l’huile chaude au début d’un tadka."},
 tip:{en:"Soaked an hour it cooks in about 35 minutes and the pieces stay whole — this is the dal for texture, not purée. A pinch of asafoetida in the tempering does more for it than any amount of extra salt.",
@@ -101,7 +101,7 @@ svg:'<path class="f2 sf" d="M26 58a11 11 0 0 1 22 0z"/><path class="f1 sf" d="M4
 
 {id:"chickpea-flour",cat:"legumes",price:1,pk:"4–8 €/kg",name:{en:"Chickpea flour",fr:"Farine de pois chiche"},latin:"Cicer arietinum",
 origin:{en:"India & the Mediterranean",fr:"Inde & Méditerranée"},season:[],
-flavor:["nutty","earthy","bitter","mild"],
+flavor:["nutty","earthy","bitter","mild"],texture:["powdery","dry","smooth"],
 story:{en:"Nice bakes it into socca and Genoa into farinata — the same batter of flour, water and oil, poured thin and blasted in a fierce oven, claimed by both cities. India has used it as besan far longer than either.",
 fr:"Nice en fait la socca et Gênes la farinata — la même pâte de farine, d’eau et d’huile, versée fine et saisie au four brûlant, revendiquée par les deux villes. L’Inde l’emploie sous le nom de besan depuis bien plus longtemps que l’une ou l’autre."},
 tip:{en:"Let the batter rest at least an hour so the flour hydrates fully, or the socca tastes raw and chalky in the middle.",
@@ -111,7 +111,7 @@ svg:'<path class="f1 sf" d="M32 38q16-4 32 0 2 18 1 34-1 4-17 4t-17-4q-1-16 1-34
 
 {id:"chickpeas",cat:"legumes",price:1,pk:"3–5 €/kg",name:{en:"Chickpeas",fr:"Pois chiches"},latin:"Cicer arietinum",
 origin:{en:"Fertile Crescent & Anatolia",fr:"Croissant fertile & Anatolie"},season:[],
-flavor:["nutty","earthy","buttery"],
+flavor:["nutty","earthy","buttery"],texture:["hard","dry","smooth"],
 story:{en:"Rome’s greatest orator, Cicero, owed his family name to the chickpea (cicer) — an ancestor supposedly had a chickpea-shaped wart, and he refused to change the name, promising to make it glorious instead. He did.",
 fr:"Le plus grand orateur de Rome, Cicéron, devait son nom au pois chiche (cicer) — un ancêtre aurait porté une verrue en forme de pois chiche, et il refusa d’en changer, promettant plutôt de rendre ce nom glorieux. Il tint parole."},
 tip:{en:"Keep the cooking water: whipped, it foams like egg white. A tin of chickpeas plus sesame paste and lemon is a five-minute feast.",
@@ -121,7 +121,7 @@ svg:'<path class="f1 sf" d="M33 22 Q37 17 40 23 Q52 27 51 39 Q50 51 37 52 Q23 52
 
 {id:"cicerchia",cat:"legumes",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Cicerchia",fr:"Gesse (pois carré)"},latin:"Lathyrus sativus",
 origin:{en:"Central Italy and the Mediterranean",fr:"Italie centrale et Méditerranée"},season:[],
-flavor:["earthy","bitter","nutty","creamy"],
+flavor:["earthy","bitter","nutty","creamy"],texture:["hard","dry","granular"],
 story:{en:"Cicerchia carries a neurotoxin, β-ODAP, that caused outbreaks of lathyrism in Europe whenever it became the only thing left to eat — and it became that often, because the plant yields through drought and flood alike. Serra de' Conti in the Marche keeps a low-toxin local variety alive as a Slow Food presidium, sown now by choice rather than by desperation.",
 fr:"La gesse renferme une neurotoxine, la β-ODAP, responsable des poussées de lathyrisme en Europe chaque fois qu’elle restait le seul aliment disponible — ce qui arrivait souvent, la plante produisant aussi bien en sécheresse qu’en terrain noyé. Serra de’ Conti, dans les Marches, maintient une variété locale peu toxique en sentinelle Slow Food, semée aujourd’hui par choix et non par détresse."},
 tip:{en:"Soak 12 to 24 hours through three changes of water and throw every soak away, then simmer 90 minutes — the water carries off the toxin and the bitterness together. It never firms up the way chickpeas do: expect a loose creamy mass, and dress it while warm.",
@@ -131,7 +131,7 @@ svg:'<path class="f1 sf" d="M20 42 Q26 30 35 24 L47 33 Q41 45 37 52 Z"/><path cl
 
 {id:"coco-de-paimpol",cat:"legumes",sign:"AOP",price:1,pk:"4–7 €/kg",name:{en:"Coco de Paimpol",fr:"Coco de Paimpol"},latin:"Phaseolus vulgaris",
 origin:{en:"Côtes-d’Armor, Brittany",fr:"Côtes-d’Armor, Bretagne"},season:[8,9,10],
-flavor:["creamy","sweet","mild","earthy"],
+flavor:["creamy","sweet","mild","earthy"],texture:["firm","moist","smooth"],
 story:{en:"A fresh shelling bean rather than a dried one, sold still in its marbled pod and podded by hand — Brittany calls the work le plumage. It holds an AOC, and the season is short enough that most of the country never sees it.",
 fr:"Un haricot demi-sec plutôt que sec, vendu encore dans sa cosse marbrée et écossé à la main — la Bretagne appelle ce travail le plumage. Il détient une AOC, et la saison est assez brève pour que la plus grande part du pays ne le voie jamais."},
 tip:{en:"It needs no soaking, unlike every dried bean. Forty minutes in unsalted water and it is done.",
@@ -141,7 +141,7 @@ svg:'<path class="f3 sf" d="M28 58q14-18 40-14-6 20-30 24-12 2-10-10z"/><circle 
 
 {id:"dried-fava",cat:"legumes",price:1,pk:"4–8 €/kg",name:{en:"Dried broad bean",fr:"Fève sèche"},latin:"Vicia faba",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
-flavor:["earthy","nutty","mild","bitter"],
+flavor:["earthy","nutty","mild","bitter"],texture:["hard","dry","smooth"],
 story:{en:"Egypt eats it at breakfast as ful medames, simmered overnight in a narrow-necked pot, and the dish is older than the pyramids. In Sicily and Puglia it is boiled to a purée called macco and served with wild greens.",
 fr:"L’Égypte la mange au petit-déjeuner en ful medames, mijotée toute la nuit dans une jarre à col étroit, et le plat est plus ancien que les pyramides. En Sicile et dans les Pouilles on la réduit en purée, le macco, servi avec des herbes sauvages."},
 tip:{en:"Buy them already skinned if you can. Peeling a kilo of soaked dried favas by hand is an afternoon's work.",
@@ -151,7 +151,7 @@ svg:'<path class="f1 sf" d="M20 48 Q17 33 34 28 Q54 22 62 34 Q69 48 52 57 Q32 65
 
 {id:"faba-asturiana",cat:"legumes",price:2,pk:"18–35 €/kg",name:{en:"Faba asturiana",fr:"Fabes de la Granja"},latin:"Phaseolus vulgaris",
 origin:{en:"Asturias, northern Spain",fr:"Asturies, Espagne du Nord"},season:[9,10],
-flavor:["buttery","creamy","mild"],
+flavor:["buttery","creamy","mild"],texture:["hard","dry","smooth"],
 story:{en:"The variety is Granja Asturiana, long and flat and ivory, selected around a single dish; the protected designation demands a skin fine enough to go unnoticed on the palate and a grain that holds its shape through three hours in the pot. Cooks still interrupt the boil two or three times with a splash of cold water — asustar les fabes, frightening the beans — a habit inherited from charcoal ranges that no modern hob requires.",
 fr:"La variété est la Granja Asturiana, longue, plate et ivoire, sélectionnée autour d’un seul plat ; l’appellation exige une peau assez fine pour passer inaperçue en bouche et un grain qui tienne sa forme après trois heures de cuisson. Les cuisiniers coupent encore l’ébullition deux ou trois fois d’un filet d’eau froide — asustar les fabes, « effrayer » les haricots — habitude héritée des fourneaux à charbon dont aucune plaque moderne n’a besoin."},
 tip:{en:"Soak overnight, then hold the pot at a bare tremble; one real boil splits the skins and clouds the fabada past saving. Skim the fat rendered by the compango once, early, rather than chasing it at the table.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M26 34q22-10 40 2 8 6 4 14t-16 6q-16-2-26-10t-2-12z"
 
 {id:"flageolet",cat:"legumes",price:1,pk:"5–9 €/kg",name:{en:"Flageolet",fr:"Flageolet"},latin:"Phaseolus vulgaris",
 origin:{en:"Brittany, France",fr:"Bretagne, France"},season:[],
-flavor:["delicate","fresh","mild","grassy"],
+flavor:["delicate","fresh","mild","grassy"],texture:["hard","dry","smooth"],
 story:{en:"Picked before maturity, which is why it stays pale green rather than turning white — the bean is harvested young and dried immature. A Breton grower named Chevrier fixed the technique in the 1870s, and the French still call it the chevrier.",
 fr:"Cueilli avant maturité, d’où sa couleur vert pâle plutôt que blanche — le grain est récolté jeune et séché immature. Un maraîcher breton nommé Chevrier fixa la technique dans les années 1870, et les Français l’appellent encore le chevrier."},
 tip:{en:"It is the classic bean for gigot d'agneau, and it wants nothing more than butter, garlic and parsley. Do not overwhelm it.",
@@ -171,7 +171,7 @@ svg:'<path class="f3 sf" d="M20 44q10-9 28-9t28 9q-8 11-28 11t-28-11z"/><path cl
 
 {id:"judion",cat:"legumes",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Judión bean",fr:"Judión (haricot géant d’Espagne)"},latin:"Phaseolus coccineus",
 origin:{en:"La Granja de San Ildefonso, Segovia",fr:"La Granja de San Ildefonso, Ségovie"},season:[],
-flavor:["buttery","creamy","mild"],
+flavor:["buttery","creamy","mild"],texture:["hard","dry","smooth"],
 story:{en:"The scarlet runner reached the royal gardens at La Granja as an ornamental, grown for its red flowers and fed to the palace's game birds before anyone thought to eat it. Gardeners selected it for the pot over generations, and the stew that made it famous only reached restaurant menus in the 1950s.",
 fr:"Le haricot d’Espagne arriva aux jardins royaux de La Granja comme plante d’ornement, cultivé pour ses fleurs rouges et donné au gibier du palais avant que quiconque songe à le manger. Les jardiniers l’ont sélectionné pour la marmite au fil des générations, et le ragoût qui l’a rendu célèbre n’a gagné les cartes qu’au cours des années 1950."},
 tip:{en:"Soak twelve hours, start in cold unsalted water and never let it do more than tremble — a rolling boil bursts the skins and loses the whole point of the bean. Salt only once they are tender.",
@@ -181,7 +181,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="50" rx="25" ry="18"/><path class="s" d="
 
 {id:"kidney-bean",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Kidney bean",fr:"Haricot rouge"},latin:"Phaseolus vulgaris",
 origin:{en:"Peru & Central America",fr:"Pérou & Amérique centrale"},season:[],
-flavor:["earthy","sweet","creamy","mild"],
+flavor:["earthy","sweet","creamy","mild"],texture:["hard","dry","smooth"],
 story:{en:"Raw or undercooked, it is genuinely poisonous — it carries phytohaemagglutinin, and as few as four raw beans can make you seriously ill. Ten minutes at a hard boil destroys it, but a slow cooker never gets hot enough on its own.",
 fr:"Crus ou insuffisamment cuits, ils sont réellement toxiques — ils portent de la phytohémagglutinine, et quatre grains crus suffisent à rendre gravement malade. Dix minutes à gros bouillons la détruisent, mais une mijoteuse seule n’atteint jamais cette température."},
 tip:{en:"Boil hard for ten full minutes before any slow cooking. This is the one bean where the instruction is a safety rule, not a preference.",
@@ -191,7 +191,7 @@ svg:'<path class="f2 sf" d="M22 64 Q13 40 33 27 Q54 14 71 29 Q80 38 75 48 Q66 41
 
 {id:"kinako",cat:"legumes",price:1,pk:"12–20 €/kg",name:{en:"Kinako",fr:"Kinako (farine de soja grillé)"},latin:"Glycine max",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["nutty","toasty","mild","earthy"],
+flavor:["nutty","toasty","mild","earthy"],texture:["powdery","dry","smooth"],
 story:{en:"Kinako is nothing but soybeans dry-roasted and milled, and the name means, flatly, yellow flour. The roast is the whole of it — the same beans boiled taste of very little, which is why kinako is a finishing ingredient and never a cooking one.",
 fr:"Le kinako n’est rien d’autre que du soja torréfié puis moulu, et son nom veut dire platement farine jaune. La torréfaction fait tout : les mêmes graines bouillies ne goûtent presque rien, ce qui fait du kinako un ingrédient de finition et jamais de cuisson."},
 tip:{en:"Toast it thirty seconds in a dry pan before use; kinako that has sat on the shelf smells of cardboard and the heat brings it straight back. Cut it with sugar at four to one plus a good pinch of salt, or it clings to the tongue and dries the mouth.",
@@ -201,7 +201,7 @@ svg:'<ellipse class="f3 sf" cx="36" cy="32" rx="10" ry="8"/><ellipse class="f2 s
 
 {id:"koya-dofu",cat:"legumes",price:2,pk:"25–40 €/kg",name:{en:"Koya-dofu",fr:"Tofu séché (koya-dofu)"},latin:"Glycine max",
 origin:{en:"Mount Kōya, Wakayama",fr:"Mont Kōya, Wakayama"},season:[],
-flavor:["mild","nutty"],
+flavor:["mild","nutty"],texture:["dry","brittle","airy"],
 story:{en:"It takes its name from the monastery complex on Mount Kōya, where tofu left out in the winter cold froze, thawed and dried into something that kept a year on a shelf. The ice crystals are the structure: they shoulder the protein aside as they grow, and the sponge they leave behind is the reason the block drinks dashi the way it does.",
 fr:"Il tient son nom du complexe monastique du mont Kōya, où le tofu laissé dehors dans le froid de l'hiver gelait, dégelait et séchait en quelque chose qui se gardait un an sur une étagère. Les cristaux de glace sont la structure : en grossissant ils repoussent les protéines, et l'éponge qu'ils laissent explique pourquoi le bloc boit ainsi le dashi."},
 tip:{en:"Modern blocks need no hot pre-soak: five minutes in warm dashi is enough. Press it gently between the palms rather than wringing it out, and hold the simmer at a bare tremble — a real boil tears the sponge apart.",
@@ -211,7 +211,7 @@ svg:'<path class="f1 sf" d="M30 36h36v32H30z"/><path class="s" d="M30 36 38 30h3
 
 {id:"lentils",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Lentils",fr:"Lentilles"},latin:"Lens culinaris",
 origin:{en:"Fertile Crescent",fr:"Croissant fertile"},season:[],
-flavor:["earthy","mild","nutty"],
+flavor:["earthy","mild","nutty"],texture:["hard","dry","granular"],
 story:{en:"Esau sold his birthright for a bowl of lentil stew — the most expensive lunch in scripture. The optical lens is named after this seed, not the other way round; Italians eat them at New Year, each little disc a coin of luck.",
 fr:"Ésaü vendit son droit d’aînesse pour un plat de lentilles — le déjeuner le plus cher des Écritures. La lentille optique doit son nom à cette graine, et non l’inverse ; les Italiens en mangent au Nouvel An, chaque petit disque valant une pièce de fortune."},
 tip:{en:"Salt them only at the end — salted water toughens their skins. The little green ones from Le Puy hold their shape best in salads.",
@@ -221,7 +221,7 @@ svg:'<path class="f1 sf" d="M19 70 Q21 58 30 55 Q33 46 42 48 Q48 40 56 46 Q66 45
 
 {id:"lupin-flour",cat:"legumes",price:2,pk:"8–16 €/kg",name:{en:"Lupin flour",fr:"Farine de lupin"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
-flavor:["nutty","bitter","rich"],
+flavor:["nutty","bitter","rich"],texture:["powdery","dry","smooth"],
 story:{en:"Every lupin was bitter with quinolizidine alkaloids until Reinhold von Sengbusch, screening hundreds of thousands of plants in 1920s Germany, isolated the rare sweet mutants that all modern varieties descend from. The flour runs near 40% protein with almost no starch, and it emulsifies like egg yolk, which no cereal flour does.",
 fr:"Tous les lupins étaient amers d’alcaloïdes quinolizidiniques jusqu’à ce que Reinhold von Sengbusch, criblant des centaines de milliers de plants dans l’Allemagne des années 1920, isole les rares mutants doux dont descendent toutes les variétés actuelles. La farine titre près de 40 % de protéines pour presque pas d’amidon, et elle émulsionne comme un jaune d’œuf — ce qu’aucune farine de céréale ne fait."},
 tip:{en:"Three to five percent of the flour weight colours a pasta or enriches a brioche; past ten it turns chalky and beany. It is a declared allergen and cross-reacts with peanut, so label anything it goes into.",
@@ -231,7 +231,7 @@ svg:'<path class="f1 sf" d="M32 40h32v30a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path
 
 {id:"lupini",cat:"legumes",price:1,pk:"6–12 €/kg",name:{en:"Lupini beans",fr:"Lupins"},latin:"Lupinus albus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
-flavor:["salty","bitter","fresh"],
+flavor:["salty","bitter","fresh"],texture:["firm","moist","smooth"],
 story:{en:"The bitterness is lupanine, an alkaloid the plant makes as a defence; Roman and Egyptian eaters dealt with it by boiling the beans and then leaving them for days in running water. Sweet, low-alkaloid lupins were only bred in the 1930s, and most beans sold in brine are still the bitter kind, tamed.",
 fr:"L’amertume, c’est la lupanine, un alcaloïde défensif de la plante ; Romains et Égyptiens la chassaient en faisant bouillir les graines puis en les laissant plusieurs jours dans l’eau courante. Les lupins doux, pauvres en alcaloïdes, ne datent que des années 1930 : la plupart des lupins en saumure restent des amers, domptés."},
 tip:{en:"Taste one before serving: any bitterness left means the water needs changing again, daily, until it goes. Squeeze the bean out of its skin between your teeth, and never cook it soft — the snap is the point.",
@@ -241,7 +241,7 @@ svg:'<ellipse class="f2 sf" cx="38" cy="44" rx="16" ry="13"/><ellipse class="f1 
 
 {id:"mogette",cat:"legumes",sign:"IGP",price:2,pk:"9–15 €/kg",name:{en:"Mogette de Vendée",fr:"Mogette de Vendée"},latin:"Phaseolus vulgaris",
 origin:{en:"Vendée, western France",fr:"Vendée"},season:[7,8,9],
-flavor:["creamy","mild","buttery"],
+flavor:["creamy","mild","buttery"],texture:["hard","dry","smooth"],
 story:{en:"Physicians were already recording bean fields in the Vendée at the end of the seventeenth century, and the name is usually traced to the mounges — the monks of the local abbeys. Picked half-dry in late summer, the bean skips the drying yard entirely and goes to market as a fresh vegetable.",
 fr:"Les médecins signalaient déjà des champs de haricots en Vendée à la fin du XVIIe siècle, et l’on rattache d’ordinaire le nom aux « mounges », les moines des abbayes locales. Cueillie demi-sèche à la fin de l’été, elle saute l’étape du séchoir et part au marché comme un légume frais."},
 tip:{en:"Half-dry mogettes need no soaking at all: cold unsalted water, a bare simmer, and they are creamy in about forty minutes — salt any earlier and the skins toughen. Fully dried ones want a night in water and twice the time.",
@@ -251,7 +251,7 @@ svg:'<path class="f2 sf" d="M22 60q16-22 52-24 4 14-14 22t-38 2z"/><path class="
 
 {id:"mung-bean",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Mung bean",fr:"Haricot mungo"},latin:"Vigna radiata",
 origin:{en:"India",fr:"Inde"},season:[],
-flavor:["sweet","fresh","mild","grassy"],
+flavor:["sweet","fresh","mild","grassy"],texture:["hard","dry","granular"],
 story:{en:"What most of the world calls bean sprouts are these, germinated in the dark for four days. Whole, they are the base of Indian moong dal; ground and made into a batter they become the noodles sold across Asia as glass or cellophane noodles.",
 fr:"Ce que le monde appelle germes de soja est en réalité ce haricot, germé quatre jours à l’obscurité. Entier, il fait le moong dal indien ; broyé et transformé en pâte, il devient les nouilles vendues dans toute l’Asie sous le nom de vermicelles de verre."},
 tip:{en:"It is the one pulse that genuinely needs no soaking. Twenty-five minutes from dry and it is soft.",
@@ -261,7 +261,7 @@ svg:'<path class="f2 sf" d="M52 28q10-2 12 6 2 9-6 12-9 3-13-4-3-8 7-14z"/><path
 
 {id:"natto",cat:"legumes",price:1,pk:"15–30 €/kg",name:{en:"Natto",fr:"Natto"},latin:"Bacillus subtilis var. natto",
 origin:{en:"Ibaraki, Japan",fr:"Ibaraki, Japon"},season:[],
-flavor:["umami","pungent","earthy"],
+flavor:["umami","pungent","earthy"],texture:["soft","viscous","moist"],
 story:{en:"The threads are polyglutamic acid, spun by Bacillus subtilis, a bacterium that lives on rice straw — hence the story that natto was found by accident in boiled beans packed in straw bales. Sake and miso brewers still refuse to eat it before entering the fermentation room: the bacterium travels on skin and clothes, and it overruns koji.",
 fr:"Les fils sont de l’acide polyglutamique, filé par Bacillus subtilis, une bactérie qui vit sur la paille de riz — d’où l’histoire, dit-on, de fèves bouillies oubliées dans des bottes de paille. Les brasseurs de saké et de miso refusent encore d’en manger avant d’entrer dans la salle de fermentation : la bactérie voyage sur la peau et les vêtements, et elle écrase le koji."},
 tip:{en:"Beat the beans on their own thirty or fifty times before the mustard and the tare go in — liquid added first stops the threads forming. Over rice just off the boil, never scalding.",
@@ -271,7 +271,7 @@ svg:'<path class="f1 sf" d="M22 55 Q48 60 74 55 L70 76 Q48 81 26 76 Z"/><path cl
 
 {id:"pigeon-pea",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Pigeon pea (toor dal)",fr:"Pois d’Angole (toor dal)"},latin:"Cajanus cajan",
 origin:{en:"Indian subcontinent",fr:"Sous-continent indien"},season:[],
-flavor:["earthy","sweet","nutty","mild"],
+flavor:["earthy","sweet","nutty","mild"],texture:["hard","dry","granular"],
 story:{en:"Cajanus cajan is a woody shrub that crops for several years running, which is why it stands at the edge of compounds and field boundaries from Gujarat to Jamaica rather than in tidy rows. The English name is traced to Barbados, where the seed was grown as feed for pigeons long before European kitchens took it seriously.",
 fr:"Le Cajanus cajan est un arbuste ligneux qui produit plusieurs années de suite : d’où sa place en bordure de parcelle, du Gujarat à la Jamaïque, plutôt qu’en rangs cultivés. Son nom anglais vient de la Barbade, où la graine servait à nourrir les pigeons bien avant que les cuisines européennes ne s’y intéressent."},
 tip:{en:"Unsoaked toor dal takes about 40 minutes at a bare simmer and a spoon of oil to hold the foam down. It thickens hard as it cools, so stop the pot looser than you mean to serve it.",
@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M24 60q10-19 26-23t26 5q-8 15-25 19t-27-1z"/><circle
 
 {id:"pochas",cat:"legumes",rare:true,price:2,pk:"8–16 €/kg",name:{en:"Pochas",fr:"Pochas (haricots demi-secs de Navarre)"},latin:"Phaseolus vulgaris",
 origin:{en:"Navarre and the Ebro valley",fr:"Navarre et vallée de l’Èbre"},season:[8,9],
-flavor:["fresh","grassy","delicate"],
+flavor:["fresh","grassy","delicate"],texture:["firm","moist","smooth"],
 story:{en:"A pocha is not a variety but a moment: the same white bean picked once the pod has gone pale and papery but before the seed inside has given up its water. The window runs a few weeks in late summer, which is why a bean that cooks in half an hour supports an entire tinned and frozen trade.",
 fr:"La pocha n’est pas une variété mais un instant : le même haricot blanc, cueilli quand la gousse a pâli et pris du parchemin, mais avant que la graine n’ait perdu son eau. La fenêtre dure quelques semaines à la fin de l’été, ce qui explique qu’un haricot cuisant en une demi-heure fasse vivre tout un commerce de conserve et de surgelé."},
 tip:{en:"No soaking, and no acid until the end: start them cold with a whole onion and a green pepper, thirty to forty minutes at a tremble, salt off the heat. Tomato or vinegar added early sets the skins hard and no amount of extra time softens them again.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M24 60q4-24 22-32t26 4q-6 16-22 26t-26 2z"/><path cl
 
 {id:"lentille-du-puy",cat:"legumes",sign:"AOP",price:2,pk:"8–14 €/kg",name:{en:"Puy lentil",fr:"Lentille verte du Puy"},latin:"Lens culinaris",
 origin:{en:"Haute-Loire, Auvergne",fr:"Haute-Loire, Auvergne"},season:[],
-flavor:["earthy","peppery","nutty","mild"],
+flavor:["earthy","peppery","nutty","mild"],texture:["hard","dry","granular"],
 story:{en:"The first vegetable in France to be granted an AOC, in 1996. It grows on volcanic soil at altitude where the summers are dry, and the lack of water is what keeps the skin thin and stops the lentil bursting — scarcity as a quality control.",
 fr:"Le premier légume français à recevoir une AOC, en 1996. Elle pousse sur sol volcanique en altitude, sous des étés secs, et c’est le manque d’eau qui garde la peau fine et empêche la lentille d’éclater — la rareté comme contrôle qualité."},
 tip:{en:"Never salt the cooking water at the start. Salt firms the skins and they take twice as long to soften.",
@@ -301,7 +301,7 @@ svg:'<path class="f2 sf" d="M21 36 Q22 24 34 23 Q47 23 47 36 Q47 49 34 49 Q21 48
 
 {id:"red-lentil",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"Red lentil",fr:"Lentille corail"},latin:"Lens culinaris",
 origin:{en:"Near East & South Asia",fr:"Proche-Orient & Asie du Sud"},season:[],
-flavor:["sweet","earthy","mild","nutty"],
+flavor:["sweet","earthy","mild","nutty"],texture:["hard","dry","granular"],
 story:{en:"It is a brown lentil with its skin removed, which is why it is orange rather than red and why it collapses so fast — nothing is left to hold it together. Split and skinned, it cooks in fifteen minutes and turns to purée on its own.",
 fr:"C’est une lentille brune décortiquée, d’où sa couleur orange plutôt que rouge et son effondrement si rapide — plus rien ne la tient. Fendue et sans peau, elle cuit en quinze minutes et se réduit en purée d’elle-même."},
 tip:{en:"Use it when you want it to disappear — dal, soup, a thickener. If you need lentils to stay whole, this is the wrong one.",
@@ -311,7 +311,7 @@ svg:'<path class="s" d="M22 50q3 20 26 20t26-20" stroke-width="3"/><path class="
 
 {id:"santorini-fava",cat:"legumes",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Santorini fava",fr:"Fava de Santorin"},latin:"Lathyrus clymenum",
 origin:{en:"Santorini and the Cyclades",fr:"Santorin et les Cyclades"},season:[6,7],
-flavor:["sweet","earthy","nutty"],
+flavor:["sweet","earthy","nutty"],texture:["hard","dry","granular"],
 story:{en:"Despite the name it is neither a broad bean nor a split pea but a grass pea, Lathyrus clymenum, and carbonised seeds of that exact species were excavated from the Bronze Age town at Akrotiri — the same crop on the same island before the eruption. It is still grown without irrigation, rooted in volcanic ash that holds the night humidity the plants live on.",
 fr:"Malgré son nom, ce n’est ni une fève ni un pois cassé mais une gesse, Lathyrus clymenum, dont des graines carbonisées ont été exhumées de la cité de l’âge du bronze d’Akrotiri — la même culture sur la même île, avant l’éruption. On la cultive toujours sans irrigation, enracinée dans une cendre volcanique qui retient l’humidité nocturne dont vivent les plants."},
 tip:{en:"One part fava to three of water with an onion in the pot, forty to sixty minutes; it collapses by itself. Finish it with a whisk, never a blender — blended it goes to glue — and keep the oil, lemon and raw onion for the table.",
@@ -321,7 +321,7 @@ svg:'<path class="s" d="M20 66q28 12 56 0"/><path class="f1 sf" d="M26 62q5-24 2
 
 {id:"silken-tofu",cat:"legumes",price:1,pk:"5–10 €/kg",name:{en:"Silken tofu (kinugoshi)",fr:"Tofu soyeux"},latin:"Glycine max",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["mild","milky","delicate","creamy"],
+flavor:["mild","milky","delicate","creamy"],texture:["soft","silky","moist"],
 story:{en:"Kinugoshi means silk-strained, and neither word is true: no silk touches it and nothing is strained. The soy milk is set with its coagulant directly in the box it will be sold in, so curds and whey never separate at all — the name describes only how it feels.",
 fr:"Kinugoshi veut dire « passé à la soie », et aucun des deux mots n’est vrai : nulle soie n’intervient et rien n’est passé. Le lait de soja prend avec son coagulant directement dans la barquette où il sera vendu, si bien que caillé et petit-lait ne se séparent jamais — le nom ne décrit que la sensation."},
 tip:{en:"It cannot be pressed, so stop trying; drain it on a tilted plate for ten minutes instead. Slide it into simmering water on the flat of a knife and keep the pot below a boil — anything more agitated and it breaks into clouds.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M20 72h56q-4 8-10 8H30q-6 0-10-8z"/><path class="f1 
 
 {id:"soissons-bean",cat:"legumes",rare:true,price:2,pk:"18–30 €/kg",name:{en:"Soissons bean",fr:"Haricot de Soissons"},latin:"Phaseolus coccineus",
 origin:{en:"Aisne valley, Picardy",fr:"Vallée de l’Aisne, Picardie"},season:[9,10],
-flavor:["creamy","mild","earthy"],
+flavor:["creamy","mild","earthy"],texture:["hard","dry","smooth"],
 story:{en:"It is not the common bean at all but a runner bean, Phaseolus coccineus, sent three or four metres up poles on the Aisne floodplain. The specification effectively sells it by the ruler: pods of twenty to twenty-five centimetres, and a dried grain of at least seventeen millimetres to carry the name.",
 fr:"Ce n’est pas du tout le haricot commun mais un haricot d’Espagne, Phaseolus coccineus, mené à trois ou quatre mètres sur rames dans la plaine alluviale de l’Aisne. Le cahier des charges le vend pour ainsi dire à la règle : des gousses de vingt à vingt-cinq centimètres, et un grain sec d’au moins dix-sept millimètres pour porter le nom."},
 tip:{en:"Soak twelve hours and it needs barely an hour of gentle cooking, half what a lingot takes. Go past that and you have purée — excellent if you meant it, and the end of any salad if you did not.",
@@ -341,7 +341,7 @@ svg:'<path class="f1 sf" d="M20 44q14-13 28-13t28 13q-14 8-28 8t-28-8z"/><path c
 
 {id:"sorana-bean",cat:"legumes",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Sorana bean",fr:"Haricot de Sorana"},latin:"Phaseolus vulgaris",
 origin:{en:"Pescia valley, Tuscany",fr:"Vallée de la Pescia, Toscane"},season:[9,10],
-flavor:["delicate","mild","buttery"],
+flavor:["delicate","mild","buttery"],texture:["hard","dry","smooth"],
 story:{en:"It grows on one strip of sand and gravel along the Pescia river, the ghiareto, on ground reclaimed under the Medici and later the grand dukes; the skin that all but disappears in cooking is credited to that poor, fast-draining soil and the damp valley air. The protected area is measured in hectares, and the plants are still staked on cane by hand.",
 fr:"Il pousse sur une seule bande de sable et de graviers le long de la Pescia, le ghiareto, sur des terres assainies sous les Médicis puis sous les grands-ducs ; cette peau qui disparaît presque à la cuisson tient à ce sol pauvre et drainant et à l’air humide de la vallée. L’aire protégée se compte en hectares, et les plants sont encore ramés à la canne, à la main."},
 tip:{en:"Cook it in unsalted water at a bare tremble, or in a low oven, with a garlic clove and a sage leaf, then dress it warm with oil and pepper. There is no skin to hold it together, so a real boil shreds it — and it needs no soffritto to hide behind.",
@@ -351,7 +351,7 @@ svg:'<path class="f1 sf" d="M22 56h52q-4 18-26 18T22 56z"/><path class="s" d="M2
 
 {id:"soy-bean",cat:"legumes",price:1,pk:"4–8 €/kg",name:{en:"Soybean",fr:"Soja"},latin:"Glycine max",
 origin:{en:"Northeast China",fr:"Nord-est de la Chine"},season:[],
-flavor:["nutty","earthy","umami","mild"],
+flavor:["nutty","earthy","umami","mild"],texture:["hard","dry","smooth"],
 story:{en:"Domesticated in China more than three thousand years ago, and almost nothing about it is eaten as a bean — it becomes tofu, miso, soy sauce, oil and animal feed. Fresh in the pod it is edamame, which is the exception.",
 fr:"Domestiqué en Chine il y a plus de trois mille ans, et il ne se mange presque jamais tel quel — il devient tofu, miso, sauce soja, huile et aliment du bétail. Frais dans sa cosse c’est l’edamame, qui fait exception."},
 tip:{en:"Dried soybeans must be boiled hard and long — they contain trypsin inhibitors that raw or gently cooked beans retain.",
@@ -361,7 +361,7 @@ svg:'<path class="f3 sf" d="M28 60q16-20 40-16-8 22-32 26-12 2-8-10z"/><circle c
 
 {id:"split-pea",cat:"legumes",price:1,pk:"2–4 €/kg",name:{en:"Split pea",fr:"Pois cassé"},latin:"Pisum sativum",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[],
-flavor:["sweet","earthy","mild","creamy"],
+flavor:["sweet","earthy","mild","creamy"],texture:["hard","dry","granular"],
 story:{en:"A field pea dried, skinned and split along its natural seam, which is where it wants to divide anyway. Splitting doubles the surface and halves the cooking time — a piece of food engineering several thousand years old.",
 fr:"Un pois de champ séché, décortiqué et fendu le long de sa suture naturelle, là où il tend de toute façon à se séparer. La fente double la surface et divise par deux le temps de cuisson — un travail d’ingénierie alimentaire vieux de plusieurs millénaires."},
 tip:{en:"It foams enormously at first boil. Skim it once and the soup stays clear instead of turning grey.",
@@ -371,7 +371,7 @@ svg:'<path class="f1 sf" d="M44 22 Q47 30 44 34 Q47 38 44 46 Q26 46 25 34 Q26 22
 
 {id:"haricot-tarbais",cat:"legumes",sign:"IGP",price:2,pk:"15–28 €/kg",name:{en:"Tarbais bean",fr:"Haricot tarbais"},latin:"Phaseolus vulgaris",
 origin:{en:"Hautes-Pyrénées, France",fr:"Hautes-Pyrénées, France"},season:[],
-flavor:["creamy","mild","earthy","nutty"],
+flavor:["creamy","mild","earthy","nutty"],texture:["hard","dry","smooth"],
 story:{en:"Traditionally grown climbing up maize stalks, which act as living stakes — the two crops were planted together for two centuries. Its skin is unusually fine, so it absorbs the fat of a cassoulet without disintegrating, which is why the dish specifies it.",
 fr:"Traditionnellement cultivé grimpant sur des tiges de maïs, qui servent de tuteurs vivants — les deux cultures étaient associées depuis deux siècles. Sa peau est exceptionnellement fine : il absorbe le gras d’un cassoulet sans se déliter, et c’est pourquoi la recette l’exige."},
 tip:{en:"Soak twelve hours, then start it in cold water and bring it up slowly. Dropping beans into boiling water splits every skin.",
@@ -381,7 +381,7 @@ svg:'<path class="f2 sf" d="M20 60 Q24 38 44 28 Q66 18 78 34 Q65 28 47 36 Q28 45
 
 {id:"tempeh",cat:"legumes",price:1,pk:"12–20 €/kg",name:{en:"Tempeh",fr:"Tempeh"},latin:"Rhizopus oligosporus",
 origin:{en:"Java, Indonesia",fr:"Java, Indonésie"},season:[],
-flavor:["nutty","earthy","umami","mild"],
+flavor:["nutty","earthy","umami","mild"],texture:["firm","moist","granular"],
 story:{en:"A colony of Rhizopus knits whole cooked soybeans into a solid white cake in about thirty-six hours, and the mycelium itself is eaten - it is the structure, not a seasoning. Javanese writing of the early nineteenth century already describes it, which makes it, unusually among soy foods, an Indonesian invention rather than a Chinese one.",
 fr:"Une colonie de Rhizopus lie en trente-six heures des graines de soja entières en un gâteau blanc et ferme, et l’on mange le mycélium lui-même : il est la structure, non l’assaisonnement. Des textes javanais du début du XIXe siècle le décrivent déjà, ce qui en fait, chose rare parmi les produits du soja, une invention indonésienne et non chinoise."},
 tip:{en:"Steam it ten minutes before marinating: it opens up, takes salt, and any raw bitterness goes off with the steam. Grey and black patches are the mould sporing and are harmless, but a smell of ammonia is not - that block goes out.",
@@ -391,7 +391,7 @@ svg:'<path class="f1 sf" d="M24 42h40v22H24z"/><path class="f2 sf" d="M24 42l8-8
 
 {id:"tolosa-black-bean",cat:"legumes",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Tolosa black bean",fr:"Haricot noir de Tolosa"},latin:"Phaseolus vulgaris",
 origin:{en:"Tolosaldea, Gipuzkoa",fr:"Tolosaldea, Guipuscoa"},season:[9,10],
-flavor:["earthy","rich","meaty"],
+flavor:["earthy","rich","meaty"],texture:["hard","dry","smooth"],
 story:{en:"Cooked, it throws a broth so dark and so bound by its own dissolved skins that Basque cooks judge the dish by the liquid rather than the bean — nothing like the firm, dry turtle bean the name suggests. The growers organised formally only in 1994, as Tolosako Babarruna, to defend a bean that had been local currency for far longer.",
 fr:"À la cuisson, il rend un bouillon si sombre et si lié par ses propres peaux dissoutes que les cuisiniers basques jugent le plat au liquide plutôt qu’au grain — rien à voir avec le haricot noir ferme et sec que le nom laisse imaginer. Les producteurs ne se sont organisés qu’en 1994, sous le nom de Tolosako Babarruna, pour défendre un haricot qui faisait monnaie locale depuis bien plus longtemps."},
 tip:{en:"Do not soak it. Start cold, hold it just under a simmer for two to three hours, top up only with cold water, and let the pot stand off the heat ten minutes before serving — that rest is what pulls the broth together.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M22 40h52l-6 26a10 10 0 0 1-10 8H38a10 10 0 0 1-10-8
 
 {id:"urad-dal",cat:"legumes",price:1,pk:"4–7 €/kg",name:{en:"Urad dal",fr:"Urad dal (haricot urd)"},latin:"Vigna mungo",
 origin:{en:"South Asia",fr:"Asie du Sud"},season:[],
-flavor:["earthy","nutty","mild"],
+flavor:["earthy","nutty","mild"],texture:["hard","dry","granular"],
 story:{en:"Ground and left to stand with rice, urad does what no other pulse does: its arabinogalactan mucilage traps the gas of fermentation, and the batter rises with no yeast added at all. South Indian cooks read the ratio in the grinder rather than the recipe — three or four parts rice to one of urad, the dal ground longer and finer than the rice.",
 fr:"Moulu et laissé à reposer avec du riz, l’urad fait ce qu’aucune autre légumineuse ne fait : son mucilage d’arabinogalactane retient le gaz de la fermentation, et la pâte lève sans la moindre levure ajoutée. Les cuisiniers du sud de l’Inde lisent le rapport dans le moulin plutôt que dans la recette — trois à quatre volumes de riz pour un d’urad, le dal broyé plus longtemps et plus fin que le riz."},
 tip:{en:"Grind the urad separately and cold, adding water in small pours until the paste is white and fluffy and a drop of it floats in water — that float test is the only reliable sign the batter will rise. Whole black urad and the skinned white split are not interchangeable: only the skinned one makes idli.",
@@ -411,7 +411,7 @@ svg:'<ellipse class="f3 sf" cx="38" cy="42" rx="11" ry="8"/><path class="s" d="M
 
 {id:"white-beans",cat:"legumes",price:1,pk:"3–6 €/kg",name:{en:"White beans",fr:"Haricots blancs"},latin:"Phaseolus vulgaris",
 origin:{en:"Americas",fr:"Amériques"},season:[],
-flavor:["mild","buttery","earthy"],
+flavor:["mild","buttery","earthy"],texture:["hard","dry","smooth"],
 story:{en:"Beans crossed from the Americas in the 1530s; Catherine de’ Medici reportedly carried a pouch of them to France in her wedding luggage. Tuscans became such devotees that the rest of Italy nicknamed them mangiafagioli — the bean-eaters.",
 fr:"Le haricot arriva des Amériques dans les années 1530 ; Catherine de Médicis, dit-on, en emporta une bourse dans ses bagages de mariage vers la France. Les Toscans en devinrent si friands que le reste de l’Italie les surnomma mangiafagioli — les mangeurs de haricots."},
 tip:{en:"Cook them gently — a hard boil bursts their jackets — and always with a bay leaf and a whole garlic clove. Their broth is liquid silver: keep it.",
@@ -421,7 +421,7 @@ svg:'<path class="f1 sf" d="M22 44 Q20 32 34 28 Q48 25 50 34 Q52 44 38 48 Q24 52
 
 {id:"yuba",cat:"legumes",price:2,pk:"25–45 €/kg",name:{en:"Yuba",fr:"Yuba (peau de soja)"},latin:"Glycine max",
 origin:{en:"Temple kitchens of Kyoto and Nikko, Japan",fr:"Cuisines de temple de Kyoto et Nikko, Japon"},season:[],
-flavor:["creamy","mild","nutty"],
+flavor:["creamy","mild","nutty"],texture:["soft","silky","moist"],
 story:{en:"Yuba is the skin that forms on soy milk held just below the boil, lifted off one sheet at a time on a bamboo rod until the pan is spent. Kyoto and Nikko each built a temple cuisine on it and even write the word with different characters: Nikko folds its sheets double as they come off, so they eat thicker.",
 fr:"Le yuba est la peau qui se forme sur le lait de soja maintenu juste sous l’ébullition, levée feuille à feuille à la baguette de bambou jusqu’à épuisement du bain. Kyoto et Nikko en ont chacune tiré une cuisine de temple et écrivent même le mot avec des caractères différents : Nikko plie sa feuille en deux au moment de la lever, elle se mange donc plus épaisse."},
 tip:{en:"Fresh yuba wants no cooking at all: eat it the same day with a trace of soy and wasabi. Dried sheets need only a brief dip in warm water — left to soak, they dissolve into the bowl.",
@@ -431,7 +431,7 @@ svg:'<path class="s" d="M24 30h48"/><path class="f1 sf" d="M36 30q-2 20 2 28 6-1
 
 {id:"zolfino-bean",cat:"legumes",rare:true,price:2,pk:"25–45 €/kg",name:{en:"Zolfino bean",fr:"Haricot zolfino"},latin:"Phaseolus vulgaris",
 origin:{en:"Pratomagno terraces, Tuscany",fr:"Terrasses du Pratomagno, Toscane"},season:[7,8],
-flavor:["buttery","nutty","earthy"],
+flavor:["buttery","nutty","earthy"],texture:["hard","dry","smooth"],
 story:{en:"It is sown in April on dry-stone terraces between roughly 250 and 600 metres, often under the olives so that rain runs straight off: its root system is so shallow that a day of standing water finishes the plant. The traditional pot is a straw-wrapped wine flask set among the embers, which happens to give exactly the slow, never-boiling heat the bean wants.",
 fr:"On le sème en avril sur des terrasses en pierre sèche, entre 250 et 600 mètres environ, souvent sous les oliviers pour que la pluie s’écoule : son enracinement est si superficiel qu’une journée d’eau stagnante tue le plant. Le récipient traditionnel est un fiasque gainé de paille posé dans la braise, ce qui donne précisément la chaleur lente et jamais bouillante que ce haricot réclame."},
 tip:{en:"Start it in cold unsalted water and raise the heat so slowly that the surface only trembles — three hours or more. A rolling boil bursts those very thin skins and the buttery density you paid for turns to soup.",

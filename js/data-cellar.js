@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"absinthe",cat:"cellar",price:3,pk:"55–95 €/L",name:{en:"Absinthe",fr:"Absinthe"},latin:"Artemisia absinthium",
 origin:{en:"Val-de-Travers, Switzerland & Pontarlier",fr:"Val-de-Travers, Suisse, et Pontarlier"},season:[],
-flavor:["bitter","anise","herbal","pungent"],
+flavor:["bitter","anise","herbal","pungent"],texture:["smooth","silky"],
 story:{en:"France banned it in 1915 and the name did not return to a French label until 2011; wormwood took the blame, though the modern reading is that alcohol at seventy percent was doing most of the damage. The milky clouding when water hits it is anise oil coming out of solution, which is exactly what happens the moment it meets a hot pan.",
 fr:"La France l’a interdite en 1915 et le nom n’est revenu sur une étiquette française qu’en 2011 ; on a accusé l’absinthe, alors qu’on lit aujourd’hui qu’un alcool à soixante-dix degrés faisait l’essentiel des dégâts. Le trouble laiteux à l’arrivée de l’eau, c’est l’huile d’anis qui sort de solution - exactement ce qui se produit dès qu’elle touche une poêle chaude."},
 tip:{en:"A teaspoon is a full dose in a shellfish sauce: the wormwood bitterness builds as the sauce reduces while the anise evaporates, so add it at the end and taste. Over opened oysters, one drop each and nothing more.",
@@ -11,7 +11,7 @@ svg:'<path class="f1 sf" d="M34 34h28l-4 26q-1 6-10 6t-10-6z"/><path class="f2" 
 
 {id:"amontillado",cat:"cellar",sign:"DOP",price:2,pk:"16–30 €/L",name:{en:"Amontillado",fr:"Amontillado"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
-flavor:["nutty","woody","rich"],
+flavor:["nutty","woody","rich"],texture:["smooth","silky"],
 story:{en:"The name means in the manner of Montilla, the neighbouring region whose wines aged without a flor veil. An amontillado begins as a fino, then the veil is killed — by a further dose of spirit, or simply by starving it — and the wine spends years exposed to air, so it carries the yeast notes of its first life and hazelnut oxidation from its second.",
 fr:"Le nom veut dire « à la manière de Montilla », la région voisine dont les vins vieillissaient sans voile de flor. Un amontillado commence en fino, puis on tue le voile — par une dose d’alcool supplémentaire ou en le laissant simplement mourir de faim — et le vin passe des années à l’air : il porte donc les notes levuriennes de sa première vie et l’oxydation à la noisette de la seconde."},
 tip:{en:"It is dry, however deep it smells; taste before you sweeten anything it goes into. A spoonful in a finished consommé, or in a sauce built on jamón bones, does more than a whole glass boiled in from the start.",
@@ -21,7 +21,7 @@ svg:'<ellipse class="f1 sf" cx="34" cy="62" rx="14" ry="12"/><ellipse class="f1 
 
 {id:"armagnac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
 origin:{en:"Gascony, southwest France",fr:"Gascogne, Sud-Ouest de la France"},season:[],
-flavor:["fruity","woody","warm","rich"],
+flavor:["fruity","woody","warm","rich"],texture:["smooth","silky"],
 story:{en:"Baco 22A is a hybrid, crossed at the end of the nineteenth century in the wake of phylloxera, and Armagnac is the one French appellation still allowed to keep a hybrid in the vineyard. A single low-strength run through the alambic armagnacais leaves in the heavy aromatics that a second distillation would strip, which is why it reads as prune and violet where Cognac reads as flowers.",
 fr:"Le baco 22A est un hybride, croisé à la fin du XIXe siècle dans le sillage du phylloxéra, et l’armagnac est la seule appellation française à garder encore un hybride dans ses vignes. Le passage unique et à faible degré dans l’alambic armagnacais laisse les composés lourds qu’une seconde distillation emporterait : d’où le pruneau et la violette là où le cognac donne des fleurs."},
 tip:{en:"Those extra congeners survive heat, so it holds where Cognac vanishes: a spoonful worked into the forcemeat of a duck or pork terrine before it goes into the mould, or poured over prunes left to swell overnight. Do not flambe the old bottles - the wood is what you paid for, and the flame takes it first.",
@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M22 48q0-16 15-16t15 16v18q0 8-8 8H30q-8 0-8-8z"/><p
 
 {id:"banyuls-wine",cat:"cellar",sign:"AOP",price:2,pk:"13–25 €/L",name:{en:"Banyuls",fr:"Banyuls"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Banyuls, Roussillon",fr:"Banyuls, Roussillon"},season:[],
-flavor:["sweet","nutty","rich"],
+flavor:["sweet","nutty","rich"],texture:["viscous","smooth"],
 story:{en:"Mutage — killing the ferment with spirit while the sugar is still the grape's own — is credited to Arnaud de Villeneuve, physician at Montpellier around 1285, and it underlies every vin doux naturel. At Banyuls the wine then spends years in glass bonbonnes left out in the sun and in old foudres, deliberately oxidising into the walnut-and-cocoa note the trade calls rancio.",
 fr:"Le mutage — arrêter la fermentation à l’alcool pendant que le sucre est encore celui du raisin — est attribué à Arnaud de Villeneuve, médecin à Montpellier vers 1285, et fonde tous les vins doux naturels. À Banyuls, le vin passe ensuite des années en bonbonnes de verre laissées au soleil et en vieux foudres, oxydé volontairement jusqu’à la noix et au cacao que le métier appelle rancio."},
 tip:{en:"Reduce it with a duck fond and a strip of orange peel, and stop while it still coats a spoon — pushed further the sugar catches and turns acrid. It is the one wine that will stand up to both Roquefort and dark chocolate.",
@@ -41,7 +41,7 @@ svg:'<g transform="translate(6.96 7.25) scale(0.855)"><circle class="f1 sf" cx="
 
 {id:"brandy-de-jerez",cat:"cellar",sign:"IG",price:2,pk:"20–45 €/L",name:{en:"Brandy de Jerez",fr:"Brandy de Jerez"},latin:"Vitis vinifera 'Airén'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
-flavor:["sweet","woody","nutty","rich"],
+flavor:["sweet","woody","nutty","rich"],texture:["smooth","silky"],
 story:{en:"The wine is Airen from La Mancha, but the spirit only becomes Brandy de Jerez by ageing inside the sherry triangle, in butts that already held oloroso or Pedro Ximenez: here the appellation is the cask, not the vineyard. It moves down through criaderas and a solera exactly as the sherry does, so no bottle is ever of one single year.",
 fr:"Le vin est de l’airén de la Manche, mais l’eau-de-vie ne devient brandy de Jerez qu’en vieillissant dans le triangle du xérès, en fûts ayant déjà porté l’oloroso ou le pedro ximénez : ici, l’appellation tient au bois et non à la vigne. Il descend les criaderas et la solera exactement comme le xérès, si bien qu’aucune bouteille n’est jamais d’une seule année."},
 tip:{en:"It arrives already carrying raisin and oxidised sweetness, so cut the sugar elsewhere - a sauce for kidneys or pork needs no added Pedro Ximenez on top of it. Deglaze and reduce it hard; a light splash leaves the dish tasting of the bottle rather than of the pan.",
@@ -51,7 +51,7 @@ svg:'<path class="f2 sf" d="M22 54q12-4 24 0 4 9 0 18-12 4-24 0-4-9 0-18z"/><pat
 
 {id:"calvados",cat:"cellar",sign:"AOC",price:2,pk:"28–55 €/L",name:{en:"Calvados",fr:"Calvados"},latin:"Malus domestica",
 origin:{en:"Normandy",fr:"Normandie"},season:[],
-flavor:["fruity","warm","woody"],
+flavor:["fruity","warm","woody"],texture:["smooth","silky"],
 story:{en:"Calvados Domfrontais must be at least thirty percent pear, which is why it smells of orchard rather than of apple alone, and the Pays d'Auge is distilled twice in a pot still where the rest of Normandy runs once through a column. The cider apples behind it are bitter, tannic varieties no one would eat out of hand - they were bred for tannin, not for the fruit bowl.",
 fr:"Le calvados Domfrontais doit compter au moins trente pour cent de poires, d’où ce nez de verger plutôt que de pomme seule, et le pays d’Auge se distille deux fois à repasse là où le reste de la Normandie passe une seule fois en colonne. Les pommes à cidre qui le font sont des variétés amères et tanniques que personne ne croquerait : on les a sélectionnées pour le tanin, pas pour la corbeille."},
 tip:{en:"Deglaze pork or tripe while the pan is still fierce, then add the cream off the heat - done the other way round, the acidity splits the cream. A tablespoon a head is plenty; past that the apple gives way to spirit heat.",
@@ -61,7 +61,7 @@ svg:'<path class="f2 sf" d="M42 34q-7-7-15-2t-4 22 13 22q6 3 6 3t6-3q9-4 13-22t-
 
 {id:"cheongju",cat:"cellar",rare:true,price:2,pk:"10–20 €/L",name:{en:"Cheongju",fr:"Cheongju"},latin:"Oryza sativa",
 origin:{en:"Korea",fr:"Corée"},season:[],
-flavor:["sweet","mild","umami"],
+flavor:["sweet","mild","umami"],texture:["smooth","silky"],
 story:{en:"Cheongju is the clear wine drawn off the top of a fermented rice mash; stir water into what is left at the bottom and you have makgeolli, so the two are one brew divided. It is the wine of jesa, the rite for the ancestors, which is why it sits in Korean kitchens for reasons that have nothing to do with the pan.",
 fr:"Le cheongju est le vin clair que l’on soutire au-dessus d’une purée de riz fermentée ; délayez d’eau ce qui reste au fond et vous obtenez du makgeolli - même brassin, partagé en deux. C’est le vin du jesa, le rite aux ancêtres, et c’est pour cela qu’il est présent dans les cuisines coréennes bien au-delà de la casserole."},
 tip:{en:"It is the odour-stripper of the Korean kitchen: a tablespoon over raw beef, pork or fish, ten minutes to sit, then patted dry before it goes near heat. In a galbi marinade add it raw and never boiled, so the alcohol carries the aromatics into the meat and burns off on the grill.",
@@ -71,7 +71,7 @@ svg:'<path class="f1 sf" d="M20 50h56q-5 22-28 22T20 50z"/><path class="s" d="M2
 
 {id:"mei-kuei-lu-chiew",cat:"cellar",rare:true,price:2,pk:"8–16 €/L",name:{en:"Chinese rose wine",fr:"Alcool de rose chinois (mei kuei lu)"},latin:"Rosa rugosa",
 origin:{en:"Northern China, Cantonese kitchens",fr:"Chine du Nord, cuisines cantonaises"},season:[],
-flavor:["floral","sweet","warm"],
+flavor:["floral","sweet","warm"],texture:["smooth","silky"],
 story:{en:"Sorghum spirit is steeped with rose petals and rock sugar and bottled at around fifty-four percent, strong enough that a spoonful is the whole dose. It is what makes Cantonese lap cheong smell of roses rather than of pork, and no rice or grain wine stands in for it.",
 fr:"Un alcool de sorgho est macéré avec des pétales de rose et du sucre candi, puis embouteillé autour de cinquante-quatre degrés : une cuillerée fait la dose entière. C’est lui qui donne au lap cheong cantonais une odeur de rose plutôt que de porc, et aucun vin de riz ou de céréale ne le remplace."},
 tip:{en:"A teaspoon per 500 g of pork is the working dose in char siu; beyond that the rose turns soapy. Put it into the marinade cold, since heat drives the aroma off, and brush on another half-teaspoon at the end of the roasting so something reaches the table.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M42 34h12v6q10 6 10 18v14q0 6-6 6H38q-6 0-6-6V58q0-1
 
 {id:"cognac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
 origin:{en:"Charente & Charente-Maritime",fr:"Charente et Charente-Maritime"},season:[],
-flavor:["fruity","floral","warm","woody"],
+flavor:["fruity","floral","warm","woody"],texture:["smooth","silky"],
 story:{en:"Ugni blanc makes a wine too thin and too acid to drink, around nine percent, which is precisely what the charentais still wants - and it is now very nearly all that Cognac plants. The angels' share, two or three percent of each cask lost to the air every year, feeds a black fungus called Baudoinia on the town's walls, so the ageing cellars can be found by their soot.",
 fr:"L’ugni blanc donne un vin trop maigre et trop acide pour être bu, autour de neuf degrés, ce qui est exactement ce que demande l’alambic charentais - et il occupe aujourd’hui la quasi-totalité du vignoble. La part des anges, ces deux ou trois pour cent que chaque fût perd chaque année, nourrit un champignon noir, la baudoinia, sur les murs de la ville : les chais se repèrent à la suie."},
 tip:{en:"Flambe off the heat and away from the extractor: pour, let it warm for a few seconds, then light it, because cold spirit hitting a hot pan will not catch. In a sauce, reduce it almost to dry before the stock goes in, or the finished sauce keeps a raw spirit edge that nothing later will cover.",
@@ -91,7 +91,7 @@ svg:'<path class="f1 sf" d="M32 26h32q4 20-16 30-20-10-16-30z"/><path class="f2"
 
 {id:"creme-de-cassis",cat:"cellar",sign:"IGP",price:2,pk:"18–32 €/L",name:{en:"Crème de cassis de Dijon",fr:"Crème de cassis de Dijon"},latin:"Ribes nigrum",
 origin:{en:"Côte-d'Or, Burgundy",fr:"Côte-d’Or, Bourgogne"},season:[],
-flavor:["sweet","fruity","sour","rich"],
+flavor:["sweet","fruity","sour","rich"],texture:["viscous","smooth"],
 story:{en:"European law reserves the word creme for a minimum of 250 grams of sugar a litre, and raises it to 400 for blackcurrant alone, because the fruit's acidity demands it. The aperitif took the name of Felix Kir, a canon and post-war mayor of Dijon who served blanc-cassis at his receptions - the drink itself was a good deal older than he was.",
 fr:"Le droit européen réserve le mot crème à un minimum de 250 grammes de sucre par litre, et le porte à 400 pour le seul cassis, parce que l’acidité du fruit l’exige. L’apéritif a pris le nom de Félix Kir, chanoine et maire de Dijon d’après-guerre, qui servait le blanc-cassis dans ses réceptions - le mélange, lui, était bien plus vieux que lui."},
 tip:{en:"Its sugar burns, so build the gastrique the other way round: reduce the vinegar and stock first, then add the cassis off the boil and let it thicken in the residual heat. One part cassis to two of red wine vinegar holds up against duck or venison.",
@@ -101,7 +101,7 @@ svg:'<path class="f1 sf" d="M56 30h10v8q6 4 6 12v20q0 4-4 4H54q-4 0-4-4V50q0-8 6
 
 {id:"dark-rum",cat:"cellar",price:2,pk:"22–40 €/L",name:{en:"Dark rum",fr:"Rhum brun"},latin:"Saccharum officinarum",
 origin:{en:"Caribbean & Latin America",fr:"Caraïbes et Amérique latine"},season:[],
-flavor:["sweet","warm","woody","rich"],
+flavor:["sweet","warm","woody","rich"],texture:["smooth","silky"],
 story:{en:"The story goes that the exiled Polish king Stanislas Leszczynski, finding a kouglof too dry, drowned it in sweet wine; the rum came later, at Stohrer in Paris, and the cake kept the name baba. Colour is not age in rum - caramel is permitted in most origins, so a very dark bottle can be a very young one.",
 fr:"On raconte que le roi de Pologne en exil Stanislas Leszczynski, trouvant un kouglof trop sec, le noya de vin doux ; le rhum est venu plus tard, chez Stohrer à Paris, et le gâteau a gardé le nom de baba. La couleur n’est pas l’âge : le caramel est autorisé dans la plupart des origines, et une bouteille très sombre peut être toute jeune."},
 tip:{en:"For a baba, soak at about 55 °C and add the rum to the syrup off the heat: hotter and the crumb collapses while the alcohol leaves anyway. Count roughly 100 ml of rum to a litre of syrup.",
@@ -111,7 +111,7 @@ svg:'<path class="f3 sf" d="M40 28h16v10q12 8 12 20v16q0 6-6 6H34q-6 0-6-6V58q0-
 
 {id:"fino-sherry",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"Fino sherry",fr:"Xérès fino"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez de la Frontera, Andalusia",fr:"Jerez de la Frontera, Andalousie"},season:[],
-flavor:["nutty","briny","delicate"],
+flavor:["nutty","briny","delicate"],texture:["smooth","silky"],
 story:{en:"Fortify Palomino to about fifteen degrees and a film of yeast, the flor, grows across the surface of the butt and lives there, eating the last sugar and glycerol and sealing the wine from air. Push the spirit half a degree higher and the veil dies, which is the whole difference between a fino and an amontillado.",
 fr:"Mutez du palomino à quinze degrés environ et un voile de levures, la flor, s’installe à la surface du fût et y vit, mangeant le dernier sucre et le glycérol tout en coupant le vin de l’air. Un demi-degré d’alcool de plus et le voile meurt : c’est là toute la différence entre un fino et un amontillado."},
 tip:{en:"Treat it as a live product, not a fortified one: refrigerate the open bottle and finish it in three days, after which the bread-dough and almond notes are simply gone. Pour it into a jamón or almond sauce at the end, never as the braising liquid.",
@@ -121,7 +121,7 @@ svg:'<path class="f1 sf" d="M36 24h24q0 24-12 30-12-6-12-30z"/><path class="s" d
 
 {id:"floc-de-gascogne",cat:"cellar",sign:"AOP",price:2,pk:"13–24 €/L",name:{en:"Floc de Gascogne",fr:"Floc de Gascogne"},latin:"Vitis vinifera",
 origin:{en:"Gascony, Gers",fr:"Gascogne, Gers"},season:[],
-flavor:["sweet","fruity","warm"],
+flavor:["sweet","fruity","warm"],texture:["smooth","silky"],
 story:{en:"Lo floc is Gascon for a bouquet of flowers, and the appellation, recognised in 1990, is the region's own mistelle: fresh must muted with Armagnac from the same estate. Armagnac is distilled once, at low strength, and keeps more of the grape than Cognac does — which is why Floc arrives with prune and rancio weight where Pineau stays bright.",
 fr:"« Lo floc » veut dire bouquet de fleurs en gascon, et l’appellation, reconnue en 1990, est la mistelle du pays : moût frais muté à l’armagnac du même domaine. L’armagnac est distillé une seule fois, à faible degré, et garde plus de raisin que le cognac — d’où le pruneau et le rancio du floc, là où le pineau reste vif."},
 tip:{en:"Deglaze duck or magret with it and drop in two prunes to swell in the reduction; the sauce will need no added sugar afterwards. Serve the rest very cold, 6 to 8 °C, as the Gascons do before the meal.",
@@ -131,7 +131,7 @@ svg:'<path class="f2 sf" d="M36 22h12v10q10 6 10 16v28a5 5 0 0 1-5 5H31a5 5 0 0 
 
 {id:"grappa",cat:"cellar",sign:"IG",price:2,pk:"25–50 €/L",name:{en:"Grappa",fr:"Grappa"},latin:"Vitis vinifera",
 origin:{en:"Italy (Friuli, Veneto, Piedmont)",fr:"Italie (Frioul, Vénétie, Piémont)"},season:[],
-flavor:["floral","fruity","warm","pungent"],
+flavor:["floral","fruity","warm","pungent"],texture:["smooth","silky"],
 story:{en:"Grappa was sold by the demijohn as a peasant spirit until 1973, when the Nonino distillery ran a single grape variety, Picolit, on its own and bottled it like a wine; every single-varietal grappa since dates from that one decision. The law asks for Italian pomace distilled in Italy, and the fresher the marc reaches the still, the more flowers and the less earth end up in the glass.",
 fr:"La grappa se vendait à la dame-jeanne, alcool de paysans, jusqu’en 1973, quand la distillerie Nonino passa un seul cépage, le picolit, à l’alambic et l’embouteilla comme un vin ; toutes les grappas monocépages datent de cette décision-là. La loi exige un marc italien distillé en Italie, et plus le marc arrive frais à l’alambic, plus il donne de fleurs et moins de terre."},
 tip:{en:"Serve it and cook with it cool, around 10 °C for a young one, or it reads as nothing but spirit. Off the heat, a spoonful stirred into a risotto at the mantecatura lifts the whole dish; boiled into it, the same spoonful turns bitter.",
@@ -141,7 +141,7 @@ svg:'<path class="f1 sf" d="M38 16h20q2 14-4 20 6 6 4 18-6 6-10 6t-10-6q-2-12 4-
 
 {id:"junmai-sake",cat:"cellar",price:2,pk:"20–40 €/L",name:{en:"Junmai sake",fr:"Saké junmai"},latin:"Oryza sativa",
 origin:{en:"Japan (Nada, Fushimi)",fr:"Japon (Nada, Fushimi)"},season:[],
-flavor:["umami","mild","rich"],
+flavor:["umami","mild","rich"],texture:["smooth","silky"],
 story:{en:"Sake sold in Japan as cooking sake is salted to a couple of percent so that it counts as a seasoning rather than a drink, and escapes liquor tax; junmai means pure rice, and carries nothing but rice, water, koji and yeast. The category once demanded a polishing ratio as well, a requirement dropped in the 2000s - today the single rule is that no distilled alcohol goes in.",
 fr:"Le saké vendu au Japon comme saké de cuisine est salé à deux ou trois pour cent pour compter comme assaisonnement et non comme boisson, échappant ainsi à la taxe sur les alcools ; junmai veut dire riz pur, et ne contient que du riz, de l’eau, du koji et des levures. La catégorie exigeait autrefois un taux de polissage, abandonné dans les années 2000 : la seule règle aujourd’hui est qu’aucun alcool distillé n’y entre."},
 tip:{en:"Let it boil for a minute before it meets anything delicate: the alcohol leaves and the amino acids stay, and it is those that soften fish odour and round out a broth. Because it carries no salt, count it as liquid rather than seasoning, and season only once it has reduced.",
@@ -151,7 +151,7 @@ svg:'<path class="f2 sf" d="M44 20h8v8q14 8 14 24v14q0 10-18 10t-18-10V52q0-16 1
 
 {id:"kirsch",cat:"cellar",price:2,pk:"25–50 €/L",name:{en:"Kirsch",fr:"Kirsch"},latin:"Prunus avium",
 origin:{en:"Fougerolles, Alsace and the Black Forest",fr:"Fougerolles, Alsace et Forêt-Noire"},season:[],
-flavor:["fruity","bitter","warm"],
+flavor:["fruity","bitter","warm"],texture:["smooth","silky"],
 story:{en:"The stones are crushed in with the fruit and ferment alongside it: amygdalin from the kernels becomes benzaldehyde in the still, and that bitter-almond note is what no cherry liqueur has. Fougerolles in the Haute-Saone holds an appellation of its own for its kirsch, and it takes something like ten kilos of cherries to fill a bottle.",
 fr:"Les noyaux sont broyés avec les fruits et fermentent avec eux : l’amygdaline des amandons devient du benzaldéhyde à l’alambic, et c’est cette amande amère qu’aucune liqueur de cerise ne possède. Fougerolles, en Haute-Saône, tient une appellation propre pour son kirsch, et il faut une dizaine de kilos de cerises pour remplir une bouteille."},
 tip:{en:"In fondue it is mechanics rather than flavour - a spoonful stirred in with the cornflour is what traditionally keeps the melted cheese loose instead of stringy. In a pate a bombe or a syrup, add it once the pan is off the heat, since most of the aroma leaves within the first minute of boiling.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M44 14h8v20q8 8 8 20v20q0 4-4 4H40q-4 0-4-4V54q0-12 
 
 {id:"macvin-du-jura",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"20–32 €/L",name:{en:"Macvin du Jura",fr:"Macvin du Jura"},latin:"Vitis vinifera",
 origin:{en:"Jura, France",fr:"Jura, France"},season:[],
-flavor:["sweet","warm","woody"],
+flavor:["sweet","warm","woody"],texture:["smooth","silky"],
 story:{en:"Macvin is the only French appellation whose mistelle is muted with marc — oak-aged pomace brandy — rather than with a wine brandy, and the name carries it: mac, for marc. Recognised in 1991, it is the youngest of the Jura appellations and the one that tastes least like wine, all pressed skins and warm spice.",
 fr:"Le macvin est la seule appellation française dont la mistelle est mutée au marc — l’eau-de-vie de marc de raisin, vieillie en fût — et non à une eau-de-vie de vin ; son nom le dit : mac, pour marc. Reconnue en 1991, c’est la plus jeune des appellations jurassiennes et celle qui ressemble le moins à du vin, toute en peaux pressées et en épice chaude."},
 tip:{en:"A spoonful stirred into a cream sauce off the heat gives a spice note no wine reduction produces; cook it hard and the marc turns to fusel. In the Jura it is poured over aged Comté, and the salt of the cheese is what makes the sweetness readable.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M26 56a18 18 0 0 1 36 0v14a6 6 0 0 1-6 6H32a6 6 0 0 
 
 {id:"madeira-malmsey",cat:"cellar",sign:"DOP",price:2,pk:"20–45 €/L",name:{en:"Malmsey Madeira",fr:"Madère Malvoisie"},latin:"Vitis vinifera 'Malvasia'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
-flavor:["sweet","rich","nutty","warm"],
+flavor:["sweet","rich","nutty","warm"],texture:["viscous","smooth"],
 story:{en:"Malmsey is an English mangling of Monemvasia, the Peloponnesian port that shipped Malvasia wine across medieval Europe long before the vine reached Madeira. Chroniclers record that the Duke of Clarence, condemned in 1478, was allowed to choose his death and asked to be drowned in a butt of it — a story repeated for five centuries with no way left to check it.",
 fr:"« Malmsey » est une déformation anglaise de Monemvasia, le port du Péloponnèse qui expédiait le malvoisie dans toute l’Europe médiévale bien avant que la vigne n’atteigne Madère. Les chroniques rapportent que le duc de Clarence, condamné en 1478, put choisir sa mort et demanda d’être noyé dans un fût de ce vin — récit répété depuis cinq siècles, et devenu invérifiable."},
 tip:{en:"Its acidity is what keeps the sugar from cloying, so reduce it gently: a hard boil drives off the volatile acidity and leaves syrup. A spoonful stirred into melted dark chocolate off the heat loosens a ganache without adding water.",
@@ -181,7 +181,7 @@ svg:'<path class="f2 sf" d="M28 30h40q7 20 0 40H28q-7-20 0-40z"/><path class="s"
 
 {id:"manzanilla-sherry",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"Manzanilla",fr:"Manzanilla"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Sanlúcar de Barrameda, Cádiz",fr:"Sanlúcar de Barrameda, Cadix"},season:[],
-flavor:["briny","delicate","fresh"],
+flavor:["briny","delicate","fresh"],texture:["smooth","silky"],
 story:{en:"Same grape and same flor as a fino, but only wine aged in Sanlúcar's bodegas at the mouth of the Guadalquivir may be called manzanilla: Atlantic humidity keeps the yeast veil thick through the summer, when it thins and lets air in further inland. The result is lighter and openly saline, which is why the sherry towns pour it with shellfish and with little else.",
 fr:"Même cépage et même flor qu’un fino, mais seul le vin élevé dans les bodegas de Sanlúcar, à l’embouchure du Guadalquivir, peut s’appeler manzanilla : l’humidité atlantique y maintient le voile épais tout l’été, quand il s’amincit et laisse passer l’air plus à l’intérieur des terres. Il en résulte un vin plus léger et franchement salin, que les villes du xérès servent avec les coquillages et guère avec autre chose."},
 tip:{en:"Cook prawns or clams in it rather than in white wine — a splash the moment the shells open, then straight off the heat. Buy the smallest bottle you will finish; three days after opening it is a duller wine.",
@@ -191,7 +191,7 @@ svg:'<path class="f1 sf" d="M30 50h36l-4 26H34z"/><path class="s" d="M27 50h42"/
 
 {id:"maraschino",cat:"cellar",price:2,pk:"28–45 €/L",name:{en:"Maraschino liqueur",fr:"Marasquin"},latin:"Prunus cerasus var. marasca",
 origin:{en:"Zadar, Dalmatia; now the Veneto",fr:"Zadar, Dalmatie ; aujourd’hui la Vénétie"},season:[],
-flavor:["fruity","bitter","nutty","sweet"],
+flavor:["fruity","bitter","nutty","sweet"],texture:["smooth","silky"],
 story:{en:"The Marasca is a small sour cherry of the Dalmatian coast, and the distillation takes the whole fruit - stems, leaves and stones together - which is where the nutty bitterness comes from. Luxardo, founded at Zadar in 1821, ages it in ash rather than oak precisely so that it stays colourless, then sweetens it; the straw jacket on the bottle is its old shipping armour.",
 fr:"La marasca est une petite cerise acide de la côte dalmate, et la distillation prend le fruit entier - queues, feuilles et noyaux ensemble - d’où cette amertume d’amande. Luxardo, fondée à Zadar en 1821, l’élève sous frêne et non sous chêne précisément pour qu’elle reste incolore, puis la sucre ; la robe de paille de la bouteille est son ancienne armure de transport."},
 tip:{en:"It is dry for a liqueur and will not sweeten a syrup on its own, so in a savarin soak count it as flavour and leave the sugar where it is. A teaspoon through a fruit salad reads as almond rather than as cherry, which is exactly the point of it.",
@@ -201,7 +201,7 @@ svg:'<path class="f2 sf" d="M44 14h8v14q16 8 16 26t-20 22-20-22 16-26z"/><path c
 
 {id:"marc-de-bourgogne",cat:"cellar",sign:"AOC",price:3,pk:"35–65 €/L",name:{en:"Marc de Bourgogne",fr:"Marc de Bourgogne"},latin:"Vitis vinifera",
 origin:{en:"Burgundy",fr:"Bourgogne"},season:[],
-flavor:["earthy","woody","warm","pungent"],
+flavor:["earthy","woody","warm","pungent"],texture:["smooth","silky"],
 story:{en:"It is made from what the press leaves behind - skins, pips and stalks, wetted down and fermented a second time - which is why it was the grower's own drink rather than the merchant's. Epoisses and Ami du Chambertin are washed with it through their ripening, so a good part of what you smell in the cheese is the spirit.",
 fr:"Il se fait avec ce que le pressoir laisse - peaux, pépins et rafles, remouillés et refermentés - et c’est pourquoi il était la boisson du vigneron et non celle du négociant. L’époisses et l’ami du Chambertin sont lavés au marc pendant leur affinage : une bonne part de ce que l’on sent dans le fromage est celle de l’eau-de-vie."},
 tip:{en:"To wash a soft cheese, work with roughly one part marc to five or six of brine, brushed on every two or three days - neat spirit kills the rind's bacteria and the crust dries out. In the pan it grips far harder than Cognac, so use half as much.",
@@ -211,7 +211,7 @@ svg:'<path class="f2 sf" d="M26 44h44v26a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6z"/><path
 
 {id:"marsala-dolce",cat:"cellar",sign:"DOP",price:2,pk:"10–20 €/L",name:{en:"Marsala dolce",fr:"Marsala doux"},latin:"Vitis vinifera 'Grillo'",
 origin:{en:"Marsala, Sicily",fr:"Marsala, Sicile"},season:[],
-flavor:["sweet","rich","toasty","fruity"],
+flavor:["sweet","rich","toasty","fruity"],texture:["viscous","smooth"],
 story:{en:"The sweetness is added rather than fermented in: producers stop the wine with mosto cotto, must boiled down to caramel, and with sifone, a mistelle of must muted with spirit. That is why dolce and secco stand on different shelves in a Sicilian kitchen and are never poured from the same bottle by mistake.",
 fr:"Le sucre n’est pas fermentaire, il est ajouté : les maisons arrêtent le vin au mosto cotto, moût réduit jusqu’au caramel, et au sifone, une mistelle mutée à l’alcool. D’où deux étagères distinctes dans une cuisine sicilienne, et jamais une bouteille prise pour l’autre."},
 tip:{en:"For zabaglione the working ratio is per egg yolk: one half-eggshell of sugar, one of Marsala, whisked over water that trembles rather than boils. Past about 82 °C the yolk sets in threads and no whisking brings it back.",
@@ -221,7 +221,7 @@ svg:'<path class="f1 sf" d="M24 44h48q-5 28-24 28T24 44z"/><path class="f2 sf" d
 
 {id:"marsala-secco",cat:"cellar",sign:"DOP",price:2,pk:"10–20 €/L",name:{en:"Marsala secco",fr:"Marsala sec"},latin:"Vitis vinifera 'Grillo'",
 origin:{en:"Marsala, Sicily",fr:"Marsala, Sicile"},season:[],
-flavor:["bitter","nutty","woody"],
+flavor:["bitter","nutty","woody"],texture:["smooth","silky"],
 story:{en:"John Woodhouse, a Liverpool merchant sheltering at Marsala in 1773, fortified the local wine for the voyage home and found that England would buy it; a quarter-century later Nelson's fleet was ordering it by the pipe. The dry bottling, from Grillo grown on the western Sicilian plain, finishes on bitter almond — the note that reads as savoury depth in a pan sauce.",
 fr:"John Woodhouse, marchand de Liverpool réfugié à Marsala en 1773, muta le vin local pour le voyage de retour et découvrit que l’Angleterre l’achetait ; un quart de siècle plus tard, la flotte de Nelson en commandait à la pipe. La version sèche, issue du grillo de la plaine occidentale sicilienne, finit sur l’amande amère — la note qui donne sa profondeur salée à une sauce de poêle."},
 tip:{en:"Buy the bottle marked secco or vergine; the sweet one turns a scaloppine into dessert. Deglaze off the flame and reduce by half before any butter goes in, or the sauce will split.",
@@ -231,7 +231,7 @@ svg:'<path class="f1 sf" d="M22 46h40v10a12 12 0 0 1-12 12H34a12 12 0 0 1-12-12z
 
 {id:"maury",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–24 €/L",name:{en:"Maury",fr:"Maury"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Agly valley, Roussillon",fr:"Vallée de l’Agly, Roussillon"},season:[],
-flavor:["sweet","fruity","rich"],
+flavor:["sweet","fruity","rich"],texture:["viscous","smooth"],
 story:{en:"Maury's Grenache grows on a band of black schist in the Agly valley, under the ruined Cathar fortress of Quéribus — rock that holds heat and almost no water. Most of it is bottled young in the grenat style, sealed against air, so where Banyuls goes nutty Maury stays black-fruited and tight.",
 fr:"Le grenache de Maury pousse sur une bande de schiste noir dans la vallée de l’Agly, sous les ruines du château cathare de Quéribus — une roche qui garde la chaleur et presque pas d’eau. L’essentiel est mis en bouteille jeune, en grenat, à l’abri de l’air : là où le banyuls part sur la noix, le maury reste sur le fruit noir, serré."},
 tip:{en:"Grenat is reductive: unlike an oxidative fortified wine it does spoil once opened, so refrigerate and use it within a week. Reduce it with game stock and black pepper rather than with chocolate — the fruit is the point.",
@@ -241,7 +241,7 @@ svg:'<path class="s" d="M48 26v10"/><circle class="f3 sf" cx="40" cy="42" r="7"/
 
 {id:"eau-de-vie-mirabelle",cat:"cellar",price:3,pk:"45–85 €/L",name:{en:"Mirabelle eau-de-vie",fr:"Eau-de-vie de mirabelle"},latin:"Prunus domestica subsp. syriaca",
 origin:{en:"Lorraine",fr:"Lorraine"},season:[],
-flavor:["fruity","honeyed","nutty","warm"],
+flavor:["fruity","honeyed","nutty","warm"],texture:["smooth","silky"],
 story:{en:"Lorraine grows the great majority of the world's mirabelles, in a season of barely six weeks in August, and the fruit bruises too easily to travel far - distilling was how the surplus was kept. The eau-de-vie is clear and unsweetened, so the honeyed note in the glass belongs to the plum and not to any sugar.",
 fr:"La Lorraine produit la très grande majorité des mirabelles du monde, sur une saison d’à peine six semaines en août, et le fruit se meurtrit trop vite pour voyager loin : distiller était la façon de garder le surplus. L’eau-de-vie est claire et non sucrée, si bien que la note miellée du verre appartient à la prune et non à un sucre ajouté."},
 tip:{en:"Warm it in the hand before flaming a tart or a souffle omelette, since a spirit straight from a cold cupboard will not light. To macerate, one part spirit to four of halved mirabelles with a spoon of sugar, sealed for a month, gives you the fruit for the tart and the syrup for its glaze.",
@@ -251,7 +251,7 @@ svg:'<circle class="f2 sf" cx="40" cy="50" r="18"/><path class="s" d="M40 32v36M
 
 {id:"muscat-beaumes-de-venise",cat:"cellar",sign:"AOP",price:2,pk:"20–32 €/L",name:{en:"Muscat de Beaumes-de-Venise",fr:"Muscat de Beaumes-de-Venise"},latin:"Vitis vinifera 'Muscat à petits grains'",
 origin:{en:"Beaumes-de-Venise, Vaucluse",fr:"Beaumes-de-Venise, Vaucluse"},season:[],
-flavor:["sweet","floral","fruity","citrus"],
+flavor:["sweet","floral","fruity","citrus"],texture:["viscous","smooth"],
 story:{en:"The Venise in the name is the Comtat Venaissin, the papal territory around Avignon, not the Italian city; the appellation was recognised in 1945 and remains the Rhône valley's only vin doux naturel. It is made to keep air out rather than let it in, so the grape's own terpenes — rose, lychee, orange flower — survive into the glass.",
 fr:"Le « Venise » du nom est le Comtat Venaissin, la terre papale autour d’Avignon, et non la ville italienne ; l’appellation, reconnue en 1945, reste le seul vin doux naturel de la vallée du Rhône. Il est élevé à l’abri de l’air plutôt qu’à son contact, de sorte que les terpènes du raisin — rose, litchi, fleur d’oranger — arrivent intacts dans le verre."},
 tip:{en:"Never boil it: those terpenes are volatile and the first minute of heat takes them. Spoon it cold over melon, or fold it into a sabayon once the pan is off the flame.",
@@ -261,7 +261,7 @@ svg:'<g transform="translate(5.62 5.85) scale(0.883)"><path class="f1 sf" d="M44
 
 {id:"oloroso",cat:"cellar",sign:"DOP",price:2,pk:"14–30 €/L",name:{en:"Oloroso",fr:"Oloroso"},latin:"Vitis vinifera 'Palomino'",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
-flavor:["nutty","rich","woody"],
+flavor:["nutty","rich","woody"],texture:["viscous","smooth"],
 story:{en:"Oloroso is fortified to seventeen degrees or more at the outset, above what the flor yeast can survive, so it never grows a veil and oxidises from its first year in cask. Oloroso means fragrant, and the confusion follows from there: it smells of raisin and walnut and is, in the classic style, bone dry — the sweet supermarket bottle is oloroso with syrup added afterwards.",
 fr:"L’oloroso est muté d’emblée à dix-sept degrés ou plus, au-dessus de ce que la flor supporte : il ne fait jamais de voile et s’oxyde dès sa première année en fût. Oloroso veut dire « odorant », d’où la confusion — il sent le raisin sec et la noix, et il est, dans le style classique, parfaitement sec ; la bouteille sucrée de supermarché est un oloroso auquel on a ajouté du sirop après coup."},
 tip:{en:"This is the sherry with body — glycerol and extract — so it thickens a braise where an amontillado would read thin. Reduce it with oxtail or beef-cheek liquor and resist adding sugar to chase the sweetness the nose promised.",
@@ -271,7 +271,7 @@ svg:'<path class="s" d="M48 16v46"/><path class="s" d="M48 16q9 0 9 9"/><path cl
 
 {id:"triple-sec",cat:"cellar",price:2,pk:"15–38 €/L",name:{en:"Orange liqueur (triple sec)",fr:"Triple sec (curaçao)"},latin:"Citrus × aurantium",
 origin:{en:"Saumur & Angers, Loire",fr:"Saumur et Angers, Val de Loire"},season:[],
-flavor:["sweet","citrus","bitter","floral"],
+flavor:["sweet","citrus","bitter","floral"],texture:["smooth","silky"],
 story:{en:"Jean-Baptiste Combier at Saumur claimed the first triple sec in the 1830s and Cointreau followed at Angers, but neither the term nor the method is protected - so a triple sec may be a distillate of bitter-orange peel or simply sweetened neutral spirit with essence. The bitter orange gives what the fresh fruit cannot: the oil of the peel without the acid of the juice.",
 fr:"Jean-Baptiste Combier, à Saumur, revendique le premier triple sec dans les années 1830 et Cointreau suit à Angers, mais ni le nom ni la méthode ne sont protégés : un triple sec peut être une distillation d’écorces d’orange amère comme un simple alcool neutre sucré et aromatisé. L’orange amère donne ce que le fruit frais ne peut pas : l’huile de l’écorce sans l’acidité du jus."},
 tip:{en:"For crepes Suzette the alcohol goes in twice: a spoonful into the beurre Suzette to dissolve the zest, the rest flamed at the pass. In a souffle, fold it into the warm base and never into the whites, which it will thin.",
@@ -281,7 +281,7 @@ svg:'<circle class="f2 sf" cx="38" cy="54" r="18"/><path class="s" d="M38 36v36M
 
 {id:"pastis",cat:"cellar",price:2,pk:"15–25 €/L",name:{en:"Pastis",fr:"Pastis"},latin:"Illicium verum",
 origin:{en:"Marseille & Provence",fr:"Marseille et Provence"},season:[],
-flavor:["anise","sweet","herbal","warm"],
+flavor:["anise","sweet","herbal","warm"],texture:["smooth","silky"],
 story:{en:"Paul Ricard put his pastis on the market in 1932, seventeen years after the absinthe ban, building it on star anise and liquorice rather than wormwood - the liquorice is what makes it round where absinthe is bitter. Its anethole is macerated in rather than distilled, so it clouds harder and it will sweeten a sauce that absinthe would only perfume.",
 fr:"Paul Ricard met son pastis sur le marché en 1932, dix-sept ans après l’interdiction de l’absinthe, en le bâtissant sur la badiane et la réglisse plutôt que sur l’armoise - c’est la réglisse qui l’arrondit là où l’absinthe est amère. Son anéthol est macéré et non distillé : il trouble plus fort, et il sucre une sauce que l’absinthe se contenterait de parfumer."},
 tip:{en:"Reduce it before any liquid goes in, because the sugar in pastis will catch and burn in a dry, hot pan. For a bouillabaisse or a rouille, 20 ml for four people alongside the saffron; beyond that the fish disappears behind the anise.",
@@ -291,7 +291,7 @@ svg:'<g transform="translate(5.81 6.05) scale(0.879)"><path class="f1 sf" d="M36
 
 {id:"pedro-ximenez",cat:"cellar",sign:"DOP",price:2,pk:"16–35 €/L",name:{en:"Pedro Ximénez",fr:"Pedro Ximénez (PX)"},latin:"Vitis vinifera 'Pedro Ximénez'",
 origin:{en:"Montilla-Moriles, Andalusia",fr:"Montilla-Moriles, Andalousie"},season:[],
-flavor:["sweet","rich","fruity","toasty"],
+flavor:["sweet","rich","fruity","toasty"],texture:["viscous","smooth"],
 story:{en:"The grapes are laid out on esparto mats in the September sun for a week or more — the soleo — until they are raisins, and the press yields a must so sugary that yeast can barely work on it. What is bottled carries around 400 grams of sugar a litre, black as treacle, tasting of raisin, fig and liquorice.",
 fr:"Les raisins sèchent sur des nattes de sparte au soleil de septembre, une semaine ou plus — c’est le soleo — jusqu’à devenir des passerillés, et le moût pressé est si sucré que la levure y travaille à peine. La bouteille titre autour de 400 grammes de sucre par litre, noire comme de la mélasse, et sent le raisin sec, la figue et la réglisse."},
 tip:{en:"Use it as a sauce, not a wine: a spoonful over vanilla ice cream, or over blue cheese. In a jus a tablespoon is the ceiling — more and it sets to toffee on the plate as it cools.",
@@ -301,7 +301,7 @@ svg:'<ellipse class="f3 sf" cx="44" cy="56" rx="21" ry="11"/><path class="s" d="
 
 {id:"pineau-des-charentes",cat:"cellar",sign:"AOP",price:2,pk:"14–24 €/L",name:{en:"Pineau des Charentes",fr:"Pineau des Charentes"},latin:"Vitis vinifera",
 origin:{en:"Charente, France",fr:"Charentes, France"},season:[],
-flavor:["sweet","fruity","honeyed","warm"],
+flavor:["sweet","fruity","honeyed","warm"],texture:["smooth","silky"],
 story:{en:"Pineau is a mistelle, not a wine: unfermented Charentais grape must muted with young Cognac, so the sugar in the bottle is grape sugar that never met a yeast. Legend has it a sixteenth-century vigneron poured must into a cask still holding eau-de-vie and left the mistake in the cellar for years before tasting it.",
 fr:"Le pineau est une mistelle et non un vin : du moût charentais non fermenté, muté au cognac jeune, si bien que le sucre de la bouteille n’a jamais rencontré de levure. La légende veut qu’un vigneron du XVIᵉ siècle ait versé du moût dans une barrique contenant encore de l’eau-de-vie et ait laissé sa méprise vieillir des années avant d’y goûter."},
 tip:{en:"In a shellfish sauce add it early and give it a full minute of heat — the young Cognac tastes raw if it goes in at the end. Once opened it fades fast: refrigerate, and drink or cook it within a fortnight.",
@@ -311,7 +311,7 @@ svg:'<path class="f1 sf" d="M28 34h26l-4 40H32z"/><path class="s" d="M29 44h24"/
 
 {id:"eau-de-vie-framboise",cat:"cellar",luxe:true,price:3,pk:"60–120 €/L",name:{en:"Raspberry eau-de-vie",fr:"Eau-de-vie de framboise"},latin:"Rubus idaeus",
 origin:{en:"Alsace & Baden",fr:"Alsace et pays de Bade"},season:[],
-flavor:["fruity","floral","warm"],
+flavor:["fruity","floral","warm"],texture:["smooth","silky"],
 story:{en:"Raspberries carry so little sugar that fermenting them yields barely any alcohol, so most framboise is not fermented at all: the fruit is steeped in neutral spirit and the whole macerate is then distilled. Something like twenty-five kilos of berries stand behind a single litre, which is the whole explanation for the price.",
 fr:"La framboise contient si peu de sucre que la fermenter ne donne presque pas d’alcool : la plupart des eaux-de-vie de framboise ne sont donc pas fermentées mais macérées dans un alcool neutre, puis distillées avec leur macérat. Il y a quelque chose comme vingt-cinq kilos de fruits derrière un seul litre, ce qui explique le prix à lui seul."},
 tip:{en:"It perfumes without sweetening: two teaspoons into a litre of sorbet base once it has cooled and no more, or the alcohol will keep the sorbet from setting firm. Never let it boil.",
@@ -321,7 +321,7 @@ svg:'<path class="f2 sf" d="M34 28q14-10 28 0 2 16-14 22-16-6-14-22z"/><path cla
 
 {id:"rhum-agricole",cat:"cellar",price:2,pk:"28–50 €/L",name:{en:"Rhum agricole",fr:"Rhum agricole"},latin:"Saccharum officinarum",
 origin:{en:"Martinique & Guadeloupe",fr:"Martinique et Guadeloupe"},season:[],
-flavor:["grassy","fruity","warm","briny"],
+flavor:["grassy","fruity","warm","briny"],texture:["smooth","silky"],
 story:{en:"Cane juice begins fermenting on its own within hours of pressing, so an agricole distillery runs only during the harvest and stands idle the rest of the year - molasses, by contrast, keeps indefinitely, which is why most of the world's rum is made from it. Martinique's rhum has held an appellation of origin since 1996, the only one of its kind for a rum.",
 fr:"Le jus de canne se met à fermenter tout seul dans les heures qui suivent le pressage : une distillerie agricole ne tourne donc qu’en campagne et chôme le reste de l’année - la mélasse, elle, se garde indéfiniment, et c’est pourquoi la plus grande part des rhums du monde en est tirée. Le rhum de Martinique porte une appellation d’origine depuis 1996, la seule de ce genre pour un rhum."},
 tip:{en:"It is grassy and high-toned, so it goes in at the end: a spoonful into a fruit macerate or a ti-punch, never into a pastry syrup, which is dark rum's job. To flambe bananas, take it at 50 percent or more - the 40 percent bottling will not catch cleanly.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M30 78l6-56 8 1-6 55z"/><path class="s" d="M31 64h8M
 
 {id:"rivesaltes-ambre",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–25 €/L",name:{en:"Rivesaltes ambré",fr:"Rivesaltes ambré"},latin:"Vitis vinifera 'Grenache blanc'",
 origin:{en:"Rivesaltes, Roussillon",fr:"Rivesaltes, Roussillon"},season:[],
-flavor:["sweet","nutty","honeyed","fruity"],
+flavor:["sweet","nutty","honeyed","fruity"],texture:["viscous","smooth"],
 story:{en:"Rivesaltes is the largest vin doux naturel appellation in France, and ambré is its white face: Grenache blanc and Macabeu, muted with spirit and then held at least two years in deliberately oxidative conditions, often in demijohns left outdoors. What comes out smells of dried apricot, hazelnut and candied peel, with none of the red-fruit weight of its Grenache noir neighbours.",
 fr:"Rivesaltes est la plus vaste appellation de vin doux naturel de France, et l’ambré en est le visage blanc : grenache blanc et macabeu, mutés puis élevés au moins deux ans en milieu volontairement oxydatif, souvent en bonbonnes dehors. Il en sort un vin d’abricot sec, de noisette et d’écorce confite, sans rien du poids de fruit rouge de ses voisins en grenache noir."},
 tip:{en:"Serve it cool but not cold, around 12 °C; straight from the refrigerator the candied-peel aromatics flatten out. In a sauce for poultry, reduce it with shallot alone — it carries enough sugar that anything else added will read as jam.",
@@ -341,7 +341,7 @@ svg:'<path class="f1 sf" d="M34 30h28q2 16-14 24-16-8-14-24z"/><path class="s" d
 
 {id:"ruby-port",cat:"cellar",sign:"DOP",price:2,pk:"13–22 €/L",name:{en:"Ruby port",fr:"Porto ruby"},latin:"Vitis vinifera 'Touriga Nacional'",
 origin:{en:"Douro valley, Portugal",fr:"Vallée du Douro, Portugal"},season:[],
-flavor:["sweet","fruity","rich","warm"],
+flavor:["sweet","fruity","rich","warm"],texture:["viscous","smooth"],
 story:{en:"Ruby is held in vats large enough that almost no air reaches the wine, then bottled young — the opposite intention to tawny, which is left in small casks precisely so that it oxidises. What it brings a sauce is colour and grip: anthocyanin and tannin from Touriga Nacional skins, trodden in the best lodges still by foot in granite lagares.",
 fr:"Le ruby vieillit dans des cuves assez grandes pour que presque aucun air n’atteigne le vin, puis part en bouteille jeune — l’intention exactement inverse du tawny, laissé en petits fûts précisément pour qu’il s’oxyde. Ce qu’il apporte à une sauce, c’est la couleur et la mâche : anthocyanes et tanins de peaux de touriga nacional, foulées dans les meilleures maisons encore au pied, en lagares de granit."},
 tip:{en:"Reduce it by two-thirds on its own before it meets the stock; added late it stays sweet and raw. A bay leaf and a strip of orange in the reduction keep it from reading as jam against game.",
@@ -351,7 +351,7 @@ svg:'<path class="f3 sf" d="M32 26h22v12q0 12-11 15-11-3-11-15z"/><path class="s
 
 {id:"madeira-sercial",cat:"cellar",sign:"DOP",price:2,pk:"20–45 €/L",name:{en:"Sercial Madeira",fr:"Madère Sercial"},latin:"Vitis vinifera 'Esgana Cão'",
 origin:{en:"Madeira, Portugal",fr:"Madère, Portugal"},season:[],
-flavor:["sour","briny","nutty"],
+flavor:["sour","briny","nutty"],texture:["smooth","silky"],
 story:{en:"Casks shipped to the Indies as ballast came back better than they left, so Madeira's growers reproduced the tropical crossing on land: estufagem, months of gentle heat that cook the wine and leave it nearly indestructible. Sercial is the driest of the noble grapes, known on the island as Esgana Cão, dog-strangler, for an acidity that scrapes the mouth clean.",
 fr:"Les fûts partis aux Indes comme lest revenaient meilleurs qu’à l’aller ; les vignerons de Madère ont recopié la traversée à terre sous le nom d’estufagem : des mois de chaleur douce qui cuisent le vin et le rendent presque indestructible. Le sercial est le plus sec des cépages nobles, appelé sur l’île Esgana Cão, « étrangle-chien », pour une acidité qui râpe la bouche."},
 tip:{en:"It has already been cooked and oxidised, so an open bottle keeps for months standing in a cupboard. Add it to a consommé or a veal jus off the heat, at the very end — boiled hard it loses the saline lift you bought it for.",
@@ -361,7 +361,7 @@ svg:'<path class="f1 sf" d="M42 22h12v14l6 10v34a4 4 0 0 1-4 4H40a4 4 0 0 1-4-4V
 
 {id:"sweet-vermouth",cat:"cellar",price:2,pk:"10–20 €/L",name:{en:"Sweet red vermouth",fr:"Vermouth rouge"},latin:"Artemisia absinthium",
 origin:{en:"Turin, Piedmont",fr:"Turin, Piémont"},season:[],
-flavor:["sweet","bitter","warm","herbal"],
+flavor:["sweet","bitter","warm","herbal"],texture:["smooth","silky"],
 story:{en:"Antonio Benedetto Carpano is credited with the first sweet vermouth, made in Turin in 1786 by sweetening and spicing a white wine for a court that found wormwood tonics too austere. The German root of the name — Wermut, wormwood — survives even though the modern bottle leans on cinchona bark, vanilla and burnt-sugar caramel for its bitterness and its colour.",
 fr:"On attribue à Antonio Benedetto Carpano le premier vermouth doux, à Turin en 1786 : un vin blanc sucré et épicé pour une cour qui trouvait les toniques à l’absinthe trop austères. La racine allemande du nom — Wermut, l’absinthe — a survécu, alors que la bouteille moderne doit son amertume et sa couleur à l’écorce de quinquina, à la vanille et au caramel."},
 tip:{en:"Add it at the start of a braise and let it reduce with the stock; poured over a finished sauce it tastes raw and medicinal. Once open it oxidises like any wine — refrigerate and finish it within a month.",
@@ -371,7 +371,7 @@ svg:'<path class="f2 sf" d="M27 33h42a21 19 0 0 1-42 0z"/><path class="s" d="M48
 
 {id:"tawny-port",cat:"cellar",sign:"DOP",price:2,pk:"15–32 €/L",name:{en:"Tawny port",fr:"Porto tawny"},latin:"Vitis vinifera 'Touriga Nacional'",
 origin:{en:"Vila Nova de Gaia, Portugal",fr:"Vila Nova de Gaia, Portugal"},season:[],
-flavor:["sweet","nutty","rich","toasty"],
+flavor:["sweet","nutty","rich","toasty"],texture:["viscous","smooth"],
 story:{en:"The ten, twenty or forty years on a tawny label is the average age of the blend, not a vintage — the house holds parcels in small casks and marries young wine into old to keep the style constant. Decades of that slow oxidation drop the colour out and put walnut, caramel and dried apricot in its place.",
 fr:"Les dix, vingt ou quarante ans d’une étiquette de tawny désignent l’âge moyen de l’assemblage, non un millésime : la maison garde des lots en petits fûts et marie du vin jeune à du vieux pour tenir le style. Des décennies de cette oxydation lente font tomber la couleur et installent à sa place la noix, le caramel et l’abricot sec."},
 tip:{en:"It is already oxidised, so an opened bottle holds a month or more in the fridge. Add it at the end of a veal or mushroom jus, off the heat — its aromatics are the finish, not the base.",
@@ -381,7 +381,7 @@ svg:'<g transform="translate(3.74 3.9) scale(0.922)"><path class="f1 sf" d="M40 
 
 {id:"umeshu",cat:"cellar",price:2,pk:"20–35 €/L",name:{en:"Umeshu",fr:"Umeshu"},latin:"Prunus mume",
 origin:{en:"Wakayama and across Japan",fr:"Wakayama et tout le Japon"},season:[],
-flavor:["sour","sweet","fruity","nutty"],
+flavor:["sour","sweet","fruity","nutty"],texture:["viscous","smooth"],
 story:{en:"Home brewing is illegal in Japan, but steeping fruit in a spirit of at least twenty percent is expressly allowed - which is why nearly every household made umeshu and almost none made beer. The almond note is the stone's doing: amygdalin in the kernels yields benzaldehyde as the fruit sits in the jar.",
 fr:"Le brassage domestique est interdit au Japon, mais la macération de fruits dans un alcool titrant au moins vingt pour cent est expressément autorisée - d’où une maison sur deux qui faisait son umeshu et presque aucune sa bière. La note d’amande vient du noyau : l’amygdaline des amandons donne du benzaldéhyde pendant que le fruit repose dans le bocal."},
 tip:{en:"Green ume are not eaten raw, and the steeping needs three months at the very least - a year is better, and the jar only improves. To deglaze pork or duck, a splash off the heat reduced by half needs no added sugar at all.",
@@ -391,7 +391,7 @@ svg:'<path class="f1 sf" d="M30 34h36v34a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8z"/><path
 
 {id:"white-port",cat:"cellar",sign:"DOP",price:2,pk:"12–22 €/L",name:{en:"White port",fr:"Porto blanc"},latin:"Vitis vinifera 'Malvasia Fina'",
 origin:{en:"Douro valley, Portugal",fr:"Vallée du Douro, Portugal"},season:[],
-flavor:["citrus","nutty","warm"],
+flavor:["citrus","nutty","warm"],texture:["smooth","silky"],
 story:{en:"White port is fortified exactly like the red — spirit into fermenting must — but from Douro whites such as Malvasia Fina and Gouveio, and it is bottled dry to off-dry rather than sweet. In the Douro itself almost none of it is drunk neat: the summer drink is porto tónico, half white port, half tonic, over ice with a strip of lemon.",
 fr:"Le porto blanc est muté exactement comme le rouge — l’alcool dans le moût en fermentation — mais à partir de cépages blancs du Douro comme la malvasia fina et le gouveio, et il est mis en bouteille de sec à demi-sec. Sur place, on ne le boit presque jamais pur : la boisson d’été est le porto tónico, moitié porto blanc, moitié tonic, sur glace avec un zeste de citron."},
 tip:{en:"Buy the bottle labelled seco or extra dry, and use it where a red port would stain: chicken livers, sole, a shellfish butter. Deglaze while the pan is still fierce so the alcohol goes and the citrus stays.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M30 26h28l-3 48H33z"/><path class="s" d="M31 38h26"/
 
 {id:"dry-vermouth",cat:"cellar",price:2,pk:"10–18 €/L",name:{en:"Dry vermouth",fr:"Vermouth sec"},latin:"Artemisia absinthium",
 origin:{en:"Marseillan, Languedoc",fr:"Marseillan, Languedoc"},season:[],
-flavor:["bitter","herbal","warm"],
+flavor:["bitter","herbal","warm"],texture:["smooth","silky"],
 story:{en:"The name is German — Wermut, wormwood — and the wormwood is not decoration: it is the bitterness that survives a reduction, at the point where white wine has gone flat and sour. At Marseillan the base wines spend a year outdoors in oak, through sun, lagoon mist and frost, before a single botanical is infused into them.",
 fr:"Le nom vient de l’allemand Wermut, l’absinthe, et cette amertume n’est pas un ornement : c’est elle qui tient à la réduction, là où un vin blanc tourne plat et acide. À Marseillan, les vins de base passent une année dehors, en fûts de chêne, soleil, brumes de l’étang et gelées, avant qu’on y infuse la moindre plante."},
 tip:{en:"Swap it for white wine in a fish sauce volume for volume, but stop the reduction earlier — the bitterness concentrates faster than the acidity does. An open bottle is a wine, not a spirit: refrigerate it and finish it inside a month.",
@@ -411,7 +411,7 @@ svg:'<path class="f2 sf" d="M44 14h8v18c0 5 6 6 6 12v34a4 4 0 0 1-4 4H42a4 4 0 0
 
 {id:"shaoxing-wine",cat:"cellar",price:1,pk:"5–12 €/L",name:{en:"Shaoxing wine",fr:"Vin de Shaoxing"},latin:"Oryza sativa var. glutinosa (brewed)",
 origin:{en:"Shaoxing, Zhejiang",fr:"Shaoxing, Zhejiang"},season:[],
-flavor:["warm","rich","umami","fruity"],
+flavor:["warm","rich","umami","fruity"],texture:["smooth","silky"],
 story:{en:"Shaoxing has brewed rice wine in clay jars sealed with lotus leaf and mud for centuries, and the custom of nü'er hong is still told there — a jar buried when a daughter is born, opened at her wedding. What matters in a kitchen is the ageing: oxidised and amber, the aroma sits closer to a dry sherry than to sake.",
 fr:"Shaoxing brasse depuis des siècles son vin de riz dans des jarres de terre scellées à la feuille de lotus et à l’argile, et l’on y raconte encore le nü’er hong : une jarre enterrée à la naissance d’une fille, ouverte à son mariage. Ce qui compte en cuisine, c’est le vieillissement — oxydé, ambré, l’arôme est plus proche d’un xérès sec que d’un saké."},
 tip:{en:"Buy the drinkable bottle, not the one labelled cooking wine — that one is salted so it can be sold as a foodstuff, and it takes the seasoning of the dish out of your hands. Splash it down the side of a hot wok so it flashes off.",
@@ -421,7 +421,7 @@ svg:'<path class="f2 sf" d="M36 36q-11 10-11 22t11 16q12 4 24 0t11-16-11-22z"/><
 
 {id:"vin-de-paille",cat:"cellar",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
 origin:{en:"Jura, dried in unheated lofts",fr:"Jura, séché en greniers non chauffés"},season:[],
-flavor:["sweet","honeyed","fruity"],
+flavor:["sweet","honeyed","fruity"],texture:["viscous","smooth"],
 story:{en:"The bunches are laid on straw or hung in an unheated loft for at least six weeks and pressed between Christmas and late February; a hundred kilos of shrivelled grapes yield fifteen to eighteen litres of must. Nothing is added at any point — the sweetness is only the water that left.",
 fr:"Les grappes reposent sur un lit de paille ou pendent au grenier non chauffé six semaines au minimum, puis passent au pressoir entre Noël et la fin février : cent kilos de raisins passerillés rendent quinze à dix-huit litres de moût. On n’ajoute rien à aucun moment — la douceur n’est que l’eau partie."},
 tip:{en:"Deglaze with it off the heat and reduce by half at most; boiled hard it caramelises and turns bitter. A tablespoon swirled into the fat left after searing foie gras is the entire sauce.",
@@ -431,7 +431,7 @@ svg:'<path class="f2 sf" d="M48 24c6 0 10 4 10 9 5 2 7 8 4 12 2 6-2 12-6 14-2 6-
 
 {id:"vin-jaune",cat:"cellar",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
-flavor:["nutty","warm","umami"],
+flavor:["nutty","warm","umami"],texture:["smooth","silky"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",
 fr:"On remplit le fût une fois, puis on ne l’ouille plus pendant six ans et trois mois : un voile de levures se forme en surface et protège le vin tandis qu’un bon tiers s’évapore. Cette perte explique le clavelin de 62 cl — ce qui reste d’un litre quand la cave a pris sa part."},
 tip:{en:"Reduce it far less than you would a dry white: the sotolon that gives the curry note concentrates fast and turns acrid. Stir it into a cream sauce at the end, off the heat, and open the bottle a day ahead.",
@@ -441,7 +441,7 @@ svg:'<path class="f2 sf" d="M43 19h10v9c0 6 9 8 9 18v28a4 4 0 0 1-4 4H38a4 4 0 0
 
 {id:"vin-santo",cat:"cellar",sign:"DOP",price:3,pk:"40–80 €/L",name:{en:"Vin Santo",fr:"Vin santo"},latin:"Vitis vinifera (Trebbiano)",
 origin:{en:"Tuscany",fr:"Toscane"},season:[],
-flavor:["nutty","sweet","woody"],
+flavor:["nutty","sweet","woody"],texture:["viscous","smooth"],
 story:{en:"The dried must goes into caratelli — fifty-litre casks that are sealed shut and never topped up — each carrying a madre, a sludge of yeast and lees held back from the previous batch to start the next. Years of that, under a roof that freezes in winter and bakes in summer, is what turns it oxidative where a straw wine stays fruity.",
 fr:"Le moût passerillé entre en caratelli — des fûts de cinquante litres scellés et jamais ouillés — chacun portant sa madre, un dépôt de levures et de lies gardé de la cuvée précédente pour lancer la suivante. Des années de ce régime, sous un toit qui gèle l’hiver et cuit l’été, le rendent oxydatif là où un vin de paille reste fruité."},
 tip:{en:"Cook with the dry version, secco; the sweet one scorches in a hot pan. Deglaze chicken livers with two spoonfuls, let it go syrupy, then mash them for crostini.",
@@ -451,7 +451,7 @@ svg:'<path class="f2 sf" d="M36 28q12-4 24 0c6 12 6 28 0 40q-12 4-24 0c-6-12-6-2
 
 {id:"hon-mirin",cat:"cellar",price:2,pk:"16–30 €/L",name:{en:"Hon-mirin",fr:"Mirin (hon-mirin)"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["sweet","mild","rich"],
+flavor:["sweet","mild","rich"],texture:["viscous","smooth"],
 story:{en:"Real mirin is a liquor: glutinous rice and koji left to sweeten in shochu until the whole thing sits at about 14 % alcohol, and Japan taxes it as one. That tax is why supermarket shelves carry mirin-fu chomiryo, a sweetened imitation held under one per cent, and why the genuine bottle stands with the sake.",
 fr:"Le vrai mirin est un alcool : riz gluant et koji laissés à sucrer dans le shochu jusqu'à environ 14 % vol., et le Japon le taxe comme tel. C'est cette taxe qui explique le mirin-fu chomiryo des rayons de supermarché, une imitation sucrée maintenue sous 1 %, et pourquoi la vraie bouteille se range avec les sakés."},
 tip:{en:"Boil it thirty seconds to burn the alcohol off before it goes into a dressing that will not be cooked further. In a glaze it goes in last: the glucose colours fast and will be bitter before the fish is done if the pan is above medium.",

@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS||[]).concat([
 {id:"cornflower",cat:"flowers",price:2,pk:"10–18 €/100 g",name:{en:"Cornflower",fr:"Bleuet"},latin:"Centaurea cyanus",
 origin:{en:"European cornfields",fr:"Moissons d’Europe"},season:[],
-flavor:["floral","mild","herbal"],
+flavor:["floral","mild","herbal"],texture:["brittle","dry"],
 story:{en:"Its blue survives drying better than that of any other edible flower, which is why it is sold as loose dried florets for tea blends and plating rather than as a fresh cut flower. As an arable weed it went the other way entirely: herbicides and cleaned seed all but erased it from European cornfields within a generation.",
 fr:"Son bleu résiste au séchage mieux que celui de toute autre fleur comestible, et c’est pourquoi on l’achète en fleurons secs en vrac pour les mélanges de thé et le dressage, plutôt qu’en fleur fraîche. Comme adventice des moissons, il a suivi le chemin inverse : herbicides et semences triées l’ont presque effacé des blés d’Europe en une génération."},
 tip:{en:"Add the florets after brewing rather than during — a long steep leaches the pigment and leaves grey petals in the cup. Keep them in a tin away from light: they hold colour for a year closed, weeks in a clear jar on a shelf.",
@@ -11,7 +11,7 @@ svg:'<path class="s" d="M48 78V58M46 70q-8-4-10-10 8 0 12 6"/><path class="f3 sf
 
 {id:"begonia-petals",cat:"flowers",rare:true,price:3,pk:"6–12 €/barquette",name:{en:"Begonia petals",fr:"Bégonia"},latin:"Begonia × tuberhybrida",
 origin:{en:"Cultivated hybrids",fr:"Hybrides horticoles"},season:[6,7,8,9],
-flavor:["sour","tangy","fresh"],
+flavor:["sour","tangy","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"Tuberous begonia petals are sour for the same reason sorrel and rhubarb are: oxalic acid, concentrated enough to make the flower an ingredient rather than a decoration. Cooks buy it as an acid — a few torn petals do the work of a squeeze of lemon without adding any liquid to the plate.",
 fr:"Les pétales de bégonia tubéreux sont acides pour la même raison que l’oseille et la rhubarbe : l’acide oxalique, assez concentré pour faire de la fleur un ingrédient et non un décor. On l’achète comme acidifiant — quelques pétales déchirés font le travail d’un trait de citron sans ajouter une goutte à l’assiette."},
 tip:{en:"Tear rather than cut, and add at the very last moment: petals turn translucent and limp within a minute of meeting oil or salt. Anyone advised to avoid rhubarb and spinach for kidney stones should avoid these on the same grounds.",
@@ -21,7 +21,7 @@ svg:'<path class="f1 sf" d="M48 48q-4-16 2-22t12 4-6 18z"/><path class="f2 sf" d
 
 {id:"borage",cat:"flowers",price:1,pk:"8–15 €/kg",name:{en:"Borage",fr:"Bourrache"},latin:"Borago officinalis",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[5,6,7,8],
-flavor:["fresh","marine","grassy","delicate"],
+flavor:["fresh","marine","grassy","delicate"],texture:["tender","moist"],
 story:{en:"The leaf tastes startlingly of cucumber and oyster, which is why Ligurians stuff pansotti with it and the English drop the blue star flowers into summer drinks. Roman soldiers took it before battle, believing it gave courage.",
 fr:"La feuille a un goût saisissant de concombre et d’huître, d’où les pansotti ligures qu’on en farcit et les fleurs bleues en étoile que les Anglais jettent dans les boissons d’été. Les soldats romains en prenaient avant la bataille, la croyant source de courage."},
 tip:{en:"The leaves are covered in prickly hairs that soften only with cooking or fine chopping. Use the flowers raw and the leaves cooked.",
@@ -31,7 +31,7 @@ svg:'<path class="s" d="M48 76V44"/><path class="f2 sf" d="M44 52q-14 0-16-8 12-
 
 {id:"nasturtium",cat:"flowers",price:1,pk:"3–6 €/barquette (20 g)",name:{en:"Nasturtium",fr:"Capucine"},latin:"Tropaeolum majus",
 origin:{en:"Andean South America",fr:"Andes d’Amérique du Sud"},season:[6,7,8,9,10],
-flavor:["peppery","hot","floral"],
+flavor:["peppery","hot","floral"],texture:["tender","silky"],
 story:{en:"Linnaeus named the genus Tropaeolum after the Roman trophy pole hung with a captured shield and helmet: the round leaf is the shield, the spurred flower the helmet. Its green seed pods, pickled, were Europe's garden substitute for capers long before anyone thought to put the flowers on a plate.",
 fr:"Linné a nommé le genre Tropaeolum d’après le trophée romain, ce mât où l’on suspendait le bouclier et le casque pris à l’ennemi : la feuille ronde est le bouclier, la fleur éperonnée le casque. Ses graines vertes, confites au vinaigre, ont longtemps servi de câpres de jardin en Europe, bien avant qu’on ne pense à mettre les fleurs dans l’assiette."},
 tip:{en:"Pick the pods green and firm and brine them for a week for something very close to a caper. Leaf heat tracks the plant's thirst — a nasturtium in dry soil is markedly hotter than the same plant watered.",
@@ -41,7 +41,7 @@ svg:'<g transform="translate(3.65 3.8) scale(0.924)"><circle class="f2 sf" cx="3
 
 {id:"sweet-violet",cat:"flowers",price:2,pk:"5–10 €/barquette (20 g)",name:{en:"Sweet violet",fr:"Violette"},latin:"Viola odorata",
 origin:{en:"Toulouse and its glasshouses",fr:"Toulouse et ses serres"},season:[2,3],
-flavor:["floral","sweet","delicate"],
+flavor:["floral","sweet","delicate"],texture:["tender","silky"],
 story:{en:"Its scent comes from ionones, which briefly numb the very receptors that detect them — you smell a violet, then you do not, then a minute later you do again. Toulouse built a winter industry on the flower in the nineteenth century, raising it under frames and candying it by the ton for the Paris trade.",
 fr:"Son parfum tient aux ionones, qui anesthésient brièvement les récepteurs mêmes chargés de les percevoir : on sent la violette, puis plus rien, puis de nouveau une minute après. Toulouse en a fait une industrie d'hiver au XIXᵉ siècle, la cultivant sous châssis et la confisant à la tonne pour le marché parisien."},
 tip:{en:"Crystallise them the day they are picked; a cut violet loses its perfume within about a day. Brush with barely beaten egg white, dip in caster sugar and dry at 50 °C rather than in open air, or they grey.",
@@ -51,7 +51,7 @@ svg:'<g transform="translate(-6.96 -7.25) scale(1.145)"><path class="f3 sf" d="M
 
 {id:"calendula",cat:"flowers",price:2,pk:"6–12 €/100 g",name:{en:"Calendula",fr:"Souci officinal"},latin:"Calendula officinalis",
 origin:{en:"Southern Europe",fr:"Europe du Sud"},season:[6,7,8,9,10],
-flavor:["bitter","resinous","floral"],
+flavor:["bitter","resinous","floral"],texture:["tender","silky"],
 story:{en:"Medieval Europe called it poor man's saffron and used the petals to yellow soups, butter and cheese; the colour is carotenoid, chemically nothing to do with saffron. It also brings a resinous, faintly bitter edge, which is why it survived as a seasoning and not merely as a dye.",
 fr:"L’Europe médiévale l’appelait le safran du pauvre et colorait au pétale les soupes, le beurre et les fromages ; la teinte vient de caroténoïdes, chimiquement sans rapport avec le safran. Il apporte aussi une pointe résineuse et légèrement amère, ce qui explique qu’il ait survécu comme condiment et pas seulement comme colorant."},
 tip:{en:"Steep whole petals in warm fat or hot broth for ten minutes and then lift them out — blitzed in, they turn the dish bitter and speckled. Dried petals carry more colour per spoonful than fresh, so halve the quantity.",
@@ -61,7 +61,7 @@ svg:'<path class="f2 sf" d="M48 20q5 9 4 16 6-6 14-6-2 8-8 12 8-1 14 4-7 5-15 4 
 
 {id:"damask-rose-petals",cat:"flowers",price:2,pk:"6–15 €/100 g",name:{en:"Damask rose petals",fr:"Pétales de rose de Damas"},latin:"Rosa × damascena",
 origin:{en:"Bulgaria, Turkey, Iran",fr:"Bulgarie, Turquie, Iran"},season:[5,6],
-flavor:["floral","honeyed","delicate"],
+flavor:["floral","honeyed","delicate"],texture:["tender","silky"],
 story:{en:"Rosa × damascena is a sterile hybrid: every bush in Bulgaria's Rose Valley and around Isparta in Turkey descends from a cutting, never from seed. Pickers start before dawn because the perfume leaves the petal as the sun warms it, and it takes on the order of three tonnes of flowers to make a kilo of rose otto.",
 fr:"Rosa × damascena est un hybride stérile : chaque pied de la vallée des Roses en Bulgarie ou des environs d’Isparta en Turquie descend d’une bouture, jamais d’une graine. On cueille avant l’aube parce que le parfum quitte le pétale dès que le soleil chauffe, et il faut de l’ordre de trois tonnes de fleurs pour un kilo d’essence."},
 tip:{en:"Add rose at the end and off the heat — the aroma is volatile and a boil strips it. Working from concentrate rather than petals, start at two drops per litre; rose crosses from perfume to soap over a very short distance.",
@@ -71,7 +71,7 @@ svg:'<path class="f1 sf" d="M48 20q22 0 26 18t-26 30q-30-12-26-30t26-18z"/><path
 
 {id:"shokuyo-giku",cat:"flowers",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Edible chrysanthemum petals (shokuyō-giku)",fr:"Pétales de chrysanthème comestible"},latin:"Chrysanthemum morifolium",
 origin:{en:"Yamagata and Aomori, Japan",fr:"Yamagata et Aomori, Japon"},season:[9,10,11],
-flavor:["floral","bitter","delicate"],
+flavor:["floral","bitter","delicate"],texture:["tender","silky"],
 story:{en:"Yamagata’s purple variety is called motte-no-hoka, which means outrageous; the story goes that eating a flower bearing the imperial crest was the outrage, though growers will tell you it only ever meant outrageously good. The petals are stripped from the head and steamed into dried sheets called kiku-nori, so an autumn flower can be eaten in February.",
 fr:"La variété violette de Yamagata s’appelle motte-no-hoka, « scandaleux » : on raconte que le scandale était de manger une fleur portant l’emblème impérial, même si les producteurs assurent que cela n’a jamais voulu dire que « scandaleusement bon ». Les pétales sont détachés puis séchés en feuilles appelées kiku-nori, ce qui permet de manger en février la fleur d’automne."},
 tip:{en:"Add a tablespoon of rice vinegar per litre to the blanching water and give the petals twenty seconds — the acid fixes the purple, which otherwise goes grey-brown in front of you. Squeeze gently and dress them warm; cold petals lose the silkiness that is the whole point.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M48 22q6 10 0 18-6-8 0-18zM70 34q-2 12-12 12 2-10 12
 
 {id:"elderflower",cat:"flowers",price:1,pk:"5–9 €/100 g",name:{en:"Elderflower",fr:"Fleur de sureau"},latin:"Sambucus nigra",
 origin:{en:"European hedgerows",fr:"Haies d’Europe"},season:[5,6],
-flavor:["floral","honeyed","fruity"],
+flavor:["floral","honeyed","fruity"],texture:["tender","airy"],
 story:{en:"The story goes that the genus name Sambucus comes from the sambuke, an ancient instrument, because the soft pith of elder wood pushes out to leave a tube. What is certain is the window: the heads hold their muscat scent for barely three weeks, and only while dry — one picked after rain has already lost it.",
 fr:"On raconte que le nom de genre Sambucus vient de la sambuque, un instrument antique, parce que la moelle tendre du bois se chasse pour laisser un tube. Ce qui est sûr, c’est la fenêtre : les ombelles ne gardent leur parfum de muscat que trois semaines environ, et seulement au sec — une tête cueillie après la pluie l’a déjà perdu."},
 tip:{en:"Never wash the heads: the wild yeasts and pollen on them start a cordial fermenting and carry most of the scent. Shake the insects out, snip away every green stem, and use within hours of picking.",
@@ -91,7 +91,7 @@ svg:'<path class="s" d="M48 84V52"/><path class="s" d="M48 52l-22-14M48 52l-11-1
 
 {id:"acacia-flower",cat:"flowers",price:1,pk:"5–15 €/kg",name:{en:"Black locust flower",fr:"Fleur d’acacia"},latin:"Robinia pseudoacacia",
 origin:{en:"North America, naturalised in Europe",fr:"Amérique du Nord, naturalisé en Europe"},season:[5,6],
-flavor:["floral","honeyed","sweet"],
+flavor:["floral","honeyed","sweet"],texture:["tender","airy"],
 story:{en:"The tree is Robinia pseudoacacia, no relation to true acacia, and it carries the name of Jean Robin, who sowed one in Paris in 1601 — that tree still stands in square René-Viviani. Its white racemes smell of orange blossom and honey for about two weeks in late spring, and then there is nothing until the following year.",
 fr:"L’arbre est le robinier faux-acacia, sans parenté avec les vrais acacias, et il porte le nom de Jean Robin, qui en sema un à Paris en 1601 — cet arbre est toujours là, square René-Viviani. Ses grappes blanches sentent la fleur d’oranger et le miel une quinzaine de jours à la fin du printemps, puis plus rien jusqu’à l’année suivante."},
 tip:{en:"Batter and fry whole racemes held by the stalk, then snip the stalk away at the plate — pick the flowers off first and you are left frying a handful of nothing. Eat only the flowers: bark, leaves and seeds of this tree are toxic.",
@@ -101,7 +101,7 @@ svg:'<path class="s" d="M48 18q4 16 2 30t-6 26"/><path class="f1 sf" d="M50 28q8
 
 {id:"torch-ginger-flower",cat:"flowers",rare:true,price:2,pk:"2–5 €/pièce",name:{en:"Torch ginger bud",fr:"Bouton de gingembre torche (bunga kantan)"},latin:"Etlingera elatior",
 origin:{en:"Malaysia, Indonesia, Thailand",fr:"Malaisie, Indonésie, Thaïlande"},season:[],
-flavor:["sour","resinous","floral","pungent"],
+flavor:["sour","resinous","floral","pungent"],texture:["firm","crisp","fibrous"],
 story:{en:"The bud rises on its own stalk straight out of the ground, quite separate from the five-metre leafy stems, so a plantation looks like a field of pink cones with a thicket standing behind it. In Penang assam laksa the sliced bud is what makes the broth read as sour before the tamarind does — a flower doing an acid’s work.",
 fr:"Le bouton monte sur sa propre hampe, directement du sol et séparé des tiges feuillées de cinq mètres : une plantation ressemble à un champ de cônes roses adossé à un fourré. Dans l’assam laksa de Penang, c’est le bouton émincé qui fait paraître le bouillon acide avant même le tamarin — une fleur qui fait le travail d’un acide."},
 tip:{en:"Slice across the bud as thinly as you can manage, under a millimetre; any thicker and it eats like a stiff onion. Add it in the last five minutes of a laksa — held at a simmer it turns soapy and the perfume boils away.",
@@ -111,7 +111,7 @@ svg:'<path class="f2 sf" d="M48 18q16 14 16 32t-16 22q-16-4-16-22t16-32z"/><path
 
 {id:"hojiso",cat:"flowers",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Hojiso (shiso flower spikes)",fr:"Épis floraux de shiso"},latin:"Perilla frutescens var. crispa",
 origin:{en:"Late-summer shiso beds, Japan",fr:"Cultures de shiso de fin d’été, Japon"},season:[9,10],
-flavor:["herbal","resinous","peppery"],
+flavor:["herbal","resinous","peppery"],texture:["tender","moist"],
 story:{en:"A shiso plant is sold four times over as it grows — mejiso sprouts, the leaf, hojiso flower spikes, then the seed pods — each under its own name on a sushiya’s order sheet. Hojiso is cut when about a third of the flowers have opened: earlier there is no seed crunch, later the spike goes woody.",
 fr:"Un pied de shiso se vend quatre fois au fil de sa croissance — pousses mejiso, feuille, épis hojiso, puis graines —, chacun sous son propre nom sur le bon de commande d’un sushiya. On coupe le hojiso quand un tiers environ des fleurs sont ouvertes : plus tôt, les graines ne croquent pas ; plus tard, l’épi devient ligneux."},
 tip:{en:"Hold the tip and scrape the buds downwards with chopsticks into the soy sauce, not onto the fish — the perfume then reaches every piece instead of one. The stripped stem is worth dropping into a clear soup.",
@@ -121,7 +121,7 @@ svg:'<path class="s" d="M48 80V22"/><path class="f2 sf" d="M48 30q-7-1-8-6 7-2 8
 
 {id:"courgette-flower",cat:"flowers",price:2,pk:"0,80–1,50 €/pièce",name:{en:"Courgette flower",fr:"Fleur de courgette"},latin:"Cucurbita pepo",
 origin:{en:"Mediterranean kitchen gardens",fr:"Potagers méditerranéens"},season:[6,7,8,9],
-flavor:["delicate","floral","mild"],
+flavor:["delicate","floral","mild"],texture:["tender","silky","moist"],
 story:{en:"The flowers sold on long bare stems are the male ones, since removing them costs the plant no fruit; the female bloom comes attached to a baby courgette and is picked far less often. Cut at dawn, a flower is firm by eight and collapsed by evening, which is why it has never travelled well.",
 fr:"Les fleurs vendues sur longue tige nue sont les mâles, car les prélever ne coûte aucun fruit à la plante ; la fleur femelle vient attachée à une courgette naissante et se cueille bien plus rarement. Coupée à l’aube, elle est ferme à huit heures et affaissée le soir : elle n’a jamais supporté le transport."},
 tip:{en:"Pull the stamen out, it is bitter, and stuff with something already cooked or set, because the batter needs only two minutes and will not cook a filling. Mix the batter with ice-cold sparkling water and use it within a minute.",
@@ -131,7 +131,7 @@ svg:'<path class="f1 sf" d="M48 18q6 6 6 14 6-8 14-8-2 8-8 12 8 0 12 6-10 6-24 6
 
 {id:"hibiscus-roselle",cat:"flowers",price:1,pk:"12–25 €/kg",name:{en:"Hibiscus / Roselle",fr:"Hibiscus (bissap)"},latin:"Hibiscus sabdariffa",
 origin:{en:"Sahel and West Africa",fr:"Sahel et Afrique de l’Ouest"},season:[],
-flavor:["sour","tangy","fruity"],
+flavor:["sour","tangy","fruity"],texture:["firm","juicy"],
 story:{en:"Picked fresh, the calyx is thick, crisp and as sharp as an unripe plum, and that is how it is cooked where the plant grows: seeded and stewed with ginger into the Caribbean Christmas sorrel, boiled to a scarlet jam in Senegal, candied whole in Mexico. The young leaves are sour too and go into stews from Burma to Sudan, so the plant is grown as a vegetable as much as a flower.",
 fr:"Cueilli frais, le calice est épais, croquant et acide comme une prune verte, et c’est ainsi qu’on le cuisine là où la plante pousse : épépiné et mijoté au gingembre dans le sorrel de Noël des Antilles, bouilli en confiture écarlate au Sénégal, confit entier au Mexique. Les jeunes feuilles sont acides elles aussi et entrent dans les ragoûts de la Birmanie au Soudan : la plante se cultive comme légume autant que comme fleur."},
 tip:{en:"Split each calyx and pull the seed capsule out before cooking — it is woody and bitter. Colour and sourness both live in the calyx: cooked briefly with sugar or ginger it keeps its crunch; cooked long it collapses into a scarlet jam.",
@@ -141,7 +141,7 @@ svg:'<path class="f3 sf" d="M48 26q10 12 10 26t-10 20q-10-6-10-20t10-26z"/><path
 
 {id:"viola",cat:"flowers",price:2,pk:"0,20–0,40 €/pièce",name:{en:"Viola",fr:"Pensée"},latin:"Viola × wittrockiana",
 origin:{en:"European gardens",fr:"Jardins d’Europe"},season:[3,4,5,10,11],
-flavor:["mild","fresh","grassy"],
+flavor:["mild","fresh","grassy"],texture:["tender","silky"],
 story:{en:"The garden pansy is barely two centuries old: Lady Mary Elizabeth Bennet spent the 1810s gathering every form of wild heartsease she could find into her father’s garden at Walton-upon-Thames, and the commercial florists took it from there. The Latin honours Veit Wittrock, the Swedish botanist who set about sorting the resulting tangle of hybrids decades later.",
 fr:"La pensée de jardin a deux siècles à peine : Lady Mary Elizabeth Bennet a passé les années 1810 à rassembler dans le jardin paternel de Walton-upon-Thames toutes les formes de pensée sauvage qu’elle pouvait trouver, et les fleuristes ont fait le reste. Le latin honore Veit Wittrock, le botaniste suédois qui entreprit des décennies plus tard de démêler cet écheveau d’hybrides."},
 tip:{en:"Buy them unsprayed and use them the same day — the petals bruise brown wherever a finger has pressed. Lay them on last and on something dry: any acid in a dressing bleaches the dark face within minutes.",
@@ -151,7 +151,7 @@ svg:'<path class="f1 sf" d="M38 16q11 0 11 10t-11 10-11-10 11-10zM58 16q11 0 11 
 
 {id:"jasmine-sambac",cat:"flowers",price:2,pk:"6–12 €/100 g",name:{en:"Jasmine sambac",fr:"Jasmin sambac"},latin:"Jasminum sambac",
 origin:{en:"Fuzhou and South Asia",fr:"Fuzhou et Asie du Sud"},season:[6,7,8,9],
-flavor:["floral","honeyed","musky"],
+flavor:["floral","honeyed","musky"],texture:["tender","silky"],
 story:{en:"The flower opens after dark, which sets the working hours of every jasmine tea house in Fuzhou: buds picked by day, held until they crack open at night, layered with tea until dawn, then picked back out. The higher grades repeat that night five, seven or nine times with fresh flowers each round.",
 fr:"La fleur s’ouvre à la nuit, ce qui fixe les horaires de toutes les fabriques de thé au jasmin de Fuzhou : boutons cueillis le jour, gardés jusqu’à ce qu’ils éclatent le soir, mêlés au thé jusqu’à l’aube, puis retirés un à un. Les grades supérieurs répètent cette nuit-là cinq, sept ou neuf fois, avec des fleurs neuves à chaque tour."},
 tip:{en:"Infuse it cold: heat drives off the light top notes and leaves the indole behind, which reads as overripe. Twelve flowers in 500 ml of cream, a night in the fridge, strained in the morning — that is the whole method.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M46 46q-5-11 0-19 5 8 0 19zM46 46q3-11 12-15-3 12-12
 
 {id:"osmanthus",cat:"flowers",price:2,pk:"10–20 €/100 g",name:{en:"Osmanthus",fr:"Osmanthe"},latin:"Osmanthus fragrans",
 origin:{en:"Southern China, Guilin and Hangzhou",fr:"Chine du Sud, Guilin et Hangzhou"},season:[9,10],
-flavor:["floral","fruity","honeyed"],
+flavor:["floral","fruity","honeyed"],texture:["brittle","dry"],
 story:{en:"The name Guilin means forest of sweet osmanthus, and the city still perfumes wine, jelly and a dense pressed cake with the autumn florets. Each flower is barely three millimetres across, which is why the dried blossom is sold and dosed by the gram rather than the handful.",
 fr:"Le nom de Guilin signifie forêt d'osmanthes, et la ville parfume toujours son vin, ses gelées et un gâteau pressé très dense avec les fleurettes d'automne. Chaque fleur mesure à peine trois millimètres : la fleur séchée se vend et se dose au gramme, non à la poignée."},
 tip:{en:"Wake the dried florets in water or syrup at 60 °C for ten minutes rather than boiling them, and count about two grams per litre. Past that the apricot note turns to soap and will not come back.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M28 68q4-30 34-42-4 34-34 42z"/><path class="s" d="M
 
 {id:"meadowsweet",cat:"flowers",rare:true,price:1,pk:"5–10 €/100 g",name:{en:"Meadowsweet",fr:"Reine-des-prés"},latin:"Filipendula ulmaria",
 origin:{en:"Damp European meadows and ditches",fr:"Prairies humides et fossés d'Europe"},season:[6,7,8],
-flavor:["floral","honeyed","herbal"],
+flavor:["floral","honeyed","herbal"],texture:["tender","airy"],
 story:{en:"Salicin was first drawn out of its flowers in the 1830s, and when Bayer acetylated it seventy years later they built the name aspirin on Spiraea, the plant's old genus. The white froth that scents a custard is the same chemistry that gave the twentieth century its headache pill.",
 fr:"La salicine fut extraite de ses fleurs dans les années 1830, et lorsque Bayer l'acétyla soixante-dix ans plus tard, le nom aspirine fut bâti sur Spiraea, l'ancien genre de la plante. La mousse blanche qui parfume une crème relève de la même chimie que le cachet du siècle dernier."},
 tip:{en:"Infuse the flowers off the heat in cream at about 70 °C for twenty minutes, then strain. Boiling pulls the salicylate out and the cream turns bitter and antiseptic.",
@@ -180,7 +180,7 @@ pairs:["honey","cream","rhubarb","strawberry","elderflower","gooseberry","almond
 svg:'<path class="f1 sf" d="M48 18q17 7 13 22-13 9-26 0Q31 25 48 18z"/><path class="s" d="M38 28q10 5 20 0M40 36q8 4 16 0"/><path class="s" d="M48 42v32"/><path class="f2 sf" d="M48 58q-11-2-14 6 9 5 14-6z"/>'},
 {id:"lavender-flowers",cat:"flowers",price:1,pk:"25–50 €/kg",name:{en:"Lavender flowers",fr:"Fleurs de lavande"},latin:"Lavandula angustifolia",
 origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[6,7,8],
-flavor:["floral","herbal","resinous","woody"],
+flavor:["floral","herbal","resinous","woody"],texture:["brittle","dry"],
 story:{en:"Only fine lavender, angustifolia, belongs in food; the lavandin hybrid that covers most of the Provençal plateaux is grown for oil and runs high in camphor, which is what turns a cream soapy. In the field the two are easy to tell apart — lavandin sends up a branched stem carrying three heads, fine lavender a single one.",
 fr:"Seule la lavande fine, angustifolia, a sa place en cuisine ; le lavandin hybride qui couvre l’essentiel des plateaux provençaux est cultivé pour l’huile et riche en camphre — c’est lui qui rend une crème savonneuse. Au champ, on les distingue sans peine : le lavandin porte une tige ramifiée à trois épis, la lavande fine un seul."},
 tip:{en:"Measure in pinches, not spoons: a teaspoon of buds infused in a litre of cream is already at the limit. Infuse warm, strain, and never leave the buds in — held too long they go medicinal.",

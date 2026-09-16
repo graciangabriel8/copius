@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"kombu-breton",cat:"seaweed",price:2,pk:"60–120 €/kg",name:{en:"Breton kombu",fr:"Kombu breton"},latin:"Laminaria digitata",
 origin:{en:"Iroise sea, Brittany",fr:"Mer d'Iroise, Bretagne"},season:[5,6,7,8,9,10],
-flavor:["marine","briny","umami"],
+flavor:["marine","briny","umami"],texture:["tough","smooth","dry"],
 story:{en:"Breton goémoniers still take it from the boat with the scoubidou, a hooked steel rod that twists the stipe off the rock, a tool designed in the 1960s and used almost nowhere else. The kelp fields around the Molène archipelago are among the largest in Europe, and the cut is governed by a season and a quota like a fishery.",
 fr:"Les goémoniers bretons le prennent encore depuis le bateau au scoubidou, une tige d'acier crochue qui dévisse le stipe du rocher, un outil dessiné dans les années 1960 et utilisé presque nulle part ailleurs. Les champs de laminaires de l'archipel de Molène comptent parmi les plus vastes d'Europe, et la coupe est encadrée par une saison et un quota, comme une pêche."},
 tip:{en:"A 10 cm strip in the pot with dried beans softens the skins and shortens the cooking; lift it out before it starts to shed. Never let it boil hard — much above 90 °C it turns slippery and bitter and clouds the stock.",
@@ -11,7 +11,7 @@ svg:'<path class="s" d="M48 82V56"/><path class="f2 sf" d="M48 56q-10-6-14-22 8 
 
 {id:"dulse",cat:"seaweed",price:2,pk:"55–110 €/kg",name:{en:"Dulse",fr:"Dulse"},latin:"Palmaria palmata",
 origin:{en:"North Atlantic shores",fr:"Rivages de l'Atlantique Nord"},season:[6,7,8,9],
-flavor:["briny","marine","smoky","nutty"],
+flavor:["briny","marine","smoky","nutty"],texture:["tough","chewy","dry"],
 story:{en:"Icelanders call it söl and gathered it under written law: the medieval codes set out who could take it from which shore, which is unusual treatment for a plant. In 2015 a strain bred at Oregon State drew headlines for frying up tasting of bacon — the smoke note is in the leaf itself, and it survives the pan where every other seaweed flavour collapses.",
 fr:"Les Islandais l'appellent söl et la récoltaient sous le régime de la loi écrite : les codes médiévaux fixaient qui pouvait la prendre et sur quel rivage, traitement rare pour une plante. En 2015, une souche sélectionnée à l'université de l'Oregon a fait les gros titres pour son goût de lard à la poêle — le fumé est bien dans la fronde, et il survit à la cuisson là où tout autre arôme d'algue s'effondre."},
 tip:{en:"Fry it twenty to thirty seconds in a film of oil and no longer; past that it scorches and goes acrid. Crumbled into bread dough it works at about 2 % of the flour weight — enough to season, not enough to grey the crumb.",
@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M48 80v-16q-14-2-18-14 8-4 14 2-6-10-2-20 8 4 8 16 4
 
 {id:"gagome-kombu",cat:"seaweed",rare:true,price:3,pk:"120–220 €/kg",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaidō"},season:[7,8,9],
-flavor:["marine","mild","umami"],
+flavor:["marine","mild","umami"],texture:["tough","viscous","dry"],
 story:{en:"Gagome names the basket-weave: the blade is embossed all over with a lattice of pits, which is how it is told from every other kelp growing on the same rocks. It holds to a short stretch of sea around Hakodate and almost nowhere else, and it is gathered for the slime rather than in spite of it.",
 fr:"Gagome désigne le vannage : la fronde est gaufrée d'un treillis de creux sur toute sa surface, ce qui la distingue de toutes les autres laminaires poussant sur les mêmes rochers. Elle se cantonne à une courte portion de mer autour de Hakodate et presque nulle part ailleurs, et on la récolte pour son mucilage, non malgré lui."},
 tip:{en:"Shred it fine and steep in cold water for ten minutes; the liquid thickens on its own and binds a dressing with no starch at all. Keep it out of a clear soup — it will never give a transparent dashi.",
@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M22 40q10-8 26-6t26 8q-8 10-26 10t-26-12z"/><path cl
 
 {id:"hijiki",cat:"seaweed",price:2,pk:"50–90 €/kg",name:{en:"Hijiki",fr:"Hijiki"},latin:"Sargassum fusiforme",
 origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
-flavor:["marine","briny","earthy"],
+flavor:["marine","briny","earthy"],texture:["brittle","chewy","dry"],
 story:{en:"It is not black on the rock: living hijiki is olive brown, and the colour arrives after hours of steaming or boiling before it is dried, which is also the step that makes the wiry strands chewable at all. That processing is why it is never sold fresh outside the harvest villages themselves.",
 fr:"Elle n'est pas noire sur le rocher : vivante, l'hijiki est d'un brun olive, et la couleur naît des heures de cuisson à la vapeur ou à l'eau qui précèdent le séchage — l'étape même qui rend ces filaments coriaces mangeables. C'est pour cela qu'on ne la trouve jamais fraîche hors des villages de récolte."},
 tip:{en:"Soak twenty to thirty minutes in plenty of cold water and throw that water away — it carries off the harshness and a good part of the inorganic arsenic the weed concentrates. It swells four to five times, so 20 g dry is a dish for four.",
@@ -41,7 +41,7 @@ svg:'<path class="s" d="M26 40q10 6 12 18t-2 20"/><path class="s" d="M36 34q6 10
 
 {id:"kombu",cat:"seaweed",price:2,pk:"50–100 €/kg",name:{en:"Kombu",fr:"Kombu"},latin:"Saccharina japonica",
 origin:{en:"Cold seas of Japan",fr:"Mers froides du Japon"},season:[],
-flavor:["umami","marine","briny","mild"],
+flavor:["umami","marine","briny","mild"],texture:["tough","smooth","dry"],
 story:{en:"In 1908, chemist Kikunae Ikeda asked why kombu broth tasted like nothing else, isolated glutamate from the seaweed, and coined a new word for what he found: umami. The finest leaves are aged for years in cellars like wine — a kelp with vintages.",
 fr:"En 1908, le chimiste Kikunae Ikeda se demanda pourquoi le bouillon de kombu n’avait le goût de rien d’autre, isola le glutamate de l’algue et forgea un mot nouveau pour sa découverte : umami. Les plus belles feuilles vieillissent des années en cave, comme le vin — une algue à millésimes."},
 tip:{en:"Never boil it — bitterness escapes past 60°C. Slide a leaf into bean-cooking water or a stock and remove it before the simmer; it seasons everything invisibly.",
@@ -51,7 +51,7 @@ svg:'<path class="f1 sf" d="M20 70C22 54 30 36 42 22C46 18 54 20 54 26C46 38 38 
 
 {id:"ma-kombu",cat:"seaweed",price:3,pk:"150–300 €/kg",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaido"},season:[],
-flavor:["umami","sweet","marine","delicate"],
+flavor:["umami","sweet","marine","delicate"],texture:["tough","smooth","dry"],
 story:{en:"Ma-kombu is cut off Hakodate in southern Hokkaido and travelled south for centuries aboard the kitamae-bune cargo ships, on what is still called the kombu road. Kyoto built its kitchen on it partly as a matter of water: the city's is soft, and soft water pulls glutamate out of the leaf where hard water leaves much of it behind.",
 fr:"Le ma-kombu se coupe au large de Hakodate, dans le sud de Hokkaido, et descendait vers le Kansai depuis des siècles à bord des navires kitamae-bune, sur ce que l’on appelle encore la route du kombu. Si Kyoto a bâti sa cuisine sur lui, c’est aussi une affaire d’eau : celle de la ville est douce, et une eau douce extrait le glutamate de la feuille là où une eau dure en laisse une grande part."},
 tip:{en:"Wipe it, never wash it — the white bloom is mannitol, its sweetness, not mould. Twenty grams per litre, an hour soaking cold, then an hour held around 60°C, and lift it out before the water trembles.",
@@ -61,7 +61,7 @@ svg:'<path class="f2 sf" d="M32 20q16 8 32 0 6 28-4 56-12 6-24 0-10-28-4-56z"/><
 
 {id:"mozuku",cat:"seaweed",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Mozuku",fr:"Mozuku"},latin:"Cladosiphon okamuranus",
 origin:{en:"Okinawa, Japan",fr:"Okinawa, Japon"},season:[4,5,6],
-flavor:["briny","marine","delicate","mild"],
+flavor:["briny","marine","delicate","mild"],texture:["soft","viscous","moist"],
 story:{en:"Nearly all the mozuku eaten in Japan is farmed off Okinawa, on nets seeded in autumn and cut between April and June. Up to a third of its dry weight is fucoidan, the sulphated sugar responsible for the slipperiness — one of the few sea vegetables bought for texture rather than flavour.",
 fr:"Presque tout le mozuku consommé au Japon est cultivé au large d’Okinawa, sur des filets ensemencés à l’automne et récoltés d’avril à juin. Jusqu’au tiers de sa matière sèche est du fucoïdane, le sucre sulfaté responsable du glissant : c’est l’une des rares algues achetées pour sa texture plutôt que pour son goût."},
 tip:{en:"It arrives packed in salt or brine: rinse in several changes of cold water for a minute or two, no longer, or the strands go limp. Dress it just before serving with rice vinegar cut with dashi, never straight vinegar, which shrivels it.",
@@ -71,7 +71,7 @@ svg:'<path class="f1 sf" d="M20 50h56q-4 22-28 22T20 50z"/><path class="s" d="M2
 
 {id:"nori",cat:"seaweed",price:2,pk:"90–180 €/kg",name:{en:"Nori",fr:"Nori"},latin:"Pyropia yezoensis",
 origin:{en:"Japan & Korea",fr:"Japon & Corée"},season:[],
-flavor:["marine","umami","toasty","salty"],
+flavor:["marine","umami","toasty","salty"],texture:["crisp","dry"],
 story:{en:"When Japan’s nori harvests mysteriously collapsed after the war, it was a British scientist, Kathleen Mary Drew-Baker, whose research on seaweed life cycles saved the crop — she never visited Japan, yet fishermen there still honour her each April as the “Mother of the Sea”.",
 fr:"Quand les récoltes de nori s’effondrèrent mystérieusement après la guerre, ce sont les travaux d’une scientifique britannique, Kathleen Mary Drew-Baker, sur le cycle des algues qui sauvèrent la culture — elle ne visita jamais le Japon, mais ses pêcheurs l’honorent encore chaque avril comme « Mère de la mer »."},
 tip:{en:"Wave a sheet over a flame until it turns emerald and crisps. Crumbled into butter or over eggs, it adds the sea without the fish.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M28 42C42 38 60 37 74 40C76 50 76 62 74 72C60 75 42 
 
 {id:"kombu-royal",cat:"seaweed",price:3,pk:"150–280 €/kg",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
 origin:{en:"Brittany",fr:"Bretagne"},season:[4,5,6,7],
-flavor:["umami","marine","sweet","mild"],
+flavor:["umami","marine","sweet","mild"],texture:["tough","smooth","dry"],
 story:{en:"Breton harvesters sell Saccharina latissima as kombu royal, though it is a different species from the Japanese kelp — sugar kelp, named for the mannitol that dries to a white bloom on the blade. France drew up a legal list of seaweeds permitted as vegetables at the start of the 1990s, and this was among the first on it.",
 fr:"Les récoltants bretons vendent Saccharina latissima sous le nom de kombu royal, mais c’est une autre espèce que le kombu japonais : la laminaire sucrée, ainsi nommée pour le mannitol qui sèche en poudre blanche sur la lame. La France a fixé au début des années 1990 une liste d’algues autorisées comme légumes, et celle-ci fut parmi les premières inscrites."},
 tip:{en:"A blade dropped in with dried beans or lentils softens the skins and shortens the cooking. Salted needs a rinse and thirty seconds' blanching; dried wants a long infusion below a simmer, never a boil, which turns it bitter and slick.",
@@ -91,7 +91,7 @@ svg:'<path class="f2 sf" d="M40 16q8 5 16 0 6 20 2 36t-2 20q-8 4-16 0 2-20-2-36t
 
 {id:"umibudo",cat:"seaweed",rare:true,price:3,pk:"80–160 €/kg",name:{en:"Sea grapes (umibudo)",fr:"Raisin de mer"},latin:"Caulerpa lentillifera",
 origin:{en:"Okinawa",fr:"Okinawa"},season:[],
-flavor:["briny","marine","fresh","delicate"],
+flavor:["briny","marine","fresh","delicate"],texture:["tender","crunchy","juicy"],
 story:{en:"A Caulerpa has no walls dividing it: a whole frond is one enormous cell with many nuclei, which is why a cut anywhere empties it everywhere. Okinawa has farmed sea grapes in shallow tanks since the 1980s and sells them at room temperature, deliberately.",
 fr:"Une Caulerpa n’a pas de cloisons : une fronde entière est une seule cellule géante à noyaux multiples, ce qui explique qu’une coupure la vide de partout. Okinawa cultive le raisin de mer en bassins peu profonds depuis les années 1980 et le vend à température ambiante, délibérément."},
 tip:{en:"Never refrigerate them — below about 15°C the beads shrivel and never plump again. Rinse in cool water, drain, and dress at the table, because salt or vinegar collapses them within minutes.",
@@ -101,7 +101,7 @@ svg:'<path class="s" d="M24 72q16 4 28-6t20-30"/><path class="s" d="M32 68l4-10M
 
 {id:"tororo-kombu",cat:"seaweed",price:2,pk:"70–130 €/kg",name:{en:"Tororo kombu",fr:"Tororo kombu"},latin:"Saccharina japonica (shaved)",
 origin:{en:"Fukui & Osaka",fr:"Fukui & Osaka"},season:[],
-flavor:["umami","marine","tangy","delicate"],
+flavor:["umami","marine","tangy","delicate"],texture:["soft","airy","dry"],
 story:{en:"Blocks of kombu steep in vinegar until the surface softens, are pressed together and then shaved: taken by hand along the flat they come away as translucent sheets called oboro, and taken against the pressed edge of a stack they come away as the wool-fine threads called tororo. The vinegar is why the threads taste faintly sour and slip apart the instant they touch hot liquid.",
 fr:"Les blocs de kombu trempent dans le vinaigre jusqu’à ce que la surface s’assouplisse, sont pressés ensemble, puis rabotés : pris à la main dans le sens de la lame, ils viennent en feuilles translucides que l’on appelle oboro ; pris contre la tranche d’une pile pressée, ils viennent en fils de laine que l’on appelle tororo. Le vinaigre explique leur acidité discrète et leur façon de se défaire dès qu’ils touchent un liquide chaud."},
 tip:{en:"It is a finish, not a stock ingredient — add it in the bowl, at the table, or it melts to mucilage. A pinch with an umeboshi, a little soy and hot water is a soup on its own.",
@@ -111,7 +111,7 @@ svg:'<path class="s" d="M22 46q12-10 26-8t26 6M24 56q12-8 24-6t26 4M26 66q10-9 2
 
 {id:"tosaka-nori",cat:"seaweed",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Tosaka-nori",fr:"Tosaka nori"},latin:"Meristotheca papulosa",
 origin:{en:"Kyushu & Shikoku coasts",fr:"Côtes de Kyushu et Shikoku"},season:[],
-flavor:["marine","briny","fresh","delicate"],
+flavor:["marine","briny","fresh","delicate"],texture:["firm","crunchy","moist"],
 story:{en:"Tosaka means cockscomb, which is the shape exactly: flat branching combs growing on rock in warm Japanese water. The red is the alga's own colour; the green and the white sold beside it are the same seaweed with the red pigment stripped out, not different species.",
 fr:"Tosaka veut dire crête de coq, et c’est exactement la forme : des peignes plats et ramifiés qui poussent sur les roches des eaux chaudes du Japon. Le rouge est sa couleur propre ; le vert et le blanc vendus à côté sont la même algue privée de son pigment rouge, non des espèces différentes."},
 tip:{en:"It arrives packed in salt. Rinse, then soak ten minutes in cold water with one change — long enough to lose the salt, short enough to keep the crunch, which never comes back once it has gone limp.",
@@ -121,7 +121,7 @@ svg:'<path class="f2 sf" d="M46 78q-2-13-9-19-6-6-2-12 4-5 9 0 0-9 4-13 5 4 5 13
 
 {id:"wakame",cat:"seaweed",price:2,pk:"45–90 €/kg",name:{en:"Wakame",fr:"Wakamé"},latin:"Undaria pinnatifida",
 origin:{en:"Cold coastal waters of Japan and Korea",fr:"Eaux froides du Japon et de Corée"},season:[2,3,4,5],
-flavor:["marine","briny","delicate"],
+flavor:["marine","briny","delicate"],texture:["brittle","dry"],
 story:{en:"Wakame travels the world in ballast water and on hulls; it sits on the register of the hundred worst invasive species and has taken hold from the Venice lagoon to Tasmania. In Brittany, where it arrived uninvited, it is now grown deliberately on ropes.",
 fr:"Le wakamé voyage dans les eaux de ballast et sur les coques ; il figure au registre des cent espèces les plus envahissantes et s’est installé de la lagune de Venise à la Tasmanie. En Bretagne, où il est arrivé sans invitation, on le cultive aujourd’hui volontairement sur cordes."},
 tip:{en:"Dried, it swells six to ten times, so a tablespoon feeds two bowls of soup, and two minutes in cold water is enough — longer leaves it slack. Add it to miso soup off the heat: boiling pulls out the slime and turns it grey.",
@@ -131,7 +131,7 @@ svg:'<path class="s" d="M48 18q-2 32 0 60"/><path class="f2 sf" d="M47 26q-14 2-
 
 {id:"aonori",cat:"seaweed",price:3,pk:"150–300 €/kg",name:{en:"Aonori",fr:"Aonori"},latin:"Monostroma spp. / Ulva prolifera",
 origin:{en:"River mouths of Shikoku, Japan",fr:"Estuaires de Shikoku, Japon"},season:[],
-flavor:["grassy","marine","briny","fresh"],
+flavor:["grassy","marine","briny","fresh"],texture:["powdery","airy","dry"],
 story:{en:"It is a green laver of brackish water, and the most sought-after grows where the Shimanto river meets the sea in Kochi — the meeting of fresh and salt is what makes the smell. That smell is largely dimethyl sulphide, the same compound behind the scent of a shoreline, and it is volatile enough that the powder has to go on off the heat.",
 fr:"C’est une algue verte des eaux saumâtres, et la plus recherchée pousse là où la Shimanto rejoint la mer, dans la préfecture de Kōchi : c’est la rencontre du doux et du salé qui fait l’odeur. Cette odeur tient surtout au sulfure de diméthyle, le composé qui donne au rivage son parfum, et elle est assez volatile pour qu’on ne saupoudre qu’hors du feu."},
 tip:{en:"Sprinkle it at the last second over something hot enough to lift it — okonomiyaki, yakisoba, a bowl of rice. Cooked into a dish it becomes dull green dust with no flavour at all, and an opened tin fades within a few weeks unless kept closed and cold.",
@@ -141,7 +141,7 @@ svg:'<rect class="f2 sf" x="34" y="24" width="26" height="30" rx="3"/><rect clas
 
 {id:"arame",cat:"seaweed",price:3,pk:"60–120 €/kg",name:{en:"Arame",fr:"Arame"},latin:"Eisenia bicyclis",
 origin:{en:"Ise-Shima coast, Japan",fr:"Côte d’Ise-Shima, Japon"},season:[],
-flavor:["mild","marine","sweet","umami"],
+flavor:["mild","marine","sweet","umami"],texture:["tough","chewy","dry"],
 story:{en:"Nearly all of it is still cut by hand from the rocks off Ise-Shima, then sun-dried, steamed for about five hours to soften it and fix the colour, shredded into threads and dried a second time. That double handling is the whole point: it arrives already cooked, which is why ten minutes of soaking is enough where hijiki wants boiling.",
 fr:"L’essentiel se coupe encore à la main sur les roches d’Ise-Shima, puis se sèche au soleil, se cuit à la vapeur cinq heures environ pour l’attendrir et fixer sa couleur, se taille en fils et sèche une seconde fois. Ce double traitement fait tout : elle arrive déjà cuite, d’où dix minutes de trempage là où la hijiki demande une ébullition."},
 tip:{en:"It swells six to eight times, so 15 g dry is a generous side for four. Soak ten minutes in cold water, throw the water away, then sauté with sesame oil, soy and a little mirin; left soaking longer it goes to slippery threads.",
@@ -151,7 +151,7 @@ svg:'<path class="s" d="M22 42q12-10 24 0t26 0"/><path class="s" d="M22 52q12-10
 
 {id:"irish-moss",cat:"seaweed",price:3,pk:"50–100 €/kg",name:{en:"Irish moss",fr:"Mousse d'Irlande (pioca)"},latin:"Chondrus crispus",
 origin:{en:"Atlantic rocky shores",fr:"Estrans rocheux de l'Atlantique"},season:[5,6,7,8,9],
-flavor:["marine","mild","briny"],
+flavor:["marine","mild","briny"],texture:["tough","brittle","dry"],
 story:{en:"Carraigín is Irish for little rock, and the weed was cut off the Connemara shore and boiled in milk as a household set long before anyone extracted anything from it. The industrial carrageenan trade began when the war cut Europe off from Japanese agar and the gels suddenly had to come from somewhere nearer home.",
 fr:"Carraigín signifie « petit rocher » en irlandais, et l'algue était coupée sur les rivages du Connemara et bouillie dans le lait comme gelée domestique bien avant qu'on en extraie quoi que ce soit. Le commerce industriel du carraghénane est né quand la guerre a coupé l'Europe de l'agar japonais et qu'il a fallu trouver un gélifiant plus près de chez soi."},
 tip:{en:"Rinse it hard for the shell grit, soak ten minutes, then simmer about 15 g dried in a litre of milk for twenty minutes and strain. It sets soft on cooling and will not survive being reboiled, so make the set once and pour it straight away.",
@@ -161,7 +161,7 @@ svg:'<path class="f2 sf" d="M46 80h4V60q10-6 12-18-6 0-8 6 2-8-2-14-4 6-2 14-4-8
 
 {id:"mekabu",cat:"seaweed",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Mekabu",fr:"Mékabu"},latin:"Undaria pinnatifida (sporophyll)",
 origin:{en:"Sanriku coast, Japan",fr:"Côte de Sanriku, Japon"},season:[2,3,4],
-flavor:["marine","umami","briny","mild"],
+flavor:["marine","umami","briny","mild"],texture:["firm","viscous","moist"],
 story:{en:"Mekabu is the frilled sporophyll at the foot of a wakame plant, the part that makes and releases the spores; it is cut away at harvest and sold on its own. Chopped, it turns viscous — fucoidan and alginate escaping from cut cells — and the finer the knife work, the thicker the mass gets.",
 fr:"Le mékabu est le sporophylle frisé qui pousse au pied du wakamé, la partie qui fabrique et libère les spores ; on le détache à la récolte et on le vend à part. Haché, il devient visqueux : la fucoïdane et les alginates s’échappent des cellules coupées, et plus le couteau est fin, plus la masse épaissit."},
 tip:{en:"Ten seconds in boiling water and it flips from brown to a violent green; drop it straight into iced water, then chop. Dress with rice vinegar and soy at the last moment — heat and waiting both thin the texture.",
@@ -171,7 +171,7 @@ svg:'<path class="s" d="M48 80V28"/><path class="f2 sf" d="M48 28q10 0 13 6t-6 8
 
 {id:"ogonori",cat:"seaweed",rare:true,price:2,pk:"30–60 €/kg",name:{en:"Ogonori",fr:"Ogonori"},latin:"Gracilaria spp.",
 origin:{en:"Warm coasts, Japan",fr:"Côtes chaudes du Japon"},season:[],
-flavor:["marine","briny","fresh","mild"],
+flavor:["marine","briny","fresh","mild"],texture:["firm","crunchy","moist"],
 story:{en:"Gracilaria is one of the world's main sources of agar, yet in Japan it is mostly eaten whole: a few seconds in hot water flip it from wine-red to bright green, and it goes under sashimi as a crisp bed. It is always sold treated, never gathered and eaten fresh — poisonings have been recorded from raw ogonori.",
 fr:"Le Gracilaria est l’une des grandes sources mondiales d’agar-agar ; au Japon, on le mange pourtant entier : quelques secondes à l’eau chaude le font virer du rouge vin au vert vif, et il tient lieu de lit croquant sous les sashimis. Il se vend toujours traité, jamais ramassé et mangé frais — des intoxications ont été rapportées avec de l’ogonori cru."},
 tip:{en:"Salt-packed needs ten minutes of rinsing and a spell in iced water to bring the snap back. Dress it at the table: vinegar softens it within minutes, and the glassy crunch is the whole point.",
@@ -181,7 +181,7 @@ svg:'<path class="s" d="M48 78V40q0-10-12-16M48 62q3-10 13-14M48 52q-3-10-12-12M
 
 {id:"sea-lettuce",cat:"seaweed",price:2,pk:"15–30 €/kg",name:{en:"Sea lettuce",fr:"Laitue de mer"},latin:"Ulva lactuca",
 origin:{en:"Atlantic & Mediterranean coasts",fr:"Côtes atlantiques et méditerranéennes"},season:[4,5,6,7,8,9],
-flavor:["marine","tangy","fresh","grassy"],
+flavor:["marine","tangy","fresh","grassy"],texture:["tender","smooth","moist"],
 story:{en:"The blade is two cells thick and nothing more, which is why it dries to something like tissue paper and crisps in seconds of hot oil. It grows wherever the water is rich in nitrogen, spectacularly so in certain Breton bays, where the summer green tides are this same alga.",
 fr:"La lame fait deux cellules d’épaisseur, pas davantage — d’où son séchage en papier de soie et sa façon de croustiller en quelques secondes d’huile chaude. Elle pousse partout où l’eau est riche en azote, spectaculairement dans certaines baies bretonnes, où les marées vertes de l’été sont cette même algue."},
 tip:{en:"Rinse it through several changes of water; sand hides in the folds. Raw and shredded it wants a sharp dressing against its sorrel edge, and to fry it you must dry it completely — a wet sheet spits violently at 180°C.",
@@ -191,7 +191,7 @@ svg:'<path class="f1 sf" d="M26 46q6-16 20-14t16 8q10-2 12 8t-10 16q-6 14-20 10T
 
 {id:"sea-spaghetti",cat:"seaweed",price:2,pk:"15–25 €/kg",name:{en:"Sea spaghetti",fr:"Haricot de mer"},latin:"Himanthalia elongata",
 origin:{en:"Brittany & Ireland",fr:"Bretagne & Irlande"},season:[4,5,6,7,8],
-flavor:["marine","briny","mild"],
+flavor:["marine","briny","mild"],texture:["firm","chewy","moist"],
 story:{en:"The straps are not the plant but its fruiting bodies: Himanthalia spends a year or two as a small rubbery button on the rock before throwing out forked thongs that reach two metres. Harvesters cut the straps and leave the button to go again.",
 fr:"Les lanières ne sont pas la plante mais ses organes reproducteurs : l’Himanthalia passe un an ou deux en petit bouton caoutchouteux sur la roche avant de lancer des rubans fourchus qui atteignent deux mètres. Les récoltants coupent les lanières et laissent le bouton repartir."},
 tip:{en:"Cook it like a green bean, not like a dried seaweed: fifteen minutes' soaking and twenty at a simmer, until it snaps instead of squeaking on the tooth. Undercooked it stays rubbery and no dressing hides it.",

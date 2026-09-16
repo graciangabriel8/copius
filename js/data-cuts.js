@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"abura-kasu",cat:"cuts",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Abura-kasu",fr:"Abura-kasu"},latin:"Bos taurus (intestinum, rendered)",
 origin:{en:"Southern Osaka",fr:"Sud d’Osaka"},season:[],
-flavor:["rich","meaty","umami","toasty"],
+flavor:["rich","meaty","umami","toasty"],texture:["crisp","chewy","dry"],
 story:{en:"Beef intestine cooked for hours in its own rendered fat until the water is gone, leaving a crisp shell around a gelatinous middle — a preserving method, not a frying one. It belongs to southern Osaka, where the butchery trades were concentrated, and it stayed local until kasu udon carried it into the city’s noodle shops over the last thirty years.",
 fr:"Des boyaux de bœuf cuits des heures dans leur propre graisse jusqu’à ce que l’eau soit partie : il reste une coque croustillante autour d’un cœur gélatineux — une méthode de conservation, pas une friture. Le produit est du sud d’Osaka, où se concentraient les métiers de la boucherie, et il est resté local jusqu’à ce que le kasu udon le porte dans les échoppes de nouilles de la ville, ces trente dernières années."},
 tip:{en:"Two spoonfuls are enough for a bowl: dropped in at the last second it stays crisp, given two minutes it surrenders its fat to the broth and goes soft. Decide which you want before you add it, because you only get one go.",
@@ -11,7 +11,7 @@ svg:'<path class="f2 sf" d="M22 40c9-7 24-8 32-1 7 6 6 16-2 21-9 6-23 6-30 0-6-5
 
 {id:"aiguillette-baronne",cat:"cuts",price:3,pk:"28–45 €/kg",name:{en:"Aiguillette baronne",fr:"Aiguillette baronne"},latin:"Bœuf — cuisse",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["meaty","delicate","mild","umami"],
+flavor:["meaty","delicate","mild","umami"],texture:["tender","fibrous","moist"],
 story:{en:"A long thin muscle running along the rump, and another of the butcher's private cuts — there is one per side and it is tender enough to roast whole. Most of it never reaches a display case at all.",
 fr:"Un muscle long et fin courant le long du rumsteck, et encore un morceau du boucher — il y en a un par côté et il est assez tendre pour se rôtir entier. L’essentiel n’atteint jamais l’étal."},
 tip:{en:"Ask for it by name and expect a shrug. Order it a week ahead if your butcher takes whole carcasses.",
@@ -21,7 +21,7 @@ svg:'<path class="f1 sf" d="M20 62c8-10 24-20 40-26 8-3 16-4 18 0 2 4-4 8-12 12-
 
 {id:"amourettes",cat:"cuts",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Amourettes (spinal marrow)",fr:"Amourettes"},latin:"Bos taurus / Ovis aries (medulla spinalis)",
 origin:{en:"The spinal canal of veal and lamb",fr:"Le canal rachidien du veau et de l’agneau"},season:[],
-flavor:["creamy","delicate","mild"],
+flavor:["creamy","delicate","mild"],texture:["soft","creamy"],
 story:{en:"Not bone marrow but spinal cord — a long soft white rope, poached and cut into short batons for fritots and for the financière garnish of the classical repertoire. BSE closed the beef trade in it: bovine spinal cord over twelve months is specified risk material, so what remains on the counter is veal and lamb.",
 fr:"Pas de la moelle osseuse mais la moelle épinière — une longue corde blanche et molle, pochée puis taillée en bâtonnets pour les fritots et la garniture financière du répertoire classique. L’ESB a fermé le commerce du bœuf : la moelle épinière bovine de plus de douze mois est un matériel à risque spécifié, et il ne reste sur l’étal que le veau et l’agneau."},
 tip:{en:"Soak an hour in cold water, then slip the fine outer membrane off with your fingers before poaching seven or eight minutes in vinegared water. Any longer and they go to paste — they hold their shape only just.",
@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M26 40q12-8 24 0t22 0v12q-10 8-22 0t-24 0z"/><path c
 
 {id:"beef-cheek",cat:"cuts",price:2,pk:"12–18 €/kg",name:{en:"Beef cheek",fr:"Joue de bœuf"},latin:"Bos taurus (masseter)",
 origin:{en:"The chewing muscle of the jaw",fr:"Le muscle masticateur de la mâchoire"},season:[],
-flavor:["meaty","rich","umami"],
+flavor:["meaty","rich","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"A muscle that worked every waking hour of the animal’s life, woven through with collagen as payment. Braised three hours it performs the great conversion: sinew into gloss, toughness into spoon-soft daube — the cut that taught cooks that time is an ingredient.",
 fr:"Un muscle qui a travaillé chaque heure éveillée de la vie de l’animal, tissé de collagène en salaire. Braisée trois heures, elle accomplit la grande conversion : le nerf en brillance, la dureté en daube fondante à la cuillère — le morceau qui apprit aux cuisiniers que le temps est un ingrédient."},
 tip:{en:"Don’t trim the silverskin obsessively — that gelatine is the future body of your sauce. It is better the next day, and better still the day after.",
@@ -41,7 +41,7 @@ svg:'<path class="f1 sf" d="M17 61q-2-10 5-17 6-8 16-8 9-5 19-2 13 3 17 11 5 10-
 
 {id:"jarret-de-boeuf",cat:"cuts",price:1,pk:"9–14 €/kg",name:{en:"Beef shin",fr:"Jarret de bœuf"},latin:"Bœuf — jarret",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","meaty","umami","earthy"],
+flavor:["rich","meaty","umami","earthy"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The hardest-working muscle on the animal, and therefore the most collagen-rich — which is exactly why it makes the best braise and the best stock. Cut across the bone it becomes osso buco, though Milan uses veal.",
 fr:"Le muscle le plus sollicité de l’animal, et donc le plus riche en collagène — ce qui en fait précisément le meilleur braisé et le meilleur bouillon. Tranché en travers de l’os il devient l’osso buco, que Milan fait toutefois au veau."},
 tip:{en:"Three hours minimum, and it is better the next day. Rushing it produces the toughest meat in the butcher's shop.",
@@ -51,7 +51,7 @@ svg:'<circle class="f1 sf" cx="48" cy="56" r="20"/><circle class="f3 sf" cx="48"
 
 {id:"tenderloin",cat:"cuts",price:3,pk:"38–70 €/kg",name:{en:"Beef tenderloin",fr:"Filet de bœuf"},latin:"Bos taurus (psoas major)",
 origin:{en:"Along the spine — the muscle that never works",fr:"Le long de l’échine — le muscle qui ne travaille jamais"},season:[],
-flavor:["delicate","meaty","mild"],
+flavor:["delicate","meaty","mild"],texture:["tender","smooth","moist"],
 story:{en:"The laziest muscle on the animal, and therefore the tenderest — and the mildest, which is why it attracts escorts: its centre cut was named Chateaubriand by the writer’s own chef, and Rossini lent his name to the version crowned with foie gras and truffle. Tenderness invites orchestras.",
 fr:"Le muscle le plus paresseux de l’animal, donc le plus tendre — et le plus discret en goût, ce qui lui vaut des escortes : son cœur fut baptisé chateaubriand par le propre cuisinier de l’écrivain, et Rossini prêta son nom à la version couronnée de foie gras et de truffe. La tendreté attire les orchestres."},
 tip:{en:"It has no fat to protect it: sear hard, finish gently, rest long. Because its voice is quiet, give it a talkative sauce — pepper, truffle, or brown butter.",
@@ -61,7 +61,7 @@ svg:'<path class="f1 sf" d="M20 58q8-14 21-12 14 2 23-6 10-8 12-8-2 8-11 15-10 8
 
 {id:"tendon-de-boeuf",cat:"cuts",price:1,pk:"5–10 €/kg",name:{en:"Beef tendon",fr:"Tendon de bœuf (nerf)"},latin:"Bos taurus (tendo)",
 origin:{en:"Vietnam, Japan, southern China",fr:"Vietnam, Japon, sud de la Chine"},season:[],
-flavor:["mild","rich","umami"],
+flavor:["mild","rich","umami"],texture:["tough","gelatinous"],
 story:{en:"Tendon is almost pure type I collagen with no muscle fibre in it at all, which is why it is inedible until hours of moist heat turn it translucent and slippery. French butchery calls it nerf and trims it into the bin; Vietnamese phở, Japanese gyūsuji nikomi and Cantonese braises buy it trimmed and by the kilo.",
 fr:"Le tendon est presque uniquement du collagène de type I, sans la moindre fibre musculaire : d’où son caractère immangeable tant que plusieurs heures de chaleur humide ne l’ont pas rendu translucide et glissant. La boucherie française l’appelle nerf et le pare à la poubelle ; le phở vietnamien, le gyūsuji nikomi japonais et les braisés cantonais l’achètent paré et au kilo."},
 tip:{en:"Four hours at a bare simmer, or forty-five minutes under pressure — there is no shortcut, and halfway is rubber. It brings no flavour of its own, so braise it in something loud: star anise and cassia, or miso and sake.",
@@ -71,7 +71,7 @@ svg:'<path class="f1 sf" d="M24 50q12-14 24-14t24 14q-12 14-24 14t-24-14z"/><pat
 
 {id:"feuillet",cat:"cuts",rare:true,price:1,pk:"6–11 €/kg",name:{en:"Bible tripe",fr:"Feuillet"},latin:"Bos taurus (omasum)",
 origin:{en:"Chongqing and Korea",fr:"Chongqing et Corée"},season:[],
-flavor:["mild","earthy","meaty"],
+flavor:["mild","earthy","meaty"],texture:["firm","chewy"],
 story:{en:"The third stomach is a stack of hundreds of thin leaves, which is why anatomists called it the psalterium — the psalter, a book. It is the one tripe cooked for crunch instead of melt: Chongqing hotpot even has a rule for its maodu, qi shang ba xia, seven dips up and eight down, which comes to about eight seconds.",
 fr:"Le troisième estomac est un empilement de centaines de feuilles fines, d’où le nom que lui donnaient les anatomistes, psalterium — le psautier, un livre. C’est la seule tripe que l’on cuise pour le croquant et non pour le fondant : le hot-pot de Chongqing a même sa règle pour le maodu, qi shang ba xia, sept plongées en haut et huit en bas, soit environ huit secondes."},
 tip:{en:"Eight to ten seconds in boiling broth, then out. Past a minute it turns tough and needs two hours to come back — there is no useful middle ground.",
@@ -81,7 +81,7 @@ svg:'<path class="f1 sf" d="M48 70q-18-8-22-32 18-2 22 10 4-12 22-10-4 24-22 32z
 
 {id:"bone-marrow",cat:"cuts",price:1,pk:"5–10 €/kg",name:{en:"Bone marrow",fr:"Os à moelle"},latin:"Bos taurus (medulla ossium)",
 origin:{en:"The heart of the femur",fr:"Le cœur du fémur"},season:[],
-flavor:["rich","buttery","meaty","umami"],
+flavor:["rich","buttery","meaty","umami"],texture:["soft","creamy"],
 story:{en:"The pot-au-feu’s hidden dividend, spread on toast with coarse salt by whoever claims the bone. In 1990s London, Fergus Henderson made roast marrow with parsley salad the manifesto dish of nose-to-tail cooking — the humblest part of the animal, restated as a first course.",
 fr:"Le dividende caché du pot-au-feu, tartiné sur le pain grillé au gros sel par qui réclame l’os. Dans le Londres des années 1990, Fergus Henderson fit de la moelle rôtie à la salade de persil le plat-manifeste de la cuisine nose-to-tail — la part la plus humble de l’animal, réénoncée en entrée."},
 tip:{en:"Soak the bones in salted water a day to draw the blood, then roast cut-side up twenty minutes — set but not melted away. Sharpness beside it: parsley, capers, pickled shallot.",
@@ -91,7 +91,7 @@ svg:'<path class="f1 sf" d="M38 34h20v36H38z" rx="6"/><path class="f1 sf" d="M34
 
 {id:"cervelle-de-veau",cat:"cuts",price:2,pk:"14–25 €/kg",name:{en:"Calf's brain",fr:"Cervelle de veau"},latin:"Bos taurus (cerebrum)",
 origin:{en:"The calf's head, under twelve months",fr:"La tête de veau, moins de douze mois"},season:[],
-flavor:["creamy","delicate","milky","rich"],
+flavor:["creamy","delicate","milky","rich"],texture:["soft","creamy"],
 story:{en:"BSE rules redrew this cut: the brain of any bovine over twelve months is specified risk material in the EU, so every calf's brain legally sold comes from an animal younger than that. What the regulation left untouched is the oldest way of eating it — soaked pale, membranes lifted, poached, then browned in noisette butter until the outside sets and the middle stays custard.",
 fr:"Les règles ESB ont redessiné ce morceau : la cervelle de tout bovin de plus de douze mois est un matériel à risque spécifié dans l’Union, si bien que toute cervelle de veau vendue vient d’un animal plus jeune. Ce que le règlement n’a pas touché, c’est la plus ancienne manière de la manger — dégorgée jusqu’au blanc, démembranée, pochée, puis colorée au beurre noisette jusqu’à ce que l’extérieur prenne et que le cœur reste crémeux."},
 tip:{en:"Soak it two hours in several changes of cold water with a spoon of vinegar until it goes white, then lift the membrane away under the tap before it firms. Poach it in a court-bouillon that never bubbles — around 80 °C — because a rolling boil breaks it into curds.",
@@ -101,7 +101,7 @@ svg:'<path class="f1 sf" d="M47 20c-13-1-24 7-28 19-4 13-1 27 9 35 5 4 12 6 19 5
 
 {id:"pied-de-veau",cat:"cuts",price:1,pk:"5–9 €/kg",name:{en:"Calf's foot",fr:"Pied de veau"},latin:"Bos taurus (pes)",
 origin:{en:"The gelatine of the daube pot",fr:"La gélatine de la daube"},season:[],
-flavor:["mild","delicate","meaty"],
+flavor:["mild","delicate","meaty"],texture:["hard","gelatinous"],
 story:{en:"Before commercial gelatine this was gelatine: nineteenth-century sickroom cookery ran on calf's-foot jelly, boiled from a split foot and flavoured with lemon and sherry for invalids. In a kitchen the job has not changed — one foot in a daube is what makes the sauce cling to the spoon and the terrine hold its edge.",
 fr:"Avant la gélatine industrielle, c’était la gélatine : la cuisine de malades du XIXe siècle vivait de la calf’s-foot jelly, bouillie d’un pied fendu et parfumée au citron et au xérès. En cuisine, la fonction n’a pas changé : un pied dans une daube, c’est la sauce qui nappe la cuillère et la terrine qui tient sa tranche."},
 tip:{en:"Ask for it split lengthwise, blanch it ten minutes and throw that first water away or the daube tastes of the yard. One foot sets roughly two litres of stock to a firm jelly — use half of it for a sauce you want glossy rather than solid.",
@@ -111,7 +111,7 @@ svg:'<path class="f2 sf" d="M38 20h20l-2 32q11 9 7 19-4 9-15 9t-15-9q-4-10 7-19z
 
 {id:"tete-de-veau",cat:"cuts",price:2,pk:"12–20 €/kg",name:{en:"Calf's head",fr:"Tête de veau"},latin:"Bos taurus (caput)",
 origin:{en:"France, sold boned and rolled",fr:"France, vendue désossée et roulée"},season:[],
-flavor:["rich","mild","meaty"],
+flavor:["rich","mild","meaty"],texture:["soft","gelatinous"],
 story:{en:"From the 1690s a London society called the Calves' Head Club met each 30 January, the anniversary of Charles I's execution, and served calves' heads to mock the dead king. The modern butcher spares you the symbolism: the head arrives boned, rolled and tied into a cylinder that puts gelatinous skin, cheek, palate and tongue-root into a single slice.",
 fr:"Dès les années 1690, une société londonienne, le Calves’ Head Club, se réunissait chaque 30 janvier, jour anniversaire de l’exécution de Charles Ier, et servait des têtes de veau pour railler le roi mort. Le boucher d’aujourd’hui vous épargne le symbole : la tête arrive désossée, roulée et ficelée en cylindre qui réunit couenne gélatineuse, joue, palais et racine de langue dans une même tranche."},
 tip:{en:"Poach it in a blanc — water whisked with flour and lemon juice — or the skin greys and turns bitter; two and a half hours at a bare shiver. Serve it hot, because sauce gribiche over cold tête de veau is a different and much sadder dish.",
@@ -121,7 +121,7 @@ svg:'<path class="f2 sf" d="M30 34h34v32H30z"/><ellipse class="f1 sf" cx="30" cy
 
 {id:"foie-de-veau",cat:"cuts",price:2,pk:"18–30 €/kg",name:{en:"Calf's liver",fr:"Foie de veau"},latin:"Bos taurus (hepar)",
 origin:{en:"Milk-fed veal, France and Veneto",fr:"Veau de lait, France et Vénétie"},season:[],
-flavor:["mild","rich","meaty"],
+flavor:["mild","rich","meaty"],texture:["tender","smooth","moist"],
 story:{en:"Venice built a whole dish on it — fegato alla veneziana, ribbons of liver under a weight of slow onions — and the sweetness of those onions is there to answer the iron. A milk-fed calf gives the palest liver of all: the darker the slice, the older the animal and the stronger it reads.",
 fr:"Venise en a tiré un plat entier — le fegato alla veneziana, en lanières sous une masse d'oignons fondus — et le sucre des oignons est là pour répondre au fer. Le veau de lait donne le foie le plus pâle qui soit : plus la tranche est sombre, plus la bête était âgée et plus le goût sera marqué."},
 tip:{en:"Ask for it cut a centimetre and a half thick and peel the fine outer skin, or the slice buckles in the pan. Ninety seconds a side in a very hot pan, and salt only afterwards — salt on raw liver draws water and it steams instead of colouring.",
@@ -131,7 +131,7 @@ svg:'<path class="f2 sf" d="M18 46q6-16 26-16t34 12q6 8-2 16-14 14-34 12T18 46z"
 
 {id:"fraise-de-veau",cat:"cuts",rare:true,price:1,pk:"8–14 €/kg",name:{en:"Calf's mesentery",fr:"Fraise de veau"},latin:"Bos taurus (mesenterium)",
 origin:{en:"Lyon",fr:"Lyon"},season:[],
-flavor:["rich","mild","meaty"],
+flavor:["rich","mild","meaty"],texture:["soft","gelatinous"],
 story:{en:"The fraise is neither stomach nor gut but the frilled mesentery that carries them, named after the pleated ruff of the sixteenth century it resembles. It is the difference between the two great andouillettes: Troyes works lengthwise strips of pork intestine, Lyon works veal fraise.",
 fr:"La fraise n’est ni l’estomac ni l’intestin mais le mésentère plissé qui les soutient, nommé d’après la fraise, ce col tuyauté du XVIe siècle qu’elle imite. C’est elle qui sépare les deux grandes andouillettes : Troyes travaille des lanières de chaudin de porc, Lyon la fraise de veau."},
 tip:{en:"It is sold already cooked, so treat it as a finished ingredient: rinse, cut it into ribbons and dress it warm with mustard vinaigrette and a great deal of shallot. Do not boil it again — a second long cook takes it from tender to slimy.",
@@ -141,7 +141,7 @@ svg:'<path class="f1 sf" d="M24 34q12-6 24 0t24 0v22q-4 8-10 4t-8 6-10-4-8 6-10-
 
 {id:"nankotsu",cat:"cuts",price:1,pk:"4–9 €/kg",name:{en:"Chicken cartilage (nankotsu)",fr:"Cartilage de volaille (nankotsu)"},latin:"Gallus gallus (cartilago)",
 origin:{en:"Japan, izakaya fryers",fr:"Japon, friteuses d’izakaya"},season:[],
-flavor:["mild","meaty","salty"],
+flavor:["mild","meaty","salty"],texture:["firm","crunchy"],
 story:{en:"The breastbone cartilage is called yagen nankotsu after the yagen, the boat-shaped rocking mortar apothecaries once used to grind herbs — the resemblance is exact. Knee cartilage is a different cut, rounder and softer; a bird gives one keel and two knees, which is why it is sold by the bag.",
 fr:"Le cartilage du bréchet s’appelle yagen nankotsu, d’après le yagen, ce mortier en forme de barque que les apothicaires faisaient rouler pour broyer les simples : la ressemblance est exacte. Le cartilage du genou est un autre morceau, plus rond et plus tendre ; une volaille ne donne qu’un bréchet et deux genoux, d’où la vente au sachet."},
 tip:{en:"Pat it bone-dry and fry at 180 °C for three minutes — any surface water steams the piece soft instead of shattering it. Salt, pepper and lemon; there is nothing here to sauce, only a texture.",
@@ -151,7 +151,7 @@ svg:'<path class="f1 sf" d="M48 20l12 22-12 10-12-10z"/><path class="s" d="M42 3
 
 {id:"pied-de-volaille",cat:"cuts",price:1,pk:"3–7 €/kg",name:{en:"Chicken feet",fr:"Pieds de volaille"},latin:"Gallus gallus (pes)",
 origin:{en:"The stockpot, and the dim sum trolley",fr:"Le fond de marmite, et le chariot de dim sum"},season:[],
-flavor:["mild","rich","umami"],
+flavor:["mild","rich","umami"],texture:["firm","gelatinous"],
 story:{en:"Chicken feet are the cheapest concentrated gelatine any kitchen can buy, and the United States ships them to Asia by the hundred thousand tonnes because almost nobody eats them at home. In dim sum they stop being an ingredient and become a dish: deep-fried until the skin blisters, then steamed in fermented black bean sauce that the puffed skin drinks up.",
 fr:"Les pieds de volaille sont la gélatine concentrée la moins chère qu’une cuisine puisse acheter, et les États-Unis en expédient des centaines de milliers de tonnes vers l’Asie faute d’en manger chez eux. En dim sum, ce n’est plus un ingrédient mais un plat : frits jusqu’à ce que la peau cloque, puis cuits vapeur dans une sauce de haricots noirs fermentés que la peau gonflée absorbe."},
 tip:{en:"For stock, five hundred grams of feet to three litres of water gives a broth that sets solid in the fridge — clip the nails, blanch five minutes and skim hard. For eating, the order matters: steam them first and the skin will never puff.",
@@ -161,7 +161,7 @@ svg:'<path class="s" d="M48 74V46" stroke-width="3"/><path class="s" d="M48 46 2
 
 {id:"gesier-de-volaille",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Chicken gizzard",fr:"Gésier de volaille"},latin:"Gallus gallus (ventriculus)",
 origin:{en:"Yakitori counters and the Gers",fr:"Les comptoirs yakitori et le Gers"},season:[],
-flavor:["meaty","umami","earthy"],
+flavor:["meaty","umami","earthy"],texture:["tough","chewy"],
 story:{en:"Japanese calls it sunagimo, sand gizzard, after the grit the bird swallows and stores there to grind its feed — the muscle is a mill, and it works every hour of the bird’s life. The tough yellow lining peeled out of it is dried and sold in Chinese pharmacies as ji nei jin.",
 fr:"Le japonais l’appelle sunagimo, « gésier de sable », d’après le gravier que l’oiseau avale et garde là pour broyer sa nourriture : le muscle est un moulin, et il tourne chaque heure de la vie de la bête. La membrane jaune et coriace qu’on en pèle est séchée et vendue en pharmacie chinoise sous le nom de ji nei jin."},
 tip:{en:"Split each one, rinse out any grit and peel away the silver lining or it stays leathery. Then commit: two minutes over fierce heat for crunch, or two hours in fat for softness — the middle ground is only chewy.",
@@ -171,7 +171,7 @@ svg:'<path class="f1 sf" d="M30 28c9-1 15 6 15 16 0 10-5 18-13 19-9 1-15-5-17-14
 
 {id:"foie-de-volaille",cat:"cuts",price:1,pk:"6–12 €/kg",name:{en:"Chicken liver",fr:"Foie de volaille"},latin:"Gallus gallus (hepar)",
 origin:{en:"Bresse and the Dombes",fr:"Bresse et Dombes"},season:[],
-flavor:["mild","creamy","rich"],
+flavor:["mild","creamy","rich"],texture:["soft","creamy"],
 story:{en:"Corn and milk turn the liver pale gold — the foies blonds that Bressan cooks order by name and set into the gâteau de foies blonds, a liver custard baked in a bain-marie and served under crayfish sauce. Only small livers emulsify like that; a calf's liver put through the same treatment turns to paste.",
 fr:"Le maïs et le lait pâlissent le foie jusqu'à l'or clair : ce sont les foies blonds que les cuisiniers bressans commandent par leur nom et montent en gâteau de foies blonds, un flan de foie cuit au bain-marie et servi sous une sauce d'écrevisses. Seuls les petits foies s'émulsionnent ainsi ; un foie de veau soumis au même traitement tourne à la pâte."},
 tip:{en:"Trim any green-stained part hard — bile bitterness cannot be cooked out. For a parfait, sear them barely and blend with butter at 45 °C: warmer and the fat splits, colder and it never comes smooth.",
@@ -181,7 +181,7 @@ svg:'<path class="f2 sf" d="M28 46q-6-10 4-14t14 6q2 10-6 14t-12-6z"/><path clas
 
 {id:"bonjiri",cat:"cuts",rare:true,price:1,pk:"5–10 €/kg",name:{en:"Chicken tail (bonjiri)",fr:"Croupion de volaille (bonjiri)"},latin:"Gallus gallus (uropygium)",
 origin:{en:"One per bird, Japan",fr:"Un par volaille, Japon"},season:[],
-flavor:["rich","meaty","umami"],
+flavor:["rich","meaty","umami"],texture:["soft","juicy"],
 story:{en:"One per bird: the fatty nub above the vent that English calls the parson’s nose and yakitori counters call bonjiri, or sankaku, the triangle. Inside sits the preen gland the bird draws its feather oil from, a hard bitter pellet that has to come out before the skewer meets the fire.",
 fr:"Un seul par volaille : le petit coussin gras au-dessus du croupion, que l’anglais nomme « nez du curé » et les comptoirs yakitori bonjiri ou sankaku, le triangle. Il abrite la glande uropygienne dont l’oiseau tire l’huile de ses plumes, une bille dure et amère qu’il faut ôter avant d’embrocher."},
 tip:{en:"Cut out the two small oil sacs at the base, then grill it slowly and away from the flames — it renders so much fat that a hot grill flares and coats it in soot. A quarter-hour at the cool end, finished over the coals, is the whole method.",
@@ -191,7 +191,7 @@ svg:'<path class="f2 sf" d="M28 40q20-8 40 0-4 22-20 34-16-12-20-34z"/><circle c
 
 {id:"macreuse",cat:"cuts",price:2,pk:"13–20 €/kg",name:{en:"Chuck tender",fr:"Macreuse"},latin:"Bœuf — épaule",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["meaty","mild","umami","earthy"],
+flavor:["meaty","mild","umami","earthy"],texture:["firm","fibrous"],
 story:{en:"French butchers split it in two and treat them as different products: macreuse à bifteck, lean and tender enough to grill, and macreuse à pot-au-feu, sinewy and destined for the pot. Asking for the wrong one is a common and expensive mistake.",
 fr:"Les bouchers français la divisent en deux et les traitent en produits distincts : la macreuse à bifteck, maigre et assez tendre pour la grillade, et la macreuse à pot-au-feu, nerveuse et vouée au bouillon. Demander la mauvaise est une erreur fréquente et coûteuse."},
 tip:{en:"Say what you are cooking, not which cut you want. The butcher knows which half to hand you.",
@@ -201,7 +201,7 @@ svg:'<path class="f1 sf" d="M18 60c-3-9 4-17 14-23 12-8 26-12 36-11 5 0 8 4 5 9-
 
 {id:"rognons-de-coq",cat:"cuts",rare:true,price:3,pk:"35–60 €/kg",name:{en:"Cockerel testicles",fr:"Rognons de coq"},latin:"Gallus gallus (testis)",
 origin:{en:"Classical French garnish",fr:"Garniture financière"},season:[],
-flavor:["creamy","delicate","mild"],
+flavor:["creamy","delicate","mild"],texture:["soft","creamy"],
 story:{en:"They are not kidneys: the name survives from an old butchery misnaming, and what is sold are the cockerel's paired glands, pale and firm as set custard. With cockscombs they make the two halves of the garniture financière, the vol-au-vent filling that outlived the dish it was invented for.",
 fr:"Ce ne sont pas des rognons : le nom vient d'une vieille erreur de boucherie, et l'on vend en réalité les glandes paires du coq, pâles et fermes comme un flan pris. Avec les crêtes, elles forment les deux moitiés de la garniture financière, cette farce à vol-au-vent qui a survécu au plat pour lequel elle fut inventée."},
 tip:{en:"Poach them whole in a light stock, barely trembling, eight to ten minutes — a boil bursts them. They take colour badly and season blandly, so finish them in the sauce rather than in the pan.",
@@ -211,7 +211,7 @@ svg:'<path class="f1 sf" d="M26 58q0-12 22-12t22 12q0 10-22 10T26 58z"/><path cl
 
 {id:"crete-de-coq",cat:"cuts",rare:true,price:2,pk:"15–28 €/kg",name:{en:"Cockscomb",fr:"Crête de coq"},latin:"Gallus gallus (carina)",
 origin:{en:"Poultry trade, Bresse",fr:"Volaillers de Bresse"},season:[],
-flavor:["mild","delicate"],
+flavor:["mild","delicate"],texture:["tough","gelatinous"],
 story:{en:"There is no meat in it at all — a comb is skin and collagen, and a long enough cooking turns it translucent and yielding, a texture nothing else on a French menu provides. Escoffier lists it in the financière and in the garnished capon; it went out with the dishes, not with the taste.",
 fr:"Il n'y a pas de viande dedans : une crête, c'est de la peau et du collagène, et une cuisson assez longue la rend translucide et fondante — une texture qu'aucun autre produit ne donne sur une carte française. Escoffier la porte à la financière et au chapon garni ; elle a disparu avec les plats, pas avec le goût."},
 tip:{en:"Rub them in coarse salt while still warm from a brief blanch and the outer skin comes away on its own — that skin is the only bitter part. Then four hours at the barest simmer in white stock; under three they stay rubbery.",
@@ -221,7 +221,7 @@ svg:'<path class="f2 sf" d="M24 66 28 44 34 58 40 32 46 56 52 34 58 56 64 42 70 
 
 {id:"magret",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Duck breast",fr:"Magret de canard"},latin:"Anas (pectoralis, canard gras)",
 origin:{en:"The breast of a fattened duck",fr:"La poitrine d’un canard gras"},season:[],
-flavor:["rich","meaty","sweet"],
+flavor:["rich","meaty","sweet"],texture:["firm","juicy"],
 story:{en:"A cut with a birth certificate: in 1959, chef André Daguin at the Hôtel de France in Auch first cooked a fattened duck’s breast rare, like a steak — scandal, then triumph. So particular is the magret that French law reserves the name for breasts of ducks raised for foie gras.",
 fr:"Une pièce avec un acte de naissance : en 1959, le chef André Daguin, à l’Hôtel de France d’Auch, cuisina pour la première fois la poitrine d’un canard gras saignante, comme un steak — scandale, puis triomphe. Le magret est si particulier que la loi française en réserve le nom aux poitrines de canards élevés pour le foie gras."},
 tip:{en:"Score the skin in a diamond pattern, start in a cold pan skin-down, and render patiently — most of the cooking happens on that side. Rose inside, mahogany outside.",
@@ -231,7 +231,7 @@ svg:'<path class="f2 sf" d="M19 66c-4-9 0-19 10-27 10-9 23-15 33-14 9 1 15 7 15 
 
 {id:"coeur-de-canard",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Duck heart",fr:"Cœur de canard"},latin:"Anas platyrhynchos domesticus (cor)",
 origin:{en:"Gascony, foie gras country",fr:"Gascogne, pays du foie gras"},season:[],
-flavor:["meaty","rich","earthy"],
+flavor:["meaty","rich","earthy"],texture:["firm","chewy"],
 story:{en:"It is a by-product of the foie gras farms, sold cheap by the tray in Gers markets where the same ducks give the magret and the confit. The muscle works constantly and never rests, so it is dense and close-grained: it eats like a very small steak, not like offal.",
 fr:"C'est un sous-produit des élevages à foie gras, vendu en barquette sur les marchés du Gers, là où les mêmes canards donnent le magret et le confit. Ce muscle travaille sans arrêt et ne se repose jamais : sa chair est dense et serrée, et se mange comme un tout petit steak, pas comme un abat."},
 tip:{en:"Split it, rinse the clot out of the chambers, and take off the pale fat cap at the top. Then either thirty seconds a side over charcoal, still red inside, or three hours at 85 °C in duck fat — the middle ground is where it turns to rubber.",
@@ -241,7 +241,7 @@ svg:'<path class="f3 sf" d="M48 72q-16-12-20-22-4-12 6-16 8-3 14 6 6-9 14-6 10 4
 
 {id:"langue-de-canard",cat:"cuts",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Duck tongue",fr:"Langue de canard"},latin:"Anas platyrhynchos domesticus (lingua)",
 origin:{en:"Guangdong and Sichuan",fr:"Guangdong et Sichuan"},season:[],
-flavor:["meaty","rich","umami"],
+flavor:["meaty","rich","umami"],texture:["firm","gelatinous"],
 story:{en:"Barely five centimetres long, a duck tongue is built around a Y-shaped hyoid cartilage that stays firm however long it is braised. Cantonese and Sichuan cooks buy them precisely for that: the point is the contrast between soft meat and the crunch inside, and the cartilage is eaten rather than spat out.",
 fr:"Longue d’à peine cinq centimètres, la langue de canard est bâtie autour d’un cartilage hyoïde en Y qui reste ferme quel que soit le braisage. Les cuisines cantonaise et sichuanaise l’achètent précisément pour cela : tout tient au contraste entre la chair fondante et le croquant intérieur, et le cartilage se mange, il ne se recrache pas."},
 tip:{en:"Blanch them first with ginger and rice wine to take off the poultry smell, then braise twenty minutes in a master stock — longer only slackens the meat, since the cartilage will not soften anyway. Serve them cold from the braise; the texture tightens as they cool.",
@@ -251,7 +251,7 @@ svg:'<path class="f2 sf" d="M48 22q10 4 10 16v24q0 12-10 14-10-2-10-14V38q0-12 1
 
 {id:"paleron",cat:"cuts",price:2,pk:"12–18 €/kg",name:{en:"Feather blade",fr:"Paleron"},latin:"Bœuf — épaule",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["meaty","rich","umami","earthy"],
+flavor:["meaty","rich","umami","earthy"],texture:["tough","gelatinous","fibrous"],
 story:{en:"A shoulder muscle split down the middle by a broad sheet of connective tissue, which is why it looks wrong raw and behaves beautifully cooked — that sheet dissolves to gelatine over three hours and bastes the meat from inside.",
 fr:"Un muscle d’épaule fendu en son milieu par une large nappe de tissu conjonctif, d’où son aspect trompeur cru et son excellent comportement cuit — cette nappe fond en gélatine en trois heures et arrose la viande de l’intérieur."},
 tip:{en:"It is the cut for bourguignon and carbonnade. Sold as a steak it needs either two minutes or three hours, nothing between.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M26 44h44v26H26z"/><path class="f3 sf" d="M26 55h44v
 
 {id:"bavette",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Flank steak",fr:"Bavette"},latin:"Bos taurus (flank)",
 origin:{en:"The abdominal flank, loose-fibred",fr:"Le flanc abdominal, à fibres lâches"},season:[],
-flavor:["meaty","umami","rich"],
+flavor:["meaty","umami","rich"],texture:["firm","fibrous","juicy"],
 story:{en:"Its long open fibres are the whole story: they drink marinades like a sponge, char in minutes, and reward anyone who respects the grain. A workers’ cut that bistros elevated to a national institution — bavette-échalote — and grill cultures from Mexico to Korea claimed for their own.",
 fr:"Ses longues fibres ouvertes sont toute l’histoire : elles boivent les marinades comme une éponge, grillent en quelques minutes et récompensent qui respecte le sens du grain. Une pièce d’ouvriers que les bistrots ont élevée en institution nationale — la bavette-échalote — et que les cultures du gril, du Mexique à la Corée, ont adoptée."},
 tip:{en:"Hot pan, short time, long rest — then slice thin against the grain at an angle. Cut with the grain and you will chew your way into regret.",
@@ -271,7 +271,7 @@ svg:'<path class="f1 sf" d="M16 56c10-12 26-20 44-22 10-1 18 1 20 6 2 5-4 11-16 
 
 {id:"gras-double",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Gras-double (rumen tripe)",fr:"Gras-double"},latin:"Bos taurus (rumen)",
 origin:{en:"Lyon",fr:"Lyon"},season:[],
-flavor:["mild","earthy","meaty"],
+flavor:["mild","earthy","meaty"],texture:["firm","chewy"],
 story:{en:"The rumen is the first and largest of the four stomachs, and it leaves the tripier already blanched — flat, smooth, ivory, half-cooked before you have paid for it. Lyon cuts it into hand-sized flaps for tablier de sapeur, the crumbed square named for a leather apron and, the story goes, for Marshal de Castellane, military governor of the city and an unembarrassed eater of tripe.",
 fr:"La panse est le premier et le plus vaste des quatre estomacs, et il quitte le tripier déjà échaudé — plat, lisse, ivoire, à moitié cuit avant même d’être payé. Lyon le taille en larges pans pour le tablier de sapeur, ce carré pané qui doit son nom à un tablier de cuir et, dit-on, au maréchal de Castellane, gouverneur militaire de la ville et amateur assumé de tripes."},
 tip:{en:"Even blanched it wants a good hour of simmering before anything else happens to it. Then marinate the flaps a few hours in white wine, mustard and lemon before crumbing — that acid is what stops the finished square tasting of the byre.",
@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M24 34h48v30q-24 8-48 0z"/><path class="f2 sf" d="M6
 
 {id:"onglet",cat:"cuts",price:2,pk:"18–30 €/kg",name:{en:"Hanger steak",fr:"Onglet"},latin:"Bos taurus (hanging tender)",
 origin:{en:"Hangs from the diaphragm — one per animal",fr:"Suspendu au diaphragme — un seul par bête"},season:[],
-flavor:["meaty","rich","umami","earthy"],
+flavor:["meaty","rich","umami","earthy"],texture:["tender","fibrous","juicy"],
 story:{en:"The French call it the butcher’s cut, because for generations the butcher quietly took it home — there is only one on each animal, and it never reached the display case. Loose-grained, iron-dark and twice the flavour of noble cuts, it is the bistro’s open secret, forever wedded to melted shallots.",
 fr:"On l’appelle le morceau du boucher, parce que des générations de bouchers l’ont discrètement rapporté chez eux — il n’y en a qu’un par bête, et il n’atteignait jamais l’étal. À fibres lâches, sombre de fer et deux fois plus goûteux que les pièces nobles, c’est le secret de Polichinelle des bistrots, marié pour toujours aux échalotes fondues."},
 tip:{en:"Rare or bleu, never beyond — past pink it turns to rope. Slice thick, across the grain, and give it the classic: shallots long-melted in butter.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M18 56c1-10 10-16 25-19 15-3 30-2 36 3 4 4 2 11-6 15
 
 {id:"bonnet",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Honeycomb tripe",fr:"Bonnet"},latin:"Bos taurus (reticulum)",
 origin:{en:"Rome and Madrid",fr:"Rome et Madrid"},season:[],
-flavor:["mild","umami","meaty"],
+flavor:["mild","umami","meaty"],texture:["tender","gelatinous","chewy"],
 story:{en:"The reticulum is the second stomach, and the honeycomb is not decoration but a trap — which is why cattle are dosed with a magnet that sits in this chamber for life and holds any swallowed wire away from the heart. In the kitchen the same pockets hold sauce, and that is why Roman trippa and Spanish callos both name this stomach and not the other three.",
 fr:"Le réseau est le deuxième estomac, et ses alvéoles ne sont pas un ornement mais un piège — c’est pourquoi on fait avaler aux bovins un aimant qui séjourne à vie dans cette poche et retient les fils de fer loin du cœur. En cuisine, les mêmes alvéoles retiennent la sauce, et c’est pour cela que la trippa romaine comme les callos espagnols réclament cet estomac et pas les trois autres."},
 tip:{en:"It is the tripe that stays tender, so it forgives the long cook: two hours in tomato and it still yields where gras-double would be firm. Add the mint off the heat at the end — the Roman version depends on it, and boiling reduces it to hay.",
@@ -301,7 +301,7 @@ svg:'<path class="f1 sf" d="M26 40q22-12 44 0 6 14 0 24-22 10-44 0-6-10 0-24z"/>
 
 {id:"rognons",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Kidneys",fr:"Rognons"},latin:"Ren",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","earthy","meaty","musky"],
+flavor:["rich","earthy","meaty","musky"],texture:["firm","smooth","moist"],
 story:{en:"Veal kidneys are the ones worth seeking — milder and finer than lamb or beef, and a Lyonnais standard served in a mustard cream. The surrounding fat is the suet that made English steamed puddings possible.",
 fr:"Les rognons de veau sont ceux qu’il faut chercher — plus doux et plus fins que ceux d’agneau ou de bœuf, et un classique lyonnais servi à la crème moutardée. Le gras qui les entoure est la graisse de rognon qui a rendu possibles les puddings anglais."},
 tip:{en:"Sear them fast and serve them pink. Overcooked kidney turns grainy and ammoniac, and there is no recovery.",
@@ -311,7 +311,7 @@ svg:'<path class="f2 sf" d="M62 22q12 2 16 10 4 9-1 16-6 6-12 2-4-8 0-15-3-8-3-1
 
 {id:"kinkan",cat:"cuts",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Kinkan (unlaid egg yolks)",fr:"Kinkan (œufs non pondus)"},latin:"Gallus gallus (ovum immaturum)",
 origin:{en:"Japanese yakitori counters",fr:"Les comptoirs yakitori du Japon"},season:[],
-flavor:["rich","creamy","umami"],
+flavor:["rich","creamy","umami"],texture:["soft","creamy"],
 story:{en:"They are named after the kumquat — kinkan — because that is what a chain of unlaid yolks looks like, graded from pea to full size inside the hen. A skewer that keeps a yolk attached to its length of oviduct is called chōchin, a paper lantern, and there are only a handful in any bird.",
 fr:"On les nomme d’après le kumquat — kinkan — car c’est bien à cela que ressemble la grappe de jaunes non pondus, calibrés du pois à l’œuf entier dans le ventre de la poule. La brochette qui garde le jaune attaché à son bout d’oviducte s’appelle chōchin, lanterne de papier, et il n’y en a qu’une poignée par volaille."},
 tip:{en:"Grill them at the edge of the coals and turn them constantly — high heat splits the membrane and the yolk is gone in a second. They want salt only; a sweet tare buries a richness already beyond any laid yolk.",
@@ -321,7 +321,7 @@ svg:'<path class="s" d="M18 72L78 30"/><circle class="f2 sf" cx="62" cy="42" r="
 
 {id:"cervelle-agneau",cat:"cuts",price:2,pk:"14–25 €/kg",name:{en:"Lamb brain",fr:"Cervelle d’agneau"},latin:"Ovis aries (cerebrum)",
 origin:{en:"Spain and the eastern Mediterranean",fr:"Espagne et Méditerranée orientale"},season:[],
-flavor:["creamy","delicate","mild"],
+flavor:["creamy","delicate","mild"],texture:["soft","creamy"],
 story:{en:"A lamb's brain runs to about a fifth the weight of a calf's, so it is never sliced — it is crumbed and fried whole, one per person, which is how Spanish sesos and the Turkish and Lebanese versions have always served it. Lambs are slaughtered under a year, so the BSE age rule that reshaped the calf's-brain trade never touched this one.",
 fr:"Une cervelle d’agneau pèse environ le cinquième d’une cervelle de veau : on ne la tranche donc pas, on la panne et on la frit entière, une par personne — exactement comme le font les sesos espagnols et les versions turque et libanaise. Les agneaux étant abattus avant un an, la règle d’âge issue de l’ESB, qui a bouleversé le commerce de la cervelle de veau, n’a jamais concerné celle-ci."},
 tip:{en:"Blanch fifteen minutes in acidulated water, cool completely, then crumb and fry it whole at 175 °C — sliced first, it collapses in the pan. The lemon at the table is not garnish: the acid is the only thing standing between it and blandness.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M48 34q13-1 16 10t-8 18q-8 4-16 0-11-7-8-18t16-10z"/
 
 {id:"animelles",cat:"cuts",rare:true,price:2,pk:"12–22 €/kg",name:{en:"Lamb fries",fr:"Animelles"},latin:"Ovis aries (testis)",
 origin:{en:"Lamb offal, Mediterranean",fr:"Abats d'agneau, Méditerranée"},season:[],
-flavor:["creamy","mild","delicate"],
+flavor:["creamy","mild","delicate"],texture:["soft","creamy"],
 story:{en:"The word is old French for the pair of glands, and they were still on grand tables in the eighteenth century before the taste for them narrowed to the south — Spain sells the bull version as criadillas. Under the tough outer tunic the flesh is pale and soft, nearer to brain than to any muscle.",
 fr:"Le mot est de l'ancien français et désigne la paire de glandes ; elles figuraient encore sur les grandes tables au XVIIIe siècle, avant que le goût ne se replie sur le Midi — l'Espagne en vend la version taurine sous le nom de criadillas. Sous la tunique coriace, la chair est pâle et molle, plus proche de la cervelle que d'un muscle."},
 tip:{en:"Blanch two minutes, cool, then peel the membrane off in one piece — cold it slips, warm it tears. Slice a centimetre thick, soak an hour in milk to draw the blood, then flour and fry hot and fast.",
@@ -341,7 +341,7 @@ svg:'<ellipse class="f1 sf" cx="36" cy="52" rx="16" ry="20"/><path class="s" d="
 
 {id:"rognon-agneau",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Lamb kidney",fr:"Rognon d'agneau"},latin:"Ovis aries (ren)",
 origin:{en:"Lamb saddle, France",fr:"Selle d'agneau, France"},season:[],
-flavor:["meaty","rich","mild"],
+flavor:["meaty","rich","mild"],texture:["firm","smooth","moist"],
 story:{en:"The two kidneys sit under the saddle wrapped in their own suet, and a butcher selling the saddle whole leaves them there. Sold separately they are counted by the piece and split along the seam rather than carved, which is why they are priced by the unit and not by weight.",
 fr:"Les deux rognons logent sous la selle, enveloppés de leur propre panne, et le boucher qui vend la selle entière les y laisse. Vendus à part, ils se comptent à la pièce et se fendent en deux dans le sens du hile plutôt qu'ils ne se tranchent — d'où un prix à l'unité et non au poids."},
 tip:{en:"Snip the white core out with scissors before it reaches the pan; leave it and the kidney weeps and turns bitter. Ninety seconds a side over fierce heat, then rest — past pink it goes granular and no sauce brings it back.",
@@ -351,7 +351,7 @@ svg:'<path class="f2 sf" d="M22 50q-2-12 10-14t14 8q4 10-4 14t-18-2z"/><path cla
 
 {id:"collier-agneau",cat:"cuts",price:1,pk:"9–15 €/kg",name:{en:"Lamb neck",fr:"Collier d’agneau"},latin:"Agneau — collier",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
-flavor:["rich","meaty","earthy","umami"],
+flavor:["rich","meaty","earthy","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The cut navarin is built on, and the one most likely to be sold cheap because it looks like offcuts. It is threaded with connective tissue that turns to gelatine, giving a sauce body no leaner cut can produce.",
 fr:"Le morceau sur lequel se bâtit le navarin, et celui qu’on brade le plus volontiers parce qu’il ressemble à des parures. Il est traversé de tissu conjonctif qui tourne en gélatine et donne à la sauce un corps qu’aucun morceau maigre ne produit."},
 tip:{en:"Buy it on the bone, in thick rounds. Boned and diced it loses exactly the thing that makes it worth cooking.",
@@ -361,7 +361,7 @@ svg:'<circle class="f1 sf" cx="48" cy="56" r="18"/><circle class="f3 sf" cx="48"
 
 {id:"lamb-shank",cat:"cuts",price:2,pk:"16–26 €/kg",name:{en:"Lamb shank",fr:"Souris d’agneau"},latin:"Ovis aries (shank)",
 origin:{en:"The plump muscle hugging the leg bone",fr:"Le muscle dodu qui enrobe l’os du gigot"},season:[],
-flavor:["meaty","rich","sweet"],
+flavor:["meaty","rich","sweet"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The French call it the souris — the mouse — for the plump, rounded shape of the muscle clinging to the shin. Too sinewy to grill, it exists for the long braise, collapsing after hours into sweet strands that slide from the bone at the touch of a spoon.",
 fr:"Les Français l’appellent la souris, pour la forme ronde et dodue du muscle accroché au tibia. Trop nerveuse pour le gril, elle n’existe que pour le long braisé, s’effondrant après des heures en filaments doux qui glissent de l’os au toucher d’une cuillère."},
 tip:{en:"One shank per person, browned deeply, then hours in a low oven with honey, thyme and garlic — turn it twice and otherwise leave it in peace.",
@@ -371,7 +371,7 @@ svg:'<path class="f1 sf" d="M48 46c3-7 5-13 7-17 2-4 12 0 10 5-2 4-3 9-5 16z"/><
 
 {id:"epaule-agneau",cat:"cuts",price:2,pk:"15–24 €/kg",name:{en:"Lamb shoulder",fr:"Épaule d’agneau"},latin:"Agneau — épaule",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
-flavor:["rich","meaty","earthy","umami"],
+flavor:["rich","meaty","earthy","umami"],texture:["firm","fibrous","juicy"],
 story:{en:"Fattier and far more forgiving than the leg, and the cut that made seven-hour lamb possible — cooked until a spoon goes through it. Butchers sell it cheaper than gigot for reasons of appearance rather than eating quality.",
 fr:"Plus grasse et bien plus indulgente que le gigot, c’est le morceau qui a rendu possible l’agneau de sept heures — cuit jusqu’à ce qu’une cuillère le traverse. Les bouchers la vendent moins cher que le gigot pour des raisons d’allure plutôt que de qualité gustative."},
 tip:{en:"Cook it longer than you think. There is no medium here — it is either pink and chewy or falling apart, and the second is the point.",
@@ -381,7 +381,7 @@ svg:'<path class="f1 sf" d="M24 32c15-7 32-6 43 3 9 7 13 17 8 26-5 9-17 13-30 12
 
 {id:"ris-agneau",cat:"cuts",price:3,pk:"35–60 €/kg",name:{en:"Lamb sweetbread",fr:"Ris d’agneau"},latin:"Ovis aries (thymus)",
 origin:{en:"The thymus of the lamb",fr:"Le thymus de l’agneau"},season:[],
-flavor:["delicate","milky","mild","creamy"],
+flavor:["delicate","milky","mild","creamy"],texture:["soft","creamy"],
 story:{en:"A lamb's thymus weighs a few dozen grams where a calf's runs to several hundred, so it reaches the counter as a handful of walnut-sized nuggets rather than a lobe to be pared and portioned. It sells for a fraction of the veal price, and that is roughly how the two were divided: ris de veau went to restaurants, ris d'agneau stayed at home.",
 fr:"Le thymus d’agneau pèse quelques dizaines de grammes quand celui du veau en fait plusieurs centaines : il arrive à l’étal en poignée de noisettes plutôt qu’en lobe à parer et à portionner. Il coûte une fraction du prix du ris de veau, et c’est à peu près ainsi qu’on les répartissait — le veau au restaurant, l’agneau à la maison."},
 tip:{en:"No overnight press, no long soak: five minutes in barely simmering acidulated water, slip the membrane off, dry them, then two minutes a side in foaming butter. Held longer they tighten and go rubbery, and nothing carves that back out of them.",
@@ -391,7 +391,7 @@ svg:'<path class="f1 sf" d="M18 57q-2-7 5-10 4-2 7 1 3-5 9-3 6 2 6 7 5 4 2 9-4 6
 
 {id:"langue-agneau",cat:"cuts",price:1,pk:"9–16 €/kg",name:{en:"Lamb tongue",fr:"Langue d’agneau"},latin:"Ovis aries (lingua)",
 origin:{en:"Morocco, Turkey, the Levant",fr:"Maroc, Turquie, Levant"},season:[],
-flavor:["meaty","mild","rich"],
+flavor:["meaty","mild","rich"],texture:["firm","smooth"],
 story:{en:"The rough skin over a tongue is keratin, the same material as a hoof, which is why every tongue is peeled and none is eaten with its surface intact. A lamb's is small enough that the skin slips off whole like a glove, and the tongue can then be served whole, one per plate — which neither ox nor veal allows.",
 fr:"La peau râpeuse d’une langue est de la kératine, la même matière qu’un sabot : c’est pourquoi toute langue se pèle et qu’aucune ne se mange avec sa surface. Celle de l’agneau est assez petite pour que la peau s’enlève d’un coup comme un gant, et la langue se sert alors entière, une par assiette — ce que ni le bœuf ni le veau ne permettent."},
 tip:{en:"Ninety minutes in aromatic water is enough; beyond that they shrink and turn woolly. Peel them warm, split them lengthwise and dress them while still tepid — cold lamb tongue takes up almost nothing.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M28 44q8-10 16-2t-2 18q-12 4-16-6-2-6 2-10z"/><path 
 
 {id:"panse-agneau",cat:"cuts",rare:true,price:1,pk:"5–10 €/kg",name:{en:"Lamb tripe",fr:"Panse d’agneau"},latin:"Ovis aries (rumen)",
 origin:{en:"Marseille and the Auvergne",fr:"Marseille et l’Auvergne"},season:[],
-flavor:["mild","meaty","earthy"],
+flavor:["mild","meaty","earthy"],texture:["firm","chewy"],
 story:{en:"Lamb tripe is thinner and far more pliable than beef, thin enough to be cut into squares and folded around a stuffing — which is exactly what pieds et paquets in Marseille and tripoux in the Auvergne are. Beef tripe is too rigid to make the parcel at all.",
 fr:"La panse d’agneau est plus fine et bien plus souple que celle du bœuf, assez fine pour être taillée en carrés et repliée sur une farce — ce que sont précisément les pieds et paquets de Marseille et les tripoux d’Auvergne. La tripe de bœuf est trop rigide pour former le paquet."},
 tip:{en:"No string: cut a small buttonhole in the square, fold the parcel and pull one corner through it — string saws into the tripe over the seven hours these need. Pack them tightly in a narrow pot so they cannot unfold.",
@@ -411,7 +411,7 @@ svg:'<path class="f1 sf" d="M18 40c10-8 24-12 38-11 12 1 22 5 24 12 2 8-4 18-14 
 
 {id:"lampredotto",cat:"cuts",rare:true,price:1,pk:"7–13 €/kg",name:{en:"Lampredotto (abomasum)",fr:"Caillette (lampredotto)"},latin:"Bos taurus (abomasum)",
 origin:{en:"Florence",fr:"Florence"},season:[],
-flavor:["earthy","meaty","pungent","umami"],
+flavor:["earthy","meaty","pungent","umami"],texture:["firm","chewy"],
 story:{en:"The abomasum is the fourth and only true stomach, the one that secretes rennet — the same enzyme that sets cheese — and it is darker and louder than the three chambers before it. France sends most of it to rennet production; Florence eats it, boiled and stuffed into a roll, and the name is said to come from the lampreda, the lamprey once fished in the Arno that its folds resemble.",
 fr:"La caillette est le quatrième et seul véritable estomac, celui qui sécrète la présure — l’enzyme même qui fait prendre les fromages — et elle est plus sombre et plus marquée que les trois panses qui la précèdent. La France en envoie l’essentiel à la fabrication de présure ; Florence la mange, bouillie et fourrée dans un petit pain, et son nom viendrait de la lampreda, la lamproie autrefois pêchée dans l’Arno, dont ses plis rappellent la chair."},
 tip:{en:"Boil it an hour and a half in a broth of celery, tomato and onion, then chop it and dip the top half of the bread in the cooking liquid before you close the sandwich. Salsa verde and a hot sauce together, never one alone — the fat needs both the acid and the heat.",
@@ -421,7 +421,7 @@ svg:'<path class="f3 sf" d="M32 30q16-6 30 4 8 8 4 20-4 14-20 14t-20-14q-4-14 6-
 
 {id:"gigot",cat:"cuts",price:2,pk:"18–30 €/kg",name:{en:"Leg of lamb",fr:"Gigot d’agneau"},latin:"Ovis aries (leg)",
 origin:{en:"The hind leg, whole",fr:"La cuisse arrière, entière"},season:[3,4,5,6],
-flavor:["meaty","rich","grassy"],
+flavor:["meaty","rich","grassy"],texture:["firm","fibrous","juicy"],
 story:{en:"France’s Easter centrepiece, studded with garlic slivers and carved at the table by whoever holds rank. The seven-hour version — gigot de sept heures — cooks until it is served with a spoon, a dish old cookbooks sealed shut with a flour-and-water lute so no perfume could escape.",
 fr:"La pièce maîtresse de Pâques en France, piquée d’éclats d’ail et découpée à table par qui détient le rang. La version de sept heures — le gigot de sept heures — cuit jusqu’à se servir à la cuillère, un plat que les vieux livres scellaient d’un lut de farine et d’eau pour qu’aucun parfum ne s’échappe."},
 tip:{en:"Two schools, both right: hot and pink with the bone in, rested under foil — or seven hours at a whisper with garlic and white beans until the knife is unemployed.",
@@ -431,7 +431,7 @@ svg:'<path class="f2 sf" d="M30 62q2-14 18-18l14-4q8-2 10 5t-6 11l-16 6q-14 5-20
 
 {id:"museau",cat:"cuts",price:1,pk:"7–13 €/kg",name:{en:"Muzzle",fr:"Museau de bœuf"},latin:"Bos taurus (rostrum)",
 origin:{en:"The tripier's counter, France",fr:"L’étal du tripier, France"},season:[],
-flavor:["mild","meaty","salty"],
+flavor:["mild","meaty","salty"],texture:["firm","gelatinous","chewy"],
 story:{en:"Museau and the English muzzle come from the same Old French musel, and the thing is exactly that: the snout, brined, simmered and pressed. The tripier sells it already cooked and sliced to the thickness of a coin, which makes it one of the very few French charcuterie items that needs no cooking at all.",
 fr:"« Museau » et l’anglais muzzle viennent du même mot d’ancien français, musel, et la chose est exactement cela : le mufle, saumuré, mijoté puis pressé. Le tripier le vend déjà cuit et tranché à l’épaisseur d’une pièce, ce qui en fait l’une des rares charcuteries françaises qui ne demande aucune cuisson."},
 tip:{en:"Dress it an hour ahead rather than at the last minute — the cartilage needs that time in the vinegar to go from rubbery to crisp. One part vinegar to three of oil, more shallot than seems reasonable, and serve it at room temperature.",
@@ -441,7 +441,7 @@ svg:'<path class="f1 sf" d="M46 19c16-1 31 10 34 25 3 16-8 30-24 33-16 3-31-7-36
 
 {id:"boyaux-naturels",cat:"cuts",price:2,pk:"10–25 €/kg",name:{en:"Natural casings",fr:"Boyaux naturels"},latin:"Sus scrofa / Ovis aries / Bos taurus (intestinum)",
 origin:{en:"Sheep, pig and beef intestine",fr:"Intestin de mouton, de porc et de bœuf"},season:[],
-flavor:["mild","salty","meaty"],
+flavor:["mild","salty","meaty"],texture:["firm","silky"],
 story:{en:"Casings are sold not by weight but by calibre in millimetres, and under their trade names: menu de mouton for merguez, menu de porc for the breakfast sausage, chaudin and baudruche for the big drying saucissons. The number commands everything downstream — a wider casing dries more slowly, so a charcutier chooses the skin before choosing the meat.",
 fr:"Les boyaux se vendent au calibre, en millimètres, et sous leur nom de métier : menu de mouton pour la merguez, menu de porc pour la saucisse, chaudin et baudruche pour les gros saucissons de séchage. Le chiffre commande tout ce qui suit — un boyau large sèche plus lentement, si bien que le charcutier choisit la peau avant de choisir la viande."},
 tip:{en:"They arrive packed in salt: rinse them, soak at least half an hour in tepid water, and run water through the inside so they slide onto the horn. Stuff them slack — a casing filled tight has nowhere to go when you twist the links, and it splits.",
@@ -451,7 +451,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="24" ry="16"/><ellipse class="s" 
 
 {id:"langue",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Ox tongue",fr:"Langue de bœuf"},latin:"Lingua bovis",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","delicate","meaty","umami"],
+flavor:["rich","delicate","meaty","umami"],texture:["firm","smooth"],
 story:{en:"Almost pure muscle with no grain to speak of, which is why it slices so cleanly and eats so tenderly once cooked. Sauce piquante or sauce gribiche are the traditional partners, and both exist to cut its richness.",
 fr:"Presque uniquement du muscle sans fibre marquée, d’où sa coupe si nette et sa tendreté une fois cuite. La sauce piquante ou la gribiche sont les accompagnements traditionnels, et toutes deux existent pour couper son gras."},
 tip:{en:"Peel the skin off while it is still hot from the pot. Let it cool and it will not come away at all.",
@@ -461,7 +461,7 @@ svg:'<path class="f1 sf" d="M19 46c1-10 9-16 20-15 14 1 29 7 38 15 3 3 2 7-2 9-6
 
 {id:"oxtail",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
 origin:{en:"The tail, ring by ring",fr:"La queue, anneau par anneau"},season:[],
-flavor:["rich","meaty","umami"],
+flavor:["rich","meaty","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"In Rome’s old slaughterhouse district of Testaccio, workers were paid partly in the quinto quarto — the “fifth quarter” of offal and tail — and from that wage they built coda alla vaccinara, the tail braise that now anchors trattoria menus. Poverty’s invention, gelatine’s triumph.",
 fr:"Dans le vieux quartier des abattoirs de Rome, le Testaccio, les ouvriers étaient payés en partie en quinto quarto — le « cinquième quartier » d’abats et de queue — et de ce salaire ils bâtirent la coda alla vaccinara, le braisé de queue qui ancre aujourd’hui les cartes de trattoria. Invention de la pauvreté, triomphe de la gélatine."},
 tip:{en:"Brown the rings hard before any liquid touches them, and skim the next day when the fat has set. The broth it leaves behind is the best stock you will ever not have to make.",
@@ -471,7 +471,7 @@ svg:'<path class="f2 sf" d="M34 34a8 8 0 0116 0q-1 6-8 7-7-1-8-7z"/><path class=
 
 {id:"oreille-de-porc",cat:"cuts",price:1,pk:"4–8 €/kg",name:{en:"Pig's ear",fr:"Oreille de porc"},latin:"Sus scrofa domesticus (auricula)",
 origin:{en:"France, Spain, southern China",fr:"France, Espagne, sud de la Chine"},season:[],
-flavor:["mild","meaty","rich"],
+flavor:["mild","meaty","rich"],texture:["firm","crunchy","gelatinous"],
 story:{en:"An ear is two sheets of skin around a single plate of cartilage, with almost no muscle in it, so cooked it delivers gelatine and crunch at once and nothing in between. It is also what makes head cheese set: cooks who buy a head separately buy extra ears to be certain of it.",
 fr:"Une oreille, ce sont deux feuillets de couenne autour d’une seule plaque de cartilage, sans presque aucun muscle : cuite, elle donne d’un coup la gélatine et le croquant, et rien entre les deux. C’est aussi elle qui fait prendre le fromage de tête — qui achète une tête à part achète des oreilles en plus pour en être sûr."},
 tip:{en:"Braise two hours, then press them flat between two trays under a weight overnight — the cartilage sets in that shape and only then will they slice thin. A warm ear cannot be cut; it folds under the knife.",
@@ -481,7 +481,7 @@ svg:'<path class="f1 sf" d="M34 24q22 4 28 24 4 16-8 26-14 4-20-10-8-18 0-40z"/>
 
 {id:"queue-de-porc",cat:"cuts",price:1,pk:"4–8 €/kg",name:{en:"Pig's tail",fr:"Queue de porc"},latin:"Sus scrofa domesticus (cauda)",
 origin:{en:"France and the American South",fr:"France et le Sud américain"},season:[],
-flavor:["rich","meaty","smoky"],
+flavor:["rich","meaty","smoky"],texture:["soft","gelatinous"],
 story:{en:"A pig's tail is skin, cartilage and almost no meat, which puts it at the far end of the counter from oxtail despite the family resemblance. Most farmed pigs are docked in the first days of life to stop tail-biting in close quarters, so a full-length tail on the block usually means an animal that had room.",
 fr:"La queue de porc, c’est de la couenne, du cartilage et presque pas de viande, ce qui la place à l’opposé de la queue de bœuf sur l’étal malgré l’air de famille. La plupart des porcs d’élevage ont la queue coupée dès les premiers jours pour éviter qu’ils ne se mordent en espace réduit : une queue entière sur le billot signale donc presque toujours une bête qui avait de la place."},
 tip:{en:"Braise ninety minutes, until a skewer passes through the cartilage, then dry them and finish under a hot grill or in a 220 °C oven until the skin blisters. Both stages are compulsory: braised alone they are flabby, roasted alone they stay tough.",
@@ -491,7 +491,7 @@ svg:'<path class="f1 sf" d="M24 30Q40 32 52 42Q68 52 68 64Q68 76 55 77Q41 77 39 
 
 {id:"pied-de-porc",cat:"cuts",price:1,pk:"3–7 €/kg",name:{en:"Pig's trotter",fr:"Pied de porc"},latin:"Sus scrofa domesticus (pes)",
 origin:{en:"Sainte-Menehould, Marne",fr:"Sainte-Menehould, Marne"},season:[],
-flavor:["rich","meaty","mild"],
+flavor:["rich","meaty","mild"],texture:["hard","gelatinous"],
 story:{en:"Pieds à la Sainte-Menehould are wrapped in cloth and cooked until the small bones crumble under the tooth — thirty hours in the old versions. The story goes that Louis XVI stopped in the town for them during the flight to Varennes in 1791 and lost the hours that led to his arrest; Sainte-Menehould has traded on it ever since.",
 fr:"Les pieds à la Sainte-Menehould sont enveloppés de linge et cuits jusqu’à ce que les petits os s’écrasent sous la dent — trente heures dans les versions anciennes. On raconte que Louis XVI s’y arrêta pour en manger lors de la fuite vers Varennes en 1791 et y perdit les heures qui menèrent à son arrestation ; la ville en vit depuis."},
 tip:{en:"Buy them split and by the pair, and singe the bristles over a flame before they go anywhere near water. Cook, cool completely, then crumb and grill — a trotter straight from the pot is far too slack to hold a coating.",
@@ -501,7 +501,7 @@ svg:'<path class="f1 sf" d="M40 22h16v30q0 6 6 10 7 5 4 13-4 9-18 9t-18-9q-3-8 4
 
 {id:"vessie-de-porc",cat:"cuts",price:2,pk:"8–15 €/pièce",name:{en:"Pig’s bladder",fr:"Vessie de porc"},latin:"Sus scrofa domesticus (vesica)",
 origin:{en:"Lyon and the Bresse table",fr:"Lyon et la table bressane"},season:[],
-flavor:["mild","meaty","rich"],
+flavor:["mild","meaty","rich"],texture:["tough","smooth"],
 story:{en:"Bought at the tripe stall as equipment rather than as food: soaked, a bird slid inside with truffle and wine, then tied and poached until the bladder balloons taut. Lyon made the dish its own — the story goes that Mère Fillioux carved her poulardes at table for forty years with the same short knife.",
 fr:"Elle s’achète à la triperie comme un ustensile, non comme un aliment : trempée, la volaille glissée dedans avec truffe et vin, puis ficelée et pochée jusqu’à ce que la vessie se tende comme un ballon. Lyon en a fait son plat — on raconte que la mère Fillioux découpa ses poulardes en salle pendant quarante ans avec le même petit couteau."},
 tip:{en:"Soak it overnight in cold water changed three or four times, with a splash of vinegar, then blow it up like a balloon to find the holes before you trust it with a chicken. Poach at a bare shiver — a rolling pot bursts it.",
@@ -511,7 +511,7 @@ svg:'<path class="f1 sf" d="M44 28h8l3 10q15 8 15 24 0 18-22 18T26 62q0-16 15-24
 
 {id:"sang-de-porc",cat:"cuts",price:1,pk:"3–7 €/L",name:{en:"Pig’s blood",fr:"Sang de porc"},latin:"Sus scrofa domesticus (sanguis)",
 origin:{en:"Farmhouse pig-killing, France",fr:"Le tue-cochon fermier, France"},season:[],
-flavor:["rich","meaty","earthy"],
+flavor:["rich","meaty","earthy"],texture:["smooth","viscous"],
 story:{en:"Blood clots within minutes of being drawn, so it is whisked as it falls and the fibrin strands lifted out — what the charcutier buys is already defibrinated, held with a little salt or vinegar. Gascony sets it alone in a pan as sanquette, Burgundy stirs it into a civet at the last second, and in boudin it is simply the binder.",
 fr:"Le sang coagule en quelques minutes après la saignée : on le fouette pendant qu’il tombe et on en retire les filaments de fibrine — ce que le charcutier achète est déjà défibriné, tenu par un peu de sel ou de vinaigre. La Gascogne le prend seul à la poêle en sanquette, la Bourgogne le lie au civet à la dernière seconde, et dans le boudin il n’est rien d’autre que le liant."},
 tip:{en:"Never let it boil. Slacken it first with a ladle of the hot sauce, stir it back off the heat, and keep the pan under 80 °C — above that the proteins seize and the sauce turns to grit.",
@@ -521,7 +521,7 @@ svg:'<path class="f3 sf" d="M26 52h44q-2 20-22 20T26 52z"/><path class="s" d="M2
 
 {id:"pluma-iberique",cat:"cuts",luxe:true,price:3,pk:"40–70 €/kg",name:{en:"Pluma ibérica",fr:"Pluma ibérique"},latin:"Sus scrofa domesticus (ibérico)",
 origin:{en:"Extremadura and Andalusia",fr:"Estrémadure et Andalousie"},season:[],
-flavor:["nutty","rich","meaty"],
+flavor:["nutty","rich","meaty"],texture:["tender","juicy"],
 story:{en:"Pluma means feather, for the flat triangle it makes: the tip of the loin where it runs out over the shoulder, about a hundred and fifty grams, two to a pig. Spanish butchers only began selling these small muscles separately in the last few decades — before that they went into the mincer with everything else.",
 fr:"Pluma veut dire plume, pour le triangle plat qu’elle dessine : la pointe de l’échine là où elle déborde sur l’épaule, cent cinquante grammes environ, deux par cochon. Les bouchers espagnols n’ont commencé à détailler ces petits muscles que depuis quelques décennies — avant, ils partaient au hachoir avec le reste."},
 tip:{en:"Two minutes a side over a fierce fire and no more: it is thin, and it goes from rosy to grey faster than any other Iberian cut. Salt it as it comes off the grill and rest it three minutes on a warm plate.",
@@ -531,7 +531,7 @@ svg:'<path class="f2 sf" d="M22 60q10-25 30-29 15-2 21 8-15 6-25 18t-20 12q-7 0-
 
 {id:"pork-belly",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Pork belly",fr:"Poitrine de porc"},latin:"Sus scrofa (venter)",
 origin:{en:"The pig’s striped underside",fr:"Le ventre rayé du cochon"},season:[],
-flavor:["rich","meaty","sweet","buttery"],
+flavor:["rich","meaty","sweet","buttery"],texture:["soft","juicy"],
 story:{en:"Bacon before it becomes bacon: alternating strata of fat and lean that answer to every slow method on Earth. Nagasaki braises it as kakuni, a technique borrowed from Chinese dongpo pork; Italy rolls it into porchetta — and the 2000s gastropub made its crisp-topped square a signature of the decade.",
 fr:"Le lard avant qu’il ne devienne lard : des strates alternées de gras et de maigre qui répondent à toutes les cuissons lentes du monde. Nagasaki la braise en kakuni, technique empruntée au porc dongpo chinois ; l’Italie la roule en porchetta — et le gastropub des années 2000 fit de son carré à peau craquante une signature de décennie."},
 tip:{en:"Two acts, always: long and low until a skewer meets no resistance, then fierce heat for the crackling. Score the skin, dry it overnight, salt it like a beach.",
@@ -541,7 +541,7 @@ svg:'<path class="f1 sf" d="M16 56c4-12 10-20 18-24 13-7 28-9 38-6 5 1 7 4 5 8-4
 
 {id:"joue-de-porc",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Pork cheek",fr:"Joue de porc"},latin:"Sus scrofa domesticus (masseter)",
 origin:{en:"The jowl, two per pig",fr:"La joue, deux par porc"},season:[],
-flavor:["rich","meaty","umami"],
+flavor:["rich","meaty","umami"],texture:["firm","fibrous"],
 story:{en:"Each pig gives two, at around eighty grams apiece: the lean masseter buried inside the jowl whose surrounding fat is cured into guanciale. Where a beef cheek is a four-hour braise, this one is done in ninety minutes, and it carries so much fat within the muscle that it can be braised with none added.",
 fr:"Chaque porc en donne deux, d’environ quatre-vingts grammes : le masséter maigre logé dans la joue dont le gras alentour devient le guanciale. Là où la joue de bœuf réclame quatre heures de braisage, celle-ci est faite en une heure et demie, et son gras intramusculaire est tel qu’on peut la braiser sans en ajouter."},
 tip:{en:"Ninety minutes at a bare simmer, then stop: pork cheek does not reward the long braise beef cheek does, and past two hours the fibres let go and dry out. Brown them hard first — they are small, so the crust is most of the flavour.",
@@ -551,7 +551,7 @@ svg:'<path class="f2 sf" d="M26 44q10-11 18-3 7 7 1 15-10 8-19 0-5-6 0-12z"/><pa
 
 {id:"echine",cat:"cuts",price:1,pk:"8–13 €/kg",name:{en:"Pork collar",fr:"Échine de porc"},latin:"Porc — échine",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","meaty","sweet","umami"],
+flavor:["rich","meaty","sweet","umami"],texture:["tender","juicy"],
 story:{en:"The neck end of the loin, and the most marbled part of a pig — which is why it is the only pork cut that survives a barbecue without drying. Italy cures the same muscle into coppa and charges ten times as much.",
 fr:"L’extrémité cou de la longe, et la partie la plus persillée du porc — d’où le seul morceau qui survive au barbecue sans sécher. L’Italie sale ce même muscle en coppa et le vend dix fois plus cher."},
 tip:{en:"It is the cheapest good cut in the shop. Roast it whole and slowly; it is far more forgiving than the loin.",
@@ -561,7 +561,7 @@ svg:'<path class="f1 sf" d="M18 42c5-9 17-13 30-13 14 0 26 4 32 11 4 5 2 13-5 18
 
 {id:"jarret-de-porc",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Pork knuckle",fr:"Jarret de porc"},latin:"Porc — jarret",
 origin:{en:"France & Germany",fr:"France & Allemagne"},season:[],
-flavor:["rich","salty","meaty","smoky"],
+flavor:["rich","salty","meaty","smoky"],texture:["tough","gelatinous"],
 story:{en:"Alsace and Germany brine it and serve it on sauerkraut; Bavaria roasts it to a lacquered Schweinshaxe. Either way it is one joint feeding two people for the price of a sandwich, which is most of its appeal.",
 fr:"L’Alsace et l’Allemagne le saumurent et le servent sur la choucroute ; la Bavière le rôtit en Schweinshaxe laqué. Dans les deux cas c’est un jarret pour deux personnes au prix d’un sandwich, et c’est l’essentiel de son attrait."},
 tip:{en:"Simmer it first, then roast it hard for twenty minutes. Roasting from raw gives leather outside and raw within.",
@@ -571,7 +571,7 @@ svg:'<path class="f1 sf" d="M47 24q9-4 19 3 10 4 12 18c3 9-1 17-8 20q-14 6-28 1-
 
 {id:"foie-de-porc",cat:"cuts",price:1,pk:"4–8 €/kg",name:{en:"Pork liver",fr:"Foie de porc"},latin:"Sus scrofa domesticus (hepar)",
 origin:{en:"Farmhouse charcuterie, France",fr:"Charcuterie fermière, France"},season:[],
-flavor:["meaty","rich","bitter"],
+flavor:["meaty","rich","bitter"],texture:["firm","smooth","moist"],
 story:{en:"Every pâté de campagne rests on it, and on a ratio the charcutiers hold to: roughly one third liver to two thirds pork, fat included. It is not there for flavour alone — its proteins are what set the terrine, and swapping in calf's liver gives a pâté that tastes politer and slices badly.",
 fr:"Tout pâté de campagne repose dessus, et sur un rapport que les charcutiers tiennent : environ un tiers de foie pour deux tiers de porc, gras compris. Il n'est pas là que pour le goût — ses protéines sont ce qui fait prendre la terrine, et le remplacer par du foie de veau donne un pâté plus poli qui se tranche mal."},
 tip:{en:"Soak the cubes an hour in milk and throw the milk away; that pulls the bitterness which survives cooking. Never blend the mix warm and never grind it twice — the emulsion breaks and the terrine comes out grey and grainy.",
@@ -581,7 +581,7 @@ svg:'<path class="f3 sf" d="M20 52q-4-14 12-20t26 4q4-8 14-2 10 6 4 18-8 16-30 1
 
 {id:"couenne",cat:"cuts",price:1,pk:"3–7 €/kg",name:{en:"Pork rind",fr:"Couenne"},latin:"Sus scrofa domesticus (cutis)",
 origin:{en:"Lauragais and the cassoulet pot",fr:"Le Lauragais et la cassole"},season:[],
-flavor:["rich","meaty","mild"],
+flavor:["rich","meaty","mild"],texture:["tough","gelatinous"],
 story:{en:"Castelnaudary lines the bottom of the cassole with sheets of rind, fat side down, before a single bean goes in: they stop the base catching and dissolve into the gelatine that gives the dish its lip-sticking body. Rind is close to pure collagen, which is why a scrap of it in a stockpot does more for texture than an extra hour of simmering.",
 fr:"Castelnaudary tapisse le fond de la cassole de couennes, côté gras dessous, avant le moindre haricot : elles empêchent la base d’attacher et se dissolvent en gélatine, ce qui donne au cassoulet sa tenue collante aux lèvres. La couenne est presque du collagène pur, et c’est pourquoi un morceau dans un bouillon fait plus pour la texture qu’une heure de cuisson supplémentaire."},
 tip:{en:"Scrape the underside clean of fat and blanch the sheets ten minutes from cold water before they go in the pot, or they perfume the dish with pig instead of melting quietly. Dried, then fried at 200 °C, they blister into crackling.",
@@ -591,7 +591,7 @@ svg:'<path class="f1 sf" d="M22 38q12-6 26 0t26-4v26q-14 6-26 2t-26 4z"/><path c
 
 {id:"filet-mignon-porc",cat:"cuts",price:2,pk:"14–22 €/kg",name:{en:"Pork tenderloin",fr:"Filet mignon de porc"},latin:"Porc — filet",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["delicate","mild","sweet","meaty"],
+flavor:["delicate","mild","sweet","meaty"],texture:["tender","moist"],
 story:{en:"The least-used muscle on the pig and therefore the most tender, but also the leanest — it has almost no fat at all, which makes it the easiest cut in the shop to ruin. Confusingly, the French name means something different from the English.",
 fr:"Le muscle le moins sollicité du porc et donc le plus tendre, mais aussi le plus maigre — presque sans gras, ce qui en fait le morceau le plus facile à gâcher. Le nom français, prêtant à confusion, ne désigne pas la même chose que l’anglais."},
 tip:{en:"Take it out at 62°C and let it rest. Pork does not need to be cooked grey, and this cut punishes it more than any other.",
@@ -601,7 +601,7 @@ svg:'<path class="f1 sf" d="M20 66c-2-8 6-14 16-16 14-3 28-8 38-14 4-2 7 1 5 5-4
 
 {id:"kobukuro",cat:"cuts",rare:true,price:1,pk:"8–15 €/kg",name:{en:"Pork uterus (kobukuro)",fr:"Utérus de porc (kobukuro)"},latin:"Sus scrofa domesticus (uterus)",
 origin:{en:"Japanese horumon grills",fr:"Les grillades horumon japonaises"},season:[],
-flavor:["mild","meaty","delicate"],
+flavor:["mild","meaty","delicate"],texture:["firm","crunchy"],
 story:{en:"Kobukuro means child bag, and in the horumon repertoire it is the offcut wanted for texture alone: lean, almost fatless, squeaking between the teeth like a fresh curd. The word horumon itself is said to come from Osaka slang for what gets thrown away, though the medical hormone is the likelier root.",
 fr:"Kobukuro signifie « sac à enfant », et dans le répertoire horumon c’est l’abat que l’on recherche pour la seule texture : maigre, presque sans gras, il craque sous la dent comme un grain de caillé frais. Le mot horumon lui-même viendrait de l’argot d’Osaka pour ce que l’on jette, même si l’hormone médicale en est la racine la plus probable."},
 tip:{en:"Grill it fast and hot — thirty seconds a side over live coals. Past a minute the snap turns to rubber and no sauce brings it back.",
@@ -611,7 +611,7 @@ svg:'<path class="f1 sf" d="M44 74q-2-14-10-24-6-8-2-14 5-6 10 2 4 6 6 14 2-8 6-
 
 {id:"sot-l-y-laisse",cat:"cuts",price:2,pk:"16–26 €/kg",name:{en:"Poultry oyster",fr:"Sot-l’y-laisse"},latin:"Gallus gallus domesticus",
 origin:{en:"France, taken off the whole bird",fr:"France, prélevé sur la carcasse"},season:[],
-flavor:["meaty","rich","delicate"],
+flavor:["meaty","rich","delicate"],texture:["tender","juicy"],
 story:{en:"The name is an eighteenth-century joke that explains itself: only a fool would leave it there. It is the pair of muscles sitting in the hollow of the pelvic bone above the parson's nose, which English calls oysters for the shape — two to a bird, perhaps fifteen grams each.",
 fr:"Le nom est une plaisanterie du XVIIIᵉ siècle qui s’explique seule : seul un sot l’y laisserait. Ce sont les deux muscles logés dans le creux de l’os iliaque, au-dessus du croupion, que l’anglais appelle huîtres pour leur forme — deux par volaille, une quinzaine de grammes chacun."},
 tip:{en:"Sold by the kilo off turkey and chicken carcasses, they want ninety seconds in foaming butter and a minute's rest — they are already the tenderest meat on the bird, and longer cooking only tightens them. Dry them well first or they will not colour.",
@@ -621,7 +621,7 @@ svg:'<path class="f2 sf" d="M28 46q10-8 18-2t-2 16q-10 6-16-2t0-12z"/><path clas
 
 {id:"presa-iberique",cat:"cuts",luxe:true,price:3,pk:"35–55 €/kg",name:{en:"Presa ibérica",fr:"Presa ibérique"},latin:"Sus scrofa domesticus (ibérico)",
 origin:{en:"Extremadura and Andalusia",fr:"Estrémadure et Andalousie"},season:[],
-flavor:["rich","nutty","meaty","earthy"],
+flavor:["rich","nutty","meaty","earthy"],texture:["tender","juicy"],
 story:{en:"The presa sits on top of the blade at the head of the loin: a thick disc of around half a kilo, two to a pig, and the most heavily veined of the Iberian cuts. The trade's own line is that on a bellota pig it beats the ham, and that it is the piece the butcher keeps for himself.",
 fr:"La presa est posée sur l’omoplate, à la naissance de l’échine : un disque épais d’environ cinq cents grammes, deux par cochon, et la plus veinée des pièces ibériques. Le métier dit que sur un bellota elle vaut mieux que le jambon, et que c’est le morceau que le boucher garde pour lui."},
 tip:{en:"Thick enough to treat like a beef fillet: sear it hard, finish it in a low oven to 58 °C in the centre, rest it ten minutes. Slice across the grain — the fat veins all run one way, and cut along them it eats tough.",
@@ -631,7 +631,7 @@ svg:'<path class="f2 sf" d="M22 46a26 13 0 1152 0v10a26 13 0 01-52 0z"/><ellipse
 
 {id:"rack-of-lamb",cat:"cuts",price:3,pk:"28–45 €/kg",name:{en:"Rack of lamb",fr:"Carré d’agneau"},latin:"Ovis aries (rib rack)",
 origin:{en:"The first eight ribs, frenched",fr:"Les huit premières côtes, manchonnées"},season:[3,4,5,6],
-flavor:["meaty","delicate","rich"],
+flavor:["meaty","delicate","rich"],texture:["tender","juicy"],
 story:{en:"Eight ribs scraped clean to the bone — “frenched” — until the rack looks architectural; two racks interlocked become the guard of honour of British wedding tables. Under its thin cap of fat sits the tenderest lamb on the animal, built for a green persillade crust.",
 fr:"Huit côtes grattées jusqu’à l’os — « manchonnées » — jusqu’à ce que le carré devienne architecture ; deux carrés entrecroisés forment la haie d’honneur des tables de noces britanniques. Sous sa fine coiffe de gras loge l’agneau le plus tendre de la bête, taillé pour une croûte verte de persillade."},
 tip:{en:"Sear the fat cap first, paint with mustard, press on the herb crumbs, then a short hot roast: pink at the bone, rested until the juices settle.",
@@ -641,7 +641,7 @@ svg:'<path class="f1 sf" d="M26 61q-5-16-6-31 0-3 3-4 3 0 4 3 2 15 5 32zM39 60q-
 
 {id:"cote-de-boeuf",cat:"cuts",price:3,pk:"25–45 €/kg",name:{en:"Rib of beef",fr:"Côte de bœuf"},latin:"Bos taurus (rib section)",
 origin:{en:"The rib cage, bone left in",fr:"Le train de côtes, avec son os"},season:[],
-flavor:["meaty","rich","umami","toasty"],
+flavor:["meaty","rich","umami","toasty"],texture:["tender","juicy"],
 story:{en:"The celebration cut: marbled enough to baste itself, big enough to demand company, always carved and shared. Dry-aged for a month or two, its edges develop the nutty, almost blue-cheese depth of enzymes at slow work — beef that has learned patience.",
 fr:"La pièce des grandes occasions : assez persillée pour s’arroser elle-même, assez grande pour exiger de la compagnie, toujours tranchée et partagée. Maturée un mois ou deux, elle gagne sur ses bords la profondeur noisettée, presque roquefortée, des enzymes au travail lent — un bœuf qui a appris la patience."},
 tip:{en:"Salt generously, sear on all faces including the fat edge, then finish low with a thermometer, not a timer. Rest it half its cooking time — the bone keeps it warm.",
@@ -651,7 +651,7 @@ svg:'<path class="f2 sf" d="M38 40q16-8 26 2 6 7 0 16-8 12-22 8-12-4-10-16 2-7 6
 
 {id:"selle-agneau",cat:"cuts",price:3,pk:"22–35 €/kg",name:{en:"Saddle of lamb",fr:"Selle d’agneau"},latin:"Agneau — selle",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
-flavor:["delicate","rich","meaty","sweet"],
+flavor:["delicate","rich","meaty","sweet"],texture:["tender","juicy"],
 story:{en:"Both loins still joined across the backbone, and the grandest thing a butcher can hand you — it is a restaurant cut, carved at the table. Escoffier's selle d'agneau was a set piece of the classical service.",
 fr:"Les deux longes encore réunies par l’échine, et la pièce la plus imposante qu’un boucher puisse tendre — un morceau de restaurant, tranché en salle. La selle d’agneau d’Escoffier était un morceau de bravoure du service classique."},
 tip:{en:"Ask the butcher to remove the chine bone but leave the saddle whole. Carving it otherwise is genuinely difficult.",
@@ -661,7 +661,7 @@ svg:'<path class="f1 sf" d="M22 48q26-10 52 0v14q-26 10-52 0z"/><path class="s" 
 
 {id:"secreto-iberique",cat:"cuts",luxe:true,price:3,pk:"35–55 €/kg",name:{en:"Secreto ibérico",fr:"Secreto ibérique"},latin:"Sus scrofa domesticus",
 origin:{en:"Dehesa oak pastures, Spain",fr:"Dehesas de chênes, Espagne"},season:[],
-flavor:["rich","nutty","meaty"],
+flavor:["rich","nutty","meaty"],texture:["tender","juicy"],
 story:{en:"Spanish butchers found this fan of muscle buried under the shoulder fat, where a vertical cut misses it entirely, and kept it back for themselves — hence the name. It reached restaurant menus only once whole-carcass butchery became something worth advertising rather than an ordinary household habit.",
 fr:"Les bouchers espagnols ont trouvé cet éventail de muscle enfoui sous le gras d’épaule, là où une coupe verticale le manque entièrement, et le gardaient pour eux : d’où son nom. Il n’est arrivé sur les cartes que le jour où la découpe à la carcasse entière est devenue un argument de vente plutôt qu’une habitude domestique."},
 tip:{en:"Charcoal, salt, three minutes a side and no more — the piece is thin, and past medium the intramuscular fat has rendered out and left it dry. Slice across the grain and salt again at the table.",
@@ -671,7 +671,7 @@ svg:'<path class="f2 sf" d="M18 58q6-24 30-26t30 22q-16 12-30 12t-30-8z"/><path 
 
 {id:"plat-de-cotes",cat:"cuts",price:1,pk:"9–16 €/kg",name:{en:"Short rib",fr:"Plat de côtes"},latin:"Bœuf — poitrine",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","meaty","umami","smoky"],
+flavor:["rich","meaty","umami","smoky"],texture:["tough","gelatinous","fibrous"],
 story:{en:"Alternating layers of meat, fat and bone, which is the ideal architecture for slow cooking — the fat renders through the meat while the bone gives up gelatine. It is the cut a pot-au-feu is built around in most French households.",
 fr:"Des couches alternées de viande, de gras et d’os, architecture idéale pour la cuisson lente — le gras fond à travers la chair pendant que l’os rend sa gélatine. C’est le morceau autour duquel se bâtit le pot-au-feu dans la plupart des foyers français."},
 tip:{en:"Cook it the day before and chill it. The fat sets on top and lifts off in one sheet, and the meat improves overnight.",
@@ -681,7 +681,7 @@ svg:'<path class="f1 sf" d="M18 44c4-8 16-12 30-12 15 0 28 3 33 9 3 5 1 13-5 17-
 
 {id:"hampe",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Skirt steak",fr:"Hampe"},latin:"Bœuf — diaphragme",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["meaty","rich","umami","earthy"],
+flavor:["meaty","rich","umami","earthy"],texture:["firm","fibrous","juicy"],
 story:{en:"Part of the diaphragm, and one of the morceaux du boucher — the cuts French butchers traditionally kept for themselves because there are only two per animal and they taste better than they look. Onglet is its neighbour.",
 fr:"Une partie du diaphragme, et l’un des morceaux du boucher — ces pièces que les bouchers gardaient traditionnellement pour eux parce qu’il n’y en a que deux par bête et qu’elles ont meilleur goût que belle allure. L’onglet est son voisin."},
 tip:{en:"The grain is coarse and runs lengthways. Slice it hard across the grain or it is unchewable, however rare you cook it.",
@@ -691,7 +691,7 @@ svg:'<path class="f1 sf" d="M17 62c2-13 13-23 27-28 12-5 23-6 32-4 3 1 4 6 1 9-9
 
 {id:"araignee",cat:"cuts",price:2,pk:"16–26 €/kg",name:{en:"Spider steak",fr:"Araignée"},latin:"Bos taurus",
 origin:{en:"The hip socket, French butchery",fr:"Cavité de la hanche, boucherie française"},season:[],
-flavor:["meaty","rich","umami"],
+flavor:["meaty","rich","umami"],texture:["tender","fibrous","juicy"],
 story:{en:"It is one of the morceaux du boucher: roughly 500 g on a whole animal, prised out of the hollow of the hip socket, and long kept back rather than put on the counter. The web of fat running through it, which an industrial grader reads as a fault, is exactly what keeps it juicy.",
 fr:"C’est l’un des morceaux du boucher : environ 500 g sur une bête entière, dégagé du creux de la cavité de la hanche, longtemps gardé plutôt que mis en vitrine. La résille de gras qui le traverse, défaut aux yeux d’un calibrage industriel, est précisément ce qui le garde juteux."},
 tip:{en:"Grill it hard and take it off at rare — the loose grain turns stringy past medium-rare and no resting fixes it. Rest five minutes, then slice across the fibres, which run diagonally rather than along the length.",
@@ -701,7 +701,7 @@ svg:'<path class="f2 sf" d="M22 50q4-18 26-18t26 16q2 16-24 20T22 50z"/><path cl
 
 {id:"rate",cat:"cuts",rare:true,price:1,pk:"4–9 €/kg",name:{en:"Spleen",fr:"Rate"},latin:"Bos taurus (lien)",
 origin:{en:"Palermo and Tuscany",fr:"Palerme et la Toscane"},season:[],
-flavor:["meaty","rich","earthy","umami"],
+flavor:["meaty","rich","earthy","umami"],texture:["soft","smooth"],
 story:{en:"In Palermo the spleen becomes pani ca’ meusa: sliced, seethed in lard and stuffed into a roll either schetta — plain — or maritata, married to ricotta and caciocavallo. Tuscany uses it differently, mashed with liver and capers into the black crostini that open a Florentine meal.",
 fr:"À Palerme, la rate devient le pani ca’ meusa : tranchée, mijotée dans le saindoux et glissée dans un pain, schetta — nature — ou maritata, mariée à la ricotta et au caciocavallo. La Toscane s’en sert autrement, écrasée avec du foie et des câpres dans les crostini neri qui ouvrent le repas florentin."},
 tip:{en:"Peel the tough outer membrane off before cooking or it curls and turns leathery. Don’t try to slice it neatly once cooked — it wants to be scraped from its skin and mashed, and it takes salt and vinegar hard.",
@@ -711,7 +711,7 @@ svg:'<path class="f3 sf" d="M32 28q16-4 26 12 8 14 4 30-2 8-8 4-14-10-20-26-4-12
 
 {id:"sweetbreads",cat:"cuts",luxe:true,price:3,pk:"45–80 €/kg",name:{en:"Sweetbreads",fr:"Ris de veau"},latin:"Bos taurus (thymus)",
 origin:{en:"The thymus of the calf — gone by adulthood",fr:"Le thymus du veau — disparu à l’âge adulte"},season:[],
-flavor:["delicate","creamy","rich","milky"],
+flavor:["delicate","creamy","rich","milky"],texture:["soft","creamy"],
 story:{en:"Not brains, as the nervous suppose, but the thymus gland — an organ that shrinks away as the animal grows, so only young calves can offer it. Haute cuisine’s badge of nerve and technique: soaked, blanched, pressed, then seared to a gilded crust over a custard heart.",
 fr:"Non pas la cervelle, comme le craignent les inquiets, mais le thymus — un organe qui s’efface à mesure que l’animal grandit, si bien que seuls les jeunes veaux peuvent l’offrir. L’insigne de nerf et de technique de la haute cuisine : trempé, blanchi, pressé, puis saisi jusqu’à la croûte dorée sur un cœur de flan."},
 tip:{en:"The pressing overnight under a weight is not optional — it firms the lobe so it sears instead of steaming. Then: brown butter, capers or morels, and conviction.",
@@ -721,7 +721,7 @@ svg:'<path class="f2 sf" d="M50 36q8-8 18-4 10 4 10 14 0 12-11 14-11 2-16-6-4-8-
 
 {id:"tetine",cat:"cuts",rare:true,price:1,pk:"5–10 €/kg",name:{en:"Udder",fr:"Tétine"},latin:"Bos taurus (uber)",
 origin:{en:"Lyon tripe stalls",fr:"La triperie lyonnaise"},season:[],
-flavor:["mild","milky","creamy","rich"],
+flavor:["mild","milky","creamy","rich"],texture:["firm","smooth"],
 story:{en:"It leaves the tripier already boiled and pressed, chalk-white and firm enough to slice thin, which is why it has always counted as a cooked product rather than a raw cut. The Lyon bouchons crumb it and fry it; elsewhere it slid off the menu so quietly that it is now more often sold as a dog chew than as a dish.",
 fr:"Elle quitte la triperie déjà bouillie et pressée, blanche comme la craie et assez ferme pour se trancher fin — raison pour laquelle elle a toujours compté parmi les produits cuits plutôt que parmi les morceaux crus. Les bouchons lyonnais la panent et la font sauter ; ailleurs elle a quitté les cartes si discrètement qu’on la vend plus souvent au rayon des chiens qu’à l’étal."},
 tip:{en:"It is already cooked, so all it needs is colour: slice it 4 mm thick, crumb it and fry hot for a minute a side. It is bland by nature — meet it with mustard, capers or a sharp vinaigrette, never with cream.",
@@ -731,7 +731,7 @@ svg:'<path class="f2 sf" d="M26 46q6-16 22-16t22 16q4 10-4 16H30q-8-6-4-16z"/><p
 
 {id:"tendron-de-veau",cat:"cuts",price:2,pk:"12–20 €/kg",name:{en:"Veal breast",fr:"Tendron de veau"},latin:"Veau — tendron",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["delicate","rich","meaty","mild"],
+flavor:["delicate","rich","meaty","mild"],texture:["tough","gelatinous"],
 story:{en:"The cartilage-laced end of the ribs, and it turns to something between meat and jelly after two hours. It is a Lyonnais bouchon staple and almost unknown outside France, where it is usually ground into mince.",
 fr:"L’extrémité cartilagineuse des côtes, qui devient après deux heures quelque chose entre la viande et la gelée. C’est un classique des bouchons lyonnais et presque inconnu hors de France, où il finit généralement au hachoir."},
 tip:{en:"The cartilage is the good part, not a defect to trim. Cook it long enough and it becomes translucent and unctuous.",
@@ -741,7 +741,7 @@ svg:'<path class="f1 sf" d="M17 46q1-7 9-8 24-5 48-1 6 1 7 7 1 8-1 15-1 7-8 8-24
 
 {id:"coeur-de-veau",cat:"cuts",price:1,pk:"9–15 €/kg",name:{en:"Veal heart",fr:"Cœur de veau"},latin:"Bos taurus (cor)",
 origin:{en:"Veal offal, France",fr:"Abats de veau, France"},season:[],
-flavor:["meaty","mild","earthy"],
+flavor:["meaty","mild","earthy"],texture:["firm","chewy"],
 story:{en:"It is the leanest thing the animal has: no marbling, no sheets of connective tissue to melt, nothing that bastes it from within. Butchers used to sell it larded — threaded on a needle with strips of back fat — because a whole veal heart braised bare comes out dry, and the fat has to be put in by hand.",
 fr:"C'est la pièce la plus maigre de l'animal : pas de persillé, pas de tissu conjonctif à fondre, rien qui l'arrose de l'intérieur. Les bouchers le vendaient piqué de lard, traversé au lardoire de bandes de gras dur, parce qu'un cœur braisé nu sort sec : le gras, il faut l'y mettre à la main."},
 tip:{en:"Two methods and no third: sliced four millimetres across the grain and flashed like minute steak, sixty seconds in all, or larded and braised whole for four hours in stock. Anything between browns the outside and leaves the middle chewy.",
@@ -751,7 +751,7 @@ svg:'<path class="f2 sf" d="M42 76Q18 56 16 40q-2-14 12-16 10-2 14 8 4-10 14-8 1
 
 {id:"rognon-de-veau",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Veal kidney",fr:"Rognon de veau"},latin:"Bos taurus (ren)",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["rich","meaty","musky","mild"],
+flavor:["rich","meaty","musky","mild"],texture:["firm","smooth"],
 story:{en:"Where a lamb's or a pig's kidney is one smooth lobe, the calf's is a dozen or more lobes fused into a single knobbled mass, and it comes to the counter sealed inside its own hard white fat. Ask for it still jacketed: that fat is the roasting vessel, and a rognonnade is nothing more than the veal loin rolled around the whole thing before it goes in the oven.",
 fr:"Là où le rognon d’agneau ou de porc n’est qu’un lobe lisse, celui du veau en compte une douzaine ou plus, soudés en une masse bosselée, et il arrive à l’étal enfermé dans sa propre graisse blanche et dure. Demandez-le ainsi : cette graisse est le plat à rôtir, et la rognonnade n’est rien d’autre que la longe de veau roulée autour avant le four."},
 tip:{en:"Roast it whole in its fat at 200°C for about 25 minutes, then rest it ten before carving — the jacket bastes it and the lobes stay rosy right through. Carve to a grey centre and it is finished; the texture never comes back.",
@@ -761,7 +761,7 @@ svg:'<path class="f1 sf" d="M24 50q0-20 24-20t24 20-24 24T24 50z"/><path class="
 
 {id:"quasi-de-veau",cat:"cuts",price:3,pk:"24–38 €/kg",name:{en:"Veal rump",fr:"Quasi de veau"},latin:"Veau — quasi",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["delicate","sweet","meaty","mild"],
+flavor:["delicate","sweet","meaty","mild"],texture:["tender","moist"],
 story:{en:"The top of the leg where it meets the loin, and the cut French cooks reach for when they want veal to roast rather than braise. It has no direct English equivalent, which is why translated recipes usually say rump and lose the distinction.",
 fr:"Le haut de la cuisse à la jonction de la longe, et le morceau que choisissent les cuisiniers français quand ils veulent rôtir le veau plutôt que le braiser. Il n’a pas d’équivalent anglais direct, d’où les recettes traduites qui disent rump et perdent la nuance."},
 tip:{en:"Roast it to just pink and rest it twenty minutes. Veal cooked through is the commonest way to waste an expensive piece of meat.",
@@ -771,7 +771,7 @@ svg:'<path class="f1 sf" d="M18 52c0-8 6-13 16-15 12-2 26-2 38 1 8 2 12 7 12 13 
 
 {id:"ris-de-veau-noix",cat:"cuts",luxe:true,price:3,pk:"55–95 €/kg",name:{en:"Veal sweetbread heart (noix)",fr:"Ris de veau — noix (pomme)"},latin:"Bos taurus (thymus, thoracic lobe)",
 origin:{en:"The thoracic lobe of the calf's thymus",fr:"Le lobe thoracique du thymus de veau"},season:[],
-flavor:["delicate","creamy","milky","rich"],
+flavor:["delicate","creamy","milky","rich"],texture:["soft","creamy"],
 story:{en:"Butchers split the calf's thymus in two and sell the halves as different goods: the round thoracic lobe — the noix, or pomme — fetches roughly double the ragged throat piece that runs on from it. One calf yields one noix, so a menu that lists it whole-roasted is quietly telling you how many it bought.",
 fr:"Le boucher partage le thymus du veau en deux et vend les moitiés comme deux produits distincts : le lobe thoracique — la noix, ou pomme — vaut environ le double du morceau de gorge, plus déchiqueté, qui le prolonge. Un veau ne donne qu’une noix ; une carte qui l’annonce rôtie entière avoue donc discrètement combien elle en a acheté."},
 tip:{en:"Degorge it three hours in cold water changed twice, blanch two minutes, peel the membrane while it is still warm, then press it overnight between two plates under a kilo. An unpressed noix steams instead of searing, and no amount of hot butter afterwards will fix that.",
@@ -781,7 +781,7 @@ svg:'<path class="f1 sf" d="M30 60q0-16 18-16t18 16q0 10-18 10T30 60z"/><path cl
 
 {id:"ris-de-veau-gorge",cat:"cuts",price:3,pk:"30–50 €/kg",name:{en:"Veal throat sweetbread (gorge)",fr:"Ris de veau — gorge"},latin:"Bos taurus (thymus, cervical lobe)",
 origin:{en:"The cervical lobe, along the calf's windpipe",fr:"Le lobe cervical, le long de la trachée du veau"},season:[],
-flavor:["delicate","milky","mild","rich"],
+flavor:["delicate","milky","mild","rich"],texture:["soft","creamy"],
 story:{en:"The gorge is the long lobe that runs up the throat toward the jaw, and it never sets into the neat cushion the noix makes — it comes away in ragged strips. Classical kitchens wasted none of it: this is the sweetbread of vol-au-vent, financière garnish and quenelle farce, where shape stops mattering.",
 fr:"La gorge est le lobe allongé qui remonte le long de la trachée vers la mâchoire, et elle ne prend jamais la forme du coussin régulier que donne la noix : elle se détache en lambeaux. La cuisine classique n’en perdait rien — c’est le ris du vol-au-vent, de la garniture financière et de la farce à quenelles, là où la forme ne compte plus."},
 tip:{en:"Buy it for anything bound in a sauce, never for a whole roast. Blanch, cut into thumb-sized pieces and braise 25 minutes in stock and cream; seared hard like a noix, the strips shrink and go stringy.",
@@ -791,7 +791,7 @@ svg:'<path class="f1 sf" d="M22 70q-6-8 0-14 5-5 10-3 0-8 7-11 6-3 10 1 3-7 11-8
 
 {id:"langue-de-veau",cat:"cuts",price:2,pk:"15–25 €/kg",name:{en:"Veal tongue",fr:"Langue de veau"},latin:"Bos taurus (lingua)",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["delicate","mild","meaty","rich"],
+flavor:["delicate","mild","meaty","rich"],texture:["firm","smooth"],
 story:{en:"A veal tongue weighs six or seven hundred grams against the ox tongue's two and a half kilos, and it is paler, finer in the grain and poached in two hours rather than five. That difference decides the service: ox tongue is pressed, chilled and sliced cold, while veal tongue goes hot to the table under sauce ravigote and never sees a press.",
 fr:"Une langue de veau pèse six ou sept cents grammes contre deux kilos et demi pour celle de bœuf ; elle est plus pâle, plus fine de grain et pochée en deux heures au lieu de cinq. Cette différence commande le service : la langue de bœuf se presse, se refroidit et se tranche froide, celle de veau part chaude à table sous une sauce ravigote et ne connaît jamais la presse."},
 tip:{en:"Peel it the moment it leaves the pot, starting at the tip with a small knife — the skin lifts in one sheet while hot and welds itself on as it cools. If you are not serving at once, let it cool in its own broth or it dries and greys.",

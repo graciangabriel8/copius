@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"angelica",cat:"herbs",price:2,pk:"15–30 €/kg",name:{en:"Angelica",fr:"Angélique"},latin:"Angelica archangelica",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[5,6,7],
-flavor:["sweet","herbal","anise","musky"],
+flavor:["sweet","herbal","anise","musky"],texture:["firm","chewy","moist"],
 story:{en:"Niort in the Deux-Sèvres has candied its hollow green stems since the eighteenth century, and the town still runs on it. The name comes from a legend that an archangel revealed the plant as a cure during a plague year.",
 fr:"Niort, dans les Deux-Sèvres, en confit les tiges creuses depuis le XVIIIe siècle, et la ville en vit encore. Le nom vient d’une légende selon laquelle un archange révéla la plante comme remède durant une année de peste."},
 tip:{en:"The candied stem is the usable form for most cooks — dice it into a cake or a fruit compote where you would use citrus peel.",
@@ -11,7 +11,7 @@ svg:'<path class="s" d="M48 49q-4-8-21-14M48 49q-4-11-12-21M48 49q1-12 0-25M48 4
 
 {id:"anise-hyssop",cat:"herbs",rare:true,price:2,pk:"3–6 €/botte",name:{en:"Anise hyssop",fr:"Agastache (hysope anisée)"},latin:"Agastache foeniculum",
 origin:{en:"Northern plains of North America",fr:"Grandes plaines d’Amérique du Nord"},season:[7,8,9],
-flavor:["anise","floral","sweet"],
+flavor:["anise","floral","sweet"],texture:["tender","moist"],
 story:{en:"It is neither anise nor hyssop but a North American mint whose leaves happen to carry methyl chavicol, the same molecule that scents tarragon. Plains nations brewed it and used it to sweeten other infusions, so settlers first met the plant as a sugar rather than as a herb.",
 fr:"Ce n’est ni de l’anis ni de l’hysope, mais une menthacée d’Amérique du Nord dont les feuilles portent le méthylchavicol, la molécule même qui parfume l’estragon. Les nations des Plaines en faisaient une infusion et s’en servaient pour adoucir les autres, si bien que les colons l’ont d’abord rencontrée comme un sucre, pas comme une herbe."},
 tip:{en:"Heat destroys the aroma — infuse the leaves off the boil, covered, twenty minutes in cream or syrup, then strain. Keep the flowers raw and scatter them at the end; they hold what the leaves lose in a pan.",
@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M48 17c7 0 11 7 11 15s-4 17-11 17-11-9-11-17 4-15 11
 
 {id:"avocado-leaf",cat:"herbs",rare:true,price:2,pk:"60–120 €/kg",name:{en:"Avocado leaf",fr:"Feuille d’avocatier"},latin:"Persea americana var. drymifolia",
 origin:{en:"Highlands of Michoacán, Mexico",fr:"Hauts plateaux du Michoacán, Mexique"},season:[],
-flavor:["anise","nutty","toasty"],
+flavor:["anise","nutty","toasty"],texture:["brittle","dry"],
 story:{en:"Only the Mexican race of avocado has a scented leaf; crush a West Indian one and it smells of nothing at all. The compound responsible is estragole, the same molecule that makes tarragon taste of tarragon, and it is why a pot of black beans in Oaxaca tastes unlike a pot of black beans anywhere else.",
 fr:"Seule la race mexicaine de l’avocatier a la feuille odorante : froissez celle d’un avocatier antillais, elle ne sent rien. La molécule responsable est l’estragole, celle-là même qui fait le goût de l’estragon, et c’est ce qui distingue une marmite de haricots noirs d’Oaxaca de toute autre."},
 tip:{en:"Toast the dry leaf on a bare pan, ten seconds a side, until it smells of hazelnut, then drop it in whole and fish it out before serving. Untoasted it tastes of hay; a few seconds too long and it tastes of ash.",
@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M48 18c14 13 16 35 0 55-16-20-14-42 0-55z"/><path cl
 
 {id:"banana-leaf",cat:"herbs",price:1,pk:"5–12 €/kg",name:{en:"Banana leaf",fr:"Feuille de bananier"},latin:"Musa spp.",
 origin:{en:"Tropics",fr:"Zones tropicales"},season:[],
-flavor:["grassy","herbal","fresh"],
+flavor:["grassy","herbal","fresh"],texture:["tough","fibrous","dry"],
 story:{en:"The leaf is not eaten — it is the vessel, and under steam it gives what it wraps a faint green-tea, hay-like note that no other wrapper leaves behind. Sold in folded sheets, fresh or frozen, it has done this work from Kerala to Oaxaca for far longer than foil has existed.",
 fr:"La feuille ne se mange pas : c’est le contenant, et à la vapeur elle laisse à ce qu’elle enveloppe une note discrète de thé vert et de foin qu’aucun autre emballage ne donne. Vendue en feuilles pliées, fraîches ou surgelées, elle fait ce travail du Kerala à Oaxaca bien avant l’invention du papier aluminium."},
 tip:{en:"Pass it over a flame or through boiling water for a few seconds until it darkens and goes limp — unwilted, it splits along the ribs the moment you fold it. Cut out the thick central rib and wrap with the glossy side against the food.",
@@ -41,7 +41,7 @@ svg:'<path class="f2 sf" d="M20 50q14-24 28-24t28 24q-14 24-28 24T20 50z"/><path
 
 {id:"basil",cat:"herbs",price:1,pk:"2–4 €/pot",name:{en:"Basil",fr:"Basilic"},latin:"Ocimum basilicum",
 origin:{en:"India",fr:"Inde"},season:[6,7,8,9],
-flavor:["herbal","anise","peppery","fresh"],
+flavor:["herbal","anise","peppery","fresh"],texture:["tender","moist"],
 story:{en:"Its name comes from basileus — Greek for king — and in India its cousin tulsi is holy enough to be planted in temple courtyards. A royal and sacred plant that ended up, gloriously, on tomatoes.",
 fr:"Son nom vient de basileus — « roi » en grec — et en Inde son cousin le tulsi est assez sacré pour pousser dans les cours des temples. Une plante royale et sainte qui a fini, glorieusement, sur des tomates."},
 tip:{en:"Heat murders it: tear the leaves by hand and add them off the flame, at the very last moment.",
@@ -51,7 +51,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="f2 sf" d="M46 44q-14-2-14-14 14
 
 {id:"bay-leaf",cat:"herbs",price:1,pk:"20–40 €/kg",name:{en:"Bay leaf",fr:"Laurier"},latin:"Laurus nobilis",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
-flavor:["woody","herbal","warm"],
+flavor:["woody","herbal","warm"],texture:["brittle","dry"],
 story:{en:"Daphne became a laurel tree to escape Apollo, and the god wore its leaves ever after — hence crowned poets “laureates” and every “baccalauréat”. In the pot, it works the same quiet magic: present everywhere, seen nowhere, always fished out at the end.",
 fr:"Daphné se changea en laurier pour échapper à Apollon, et le dieu en porta les feuilles à jamais — d’où les poètes « lauréats » et le « baccalauréat ». Dans la marmite, même magie discrète : présent partout, visible nulle part, toujours repêché à la fin."},
 tip:{en:"One leaf per pot is plenty — two is a statement, three is a mistake. Dried is often better than fresh, and it needs time to speak.",
@@ -61,7 +61,7 @@ svg:'<path class="f2 sf" d="M30 34q-8 13-3 26 5 11 14 17 2-13-3-24-3-11-8-19z"/>
 
 {id:"blackcurrant-buds",cat:"herbs",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Blackcurrant buds",fr:"Bourgeons de cassis"},latin:"Ribes nigrum",
 origin:{en:"Burgundy, France",fr:"Bourgogne, France"},season:[12,1,2],
-flavor:["fruity","resinous","musky","fresh"],
+flavor:["fruity","resinous","musky","fresh"],texture:["firm","dry"],
 story:{en:"The buds are cut from dormant wood between December and February, when their aromatic load peaks, and Burgundy now supplies almost the whole crop — around eighty-five percent of it goes to perfumers, who extract an absolute, not to kitchens. The scent owes its blackcurrant-and-boxwood edge to sulphur compounds, which is exactly why it survives dilution down to almost nothing.",
 fr:"Les bourgeons se coupent sur le bois dormant entre décembre et février, quand leur charge aromatique culmine, et la Bourgogne en fournit aujourd’hui la quasi-totalité : environ quatre-vingt-cinq pour cent de la récolte part chez les parfumeurs, qui en tirent une absolue, et non en cuisine. Le parfum doit son tranchant de cassis et de buis à des composés soufrés, ce qui explique qu’il tienne à des dilutions extrêmes."},
 tip:{en:"Infuse ten grams of buds per litre in cold cream overnight in the fridge, then strain — heat drives off the sulphur compounds that carry the blackcurrant note and leaves a flat green taste. Two or three buds are enough to scent a glass of syrup; beyond that it turns to boxwood and leaf.",
@@ -71,7 +71,7 @@ svg:'<path class="s" d="M24 78q16-10 24-26t12-28"/><path class="f2 sf" d="M38 60
 
 {id:"blackcurrant-leaf",cat:"herbs",price:1,pk:"5–15 €/kg",name:{en:"Blackcurrant leaf",fr:"Feuille de cassis"},latin:"Ribes nigrum",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[5,6,7,8],
-flavor:["grassy","herbal","fruity"],
+flavor:["grassy","herbal","fruity"],texture:["tender","moist"],
 story:{en:"The leaf smells of blackcurrant with none of the fruit's sugar or colour — green, sappy, faintly catty, from the same thiol family that makes Sauvignon Blanc smell of blackcurrant bud. It is at its most aromatic before the fruit sets, which is precisely when nobody is paying the bush any attention.",
 fr:"La feuille sent le cassis sans rien de son sucre ni de sa couleur : verte, sève, un rien pipi-de-chat, issue de la même famille de thiols qui fait sentir le bourgeon de cassis dans un sauvignon. Elle est à son maximum aromatique avant la nouaison, c’est-à-dire au moment précis où personne ne regarde le buisson."},
 tip:{en:"Infuse hot but never boil: two minutes off the heat in syrup or cream is enough, and a hard boil turns the aroma into cooked spinach. Ten leaves to a litre, then strain and chill straight away.",
@@ -81,7 +81,7 @@ svg:'<path class="f1 sf" d="M51 23.5L54 28L52.5 30Q51 32 54.5 34L58 36L56 38.5Q5
 
 {id:"blue-fenugreek",cat:"herbs",rare:true,price:2,pk:"4–8 €/100 g",name:{en:"Blue fenugreek",fr:"Fenugrec bleu"},latin:"Trigonella caerulea",
 origin:{en:"Caucasus & the Alps",fr:"Caucase & Alpes"},season:[],
-flavor:["herbal","sweet","nutty","grassy"],
+flavor:["herbal","sweet","nutty","grassy"],texture:["powdery","dry"],
 story:{en:"Georgians call it utskho suneli, the foreign spice, although it has grown in the Caucasus for centuries, and it is the blue in khmeli suneli. In Glarus the same herb is ground whole — pods included, which is why it is milder than common fenugreek — into Schabziger, the hard green cheese Swiss records mention as early as the fifteenth century.",
 fr:"Les Géorgiens l’appellent utskho suneli, « l’épice étrangère », alors qu’il pousse dans le Caucase depuis des siècles, et c’est lui le bleu du khmeli suneli. Dans le canton de Glaris, la même herbe est moulue entière — gousses comprises, d’où sa douceur au regard du fenugrec commun — pour le schabziger, ce fromage vert et dur que les archives suisses mentionnent dès le XVe siècle."},
 tip:{en:"Add it at the end of cooking, off the heat, the way you would a dried herb — sustained heat strips the hay-and-maple aroma out of it within minutes. Do not swap it weight for weight with common fenugreek: the ordinary seed is far more bitter, and half the quantity is already too much.",
@@ -91,7 +91,7 @@ svg:'<path class="s" d="M48 78V44"/><path class="f2 sf" d="M48 52q-12-2-16-10 10
 
 {id:"bog-myrtle",cat:"herbs",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Bog myrtle",fr:"Piment royal"},latin:"Myrica gale",
 origin:{en:"Northern peat bogs",fr:"Tourbières du Nord"},season:[4,5,6,7,8],
-flavor:["resinous","bitter","woody"],
+flavor:["resinous","bitter","woody"],texture:["firm","dry"],
 story:{en:"Before hops took over, northern European ale was bittered with gruit, and bog myrtle was one of its principal herbs — a shrub of acid bogs where almost nothing edible grows. Nordic kitchens brought it back for fish and game, where it works like a bay leaf with eucalyptus behind it.",
 fr:"Avant que le houblon ne s’impose, la bière du nord de l’Europe était amérisée au gruit, et le piment royal en était l’une des herbes principales — un arbrisseau des tourbières acides où presque rien de comestible ne pousse. Les cuisines nordiques l’ont repris pour le poisson et le gibier, où il agit comme une feuille de laurier doublée d’eucalyptus."},
 tip:{en:"Use whole leaves, one or two, and lift them out before serving — the resin is strong and the bitterness keeps building through a long braise. Bruise a leaf in the pan for oily fish; the catkins are stronger still, so halve the quantity.",
@@ -101,7 +101,7 @@ svg:'<path class="s" d="M28 76q12-20 20-32t14-24"/><path class="f2 sf" d="M38 58
 
 {id:"buckler-leaf-sorrel",cat:"herbs",price:2,pk:"4–7 €/barquette (30 g)",name:{en:"Buckler-leaf sorrel",fr:"Oseille ronde"},latin:"Rumex scutatus",
 origin:{en:"French kitchen gardens",fr:"Potagers français"},season:[4,5,6,7,8,9,10],
-flavor:["sour","citrus","fresh"],
+flavor:["sour","citrus","fresh"],texture:["tender","juicy"],
 story:{en:"Scutatus means shielded, and Linnaeus named it for the little bucklers the leaves cut against the light. English seedsmen have sold it as French sorrel for three centuries, which is how one country’s garden herb ended up carrying another country’s name on the packet.",
 fr:"Scutatus veut dire muni d’un bouclier : Linné a nommé la plante pour ces petits écus que les feuilles découpent à contre-jour. Les grainetiers anglais la vendent depuis trois siècles sous le nom de french sorrel — l’herbe de potager d’un pays portant sur le sachet le nom d’un autre."},
 tip:{en:"Raw and last: it holds its shape in a salad but collapses to khaki purée within seconds of heat. To serve it warm, lay the leaves on the plate and put the hot fish down on top of them.",
@@ -111,7 +111,7 @@ svg:'<path class="f2 sf" d="M48 20q13 14 13 28 0 8-13 12-13-4-13-12 0-14 13-28z"
 
 {id:"chervil",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Chervil",fr:"Cerfeuil"},latin:"Anthriscus cerefolium",
 origin:{en:"Caucasus & Southern Russia",fr:"Caucase & Russie du Sud"},season:[3,4,5,6],
-flavor:["delicate","anise","fresh","grassy"],
+flavor:["delicate","anise","fresh","grassy"],texture:["tender","moist"],
 story:{en:"The most fragile of the fines herbes — the classic French quartet with parsley, chives and tarragon — whispering anise where the others speak. Old Europe ate it at Easter as a herb of renewal; today it is the connoisseur’s test of a kitchen’s finesse, since heat erases it entirely.",
 fr:"La plus fragile des fines herbes — le quatuor français classique avec persil, ciboulette et estragon — murmurant l’anis là où les autres parlent. La vieille Europe en mangeait à Pâques, herbe de renouveau ; c’est aujourd’hui le test du connaisseur pour jauger la finesse d’une cuisine, car la chaleur l’efface entièrement."},
 tip:{en:"Never chop it hard, never cook it: pluck the lacy leaves whole over eggs, carrots or a cream soup at the moment of serving.",
@@ -121,7 +121,7 @@ svg:'<path class="s" d="M48 81q-3-16-2-24M46 60q-5 1-9-1M50 60q5 1 9-1"/><path c
 
 {id:"chives",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Chives",fr:"Ciboulette"},latin:"Allium schoenoprasum",
 origin:{en:"Europe & Asia",fr:"Europe & Asie"},season:[4,5,6,7,8,9],
-flavor:["mild","fresh","pungent"],
+flavor:["mild","fresh","pungent"],texture:["tender","juicy"],
 story:{en:"The gentlest member of the onion clan, gathered wild in Europe since the Middle Ages, when bunches were hung against evil spells. It offers the allium idea — without the allium consequences.",
 fr:"Le membre le plus doux du clan des oignons, cueilli sauvage en Europe depuis le Moyen Âge, où l’on en suspendait des bouquets contre les mauvais sorts. Elle offre l’idée de l’oignon — sans les conséquences de l’oignon."},
 tip:{en:"Scissors beat the knife: snip it directly over eggs, potatoes or cream, and its purple pompom flowers are edible too.",
@@ -131,7 +131,7 @@ svg:'<path class="s" d="M46 81q-14-7-18-15M47 81q14-6 18-14" stroke-width="2"/><
 
 {id:"cilantro",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Cilantro / Coriander",fr:"Coriandre"},latin:"Coriandrum sativum",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[5,6,7,8,9],
-flavor:["fresh","citrus","herbal","pungent"],
+flavor:["fresh","citrus","herbal","pungent"],texture:["tender","moist"],
 story:{en:"Coriander seeds were found in Tutankhamun’s tomb, making it one of the oldest herbs humans carry with them. A single gene decides its fate on your tongue: for most it sings of citrus, for the unlucky few it tastes of soap.",
 fr:"Des graines de coriandre furent trouvées dans la tombe de Toutânkhamon — l’une des plus vieilles herbes que l’humanité emporte avec elle. Un seul gène décide de son destin sur votre langue : pour la plupart elle chante l’agrume, pour quelques malchanceux elle a un goût de savon."},
 tip:{en:"Leaves and seeds are two different ingredients: the leaf is a finishing herb, the seed a warm spice. Never swap one for the other.",
@@ -141,7 +141,7 @@ svg:'<path class="s" d="M48 82q-2-14-1-22M46 62q-5 1-9-2M50 62q5 1 9-2"/><path c
 
 {id:"clary-sage",cat:"herbs",rare:true,price:2,pk:"5–10 €/100 g",name:{en:"Clary sage",fr:"Sauge sclarée"},latin:"Salvia sclarea",
 origin:{en:"Provence and the Caucasus",fr:"Provence et Caucase"},season:[5,6,7,8],
-flavor:["floral","musky","herbal"],
+flavor:["floral","musky","herbal"],texture:["soft","fibrous","moist"],
 story:{en:"German still calls it Muskatellersalbei, muscatel sage, after the sixteenth-century merchants who dosed cheap Rhine wine with it and sold the result as muscat. The English name comes from a different trade: clarus, clear-eye, for the mucilaginous seed once dropped into an eye to lift out a piece of grit.",
 fr:"L’allemand la nomme encore Muskatellersalbei, sauge muscat, du nom des marchands du XVIe siècle qui en dosaient les vins du Rhin bon marché pour les vendre comme muscat. Le nom anglais vient d’un tout autre usage : clarus, œil clair, la graine mucilagineuse qu’on déposait dans l’œil pour en retirer une poussière."},
 tip:{en:"Infuse it warm and briefly — twenty minutes in cream held at 70°C, then strain. Boiled, the muscat note turns to sweat; for beignets, take the young leaves before the flower spike rises.",
@@ -151,7 +151,7 @@ svg:'<path class="s" d="M48 82V26"/><path class="f1 sf" d="M46 30q-11-2-13 5 7 6
 
 {id:"culantro",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Culantro",fr:"Chardon béni"},latin:"Eryngium foetidum",
 origin:{en:"Tropical America",fr:"Amérique tropicale"},season:[],
-flavor:["pungent","herbal","grassy"],
+flavor:["pungent","herbal","grassy"],texture:["firm","fibrous","moist"],
 story:{en:"Despite the coriander scent it is an Eryngium, a sea-holly relative, and the leaf is a leathery toothed rosette rather than a soft frond. That structure is why it holds up through a long simmer, where coriander leaf added early vanishes — it is chadon beni in Trinidad, ngo gai in Vietnam, recao in Puerto Rico.",
 fr:"Malgré son parfum de coriandre, c’est un Eryngium, cousin du panicaut, et la feuille forme une rosette coriace et dentée plutôt qu’un feuillage tendre. C’est cette structure qui lui fait tenir un long mijotage, là où la coriandre ajoutée trop tôt disparaît — c’est le chadon beni de Trinidad, le ngo gai du Vietnam, le recao de Porto Rico."},
 tip:{en:"It runs three or four times as strong as coriander, so substitute by the leaf and not by the bunch: one leaf for a small handful. Shred it finely across the ribs — whole leaves stay chewy however long they cook.",
@@ -161,7 +161,7 @@ svg:'<path class="f2 sf" d="M48 78q-6-14-6-28l-4-6 5-1 1-7 4 5 4-5 1 7 5 1-4 6q0
 
 {id:"curry-leaf",cat:"herbs",price:2,pk:"8–15 €/100 g",name:{en:"Curry leaf",fr:"Feuille de curry"},latin:"Murraya koenigii",
 origin:{en:"India & Sri Lanka",fr:"Inde & Sri Lanka"},season:[],
-flavor:["citrus","herbal","warm","resinous"],
+flavor:["citrus","herbal","warm","resinous"],texture:["firm","smooth","moist"],
 story:{en:"Nothing to do with curry powder, which contains none of it. The leaf is thrown into hot oil at the very start of a South Indian dish, where it crackles and perfumes the fat — a step called tempering, and the dish is unrecognisable without it.",
 fr:"Rien à voir avec le curry en poudre, qui n’en contient pas. La feuille est jetée dans l’huile chaude au tout début d’un plat sud-indien, où elle crépite et parfume le gras — une étape appelée tempérage, sans laquelle le plat est méconnaissable."},
 tip:{en:"Dried curry leaves are close to worthless. Buy them fresh and freeze what you do not use — they freeze perfectly.",
@@ -171,7 +171,7 @@ svg:'<path class="s" d="M26 73q11-9 19-21 7-11 19-22"/><path class="f1 sf" d="M3
 
 {id:"curry-plant",cat:"herbs",rare:true,price:1,pk:"3–6 €/pot",name:{en:"Curry plant",fr:"Hélichryse italienne (immortelle)"},latin:"Helichrysum italicum",
 origin:{en:"Mediterranean scrub, Corsica",fr:"Maquis méditerranéen, Corse"},season:[5,6,7,8,9],
-flavor:["herbal","warm","woody"],
+flavor:["herbal","warm","woody"],texture:["firm","dry"],
 story:{en:"Nothing in the curry plant is related to curry: the smell comes from its own resins, and the shrub was harvested in Corsica and the Balkans for the immortelle oil distilled from its flowers long before any cook touched it. Its dried flower heads keep their yellow for years, which is what everlasting means.",
 fr:"Rien dans l’immortelle ne tient au curry : l’odeur vient de ses propres résines, et l’arbrisseau a d’abord été récolté en Corse et dans les Balkans pour l’huile essentielle distillée de ses fleurs, pas pour la cuisine. Ses capitules séchés gardent leur jaune pendant des années — c’est tout le sens du mot immortelle."},
 tip:{en:"Treat it as a bay leaf that must not stay: infuse a sprig in the fat or the simmering liquid, then lift it out within about ten minutes. The chewed leaf is bitter and faintly medicinal, so it never reaches the plate.",
@@ -181,7 +181,7 @@ svg:'<path class="s" d="M48 84V34"/><path class="s" d="M48 60l-14-8M48 60l14-8M4
 
 {id:"dill",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Dill",fr:"Aneth"},latin:"Anethum graveolens",
 origin:{en:"Western Asia",fr:"Asie occidentale"},season:[5,6,7,8,9],
-flavor:["anise","fresh","grassy"],
+flavor:["anise","fresh","grassy"],texture:["tender","moist"],
 story:{en:"Old Norse dilla means “to soothe” — the herb once calmed babies’ colic. The North never let it go: gravlax, that Scandinavian invention of salmon “buried” in salt and dill, remains its masterpiece.",
 fr:"Le vieux norrois dilla signifie « apaiser » — l’herbe calmait jadis les coliques des nourrissons. Le Nord ne l’a jamais lâchée : le gravlax, cette invention scandinave de saumon « enterré » sous sel et aneth, reste son chef-d’œuvre."},
 tip:{en:"Dill hates heat and long waits: snip it over the dish at the table, especially anything with yogurt, eggs or fish.",
@@ -191,7 +191,7 @@ svg:'<path class="s" d="M48 78V40"/><path class="s" d="M48 40l-12-8M48 40l12-8M4
 
 {id:"douglas-fir-tips",cat:"herbs",rare:true,price:1,pk:"20–40 €/kg",name:{en:"Douglas fir tips",fr:"Pousses de sapin de Douglas"},latin:"Pseudotsuga menziesii",
 origin:{en:"Pacific Northwest forests",fr:"Forêts du nord-ouest américain"},season:[4,5,6],
-flavor:["resinous","citrus","fresh"],
+flavor:["resinous","citrus","fresh"],texture:["tender","moist"],
 story:{en:"The Douglas fir is not a fir: its genus name, Pseudotsuga, means false hemlock, and the tree carries the memory of two rival Scots — Archibald Menzies, who found and described it, and David Douglas, who shipped the seed home to Britain. The new spring tips read closer to grapefruit than to forest floor, which is why pastry kitchens buy Douglas and cure kitchens buy spruce.",
 fr:"Le douglas n’est pas un sapin : son nom de genre, Pseudotsuga, signifie faux tsuga, et l’arbre porte le souvenir de deux Écossais rivaux — Archibald Menzies, qui l’a décrit, et David Douglas, qui en a rapporté les graines en Grande-Bretagne. Les jeunes pousses de printemps tiennent plus du pamplemousse que du sous-bois, ce qui explique qu’on réserve le douglas à la pâtisserie et l’épicéa aux salaisons."},
 tip:{en:"Use only the soft pale tips, in the fortnight they stay bright green — older growth goes turpentine. Steep about 20 g per litre of cream or syrup, warm but never boiling, for twenty minutes.",
@@ -201,7 +201,7 @@ svg:'<path class="s" d="M16 62q18-8 62-14"/><path class="s" d="M28 58l-4-10M36 5
 
 {id:"dried-fenugreek-leaves",cat:"herbs",price:1,pk:"8–15 €/100 g",name:{en:"Dried fenugreek leaves",fr:"Feuilles de fenugrec séchées (kasoori methi)"},latin:"Trigonella foenum-graecum",
 origin:{en:"Punjab",fr:"Pendjab"},season:[],
-flavor:["bitter","herbal","grassy","warm"],
+flavor:["bitter","herbal","grassy","warm"],texture:["brittle","flaky","dry"],
 story:{en:"Kasoori methi takes its name from Kasur in the Punjab, the town whose dried crop set the standard. The leaf carries the same compound, sotolon, that makes the seed smell of maple syrup and burnt sugar, but without the seed’s hard resinous bitterness.",
 fr:"Le kasoori methi tient son nom de Kasur, au Pendjab, dont la récolte séchée a fixé la référence. La feuille porte le même composé, le sotolon, qui donne à la graine son odeur de sirop d’érable et de sucre brûlé, mais sans l’amertume dure et résineuse de celle-ci."},
 tip:{en:"Crush a tablespoon between your palms straight over the pan in the last minute, off the heat. Added early it stews down into something that tastes of hay.",
@@ -211,7 +211,7 @@ svg:'<path class="f1 sf" d="M48 28q9 6 9 16t-9 12q-9-2-9-12t9-16z"/><path class=
 
 {id:"epazote",cat:"herbs",price:2,pk:"10–20 €/100 g",name:{en:"Epazote",fr:"Épazote"},latin:"Dysphania ambrosioides",
 origin:{en:"Mexico & Central America",fr:"Mexique & Amérique centrale"},season:[6,7,8,9],
-flavor:["pungent","bitter","herbal","resinous"],
+flavor:["pungent","bitter","herbal","resinous"],texture:["tender","moist"],
 story:{en:"Mexican cooks put it in black beans for the same reason Germans put savory in theirs — it is held to reduce the gas. Its taste is genuinely divisive: descriptions run from petrol to turpentine to oregano, and all three are fair.",
 fr:"Les cuisiniers mexicains la mettent dans les haricots noirs pour la même raison que les Allemands y mettent de la sarriette — on lui prête un effet anti-flatulence. Son goût divise franchement : les descriptions vont de l’essence à la térébenthine en passant par l’origan, et les trois sont justes."},
 tip:{en:"One sprig for a whole pot, added in the last ten minutes. It is not an herb you scatter generously.",
@@ -221,7 +221,7 @@ svg:'<path class="s" d="M50 80q-3-14-1-24 1-14-1-26"/><path class="f1 sf" d="M47
 
 {id:"fig-leaf",cat:"herbs",price:1,pk:"0,50–1 €/pièce",name:{en:"Fig leaf",fr:"Feuille de figuier"},latin:"Ficus carica",
 origin:{en:"Mediterranean orchards",fr:"Vergers méditerranéens"},season:[5,6,7,8,9],
-flavor:["grassy","nutty","creamy"],
+flavor:["grassy","nutty","creamy"],texture:["tough","fibrous","moist"],
 story:{en:"The green smell of a fig leaf is largely coumarin, the compound behind new-mown hay and tonka bean — the fruit holds almost none of it, which is why leaf and fig taste nothing alike. Handling the leaves in strong sun can burn the skin, because the sap carries furocoumarins.",
 fr:"L’odeur verte de la feuille de figuier vient surtout de la coumarine, le composé du foin coupé et de la fève tonka — le fruit n’en contient presque pas, et c’est pourquoi la feuille et la figue n’ont rien du même goût. Manipuler les feuilles en plein soleil peut brûler la peau : la sève est chargée de furocoumarines."},
 tip:{en:"Toast a leaf briefly over a flame or in a dry pan until it smells of coconut, then steep it in hot cream or milk for fifteen minutes and take it out. Left in to cool, it turns bitter and grassy.",
@@ -231,7 +231,7 @@ svg:'<path class="f1 sf" d="M48 66q-12 2-22-8 2-6 10-10-11-2-14-14 6-2 17 4 0-9 
 
 {id:"fish-mint",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Fish mint (diếp cá)",fr:"Houttuynie (menthe-poisson)"},latin:"Houttuynia cordata",
 origin:{en:"Southeast and East Asia",fr:"Asie du Sud-Est et de l’Est"},season:[],
-flavor:["marine","pungent","fresh"],
+flavor:["marine","pungent","fresh"],texture:["tender","juicy"],
 story:{en:"The fishy note comes from aldehydes of the decanal family, the same class of compounds that gives fresh fish its smell — the plant is genuinely making a fish aroma, not merely suggesting one. In Japan the identical species is called dokudami, poison-blocker, and is dried for tea rather than eaten raw: one country’s salad leaf is another’s medicine cabinet.",
 fr:"La note de poisson vient d’aldéhydes de la famille du décanal, la classe même de molécules qui donne son odeur au poisson frais : la plante fabrique réellement un arôme de poisson, elle ne fait pas que l’évoquer. Au Japon, la même espèce s’appelle dokudami, « qui arrête le poison », et se sèche en tisane au lieu de se manger crue : la salade des uns est la pharmacie des autres."},
 tip:{en:"Serve it raw and cold only; heat blooms the aroma into something closer to a fish market and there is no walking it back. Give every leaf acid alongside — lime, the vinegar in nuoc cham — which cuts the metallic edge and lets the citrus through.",
@@ -241,7 +241,7 @@ svg:'<path class="f2 sf" d="M48 26q-8-8-18-4-10 4-8 18 2 16 26 34 24-18 26-34 2-
 
 {id:"garden-cress",cat:"herbs",price:1,pk:"2–4 €/barquette",name:{en:"Garden cress",fr:"Cresson alénois"},latin:"Lepidium sativum",
 origin:{en:"Egypt and West Asia",fr:"Égypte et Asie de l’Ouest"},season:[],
-flavor:["peppery","pungent","fresh"],
+flavor:["peppery","pungent","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"In the old British mustard-and-cress punnet the cress is sown three or four days ahead of the mustard, because it is the slower of the two — sown together, the mustard smothers it. It needs no soil at all: a damp cloth or a pad of wool is enough, which is how every schoolroom windowsill has grown it.",
 fr:"Dans la barquette anglaise de mustard-and-cress, le cresson alénois se sème trois ou quatre jours avant la moutarde, parce qu’il est le plus lent des deux — semés ensemble, la moutarde l’étouffe. Il n’a besoin d’aucune terre : un linge humide ou un tampon de coton suffit, et c’est ainsi qu’il pousse sur toutes les fenêtres d’école."},
 tip:{en:"Cut it with scissors just above the seed coats and serve it raw the same day — heat erases the mustard heat within seconds. Rinse as little as you can: wet seedlings collapse and never recover.",
@@ -251,7 +251,7 @@ svg:'<path class="f2 sf" d="M26 62h44l-4 20H30z"/><path class="s" d="M26 68h44"/
 
 {id:"garlic-chives",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Garlic chives",fr:"Ciboule de Chine"},latin:"Allium tuberosum",
 origin:{en:"Northern China",fr:"Chine du Nord"},season:[5,6,7,8,9],
-flavor:["pungent","herbal","grassy"],
+flavor:["pungent","herbal","grassy"],texture:["tender","juicy"],
 story:{en:"Chinese growers take two vegetables from the same plant: green jiucai in full light, and jiuhuang blanched under cover until the blades come up pale yellow and sweet. The flowering stems make a third, sold with the bud still shut.",
 fr:"Les maraîchers chinois tirent deux légumes de la même plante : le jiucai vert, en pleine lumière, et le jiuhuang étiolé sous couverture jusqu’à ce que les lames sortent jaune pâle et sucrées. Les tiges florales en font un troisième, vendues bouton encore fermé."},
 tip:{en:"Add them in the last thirty seconds of a stir-fry, cut in 4 cm lengths, and do not chop them fine — the flavour comes out of the cut ends, and a fine chop leaves it in the pan.",
@@ -261,7 +261,7 @@ svg:'<path class="f2 sf" d="M32 84q2-28 10-42 2 16-4 42zM46 84q-2-30 2-44 4 16 2
 
 {id:"garlic-mustard",cat:"herbs",rare:true,price:1,pk:"15–30 €/kg",name:{en:"Garlic mustard",fr:"Alliaire officinale"},latin:"Alliaria petiolata",
 origin:{en:"European woodland edges",fr:"Lisières de forêt d’Europe"},season:[3,4,5],
-flavor:["pungent","peppery","herbal"],
+flavor:["pungent","peppery","herbal"],texture:["tender","moist"],
 story:{en:"Charred deposits on western Baltic pottery have yielded garlic mustard seed phytoliths dated to roughly 6,000 years ago, mixed with fish and deer fats — the earliest direct evidence in Europe of food seasoned for taste rather than for nourishment. The plant smells of garlic without being an allium at all: it is a crucifer, building that smell from sulphur compounds of its own.",
 fr:"Des dépôts carbonisés sur des poteries de la Baltique occidentale ont livré des phytolithes de graines d’alliaire vieux d’environ 6 000 ans, mêlés à des graisses de poisson et de cerf : la plus ancienne preuve directe, en Europe, d’un aliment assaisonné pour le goût et non pour se nourrir. La plante sent l’ail sans être une alliacée — c’est une crucifère, qui fabrique cette odeur avec ses propres composés soufrés."},
 tip:{en:"The garlic note is destroyed by heat, so chop it raw into a salsa verde or a soft butter. Take leaves before flowering — once it bolts they go hard and bitter — while the young seed pods stay usable as a pungent caper.",
@@ -271,7 +271,7 @@ svg:'<path class="s" d="M48 86V34"/><path class="f2 sf" d="M46 66q-16 0-22-10 8-
 
 {id:"ground-elder",cat:"herbs",rare:true,price:1,pk:"10–25 €/kg",name:{en:"Ground elder",fr:"Égopode (herbe aux goutteux)"},latin:"Aegopodium podagraria",
 origin:{en:"European hedges and gardens",fr:"Haies et jardins d’Europe"},season:[3,4,5],
-flavor:["herbal","grassy","resinous"],
+flavor:["herbal","grassy","resinous"],texture:["tender","moist"],
 story:{en:"Its Latin name podagraria means gout: monastery gardens grew it as a poultice for the swollen joint, and the French herbe aux goutteux kept the memory long after the medicine was dropped. Gardeners now count it near-impossible to remove, since any fragment of rhizome left behind rebuilds the colony.",
 fr:"Son nom latin, podagraria, veut dire goutte : les jardins monastiques la cultivaient en cataplasme pour l’articulation enflée, et le français herbe aux goutteux en a gardé la trace bien après l’abandon du remède. Les jardiniers la tiennent aujourd’hui pour presque inextirpable, le moindre fragment de rhizome reconstituant la colonie."},
 tip:{en:"Take only the glossy folded leaflets, before the plant flowers — after that it turns soapy and does not come back. Treat it as a parsley with celery in it: chopped raw at the end, or wilted a minute in butter.",
@@ -281,7 +281,7 @@ svg:'<path class="s" d="M48 86V50"/><path class="s" d="M48 58l-16-8M48 58l16-8"/
 
 {id:"genepi",cat:"herbs",price:3,pk:"25–50 €/100 g",name:{en:"Génépi",fr:"Génépi"},latin:"Artemisia umbelliformis",
 origin:{en:"Alpine screes above 2000 m",fr:"Éboulis alpins au-dessus de 2 000 m"},season:[7,8],
-flavor:["bitter","herbal","resinous"],
+flavor:["bitter","herbal","resinous"],texture:["brittle","dry"],
 story:{en:"A Savoie prefectoral decree of June 2021 capped picking at 120 sprigs per person per day, after whole colonies were stripped from the screes above 2,000 metres where the plant grows. Distillers already worked to a rule older than the law: forty sprigs, forty sugar lumps, forty days.",
 fr:"Un arrêté préfectoral de Savoie, en juin 2021, a limité la cueillette à 120 brins par personne et par jour, après le pillage de stations entières sur les éboulis au-dessus de 2 000 mètres où pousse la plante. Les distillateurs suivaient déjà une règle plus ancienne que la loi : quarante brins, quarante sucres, quarante jours."},
 tip:{en:"The classic maceration is forty sprigs and forty sugar lumps in a litre of neutral spirit, forty days and no longer — past that the bitterness turns woody. A single dried sprig is already enough to mark a cream or a sorbet base.",
@@ -291,7 +291,7 @@ svg:'<path class="s" d="M48 86V32"/><path class="s" d="M40 74l-10-6M56 66l10-6M4
 
 {id:"hairy-bittercress",cat:"herbs",rare:true,price:1,pk:"15–30 €/kg",name:{en:"Hairy bittercress",fr:"Cardamine hirsute (cressonnette)"},latin:"Cardamine hirsuta",
 origin:{en:"Temperate waste ground",fr:"Terrains vagues tempérés"},season:[2,3,4,11],
-flavor:["pungent","fresh","grassy"],
+flavor:["pungent","fresh","grassy"],texture:["tender","juicy"],
 story:{en:"Ripe bittercress pods sit under tension and fling their seeds a metre or more at a touch, which is how the plant reaches every nursery pot and gravel path in the country. It is a winter annual, holding a green rosette through the cold months when nothing else sharp is growing outdoors.",
 fr:"Les siliques mûres de la cardamine sont sous tension et projettent leurs graines à un mètre ou plus au moindre contact : c’est ainsi qu’elle gagne tous les pots de pépinière et toutes les allées de gravier. C’est une annuelle d’hiver, qui garde sa rosette verte pendant la saison froide, quand plus rien de piquant ne pousse dehors."},
 tip:{en:"Pull the whole rosette and cut it off at the root — it is served as one piece, not leaf by leaf. Use it raw and scattered like a herb; a warm plate alone is enough to blunt the wasabi edge.",
@@ -301,7 +301,7 @@ svg:'<circle class="s" cx="48" cy="54" r="4"/><path class="f1 sf" d="M44 54q-14-
 
 {id:"hoba-leaf",cat:"herbs",rare:true,price:2,pk:"1–3 €/feuille",name:{en:"Hoba leaf (magnolia leaf)",fr:"Feuille de magnolia (hoba)"},latin:"Magnolia obovata",
 origin:{en:"Hida, Gifu",fr:"Hida, Gifu"},season:[],
-flavor:["woody","resinous","smoky","warm"],
+flavor:["woody","resinous","smoky","warm"],texture:["tough","fibrous","dry"],
 story:{en:"In the Hida mountains, where winter froze the miso and the pickles solid, a fallen magnolia leaf laid on the hearth served as the pan; that improvisation is now hoba miso, the dish Takayama is known for. The leaves are gathered brown in autumn, or picked green and cured in brine for three days before drying.",
 fr:"Dans les montagnes de Hida, où l’hiver gelait le miso et les pickles en bloc, une feuille de magnolia tombée posée sur le foyer tenait lieu de poêle ; cette débrouille est devenue le hoba miso, le plat qui a fait Takayama. Les feuilles se ramassent brunes à l’automne, ou se cueillent vertes et se saumurent trois jours avant séchage."},
 tip:{en:"Soak a dried leaf ten minutes before it goes on the grill and keep whatever sits on it wet — moisture is the only thing stopping it burning through. One leaf takes one grilling; the scent is spent after that.",
@@ -311,7 +311,7 @@ svg:'<path class="f1 sf" d="M48 14q22 14 22 36T48 82Q26 62 26 50T48 14z"/><path 
 
 {id:"hoja-santa",cat:"herbs",rare:true,price:3,pk:"25–50 €/100 g",name:{en:"Hoja santa",fr:"Hoja santa (feuille sainte)"},latin:"Piper auritum",
 origin:{en:"Southern Mexico",fr:"Sud du Mexique"},season:[6,7,8,9],
-flavor:["anise","herbal","peppery"],
+flavor:["anise","herbal","peppery"],texture:["tender","moist"],
 story:{en:"The aroma is safrole, the compound that once flavoured sassafras root beer and that American regulators pulled from the market in 1960 — the leaf itself has stayed a daily herb across southern Mexico throughout. Piper auritum is a true pepper relative, and grows leaves the size of a dinner plate.",
 fr:"L’arôme vient du safrole, le composé qui parfumait la root beer au sassafras et que la réglementation américaine a retiré du marché en 1960 — la feuille, elle, est restée pendant tout ce temps une herbe quotidienne dans le sud du Mexique. Piper auritum est un vrai poivrier, et ses feuilles atteignent la taille d’une assiette."},
 tip:{en:"Use the leaf as the vessel: wrap fish or fresh cheese in it and the aroma transfers through the steam without the leaf being eaten. Blended into a green mole, strip out the thick central vein first or the sauce turns stringy and bitter.",
@@ -321,7 +321,7 @@ svg:'<path class="f2 sf" d="M48 30q22 2 24 22T48 82Q26 72 24 52t24-22z"/><path c
 
 {id:"holy-basil",cat:"herbs",price:1,pk:"2–4 €/botte",name:{en:"Holy basil",fr:"Basilic sacré (tulsi, kaphrao)"},latin:"Ocimum tenuiflorum",
 origin:{en:"Indian subcontinent",fr:"Sous-continent indien"},season:[6,7,8,9],
-flavor:["peppery","hot","herbal"],
+flavor:["peppery","hot","herbal"],texture:["tender","moist"],
 story:{en:"Tulsi is grown in the courtyard of Hindu households as a sacred plant, and it is a different species from the Thai basil of restaurant menus — pad kaphrao is named for this one, and outside Thailand is routinely made with the wrong basil. Its heat comes from eugenol, the same compound that makes clove hot.",
 fr:"Le tulsi se cultive dans la cour des maisons hindoues comme plante sacrée, et ce n’est pas le basilic thaï des cartes de restaurant : le pad kaphrao porte son nom à lui, et se prépare pourtant le plus souvent avec le mauvais basilic hors de Thaïlande. Sa chaleur vient de l’eugénol, le composé qui rend le clou de girofle brûlant."},
 tip:{en:"It goes into very hot oil with the garlic and chilli at the start, not at the end — hard-cooked it turns peppery and clove-like, where Thai basil would simply blacken. Buy it with the flower spikes attached; they carry most of the pepper.",
@@ -331,7 +331,7 @@ svg:'<path class="s" d="M48 86V34"/><path class="f2 sf" d="M46 70q-16-2-20-12 12
 
 {id:"huacatay",cat:"herbs",rare:true,price:2,pk:"4–7 €/bocal (200 g)",name:{en:"Huacatay (Peruvian black mint)",fr:"Huacatay (tagète des Andes)"},latin:"Tagetes minuta",
 origin:{en:"Andean Peru and Bolivia",fr:"Andes du Pérou et de Bolivie"},season:[],
-flavor:["herbal","pungent","bitter","resinous"],
+flavor:["herbal","pungent","bitter","resinous"],texture:["smooth","viscous"],
 story:{en:"Huacatay is a marigold, not a mint, and its essential oil is distilled commercially as tagetes oil for perfumery — the plant that flavours ocopa turns up in fine fragrance. Outside the Andes it has a reputation of another kind entirely: naturalised across Africa and Australia as a roadside weed called stinking roger, where nobody eats it at all.",
 fr:"Le huacatay est un tagète, pas une menthe, et son huile essentielle est distillée commercialement pour la parfumerie sous le nom d’essence de tagète : la plante qui parfume l’ocopa se retrouve en parfumerie fine. Hors des Andes, sa réputation est tout autre — naturalisée en Afrique et en Australie comme mauvaise herbe de bord de route, on l’y appelle stinking roger et personne ne la mange."},
 tip:{en:"Start at a teaspoon of paste per 250 ml of sauce and correct with more chilli and nuts, never with water — thinned down, huacatay turns soapy rather than milder. Stir it into an ocopa at the end, off the heat, so the tarry top notes survive.",
@@ -341,7 +341,7 @@ svg:'<path class="f3 sf" d="M30 44h36v30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path
 
 {id:"hyssop",cat:"herbs",price:1,pk:"4–8 €/100 g",name:{en:"Hyssop",fr:"Hysope"},latin:"Hyssopus officinalis",
 origin:{en:"Southern Europe",fr:"Europe du Sud"},season:[6,7,8,9],
-flavor:["bitter","herbal","floral","resinous"],
+flavor:["bitter","herbal","floral","resinous"],texture:["firm","moist"],
 story:{en:"Named in the Bible and grown in monastery gardens for a thousand years, it fell almost entirely out of cooking — too bitter, too medicinal for modern palates. It survives mainly in Chartreuse and a handful of other monastic liqueurs.",
 fr:"Nommée dans la Bible et cultivée mille ans dans les jardins de monastère, elle a presque entièrement quitté la cuisine — trop amère, trop médicinale pour les palais modernes. Elle survit surtout dans la Chartreuse et quelques autres liqueurs monastiques."},
 tip:{en:"Treat it like a bitter rather than an herb. A few leaves in a fruit compote or a game sauce, and no more.",
@@ -351,7 +351,7 @@ svg:'<path class="s" d="M48 76V32"/><path class="f2 sf" d="M46 38q-8 0-9 5 7 5 9
 
 {id:"daun-salam",cat:"herbs",rare:true,price:2,pk:"15–30 €/100 g",name:{en:"Indonesian bay leaf (daun salam)",fr:"Feuille de salam"},latin:"Syzygium polyanthum",
 origin:{en:"Java and Sumatra",fr:"Java et Sumatra"},season:[],
-flavor:["sour","woody","mild","herbal"],
+flavor:["sour","woody","mild","herbal"],texture:["brittle","dry"],
 story:{en:"Salam belongs to the myrtle family, alongside clove and allspice, and has no botanical relation to laurel at all — the name Indonesian bay leaf is a colonial convenience that has misled cooks for a century. Its flavour is faint and slightly sour, nearer weak black tea than bay, which is why recipes ask for three or four leaves where one laurel would shout.",
 fr:"Le salam appartient aux myrtacées, comme le clou de girofle et le piment de la Jamaïque, et n’a aucun lien botanique avec le laurier : l’appellation « laurier indonésien » est une commodité coloniale qui égare les cuisiniers depuis un siècle. Son goût est ténu et légèrement acidulé, plus proche d’un thé noir léger que du laurier, d’où les trois ou quatre feuilles des recettes là où une seule feuille de laurier couvrirait tout."},
 tip:{en:"Use three or four whole leaves per kilo of meat and give them at least thirty minutes of simmering — the flavour is slow and will not show in a quick curry. Never substitute laurel: its eucalyptol takes over a rendang completely.",
@@ -361,7 +361,7 @@ svg:'<path class="s" d="M52 26q-6 26-20 50"/><path class="f2 sf" d="M46 48q-18 0
 
 {id:"kinome",cat:"herbs",rare:true,price:4,pk:"1–3 €/g",name:{en:"Kinome (sanshō leaf)",fr:"Kinome (jeune feuille de sanshō)"},latin:"Zanthoxylum piperitum",
 origin:{en:"Japanese gardens and hillsides",fr:"Jardins et coteaux du Japon"},season:[4,5],
-flavor:["citrus","fresh","numbing"],
+flavor:["citrus","fresh","numbing"],texture:["tender","moist"],
 story:{en:"Kinome is the spring leaf of the same tree that gives sanshō pepper, sold by the leaf rather than by weight, and it appears for a few weeks in April and May alongside the first bamboo shoots. Cooks slap it once between their palms before it goes on the plate, bruising the oil cells so the scent lifts.",
 fr:"Le kinome est la jeune feuille de l’arbre qui donne le poivre sanshō ; il se vend à la feuille et non au poids, et ne paraît que quelques semaines, en avril et en mai, en même temps que les premières pousses de bambou. Le cuisinier la claque une fois entre ses paumes avant de la poser : le choc crève les cellules à huile et fait monter le parfum."},
 tip:{en:"Never chop it — bruise it whole in the palm and lay it on, or the citrus note oxidises within a minute. It tingles faintly rather than numbing like the dried peppercorn, so it suits delicate things: clams, tofu, bamboo.",
@@ -371,7 +371,7 @@ svg:'<path class="s" d="M48 82V22"/><path class="f1 sf" d="M46 74q-12 0-16-8 10-
 
 {id:"kkaennip",cat:"herbs",price:1,pk:"2–4 €/paquet (20 feuilles)",name:{en:"Kkaennip (Korean perilla leaf)",fr:"Feuille de périlla coréenne"},latin:"Perilla frutescens var. frutescens",
 origin:{en:"Korea",fr:"Corée"},season:[7,8,9],
-flavor:["anise","herbal","pungent"],
+flavor:["anise","herbal","pungent"],texture:["tender","moist"],
 story:{en:"Korean perilla is a different botanical variety from Japanese shiso — broader, flatter, green on both faces instead of purple beneath — and the two are never swapped in a Korean kitchen. The same plant supplies deulgireum, the roasted perilla-seed oil that seasons half of Korean vegetable cookery, so one crop gives both a wrapper and a fat.",
 fr:"Le périlla coréen est une variété botanique différente du shiso japonais — plus large, plus plate, verte sur les deux faces plutôt que pourpre au revers — et une cuisine coréenne ne les échange jamais. La même plante fournit le deulgireum, l’huile de graines de périlla grillées qui assaisonne la moitié des légumes coréens : une seule culture donne à la fois une feuille à envelopper et une matière grasse."},
 tip:{en:"For kkaennip-jangajji, stack the leaves and brush sauce onto every second or third one, then weight the pile: sauce on every leaf and the middle is oversalted within a day. Lay them flat over lettuce rather than instead of it — one perilla leaf per bite is the ceiling.",
@@ -381,7 +381,7 @@ svg:'<path class="f2 sf" d="M48 20q20 4 24 22t-24 30q-24-12-24-30t24-22z"/><path
 
 {id:"lemon-balm",cat:"herbs",price:1,pk:"2–4 €/pot",name:{en:"Lemon balm",fr:"Mélisse"},latin:"Melissa officinalis",
 origin:{en:"Southern Europe",fr:"Europe méridionale"},season:[5,6,7,8,9],
-flavor:["citrus","fresh","mild"],
+flavor:["citrus","fresh","mild"],texture:["tender","moist"],
 story:{en:"Melissa is Greek for honey bee: beekeepers rubbed the crushed leaf inside a new hive to persuade a swarm to settle in it. Carmelite friars in Paris were distilling it as eau de mélisse des Carmes from 1611, and something close to the same formula is still sold in French pharmacies.",
 fr:"Melissa est le grec pour abeille : les apiculteurs frottaient la feuille froissée dans une ruche neuve pour décider un essaim à y rester. Les Carmes de Paris en distillaient l’eau de mélisse des Carmes dès 1611, et une formule très proche se vend encore en pharmacie."},
 tip:{en:"Its lemon note collapses on heat, so infuse it cold — a handful in a jug of water or cream, a few hours in the fridge, beats any hot infusion. Bruise it, do not chop: cut edges blacken and go grassy within minutes.",
@@ -391,7 +391,7 @@ svg:'<path class="f2 sf" d="M48 80q-8-4-14-10-10-10-10-20 0-7 6-11 6-4 12-13 6 9
 
 {id:"lemon-myrtle",cat:"herbs",rare:true,price:2,pk:"12–25 €/100 g",name:{en:"Lemon myrtle",fr:"Myrte citronné"},latin:"Backhousia citriodora",
 origin:{en:"Queensland rainforest",fr:"Forêt humide du Queensland"},season:[],
-flavor:["citrus","floral","pungent"],
+flavor:["citrus","floral","pungent"],texture:["powdery","dry"],
 story:{en:"Lemon myrtle leaf carries the highest citral concentration measured in any plant, above ninety per cent of its essential oil, and the Australian crop was planted for flavour extraction before anyone thought to cook with it. Lemongrass, the usual benchmark for a lemon note, does not come close.",
 fr:"La feuille de myrte citronné affiche la plus forte teneur en citral mesurée chez une plante, plus de quatre-vingt-dix pour cent de son huile essentielle, et la culture australienne s’est montée pour l’extraction d’arôme avant que quiconque n’ait songé à cuisiner avec. La citronnelle, référence habituelle de la note citron, n’en approche pas."},
 tip:{en:"Dose it in pinches: a quarter teaspoon of ground leaf flavours a litre of cream, and more turns medicinal and slightly bitter. Add it off the heat — boiling drives the citral off and leaves the eucalyptus behind.",
@@ -401,7 +401,7 @@ svg:'<path class="s" d="M30 82q10-32 36-48"/><path class="f2 sf" d="M40 58q-14-2
 
 {id:"lemon-tagetes",cat:"herbs",rare:true,price:2,pk:"3–6 €/pot",name:{en:"Lemon tagetes",fr:"Tagète citron (œillet d’Inde citron)"},latin:"Tagetes tenuifolia",
 origin:{en:"Mexico and Central America",fr:"Mexique et Amérique centrale"},season:[6,7,8,9],
-flavor:["citrus","anise","floral"],
+flavor:["citrus","anise","floral"],texture:["tender","moist"],
 story:{en:"Tagetes tenuifolia is the marigold grown to be eaten: it is the foliage that carries the lemon-and-tarragon scent, and the flowers barely reach a centimetre across. Calendula, the other plant sold as marigold, belongs to an entirely different genus and runs bitter rather than lemony.",
 fr:"Tagetes tenuifolia est l’œillet d’Inde cultivé pour être mangé : c’est le feuillage qui porte l’odeur de citron et d’estragon, et les fleurs dépassent à peine le centimètre. Le souci officinal, l’autre plante vendue sous le nom de marigold, appartient à un genre tout différent et tire vers l’amer, jamais vers le citron."},
 tip:{en:"The leaf is stronger than the petal — snip a few leaves into a dressing and keep the petals for colour. Everything goes on raw at the last second: cooked, the scent turns to marigold bed and stays there.",
@@ -411,7 +411,7 @@ svg:'<path class="f1 sf" d="M48 24q10 0 10 10t-10 12q-10-2-10-12t10-10zM30 40q9-
 
 {id:"lemon-thyme",cat:"herbs",price:1,pk:"2–4 €/pot",name:{en:"Lemon thyme",fr:"Thym citron"},latin:"Thymus × citriodorus",
 origin:{en:"European gardens",fr:"Jardins d’Europe"},season:[],
-flavor:["citrus","herbal","woody"],
+flavor:["citrus","herbal","woody"],texture:["firm","moist"],
 story:{en:"Lemon thyme is a garden hybrid whose parentage has never been settled — long given as common thyme crossed with large thyme, without the genetics ever confirming it. Plants drift back towards plain thyme as they age, so growers take cuttings only from the branches that still smell of lemon.",
 fr:"Le thym citron est un hybride de jardin dont la filiation n’a jamais été tranchée : on l’a longtemps donné pour un croisement du thym commun et du thym faux-pouliot, sans que la génétique l’ait confirmé. Les pieds dérivent vers le thym ordinaire en vieillissant, et les producteurs ne bouturent donc que les rameaux qui sentent encore le citron."},
 tip:{en:"It is a finishing thyme: strip the leaves in and add them in the last two minutes, since a long braise burns off the citral and leaves only resin. On fish or scallops, warm a sprig through the butter rather than boiling it.",
@@ -421,7 +421,7 @@ svg:'<path class="s" d="M48 84q-4-30 6-56"/><path class="f2 sf" d="M45 72q-11 2-
 
 {id:"lemon-verbena",cat:"herbs",price:1,pk:"3–6 €/pot",name:{en:"Lemon verbena",fr:"Verveine citronnelle"},latin:"Aloysia citrodora",
 origin:{en:"Andes of Chile & Peru",fr:"Andes du Chili & du Pérou"},season:[6,7,8,9],
-flavor:["citrus","floral","fresh","delicate"],
+flavor:["citrus","floral","fresh","delicate"],texture:["firm","moist"],
 story:{en:"Brought from the Andes in the 18th century and named for a Spanish queen, it settled into French life as the grandmother’s tisane of Provence. Pastry chefs rediscovered what the grandmothers knew: no other leaf smells this purely of lemon without a drop of acidity.",
 fr:"Rapportée des Andes au XVIIIe siècle et nommée en l’honneur d’une reine d’Espagne, elle s’est installée dans la vie française comme la tisane des grands-mères de Provence. Les pâtissiers ont redécouvert ce que les grands-mères savaient : aucune autre feuille ne sent aussi purement le citron sans une goutte d’acidité."},
 tip:{en:"Infuse it in warm cream or syrup off the heat, covered, ten minutes — boiling murders its perfume. Transcendent with peaches and apricots.",
@@ -431,7 +431,7 @@ svg:'<path class="s" d="M48 82q-3-26-1-54"/><path class="f1 sf" d="M46 62q-13 2-
 
 {id:"lemongrass",cat:"herbs",price:1,pk:"8–15 €/kg",name:{en:"Lemongrass",fr:"Citronnelle"},latin:"Cymbopogon citratus",
 origin:{en:"Maritime Southeast Asia",fr:"Asie du Sud-Est insulaire"},season:[],
-flavor:["citrus","fresh","floral","grassy"],
+flavor:["citrus","fresh","floral","grassy"],texture:["tough","fibrous"],
 story:{en:"A grass that decided to be a citrus: its stalks carry citral, the same aromatic soul as lemon zest, without any of the acid. It is the upright backbone of Thai tom yum and Vietnamese broths — always present, always fished out, never chewed.",
 fr:"Une herbe qui a décidé d’être un agrume : ses tiges portent le citral, l’âme aromatique du zeste de citron, sans rien de son acidité. C’est la colonne vertébrale du tom yum thaï et des bouillons vietnamiens — toujours présente, toujours repêchée, jamais mâchée."},
 tip:{en:"Use only the pale lower third; bruise it flat with the knife’s spine to crack the perfume open before it goes in the pot.",
@@ -441,7 +441,7 @@ svg:'<path class="f1 sf" d="M33 71q2-14 7-24 4-11 7-22 1-4 5-3l8 3q1 3-1 6-5 11-
 
 {id:"lolot-leaf",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Lolot leaf",fr:"Feuille de lolot (lá lốt)"},latin:"Piper sarmentosum",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["peppery","herbal","warm"],
+flavor:["peppery","herbal","warm"],texture:["tender","smooth","moist"],
 story:{en:"Lolot is sold across Europe as wild betel leaf, but it is a different pepper: true betel is chewed with lime and areca nut and is never grilled. In bò lá lốt the leaf is wrapped around seasoned minced beef, and the aroma only arrives when the outside chars.",
 fr:"Le lolot se vend en Europe sous le nom de feuille de bétel sauvage, mais c’est un autre poivrier : le vrai bétel se chique avec de la chaux et de la noix d’arec, jamais grillé. Dans le bò lá lốt, la feuille enveloppe un hachis de bœuf assaisonné, et l’arôme n’apparaît qu’au moment où l’extérieur brûle."},
 tip:{en:"Roll the leaf around the filling shiny side out and pin the seam with the stem or a bamboo splinter. Grill one to two minutes a side over a hard fire — a gentle one dries the leaf out before it ever scorches.",
@@ -451,7 +451,7 @@ svg:'<path class="f2 sf" d="M26 46q22-10 44 0 4 10 0 20-22 10-44 0-4-10 0-20z"/>
 
 {id:"lotus-leaf",cat:"herbs",rare:true,price:1,pk:"0,50–1 €/feuille",name:{en:"Lotus leaf",fr:"Feuille de lotus"},latin:"Nelumbo nucifera",
 origin:{en:"Asian ponds and paddies",fr:"Étangs et rizières d’Asie"},season:[],
-flavor:["bitter","grassy","earthy"],
+flavor:["bitter","grassy","earthy"],texture:["tough","fibrous","dry"],
 story:{en:"The living leaf is waxy enough that water beads and rolls straight off it — the effect that gave lotus-effect coatings their name — and it is drying that leaves the surface porous enough to give its aroma up to rice. Dried leaves come folded into quarters by the packet in Chinese groceries, one leaf to a parcel of lo mai gai.",
 fr:"La feuille vivante est si cireuse que l’eau y roule en billes sans la mouiller — l’effet lotus qui a donné son nom aux revêtements — et c’est le séchage qui rend cette surface assez poreuse pour céder son arôme au riz. Les feuilles sèches se vendent pliées en quatre, par paquets, dans les épiceries chinoises : une feuille par portion de lo mai gai."},
 tip:{en:"Soak a dried leaf in hot water for about half an hour until it is pliable, wipe both faces, and cut out the hard central boss before folding. It flavours through steam over roughly forty minutes; less and you get the wrapper without the tea-and-hay note.",
@@ -461,7 +461,7 @@ svg:'<circle class="f1 sf" cx="48" cy="46" r="26"/><path class="s" d="M48 46l-24
 
 {id:"lovage",cat:"herbs",price:1,pk:"2–4 €/botte",name:{en:"Lovage",fr:"Livèche"},latin:"Levisticum officinale",
 origin:{en:"Mediterranean & Persia",fr:"Méditerranée & Perse"},season:[5,6,7,8,9],
-flavor:["herbal","pungent","fresh","warm"],
+flavor:["herbal","pungent","fresh","warm"],texture:["tender","juicy"],
 story:{en:"Charlemagne ordered it grown in every imperial garden, and German kitchens still call it Maggikraut — the Maggi herb — because it tastes uncannily of the famous seasoning, though the sauce never contained it. Celery’s louder, wilder great-uncle, one leaf deep.",
 fr:"Charlemagne ordonna sa culture dans tous les jardins impériaux, et les cuisines allemandes l’appellent encore Maggikraut — l’herbe Maggi — car son goût rappelle étrangement le célèbre arôme, qui n’en a pourtant jamais contenu. Le grand-oncle du céleri, plus sonore et plus sauvage, à une feuille de profondeur."},
 tip:{en:"Ferociously potent: one leaf perfumes a whole pot of broth or a potato salad. Its hollow stems make edible straws for a tomato juice.",
@@ -471,7 +471,7 @@ svg:'<path class="s" d="M48 82q-2-14-1-22M46 62q-5 1-9-2M50 62q5 1 9-2"/><path c
 
 {id:"kaffir-lime-leaf",cat:"herbs",price:2,pk:"10–20 €/100 g",name:{en:"Makrut lime leaf",fr:"Feuille de combava"},latin:"Citrus hystrix",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["citrus","floral","fresh","resinous"],
+flavor:["citrus","floral","fresh","resinous"],texture:["firm","smooth","moist"],
 story:{en:"The leaf grows in a distinctive double lobe, one leaf apparently joined to another end to end. It carries far more perfume than the fruit, which is knobbly, dry and yields almost no juice — here the tree's value is entirely in the foliage.",
 fr:"La feuille pousse en double lobe caractéristique, comme deux feuilles jointes bout à bout. Elle porte bien plus de parfum que le fruit, bosselé, sec et presque sans jus — ici toute la valeur de l’arbre est dans le feuillage."},
 tip:{en:"Tear the leaf along the central rib before it goes in. Whole and intact it releases almost nothing.",
@@ -481,7 +481,7 @@ svg:'<path class="f2 sf" d="M48 30q10 8 10 18t-10 10-10-10 10-18z"/><path class=
 
 {id:"marjoram",cat:"herbs",price:1,pk:"2–4 €/pot",name:{en:"Marjoram",fr:"Marjolaine"},latin:"Origanum majorana",
 origin:{en:"Cyprus & southern Turkey",fr:"Chypre & sud de la Turquie"},season:[6,7,8,9],
-flavor:["herbal","floral","sweet","warm"],
+flavor:["herbal","floral","sweet","warm"],texture:["tender","moist"],
 story:{en:"Oregano's gentler sister — the same genus, but sweeter and more floral where oregano is peppery and blunt. Greeks planted it on graves for a peaceful sleep, and the Romans made wedding crowns from it.",
 fr:"La sœur plus douce de l’origan — même genre, mais plus sucrée et plus florale là où l’origan est poivré et franc. Les Grecs en plantaient sur les tombes pour un sommeil paisible, et les Romains en faisaient des couronnes de mariage."},
 tip:{en:"Add it at the end, never at the start. Unlike oregano it is fragile and long cooking flattens it completely.",
@@ -491,7 +491,7 @@ svg:'<path class="s" d="M48 81q1-14 1-24M49 57q-10-6-17-14M49 57q10-6 17-14M49 5
 
 {id:"mexican-oregano",cat:"herbs",price:2,pk:"8–16 €/100 g",name:{en:"Mexican oregano",fr:"Origan mexicain"},latin:"Lippia graveolens",
 origin:{en:"Mexico and Guatemala, largely wild-gathered",fr:"Mexique et Guatemala, surtout cueilli sauvage"},season:[],
-flavor:["citrus","warm","woody","herbal"],
+flavor:["citrus","warm","woody","herbal"],texture:["brittle","flaky","dry"],
 story:{en:"Lippia is a verbena, a shrub that can reach two metres, and shares nothing with the Origanum of the Mediterranean beyond a similar phenol and the same English word. Most of what reaches the market is still gathered from wild stands in Oaxaca, Puebla and Hidalgo rather than farmed, which is why leaf size and strength vary from bag to bag.",
 fr:"Le Lippia est une verbénacée, un arbuste qui peut atteindre deux mètres, et ne partage rien avec l’Origanum méditerranéen sinon un phénol voisin et le même nom vernaculaire. L’essentiel de ce qui arrive sur le marché est encore cueilli sur des peuplements sauvages d’Oaxaca, de Puebla et d’Hidalgo plutôt que cultivé, d’où des feuilles et une puissance qui changent d’un sachet à l’autre."},
 tip:{en:"Toast it dry in a hot pan for ten to fifteen seconds, until it smells of lemon, then crumble it between your palms into the pot — untoasted it stays dusty and reads as hay. It holds up to two hours of simmering where Mediterranean oregano fades in twenty minutes.",
@@ -501,7 +501,7 @@ svg:'<path class="f1 sf" d="M22 58h52a26 26 0 0 1-52 0z"/><path class="f2 sf" d=
 
 {id:"mint",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Mint",fr:"Menthe"},latin:"Mentha spicata",
 origin:{en:"Mediterranean & Near East",fr:"Méditerranée & Proche-Orient"},season:[5,6,7,8,9],
-flavor:["fresh","sweet","herbal"],
+flavor:["fresh","sweet","herbal"],texture:["tender","moist"],
 story:{en:"Minthe was a nymph whom jealous Persephone crushed underfoot; Hades could only give her a scent that rises whenever she is stepped on. From Marrakech tea to Vietnamese tables, no herb refreshes more of the planet.",
 fr:"Minthé était une nymphe que Perséphone, jalouse, écrasa sous son pied ; Hadès ne put que lui offrir un parfum qui s’élève chaque fois qu’on la foule. Du thé de Marrakech aux tables vietnamiennes, aucune herbe ne rafraîchit davantage la planète."},
 tip:{en:"It spreads like gossip in a garden — grow it in a pot. Bruise the leaves, don’t chop them, for drinks.",
@@ -511,7 +511,7 @@ svg:'<path class="s" d="M48 78V30"/><path class="f2 sf" d="M46 40q-12 2-14-10 12
 
 {id:"mitsuba",cat:"herbs",rare:true,price:2,pk:"4–7 €/botte",name:{en:"Mitsuba",fr:"Mitsuba (persil japonais)"},latin:"Cryptotaenia japonica",
 origin:{en:"Japanese woodland floors",fr:"Sous-bois japonais"},season:[3,4,5],
-flavor:["fresh","herbal","delicate"],
+flavor:["fresh","herbal","delicate"],texture:["tender","juicy"],
 story:{en:"Japanese growers earth up or shade the stems as they grow so they lengthen pale and tender, the same blanching trick used on Belgian endive. The name means simply three leaves, and a cook counts them: one trefoil laid on a clear soup is the whole garnish.",
 fr:"Les producteurs japonais buttent ou occultent les tiges pendant la croissance pour qu'elles s'allongent, pâles et tendres — le blanchiment que l'on applique à l'endive. Le nom veut dire trois feuilles, et le cuisinier les compte : un seul trèfle posé sur un bouillon clair fait tout le décor."},
 tip:{en:"Add it to the bowl, never the pot — thirty seconds in hot dashi is its entire cooking time. Cut the blanched stem into batons and eat it; it is the better half of the plant.",
@@ -521,7 +521,7 @@ svg:'<path class="f2 sf" d="M46 38q-15-2-17-12 13-6 17 12z"/><path class="f2 sf"
 
 {id:"mountain-sorrel",cat:"herbs",rare:true,price:2,pk:"6–10 €/100 g",name:{en:"Mountain sorrel",fr:"Oseille des Alpes"},latin:"Oxyria digyna",
 origin:{en:"Arctic and alpine screes",fr:"Éboulis arctiques et alpins"},season:[6,7,8],
-flavor:["sour","fresh","citrus"],
+flavor:["sour","fresh","citrus"],texture:["tender","juicy"],
 story:{en:"It is one of the very few plants the Inuit gather in quantity: qunguliit is eaten fresh through the short summer and packed into seal oil to hold its vitamin C through the winter. The leaves are round and thick as felt, and the sourness lands at the front of the tongue and then vanishes rather than lingering.",
 fr:"C’est l’une des rares plantes que les Inuits récoltent en quantité : la qunguliit se mange fraîche pendant le court été, puis se conserve dans l’huile de phoque pour garder sa vitamine C tout l’hiver. La feuille est ronde et épaisse comme du feutre, et son acidité frappe à l’avant de la langue avant de disparaître au lieu de s’installer."},
 tip:{en:"Dress it with fat rather than acid — oil, or a spoon of cream; a vinaigrette on top of that oxalic bite turns the plate metallic. Never wilt it in aluminium or bare cast iron.",
@@ -531,7 +531,7 @@ svg:'<path class="f2 sf" d="M46 28q14 0 14 12t-14 14-14-14 14-12z"/><path class=
 
 {id:"mugwort",cat:"herbs",rare:true,price:1,pk:"3–8 €/100 g",name:{en:"Mugwort",fr:"Armoise"},latin:"Artemisia vulgaris",
 origin:{en:"Eurasian roadsides and riverbanks",fr:"Bords de chemins et berges d'Eurasie"},season:[3,4,5,6],
-flavor:["bitter","herbal","resinous"],
+flavor:["bitter","herbal","resinous"],texture:["tender","moist"],
 story:{en:"German kitchens call it Beifuss and pack whole stems into a roast goose, where the bitterness cuts the fat; Japanese ones blanch the young spring leaves into the yomogi paste that turns mochi green. The two uses are months apart and the plant is barely recognisable between them.",
 fr:"Les cuisines allemandes l'appellent Beifuss et en garnissent l'oie rôtie, où l'amertume tranche le gras ; les japonaises blanchissent les jeunes pousses de printemps en pâte de yomogi, celle qui verdit les mochis. Les deux usages sont séparés de plusieurs mois, et la plante n'a presque rien à voir de l'un à l'autre."},
 tip:{en:"For yomogi, blanch only the young leaves with a pinch of bicarbonate of soda to hold the green, squeeze them hard and pound. For goose, use whole stems and pull them out before carving — they are inedible.",
@@ -541,7 +541,7 @@ svg:'<path class="f1 sf" d="M51 20Q54 24 56 28.5Q58 33 65 29.5L72 26L66.5 32Q61 
 
 {id:"myrtle",cat:"herbs",price:2,pk:"40–90 €/kg",name:{en:"Myrtle",fr:"Myrte"},latin:"Myrtus communis",
 origin:{en:"Corsican and Sardinian maquis",fr:"Maquis corse et sarde"},season:[10,11,12,1],
-flavor:["resinous","woody","fruity"],
+flavor:["resinous","woody","fruity"],texture:["firm","smooth","dry"],
 story:{en:"In Sardinia the suckling pig comes out of the fire pit onto a bed of myrtle branches and is covered with more, so the leaf perfumes the meat while it rests rather than while it cooks. The black berries ripen only from late autumn and are a separate seasoning altogether, sweeter, closer to juniper steeped in wine.",
 fr:"En Sardaigne, le cochon de lait sort de la fosse sur un lit de branches de myrte et se couvre d’autres branches encore : la feuille parfume la viande pendant qu’elle repose, non pendant la cuisson. Les baies noires ne mûrissent qu’à l’arrière-saison et forment un tout autre assaisonnement, plus doux, proche d’un genièvre macéré au vin."},
 tip:{en:"Use the leaves whole and pull them out; chopped, the resin turns eucalyptus-bitter. Three or four leaves per kilo of meat is the ceiling, not the starting point.",
@@ -551,7 +551,7 @@ svg:'<path class="s" d="M48 80V26"/><path class="f2 sf" d="M48 42q-11-9-19-4 4 1
 
 {id:"nepitella",cat:"herbs",rare:true,price:2,pk:"6–12 €/100 g",name:{en:"Nepitella",fr:"Calament (népita)"},latin:"Clinopodium nepeta",
 origin:{en:"Tuscan and Corsican scrubland",fr:"Maquis toscan et corse"},season:[5,6,7,8,9],
-flavor:["herbal","fresh","peppery"],
+flavor:["herbal","fresh","peppery"],texture:["tender","moist"],
 story:{en:"Roman cooks stuff carciofi alla romana with mentuccia and nothing else green, and no Tuscan cooks a mushroom without it — the plant is a calamint, cousin to both mint and savory and identical to neither. Ask for mentuccia in Rome and nepitella in Florence: one plant, two market names.",
 fr:"Les cuisiniers romains farcissent les carciofi alla romana de mentuccia et de rien d'autre, et aucun Toscan ne cuit un champignon sans elle — c'est un calament, cousin de la menthe et de la sarriette sans être ni l'une ni l'autre. Demandez de la mentuccia à Rome, de la nepitella à Florence : une plante, deux noms de marché."},
 tip:{en:"Put it in at the start with the oil and garlic, not at the end. Unlike mint it wants heat, and thirty seconds in a hot pan is what opens up the oregano side of it.",
@@ -561,7 +561,7 @@ svg:'<path class="s" d="M48 74V32"/><path class="f2 sf" d="M46 60q-15 2-17-8 15-
 
 {id:"oregano",cat:"herbs",price:1,pk:"3–6 €/100 g",name:{en:"Oregano",fr:"Origan"},latin:"Origanum vulgare",
 origin:{en:"Mediterranean mountains",fr:"Montagnes méditerranéennes"},season:[6,7,8,9],
-flavor:["herbal","peppery","warm"],
+flavor:["herbal","peppery","warm"],texture:["brittle","flaky","dry"],
 story:{en:"Greek for “joy of the mountain”, it perfumed hillsides long before pizza existed. American soldiers came home from Italy in 1945 asking for “the pizza herb” — and oregano sales rose five-thousand percent in a decade.",
 fr:"« Joie de la montagne » en grec, il parfumait les collines bien avant l’existence de la pizza. Les soldats américains revinrent d’Italie en 1945 en réclamant « l’herbe à pizza » — et les ventes d’origan bondirent de cinq mille pour cent en une décennie."},
 tip:{en:"One of the rare herbs that is stronger dried than fresh. Bloom it in warm oil to release its perfume before it touches the dish.",
@@ -571,7 +571,7 @@ svg:'<path class="s" d="M48 82q-4-19-2-32 1-12 0-22"/><path class="f1 sf" d="M45
 
 {id:"oxalis",cat:"herbs",rare:true,price:1,pk:"4–7 €/barquette (30 g)",name:{en:"Oxalis",fr:"Oxalis (surelle)"},latin:"Oxalis acetosella",
 origin:{en:"Shaded temperate woodland",fr:"Sous-bois tempérés ombragés"},season:[4,5,6],
-flavor:["sour","fresh","citrus"],
+flavor:["sour","fresh","citrus"],texture:["tender","juicy"],
 story:{en:"Its sharpness is oxalic acid, the compound that gives rhubarb leaves their reputation, and the Greek oxys — sharp — names both the acid and the plant. It is no relation at all to the sorrel of the docks and knotweeds; the likeness is a coincidence of taste, not of family.",
 fr:"Son acidité vient de l'acide oxalique, celui-là même qui fait la réputation des feuilles de rhubarbe, et le grec oxys — aigu — nomme à la fois l'acide et la plante. Elle n'a aucun lien avec l'oseille des Rumex : la ressemblance tient au goût, pas à la famille."},
 tip:{en:"Raw and last — heat turns the leaves to olive rags within seconds. A dozen leaves over a scallop or a warm potato salad does the work of a squeeze of lemon without wetting the plate.",
@@ -581,7 +581,7 @@ svg:'<path class="f2 sf" d="M48 40q-14-3-14-13 0-7 7-7 5 0 7 6 2-6 7-6 7 0 7 7 0
 
 {id:"pandan",cat:"herbs",price:1,pk:"2–4 €/100 g",name:{en:"Pandan leaf",fr:"Feuille de pandan"},latin:"Pandanus amaryllifolius",
 origin:{en:"Southeast Asian gardens",fr:"Jardins d'Asie du Sud-Est"},season:[],
-flavor:["grassy","floral","nutty"],
+flavor:["grassy","floral","nutty"],texture:["tough","fibrous","dry"],
 story:{en:"The scent is 2-acetyl-1-pyrroline, the identical molecule that makes basmati and jasmine rice smell the way they do. This one pandanus almost never flowers and travels only as cuttings, so the fragrant plant in a Bangkok garden and one in Jakarta are divisions of the same stock.",
 fr:"Le parfum est la 2-acétyl-1-pyrroline, la molécule même qui donne son odeur au riz basmati et au jasmin. Ce pandanus ne fleurit presque jamais et ne voyage que par boutures : le pied parfumé d'un jardin de Bangkok et celui de Jakarta sont des divisions d'une même souche."},
 tip:{en:"Bruise the blade with the back of a knife, knot it so you can pull it out whole, and give it fifteen minutes in simmering coconut milk. Longer and the vanilla note flattens into cut grass.",
@@ -591,7 +591,7 @@ svg:'<path class="f2 sf" d="M30 80q-6-42 18-62 8 44-14 62z"/><path class="s" d="
 
 {id:"papalo",cat:"herbs",rare:true,price:3,pk:"20–40 €/100 g",name:{en:"Papalo",fr:"Papalo"},latin:"Porophyllum ruderale",
 origin:{en:"Puebla and central Mexico",fr:"Puebla et centre du Mexique"},season:[6,7,8,9],
-flavor:["bitter","pungent","herbal","citrus"],
+flavor:["bitter","pungent","herbal","citrus"],texture:["tender","moist"],
 story:{en:"The Nahuatl name papaloquilitl means butterfly herb, for leaves shaped like open wings, and the plant is a daisy relative with no botanical link to coriander whatsoever. A Puebla cemita is built with three or four raw leaves and nothing else green; the herb is never cooked, and no dried version exists because drying leaves nothing behind.",
 fr:"Le nom nahuatl papaloquilitl signifie « herbe-papillon », pour des feuilles en forme d’ailes ouvertes ; la plante est une astéracée sans le moindre lien botanique avec la coriandre. À Puebla, une cemita se monte avec trois ou quatre feuilles crues et rien d’autre de vert : l’herbe ne se cuit jamais, et il n’en existe pas de version séchée, le séchage ne laissant rien."},
 tip:{en:"Use about a third of the quantity of coriander you would otherwise reach for, torn at the last moment — papalo overwhelms a plate faster than any other soft herb. Stand the stems in a glass of water on the counter rather than in the fridge; cold blackens the leaves in two days.",
@@ -601,7 +601,7 @@ svg:'<path class="s" d="M48 80V30"/><path class="f2 sf" d="M48 42q-14-6-14-14 12
 
 {id:"parsley",cat:"herbs",price:1,pk:"1–2 €/botte",name:{en:"Parsley",fr:"Persil"},latin:"Petroselinum crispum",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[3,4,5,6,7,8,9,10],
-flavor:["grassy","fresh","peppery"],
+flavor:["grassy","fresh","peppery"],texture:["tender","moist"],
 story:{en:"Greeks planted parsley on graves and crowned victors with it at the Nemean games — an herb of both mourning and triumph. French cooking made it a daily workhorse: half the savoury dishes of the repertoire end in a flurry of chopped parsley.",
 fr:"Les Grecs plantaient le persil sur les tombes et en couronnaient les vainqueurs aux jeux de Némée — herbe de deuil et de triomphe à la fois. La cuisine française en fit un ouvrier du quotidien : la moitié du répertoire salé se termine sous une pluie de persil haché."},
 tip:{en:"Flat-leaf for flavour, curly for looks. The stems carry more taste than the leaves — tie them into every stock.",
@@ -611,7 +611,7 @@ svg:'<path class="s" d="M48 82q-1-12-1-18M47 66q-8-2-11-6M49 66q8-2 11-6"/><path
 
 {id:"purple-basil",cat:"herbs",price:1,pk:"3–5 €/pot",name:{en:"Purple basil",fr:"Basilic pourpre"},latin:"Ocimum basilicum var. purpurascens",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["anise","herbal","warm","floral"],
+flavor:["anise","herbal","warm","floral"],texture:["tender","moist"],
 story:{en:"More clove and anise than green basil, and considerably tougher-leaved. Its anthocyanins bleed pink into vinegar within minutes, which is why it is grown as much for infusing as for the leaf itself.",
 fr:"Plus giroflé et anisé que le basilic vert, et à la feuille nettement plus coriace. Ses anthocyanes rosissent le vinaigre en quelques minutes, d’où une culture autant pour l’infusion que pour la feuille elle-même."},
 tip:{en:"It does not make good pesto — the colour turns muddy brown. Use it whole in salads or steep it in vinegar.",
@@ -621,7 +621,7 @@ svg:'<path class="f2 sf" d="M52 78q-16-10-18-29-2-21 10-31 7 6 10 14 4 7 5 15 1 
 
 {id:"red-shiso",cat:"herbs",price:2,pk:"4–8 €/paquet (20 feuilles)",name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
 origin:{en:"Japan, Korea and highland China",fr:"Japon, Corée et hautes terres chinoises"},season:[6,7],
-flavor:["herbal","anise","tangy"],
+flavor:["herbal","anise","tangy"],texture:["tender","moist"],
 story:{en:"The purple is shisonin, an anthocyanin that sits dull violet until it meets acid — dropped into the brine of salting plums it flares scarlet, and that reaction is what colours umeboshi. Dried and ground with salt the same leaf becomes yukari, a name that traces back to an old poetic word for the colour purple.",
 fr:"Le pourpre est la shisonine, une anthocyane d'un violet terne jusqu'à ce qu'elle rencontre un acide : plongée dans la saumure des prunes en salaison, elle vire à l'écarlate, et c'est cette réaction qui colore les umeboshi. Séchée et broyée au sel, la même feuille devient le yukari, un nom qui remonte à un vieux mot poétique désignant le violet."},
 tip:{en:"Rub the leaves hard with salt and throw away the first two lots of black juice they give up — that bitter liquid is what ruins a jar of umeboshi. Only then stir them into the plum vinegar.",
@@ -631,7 +631,7 @@ svg:'<path class="f3 sf" d="M48 20q4 8 10 10-4 4 2 8-4 4 2 8-6 2-4 8-6 0-10 6-4-
 
 {id:"reflexed-stonecrop",cat:"herbs",rare:true,price:1,pk:"20–40 €/kg",name:{en:"Reflexed stonecrop",fr:"Trique-madame"},latin:"Petrosedum rupestre",
 origin:{en:"Dry walls and rocky ground",fr:"Murets et rocailles"},season:[4,5,6],
-flavor:["sour","fresh","briny"],
+flavor:["sour","fresh","briny"],texture:["tender","crisp","juicy"],
 story:{en:"The French name orpin réfléchi records a movement rather than a taste: the flower head curls backwards on itself before opening, then straightens as the buds break. Under its older name, trique-madame, it was eaten as a spring salad long before anyone thought of it as a garnish.",
 fr:"Le nom d’orpin réfléchi note un mouvement et non un goût : la cyme se recourbe vers l’arrière avant l’ouverture, puis se redresse quand les boutons éclatent. Sous son ancien nom de trique-madame, on la mangeait en salade de printemps bien avant d’en faire une garniture."},
 tip:{en:"Take only the young growth: once the plant has flowered the needles turn woody and bitter together. Salt it at the table and never in advance — salt collapses the cells, and the snap is the whole reason to buy it.",
@@ -641,7 +641,7 @@ svg:'<path class="s" d="M48 80V36"/><path class="f2 sf" d="M48 72q-9-1-15-7 8-5 
 
 {id:"rice-paddy-herb",cat:"herbs",rare:true,price:1,pk:"2–4 €/botte",name:{en:"Rice paddy herb (ngò om)",fr:"Herbe de rizière (ngo om)"},latin:"Limnophila aromatica",
 origin:{en:"Mekong delta paddies",fr:"Rizières du delta du Mékong"},season:[],
-flavor:["citrus","warm","herbal"],
+flavor:["citrus","warm","herbal"],texture:["tender","juicy"],
 story:{en:"The plant grows half-submerged in flooded paddies, which is why it reaches Western shops through aquarium suppliers as often as greengrocers — it is sold as an ornamental pond plant under the same Latin name. Its scent sits between cumin and lemon, and in the delta it goes into canh chua by the fistful, torn rather than chopped.",
 fr:"La plante pousse à demi immergée dans les rizières, ce qui explique qu’elle arrive en Occident aussi souvent par les fournisseurs d’aquariophilie que par les primeurs : on la vend comme plante de bassin sous le même nom latin. Son parfum tient du cumin et du citron ; dans le delta, elle va dans le canh chua par poignées, déchirée plutôt que ciselée."},
 tip:{en:"Tear the stems in off the heat, thirty seconds before the soup leaves the stove — a minute of simmering and the cumin note is gone, leaving a flat grassiness. Keep the tender upper stem: it carries more perfume than the leaf.",
@@ -651,7 +651,7 @@ svg:'<path class="s" d="M48 78V24"/><path class="f2 sf" d="M48 34q-14 0-18-5 12-
 
 {id:"roman-chamomile",cat:"herbs",price:2,pk:"8–15 €/100 g",name:{en:"Roman chamomile",fr:"Camomille romaine"},latin:"Chamaemelum nobile",
 origin:{en:"Western Europe, Anjou plantings",fr:"Europe de l'Ouest, cultures d'Anjou"},season:[6,7,8],
-flavor:["bitter","floral","fruity"],
+flavor:["bitter","floral","fruity"],texture:["brittle","dry"],
 story:{en:"It is a different plant from the German chamomile of teabags: a creeping perennial once laid as a lawn you walked on to release the scent, and far more bitter in the mouth. French production settled around Chemillé in Anjou, where the double-flowered form is still grown for the whole head.",
 fr:"Ce n'est pas la camomille allemande des sachets de tisane : c'est une vivace rampante, autrefois plantée en tapis que l'on foulait pour libérer le parfum, et bien plus amère en bouche. La production française s'est fixée autour de Chemillé, en Anjou, où l'on cultive encore la forme à fleurs doubles pour le capitule entier."},
 tip:{en:"Four or five heads to the litre, off the heat, five minutes at most — the bitterness climbs fast and a ten-minute infusion is undrinkable. It does more for a butter sauce for chicken than most cooks expect.",
@@ -661,7 +661,7 @@ svg:'<path class="f2 sf" d="M36 48q0-16 12-16t12 16q-12 6-24 0z"/><path class="f
 
 {id:"rose-geranium",cat:"herbs",price:1,pk:"4–8 €/pot",name:{en:"Rose geranium",fr:"Géranium rosat"},latin:"Pelargonium graveolens",
 origin:{en:"Southern Africa, grown on Réunion",fr:"Afrique australe, cultivé à La Réunion"},season:[5,6,7,8,9],
-flavor:["floral","fruity","fresh"],
+flavor:["floral","fruity","fresh"],texture:["soft","fibrous","moist"],
 story:{en:"It is not a geranium at all but a Pelargonium from the Cape, grown on Réunion since the nineteenth century for an oil the perfume trade still calls geranium bourbon. Its leaf carries geraniol and citronellol, two of the compounds in rose oil, which is how a handful of leaves reads as roses at a fraction of the price.",
 fr:"Ce n'est pas un géranium mais un pélargonium du Cap, cultivé à La Réunion depuis le XIXᵉ siècle pour une essence que la parfumerie appelle toujours géranium bourbon. Sa feuille porte du géraniol et du citronellol, deux composés de l'essence de rose : une poignée de feuilles donne la rose pour une fraction du prix."},
 tip:{en:"Lay three or four leaves in the bottom of a cake tin before the batter, or infuse them twenty minutes in warm cream and lift them out. Left sitting in hot syrup they turn metallic inside an hour.",
@@ -671,7 +671,7 @@ svg:'<path class="f2 sf" d="M48 22q10 0 14 8t10 8q4 6-2 12t-6 14q-4 8-16 6t-16-6
 
 {id:"rosemary",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Rosemary",fr:"Romarin"},latin:"Salvia rosmarinus",
 origin:{en:"Mediterranean scrubland",fr:"Garrigue méditerranéenne"},season:[],
-flavor:["woody","herbal","peppery"],
+flavor:["woody","herbal","peppery"],texture:["firm","fibrous"],
 story:{en:"Its name means “dew of the sea”, for the coastal cliffs it clings to. Greek students wore rosemary crowns while studying, believing it strengthened memory — Ophelia agreed: “rosemary, that’s for remembrance.”",
 fr:"Son nom signifie « rosée de mer », pour les falaises côtières où il s’accroche. Les étudiants grecs portaient des couronnes de romarin en étudiant, persuadés qu’il fortifiait la mémoire — Ophélie confirme : « le romarin, c’est pour le souvenir »."},
 tip:{en:"Its needles survive long cooking where soft herbs die — throw a sprig under roasting potatoes or lamb and remove it before serving.",
@@ -681,7 +681,7 @@ svg:'<path class="s" d="M48 82q-3-20-2-32 0-14 0-25"/><path class="s" d="M47 58q
 
 {id:"rue",cat:"herbs",rare:true,price:1,pk:"5–10 €/100 g",name:{en:"Rue",fr:"Rue officinale (herbe de grâce)"},latin:"Ruta graveolens",
 origin:{en:"Mediterranean rocky ground",fr:"Rocailles méditerranéennes"},season:[5,6,7,8,9],
-flavor:["bitter","musky","pungent"],
+flavor:["bitter","musky","pungent"],texture:["tender","moist"],
 story:{en:"Apicius reaches for it constantly, and Roman offal cookery has never let it go — it is still the herb standing upright in a bottle of grappa alla ruta. Its sap is phototoxic: handle the plant bare-armed in summer sun and you can raise blisters that take weeks to fade.",
 fr:"Apicius y revient sans cesse, et la cuisine romaine des abats ne l'a jamais lâchée — c'est encore le rameau dressé dans une bouteille de grappa alla ruta. Sa sève est phototoxique : manipulez la plante bras nus en plein soleil d'été et vous provoquerez des cloques longues à s'effacer."},
 tip:{en:"Count leaves, not sprigs: two or three in a pan of kidneys or a litre of stock is the ceiling, and a fourth turns the whole dish acrid. Chop it into fat, never into acid.",
@@ -691,7 +691,7 @@ svg:'<path class="s" d="M48 78V28M48 66h-9M48 66h9M48 54h-11M48 54h11M48 42h-7M4
 
 {id:"sage",cat:"herbs",price:1,pk:"2–3 €/botte",name:{en:"Sage",fr:"Sauge"},latin:"Salvia officinalis",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[],
-flavor:["herbal","peppery","earthy"],
+flavor:["herbal","peppery","earthy"],texture:["soft","fibrous","moist"],
 story:{en:"Salvia comes from salvare, “to save” — the medieval school of Salerno asked: “Why should a man die who has sage in his garden?” In the kitchen it saved something humbler: pork, butter and beans from blandness.",
 fr:"Salvia vient de salvare, « sauver » — l’école de Salerne demandait au Moyen Âge : « Pourquoi mourrait-il, celui qui a de la sauge au jardin ? » En cuisine, elle sauva plus modestement le porc, le beurre et les haricots de la fadeur."},
 tip:{en:"Fry whole leaves in butter until crisp: the butter turns nutty and the leaves become savoury chips.",
@@ -701,7 +701,7 @@ svg:'<path class="s" d="M48 82q1-14 0-24 0-8 0-14"/><path class="f1 sf" d="M46 6
 
 {id:"salad-burnet",cat:"herbs",price:1,pk:"3–6 €/pot",name:{en:"Salad burnet",fr:"Pimprenelle"},latin:"Sanguisorba minor",
 origin:{en:"European chalk grassland",fr:"Pelouses calcaires d'Europe"},season:[3,4,5,6,10,11],
-flavor:["fresh","grassy","mild"],
+flavor:["fresh","grassy","mild"],texture:["tender","moist"],
 story:{en:"Sanguisorba means blood-absorber, from the centuries when the crushed leaf was pressed onto a wound to stop it bleeding; the kitchen found the plant much later and by another road. It is a rose relative that tastes squarely of cucumber, and it holds its green through a mild winter when nothing else in the herb bed does.",
 fr:"Sanguisorba signifie qui absorbe le sang : on écrasait autrefois la feuille sur les plaies pour arrêter l'hémorragie, et la cuisine n'a découvert la plante que bien plus tard, par un autre chemin. C'est une rosacée au goût franc de concombre, et elle garde son vert tout un hiver doux quand plus rien ne le fait dans le carré d'aromatiques."},
 tip:{en:"Take only the young leaflets from the centre of the rosette; the older outer ones go dry, fibrous and flavourless. Never chop it fine — bruise it into cream or vinegar, and leave it whole in a salad.",
@@ -711,7 +711,7 @@ svg:'<path class="s" d="M30 78Q40 52 50 28"/><path class="f2 sf" d="M25 68a5 5 0
 
 {id:"savory",cat:"herbs",price:1,pk:"2–4 €/botte",name:{en:"Savory",fr:"Sarriette"},latin:"Satureja hortensis",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[6,7,8,9],
-flavor:["peppery","herbal","warm","resinous"],
+flavor:["peppery","herbal","warm","resinous"],texture:["firm","moist"],
 story:{en:"Germany calls it Bohnenkraut, the bean herb, because it does two things at once: it tastes right with beans and it genuinely helps digest them. Provence puts it on goat's cheese, where it is called pèbre d'ail, garlic pepper.",
 fr:"L’Allemagne l’appelle Bohnenkraut, l’herbe aux haricots, parce qu’elle fait deux choses à la fois : elle va avec les haricots et aide réellement à les digérer. La Provence la met sur le chèvre, où on la nomme pèbre d’ail, poivre d’ail."},
 tip:{en:"Put a sprig in the water with any dried bean or lentil. It is the oldest trick in European bean cookery and it works.",
@@ -721,7 +721,7 @@ svg:'<path class="s" d="M47 82q-1-15 1-27 1-14 1-21"/><path class="f1 sf" d="M48
 
 {id:"scurvy-grass",cat:"herbs",rare:true,price:2,pk:"6–12 €/100 g",name:{en:"Scurvy grass",fr:"Cranson officinal"},latin:"Cochlearia officinalis",
 origin:{en:"Northern saltmarshes and cliffs",fr:"Prés salés et falaises du Nord"},season:[2,3,4,5,6],
-flavor:["pungent","briny","fresh"],
+flavor:["pungent","briny","fresh"],texture:["tender","juicy"],
 story:{en:"English ships carried it salted by the barrel and English taverns sold scurvy-grass ale as a spring tonic — not because the leaf is unusually rich in vitamin C, but because it is unmistakable and standing on the coast in every month of the year. Cochlearia is simply cochlear, the spoon its leaves copy.",
 fr:"Les navires anglais l’embarquaient salée par tonneaux et les tavernes vendaient la scurvy-grass ale comme tonique de printemps — non que la feuille soit exceptionnellement riche en vitamine C, mais parce qu’elle s’identifie sans erreur et tient la côte tous les mois de l’année. Cochlearia n’est rien d’autre que cochlear, la cuiller que ses feuilles imitent."},
 tip:{en:"Treat it as wasabi, not as salad: chop at the last second, because the mustard oils peak about a minute after the cell walls break and are gone within five. With oysters or raw scallop it also does the work of the salt.",
@@ -731,7 +731,7 @@ svg:'<path class="f2 sf" d="M34 30q11 0 11 11t-11 11-11-11 11-11z"/><path class=
 
 {id:"sea-arrowgrass",cat:"herbs",rare:true,price:3,pk:"10–20 €/100 g",name:{en:"Sea arrowgrass",fr:"Troscart maritime"},latin:"Triglochin maritima",
 origin:{en:"Temperate saltmarshes",fr:"Prés salés tempérés"},season:[5,6,7,8,9],
-flavor:["fresh","herbal","briny"],
+flavor:["fresh","herbal","briny"],texture:["crisp","juicy"],
 story:{en:"Crush the pale base of a leaf and it gives off coriander so exactly that saltmarsh foragers call it coriander grass. The resemblance stops at the smell: this is a relative of the rushes, and it builds cyanogenic glycosides in the green blade, most of all when drought or grazing has stressed it.",
 fr:"Écrasez la base pâle d’une feuille et elle rend une odeur de coriandre si exacte que les cueilleurs des prés salés l’appellent herbe à coriandre. La ressemblance s’arrête à l’odeur : c’est un proche des joncs, qui accumule des glucosides cyanogènes dans le limbe vert, surtout lorsque la sécheresse ou le pâturage l’ont stressé."},
 tip:{en:"Use only the white base of the leaf, two centimetres or so, raw and in small amounts — the dark green blade is where the cyanogenic compounds sit. Anyone not certain of the identification should reach for coriander instead.",
@@ -741,7 +741,7 @@ svg:'<path class="s" d="M44 80q-12-20-10-46M50 80q-4-24-2-48M56 80q9-18 11-40"/>
 
 {id:"sea-rocket",cat:"herbs",rare:true,price:2,pk:"5–10 €/100 g",name:{en:"Sea rocket",fr:"Roquette de mer"},latin:"Cakile maritima",
 origin:{en:"Atlantic and Mediterranean dunes",fr:"Dunes atlantiques et méditerranéennes"},season:[5,6,7,8,9],
-flavor:["pungent","briny","peppery"],
+flavor:["pungent","briny","peppery"],texture:["crisp","juicy"],
 story:{en:"Cakile is one of the few plant genera to carry an Arabic name straight into Linnaean Latin, from kakileh. On the dunes it served as famine food twice over: the leaves eaten green, and the long taproot dried and ground into the bread flour once the grain ran out.",
 fr:"Cakile est l’un des rares genres à porter un nom arabe entré tel quel dans le latin de Linné, de kakileh. Sur les dunes, elle a servi deux fois de nourriture de disette : la feuille mangée crue, et la longue racine pivotante séchée puis moulue dans la farine à pain quand le grain manquait."},
 tip:{en:"Raw, or barely warmed: the mustard heat is volatile and thirty seconds in a pan leaves nothing but salt and water. Rinse in cold fresh water and dry it hard, or sand stays trapped in the folds of the leaf.",
@@ -751,7 +751,7 @@ svg:'<path class="f2 sf" d="M30 62q5-15 18-18-1 8-5 12 8-2 13 3-6 10-18 9-9 0-8-
 
 {id:"shiso",cat:"herbs",price:2,pk:"4–8 €/paquet (20 feuilles)",name:{en:"Shiso",fr:"Shiso"},latin:"Perilla frutescens",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[6,7,8,9],
-flavor:["herbal","fresh","anise","citrus"],
+flavor:["herbal","fresh","anise","citrus"],texture:["tender","moist"],
 story:{en:"The jagged leaf beside your sashimi is not decoration but a thousand-year-old palate cleanser — mint’s enigmatic Japanese cousin, tasting of cumin, basil and citrus at once. Its red variety dyes umeboshi plums their warning shade of crimson.",
 fr:"La feuille dentelée près de vos sashimis n’est pas un décor mais un rince-palais millénaire — cousine japonaise et énigmatique de la menthe, au goût de cumin, de basilic et d’agrume à la fois. Sa variété rouge teint les prunes umeboshi de leur cramoisi d’avertissement."},
 tip:{en:"Roll several leaves and slice them into needles at the last second — bruising blackens them. Magnificent scattered over rice, tuna or strawberries.",
@@ -761,7 +761,7 @@ svg:'<path class="f1 sf" d="M65 54q1 2 4 3q0 0 1 -2q1 2 2 2q1 0 1 -1q2 1 4 1q0 -
 
 {id:"sorrel",cat:"herbs",price:1,pk:"2–4 €/botte",name:{en:"Sorrel",fr:"Oseille"},latin:"Rumex acetosa",
 origin:{en:"Europe & Western Asia",fr:"Europe & Asie occidentale"},season:[4,5,6,7,8,9],
-flavor:["sour","grassy","fresh"],
+flavor:["sour","grassy","fresh"],texture:["tender","juicy"],
 story:{en:"A leaf that tastes of green lemon, beloved of peasant soups for centuries — then, in 1973, the Troisgros brothers laid a barely-cooked salmon escalope on sorrel cream and produced the signature dish of nouvelle cuisine. One acid leaf rewrote French fish cookery.",
 fr:"Une feuille au goût de citron vert, pilier des soupes paysannes pendant des siècles — puis, en 1973, les frères Troisgros posèrent une escalope de saumon à peine cuite sur une crème d’oseille et signèrent le plat emblème de la nouvelle cuisine. Une feuille acide a réécrit la cuisine française du poisson."},
 tip:{en:"It melts to khaki in seconds of heat — that’s normal. Add half in the pan for flavour, the rest raw at the end for colour and bite.",
@@ -771,7 +771,7 @@ svg:'<path class="f2 sf" d="M33 64q3 0 4 -1q5 0 6 -1q-2 -1 -6 -3q-1 -4 -3 -6q-4 
 
 {id:"spignel",cat:"herbs",rare:true,price:2,pk:"8–15 €/100 g",name:{en:"Spignel",fr:"Cistre"},latin:"Meum athamanticum",
 origin:{en:"Mountain pastures of Auvergne and the Alps",fr:"Estives d’Auvergne et des Alpes"},season:[4,5,6,7],
-flavor:["anise","herbal","warm"],
+flavor:["anise","herbal","warm"],texture:["tender","moist"],
 story:{en:"On the Mézenc plateau the herb is fed to cattle before it ever reaches a cook: graziers count cistre in the hay because it carries through into the milk, the butter and the fat of the beef. The leaf tastes of aniseed and curry at the same time, while the root goes the other way, closer to peppered celeriac.",
 fr:"Sur le plateau du Mézenc, l’herbe nourrit d’abord les bêtes : les éleveurs comptent le cistre dans le foin parce qu’il passe dans le lait, le beurre et le gras du bœuf. La feuille tient de l’anis et du curry à la fois, quand la racine part dans l’autre sens, du côté du céleri-rave poivré."},
 tip:{en:"Add the feathery leaf off the heat — a minute at a boil and the anise goes flat. The root wants the opposite: twenty minutes in a broth before it gives anything up.",
@@ -781,7 +781,7 @@ svg:'<path class="s" d="M48 62V44M48 44l-16-6M48 44l-9-11M48 44l9-11M48 44l16-6"
 
 {id:"spruce-tips",cat:"herbs",rare:true,price:1,pk:"20–40 €/kg",name:{en:"Spruce tips",fr:"Pousses d'épicéa"},latin:"Picea abies",
 origin:{en:"Northern European conifer forest",fr:"Forêts de conifères d'Europe du Nord"},season:[4,5],
-flavor:["resinous","citrus","sour"],
+flavor:["resinous","citrus","sour"],texture:["tender","moist"],
 story:{en:"Only the new growth is edible — the pale soft candles that push out of a papery brown sheath — and the window between bud break and the needles hardening runs two or three weeks. Sailors on northern voyages brewed those shoots into spruce beer against scurvy, on the strength of a vitamin C content nobody could yet measure.",
 fr:"Seule la pousse nouvelle se mange — les chandelles pâles et souples qui percent une gaine brune et papyracée — et la fenêtre entre le débourrement et le durcissement des aiguilles dure deux à trois semaines. Les marins des routes du Nord en brassaient une bière d'épicéa contre le scorbut, forts d'une teneur en vitamine C que nul ne savait encore mesurer."},
 tip:{en:"Layer them raw with their own weight of sugar in a jar and leave it three weeks in the dark: the syrup that draws out keeps a year, where the tips themselves brown in days. Check what you are picking — yew has no papery sheath and is lethal.",
@@ -791,7 +791,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 68l-14-6M48 68l14-6M4
 
 {id:"sweet-cicely",cat:"herbs",rare:true,price:1,pk:"3–6 €/pot",name:{en:"Sweet cicely",fr:"Cerfeuil musqué"},latin:"Myrrhis odorata",
 origin:{en:"Northern European hedgerows",fr:"Haies d'Europe du Nord"},season:[4,5,6],
-flavor:["anise","sweet","herbal"],
+flavor:["anise","sweet","herbal"],texture:["tender","moist"],
 story:{en:"The whole plant tastes of aniseed and carries its own sweetness, so northern cooks stewed it with rhubarb and gooseberries long before sugar was cheap. It naturalised around abandoned cottage and monastery gardens, which is why it lines roadsides in the north of Britain and is almost absent from the south.",
 fr:"Toute la plante a un goût d'anis et porte sa propre douceur : les cuisines du Nord la faisaient compoter avec la rhubarbe et les groseilles à maquereau bien avant que le sucre ne devienne bon marché. Elle s'est naturalisée autour des jardins de chaumières et de monastères abandonnés, d'où sa présence sur les bords de route du nord de la Grande-Bretagne et son absence presque totale au sud."},
 tip:{en:"Chop a good handful of leaf into rhubarb or gooseberries at the start of cooking and take a quarter of the sugar out of the recipe. The green unripe seeds are the strongest part of the plant — slice them raw into fruit.",
@@ -801,7 +801,7 @@ svg:'<path class="s" d="M48 78V50M48 50 32 36M48 50 40 30M48 50V28M48 50 56 30M4
 
 {id:"sweet-woodruff",cat:"herbs",rare:true,price:1,pk:"5–10 €/100 g",name:{en:"Sweet woodruff",fr:"Aspérule odorante"},latin:"Galium odoratum",
 origin:{en:"Beech woods of central Europe",fr:"Hêtraies d'Europe centrale"},season:[4,5],
-flavor:["herbal","grassy","honeyed"],
+flavor:["herbal","grassy","honeyed"],texture:["tender","moist"],
 story:{en:"Pick a fresh sprig and it smells of nothing at all — the hay-and-vanilla scent is coumarin, and it forms only as the plant wilts and its cells break down. Germany drinks it as Maiwein on the first of May and also caps how much may legally go into a drink, coumarin in quantity being hard on the liver.",
 fr:"Cueillez un brin frais : il ne sent rien — le parfum de foin et de vanille est la coumarine, qui ne se forme qu'au flétrissement, lorsque les cellules se rompent. L'Allemagne en boit le Maiwein le premier mai, et plafonne aussi la dose autorisée dans une boisson, la coumarine à forte dose étant dure pour le foie."},
 tip:{en:"Wilt it one day before use and no longer; dried past that it goes musty. Three grams of wilted stems to a litre of white wine for half an hour is the classic Maiwein dose, and it must never be boiled.",
@@ -811,7 +811,7 @@ svg:'<path class="s" d="M48 80V28"/><path class="f2 sf" d="M48 60 24 54q0 8 24 6
 
 {id:"sweetfern",cat:"herbs",rare:true,price:3,pk:"15–30 €/100 g",name:{en:"Sweetfern",fr:"Comptonie voyageuse"},latin:"Comptonia peregrina",
 origin:{en:"Boreal Quebec and New England",fr:"Québec boréal et Nouvelle-Angleterre"},season:[5,6,7,8,9],
-flavor:["smoky","resinous","warm"],
+flavor:["smoky","resinous","warm"],texture:["brittle","dry"],
 story:{en:"Catharine Parr Traill listed it among the substitutes for China tea in her 1854 guide for emigrants to Canada, where the leaf grew free on the poorest sand. It is not a fern at all but a nitrogen-fixing shrub that colonises burnt ground, which is roughly what it tastes of.",
 fr:"Catharine Parr Traill la range parmi les substituts du thé de Chine dans son guide de 1854 pour les émigrants au Canada, là où la feuille poussait librement sur les sables les plus pauvres. Ce n’est nullement une fougère, mais un arbuste fixateur d’azote qui colonise les terrains brûlés — ce dont, à peu de chose près, elle a le goût."},
 tip:{en:"For smoking fish, lay the dried leaf on embers rather than flame: it is resinous and will flare. In a broth, five grams to the litre for ten minutes — longer and the bay note disappears under tannin.",
@@ -821,7 +821,7 @@ svg:'<path class="f2 sf" d="M48 18q-10 8-7 14-10 4-7 12-10 4-7 12-9 6-4 14 12 4 
 
 {id:"sweetgrass",cat:"herbs",rare:true,price:2,pk:"100–200 €/kg",name:{en:"Sweetgrass",fr:"Foin d’odeur"},latin:"Hierochloe odorata",
 origin:{en:"Northern Europe and boreal North America",fr:"Europe du Nord et forêt boréale"},season:[],
-flavor:["sweet","grassy","honeyed"],
+flavor:["sweet","grassy","honeyed"],texture:["tough","fibrous","dry"],
 story:{en:"Hierochloe means holy grass: in northern Europe it was strewn before church doors on saints’ days so the coumarin would rise as people walked over it. That same compound puts a single blade in every bottle of Żubrówka and sets the legal ceiling on how much of it a kitchen may use.",
 fr:"Hierochloe signifie herbe sainte : on la jonchait devant les portes d’église les jours de fête, pour que la coumarine monte sous les pas. C’est cette même molécule qui met un brin dans chaque bouteille de Żubrówka et qui fixe la dose légale qu’une cuisine peut en employer."},
 tip:{en:"Infuse it dried, never fresh — the coumarin only develops as the blade dries. One blade to 500 ml of cream, twenty minutes off the heat, then out: left longer it goes from hay to cold tobacco.",
@@ -831,7 +831,7 @@ svg:'<path class="s" d="M42 26q13 8 0 16t0 16 0 16 0 12"/><path class="s" d="M54
 
 {id:"brede-mafane",cat:"herbs",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Szechuan button (brède mafane)",fr:"Brède mafane (cresson de Para)"},latin:"Acmella oleracea",
 origin:{en:"Brazil, Madagascar, Réunion",fr:"Brésil, Madagascar, La Réunion"},season:[],
-flavor:["numbing","pungent","grassy"],
+flavor:["numbing","pungent","grassy"],texture:["tender","moist"],
 story:{en:"The tingle is spilanthol, an alkylamide that fires the touch and salivary nerves rather than the taste buds — Brazilian dentists used the plant for toothache long before chefs bought it by the bud. In Madagascar the leaves and flower heads go into romazava, where the numbness is the point of the dish rather than a trick played on the diner.",
 fr:"Le picotement vient du spilanthol, un alkylamide qui excite les nerfs du toucher et de la salivation plutôt que les papilles : au Brésil, les dentistes s’en servaient contre les rages de dents bien avant que les cuisiniers ne l’achètent au bouton. À Madagascar, feuilles et capitules entrent dans le romazava, où l’engourdissement est le propos du plat et non un tour joué au convive."},
 tip:{en:"A quarter of a flower head per person is the working dose; a whole one floods the mouth and blanks the palate for several minutes. Cooking softens the tingle but never removes it, so serve nothing delicate alongside — and no wine you care about.",
@@ -841,7 +841,7 @@ svg:'<path class="f1 sf" d="M34 40a14 14 0 0 1 28 0q0 16-14 24T34 40z"/><circle 
 
 {id:"tarragon",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Tarragon",fr:"Estragon"},latin:"Artemisia dracunculus",
 origin:{en:"Central Asia & Siberia",fr:"Asie centrale & Sibérie"},season:[5,6,7,8,9],
-flavor:["anise","herbal","delicate"],
+flavor:["anise","herbal","delicate"],texture:["tender","moist"],
 story:{en:"Its name means “little dragon” — medieval healers claimed it cured serpent bites, and its roots do coil like one. France adopted the orphan of the steppes and built béarnaise sauce around its quiet anise breath.",
 fr:"Son nom signifie « petit dragon » — les guérisseurs médiévaux le disaient efficace contre les morsures de serpent, et ses racines s’enroulent comme tel. La France adopta cet orphelin des steppes et bâtit la béarnaise autour de son discret souffle anisé."},
 tip:{en:"It overwhelms fast: a few leaves perfume a whole chicken. With eggs and mustard, it is the most French of accents.",
@@ -851,7 +851,7 @@ svg:'<path class="s" d="M48 82q-3-24-1-40 1-10 0-18"/><path class="f1 sf" d="M47
 
 {id:"thai-basil",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thai basil",fr:"Basilic thaï (horapha)"},latin:"Ocimum basilicum var. thyrsiflorum",
 origin:{en:"Thai and Lao kitchen gardens",fr:"Jardins potagers thaïs et laotiens"},season:[6,7,8,9],
-flavor:["anise","peppery","floral"],
+flavor:["anise","peppery","floral"],texture:["tender","moist"],
 story:{en:"Thai kitchens keep three basils apart and never swap them: horapha with its purple stem and anise note, holy basil for stir-fries, lemon basil for soups. Horapha runs on a different balance of aromatics from Genovese basil, and its firmer leaf survives a simmering curry instead of going black.",
 fr:"Les cuisines thaïes distinguent trois basilics et ne les échangent jamais : le horapha, à tige violette et note anisée, le basilic sacré pour les sautés, le basilic-citron pour les soupes. Le horapha repose sur un autre équilibre d'aromatiques que le basilic génois, et sa feuille plus ferme tient dans un curry qui mijote au lieu de noircir."},
 tip:{en:"Add it in the last minute of a curry, whole leaves and tender stem tips together, pressed under the sauce. Unlike Genovese it takes heat, but chopping it releases the oils that turn the anise medicinal.",
@@ -861,7 +861,7 @@ svg:'<path class="s" d="M48 78V30"/><path class="f3 sf" d="M42 32q6-4 12 0-3 5-6
 
 {id:"three-cornered-leek",cat:"herbs",rare:true,price:1,pk:"10–20 €/kg",name:{en:"Three-cornered leek",fr:"Ail à trois angles"},latin:"Allium triquetrum",
 origin:{en:"Mediterranean basin, naturalised west",fr:"Bassin méditerranéen, naturalisé à l'ouest"},season:[2,3,4,5],
-flavor:["pungent","fresh","mild"],
+flavor:["pungent","fresh","mild"],texture:["tender","juicy"],
 story:{en:"Roll a stem between your fingers and you feel three flat faces and three sharp angles — the shape names the plant and tells it apart by touch from every other wild allium. It escaped Mediterranean gardens so thoroughly that Britain now lists it among the plants it is an offence to spread into the wild.",
 fr:"Roulez une tige entre vos doigts : trois faces plates, trois arêtes vives — la forme donne son nom à la plante et la distingue au toucher de tout autre ail sauvage. Échappé des jardins méditerranéens, il s'est si bien installé que la Grande-Bretagne interdit désormais de le répandre dans la nature."},
 tip:{en:"Treat it as a vegetable, not a herb: griddle the whole stems like thin leeks, two minutes a side, and scatter the raw bells over at the end. The white flowers are as edible as the stem and considerably stronger.",
@@ -871,7 +871,7 @@ svg:'<path class="s" d="M48 80V34M48 34q-14 0-16 8M48 34q14 0 16 8M48 34v8"/><pa
 
 {id:"thyme",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thyme",fr:"Thym"},latin:"Thymus vulgaris",
 origin:{en:"Mediterranean hills",fr:"Collines méditerranéennes"},season:[],
-flavor:["herbal","woody","warm"],
+flavor:["herbal","woody","warm"],texture:["firm","fibrous"],
 story:{en:"Medieval ladies embroidered a bee hovering over thyme on the scarves of their knights — the herb meant courage. Egyptians used it for embalming; cooks use it for nearly everything that simmers.",
 fr:"Les dames du Moyen Âge brodaient une abeille survolant un brin de thym sur l’écharpe de leur chevalier — l’herbe signifiait le courage. Les Égyptiens l’utilisaient pour embaumer ; les cuisiniers, pour presque tout ce qui mijote."},
 tip:{en:"Strip the leaves by sliding your fingers down the stem against the grain. Whole sprigs can simmer and be fished out like bay leaves.",
@@ -881,7 +881,7 @@ svg:'<path class="s" d="M48 82q-5-20-3-33 1-13 1-23"/><path class="s" d="M46 62q
 
 {id:"turmeric-leaf",cat:"herbs",rare:true,price:1,pk:"15–30 €/kg",name:{en:"Turmeric leaf",fr:"Feuille de curcuma"},latin:"Curcuma longa",
 origin:{en:"Sumatra, South India, Southeast Asia",fr:"Sumatra, Inde du Sud, Asie du Sud-Est"},season:[],
-flavor:["grassy","fruity","warm"],
+flavor:["grassy","fruity","warm"],texture:["tough","fibrous","moist"],
 story:{en:"The leaf smells of green mango and cut grass and carries none of the rhizome’s earthy bitterness — aromatically the two parts of the plant share almost nothing. Minangkabau cooks shred it into rendang and wrap fish in it for pais, while in Kerala the whole leaf steams the ada parcels made for Onam.",
 fr:"La feuille sent la mangue verte et l’herbe coupée, sans rien de l’amertume terreuse du rhizome : sur le plan aromatique, les deux parties de la plante n’ont presque rien en commun. Les cuisiniers minangkabau la ciselent dans le rendang et y enveloppent le poisson pour le pais ; au Kerala, la feuille entière sert à cuire à la vapeur les ada d’Onam."},
 tip:{en:"Shred it into ribbons a millimetre wide and add it for the last hour of a rendang — chopped coarse it stays stringy and never releases. Used whole as a wrapper it wants a light oiling first, or it welds itself to the fish skin.",
@@ -891,7 +891,7 @@ svg:'<path class="f2 sf" d="M48 16q14 20 12 40t-12 24q-10-4-12-24t12-40z"/><path
 
 {id:"vietnamese-coriander",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Vietnamese coriander",fr:"Coriandre vietnamienne (rau răm)"},latin:"Persicaria odorata",
 origin:{en:"Mekong delta gardens",fr:"Jardins du delta du Mékong"},season:[],
-flavor:["peppery","hot","citrus"],
+flavor:["peppery","hot","citrus"],texture:["tender","juicy"],
 story:{en:"It belongs to the knotweeds, not to the carrot family that gives us coriander, parsley and dill, and the difference shows in the heat that arrives behind the citrus. In Vietnam it is the leaf set beside a bowl of hot vit lon, and the story goes that monks were told to eat it to dampen desire.",
 fr:"Elle appartient aux renouées, non à la famille des ombellifères qui donne la coriandre, le persil et l'aneth, et cela s'entend dans la chaleur qui arrive derrière l'agrume. Au Vietnam, c'est la feuille posée à côté d'un bol de hot vit lon, et l'on raconte qu'on la prescrivait aux moines pour calmer le désir."},
 tip:{en:"It goes into hot broth and keeps its perfume where coriander leaf would collapse, but it is far stronger — use about a third the volume you would of coriander. Strip the leaves off the knotted stem, which stays tough.",
@@ -901,7 +901,7 @@ svg:'<path class="f2 sf" d="M54 20q10 18 3 32t-15 14q-8-14-3-29t15-17z"/><path c
 
 {id:"vine-leaf",cat:"herbs",price:1,pk:"6–12 €/kg",name:{en:"Vine leaf",fr:"Feuille de vigne"},latin:"Vitis vinifera",
 origin:{en:"Vineyards of the Mediterranean",fr:"Vignobles méditerranéens"},season:[5,6],
-flavor:["bitter","sour","grassy"],
+flavor:["bitter","sour","grassy"],texture:["tough","fibrous","moist"],
 story:{en:"The Turkish dolma comes from dolmak, to be filled, and the vine leaf travelled with the Ottoman table from the Balkans to the Levant as a wrapper that seasons whatever it holds. Brined and fresh leaves are not interchangeable: brine has already softened and salted the leaf, while a fresh one still carries its tannin and needs blanching.",
 fr:"Le mot turc dolma vient de dolmak, être rempli, et la feuille de vigne a suivi la table ottomane des Balkans au Levant comme un emballage qui assaisonne ce qu'il contient. Feuilles en saumure et feuilles fraîches ne s'échangent pas : la saumure a déjà attendri et salé la feuille, quand la fraîche garde son tanin et demande un blanchiment."},
 tip:{en:"Pick fresh leaves in late spring while the veins are still soft and blanch them thirty seconds. Brined leaves want the opposite: ten minutes soaking in cold water, or the finished dolma is inedibly salty.",
@@ -911,7 +911,7 @@ svg:'<path class="f2 sf" d="M48 22q6 8 6 12 6-8 14-8 2 8-4 14 8 0 12 6-6 8-14 8 
 
 {id:"benitade",cat:"herbs",rare:true,price:3,pk:"150–300 €/kg",name:{en:"Water pepper (tade / benitade)",fr:"Renouée poivre d’eau (tade)"},latin:"Persicaria hydropiper",
 origin:{en:"Japanese wetlands and riverbanks",fr:"Zones humides et berges, Japon"},season:[6,7,8,9],
-flavor:["peppery","hot","bitter","grassy"],
+flavor:["peppery","hot","bitter","grassy"],texture:["tender","juicy"],
 story:{en:"Water pepper gave Japanese its proverb for taste, tade kuu mushi mo suki-zuki — there are even insects that eat water pepper — first recorded around 1600. The red sprouts sold as benitade are the same plant cut a few days after germination, when the pepperiness is at its sharpest and before any bitterness sets in.",
 fr:"La renouée poivre d’eau a donné au japonais son proverbe sur les goûts, tade kuu mushi mo suki-zuki, « il est même des insectes qui mangent la renouée », attesté vers 1600. Les pousses rouges vendues sous le nom de benitade sont la même plante coupée quelques jours après la germination, quand le piquant est à son plus vif et que l’amertume n’est pas encore installée."},
 tip:{en:"Pound the leaves with a little cooked rice and rice vinegar for tade-zu, the sauce for grilled ayu; the rice starch is what keeps it from separating on the plate. Scatter the sprouts at the last second — heat kills the pepperiness inside a minute.",
@@ -921,7 +921,7 @@ svg:'<path class="s" d="M40 78q-4-20 2-34M48 78V40M56 78q4-20-2-32"/><path class
 
 {id:"wild-bergamot",cat:"herbs",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Wild bergamot",fr:"Monarde"},latin:"Monarda fistulosa",
 origin:{en:"North American prairies",fr:"Prairies d’Amérique du Nord"},season:[7,8,9],
-flavor:["floral","herbal","citrus"],
+flavor:["floral","herbal","citrus"],texture:["tender","moist"],
 story:{en:"It was named for a smell borrowed from a fruit it has nothing to do with, the bergamot orange of Calabria, while this is a North American mint. Earl Grey has never contained a leaf of it, and the scent comes from thymol, the compound that makes thyme smell of thyme.",
 fr:"Elle doit son nom à une odeur empruntée à un fruit qui ne lui est rien, la bergamote de Calabre, alors qu’il s’agit d’une labiée nord-américaine. L’Earl Grey n’en a jamais contenu une feuille, et le parfum vient du thymol, la molécule qui donne au thym son odeur de thym."},
 tip:{en:"Steep the leaf like a tea: 3 g per litre, four minutes off the boil. Simmered, the thymol turns medicinal — scatter the tubular florets whole at the end, since they carry the sweet part.",
@@ -931,7 +931,7 @@ svg:'<path class="f2 sf" d="M34 52q0-13 14-13t14 13q-5 9-14 9t-14-9z"/><path cla
 
 {id:"wild-fennel-fronds",cat:"herbs",price:1,pk:"1,50–4 €/botte",name:{en:"Wild fennel fronds",fr:"Fenouil sauvage"},latin:"Foeniculum vulgare subsp. piperitum",
 origin:{en:"Sicily and the Mediterranean scrub",fr:"Sicile et garrigue méditerranéenne"},season:[3,4,5],
-flavor:["anise","bitter","resinous","herbal"],
+flavor:["anise","bitter","resinous","herbal"],texture:["tender","moist"],
 story:{en:"The wild subspecies makes no bulb at all — it puts everything into thread-fine fronds that are more bitter and more resinous than the cultivated plant’s. In pasta con le sarde the fronds are boiled first and the green cooking water is kept to cook the pasta, so half the flavour of the dish comes out of a pot most cooks would tip away.",
 fr:"La sous-espèce sauvage ne fait aucun bulbe : elle met tout dans des frondes filiformes, plus amères et plus résineuses que celles de la plante cultivée. Dans les pasta con le sarde, on blanchit d’abord les frondes et l’on garde l’eau verte pour y cuire les pâtes : la moitié du goût du plat sort d’une casserole que la plupart jetteraient."},
 tip:{en:"Boil the fronds ten minutes, chop them, and cook the pasta in that same water — salt it as you would any pasta water, since it is now the backbone of the sauce. Pick before the plant flowers: once the umbels open the fronds toughen and the anise turns harsh.",
@@ -941,7 +941,7 @@ svg:'<path class="s" d="M48 82q0-30 4-52"/><path class="s" d="M50 62q-14-2-20-10
 
 {id:"wild-garlic",cat:"herbs",price:1,pk:"10–25 €/kg",name:{en:"Wild garlic",fr:"Ail des ours"},latin:"Allium ursinum",
 origin:{en:"European woodlands",fr:"Forêts d’Europe"},season:[3,4,5],
-flavor:["pungent","grassy","fresh"],
+flavor:["pungent","grassy","fresh"],texture:["tender","juicy"],
 story:{en:"“Bear’s garlic” in half of Europe’s languages: legend says bears eat it first thing after hibernation to wake their blood. For a few weeks each spring, whole forests smell of garlic, and foragers fill baskets with the leaves — the kitchen’s brief, green thunderclap.",
 fr:"« Ail des ours » dans la moitié des langues d’Europe : la légende veut que les ours en mangent au sortir de l’hibernation pour réveiller leur sang. Quelques semaines chaque printemps, des forêts entières sentent l’ail, et les cueilleurs remplissent des paniers de feuilles — le bref coup de tonnerre vert de la cuisine."},
 tip:{en:"Beware its deadly lookalike, lily of the valley: crush a leaf — no garlic smell, no picking. Blitzed with pine nuts and parmesan it makes spring’s definitive pesto.",
@@ -951,7 +951,7 @@ svg:'<path class="f1 sf" d="M40 30q8 14 4 46-8-10-8-28 0-12 4-18z"/><path class=
 
 {id:"wild-thyme",cat:"herbs",price:1,pk:"1,50–4 €/botte",name:{en:"Wild thyme",fr:"Serpolet"},latin:"Thymus serpyllum",
 origin:{en:"Limestone and alpine pasture",fr:"Causses et pâturages d'altitude"},season:[6,7,8],
-flavor:["herbal","woody","floral"],
+flavor:["herbal","woody","floral"],texture:["firm","fibrous"],
 story:{en:"Serpyllum comes from the Latin serpere, to creep, and the plant does exactly that, flattening itself across limestone and alpine turf instead of making a bush. It carries far less thymol than garden thyme, which is why a whole flowering stem can go into a dish where common thyme would have to be stripped and rationed.",
 fr:"Serpyllum vient du latin serpere, ramper, et la plante ne fait rien d'autre : elle s'aplatit sur le calcaire et les pelouses d'altitude au lieu de former un buisson. Elle contient bien moins de thymol que le thym cultivé, d'où l'usage de la tige fleurie entière là où le thym commun devrait être effeuillé et compté."},
 tip:{en:"Use the flowering stem whole and lift it out at the end, as you would a bay leaf. It gives itself up to warm honey or oil in twenty minutes off the heat; boiling drives off the floral top notes first.",
@@ -961,7 +961,7 @@ svg:'<path class="s" d="M22 72q14 8 26 0t26-6"/><path class="f2 sf" d="M30 70q4-
 
 {id:"wormwood",cat:"herbs",price:3,pk:"40–80 €/kg",name:{en:"Wormwood",fr:"Grande absinthe"},latin:"Artemisia absinthium",
 origin:{en:"Temperate Europe; Val-de-Travers, Switzerland",fr:"Europe tempérée ; Val-de-Travers, Suisse"},season:[6,7,8],
-flavor:["bitter","herbal","resinous"],
+flavor:["bitter","herbal","resinous"],texture:["soft","fibrous","moist"],
 story:{en:"Vermouth takes its name straight from Wermut, the German word for wormwood, and the plant is still what legally separates that drink from any other aromatised wine. Its bitterness comes from absinthin, detectable when diluted many tens of thousands of times, which is why the leaf is dosed by the count and not by the sprig.",
 fr:"Le vermouth tient son nom de Wermut, l’allemand pour l’absinthe, et la plante reste ce qui distingue légalement cette boisson de tout autre vin aromatisé. Son amertume vient de l’absinthine, encore perceptible à des dilutions de plusieurs dizaines de milliers de fois, d’où un dosage à la feuille et non au brin."},
 tip:{en:"One or two leaves per litre of game marinade, lifted out after twenty minutes — leave a sprig in overnight and the meat takes a camphor note that no cooking removes. Add it to a syrup off the heat: boiling drives out the aroma and concentrates only the bitterness.",
@@ -971,7 +971,7 @@ svg:'<path class="s" d="M48 80V22"/><path class="f1 sf" d="M48 34q-12-2-14-10 12
 
 {id:"yarrow",cat:"herbs",rare:true,price:1,pk:"30–60 €/kg",name:{en:"Yarrow",fr:"Achillée millefeuille"},latin:"Achillea millefolium",
 origin:{en:"European meadows and verges",fr:"Prairies et talus d'Europe"},season:[4,5,6,7,8,9],
-flavor:["anise","bitter","herbal"],
+flavor:["anise","bitter","herbal"],texture:["tender","moist"],
 story:{en:"The genus honours Achilles, who legend has it packed the leaf into his soldiers' wounds at Troy; millefolium counts the thousand fine divisions of a single frond. Brewers bittered ale with it for centuries before hops took the job, and it still carries that double register — tarragon first, then a clean bitterness underneath.",
 fr:"Le genre honore Achille qui, dit la légende, étanchait avec cette feuille les blessures de ses soldats devant Troie ; millefolium compte les mille découpes d'une seule fronde. Les brasseurs l'ont utilisée pour amériser la bière bien avant le houblon, et elle garde ce double registre : l'estragon d'abord, puis une amertume nette en dessous."},
 tip:{en:"Use only the young feathery leaves, finely chopped, and no more than a teaspoon for four — mature leaves turn medicinally bitter. Fold it in raw, into soured cream or soft butter; heat flattens the anise and leaves the bitterness alone on the plate.",
@@ -981,7 +981,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 66q-10-2-14-8M48 66q1
 
 {id:"yomogi",cat:"herbs",rare:true,price:2,pk:"80–180 €/kg",name:{en:"Yomogi",fr:"Armoise japonaise"},latin:"Artemisia princeps",
 origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
-flavor:["bitter","herbal","grassy","fresh"],
+flavor:["bitter","herbal","grassy","fresh"],texture:["tender","moist"],
 story:{en:"The same plant is the source of moxa, the smouldering cone of dried leaf used in moxibustion, so the kitchen and the clinic come out of one spring picking. Pounded into rice cake it makes kusamochi, grass cake, whose green is the leaf itself and not a colouring.",
 fr:"La même plante fournit le moxa, ce cône de feuille séchée que l’on fait se consumer en moxibustion : la cuisine et la médecine sortent d’une seule cueillette de printemps. Pilée dans la pâte de riz, elle donne le kusamochi, le « gâteau d’herbe », dont le vert est celui de la feuille et non un colorant."},
 tip:{en:"Take only the pale tips before the plant flowers, since older leaves turn harsh. Blanch thirty seconds in water with a pinch of bicarbonate to hold the green, squeeze hard, and pound while still warm — cold leaves will not break down into the dough.",

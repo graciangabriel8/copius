@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"agretti",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Agretti",fr:"Barbe de moine"},latin:"Salsola soda",
 origin:{en:"Mediterranean salt marshes",fr:"Marais salants méditerranéens"},season:[3,4,5],
-flavor:["salty","sour","grassy"],
+flavor:["salty","sour","grassy"],texture:["tender","crisp","juicy"],
 story:{en:"Before it was a vegetable it was industry: the ash of this plant runs to roughly a third soda, and Murano glassmakers bought it by the ton for the clarity of their cristallo. Synthetic soda killed the trade in the nineteenth century and left behind a six-week spring salad.",
 fr:"Avant d’être un légume, c’était une industrie : la cendre de cette plante titre près d’un tiers de soude, et les verriers de Murano l’achetaient à la tonne pour la limpidité de leur cristallo. La soude de synthèse a tué le commerce au XIXᵉ siècle et n’a laissé qu’une salade de six semaines au printemps."},
 tip:{en:"Pull the pink root off every strand — it stays woody however long you cook it. Ninety seconds in unsalted boiling water, then oil and lemon: the plant brings its own salt and will over-season anything you add it to.",
@@ -11,7 +11,7 @@ svg:'<path class="s" d="M20 62q10-28 28-30 18 2 28 30M25 68q8-24 23-26 15 2 23 2
 
 {id:"alexanders",cat:"vegetables",rare:true,price:1,pk:"5–12 €/kg",name:{en:"Alexanders",fr:"Maceron"},latin:"Smyrnium olusatrum",
 origin:{en:"Mediterranean coasts, naturalised in Britain",fr:"Littoraux méditerranéens, naturalisé en Grande-Bretagne"},season:[3,4,5],
-flavor:["bitter","herbal","resinous"],
+flavor:["bitter","herbal","resinous"],texture:["firm","fibrous","juicy"],
 story:{en:"Rome carried it north as a pot-herb and until the seventeenth century it was one of the commonest plants in a British kitchen garden, before self-blanching celery — sweeter, milder, less work — pushed it out entirely. Its genus name comes from smyrna, myrrh: the resin is in the smell, and celery has none of it.",
 fr:"Rome l’a emporté vers le nord comme plante potagère, et jusqu’au XVIIᵉ siècle il comptait parmi les plus communes des jardins anglais, avant que le céleri à blanchir — plus doux, plus sucré, moins exigeant — ne l’en chasse tout à fait. Son nom de genre vient de smyrna, la myrrhe : la résine est dans l’odeur, et le céleri n’en a pas trace."},
 tip:{en:"Peel the stems like rhubarb before cooking — most of the bitterness sits in the skin — then braise ten minutes in butter and stock. The unopened flower buds are the best of the plant: sixty seconds in boiling water, dressed warm.",
@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M26 30q22-15 44 0-22 9-44 0z"/><path class="s" d="M4
 
 {id:"arleux-smoked-garlic",cat:"vegetables",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Arleux smoked garlic",fr:"Ail fumé d’Arleux"},latin:"Allium sativum",
 origin:{en:"Arleux, northern France",fr:"Arleux, dans le Nord"},season:[9,10,11,12,1,2],
-flavor:["smoky","pungent","warm"],
+flavor:["smoky","pungent","warm"],texture:["firm","smooth","dry"],
 story:{en:"The braids, called manouilles, hang in closed sheds for eight to ten days over peat, short straw and untreated sawdust, held between 35 and 40 °C — peat cut from the marshes that ring the town. The smoke was never for flavour: it drives the water out, and a braid dried that way keeps a full year.",
 fr:"Les tresses, les manouilles, pendent huit à dix jours dans des cambres closes au-dessus de tourbe, de paille courte et de sciure non traitée, entre 35 et 40 °C — la tourbe venant des marais qui cernent le bourg. La fumée n’a jamais servi à parfumer : elle chasse l’eau, et une tresse ainsi séchée se garde une année entière."},
 tip:{en:"Do not brown it — smoked garlic burns bitter far sooner than raw does. Drop the cloves unpeeled into a stock, or confit them gently in fat and squeeze the flesh out afterwards.",
@@ -31,7 +31,7 @@ svg:'<path class="s" d="M40 20q8 10 16 0M44 17q-5 13 4 23M52 17q5 13-4 23"/><pat
 
 {id:"arracacha",cat:"vegetables",rare:true,price:1,pk:"5–10 €/kg",name:{en:"Arracacha",fr:"Arracacha"},latin:"Arracacia xanthorrhiza",
 origin:{en:"Northern Andes",fr:"Andes septentrionales"},season:[],
-flavor:["earthy","nutty","herbal"],
+flavor:["earthy","nutty","herbal"],texture:["firm","crisp","moist"],
 story:{en:"It belongs to the carrot and celery family and was domesticated in the northern Andes; Brazil, where it is called mandioquinha-salsa, now grows more of it than anywhere else. Its roots begin to break down within days of lifting, which is why a vegetable that feeds millions of Colombians has almost no export trade.",
 fr:"Elle appartient à la famille de la carotte et du céleri, et fut domestiquée dans les Andes du Nord ; c’est aujourd’hui le Brésil, où on l’appelle mandioquinha-salsa, qui en produit le plus. Ses racines commencent à se dégrader quelques jours après l’arrachage, ce qui explique qu’un légume nourrissant des millions de Colombiens n’ait presque aucun commerce d’exportation."},
 tip:{en:"It cooks in half the time of potato and passes the point of no return quickly: twelve to fifteen minutes at a simmer and it is already purée. Mash it with butter and nothing else — it thickens a soup on its own and needs neither cream nor flour.",
@@ -41,7 +41,7 @@ svg:'<path class="f1 sf" d="M30 46q8-6 14-2 2 12-1 22t-5 12q-3-3-6-14t-2-18z"/><
 
 {id:"artichoke",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Artichoke",fr:"Artichaut"},latin:"Cynara cardunculus var. scolymus",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[5,6,7,8,9],
-flavor:["bitter","earthy","nutty","delicate"],
+flavor:["bitter","earthy","nutty","delicate"],texture:["firm","fibrous","moist"],
 story:{en:"It is an unopened thistle flower, eaten before it can bloom. It also contains cynarin, a compound that makes whatever you drink next taste sweet — which is why wine is famously difficult alongside it, and why sommeliers dread the course.",
 fr:"C’est un chardon dont on mange la fleur avant qu’elle ne s’ouvre. Il contient aussi la cynarine, un composé qui rend sucré tout ce que l’on boit ensuite — d’où la difficulté notoire de l’accord avec le vin, et l’appréhension des sommeliers."},
 tip:{en:"Rub every cut surface with lemon immediately. It browns faster than almost any other vegetable.",
@@ -51,7 +51,7 @@ svg:'<path class="f2 sf" d="M48 26q16 8 16 26t-16 22-16-22 16-26z"/><path class=
 
 {id:"ashitaba",cat:"vegetables",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Ashitaba",fr:"Ashitaba (angélique d’Hachijō)"},latin:"Angelica keiskei",
 origin:{en:"Izu Islands, Japan",fr:"Îles Izu, Japon"},season:[3,4,5],
-flavor:["bitter","herbal","grassy"],
+flavor:["bitter","herbal","grassy"],texture:["tender","fibrous","moist"],
 story:{en:"The name means tomorrow’s leaf: pick one today and another is said to be up by morning, a claim the plant nearly earns, since it regrows in a few days. Cut the stem and it bleeds a sulphur-yellow sap loaded with chalcones — that sap is the bitterness you taste, and the reason the islanders drank the plant long before they cooked it.",
 fr:"Le nom signifie « feuille de demain » : cueillez-en une aujourd’hui et une autre serait levée au matin — la plante n’en est pas loin, elle repousse en quelques jours. Coupez la tige et il en sort une sève jaune soufre chargée de chalcones : c’est elle, l’amertume que l’on goûte, et la raison pour laquelle les insulaires en buvaient bien avant d’en cuisiner."},
 tip:{en:"For tempura, batter only the underside of the leaf and fry at 170 °C for twenty seconds, green side up — coated on both faces it steams and the bitterness turns metallic. As a green, blanch thirty seconds in salted water and shock it: the bitterness drops back to something like celery.",
@@ -61,7 +61,7 @@ svg:'<path class="f2 sf" d="M48 30q-6-12-18-12 0 14 14 18z"/><path class="f2 sf"
 
 {id:"asparagus",cat:"vegetables",price:2,pk:"8–18 €/kg",name:{en:"Asparagus",fr:"Asperge"},latin:"Asparagus officinalis",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[4,5,6],
-flavor:["grassy","sweet","delicate"],
+flavor:["grassy","sweet","delicate"],texture:["crisp","fibrous","juicy"],
 story:{en:"Romans loved it so much that “faster than cooking asparagus” was their phrase for instant. Louis XIV demanded it in January, so his gardener invented heated frames — the king of vegetables for the vegetable of kings.",
 fr:"Les Romains l’aimaient tant que « plus vite que ne cuit une asperge » signifiait chez eux l’instantané. Louis XIV en exigea en janvier, et son jardinier inventa les couches chauffées — le roi des légumes pour le légume des rois."},
 tip:{en:"Snap, don’t cut: the stalk breaks naturally where tenderness begins. Its season is short — honour it.",
@@ -71,7 +71,7 @@ svg:'<path class="s" d="M40 76V38M48 78V32M56 76V38"/><path class="f2 sf" d="M40
 
 {id:"bamboo-shoot",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"Bamboo shoot",fr:"Pousse de bambou"},latin:"Bambusoideae spp.",
 origin:{en:"East & Southeast Asia",fr:"Asie de l’Est et du Sud-Est"},season:[3,4,5],
-flavor:["mild","earthy","fresh","umami"],
+flavor:["mild","earthy","fresh","umami"],texture:["firm","crunchy","fibrous"],
 story:{en:"Dug in spring before the shoot breaks ground, because it grows fast enough to be measured hourly and turns woody within days. Fresh shoots contain cyanogenic compounds and must be boiled — one of the few vegetables that is genuinely toxic raw.",
 fr:"On les déterre au printemps avant qu’elles ne percent, car elles poussent assez vite pour se mesurer à l’heure et deviennent ligneuses en quelques jours. Les pousses fraîches contiennent des composés cyanogènes et doivent être bouillies — l’un des rares légumes réellement toxiques crus."},
 tip:{en:"Tinned shoots keep a metallic edge. Boil them for five minutes in fresh water before use and it goes.",
@@ -81,7 +81,7 @@ svg:'<path class="f1 sf" d="M48 16q10 13 14 33 3 13 3 31-17 5-34 0 0-18 3-31 4-2
 
 {id:"banana-shallot",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Banana shallot",fr:"Échalote banane"},latin:"Allium cepa var. aggregatum",
 origin:{en:"Northern Europe, seed-grown",fr:"Europe du Nord, semée en graine"},season:[],
-flavor:["mild","sweet","delicate"],
+flavor:["mild","sweet","delicate"],texture:["firm","smooth","juicy"],
 story:{en:"It is raised from seed rather than from a mother bulb, and that is why French growers spent the 2000s in court trying to stop it being sold as échalote - the compromise word was échalion. One lobe means no wasted double bulbs and a long, even body.",
 fr:"Elle se sème en graine au lieu de se planter en bulbe mère, et c'est pour cela que les producteurs français ont passé les années 2000 au tribunal à vouloir lui interdire le nom d'échalote — le compromis s'appelle échalion. Un seul lobe, donc aucun bulbe double perdu et un corps long et régulier."},
 tip:{en:"This is the shallot for clean rings and even brunoise; it holds together where a grey shallot splits into lobes. For a red wine sauce go back to the grey one - the banana carries more water and less depth.",
@@ -91,7 +91,7 @@ svg:'<path class="f2 sf" d="M40 26q12 6 12 26t-12 24-12-24 12-26z"/><path class=
 
 {id:"barbe-de-capucin",cat:"vegetables",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Barbe de capucin",fr:"Barbe de capucin"},latin:"Cichorium intybus",
 origin:{en:"Forcing cellars of Montreuil, near Paris",fr:"Caves de forçage de Montreuil, près de Paris"},season:[11,12,1,2,3],
-flavor:["bitter","fresh","mild"],
+flavor:["bitter","fresh","mild"],texture:["tender","crisp","moist"],
 story:{en:"Wild chicory roots are lifted in autumn, bedded in damp sand in a cellar and shut in the dark; with no light to build chlorophyll the new leaves come up pale, hollow and thin. Six hundred market gardeners around Paris were still forcing it in 1912, until Belgian endive — the same trick, a fatter result — took the trade.",
 fr:"On arrache les racines de chicorée sauvage à l’automne, on les couche dans du sable humide au fond d’une cave et on ferme : privées de lumière, les feuilles poussent blondes, creuses et filiformes. Six cents maraîchers de la ceinture parisienne la forçaient encore en 1912, jusqu’à ce que l’endive belge — même astuce, résultat plus charnu — emporte le marché."},
 tip:{en:"Dress it at the table and not a minute before: the leaves are hollow and collapse in vinaigrette inside five minutes. Walnut oil or a hot bacon-fat deglaze both carry it; lemon alone leaves the bitterness standing bare.",
@@ -101,7 +101,7 @@ svg:'<path class="f2 sf" d="M44 60h8l-2 20q-2 4-4 0z"/><path class="f1 sf" d="M4
 
 {id:"beetroot",cat:"vegetables",price:1,pk:"2–3,50 €/kg",name:{en:"Beetroot",fr:"Betterave"},latin:"Beta vulgaris",
 origin:{en:"Mediterranean coasts",fr:"Côtes méditerranéennes"},season:[1,2,3,9,10,11,12],
-flavor:["sweet","earthy"],
+flavor:["sweet","earthy"],texture:["firm","juicy"],
 story:{en:"Romans ate only its leaves and left the root to medicine. When British blockades cut Napoleon off from cane sugar, he ordered thousands of hectares of beet planted — and the root that stains everything crimson became Europe’s sugar bowl.",
 fr:"Les Romains n’en mangeaient que les feuilles et laissaient la racine à la médecine. Quand le blocus britannique priva Napoléon du sucre de canne, il fit planter des milliers d’hectares de betteraves — et la racine qui teinte tout de pourpre devint le sucrier de l’Europe."},
 tip:{en:"Roast it whole in its skin to keep the juices in; it peels with a rub of the thumb once cooked.",
@@ -111,7 +111,7 @@ svg:'<circle class="f2 sf" cx="48" cy="52" r="17"/><path class="s" d="M48 69v10"
 
 {id:"endive",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Belgian endive",fr:"Endive"},latin:"Cichorium intybus var. foliosum",
 origin:{en:"Brussels, Belgium",fr:"Bruxelles, Belgique"},season:[10,11,12,1,2,3],
-flavor:["bitter","fresh","sweet","delicate"],
+flavor:["bitter","fresh","sweet","delicate"],texture:["firm","crisp","juicy"],
 story:{en:"Discovered by accident around 1830, when a Brussels farmer left chicory roots in a dark cellar and found them sprouting pale, tight, tender heads. It has been grown in the dark ever since — expose it to light and it greens and turns unbearably bitter.",
 fr:"Découverte par accident vers 1830, quand un cultivateur bruxellois laissa des racines de chicorée dans une cave obscure et les retrouva germées en pommes pâles, serrées, tendres. On la force dans le noir depuis — exposée à la lumière elle verdit et devient insupportablement amère."},
 tip:{en:"Keep it wrapped and in the dark at home too. And cut out the cone at the base, which holds most of the bitterness.",
@@ -121,7 +121,7 @@ svg:'<path class="f1 sf" d="M48 18q10 10 12 26 2 18-2 30-2 8-10 8t-10-8q-4-12-2-
 
 {id:"bell-pepper",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Bell pepper",fr:"Poivron"},latin:"Capsicum annuum",
 origin:{en:"Central America",fr:"Amérique centrale"},season:[7,8,9,10],
-flavor:["sweet","fresh","grassy","fruity"],
+flavor:["sweet","fresh","grassy","fruity"],texture:["firm","crisp","juicy"],
 story:{en:"It is a chilli that lost its fire — a single recessive gene switches off capsaicin production entirely. Green, yellow and red are not varieties but stages of the same fruit ripening, which is why red ones cost more and taste sweeter.",
 fr:"C’est un piment qui a perdu son feu — un seul gène récessif éteint entièrement la production de capsaïcine. Vert, jaune et rouge ne sont pas des variétés mais les étapes d’un même fruit qui mûrit, d’où les rouges plus chers et plus doux."},
 tip:{en:"Blister the skin black under a grill and steam it in a covered bowl for ten minutes. The skin then lifts off in sheets.",
@@ -131,7 +131,7 @@ svg:'<path class="f1 sf" d="M48 28q13-1 19 8 6 9 5 20-1 12-5 19-3 5-8 4-4-1-5-7-
 
 {id:"bintje-potato",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Bintje potato",fr:"Bintje"},latin:"Solanum tuberosum",
 origin:{en:"Friesland, Netherlands",fr:"Frise, Pays-Bas"},season:[8,9,10,11],
-flavor:["earthy","mild","nutty"],
+flavor:["earthy","mild","nutty"],texture:["firm","granular","dry"],
 story:{en:"A Frisian schoolmaster, Kornelis Lieuwes de Vries, bred it in 1904 and named it after a former pupil, Bintje Jansma, then seventeen — he named most of his 125 varieties after his children and his students. Its dry, high-starch flesh is exactly what a two-bath fry wants, and exactly why it disintegrates in a pot of boiling water.",
 fr:"Un instituteur frison, Kornelis Lieuwes de Vries, l’a obtenue en 1904 et l’a baptisée du nom d’une ancienne élève, Bintje Jansma, alors âgée de dix-sept ans — il nommait la plupart de ses 125 variétés d’après ses enfants et ses écoliers. Sa chair sèche et très amylacée est exactement ce qu’exige une friture en deux bains, et exactement pourquoi elle se défait à l’eau bouillante."},
 tip:{en:"Fry twice: 150 °C until limp and still pale, rest ten minutes, then 180 °C for colour. For purée, steam or bake it in its skin — boiled Bintje takes on water and turns to glue under a whisk.",
@@ -141,7 +141,7 @@ svg:'<path class="f2 sf" d="M28 50c0-11 10-17 22-17s17 8 17 17-8 18-19 18-20-8-2
 
 {id:"bitter-melon",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Bitter melon",fr:"Margose"},latin:"Momordica charantia",
 origin:{en:"Tropical Asia and Africa",fr:"Asie et Afrique tropicales"},season:[6,7,8,9],
-flavor:["bitter","fresh","grassy"],
+flavor:["bitter","fresh","grassy"],texture:["firm","crisp","moist"],
 story:{en:"The bitterness comes from momordicin and is the reason the plant is grown at all — Okinawan gōyā champurū, Indian karela and Cantonese stuffed rings all exist to carry it. Left to ripen the fruit turns orange, splits open and shows scarlet arils that are frankly sweet, which is why it is always picked green.",
 fr:"L’amertume vient de la momordicine et constitue toute la raison d’être de la plante : le gōyā champurū d’Okinawa, le karela indien et les tronçons farcis cantonais n’existent que pour la porter. Laissé mûrir, le fruit vire à l’orange, s’ouvre et découvre des arilles écarlates franchement sucrées : c’est pourquoi on le cueille toujours vert."},
 tip:{en:"Halve, scrape out the seeds and the spongy core — the harshest part — then slice, salt at about a tablespoon per large melon, wait twenty minutes and press dry. That takes the edge off without removing the point of it.",
@@ -151,7 +151,7 @@ svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="f2 sf" d="M44
 
 {id:"respountchous",cat:"vegetables",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Black bryony shoots",fr:"Respountchous"},latin:"Dioscorea communis",
 origin:{en:"Hedgerows of the Tarn and Aveyron",fr:"Haies du Tarn et de l’Aveyron"},season:[3,4,5],
-flavor:["bitter","grassy","earthy"],
+flavor:["bitter","grassy","earthy"],texture:["tender","fibrous","moist"],
 story:{en:"In the Tarn and the Rouergue these climbing shoots are pulled from the hedges for a few weeks each spring; the name is usually traced to the Occitan for something that hides, which is what they do among the brambles. Everything else on the plant — root, stem, red berries — is toxic, so only the young tips ever come home.",
 fr:"Dans le Tarn et le Rouergue, on tire ces jeunes pousses grimpantes des haies quelques semaines par an ; le nom se rattache d’ordinaire à l’occitan pour ce qui se cache, ce qu’elles font en effet sous les ronces. Tout le reste de la plante — racine, tige, baies rouges — est toxique : seules les pointes tendres rentrent à la maison."},
 tip:{en:"Boil 5 to 8 minutes in a large pan of unsalted water and throw that water out — the bitterness leaves with it. Then vinaigrette while still warm, or straight into beaten egg for an omelette; never raw.",
@@ -161,7 +161,7 @@ svg:'<path class="s" d="M36 82q2-30 8-46 3-9 8-14M45 82q1-30 7-46 3-9 9-13M54 82
 
 {id:"black-krim-tomato",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Black Krim tomato",fr:"Tomate noire de Crimée"},latin:"Solanum lycopersicum",
 origin:{en:"Crimean peninsula",fr:"Péninsule de Crimée"},season:[7,8,9],
-flavor:["umami","sweet","fruity"],
+flavor:["umami","sweet","fruity"],texture:["soft","smooth","juicy"],
 story:{en:"Seed collected from a farmer near the Crimean coast reached the Seed Savers Exchange in 1991 through a Swedish gardener, Lars Olov Rosenström, and it became the first dark tomato sold widely in the West. Its acidity is unusually low, which is why the fruit reads as savoury rather than sharp.",
 fr:"Des graines recueillies chez un paysan de la côte de Crimée sont parvenues au Seed Savers Exchange en 1991 par un jardinier suédois, Lars Olov Rosenström, et la variété est devenue la première tomate noire largement diffusée en Occident. Son acidité est très basse : le fruit se lit comme salé plutôt que comme vif."},
 tip:{en:"Dress it with olive oil and salt alone — vinegar flattens the saline finish that is the whole reason to buy it. Never refrigerate: below about 12 °C the fruit stops making its aroma compounds and does not start again.",
@@ -171,7 +171,7 @@ svg:'<circle class="f2 sf" cx="48" cy="54" r="24"/><path class="f3" d="M26 46q10
 
 {id:"black-radish",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Black radish",fr:"Radis noir"},latin:"Raphanus sativus var. niger",
 origin:{en:"Eastern Europe",fr:"Europe de l’Est"},season:[10,11,12,1,2],
-flavor:["hot","peppery","bitter","earthy"],
+flavor:["hot","peppery","bitter","earthy"],texture:["hard","crisp","dry"],
 story:{en:"Coal-black outside, bone-white within, and considerably fiercer than its pink cousin. Central European kitchens grated it with goose fat and salt as a winter relish, and pharmacists sold it for the liver — a claim it still carries in French health-food shops.",
 fr:"Noir charbon dehors, blanc d’os dedans, et nettement plus féroce que son cousin rose. Les cuisines d’Europe centrale le râpaient à la graisse d’oie et au sel comme condiment d’hiver, et les apothicaires le vendaient pour le foie — réputation qu’il traîne encore en herboristerie."},
 tip:{en:"Salt the grated flesh for twenty minutes and squeeze it out. That draws off the bitterness and leaves the clean heat.",
@@ -181,7 +181,7 @@ svg:'<path class="f2 sf" d="M46 24q16 1 20 13 4 14 0 26-4 13-11 18-3 2-6 2t-6-2q
 
 {id:"stridoli",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Bladder campion",fr:"Silène enflé"},latin:"Silene vulgaris",
 origin:{en:"Meadows of Emilia-Romagna",fr:"Prairies d’Émilie-Romagne"},season:[3,4,5,6],
-flavor:["sweet","grassy","nutty"],
+flavor:["sweet","grassy","nutty"],texture:["tender","moist"],
 story:{en:"The English name and half the Italian dialect ones come from the same game: the calyx inflates like a small balloon and children burst it against the back of a hand. In Romagna the leaves go into risotto and ravioli fillings, where they taste improbably of raw young peas with an almond at the end.",
 fr:"Le nom anglais et la moitié des noms dialectaux italiens viennent du même jeu : le calice se gonfle comme un petit ballon que les enfants font claquer sur le dos de la main. En Romagne, les feuilles vont au risotto et aux farces de raviolis, où elles ont un goût invraisemblable de petit pois cru, avec une finale d’amande."},
 tip:{en:"Use the leaves and soft tips only; the stems go woody at flowering. The pea note is volatile — stir it into a risotto in the last two minutes, off the heat if you can, or it flattens to plain greens.",
@@ -191,7 +191,7 @@ svg:'<path class="f1 sf" d="M48 34q12 0 13 11t-13 12q-13-1-13-12t13-11z"/><path 
 
 {id:"bonnotte-de-noirmoutier",cat:"vegetables",price:3,pk:"15–40 €/kg",name:{en:"Bonnotte de Noirmoutier",fr:"Bonnotte de Noirmoutier"},latin:"Solanum tuberosum",
 origin:{en:"Île de Noirmoutier, Vendée",fr:"Île de Noirmoutier, Vendée"},season:[5],
-flavor:["salty","buttery","delicate"],
+flavor:["salty","buttery","delicate"],texture:["firm","smooth","moist"],
 story:{en:"It is planted around Candlemas in island sand dressed with seaweed hauled off the beaches, and lifted by hand between the eighth and the twentieth of May. Mechanisation killed the crop in the 1960s and it was brought back in the 1990s with help from INRA, after which a charity auction briefly made it the most expensive potato in France.",
 fr:"Elle se plante vers la Chandeleur dans le sable de l’île amendé au goémon ramassé sur les plages, et s’arrache à la main entre le 8 et le 20 mai. La mécanisation avait tué la culture dans les années 1960 ; relancée dans les années 1990 avec l’INRA, elle est devenue brièvement, lors d’une vente aux enchères, la pomme de terre la plus chère de France."},
 tip:{en:"Do not peel and do not soak: the saline note sits in and just under the skin. Steam eight to ten minutes and finish in butter with fleur de sel — boiling in salted water is redundant and washes the flavour out.",
@@ -201,7 +201,7 @@ svg:'<ellipse class="f2 sf" cx="38" cy="58" rx="17" ry="13"/><ellipse class="f1 
 
 {id:"fava-bean",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Broad bean",fr:"Fève"},latin:"Vicia faba",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[4,5,6,7],
-flavor:["sweet","earthy","grassy","mild"],
+flavor:["sweet","earthy","grassy","mild"],texture:["firm","smooth","moist"],
 story:{en:"One of the oldest crops in cultivation, and the only vegetable Pythagoras forbade his followers to eat — nobody has ever satisfactorily explained why. In the Middle East it feeds breakfast as ful medames, a dish older than the pyramids.",
 fr:"L’une des plus anciennes cultures, et le seul légume que Pythagore interdit à ses disciples — sans que personne ait jamais expliqué pourquoi de façon satisfaisante. Au Moyen-Orient elle fait le petit-déjeuner en ful medames, un plat plus vieux que les pyramides."},
 tip:{en:"Double-pod anything past the first young ones: shell, blanch a minute, then slip each bean out of its grey jacket.",
@@ -211,7 +211,7 @@ svg:'<path class="f2 sf" d="M32 30q-6 26 6 42t22-4q4-20-6-34t-22-4z"/><circle cl
 
 {id:"broccoli",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Broccoli",fr:"Brocoli"},latin:"Brassica oleracea var. italica",
 origin:{en:"Southern Italy",fr:"Italie du Sud"},season:[6,7,8,9,10,11],
-flavor:["grassy","bitter","earthy","mild"],
+flavor:["grassy","bitter","earthy","mild"],texture:["firm","crunchy","moist"],
 story:{en:"The name is a plural — broccoli, the little arms or shoots of the cabbage. Italian immigrants carried it to America in the 1920s, where it was so unfamiliar that shipments were labelled in Italian only; within twenty years it was on every plate.",
 fr:"Le nom est un pluriel — broccoli, les petits bras ou pousses du chou. Des immigrants italiens l’emportèrent en Amérique dans les années 1920, où il était si inconnu que les cageots n’étaient étiquetés qu’en italien ; vingt ans plus tard il était dans toutes les assiettes."},
 tip:{en:"Do not throw away the stalk. Peeled of its tough skin it is sweeter and crunchier than the florets.",
@@ -221,7 +221,7 @@ svg:'<path class="f2 sf" d="M30 46q0-16 18-16t18 16q0 12-18 12T30 46z"/><path cl
 
 {id:"brussels-sprout",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Brussels sprout",fr:"Chou de Bruxelles"},latin:"Brassica oleracea var. gemmifera",
 origin:{en:"Brabant, Belgium",fr:"Brabant, Belgique"},season:[10,11,12,1,2],
-flavor:["bitter","sweet","earthy","nutty"],
+flavor:["bitter","sweet","earthy","nutty"],texture:["firm","crisp","moist"],
 story:{en:"They grow spiralling up a single thick stalk, dozens to a plant, and they taste different than they did a generation ago. In the 1990s Dutch breeders identified the compounds behind the bitterness and bred them down — the vegetable people remember hating no longer exists.",
 fr:"Ils poussent en spirale le long d’une tige unique, des dizaines par pied, et ils n’ont plus le goût d’il y a une génération. Dans les années 1990, des sélectionneurs néerlandais ont identifié les composés de l’amertume et les ont fait reculer — le légume que l’on se souvient de détester n’existe plus."},
 tip:{en:"Halve and roast them cut-side down until properly browned. Boiling is what gave them their reputation.",
@@ -231,7 +231,7 @@ svg:'<path class="f1 sf" d="M40.5 22Q46 24 49 28.5Q52 33 52 38.5Q52 44 49 48.5Q4
 
 {id:"bucks-horn-plantain",cat:"vegetables",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Buck’s-horn plantain",fr:"Plantain corne-de-cerf"},latin:"Plantago coronopus",
 origin:{en:"European coasts",fr:"Littoraux européens"},season:[10,11,12,1,2,3,4],
-flavor:["fresh","mild","briny"],
+flavor:["fresh","mild","briny"],texture:["tender","crunchy","moist"],
 story:{en:"It is a salt-tolerant coastal plant, which is where the faint saline edge comes from, and Italian growers sell the cultivated form as minutina or erba stella. That form — narrow antler-shaped leaves cut as a salad crop — is a table vegetable, not the broad medicinal plantain of lawns and verges.",
 fr:"C’est une plante littorale tolérante au sel, d’où sa légère note saline, et les maraîchers italiens vendent la forme cultivée sous le nom de minutina ou erba stella. Cette forme — feuilles étroites en bois de cerf, coupées comme une salade — est un légume de table, pas le plantain médicinal à larges feuilles des pelouses et des talus."},
 tip:{en:"Cut it, do not pull it: the crown regrows three or four times across a winter, which is the whole economy of the crop. Dress it late — the leaves are crunchy and hold well, but salt collapses them within a few minutes.",
@@ -241,7 +241,7 @@ svg:'<path class="f2 sf" d="M48 50 26 24l6 12-10-4 8 10-12-2 10 8-10 2 12 4-6 6 
 
 {id:"burdock-root",cat:"vegetables",rare:true,price:1,pk:"6–12 €/kg",name:{en:"Burdock root",fr:"Racine de bardane"},latin:"Arctium lappa",
 origin:{en:"Eurasia; cultivated in Japan",fr:"Eurasie ; cultivée au Japon"},season:[10,11,12,1,2],
-flavor:["earthy","woody","nutty"],
+flavor:["earthy","woody","nutty"],texture:["firm","crunchy","fibrous"],
 story:{en:"Japanese records name gobō as food from the Heian period, and it is one of the few root vegetables Europe abandoned while East Asia kept it in daily use. A Swiss engineer who put its hooked burrs under a microscope in 1941 came away with the idea for Velcro.",
 fr:"Les textes japonais mentionnent le gobō comme aliment dès l’époque de Heian : c’est l’un des rares légumes-racines que l’Europe a délaissé et que l’Asie de l’Est a gardé au quotidien. Un ingénieur suisse qui observa ses capitules crochus au microscope en 1941 en tira l’idée du Velcro."},
 tip:{en:"Scrape the skin with the back of a knife rather than peeling — the flavour sits just underneath — and drop each piece straight into acidulated water, because the cut surface browns within a minute. Twenty minutes of simmering is the minimum before it stops tasting woody.",
@@ -251,7 +251,7 @@ svg:'<g transform="translate(8.35 8.7) scale(0.826)"><path class="f2 sf" d="M22 
 
 {id:"butternut",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Butternut squash",fr:"Butternut"},latin:"Cucurbita moschata",
 origin:{en:"Massachusetts, 1944",fr:"Massachusetts, 1944"},season:[9,10,11,12,1],
-flavor:["sweet","nutty","earthy","creamy"],
+flavor:["sweet","nutty","earthy","creamy"],texture:["hard","smooth","moist"],
 story:{en:"Unusually for a vegetable, it has a birth certificate: Charles Leggett bred it in Stow, Massachusetts in 1944, aiming for something sweeter than the squashes then grown. He said it was smooth as butter and sweet as a nut, and named it on the spot.",
 fr:"Fait rare pour un légume, il a un acte de naissance : Charles Leggett l’a créé à Stow, dans le Massachusetts, en 1944, en cherchant plus sucré que les courges de l’époque. Il le dit lisse comme du beurre et doux comme une noix, et le nomma sur-le-champ."},
 tip:{en:"The neck is solid flesh and the base is all seed. Cut them apart and treat them as two different vegetables.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M37 24C34 36 36 44 38 52 30 58 30 72 38 78c8 6 24 4 
 
 {id:"cabbage",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Cabbage",fr:"Chou"},latin:"Brassica oleracea var. capitata",
 origin:{en:"Coastal Europe",fr:"Côtes d’Europe"},season:[9,10,11,12,1,2,3],
-flavor:["sweet","earthy","mild","pungent"],
+flavor:["sweet","earthy","mild","pungent"],texture:["firm","crisp","juicy"],
 story:{en:"Cato the Elder devoted pages of his farming manual to cabbage, convinced it cured everything from hangovers to gangrene. Its real gift came later and colder: salted and packed, it kept northern Europe and the Royal Navy alive through winters without scurvy.",
 fr:"Caton l’Ancien consacra des pages de son manuel d’agriculture au chou, persuadé qu’il guérissait tout, de la gueule de bois à la gangrène. Son vrai don vint plus tard et plus au nord : salé et tassé, il fit passer l’hiver à l’Europe du Nord et à la Royal Navy sans scorbut."},
 tip:{en:"Cook it fast and hot or long and slow — never in between. The middle ground is where the sulphur smell lives.",
@@ -271,7 +271,7 @@ svg:'<path class="f2 sf" d="M34 61Q24 60 20 64 16 69 22 72 29 74 35 70 40 66 42 
 
 {id:"calcot",cat:"vegetables",sign:"IGP",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Calçot",fr:"Calçot"},latin:"Allium cepa",
 origin:{en:"Valls, Catalonia (IGP)",fr:"Valls, Catalogne (IGP)"},season:[12,1,2,3],
-flavor:["sweet","smoky","mild"],
+flavor:["sweet","smoky","mild"],texture:["firm","smooth","juicy"],
 story:{en:"Calçar means to earth up, and that is the whole trick: an onion is replanted and soil heaped around the shoot all winter so it runs long and white. Valls in Catalonia credits the invention to a nineteenth-century farmer nicknamed Xat de Benaiges, and holds a calçotada every winter to say so.",
 fr:"Calçar veut dire chausser, et tout est là : on replante un oignon et on butte la terre autour du rejet tout l'hiver pour qu'il file long et blanc. Valls, en Catalogne, en attribue l'invention à un paysan du XIXᵉ siècle surnommé Xat de Benaiges, et tient chaque hiver sa calçotada pour le rappeler."},
 tip:{en:"Burn them black over vine cuttings - you want char, not colour - then wrap the bundle in newspaper for fifteen minutes so the inside steams. Pull the burnt sheath down and off, dip the white in romesco, and eat with your head tipped back.",
@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M32 80q-2-34 3-44t5 44z"/><path class="f1 sf" d="M46
 
 {id:"camus-artichoke",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Camus de Bretagne artichoke",fr:"Artichaut camus de Bretagne"},latin:"Cynara scolymus",
 origin:{en:"Finistère and the Breton coast",fr:"Finistère et littoral breton"},season:[5,6,7,8,9,10,11],
-flavor:["earthy","bitter","nutty"],
+flavor:["earthy","bitter","nutty"],texture:["firm","fibrous","moist"],
 story:{en:"The variety was bred around 1810 by an agronomist near Paris and then moved west, and Brittany now grows the bulk of France’s artichokes with it. It is a heavy head bought for a thick fond and fleshy leaf bases; a poivrade of the same weight would be mostly waste.",
 fr:"La variété a été créée vers 1810 par un agronome de la région parisienne avant de gagner l’ouest, et la Bretagne produit aujourd’hui l’essentiel des artichauts français avec elle. C’est une tête lourde qu’on achète pour un fond épais et des bases de feuilles charnues : une poivrade du même poids serait surtout du déchet."},
 tip:{en:"Snap the stem off rather than cutting it, so the tough fibres pull out of the base with it. Boil head-down in salted water for thirty to forty minutes; it is done when an outer leaf lifts away with no resistance at all.",
@@ -291,7 +291,7 @@ svg:'<path class="f2 sf" d="M48 22q20 2 22 18t-22 34q-22-18-22-34T48 22z"/><path
 
 {id:"cardoon",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Cardoon",fr:"Cardon"},latin:"Cynara cardunculus",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,11,12],
-flavor:["bitter","delicate","grassy"],
+flavor:["bitter","delicate","grassy"],texture:["firm","fibrous","moist"],
 story:{en:"The artichoke’s wilder ancestor, eaten for its ribs rather than its flower. Piedmont dips the raw stalks into bagna cauda — hot anchovy and garlic bath — while Lyon gratinées them with marrow for Christmas; two regions, one thistle, both convinced they invented it.",
 fr:"L’ancêtre sauvage de l’artichaut, cultivé pour ses côtes plutôt que pour sa fleur. Le Piémont trempe les cardes crues dans la bagna cauda — bain chaud d’anchois et d’ail — quand Lyon les gratine à la moelle pour Noël ; deux régions, un même chardon, chacune convaincue de l’avoir inventé."},
 tip:{en:"String it like celery, blanch it in lemony water, and pair it with anything salty-deep: anchovy, parmesan, marrow. The bitterness is the point, not the flaw.",
@@ -301,7 +301,7 @@ svg:'<path class="f1 sf" d="M28 24q6-1 9 4 5 24 5 50-6 2-12 0-4-27-2-54z"/><path
 
 {id:"carrot",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Carrot",fr:"Carotte"},latin:"Daucus carota",
 origin:{en:"Persia (Iran, Afghanistan)",fr:"Perse (Iran, Afghanistan)"},season:[6,7,8,9,10,11],
-flavor:["sweet","earthy","fresh"],
+flavor:["sweet","earthy","fresh"],texture:["firm","crunchy","juicy"],
 story:{en:"The first cultivated carrots, in Persia, were purple and white. Legend says Dutch growers of the 17th century bred the orange carrot in tribute to the House of Orange — a vegetable that carries a flag.",
 fr:"Les premières carottes cultivées, en Perse, étaient violettes et blanches. La légende veut que les maraîchers hollandais du XVIIe siècle aient créé la carotte orange en hommage à la maison d’Orange — un légume porte-drapeau."},
 tip:{en:"Roasting concentrates its sugar; a spoonful of honey and a pinch of cumin make it sing.",
@@ -311,7 +311,7 @@ svg:'<path class="f2 sf" d="M42 30l12 4-9 40q-2 5-3-1z"/><path class="s" d="M46 
 
 {id:"cassava",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Cassava",fr:"Manioc"},latin:"Manihot esculenta",
 origin:{en:"Amazon basin, Brazil",fr:"Bassin amazonien, Brésil"},season:[],
-flavor:["mild","earthy","sweet"],
+flavor:["mild","earthy","sweet"],texture:["hard","fibrous","dry"],
 story:{en:"The bitter varieties carry cyanogenic glycosides right through the flesh, and Amazonian peoples answered with the tipiti, a woven tube press that squeezes the poison out as juice. That juice is not thrown away: boiled hard for hours it becomes tucupi, a golden cooking broth, so the same root supplies both the danger and the seasoning.",
 fr:"Les variétés amères portent des hétérosides cyanogènes dans toute leur chair, et les peuples d’Amazonie y ont répondu par le tipiti, une presse tressée qui en exprime le poison sous forme de jus. Ce jus n’est pas perdu : longuement bouilli, il devient le tucupi, un bouillon doré — la même racine donne le danger et l’assaisonnement."},
 tip:{en:"Peel deep, since the toxin sits mostly in the thick pink underskin, split the root and pull out the woody central cord, then boil hard in plenty of water until it splits and turns translucent. Never microwave it and never cook it gently: a genuine rolling boil drives the cyanide off, warmth does not.",
@@ -321,7 +321,7 @@ svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="f3 sf" d="M34
 
 {id:"castelfranco-chicory",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Castelfranco chicory",fr:"Chicorée de Castelfranco"},latin:"Cichorium intybus",
 origin:{en:"Castelfranco Veneto, Italy",fr:"Castelfranco Veneto, Italie"},season:[11,12,1,2],
-flavor:["bitter","fresh","mild"],
+flavor:["bitter","fresh","mild"],texture:["tender","crisp","moist"],
 story:{en:"It appeared in the Veneto at the end of the nineteenth century as a cross between Treviso radicchio and escarole, taking the broad pale leaf from one and the wine-red flecking from the other. The cream colour is not natural: the heads are forced in the dark, and daylight would turn them green and properly bitter.",
 fr:"Elle est née en Vénétie à la fin du XIXe siècle d’un croisement entre le radicchio de Trévise et la scarole, empruntant à l’une la feuille large et pâle, à l’autre les mouchetures lie-de-vin. La couleur crème n’a rien de naturel : les pommes sont forcées à l’obscurité, et la lumière les rendrait vertes et franchement amères."},
 tip:{en:"Use the whole leaves as cups and dress them at the last second — vinaigrette wilts them within minutes. A little honey or a sweet vinegar suits it better than a sharp one, since there is far less bitterness here to balance.",
@@ -331,7 +331,7 @@ svg:'<circle class="f1 sf" cx="48" cy="52" r="26"/><path class="s" d="M48 26q-14
 
 {id:"cauliflower",cat:"vegetables",price:1,pk:"2–4 €/pièce",name:{en:"Cauliflower",fr:"Chou-fleur"},latin:"Brassica oleracea var. botrytis",
 origin:{en:"Cyprus & the Levant",fr:"Chypre & Levant"},season:[9,10,11,12,1,2,3,4],
-flavor:["mild","nutty","sweet","earthy"],
+flavor:["mild","nutty","sweet","earthy"],texture:["firm","crunchy","moist"],
 story:{en:"What you eat is a flower that failed — a head of aborted buds arrested before they could bloom, held in suspension by generations of selection. Louis XIV had it served at Versailles under the name chou de Chypre, after the island it reached France from.",
 fr:"Ce que l’on mange est une fleur ratée — une masse de boutons avortés, arrêtés avant l’éclosion et maintenus en suspens par des générations de sélection. Louis XIV le fit servir à Versailles sous le nom de chou de Chypre, d’après l’île par laquelle il gagna la France."},
 tip:{en:"Roast it whole, or slice thick steaks from the core. Broken into florets it loses all the browning surface that makes it worth eating.",
@@ -341,7 +341,7 @@ svg:'<path class="f3 sf" d="M28 52q0-20 20-20t20 20q0 14-20 14T28 52z"/><path cl
 
 {id:"cavolo-nero",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Cavolo nero",fr:"Chou noir de Toscane"},latin:"Brassica oleracea var. palmifolia",
 origin:{en:"Tuscany, Italy",fr:"Toscane, Italie"},season:[10,11,12,1,2],
-flavor:["bitter","earthy","mild","umami"],
+flavor:["bitter","earthy","mild","umami"],texture:["firm","fibrous","dry"],
 story:{en:"Tuscans will tell you ribollita cannot be made before the first frost, and they are not being romantic — the cold converts starch to sugar and the bitterness drops. The soup is named for being reboiled: it is meant to be a day old.",
 fr:"Les Toscans vous diront que la ribollita ne se fait pas avant les premières gelées, et ce n’est pas du romantisme — le froid transforme l’amidon en sucre et l’amertume tombe. La soupe tient son nom d’être rebouillie : elle doit avoir un jour."},
 tip:{en:"Strip the leaf from the stem by pulling it backwards down the rib. The stem is too fibrous to soften in any reasonable time.",
@@ -351,7 +351,7 @@ svg:'<path class="f2 sf" d="M48 16q10 13 9 26 2 12-1 21 1 9-3 14-1 3-5 3t-5-3q-4
 
 {id:"celeriac",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Celeriac",fr:"Céleri-rave"},latin:"Apium graveolens var. rapaceum",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,2,3,9,10,11,12],
-flavor:["earthy","fresh","nutty","mild"],
+flavor:["earthy","fresh","nutty","mild"],texture:["firm","crisp","moist"],
 story:{en:"The ugliest vegetable at the market and the most transformed by ambition: France shreds it raw into rémoulade at every bistro, while modern chefs bake the whole gnarled globe in a salt crust and carve it tableside like a roast. Same root, two centuries of range.",
 fr:"Le légume le plus laid du marché et le plus transfiguré par l’ambition : la France le râpe cru en rémoulade dans tous les bistrots, tandis que les chefs contemporains cuisent la boule noueuse entière en croûte de sel et la découpent en salle comme un rôti. Même racine, deux siècles d’amplitude."},
 tip:{en:"Raw, cut it fine and dress it immediately; cooked, brown it hard — its sugars caramelise like a scallop’s. The peelings make a remarkable stock.",
@@ -361,7 +361,7 @@ svg:'<path class="f2 sf" d="M32 56q-2-16 16-16t16 16q0 14-16 14t-16-14z"/><path 
 
 {id:"celery",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Celery",fr:"Céleri branche"},latin:"Apium graveolens",
 origin:{en:"Mediterranean marshes",fr:"Marais méditerranéens"},season:[7,8,9,10,11],
-flavor:["fresh","grassy","salty"],
+flavor:["fresh","grassy","salty"],texture:["crisp","fibrous","juicy"],
 story:{en:"Greeks crowned athletes with celery leaves and planted it on graves; Victorians served it in crystal vases as a table luxury. Today it works anonymously in every stock — the third of the French mirepoix trinity.",
 fr:"Les Grecs couronnaient leurs athlètes de feuilles de céleri et en plantaient sur les tombes ; les Victoriens le servaient dans des vases de cristal comme un luxe de table. Aujourd’hui il œuvre incognito dans tous les bouillons — troisième pilier de la sainte trinité du mirepoix."},
 tip:{en:"Its leaves are a seasoning in themselves — chop them like an herb over soups and salads.",
@@ -371,7 +371,7 @@ svg:'<path class="f1 sf" d="M40 34v34q0 6 4 6h8q4 0 4-6V34"/><path class="s" d="
 
 {id:"celtuce",cat:"vegetables",rare:true,price:1,pk:"6–12 €/kg",name:{en:"Celtuce",fr:"Laitue asperge"},latin:"Lactuca sativa var. augustana",
 origin:{en:"Chinese vegetable gardens",fr:"Maraîchages chinois"},season:[3,4,5,10,11],
-flavor:["fresh","grassy","nutty"],
+flavor:["fresh","grassy","nutty"],texture:["firm","crisp","juicy"],
 story:{en:"China selected the same species as garden lettuce for the opposite trait: a stem that thickens and stays sweet instead of bolting into bitterness, the leaves reduced to an afterthought. An American seed house put it on the Western market in the 1940s under a coined name, celery plus lettuce, and it went nowhere.",
 fr:"La Chine a sélectionné la même espèce que notre laitue pour le trait inverse : une tige qui s’épaissit et reste douce au lieu de monter en amertume, la feuille reléguée au second plan. Un semencier américain l’a lancée en Occident dans les années 1940 sous un nom-valise, céleri plus laitue, sans aucun succès."},
 tip:{en:"Peel deep — the outer layer is stringy and bitter, and you can see where it ends, a pale ring inside the green. The jade core wants a minute at most in the wok, or a salting and a rinse to be eaten raw.",
@@ -381,7 +381,7 @@ svg:'<path class="f1 sf" d="M42 40h12l3 36q0 6-9 6t-9-6z"/><path class="f2 sf" d
 
 {id:"chayote",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Chayote",fr:"Chayotte"},latin:"Sechium edule",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[9,10,11,12],
-flavor:["mild","fresh","delicate"],
+flavor:["mild","fresh","delicate"],texture:["firm","crisp","juicy"],
 story:{en:"The name comes from the Nahuatl chayotli, and the fruit holds a single flat seed that germinates inside it while the fruit is still hanging — you plant the whole chayote, never a seed. That seed stays soft and is eaten with the flesh, which no courgette can offer.",
 fr:"Le nom vient du nahuatl chayotli, et le fruit ne contient qu’une graine plate qui germe à l’intérieur alors qu’il est encore sur la liane : on plante la chayotte entière, jamais une graine. Cette graine reste tendre et se mange avec la chair, ce qu’aucune courgette ne propose."},
 tip:{en:"Peel it under running water: the sap sets into a film on your hands that is a nuisance to remove afterwards. It keeps its bite through forty minutes in a gratin, so cut it noticeably thicker than you would courgette.",
@@ -391,7 +391,7 @@ svg:'<path class="f2 sf" d="M48 20q14 0 20 16t2 32q-8 12-22 12t-22-12q-4-16 2-32
 
 {id:"chickweed",cat:"vegetables",rare:true,price:1,pk:"15–30 €/kg",name:{en:"Chickweed",fr:"Mouron des oiseaux"},latin:"Stellaria media",
 origin:{en:"Temperate worldwide",fr:"Zones tempérées"},season:[10,11,12,1,2,3,4],
-flavor:["fresh","grassy","mild"],
+flavor:["fresh","grassy","mild"],texture:["tender","juicy"],
 story:{en:"Chickweed tastes startlingly of raw sweetcorn, and it can be told from everything it grows beside by a single line of fine hairs running along one side of the stem, switching sides at each pair of leaves. It is a cool-season plant: it germinates in autumn, mats through winter and is finished by the first real heat.",
 fr:"Le mouron a un goût étonnamment proche du maïs cru, et on le distingue de tout ce qui pousse à côté par une seule ligne de poils fins courant sur un côté de la tige, qui change de côté à chaque paire de feuilles. C’est une plante de saison fraîche : elle lève à l’automne, tapisse tout l’hiver et disparaît aux premières vraies chaleurs."},
 tip:{en:"Shear the mat with scissors rather than pulling it: pull and the roots come with the plant, and the grit comes with the roots. Serve it raw and dressed at the last second — heated, it collapses to almost nothing.",
@@ -401,7 +401,7 @@ svg:'<path class="s" d="M20 62q12 2 20-6t16-12M24 74q14-4 22-14t16-16"/><path cl
 
 {id:"chinese-broccoli",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Chinese broccoli",fr:"Kaï-lan"},latin:"Brassica oleracea var. alboglabra",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
-flavor:["bitter","grassy","fresh"],
+flavor:["bitter","grassy","fresh"],texture:["firm","crunchy","juicy"],
 story:{en:"It is the same botanical species as cabbage and cauliflower, selected in southern China for the stem rather than the head, and the flowers are meant to be open when it is cut. Its clean bitterness comes from the same glucosinolates as mustard, concentrated in the stalk rather than the leaf.",
 fr:"C’est la même espèce botanique que le chou et le chou-fleur, sélectionnée dans le sud de la Chine pour la tige et non pour la pomme, et les fleurs doivent être ouvertes au moment de la coupe. Son amertume nette vient des glucosinolates de la moutarde, concentrés dans la tige plutôt que dans la feuille."},
 tip:{en:"Split the thick stems lengthways so they cook at the rate of the leaves, blanch ninety seconds in water with a spoon of oil, and dress hot with oyster sauce. Cooked whole you get raw stalks and grey leaves in the same dish.",
@@ -411,7 +411,7 @@ svg:'<path class="f2 sf" d="M44 82q-2-30 2-48h6q4 18 2 48z"/><path class="f1 sf"
 
 {id:"chinese-toon",cat:"vegetables",price:3,pk:"30–60 €/kg",name:{en:"Chinese toon shoots",fr:"Pousses de cédrèle"},latin:"Toona sinensis",
 origin:{en:"Northern China",fr:"Chine du Nord"},season:[3,4],
-flavor:["pungent","resinous","musky"],
+flavor:["pungent","resinous","musky"],texture:["tender","fibrous","moist"],
 story:{en:"The shoots come from a tree in the mahogany family, picked red and young in a window of about three weeks around Qingming, after which the aroma coarsens and the price collapses. Older shoots also accumulate nitrite, which is the practical reason every Chinese recipe begins by blanching them rather than a matter of taste.",
 fr:"Les pousses viennent d’un arbre de la famille de l’acajou, et on les cueille rouges et jeunes dans une fenêtre d’environ trois semaines autour de Qingming ; passé ce cap, l’arôme s’épaissit et le prix s’effondre. Les pousses âgées accumulent aussi des nitrites, et c’est la vraie raison pour laquelle toute recette chinoise commence par les blanchir."},
 tip:{en:"Thirty seconds in boiling water first — it fixes the colour to bright green and removes most of the nitrite — then chop fine and fold into beaten egg at the last moment. It is an aromatic, not a vegetable: fifty grams will season six eggs, and more than that turns the dish medicinal.",
@@ -421,7 +421,7 @@ svg:'<path class="s" d="M48 84V22"/><path class="f2 sf" d="M48 32q-14-4-18-12 14
 
 {id:"chioggia-beetroot",cat:"vegetables",price:2,pk:"4–7 €/kg",name:{en:"Chioggia beetroot",fr:"Betterave de Chioggia"},latin:"Beta vulgaris",
 origin:{en:"Venetian lagoon, Italy",fr:"Lagune de Venise, Italie"},season:[6,7,8,9,10],
-flavor:["sweet","fresh","mild"],
+flavor:["sweet","fresh","mild"],texture:["firm","crisp","juicy"],
 story:{en:"It is named for Chioggia, the fishing town at the southern end of the Venetian lagoon, and reached American seed catalogues by the middle of the nineteenth century. The rings are pigment laid down in alternating layers as the root swells, and they are chemically fragile: the betalains bleed and blur the moment heat arrives.",
 fr:"Elle porte le nom de Chioggia, port de pêche à la pointe sud de la lagune de Venise, et figurait dans les catalogues grainiers américains dès le milieu du XIXᵉ siècle. Les anneaux sont des couches de pigment déposées alternativement pendant le grossissement, et ils sont chimiquement fragiles : les bétalaïnes diffusent et brouillent le dessin dès que la chaleur intervient."},
 tip:{en:"Slice it raw on a mandoline at one to two millimetres and dress it at the last moment; even lemon juice starts bleaching the rings within ten minutes. If you must cook it, roast it whole in foil and accept that it will come out pink — the pattern is a raw-only proposition.",
@@ -431,7 +431,7 @@ svg:'<circle class="f1 sf" cx="48" cy="52" r="24"/><circle class="s" cx="48" cy=
 
 {id:"choy-sum",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Choy sum",fr:"Choy sum"},latin:"Brassica rapa var. parachinensis",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
-flavor:["sweet","grassy","mild"],
+flavor:["sweet","grassy","mild"],texture:["tender","crisp","juicy"],
 story:{en:"The name means flowering heart, and the plant is cut exactly when the bud stalk bolts — a window of a few days before the stem goes hollow and fibrous. It belongs to the turnip side of the brassicas rather than the cabbage side, which is where the sweetness comes from.",
 fr:"Le nom signifie cœur fleuri, et la plante se coupe au moment précis où la hampe monte : une fenêtre de quelques jours avant que la tige ne devienne creuse et filandreuse. Elle relève des navets plutôt que des choux au sein des brassicacées, et c’est de là que vient sa douceur."},
 tip:{en:"Ninety seconds is the entire cooking time. Stems in first, leaves and buds ten seconds later, then finish with hot oil poured over sliced garlic — braise it and the buds collapse to mush.",
@@ -441,7 +441,7 @@ svg:'<path class="f2 sf" d="M46 82q-1-28 0-44h4q1 16 0 44z"/><path class="f1 sf"
 
 {id:"shungiku",cat:"vegetables",rare:true,price:1,pk:"6–12 €/kg",name:{en:"Chrysanthemum greens",fr:"Shungiku"},latin:"Glebionis coronaria",
 origin:{en:"Mediterranean; grown in East Asia",fr:"Méditerranée ; cultivée en Asie de l’Est"},season:[11,12,1,2,3],
-flavor:["herbal","bitter","grassy"],
+flavor:["herbal","bitter","grassy"],texture:["tender","moist"],
 story:{en:"The plant is a Mediterranean wildflower that travelled east along the trade routes and became a vegetable there while Europe kept it in the flower border. Chinese cooks have eaten tong hao for well over a thousand years; French seed catalogues still sell the same species as a summer annual.",
 fr:"C’est une fleur sauvage méditerranéenne qui a gagné l’Orient par les routes commerciales et y est devenue un légume, tandis que l’Europe la gardait au massif. On mange le tong hao en Chine depuis bien plus de mille ans ; les catalogues français vendent toujours la même espèce comme annuelle d’ornement."},
 tip:{en:"Ten seconds in the broth and out — held longer it turns bitter and metallic, and no seasoning brings it back. Add it per portion at the table in a hot pot, never to the pot at the start.",
@@ -451,7 +451,7 @@ svg:'<path class="f2 sf" d="M46 78q-16-8-20-24-4-16 6-26 8 8 8 16 4-10 12-12 2 1
 
 {id:"chuno",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Chuño",fr:"Chuño"},latin:"Solanum tuberosum",
 origin:{en:"Andean altiplano",fr:"Altiplano andin"},season:[],
-flavor:["earthy","mild","musky"],
+flavor:["earthy","mild","musky"],texture:["hard","chewy","dry"],
 story:{en:"Chuño is made in the June frosts of the altiplano: the potatoes freeze overnight, thaw in the sun and are trodden underfoot by day to press the water out, over four or five cycles. It keeps for a decade or more, which is what filled the Inca qollqa storehouses along the royal roads and fed armies on the march.",
 fr:"Le chuño se fait dans les gelées de juin sur l’altiplano : les pommes de terre gèlent la nuit, dégèlent au soleil et sont foulées aux pieds le jour pour en chasser l’eau, quatre ou cinq cycles durant. Il se garde dix ans et plus — c’est lui qui remplissait les qollqa incas le long des routes royales et nourrissait les armées en marche."},
 tip:{en:"Soak black chuño overnight and change the water twice, or the smell stays barnyard rather than earthy. It never softens like a fresh potato: it turns chewy and porous, and belongs in a long-simmered stew where it drinks the broth.",
@@ -461,7 +461,7 @@ svg:'<path class="f2 sf" d="M24 54q-2-14 12-16t18 8q4 12-6 18t-20-2z"/><path cla
 
 {id:"cime-di-rapa",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Cime di rapa",fr:"Brocoli-rave"},latin:"Brassica rapa subsp. sylvestris",
 origin:{en:"Puglia and Campania",fr:"Pouilles et Campanie"},season:[11,12,1,2,3],
-flavor:["bitter","grassy","peppery"],
+flavor:["bitter","grassy","peppery"],texture:["tender","fibrous","moist"],
 story:{en:"It is a turnip selected for its flowering tops instead of its root, and it shares no ancestry with broccoli whatever the English name suggests. In Puglia the entire plant goes into one pot — leaf, stem and bud — with the orecchiette cooked in the same water.",
 fr:"C’est un navet sélectionné pour ses hampes fleuries plutôt que pour sa racine, et il n’a aucune parenté avec le brocoli, quoi qu’en dise son nom. Dans les Pouilles, la plante entière passe dans la même casserole — feuille, tige et bouton — avec les orecchiette cuites dans cette eau-là."},
 tip:{en:"Blanch two minutes in plenty of salted water before it ever meets the pan; sautéed raw it keeps a bitterness that reads as scorched. Save the blanching water for the pasta, since that is where much of the flavour has gone.",
@@ -471,7 +471,7 @@ svg:'<path class="f2 sf" d="M46 76q-14-14-18-30 12 2 18 14zM50 76q14-14 18-30-12
 
 {id:"cipollini-onion",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Cipollini onion",fr:"Oignon cipollini"},latin:"Allium cepa",
 origin:{en:"Emilia-Romagna, Italy",fr:"Émilie-Romagne, Italie"},season:[8,9,10,11],
-flavor:["sweet","mild","rich"],
+flavor:["sweet","mild","rich"],texture:["firm","smooth","juicy"],
 story:{en:"The flat shape comes from an old Emilian landrace, the Borettana, named for Boretto on the Po and selected for sugar rather than for keeping. In Italy the word cipollina also covers the bitter bulbs of grape hyacinth, so a market label does not always mean an onion.",
 fr:"Sa forme aplatie vient d'une vieille population émilienne, la borettana, du nom de Boretto sur le Pô, sélectionnée pour le sucre et non pour la conservation. En Italie, le mot cipollina désigne aussi les bulbes amers du muscari : l'étiquette du marché n'annonce pas toujours un oignon."},
 tip:{en:"Two minutes in boiling water and the papery skin slips off in one piece. For agrodolce, glaze them whole in butter with a spoon of sugar and three of vinegar, covered, for twenty minutes, then uncover and let the syrup catch.",
@@ -481,7 +481,7 @@ svg:'<path class="f1 sf" d="M20 58q0-15 28-15t28 15-28 15-28-15z"/><path class="
 
 {id:"corn",cat:"vegetables",price:1,pk:"1–2 €/pièce",name:{en:"Corn",fr:"Maïs"},latin:"Zea mays",
 origin:{en:"Mexico",fr:"Mexique"},season:[7,8,9],
-flavor:["sweet","milky","buttery"],
+flavor:["sweet","milky","buttery"],texture:["tender","crunchy","juicy"],
 story:{en:"Nine thousand years ago, Mexican farmers began turning teosinte — a grass with a dozen hard seeds — into cobs of hundreds: the greatest plant-breeding feat in history. They planted it with beans and squash, the “three sisters” who feed each other.",
 fr:"Il y a neuf mille ans, des paysans mexicains commencèrent à transformer la téosinte — une herbe à douze graines dures — en épis de plusieurs centaines : le plus grand exploit de sélection végétale de l’histoire. Ils le semaient avec haricots et courges, les « trois sœurs » qui se nourrissent entre elles."},
 tip:{en:"Sweetness starts fading the hour it is picked: cook fresh cobs the day you buy them, and scrape the milky pulp from spent cobs into soups.",
@@ -491,7 +491,7 @@ svg:'<path class="f1 sf" d="M48 22q10 8 11 24 2 18-2 29-2 8-9 8t-9-8q-4-11-2-29 
 
 {id:"crapaudine-beetroot",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Crapaudine beetroot",fr:"Betterave crapaudine"},latin:"Beta vulgaris",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[10,11,12,1,2],
-flavor:["earthy","sweet","rich"],
+flavor:["earthy","sweet","rich"],texture:["hard","granular","dry"],
 story:{en:"The name is from crapaud, toad: the skin cracks into rough dark plates as the root swells, and growers call it the oldest beetroot still in cultivation, a claim repeated everywhere and documented nowhere. What is certain is the flesh — dense, low in water, with none of the wet sweetness of a round table beet.",
 fr:"Le nom vient du crapaud : la peau se fend en plaques sombres et rugueuses à mesure que la racine grossit, et les maraîchers la disent la plus ancienne betterave encore cultivée — affirmation répétée partout et documentée nulle part. Ce qui est sûr, c’est la chair : dense, pauvre en eau, sans rien du sucre mouillé d’une betterave ronde de table."},
 tip:{en:"Roast it whole and unpeeled, buried in coarse salt at 180°C for an hour and a half, or straight in the embers; the skin turns to a shell you crack off. Boiling is the one thing to avoid — the dry flesh takes on water and everything that justifies the price goes into the pan.",
@@ -501,7 +501,7 @@ svg:'<g transform="translate(3.26 3.4) scale(0.932)"><path class="f3 sf" d="M36 
 
 {id:"crosnes",cat:"vegetables",rare:true,price:2,pk:"14–25 €/kg",name:{en:"Crosnes",fr:"Crosne"},latin:"Stachys affinis",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[1,2,11,12],
-flavor:["nutty","delicate","sweet","fresh"],
+flavor:["nutty","delicate","sweet","fresh"],texture:["firm","crisp","juicy"],
 story:{en:"Little pearly tubers shaped like Michelin men, named after the village of Crosne where a French agronomist first planted them in the 1880s after bringing them back from Asia. Restaurant kitchens adore and curse them equally: exquisite crunch, maddening to clean.",
 fr:"Petits tubercules nacrés en forme de bibendum, nommés d’après le village de Crosne où un agronome français les planta pour la première fois dans les années 1880, rapportés d’Asie. Les cuisines de restaurant les adorent et les maudissent à parts égales : croquant exquis, nettoyage exaspérant."},
 tip:{en:"Don’t peel — shake them in a tea towel with coarse salt to strip the skins, then glaze them in butter barely two minutes. They should still snap.",
@@ -511,7 +511,7 @@ svg:'<path class="f1 sf" d="M20 66q1-9 10-10 3-8 12-7 4-8 13-6 5-7 13-4 8-2 10 6
 
 {id:"cucamelon",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Cucamelon",fr:"Mélothrie"},latin:"Melothria scabra",
 origin:{en:"Mexico and Central America",fr:"Mexique et Amérique centrale"},season:[7,8,9],
-flavor:["fresh","sour","citrus"],
+flavor:["fresh","sour","citrus"],texture:["firm","crunchy","juicy"],
 story:{en:"It was grown in Mesoamerica long before contact, and is still called sandiita, little watermelon, for the striped skin rather than for anything melon-like in the taste. Botanists only described it in 1866, and seed catalogues outside Mexico ignored it until the last twenty years or so.",
 fr:"On la cultivait en Mésoamérique bien avant la conquête, et on l’appelle toujours sandiita, petite pastèque, pour la peau rayée et non pour un quelconque goût de melon. Les botanistes ne l’ont décrite qu’en 1866, et les catalogues de graines hors du Mexique l’ont ignorée jusqu’à ces vingt dernières années."},
 tip:{en:"Eat them whole, raw and unpeeled — the cucumber note lives in the skin and the flesh alone is bland. For a quick pickle, cover with warm brine and eat them the same day; after a few hours they soften and lose the snap that is the point.",
@@ -521,7 +521,7 @@ svg:'<ellipse class="f2 sf" cx="40" cy="58" rx="16" ry="12"/><ellipse class="f1 
 
 {id:"cucumber",cat:"vegetables",price:1,pk:"1–2 €/pièce",name:{en:"Cucumber",fr:"Concombre"},latin:"Cucumis sativus",
 origin:{en:"Northern India",fr:"Inde du Nord"},season:[6,7,8,9],
-flavor:["fresh","mild","grassy","delicate"],
+flavor:["fresh","mild","grassy","delicate"],texture:["firm","crisp","juicy"],
 story:{en:"Tiberius wanted it every day of the year, so Roman gardeners grew it in wheeled beds pushed into the sun and covered at night with frames glazed in sheets of mica — greenhouses, sixteen centuries early, built for one emperor's appetite.",
 fr:"Tibère en voulait chaque jour de l’année : ses jardiniers le cultivaient donc dans des châssis à roulettes poussés au soleil et couverts la nuit de plaques de mica — des serres, seize siècles trop tôt, bâties pour l’appétit d’un seul empereur."},
 tip:{en:"Salt sliced cucumber for twenty minutes and drain it before dressing. Otherwise it weeps into the sauce and dilutes everything.",
@@ -531,7 +531,7 @@ svg:'<path class="f2 sf" d="M36 26q10-2 14 8t2 34q-2 10-10 8t-8-14 0-28 2-8z"/><
 
 {id:"cevennes-sweet-onion",cat:"vegetables",sign:"AOP",price:2,pk:"3,50–6 €/kg",name:{en:"Cévennes sweet onion",fr:"Oignon doux des Cévennes"},latin:"Allium cepa",
 origin:{en:"Cévennes terraces, Gard",fr:"Bancels des Cévennes, Gard"},season:[8,9,10,11],
-flavor:["sweet","mild","fresh"],
+flavor:["sweet","mild","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"It is grown on bancels, the dry-stone terraces monks began cutting into the Cévennes hillsides in the Middle Ages, and a tithe record of 1409 already mentions the local onion. It took the first AOC ever granted to an onion in 2003 and the European AOP in 2008.",
 fr:"Il pousse sur les bancels, ces terrasses en pierre sèche que les moines ont commencé à tailler au flanc des Cévennes au Moyen Âge, et un registre de dîme de 1409 mentionne déjà l’oignon local. Il a obtenu en 2003 la première AOC jamais accordée à un oignon, puis l’AOP européenne en 2008."},
 tip:{en:"Bake it whole in its skin for an hour at 180 °C and it turns to jam without a grain of added sugar. Buy only what you will use inside a month: its low dry matter is what makes it sweet and also what makes it rot where a keeping onion would not.",
@@ -541,7 +541,7 @@ svg:'<path class="f2 sf" d="M48 30q20 2 24 18t-24 26-24-26 24-18z"/><path class=
 
 {id:"daikon",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Daikon",fr:"Daïkon"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"East Asian winter fields",fr:"Champs d’hiver d’Asie de l’Est"},season:[10,11,12,1,2],
-flavor:["mild","peppery","fresh"],
+flavor:["mild","peppery","fresh"],texture:["firm","crisp","juicy"],
 story:{en:"By tonnage no vegetable is grown more in Japan than this one, and the Sakurajima cultivar has been weighed at over thirty kilos — a radish the size of a beach ball. The kitchen wants the opposite of size: a root simmered long enough that its opaque white turns translucent.",
 fr:"Aucun légume n’est plus cultivé au Japon en tonnage, et la variété Sakurajima a été pesée à plus de trente kilos — un radis gros comme un ballon. La cuisine cherche pourtant l’inverse de la taille : une racine mijotée assez longtemps pour que son blanc opaque devienne translucide."},
 tip:{en:"Peel thick — the outer three millimetres stay fibrous whatever you do. Bevel the cut edge of every round and score a shallow cross in one face: the bevel keeps them from breaking up over the hour they take to go glassy, the cross lets the dashi in.",
@@ -551,7 +551,7 @@ svg:'<path class="f1 sf" d="M38 36h20l-3 28q-2 20-7 20t-7-20z"/><path class="f2 
 
 {id:"dandelion",cat:"vegetables",price:2,pk:"7–14 €/kg",name:{en:"Dandelion greens",fr:"Pissenlit"},latin:"Taraxacum officinale",
 origin:{en:"Eurasia",fr:"Eurasie"},season:[3,4,5],
-flavor:["bitter","earthy","fresh","grassy"],
+flavor:["bitter","earthy","fresh","grassy"],texture:["tender","fibrous","moist"],
 story:{en:"The French name is a blunt medical observation about its effect on the bladder, and the English one is a corruption of dent-de-lion, for the toothed leaf. Country people gathered it in March as the first green thing after winter.",
 fr:"Le nom français est une observation médicale sans détour sur son effet diurétique, et l’anglais une déformation de dent-de-lion, pour la feuille dentée. Les campagnes le ramassaient en mars, première verdure après l’hiver."},
 tip:{en:"Pick or buy it before the plant flowers. Once the yellow head appears the leaves turn harshly bitter and stay that way.",
@@ -561,7 +561,7 @@ svg:'<path class="s" d="M47 72q1-16 1-26"/><path class="f1 sf" d="M47 76l-9-3 2-
 
 {id:"datterino-tomato",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Datterino tomato",fr:"Tomate datterino"},latin:"Solanum lycopersicum",
 origin:{en:"Sicily and Puglia",fr:"Sicile et Pouilles"},season:[6,7,8,9],
-flavor:["sweet","fruity","tangy"],
+flavor:["sweet","fruity","tangy"],texture:["firm","smooth","juicy"],
 story:{en:"The name is simply dattero, date, for a fruit no bigger than one; Sicilian growers irrigate it with brackish water and the sugar climbs to roughly double a field tomato's. The skin stays thin at that sweetness, which is why it splits at the first excess of heat.",
 fr:"Son nom dit simplement dattero, la datte, pour un fruit qui n’en dépasse pas la taille ; les producteurs siciliens l’irriguent à l’eau saumâtre et le sucre y monte à près du double d’une tomate de plein champ. La peau, elle, reste fine à ce degré de sucre, et c’est pourquoi elle éclate au premier excès de chaleur."},
 tip:{en:"Confit them whole at 90 °C for two hours with olive oil, salt and a garlic clove — at that temperature the skin will not split and the fruit holds its shape. Above 120 °C the sugar catches and you get caramel, not tomato.",
@@ -571,7 +571,7 @@ svg:'<ellipse class="f3 sf" cx="35" cy="60" rx="11" ry="18"/><ellipse class="f3 
 
 {id:"doraji",cat:"vegetables",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Doraji (balloon flower root)",fr:"Racine de campanule (doraji)"},latin:"Platycodon grandiflorus",
 origin:{en:"Korean hillsides",fr:"Collines de Corée"},season:[9,10,11],
-flavor:["bitter","earthy","fresh","woody"],
+flavor:["bitter","earthy","fresh","woody"],texture:["firm","crunchy","fibrous"],
 story:{en:"Doraji is the root of the balloon flower, dug in autumn, and the subject of Doraji Taryeong, one of the few folk songs still sung on both sides of the border. Its bitterness is saponin — the platycosides that made it a cough remedy long before it was a side dish.",
 fr:"Le doraji est la racine de la campanule à grandes fleurs, arrachée à l’automne, et le sujet du Doraji taryeong, l’un des rares chants populaires encore chantés des deux côtés de la frontière. Son amertume vient des saponines : les platycosides qui en ont fait un remède contre la toux bien avant d’en faire un banchan."},
 tip:{en:"Split the root into strips, rub it hard with coarse salt, then rinse and soak thirty minutes in cold water, changing it twice; without that the bitterness sits at the back of the tongue. Squeeze it dry before dressing or the seasoning slides straight off.",
@@ -581,7 +581,7 @@ svg:'<path class="f1 sf" d="M42 26q6-4 12 0l-2 14q8 8 6 20t-10 18q-2-10-6-14-6 8
 
 {id:"kuru-patlican",cat:"vegetables",rare:true,price:2,pk:"25–45 €/kg",name:{en:"Dried aubergine",fr:"Aubergine séchée"},latin:"Solanum melongena",
 origin:{en:"South-eastern Anatolia",fr:"Anatolie du Sud-Est"},season:[],
-flavor:["smoky","earthy","umami","mild"],
+flavor:["smoky","earthy","umami","mild"],texture:["tough","chewy","dry"],
 story:{en:"In Gaziantep and Urfa small aubergines are hollowed out in late summer and strung up in the sun until the shells go papery, a winter store from long before refrigeration. Drying concentrates them into something smoky and dense that a fresh aubergine never becomes, whatever you do to it.",
 fr:"À Gaziantep et à Urfa, on évide de petites aubergines à la fin de l’été et on les enfile en guirlandes au soleil jusqu’à ce que les coques deviennent parcheminées : une réserve d’hiver bien antérieure au froid artificiel. Le séchage les concentre en quelque chose de fumé et dense qu’une aubergine fraîche ne devient jamais, quoi qu’on lui fasse."},
 tip:{en:"Boil the shells three or four minutes only, just until pliable — any longer and they tear as you fill them. Stuff them two-thirds full: the rice swells and splits a tight shell open in the pot.",
@@ -591,7 +591,7 @@ svg:'<path class="s" d="M22 30q26 8 52 0"/><path class="f3 sf" d="M30 34q8-2 9 4
 
 {id:"dried-lily-buds",cat:"vegetables",price:2,pk:"30–50 €/kg",name:{en:"Dried lily buds",fr:"Aiguilles d’or (lis séché)"},latin:"Hemerocallis fulva",
 origin:{en:"Northern China",fr:"Chine du Nord"},season:[],
-flavor:["musky","smoky","earthy"],
+flavor:["musky","smoky","earthy"],texture:["tough","chewy","dry"],
 story:{en:"These are unopened daylily buds dried to golden threads; Chinese calls them jin zhen, golden needles, and the plant is the same Hemerocallis grown in gardens for its one-day flowers. They are among the very few vegetables sold only in dried form, because a picked bud opens or wilts within hours.",
 fr:"Ce sont des boutons d’hémérocalle non ouverts, séchés jusqu’à devenir des fils dorés ; le chinois les nomme jin zhen, « aiguilles d’or », et la plante est l’hémérocalle même que l’on cultive au jardin pour ses fleurs d’un jour. C’est l’un des rares légumes que le commerce ne vend que séché, car un bouton cueilli s’ouvre ou fane en quelques heures."},
 tip:{en:"Soak twenty to thirty minutes in warm water, then pinch off the hard stem tip, which stays woody however long it cooks. Tie each bud in a single knot and it will hold its shape through a braise.",
@@ -601,7 +601,7 @@ svg:'<path class="f1 sf" d="M30 20q6 0 8 6l10 48q1 5-3 6t-5-4l-11-49q-1-5 1-7Z"/
 
 {id:"earth-chestnut",cat:"vegetables",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Earth chestnut",fr:"Châtaigne de terre"},latin:"Bunium bulbocastanum",
 origin:{en:"European hedgerows and field margins",fr:"Haies et lisières d’Europe"},season:[4,5,6,9,10],
-flavor:["nutty","sweet","earthy"],
+flavor:["nutty","sweet","earthy"],texture:["firm","crisp","moist"],
 story:{en:"The tuber forms a hand's depth down, on a stem no thicker than a thread, so it cannot be pulled — it has to be traced from the flowering stalk and dug out whole. That single fact is why a root tasting of raw hazelnut and chestnut has been foraged across Europe for centuries and never became a field crop.",
 fr:"Le tubercule se forme à une main de profondeur, au bout d’une tige pas plus grosse qu’un fil : impossible de l’arracher, il faut suivre la hampe florale et le déterrer entier. C’est cette seule raison qui fait qu’une racine au goût de noisette crue et de châtaigne se cueille en Europe depuis des siècles sans être jamais devenue une culture de plein champ."},
 tip:{en:"Scrub rather than peel: the skin is thin and most of the nut flavour sits directly under it. Eat them raw and sliced into a salad, or give them five minutes in butter at the most — boiled, they go floury and the hazelnut disappears.",
@@ -611,7 +611,7 @@ svg:'<circle class="f3 sf" cx="48" cy="68" r="11"/><path class="s" d="M48 57V30"
 
 {id:"edamame",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Edamame",fr:"Édamame"},latin:"Glycine max",
 origin:{en:"Japan",fr:"Japon"},season:[7,8,9],
-flavor:["fresh","grassy","buttery"],
+flavor:["fresh","grassy","buttery"],texture:["firm","smooth","moist"],
 story:{en:"The name means stem bean: in Edo they were sold boiled and still attached to the cut stalk, a summer street food eaten standing up. They are ordinary soybeans picked at about four-fifths of maturity, and their sugar starts converting to starch within hours of harvest, which is why frozen ones are often better than fresh ones that have travelled.",
 fr:"Le nom veut dire haricot de tige : à Edo, on les vendait bouillis et encore accrochés à leur branche, nourriture de rue d’été que l’on mangeait debout. Ce sont des sojas ordinaires cueillis aux quatre cinquièmes de leur maturité, et leur sucre se convertit en amidon dans les heures qui suivent la récolte — d’où des surgelés souvent meilleurs que des frais qui ont voyagé."},
 tip:{en:"Rub the pods with coarse salt before boiling — it scours the fuzz and drives salt through the shell — then five minutes at a hard boil and straight onto a tray to cool in the air, never in water. Salt them again while they are steaming hot; a pod salted cold tastes of nothing.",
@@ -621,7 +621,7 @@ svg:'<path class="f2 sf" d="M26 62q-4-12 6-22t26-16 14 8-6 22-26 16-14-8z"/><cir
 
 {id:"eggplant",cat:"vegetables",price:1,pk:"2,50–5 €/kg",name:{en:"Eggplant",fr:"Aubergine"},latin:"Solanum melongena",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["mild","earthy","rich"],
+flavor:["mild","earthy","rich"],texture:["firm","airy","dry"],
 story:{en:"Medieval Europe called it the “mad apple” and blamed it for insanity; Italian still says melanzana. The Ottomans knew better — a dish of it was so good, they say, that an imam fainted at the taste.",
 fr:"L’Europe médiévale l’appelait la « pomme folle » et l’accusait de rendre insensé ; l’italien dit encore melanzana. Les Ottomans savaient mieux — un plat d’aubergine était si bon, dit-on, qu’un imam s’en évanouit de plaisir."},
 tip:{en:"It drinks oil like a sponge when raw; salt it first or roast it dry, then dress it generously.",
@@ -631,7 +631,7 @@ svg:'<path class="f2 sf" d="M40 38q-10 16 2 30 10 12 20 2 8-9-2-20-8-8-20-12z" t
 
 {id:"elephant-garlic",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"Elephant garlic",fr:"Ail éléphant"},latin:"Allium ampeloprasum",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[6,7,8],
-flavor:["mild","sweet","pungent","earthy"],
+flavor:["mild","sweet","pungent","earthy"],texture:["firm","smooth","moist"],
 story:{en:"Not garlic at all but a leek that forms a bulb, which explains everything about it: cloves the size of walnuts, and a fraction of true garlic's bite. Growers in Oregon marketed it under the elephant name in the 1940s and the botany never caught up.",
 fr:"Pas de l’ail du tout, mais un poireau qui forme un bulbe, ce qui explique tout : des gousses grosses comme des noix, et une fraction du mordant de l’ail véritable. Des producteurs de l’Oregon le commercialisèrent sous le nom d’éléphant dans les années 1940, et la botanique n’a jamais rattrapé."},
 tip:{en:"Treat it as a vegetable, not a seasoning. Roast whole cloves in oil until they collapse — used raw as garlic it disappoints.",
@@ -641,7 +641,7 @@ svg:'<path class="f3 sf" d="M30 54q0-16 18-16t18 16-18 22-18-22z"/><path class="
 
 {id:"escarole",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Escarole",fr:"Scarole"},latin:"Cichorium endivia var. latifolium",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[9,10,11,12],
-flavor:["bitter","mild","earthy","fresh"],
+flavor:["bitter","mild","earthy","fresh"],texture:["tender","crisp","moist"],
 story:{en:"The broad-leaved sister of frisée, sturdy enough that southern Italy treats it as a cooking green rather than a salad — wilted with garlic, anchovy and raisins, or folded into a Neapolitan Christmas pie.",
 fr:"La sœur à larges feuilles de la frisée, assez robuste pour que l’Italie du Sud la traite en légume à cuire plutôt qu’en salade — tombée à l’ail, aux anchois et aux raisins secs, ou glissée dans une tourte napolitaine de Noël."},
 tip:{en:"Use the dark outer leaves for the pot and keep the pale heart for the salad bowl. They are two different vegetables.",
@@ -651,7 +651,7 @@ svg:'<path class="f1 sf" d="M43 70q-12-4-19-13-8-11-8-19 6-3 9 2 1-6 6-2 3-5 6 0
 
 {id:"fennel",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Fennel",fr:"Fenouil"},latin:"Foeniculum vulgare",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[5,6,7,8,9,10],
-flavor:["anise","fresh","sweet"],
+flavor:["anise","fresh","sweet"],texture:["crisp","fibrous","juicy"],
 story:{en:"The plain of Marathon takes its name from the Greek word for fennel, which grew wild there — the famous run was named after a field of it. Prometheus, myth says, smuggled fire to humans inside a fennel stalk.",
 fr:"La plaine de Marathon tient son nom du mot grec désignant le fenouil, qui y poussait à l’état sauvage — la course célèbre porte le nom d’un champ de fenouil. Prométhée, dit le mythe, déroba le feu aux dieux dans une tige de fenouil."},
 tip:{en:"Raw and shaved, it crunches with licorice freshness; braised, it melts and turns gentle. Keep the fronds as a free herb.",
@@ -661,7 +661,7 @@ svg:'<path class="f1 sf" d="M34 52q0-14 14-14t14 14q0 12-14 12t-14-12z"/><path c
 
 {id:"fiddlehead-fern",cat:"vegetables",rare:true,price:3,pk:"35–70 €/kg",name:{en:"Fiddlehead fern",fr:"Tête de violon"},latin:"Matteuccia struthiopteris",
 origin:{en:"North-eastern woodland riverbanks",fr:"Berges boisées du nord-est américain"},season:[4,5],
-flavor:["grassy","earthy","bitter"],
+flavor:["grassy","earthy","bitter"],texture:["firm","fibrous","moist"],
 story:{en:"A run of illness across New York State and western Canada in 1994 was traced to lightly sautéed fiddleheads; Health Canada has advised a full fifteen-minute boil ever since, and the toxin responsible has still not been identified. Only the ostrich fern is eaten — its crozier is smooth and grooved on the inner face, and the fuzzy ones growing beside it are not.",
 fr:"Une série d’intoxications dans l’État de New York et dans l’Ouest canadien en 1994 a été rattachée à des crosses juste sautées ; Santé Canada impose depuis quinze minutes d’ébullition franche, et la toxine responsable n’est toujours pas identifiée. Seule la crosse de la matteuccie se mange : elle est lisse et creusée d’une gouttière sur la face interne, les duveteuses d’à côté ne le sont pas."},
 tip:{en:"Fifteen minutes in plenty of boiling water, water thrown away, then refresh and sauté — a second short blanch in clean water improves the flavour markedly. Never sauté them raw, however good the colour looks in the basket.",
@@ -671,7 +671,7 @@ svg:'<path class="f2 sf" d="M44 84q-3-30 1-42 4-13 16-11t12 15q0 12-11 12-8 0-8-
 
 {id:"fresh-ginseng",cat:"vegetables",price:3,pk:"60–150 €/kg",name:{en:"Fresh ginseng",fr:"Ginseng frais"},latin:"Panax ginseng",
 origin:{en:"Geumsan, Korea",fr:"Geumsan, Corée"},season:[9,10,11],
-flavor:["bitter","earthy","resinous","sweet"],
+flavor:["bitter","earthy","resinous","sweet"],texture:["hard","fibrous","dry"],
 story:{en:"A root is lifted in its sixth autumn, the point at which its ginsenosides peak; the field then has to be rested or rotated for about ten years, because the soil fungi that plague the plant stay put after the harvest. Six years growing against a decade fallow is most of what you are paying for.",
 fr:"On arrache la racine à son sixième automne, quand la teneur en ginsénosides culmine ; la parcelle doit ensuite être mise au repos ou en rotation une dizaine d’années, car les champignons du sol qui attaquent la plante, eux, restent en place après la récolte. Six ans de culture contre dix ans de jachère : c’est là l’essentiel du prix."},
 tip:{en:"Scrub it, do not peel it — the aroma sits in the skin. Simmered whole in samgyetang, one root per bird for an hour is plenty; sliced raw into honey it is startlingly bitter, so keep the slices paper-thin.",
@@ -681,7 +681,7 @@ svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f2 sf" d="M48 2
 
 {id:"frisee",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Frisée",fr:"Frisée"},latin:"Cichorium endivia var. crispum",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[9,10,11,12],
-flavor:["bitter","fresh","grassy","mild"],
+flavor:["bitter","fresh","grassy","mild"],texture:["firm","crisp","moist"],
 story:{en:"Growers tie the outer leaves over the heart or cap it with a plate for a fortnight before harvest, so the centre blanches to pale yellow and loses its bitterness. The dark green edge and the blond heart are the same leaf, treated differently by light.",
 fr:"Les maraîchers lient les feuilles extérieures sur le cœur ou le coiffent d’une assiette une quinzaine avant la récolte, pour que le centre blanchisse en jaune pâle et perde son amertume. Le bord vert sombre et le cœur blond sont la même feuille, traitée différemment par la lumière."},
 tip:{en:"It is built for a hot dressing — bacon fat, a poached egg, a splash of vinegar. Its ribs stand up to heat where a soft lettuce collapses.",
@@ -691,7 +691,7 @@ svg:'<path class="f1 sf" d="M48 26.3Q54.2 23.2 58.8 27.6Q65.6 27.6 66.3 34.7Q75.
 
 {id:"fuki",cat:"vegetables",rare:true,price:2,pk:"18–35 €/kg",name:{en:"Fuki (butterbur stalk)",fr:"Pétiole de pétasite du Japon (fuki)"},latin:"Petasites japonicus",
 origin:{en:"Japanese mountain villages",fr:"Villages de montagne, Japon"},season:[3,4,5],
-flavor:["bitter","grassy","fresh"],
+flavor:["bitter","grassy","fresh"],texture:["firm","fibrous","juicy"],
 story:{en:"Fuki is one of the few vegetables domesticated in Japan itself rather than brought in from the continent, and the Akita variety throws leaves wide enough to shelter a child under. The part eaten is the leaf stalk, cut from March to May, and it is inedible until it has been de-bittered: rolled in salt on the board, blanched, then peeled while still hot.",
 fr:"Le fuki est l’un des rares légumes domestiqués au Japon même plutôt qu’importés du continent, et la variété d’Akita pousse des feuilles assez larges pour abriter un enfant. Ce qu’on mange est le pétiole, coupé de mars à mai, immangeable tant qu’il n’a pas été désamérisé : roulé au sel sur la planche, blanchi, puis épluché encore chaud."},
 tip:{en:"Do the salt rolling, itazuri, before blanching, not after — it bruises the skin so the strings lift away in one pull. Peel the stalks while they are still hot; cold, the skin welds back on and takes the flesh with it.",
@@ -701,7 +701,7 @@ svg:'<path class="s" d="M40 80q-8-24-4-38"/><path class="s" d="M56 80q10-20 6-28
 
 {id:"fuki-no-to",cat:"vegetables",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Fuki-no-tō (butterbur flower bud)",fr:"Bouton floral de pétasite (fuki-no-tō)"},latin:"Petasites japonicus",
 origin:{en:"Japanese woodland edges",fr:"Lisières boisées, Japon"},season:[2,3],
-flavor:["bitter","herbal","resinous","fresh"],
+flavor:["bitter","herbal","resinous","fresh"],texture:["tender","moist"],
 story:{en:"The flower bud pushes up through the last snow weeks before any stalk is worth cutting, and it counts as the first sansai of the year — in much of Japan it is the plant that announces the season, not a crocus. It comes off the same rootstock as fuki but is bought, priced and cooked as an entirely separate vegetable.",
 fr:"Le bouton floral perce la dernière neige des semaines avant que le moindre pétiole vaille d’être coupé : c’est le premier sansai de l’année, et dans une bonne partie du Japon la plante qui annonce la saison, à la place du crocus. Il sort de la même souche que le fuki mais s’achète, se paie et se cuisine comme un légume tout autre."},
 tip:{en:"For tempura do not soak or blanch it: dip the dry bud in cold batter and fry at 170°C, since the bitterness is the dish. For fuki-miso, chop and fry it in oil first, then fold it into miso with sake and sugar off the heat.",
@@ -711,7 +711,7 @@ svg:'<path class="f1 sf" d="M48 24q12 10 12 26t-12 26q-12-10-12-26t12-26z"/><pat
 
 {id:"garlic",cat:"vegetables",price:1,pk:"6–12 €/kg",name:{en:"Garlic",fr:"Ail"},latin:"Allium sativum",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[],
-flavor:["pungent","hot","umami"],
+flavor:["pungent","hot","umami"],texture:["firm","smooth","dry"],
 story:{en:"Egyptian labourers ate it for strength, Greek athletes for stamina, and folklore armed it against vampires. Few ingredients have been simultaneously medicine, talisman and seasoning for five thousand years.",
 fr:"Les ouvriers égyptiens en mangeaient pour la force, les athlètes grecs pour l’endurance, et le folklore en fit une arme contre les vampires. Peu d’ingrédients ont été à la fois remède, talisman et condiment pendant cinq mille ans."},
 tip:{en:"Crushed, it roars; sliced, it speaks; whole and roasted, it whispers sweetly. Choose its voice before you cook.",
@@ -721,7 +721,7 @@ svg:'<path class="f1 sf" d="M48 20q4 11 11 18 9 8 10 20 1 14-10 19-11 6-22 0-11-
 
 {id:"garlic-scape",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Garlic scape",fr:"Fleur d’ail"},latin:"Allium sativum",
 origin:{en:"Hardneck garlic fields",fr:"Champs d’ail à tige dure"},season:[5,6],
-flavor:["grassy","fresh","pungent"],
+flavor:["grassy","fresh","pungent"],texture:["tough","fibrous","moist"],
 story:{en:"Hardneck garlic throws up a flower stem that has to be cut off or the bulb below stays small, and for almost the whole history of the crop that cut stem went on the compost heap. It became a market vegetable only in the last few decades, which is why there is no old recipe for it.",
 fr:"L’ail à tige dure monte une hampe florale qu’il faut couper, faute de quoi le bulbe reste petit ; pendant presque toute l’histoire de la culture, cette hampe finissait au compost. Elle n’est devenue un légume de marché que depuis quelques décennies, ce qui explique qu’il n’en existe aucune recette ancienne."},
 tip:{en:"Grill them whole over high heat until they blister and go limp, about five minutes — raw they are stringy, gently cooked they stay tough. For pesto, blanch thirty seconds first or the raw grassiness takes over the jar.",
@@ -731,7 +731,7 @@ svg:'<path class="s" d="M30 84q2-30 9-38"/><path class="s" d="M39 46q5-14 19-14t
 
 {id:"gernika-pepper",cat:"vegetables",price:2,pk:"14–25 €/kg",name:{en:"Gernika pepper",fr:"Piment de Gernika"},latin:"Capsicum annuum",
 origin:{en:"Gernika-Lumo, Bizkaia",fr:"Gernika-Lumo, Biscaye"},season:[7,8,9,10],
-flavor:["grassy","mild","fresh"],
+flavor:["grassy","mild","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"Grown around Gernika-Lumo in Bizkaia and sold under its own Basque quality mark, which fixes the fruit small, slender and picked green, before the seeds have had time to build heat. Padrón is harvested larger and later, which is why one in a dozen bites back and a Gernika almost never does.",
 fr:"Cultivé autour de Gernika-Lumo en Biscaye et vendu sous son propre label basque, qui impose un fruit petit, fin et cueilli vert, avant que les graines aient eu le temps de fabriquer du piquant. Le padrón se récolte plus gros et plus tard : c’est pourquoi un sur douze mord, alors qu’un gernika ne mord presque jamais."},
 tip:{en:"Fry in a good depth of oil at 180 °C for barely a minute, until the thin skin blisters and turns papery. Salt after draining, never in the pan — salt on the heat pulls the water out and steams them limp.",
@@ -741,7 +741,7 @@ svg:'<path class="f2 sf" d="M58 30q4 14-4 30-8 16-20 18-6 1-6-4 10-4 18-16 8-12 
 
 {id:"gondre",cat:"vegetables",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Gondre",fr:"Gondre"},latin:"Cirsium setidens",
 origin:{en:"Jeongseon, Gangwon",fr:"Jeongseon, Gangwon"},season:[],
-flavor:["nutty","earthy","bitter"],
+flavor:["nutty","earthy","bitter"],texture:["tough","fibrous","dry"],
 story:{en:"Cirsium setidens is a mountain thistle whose young leaves are picked in the Gangwon highlands and dried, and Jeongseon built its signature dish on it: gondeure-namul-bap, rice steamed with the rehydrated leaf and dressed with perilla oil. It entered the kitchen because a spring leaf dried in May would still feed a household in February.",
 fr:"Le Cirsium setidens est un chardon de montagne dont on cueille les jeunes feuilles sur les hauteurs du Gangwon avant de les sécher ; Jeongseon en a tiré son plat emblématique, le gondeure-namul-bap, riz cuit à la vapeur avec la feuille réhydratée et assaisonné à l’huile de périlla. Il est entré en cuisine parce qu’une feuille de printemps séchée en mai nourrissait encore la maison en février."},
 tip:{en:"Dried gondre needs a long soak and a real boil, not a quick rehydration: overnight in cold water, then twenty to thirty minutes at a simmer, then rinse. Undercooked, the leaf stays fibrous and no dressing repairs it.",
@@ -751,7 +751,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="f2 sf" d="M46 66q-14-2-18-12 12
 
 {id:"good-king-henry",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Good King Henry",fr:"Chénopode bon-Henri"},latin:"Blitum bonus-henricus",
 origin:{en:"European mountain pastures",fr:"Pâturages de montagne d’Europe"},season:[4,5,6,7],
-flavor:["earthy","grassy","bitter"],
+flavor:["earthy","grassy","bitter"],texture:["tender","fibrous","moist"],
 story:{en:"The German name Guter Heinrich, good Henry, was coined to separate it from Böser Heinrich, bad Henry — the poisonous dog's mercury it can be mistaken for in a hedge. No king is involved: both Henrys are house spirits.",
 fr:"Le nom allemand Guter Heinrich, « bon Henri », a été forgé pour le distinguer du Böser Heinrich, le « mauvais Henri » : la mercuriale vivace, toxique, qu’on peut confondre avec lui dans une haie. Aucun roi là-dedans — les deux Henri sont des lutins de maison."},
 tip:{en:"Take the shoots at pencil thickness and peel the lower third like sprue asparagus; unpeeled, the skin stays stringy. The leaves want a change of water — blanch, drain, then cook, or the oxalic bite carries through the dish.",
@@ -761,7 +761,7 @@ svg:'<path class="s" d="M48 84V28"/><path class="f2 sf" d="M46 62q-18-2-22-16 8-
 
 {id:"green-bean",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Green bean",fr:"Haricot vert"},latin:"Phaseolus vulgaris",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[6,7,8,9],
-flavor:["grassy","fresh","sweet","mild"],
+flavor:["grassy","fresh","sweet","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Every bean in Europe arrived from the Americas after 1492, and for two centuries the pods were eaten only when the string was pulled off first. A single American breeder eliminated that string in 1894, and the vegetable people eat today is his.",
 fr:"Tous les haricots d’Europe sont venus des Amériques après 1492, et pendant deux siècles on ne mangeait les gousses qu’après en avoir tiré le fil. Un seul sélectionneur américain supprima ce fil en 1894, et le légume que l’on mange aujourd’hui est le sien."},
 tip:{en:"Salt the cooking water heavily and refresh in ice. Both steps are about colour — the green sets and stays set.",
@@ -771,7 +771,7 @@ svg:'<path class="f2 sf" d="M30 68q10-30 34-42"/><path class="f2 sf" d="M36 72q1
 
 {id:"green-garlic",cat:"vegetables",price:1,pk:"6–12 €/kg",name:{en:"Green garlic",fr:"Ail nouveau"},latin:"Allium sativum",
 origin:{en:"Spring garlic beds",fr:"Planches d’ail de printemps"},season:[4,5,6],
-flavor:["sweet","mild","pungent"],
+flavor:["sweet","mild","pungent"],texture:["tender","fibrous","juicy"],
 story:{en:"Curing is what makes garlic sharp: weeks of drying concentrate the bulb's sulphur compounds as it loses water and the cloves seal themselves into papery jackets. Pulled in spring before any of that, it is one soft undivided bulb on a juicy stalk, and the whole plant is edible.",
 fr:"C’est le séchage qui rend l’ail mordant : des semaines de ressuyage concentrent les composés soufrés du bulbe à mesure qu’il perd son eau et que les gousses s’enferment dans leurs tuniques. Arraché au printemps avant tout cela, il n’est qu’un bulbe tendre et indivis au bout d’une tige juteuse, et la plante entière se mange."},
 tip:{en:"Use the white and the pale green of the stalk, sliced into rounds like a leek — there is nothing to separate, the cloves have not formed yet. Give it a fortnight in the fridge, not a season on the shelf.",
@@ -781,7 +781,7 @@ svg:'<path class="f1 sf" d="M40 60q0-13 8-13t8 13-8 15-8-15z"/><path class="s" d
 
 {id:"green-tomato",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Green tomato",fr:"Tomate verte"},latin:"Solanum lycopersicum",
 origin:{en:"End-of-season tomato rows",fr:"Rangs de tomates de fin de saison"},season:[9,10],
-flavor:["sour","tangy","grassy"],
+flavor:["sour","tangy","grassy"],texture:["firm","crisp","juicy"],
 story:{en:"Unripe fruit carries tomatine, the alkaloid that all but vanishes as a tomato reddens — one reason Europe kept the plant ornamental and suspect for two centuries. The amounts in a green tomato are far below harm, but they are part of why it tastes bitter and why nobody eats it raw.",
 fr:"Le fruit vert porte de la tomatine, l’alcaloïde qui disparaît presque entièrement à mesure que la tomate rougit — une des raisons pour lesquelles l’Europe a tenu la plante pour ornementale et suspecte pendant deux siècles. Les quantités en jeu sont très loin d’être dangereuses, mais elles expliquent l’amertume et le fait que personne ne la mange crue."},
 tip:{en:"For frying, salt the slices and let them drain twenty minutes before dredging — they give up a lot of water and it is the water that makes the crust slide off. For chutney, allow at least an hour of simmering; the starch does not soften quickly.",
@@ -791,7 +791,7 @@ svg:'<circle class="f1 sf" cx="48" cy="54" r="26"/><path class="f2 sf" d="M48 34
 
 {id:"green-zebra-tomato",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Green Zebra tomato",fr:"Tomate Green Zebra"},latin:"Solanum lycopersicum",
 origin:{en:"Everett, Washington",fr:"Everett, État de Washington"},season:[7,8,9],
-flavor:["sour","tangy","fresh"],
+flavor:["sour","tangy","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"Tom Wagner crossed four varieties in his garden at Everett, Washington, and listed the result in his Tater-Mater seed catalogue in 1983. Every seed list sells it as an heirloom: it is a deliberate modern cross, bred for skin that will not crack the way its green-when-ripe parent did.",
 fr:"Tom Wagner a croisé quatre variétés dans son jardin d’Everett, dans l’État de Washington, et a inscrit le résultat à son catalogue Tater-Mater en 1983. Toutes les listes de graines la vendent comme une variété ancienne : c’est un croisement moderne et délibéré, sélectionné pour une peau qui ne se fend pas comme celle de son parent vert à maturité."},
 tip:{en:"Judge ripeness by feel, not colour — it stays green, so look for slight give under the thumb and an amber flush at the blossom end. Salt it later than a red tomato: the acidity already pulls water and it goes slack within ten minutes.",
@@ -801,7 +801,7 @@ svg:'<g transform="translate(3.02 3.15) scale(0.937)"><circle class="f2 sf" cx="
 
 {id:"grey-shallot",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"Grey shallot",fr:"Échalote grise"},latin:"Allium oschaninii",
 origin:{en:"Central Asian foothills",fr:"Piémonts d’Asie centrale"},season:[8,9,10,11,12,1],
-flavor:["pungent","sweet","warm"],
+flavor:["pungent","sweet","warm"],texture:["firm","smooth","dry"],
 story:{en:"It is not a variety of the common shallot but a separate species, and it sets no usable seed: every grey shallot in France descends by division from the one before it. Cooks call it the true shallot, and the seed-grown shallots of most supermarkets are, botanically, onions.",
 fr:"Ce n’est pas une variété d’échalote commune mais une espèce à part, et elle ne donne pas de graine exploitable : chaque échalote grise de France descend par division de la précédente. Les cuisiniers l’appellent la vraie échalote, et les échalotes de semis des supermarchés sont, botaniquement, des oignons."},
 tip:{en:"It is a beast to peel — a minute in hot water and the grey skin lifts off in one piece. For a beurre rouge or a bercy, sweat it in butter without colour; browning it costs exactly the aromatics you paid extra for.",
@@ -811,7 +811,7 @@ svg:'<path class="f3 sf" d="M40 46q-7 10-5 21t13 13 13-13-5-21q-4-8-8-8t-8 8z"/>
 
 {id:"hakurei-turnip",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Hakurei turnip",fr:"Navet hakurei"},latin:"Brassica rapa",
 origin:{en:"Japan",fr:"Japon"},season:[4,5,6,10,11],
-flavor:["sweet","fresh","mild"],
+flavor:["sweet","fresh","mild"],texture:["tender","crisp","juicy"],
 story:{en:"It was bred in Japan in the years after the war as a kabu you could eat without cooking, and its skin is thin enough that peeling removes flavour rather than toughness. The tops are not a bonus but half the crop, and a bunch sold without them has usually sat long enough for someone to cut them away.",
 fr:"Il a été sélectionné au Japon dans les années d’après-guerre comme un kabu que l’on puisse manger sans le cuire, et sa peau est si fine que l’éplucher retire du goût plutôt que de la dureté. Les fanes ne sont pas un supplément : elles font la moitié de la récolte, et une botte vendue sans elles a le plus souvent assez attendu pour qu’on les ait coupées."},
 tip:{en:"Do not peel and do not boil: halve them and either eat them raw with salt and butter, or sear them cut-side down in a hot pan for three minutes and finish with a splash of water under a lid. Cook the greens separately — sixty seconds for the leaves, three minutes for the roots, and together both come out wrong.",
@@ -821,7 +821,7 @@ svg:'<circle class="f1 sf" cx="48" cy="60" r="16"/><path class="s" d="M48 76q1 7
 
 {id:"hamburg-parsley-root",cat:"vegetables",rare:true,price:2,pk:"6–12 €/kg",name:{en:"Hamburg parsley root",fr:"Persil tubéreux"},latin:"Petroselinum crispum var. tuberosum",
 origin:{en:"Central and Eastern Europe",fr:"Europe centrale et orientale"},season:[10,11,12,1,2,3],
-flavor:["earthy","herbal","sweet"],
+flavor:["earthy","herbal","sweet"],texture:["firm","fibrous","dry"],
 story:{en:"It reached English gardens from Germany in the eighteenth century and then quietly left them, while Poland kept it as a fixed member of włoszczyzna, the bundle of soup roots sold tied together in every market. The leaves are ordinary parsley; the plant simply puts its year into the root instead.",
 fr:"Elle a gagné les jardins anglais depuis l’Allemagne au XVIIIᵉ siècle puis les a discrètement quittés, tandis que la Pologne la garde comme membre fixe de la włoszczyzna, le bouquet de racines à potage vendu ficelé sur tous les marchés. Les feuilles sont du persil ordinaire : la plante met simplement son année dans la racine."},
 tip:{en:"Cook it in milk or in a lemony court-bouillon; it browns fast in a pan and the burnt note is not pleasant. Add its own leaves at the end — they are parsley, and they put back the green the cooking takes out.",
@@ -831,7 +831,7 @@ svg:'<path class="f1 sf" d="M40 44h16l-4 26q-2 14-4 14t-4-14z"/><path class="s" 
 
 {id:"palm-heart",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Heart of palm",fr:"Cœur de palmier"},latin:"Bactris gasipaes",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[],
-flavor:["mild","delicate","fresh","nutty"],
+flavor:["mild","delicate","fresh","nutty"],texture:["tender","smooth","moist"],
 story:{en:"It is the growing bud at the top of a palm, and harvesting it from a single-stemmed tree kills the whole plant — which is why it was long a luxury. Farmed multi-stemmed peach palms changed that: they can be cut repeatedly and regrow.",
 fr:"C’est le bourgeon terminal d’un palmier, et le récolter sur un arbre à tronc unique tue toute la plante — d’où son long statut de produit de luxe. Les pêchers-palmiers cultivés à tiges multiples ont changé cela : on les recoupe et ils repoussent."},
 tip:{en:"Rinse tinned hearts well and dry them. The brine is assertive and will otherwise dominate whatever you dress them with.",
@@ -841,7 +841,7 @@ svg:'<path class="f1 sf" d="M38 36q0-6 13-6t13 6q2 20 1 40 0 6-14 6t-13-6q-1-20 
 
 {id:"hogweed-shoots",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Hogweed shoots",fr:"Berce commune"},latin:"Heracleum sphondylium",
 origin:{en:"European meadows",fr:"Prairies d’Europe"},season:[4,5,8,9],
-flavor:["grassy","citrus","fresh"],
+flavor:["grassy","citrus","fresh"],texture:["tender","fibrous","juicy"],
 story:{en:"Borscht is named after this plant and not after beetroot: the Slavic borshch meant hogweed, and the original soup was made from its fermented stems long before beets took the name over. The same plant gives a second, quite different crop in late summer, when the green seeds smell of cardamom and orange peel.",
 fr:"Le bortsch tient son nom de cette plante et non de la betterave : le slave borchtch désignait la berce, et la soupe d’origine se faisait de ses tiges fermentées bien avant que la betterave n’en reprenne le nom. La même plante donne une seconde récolte, toute différente, en fin d’été, quand les graines vertes sentent la cardamome et l’écorce d’orange."},
 tip:{en:"Peel the spring shoots — the skin is fibrous and the sap is mildly phototoxic, so pick and peel out of strong sun and wash your hands afterwards. Steam them four or five minutes like asparagus; toast the seeds whole and crush them at the last moment.",
@@ -851,7 +851,7 @@ svg:'<path class="f2 sf" d="M42 84V44q0-10 6-14 6 4 6 14v40z"/><path class="s" d
 
 {id:"hop-shoots",cat:"vegetables",luxe:true,price:4,pk:"200–800 €/kg",name:{en:"Hop shoots",fr:"Jets de houblon"},latin:"Humulus lupulus",
 origin:{en:"Flemish and Alsatian hop yards",fr:"Houblonnières de Flandre et d’Alsace"},season:[3,4],
-flavor:["nutty","bitter","earthy"],
+flavor:["nutty","bitter","earthy"],texture:["tender","fibrous","moist"],
 story:{en:"They are dug white from under the soil by hand, kneeling in cold ground, and a whole hop plant yields about twenty-five grams; at Belgian spring auctions the kilo has passed a thousand euros. The season runs three weeks and nothing about it mechanises, which is the entire explanation for the price.",
 fr:"On les déterre blancs, à la main, à genoux dans la terre froide, et un pied de houblon entier en donne environ vingt-cinq grammes ; aux ventes belges de printemps le kilo a dépassé mille euros. La saison dure trois semaines et rien ne se mécanise : l’explication du prix tient là."},
 tip:{en:"They are already tender: ninety seconds in salted water, no more, then straight into butter. The classic Belgian service of poached egg and cream is not decoration — the bitterness needs fat opposite it.",
@@ -861,7 +861,7 @@ svg:'<path class="f1 sf" d="M34 78q-2-30 4-44 2 16 2 44zM45 80q-2-34 2-48 4 14 2
 
 {id:"huauzontle",cat:"vegetables",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Huauzontle",fr:"Huauzontle"},latin:"Chenopodium berlandieri",
 origin:{en:"Valley of Mexico",fr:"Vallée de Mexico"},season:[2,3,4,5],
-flavor:["earthy","grassy","bitter"],
+flavor:["earthy","grassy","bitter"],texture:["tender","granular","moist"],
 story:{en:"The Nahuatl name joins huauhtli, amaranth, to tzontli, hair — the plant is a goosefoot grown for its whole flowering head rather than its leaves or its grain. Bound into bundles around a stick of cheese, battered and fried, it is a Lenten dish in central Mexico, eaten by stripping the buds off the stalk with your teeth.",
 fr:"Le nom nahuatl assemble huauhtli, l’amarante, et tzontli, la chevelure : la plante est un chénopode que l’on cultive pour son inflorescence entière, non pour ses feuilles ni pour sa graine. Liée en bottes autour d’un bâtonnet de fromage, panée à l’œuf et frite, c’est un plat de carême du centre du Mexique, que l’on mange en raclant les boutons de la tige avec les dents."},
 tip:{en:"Whisk the whites to a foam, fold the yolks back in, and fry the bundle seam-side down first so it seals — a flat beaten egg slides off. Warn the table that the central stalk stays in and is not eaten.",
@@ -871,7 +871,7 @@ svg:'<path class="f2 sf" d="M48 18q9 4 9 13t-9 10q-9-2-9-10t9-13z"/><path class=
 
 {id:"gobbo-cardoon",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Hunchback cardoon",fr:"Cardon gobbo"},latin:"Cynara cardunculus",
 origin:{en:"Nizza Monferrato, Piedmont",fr:"Nizza Monferrato, Piémont"},season:[11,12,1,2],
-flavor:["bitter","earthy","fresh"],
+flavor:["bitter","earthy","fresh"],texture:["firm","fibrous","moist"],
 story:{en:"Around Nizza Monferrato the plants are bent over in autumn and buried in earth; deprived of light they grow back up towards it, which is where the hunch and the name come from. The burial also strips the bitterness, and this is the one cardoon eaten raw, dipped straight into bagna cauda.",
 fr:"Autour de Nizza Monferrato, on couche les pieds à l’automne et on les enterre : privés de lumière, ils remontent vers elle en se courbant — d’où la bosse et le nom. L’enfouissement leur ôte aussi l’amertume, et c’est le seul cardon qui se mange cru, trempé tel quel dans la bagna cauda."},
 tip:{en:"Cardoon blackens the moment it is cut — work it in water acidulated with the juice of a lemon per litre, and pull the strings off the ribs the way you would a stick of celery. Cooked cardoon wants 30 to 40 minutes; the gobbo eaten raw wants none.",
@@ -881,7 +881,7 @@ svg:'<path class="f1 sf" d="M40 80q-8-26 0-46 4-10 12-12 2 8-4 14-8 16-2 44z"/><
 
 {id:"ice-plant",cat:"vegetables",price:2,pk:"20–35 €/kg",name:{en:"Ice plant",fr:"Ficoïde glaciale"},latin:"Mesembryanthemum crystallinum",
 origin:{en:"South African coast",fr:"Littoral d’Afrique du Sud"},season:[4,5,6,7,8,9],
-flavor:["briny","sour","fresh"],
+flavor:["briny","sour","fresh"],texture:["tender","crunchy","juicy"],
 story:{en:"The glassy beads are epidermal bladder cells, where the plant parks the salt it pulls out of saline ground — what bursts on the tongue is its waste-disposal system. In the Canary Islands it was once burned for the soda in its ash, the same trade that made agretti valuable to Venetian glassmakers.",
 fr:"Les perles vitreuses sont des cellules épidermiques vésiculeuses, où la plante stocke le sel qu’elle extrait d’un sol saumâtre : ce qui éclate sous la dent est son système d’évacuation. Aux Canaries, on la brûlait autrefois pour la soude de ses cendres, le même commerce qui rendait la salsole précieuse aux verriers vénitiens."},
 tip:{en:"Never cook it and never dress it more than a minute ahead: heat and salt both burst the water cells and leave a limp, wet leaf. It brings its own salinity, so take salt out of whatever it sits beside.",
@@ -891,7 +891,7 @@ svg:'<path class="f2 sf" d="M48 76q-23-5-25-21 9-8 21-2-7-13 4-19 11 6 4 19 12-6
 
 {id:"jerusalem-artichoke",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Jerusalem artichoke",fr:"Topinambour"},latin:"Helianthus tuberosus",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[1,2,3,11,12],
-flavor:["nutty","earthy","sweet"],
+flavor:["nutty","earthy","sweet"],texture:["firm","crisp","moist"],
 story:{en:"Neither from Jerusalem nor an artichoke — a sunflower tuber named, in French, after the Tupinambá people paraded in Paris in 1613. Wartime France ate so much of it that a generation refused to touch it again; chefs like Alain Passard rehabilitated it, roasting it with hazelnuts until the two become indistinguishable.",
 fr:"Ni de Jérusalem, ni artichaut — un tubercule de tournesol baptisé d’après les Tupinambá exhibés à Paris en 1613. La France de l’Occupation en mangea tant qu’une génération refusa d’y retoucher ; des chefs comme Alain Passard l’ont réhabilité, rôti aux noisettes jusqu’à ce que les deux se confondent."},
 tip:{en:"No need to peel: scrub, roast hard, finish with crushed hazelnuts and brown butter. Its inulin rewards moderation at the first tasting.",
@@ -901,7 +901,7 @@ svg:'<path class="f1 sf" d="M17 60Q15 44 30 38Q38 42 43 36Q49 26 59 28Q68 30 72 
 
 {id:"jicama",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Jicama",fr:"Jicama"},latin:"Pachyrhizus erosus",
 origin:{en:"Mexico and Central America",fr:"Mexique et Amérique centrale"},season:[11,12,1,2,3],
-flavor:["fresh","sweet","mild"],
+flavor:["fresh","sweet","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Only the root is food: the vine's pods and seeds hold rotenone, and growers in Central America long used them as an insecticide and a fish poison. The name comes through Spanish from the Nahuatl xicamatl, and the root is so low in starch and so high in inulin that it stays crisp for days after it has been cut.",
 fr:"Seule la racine se mange : les gousses et les graines de la liane contiennent de la roténone, et on s’en servait en Amérique centrale comme insecticide et comme poison de pêche. Le nom vient de l’espagnol, qui l’a pris au nahuatl xicamatl, et la racine est si pauvre en amidon et si riche en inuline qu’elle reste croquante plusieurs jours après avoir été taillée."},
 tip:{en:"Peel it with a knife rather than a peeler: under the brown skin runs a fibrous layer a peeler leaves behind and no cooking softens. Cut, it will not brown, so it is the one raw vegetable you can batonnet an hour ahead — lime, salt, chilli, nothing else.",
@@ -911,7 +911,7 @@ svg:'<path class="f1 sf" d="M48 28q26 0 26 22 0 20-26 26T22 50q0-22 26-22z"/><pa
 
 {id:"junsai",cat:"vegetables",rare:true,price:3,pk:"40–90 €/kg",name:{en:"Junsai",fr:"Junsai"},latin:"Brasenia schreberi",
 origin:{en:"Akita ponds, Japan",fr:"Étangs d'Akita, Japon"},season:[6,7,8],
-flavor:["fresh","mild","delicate"],
+flavor:["fresh","mild","delicate"],texture:["tender","gelatinous","moist"],
 story:{en:"The jelly is not added — it is the mucilage the plant sheathes its own unopened bud in, and it lies thickest on the smallest buds, so the grade runs downward as the bud grows rather than up. Nearly all of Japan's crop comes from the ponds of Mitane in Akita, taken one bud at a time by hand from a flat-bottomed boat.",
 fr:"La gelée n'est pas ajoutée : c'est le mucilage dont la plante enveloppe son propre bourgeon encore fermé, et il est le plus épais sur les plus petits bourgeons — la qualité décroît donc à mesure que le bourgeon grossit. La quasi-totalité de la production japonaise vient des étangs de Mitane, dans l'Akita, cueillie bourgeon par bourgeon à la main depuis une barque à fond plat."},
 tip:{en:"Ten seconds in boiling water, then straight into iced water; any longer and the jelly slides off and leaves you a bare stalk. Serve it cold in a vinegared broth — a hot dish melts away the entire point of it.",
@@ -921,7 +921,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="46" rx="16" ry="14"/><path class="f3 sf"
 
 {id:"kabocha",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Kabocha",fr:"Courge kabocha"},latin:"Cucurbita maxima",
 origin:{en:"Hokkaido, Japan",fr:"Hokkaidō, Japon"},season:[8,9,10,11,12],
-flavor:["sweet","nutty","earthy"],
+flavor:["sweet","nutty","earthy"],texture:["hard","dry"],
 story:{en:"The name is the country: Portuguese ships brought the squash to Kyushu in the sixteenth century by way of Cambodia, and Camboja became kabocha. Japan eats it at the winter solstice from fruit picked in late summer and cured for months, because the starch turns to sugar in storage and a kabocha eaten straight off the field is the dull version.",
 fr:"Le nom, c’est le pays : les navires portugais ont apporté la courge à Kyūshū au XVIᵉ siècle en passant par le Cambodge, et Camboja est devenu kabocha. Le Japon la mange au solstice d’hiver à partir de fruits récoltés en fin d’été et affinés plusieurs mois — l’amidon se change en sucre au stockage, et une kabocha mangée au sortir du champ est la version fade."},
 tip:{en:"Leave the skin on, cut large chunks with the edges bevelled off, then simmer in dashi, sugar and soy with the cut faces up and barely covered: twenty minutes, no stirring. Its dryness is the point — it will not thicken a soup the way butternut does, so it wants liquid around it rather than to become one.",
@@ -931,7 +931,7 @@ svg:'<path class="f3 sf" d="M22 66q10-32 26-40 16 8 26 40-26 10-52 0z"/><path cl
 
 {id:"kaiware",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Kaiware daikon sprouts",fr:"Kaiware"},latin:"Raphanus sativus",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["peppery","fresh","bitter"],
+flavor:["peppery","fresh","bitter"],texture:["tender","crisp","juicy"],
 story:{en:"Kaiware means split shell: the two seed leaves open like a clam, and the word describes the shape rather than the plant. They are grown in the dark to stretch the stem and given light only for a day or two at the end — the darkness makes the length, the light makes the green.",
 fr:"Kaiware veut dire coquille fendue : les deux cotylédons s’ouvrent comme un coquillage, et le mot décrit la forme plutôt que la plante. On les fait pousser à l’obscurité pour allonger la tige, puis on leur donne la lumière un jour ou deux à la fin — le noir fait la longueur, la lumière fait le vert."},
 tip:{en:"Cut them off the pad rather than pulling, wash, drain hard and add them at the end: in a warm bowl they wilt within a minute. Their bite is volatile mustard oil, so chopping fades it in a few minutes — cut at the moment of serving.",
@@ -941,7 +941,7 @@ svg:'<path class="f3 sf" d="M28 74h40v10h-40z"/><path class="s" d="M34 74V44M42 
 
 {id:"kale",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Kale",fr:"Chou kale"},latin:"Brassica oleracea var. sabellica",
 origin:{en:"Eastern Mediterranean",fr:"Méditerranée orientale"},season:[10,11,12,1,2,3],
-flavor:["bitter","earthy","grassy","mild"],
+flavor:["bitter","earthy","grassy","mild"],texture:["tough","fibrous","dry"],
 story:{en:"Kale is the cabbage that never learned to make a head, and it is closer to the wild ancestor than any of its cousins. During the Second World War the British Dig for Victory campaign pushed it into every garden because it survives frost that flattens everything else.",
 fr:"Le kale est le chou qui n’a jamais appris à pommer, et il est plus proche de l’ancêtre sauvage qu’aucun de ses cousins. Pendant la Seconde Guerre mondiale, la campagne britannique Dig for Victory l’imposa dans tous les jardins parce qu’il résiste à des gels qui couchent tout le reste."},
 tip:{en:"Frost genuinely sweetens it — the plant makes sugars as antifreeze. Massage raw leaves with oil and salt to break them down for a salad.",
@@ -951,7 +951,7 @@ svg:'<path class="f1 sf" d="M48 21Q55 18.7 60.9 22.5Q67 25.8 70.4 32Q76.5 36.8 7
 
 {id:"kanpyo",cat:"vegetables",price:2,pk:"40–70 €/kg",name:{en:"Kanpyō",fr:"Kanpyō"},latin:"Lagenaria siceraria var. hispida",
 origin:{en:"Mibu, Tochigi",fr:"Mibu, Tochigi"},season:[],
-flavor:["mild","sweet","earthy"],
+flavor:["mild","sweet","earthy"],texture:["tough","chewy","dry"],
 story:{en:"The lord of Mibu had gourd seed brought from Ōmi in 1712, and southern Tochigi still makes over eighty percent of Japan's kanpyō; the fruit is pared into a single continuous ribbon on a lathe and hung to dry in the July sun. The gourd is Lagenaria, the bottle gourd — the same plant that dries into a calabash flask, here eaten young instead of hollowed out.",
 fr:"Le seigneur de Mibu fait venir des graines de gourde de l’Ōmi en 1712, et le sud de Tochigi produit encore plus de quatre-vingts pour cent du kanpyō japonais ; le fruit est pelé en un ruban continu au tour, puis mis à sécher au soleil de juillet. La gourde est une Lagenaria, la calebasse — la plante même dont on fait les gourdes à eau, mangée jeune au lieu d’être évidée."},
 tip:{en:"Rub the dried ribbon hard with salt and rinse it before it goes near soaking water, then boil until a fingernail passes through — undersoaked kanpyō stays like string. Simmer it in soy, mirin and dashi and let it cool in the liquid; that is when it takes the seasoning.",
@@ -961,7 +961,7 @@ svg:'<path class="f3 sf" d="M48 10q6 0 6 6t-2 8q9 4 9 12t-10 8-10-8 5-12q-4-2-4-
 
 {id:"kiriboshi-daikon",cat:"vegetables",price:2,pk:"25–45 €/kg",name:{en:"Kiriboshi daikon",fr:"Kiriboshi daikon"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"Miyazaki",fr:"Miyazaki"},season:[],
-flavor:["sweet","earthy","mild"],
+flavor:["sweet","earthy","mild"],texture:["tough","chewy","dry"],
 story:{en:"Miyazaki dries around ninety percent of Japan's kiriboshi daikon, on open racks in the dry winter wind off the mountains; the sugars concentrate as the water leaves and the strips come out sweeter than the raw root and smelling of hay. No salt and no ferment are involved at any point, which is exactly what separates it from every daikon pickle.",
 fr:"Miyazaki sèche environ quatre-vingt-dix pour cent du kiriboshi daikon japonais, sur claies, dans le vent sec d’hiver qui descend des montagnes ; les sucres se concentrent à mesure que l’eau part et les lanières sortent plus sucrées que la racine crue, avec une odeur de foin. Ni sel ni fermentation n’interviennent, et c’est ce qui le sépare de tous les daikons en saumure."},
 tip:{en:"Soak fifteen minutes, no longer, and keep the soaking water — it is sweet and makes the best broth for the dish itself. If it smells sour or the strips are grey they have oxidised; good ones are pale amber and flexible.",
@@ -971,7 +971,7 @@ svg:'<ellipse class="sf" cx="48" cy="60" rx="28" ry="14"/><ellipse class="s" cx=
 
 {id:"kohlrabi",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Kohlrabi",fr:"Chou-rave"},latin:"Brassica oleracea var. gongylodes",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[5,6,7,8,9,10],
-flavor:["sweet","fresh","mild","peppery"],
+flavor:["sweet","fresh","mild","peppery"],texture:["firm","crisp","juicy"],
 story:{en:"Neither root nor cabbage: it is a stem that swelled above ground into a pale sputnik with leaves sticking out at angles. The German name says it plainly — Kohl and Rübe, cabbage and turnip — and Charlemagne ordered it planted across his empire.",
 fr:"Ni racine ni chou : c’est une tige qui a gonflé hors de terre en spoutnik pâle, feuilles plantées de travers. Le nom allemand le dit simplement — Kohl et Rübe, chou et navet — et Charlemagne en ordonna la culture dans tout son empire."},
 tip:{en:"Eat it raw. Peeled and cut into thin batons it is crisper and sweeter than any cooked version, closer to an apple than a cabbage.",
@@ -981,7 +981,7 @@ svg:'<path class="f1 sf" d="M48 40q17 1 21 11 4 11-2 19-7 9-19 9-13 0-19-9-6-8-2
 
 {id:"komatsuna",cat:"vegetables",rare:true,price:2,pk:"7–14 €/kg",name:{en:"Komatsuna",fr:"Komatsuna"},latin:"Brassica rapa var. perviridis",
 origin:{en:"Edogawa, Tokyo",fr:"Edogawa, Tokyo"},season:[11,12,1,2],
-flavor:["mild","grassy","fresh"],
+flavor:["mild","grassy","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"It takes its name from Komatsugawa, a village on the eastern edge of Edo that is now a Tokyo ward, and the story goes that the shogun Yoshimune, served it there in a New Year soup, named it after the place on the spot. Botanically it is the same species as the turnip, bred entirely for leaf: no bitterness, no serration, and none of the mustard bite of mizuna.",
 fr:"Il tient son nom de Komatsugawa, village de l’est d’Edo devenu un arrondissement de Tokyo, et l’on raconte que le shogun Yoshimune, à qui on l’avait servi là dans une soupe du Nouvel An, le baptisa séance tenante du nom du lieu. Botaniquement, c’est la même espèce que le navet, sélectionnée pour la seule feuille : aucune amertume, aucune découpe, et rien du piquant moutardé du mizuna."},
 tip:{en:"It needs neither blanching nor squeezing out: drop the cut leaves into simmering dashi for forty-five seconds at the very end and serve. If you are keeping the stems, give them a minute's head start — they stay crisp when the leaf has already gone soft.",
@@ -991,7 +991,7 @@ svg:'<path class="f2 sf" d="M30 34q14 2 16 16t-6 18q-12-4-14-16 0-12 4-18z"/><pa
 
 {id:"konnyaku",cat:"vegetables",price:1,pk:"6–12 €/kg",name:{en:"Konnyaku",fr:"Konjac (konnyaku)"},latin:"Amorphophallus konjac",
 origin:{en:"Japan, from konjac corm",fr:"Japon, à partir du corme de konjac"},season:[],
-flavor:["mild","earthy"],
+flavor:["mild","earthy"],texture:["firm","gelatinous","moist"],
 story:{en:"The corm spends three years underground before it is worth lifting, and the flour milled from it will not set with heat alone — it needs an alkali, traditionally limewater, and that is where the faint mineral smell comes from. Japanese has long called it the broom of the stomach, and for centuries it was eaten as much for that as for the plate.",
 fr:"Le corme passe trois ans sous terre avant de valoir la peine d'être arraché, et la farine qu'on en tire ne prend pas à la seule chaleur : il lui faut un alcalin, traditionnellement de l'eau de chaux, d'où cette légère odeur minérale. Le japonais l'appelle depuis longtemps « le balai de l'estomac », et on l'a mangé des siècles durant autant pour cela que pour l'assiette."},
 tip:{en:"Parboil it two or three minutes in salted water first; that step alone removes the alkaline smell people blame on the ingredient itself. Tear it rather than slice it — a torn face is rough and holds several times the sauce a knife-cut one does.",
@@ -1001,7 +1001,7 @@ svg:'<path class="f2 sf" d="M28 38h40q4 0 4 4v24q0 4-4 4H28q-4 0-4-4V42q0-4 4-4z
 
 {id:"kuwai",cat:"vegetables",price:3,pk:"30–60 €/kg",name:{en:"Kuwai",fr:"Kuwai"},latin:"Sagittaria trifolia",
 origin:{en:"Paddy fields of Saitama and Hiroshima, Japan",fr:"Rizières de Saitama et Hiroshima, Japon"},season:[11,12,1],
-flavor:["nutty","bitter","earthy"],
+flavor:["nutty","bitter","earthy"],texture:["firm","crisp","dry"],
 story:{en:"It sits on the New Year table because of a pun: the corm throws up one fat sprout, and me ga deru, to sprout, is also the phrase for getting ahead in life. Break that sprout and the vegetable loses its whole point, which is why it is sold with the shoot carefully protected and why a snapped one fetches a fraction of the price.",
 fr:"Il figure sur la table du Nouvel An pour un jeu de mots : le corme pousse un unique germe épais, et me ga deru, germer, se dit aussi de qui réussit dans la vie. Cassez ce germe et le légume perd tout son sens — d’où la protection soignée de la pousse à la vente, et le prix dérisoire d’un corme abîmé."},
 tip:{en:"Peel the corm into six flat faces up to the sprout, leaving three centimetres of shoot standing, then soak it in water with rice bran or a little vinegar to draw out the bitterness. Simmer it in dashi, sugar and light soy at a bare tremble: a real boil knocks the sprout off.",
@@ -1011,7 +1011,7 @@ svg:'<g transform="translate(5.62 5.85) scale(0.883)"><path class="f2 sf" d="M48
 
 {id:"mache",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Lamb’s lettuce",fr:"Mâche"},latin:"Valerianella locusta",
 origin:{en:"Europe",fr:"Europe"},season:[10,11,12,1,2,3],
-flavor:["nutty","delicate","mild","grassy"],
+flavor:["nutty","delicate","mild","grassy"],texture:["tender","smooth","moist"],
 story:{en:"For centuries it was a weed pulled from cornfields after the harvest, which is why German still calls it Ackersalat — field salad. Nantes turned it into a crop in the nineteenth century, and the Loire valley still grows most of what France eats.",
 fr:"Pendant des siècles ce fut une herbe ramassée dans les champs après la moisson, d’où l’allemand Ackersalat — salade des champs. Nantes en fit une culture au XIXe siècle, et le Val de Loire produit encore l’essentiel de ce que mange la France."},
 tip:{en:"Wash it in a large bowl of standing water, never under a tap. The rosettes trap grit at the base and a jet just drives it deeper.",
@@ -1021,7 +1021,7 @@ svg:'<path class="f1 sf" d="M46 52q-11-3-17-9-8-7-5-12 6-4 12 3 7 8 12 16zM46 51
 
 {id:"lampascione",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Lampascione",fr:"Lampascion"},latin:"Leopoldia comosa",
 origin:{en:"Southern Italy, wild-dug",fr:"Italie du Sud, arrachés sauvages"},season:[12,1,2,3],
-flavor:["bitter","earthy","mild"],
+flavor:["bitter","earthy","mild"],texture:["firm","smooth","moist"],
 story:{en:"It is a grape hyacinth bulb, not an onion, and Rome ate it: Apicius gives bulbi boiled and dressed with oil and vinegar, and Latin writers kept repeating that they restored a husband's vigour. Puglia and Basilicata still dig them in winter and cook them under wood ash.",
 fr:"C'est un bulbe de muscari, pas un oignon, et Rome le mangeait : Apicius donne les bulbi bouillis puis assaisonnés d'huile et de vinaigre, et les auteurs latins répétaient qu'ils rendaient sa vigueur au mari. Les Pouilles et la Basilicate les arrachent toujours en hiver et les cuisent sous la cendre."},
 tip:{en:"Peel them and soak a full day in cold water, changed three or four times - it takes the harshness off without removing the bitterness, which is the point. Then boil until tender and dress them hot with oil and vinegar, or bury them in the ashes of a wood fire.",
@@ -1031,7 +1031,7 @@ svg:'<path class="f2 sf" d="M48 40q16 0 16 17t-16 17-16-17 16-17z"/><path class=
 
 {id:"lautrec-pink-garlic",cat:"vegetables",sign:"IGP",price:2,pk:"12–20 €/kg",name:{en:"Lautrec pink garlic",fr:"Ail rose de Lautrec"},latin:"Allium sativum",
 origin:{en:"Lautrec, Tarn",fr:"Lautrec, Tarn"},season:[7,8,9,10,11,12],
-flavor:["sweet","pungent","mild"],
+flavor:["sweet","pungent","mild"],texture:["firm","smooth","dry"],
 story:{en:"It took Label Rouge in 1966, among the very first French agricultural products to hold one, and the IGP thirty years later. The pink is only the tunic over the cloves — the clove itself is white — and the trade sells it plaited into manouilles because the braid keeps the necks dry.",
 fr:"Il obtient le Label Rouge en 1966, parmi les tout premiers produits agricoles français à en porter un, et l’IGP trente ans plus tard. Le rose n’est que la tunique qui couvre les gousses — la gousse elle-même est blanche — et la filière le vend tressé en manouilles parce que la tresse tient les collets au sec."},
 tip:{en:"For a confit, keep the cloves in their skins and hold the oil between 70 and 80 °C for forty minutes; above that the sugars brown and turn bitter. It is a keeping garlic, not a fresh one — dry and dark, it will run to spring.",
@@ -1041,7 +1041,7 @@ svg:'<path class="f2 sf" d="M48 40q21 5 21 21t-21 19-21-19 21-21z"/><path class=
 
 {id:"leek",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Leek",fr:"Poireau"},latin:"Allium ampeloprasum",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,2,3,10,11,12],
-flavor:["mild","sweet","grassy"],
+flavor:["mild","sweet","grassy"],texture:["firm","fibrous","juicy"],
 story:{en:"Emperor Nero ate leeks in oil for days each month, convinced they cleared his singing voice — Romans mocked him as the “leek-eater”. Wales later made it a national emblem, worn on helmets into battle.",
 fr:"L’empereur Néron mangeait des poireaux à l’huile plusieurs jours par mois, persuadé qu’ils éclaircissaient sa voix de chanteur — les Romains le surnommaient « mangeur de poireaux ». Le pays de Galles en fit plus tard un emblème national, porté au casque à la bataille."},
 tip:{en:"The white cooks to silk, the green perfumes stocks. Slit it lengthwise and rinse well — sand hides between its layers.",
@@ -1051,7 +1051,7 @@ svg:'<path class="f1 sf" d="M42 44h12v26q0 6-6 6t-6-6z"/><path class="f2 sf" d="
 
 {id:"lettuce",cat:"vegetables",price:1,pk:"1–2,50 €/pièce",name:{en:"Lettuce",fr:"Laitue"},latin:"Lactuca sativa",
 origin:{en:"Egypt & the Mediterranean",fr:"Égypte & Méditerranée"},season:[4,5,6,7,8,9],
-flavor:["fresh","mild","grassy","delicate"],
+flavor:["fresh","mild","grassy","delicate"],texture:["tender","crisp","juicy"],
 story:{en:"Egyptian tomb paintings show it growing tall and narrow, sacred to the fertility god Min for the milky sap it bleeds when cut. That sap gave it its Latin name — lactuca, from lac, milk — and in wild lettuce it is mildly sedative.",
 fr:"Les peintures des tombes égyptiennes la montrent haute et étroite, consacrée au dieu de la fertilité Min pour le suc laiteux qu’elle pleure à la coupe. Ce suc lui a donné son nom latin — lactuca, de lac, le lait — et chez la laitue sauvage il est légèrement sédatif."},
 tip:{en:"Dress it at the very last second. Salt and acid start collapsing the leaf cells within a minute of touching them.",
@@ -1061,7 +1061,7 @@ svg:'<path class="f1 sf" d="M48 26q9-4 14 4 10-2 12 8 8 5 4 14 3 11-8 16-6 8-16 
 
 {id:"fresh-lily-bulb",cat:"vegetables",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Lily bulb",fr:"Bulbe de lys"},latin:"Lilium brownii",
 origin:{en:"Lanzhou, Gansu, China",fr:"Lanzhou, Gansu, Chine"},season:[9,10,11],
-flavor:["sweet","mild","delicate"],
+flavor:["sweet","mild","delicate"],texture:["firm","crisp","dry"],
 story:{en:"Chinese cooking keeps two lilies apart: the bitter medicinal bulb of the pharmacopoeia, and the sweet Lanzhou bulb from Gansu, which never entered it and is grown as a vegetable. Only the second is worth cooking — it comes apart into separate white scales, each one crisp as a water chestnut.",
 fr:"La cuisine chinoise distingue deux lis : le bulbe amer de la pharmacopée et le bulbe sucré de Lanzhou, au Gansu, qui n’y figure pas et se cultive en légume. Seul le second se cuisine — il se défait en écailles blanches séparées, croquantes comme la châtaigne d’eau."},
 tip:{en:"Break the bulb into scales and trim the brown edges, then cook them for barely a minute — stir-fried past that they go from crisp to chalky and never come back. Ten minutes in cold water takes off any lingering bitterness.",
@@ -1071,7 +1071,7 @@ svg:'<path class="f1 sf" d="M48 20q20 10 20 32 0 20-20 26t-20-26q0-22 20-32z"/><
 
 {id:"lotus-root",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Lotus root",fr:"Racine de lotus"},latin:"Nelumbo nucifera",
 origin:{en:"Asian pond mud",fr:"Vasières d’Asie"},season:[10,11,12,1,2],
-flavor:["mild","earthy","fresh"],
+flavor:["mild","earthy","fresh"],texture:["firm","crunchy","moist"],
 story:{en:"The holes are air ducts: the rhizome lies buried in pond mud and breathes through them from the leaves standing above the water. Japanese New Year tables include it because you can see through the slice, read as a clear view of the year ahead.",
 fr:"Les trous sont des conduits d’air : le rhizome vit enfoui dans la vase et respire par eux depuis les feuilles restées à la surface. Les tables japonaises du Nouvel An en servent parce qu’on voit à travers la tranche, ce qui se lit comme une vue dégagée sur l’année qui vient."},
 tip:{en:"Slice it and hold the slices in water with a splash of vinegar; the cut face browns within minutes. Vinegar in the cooking water also keeps it crisp — simmered in plain water it goes floury.",
@@ -1081,7 +1081,7 @@ svg:'<circle class="f1 sf" cx="48" cy="50" r="27"/><circle class="s" cx="48" cy=
 
 {id:"mammola-artichoke",cat:"vegetables",price:2,pk:"2–4 €/pièce",name:{en:"Mammola artichoke",fr:"Artichaut mammola"},latin:"Cynara cardunculus var. scolymus",
 origin:{en:"Roman countryside, Lazio",fr:"Campagne romaine, Latium"},season:[2,3,4,5],
-flavor:["earthy","bitter","nutty"],
+flavor:["earthy","bitter","nutty"],texture:["firm","fibrous","moist"],
 story:{en:"In Rome the crown head of the plant is the cimarolo, cut first and sold as the mammola: round, spineless, and with a choke so young it barely exists. The side buds that follow are the same plant and a different vegetable — they go to the pan, never whole into the fryer.",
 fr:"À Rome, la tête maîtresse du pied s’appelle le cimarolo : coupée la première, elle part au marché sous le nom de mammola, ronde, sans épines, au foin si jeune qu’il n’existe pour ainsi dire pas. Les boutons latéraux qui suivent sont la même plante et un autre légume — ils vont à la poêle, jamais entiers dans la friture."},
 tip:{en:"For alla giudia, fry twice: once at 130 °C until a knife slides through the base, then hot at 180 °C, pressing the head down so the leaves open into a flower and crisp. One frying gives you either a raw heart or burnt leaves.",
@@ -1091,7 +1091,7 @@ svg:'<path class="f2 sf" d="M48 20c14 0 22 10 22 22 0 14-10 24-22 24s-22-10-22-2
 
 {id:"mangetout",cat:"vegetables",price:2,pk:"8–14 €/kg",name:{en:"Mangetout",fr:"Pois gourmand"},latin:"Pisum sativum var. macrocarpon",
 origin:{en:"Europe & Asia",fr:"Europe & Asie"},season:[5,6,7,8],
-flavor:["sweet","fresh","grassy","delicate"],
+flavor:["sweet","fresh","grassy","delicate"],texture:["tender","crisp","juicy"],
 story:{en:"A pea bred without the tough parchment layer inside the pod, so the whole thing is edible — the French name says it outright: eat it all. Without that membrane the pod cannot split to release seed, so the plant depends entirely on us.",
 fr:"Un pois sélectionné sans la membrane parcheminée de la gousse, si bien que tout se mange — le nom anglais le dit franchement : mange-tout. Sans cette membrane la gousse ne peut plus s’ouvrir pour libérer la graine : la plante dépend entièrement de nous."},
 tip:{en:"Ninety seconds in a hot pan is enough. The point is the snap, and it is lost the moment the pod goes limp.",
@@ -1101,7 +1101,7 @@ svg:'<path class="f2 sf" d="M28 62q14-24 40-30-6 26-32 36-8 2-8-6z"/><circle cla
 
 {id:"mashua",cat:"vegetables",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Mashua",fr:"Capucine tubéreuse"},latin:"Tropaeolum tuberosum",
 origin:{en:"High Andes",fr:"Hautes Andes"},season:[10,11,12],
-flavor:["pungent","peppery","sweet"],
+flavor:["pungent","peppery","sweet"],texture:["firm","crisp","moist"],
 story:{en:"The seventeenth-century chronicler Bernabé Cobo wrote that the Inca fed mashua to armies in the field so the soldiers would forget their wives; rat studies have since measured a fall in testosterone, which is not the same as confirming the chronicle. What is certain is the mustard heat, which it shares with its cousin the nasturtium.",
 fr:"Le chroniqueur Bernabé Cobo écrit au XVIIᵉ siècle que les Incas nourrissaient leurs armées de mashua pour que les soldats oublient leurs femmes ; des études sur le rat ont depuis mesuré une baisse de testostérone, ce qui ne vaut pas preuve de la chronique. Ce qui est certain, c’est le piquant de moutarde, qu’elle partage avec sa cousine la capucine."},
 tip:{en:"Roast them whole at 180 °C for at least forty-five minutes: the mustard oils behind the raw heat are volatile and cook off, leaving the sweetness. Andean practice goes further and leaves the tubers in the sun for days first, which does the same thing more slowly.",
@@ -1111,7 +1111,7 @@ svg:'<path class="f2 sf" d="M56 24q7 10 3 25t-6 24q-3 13-8 13t-6-13q0-14 4-27t13
 
 {id:"miners-lettuce",cat:"vegetables",price:2,pk:"20–35 €/kg",name:{en:"Miner's lettuce",fr:"Claytone de Cuba"},latin:"Claytonia perfoliata",
 origin:{en:"Western North America",fr:"Ouest de l’Amérique du Nord"},season:[11,12,1,2,3,4],
-flavor:["fresh","mild","earthy"],
+flavor:["fresh","mild","earthy"],texture:["tender","juicy"],
 story:{en:"Californian gold miners ate it against scurvy, which is where the English name comes from; the French name is simply wrong — the plant is from the Pacific coast of North America and honours the Virginian botanist John Clayton, not Cuba. It seeds itself so freely in a cold frame that the second year is a weeding problem, not a sowing one.",
 fr:"Les chercheurs d’or californiens la mangeaient contre le scorbut, d’où son nom anglais de laitue des mineurs ; le nom français est faux — la plante vient de la côte pacifique de l’Amérique du Nord et honore le botaniste virginien John Clayton, pas Cuba. Elle se ressème si volontiers sous châssis que la deuxième année pose un problème de désherbage, pas de semis."},
 tip:{en:"Dress it at the table — the leaf is nearly all water and collapses minutes after it meets acid. The stems are as good as the leaves; do not strip them.",
@@ -1121,7 +1121,7 @@ svg:'<path class="s" d="M48 86V52"/><ellipse class="f2 sf" cx="48" cy="52" rx="2
 
 {id:"mizuna",cat:"vegetables",price:2,pk:"10–20 €/kg",name:{en:"Mizuna",fr:"Mizuna"},latin:"Brassica rapa var. nipposinica",
 origin:{en:"Kyoto market gardens",fr:"Maraîchages de Kyoto"},season:[10,11,12,1,2,3],
-flavor:["peppery","fresh","grassy"],
+flavor:["peppery","fresh","grassy"],texture:["tender","crisp","juicy"],
 story:{en:"The name means water vegetable: Kyoto growers raised it on beds flooded between the rows, with water doing the work fertiliser does elsewhere. It reached European salad bags because it regrows four or five times after cutting, not because anyone chose it for flavour.",
 fr:"Le nom veut dire « légume d’eau » : les maraîchers de Kyoto la cultivaient sur des planches inondées entre les rangs, l’eau faisant le travail que l’engrais fait ailleurs. Elle est arrivée dans les sachets de salade européens parce qu’elle repousse quatre ou cinq fois après coupe, non parce qu’on l’avait choisie pour son goût."},
 tip:{en:"If you cook it at all, cut the heat and drop it into the hot liquid off the stove — residual heat is enough to wilt it, and thirty seconds more turns it slimy. In a salad it will carry a heavier dressing than lettuce.",
@@ -1131,7 +1131,7 @@ svg:'<path class="f2 sf" d="M46 84q-2-20-2-30-9-4-15-14 9 0 15 4-6-8-6-18 8 6 10
 
 {id:"molokhia",cat:"vegetables",price:1,pk:"5–10 €/kg",name:{en:"Molokhia",fr:"Corète potagère"},latin:"Corchorus olitorius",
 origin:{en:"Nile Delta and the Levant",fr:"Delta du Nil et Levant"},season:[6,7,8,9],
-flavor:["earthy","grassy","mild"],
+flavor:["earthy","grassy","mild"],texture:["tender","viscous","moist"],
 story:{en:"The Fatimid caliph al-Hakim banned it around 1005, for reasons the chroniclers cannot agree on: an aphrodisiac, or simply a dish loved by a rival dynasty. His successor lifted the ban, but the Druze, who revere al-Hakim, have kept it for a thousand years and eat no molokhia at all.",
 fr:"Le calife fatimide al-Hakim l’interdit vers 1005, pour des raisons sur lesquelles les chroniqueurs ne s’accordent pas : aphrodisiaque, ou simplement plat cher à une dynastie rivale. Son successeur a levé l’interdit, mais les Druzes, qui vénèrent al-Hakim, l’observent depuis mille ans et ne mangent aucune mloukhiya."},
 tip:{en:"Chop it to a near-paste with a two-bladed makhrata and add it to the broth off the boil: a rolling boil breaks the mucilage and the soup separates into water and green flecks. Once it has separated it will not come back.",
@@ -1141,7 +1141,7 @@ svg:'<path class="f2 sf" d="M48 14q11 12 11 26t-11 14-11-14 11-26z"/><path class
 
 {id:"musquee-de-provence-squash",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Muscade de Provence squash",fr:"Courge musquée de Provence"},latin:"Cucurbita moschata",
 origin:{en:"Provence",fr:"Provence"},season:[9,10,11,12,1],
-flavor:["sweet","musky","earthy"],
+flavor:["sweet","musky","earthy"],texture:["hard","smooth","dry"],
 story:{en:"The nineteenth-century Vilmorin catalogue already described it and it has barely changed: a flat wheel of deep ribs running ten to twenty kilos, which is why French markets sell it as a wedge with the seeds still in. The flesh is dense enough to roast for an hour without collapsing.",
 fr:"Le catalogue Vilmorin la décrivait déjà au XIXᵉ siècle et elle n’a guère changé : une roue plate à côtes profondes qui pèse de dix à vingt kilos, ce qui explique qu’on la vende en quartier, graines comprises, sur les marchés français. La chair est assez dense pour rôtir une heure sans s’affaisser."},
 tip:{en:"Roast the wedges cut side down at 200 °C with the skin on and scoop afterwards — the skin is too tough to eat and too slow to remove raw. Keep the seeds and the fibres for stock; that is where most of the musky perfume sits.",
@@ -1151,7 +1151,7 @@ svg:'<ellipse class="f3 sf" cx="48" cy="56" rx="28" ry="19"/><path class="s" d="
 
 {id:"mustard-greens",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Mustard greens",fr:"Moutarde de Chine"},latin:"Brassica juncea",
 origin:{en:"Himalayan foothills",fr:"Contreforts himalayens"},season:[3,4,5,10,11],
-flavor:["pungent","peppery","bitter","hot"],
+flavor:["pungent","peppery","bitter","hot"],texture:["tender","fibrous","moist"],
 story:{en:"The same plant that yields brown mustard seed produces a leaf with the same fire in it — bite one raw and the heat arrives in the nose, not the mouth. The American South braises it for hours with pork; Sichuan salts and ferments it into zha cai.",
 fr:"La plante qui donne la graine de moutarde brune produit une feuille au même feu — croquez-la crue et la chaleur monte au nez, non en bouche. Le Sud américain la braise des heures avec du porc ; le Sichuan la sale et la fermente en zha cai."},
 tip:{en:"Heat destroys the pungency, so decide which you want. Raw in a salad it bites; braised twenty minutes it turns sweet and mild.",
@@ -1161,7 +1161,7 @@ svg:'<path class="f1 sf" d="M48 74q-14-1-12-9-13-2-10-12-9-6-3-14-2-11 9-13 7-7 
 
 {id:"myoga",cat:"vegetables",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Myoga",fr:"Myoga"},latin:"Zingiber mioga",
 origin:{en:"Japanese woodland shade",fr:"Sous-bois japonais"},season:[7,8,9,10],
-flavor:["fresh","pungent","floral"],
+flavor:["fresh","pungent","floral"],texture:["firm","crisp","juicy"],
 story:{en:"The story goes that the plant first grew on the grave of Shurihandoku, a disciple of the Buddha who could not hold on to his own name, and Japanese households still half-joke that eating too much of it makes you forgetful. What you eat is the flower bud, pushed up at ground level separately from the leaves, not the rhizome its ginger cousins give.",
 fr:"On raconte que la plante a poussé la première fois sur la tombe de Shurihandoku, ce disciple du Bouddha incapable de retenir son propre nom, et les foyers japonais plaisantent encore à moitié en disant qu’en manger trop rend distrait. Ce qu’on mange est le bouton floral, poussé au ras du sol séparément des feuilles, et non le rhizome que donnent ses cousins gingembres."},
 tip:{en:"Shred it lengthways and soak the shreds five minutes in cold water to take the raw edge off, then drain hard. It goes on at the very end, over cold noodles or chilled tofu, never into the pan.",
@@ -1171,7 +1171,7 @@ svg:'<path class="f2 sf" d="M48 20q14 15 12 34t-12 22q-10-3-12-22t12-34z"/><path
 
 {id:"nagaimo",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Nagaimo (Chinese yam)",fr:"Nagaimo (igname de Chine)"},latin:"Dioscorea polystachya",
 origin:{en:"Aomori and Hokkaido, Japan",fr:"Aomori et Hokkaidō, Japon"},season:[10,11,12,1,2],
-flavor:["mild","earthy","fresh"],
+flavor:["mild","earthy","fresh"],texture:["crisp","viscous","moist"],
 story:{en:"Almost every yam in the world needs cooking; this one is eaten raw, grated into the viscous white foam called tororo and poured over rice or soba. The itch it can leave on your hands is not an allergy but needle-shaped oxalate crystals under the skin, which is why old kitchens grated it holding the tuber by an ungrated end.",
 fr:"Presque toutes les ignames du monde demandent cuisson ; celle-ci se mange crue, râpée en une mousse blanche et visqueuse, le tororo, versée sur le riz ou les soba. La démangeaison qu’elle laisse aux mains n’est pas une allergie mais des cristaux d’oxalate en aiguilles logés sous la peau — d’où l’habitude de la tenir par un bout non râpé."},
 tip:{en:"Grate it on a fine ceramic or metal plate, not a box grater — you want it broken to a foam, not shredded. Rub your hands with vinegar first, or peel it under running water, and the itching never starts.",
@@ -1181,7 +1181,7 @@ svg:'<path class="f1 sf" d="M36 26q0-10 12-10t12 10l3 44H33z"/><path class="s" d
 
 {id:"nanohana",cat:"vegetables",price:2,pk:"10–20 €/kg",name:{en:"Nanohana (rapeseed blossom)",fr:"Fleurs de colza (nanohana)"},latin:"Brassica rapa",
 origin:{en:"Japan",fr:"Japon"},season:[1,2,3],
-flavor:["bitter","grassy","fresh","sweet"],
+flavor:["bitter","grassy","fresh","sweet"],texture:["tender","crisp","moist"],
 story:{en:"The nanohana on a February plate is the flowering shoot of the rape whose oil lit the lamps of Edo — the same plant, picked before the buds open instead of run on to seed. Growers cut it while the yellow is still shut, because an open flower means the stem has already gone woody.",
 fr:"Le nanohana de février est la pousse fleurie du colza dont l’huile éclairait les lampes d’Edo : la même plante, cueillie avant l’ouverture des boutons au lieu d’être menée jusqu’à la graine. Les maraîchers coupent tant que le jaune est encore fermé, car une fleur ouverte signifie une tige déjà filandreuse."},
 tip:{en:"Blanch sixty to ninety seconds in well-salted water, straight into cold, then squeeze hard — waterlogged nanohana dilutes any dressing you put on it. Stems in first, flowering tips ten seconds later.",
@@ -1191,7 +1191,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="f1 sf" d="M48 58q-14-4-18-14 12
 
 {id:"napa-cabbage",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Napa cabbage",fr:"Chou chinois"},latin:"Brassica rapa subsp. pekinensis",
 origin:{en:"Yangtze delta, China",fr:"Delta du Yangzi, Chine"},season:[10,11,12,1,2],
-flavor:["sweet","mild","fresh"],
+flavor:["sweet","mild","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"It is a hybrid of turnip and pak choi that stabilised in the Yangtze delta, and it reached Korea only in the late nineteenth century — before that, kimchi was made chiefly from radish and other greens. The cabbage now synonymous with kimchi has held the job for barely a hundred years.",
 fr:"C’est un hybride du navet et du pak-choï stabilisé dans le delta du Yangzi, et il n’est arrivé en Corée qu’à la fin du XIXᵉ siècle — avant lui, le kimchi se faisait surtout de radis et d’autres feuilles. Le chou aujourd’hui synonyme de kimchi n’occupe le poste que depuis un siècle à peine."},
 tip:{en:"Salt it before you cook it, not after: quartered and left in brine two hours it sheds a third of its weight in water and will then fry or braise instead of stewing in its own liquid. Cut across the ribs and treat white and green apart — the leaf collapses in seconds, the rib wants four minutes.",
@@ -1201,7 +1201,7 @@ svg:'<path class="f1 sf" d="M48 20q17 0 17 20v22q0 16-17 16t-17-16V40q0-20 17-20
 
 {id:"negi",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Negi",fr:"Poireau japonais"},latin:"Allium fistulosum",
 origin:{en:"Kanto plain, Japan",fr:"Plaine du Kantô, Japon"},season:[11,12,1,2],
-flavor:["sweet","pungent","mild"],
+flavor:["sweet","pungent","mild"],texture:["firm","fibrous","juicy"],
 story:{en:"Japan is split over it: eastern growers hill soil up the stem to blanch a long white shaft, while Kansai kitchens want the same species grown for its green leaves instead. The white part is white because it never saw light, not because of the variety.",
 fr:"Le Japon se partage à son sujet : à l’est, on butte la terre le long de la tige pour blanchir un long fût blanc, tandis que les cuisines du Kansai veulent la même espèce conduite pour ses feuilles vertes. Le blanc est blanc parce qu’il n’a jamais vu la lumière, pas à cause de la variété."},
 tip:{en:"Char the whole white shaft black over a flame or under a grill, then peel the burnt layers away; the centre inside will have gone to jelly. Sliced raw as a garnish, soak the shreds ten minutes in iced water to lose the sulphur bite.",
@@ -1211,7 +1211,7 @@ svg:'<g transform="translate(3.65 3.8) scale(0.924)"><path class="f1 sf" d="M40 
 
 {id:"nettle",cat:"vegetables",price:1,pk:"8–15 €/kg",name:{en:"Nettle",fr:"Ortie"},latin:"Urtica dioica",
 origin:{en:"Temperate hedgerows",fr:"Haies et friches tempérées"},season:[3,4,5],
-flavor:["earthy","grassy","meaty"],
+flavor:["earthy","grassy","meaty"],texture:["tender","fibrous","moist"],
 story:{en:"The sting is a hollow silica needle that snaps at a touch and injects what it holds; heat, or a hard enough crushing, collapses it, which is why blanched nettle is harmless. The plant was a fibre crop too: Germany wove nettle cloth for uniforms during the First World War, when the cotton blockade bit.",
 fr:"Le poil urticant est une aiguille creuse de silice qui casse au contact et injecte son contenu ; la chaleur, ou un écrasement suffisant, l’effondre, et c’est pour cela que l’ortie blanchie ne pique plus. La plante a aussi été une culture textile : l’Allemagne a tissé du drap d’ortie pour ses uniformes pendant la Première Guerre mondiale, quand le blocus du coton a mordu."},
 tip:{en:"Take only the top four leaves, and take them before the plant flowers — afterwards the leaves build gritty calcium crystals. Thirty seconds in boiling water disarms the sting completely, and the blanching water is a good stock; do not throw it away.",
@@ -1221,7 +1221,7 @@ svg:'<path class="s" d="M48 86V22"/><path class="f2 sf" d="M46 46q-18 2-22-10 10
 
 {id:"new-zealand-spinach",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"New Zealand spinach",fr:"Tétragone"},latin:"Tetragonia tetragonioides",
 origin:{en:"New Zealand and Australian shores",fr:"Rivages de Nouvelle-Zélande et d’Australie"},season:[6,7,8,9],
-flavor:["grassy","salty","mild"],
+flavor:["grassy","salty","mild"],texture:["tender","juicy"],
 story:{en:"Joseph Banks collected it from the Endeavour in 1770 and Cook had it cooked for the crew as an antiscorbutic; the seed Banks brought back to Kew is the source of every European plant. It is not a spinach and not related to one — it belongs with the ice plant, which explains the thickness of the leaf.",
 fr:"Joseph Banks l’a récoltée depuis l’Endeavour en 1770 et Cook la faisait cuire pour l’équipage comme antiscorbutique ; les graines rapportées à Kew sont la source de tous les pieds européens. Ce n’est pas un épinard et elle ne lui est pas apparentée — elle appartient à la famille de la ficoïde glaciale, ce qui explique l’épaisseur de la feuille."},
 tip:{en:"Blanch it a minute and throw the water out: it is high in oxalates and blanching takes most of them with it. It does not shrink the way spinach does, so measure it by the plateful, not by the heap.",
@@ -1231,7 +1231,7 @@ svg:'<path class="s" d="M20 76q15 4 27-6t26-25"/><path class="f2 sf" d="M32 70q-
 
 {id:"nopal",cat:"vegetables",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Nopal",fr:"Nopal"},latin:"Opuntia ficus-indica",
 origin:{en:"Central Mexican highlands",fr:"Hauts plateaux du Mexique central"},season:[3,4,5,6],
-flavor:["sour","grassy","fresh"],
+flavor:["sour","grassy","fresh"],texture:["firm","viscous","juicy"],
 story:{en:"The paddle is not a leaf but a flattened stem — the spines are the leaves, reduced to needles — which is why it stores water like a reservoir and behaves like a vegetable rather than a green. It is the cactus of the Mexican coat of arms, the one the eagle stands on.",
 fr:"La raquette n’est pas une feuille mais une tige aplatie — les épines, elles, sont les feuilles, réduites à des aiguilles —, ce qui explique qu’elle stocke l’eau comme un réservoir et se comporte en légume plutôt qu’en verdure. C’est le cactus des armoiries du Mexique, celui sur lequel se tient l’aigle."},
 tip:{en:"Griddle it whole and dry over high heat until the bright green turns olive and the surface squeaks — that is the mucilage gone. Boiled instead, salt the water hard, drain the moment the colour changes and rinse cold, or you will be eating okra.",
@@ -1241,7 +1241,7 @@ svg:'<path class="f2 sf" d="M44 24c12 0 18 12 18 27s-6 27-18 27-16-12-16-27 4-27
 
 {id:"oca",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Oca",fr:"Oca du Pérou"},latin:"Oxalis tuberosa",
 origin:{en:"Andean highlands",fr:"Hauts plateaux andins"},season:[11,12,1],
-flavor:["sour","sweet","earthy"],
+flavor:["sour","sweet","earthy"],texture:["firm","crisp","juicy"],
 story:{en:"Oca is the second most cultivated tuber of the Andes after the potato, and reached New Zealand around 1860, where it is still sold as yam although it is no relation. Its oxalic tartness sits in the skin, and a week on a sunny windowsill breaks that acid down until the tuber turns frankly sweet.",
 fr:"L’oca est le deuxième tubercule des Andes après la pomme de terre ; introduite en Nouvelle-Zélande vers 1860, elle y est toujours vendue sous le nom de yam, dont elle n’est pourtant pas parente. Son acidité oxalique loge dans la peau, et une semaine sur un rebord de fenêtre ensoleillé la dégrade jusqu’à rendre le tubercule franchement sucré."},
 tip:{en:"Do not peel and do not boil: roast whole at 200 °C for 25 minutes so the skin blisters and the inside stays lemony. Water leaches out the acid and the flavour together.",
@@ -1251,7 +1251,7 @@ svg:'<path class="f2 sf" d="M28 68q-7-7 0-14l26-26q7-7 14 0t0 14L42 68q-7 7-14 0
 
 {id:"okra",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Okra",fr:"Gombo"},latin:"Abelmoschus esculentus",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[7,8,9],
-flavor:["grassy","fresh","mild"],
+flavor:["grassy","fresh","mild"],texture:["firm","viscous","moist"],
 story:{en:"The word gumbo comes from ki ngombo, the Bantu name for the pod, which crossed the Atlantic with enslaved West Africans along with the plant itself. The mucilage cooks either want or fear is a soluble fibre held in the seed cavity, and it is released only once the pod is cut and wetted.",
 fr:"Le mot gumbo vient de ki ngombo, nom bantou de la gousse, passé l’Atlantique avec les Africains réduits en esclavage, en même temps que la plante. Le mucilage que l’on recherche ou que l’on redoute est une fibre soluble logée dans la loge à graines, libérée seulement quand la gousse est coupée et mouillée."},
 tip:{en:"To thicken a stew, slice it; to keep it firm, leave the pods whole and sear them dry in a hot pan for four minutes before any liquid goes in. A spoon of vinegar or tamarind also cuts the slime.",
@@ -1261,7 +1261,7 @@ svg:'<path class="f2 sf" d="M38 62q-2-24 10-42 12 18 10 42-10 5-20 0z"/><path cl
 
 {id:"onion",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Onion",fr:"Oignon"},latin:"Allium cepa",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[],
-flavor:["pungent","sweet","umami"],
+flavor:["pungent","sweet","umami"],texture:["firm","crisp","juicy"],
 story:{en:"Egyptians swore oaths on onions: its concentric rings symbolised eternity, and pyramid builders were partly paid in them. It remains the quiet first note of nearly every savoury dish on Earth.",
 fr:"Les Égyptiens juraient sur l’oignon : ses anneaux concentriques symbolisaient l’éternité, et les bâtisseurs de pyramides étaient en partie payés en oignons. Il reste la discrète première note de presque tous les plats salés du monde."},
 tip:{en:"Slow, patient cooking turns its bite into deep sweetness — rushing an onion is the most common kitchen sin.",
@@ -1271,7 +1271,7 @@ svg:'<path class="f2 sf" d="M48 30q20 8 20 26a20 18 0 01-40 0q0-18 20-26z"/><pat
 
 {id:"orach",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Orach",fr:"Arroche"},latin:"Atriplex hortensis",
 origin:{en:"European kitchen gardens",fr:"Potagers d’Europe"},season:[5,6,7,8],
-flavor:["salty","mild","grassy"],
+flavor:["salty","mild","grassy"],texture:["tender","moist"],
 story:{en:"Orach fed European kitchen gardens for centuries before spinach displaced it in the eighteenth century; French gardeners called it bonne-dame and grew the red form as much for its colour as for the pot. It is a saltbush of the genus Atriplex, so it carries a faint salinity of its own and none of spinach's oxalic grip on the teeth.",
 fr:"L’arroche a nourri les potagers d’Europe pendant des siècles avant que l’épinard ne la supplante au XVIIIᵉ siècle ; on l’appelait bonne-dame, et la forme rouge se cultivait autant pour la couleur que pour la marmite. Halophyte du genre Atriplex, elle porte sa propre salinité légère et rien de l’âpreté oxalique de l’épinard sur les dents."},
 tip:{en:"The red leaves bleed magenta the moment they meet heat or acid: dress them at the table, not in the kitchen, or a whole salad turns pink. Two minutes in butter is the entire cooking time.",
@@ -1281,7 +1281,7 @@ svg:'<path class="s" d="M48 82V28M46 50 32 34M50 62l14-14"/><path class="f2 sf" 
 
 {id:"oxheart-tomato",cat:"vegetables",price:2,pk:"4–8 €/kg",name:{en:"Oxheart tomato",fr:"Tomate cœur de bœuf"},latin:"Solanum lycopersicum",
 origin:{en:"Northern Italy",fr:"Italie du Nord"},season:[7,8,9],
-flavor:["sweet","fresh","mild"],
+flavor:["sweet","fresh","mild"],texture:["firm","smooth","juicy"],
 story:{en:"The cuor di bue type is old Italian, selected for flesh rather than juice: under the ribbed shoulders there is almost no seed cavity, which is why a slice holds together instead of flooding the plate. Its thin skin and low acidity are also why it travels badly and is rarely found far from where it grew.",
 fr:"Le type cœur de bœuf est ancien et italien, sélectionné pour la chair et non pour le jus : sous les épaules côtelées, la loge à pépins est presque inexistante, si bien qu’une tranche tient au lieu d’inonder l’assiette. Sa peau fine et sa faible acidité expliquent aussi qu’elle voyage mal et qu’on la voie rarement loin de son terroir."},
 tip:{en:"Slice it thick, salt it, and let it stand ten minutes before the oil goes on: the salt first draws out water that would otherwise dilute the dressing. Never cook it, as there is no gel or seed to hold the flesh and it collapses to water.",
@@ -1291,7 +1291,7 @@ svg:'<path class="f2 sf" d="M22 46q0-14 12-14 9 0 14 7 5-7 14-7 12 0 12 14 0 17-
 
 {id:"oyster-leaf",cat:"vegetables",rare:true,price:4,pk:"150–400 €/kg",name:{en:"Oyster leaf",fr:"Feuille d’huître"},latin:"Mertensia maritima",
 origin:{en:"North Atlantic shingle beaches",fr:"Plages de galets de l’Atlantique nord"},season:[5,6,7,8],
-flavor:["briny","marine","delicate"],
+flavor:["briny","marine","delicate"],texture:["tender","smooth","juicy"],
 story:{en:"Mertensia maritima grows on North Atlantic shingle and tastes of raw oyster because it makes dimethyl sulphide, the compound behind the smell of the sea at low tide. It was a forager's curiosity until Nordic kitchens put it on plates in the 2000s, and it is now scarce enough on wild beaches to be legally protected across parts of its range.",
 fr:"Mertensia maritima pousse sur les galets de l’Atlantique nord et goûte l’huître crue parce qu’elle produit du sulfure de diméthyle, la molécule même de l’odeur de la mer à marée basse. Curiosité de cueilleur jusqu’aux cuisines nordiques des années 2000, elle est aujourd’hui assez rare à l’état sauvage pour être protégée sur une partie de son aire."},
 tip:{en:"Heat destroys it: the sulphur note is gone within seconds and the leaf goes grey and limp. Serve it raw and whole, unwashed if the source allows, laid on something cold.",
@@ -1301,7 +1301,7 @@ svg:'<path class="f1 sf" d="M48 80q-19-6-23-25t9-27q15 7 19 26t-5 26z"/><path cl
 
 {id:"padron-pepper",cat:"vegetables",price:2,pk:"12–22 €/kg",name:{en:"Padrón pepper",fr:"Piment de Padrón"},latin:"Capsicum annuum",
 origin:{en:"Herbón, Galicia",fr:"Herbón, Galice"},season:[6,7,8,9],
-flavor:["grassy","mild","hot"],
+flavor:["grassy","mild","hot"],texture:["tender","crisp","juicy"],
 story:{en:"Franciscan friars are credited with carrying the seed from Mexico to the monastery at Herbón, in the parish of Padrón, in the seventeenth century. The Galician saying runs that some bite and some do not, and the heat is real capsaicin that builds as the pod matures and as drought stresses the plant, so a late-summer crop bites far more often than a June one.",
 fr:"Ce sont les franciscains qui auraient rapporté la graine du Mexique au couvent d’Herbón, dans la paroisse de Padrón, au XVIIᵉ siècle. Le dicton galicien veut que les uns piquent et les autres non : la capsaïcine augmente réellement avec la maturité du fruit et le stress hydrique de la plante, si bien qu’une récolte de fin d’été mord bien plus souvent qu’une récolte de juin."},
 tip:{en:"Fry them whole in a finger of very hot oil for two minutes, until the skins blister and collapse, then salt with coarse flakes off the heat. Salt added in the pan draws water and they steam instead of blistering.",
@@ -1311,7 +1311,7 @@ svg:'<path class="f2 sf" d="M36 34q13 4 13 19t-7 21q-4 4-9-1t-8-21 11-18z"/><pat
 
 {id:"pak-choi",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Pak choi",fr:"Pak choï"},latin:"Brassica rapa subsp. chinensis",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[3,4,5,9,10,11],
-flavor:["fresh","mild","grassy","sweet"],
+flavor:["fresh","mild","grassy","sweet"],texture:["tender","crunchy","juicy"],
 story:{en:"Cultivated in the Yangtze delta since at least the fifth century, it is two vegetables in one plant: a white stem with the snap of celery, and a dark leaf that wilts in seconds. Chinese cooks treat them as separate ingredients and add them at different moments.",
 fr:"Cultivé dans le delta du Yangzi depuis le Ve siècle au moins, c’est deux légumes dans une plante : une côte blanche au croquant du céleri, et une feuille sombre qui tombe en quelques secondes. Les cuisiniers chinois les traitent en ingrédients distincts et les ajoutent à des moments différents."},
 tip:{en:"Split the stems from the leaves. Stems first for a minute in the hot pan, leaves at the very end.",
@@ -1321,7 +1321,7 @@ svg:'<path class="f3 sf" d="M40 76V50q-8-4-6-14 8 0 10 8V76z"/><path class="f2 s
 
 {id:"pardailhan-turnip",cat:"vegetables",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Pardailhan black turnip",fr:"Navet noir de Pardailhan"},latin:"Brassica rapa",
 origin:{en:"Pardailhan, Hérault",fr:"Pardailhan, Hérault"},season:[11,12,1,2],
-flavor:["sweet","nutty","earthy"],
+flavor:["sweet","nutty","earthy"],texture:["firm","dry"],
 story:{en:"Pardailhan sits at 500 metres in the Hérault, and its black turnip took medals at nineteenth-century exhibitions and shipped some 500 tonnes a year in the 1910s before rural exodus after the war nearly ended it. Nineteen growers rebuilt it through the association Lou Nap del Pardailha in 1993, and Slow Food made it a Presidium in 2003.",
 fr:"Pardailhan est perché à 500 mètres dans l’Hérault, et son navet noir a raflé des médailles aux expositions du XIXᵉ siècle et s’expédiait à quelque 500 tonnes par an dans les années 1910, avant que l’exode rural d’après-guerre ne l’efface presque. Dix-neuf producteurs l’ont relevé avec l’association Lou Nap del Pardailha en 1993, et Slow Food en a fait une sentinelle en 2003."},
 tip:{en:"Do not blanch it: removing sulphur is what blanching is for, and this turnip has none. Peel, halve lengthwise and roast in duck fat at 180 °C until the cut face caramelises, which the dense flesh will take 40 minutes to do.",
@@ -1331,7 +1331,7 @@ svg:'<path class="f3 sf" d="M39 34q9-5 18 0 2 15-3 26t-6 16q-2-5-7-16t-2-26z"/><
 
 {id:"parsnip",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Parsnip",fr:"Panais"},latin:"Pastinaca sativa",
 origin:{en:"Eurasia",fr:"Eurasie"},season:[10,11,12,1,2,3],
-flavor:["sweet","earthy","nutty","warm"],
+flavor:["sweet","earthy","nutty","warm"],texture:["firm","fibrous","dry"],
 story:{en:"Before sugar beet, this was how northern Europe sweetened things — parsnips went into cakes, jams and a passable wine. The potato took its place in the eighteenth century and it has been recovering the ground ever since.",
 fr:"Avant la betterave sucrière, c’est ainsi que l’Europe du Nord sucrait — le panais entrait dans les gâteaux, les confitures et un vin acceptable. La pomme de terre lui prit sa place au XVIIIe siècle, et il regagne du terrain depuis."},
 tip:{en:"Cut out the woody core of any large one. It never softens and it drags the whole dish down.",
@@ -1341,7 +1341,7 @@ svg:'<path class="f3 sf" d="M42 28h12l-4 46q-2 6-4 0z"/><path class="s" d="M46 2
 
 {id:"patisson",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Pattypan squash",fr:"Pâtisson"},latin:"Cucurbita pepo var. clypeata",
 origin:{en:"Central America",fr:"Amérique centrale"},season:[7,8,9,10],
-flavor:["mild","delicate","sweet","fresh"],
+flavor:["mild","delicate","sweet","fresh"],texture:["firm","smooth","moist"],
 story:{en:"Its scalloped edge gave it the French name — a pâtisson is a small fluted pie — and English speakers saw a pattypan tin. Picked at the size of a plum it is tender enough to eat whole; left to grow it turns to a hollow, woody shell.",
 fr:"Son bord festonné lui a donné son nom français — un pâtisson est un petit gâteau cannelé — quand les anglophones y voyaient un moule à tarte. Cueilli gros comme une prune il se mange entier ; laissé grossir il devient une coque creuse et ligneuse."},
 tip:{en:"Buy them small — no wider than your palm. Anything larger has already turned fibrous.",
@@ -1351,7 +1351,7 @@ svg:'<path class="f1 sf" d="M48 36.8Q63.7 34.9 71.3 43.1Q84 49.2 77 57.9Q76.8 67
 
 {id:"pea",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Pea",fr:"Petit pois"},latin:"Pisum sativum",
 origin:{en:"Near East",fr:"Proche-Orient"},season:[5,6,7],
-flavor:["sweet","fresh","grassy","delicate"],
+flavor:["sweet","fresh","grassy","delicate"],texture:["tender","smooth","juicy"],
 story:{en:"Gregor Mendel worked out the laws of inheritance on 28,000 pea plants in a monastery garden, choosing them because their traits came in clean pairs. A century earlier the fresh pea was a Versailles craze — courtiers ate until they were ill and boasted of it.",
 fr:"Gregor Mendel établit les lois de l’hérédité sur 28 000 pieds de pois dans un jardin de monastère, choisis parce que leurs caractères allaient par paires nettes. Un siècle plus tôt, le petit pois frais faisait fureur à Versailles — les courtisans en mangeaient jusqu’à l’indigestion et s’en vantaient."},
 tip:{en:"Sugar turns to starch within hours of picking, which is why frozen peas genuinely beat tired fresh ones.",
@@ -1361,7 +1361,7 @@ svg:'<path class="f2 sf" d="M18 48q4 20 28 22 24 2 32-14-9 5-22 5-15 0-23-4-8-5-
 
 {id:"pea-shoots",cat:"vegetables",price:2,pk:"20–35 €/kg",name:{en:"Pea shoots",fr:"Pousses de pois"},latin:"Pisum sativum",
 origin:{en:"Market gardens and glasshouses",fr:"Maraîchage et serres"},season:[3,4,5,6],
-flavor:["sweet","grassy","fresh"],
+flavor:["sweet","grassy","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"In Cantonese kitchens dou miao means only the top two leaves and the tendril, snapped off the vine by hand, and the price steps up sharply for that one inch of plant. The rest of the shoot is sold separately and cooks down to string.",
 fr:"En cuisine cantonaise, le dou miao ne désigne que les deux feuilles du sommet et la vrille, cassées à la main sur la tige, et le prix monte d’un cran pour ces trois centimètres de plante. Le reste de la pousse se vend à part et cuit en filaments."},
 tip:{en:"Wilt them in a very hot pan in under thirty seconds with garlic and a splash of water rather than oil alone — it is the steam that collapses them evenly. Salt afterwards, since salted first they weep and stew.",
@@ -1371,7 +1371,7 @@ svg:'<path class="s" d="M32 80q7-20 16-30"/><path class="f2 sf" d="M44 58q-14-5-
 
 {id:"pearl-onion",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Pearl onion",fr:"Oignon grelot"},latin:"Allium cepa",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[6,7,8,9],
-flavor:["sweet","mild","pungent"],
+flavor:["sweet","mild","pungent"],texture:["firm","smooth","juicy"],
 story:{en:"The grelot is not a variety but a stage: an onion pulled young and small, before the bulb has built the dry layers that make a keeping onion. Classic garnitures split them two ways, glazed à blanc in butter, water and sugar for white stews, and glazed à brun until that sugar caramelises for a bourguignon.",
 fr:"Le grelot n’est pas une variété mais un stade : un oignon arraché jeune, avant que le bulbe n’ait formé les tuniques sèches d’un oignon de garde. Les garnitures classiques les traitent de deux façons — glacés à blanc au beurre, à l’eau et au sucre pour les blanquettes, glacés à brun jusqu’à caramélisation pour un bourguignon."},
 tip:{en:"For either glaze, use only enough water to come halfway up, with a knob of butter and a teaspoon of sugar, then reduce to a syrup and roll them in it. More water and they boil apart before the glaze ever forms.",
@@ -1381,7 +1381,7 @@ svg:'<path class="f1 sf" d="M28 56q0-13 14-13t14 13-6 17-16 0-6-17z"/><path clas
 
 {id:"peperone-crusco",cat:"vegetables",rare:true,price:2,pk:"40–70 €/kg",name:{en:"Peperone crusco di Senise",fr:"Peperone crusco de Senise"},latin:"Capsicum annuum 'Senise'",
 origin:{en:"Senise, Basilicata",fr:"Senise, Basilicate"},season:[],
-flavor:["sweet","toasty","mild","fruity"],
+flavor:["sweet","toasty","mild","fruity"],texture:["brittle","airy","dry"],
 story:{en:"The Senise pepper is bred for drying rather than for the table: thin flesh, little water, and a stalk that holds fast enough for the fruit to be needled onto two-metre strings, the serte, hung outdoors through the summer. Crusco is dialect for crisp, and it describes what happens in the pan, not on the plant.",
 fr:"Le poivron de Senise est sélectionné pour le séchage plutôt que pour la table : chair fine, peu d’eau, et un pédoncule qui tient assez pour qu’on enfile les fruits à l’aiguille en guirlandes de deux mètres, les serte, séchées dehors tout l’été. Crusco veut dire croustillant en dialecte, et décrit ce qui se passe dans la poêle, non sur le pied."},
 tip:{en:"Fry them whole at about 160 °C for three or four seconds — any longer and they blacken and turn bitter, which is the failure everyone meets first. Lift them onto paper; the shatter only arrives as they cool.",
@@ -1391,7 +1391,7 @@ svg:'<path class="s" d="M18 26q30 11 60 0"/><path class="f3 sf" d="M37 34c6 0 9 
 
 {id:"piquillo",cat:"vegetables",price:2,pk:"12–22 €/kg",name:{en:"Piquillo pepper",fr:"Piquillo"},latin:"Capsicum annuum var. piquillo",
 origin:{en:"Navarre, Spain",fr:"Navarre, Espagne"},season:[9,10,11],
-flavor:["sweet","smoky","fruity","mild"],
+flavor:["sweet","smoky","fruity","mild"],texture:["soft","silky","moist"],
 story:{en:"Grown around Lodosa in Navarre and roasted over wood embers, never water or steam — the char is peeled off by hand and the pepper is never washed, so none of the smoke is lost. The name means little beak, for its pointed tip.",
 fr:"Cultivé autour de Lodosa en Navarre et rôti sur braise de bois, jamais à l’eau ni à la vapeur — le brûlé est ôté à la main et le poivron n’est jamais lavé, pour ne rien perdre de la fumée. Le nom veut dire petit bec, pour sa pointe."},
 tip:{en:"They come ready to eat in the jar. Stuff them with brandade or goat's cheese and warm them through — cooking them further is wasted work.",
@@ -1401,7 +1401,7 @@ svg:'<path class="f1 sf" d="M29 44q1-13 15-15t20 12q3 14-4 25-6 10-11 15-4 4-8-3
 
 {id:"pointed-cabbage",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Pointed cabbage",fr:"Chou pointu"},latin:"Brassica oleracea var. capitata",
 origin:{en:"Northern European spring gardens",fr:"Potagers de printemps d’Europe du Nord"},season:[4,5,6,7],
-flavor:["sweet","mild","grassy"],
+flavor:["sweet","mild","grassy"],texture:["tender","crisp","juicy"],
 story:{en:"The pointed spring cabbage, whose old Paris market form is the cœur de bœuf des Vertus, is cut before the head packs tight, which is why its leaves carry no woody rib to trim out. Sown in autumn, it arrives in April, months ahead of any storable white cabbage.",
 fr:"Le chou pointu de printemps, dont la vieille forme des maraîchers parisiens est le « cœur de bœuf des Vertus », se coupe avant que la pomme ne se serre : ses feuilles n’ont pas de côte ligneuse à retirer. Semé à l’automne, il arrive en avril, des mois avant tout chou blanc de garde."},
 tip:{en:"Quarter it through the core, oil the cut faces and roast at 220 °C for 15 minutes: the outer leaves char while the inside steams in its own water. A dense white cabbage at the same temperature only dries out.",
@@ -1411,7 +1411,7 @@ svg:'<path class="f1 sf" d="M48 16q15 23 15 40 0 17-15 17t-15-17q0-17 15-40z"/><
 
 {id:"poivrade-artichoke",cat:"vegetables",price:2,pk:"1–2,50 €/pièce",name:{en:"Poivrade artichoke",fr:"Artichaut poivrade"},latin:"Cynara cardunculus var. scolymus",
 origin:{en:"Provence",fr:"Provence"},season:[4,5,6,7],
-flavor:["bitter","nutty","fresh"],
+flavor:["bitter","nutty","fresh"],texture:["tender","crisp","moist"],
 story:{en:"The poivrade is the Provençal violet picked small, before the choke has had time to form, so nothing inside needs removing. Cut in half it shows a solid pale heart the whole way down, where the same variety left three more weeks would have to be gutted before cooking.",
 fr:"La poivrade est le violet de Provence cueilli petit, avant que le foin n’ait eu le temps de se former : rien à retirer à l’intérieur. Coupée en deux, elle montre un cœur pâle et plein jusqu’en bas, là où le même artichaut laissé trois semaines de plus devrait être vidé avant cuisson."},
 tip:{en:"Trim into a bowl of lemon water and shave raw on a mandoline, or cook it whole barigoule with white wine, olive oil and thyme for 20 minutes. Cut surfaces blacken within a minute in open air.",
@@ -1421,7 +1421,7 @@ svg:'<path class="f2 sf" d="M48 16q15 9 15 26t-15 22q-15-5-15-22T48 16z"/><path 
 
 {id:"piennolo-tomato",cat:"vegetables",price:3,pk:"12–22 €/kg",name:{en:"Pomodorino del Piennolo del Vesuvio",fr:"Tomate du Piennolo del Vesuvio"},latin:"Solanum lycopersicum",
 origin:{en:"Slopes of Vesuvius, Campania",fr:"Pentes du Vésuve, Campanie"},season:[7,8,9,10,11,12,1,2,3],
-flavor:["tangy","sweet","umami","fresh"],
+flavor:["tangy","sweet","umami","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"Whole clusters are threaded onto a hemp cord tied into a ring — the piennolo, Neapolitan for pendulum — and hung indoors, where the fruit goes on ripening for seven or eight months with no refrigeration at all. The volcanic soil gives a thick skin and very little water, and it is that skin, not any treatment, that does the preserving.",
 fr:"Les grappes entières sont enfilées sur une cordelette de chanvre nouée en anneau — le piennolo, « pendule » en napolitain — puis suspendues à l’intérieur, où les fruits continuent de mûrir sept à huit mois sans aucun froid. Le sol volcanique donne une peau épaisse et très peu d’eau, et c’est cette peau, et non un traitement, qui assure la conservation."},
 tip:{en:"Do not peel them; the skin is the whole point. Crush them by hand into hot oil and let them collapse over about ten minutes, seeds and gel included — that is where most of the acidity balancing the sugar sits.",
@@ -1431,7 +1431,7 @@ svg:'<path class="s" d="M48 12v62"/><circle class="f3 sf" cx="34" cy="40" r="12"
 
 {id:"potato",cat:"vegetables",price:1,pk:"1–2,50 €/kg",name:{en:"Potato",fr:"Pomme de terre"},latin:"Solanum tuberosum",
 origin:{en:"Andes, Peru & Bolivia",fr:"Andes, Pérou & Bolivie"},season:[],
-flavor:["earthy","mild","buttery"],
+flavor:["earthy","mild","buttery"],texture:["firm","granular","dry"],
 story:{en:"France distrusted it until the 1780s, when Parmentier posted armed guards around his potato fields by day — and withdrew them at night, inviting theft. The trick worked: the stolen tuber conquered the country and now bears his name on menus.",
 fr:"La France s’en méfia jusqu’aux années 1780, quand Parmentier fit garder ses champs de pommes de terre le jour — et retira les gardes la nuit, invitant au vol. La ruse fonctionna : le tubercule dérobé conquit le pays et porte désormais son nom sur les menus."},
 tip:{en:"Waxy varieties hold their shape for salads; floury ones collapse into the silkiest purées. Never chase both in one potato.",
@@ -1441,7 +1441,7 @@ svg:'<path class="f1 sf" d="M20 58q-3-10 6-16 6-5 13-4 5-5 13-4 10 0 16 6 8 7 7 
 
 {id:"aspergette",cat:"vegetables",rare:true,price:2,pk:"15–25 €/kg",name:{en:"Prussian asparagus",fr:"Aspergette"},latin:"Ornithogalum pyrenaicum",
 origin:{en:"Woodland edges, southwest France",fr:"Lisières de bois du Sud-Ouest"},season:[5,6],
-flavor:["milky","delicate","grassy"],
+flavor:["milky","delicate","grassy"],texture:["tender","fibrous","moist"],
 story:{en:"What is eaten is not a shoot but the unopened flower spike of a star-of-Bethlehem bulb, cut before the buds break. It was gathered on a commercial scale around Bath in England and sold in the market there as Bath asparagus, while in southwest France the same spike is cut from woodland edges and called aspergette.",
 fr:"Ce que l’on mange n’est pas une pousse mais la hampe florale encore fermée d’un ornithogale, coupée avant que les boutons ne s’ouvrent. On la récoltait à échelle commerciale autour de Bath, en Angleterre, où elle se vendait au marché sous le nom de « Bath asparagus » ; dans le Sud-Ouest, la même hampe se coupe en lisière de bois et s’appelle aspergette."},
 tip:{en:"Two minutes in boiling salted water and no more, since the buds are already tender and go to mush quickly. Eat the spike whole, buds included, with butter or a soft egg; the slight bitterness at the tip is correct.",
@@ -1451,7 +1451,7 @@ svg:'<path class="s" d="M48 84V24M48 30l-9 2M48 40l9 2M48 50l-9 2M48 60l9 2M48 7
 
 {id:"pumpkin",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Pumpkin",fr:"Potiron"},latin:"Cucurbita maxima",
 origin:{en:"North America",fr:"Amérique du Nord"},season:[9,10,11,12],
-flavor:["sweet","earthy","mild","creamy"],
+flavor:["sweet","earthy","mild","creamy"],texture:["hard","fibrous","moist"],
 story:{en:"The jack-o'-lantern began in Ireland as a carved turnip, hollowed to hold an ember and ward off a wandering soul called Stingy Jack. Irish emigrants found the American pumpkin far easier to cut, and the turnip was quietly abandoned.",
 fr:"Le jack-o’-lantern est né en Irlande d’un navet creusé pour porter une braise et écarter une âme errante nommée Stingy Jack. Les émigrants irlandais trouvèrent le potiron américain bien plus facile à tailler, et le navet fut discrètement abandonné."},
 tip:{en:"The big carving varieties are watery and bland. Buy a small dense one for eating and leave the giants to the lanterns.",
@@ -1461,7 +1461,7 @@ svg:'<path class="f1 sf" d="M24 56q0-18 24-18t24 18-24 20-24-20z"/><path class="
 
 {id:"puntarelle",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Puntarelle",fr:"Puntarelle"},latin:"Cichorium intybus var. foliosum",
 origin:{en:"Lazio",fr:"Latium"},season:[11,12,1,2,3],
-flavor:["bitter","fresh","mild"],
+flavor:["bitter","fresh","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Puntarelle are the hollow inner shoots of a Catalogna chicory, and Roman cooks split them lengthwise on a wire grid so the strips curl in iced water within twenty minutes. The curl is osmotic rather than decorative: cut cells take up water and the strip bends outward, and the bitterness leaches into the bath at the same time.",
 fr:"Les puntarelle sont les jeunes pousses creuses d’une chicorée catalogne ; les cuisiniers romains les fendent en lanières sur une grille de fil de fer et les font boucler vingt minutes dans l’eau glacée. La boucle est osmotique et non décorative : les cellules coupées se gorgent d’eau, la lanière se courbe, et l’amertume passe dans le bain au même moment."},
 tip:{en:"The dressing is pounded anchovy, garlic and vinegar finished with oil — no lemon, and no more than an hour ahead or the strips go limp. Keep the outer leaves for cooking, as only the shoots are eaten raw.",
@@ -1471,7 +1471,7 @@ svg:'<path class="f2 sf" d="M35 66q13 6 26 0 2 11-13 15t-13-15z"/><path class="f
 
 {id:"purple-asparagus",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Purple asparagus",fr:"Asperge violette"},latin:"Asparagus officinalis",
 origin:{en:"Albenga, Liguria",fr:"Albenga, Ligurie"},season:[4,5,6],
-flavor:["sweet","grassy","delicate"],
+flavor:["sweet","grassy","delicate"],texture:["tender","crisp","juicy"],
 story:{en:"The Violetto d'Albenga owes its colour to a doubled chromosome count, forty instead of twenty, rather than to any growing method, and it carries roughly a fifth more sugar than a green spear. Cut as the tip breaks daylight, it never builds the fibre a green spear develops standing up.",
 fr:"Le Violetto d’Albenga doit sa couleur à un doublement chromosomique — quarante au lieu de vingt — et non à une méthode de culture ; il porte environ un cinquième de sucre en plus qu’un turion vert. Coupée dès que la pointe perce le jour, elle ne développe pas la fibre que fabrique une asperge verte en montant."},
 tip:{en:"Boiling turns it green in under a minute, since the anthocyanins are water-soluble and heat-fragile and simply wash out. Eat it raw and shaved, or roast it dry at high heat to keep some colour, and never peel it.",
@@ -1481,7 +1481,7 @@ svg:'<path class="f2 sf" d="M36 84q-5-32 0-50 2-11 4-15 2 4 4 15 5 18 0 50-4 2-8
 
 {id:"purple-sprouting-broccoli",cat:"vegetables",price:2,pk:"6–10 €/kg",name:{en:"Purple sprouting broccoli",fr:"Brocoli à jets violets"},latin:"Brassica oleracea var. italica",
 origin:{en:"British kitchen gardens",fr:"Potagers britanniques"},season:[1,2,3,4],
-flavor:["nutty","sweet","bitter"],
+flavor:["nutty","sweet","bitter"],texture:["tender","crisp","moist"],
 story:{en:"It needs a winter to work: sown in spring, it stands through the cold, and only a proper chill makes it throw its purple side shoots the following February. That timing lands it in the hungry gap, the weeks when the stores are empty and nothing new has come out of the ground yet.",
 fr:"Il lui faut un hiver : semé au printemps, il traverse le froid, et seul un vrai coup de gel le décide à lancer ses jets violets en février suivant. Ce calendrier le fait tomber dans la « soudure », ces semaines où les réserves sont vides et où rien de neuf n’est encore sorti de terre."},
 tip:{en:"Cut the leading spear first — the plant answers by pushing out more side shoots. Take the whole thing, leaf and stem: three minutes in hard-salted water, dressed while hot so it drinks the oil.",
@@ -1491,7 +1491,7 @@ svg:'<path class="f2 sf" d="M48 22q8 0 9 8t-9 12q-10-2-9-12t9-8z"/><path class="
 
 {id:"purslane",cat:"vegetables",price:2,pk:"8–14 €/kg",name:{en:"Purslane",fr:"Pourpier"},latin:"Portulaca oleracea",
 origin:{en:"India & the Middle East",fr:"Inde & Moyen-Orient"},season:[6,7,8,9],
-flavor:["sour","fresh","briny","grassy"],
+flavor:["sour","fresh","briny","grassy"],texture:["tender","crunchy","juicy"],
 story:{en:"Most of the world pulls it up as a weed; Greece, Turkey and Mexico eat it by the kilo. Its thick leaves are a succulent's water store, and it carries more omega-3 than any other leafy plant that has been measured.",
 fr:"La plupart du monde l’arrache comme mauvaise herbe ; la Grèce, la Turquie et le Mexique en mangent au kilo. Ses feuilles épaisses sont la réserve d’eau d’une plante grasse, et elle porte plus d’oméga-3 qu’aucune autre plante à feuilles mesurée."},
 tip:{en:"Eat it raw for the lemony snap. The stems are as good as the leaves — do not strip them out.",
@@ -1501,7 +1501,7 @@ svg:'<path class="s" d="M46 82q1-14 1-24 0-8 1-12"/><path class="f1 sf" d="M45 6
 
 {id:"radicchio",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Radicchio",fr:"Trévise"},latin:"Cichorium intybus var. foliosum",
 origin:{en:"Veneto, Italy",fr:"Vénétie, Italie"},season:[10,11,12,1,2],
-flavor:["bitter","earthy","sweet","fresh"],
+flavor:["bitter","earthy","sweet","fresh"],texture:["firm","crisp","moist"],
 story:{en:"The long Treviso variety is forced in spring water drawn from underground, which keeps it at a constant temperature while the outer leaves are stripped away — a process closer to a spa treatment than farming, and it takes weeks.",
 fr:"La variété longue de Trévise est forcée dans l’eau de source tirée du sous-sol, qui la maintient à température constante pendant qu’on ôte les feuilles extérieures — un procédé plus proche du thermalisme que de l’agriculture, et qui prend des semaines."},
 tip:{en:"Grill or roast it. Heat and a little sugar or balsamic turn the bitterness into something closer to caramel.",
@@ -1511,7 +1511,7 @@ svg:'<path class="f2 sf" d="M18 66q-2-16 8-26 8-11 22-11 13 0 21 10 10 9 9 27-14
 
 {id:"radish",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Radish",fr:"Radis"},latin:"Raphanus sativus",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[4,5,6,7,8,9],
-flavor:["peppery","fresh","hot","mild"],
+flavor:["peppery","fresh","hot","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Herodotus recorded that the builders of the Great Pyramid were fed radishes, onions and garlic. The heat is a defence: crushing the cells releases an enzyme that manufactures the pungent compound on the spot, which is why a whole radish smells of nothing.",
 fr:"Hérodote rapporte que les bâtisseurs de la Grande Pyramide étaient nourris de radis, d’oignons et d’ail. Le piquant est une défense : écraser les cellules libère une enzyme qui fabrique le composé âcre sur-le-champ, d’où le radis entier qui ne sent rien."},
 tip:{en:"Butter and salt is not a garnish, it is the recipe. The fat blunts the heat and the salt draws out the sweetness.",
@@ -1521,7 +1521,7 @@ svg:'<circle class="f1 sf" cx="46" cy="56" r="14"/><path class="s" d="M46 70q2 1
 
 {id:"rampion",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Rampion",fr:"Raiponce"},latin:"Campanula rapunculus",
 origin:{en:"European hedgerows and gardens",fr:"Haies et potagers d’Europe"},season:[10,11,12,1,2,3],
-flavor:["nutty","milky","mild"],
+flavor:["nutty","milky","mild"],texture:["firm","crisp","moist"],
 story:{en:"Rampion is the plant behind the Grimm tale, since Rapunzel is the German name for Campanula rapunculus, the salad the pregnant wife craved from the witch's garden. Root and rosette are eaten together, the slim white root raw like a radish, and it is a bellflower with no relation to chicory or to the wild ramps it is sometimes confused with.",
 fr:"La raiponce est la plante du conte des Grimm : Rapunzel est le nom allemand de Campanula rapunculus, la salade que convoitait la femme enceinte dans le jardin de la sorcière. On en mange tout, la racine blanche et fine crue comme un radis et la rosette en feuilles ; c’est une campanule, sans lien avec la chicorée ni avec l’ail des ours avec lequel on la confond parfois."},
 tip:{en:"Scrub rather than peel, because the skin is thin and the milky, faintly nutty flavour sits just beneath it. Dress root and leaves together raw with walnut oil and a soft-boiled egg; cooking flattens it into a bland parsnip.",
@@ -1531,7 +1531,7 @@ svg:'<path class="f1 sf" d="M44 54q4-5 9 0 2 14 0 22t-4 8-4-8-1-22z"/><path clas
 
 {id:"ramps",cat:"vegetables",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Ramps",fr:"Ail des bois"},latin:"Allium tricoccum",
 origin:{en:"Eastern North American woods",fr:"Sous-bois de l'est de l'Amérique du Nord"},season:[4,5],
-flavor:["pungent","grassy","fresh"],
+flavor:["pungent","grassy","fresh"],texture:["tender","smooth","juicy"],
 story:{en:"Chicago is named after it: shikaakwa, the Miami-Illinois word for the wild onion that grew on that ground. A bulb takes years to reach picking size, and Quebec has banned the sale of wild leek since 1995, capping a forager at fifty bulbs.",
 fr:"Chicago porte son nom : shikaakwa, le mot miami-illinois pour l'ail sauvage qui poussait là. Un bulbe met des années à atteindre la taille de cueillette, et le Québec interdit la vente de l'ail des bois depuis 1995 en limitant chaque cueilleur à cinquante bulbes."},
 tip:{en:"Cut the leaf and leave the bulb in the ground and the patch outlives you. Pickle the bulbs in equal vinegar and water and keep the leaves raw - heat strips the garlic out of them in seconds.",
@@ -1541,7 +1541,7 @@ svg:'<path class="f1 sf" d="M46 56q-20-6-24-26 18 2 24 22z"/><path class="f1 sf"
 
 {id:"rat-tail-radish",cat:"vegetables",rare:true,price:2,pk:"15–25 €/kg",name:{en:"Rat-tail radish pod",fr:"Radis serpent"},latin:"Raphanus caudatus",
 origin:{en:"Java and South Asia",fr:"Java et Asie du Sud"},season:[7,8,9],
-flavor:["peppery","pungent","fresh"],
+flavor:["peppery","pungent","fresh"],texture:["firm","crisp","juicy"],
 story:{en:"It is a radish grown for its seed pods, and it reached European seed catalogues in the 1860s billed as the Java radish, a curiosity that never caught on though the pods had long been an ordinary vegetable in India. The root beneath is woody and inedible: the plant has put everything into the pod.",
 fr:"C’est un radis cultivé pour ses siliques, arrivé dans les catalogues grainiers européens dans les années 1860 sous le nom de radis de Java — une curiosité qui n’a jamais pris, alors que les gousses sont un légume ordinaire en Inde depuis bien plus longtemps. La racine, elle, est ligneuse et immangeable : la plante a tout mis dans la gousse."},
 tip:{en:"Take them young, at pencil thickness or less; beyond that a papery string runs down each seam and the seeds go hard. Thirty seconds in hot oil with garlic, or raw in a quick vinegar pickle — anything longer and the pepper heat cooks straight out.",
@@ -1551,7 +1551,7 @@ svg:'<path class="f2 sf" d="M46 76q-4-20-16-30 2-4 6-2 12 12 14 32z"/><path clas
 
 {id:"ratte-potato",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Ratte potato",fr:"Pomme de terre ratte"},latin:"Solanum tuberosum",
 origin:{en:"France and Denmark",fr:"France et Danemark"},season:[5,6,7,8,9],
-flavor:["nutty","buttery","earthy"],
+flavor:["nutty","buttery","earthy"],texture:["firm","smooth","moist"],
 story:{en:"La Ratte dates from 1872 and had nearly disappeared by the 1930s through seed degeneration before French growers rebuilt the stock. Its density is the point: low-water, high-starch flesh that absorbs an absurd quantity of fat, which is why Robuchon built his purée on it at a restaurant ratio of two parts potato to one part butter.",
 fr:"La ratte date de 1872 et avait presque disparu dans les années 1930, la semence dégénérée, avant que des producteurs français ne la relèvent. Sa densité fait tout : une chair pauvre en eau et riche en amidon qui absorbe une quantité déraisonnable de gras — d’où la purée de Robuchon, deux parts de pomme de terre pour une de beurre au restaurant."},
 tip:{en:"Cook them in their skins from cold salted water brought up slowly, then peel hot and pass them through a drum sieve, never a blender: a blade tears the starch and turns the purée to glue. Add the butter cold, in cubes, off the heat.",
@@ -1561,7 +1561,7 @@ svg:'<path class="f2 sf" d="M22 52q0-14 16-18t32 5q10 7 5 15t-21 9-25-3-7-8z"/><
 
 {id:"red-amaranth-leaf",cat:"vegetables",rare:true,price:1,pk:"4–8 €/kg",name:{en:"Red amaranth leaf",fr:"Amarante rouge"},latin:"Amaranthus tricolor",
 origin:{en:"Tropical Asia",fr:"Asie tropicale"},season:[6,7,8,9],
-flavor:["earthy","grassy","mild"],
+flavor:["earthy","grassy","mild"],texture:["tender","fibrous","moist"],
 story:{en:"It is the same genus as the grain amaranths but an entirely different job: this one is grown for leaf, and the magenta that runs out of it is amaranthin, a water-soluble pigment named for the family. In Shanghai the pink liquid at the bottom of the dish is the point — rice is spooned into it, and a plate of amaranth that has not stained counts as a failure.",
 fr:"C’est le même genre que les amarantes à grain, mais un tout autre métier : celle-ci se cultive pour la feuille, et le magenta qui en sort est l’amaranthine, un pigment hydrosoluble qui porte le nom de la famille. À Shanghai, le liquide rose au fond du plat est l’objectif — on y verse le riz, et une amarante qui n’a pas taché est un échec."},
 tip:{en:"Cook it in a dry, very hot pan with garlic and only the water clinging to the leaves: any added liquid dilutes the colour and you lose the sauce. Two minutes at most, with the thick stems given a minute's head start, since the leaves collapse in thirty seconds.",
@@ -1571,7 +1571,7 @@ svg:'<path class="s" d="M48 84V28"/><path class="f2 sf" d="M46 62q-20 4-24-8t8-2
 
 {id:"red-cabbage",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Red cabbage",fr:"Chou rouge"},latin:"Brassica oleracea var. rubra",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[9,10,11,12,1,2],
-flavor:["sweet","earthy","tangy","mild"],
+flavor:["sweet","earthy","tangy","mild"],texture:["firm","crisp","moist"],
 story:{en:"Its colour is a working pH meter: the anthocyanins turn blue in alkali and red in acid, which is why an unacidulated pot comes out an unappetising grey-violet. German and Flemish cooks solved this centuries before chemistry explained it, by always adding apple or vinegar.",
 fr:"Sa couleur est un pH-mètre : les anthocyanes virent au bleu en milieu alcalin et au rouge en milieu acide, d’où la casserole non acidulée qui sort d’un gris-violet peu appétissant. Les cuisines allemande et flamande avaient résolu cela des siècles avant que la chimie ne l’explique, en ajoutant toujours pomme ou vinaigre."},
 tip:{en:"Add the acid at the start, not the end. Vinegar or apple early keeps it crimson; added late it never recovers the colour.",
@@ -1581,7 +1581,7 @@ svg:'<path class="f2 sf" d="M48 20Q70 21 75 40 80 59 62 70 43 79 30 65 17 50 24 
 
 {id:"potimarron",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Red kuri squash",fr:"Potimarron"},latin:"Cucurbita maxima",
 origin:{en:"Japan",fr:"Japon"},season:[9,10,11,12,1],
-flavor:["sweet","nutty","earthy","creamy"],
+flavor:["sweet","nutty","earthy","creamy"],texture:["hard","granular","dry"],
 story:{en:"The French name is a portmanteau of potiron and marron — pumpkin and chestnut — and it is an accurate tasting note rather than a marketing one. It arrived from Japan, where it is called uchiki kuri, and took over French markets in a generation.",
 fr:"Le nom français est un mot-valise de potiron et marron, et c’est une note de dégustation exacte plutôt qu’un argument commercial. Il est venu du Japon, où on l’appelle uchiki kuri, et a conquis les marchés français en une génération."},
 tip:{en:"Do not peel it. The skin softens completely in cooking and carries most of the chestnut flavour.",
@@ -1591,7 +1591,7 @@ svg:'<path class="f1 sf" d="M26 56q0-18 22-18t22 18-22 20-22-20z"/><path class="
 
 {id:"red-onion",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Red onion",fr:"Oignon rouge"},latin:"Allium cepa var. cepa",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[7,8,9,10],
-flavor:["sweet","pungent","fresh","mild"],
+flavor:["sweet","pungent","fresh","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Milder and sweeter than a yellow onion because it carries less of the sulphur compound that makes you cry, which is why it is the one eaten raw. Its purple comes from the same anthocyanins as red cabbage, and it bleeds them into vinegar within minutes.",
 fr:"Plus doux et plus sucré que l’oignon jaune parce qu’il porte moins du composé soufré qui fait pleurer, d’où son usage cru. Son violet vient des mêmes anthocyanes que le chou rouge, et il les libère dans le vinaigre en quelques minutes."},
 tip:{en:"Soak raw slices in cold water for ten minutes to pull the harshness out, or pickle them briefly in vinegar — they turn bright pink.",
@@ -1601,7 +1601,7 @@ svg:'<path class="f1 sf" d="M30 54q0-16 18-16t18 16-18 22-18-22z"/><path class="
 
 {id:"red-orache",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Red orache",fr:"Arroche rouge"},latin:"Atriplex hortensis var. rubra",
 origin:{en:"Old European kitchen gardens",fr:"Anciens potagers européens"},season:[6,7,8,9],
-flavor:["mild","salty","earthy"],
+flavor:["mild","salty","earthy"],texture:["tender","moist"],
 story:{en:"European gardeners grew orache as their summer green for centuries and abandoned it when spinach arrived, which crops earlier and does not bolt through July. The crimson form was kept on for its colour: the leaves bleed into a pale sauce or a dough and stain it pink.",
 fr:"Les jardiniers européens ont cultivé l'arroche comme légume-feuille d'été pendant des siècles avant de l'abandonner pour l'épinard, plus précoce et moins prompt à monter en juillet. La forme rouge a survécu pour sa couleur : ses feuilles saignent dans une sauce claire ou une pâte et la teintent de rose."},
 tip:{en:"Cook it covered in nothing but its own water and keep acid away — a squeeze of lemon turns the crimson to dull brown. Salt it lightly, since the leaf is already saline.",
@@ -1611,7 +1611,7 @@ svg:'<path class="f3 sf" d="M48 18q14 22 16 32-9-3-12 2 0 8-4 14-4-6-4-14-3-5-12
 
 {id:"rocambole-garlic",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Rocambole garlic",fr:"Ail rocambole"},latin:"Allium scorodoprasum",
 origin:{en:"Hedges and old gardens, Europe",fr:"Haies et vieux jardins d'Europe"},season:[5,6,7],
-flavor:["mild","grassy","pungent"],
+flavor:["mild","grassy","pungent"],texture:["firm","smooth","dry"],
 story:{en:"Rocambole is a German word gone French - Rockenbolle, the rye bulb - and the plant is not garlic at all but a sand leek, Allium scorodoprasum. What is sold is the bulbil head at the top of the stem, which coils into a loop before it straightens, and the taste sits closer to a mild leek than to a clove.",
 fr:"Rocambole est un mot allemand francisé, Rockenbolle, « bulbe de seigle », et la plante n'est pas de l'ail mais un poireau des sables, Allium scorodoprasum. Ce qu'on achète est la tête de bulbilles au sommet de la tige, qui s'enroule en boucle avant de se redresser ; le goût tient du poireau doux plus que de la gousse."},
 tip:{en:"Pickle the bulbils in a light vinegar brine and serve them whole like capers, at the end of cooking. Cut the scapes while they are still curled - once the stem has straightened it is fibrous.",
@@ -1621,7 +1621,7 @@ svg:'<g transform="translate(2.93 3.05) scale(0.939)"><path class="s" d="M48 80q
 
 {id:"rock-samphire",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Rock samphire",fr:"Criste marine"},latin:"Crithmum maritimum",
 origin:{en:"Atlantic and Mediterranean sea cliffs",fr:"Falaises atlantiques et méditerranéennes"},season:[6,7,8,9],
-flavor:["resinous","briny","herbal"],
+flavor:["resinous","briny","herbal"],texture:["firm","crunchy","juicy"],
 story:{en:"Crithmum maritimum grows straight out of sea cliffs, and Shakespeare hangs a man halfway down one gathering it in King Lear, calling it a ”dreadful trade” — worth the risk because pickled samphire sold well in London. It is an umbellifer, kin to carrot and fennel, which is why it smells resinous and nothing like the salicornia sold under the same English name.",
 fr:"Crithmum maritimum pousse à même la falaise, et Shakespeare suspend un homme au-dessus du vide pour la cueillir dans « Le Roi Lear », métier qu’il juge effroyable : le risque payait, car la criste au vinaigre se vendait bien à Londres. C’est une ombellifère, cousine de la carotte et du fenouil, d’où son parfum résineux qui n’a rien de la salicorne."},
 tip:{en:"Blanch it 30 seconds and pickle it in a brine of two parts vinegar to one of water with fennel seed; raw it is aggressively medicinal, and the blanch is what makes it edible. Never salt the brine, as the plant brings its own.",
@@ -1631,7 +1631,7 @@ svg:'<path class="s" d="M48 84V32M32 32h32M35 32l-3-8M42 32l-2-8M55 32l2-8M62 32
 
 {id:"roquette",cat:"vegetables",price:1,pk:"8–14 €/kg",name:{en:"Rocket",fr:"Roquette"},latin:"Eruca vesicaria",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[4,5,6,9,10],
-flavor:["peppery","bitter","grassy","pungent"],
+flavor:["peppery","bitter","grassy","pungent"],texture:["tender","moist"],
 story:{en:"Rome grew it as an aphrodisiac and it was banned from monastery gardens for exactly that reason. The pepper is a mustard-family defence, and it grows sharper the drier and hotter the summer — a stressed plant is a fiercer one.",
 fr:"Rome la cultivait comme aphrodisiaque, et c’est précisément pour cela qu’elle fut bannie des jardins de monastères. Le poivré est une défense de la famille des moutardes, et il s’aiguise à mesure que l’été est sec et chaud — une plante stressée est une plante plus féroce."},
 tip:{en:"Add it to hot pasta off the heat and let it wilt from the residual warmth. Cooked directly, the pepper vanishes entirely.",
@@ -1641,7 +1641,7 @@ svg:'<path class="f1 sf" d="M46 79q-2-8-1-15-12 2-16-5 7-3 15-5v-4q-13 1-17-6 8-
 
 {id:"romanesco",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Romanesco",fr:"Chou romanesco"},latin:"Brassica oleracea var. botrytis",
 origin:{en:"Lazio, Italy",fr:"Latium, Italie"},season:[9,10,11,12],
-flavor:["nutty","sweet","mild","grassy"],
+flavor:["nutty","sweet","mild","grassy"],texture:["firm","crunchy","moist"],
 story:{en:"Every spiral is made of smaller spirals of the same shape, all the way down — a natural fractal, and the bud count follows the Fibonacci sequence. It appeared in Roman market records in the sixteenth century, three hundred years before anyone had the mathematics to describe it.",
 fr:"Chaque spirale est faite de spirales plus petites de même forme, à l’infini — une fractale naturelle, dont le nombre de bourgeons suit la suite de Fibonacci. Il apparaît dans les registres des marchés romains au XVIe siècle, trois cents ans avant que l’on ait les mathématiques pour le décrire."},
 tip:{en:"Keep the cooking short and the pieces large — its whole appeal is visual, and overcooking collapses the cones to mush.",
@@ -1651,7 +1651,7 @@ svg:'<path class="f2 sf" d="M48 26l14 34H34z"/><path class="f2 sf" d="M36 46l7 1
 
 {id:"rosa-di-gorizia",cat:"vegetables",luxe:true,price:4,pk:"60–150 €/kg",name:{en:"Rosa di Gorizia",fr:"Rosa di Gorizia"},latin:"Cichorium intybus",
 origin:{en:"Gorizia, Friuli, Italy",fr:"Gorizia, Frioul, Italie"},season:[12,1],
-flavor:["bitter","sweet","delicate"],
+flavor:["bitter","sweet","delicate"],texture:["firm","crisp","moist"],
 story:{en:"It is a chicory sown in spring and left in the ground until the frosts, then lifted, replanted in dark cellars and opened leaf by leaf by hand: eight months of work for a head the size of a fist. A handful of growers in the hills around Gorizia produce all of it, in December and January, and it is trimmed and dressed at the table rather than in the kitchen.",
 fr:"C’est une chicorée semée au printemps et laissée en terre jusqu’aux gelées, puis arrachée, replantée dans des caves obscures et ouverte feuille à feuille à la main : huit mois de travail pour une rose de la taille d’un poing. Une poignée de producteurs des collines de Gorizia en fournit la totalité, en décembre et janvier, et on la pare et l’assaisonne à table plutôt qu’en cuisine."},
 tip:{en:"Do not shred it — the rose is what you are paying for. Lift off the outer leaves only if there is grit, then dress the whole head at the table with oil, salt and a drop of vinegar; with warm pancetta the vinegar goes into the pan, never onto the chicory.",
@@ -1661,7 +1661,7 @@ svg:'<path class="f1 sf" d="M48 20q22 4 26 24t-26 32-26-32 26-24z"/><path class=
 
 {id:"roscoff-pink-onion",cat:"vegetables",sign:"AOP",price:2,pk:"4–7 €/kg",name:{en:"Roscoff pink onion",fr:"Oignon rosé de Roscoff"},latin:"Allium cepa",
 origin:{en:"Roscoff, Brittany (AOP)",fr:"Roscoff, Bretagne (AOP)"},season:[8,9,10,11,12,1,2,3,4],
-flavor:["sweet","mild","fresh"],
+flavor:["sweet","mild","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"From 1828 Breton growers sailed to Britain with this onion and sold it door to door from bicycles, strings across the handlebars - the Onion Johnnies, who gave the English their picture of a Frenchman in a beret. It took AOC status in 2009, the first French onion to be given one.",
 fr:"Dès 1828, des cultivateurs bretons traversaient la Manche pour le vendre en porte-à-porte, les tresses en travers du guidon : les Johnnies, à qui les Anglais doivent leur image du Français en béret. Il a obtenu l'AOC en 2009, le premier oignon français à en décrocher une."},
 tip:{en:"Braise it whole, split through the root, in butter and a little cider - it keeps its shape where a yellow onion would fall apart. It is a poor keeper: bought in autumn it will not see out the spring.",
@@ -1671,7 +1671,7 @@ svg:'<g transform="translate(2.83 2.95) scale(0.941)"><path class="s" d="M20 20h
 
 {id:"salsify",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Salsify",fr:"Salsifis"},latin:"Tragopogon porrifolius",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[1,2,10,11,12],
-flavor:["delicate","earthy","sweet","milky"],
+flavor:["delicate","earthy","sweet","milky"],texture:["firm","fibrous","moist"],
 story:{en:"The Victorians called it the “oyster plant”, swearing its poached flesh tasted of the sea. A star of 19th-century kitchen gardens, it vanished into tins and school canteens before the forgotten-vegetable revival gave it back its silky, faintly saline dignity.",
 fr:"Les Victoriens l’appelaient « plante huître », jurant que sa chair pochée avait un goût de mer. Vedette des potagers du XIXe siècle, il disparut dans les conserves et les cantines avant que la vague des légumes oubliés ne lui rende sa dignité soyeuse, vaguement saline.",},
 tip:{en:"It oxidises in minutes: drop the peeled batons straight into lemon water, then braise in butter. A shaving of truffle makes it hold its own on a tasting menu.",
@@ -1681,7 +1681,7 @@ svg:'<path class="f1 sf" d="M34 22c1 20 5 38 13 56 1 3 3 3 4 0 6-18 5-38 3-56z"/
 
 {id:"samphire",cat:"vegetables",price:2,pk:"15–30 €/kg",name:{en:"Samphire",fr:"Salicorne"},latin:"Salicornia europaea",
 origin:{en:"Atlantic & Channel salt marshes",fr:"Marais salants de l’Atlantique & de la Manche"},season:[5,6,7,8],
-flavor:["briny","fresh","grassy","salty"],
+flavor:["briny","fresh","grassy","salty"],texture:["crunchy","fibrous","juicy"],
 story:{en:"A vegetable that grows with its feet in the tide, harvested from salt marshes where nothing else deigns to live. Once pickled by coastal families as the “poor man’s asparagus”, it now garnishes fish at starred tables — the sea pre-salts it better than any cook could.",
 fr:"Un légume qui pousse les pieds dans la marée, cueilli dans les prés salés où rien d’autre ne daigne vivre. Jadis confite au vinaigre par les familles côtières comme « asperge du pauvre », elle garnit désormais les poissons des tables étoilées — la mer la sale mieux qu’aucun cuisinier."},
 tip:{en:"Never add salt. Blanch thirty seconds, refresh, toss in butter at the last moment — it should crunch like a green wave.",
@@ -1691,7 +1691,7 @@ svg:'<path class="f1 sf" d="M44 82q-3-16-1-26 1-9 2-16 1-7 4-14 4 8 4 15t1 17q1 
 
 {id:"san-marzano-tomato",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"San Marzano tomato",fr:"Tomate San Marzano"},latin:"Solanum lycopersicum",
 origin:{en:"Agro Sarnese-Nocerino, Campania",fr:"Agro Sarnese-Nocerino, Campanie"},season:[7,8,9],
-flavor:["sweet","umami","tangy"],
+flavor:["sweet","umami","tangy"],texture:["firm","smooth","juicy"],
 story:{en:"San Marzano grows in the volcanic Agro Sarnese-Nocerino south of Vesuvius, and the story goes that the first seed reached the Kingdom of Naples around 1770 as a gift from the Viceroyalty of Peru. What the DOP protects is a shape and a chemistry: thick walls, few seeds, little water and high pectin, bred to be reduced rather than sliced.",
 fr:"La San Marzano pousse dans l’Agro Sarnese-Nocerino volcanique, au sud du Vésuve, et l’on raconte que la première graine serait arrivée au royaume de Naples vers 1770, cadeau de la vice-royauté du Pérou. Ce que protège la DOP, c’est une forme et une chimie : parois épaisses, peu de pépins, peu d’eau et beaucoup de pectine — une tomate faite pour réduire, non pour se trancher."},
 tip:{en:"Crush the tinned fruit by hand and cook it 20 minutes at a bare simmer, since a long hard boil drives off the sweetness the variety exists for. If a tin needs sugar, it was not San Marzano.",
@@ -1701,7 +1701,7 @@ svg:'<path class="f2 sf" d="M48 30q15 0 17 17t-4 27q-6 10-13 10t-13-10-4-27 17-1
 
 {id:"savoy-cabbage",cat:"vegetables",price:1,pk:"2–3,50 €/kg",name:{en:"Savoy cabbage",fr:"Chou frisé de Milan"},latin:"Brassica oleracea var. sabauda",
 origin:{en:"Northern Italy",fr:"Italie du Nord"},season:[10,11,12,1,2,3],
-flavor:["sweet","mild","earthy","delicate"],
+flavor:["sweet","mild","earthy","delicate"],texture:["firm","crisp","moist"],
 story:{en:"The crimped leaves are looser and thinner than a white cabbage's, which is why they were the wrapper of choice long before cling film: blanched, a single leaf will hold a stuffing through an hour of braising without tearing.",
 fr:"Ses feuilles gaufrées sont plus lâches et plus fines que celles du chou blanc, ce qui en fit l’emballage de choix bien avant le film alimentaire : blanchie, une seule feuille tient une farce une heure de braisage sans se déchirer."},
 tip:{en:"Cut out the thick central rib before rolling. Left in, it springs open and the parcel unwraps itself in the pot.",
@@ -1711,7 +1711,7 @@ svg:'<path class="f1 sf" d="M18 52q-2-12 8-18 6-10 18-10t20 8q12 5 12 18 2 14-9 
 
 {id:"scorzonera",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Scorzonera",fr:"Scorsonère"},latin:"Scorzonera hispanica",
 origin:{en:"Southern Europe",fr:"Europe du Sud"},season:[10,11,12,1,2],
-flavor:["delicate","sweet","nutty","earthy"],
+flavor:["delicate","sweet","nutty","earthy"],texture:["firm","fibrous","moist"],
 story:{en:"Black-skinned, white-fleshed, and named from an old belief that it cured snakebite — scorzone, the viper. It shares a plate and a reputation with salsify, and most French markets sell one under the other's name without anyone minding.",
 fr:"Peau noire, chair blanche, et nommée d’après une vieille croyance qui la disait antidote aux morsures — scorzone, la vipère. Elle partage l’assiette et la réputation du salsifis, et la plupart des marchés français vendent l’une sous le nom de l’autre sans que personne s’en émeuve."},
 tip:{en:"Peel it under water and drop it straight into acidulated water. The sap oxidises in seconds and stains hands brown for days.",
@@ -1721,7 +1721,7 @@ svg:'<path class="f2 sf" d="M34 20c-4 20-3 42 4 62 1 3 5 3 6 0 5-20 6-42 3-62z"/
 
 {id:"sea-aster",cat:"vegetables",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Sea aster",fr:"Aster maritime"},latin:"Tripolium pannonicum",
 origin:{en:"Channel salt marshes",fr:"Prés salés de la Manche"},season:[4,5,6,7],
-flavor:["briny","grassy","mild"],
+flavor:["briny","grassy","mild"],texture:["tender","smooth","juicy"],
 story:{en:"Salt-marsh gatherers on the Channel coast call it oreille de cochon, pig's ear, for the shape of the fleshy leaf, and cut it from March to June, before the salicornia season opens. It grows in the lower marsh where the tide covers it twice a day, yet it holds far less salt than the samphire beside it.",
 fr:"Les ramasseurs de prés salés, sur les côtes de la Manche, l’appellent « oreille de cochon » pour la forme de sa feuille charnue, et la coupent de mars à juin, avant la saison de la salicorne. Elle pousse dans le bas schorre, recouverte deux fois par jour par la marée, et retient pourtant bien moins de sel que la salicorne qui l’entoure."},
 tip:{en:"Wilt it in butter for 60 seconds and add no salt at all, since it brings roughly the seasoning a dish needs on its own. Taste one raw leaf first: marsh salinity shifts with the tide and the week.",
@@ -1731,7 +1731,7 @@ svg:'<path class="f2 sf" d="M48 76q-11-7-17-19t-2-23q11 9 15 21t4 21zM48 76q11-7
 
 {id:"sea-beet",cat:"vegetables",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Sea beet",fr:"Bette maritime"},latin:"Beta vulgaris subsp. maritima",
 origin:{en:"Atlantic and Mediterranean coasts",fr:"Littoraux atlantique et méditerranéen"},season:[4,5,6,7,8,9],
-flavor:["earthy","briny","grassy"],
+flavor:["earthy","briny","grassy"],texture:["tender","fibrous","moist"],
 story:{en:"Every beetroot, chard, mangel and sugar beet on earth was bred out of this one wild coastal plant, which still grows unimproved on shingle banks and sea walls from the Atlantic to the Mediterranean. Selection ran two ways from here, down into the root or out into the leaf, and the wild form gave up neither.",
 fr:"Toutes les betteraves, blettes, disettes et betteraves à sucre du monde descendent de cette seule plante littorale sauvage, qui pousse encore sans amélioration sur les galets et les digues, de l’Atlantique à la Méditerranée. La sélection est partie d’ici dans deux directions — vers la racine ou vers la feuille — et la forme sauvage n’a cédé ni l’une ni l’autre."},
 tip:{en:"The leaves need no ribbing and no blanching, but grit hides in their crinkles: two changes of water, not one. Thirty seconds in a hot pan with oil and garlic, because beyond that the mineral edge turns metallic.",
@@ -1741,7 +1741,7 @@ svg:'<path class="f2 sf" d="M48 18q6 6 14 8-6 4-2 10 8 0 8 8-6 2-6 10 8 4 4 12-8
 
 {id:"sea-kale",cat:"vegetables",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Sea kale",fr:"Chou marin"},latin:"Crambe maritima",
 origin:{en:"Northern European shingle shores",fr:"Rivages de galets d’Europe du Nord"},season:[1,2,3,4],
-flavor:["nutty","sweet","delicate"],
+flavor:["nutty","sweet","delicate"],texture:["tender","crisp","juicy"],
 story:{en:"William Curtis published a pamphlet in 1799 on forcing sea kale under blanching pots heaped with rotting manure, which brought pale shoots up by December and turned a shore weed into a Georgian table vegetable. Coastal people had been doing it accidentally for centuries, digging out shoots that shifting shingle had already blanched for them.",
 fr:"William Curtis publie en 1799 une brochure sur le forçage du chou marin sous cloches couvertes de fumier en fermentation, qui fait monter des pousses blanches dès décembre et transforme une herbe de rivage en légume de table géorgien. Les gens du littoral le faisaient sans le savoir depuis des siècles, en déterrant des pousses que les galets avaient déjà étiolées."},
 tip:{en:"Steam the blanched stems 4 minutes and eat them with melted butter like asparagus; they need nothing more. Green unforced shoots are bitter and tough, so buy only pale stems with pink-flushed tips.",
@@ -1751,7 +1751,7 @@ svg:'<path class="f2 sf" d="M28 78q-2-27 20-33t22 33q-20 7-42 0z"/><path class="
 
 {id:"sea-purslane",cat:"vegetables",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Sea purslane",fr:"Obione"},latin:"Halimione portulacoides",
 origin:{en:"Upper salt marsh",fr:"Haut schorre"},season:[5,6,7,8,9],
-flavor:["salty","briny","mild"],
+flavor:["salty","briny","mild"],texture:["firm","crunchy","juicy"],
 story:{en:"Halimione portulacoides carpets the creek banks of the upper salt marsh, where its silvery leaves are coated in bladder cells that store the salt the plant pulls out of seawater. That coating is what you taste: the seasoning sits on the outside of the leaf, not in the sap.",
 fr:"L’obione tapisse les berges des chenaux du haut schorre, ses feuilles argentées couvertes de cellules-vésicules qui stockent le sel puisé dans l’eau de mer. C’est cette pellicule que l’on goûte : l’assaisonnement est à la surface de la feuille, pas dans la sève."},
 tip:{en:"Treat it as salt rather than as a vegetable: a handful stirred through at the end replaces the seasoning of a whole dish. Rinsing it under fresh water washes the salinity straight off.",
@@ -1761,7 +1761,7 @@ svg:'<path class="s" d="M48 84q-3-21 0-32t5-24"/><path class="f1 sf" d="M48 72q-
 
 {id:"semi-dried-tomato",cat:"vegetables",price:2,pk:"15–25 €/kg",name:{en:"Semi-dried tomato",fr:"Tomate mi-séchée"},latin:"Solanum lycopersicum",
 origin:{en:"Mediterranean kitchens",fr:"Cuisines méditerranéennes"},season:[],
-flavor:["sweet","umami","tangy","fruity"],
+flavor:["sweet","umami","tangy","fruity"],texture:["soft","chewy","moist"],
 story:{en:"A semi-dried tomato is stopped at roughly half its water, the point where the sugars have concentrated but the cell walls have not yet collapsed — a stage the fully dried tomato passes through on its way to leather. Because it is still moist it is not shelf-stable on its own, which is why it always arrives under oil.",
 fr:"Une tomate mi-séchée est arrêtée vers la moitié de son eau, là où les sucres se sont concentrés mais où les parois cellulaires n’ont pas encore cédé : le stade que la tomate séchée traverse en chemin vers le cuir. Encore humide, elle n’est pas stable à température ambiante, et c’est pourquoi elle arrive toujours sous l’huile."},
 tip:{en:"Two hours at 100 °C, cut side up on a rack, is the working window for halved plum tomatoes; pull them while they still give under a finger. Under oil in the fridge they keep about two weeks — the oil preserves nothing, it only keeps air off.",
@@ -1771,7 +1771,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="52" rx="26" ry="20"/><path class="f1 sf"
 
 {id:"seri",cat:"vegetables",rare:true,price:3,pk:"15–30 €/100 g",name:{en:"Seri (Japanese water dropwort)",fr:"Œnanthe du Japon (seri)"},latin:"Oenanthe javanica",
 origin:{en:"Paddy margins and streams, Japan",fr:"Bords de rizières et ruisseaux, Japon"},season:[1,2,3,4],
-flavor:["fresh","grassy","herbal"],
+flavor:["fresh","grassy","herbal"],texture:["tender","crisp","juicy"],
 story:{en:"Seri opens the list of seven herbs eaten in nanakusa-gayu on 7 January, a rice porridge meant to settle the stomach after the New Year — the custom is recorded at the Heian court. In Akita it is the one Japanese herb eaten root and all: the white roots go into kiritanpo hotpot and are valued above the leaf.",
 fr:"Le seri ouvre la liste des sept herbes du nanakusa-gayu du 7 janvier, une bouillie de riz censée reposer l’estomac après les fêtes, coutume attestée à la cour de Heian. Dans l’Akita, c’est la seule herbe japonaise que l’on mange racine comprise : les racines blanches vont dans le nabe de kiritanpo, et on les préfère aux feuilles."},
 tip:{en:"Wash the roots through three changes of water — paddy grit hides in the crown — and drop them into the pot forty seconds before the leaves. Longer than a minute and the celery note flattens into hay.",
@@ -1781,7 +1781,7 @@ svg:'<path class="f2 sf" d="M48 42q-15-5-17-16 13-2 17 8z"/><path class="f2 sf" 
 
 {id:"shallot",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Shallot",fr:"Échalote"},latin:"Allium ascalonicum",
 origin:{en:"Central Asia, via Ascalon",fr:"Asie centrale, via Ascalon"},season:[],
-flavor:["pungent","sweet","delicate"],
+flavor:["pungent","sweet","delicate"],texture:["firm","smooth","juicy"],
 story:{en:"Its name remembers Ascalon, the ancient port from which crusaders reportedly carried it home. The onion’s finishing-school graduate, it underwrites half of French sauce-making — béarnaise, beurre blanc, red-wine reductions, the mignonette on your oysters — while almost never being named on the menu.",
 fr:"Son nom se souvient d’Ascalon, le port antique d’où les croisés l’auraient rapportée. Diplômée de l’école de maintien des oignons, elle cautionne la moitié de la saucier­­ie française — béarnaise, beurre blanc, réductions au vin, mignonette des huîtres — sans presque jamais figurer sur la carte."},
 tip:{en:"Mince it fine and sweat it without colour: browned shallot turns bitter where onion turns sweet. Raw in a vinaigrette, ten minutes in the vinegar first tames it.",
@@ -1791,7 +1791,7 @@ svg:'<path class="f2 sf" d="M46 30q-14 10-12 26 2 14 14 14t14-14q2-16-12-26z" tr
 
 {id:"shepherds-purse",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Shepherd’s purse",fr:"Bourse-à-pasteur"},latin:"Capsella bursa-pastoris",
 origin:{en:"Temperate wasteland worldwide",fr:"Friches tempérées du monde entier"},season:[1,2,3,4],
-flavor:["nutty","grassy","herbal"],
+flavor:["nutty","grassy","herbal"],texture:["tender","fibrous","juicy"],
 story:{en:"Both names describe the seed pod: bursa pastoris, the shepherd's purse, a flat triangular pouch hanging along the stem. In Japan the same weed is nazuna, one of the seven herbs eaten in rice porridge on the seventh of January, and in Shanghai it is a filling long before it is ever a leaf.",
 fr:"Les deux noms décrivent la silique : bursa pastoris, la bourse du berger, une poche triangulaire et plate accrochée le long de la tige. Au Japon, la même mauvaise herbe est la nazuna, l’une des sept herbes du porridge de riz du 7 janvier, et à Shanghai elle est une farce bien avant d’être une feuille."},
 tip:{en:"Blanch thirty seconds, refresh, then squeeze hard and chop fine: the water it holds will otherwise burst wontons open in the pot. Pick it before the flower stalk rises — once it is in flower the leaves go stringy and no amount of chopping fixes it.",
@@ -1801,7 +1801,7 @@ svg:'<path class="s" d="M48 84V22"/><path class="f2 sf" d="M48 34 62 28l-2 10zM4
 
 {id:"shishito",cat:"vegetables",price:2,pk:"15–30 €/kg",name:{en:"Shishito pepper",fr:"Piment shishito"},latin:"Capsicum annuum",
 origin:{en:"Japan",fr:"Japon"},season:[6,7,8,9],
-flavor:["sweet","grassy","mild"],
+flavor:["sweet","grassy","mild"],texture:["tender","crisp","juicy"],
 story:{en:"The name is shishitōgarashi, lion pepper, for the crumpled tip that is said to resemble a lion's head. About one in ten comes out hot, and it is not random: plants short of water make capsaicin, so a fierce pod is the record of a dry week in the field.",
 fr:"Le nom est shishitōgarashi, piment lion, pour la pointe froissée où l’on veut voir une tête de lion. Un sur dix environ sort piquant, et ce n’est pas le hasard : les plants qui manquent d’eau fabriquent de la capsaïcine, si bien qu’une gousse forte est le relevé d’une semaine sèche au champ."},
 tip:{en:"Pierce each pepper once with a knife tip before it goes in the pan, or the steam inside will burst it and spit oil. Very hot pan, barely any oil, three or four minutes until blistered on two sides: the thin walls mean it is done long before a padrón would be.",
@@ -1811,7 +1811,7 @@ svg:'<path class="f2 sf" d="M40 24q12 2 14 16t-2 32-9 12-9-16 2-34 4-10z"/><path
 
 {id:"skirret",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Skirret",fr:"Chervis"},latin:"Sium sisarum",
 origin:{en:"Eastern Asia, then medieval Europe",fr:"Asie orientale, puis Europe médiévale"},season:[10,11,12,1,2],
-flavor:["sweet","earthy","nutty"],
+flavor:["sweet","earthy","nutty"],texture:["firm","fibrous","moist"],
 story:{en:"The English name comes from the Middle English skirwhit, white root, and Pliny records skirret as the vegetable the Emperor Tiberius had sent to him every year out of Germany. It held European gardens through the Middle Ages until the potato took its place, and what it lost on was labour: each plant yields a fistful of thin fingers around a woody core that has to come out.",
 fr:"Le nom anglais vient du moyen anglais « skirwhit », racine blanche, et Pline rapporte que le chervis était le légume que l’empereur Tibère se faisait envoyer chaque année de Germanie. Il a tenu les jardins d’Europe tout le Moyen Âge avant que la pomme de terre ne le supplante, vaincu par le travail qu’il exige : chaque pied donne une poignée de doigts fins autour d’un cœur ligneux qu’il faut retirer."},
 tip:{en:"Boil the whole cluster 15 minutes first, then slip the skins and pull the fibrous core from each finger, because peeling raw is impossible and wastes half the root. Finish in butter and cream; the sweetness is already there.",
@@ -1821,7 +1821,7 @@ svg:'<path class="f2 sf" d="M37 34q11-5 22 0 2 7-11 9t-11-9z"/><path class="f1 s
 
 {id:"spaghetti-squash",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Spaghetti squash",fr:"Courge spaghetti"},latin:"Cucurbita pepo",
 origin:{en:"China, via Japan",fr:"Chine, via le Japon"},season:[9,10,11,12],
-flavor:["mild","sweet","fresh","delicate"],
+flavor:["mild","sweet","fresh","delicate"],texture:["hard","fibrous","dry"],
 story:{en:"Cooked, the flesh separates into long strands that come away with a fork — the cells are arranged in fibres rather than a mass. A Japanese seed company introduced it to America in 1934 as the vegetable spaghetti, and the name stuck to the joke.",
 fr:"Cuite, la chair se sépare en longs filaments qui viennent à la fourchette — les cellules sont disposées en fibres plutôt qu’en masse. Une maison de semences japonaise l’introduisit en Amérique en 1934 sous le nom de spaghetti végétal, et la plaisanterie est restée."},
 tip:{en:"Roast it halved and cut-side down, then rake it lengthwise. Cutting it into rings first gives you longer strands.",
@@ -1831,7 +1831,7 @@ svg:'<path class="f1 sf" d="M16 50q0-10 12-14 18-6 38-1 14 4 14 15 0 11-14 15-20
 
 {id:"spinach",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Spinach",fr:"Épinard"},latin:"Spinacia oleracea",
 origin:{en:"Persia",fr:"Perse"},season:[3,4,5,9,10,11],
-flavor:["grassy","earthy","mild"],
+flavor:["grassy","earthy","mild"],texture:["tender","moist"],
 story:{en:"Persia grew it, Arab agronomists praised it as the “prince of vegetables”, and it reached French court cooking with Catherine de’ Medici — dishes served “à la florentine” still bow to her Florence. Popeye’s iron myth came later, from a misplaced decimal point.",
 fr:"La Perse le cultiva, les agronomes arabes le saluèrent comme « prince des légumes », et il entra dans la cuisine de cour française avec Catherine de Médicis — les plats « à la florentine » saluent encore sa Florence. Le mythe du fer de Popeye vint plus tard, d’une virgule mal placée."},
 tip:{en:"A mountain of leaves melts to a handful: buy more than seems reasonable, and finish with butter and a whisper of nutmeg.",
@@ -1841,7 +1841,7 @@ svg:'<path class="f2 sf" d="M67.5 25.5Q72 29 74 34.5Q76 40 75 45Q74 50 70 54.5Q6
 
 {id:"spring-onion",cat:"vegetables",price:1,pk:"4–8 €/kg",name:{en:"Spring onion",fr:"Cébette"},latin:"Allium fistulosum",
 origin:{en:"China",fr:"Chine"},season:[3,4,5,6,7,8],
-flavor:["fresh","pungent","grassy","mild"],
+flavor:["fresh","pungent","grassy","mild"],texture:["tender","crisp","juicy"],
 story:{en:"A different species from the bulb onion — it never swells and never means to. Cultivated in China for two thousand years, it is one of the few alliums used raw at the finish of a dish rather than cooked down at the start.",
 fr:"Une espèce différente de l’oignon bulbeux — elle ne gonfle jamais et n’en a pas l’intention. Cultivée en Chine depuis deux mille ans, c’est l’un des rares aulx employés crus à la fin d’un plat plutôt que fondus au début."},
 tip:{en:"White and green are two ingredients. Cook the white with the aromatics, scatter the green raw over the finished plate.",
@@ -1851,7 +1851,7 @@ svg:'<path class="f3 sf" d="M41 54h13q2 10 1 16-1 8-8 9t-8-9q-1-6 2-16z"/><path 
 
 {id:"sucrine-du-berry",cat:"vegetables",rare:true,price:1,pk:"3–6 €/kg",name:{en:"Sucrine du Berry squash",fr:"Sucrine du Berry"},latin:"Cucurbita moschata",
 origin:{en:"Berry, central France",fr:"Berry"},season:[9,10,11,12],
-flavor:["sweet","nutty","creamy"],
+flavor:["sweet","nutty","creamy"],texture:["hard","granular","dry"],
 story:{en:"A Berry heirloom of the moschata group, small and pear-shaped, whose skin ripens from dark green through straw to ochre, which is the only reliable sign that it is ready. The flesh is dry and fine-grained where a pumpkin is watery, which is why it was traditionally worked into sweet tarts and flans rather than soup.",
 fr:"Variété ancienne du Berry, de la famille des courges musquées, petite et piriforme, dont la peau passe du vert foncé au paille puis à l’ocre — seul signe fiable de sa maturité. Sa chair est sèche et fine là où le potiron est aqueux, d’où son emploi traditionnel en tartes et flans sucrés plutôt qu’en potage."},
 tip:{en:"Cure it three weeks after cutting before you cook it: the starch converts to sugar and the flesh dries further. Roast it halved, cut side down, at 190 °C with no water, or the dryness that makes it worth having is lost.",
@@ -1861,7 +1861,7 @@ svg:'<path class="f2 sf" d="M48 30q11 0 13 11t-3 17q11 6 11 19t-21 13-21-13 11-1
 
 {id:"sugarloaf-chicory",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Sugarloaf chicory",fr:"Pain de sucre"},latin:"Cichorium intybus",
 origin:{en:"Northern Italy",fr:"Italie du Nord"},season:[10,11,12,1],
-flavor:["bitter","fresh","sweet"],
+flavor:["bitter","fresh","sweet"],texture:["firm","crisp","moist"],
 story:{en:"Pain de sucre is a chicory that blanches itself: the outer leaves wrap so tightly that light never reaches the heart, so the inside stays pale and only faintly bitter with no pot or cover needed. It stands in the field through frost, which is when the bitterness drops and the sugars climb.",
 fr:"Le pain de sucre est une chicorée qui s’étiole toute seule : ses feuilles extérieures se referment si serré que la lumière n’atteint jamais le cœur, qui reste pâle et à peine amer, sans cloche ni couverture. Il reste au champ jusqu’aux gelées, moment où l’amertume tombe et où les sucres montent."},
 tip:{en:"Halve it, oil the cut face and grill it hard for 3 minutes a side: the leaves are packed tight enough to stay crisp inside a charred face. Discard nothing, since the dark outer leaves are the bitter ones and they belong in the pan, not the salad.",
@@ -1871,7 +1871,7 @@ svg:'<path class="f1 sf" d="M48 12q15 24 15 44 0 18-15 22-15-4-15-22 0-20 15-44z
 
 {id:"sun-dried-tomato",cat:"vegetables",price:2,pk:"20–35 €/kg",name:{en:"Sun-dried tomato",fr:"Tomate séchée"},latin:"Solanum lycopersicum",
 origin:{en:"Southern Italy",fr:"Italie du Sud"},season:[],
-flavor:["umami","sweet","tangy","rich"],
+flavor:["umami","sweet","tangy","rich"],texture:["tough","chewy","dry"],
 story:{en:"Drying strips about nine tenths of a tomato's water, and everything left behind concentrates in the same proportion — the free glutamate that reads as savouriness rises with it, which is why a dried tomato tastes of more than tomato. In Puglia and Sicily the halves were salted before they went onto the tufa rooftops, the salt starting the work the sun would finish.",
 fr:"Le séchage retire environ neuf dixièmes de l’eau de la tomate, et tout ce qui reste se concentre d’autant : le glutamate libre qui se lit comme du savoureux monte avec, ce qui explique qu’une tomate séchée ait plus de goût que la tomate. Dans les Pouilles et en Sicile, on salait les moitiés avant de les étendre sur les toits de tuf, le sel commençant le travail que le soleil finissait."},
 tip:{en:"Treat them as a seasoning rather than a vegetable: 30 g chopped fine into a sauce for four does the work of a spoonful of anchovy. If they are bone dry, soak twenty minutes in warm water and keep the soaking water — it is tomato stock.",
@@ -1881,7 +1881,7 @@ svg:'<path class="f1 sf" d="M18 50q2-12 12-17 8-6 16-4 4-3 9-1 11-2 16 6 9 6 6 1
 
 {id:"sunflower-shoots",cat:"vegetables",price:2,pk:"40–80 €/kg",name:{en:"Sunflower shoots",fr:"Pousses de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Indoor growing trays",fr:"Germoirs et cultures d’intérieur"},season:[],
-flavor:["nutty","fresh","citrus"],
+flavor:["nutty","fresh","citrus"],texture:["tender","crisp","juicy"],
 story:{en:"They are grown from black oil sunflower seed, the same seed pressed for cooking oil and sold as bird food, and cut at eight to twelve days, before the first true leaf appears. That thick seed leaf is where the oil went, which is why they taste of hazelnut and have the body to be dressed like a salad rather than scattered like a garnish.",
 fr:"Elles poussent à partir de graines de tournesol noires — celles-là mêmes que l’on presse pour l’huile et que l’on vend aux oiseaux — et se coupent entre huit et douze jours, avant l’apparition de la première vraie feuille. Cette épaisse feuille cotylédonaire est là où l’huile est allée : d’où le goût de noisette et une tenue qui supporte d’être assaisonnée en salade, et non semée en décor."},
 tip:{en:"Pull off any seed husks still clamped to the leaves before serving: they are bitter and they do not soften. Cut once the true leaf shows and the shoots turn bitter too, so buy them with two fat seed leaves and nothing between them.",
@@ -1891,7 +1891,7 @@ svg:'<path class="s" d="M40 80V44M56 80V38"/><path class="f2 sf" d="M40 44q-14-2
 
 {id:"swede",cat:"vegetables",price:1,pk:"2–3,50 €/kg",name:{en:"Swede",fr:"Rutabaga"},latin:"Brassica napobrassica",
 origin:{en:"Scandinavia",fr:"Scandinavie"},season:[10,11,12,1,2,3],
-flavor:["sweet","earthy","peppery","mild"],
+flavor:["sweet","earthy","peppery","mild"],texture:["hard","granular","moist"],
 story:{en:"A seventeenth-century accident — a cross between a cabbage and a turnip that happened in a Bohemian or Scandinavian garden and bred true. In France its name is still a byword for wartime hardship, which has done its reputation lasting damage.",
 fr:"Un accident du XVIIe siècle — un croisement entre chou et navet survenu dans un jardin de Bohême ou de Scandinavie, et qui s’est fixé. En France son nom reste synonyme de privations de guerre, ce qui a durablement nui à sa réputation."},
 tip:{en:"Mash it half and half with potato and a great deal of butter. Alone it is watery; the potato gives it body.",
@@ -1901,7 +1901,7 @@ svg:'<path class="f2 sf" d="M30 54q0-18 18-18t18 18q0 18-18 22T30 54z"/><path cl
 
 {id:"sweet-potato",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Sweet potato",fr:"Patate douce"},latin:"Ipomoea batatas",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[9,10,11,12],
-flavor:["sweet","earthy","creamy","warm"],
+flavor:["sweet","earthy","creamy","warm"],texture:["firm","granular","moist"],
 story:{en:"Not a potato and not even a close relation — it is a morning glory. Its presence in Polynesia centuries before Columbus is one of the strongest arguments that Pacific islanders reached South America and sailed home again.",
 fr:"Ni pomme de terre ni même parente proche — c’est un liseron. Sa présence en Polynésie des siècles avant Colomb est l’un des arguments les plus solides pour dire que des navigateurs du Pacifique ont atteint l’Amérique du Sud et en sont revenus."},
 tip:{en:"Bake it slowly. An enzyme converts starch to maltose between roughly 60 and 75°C, and a slow oven gives it time to work.",
@@ -1911,7 +1911,7 @@ svg:'<path class="f2 sf" d="M20 40q6-8 16-9 10-2 16 2-6 7-16 9-10 2-16-2z"/><pat
 
 {id:"swiss-chard",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Swiss chard",fr:"Blette"},latin:"Beta vulgaris subsp. cicla",
 origin:{en:"Mediterranean",fr:"Méditerranée"},season:[6,7,8,9,10,11],
-flavor:["earthy","mild","bitter","grassy"],
+flavor:["earthy","mild","bitter","grassy"],texture:["tender","fibrous","juicy"],
 story:{en:"The same species as beetroot, bred for leaf instead of root. Nice puts it in a sweet tart with raisins and pine nuts — the tourte de blettes, a dessert made of a green vegetable, which locals defend with some heat.",
 fr:"La même espèce que la betterave, sélectionnée pour la feuille au lieu de la racine. Nice la met dans une tarte sucrée aux raisins et aux pignons — la tourte de blettes, un dessert de légume vert que les Niçois défendent avec une certaine vigueur."},
 tip:{en:"Stems and leaves cook at completely different rates. Slice the stems, start them five minutes ahead, add the leaves at the end.",
@@ -1921,7 +1921,7 @@ svg:'<path class="f1 sf" d="M46 54q-14 0-20-6 7-1 6-6-8-1-10-8 8 0 10-5 2-7 6-9 
 
 {id:"tara-no-me",cat:"vegetables",price:3,pk:"80–150 €/kg",name:{en:"Tara no me",fr:"Pousse d’aralia"},latin:"Aralia elata",
 origin:{en:"Japanese mountain woodland",fr:"Forêts de montagne japonaises"},season:[3,4,5],
-flavor:["bitter","resinous","earthy"],
+flavor:["bitter","resinous","earthy"],texture:["tender","fibrous","moist"],
 story:{en:"It is the terminal bud of a thorny tree and each shoot carries exactly one: take it and the tree pushes a second, take that one too and the branch dies. Japanese foragers hold to a one-bud rule for exactly that reason, and the commercial crop now comes mostly from cut branches forced in water sheds through the winter.",
 fr:"C’est le bourgeon terminal d’un arbre épineux, et chaque pousse n’en porte qu’un : prenez-le, l’arbre en pousse un second ; prenez celui-là aussi, la branche meurt. Les cueilleurs japonais s’en tiennent pour cette raison à la règle d’un seul bourgeon, et la production commerciale vient désormais surtout de branches coupées et forcées dans l’eau tout l’hiver."},
 tip:{en:"Trim only the hard brown collar at the base and keep the bud whole; batter one side only so the leaves stay visible, and fry at 170°C for ninety seconds. Salt, not tentsuyu — the dipping sauce drowns the bitterness that is the entire reason to eat it.",
@@ -1931,7 +1931,7 @@ svg:'<path class="f3 sf" d="M44 84V52h8v32z"/><path class="s" d="M44 76l-8-4M52 
 
 {id:"taro",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Taro",fr:"Taro"},latin:"Colocasia esculenta",
 origin:{en:"South-east Asia, ancient cultivation",fr:"Asie du Sud-Est, culture ancienne"},season:[],
-flavor:["nutty","earthy","creamy"],
+flavor:["nutty","earthy","creamy"],texture:["hard","granular","dry"],
 story:{en:"The drainage ditches cut for taro at Kuk Swamp in Papua New Guinea are among the oldest traces of farming anywhere, roughly seven thousand years old. The itch it gives raw is mechanical: needle-shaped crystals of calcium oxalate, which heat destroys.",
 fr:"Les fossés de drainage creusés pour le taro dans le marais de Kuk, en Papouasie-Nouvelle-Guinée, comptent parmi les plus anciennes traces d'agriculture au monde : environ sept mille ans. La démangeaison qu'il donne cru est mécanique — des aiguilles d'oxalate de calcium, que la cuisson détruit."},
 tip:{en:"Peel it under running water in gloves, or oil your hands first; if it stings, rub the skin with vinegar or lemon. Never taste it raw, and expect it to thicken whatever it cooks in - it turns a thin stew into a sauce.",
@@ -1941,7 +1941,7 @@ svg:'<path class="f3 sf" d="M48 22q18 6 18 28t-18 26-18-26 18-28z"/><path class=
 
 {id:"zuiki",cat:"vegetables",rare:true,price:1,pk:"6–12 €/kg",name:{en:"Taro stem",fr:"Tige de taro"},latin:"Colocasia esculenta",
 origin:{en:"Japan, taro leaf stalk",fr:"Japon, pétiole de taro"},season:[7,8,9],
-flavor:["mild","earthy","delicate"],
+flavor:["mild","earthy","delicate"],texture:["tender","airy","fibrous"],
 story:{en:"Records describe imogara-nawa: taro stems simmered in miso, twisted into rope and dried, so a samurai carried his cord and cut a length off to boil into soup. The stalk is a sponge, not a flavour - it holds far more liquid than the corm and gives back whatever it soaked in.",
 fr:"Les textes décrivent l'imogara-nawa : des tiges de taro mijotées au miso, tressées en corde puis séchées, qu'un samouraï portait en cordage et dont il coupait un bout à faire bouillir en soupe. La tige est une éponge, pas un goût : elle retient bien plus de liquide que le tubercule et rend ce dont on l'a imbibée."},
 tip:{en:"Peel the stalk, soak it fifteen minutes in vinegared water to kill the itch, boil it, then squeeze it dry with both hands before it goes near the dashi - unsqueezed it collapses and clouds the broth. Dried zuiki wants half an hour of soaking before any of that.",
@@ -1951,7 +1951,7 @@ svg:'<path class="f1 sf" d="M58 18q18 8 10 24t-22 6q0-18 12-30z"/><path class="s
 
 {id:"tatsoi",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Tatsoi",fr:"Tatsoi"},latin:"Brassica rapa var. rosularis",
 origin:{en:"Eastern China",fr:"Chine orientale"},season:[10,11,12,1,2,3],
-flavor:["fresh","mild","peppery"],
+flavor:["fresh","mild","peppery"],texture:["tender","crisp","moist"],
 story:{en:"Its Chinese name turns on the character for collapse: tatsoi grows as a rosette pressed flat against cold soil rather than upright, and that is exactly what carries it through hard frost. Growers cut it from under snow, when almost nothing else in the field is still standing.",
 fr:"Son nom chinois repose sur le caractère qui signifie s’affaisser : le tatsoi pousse en rosette plaquée au sol plutôt qu’en touffe dressée, et c’est précisément ce qui lui fait encaisser les fortes gelées. On le coupe sous la neige, quand plus rien d’autre ne tient debout au champ."},
 tip:{en:"The spoon-shaped leaves are thicker than mizuna and take heat well, but unevenly: put the ribs in the pan thirty seconds before the leaves, or the leaves go grey while the ribs are still raw. Dress a raw salad at the table — dressed early, the rosettes weep.",
@@ -1961,7 +1961,7 @@ svg:'<g transform="translate(3.36 3.5) scale(0.93)"><path class="f2 sf" d="M48 2
 
 {id:"tomatillo",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Tomatillo",fr:"Tomatille"},latin:"Physalis philadelphica",
 origin:{en:"Mexico",fr:"Mexique"},season:[7,8,9,10],
-flavor:["sour","fresh","tangy","grassy"],
+flavor:["sour","fresh","tangy","grassy"],texture:["firm","smooth","juicy"],
 story:{en:"Domesticated in Mexico before the tomato and still the backbone of salsa verde. It grows inside a papery husk that splits when the fruit is ready — the plant's own ripeness indicator, and the reason it keeps for weeks.",
 fr:"Domestiquée au Mexique avant la tomate, elle reste l’ossature de la salsa verde. Elle grandit dans une enveloppe de papier qui se fend quand le fruit est prêt — l’indicateur de maturité de la plante, et la raison de sa longue conservation."},
 tip:{en:"Char them under a grill before blending. Raw they are aggressively acidic; blistered they turn sweet and smoky.",
@@ -1971,7 +1971,7 @@ svg:'<circle class="f2 sf" cx="48" cy="56" r="18"/><path class="s" d="M34 44q6-1
 
 {id:"tomato",cat:"vegetables",price:1,pk:"2–6 €/kg",name:{en:"Tomato",fr:"Tomate"},latin:"Solanum lycopersicum",
 origin:{en:"Andes, South America",fr:"Andes, Amérique du Sud"},season:[6,7,8,9],
-flavor:["sweet","tangy","umami"],
+flavor:["sweet","tangy","umami"],texture:["soft","smooth","juicy"],
 story:{en:"The Aztecs grew the “tomatl” long before Europe dared to eat it — for two centuries, Europeans grew tomatoes as ornamental plants, convinced they were poisonous. It took the cooks of Naples to turn suspicion into sauce.",
 fr:"Les Aztèques cultivaient le « tomatl » bien avant que l’Europe n’ose y goûter — pendant deux siècles, on y cultiva la tomate comme plante d’ornement, persuadé qu’elle était toxique. Il fallut les cuisiniers de Naples pour changer la méfiance en sauce."},
 tip:{en:"Never store tomatoes in the fridge: cold kills their perfume. A pinch of salt ten minutes before serving wakes them up.",
@@ -1981,7 +1981,7 @@ svg:'<circle class="f2 sf" cx="48" cy="55" r="21"/><path class="s" d="M48 34c-1-
 
 {id:"treviso-tardivo",cat:"vegetables",price:3,pk:"12–20 €/kg",name:{en:"Treviso tardivo",fr:"Trévise tardive"},latin:"Cichorium intybus",
 origin:{en:"Veneto, Italy",fr:"Vénétie, Italie"},season:[11,12,1,2],
-flavor:["bitter","fresh","earthy"],
+flavor:["bitter","fresh","earthy"],texture:["firm","crunchy","moist"],
 story:{en:"Tardivo is less harvested than re-grown: after the first frosts the plants are lifted and stood root-deep in running spring water at around 13 °C in the dark, and three weeks later pale new leaves have pushed out and curled into claws. Everything green is then stripped away, so what leaves the field is several times what reaches the stall.",
 fr:"La tardive est moins récoltée que refaite : après les premières gelées, on arrache les pieds et on les plonge racines dans l’eau de source courante à 13 °C environ, à l’obscurité ; trois semaines plus tard, de nouvelles feuilles pâles ont poussé et se sont enroulées en griffes. Tout le vert est ensuite éliminé : ce qui quitte le champ pèse plusieurs fois ce qui arrive à l’étal."},
 tip:{en:"Split the heads lengthwise through the root so the claws stay attached, then grill or braise them cut-side down until the white rib chars — raw, that rib gives crunch and nothing else. Finish with a spoonful of vinegar or orange juice, which pulls the bitterness back into range.",
@@ -1991,7 +1991,7 @@ svg:'<path class="f2 sf" d="M48 78q-8-4-9-16t3-24q2-8 6-14 4 6 6 14t3 24-9 16z"/
 
 {id:"trombetta-squash",cat:"vegetables",price:2,pk:"4–8 €/kg",name:{en:"Trombetta squash",fr:"Courgette trompette d’Albenga"},latin:"Cucurbita moschata",
 origin:{en:"Albenga, Liguria",fr:"Albenga, Ligurie"},season:[7,8,9],
-flavor:["mild","fresh","nutty"],
+flavor:["mild","fresh","nutty"],texture:["firm","smooth","dry"],
 story:{en:"On the Albenga plain it is grown up frames so the trumpet hangs and lengthens straight; left on the ground it curls into a hook. Botanically it is a moschata, the butternut family, picked deliberately unripe — left on the vine it goes on to harden into an orange winter squash.",
 fr:"Dans la plaine d’Albenga on la conduit sur treille pour que la trompette pende et s’allonge droit ; laissée au sol, elle s’enroule en crosse. C’est botaniquement une moschata, la famille du butternut, cueillie volontairement avant maturité — laissée sur pied, elle durcit en courge d’hiver orange."},
 tip:{en:"The neck is solid flesh with no seed cavity and it does not weep, so peeler-cut ribbons stay dry: salt them only as the plate goes out. For the grill, cut 5 mm planks the long way and take them straight off the bars into olive oil and garlic while hot.",
@@ -2001,7 +2001,7 @@ svg:'<path class="f2 sf" d="M32 22q-6 18 4 32t26 14q10 0 12-9t-8-13q-14-4-20-14t
 
 {id:"tropea-red-onion",cat:"vegetables",price:2,pk:"6–10 €/kg",name:{en:"Tropea red onion",fr:"Oignon rouge de Tropea"},latin:"Allium cepa",
 origin:{en:"Tyrrhenian coast, Calabria (IGP)",fr:"Côte tyrrhénienne, Calabre (IGP)"},season:[5,6,7,8],
-flavor:["sweet","mild","fruity"],
+flavor:["sweet","mild","fruity"],texture:["tender","crisp","juicy"],
 story:{en:"Grown on a narrow strip of Calabrian coast and plaited into trecce for market, it is low enough in sulphur to be eaten raw by the slice - Calabria also turns it into jam and into ice cream. Its IGP fixes both the strip of coast and the shape of the bulb.",
 fr:"Cultivé sur une bande étroite de côte calabraise et tressé en trecce pour le marché, il est assez pauvre en soufre pour se manger cru en tranches — la Calabre en fait aussi de la confiture et de la glace. L'IGP fixe à la fois la bande de côte et la forme du bulbe."},
 tip:{en:"It needs no soaking for a raw salad, unlike a standard red onion. Roasted whole in its skin at 180 °C for forty-five minutes it collapses to something close to jam - split it and eat it with a spoon.",
@@ -2011,7 +2011,7 @@ svg:'<path class="f2 sf" d="M48 34q12 0 12 18t-12 28-12-28 12-18z"/><path class=
 
 {id:"tuberous-chervil",cat:"vegetables",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Tuberous chervil",fr:"Cerfeuil tubéreux"},latin:"Chaerophyllum bulbosum",
 origin:{en:"Central Europe",fr:"Europe centrale"},season:[10,11,12,1],
-flavor:["sweet","nutty","earthy"],
+flavor:["sweet","nutty","earthy"],texture:["firm","granular","dry"],
 story:{en:"Dug in August it is barely worth eating — firm, starchy and flat; the sweetness and the chestnut note only appear after weeks buried in sand in a cool cellar, which is why it reaches market in autumn and not at harvest. It shares a name with the herb but is a different plant, and it is the root that is eaten, never the leaf.",
 fr:"Arraché en août, il ne vaut presque rien à table — ferme, farineux, plat ; le sucré et la note de châtaigne n’apparaissent qu’après plusieurs semaines enfouies dans le sable, en cave fraîche, d’où son arrivée sur les marchés à l’automne et non à la récolte. Il partage son nom avec l’herbe mais c’est une autre plante, et c’est la racine qui se mange, jamais la feuille."},
 tip:{en:"Do not peel raw: steam or simmer them whole in their skins for about fifteen minutes and the grey skin slips off between finger and thumb, taking almost no flesh. Finish in butter and stop early — a minute too long and they collapse into purée.",
@@ -2021,7 +2021,7 @@ svg:'<path class="f2 sf" d="M48 78q-8-14-9-28t9-18q10 4 9 18t-9 28z"/><path clas
 
 {id:"turnip",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Turnip",fr:"Navet"},latin:"Brassica rapa",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[3,4,5,10,11,12],
-flavor:["peppery","sweet","mild","earthy"],
+flavor:["peppery","sweet","mild","earthy"],texture:["firm","crisp","juicy"],
 story:{en:"Rome fed its legions on turnips and Germany survived on them through the Steckrübenwinter of 1916–17, when the potato harvest failed. It is the vegetable of hard years, which is exactly why French cuisine spent centuries proving it could be elegant — glazed, with duck.",
 fr:"Rome nourrissait ses légions de navets et l’Allemagne survécut grâce à eux au Steckrübenwinter de 1916-17, quand la récolte de pommes de terre échoua. C’est le légume des années dures, et c’est précisément pourquoi la cuisine française a mis des siècles à prouver qu’il pouvait être élégant — glacé, avec du canard."},
 tip:{en:"Young spring turnips need no peeling and barely any cooking. The big winter ones need both, plus a pinch of sugar.",
@@ -2031,7 +2031,7 @@ svg:'<path class="f3 sf" d="M32 56q0-16 16-16t16 16q0 16-16 20T32 56z"/><path cl
 
 {id:"udo",cat:"vegetables",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Udo",fr:"Udo"},latin:"Aralia cordata",
 origin:{en:"Japan",fr:"Japon"},season:[3,4,5],
-flavor:["fresh","resinous","bitter"],
+flavor:["fresh","resinous","bitter"],texture:["crisp","fibrous","juicy"],
 story:{en:"Japanese has a phrase for something large and good for nothing — udo no taiboku, a great tree of udo — because a stalk left to grow tall turns too woody to eat and is still useless as timber. Growers sidestep the problem by forcing the shoots in dark cellars, which is why the stalk arrives white, straight and tender.",
 fr:"Le japonais a une expression pour ce qui est grand et bon à rien — udo no taiboku, le grand arbre d’udo — parce qu’une tige laissée monter devient trop ligneuse pour la table sans valoir mieux comme bois. Les producteurs contournent le problème en forçant les pousses dans des caves obscures : la tige arrive blanche, droite et tendre."},
 tip:{en:"Peel it thickly and drop the strips straight into water with a splash of rice vinegar — a cut face browns within a minute in air. The peel is not waste: shredded and fried as kinpira, it is the more interesting half of the vegetable.",
@@ -2041,7 +2041,7 @@ svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f1 sf" d="M42 7
 
 {id:"ulluco",cat:"vegetables",rare:true,price:3,pk:"20–40 €/kg",name:{en:"Ulluco",fr:"Ulluque"},latin:"Ullucus tuberosus",
 origin:{en:"Andes",fr:"Andes"},season:[10,11,12],
-flavor:["earthy","mild","fresh"],
+flavor:["earthy","mild","fresh"],texture:["firm","crisp","viscous"],
 story:{en:"Andean cooks know it as olluco or melloco, and it has one property no European tuber shares: the flesh is mucilaginous rather than starchy, so it stays crunchy through cooking and never goes floury. The skins come yellow, rose and magenta, and all of them fade toward yellow in the pan.",
 fr:"Les cuisines andines l’appellent olluco ou melloco, et il a une propriété qu’aucun tubercule européen ne possède : la chair est mucilagineuse et non farineuse, elle reste croquante à la cuisson et ne devient jamais farineuse. Les peaux vont du jaune au rose et au magenta, et toutes virent au jaune à la casserole."},
 tip:{en:"Do not peel and do not boil long: scrub it, slice it into matchsticks and give it three or four minutes at most, or the mucilage turns slippery rather than crisp. You are buying texture, not starch — it will never thicken a stew.",
@@ -2051,7 +2051,7 @@ svg:'<path class="f2 sf" d="M34 40q8-8 16-2t2 16-16 2-2-16z"/><path class="f1 sf
 
 {id:"urui",cat:"vegetables",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Urui",fr:"Pousse de hosta"},latin:"Hosta sieboldii",
 origin:{en:"Yamagata, Japan",fr:"Yamagata, Japon"},season:[3,4,5],
-flavor:["fresh","mild","grassy"],
+flavor:["fresh","mild","grassy"],texture:["tender","silky","juicy"],
 story:{en:"Half the world grows hosta as a shade ornamental and never thinks to eat it; in Yamagata it is forced in the dark through late winter and sold as the mildest of the mountain vegetables. It is also the one that poisons people every spring, because the emerging shoots are easily taken for false hellebore, which grows in the same wet ground and is dangerous.",
 fr:"La moitié du monde cultive le hosta comme plante d’ombre sans songer à le manger ; à Yamagata on le force à l’obscurité en fin d’hiver et on le vend comme le plus doux des légumes de montagne. C’est aussi celui qui empoisonne chaque printemps, car les jeunes pousses se confondent avec le vérâtre, qui pousse dans les mêmes terrains humides et qui est dangereux."},
 tip:{en:"Bought urui needs no cooking at all: trim the base, split the thicker stems lengthways and dress them raw with vinegared miso, which suits the faint slipperiness better than oil. If you do cook it, ten seconds in boiling water and straight into cold — any longer and the crispness is gone for good.",
@@ -2061,7 +2061,7 @@ svg:'<path class="f2 sf" d="M42 62q-14-16-14-34 14 12 18 32z"/><path class="f2 s
 
 {id:"vineyard-wild-leek",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Vineyard wild leek",fr:"Poireau des vignes"},latin:"Allium polyanthum",
 origin:{en:"Southern French vineyards",fr:"Vignobles du Midi"},season:[2,3,4],
-flavor:["sweet","pungent","fruity"],
+flavor:["sweet","pungent","fruity"],texture:["firm","fibrous","juicy"],
 story:{en:"Around the Gard and the Hérault it is called baragane, and it is pulled from between the vine rows from February until the flower stalk shows in April. Only untreated parcels are worth walking: the plant is a perennial bulb sitting in the ground all year and takes up whatever has been sprayed on the vines above it.",
 fr:"Dans le Gard et l’Hérault on l’appelle baragane, et on l’arrache entre les rangs de vigne de février jusqu’à ce que la hampe florale se montre, en avril. Seules les parcelles non traitées valent la marche : c’est un bulbe vivace, en terre toute l’année, qui absorbe ce qu’on a pulvérisé sur la vigne au-dessus."},
 tip:{en:"The tender white base is the whole point — boil it eight to ten minutes, dress it with mustard vinaigrette while it is still steaming, and serve warm with a hard-boiled egg. The green tops stay fibrous whatever you do; keep them for stock.",
@@ -2071,7 +2071,7 @@ svg:'<path class="f1 sf" d="M44 78q-5-4-5-11t5-9h8q5 2 5 9t-5 11z"/><path class=
 
 {id:"vitelotte-potato",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Vitelotte potato",fr:"Vitelotte"},latin:"Solanum tuberosum",
 origin:{en:"Andes, by way of France",fr:"Andes, par la France"},season:[9,10,11,12],
-flavor:["earthy","nutty","mild"],
+flavor:["earthy","nutty","mild"],texture:["firm","granular","dry"],
 story:{en:"The violet flesh came out of the Andes and made its French name in the nineteenth century, under the Second Empire, when it was sold as truffe de Chine. The colour is anthocyanin, the same class of pigment as in blackcurrant, and it behaves like one — it bleeds out into plain cooking water and holds far better in acid.",
 fr:"La chair violette vient des Andes et s’est fait un nom en France au XIXe siècle, sous le Second Empire, où on la vendait comme truffe de Chine. La couleur est une anthocyane, la même famille de pigment que dans le cassis, et elle se comporte comme telle : elle fuit dans l’eau de cuisson et tient bien mieux en milieu acide."},
 tip:{en:"Cook them whole in their skins, in salted water with a tablespoon of vinegar, and cut only afterwards — peeled and cut first, much of the colour ends up in the pan. The flesh is dry and chestnut-like, which makes a poor purée and an excellent warm salad.",
@@ -2081,7 +2081,7 @@ svg:'<path class="f3 sf" d="M24 50q0-16 22-16t24 12-14 20-28-4-4-12z"/><circle c
 
 {id:"warabi",cat:"vegetables",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Warabi (bracken shoot)",fr:"Crosse de fougère-aigle (warabi)"},latin:"Pteridium aquilinum",
 origin:{en:"Japanese hillsides and clearings",fr:"Coteaux et clairières du Japon"},season:[4,5,6],
-flavor:["grassy","earthy","mild"],
+flavor:["grassy","earthy","mild"],texture:["tender","viscous","fibrous"],
 story:{en:"Bracken is one of the few vegetables that has to be disarmed before it can be eaten: Japanese kitchens have doused the shoots in wood-ash lye or baking soda for centuries, a treatment called aku-nuki. The same plant’s rhizome yields warabi-ko, the grey starch behind warabi-mochi, at a rate of roughly seventy grams of powder per ten kilos of root.",
 fr:"La fougère-aigle fait partie des rares légumes qu’il faut désarmer avant de les manger : au Japon, on arrose les crosses de lessive de cendre de bois ou de bicarbonate depuis des siècles, un traitement appelé aku-nuki. Le rhizome de la même plante donne le warabi-ko, l’amidon gris du warabi-mochi, à raison d’environ soixante-dix grammes de poudre pour dix kilos de racine."},
 tip:{en:"Lay the shoots in a tray, dust with baking soda — about a teaspoon per litre — cover with water just off the boil and leave overnight; never boil them or they collapse into threads. Rinse well in the morning and the texture turns silky rather than slimy.",
@@ -2091,7 +2091,7 @@ svg:'<path class="f2 sf" d="M45 74q-2-18 0-32h6q-2 14 0 32z"/><path class="sf" d
 
 {id:"water-chestnut",cat:"vegetables",price:1,pk:"5–10 €/kg",name:{en:"Water chestnut",fr:"Châtaigne d’eau"},latin:"Eleocharis dulcis",
 origin:{en:"Southern China paddies",fr:"Rizières du sud de la Chine"},season:[11,12,1,2],
-flavor:["fresh","sweet","mild"],
+flavor:["fresh","sweet","mild"],texture:["firm","crunchy","juicy"],
 story:{en:"It is not a nut but the corm of a sedge grown in flooded paddy, and it stays crisp at any temperature because its cell walls are locked together by ferulic acid, a bond heat does not break. Beetroot owes part of its own stubborn bite to the same chemistry.",
 fr:"Ce n’est pas une noix mais le bulbe d’un souchet cultivé en rizière inondée, et il reste croquant à toute température parce que ses parois cellulaires sont soudées par l’acide férulique, une liaison que la chaleur ne rompt pas. La betterave doit une part de sa fermeté à la même chimie."},
 tip:{en:"Buy them fresh, unpeeled and heavy for their size — canned ones keep the crunch but lose the coconut sweetness that is the reason to use them. Peel with a knife rather than a peeler: the skin is thick and the bitter layer sits just under it.",
@@ -2101,7 +2101,7 @@ svg:'<path class="f3 sf" d="M26 54q0-16 22-16t22 16-10 18H36q-10-2-10-18z"/><pat
 
 {id:"water-spinach",cat:"vegetables",price:1,pk:"5–10 €/kg",name:{en:"Water spinach",fr:"Liseron d’eau"},latin:"Ipomoea aquatica",
 origin:{en:"Southeast Asian waterways",fr:"Cours d’eau d’Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["fresh","earthy","mild"],
+flavor:["fresh","earthy","mild"],texture:["tender","crisp","juicy"],
 story:{en:"The United States lists it as a federal noxious weed: growing it or moving it across a state line requires a permit, and Florida growers supply their own market under a compliance agreement. It floats and roots again at every node, which is exactly what makes it cheap in Asia and illegal in a Florida canal.",
 fr:"Les États-Unis le classent parmi les mauvaises herbes nuisibles fédérales : le cultiver ou le faire passer d’un État à l’autre exige un permis, et les producteurs de Floride approvisionnent leur seul marché sous convention. Il flotte et s’enracine à chaque nœud, ce qui le rend précisément bon marché en Asie et illégal dans un canal floridien."},
 tip:{en:"Cut the stems away from the leaves and give the stems a forty-second head start in the wok. Thrown in together, the leaves are grey slime before the stems have lost their raw taste.",
@@ -2111,7 +2111,7 @@ svg:'<g transform="translate(4.37 4.55) scale(0.909)"><path class="s" d="M24 78q
 
 {id:"watercress",cat:"vegetables",price:1,pk:"6–10 €/kg",name:{en:"Watercress",fr:"Cresson"},latin:"Nasturtium officinale",
 origin:{en:"Europe & Central Asia",fr:"Europe & Asie centrale"},season:[3,4,5,9,10,11],
-flavor:["peppery","fresh","grassy","pungent"],
+flavor:["peppery","fresh","grassy","pungent"],texture:["tender","crisp","juicy"],
 story:{en:"It grows in running spring water, not soil, which is why the beds at Méréville have been fed by the same watercourses since the 1860s. Hippocrates is said to have sited his hospital beside a stream to have it to hand.",
 fr:"Il pousse dans l’eau vive, non dans la terre, d’où les cressonnières de Méréville alimentées par les mêmes cours d’eau depuis les années 1860. On dit qu’Hippocrate installa son hôpital au bord d’un ruisseau pour l’avoir sous la main."},
 tip:{en:"Never boil it. Blanch for fifteen seconds at most, or blend it raw — the pepper is destroyed by sustained heat.",
@@ -2121,7 +2121,7 @@ svg:'<path class="s" d="M22 75q11-14 22-24 9-9 16-15"/><path class="f1 sf" d="M3
 
 {id:"watermelon-radish",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Watermelon radish",fr:"Radis red meat"},latin:"Raphanus sativus var. longipinnatus",
 origin:{en:"Northern China",fr:"Nord de la Chine"},season:[10,11,12,1,2],
-flavor:["peppery","fresh","sweet"],
+flavor:["peppery","fresh","sweet"],texture:["firm","crisp","juicy"],
 story:{en:"It is a Chinese winter radish, xin li mei, roughly beautiful heart: the pale green skin gives nothing away and the flesh inside is deep magenta. Bred as a keeper for cellars rather than for the spring bed, it is mild and faintly sweet where the black winter radish is aggressive.",
 fr:"C’est un radis d’hiver chinois, xin li mei, à peu près « beau cœur » : la peau vert pâle ne laisse rien deviner et la chair est d’un magenta profond. Sélectionné pour la garde en cave et non pour la planche de printemps, il est doux et légèrement sucré là où le radis noir est agressif."},
 tip:{en:"Slice it paper-thin across the grain, salt the slices and wait ten minutes before dressing — the salt pulls out the water that would otherwise thin the vinaigrette on the plate. The magenta bleeds, so dress it apart from anything pale.",
@@ -2131,7 +2131,7 @@ svg:'<path class="f1 sf" d="M48 22q26 0 26 24T48 74 22 46 48 22z"/><path class="
 
 {id:"white-asparagus",cat:"vegetables",price:2,pk:"8–16 €/kg",name:{en:"White asparagus",fr:"Asperge blanche"},latin:"Asparagus officinalis",
 origin:{en:"Northern European sand beds",fr:"Sables du nord de l’Europe"},season:[4,5,6],
-flavor:["bitter","sweet","delicate"],
+flavor:["bitter","sweet","delicate"],texture:["firm","fibrous","juicy"],
 story:{en:"White and green are the same plant: the spear stays white only because it is cut before it ever meets light, out of a soil ridge the grower watches for the crack that says a tip is coming. In Germany the season closes by tradition on 24 June, Johannistag, leaving the crowns the rest of the summer to feed themselves for the next year.",
 fr:"La blanche et la verte sont la même plante : le turion ne reste blanc que parce qu’on le coupe avant qu’il ne voie le jour, sous une butte que le producteur surveille pour y guetter la fissure annonçant une pointe. En Allemagne la saison se ferme par tradition le 24 juin, la Saint-Jean, laissant aux griffes tout l’été pour se refaire."},
 tip:{en:"Peel the whole spear from just under the tip down to the base, twice if the skin resists, and simmer the peelings and butt ends in the water first — that is your cooking stock. Twelve to fifteen minutes at a bare tremble; a white spear cannot be grilled, it turns fibrous and sour.",
@@ -2141,7 +2141,7 @@ svg:'<path class="f2 sf" d="M32 28q4-6 8 0v48h-8z"/><path class="f1 sf" d="M44 2
 
 {id:"wild-asparagus",cat:"vegetables",price:3,pk:"30–60 €/kg",name:{en:"Wild asparagus",fr:"Asperge sauvage"},latin:"Asparagus acutifolius",
 origin:{en:"Mediterranean scrub",fr:"Garrigue méditerranéenne"},season:[3,4,5],
-flavor:["bitter","grassy","earthy"],
+flavor:["bitter","grassy","earthy"],texture:["tender","fibrous","moist"],
 story:{en:"The spears come from a spiny evergreen shrub of Mediterranean scrub, not from a cultivated bed, and they are thread-thin and markedly more bitter than anything grown for market. In Spain they go into a revuelto — eggs barely set — which takes roughly as long to cook as the spears do.",
 fr:"Les turions viennent d’un arbrisseau épineux et persistant de la garrigue, non d’une aspergeraie, et ils sont fins comme du fil et nettement plus amers que tout ce qui se cultive. En Espagne ils partent en revuelto — des œufs à peine pris — qui cuit à peu près aussi vite qu’eux."},
 tip:{en:"Snap them rather than cut, and give them under a minute: they are already bitter and heat concentrates it fast. Fold them into eggs off the flame and the bitterness reads as depth instead of as a fault.",
@@ -2151,7 +2151,7 @@ svg:'<path class="s" d="M48 78q-4-24 0-48M48 78q-10-22-16-38M48 78q10-22 16-40M4
 
 {id:"wild-rocket",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Wild rocket",fr:"Roquette sauvage"},latin:"Diplotaxis tenuifolia",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[4,5,6,7,8,9,10],
-flavor:["peppery","pungent","bitter"],
+flavor:["peppery","pungent","bitter"],texture:["tender","moist"],
 story:{en:"Salad rocket is an annual Eruca; this is a Diplotaxis, a perennial in a different genus, with a narrow deeply cut leaf and several times the mustard oil. It is what rucola usually means on an Italian menu, and it is why the leaf goes onto the pizza after the oven rather than before.",
 fr:"La roquette cultivée est une Eruca annuelle ; celle-ci est une Diplotaxis, vivace, d’un autre genre, à feuille étroite et profondément découpée, bien plus chargée en essence de moutarde. C’est ce que veut dire rucola sur une carte italienne, et c’est pourquoi la feuille se pose sur la pizza à la sortie du four et non avant."},
 tip:{en:"Use it as a seasoning, not a base: a small torn handful through milder leaves, or scattered on hot food at the last second. Residual plate heat wilts it in about ten seconds and takes the pungency with it, so it goes on after the plate is dressed.",
@@ -2161,7 +2161,7 @@ svg:'<path class="f2 sf" d="M48 20q6 8 4 16 8-2 10 4-8 2-10 8 9 0 10 6-9 1-11 7 
 
 {id:"winter-melon",cat:"vegetables",rare:true,price:1,pk:"2–4 €/kg",name:{en:"Winter melon",fr:"Courge cireuse"},latin:"Benincasa hispida",
 origin:{en:"South and Southeast Asia",fr:"Asie du Sud et du Sud-Est"},season:[7,8,9,10],
-flavor:["mild","fresh","delicate"],
+flavor:["mild","fresh","delicate"],texture:["firm","smooth","juicy"],
 story:{en:"It is a summer fruit named for winter: the white waxy bloom on its skin seals it so well that an uncut melon keeps for months in a cool room, which is when it was traditionally eaten. In Cantonese banquet cooking the melon is the pot — hollowed, carved and steamed with the broth inside it, then carried to the table whole.",
 fr:"C’est un fruit d’été nommé pour l’hiver : la pruine cireuse et blanche de sa peau le scelle si bien qu’une courge entière se garde des mois dans une pièce fraîche, et c’est alors qu’on la mangeait. Dans la cuisine de banquet cantonaise, la courge est la marmite : évidée, sculptée, cuite à la vapeur avec le bouillon dedans et portée entière à table."},
 tip:{en:"Cut it into thick cubes and give them twenty to thirty minutes in a strong stock; it has no flavour of its own, so undercooked it is merely wet, while properly cooked it turns glassy and carries everything around it. Peel past the pale green layer down to the white — the green stays fibrous however long you cook.",
@@ -2171,7 +2171,7 @@ svg:'<path class="f2 sf" d="M20 50q0-20 28-20t28 20-28 22-28-22z"/><path class="
 
 {id:"yacon",cat:"vegetables",rare:true,price:2,pk:"8–15 €/kg",name:{en:"Yacon",fr:"Poire de terre"},latin:"Smallanthus sonchifolius",
 origin:{en:"Andean valleys",fr:"Vallées andines"},season:[10,11,12],
-flavor:["sweet","fresh","fruity"],
+flavor:["sweet","fresh","fruity"],texture:["tender","crisp","juicy"],
 story:{en:"It stores its carbohydrate as fructo-oligosaccharides rather than starch, which is why it is sweet, watery and crisp all at once and never softens the way a root vegetable does. It travelled late: it arrived in New Zealand as a novelty crop only in the early 1980s.",
 fr:"Il stocke ses glucides sous forme de fructo-oligosaccharides et non d’amidon : c’est pourquoi il est à la fois sucré, gorgé d’eau et croquant, et pourquoi il ne s’attendrit jamais comme un légume-racine. Il a voyagé tard : il n’est arrivé en Nouvelle-Zélande, comme culture de curiosité, qu’au début des années 1980."},
 tip:{en:"Peel it and eat it raw like a pear, straight into lemon or lime juice — the cut face browns within minutes. Those same sugars are largely indigestible, so a whole root at one sitting is a genuinely bad idea for most people.",
@@ -2181,7 +2181,7 @@ svg:'<path class="f2 sf" d="M30 26q10 0 16 12t8 22-8 14-12-8-6-24-2-16z"/><path 
 
 {id:"yam",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Yam",fr:"Igname"},latin:"Dioscorea spp.",
 origin:{en:"West Africa",fr:"Afrique de l’Ouest"},season:[],
-flavor:["earthy","mild","nutty","creamy"],
+flavor:["earthy","mild","nutty","creamy"],texture:["hard","granular","dry"],
 story:{en:"In much of West Africa the yam is not a vegetable but the centre of the year: harvest festivals mark its arrival, and pounded into fufu it is the plate onto which everything else is served. Some tubers grow past two metres and outweigh the person digging them.",
 fr:"Dans une grande part de l’Afrique de l’Ouest, l’igname n’est pas un légume mais le centre de l’année : des fêtes marquent sa récolte, et pilée en fufu elle devient l’assiette sur laquelle tout le reste se sert. Certains tubercules dépassent deux mètres et pèsent plus que celui qui les déterre."},
 tip:{en:"Wear gloves peeling raw yam. The sap irritates skin, and it must always be cooked — never eaten raw.",
@@ -2191,7 +2191,7 @@ svg:'<path class="f2 sf" d="M24 70q-4-10 2-18 5-10 14-16 8-7 16-8 9 1 12 8-2 9-1
 
 {id:"yardlong-bean",cat:"vegetables",price:1,pk:"5–9 €/kg",name:{en:"Yardlong bean",fr:"Haricot kilomètre"},latin:"Vigna unguiculata subsp. sesquipedalis",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["grassy","earthy","mild"],
+flavor:["grassy","earthy","mild"],texture:["firm","fibrous","dry"],
 story:{en:"It is not a green bean at all but a cowpea, the same species as the black-eyed pea, grown for pods instead of seeds; sesquipedalis means a foot and a half, which is roughly honest. The difference is in the wall, dense and dry where a haricot vert is juicy, and that wall is why it behaves so differently in a pan.",
 fr:"Ce n’est pas un haricot vert mais un niébé, la même espèce que le haricot à œil noir, cultivé pour la gousse et non pour la graine ; sesquipedalis veut dire un pied et demi, ce qui est à peu près honnête. La différence est dans la paroi — dense et sèche là où le haricot vert est juteux — et c’est elle qui change tout à la poêle."},
 tip:{en:"Dry-fry it: cut into finger lengths, then six to eight minutes in a wide dry pan or shallow oil over high heat until the skin blisters and wrinkles, and only then add garlic and seasoning. Blanching it like a green bean is the classic mistake — it comes out squeaky and grey-green, with none of the sweetness the blistering brings.",
@@ -2201,7 +2201,7 @@ svg:'<path class="s" d="M34 22q-8 26-4 44t18 14 18-16-4-42"/><path class="s" d="
 
 {id:"zenmai",cat:"vegetables",rare:true,price:3,pk:"80–150 €/kg",name:{en:"Zenmai (royal fern, dried)",fr:"Osmonde du Japon séchée (zenmai)"},latin:"Osmunda japonica",
 origin:{en:"Mountain villages of northern Japan",fr:"Villages de montagne du nord du Japon"},season:[],
-flavor:["earthy","woody","mild"],
+flavor:["earthy","woody","mild"],texture:["tough","chewy","dry"],
 story:{en:"Zenmai is not simply dried: it is boiled, then rubbed by hand between the palms every few hours while it lies in the sun, over three or four days, which breaks the fibres and turns the shoots black and pliant. In Tōhoku and Niigata it was long a cash crop, and the season of rubbing was paid work that occupied whole households.",
 fr:"Le zenmai n’est pas simplement séché : on le blanchit, puis on le frotte à la main entre les paumes toutes les quelques heures pendant qu’il sèche au soleil, trois ou quatre jours durant, ce qui casse les fibres et rend les crosses noires et souples. Dans le Tōhoku et à Niigata, il fut longtemps une culture de rapport, et la saison du frottage occupait des maisonnées entières."},
 tip:{en:"Rehydrate six hours in warm water, then simmer twenty minutes and let it cool in its own liquid before dressing it — the chew softens on the way down, not on the boil. Squeeze it dry before it meets soy sauce, or the seasoning never penetrates.",
@@ -2211,7 +2211,7 @@ svg:'<path class="f3 sf" d="M34 24q-5 24-1 48h6q-4-24 1-48z"/><path class="f3 sf
 
 {id:"zucchini",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Zucchini",fr:"Courgette"},latin:"Cucurbita pepo",
 origin:{en:"Americas, refined in Italy",fr:"Amériques, affinée en Italie"},season:[5,6,7,8,9],
-flavor:["mild","fresh","grassy"],
+flavor:["mild","fresh","grassy"],texture:["firm","smooth","juicy"],
 story:{en:"Its ancestors crossed the Atlantic with the conquistadors, but the slim green zucchini we know was shaped in 19th-century Italian market gardens near Milan. Italians still prize its golden blossom as much as the fruit.",
 fr:"Ses ancêtres ont traversé l’Atlantique avec les conquistadors, mais la fine courgette verte que nous connaissons fut façonnée au XIXe siècle dans les potagers italiens près de Milan. Les Italiens prisent encore sa fleur dorée autant que le fruit."},
 tip:{en:"It is nine-tenths water: cook it fast and hot, or salt and drain it, so it browns instead of steaming.",
@@ -2220,7 +2220,7 @@ pairs:["mint","lemon","garlic","parmesan","basil","pine-nut","olive-oil"],
 svg:'<rect class="f2 sf" x="26" y="44" width="44" height="16" rx="8" transform="rotate(-14 48 52)"/><path class="s" d="M68 38q6-2 8-6"/><path class="dot" d="M38 52a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M48 49a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M44 58a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0M56 53a1.6 1.6 0 103.2 0 1.6 1.6 0 10-3.2 0"/>'},
 {id:"banana-blossom",cat:"vegetables",price:2,pk:"4–7 €/pièce",name:{en:"Banana blossom",fr:"Fleur de bananier"},latin:"Musa spp.",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["bitter","fresh","mild"],
+flavor:["bitter","fresh","mild"],texture:["firm","fibrous","dry"],
 story:{en:"The purple cone hanging below a banana bunch is the flower bud, and growers cut it off so the fruit above fills out — which makes it a by-product of the banana harvest rather than a crop of its own. Strip the bracts and the pale heart inside behaves exactly like an artichoke, browning included.",
 fr:"Le cône pourpre suspendu sous le régime est le bouton floral, et on le coupe pour que les bananes au-dessus se remplissent : c’est donc un sous-produit de la récolte, pas une culture. Sous les bractées, le cœur pâle se comporte en tout point comme un artichaut, noircissement compris."},
 tip:{en:"Have a bowl of acidulated water standing before the knife touches it — shredded heart browns in under two minutes. Oil your hands and the blade first: the sap is a latex that stains black and does not wash off.",
@@ -2229,7 +2229,7 @@ pairs:["lime","coconut-milk","chili","peanut","cilantro","fish-sauce"],
 svg:'<path class="f2 sf" d="M48 82c-12-11-16-27-14-41 8-8 20-8 28 0 2 14-2 30-14 41z"/><path class="s" d="M34 52q14 8 28 0M36 64q12 7 24 0"/><path class="f1 sf" d="M34 41q14-11 28 0-14 7-28 0z"/><path class="s" d="M48 34V16"/>'},
 {id:"hanawasabi",cat:"vegetables",rare:true,price:3,pk:"15–30 €/100 g",name:{en:"Hanawasabi (wasabi flower stems)",fr:"Fleurs de wasabi"},latin:"Eutrema japonicum",
 origin:{en:"Wasabi beds of Shizuoka and Nagano",fr:"Cressonnières à wasabi, Shizuoka et Nagano"},season:[2,3,4],
-flavor:["pungent","hot","fresh"],
+flavor:["pungent","hot","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"Growers cut the flowering stems to drive the plant’s strength back into the rhizome, so hanawasabi began as a by-product of the crop that pays. Its heat has to be provoked: the pungent compound forms only once the cells are torn, so cooks salt the stems, scald them and shut them warm in a sealed jar — a step the Japanese describe as making the wasabi angry.",
 fr:"Les producteurs coupent les hampes florales pour renvoyer la vigueur de la plante dans le rhizome : le hanawasabi est né comme sous-produit de la vraie récolte. Son piquant se provoque — la molécule ne se forme qu’une fois les cellules déchirées : on sale les tiges, on les ébouillante, puis on les enferme au chaud dans un bocal, ce que le japonais appelle « mettre le wasabi en colère »."},
 tip:{en:"Salt and rub the stems, dip them ten seconds in water at 80 °C, then shake them hard in a sealed jar and leave it at room temperature two hours before it goes to the fridge. Boiling water kills the enzyme and a loose lid lets the heat escape; either mistake leaves you a merely green vegetable.",
@@ -2238,7 +2238,7 @@ pairs:["koikuchi-shoyu","katsuobushi","hon-mirin","salt","rice","junmai-sake"],
 svg:'<path class="s" d="M36 76q4-24 10-38M48 76q1-22 2-38M60 76q-3-24-7-38"/><circle class="f1 sf" cx="46" cy="30" r="6"/><circle class="f1 sf" cx="50" cy="36" r="5"/><circle class="f1 sf" cx="56" cy="30" r="5"/><path class="f2 sf" d="M40 60q-12 2-14-8 12-4 14 8z"/>'},
 {id:"ribwort-plantain",cat:"vegetables",rare:true,price:1,pk:"10–25 €/kg",name:{en:"Ribwort plantain",fr:"Plantain lancéolé"},latin:"Plantago lanceolata",
 origin:{en:"Meadows and field margins",fr:"Prairies et bordures de champs"},season:[4,5,6,7],
-flavor:["earthy","umami","mild"],
+flavor:["earthy","umami","mild"],texture:["firm","chewy","moist"],
 story:{en:"It shares a genus with psyllium, the plant whose seed husks are sold as fibre, and its own seeds go slippery in water in exactly the same way. Foragers walk past the tough ribbed leaf for the unopened flower buds, which taste of button mushroom the moment they hit hot fat.",
 fr:"Il appartient au même genre que le psyllium, dont on vend les téguments comme fibre, et ses propres graines deviennent mucilagineuses dans l'eau de la même manière. Les cueilleurs délaissent la feuille nervurée et coriace pour les boutons floraux fermés, qui prennent un goût de champignon de Paris dès qu'ils touchent le gras chaud."},
 tip:{en:"Sear the buds a minute in foaming butter over high heat until they squeak and colour. Spikes that have already opened have gone woody, and no amount of cooking brings them back.",

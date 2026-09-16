@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"acacia-honey",cat:"sweet",price:2,pk:"10–20 €/kg",name:{en:"Acacia honey",fr:"Miel d’acacia"},latin:"Robinia pseudoacacia",
 origin:{en:"Europe & North America",fr:"Europe & Amérique du Nord"},season:[5,6],
-flavor:["sweet","floral","delicate","mild"],
+flavor:["sweet","floral","delicate","mild"],texture:["viscous","smooth"],
 story:{en:"From the false acacia, which flowers for barely two weeks in late spring — a single storm can wipe out an entire year's crop. Its very high fructose content is why it stays liquid for years while other honeys crystallise.",
 fr:"Issu du robinier faux-acacia, qui ne fleurit qu’une quinzaine de jours à la fin du printemps — un seul orage peut anéantir une année de récolte. Sa très forte teneur en fructose explique qu’il reste liquide des années quand les autres miels cristallisent."},
 tip:{en:"It is the neutral honey — use it where you want sweetness without the honey announcing itself.",
@@ -11,7 +11,7 @@ svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path 
 
 {id:"agave-syrup",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Agave syrup",fr:"Sirop d’agave"},latin:"Agave tequilana",
 origin:{en:"Jalisco, Mexico",fr:"Jalisco, Mexique"},season:[],
-flavor:["sweet","mild","floral","earthy"],
+flavor:["sweet","mild","floral","earthy"],texture:["viscous","smooth"],
 story:{en:"From the same plant that makes tequila — the heart of the agave is cut out and its sap boiled down. Marketed for years as a low-glycaemic alternative, though it is largely fructose, which is a rather different claim than most labels imply.",
 fr:"De la même plante que la tequila — on découpe le cœur de l’agave et l’on réduit sa sève. Vendu des années comme alternative à faible index glycémique, alors qu’il est majoritairement fructose, ce qui n’est pas tout à fait ce que suggèrent les étiquettes."},
 tip:{en:"It is sweeter than sugar, so use about three quarters as much, and reduce the other liquid slightly.",
@@ -21,7 +21,7 @@ svg:'<path class="f2 sf" d="M40 74V42h16v32z"/><path class="s" d="M40 50h16"/><p
 
 {id:"amardine",cat:"sweet",rare:true,price:1,pk:"8–15 €/kg",name:{en:"Amardine",fr:"Amardine (pâte d’abricot séchée)"},latin:"Prunus armeniaca",
 origin:{en:"Ghouta orchards, Syria",fr:"Vergers de la Ghouta, Syrie"},season:[],
-flavor:["tangy","sweet","fruity"],
+flavor:["tangy","sweet","fruity"],texture:["tough","chewy","dry"],
 story:{en:"Amardine is the Levantine name for qamar al-din, apricot pulp cooked with sugar and dried in sheets on wooden trays; the apricots of the Ghouta orchards outside Damascus set the standard. It is drunk more than it is eaten — soaked overnight into a thick nectar that breaks the Ramadan fast.",
 fr:"L’amardine est le nom levantin du qamar al-din : une pulpe d’abricot cuite au sucre et séchée en feuilles sur des claies de bois, les abricots des vergers de la Ghouta, près de Damas, faisant référence. On la boit plus qu’on ne la mange — trempée une nuit, elle donne le nectar épais qui rompt le jeûne du ramadan."},
 tip:{en:"Tear the sheet up and soak it in warm water at least four hours, or overnight for a drink, then blend; boiling it to save time flattens the flavour into plain jam. A slab melted into a lamb tagine does the work of both the dried apricots and the sugar.",
@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M24 40h40l6 8-6 6H24l-6-6z"/><path class="f1 sf" d="
 
 {id:"amarena",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Amarena cherry in syrup",fr:"Cerise amarena au sirop"},latin:"Prunus cerasus var. austera",
 origin:{en:"Bologna and Modena",fr:"Bologne et Modène"},season:[],
-flavor:["sour","rich","fruity"],
+flavor:["sour","rich","fruity"],texture:["soft","smooth","moist"],
 story:{en:"The amarena in syrup was worked out by Rachele Fabbri in Bologna around 1915, and the blue-and-white jar it still comes in was thrown in the same years by the Faenza ceramicist Riccardo Gatti. The fruit is a genuine sour cherry held firm in heavy syrup, not a sweet cherry bleached and re-dyed the way a maraschino is.",
 fr:"L’amarena au sirop a été mise au point par Rachele Fabbri à Bologne vers 1915, et le pot bleu et blanc dans lequel elle se vend encore fut tourné les mêmes années par le céramiste faentin Riccardo Gatti. C’est une vraie cerise acide, tenue ferme dans un sirop épais, et non une cerise douce blanchie puis recolorée comme la maraschino."},
 tip:{en:"Use the syrup — a spoonful on the plate under a semifreddo does more than the cherries themselves. If they must go into a batter, drain them an hour on paper first or the syrup bleeds grey streaks through the crumb.",
@@ -41,7 +41,7 @@ svg:'<path class="f1 sf" d="M32 38h32v30q0 8-8 8H40q-8 0-8-8z"/><path class="f3 
 
 {id:"atomised-glucose",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Atomised glucose",fr:"Glucose atomisé"},latin:"—",
 origin:{en:"Industrial starch conversion",fr:"Conversion industrielle de l’amidon"},season:[],
-flavor:["mild","sweet"],
+flavor:["mild","sweet"],texture:["powdery","dry"],
 story:{en:"It is glucose syrup sprayed into a hot chamber and dried in flight, so what lands is a powder of the same dextrins with the water gone. Confectioners buy it by dextrose equivalent — around DE 21 for sorbets, higher when they want sweetness — and it is the DE, not the weight, that says how it will behave.",
 fr:"C’est du sirop de glucose pulvérisé dans une chambre chaude et séché en vol : ce qui retombe est une poudre des mêmes dextrines, sans l’eau. Les confiseurs l’achètent à l’équivalent dextrose — autour de DE 21 pour les sorbets, plus haut quand on cherche du sucrant — et c’est le DE, non le poids, qui dit comment il se comportera."},
 tip:{en:"Use it to raise the dry matter of a sorbet without raising sweetness: replacing 3 to 5 % of the sugar with DE 21 powder gives body and stops the ice going coarse. Sift it into the dry sugars before it meets any liquid, or it lumps instantly.",
@@ -51,7 +51,7 @@ svg:'<path class="f1 sf" d="M32 44q-8 14-8 26t10 12h28q10 0 10-12t-8-26z"/><path
 
 {id:"barley-malt-syrup",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Barley malt syrup",fr:"Sirop de malt d’orge"},latin:"Hordeum vulgare",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[],
-flavor:["toasty","earthy","rich"],
+flavor:["toasty","earthy","rich"],texture:["viscous","smooth"],
 story:{en:"Sprouted barley is kilned, then mashed so its own enzymes cut the starch into maltose, about two thirds of the finished syrup, and maltose is why it reads as roughly half as sweet as sugar. Bakers buy it for the enzymes and for the sugar the yeast cannot finish: what survives fermentation caramelises into the crust.",
 fr:"L’orge germée est touraillée, puis empâtée pour que ses propres enzymes découpent l’amidon en maltose — environ deux tiers du sirop fini — et c’est ce maltose qui lui donne un pouvoir sucrant d’à peine la moitié de celui du sucre. Les boulangers l’achètent pour les enzymes et pour ce sucre que la levure ne finit pas : ce qui survit à la fermentation caramélise dans la croûte."},
 tip:{en:"Check whether it is diastatic before buying: the enzyme-active kind is dosed at 0.5 to 1 % of flour weight and will slacken a dough badly beyond that, while the deactivated kind is only flavour and colour. Warm the jar in water before weighing, since cold it will not leave the spoon.",
@@ -61,7 +61,7 @@ svg:'<g transform="translate(2.59 2.7) scale(0.946)"><path class="f2 sf" d="M55 
 
 {id:"bee-pollen",cat:"sweet",price:2,pk:"30–60 €/kg",name:{en:"Bee pollen",fr:"Pollen d’abeille"},latin:"Apis mellifera",
 origin:{en:"Hives, spring and summer flowering",fr:"Ruches, floraisons de printemps"},season:[4,5,6,7],
-flavor:["floral","bitter","honeyed"],
+flavor:["floral","bitter","honeyed"],texture:["granular","dry"],
 story:{en:"A foraging bee glues pollen together with a drop of nectar and packs it into the baskets on her hind legs; the beekeeper harvests it with a trap that scrapes the pellets off as she comes home. Every colour in the jar is a different flower, which makes a pot of pollen a map of what was blooming that week.",
 fr:"L’abeille agglomère le pollen avec une goutte de nectar et le tasse dans les corbeilles de ses pattes arrière ; l’apiculteur le récolte avec une trappe qui racle les pelotes au passage. Chaque couleur du bocal correspond à une fleur différente : un pot de pollen est la carte de ce qui fleurissait cette semaine-là."},
 tip:{en:"Heat turns it bitter and gluey - fold it into cold yogurt or scatter it at the moment of serving. Fresh pollen keeps in the freezer; dried keeps in the cupboard but has lost half its perfume.",
@@ -71,7 +71,7 @@ svg:'<path class="f2 sf" d="M25 57q0-9 9-9t9 9-9 9-9-9zM40 54q0-9 9-9t9 9-9 9-9-
 
 {id:"birch-syrup",cat:"sweet",rare:true,luxe:true,price:3,pk:"150–350 €/L",name:{en:"Birch syrup",fr:"Sirop de bouleau"},latin:"Betula spp.",
 origin:{en:"Alaska, Yukon, Finland",fr:"Alaska, Yukon, Finlande"},season:[],
-flavor:["bitter","earthy","warm"],
+flavor:["bitter","earthy","warm"],texture:["viscous","smooth"],
 story:{en:"It takes around 110 litres of birch sap to make one litre of syrup, against forty for maple - the sap runs at barely one percent sugar. That sugar is mostly fructose rather than sucrose, which is why the syrup tastes mineral and faintly bitter instead of sweet.",
 fr:"Il faut environ 110 litres de sève de bouleau pour un litre de sirop, contre quarante pour l’érable : la sève titre à peine 1 % de sucre. Ce sucre est surtout du fructose et non du saccharose, d’où ce goût minéral, presque amer, plutôt que sucré."},
 tip:{en:"Fructose scorches far below maple's temperature, so never reduce it into a glaze - stir it in off the heat at the end. Count on a quarter of the maple quantity: it seasons game and oily fish rather than sweetening them.",
@@ -81,7 +81,7 @@ svg:'<path class="f2 sf" d="M42 20h12v10l8 14v30a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6V
 
 {id:"blond-chocolate",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Blond chocolate",fr:"Chocolat blond"},latin:"Theobroma cacao",
 origin:{en:"Tain-l'Hermitage, Drome",fr:"Tain-l’Hermitage, Drôme"},season:[],
-flavor:["toasty","creamy","sweet","milky"],
+flavor:["toasty","creamy","sweet","milky"],texture:["hard","brittle","dry"],
 story:{en:"In 2004 Frederic Bau left white chocolate in a bain-marie during a demonstration and came back to something the colour of shortbread; Valrhona spent eight years making the accident repeatable and launched Dulcey in 2012. What happened was a Maillard reaction in a product with no cocoa solids at all - the browning is entirely milk.",
 fr:"En 2004, Frédéric Bau oublie du chocolat blanc au bain-marie pendant une démonstration et retrouve une matière couleur de sablé ; Valrhona mettra huit ans à rendre l’accident reproductible et lancera Dulcey en 2012. C’est une réaction de Maillard dans un produit sans aucune matière sèche de cacao : le brunissement vient entièrement du lait."},
 tip:{en:"Treat it as white chocolate, only cooler - melt no higher than 45C, temper down to 26-27C and work at 28C. Its already-caramelised milk sugars catch fast, so build ganache at 35C and no hotter.",
@@ -91,7 +91,7 @@ svg:'<path class="f2 sf" d="M22 34h44v30H22z"/><path class="s" d="M22 49h44M37 3
 
 {id:"brown-rice-syrup",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Brown rice syrup",fr:"Sirop de riz brun"},latin:"Oryza sativa",
 origin:{en:"Japan and East Asia",fr:"Japon et Asie de l’Est"},season:[],
-flavor:["sweet","mild","nutty"],
+flavor:["sweet","mild","nutty"],texture:["viscous","smooth"],
 story:{en:"Rice starch has no sweetness of its own until an enzyme cuts it: barley malt or koji amylase chops the long chains into maltose, a sugar roughly half as sweet as sucrose. That is the whole character of the syrup — you can use it by the spoonful and the flavour never announces itself as sugar, though it browns faster than you expect.",
 fr:"L’amidon de riz n’a aucune douceur propre tant qu’une enzyme ne l’a pas coupé : le malt d’orge ou l’amylase du koji découpe les longues chaînes en maltose, un sucre à peu près deux fois moins sucrant que le saccharose. C’est là tout le caractère du sirop : on l’emploie à la cuillère sans que la saveur s’annonce comme du sucre, mais il colore plus vite qu’on ne le croit."},
 tip:{en:"Swap it for sugar at about 1.3 to 1 by weight and cut the liquid elsewhere in the recipe. It is far stickier than glucose syrup, so stand the jar in hot water before you measure, or half of it stays on the spoon.",
@@ -101,7 +101,7 @@ svg:'<path class="f1 sf" d="M30 34h36v40a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path
 
 {id:"buckwheat-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Buckwheat honey",fr:"Miel de sarrasin"},latin:"Fagopyrum esculentum",
 origin:{en:"Brittany & northern Europe",fr:"Bretagne & Europe du Nord"},season:[7,8],
-flavor:["earthy","musky","rich","smoky"],
+flavor:["earthy","musky","rich","smoky"],texture:["viscous","smooth"],
 story:{en:"Almost black, and it smells of molasses, malt and the farmyard — it is the most divisive honey there is, and the one with by far the most antioxidants. Brittany makes it because Brittany grows buckwheat for its galettes.",
 fr:"Presque noir, il sent la mélasse, le malt et l’étable — c’est le miel le plus clivant qui soit, et de loin le plus riche en antioxydants. La Bretagne en produit parce qu’elle cultive le sarrasin pour ses galettes."},
 tip:{en:"Do not try it on a scone. It belongs in a marinade, a barbecue glaze or a dark gingerbread.",
@@ -111,7 +111,7 @@ svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path 
 
 {id:"angelique-confite",cat:"sweet",price:3,pk:"50–100 €/kg",name:{en:"Candied angelica",fr:"Angélique confite"},latin:"Angelica archangelica",
 origin:{en:"Marais poitevin, Niort",fr:"Marais poitevin, Niort"},season:[],
-flavor:["bitter","musky","resinous","herbal"],
+flavor:["bitter","musky","resinous","herbal"],texture:["firm","chewy","moist"],
 story:{en:"Angelica reached the Marais poitevin with monks who grew it as medicine, and the nuns of Niort turned the hollow stems into a confection in the eighteenth century, candied in grooved batons. It is a biennial cut in its second spring, when the stem is thick but has not yet gone woody towards the flower.",
 fr:"L’angélique est arrivée dans le Marais poitevin avec des moines qui la cultivaient comme plante médicinale, et les religieuses de Niort en ont fait au XVIIIᵉ siècle une confiserie, les tiges creuses confites en bâtons cannelés. C’est une bisannuelle coupée au deuxième printemps, quand la tige est grosse mais pas encore montée en bois vers la fleur."},
 tip:{en:"Dice it small: the flavour is musky and resinous, and more than a teaspoon per kilo of dough takes over everything around it. Rinse and dry the batons before they go into a cake, or the surface sugar sends them straight to the bottom.",
@@ -121,7 +121,7 @@ svg:'<path class="f2 sf" d="M36 24h10v46q0 6-5 6t-5-6z"/><path class="f1 sf" d="
 
 {id:"cedrat-confit",cat:"sweet",price:2,pk:"30–60 €/kg",name:{en:"Candied citron",fr:"Cédrat confit"},latin:"Citrus medica",
 origin:{en:"Cap Corse",fr:"Cap Corse"},season:[],
-flavor:["floral","citrus","sweet","bitter"],
+flavor:["floral","citrus","sweet","bitter"],texture:["firm","chewy","moist"],
 story:{en:"The citron is almost entirely pith: a thick white albedo around a pulp so reduced there is barely any juice, which is why the fruit exists commercially as candied peel rather than as fruit. Cap Corse supplied about a third of the world’s candied citron into the 1950s before the orchards went and Corsican production nearly vanished.",
 fr:"Le cédrat n’est presque que de l’albédo : une épaisse écorce blanche autour d’une pulpe si réduite qu’il n’en sort quasiment pas de jus — d’où un fruit qui n’existe commercialement que confit. Le Cap Corse a fourni près du tiers du cédrat confit mondial jusque dans les années 1950, avant que les vergers disparaissent et la production corse avec eux."},
 tip:{en:"Buy it in whole blocks rather than diced: pre-cut cubes are dusted in glucose and taste of nothing. Chop it by hand with an oiled knife, and rinse the syrup off in warm water if it is going into a batter that already carries its own sugar.",
@@ -131,7 +131,7 @@ svg:'<circle class="f2 sf" cx="48" cy="50" r="27"/><circle class="f1 sf" cx="48"
 
 {id:"ecorce-orange-confite",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Candied orange peel",fr:"Écorce d’orange confite"},latin:"Citrus sinensis",
 origin:{en:"Mediterranean citrus groves",fr:"Vergers d’agrumes méditerranéens"},season:[],
-flavor:["bitter","citrus","sweet"],
+flavor:["bitter","citrus","sweet"],texture:["firm","chewy","moist"],
 story:{en:"Candying works by slow exchange: the peel sits in syrups of rising sugar concentration over several days, so water leaves the cells gradually enough that they never collapse and the peel turns translucent instead of shrivelling. Forced through in one strong syrup it goes tough and hollow, which is what cheap candied peel is.",
 fr:"Le confisage travaille par échange lent : l’écorce séjourne plusieurs jours dans des sirops de concentration croissante, l’eau quittant les cellules assez doucement pour qu’elles ne s’effondrent pas et que l’écorce devienne translucide au lieu de se ratatiner. Expédié en un seul sirop fort, le résultat est coriace et creux : c’est exactement l’écorce confite bon marché."},
 tip:{en:"Blanch fresh peel three times from cold water, changing the water each time, before it ever meets syrup, or the bitterness stays harsh instead of turning aromatic. To dice bought peel without gumming the blade, chill it first and dip the knife in hot water.",
@@ -141,7 +141,7 @@ svg:'<path class="f2 sf" d="M30 24q10 14 8 30t-10 20q6-12 4-24T26 26z"/><path cl
 
 {id:"carob-powder",cat:"sweet",price:1,pk:"8–16 €/kg",name:{en:"Carob powder",fr:"Poudre de caroube"},latin:"Ceratonia siliqua",
 origin:{en:"Mediterranean carob groves",fr:"Caroubiers méditerranéens"},season:[],
-flavor:["sweet","toasty","earthy"],
+flavor:["sweet","toasty","earthy"],texture:["powdery","dry"],
 story:{en:"Carob is a roasted legume pod with no kinship to cacao, and its flesh is already about half sugar before anything is added to it. The story goes that its seeds were so even in weight that they gave the jeweller's carat its name; weighing them shows them no steadier than any other seed.",
 fr:"La caroube est une gousse de légumineuse torréfiée, sans parenté avec le cacao, et sa pulpe est déjà sucrée à près de 50 % avant qu’on n’y ajoute quoi que ce soit. On raconte que ses graines, d’un poids si régulier, ont donné son nom au carat du joaillier ; les pesées montrent qu’elles ne le sont pas plus que d’autres."},
 tip:{en:"With almost no fat it will never temper or set - use it to colour and sweeten a batter, swapping it weight for weight with cocoa and cutting the recipe's sugar by about a quarter. It scorches easily, so add it to liquid off the heat.",
@@ -151,7 +151,7 @@ svg:'<path class="f2 sf" d="M20 40q14-8 28 0t28 0v10q-14 8-28 0t-28 0z"/><circle
 
 {id:"cassonade",cat:"sweet",price:1,pk:"2–4 €/kg",name:{en:"Cassonade",fr:"Cassonade"},latin:"Saccharum — sucre roux de canne",
 origin:{en:"France & Belgium",fr:"France & Belgique"},season:[],
-flavor:["sweet","toasty","warm","rich"],
+flavor:["sweet","toasty","warm","rich"],texture:["granular","dry"],
 story:{en:"Beware the word: in France cassonade means unrefined cane sugar, in Belgium and Quebec it means something closer to soft brown sugar made from beet. Recipes crossing those borders go wrong on this single term more than any other.",
 fr:"Méfiez-vous du mot : en France la cassonade est un sucre de canne roux non raffiné, en Belgique et au Québec elle désigne un sucre brun de betterave. Plus qu’aucun autre terme, celui-ci fait dérailler les recettes qui traversent ces frontières."},
 tip:{en:"It is what goes on a crème brûlée because it caramelises faster than white sugar and colours more evenly.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M22 49q-4-3-2-8l33-19q5-2 8 3l-4 8-33 19q-5 1-2-3z"/
 
 {id:"chestnut-cream",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Chestnut cream",fr:"Crème de marrons"},latin:"Castanea sativa",
 origin:{en:"Ardèche, France",fr:"Ardèche, France"},season:[],
-flavor:["sweet","nutty","earthy"],
+flavor:["sweet","nutty","earthy"],texture:["soft","creamy","smooth"],
 story:{en:"Clément Faugier set up in Privas in 1882 to candy chestnuts and, as the house tells it, was left with a mountain of broken marrons glacés; in 1885 he sweetened and vanilla-scented the debris and sold it as crème de marrons. The by-product outlived the luxury it came from: the tube is a French pantry fixture, and candied chestnuts are a fraction of the trade.",
 fr:"Clément Faugier s’installe à Privas en 1882 pour confire des châtaignes et, comme le raconte la maison, se retrouve avec une montagne de marrons glacés brisés ; en 1885 il sucre et vanille les débris et les vend en crème de marrons. Le sous-produit a survécu au luxe dont il venait : le tube est un classique du placard français, et le marron glacé ne pèse qu’une fraction du commerce."},
 tip:{en:"It is already close to half sugar, so treat it as a sweetener and not a purée — folded one to one into whipped cream it is a Mont-Blanc mix that needs nothing added. Loosen it with rum, cream or crème fraîche; water thins it without carrying the flavour and it separates on standing.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M40 30h16l5 32H35z"/><path class="f3 sf" d="M43 20h1
 
 {id:"chestnut-honey",cat:"sweet",price:2,pk:"14–24 €/kg",name:{en:"Chestnut honey",fr:"Miel de châtaignier"},latin:"Castanea sativa",
 origin:{en:"Corsica, Cévennes, Italy",fr:"Corse, Cévennes, Italie"},season:[6,7],
-flavor:["bitter","earthy","woody","rich"],
+flavor:["bitter","earthy","woody","rich"],texture:["viscous","smooth"],
 story:{en:"Dark, resinous and genuinely bitter — the honey people either love or send back. Its pollen count is so distinctive that laboratories use it as a reference sample, and Corsica protects its version with an appellation.",
 fr:"Sombre, résineux et franchement amer — le miel que l’on adore ou que l’on renvoie. Son spectre pollinique est si caractéristique que les laboratoires s’en servent d’échantillon de référence, et la Corse protège le sien par une appellation."},
 tip:{en:"It is a savoury honey. Put it with blue cheese, game or a duck glaze rather than on toast.",
@@ -181,7 +181,7 @@ svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path 
 
 {id:"chinese-rock-sugar",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Chinese rock sugar",fr:"Sucre candi chinois"},latin:"Saccharum officinarum",
 origin:{en:"Sichuan and Guangdong",fr:"Sichuan et Guangdong"},season:[],
-flavor:["sweet","mild"],
+flavor:["sweet","mild"],texture:["hard","brittle","dry"],
 story:{en:"Bing tang means ice sugar: crystals grown over days on threads or bamboo splints hung in a supersaturated syrup, rather than milled out of it. Size is the whole point - one lump dissolves across a long braise instead of all at once.",
 fr:"Bing tang signifie « sucre de glace » : des cristaux que l’on fait croître pendant des jours sur des fils ou des éclats de bambou plongés dans un sirop sursaturé, au lieu de les broyer. La taille est tout l’intérêt — un morceau se dissout à l’échelle d’un braisage entier, et non d’un coup."},
 tip:{en:"For a red-braise, melt a two-centimetre lump in the oil to a pale caramel before the soy sauce goes in - that is where the lacquer comes from. One shade past pale and the whole pot turns bitter.",
@@ -191,7 +191,7 @@ svg:'<path class="f1 sf" d="M26 46l16-16 22 6 6 20-14 16-24-4z"/><path class="s"
 
 {id:"cocoa-husk",cat:"sweet",rare:true,price:1,pk:"12–25 €/kg",name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
 origin:{en:"Chocolate roasting rooms",fr:"Ateliers de torréfaction du cacao"},season:[],
-flavor:["smoky","woody","toasty"],
+flavor:["smoky","woody","toasty"],texture:["brittle","dry","flaky"],
 story:{en:"The husk is about a tenth of the bean's weight, winnowed off after roasting, and in nineteenth-century Britain and France it was sold on its own as cocoa shell tea to households that could not afford the nib. It carries the smoke of the roast with almost none of the fat and almost none of the bitterness.",
 fr:"La coque représente environ un dixième du poids de la fève ; soufflée après torréfaction, elle était vendue seule au XIXe siècle, en Angleterre comme en France, comme « thé de coques de cacao » pour ceux qui ne pouvaient pas s’offrir le grué. Elle porte la fumée de la torréfaction sans presque aucune matière grasse ni amertume."},
 tip:{en:"Infuse it like tea - about 30 g per litre of cream or milk at 80C for twenty minutes, then strain and press the husks. Boiling drags out a papery bitterness that will not leave again.",
@@ -201,7 +201,7 @@ svg:'<path class="f3 sf" d="M34 28q18-6 26 8t-4 32q-18 6-25-8t3-32z"/><path clas
 
 {id:"cacao-mass",cat:"sweet",price:2,pk:"20–35 €/kg",name:{en:"Cocoa mass",fr:"Pâte de cacao"},latin:"Theobroma cacao",
 origin:{en:"Cacao grinding rooms",fr:"Broyage de la fève de cacao"},season:[],
-flavor:["bitter","rich","earthy"],
+flavor:["bitter","rich","earthy"],texture:["hard","brittle","dry"],
 story:{en:"Cocoa liquor has nothing to do with alcohol; the word only records that ground nib runs liquid above about 35C, half its weight being cocoa butter. It is chocolate at the moment before anyone adds anything to it.",
 fr:"La « liqueur de cacao » n’a rien d’alcoolisé : le mot enregistre seulement que le grué broyé devient liquide au-dessus de 35 °C, la moitié de son poids étant du beurre de cacao. C’est le chocolat juste avant qu’on ne lui ajoute quoi que ce soit."},
 tip:{en:"Use it to raise a couverture's cacao percentage without adding sugar - swap 10 g of it for 10 g of your 70% and the batch comes out darker and drier. Melt it with the couverture, never alone above 50C.",
@@ -211,7 +211,7 @@ svg:'<path class="f3 sf" d="M26 42h44l6 10-6 22H26l-6-22z"/><path class="f2 sf" 
 
 {id:"cocoa-nibs",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Cocoa nibs",fr:"Grué de cacao"},latin:"Theobroma cacao",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[],
-flavor:["bitter","toasty","earthy","nutty"],
+flavor:["bitter","toasty","earthy","nutty"],texture:["hard","crunchy","dry"],
 story:{en:"Roasted cocoa beans cracked into fragments, before any sugar or grinding — this is what chocolate is made from, and it is unrecognisably bitter. The Aztecs drank it with chilli and used the beans as currency.",
 fr:"Des fèves de cacao torréfiées et concassées, avant tout sucre et tout broyage — c’est la matière du chocolat, et elle est amère au point d’être méconnaissable. Les Aztèques la buvaient au piment et se servaient des fèves comme monnaie."},
 tip:{en:"Use them as you would a nut, for crunch and bitterness against something sweet. They never soften.",
@@ -221,7 +221,7 @@ svg:'<path class="f1 sf" d="M38 60q-7-8-2-17t18-7q7 5 3 14t-19 10z"/><path class
 
 {id:"criollo-cacao",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
-flavor:["nutty","mild","fruity","honeyed"],
+flavor:["nutty","mild","fruity","honeyed"],texture:["hard","brittle","dry"],
 story:{en:"Cut a criollo pod and the beans are white or pale violet, not the deep purple of the forastero that fills the commodity trade — the group simply lacks the anthocyanins that carry most of chocolate's bitterness and astringency. It lacks the vigour too: the trees are fragile and shy-bearing, which is why criollo remains a sliver of the world crop.",
 fr:"Ouvrez une cabosse criollo et les fèves sont blanches ou violet pâle, non pas le pourpre profond du forastero qui alimente le négoce de masse — le groupe est simplement dépourvu des anthocyanes qui portent l’essentiel de l’amertume et de l’astringence du chocolat. Il manque aussi de vigueur : arbres fragiles, rendements faibles, d’où la part infime du criollo dans la récolte mondiale."},
 tip:{en:"Roast it low, around 110–120 °C, well under what a forastero blend takes: there is no astringency to burn off, and the nut-and-caramel notes flatten above that. If you are only melting it, keep the bowl under 45 °C.",
@@ -231,7 +231,7 @@ svg:'<g transform="translate(4.66 4.85) scale(0.903)"><path class="f2 sf" d="M48
 
 {id:"dark-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Dark chocolate",fr:"Chocolat noir"},latin:"Theobroma cacao",
 origin:{en:"Mesoamerica",fr:"Mésoamérique"},season:[],
-flavor:["bitter","rich","fruity","toasty"],
+flavor:["bitter","rich","fruity","toasty"],texture:["hard","brittle","dry"],
 story:{en:"The Aztecs used cacao beans as money and drank chocolate bitter, spiced with chili — Linnaeus later named the tree Theobroma, “food of the gods”. Europe added sugar in the 1600s, and chocolate houses became the social networks of London and Madrid.",
 fr:"Les Aztèques utilisaient les fèves de cacao comme monnaie et buvaient le chocolat amer, relevé de piment — Linné nomma plus tard l’arbre Theobroma, « nourriture des dieux ». L’Europe y ajouta le sucre au XVIIe siècle, et les maisons de chocolat devinrent les réseaux sociaux de Londres et de Madrid."},
 tip:{en:"A pinch of salt makes chocolate taste more of chocolate. Melt it gently — past 55°C it seizes and sulks, and no apology will bring it back.",
@@ -241,7 +241,7 @@ svg:'<path class="f2 sf" d="M19 54q-1-4 3-5l26-4 2 4-4 2 4 4-4 2 3 5 1 5q0 4-4 5
 
 {id:"nolen-gur",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Date palm jaggery",fr:"Jaggery de palmier dattier"},latin:"Phoenix sylvestris",
 origin:{en:"Bengal, date palm groves",fr:"Bengale, palmeraies dattières"},season:[11,12,1,2],
-flavor:["smoky","sweet","rich"],
+flavor:["smoky","sweet","rich"],texture:["soft","viscous","moist"],
 story:{en:"The shiuli climb the date palms at dusk, cut a strip of bark and hang an earthen pot; the sap runs overnight and has to be boiled at dawn, because by midday it has begun to ferment. It is made only while Bengal's nights stay below about fourteen degrees - November to February, and not a week longer.",
 fr:"Les shiuli grimpent aux palmiers dattiers au crépuscule, entaillent l’écorce et suspendent un pot de terre ; la sève coule toute la nuit et doit être cuite à l’aube, car à midi elle a commencé à fermenter. On ne le fabrique que tant que les nuits du Bengale restent sous quatorze degrés — de novembre à février, et pas une semaine de plus."},
 tip:{en:"It is semi-liquid and burns quickly - stir it into warm milk or rice pudding off the heat, never into a boiling pot. Cane jaggery is not a substitute; the smoke is the whole flavour.",
@@ -251,7 +251,7 @@ svg:'<path class="f2 sf" d="M34 34h28l-3 9q11 7 11 19t-22 20-22-20 11-19z"/><pat
 
 {id:"date-paste",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Date paste",fr:"Pâte de dattes"},latin:"Phoenix dactylifera",
 origin:{en:"Middle East & North Africa",fr:"Moyen-Orient & Afrique du Nord"},season:[],
-flavor:["sweet","rich","earthy","honeyed"],
+flavor:["sweet","rich","earthy","honeyed"],texture:["firm","viscous","moist"],
 story:{en:"The filling of maamoul and of the Iraqi kleicha, and one of the oldest sweeteners in use — Mesopotamian tablets record date syrup as a trade good four thousand years ago, long before cane sugar reached the region.",
 fr:"La garniture des maamoul et de la kleicha irakienne, et l’un des plus anciens édulcorants en usage — des tablettes mésopotamiennes mentionnent le sirop de dattes comme marchandise il y a quatre mille ans, bien avant l’arrivée du sucre de canne."},
 tip:{en:"Warm it with a spoonful of water and a little butter to make it spreadable. Cold it is unworkable.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M22 48q-5-9 5-15t24-1q7 7-3 13t-26 3z"/><path class=
 
 {id:"date-syrup",cat:"sweet",price:2,pk:"8–16 €/kg",name:{en:"Date syrup (silan)",fr:"Sirop de dattes (silan)"},latin:"Phoenix dactylifera",
 origin:{en:"Iraq and the Levant",fr:"Irak et Levant"},season:[],
-flavor:["sweet","rich","bitter","fruity"],
+flavor:["sweet","rich","bitter","fruity"],texture:["viscous","smooth"],
 story:{en:"Dibs, or silan, is among the oldest sweeteners on record: Mesopotamian tablets account for it by the jar, and the honey of the biblical land of milk and honey is usually read as this rather than the bee's. It is nothing but juice reduced, so the tannin of the skins concentrates alongside the sugar — which is why the finish bites.",
 fr:"Le dibs, ou silan, compte parmi les sucrants les plus anciennement attestés : les tablettes mésopotamiennes le comptabilisent à la jarre, et le miel du pays de lait et de miel biblique se lit d’ordinaire comme celui-ci plutôt que comme celui des abeilles. Ce n’est que du jus réduit : le tanin des peaux se concentre en même temps que le sucre, d’où cette finale qui mord."},
 tip:{en:"Cut it with an equal weight of tahini for the Levantine dip. As a glaze on lamb or aubergine, keep it to a tablespoon a portion and brush it on late — laid on thick and early, the tannin turns drying and the sugar scorches.",
@@ -271,7 +271,7 @@ svg:'<path class="f1 sf" d="M42 20h12v14q12 8 12 22v20a6 6 0 0 1-6 6H36a6 6 0 0 
 
 {id:"demerara-sugar",cat:"sweet",price:1,pk:"3–6 €/kg",name:{en:"Demerara sugar",fr:"Sucre demerara"},latin:"Saccharum officinarum",
 origin:{en:"Mauritius, formerly Guyana",fr:"Maurice, autrefois le Guyana"},season:[],
-flavor:["sweet","toasty","warm"],
+flavor:["sweet","toasty","warm"],texture:["crunchy","granular","dry"],
 story:{en:"Demerara is a river in what is now Guyana, and almost no demerara sugar has come from there for a long time - most of it is milled in Mauritius. The word survives as a crystal specification rather than an origin.",
 fr:"Le Demerara est un fleuve de l’actuel Guyana, et le sucre qui en porte le nom n’en vient plus depuis longtemps : l’essentiel arrive de Maurice. Le mot ne désigne plus une origine mais un calibre de cristal."},
 tip:{en:"Buy it for what the crystal does, not for molasses it barely has: scattered on a shortbread lid or a crumble it stays crunchy right through the oven. Creamed into a cake batter it simply dissolves, and you have paid extra for white sugar.",
@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M22 72q10-28 26-28t26 28z"/><path class="s" d="M34 6
 
 {id:"dextrose",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Dextrose",fr:"Dextrose"},latin:"Zea mays",
 origin:{en:"Maize starch hydrolysis",fr:"Hydrolyse de l’amidon de maïs"},season:[],
-flavor:["sweet","mild"],
+flavor:["sweet","mild"],texture:["powdery","dry"],
 story:{en:"Dextrose is glucose in crystal form, and its molecule weighs 180 against sucrose's 342 - a gram of it puts nearly twice as many particles into the water. Freezing point depression counts particles rather than sweetness, which is why a sorbet maker reaches for it.",
 fr:"Le dextrose est du glucose cristallisé : sa molécule pèse 180 contre 342 pour le saccharose, si bien qu’un gramme met près de deux fois plus de particules dans l’eau. L’abaissement du point de congélation compte des particules et non du sucré — d’où sa place dans tout sorbet."},
 tip:{en:"Replace fifteen to twenty percent of a sorbet's sucrose with dextrose and the scoop softens without getting sweeter - it sweetens at about 70 against sugar's 100, with roughly twice the effect on the freezing point. Past a quarter of the sugars it stops setting at all.",
@@ -291,7 +291,7 @@ svg:'<path class="f1 sf" d="M32 38h32v32a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8z"/><path
 
 {id:"cocoa-powder-dutch",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Dutch-process cocoa powder",fr:"Cacao en poudre alcalinisé"},latin:"Theobroma cacao",
 origin:{en:"Netherlands",fr:"Pays-Bas"},season:[],
-flavor:["rich","earthy","mild"],
+flavor:["rich","earthy","mild"],texture:["powdery","dry"],
 story:{en:"Alkalising cocoa to pH 7-8 darkens it and rounds it off, and the process took its name from the Netherlands and from Coenraad van Houten, whose 1828 press had made cocoa powder possible in the first place. Colour is not strength: the alkali carries off flavour acids along with the sharpness, so the blackest powders often taste the weakest.",
 fr:"Alcaliniser le cacao jusqu’à un pH de 7 à 8 le fonce et l’arrondit ; le procédé doit son nom aux Pays-Bas et à Coenraad van Houten, dont la presse de 1828 avait rendu la poudre de cacao possible. La couleur ne dit rien de la puissance : l’alcali emporte des acides aromatiques en même temps que l’âpreté, et les poudres les plus noires sont souvent les plus fades."},
 tip:{en:"It has no acid left to react with bicarbonate of soda, so a recipe written for natural cocoa needs baking powder instead - roughly four times the weight of the soda you take out. It disperses cleanly into hot liquid where natural cocoa clumps.",
@@ -301,7 +301,7 @@ svg:'<path class="f2 sf" d="M34 42h28v34H34z"/><path class="f1 sf" d="M34 42q14-
 
 {id:"eucalyptus-honey",cat:"sweet",price:2,pk:"12–22 €/kg",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
 origin:{en:"Iberia, Italy, Australia",fr:"Péninsule Ibérique, Italie, Australie"},season:[],
-flavor:["resinous","bitter","warm"],
+flavor:["resinous","bitter","warm"],texture:["viscous","smooth"],
 story:{en:"The eucalyptus honey of Portugal, Spain and Italy comes from trees that were not on the continent two centuries ago - Australian seed planted through the 1800s for timber and for drying out marshland. It tastes of malt and camphor, nearer a medicine chest than a dessert.",
 fr:"Le miel d’eucalyptus du Portugal, d’Espagne et d’Italie vient d’arbres absents du continent il y a deux siècles : des semences australiennes plantées au XIXe siècle pour le bois et pour assécher les marais. Il a un goût de malt et de camphre, plus proche d’une pharmacie que d’un dessert."},
 tip:{en:"Use it where it can push back against salt and fat - a spoonful into a lamb or duck braise, or over an aged pecorino. In a delicate cream it flattens everything around it.",
@@ -311,7 +311,7 @@ svg:'<path class="f2 sf" d="M26 62q2-24 22-34-1 25-22 34z"/><path class="f1 sf" 
 
 {id:"paillete-feuilletine",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Feuilletine",fr:"Pailleté feuilletine"},latin:"Triticum aestivum",
 origin:{en:"Quimper, Brittany",fr:"Quimper, Bretagne"},season:[],
-flavor:["toasty","buttery","sweet","nutty"],
+flavor:["toasty","buttery","sweet","nutty"],texture:["crisp","flaky","dry"],
 story:{en:"It is crepe dentelle broken up: the story goes that a Quimper crepe-maker left one too long on the billig in 1886 and rolled the brittle result rather than throw it out. Pastry buys the crumbs by the kilo for one property alone, a crackle that survives being bound in fat.",
 fr:"C’est de la crêpe dentelle concassée : on raconte qu’une crêpière de Quimper en a laissé une de trop sur le billig en 1886 et qu’elle a roulé le résultat cassant plutôt que de le jeter. La pâtisserie en achète les brisures au kilo pour une seule qualité : un croquant qui survit à l’enrobage dans la matière grasse."},
 tip:{en:"Fold it into praline or chocolate below 30 C and shape it at once - it goes soft the moment it meets water or a warm cream. Coating the crumbs in melted chocolate first, roughly one part to three, waterproofs them and buys a week of crunch.",
@@ -321,7 +321,7 @@ svg:'<path class="f1 sf" d="M24 44q14-10 28-4-12 7-28 4z"/><path class="f2 sf" d
 
 {id:"fir-honeydew-honey",cat:"sweet",price:2,pk:"18–32 €/kg",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
 origin:{en:"Fir forests of the Vosges and Jura",fr:"Sapinières des Vosges et du Jura"},season:[7,8],
-flavor:["resinous","woody","warm"],
+flavor:["resinous","woody","warm"],texture:["viscous","smooth"],
 story:{en:"Fir honey comes from no flower at all: aphids drink the tree's sap, void the excess as honeydew on the needles, and the bees collect that. Carrying almost no glucose, it stays liquid for years — and since the flow depends on an insect that may or may not appear, whole seasons pass with no crop.",
 fr:"Le miel de sapin ne vient pas de fleurs : des pucerons boivent la sève de l’arbre, rejettent l’excédent en miellat sur les aiguilles, et les abeilles récoltent cela. Comme il ne porte presque pas de glucose, il reste liquide des années — et comme la miellée dépend d’un insecte qui vient ou ne vient pas, des saisons entières passent sans récolte."},
 tip:{en:"Use it where the resin is the point — a spoon in a marinade for game, or over a young sheep cheese — and keep it out of anything delicate, which it will bury. Barely sweet, it does not swap one for one with acacia honey in baking.",
@@ -331,7 +331,7 @@ svg:'<path class="f3 sf" d="M32 40h28v26q0 6-6 6H38q-6 0-6-6z"/><path class="s" 
 
 {id:"gianduja",cat:"sweet",price:2,pk:"20–35 €/kg",name:{en:"Gianduja",fr:"Gianduja"},latin:"Corylus avellana × Theobroma cacao",
 origin:{en:"Turin, Piedmont",fr:"Turin, Piémont"},season:[],
-flavor:["nutty","creamy","sweet","rich"],
+flavor:["nutty","creamy","sweet","rich"],texture:["soft","creamy","smooth"],
 story:{en:"Napoleon's continental blockade made cocoa scarce in Turin, so the city's chocolatiers stretched it with Piedmont hazelnuts; the paste was handed out at the Carnival of 1865 by the masked character Gianduja and took his name. Up to thirty percent of it is nut oil, which drops its melting point close to body temperature.",
 fr:"Le blocus continental raréfie le cacao à Turin ; les chocolatiers l’allongent alors de noisettes du Piémont, et la pâte est distribuée au Carnaval de 1865 par le masque de Gianduja, dont elle prend le nom. Jusqu’à trente pour cent d’huile de noisette en abaissent le point de fusion tout près de la température du corps."},
 tip:{en:"It will not temper like a couverture - the hazelnut oil keeps it soft. Set it in a frame at 16-18C, and if it has to hold a clean edge, cut it with twenty to thirty percent dark couverture.",
@@ -341,7 +341,7 @@ svg:'<path class="f3 sf" d="M22 42h34v34H22z"/><path class="s" d="M39 42v34M22 5
 
 {id:"glucose-syrup",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Glucose syrup",fr:"Sirop de glucose"},latin:"Glucosum liquidum",
 origin:{en:"Europe, 1811",fr:"Europe, 1811"},season:[],
-flavor:["sweet","mild","delicate","milky"],
+flavor:["sweet","mild","delicate","milky"],texture:["viscous","smooth"],
 story:{en:"Invented by a Russian chemist during the Napoleonic blockade, when cane sugar could not reach the continent — he made it from potato starch. Confectioners use it not for sweetness but to stop other sugars crystallising.",
 fr:"Inventé par un chimiste russe pendant le blocus napoléonien, quand le sucre de canne n’atteignait plus le continent — il le tira de la fécule de pomme de terre. Les confiseurs l’emploient non pour sucrer mais pour empêcher les autres sucres de cristalliser."},
 tip:{en:"It is what keeps sorbet scoopable and caramel smooth. A spoonful is a technical decision, not a sweetening one.",
@@ -351,7 +351,7 @@ svg:'<path class="f1 sf" d="M31 45q1 16 4 25 1 5 13 5t13-5q3-9 4-25z"/><path cla
 
 {id:"golden-syrup",cat:"sweet",price:2,pk:"8–14 €/kg",name:{en:"Golden syrup",fr:"Golden syrup"},latin:"Saccharum officinarum",
 origin:{en:"Plaistow, London",fr:"Plaistow, Londres"},season:[],
-flavor:["sweet","buttery","tangy"],
+flavor:["sweet","buttery","tangy"],texture:["viscous","smooth"],
 story:{en:"Abram Lyle began selling it from his refinery on the Thames in 1881, and the tin has carried a dead lion, a swarm of bees and Samson's riddle since the 1880s - Guinness records it as the world's oldest unchanged brand packaging. The picture is apt: the syrup is a by-product of refining, sweetness left over from the strong.",
 fr:"Abram Lyle le vend depuis sa raffinerie de la Tamise à partir de 1881, et la boîte porte le lion mort, l’essaim d’abeilles et l’énigme de Samson depuis les années 1880 — le Guinness y voit le plus ancien emballage de marque jamais modifié. L’image est juste : ce sirop est un sous-produit du raffinage, la douceur sortie du fort."},
 tip:{en:"It is partly inverted, so it will not crystallise and it holds on to water - a spoonful in a biscuit dough keeps it chewy for days. Weigh it rather than spooning it, and oil the spoon or half of it stays behind.",
@@ -361,7 +361,7 @@ svg:'<path class="f2 sf" d="M30 36h36v42H30z"/><path class="f1 sf" d="M27 28h42v
 
 {id:"gula-melaka",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Gula melaka",fr:"Gula melaka (sucre de palmier de Malacca)"},latin:"Cocos nucifera",
 origin:{en:"Melaka, Malaysia",fr:"Malacca, Malaisie"},season:[],
-flavor:["sweet","smoky","toasty","rich"],
+flavor:["sweet","smoky","toasty","rich"],texture:["hard","granular","dry"],
 story:{en:"Despite the name it is not made from a sugar palm but from the coconut: a tapper climbs twice a day to slice the unopened flower spike and catch the sap, which is boiled down over a wood fire and poured into bamboo tubes to set. That wood fire is where the smoke comes from, and why two cylinders from two villages do not taste alike.",
 fr:"Malgré le nom, il ne vient pas d’un palmier à sucre mais du cocotier : le grimpeur monte deux fois par jour entailler l’inflorescence encore fermée pour en recueillir la sève, réduite au feu de bois puis coulée dans des tubes de bambou. Ce feu de bois est l’origine de la fumée, et la raison pour laquelle deux cylindres de deux villages n’ont pas le même goût."},
 tip:{en:"Shave it rather than chop it — the cylinder is hard enough to skid under a knife — and melt the shavings with a splash of water and a pandan leaf into a syrup you can actually measure. A pinch of salt in that syrup is what makes it taste of caramel rather than merely of sugar.",
@@ -371,7 +371,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="36" rx="24" ry="9"/><path class="f3 sf" 
 
 {id:"heather-honey",cat:"sweet",price:2,pk:"22–40 €/kg",name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
 origin:{en:"Northern moors — Scotland, Brittany, the Landes",fr:"Landes et tourbières du nord — Écosse, Bretagne, Landes"},season:[8,9],
-flavor:["bitter","woody","rich"],
+flavor:["bitter","woody","rich"],texture:["gelatinous","smooth"],
 story:{en:"Ling heather honey is thixotropic: it sets to a jelly in the comb and returns to that jelly faster than any other honey the moment you stop stirring it. That is why it cannot be spun out in an extractor at all — the comb is pressed, or sold whole, which is half the reason for the price.",
 fr:"Le miel de callune est thixotrope : il prend en gelée dans le rayon et y revient plus vite que tout autre miel dès qu’on cesse de l’agiter. Impossible donc de l’extraire à la centrifugeuse — on presse le rayon, ou on le vend tel quel, ce qui explique la moitié du prix."},
 tip:{en:"Beat it hard in the jar before you weigh it, or it reads as a solid and refuses to blend into anything. It holds air better than any runny honey, which makes it the one to use in a buttercream.",
@@ -381,7 +381,7 @@ svg:'<path class="f1 sf" d="M32 42h32v32a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path
 
 {id:"honey",cat:"sweet",price:1,pk:"7–15 €/kg",name:{en:"Honey",fr:"Miel"},latin:"Apis mellifera (nectar)",
 origin:{en:"Everywhere bees fly",fr:"Partout où volent les abeilles"},season:[],
-flavor:["sweet","floral","honeyed","warm"],
+flavor:["sweet","floral","honeyed","warm"],texture:["viscous","smooth"],
 story:{en:"Jars of honey found in pharaohs’ tombs were still edible after three thousand years — it is the only food that never spoils. A single pound represents the nectar of about two million flowers; every spoonful is a map of a landscape in bloom.",
 fr:"Des pots de miel trouvés dans les tombes des pharaons étaient encore comestibles après trois mille ans — c’est le seul aliment qui ne se gâte jamais. Un seul kilo représente le nectar d’environ quatre millions de fleurs ; chaque cuillerée est la carte d’un paysage en fleurs."},
 tip:{en:"Crystallised honey isn’t spoiled — warm the jar gently in water and it clears. Match its strength to the dish: acacia whispers, chestnut argues.",
@@ -391,7 +391,7 @@ svg:'<path class="s" d="M60 36L44 52"/><path class="f2 sf" d="M34 58h20M32 63h24
 
 {id:"honeycomb",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
 origin:{en:"Hive frames, wherever bees are kept",fr:"Cadres de ruche, partout où l’on élève des abeilles"},season:[6,7,8,9],
-flavor:["honeyed","floral","sweet"],
+flavor:["honeyed","floral","sweet"],texture:["soft","chewy","moist"],
 story:{en:"Worker bees secrete wax from glands on the underside of the abdomen, spending several kilos of honey for every kilo of comb they build. Until the centrifugal extractor arrived in the 1860s all honey was sold this way — the jar is the modern form, not the comb.",
 fr:"Les ouvrières sécrètent la cire par des glandes situées sous l’abdomen, au prix de plusieurs kilos de miel pour un seul kilo de rayon. Jusqu’à l’invention de l’extracteur centrifuge, dans les années 1860, tout le miel se vendait ainsi : c’est le pot qui est moderne, pas le rayon."},
 tip:{en:"Cut it with a knife dipped in hot water and serve it at room temperature — straight from the fridge the wax chews like a candle. On a board it wants a hard salty cheese, not a soft one.",
@@ -401,7 +401,7 @@ svg:'<path class="f2 sf" d="M48 20l12 7v14l-12 7-12-7V27z"/><path class="f1 sf" 
 
 {id:"icing-sugar",cat:"sweet",price:1,pk:"2–5 €/kg",name:{en:"Icing sugar",fr:"Sucre glace"},latin:"Saccharum pulverulentum",
 origin:{en:"Europe",fr:"Europe"},season:[],
-flavor:["sweet","delicate","mild","milky"],
+flavor:["sweet","delicate","mild","milky"],texture:["powdery","dry"],
 story:{en:"Ground to a powder and cut with two or three per cent starch to stop it caking — which is why it clouds a liquid and why it can never be used to make caramel. The starch is the reason, not the fineness.",
 fr:"Broyé en poudre et coupé de deux ou trois pour cent d’amidon pour l’empêcher de prendre en masse — d’où le trouble qu’il laisse dans un liquide et son inaptitude au caramel. C’est l’amidon la cause, non la finesse."},
 tip:{en:"Always sift it, without exception. It clumps in the box and a lump will not dissolve in a buttercream.",
@@ -411,7 +411,7 @@ svg:'<path class="f2 sf" d="M22 36q0 12 26 12t26-12v-2q0-9-26-9t-26 9z"/><path c
 
 {id:"invert-sugar",cat:"sweet",price:1,pk:"6–12 €/kg",name:{en:"Invert sugar",fr:"Sucre inverti (trimoline)"},latin:"Saccharum officinarum",
 origin:{en:"Pastry kitchens, from cane or beet sugar",fr:"Laboratoires de pâtisserie, à partir de sucre de canne ou de betterave"},season:[],
-flavor:["sweet","honeyed","mild"],
+flavor:["sweet","honeyed","mild"],texture:["viscous","smooth"],
 story:{en:"The name comes from a physics bench, not a kitchen: splitting sucrose into glucose and fructose reverses the direction in which the syrup rotates polarised light. Bees run the same reaction with the enzyme invertase, which is why honey and trimoline behave so alike in a dough.",
 fr:"Le nom vient de la paillasse, pas du fourneau : en scindant le saccharose en glucose et fructose, on inverse le sens dans lequel le sirop fait tourner la lumière polarisée. Les abeilles opèrent la même réaction grâce à l’invertase — d’où le comportement voisin du miel et de la trimoline dans une pâte."},
 tip:{en:"Swap out no more than about a tenth of a recipe's sugar for it: it is sweeter than sucrose and it pulls water from the air. Past that share a ganache turns slack and an ice cream will not set.",
@@ -421,7 +421,7 @@ svg:'<path class="f1 sf" d="M20 24q13-7 22 2-9 9-22 2z"/><path class="s" d="M42 
 
 {id:"isomalt",cat:"sweet",price:2,pk:"10–20 €/kg",name:{en:"Isomalt",fr:"Isomalt"},latin:"Beta vulgaris",
 origin:{en:"Mannheim, Germany — made from beet sugar",fr:"Mannheim, Allemagne — issu du sucre de betterave"},season:[],
-flavor:["sweet","mild"],
+flavor:["sweet","mild"],texture:["hard","brittle","dry"],
 story:{en:"Isomalt was built in the 1960s at a German sugar company, by rearranging sucrose into isomaltulose and then hydrogenating it, and was sold first as a tooth-kind sweetener. Pastry took it over for an unintended property: it absorbs almost no moisture, so a sugar showpiece stops weeping.",
 fr:"L’isomalt naît dans les années 1960 chez un sucrier allemand, par réarrangement du saccharose en isomaltulose puis hydrogénation, et fut d’abord vendu comme édulcorant respectueux des dents. La pâtisserie s’en est emparée pour une qualité imprévue : il n’absorbe presque pas l’humidité, et la pièce en sucre cesse de pleurer."},
 tip:{en:"Cook it dry to about 170 °C — it needs neither glucose nor acid, and it can be remelted again and again without yellowing. Keep iced water on the bench: at that temperature it sticks to skin and goes on burning.",
@@ -431,7 +431,7 @@ svg:'<circle class="f1 sf" cx="44" cy="34" r="17"/><path class="s" d="M35 27q5-6
 
 {id:"lavender-honey",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Lavender honey",fr:"Miel de lavande"},latin:"Lavandula angustifolia",
 origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[7,8],
-flavor:["floral","sweet","delicate","herbal"],
+flavor:["floral","sweet","delicate","herbal"],texture:["viscous","smooth"],
 story:{en:"Hives are trucked up to the Provençal plateaux in July when the lavender opens, a migration beekeepers have made for generations. It crystallises into a fine white cream rather than gritty crystals, which is the mark of the real thing.",
 fr:"Les ruches montent en camion sur les plateaux provençaux en juillet quand la lavande s’ouvre, une transhumance que les apiculteurs font depuis des générations. Il cristallise en une crème blanche et fine plutôt qu’en cristaux grossiers, marque de l’authentique."},
 tip:{en:"Use it where its perfume is the point — over goat's cheese, in an ice cream, with apricots. Cooked hard it is wasted.",
@@ -441,7 +441,7 @@ svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path 
 
 {id:"leatherwood-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
 origin:{en:"Rainforest of western Tasmania",fr:"Forêts pluviales de l’ouest de la Tasmanie"},season:[1,2,3],
-flavor:["floral","resinous","warm"],
+flavor:["floral","resinous","warm"],texture:["viscous","smooth"],
 story:{en:"Leatherwood grows nowhere but the wet west of Tasmania, and it supplies roughly seven tenths of all the honey the island produces; hives are trucked to forestry-road camps for the January flowering. The trees take decades to come into full flower, so the crop rests on forest nobody can replant on a beekeeper's timescale.",
 fr:"Le leatherwood ne pousse que dans l’ouest humide de la Tasmanie et fournit environ sept dixièmes du miel de l’île ; on transporte les ruches jusqu’à des campements de pistes forestières pour la floraison de janvier. L’arbre met des décennies à fleurir pleinement : la récolte repose sur une forêt qu’on ne replante pas à l’échelle d’un apiculteur."},
 tip:{en:"It bullies whatever it is mixed into, so start at a third of the honey a recipe asks for and taste upward. Keep it off the heat — the perfume is the whole point and it cooks straight out.",
@@ -451,7 +451,7 @@ svg:'<path class="s" d="M48 14v18"/><path class="f2 sf" d="M48 32q11 0 11 15t-11
 
 {id:"linden-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
 origin:{en:"Lime avenues of central and eastern Europe",fr:"Allées de tilleuls d’Europe centrale et orientale"},season:[6,7],
-flavor:["fresh","herbal","floral"],
+flavor:["fresh","herbal","floral"],texture:["viscous","granular"],
 story:{en:"Limes were planted along town avenues across central Europe long before anyone valued them for honey, and a mature tree in flower can out-yield a field of clover for the fortnight it lasts. The cool, menthol edge in the jar comes from the same aromatics you taste in a cup of lime-flower tisane.",
 fr:"Les tilleuls furent plantés en alignement dans les villes d’Europe centrale bien avant qu’on s’intéresse à leur miel, et un arbre en fleurs peut, quinze jours durant, produire davantage qu’un champ de trèfle. La pointe fraîche, mentholée, du pot vient des mêmes arômes que la tisane de tilleul."},
 tip:{en:"Use it where a warm honey would be wrong: whisked into a vinaigrette for cold white fish, or spooned over yogurt. It crystallises fine and fast — loosen the jar in a 40 °C water bath rather than on the stove, which flattens the menthol note.",
@@ -461,7 +461,7 @@ svg:'<path class="f1 sf" d="M34 46h28l-3 30a5 5 0 0 1-5 5H42a5 5 0 0 1-5-5z"/><p
 
 {id:"sirop-de-liege",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Liège syrup",fr:"Sirop de Liège"},latin:"Sirop de Liège",
 origin:{en:"Wallonia, Belgium",fr:"Wallonie, Belgique"},season:[],
-flavor:["sweet","sour","fruity","rich"],
+flavor:["sweet","sour","fruity","rich"],texture:["soft","viscous","smooth"],
 story:{en:"Pears and apples boiled for hours until they reduce to a near-black paste, with no added sugar at all — the sweetness is entirely the fruit's. It has been made in the Pays de Herve since the seventeenth century and is eaten with cheese.",
 fr:"Des poires et des pommes cuites des heures jusqu’à une pâte presque noire, sans aucun sucre ajouté — la douceur vient entièrement du fruit. On le fait au Pays de Herve depuis le XVIIe siècle et on le mange avec du fromage."},
 tip:{en:"Belgians put it with strong cheese and with rabbit. Treating it as a jam misses most of what it can do.",
@@ -471,7 +471,7 @@ svg:'<path class="f1 sf" d="M38 74V42h20v32z"/><path class="s" d="M38 50h20"/><p
 
 {id:"lotus-seed-paste",cat:"sweet",price:2,pk:"8–18 €/kg",name:{en:"Lotus seed paste",fr:"Pâte de graines de lotus"},latin:"Nelumbo nucifera",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
-flavor:["sweet","floral","rich"],
+flavor:["sweet","floral","rich"],texture:["soft","creamy","smooth"],
 story:{en:"Mooncakes are priced on two things: whether the filling is white lotus paste, made from peeled pale seed, or the ordinary yellow, and how many salted duck yolks are buried in it. The paste is fried down with sugar and oil for an hour or more until it pulls cleanly away from the pan, and that long reduction is the whole difference between it and a purée.",
 fr:"Le prix d’un mooncake tient à deux choses : la pâte est-elle de lotus blanc, faite de graines pâles décortiquées, ou de lotus jaune ordinaire, et combien de jaunes d’œufs de cane salés y sont enfouis. La pâte est desséchée au sucre et à l’huile pendant une heure ou plus, jusqu’à se décoller nettement de la poêle — cette longue réduction fait toute la différence avec une purée."},
 tip:{en:"Judge it in the pan, not by the clock: a spatula drawn through should leave a furrow whose edges hold for a second or two. Underfried paste weeps oil into the pastry and the mooncake never sets a skin, which no amount of baking will correct.",
@@ -481,7 +481,7 @@ svg:'<ellipse class="f2 sf" cx="48" cy="50" rx="26" ry="22"/><path class="s" d="
 
 {id:"maesil-cheong",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Maesil cheong",fr:"Sirop de prune verte (maesil)"},latin:"Prunus mume (steeped)",
 origin:{en:"Southern Korea",fr:"Sud de la Corée"},season:[],
-flavor:["sweet","tangy","fruity"],
+flavor:["sweet","tangy","fruity"],texture:["viscous","smooth"],
 story:{en:"Green ume are picked in June before the rains, layered with their own weight in sugar and left about a hundred days, until osmosis has drawn a clear syrup out of the fruit. The plums are strained off and discarded at that point: raw and unripe they are not eaten, the kernel above all, which carries amygdalin.",
 fr:"Les prunes vertes se cueillent en juin, avant les pluies, puis se superposent à leur poids de sucre et reposent une centaine de jours, le temps que l’osmose tire des fruits un sirop clair. On filtre alors les prunes et on les jette : crues et vertes, elles ne se mangent pas, le noyau surtout, qui contient de l’amygdaline."},
 tip:{en:"Use it wherever a dressing needs sugar and acid at once — a spoonful to two of soy sauce, with vinegar and gochugaru — and add it off the heat, since the almond-blossom note boils off in seconds.",
@@ -491,7 +491,7 @@ svg:'<path class="f1 sf" d="M32 34h32v34a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><rect
 
 {id:"manuka-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
 origin:{en:"Scrubland of New Zealand",fr:"Broussailles de Nouvelle-Zélande"},season:[11,12,1],
-flavor:["earthy","musky","warm"],
+flavor:["earthy","musky","warm"],texture:["firm","viscous","smooth"],
 story:{en:"Manuka nectar contains no methylglyoxal at all: it carries dihydroxyacetone, which turns into MGO slowly as the honey stands, so a jar's rating climbs with storage. Chemists at Waikato only worked this out in 2008, and before that manuka was scrub that farmers paid to clear.",
 fr:"Le nectar de manuka ne contient aucun méthylglyoxal : il porte de la dihydroxyacétone, qui s’y convertit lentement pendant la conservation — l’indice d’un pot monte donc avec le temps. Des chimistes de Waikato ne l’ont établi qu’en 2008 ; jusque-là, le manuka n’était qu’une broussaille qu’on payait pour arracher."},
 tip:{en:"Do not bake with it — heat degrades the methylglyoxal you paid for, and the flavour is too dense for a cake anyway. It is stiff and dark: spoon it onto something cold and let it slacken rather than trying to stir it in.",
@@ -501,7 +501,7 @@ svg:'<path class="f1 sf" d="M30 45q0-7 7-7h22q7 0 7 7v27a8 8 0 0 1-8 8H38a8 8 0 
 
 {id:"maple-butter",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Maple butter",fr:"Beurre d’érable"},latin:"Acer saccharum",
 origin:{en:"Sugar bush of Quebec",fr:"Érablières du Québec"},season:[],
-flavor:["sweet","creamy","rich"],
+flavor:["sweet","creamy","rich"],texture:["soft","creamy","smooth"],
 story:{en:"There is no dairy in it at all: maple butter is syrup boiled to around 112 °C, cooled without being touched, then beaten until the sugar crystallises so finely that the tongue reads it as cream. Those crystals are its entire structure, which is why warming a jar destroys it for good.",
 fr:"Il n’y a pas le moindre laitier dedans : le beurre d’érable est un sirop cuit vers 112 °C, refroidi sans qu’on y touche, puis battu jusqu’à ce que le sucre cristallise assez finement pour que la langue y lise une crème. Ces cristaux sont toute sa structure — réchauffer le pot le détruit définitivement."},
 tip:{en:"Never warm it to soften it; work it with a spoon at room temperature instead, or it splits into syrup and grit and will not come back. Spread it on something cool — on hot toast it simply melts back to syrup.",
@@ -511,7 +511,7 @@ svg:'<path class="f1 sf" d="M26 47h44l-4 27a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6z"/><e
 
 {id:"maple-sugar",cat:"sweet",price:3,pk:"35–70 €/kg",name:{en:"Maple sugar",fr:"Sucre d’érable"},latin:"Acer saccharum",
 origin:{en:"Quebec, Vermont and the Eastern Woodlands",fr:"Québec, Vermont et forêts de l’Est"},season:[],
-flavor:["sweet","woody","toasty"],
+flavor:["sweet","woody","toasty"],texture:["granular","dry"],
 story:{en:"For most of its history maple was stored as sugar rather than syrup — hard cakes kept and travelled, and a liquid did neither before sealed tins. The Eastern Woodlands nations who developed sugaring made blocks; the can of syrup is the recent form.",
 fr:"Pendant l’essentiel de son histoire, l’érable se conservait en sucre et non en sirop : les pains durs se gardaient et voyageaient, ce qu’un liquide ne faisait pas avant les boîtes scellées. Les nations des forêts de l’Est, qui ont mis au point l’entaillage, en faisaient des blocs — la boîte de sirop est récente."},
 tip:{en:"Swap it weight for weight with white sugar but drop the oven about 10 °C: it browns noticeably faster. It cakes hard in a damp cupboard, so keep it sealed and sieve it before creaming.",
@@ -521,7 +521,7 @@ svg:'<path class="f2 sf" d="M48 20l6 12 8-4-2 10 10 2-8 8 10 8-16 2 2 8-10-6-10 
 
 {id:"maple-syrup",cat:"sweet",price:2,pk:"20–35 €/L",name:{en:"Maple syrup",fr:"Sirop d’érable"},latin:"Acer saccharum",
 origin:{en:"Northeastern North America",fr:"Nord-Est de l’Amérique du Nord"},season:[3,4],
-flavor:["sweet","woody","toasty","warm"],
+flavor:["sweet","woody","toasty","warm"],texture:["viscous","smooth"],
 story:{en:"Indigenous peoples of the northeastern forests taught settlers to read the “sugar moon” — the late-winter thaw when maples let their sap rise. It takes forty litres of sap, boiled down over days, to make a single litre of syrup: patience you can pour.",
 fr:"Les peuples autochtones des forêts du Nord-Est apprirent aux colons à lire la « lune du sucre » — le redoux de fin d’hiver où l’érable laisse monter sa sève. Il faut quarante litres de sève, réduits des jours durant, pour un seul litre de sirop : de la patience qui se verse."},
 tip:{en:"Darker grades carry more maple character — save “golden” for pancakes and cook with “dark”. It loves pork fat and coffee equally.",
@@ -531,7 +531,7 @@ svg:'<path class="f1 sf" d="M30 48q-1-8 6-10h24q7 2 6 10l3 21q1 9-9 9H36q-10 0-9
 
 {id:"marzipan",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Marzipan",fr:"Massepain"},latin:"Prunus dulcis",
 origin:{en:"Lübeck and Toledo",fr:"Lübeck et Tolède"},season:[],
-flavor:["sweet","nutty","rich"],
+flavor:["sweet","nutty","rich"],texture:["firm","smooth","moist"],
 story:{en:"Marzipan is bought by ratio rather than by name: the more almond and the less sugar in the raw paste, the higher the grade, and the Lübeck designations sit at the top of that scale. The story told in every Lübeck shop is that bakers invented it in a famine, ordered to make bread when only almonds and sugar were left in the stores — there is no record of it, and the paste had reached northern Europe from the Arab Mediterranean long before.",
 fr:"Le massepain s'achète à la proportion et non au nom : plus il y a d'amande et moins de sucre dans la pâte crue, plus la qualité est haute, et les appellations de Lübeck occupent le haut de cette échelle. La légende que raconte toute boutique de Lübeck veut que des boulangers l'aient inventé pendant une famine, sommés de faire du pain quand il ne restait en réserve que des amandes et du sucre : aucun document ne l'atteste, et la pâte était arrivée d'Orient méditerranéen en Europe du Nord bien avant."},
 tip:{en:"Work it cold and briefly. Kneading warms the almond oil out and the paste turns greasy, then grainy, and will not come back — dust the bench with icing sugar, never flour.",
@@ -541,7 +541,7 @@ svg:'<path class="f1 sf" d="M26 46h44v22q0 4-4 4H30q-4 0-4-4z"/><path class="f2 
 
 {id:"milk-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Milk chocolate",fr:"Chocolat au lait"},latin:"Theobroma cacao",
 origin:{en:"Vevey, Switzerland, 1875",fr:"Vevey, Suisse, 1875"},season:[],
-flavor:["sweet","creamy","milky","rich"],
+flavor:["sweet","creamy","milky","rich"],texture:["firm","brittle","dry"],
 story:{en:"Daniel Peter spent eight years failing to combine milk and chocolate — the water in milk seizes cocoa butter. His neighbour Henri Nestlé had just invented condensed milk, and the two of them solved it in 1875 by removing the water first.",
 fr:"Daniel Peter passa huit ans à échouer à marier lait et chocolat — l’eau du lait fait figer le beurre de cacao. Son voisin Henri Nestlé venait d’inventer le lait condensé, et à eux deux ils résolurent le problème en 1875 en ôtant l’eau d’abord."},
 tip:{en:"It burns and seizes far more easily than dark. Melt it over water that is barely steaming, never simmering.",
@@ -551,7 +551,7 @@ svg:'<path class="f2 sf" d="M20 32q28-4 56 0q3 12 0 24q-28 4-56 0q-3-12 0-24z"/>
 
 {id:"mizuame",cat:"sweet",rare:true,price:2,pk:"12–25 €/kg",name:{en:"Mizuame",fr:"Mizuame (sirop de riz)"},latin:"Oryza sativa",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["sweet","mild","delicate"],
+flavor:["sweet","mild","delicate"],texture:["viscous","smooth"],
 story:{en:"Japan had mizuame centuries before it had cane sugar: rice or millet starch broken down by malt into a clear syrup. Edo-period street artists pulled candy animals from it while it was still warm, and because it is far less sweet than sugar it is still reached for as body and shine rather than sweetness.",
 fr:"Le Japon a connu le mizuame des siècles avant le sucre de canne : un amidon de riz ou de millet dégradé par le malt en un sirop limpide. Les sculpteurs de sucre de l’époque d’Edo en étiraient des animaux encore tiède, et comme il sucre bien moins que le sucre, on y recourt toujours pour la tenue et la brillance."},
 tip:{en:"Wet the spoon before you dip it, or you will lift the whole jar. A spoonful stirred into a boiling sugar syrup stops it crystallising and gives a glaze a shine plain sugar cannot hold.",
@@ -561,7 +561,7 @@ svg:'<path class="f1 sf" d="M26 52h40q-4 22-20 22T26 52z"/><path class="s" d="M2
 
 {id:"molasses",cat:"sweet",price:1,pk:"5–10 €/kg",name:{en:"Molasses",fr:"Mélasse"},latin:"Melassum",
 origin:{en:"Caribbean",fr:"Caraïbes"},season:[],
-flavor:["bitter","rich","smoky","earthy"],
+flavor:["bitter","rich","smoky","earthy"],texture:["viscous","smooth"],
 story:{en:"What is left after sugar crystals are spun out, and it was the raw material of rum and of the triangular trade. In 1919 a storage tank burst in Boston and sent a wave of it through the streets, killing twenty-one people.",
 fr:"Ce qui reste après extraction des cristaux de sucre, et la matière première du rhum et du commerce triangulaire. En 1919 une cuve éclata à Boston et déversa une vague dans les rues, tuant vingt et une personnes."},
 tip:{en:"Blackstrap is the third boiling and is genuinely bitter. For baking you almost always want the lighter grade.",
@@ -571,7 +571,7 @@ svg:'<path class="f1 sf" d="M38 74V40h20v34z"/><path class="s" d="M38 48h20"/><p
 
 {id:"muscovado",cat:"sweet",price:2,pk:"6–12 €/kg",name:{en:"Muscovado",fr:"Muscovado"},latin:"Saccharum officinarum",
 origin:{en:"Mauritius & the Philippines",fr:"Maurice & Philippines"},season:[],
-flavor:["rich","earthy","smoky","sweet"],
+flavor:["rich","earthy","smoky","sweet"],texture:["granular","moist"],
 story:{en:"Sugar with none of its molasses removed — the darkest, stickiest, least processed form there is, and it tastes of liquorice and smoke rather than simple sweetness. The name comes from Portuguese mascavado, unrefined.",
 fr:"Un sucre dont on n’a retiré aucune mélasse — la forme la plus sombre, la plus collante et la moins transformée, au goût de réglisse et de fumée plutôt que de simple sucre. Le nom vient du portugais mascavado, non raffiné."},
 tip:{en:"It clumps into rock. Keep a piece of bread or a terracotta disc in the jar and it stays workable.",
@@ -581,7 +581,7 @@ svg:'<path class="f1 sf" d="M22 54q0 14 11 19q16 6 33 0q11-5 11-19q-28 8-55 0z"/
 
 {id:"nacional-arriba-cacao",cat:"sweet",price:3,pk:"40–80 €/kg",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
 origin:{en:"Guayas river basin, Ecuador",fr:"Bassin du Guayas, Équateur"},season:[],
-flavor:["floral","fruity","nutty","delicate"],
+flavor:["floral","fruity","nutty","delicate"],texture:["hard","brittle","dry"],
 story:{en:"Arriba is a shipping word, not a botanical one: cacao floated down the Guayas to Guayaquil was said to come from río arriba, upriver, and the buyers kept the term for the perfume that came with it. The blight years from 1916 took most of the old Nacional groves, so much of what is sold as Arriba today carries the blood of the high-yield clones planted to replace them.",
 fr:"Arriba est un mot de négoce, pas de botanique : le cacao descendu du Guayas jusqu’à Guayaquil venait, disait-on, de río arriba, de l’amont, et les acheteurs ont gardé le mot pour le parfum qui l’accompagnait. Les maladies à partir de 1916 ont emporté l’essentiel des vieilles plantations de Nacional, si bien qu’une grande part de l’« Arriba » vendu aujourd’hui porte le sang des clones productifs plantés pour les remplacer."},
 tip:{en:"The jasmine note lives in volatiles that boil away. Fold it into ganache off the heat, keep any infusion under 45 °C, and never pour boiling cream onto it — a hot melt leaves you a decent chocolate with no perfume at all.",
@@ -591,7 +591,7 @@ svg:'<circle class="f1 sf" cx="36" cy="30" r="11"/><path class="s" d="M36 19v22M
 
 {id:"cocoa-powder-natural",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"Natural cocoa powder",fr:"Cacao en poudre non alcalinisé"},latin:"Theobroma cacao",
 origin:{en:"Cacao beans, defatted and milled",fr:"Fèves de cacao dégraissées et broyées"},season:[],
-flavor:["bitter","sour","fruity"],
+flavor:["bitter","sour","fruity"],texture:["powdery","dry"],
 story:{en:"Coenraad van Houten's press of 1828 is what made cocoa a powder at all, by squeezing the butter out of the ground bean; the alkali treatment that gives Dutch cocoa its dark colour came out of the same Amsterdam workshop. Natural powder is simply the one left alone, acidity and all, sitting around pH 5.3.",
 fr:"C’est la presse de Coenraad van Houten, en 1828, qui a fait du cacao une poudre, en extrayant le beurre de la fève broyée ; le traitement alcalin qui donne au cacao « hollandais » sa couleur sombre est sorti du même atelier d’Amsterdam. La poudre naturelle est simplement celle qu’on a laissée tranquille, acidité comprise, autour de pH 5,3."},
 tip:{en:"It is the acid half of any baking-soda recipe, so swapping in Dutch-process powder leaves the soda nothing to react against: the cake rises less and tastes soapy. Going the other way, a pinch of cream of tartar restores the acidity.",
@@ -601,7 +601,7 @@ svg:'<path class="f1 sf" d="M36 24h26v34H36z"/><path class="f3 sf" d="M33 17h32v
 
 {id:"kokuto",cat:"sweet",rare:true,price:2,pk:"20–45 €/kg",name:{en:"Okinawan black sugar",fr:"Kokutō (sucre noir d’Okinawa)"},latin:"Saccharum officinarum",
 origin:{en:"Eight islands of the Okinawa archipelago",fr:"Huit îles de l’archipel d’Okinawa"},season:[],
-flavor:["salty","rich","toasty"],
+flavor:["salty","rich","toasty"],texture:["hard","brittle","dry"],
 story:{en:"Sugar-making reached the Ryukyu kingdom in the early 1600s, brought back from Fujian by an official, and it became the islands' tribute crop. Only eight Okinawan islands still make the real thing — whole cane juice boiled down and set in blocks with nothing removed, which is where the salt-mineral edge comes from.",
 fr:"La fabrication du sucre atteint le royaume des Ryūkyū au début du XVIIe siècle, rapportée du Fujian par un fonctionnaire, et devint la culture de tribut des îles. Huit îles d’Okinawa seulement produisent encore l’authentique : jus de canne entier cuit puis coulé en blocs, sans rien retirer — d’où sa pointe minérale et salée."},
 tip:{en:"The lumps will not dissolve on their own — smash them in a bag or grate them before they go into a batter, or the crumb comes out gravelly. A block dropped into a pork braise gives colour and salt at once.",
@@ -611,7 +611,7 @@ svg:'<path class="f3 sf" d="M22 48l16-16 20 4 4 20-14 14-20-2z"/><path class="f2
 
 {id:"orange-blossom-honey",cat:"sweet",price:2,pk:"12–22 €/kg",name:{en:"Orange blossom honey",fr:"Miel de fleur d’oranger"},latin:"Citrus sinensis",
 origin:{en:"Citrus groves of Spain, Mexico and Florida",fr:"Vergers d’agrumes d’Espagne, du Mexique et de Floride"},season:[3,4,5],
-flavor:["floral","citrus","delicate"],
+flavor:["floral","citrus","delicate"],texture:["viscous","smooth"],
 story:{en:"The perfume in the jar is neroli, the same aromatic the blossom gives to perfumery, and one of the few that survives into honey intact. Bees and citrus are not always allies: growers of seedless mandarins have gone to law to keep hives at a distance, since pollination puts pips back in the fruit.",
 fr:"Le parfum du pot, c’est le néroli, l’arôme même que la fleur donne à la parfumerie, et l’un des rares à passer intact dans le miel. Abeilles et agrumes ne sont pas toujours alliés : des producteurs de mandarines sans pépins sont allés en justice pour éloigner les ruches, la pollinisation remettant des pépins dans le fruit."},
 tip:{en:"Treat it as an aromatic rather than a sweetener: fold it into a pastry cream or a soaking syrup off the heat, at the very end. Boiled, it loses the blossom and becomes ordinary sweetness.",
@@ -621,7 +621,7 @@ svg:'<path class="f1 sf" d="M42 26h12v11l10 14v25a5 5 0 0 1-5 5H37a5 5 0 0 1-5-5
 
 {id:"orgeat-syrup",cat:"sweet",price:2,pk:"8–18 €/L",name:{en:"Orgeat syrup",fr:"Sirop d'orgeat"},latin:"Prunus dulcis",
 origin:{en:"Southern France",fr:"Midi de la France"},season:[],
-flavor:["sweet","nutty","floral","creamy"],
+flavor:["sweet","nutty","floral","creamy"],texture:["viscous","smooth"],
 story:{en:"The name comes from orge, barley: orgeat began as a barley emulsion, and almonds only replaced the grain in the eighteenth century while the word stayed where it was. It survives today largely because of a California tiki bar in the 1940s, which put it in the Mai Tai and kept a French barley drink in business a continent away.",
 fr:"Le nom vient de l'orge : l'orgeat fut d'abord une émulsion d'orge, et l'amande n'a remplacé la céréale qu'au XVIIIᵉ siècle, le mot restant à sa place. S'il survit aujourd'hui, c'est surtout grâce à un bar tiki californien des années 1940 qui l'a mis dans le Mai Tai et a maintenu en vie, à un continent de là, une boisson d'orge française."},
 tip:{en:"It is an emulsion, not a syrup: never boil it, and shake the bottle before pouring or you get sugar water off the top and almond sludge at the end. Refrigerate once opened — the nut solids sour.",
@@ -631,7 +631,7 @@ svg:'<path class="f2 sf" d="M40 32h16v8q12 8 12 22v14q0 4-4 4H32q-4 0-4-4V62q0-1
 
 {id:"palm-sugar",cat:"sweet",price:1,pk:"6–14 €/kg",name:{en:"Palm sugar",fr:"Sucre de palme"},latin:"Borassus flabellifer",
 origin:{en:"Southeast Asia",fr:"Asie du Sud-Est"},season:[],
-flavor:["sweet","toasty","earthy","floral"],
+flavor:["sweet","toasty","earthy","floral"],texture:["soft","granular","moist"],
 story:{en:"Tapped from the flower stalk of a palm, not from any fruit — a climber cuts the stem and hangs a pot beneath it every morning. The sap is boiled the same day, because it ferments within hours in tropical heat.",
 fr:"Récolté sur la hampe florale d’un palmier, non sur un fruit — un grimpeur entaille la tige et suspend un pot chaque matin. La sève est bouillie le jour même, car elle fermente en quelques heures sous la chaleur tropicale."},
 tip:{en:"It is far less sweet than white sugar and more savoury. Do not substitute it one for one in a Western recipe.",
@@ -641,7 +641,7 @@ svg:'<path class="f2 sf" d="M24 64q-1-7 18-7 19 0 19 7l1 6q0 6-19 6-20 0-19-6z"/
 
 {id:"persipan",cat:"sweet",rare:true,price:2,pk:"12–20 €/kg",name:{en:"Persipan",fr:"Persipan"},latin:"Prunus armeniaca",
 origin:{en:"German and Austrian bakeries",fr:"Boulangeries d'Allemagne et d'Autriche"},season:[],
-flavor:["bitter","sweet","nutty"],
+flavor:["bitter","sweet","nutty"],texture:["soft","smooth","moist"],
 story:{en:"German food law defines persipan as a paste of debittered apricot or peach kernels, and requires a marker to be stirred into the raw paste — a trace of starch — so that a laboratory can tell it from marzipan inside a finished cake. The rule exists because the paste began as the cheap stand-in during almond shortages, and was written down precisely to stop it being sold as the thing it replaced.",
 fr:"Le droit alimentaire allemand définit le persipan comme une pâte d'amandons d'abricot ou de pêche désamérisés, et impose d'incorporer un marqueur à la pâte crue — une trace d'amidon — afin qu'un laboratoire puisse le distinguer du massepain dans un gâteau fini. La règle existe parce que cette pâte est née comme substitut bon marché pendant les pénuries d'amande, et qu'il fallait l'empêcher d'être vendue pour ce qu'elle remplaçait."},
 tip:{en:"Sharper and less sweet than marzipan, it holds its own under a heavy filling — use it in stollen and Christmas baking where marzipan vanishes into the sugar. It is softer, though, so it will not hold a modelled edge: keep it inside the bake.",
@@ -651,7 +651,7 @@ svg:'<path class="f1 sf" d="M32 40h28q8 0 8 14t-8 14H32q-8 0-8-14t8-14z"/><ellip
 
 {id:"pistachio-paste",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Pistachio paste",fr:"Pâte de pistache"},latin:"Pistacia vera",
 origin:{en:"Pastry kitchens, Sicily and France",fr:"Pâtisseries, Sicile et France"},season:[],
-flavor:["nutty","rich","creamy","resinous"],
+flavor:["nutty","rich","creamy","resinous"],texture:["viscous","smooth"],
 story:{en:"Pure ground kernel is a dull khaki-olive; the bright green on most shelves is dye, and often almond making up part of the weight. That matters beyond colour — a cut paste carries less fat, so a ganache built on it sets harder and a cream splits sooner.",
 fr:"L'amande pure broyée donne un kaki terne : le vert vif des rayons vient d'un colorant, et souvent d'une part d'amande dans le poids. Ce n'est pas qu'une affaire de couleur — une pâte coupée apporte moins de matière grasse, la ganache prend plus dur et la crème tranche plus vite."},
 tip:{en:"Count it as a fat, not a flavouring: at roughly half its weight in oil, 100 g of paste in a crème pâtissière wants about 20 g less butter. Stir the risen oil back in before you weigh — the bottom of a settled jar is nearly dry solids.",
@@ -661,7 +661,7 @@ svg:'<path class="f2 sf" d="M34 44h28v28q0 4-4 4H38q-4 0-4-4z"/><path class="f1 
 
 {id:"praline-paste",cat:"sweet",price:2,pk:"20–40 €/kg",name:{en:"Praline paste",fr:"Praliné"},latin:"Corylus avellana",
 origin:{en:"Montargis and Lyon, France",fr:"Montargis et Lyon"},season:[],
-flavor:["nutty","toasty","rich"],
+flavor:["nutty","toasty","rich"],texture:["viscous","smooth"],
 story:{en:"The name belongs to a seventeenth-century marshal, du Plessis-Praslin, whose cook is credited — the story goes — with dropping almonds into boiling sugar at Montargis. The paste came much later, when someone ground the cooled sweets, and it is that grinding rather than the caramel that made it a pastry ingredient.",
 fr:"Le nom appartient à un maréchal du XVIIe siècle, du Plessis-Praslin, dont l’officier de bouche aurait — dit la légende — jeté des amandes dans du sucre bouillant à Montargis. La pâte est bien postérieure : quelqu’un a broyé les dragées refroidies, et c’est ce broyage, non le caramel, qui en a fait un ingrédient de pâtissier."},
 tip:{en:"It separates in the tub like nut butter — stir the risen oil back in before you weigh, or the ganache is short of fat one day and swimming in it the next. Standard is fifty-fifty nuts to sugar; a sixty-forty runs looser and tastes far less sweet.",
@@ -671,7 +671,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="62" rx="26" ry="14"/><path class="s" d="
 
 {id:"pate-de-coing",cat:"sweet",price:2,pk:"15–30 €/kg",name:{en:"Quince paste",fr:"Pâte de coing"},latin:"Cydonia oblonga",
 origin:{en:"Iberian peninsula",fr:"Péninsule Ibérique"},season:[],
-flavor:["floral","sweet","tangy","honeyed"],
+flavor:["floral","sweet","tangy","honeyed"],texture:["firm","gelatinous","chewy"],
 story:{en:"Quince paste is the original marmalade: Portuguese marmelada, from marmelo for quince, meant a firm sliceable block, and English cooks only carried the word over to spoonable citrus preserve in the eighteenth century. Quince holds enough of its own pectin to set with nothing added, which is why the block cuts clean.",
 fr:"La pâte de coing est la marmelade d’origine : la marmelada portugaise, de marmelo, « coing », désignait un bloc ferme que l’on tranchait, et les cuisiniers anglais n’ont transféré le mot aux confitures d’agrumes qu’au XVIIIᵉ siècle. Le coing porte assez de pectine pour prendre sans rien ajouter — d’où une coupe nette."},
 tip:{en:"Cook the pulp with an equal weight of sugar over low heat, stirring, until a spoon drawn across the pan leaves a track that stays open; it spits, so use a long spoon. Pour it 2 cm deep and leave it uncovered two days before slicing.",
@@ -681,7 +681,7 @@ svg:'<path class="f3 sf" d="M24 40h30v30H24z"/><path class="f2 sf" d="M24 40l8-8
 
 {id:"rapadura",cat:"sweet",price:2,pk:"8–15 €/kg",name:{en:"Rapadura",fr:"Rapadura"},latin:"Saccharum officinarum",
 origin:{en:"Brazil & Latin America",fr:"Brésil & Amérique latine"},season:[],
-flavor:["earthy","rich","sweet","smoky"],
+flavor:["earthy","rich","sweet","smoky"],texture:["hard","granular","dry"],
 story:{en:"Whole cane juice boiled down and left to set in a block, then scraped — rapar means to scrape. It is called panela in Colombia, piloncillo in Mexico, jaggery in India: the same product with five names and no refining at any point.",
 fr:"Du pur jus de canne réduit et laissé prendre en bloc, puis râpé — rapar signifie racler. On l’appelle panela en Colombie, piloncillo au Mexique, jaggery en Inde : le même produit sous cinq noms, sans aucun raffinage."},
 tip:{en:"It does not dissolve like white sugar. Melt it in a little hot liquid first, or you get gritty pockets.",
@@ -691,7 +691,7 @@ svg:'<path class="f2 sf" d="M34 44q14-5 26 0l9 28q-23 8-44 0z"/><path class="f1 
 
 {id:"rapeseed-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
 origin:{en:"Oilseed fields of northern Europe",fr:"Champs de colza d’Europe du Nord"},season:[4,5],
-flavor:["sweet","mild","grassy","buttery"],
+flavor:["sweet","mild","grassy","buttery"],texture:["firm","granular"],
 story:{en:"Its glucose load is so high that it will set solid inside the comb if the beekeeper is slow: the frames have to come off within days of capping or the honey must be cut out rather than spun. French producers turned the defect into the product, whipping it as it crystallises to make crème de miel.",
 fr:"Sa charge en glucose est telle qu’il fige dans le rayon si l’apiculteur tarde : il faut retirer les cadres dans les jours qui suivent l’operculation, faute de quoi le miel se découpe au couteau au lieu de s’extraire. Les producteurs français ont fait du défaut le produit, en le battant pendant la cristallisation pour obtenir la crème de miel."},
 tip:{en:"If a jar has set coarse and sandy, warm it to about 40 °C, stir in a spoonful of already-creamed honey and let it cool slowly — that seeds a fine crystal. Never take it past 45 °C, which melts the seed and gives you a jar that sets gritty again.",
@@ -701,7 +701,7 @@ svg:'<path class="f1 sf" d="M26 44h44l-4 30a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><p
 
 {id:"rosemary-honey",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Rosemary honey",fr:"Miel de romarin"},latin:"Rosmarinus officinalis",
 origin:{en:"Mediterranean garrigue",fr:"Garrigue méditerranéenne"},season:[4,5],
-flavor:["sweet","floral","delicate","resinous"],
+flavor:["sweet","floral","delicate","resinous"],texture:["viscous","smooth"],
 story:{en:"Rosemary flowers in late winter, when almost nothing else on the Mediterranean garrigue is in bloom, so hives set among it fill with a nectar barely mixed with anything else — the miel de Narbonne that French apothecaries sold under its own name for centuries. It crystallises within weeks into a paste so white that first-time buyers often suspect it has been cut with sugar.",
 fr:"Le romarin fleurit à la fin de l’hiver, quand presque rien d’autre n’est en fleur sur la garrigue : les ruches posées au milieu se remplissent d’un nectar presque pur, ce miel de Narbonne que les apothicaires français ont vendu sous son nom pendant des siècles. Il cristallise en quelques semaines en une pâte si blanche que l’acheteur qui le découvre le soupçonne souvent d’être coupé au sucre."},
 tip:{en:"Its resinous top note is volatile: stir it into anything above 40 °C and you are left with plain sweetness. Spoon it cold over fresh goat cheese, or fold it into whipped ricotta off the heat.",
@@ -711,7 +711,7 @@ svg:'<path class="f2 sf" d="M32 48h32v22q0 6-6 6H38q-6 0-6-6z"/><path class="f1 
 
 {id:"ruby-chocolate",cat:"sweet",price:2,pk:"22–40 €/kg",name:{en:"Ruby chocolate",fr:"Chocolat ruby"},latin:"Theobroma cacao",
 origin:{en:"Belgian couverture works",fr:"Chocolateries belges"},season:[],
-flavor:["sour","fruity","creamy","tangy"],
+flavor:["sour","fruity","creamy","tangy"],texture:["hard","brittle","dry"],
 story:{en:"Barry Callebaut launched it in Shanghai in 2017 as the first new chocolate type since white, and the colour comes from no added fruit: barely fermented beans are treated with acid, which shifts the purple pigment already sitting in the seed towards pink. The sourness and the colour are the same chemistry, which is why sustained heat dulls the pink to brown.",
 fr:"Barry Callebaut l’a lancé à Shanghai en 2017 comme le premier nouveau type de chocolat depuis le blanc, et la couleur ne vient d’aucun ajout de fruit : des fèves à peine fermentées sont traitées à l’acide, ce qui fait virer au rose le pigment pourpre déjà présent dans la graine. L’acidité et la couleur relèvent de la même chimie, et c’est pourquoi une chauffe prolongée ternit le rose en brun."},
 tip:{en:"Melt it no higher than 45 °C and temper around 28-29 °C, cooler than dark — the milk solids grey out fast above that. Keep every drop of water and fruit juice out of the bowl: ruby seizes into grain quicker than any other couverture.",
@@ -721,7 +721,7 @@ svg:'<path class="f2 sf" d="M22 34h30v34H22z"/><path class="f3 sf" d="M52 30h22v
 
 {id:"saba",cat:"sweet",rare:true,price:2,pk:"20–40 €/L",name:{en:"Saba (cooked grape must)",fr:"Saba (moût de raisin cuit)"},latin:"Vitis vinifera (mosto cotto)",
 origin:{en:"Emilia-Romagna & the Marche",fr:"Émilie-Romagne & les Marches"},season:[],
-flavor:["sweet","fruity","rich","honeyed"],
+flavor:["sweet","fruity","rich","honeyed"],texture:["viscous","smooth"],
 story:{en:"Romans called it defrutum or sapa and boiled the must down in lead vessels, which sweetened it further and poisoned them slowly. The same reduction is the first step of traditional balsamic, but saba stops there and never sees a vinegar barrel.",
 fr:"Les Romains l’appelaient defrutum ou sapa et réduisaient le moût dans des vases de plomb, ce qui le sucrait davantage et les empoisonnait lentement. La même réduction ouvre la fabrication du balsamique traditionnel, mais la saba s’arrête là et ne voit jamais de fût de vinaigre."},
 tip:{en:"Treat it as a honey, not a vinegar: there is no acidity in it to balance the sweetness. Brush it on roasting vegetables or meat only in the last three minutes - the sugars catch and turn bitter quickly.",
@@ -731,7 +731,7 @@ svg:'<path class="f3 sf" d="M34 44h26l-4 30q-1 4-5 4H43q-4 0-5-4z"/><path class=
 
 {id:"sidr-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
 origin:{en:"Wadi Do’an, Hadhramaut",fr:"Wadi Do’an, Hadramaout"},season:[10,11],
-flavor:["sweet","rich","toasty","warm"],
+flavor:["sweet","rich","toasty","warm"],texture:["firm","viscous","smooth"],
 story:{en:"The sidr trees of Wadi Do’an in Hadhramaut flower for roughly three weeks a year, and hives are carried into the valleys for that window alone — which is most of the reason a kilo can pass two hundred dollars. The bloom comes twice, autumn and spring, and beekeepers rate the autumn crop the darker and denser of the two.",
 fr:"Les jujubiers du Wadi Do’an, dans l’Hadramaout, ne fleurissent qu’une vingtaine de jours par an, et les ruches ne montent dans les vallées que pour cette fenêtre : c’est l’essentiel de la raison pour laquelle le kilo dépasse parfois deux cents dollars. La floraison revient deux fois, à l’automne et au printemps, et les apiculteurs tiennent la récolte d’automne pour la plus sombre et la plus dense des deux."},
 tip:{en:"It is thick enough to hold a spoon upright; warm the jar in your hand, never on the stove, or the butterscotch depth that justifies the price goes flat. Eat it on its own, on labneh or with dates — baked into a pastry it disappears under the sugar.",
@@ -741,7 +741,7 @@ svg:'<g transform="translate(7.15 7.45) scale(0.851)"><path class="f3 sf" d="M42
 
 {id:"sorghum-syrup",cat:"sweet",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Sorghum syrup",fr:"Sirop de sorgho"},latin:"Sorghum bicolor",
 origin:{en:"Upland American South",fr:"Sud appalachien des États-Unis"},season:[9,10],
-flavor:["sweet","tangy","earthy"],
+flavor:["sweet","tangy","earthy"],texture:["viscous","smooth"],
 story:{en:"Sweet sorghum reached American farms in the 1850s and became the upland South’s own sweetener: cane pressed by a mule walking a circle, the juice boiled down that same afternoon in a long open pan. It is reduced juice and nothing else, where molasses is what is left after the sugar has been taken out — which is why sorghum stays pourable and never sets.",
 fr:"Le sorgho sucrier arrive dans les fermes américaines dans les années 1850 et devient le sucrant des Appalaches : la canne pressée par une mule qui tourne en rond, le jus réduit l’après-midi même dans une longue bassine ouverte. C’est du jus réduit et rien d’autre, là où la mélasse est ce qui reste une fois le sucre retiré — d’où un sirop toujours coulant, qui ne cristallise jamais."},
 tip:{en:"Swap it for honey volume for volume in a batter, then cut the baking soda back: sorghum is acidic and lifts on its own, and an excess of soda tastes soapy. It runs thinner than molasses, so take out about a tablespoon of other liquid per cup.",
@@ -751,7 +751,7 @@ svg:'<path class="f2 sf" d="M34 34h24v34q0 6-6 6H40q-6 0-6-6z"/><path class="s" 
 
 {id:"strawberry-tree-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Strawberry-tree honey",fr:"Miel d’arbousier"},latin:"Arbutus unedo",
 origin:{en:"Sardinia and Corsica",fr:"Sardaigne et Corse"},season:[10,11,12],
-flavor:["bitter","herbal","woody"],
+flavor:["bitter","herbal","woody"],texture:["viscous","smooth"],
 story:{en:"The arbutus flowers from October into December, which makes this the only European honey harvested in winter — and in air so damp that Italian law raises the permitted water content for this one honey alone. The bitterness, coffee and quinine at the finish, is not a fault in it; it is the reason anyone buys it.",
 fr:"L’arbousier fleurit d’octobre à décembre, ce qui en fait le seul miel européen récolté en hiver — et dans un air si humide que la loi italienne relève le taux d’eau admis pour ce miel-là seulement. L’amertume, café et quinquina en finale, n’est pas un défaut : c’est la raison même de l’acheter."},
 tip:{en:"Serve it against salt and fat — a shard of aged pecorino, a slice of foie gras — and count a scant teaspoon. Baked into a batter the bitterness stops being a counterweight and turns to a metallic aftertaste.",
@@ -761,7 +761,7 @@ svg:'<path class="f2 sf" d="M34 36h28v34a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8z"/><path
 
 {id:"sunflower-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Sunflower honey",fr:"Miel de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Sunflower plains of France, Spain and the Balkans",fr:"Plaines à tournesol de France, d’Espagne et des Balkans"},season:[7,8],
-flavor:["sweet","grassy","herbal","floral"],
+flavor:["sweet","grassy","herbal","floral"],texture:["viscous","granular"],
 story:{en:"A sunflower head is hundreds of separate florets that open in a spiral from the rim inward over about a week, so one field gives the hive a long staggered flow rather than a burst. What comes out is a hard yellow honey that grains coarsely within weeks — a flaw on a breakfast table, and exactly the backbone that nougat and pain d'épices need.",
 fr:"Un capitule de tournesol est fait de centaines de fleurons distincts qui s’ouvrent en spirale, du bord vers le centre, sur une semaine environ : un même champ donne à la ruche une miellée longue et échelonnée plutôt qu’un coup de feu. Il en sort un miel jaune et dur, au grain grossier en quelques semaines — un défaut sur une table de petit-déjeuner, et exactement la charpente qu’exigent le nougat et le pain d’épices."},
 tip:{en:"Its herbaceous edge survives the oven where an acacia would vanish: take it to a third of the sugar in pain d'épices. Keep it out of tea or plain yoghurt, where there is nothing for that edge to push against.",
@@ -771,7 +771,7 @@ svg:'<path class="f1 sf" d="M30 34l9-14h18l9 14-9 14H39z"/><path class="f2 sf" d
 
 {id:"thyme-honey",cat:"sweet",price:2,pk:"20–40 €/kg",name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
 origin:{en:"Attica and Provence",fr:"Attique et Provence"},season:[7,8],
-flavor:["sweet","herbal","warm","pungent"],
+flavor:["sweet","herbal","warm","pungent"],texture:["viscous","smooth"],
 story:{en:"Thyme honey from Mount Hymettus was the honey of ancient Athens, sold and taxed under its own name, with the hillsides above the city kept for hives. What sets it apart is phenolic rather than floral: it reads almost savoury, which is why Greek and Provençal kitchens put it on cheese and lamb rather than on cake.",
 fr:"Le miel de thym du mont Hymette était le miel d’Athènes antique, vendu et taxé sous son propre nom, les collines au-dessus de la ville étant réservées aux ruches. Ce qui le distingue tient au phénol plus qu’à la fleur : il tire presque vers le salé, et c’est pourquoi les cuisines grecque et provençale le mettent sur le fromage et l’agneau plutôt que sur un gâteau."},
 tip:{en:"Use it where you would reach for a sweet-sour glaze: a spoonful whisked with lemon and olive oil is the standard dressing for grilled feta or fried manouri. On roast lamb, brush it on in the last ten minutes — it burns bitter long before the meat is done.",
@@ -781,7 +781,7 @@ svg:'<path class="s" d="M40 16v18"/><path class="f2 sf" d="M40 34q-8 0-8 9t8 15q
 
 {id:"tupelo-honey",cat:"sweet",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
 origin:{en:"Apalachicola river swamps, Florida",fr:"Marais de l’Apalachicola, Floride"},season:[4,5],
-flavor:["sweet","floral","delicate","fruity"],
+flavor:["sweet","floral","delicate","fruity"],texture:["viscous","smooth"],
 story:{en:"The white tupelo blooms for two or three weeks in April along one Florida river system, and beekeepers barge their hives onto platforms in the swamp to reach it; a wet fortnight cancels the year. The hives are stripped of every other frame first, because a single day of a different nectar shows up in the jar.",
 fr:"Le tupelo blanc fleurit deux ou trois semaines en avril le long d’un seul réseau fluvial de Floride, et les apiculteurs acheminent leurs ruches par barge jusqu’à des plateformes dans le marais ; quinze jours de pluie annulent l’année. On retire d’abord tous les autres cadres, car une seule journée d’un autre nectar se voit dans le pot."},
 tip:{en:"This is the honey for anything crystals would ruin — a mirror glaze, a bar syrup, a squeeze bottle that sits for months. It stays liquid on its own, so never warm it to loosen it: there is nothing to loosen, and the heat costs you the floral top note.",
@@ -791,7 +791,7 @@ svg:'<path class="s" d="M48 16v16"/><path class="f1 sf" d="M48 32q14 1 14 15t-14
 
 {id:"vergeoise",cat:"sweet",price:1,pk:"3–6 €/kg",name:{en:"Vergeoise",fr:"Vergeoise"},latin:"Beta vulgaris",
 origin:{en:"Northern France & Belgium",fr:"Nord de la France & Belgique"},season:[],
-flavor:["sweet","toasty","rich","warm"],
+flavor:["sweet","toasty","rich","warm"],texture:["soft","granular","moist"],
 story:{en:"A beet sugar, not a cane one — which is what separates it from cassonade and why the north of France insists on it. Speculoos, tarte au sucre and gaufres de Lille are all built on vergeoise brune and taste wrong without it.",
 fr:"Un sucre de betterave, non de canne — ce qui la distingue de la cassonade et pourquoi le Nord y tient. Spéculoos, tarte au sucre et gaufres de Lille reposent tous sur la vergeoise brune et sonnent faux sans elle."},
 tip:{en:"Blonde and brune are not interchangeable. Brune is caramelised twice and carries most of the flavour.",
@@ -801,7 +801,7 @@ svg:'<path class="f1 sf" d="M46 60q14-2 24-11 6-5 9 0t-6 9q-11 6-25 8z"/><path c
 
 {id:"wasanbon",cat:"sweet",rare:true,price:3,pk:"100–250 €/kg",name:{en:"Wasanbon sugar",fr:"Wasanbon"},latin:"Saccharum sinense",
 origin:{en:"Tokushima and Kagawa, Shikoku",fr:"Tokushima et Kagawa, Shikoku"},season:[],
-flavor:["sweet","delicate","mild"],
+flavor:["sweet","delicate","mild"],texture:["powdery","dry"],
 story:{en:"Made in Tokushima and Kagawa from a thin local cane called chikutō, it takes about twenty days: the sugar is crystallised slowly in wooden tubs, then kneaded by hand with a little water on trays, up to five times, to press the molasses out. Sanbon means three trays, after the kneadings the old method counted — the process now runs longer than its own name admits.",
 fr:"Fabriqué à Tokushima et Kagawa à partir d’une canne locale fine, le chikutō, il demande une vingtaine de jours : le sucre cristallise lentement en cuves de bois, puis il est pétri à la main avec un peu d’eau sur des plateaux, jusqu’à cinq fois, pour en chasser la mélasse. Sanbon veut dire « trois plateaux », d’après les pétrissages que comptait l’ancienne méthode — le procédé actuel en fait davantage que son nom ne le dit."},
 tip:{en:"The crystal is fine enough to melt on the tongue and heat destroys the point of it: keep it for higashi, dusted over fruit or whisked into cold cream, never boiled into a syrup. If you have to substitute, icing sugar comes closer than caster.",
@@ -811,7 +811,7 @@ svg:'<path class="f1 sf" d="M28 30q20-4 40 0 4 20 0 38-20 4-40 0-4-19 0-38z"/><p
 
 {id:"white-chocolate",cat:"sweet",price:2,pk:"12–25 €/kg",name:{en:"White chocolate",fr:"Chocolat blanc"},latin:"Theobroma cacao — beurre de cacao",
 origin:{en:"Switzerland, 1930s",fr:"Suisse, années 1930"},season:[],
-flavor:["sweet","creamy","milky","buttery"],
+flavor:["sweet","creamy","milky","buttery"],texture:["hard","brittle","dry"],
 story:{en:"Cocoa butter, sugar and milk with no cocoa solids at all — which is why purists argue it is not chocolate. It was invented to use up surplus cocoa butter left over from making cocoa powder, and it is a by-product that became a product.",
 fr:"Du beurre de cacao, du sucre et du lait sans aucune matière sèche de cacao — d’où l’argument des puristes qu’il n’est pas du chocolat. Il fut inventé pour écouler le beurre de cacao excédentaire de la fabrication du cacao en poudre : un sous-produit devenu produit."},
 tip:{en:"Check the label says cocoa butter and not vegetable fat. That single line separates the real thing from confectionery.",
@@ -821,7 +821,7 @@ svg:'<path class="f1 sf" d="M18 36q9-3 20-2l-2 7l5 5l-4 6l4 7l-3 6q-11 2-20-1q-3
 
 {id:"sugar",cat:"sweet",price:1,pk:"1–2 €/kg",name:{en:"White sugar",fr:"Sucre blanc"},latin:"Saccharum officinarum",
 origin:{en:"New Guinea, via India",fr:"Nouvelle-Guinée, via l’Inde"},season:[],
-flavor:["sweet","mild","delicate","toasty"],
+flavor:["sweet","mild","delicate","toasty"],texture:["granular","dry"],
 story:{en:"Cane was chewed in New Guinea nine thousand years ago; India learned to crystallise the juice, and the Sanskrit sharkara became sucre, sugar, azúcar. For four centuries it was the engine of the Atlantic slave trade, which is the part the word does not carry.",
 fr:"On mâchait la canne en Nouvelle-Guinée il y a neuf mille ans ; l’Inde apprit à en cristalliser le jus, et le sanskrit sharkara devint sucre, sugar, azúcar. Pendant quatre siècles il fut le moteur de la traite atlantique, ce que le mot ne porte pas."},
 tip:{en:"It does far more than sweeten — it holds moisture, browns, and stops gluten forming. Cutting it in a cake changes the texture, not just the taste.",
@@ -831,7 +831,7 @@ svg:'<path class="f1 sf" d="M24 56q4-4 7-6 8-1 17-1 0 8 1 17-4 4-7 6-9 0-17 1z"/
 
 {id:"yacon-syrup",cat:"sweet",rare:true,price:2,pk:"35–70 €/kg",name:{en:"Yacon syrup",fr:"Sirop de yacon"},latin:"Smallanthus sonchifolius",
 origin:{en:"Andes of Peru and Bolivia",fr:"Andes du Pérou et de Bolivie"},season:[],
-flavor:["sweet","earthy","fruity"],
+flavor:["sweet","earthy","fruity"],texture:["viscous","smooth"],
 story:{en:"The root stores its sugar as fructo-oligosaccharides rather than starch or sucrose — chains the human gut cannot break down, so most of the sweetness passes straight through. Andean growers ate the root raw as fruit long before anyone reduced its juice; French still calls the plant poire de terre, the ground pear.",
 fr:"La racine stocke son sucre sous forme de fructo-oligosaccharides plutôt que d’amidon ou de saccharose — des chaînes que l’intestin humain ne sait pas rompre, si bien que l’essentiel de la douceur passe sans être digéré. Les cultivateurs andins mangeaient la racine crue, comme un fruit, bien avant qu’on en réduise le jus ; le français l’appelle toujours poire de terre."},
 tip:{en:"It will not caramelise and will not crystallise, so keep it out of confectionery entirely. Use it where you want dark sweetness that stays pourable: a vinaigrette, a barbecue glaze brushed on after the heat, a spoonful over yoghurt.",

@@ -29,6 +29,11 @@
     fats: "fat", dairy: "fat",
     spices: "seasoning", herbs: "seasoning",
     condiments: "seasoning", flowers: "seasoning",
+    /* A nut finishes a plate rather than composing it, which is what this role
+       already holds. Filed here rather than under fat, though it is rich, and
+       rather than protein, though it is that too — on a plate it is the thing
+       scattered last. Overrule it if the kitchen says otherwise. */
+    nuts: "seasoning",
     fruits: "fruit", sweet: "fruit",
     cellar: "aside", infusions: "aside", texture: "aside",
     /* The bases — hollandaise, béchamel, the fonds — carry no flavour tags and
@@ -434,6 +439,17 @@
 
   /* A tag in the atlas with no axis here would be silently ignored, and the
      balance rules would quietly stop seeing it. Fail at load instead. */
+  /* nuts were missing from the map for a day and 60 ingredients quietly read as
+     "on the side", reachable by no template. A family the map does not name
+     does not announce itself, so the caller is told to check. */
+  function unmappedCats(ings) {
+    var miss = {};
+    (ings || []).forEach(function (i) {
+      if (!ROLE_BY_CAT[i.cat] && !ROLE_OVERRIDE[i.id]) miss[i.cat] = (miss[i.cat] || 0) + 1;
+    });
+    return miss;
+  }
+
   var TAG_COUNT = 35;
   if (Object.keys(AXIS_BY_TAG).length !== TAG_COUNT && window.console) {
     window.console.warn("plate.js: expected " + TAG_COUNT + " flavour tags, mapped " +
@@ -449,6 +465,7 @@
     MAX_FREE: MAX_FREE,
     AXIS_BY_TAG: AXIS_BY_TAG,
     roleOf: roleOf,
+    unmappedCats: unmappedCats,
     axesOf: axesOf,
     judge: judge
   };

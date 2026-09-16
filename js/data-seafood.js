@@ -1,7 +1,7 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
 {id:"albacore",cat:"seafood",price:2,pk:"14–25 €/kg",name:{en:"Albacore",fr:"Germon (thon blanc)"},latin:"Thunnus alalunga",
 origin:{en:"Bay of Biscay & temperate oceans",fr:"Golfe de Gascogne & océans tempérés"},season:[6,7,8,9,10],
-flavor:["mild","delicate","rich","marine"],
+flavor:["mild","delicate","rich","marine"],texture:["firm","moist"],
 story:{en:"Its Latin name means long wing: the pectoral fins reach back past the anal fin, further than on any other tuna, and that single mark is what keeps it out of the bluefin bin. Basque boats still take it on pole and line, one fish at a time, and the tins made from it are sold as bonito del norte - which is not a bonito at all.",
 fr:"Son nom latin signifie « longue aile » : les pectorales dépassent vers l’arrière la nageoire anale, plus loin que chez tout autre thon, et ce seul repère l’empêche d’être confondu avec le rouge. Les bateaux basques le pêchent encore à la canne, un poisson à la fois, et les conserves qu’on en tire se vendent sous le nom de bonito del norte — qui n’est pas une bonite."},
 tip:{en:"The loin goes from raw to dry between one turn and the next: thirty seconds a side on a fierce pan and a cool centre, or nothing. In a marmitako it goes in off the heat, once the potatoes are already done.",
@@ -11,7 +11,7 @@ svg:'<path class="f2 sf" d="M20 52q16-14 38-12t18 12q-6 12-24 13T20 52z"/><path 
 
 {id:"allis-shad",cat:"seafood",price:2,pk:"10–18 €/kg",name:{en:"Allis shad",fr:"Alose"},latin:"Alosa alosa",
 origin:{en:"Loire, Gironde & Atlantic rivers",fr:"Loire, Gironde & fleuves atlantiques"},season:[4,5,6],
-flavor:["rich","meaty","marine","mild"],
+flavor:["rich","meaty","marine","mild"],texture:["tender","flaky","moist"],
 story:{en:"It lives at sea and climbs the rivers once, in spring, to spawn - the Loire and the Gironde carried the great runs until the dams, and the counts now come in hundreds where they once came in tens of thousands. The classic alose à l'oseille braises it for hours on a bed of sorrel, whose acid was long held to dissolve the fine bones; cooks still disagree about whether it does.",
 fr:"Elle vit en mer et ne remonte les fleuves qu’une fois, au printemps, pour frayer : la Loire et la Gironde portaient les grandes montaisons jusqu’aux barrages, et l’on compte aujourd’hui par centaines là où l’on comptait par dizaines de milliers. L’alose à l’oseille classique la braise des heures sur un lit d’oseille, dont l’acide passait pour dissoudre les arêtes fines ; les cuisiniers en débattent encore."},
 tip:{en:"Give it two to three hours in a low oven on a thick bed of sorrel - a short cooking leaves you picking bones all through the meal. Have the fillets scored deeply every few millimetres: the cuts sever the fine bones, which no filleting removes.",
@@ -21,7 +21,7 @@ svg:'<path class="f1 sf" d="M24 52q10-20 30-18t18 18q-8 18-26 18T24 52z"/><path 
 
 {id:"anchovy",cat:"seafood",price:1,pk:"8–15 €/kg",name:{en:"Anchovy",fr:"Anchois"},latin:"Engraulis encrasicolus",
 origin:{en:"Mediterranean & Atlantic",fr:"Méditerranée & Atlantique"},season:[],
-flavor:["salty","umami","marine","pungent"],
+flavor:["salty","umami","marine","pungent"],texture:["soft","silky"],
 story:{en:"Rome ran on garum — fermented anchovy sauce traded like oil, its factories worth fortunes. The little fish still works undercover: melted into a sauce it disappears entirely, leaving only depth, and people who “hate anchovies” praise the dish.",
 fr:"Rome carburait au garum — sauce d’anchois fermentés négociée comme le pétrole, ses fabriques valant des fortunes. Le petit poisson travaille toujours sous couverture : fondu dans une sauce il disparaît entièrement, ne laissant que la profondeur, et ceux qui « détestent les anchois » complimentent le plat."},
 tip:{en:"One or two fillets, melted in warm olive oil at the start of a tomato sauce or a lamb braise, is seasoning, not fish. Nobody will know; everybody will notice.",
@@ -31,7 +31,7 @@ svg:'<path class="f1 sf" d="M 15.6 56.3q 4.4-9 17.9-12.7 15.3-5 28.1-2.4 6.3 0.8
 
 {id:"foie-de-lotte",cat:"seafood",price:3,pk:"25–50 €/kg",name:{en:"Ankimo",fr:"Foie de lotte (ankimo)"},latin:"Lophius litulon",
 origin:{en:"Cold Japanese coastal waters",fr:"Eaux côtières froides du Japon"},season:[11,12,1,2],
-flavor:["rich","creamy","marine","umami"],
+flavor:["rich","creamy","marine","umami"],texture:["soft","creamy"],
 story:{en:"Japan calls it the foie gras of the sea, and the comparison is anatomical rather than poetic: in cold water the liver can reach a tenth of the fish's weight. Salted, rinsed with sake, rolled in cloth and steamed — ankimo is a preparation, not a cut, and the lean tail it comes from tastes nothing like it.",
 fr:"Au Japon on l’appelle le foie gras de la mer, et la comparaison tient à l’anatomie plus qu’à la poésie : par eau froide, le foie atteint le dixième du poids du poisson. Salé, rincé au saké, roulé dans un linge puis cuit à la vapeur — l’ankimo est une préparation, pas un morceau, et la queue maigre dont il vient n’a rien de ce goût."},
 tip:{en:"Devein it while the liver is still cold and firm, then salt thirty minutes and rinse with sake before rolling — skip either step and the terrine turns bitter and grainy. Steam thirty minutes, chill overnight, slice with a wetted blade.",
@@ -41,7 +41,7 @@ svg:'<path class="f2 sf" d="M34 38h26a12 12 0 0 1 0 24H34a12 12 0 0 1 0-24z"/><e
 
 {id:"char",cat:"seafood",price:2,pk:"18–28 €/kg",name:{en:"Arctic char",fr:"Omble chevalier"},latin:"Salvelinus alpinus",
 origin:{en:"Arctic & alpine lakes",fr:"Lacs arctiques & alpins"},season:[6,7,8,9,10],
-flavor:["delicate","rich","sweet","marine"],
+flavor:["delicate","rich","sweet","marine"],texture:["tender","flaky","moist"],
 story:{en:"It lives in the coldest fresh water on Earth, further north than any other freshwater fish, and in the deep alpine lakes of Savoie and Switzerland. Somewhere between salmon and trout in richness, and rarer than either.",
 fr:"Il vit dans les eaux douces les plus froides du globe, plus au nord qu’aucun autre poisson d’eau douce, et dans les lacs alpins profonds de Savoie et de Suisse. À mi-chemin du saumon et de la truite pour le gras, et plus rare que l’un comme l’autre."},
 tip:{en:"Cook it barely — it is at its best still translucent at the centre. It goes from perfect to chalky in under a minute.",
@@ -51,7 +51,7 @@ svg:'<path class="f1 sf" d="M25 35q15-2 28 6 14 8 27 12l-1 8q-16-2-30 2-14 4-24 
 
 {id:"black-scabbardfish",cat:"seafood",price:2,pk:"9–16 €/kg",name:{en:"Black scabbardfish",fr:"Sabre noir"},latin:"Aphanopus carbo",
 origin:{en:"Madeira & the Portuguese slope",fr:"Madère & le talus portugais"},season:[],
-flavor:["delicate","mild","buttery","marine"],
+flavor:["delicate","mild","buttery","marine"],texture:["soft","moist"],
 story:{en:"It is fished off Madeira on longlines set a kilometre and more down, and comes up jet black with eyes the size of coins; the black is a loose skin pigment that comes away on your hands. The island eats it fried with a fried banana beside it, a pairing that sounds like a dare and is on every menu there.",
 fr:"On le pêche au large de Madère à la palangre, à mille mètres et plus, et il remonte d’un noir d’encre, l’œil large comme une pièce ; ce noir est un pigment de peau qui part sur les doigts. L’île le mange frit avec une banane frite à côté, accord qui sonne comme un défi et figure à toutes les cartes."},
 tip:{en:"The flesh comes off in long boneless strips and is very soft: flour it and give it a minute a side in hot oil. Longer and it goes to threads; there is no second chance with this fish.",
@@ -61,7 +61,7 @@ svg:'<path class="f3 sf" d="M18 46q10-6 20-2l50 8-50 6q-12 2-20-4z"/><path class
 
 {id:"bonito",cat:"seafood",price:2,pk:"9–15 €/kg",name:{en:"Bonito (katsuo)",fr:"Bonite à ventre rayé"},latin:"Katsuwonus pelamis",
 origin:{en:"Tosa, Kochi & the Pacific",fr:"Tosa, Kōchi & le Pacifique"},season:[4,5,9,10],
-flavor:["rich","meaty","umami","marine"],
+flavor:["rich","meaty","umami","marine"],texture:["tender","moist"],
 story:{en:"Edo made a cult of the first bonito of the year and paid absurd sums for it - the season's first fish were priced like jewellery, and households are recorded pawning goods to buy one. Tosa sears it over burning rice straw, which flares hot enough to colour the skin in seconds without cooking the red flesh underneath.",
 fr:"Edo avait le culte de la première bonite de l’année et la payait des sommes absurdes : les premiers poissons de la saison valaient un bijou, et l’on a gardé trace de foyers mettant des biens en gage pour s’en offrir une. Tosa la saisit sur une flambée de paille de riz, qui monte assez haut pour colorer la peau en quelques secondes sans cuire la chair rouge dessous."},
 tip:{en:"Tataki wants the fiercest heat you have, then ice water at once, then a thorough drying - leave it wet and the surface goes on cooking inward. Serve it with grated garlic and ginger rather than soy alone; the flesh is strong enough to need them.",
@@ -71,7 +71,7 @@ svg:'<path class="f2 sf" d="M22 52q16-16 38-13t16 13q-6 13-22 14T22 52z"/><path 
 
 {id:"boquerones",cat:"seafood",price:2,pk:"25–40 €/kg",name:{en:"Boquerones",fr:"Boquerones (anchois marinés au vinaigre)"},latin:"Engraulis encrasicolus (vinegar-cured)",
 origin:{en:"Andalusian and Levantine coasts",fr:"Côtes d'Andalousie et du Levant"},season:[4,5,6,7,8],
-flavor:["sour","tangy","marine","delicate"],
+flavor:["sour","tangy","marine","delicate"],texture:["soft","silky"],
 story:{en:"Spain keeps a hard line between the salt-cured anchoa and the vinegar-cured boquerón: one fish taken in opposite directions, darkened by months of fermentation or whitened by acid in an afternoon. Since 2006 Spanish law has required the fish to be frozen before it is marinated, because vinegar changes the texture of a raw anchovy without killing anything living in it.",
 fr:"L'Espagne sépare nettement l'anchoa salée du boquerón au vinaigre : un même poisson mené dans deux directions opposées, noirci par des mois de fermentation ou blanchi par l'acide en un après-midi. Depuis 2006, la loi espagnole impose la congélation avant marinade, car le vinaigre modifie la texture d'un anchois cru sans rien y tuer."},
 tip:{en:"Marinate in white wine vinegar cut with a third of its volume in water, and stop the moment the flesh turns opaque — two to four hours for small fillets. Drain, then cover with oil and sliced garlic; left overnight in the vinegar they go chalky.",
@@ -81,7 +81,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="54" rx="28" ry="16"/><path class="f2 sf"
 
 {id:"brill",cat:"seafood",price:3,pk:"22–38 €/kg",name:{en:"Brill",fr:"Barbue"},latin:"Scophthalmus rhombus",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[4,5,6,7,8,9],
-flavor:["delicate","sweet","marine","rich"],
+flavor:["delicate","sweet","marine","rich"],texture:["tender","flaky","moist"],
 story:{en:"Turbot's slightly cheaper cousin, and the difference is real but small — brill is softer-fleshed and less firm. Chefs who cannot justify turbot buy brill and rarely mention the substitution, which tells you how close they are.",
 fr:"La cousine un peu moins chère du turbot, et la différence est réelle mais mince — la barbue a la chair plus tendre et moins ferme. Les chefs qui ne peuvent justifier le turbot prennent de la barbue et mentionnent rarement l’échange, ce qui dit assez leur proximité."},
 tip:{en:"Cook it on the bone. Both flat fish lose most of what makes them worth the money once filleted.",
@@ -91,7 +91,7 @@ svg:'<ellipse class="f3 sf" cx="46" cy="56" rx="27" ry="17"/><path class="f3 sf"
 
 {id:"brown-scorpionfish",cat:"seafood",price:2,pk:"10–18 €/kg",name:{en:"Brown scorpionfish",fr:"Rascasse brune"},latin:"Scorpaena porcus",
 origin:{en:"Mediterranean rocky shores",fr:"Côtes rocheuses de Méditerranée"},season:[],
-flavor:["marine","umami","rich","mild"],
+flavor:["marine","umami","rich","mild"],texture:["firm","gelatinous","flaky"],
 story:{en:"The charter drawn up by Marseille restaurateurs in 1980 makes it compulsory in a bouillabaisse - a soup defined, unusually, by a document. The fish is nearly all head: the fillet yield is derisory, and that is exactly the point, because the head is where the gelatine and the flavour are.",
 fr:"La charte rédigée par les restaurateurs marseillais en 1980 la rend obligatoire dans une bouillabaisse — soupe définie, chose rare, par un document. Le poisson n’est presque que tête : le rendement en filet est dérisoire, et c’est bien là l’objet, car la tête porte la gélatine et le goût."},
 tip:{en:"Never fillet it - head, bones and all go into the pot, then through a mouli and a sieve. Press hard on the solids: most of what you paid for is in the head, and a soup strained gently leaves it behind.",
@@ -101,7 +101,7 @@ svg:'<path class="f3 sf" d="M22 56q6-16 20-18t26 8q10 6 8 14-14 8-30 6T22 56z"/>
 
 {id:"cod",cat:"seafood",price:2,pk:"14–26 €/kg",name:{en:"Cod",fr:"Cabillaud"},latin:"Gadus morhua",
 origin:{en:"North Atlantic",fr:"Atlantique Nord"},season:[1,2,3,10,11,12],
-flavor:["mild","delicate","marine"],
+flavor:["mild","delicate","marine"],texture:["tender","flaky","moist"],
 story:{en:"The fish that built nations: Vikings dried it into ship's biscuit, Basques salted it and may have reached America chasing it before Columbus. Wars were fought over it, banks named after it — all for a flaky white fillet.",
 fr:"Le poisson qui bâtit des nations : les Vikings le séchaient en biscuit de mer, les Basques le salaient et l’auraient poursuivi jusqu’en Amérique avant Colomb. On lui fit des guerres, on baptisa des bancs en son nom — tout ça pour un filet blanc et feuilleté."},
 tip:{en:"Salt the fillets twenty minutes before cooking: the flesh firms and the flakes hold. It carries bold friends — chorizo, capers, saffron — with grace.",
@@ -111,7 +111,7 @@ svg:'<path class="f1 sf" d="M 16 52.5q 7.4-12.1 21.2-14.1 17.8-2.5 30.5 1.8 4.2 
 
 {id:"foie-de-morue",cat:"seafood",price:2,pk:"20–35 €/kg",name:{en:"Cod liver",fr:"Foie de morue"},latin:"Gadus morhua (liver)",
 origin:{en:"Iceland, Norway and the Barents Sea",fr:"Islande, Norvège et mer de Barents"},season:[],
-flavor:["rich","marine","creamy","umami"],
+flavor:["rich","marine","creamy","umami"],texture:["soft","creamy"],
 story:{en:"Cod liver was industrialised for its oil long before anyone tinned it whole: nineteenth-century Norwegian and Icelandic plants rendered it as medicine against rickets, and the flesh of the fish was in some seasons the by-product. The tinned liver is cooked exactly once, sealed, in nothing but the oil it gives off itself.",
 fr:"Le foie de morue a été industrialisé pour son huile bien avant d'être mis en boîte entier : les usines norvégiennes et islandaises du XIXe siècle le fondaient comme remède contre le rachitisme, et la chair du poisson passait certaines saisons au rang de sous-produit. Le foie en conserve ne cuit qu'une seule fois, scellé, dans la seule huile qu'il rend."},
 tip:{en:"Pour the oil off into a jar and keep it — it makes an iodised vinaigrette — then crush the liver with lemon and raw shallot. Warm it gently at most; past a bare simmer it splits into oil and grain.",
@@ -121,7 +121,7 @@ svg:'<path class="f1 sf" d="M20 44h56v22a6 6 0 0 1-6 6H26a6 6 0 0 1-6-6z"/><path
 
 {id:"langue-de-morue",cat:"seafood",rare:true,price:2,pk:"15–25 €/kg",name:{en:"Cod tongues",fr:"Langues de morue"},latin:"Gadus morhua (throat)",
 origin:{en:"Newfoundland and the salt-cod trade",fr:"Terre-Neuve et le commerce de la morue salée"},season:[],
-flavor:["briny","marine","salty"],
+flavor:["briny","marine","salty"],texture:["soft","gelatinous"],
 story:{en:"Cod tongues are the same throat muscle the Basques call kokotxa, and on Newfoundland wharves cutting them out of the day's catch was children's work, paid by the bucket. Almost everything sold in Europe is salt-cured, so it comes home stiff as card and has to be soaked back before it can be cooked at all.",
 fr:"Les langues de morue sont le même muscle de gorge que les Basques appellent kokotxa, et sur les quais de Terre-Neuve les découper dans la pêche du jour était un travail d’enfants, payé au seau. Presque tout ce qui se vend en Europe est salé : cela arrive raide comme du carton et doit être dessalé avant toute cuisson."},
 tip:{en:"Desalt twenty-four hours in the fridge in three changes of cold water, then dry, flour and fry in pork fat until the edges blister. Taste the soaking water before you stop — if it is still salty, so is the tongue.",
@@ -131,7 +131,7 @@ svg:'<path class="f1 sf" d="M48 24q14 6 14 22 0 18-14 24-14-6-14-24 0-16 14-22z"
 
 {id:"dentex",cat:"seafood",price:3,pk:"22–40 €/kg",name:{en:"Dentex",fr:"Denté"},latin:"Dentex dentex",
 origin:{en:"Mediterranean & Adriatic",fr:"Méditerranée & Adriatique"},season:[5,6,7,8,9],
-flavor:["sweet","delicate","marine","rich"],
+flavor:["sweet","delicate","marine","rich"],texture:["firm","flaky"],
 story:{en:"It is named for its teeth: four large canines at the front of each jaw, the equipment of a hunter that chases fish rather than grazing the bottom like the bream it resembles. It is reported to begin life female and turn male with size, so the big ones on the slab are almost all males.",
 fr:"Il doit son nom à ses dents : quatre grandes canines à l’avant de chaque mâchoire, l’outillage d’un chasseur qui poursuit le poisson au lieu de brouter le fond comme la daurade qu’il rappelle. Il commencerait sa vie femelle et deviendrait mâle en grandissant : les gros sujets de l’étal sont donc presque tous des mâles."},
 tip:{en:"The flesh is firm enough for a salt crust: whole in damp coarse salt at 200 °C, about twelve minutes per 500 g, then crack the crust and lift the skin away with it. Under a kilo, grill it instead - the crust needs mass to work.",
@@ -141,7 +141,7 @@ svg:'<path class="f1 sf" d="M24 54q6-20 26-20t24 16q0 16-24 20T24 54z"/><path cl
 
 {id:"dover-sole",cat:"seafood",luxe:true,price:3,pk:"30–55 €/kg",name:{en:"Dover sole",fr:"Sole"},latin:"Solea solea",
 origin:{en:"English Channel & North Sea",fr:"Manche & mer du Nord"},season:[],
-flavor:["delicate","sweet","marine"],
+flavor:["delicate","sweet","marine"],texture:["firm","flaky"],
 story:{en:"Named for the port that rushed it to London’s tables, it earned immortality in Rouen in 1948: one sole meunière — browned butter, lemon, parsley — struck the young Julia Child as “the most exciting meal of my life” and rerouted American cooking through France.",
 fr:"Nommée d’après le port qui la précipitait vers les tables de Londres, elle gagna l’immortalité à Rouen en 1948 : une sole meunière — beurre noisette, citron, persil — frappa la jeune Julia Child comme « le repas le plus exaltant de ma vie » et fit passer la cuisine américaine par la France."},
 tip:{en:"Its firm, sweet flesh peels from the bone in four perfect fillets — but cook it whole and skin-on for the true meunière. The pan does the sauce: butter, lemon, and the fond it leaves behind.",
@@ -151,7 +151,7 @@ svg:'<path class="f1 sf" d="M 19 57.8Q 20.4 53.2 22.7 48.5Q 26.4 44.6 31.1 41.1Q
 
 {id:"eel",cat:"seafood",price:3,pk:"20–35 €/kg",name:{en:"Eel",fr:"Anguille"},latin:"Anguilla anguilla",
 origin:{en:"Sargasso Sea",fr:"Mer des Sargasses"},season:[9,10,11,12],
-flavor:["rich","smoky","meaty","umami"],
+flavor:["rich","smoky","meaty","umami"],texture:["firm","silky"],
 story:{en:"Every European eel is born in the Sargasso Sea, drifts to Europe as a transparent larva, lives decades in fresh water, then swims back across the Atlantic to spawn and die. Aristotle thought they emerged from mud; nobody has ever seen them breed.",
 fr:"Toute anguille européenne naît dans la mer des Sargasses, dérive vers l’Europe en larve transparente, vit des décennies en eau douce, puis retraverse l’Atlantique pour frayer et mourir. Aristote les croyait nées de la boue ; personne n’a jamais assisté à leur reproduction."},
 tip:{en:"Its blood is toxic raw and destroyed by heat, which is why eel is never served raw anywhere in the world.",
@@ -161,7 +161,7 @@ svg:'<path class="f1 sf" d="M16 60q14-14 28 0t30-6"/><path class="s" d="M16 62q1
 
 {id:"conger",cat:"seafood",price:1,pk:"7–13 €/kg",name:{en:"European conger",fr:"Congre"},latin:"Conger conger",
 origin:{en:"Northeast Atlantic & Brittany",fr:"Atlantique Nord-Est & Bretagne"},season:[9,10,11,12,1,2],
-flavor:["meaty","marine","mild","rich"],
+flavor:["meaty","marine","mild","rich"],texture:["firm","gelatinous"],
 story:{en:"It has no scales and no pelvic fins, never leaves salt water, and the females reach two metres; once they mature for the spawning migration they stop feeding altogether and their teeth and bones begin to break down. Brittany buys it by the section, because the two ends of the fish are two different ingredients.",
 fr:"Il n’a ni écailles ni nageoires pelviennes, ne quitte jamais l’eau salée, et les femelles atteignent deux mètres ; une fois mûres pour la migration de fraie, elles cessent tout à fait de se nourrir et leurs dents comme leurs os commencent à se défaire. La Bretagne l’achète au tronçon, car les deux bouts du poisson sont deux ingrédients différents."},
 tip:{en:"Buy the head end and only that: the tail half is a thicket of hair-fine bones that no filleting solves. Keep every trimming - conger gelatine sets a fish stock more firmly than any other bone in the box.",
@@ -171,7 +171,7 @@ svg:'<path class="f2 sf" d="M20 46q10-8 20-4t22 10 20 4q-10 8-22 4t-22-10-18-4z"
 
 {id:"vessie-natatoire-sechee",cat:"seafood",rare:true,luxe:true,price:4,pk:"300–1000 €/kg",name:{en:"Fish maw",fr:"Vessie natatoire séchée"},latin:"Sciaenidae spp. (dried swim bladder)",
 origin:{en:"South China Sea trade",fr:"Négoce de mer de Chine méridionale"},season:[],
-flavor:["mild","marine","umami","delicate"],
+flavor:["mild","marine","umami","delicate"],texture:["hard","brittle","dry"],
 story:{en:"The same organ, processed another way, gives isinglass, the fish gelatine that has clarified beer and wine for centuries. Graded by species and thickness, top maw reaches prices that have pushed the trade somewhere dangerous: demand for totoaba bladders is what is driving the vaquita porpoise towards extinction in the Gulf of California.",
 fr:"Le même organe, traité autrement, donne l'ichtyocolle, cette gélatine de poisson qui clarifie bière et vin depuis des siècles. Classée par espèce et par épaisseur, la vessie de premier choix atteint des prix qui ont fait dériver le commerce : c'est la demande de vessies de totoaba qui pousse le marsouin vaquita vers l'extinction dans le golfe de Californie."},
 tip:{en:"Blanch the fried kind in water with ginger and Shaoxing to strip its oil, then soak it until springy. Add it to a braise only in the last twenty minutes: held longer it melts into the liquid and thickens it.",
@@ -181,7 +181,7 @@ svg:'<path class="f1 sf" d="M24 56q-2-20 16-24t24 8 10 20-16 14-24-4-10-14z"/><p
 
 {id:"sea-bream",cat:"seafood",price:2,pk:"12–22 €/kg",name:{en:"Gilt-head bream",fr:"Daurade royale"},latin:"Sparus aurata",
 origin:{en:"Mediterranean & eastern Atlantic",fr:"Méditerranée & Atlantique Est"},season:[6,7,8,9,10],
-flavor:["sweet","delicate","marine","nutty"],
+flavor:["sweet","delicate","marine","nutty"],texture:["firm","flaky","moist"],
 story:{en:"The gold band between its eyes gives it both its names — aurata in Latin, royale in French. It was sacred to Aphrodite, and the Romans farmed it in coastal ponds two thousand years before anyone used the word aquaculture.",
 fr:"Le bandeau doré entre ses yeux lui vaut ses deux noms — aurata en latin, royale en français. Consacrée à Aphrodite, elle était élevée par les Romains dans des viviers côtiers deux mille ans avant qu’on emploie le mot aquaculture."},
 tip:{en:"Bake it whole in a salt crust. The flesh steams in its own moisture and stays far juicier than any fillet.",
@@ -191,7 +191,7 @@ svg:'<path class="f2 sf" d="M20 56q16-16 40-12t16 12q-8 12-30 12T20 56z"/><path 
 
 {id:"glass-eel",cat:"seafood",luxe:true,price:4,pk:"400–1000 €/kg",name:{en:"Glass eel",fr:"Civelle (pibale)"},latin:"Anguilla anguilla",
 origin:{en:"Gironde & Adour estuaries",fr:"Estuaires de la Gironde & de l’Adour"},season:[12,1,2,3],
-flavor:["delicate","mild","marine"],
+flavor:["delicate","mild","marine"],texture:["soft","gelatinous"],
 story:{en:"They reach the Gironde and the Adour after two or three years drifting from the Sargasso, transparent and about six centimetres long, and the fishery now runs on quota with every kilo traced because the species is critically endangered. Prices climbed high enough that Spain answered with gulas - surimi threads with two ink dots for eyes - now more common on Spanish tables than the fish.",
 fr:"Elles atteignent la Gironde et l’Adour après deux ou trois ans de dérive depuis les Sargasses, transparentes et longues de six centimètres, et la pêche se fait désormais sous quota, chaque kilo tracé, l’espèce étant en danger critique. Les prix ont tant monté que l’Espagne a répondu par les gulas — des fils de surimi avec deux points d’encre en guise d’yeux — aujourd’hui plus courants sur les tables espagnoles que le poisson lui-même."},
 tip:{en:"Seconds, not minutes: garlic and chilli warmed in olive oil, the civelles tipped in, a count of twenty, straight to the table in the earthenware they cooked in. They carry almost no flavour of their own, so the oil and the garlic are the dish.",
@@ -201,7 +201,7 @@ svg:'<path class="s" d="M20 40q14 8 28 0t28 4M18 52q14 8 28 0t28 4M22 64q14 8 28
 
 {id:"grayling",cat:"seafood",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Grayling",fr:"Ombre commun"},latin:"Thymallus thymallus",
 origin:{en:"Cold rivers of northern & alpine Europe",fr:"Rivières froides d’Europe du Nord & des Alpes"},season:[6,7,8,9,10],
-flavor:["delicate","herbal","fresh","mild"],
+flavor:["delicate","herbal","fresh","mild"],texture:["tender","flaky","moist"],
 story:{en:"The Latin name records a smell: Thymallus, for thyme, which is what a grayling straight out of a cold river gives off. The scent goes within an hour or two of death, so almost nobody who buys their fish has ever met it.",
 fr:"Le nom latin enregistre une odeur : Thymallus, le thym, c’est bien ce que dégage un ombre sorti à l’instant d’une rivière froide. Le parfum s’en va une heure ou deux après la mort, si bien que presque personne, achetant son poisson, ne l’a jamais senti."},
 tip:{en:"Cook it on the bank or not at all - hours matter here, not days. Butter and nothing acid: a squeeze of lemon flattens the thyme note that is the only reason to prefer it to a trout.",
@@ -211,7 +211,7 @@ svg:'<g transform="translate(4.85 5.05) scale(0.899)"><path class="f1 sf" d="M22
 
 {id:"kanpachi",cat:"seafood",price:3,pk:"40–70 €/kg",name:{en:"Greater amberjack (kanpachi)",fr:"Sériole couronnée (kanpachi)"},latin:"Seriola dumerili",
 origin:{en:"Kyushu & the western Pacific",fr:"Kyūshū & Pacifique occidental"},season:[6,7,8,9],
-flavor:["sweet","delicate","rich","marine"],
+flavor:["sweet","delicate","rich","marine"],texture:["firm","smooth"],
 story:{en:"The Japanese name is read off the head: a dark band runs from each eye to the dorsal fin, and from above the pair draw the character for eight, hachi, between the eyes. It is a different Seriola from buri and runs the opposite calendar - lean and firm through the summer, when winter yellowtail is at its worst.",
 fr:"Le nom japonais se lit sur la tête : une bande sombre court de chaque œil à la dorsale, et vues d’en haut les deux dessinent entre les yeux le caractère de huit, hachi. C’est une sériole différente du buri, au calendrier inverse — maigre et ferme tout l’été, quand la sériole d’hiver est au plus bas."},
 tip:{en:"It holds a slice better than buri, so cut sashimi thicker, eight to ten millimetres, and let the texture carry it. Salt and sudachi suit it better than the fatty soy treatments that flatter winter yellowtail.",
@@ -221,7 +221,7 @@ svg:'<g transform="translate(3.36 3.5) scale(0.93)"><path class="f2 sf" d="M20 5
 
 {id:"grey-mullet",cat:"seafood",price:1,pk:"6–12 €/kg",name:{en:"Grey mullet",fr:"Mulet"},latin:"Mugil cephalus",
 origin:{en:"Estuaries and coastal lagoons",fr:"Estuaires et lagunes côtières"},season:[9,10,11,12],
-flavor:["rich","earthy","marine","mild"],
+flavor:["rich","earthy","marine","mild"],texture:["firm","flaky","moist"],
 story:{en:"The word poutargue travels back through Arabic butarkha to a Greek compound meaning salted fish eggs, and the roe it names is this fish's — Martigues has pressed and waxed grey mullet roe since at least the Middle Ages. The animal that carries it sells for a fraction of the price of what it is transporting.",
 fr:"Le mot poutargue remonte, par l’arabe butarkha, à un composé grec signifiant « œufs de poisson salés » : cette poche d’œufs est la sienne, et Martigues la presse et la cire depuis le Moyen Âge au moins. Le poisson qui la porte se vend, lui, une fraction du prix de ce qu’il transporte."},
 tip:{en:"Skin it and leave the fillets uncovered on ice overnight — the muddy note lives in the skin and the fat directly beneath it, and a night of air changes the fish completely. Failing that, salt the flesh for 20 minutes and rinse.",
@@ -231,7 +231,7 @@ svg:'<path class="f2 sf" d="M22 50q14-14 30-12t18 12q-4 10-18 12T22 50z"/><path 
 
 {id:"grouper",cat:"seafood",price:3,pk:"25–45 €/kg",name:{en:"Grouper",fr:"Mérou"},latin:"Epinephelus marginatus",
 origin:{en:"Mediterranean rock and drop-offs",fr:"Roches et tombants de Méditerranée"},season:[],
-flavor:["rich","mild","marine"],
+flavor:["rich","mild","marine"],texture:["firm","gelatinous"],
 story:{en:"Every dusky grouper begins life as a female and only turns male at around fourteen years and eighty centimetres, so fishing out the largest individuals removes the males from an entire reef. France has held a moratorium on spearfishing it in the Mediterranean since 1993.",
 fr:"Tout mérou brun naît femelle et ne devient mâle que vers quatorze ans et quatre-vingts centimètres : pêcher les plus gros revient donc à retirer les mâles d’un tombant entier. La France applique depuis 1993 un moratoire sur sa chasse sous-marine en Méditerranée."},
 tip:{en:"Ask for the head and frame with it: grouper bone is so rich in gelatine that a two-hour stock sets to a firm jelly when cold. That jelly is the base of a braise needing neither cream nor flour.",
@@ -241,7 +241,7 @@ svg:'<path class="f2 sf" d="M22 50q4-16 22-16t22 14q0 12-20 14T22 50z"/><path cl
 
 {id:"gurnard",cat:"seafood",price:1,pk:"6–12 €/kg",name:{en:"Gurnard",fr:"Grondin"},latin:"Chelidonichthys lucerna",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[10,11,12,1,2,3],
-flavor:["sweet","marine","mild","meaty"],
+flavor:["sweet","marine","mild","meaty"],texture:["firm","flaky"],
 story:{en:"It grunts audibly when landed, using its swim bladder — which is where both names come from, grondin from gronder, to growl. Long dismissed as bycatch, it is one of the essential fish of a real bouillabaisse.",
 fr:"Il grogne distinctement quand on le remonte, en faisant vibrer sa vessie natatoire — d’où ses deux noms, grondin venant de gronder. Longtemps méprisé comme prise accessoire, c’est l’un des poissons indispensables d’une vraie bouillabaisse."},
 tip:{en:"Mind the spines on the head and gill covers — they are genuinely sharp. Ask the fishmonger to trim them.",
@@ -251,7 +251,7 @@ svg:'<path class="f1 sf" d="M20 56q16-14 40-10t16 10q-8 12-30 12T20 56z"/><path 
 
 {id:"haddock",cat:"seafood",price:2,pk:"12–20 €/kg",name:{en:"Haddock",fr:"Églefin"},latin:"Melanogrammus aeglefinus",
 origin:{en:"North Atlantic and North Sea",fr:"Atlantique Nord et mer du Nord"},season:[10,11,12,1,2,3],
-flavor:["sweet","mild","marine","delicate"],
+flavor:["sweet","mild","marine","delicate"],texture:["tender","flaky","moist"],
 story:{en:"The dark thumbprint above the pectoral fin is where, the story goes, Saint Peter lifted the fish to take the tribute coin from its mouth. The smoked version has a stricter address: finnan haddie is named for Findon in Aberdeenshire and is cold-smoked, which means it is still raw and still needs poaching.",
 fr:"La tache sombre au-dessus de la nageoire pectorale serait, dit la légende, l’empreinte du pouce de saint Pierre lorsqu’il tira de la bouche du poisson la pièce du tribut. Le fumé a une adresse plus précise : le finnan haddie tient son nom de Findon, en Aberdeenshire, et il est fumé à froid — donc cru, et à pocher."},
 tip:{en:"Poach smoked haddock in milk rather than water, at a bare tremble for eight minutes; boiling squeezes it dry. Keep the milk — it is already the sauce.",
@@ -261,7 +261,7 @@ svg:'<path class="f1 sf" d="M22 52q14-16 30-14t16 12q-2 10-16 12T22 52z"/><path 
 
 {id:"hake",cat:"seafood",price:2,pk:"12–20 €/kg",name:{en:"Hake",fr:"Merlu"},latin:"Merluccius merluccius",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[3,4,5,6,7,8],
-flavor:["delicate","mild","marine","sweet"],
+flavor:["delicate","mild","marine","sweet"],texture:["soft","flaky","moist"],
 story:{en:"Spain eats more of it than anyone and treats the throat — the kokotxa — as the finest part, a gelatinous morsel Basque cooks turn into pil-pil sauce by nothing more than swirling it in warm oil until it emulsifies.",
 fr:"L’Espagne en mange plus que quiconque et tient la gorge — la kokotxa — pour la meilleure part, un morceau gélatineux dont les cuisiniers basques tirent la sauce pil-pil rien qu’en la faisant tourner dans l’huile tiède jusqu’à émulsion."},
 tip:{en:"Its flesh is fragile and falls apart if turned twice. Cook it on one side only and finish it under the grill.",
@@ -271,7 +271,7 @@ svg:'<path class="f1 sf" d="M13 50q6-16 24-16 18 0 27 5 8 4 9 8l8-5v16l-8-5q-1 4
 
 {id:"sayori",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Halfbeak (sayori)",fr:"Demi-bec du Japon (sayori)"},latin:"Hyporhamphus sajori",
 origin:{en:"Coastal Japan, spring shoals",fr:"Côtes japonaises, bancs de printemps"},season:[2,3,4,5],
-flavor:["delicate","sweet","fresh","marine"],
+flavor:["delicate","sweet","fresh","marine"],texture:["tender","smooth"],
 story:{en:"Slit the belly and the cavity is lined with a black membrane, sometimes given as the source of haraguro — Japanese for a scheming person, literally black-bellied. The etymology is argued over, but the fish really is two-faced: glass and silver outside, soot within.",
 fr:"Ouvrez le ventre : la cavité est tapissée d’une membrane noire, que l’on donne parfois pour origine de haraguro — « ventre noir », qui se dit d’un être retors. L’étymologie est discutée, mais le poisson, lui, est bien double : verre et argent dehors, suie dedans."},
 tip:{en:"Scrape the black lining out with the back of a knife under running water until the cavity is white, or the whole fish tastes bitter. The fillet is too thin to slice across — cut it into long ribbons and tie each one in a loose knot.",
@@ -281,7 +281,7 @@ svg:'<path class="f1 sf" d="M26 50q14-7 26-6t10 5q-2 4-10 5t-26-4z"/><path class
 
 {id:"halibut",cat:"seafood",price:3,pk:"25–40 €/kg",name:{en:"Halibut",fr:"Flétan"},latin:"Hippoglossus hippoglossus",
 origin:{en:"Cold North Atlantic",fr:"Atlantique Nord froid"},season:[4,5,6,7,8,9],
-flavor:["mild","sweet","delicate","buttery"],
+flavor:["mild","sweet","delicate","buttery"],texture:["firm","flaky"],
 story:{en:"The English name is Middle English halybutte — haly, holy, plus butte, flatfish — because it was the flatfish eaten on church fast days, and the first record dates from 1396. It is the largest flatfish in the world, and at that size it is butchered into loin steaks rather than filleted.",
 fr:"Le nom anglais vient du moyen anglais halybutte — haly, saint, et butte, poisson plat — parce que c’était le poisson plat des jours maigres ; la première mention date de 1396. C’est le plus grand poisson plat du monde, et à cette taille on le débite en pavés de longe, pas en filets."},
 tip:{en:"Halibut goes from translucent to cotton wool in about a minute: roast it at 130 °C to 45 °C at the centre, then rest it. In a pan, sear one side only and finish it under a low grill.",
@@ -291,7 +291,7 @@ svg:'<path class="f2 sf" d="M48 20q22 8 24 30T48 80Q26 72 24 50T48 20z"/><path c
 
 {id:"herring",cat:"seafood",price:1,pk:"5–9 €/kg",name:{en:"Herring",fr:"Hareng"},latin:"Clupea harengus",
 origin:{en:"North Atlantic & Baltic",fr:"Atlantique Nord & Baltique"},season:[10,11,12,1,2],
-flavor:["rich","salty","marine","smoky"],
+flavor:["rich","salty","marine","smoky"],texture:["tender","silky"],
 story:{en:"The fish that built cities. The Hanseatic League ran on salted herring, Amsterdam is said to be built on its bones, and a fourteenth-century Dutchman's method of gutting it at sea gave the Netherlands a two-century commercial advantage.",
 fr:"Le poisson qui a bâti des villes. La Ligue hanséatique vivait du hareng salé, on dit qu’Amsterdam est bâtie sur ses arêtes, et la méthode d’un Néerlandais du XIVe siècle pour l’étêter en mer donna aux Pays-Bas deux siècles d’avance commerciale."},
 tip:{en:"Smoked, salted or soused, it wants something starchy and something sour alongside — potato and onion, or apple and cream.",
@@ -301,7 +301,7 @@ svg:'<path class="f1 sf" d="M16 50q3-11 16-14 22-6 38 3l8-6q-8 18 0 36l-8-6q-16 
 
 {id:"honkarebushi",cat:"seafood",price:3,pk:"120–250 €/kg",name:{en:"Honkarebushi",fr:"Honkarebushi (katsuobushi affiné à la moisissure)"},latin:"Katsuwonus pelamis",
 origin:{en:"Kagoshima and Shizuoka, Japan",fr:"Kagoshima et Shizuoka, Japon"},season:[],
-flavor:["umami","smoky","delicate","toasty"],
+flavor:["umami","smoky","delicate","toasty"],texture:["hard","brittle","dry"],
 story:{en:"After smoking, the loin is scraped clean and deliberately seeded with Aspergillus glaucus, then shut in a cellar and put out in the sun again, cycle after cycle, for four to six months. Two rounds make karebushi; three or more make honkarebushi, by which point the mould has eaten the remaining fat and the block rings like wood when struck.",
 fr:"Après fumage, la longe est raclée puis volontairement ensemencée d’Aspergillus glaucus, enfermée en cave et ressortie au soleil, cycle après cycle, quatre à six mois durant. Deux cycles donnent le karebushi, trois ou plus le honkarebushi : à ce stade la moisissure a mangé le gras restant et le bloc sonne comme du bois."},
 tip:{en:"Shave it thin and steep it once, off the boil at about 80 C for a minute, then lift the flakes straight out — squeezing the cloth or letting it boil pulls back the bitterness the mould spent six months removing.",
@@ -311,7 +311,7 @@ svg:'<path class="f3 sf" d="M20 62q4-27 28-27t28 27q-11 8-28 8t-28-8z"/><path cl
 
 {id:"hwangtae",cat:"seafood",price:3,pk:"40–80 €/kg",name:{en:"Hwangtae (freeze-dried pollack)",fr:"Hwangtae (lieu d’Alaska séché au gel)"},latin:"Gadus chalcogrammus",
 origin:{en:"Inje, Gangwon",fr:"Inje, Gangwon"},season:[],
-flavor:["umami","marine","mild","meaty"],
+flavor:["umami","marine","mild","meaty"],texture:["tough","fibrous","dry"],
 story:{en:"On the deokjang racks of Yongdae-ri in Inje, pollack hang through the winter, freezing at night to around −10 °C and thawing by day, twenty times or more over three or four months, until the flesh has turned yellow and porous. The ice crystals do the work: they tear the muscle into fibres that plain drying never produces.",
 fr:"Sur les séchoirs de Yongdae-ri, à Inje, les lieus d’Alaska pendent tout l’hiver : ils gèlent la nuit vers −10 °C et dégèlent le jour, vingt fois ou davantage sur trois à quatre mois, jusqu’à ce que la chair devienne jaune et spongieuse. Ce sont les cristaux de glace qui travaillent, en déchirant le muscle en fibres qu’un séchage simple ne produit jamais."},
 tip:{en:"Beat the dried fish or roll it hard to open the fibres, soak twenty minutes and squeeze — the squeezed water is bitter, the fish is not. Fry it in sesame oil before you add any liquid and the soup comes out milky instead of thin.",
@@ -321,7 +321,7 @@ svg:'<g transform="translate(3.84 4.0) scale(0.92)"><path class="f1 sf" d="M48 1
 
 {id:"buri",cat:"seafood",price:3,pk:"35–60 €/kg",name:{en:"Japanese amberjack (buri)",fr:"Sériole du Japon (buri)"},latin:"Seriola quinqueradiata",
 origin:{en:"Sea of Japan, winter",fr:"Mer du Japon, en hiver"},season:[11,12,1,2],
-flavor:["rich","umami","meaty"],
+flavor:["rich","umami","meaty"],texture:["firm","silky"],
 story:{en:"Buri is a shusse-uo, a fish renamed as it grows — wakashi, inada, warasa, then buri — so a New Year gift of one carries a wish for promotion. The winter fish taken off Himi and Toyama carries so much fat that the market quotes it separately, as kan-buri.",
 fr:"Le buri est un shusse-uo, un poisson qui change de nom en grandissant — wakashi, inada, warasa, puis buri — si bien qu’en offrir au Nouvel An, c’est souhaiter une promotion. Le poisson d’hiver pêché au large de Himi et de Toyama est si gras que le marché le cote à part, sous le nom de kan-buri."},
 tip:{en:"For buri-daikon, simmer the daikon alone until translucent first, then add the fish for the last ten minutes. Pour boiling water over the collar and bones before they go in — that step is what removes the blood smell that ruins the broth.",
@@ -331,7 +331,7 @@ svg:'<path class="f2 sf" d="M26 50q10-14 26-13t22 13q-6 13-22 13T26 50z"/><path 
 
 {id:"madai",cat:"seafood",price:3,pk:"40–70 €/kg",name:{en:"Japanese red seabream (madai)",fr:"Daurade japonaise (madai)"},latin:"Pagrus major",
 origin:{en:"Seto Inland Sea, Japan",fr:"Mer intérieure de Seto, Japon"},season:[3,4,5],
-flavor:["delicate","sweet","mild","umami"],
+flavor:["delicate","sweet","mild","umami"],texture:["firm","smooth"],
 story:{en:"Inside each pectoral girdle sits a small bone shaped like a fish, the tai no tai — the sea bream within the sea bream — kept as a charm since the Edo period. The whole fish presides over weddings on the strength of a pun: tai sits inside medetai, auspicious.",
 fr:"Dans chaque ceinture pectorale se cache un petit os en forme de poisson, le tai no tai — la daurade dans la daurade — gardé comme porte-bonheur depuis l’époque d’Edo. Le poisson entier trône aux mariages sur la foi d’un calembour : tai se loge dans medetai, « de bon augure »."},
 tip:{en:"For kobujime, wipe two sheets of kombu with sake, press the salted fillets between them and chill four hours; longer and the kelp cures the flesh rubbery. The head and frame, blanched then simmered in nothing but salted water, give ushiojiru.",
@@ -341,7 +341,7 @@ svg:'<path class="f2 sf" d="M30 50q6-18 22-18t20 18q-6 18-20 18T30 50z"/><path c
 
 {id:"sawara",cat:"seafood",rare:true,price:3,pk:"35–60 €/kg",name:{en:"Japanese Spanish mackerel (sawara)",fr:"Thazard oriental (sawara)"},latin:"Scomberomorus niphonius",
 origin:{en:"Seto Inland Sea, Japan",fr:"Mer intérieure de Seto, Japon"},season:[3,4,5],
-flavor:["rich","delicate","mild"],
+flavor:["rich","delicate","mild"],texture:["soft","flaky","moist"],
 story:{en:"Its kanji is written with the characters for fish and spring, after the March run that enters the Seto Inland Sea to spawn. Tokyo buyers disagree: on the Pacific side the same fish is fattest in midwinter and is sold then as kan-zawara.",
 fr:"Son kanji s’écrit avec les caractères du poisson et du printemps, d’après la montaison de mars dans la mer intérieure de Seto. Tokyo n’est pas d’accord : côté Pacifique, le même poisson est au plus gras en plein hiver et se vend alors sous le nom de kan-zawara."},
 tip:{en:"The flesh tears if you handle it like mackerel. Cure it two days in saikyo miso, wipe the miso off completely, then grill it far from the heat — the miso sugars burn long before the fish is done.",
@@ -351,7 +351,7 @@ svg:'<path class="f1 sf" d="M26 50q12-11 26-11t22 11q-8 11-22 11T26 50z"/><path 
 
 {id:"amadai",cat:"seafood",luxe:true,price:3,pk:"80–150 €/kg",name:{en:"Japanese tilefish (amadai)",fr:"Tile du Japon (amadai)"},latin:"Branchiostegus japonicus",
 origin:{en:"Wakasa Bay, Japan",fr:"Baie de Wakasa, Japon"},season:[10,11,12,1,2],
-flavor:["sweet","delicate","mild","toasty"],
+flavor:["sweet","delicate","mild","toasty"],texture:["soft","flaky"],
 story:{en:"In Kyoto this fish is called guji, and the best of it comes from Wakasa Bay a day's carry away, salted on the quay so that it arrives in condition — the same salt-road logic that gave Kyoto its mackerel. It is the one fish a Japanese kitchen buys for the scales rather than in spite of them.",
 fr:"À Kyoto ce poisson s’appelle guji, et le meilleur vient de la baie de Wakasa, à une journée de portage : on le sale sur le quai pour qu’il arrive en état, exactement comme le maquereau de la route du sel. C’est le seul poisson qu’une cuisine japonaise achète pour ses écailles, et non malgré elles."},
 tip:{en:"Matsukasa-yaki: leave the scales on, hold the skin to a fierce heat while basting it with smoking oil, and the scales lift and set into crisp shingles. Salt it lightly the night before so the very soft flesh firms enough to survive the handling.",
@@ -361,7 +361,7 @@ svg:'<path class="f1 sf" d="M26 50q10-12 28-13 9 0 12 7 2 13-13 19-19 1-27-13z"/
 
 {id:"john-dory",cat:"seafood",price:3,pk:"30–50 €/kg",name:{en:"John Dory",fr:"Saint-Pierre"},latin:"Zeus faber",
 origin:{en:"Eastern Atlantic & Mediterranean",fr:"Atlantique Est & Méditerranée"},season:[1,2,3,4,10,11,12],
-flavor:["delicate","sweet","marine","mild"],
+flavor:["delicate","sweet","marine","mild"],texture:["firm","flaky"],
 story:{en:"The dark spot on its flank is said to be Saint Peter's thumbprint, left when he lifted the fish to take a coin from its mouth — hence saint-pierre. It is so thin from the side that a large one yields surprisingly little flesh.",
 fr:"La tache sombre sur son flanc serait l’empreinte du pouce de saint Pierre, laissée en soulevant le poisson pour prendre une pièce dans sa bouche — d’où saint-pierre. Il est si mince de profil qu’un gros individu rend étonnamment peu de chair."},
 tip:{en:"Ask for it filleted and keep the bones — the head and frame make one of the best fish stocks there is.",
@@ -371,7 +371,7 @@ svg:'<path class="f2 sf" d="M24 56q6-22 26-22t26 22q-8 16-26 16t-26-16z"/><circl
 
 {id:"katsuobushi",cat:"seafood",price:3,pk:"70–140 €/kg",name:{en:"Katsuobushi",fr:"Katsuobushi"},latin:"Katsuwonus pelamis (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["umami","smoky","marine","toasty"],
+flavor:["umami","smoky","marine","toasty"],texture:["airy","brittle","dry"],
 story:{en:"Bonito simmered, smoked for weeks and dried with a noble mould until it becomes the hardest food on Earth — a fillet that rings like wood. Shaved into rosy petals, its inosinate meets kombu’s glutamate in dashi, a synergy that multiplies perceived umami nearly eightfold: broth as chemistry lesson.",
 fr:"Une bonite pochée, fumée des semaines et séchée sous une noble moisissure jusqu’à devenir l’aliment le plus dur du monde — un filet qui sonne comme du bois. Rabotée en pétales rosés, son inosinate rencontre le glutamate du kombu dans le dashi, une synergie qui multiplie l’umami perçu par près de huit : le bouillon comme leçon de chimie."},
 tip:{en:"Buy the flakes in small bags — the perfume fades fast once opened. A handful over hot rice with soy sauce is Japan’s simplest luxury; watch the petals dance in the steam.",
@@ -381,7 +381,7 @@ svg:'<path class="f2 sf" d="M18 58q9-16 26-23 14-6 24 1 6 6 0 12-10 7-24 10-15 3
 
 {id:"kokotxas",cat:"seafood",luxe:true,price:3,pk:"40–80 €/kg",name:{en:"Kokotxas (hake throat)",fr:"Kokotxas (gorges de merlu)"},latin:"Merluccius merluccius (throat)",
 origin:{en:"Basque Country",fr:"Pays basque"},season:[],
-flavor:["delicate","marine","rich","umami"],
+flavor:["delicate","marine","rich","umami"],texture:["soft","gelatinous"],
 story:{en:"Kokotxa is the Basque name for the V of muscle under a hake's chin, and it outsells the fillet several times over — €60 to €90 a kilo against a fraction of that for the loin. It is bought for what it releases rather than what it tastes of: warmed gently in olive oil, its collagen emulsifies the oil into pil-pil, a sauce with no butter, no cream and no flour in it.",
 fr:"Kokotxa est le nom basque du V de muscle sous le menton du merlu, et il vaut plusieurs fois le prix du filet — de 60 à 90 € le kilo contre une fraction de cela pour la longe. On l’achète pour ce qu’il libère plus que pour son goût : chauffé doucement dans l’huile d’olive, son collagène émulsionne l’huile en pil-pil, une sauce sans beurre, sans crème et sans farine."},
 tip:{en:"Keep the oil below a simmer — around 65 °C — and swirl the pan in circles off the heat; oil that boils splits the emulsion and no whisking brings it back. Skin side down first, and let them give up their gelatine before you start swirling.",
@@ -391,7 +391,7 @@ svg:'<path class="f1 sf" d="M28 30q5-2 7 2l13 24 13-24q2-4 7-2-2 5-5 10L48 70 33
 
 {id:"konowata",cat:"seafood",rare:true,luxe:true,price:4,pk:"300–600 €/kg",name:{en:"Konowata",fr:"Konowata"},latin:"Apostichopus japonicus (intestine)",
 origin:{en:"Noto and Mikawa bay",fr:"Noto et la baie de Mikawa"},season:[12,1,2],
-flavor:["briny","umami","marine","salty"],
+flavor:["briny","umami","marine","salty"],texture:["soft","viscous"],
 story:{en:"Ko is the old word for sea cucumber — namako is raw ko — and konowata is simply its guts, stripped, washed, salted and left to mature for weeks. It is counted among the three great chinmi of Japan alongside mullet-roe karasumi and sea urchin, and one animal yields a few grams.",
 fr:"Ko est le vieux mot pour holothurie — namako, c’est le « ko cru » — et le konowata n’est rien d’autre que ses boyaux, dénervés, lavés, salés et laissés mûrir des semaines. On le compte parmi les trois grands chinmi du Japon, avec la poutargue karasumi et l’oursin, et une bête n’en donne que quelques grammes."},
 tip:{en:"Serve it cold and by the teaspoon, straight from the fridge with warm sake — heat destroys it and a large helping is punishing. A little stirred into grated yam, or dropped onto a hot bowl of rice at table, is the gentler way in.",
@@ -401,7 +401,7 @@ svg:'<path class="f1 sf" d="M34 40h28v28q0 8-8 8H42q-8 0-8-8z"/><path class="s" 
 
 {id:"lamprey",cat:"seafood",price:3,pk:"20–35 €/kg",name:{en:"Lamprey",fr:"Lamproie"},latin:"Petromyzon marinus",
 origin:{en:"Gironde and Garonne",fr:"Gironde et Garonne"},season:[1,2,3,4,5],
-flavor:["rich","meaty","earthy"],
+flavor:["rich","meaty","earthy"],texture:["firm","silky"],
 story:{en:"Gloucester owed the Crown a lamprey pie each Christmas, and King John fined the city forty marks the year it failed to send one. The animal has no jaw, no bones and no scales; the Bordeaux dish bleeds it live and thickens the red wine with its own blood.",
 fr:"Gloucester devait à la Couronne un pâté de lamproie à chaque Noël, et le roi Jean infligea à la ville une amende de quarante marks l’année où elle n’en envoya pas. L’animal n’a ni mâchoire, ni arêtes, ni écailles ; la recette bordelaise le saigne vivant et lie le vin rouge avec son propre sang."},
 tip:{en:"Scald it at 70 °C and scrape the slime coat off before anything else, or the sauce turns grey and slippery. Catch the blood in a bowl with a spoonful of red wine to stop it clotting, and stir it in off the heat at the very end — over heat it curdles.",
@@ -411,7 +411,7 @@ svg:'<path class="f2 sf" d="M20 68q12-6 18-16t14-16 14-4v10q-8 0-12 6t-12 16-20 
 
 {id:"tachiuo",cat:"seafood",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Largehead hairtail (tachiuo)",fr:"Poisson-sabre (tachiuo)"},latin:"Trichiurus lepturus",
 origin:{en:"Warm coastal waters",fr:"Eaux côtières tempérées"},season:[7,8,9,10,11],
-flavor:["delicate","mild","rich"],
+flavor:["delicate","mild","rich"],texture:["soft","flaky","moist"],
 story:{en:"It has no scales at all: the silver on its skin is a layer of guanine crystals, the same material the fishing trade once scraped off and sold to cosmetics makers as pearl essence. That silver is edible and stays on the fish, which takes its name from it — tachi, the sword.",
 fr:"Il n’a aucune écaille : l’argent de sa peau est une couche de cristaux de guanine, la matière même que l’industrie raclait autrefois pour la vendre aux parfumeurs sous le nom d’essence d’Orient. Cet argent se mange et reste en place ; le poisson en tire son nom, tachi, le sabre."},
 tip:{en:"Score the skin in a diamond, salt it 30 minutes, blot it dry and sear skin-side down without moving it — the silver blisters and crisps. Lift it with a slice from underneath, never with tongs: the flesh comes apart on its own.",
@@ -421,7 +421,7 @@ svg:'<path class="f1 sf" d="M42 24q7-7 13 0 2 20 0 34-2 13-6 26-4-13-5-26-2-14-2
 
 {id:"lemon-sole",cat:"seafood",price:2,pk:"12–22 €/kg",name:{en:"Lemon sole",fr:"Limande-sole"},latin:"Microstomus kitt",
 origin:{en:"North Sea and Channel",fr:"Mer du Nord et Manche"},season:[6,7,8,9,10,11],
-flavor:["sweet","delicate","mild"],
+flavor:["sweet","delicate","mild"],texture:["soft","flaky","moist"],
 story:{en:"It is neither a sole nor lemony: Microstomus kitt is a dab, and the English name most likely crossed over from the French limande. The gap shows up in the price — around a third of Dover sole, and a different fish to cook.",
 fr:"Ce n’est ni une sole ni un agrume : Microstomus kitt est une limande, et le nom anglais lemon sole vient très probablement du français limande. L’écart se lit dans le prix — un tiers de celui de la sole, et une tout autre cuisson."},
 tip:{en:"The flesh is thinner and wetter than Dover sole and collapses under a long meunière. Flour it, give it two minutes a side on the bone in foaming butter, and finish with lemon in the pan off the heat.",
@@ -431,7 +431,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="50" rx="24" ry="16"/><path class="s" d="
 
 {id:"mackerel",cat:"seafood",price:1,pk:"6–11 €/kg",name:{en:"Mackerel",fr:"Maquereau"},latin:"Scomber scombrus",
 origin:{en:"North Atlantic",fr:"Atlantique Nord"},season:[5,6,7,8,9],
-flavor:["rich","marine","umami","meaty"],
+flavor:["rich","marine","umami","meaty"],texture:["tender","silky","moist"],
 story:{en:"It has no swim bladder and must keep swimming to stay off the bottom, which is why the flesh is so dark and oily — it is pure endurance muscle. That same oil means it spoils faster than almost any other fish.",
 fr:"Il n’a pas de vessie natatoire et doit nager sans cesse pour ne pas couler, d’où une chair si sombre et si grasse — c’est du muscle d’endurance pur. Ce même gras le fait s’altérer plus vite que presque tout autre poisson."},
 tip:{en:"Buy it the day it was landed or not at all. Its acidity partners — gooseberry, rhubarb, mustard — are not decoration but necessity.",
@@ -441,7 +441,7 @@ svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f1 sf" d="M18
 
 {id:"maguro-bushi",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Maguro-bushi",fr:"Maguro-bushi (thon séché)"},latin:"Thunnus spp. (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["umami","delicate","mild","marine"],
+flavor:["umami","delicate","mild","marine"],texture:["airy","brittle","dry"],
 story:{en:"Bonito is only one of the fish Japan dries into a bushi: tuna, mackerel, sardine and round herring all go through the same simmering, weeks of smoke and long sun-drying. Tuna gives the palest of them, and a packet labelled simply kezuribushi rather than katsuo-kezuribushi is often tuna, or a blend built on it.",
 fr:"La bonite n’est qu’un des poissons que le Japon sèche en bushi : thon, maquereau, sardine et sardinelle passent par le même pochage, des semaines de fumage et un long séchage au soleil. Le thon donne le plus pâle de tous, et un sachet simplement étiqueté kezuribushi, et non katsuo-kezuribushi, est souvent du thon ou un mélange qui en part."},
 tip:{en:"Shave it fine and steep it once, off the boil — a minute or two around 80°C, then strain without pressing. Two percent of the water's weight is plenty, and it belongs under white fish and simmered vegetables where bonito smoke would take the dish over.",
@@ -451,7 +451,7 @@ svg:'<path class="f3 sf" d="M24 56q6-18 26-18t20 12q2 8-6 12-16 8-32 2-8-2-8-8z"
 
 {id:"hareng-matjes",cat:"seafood",price:2,pk:"15–25 €/kg",name:{en:"Matjes herring",fr:"Hareng matjes"},latin:"Clupea harengus (enzyme-ripened)",
 origin:{en:"Dutch North Sea fleet",fr:"Flotte néerlandaise de mer du Nord"},season:[6,7,8],
-flavor:["rich","mild","briny","delicate"],
+flavor:["rich","mild","briny","delicate"],texture:["soft","silky"],
 story:{en:"Matjes depends on a fourteenth-century Dutch technique called gibbing: the gills and most of the guts are drawn out, but the pancreas is deliberately left in, and its enzymes ripen the flesh from the inside in a light brine. The first barrels of the year are auctioned in June, and the fish must be young enough not to have spawned — which is what keeps it sweet, soft and barely salty.",
 fr:"Le matjes repose sur une technique néerlandaise du XIVe siècle, le gibbing : on retire les branchies et l'essentiel des viscères, mais on laisse volontairement le pancréas, dont les enzymes font mûrir la chair de l'intérieur dans une saumure légère. Les premiers tonneaux de l'année sont vendus aux enchères en juin, et le poisson doit être assez jeune pour n'avoir pas frayé — d'où sa douceur, sa souplesse et son sel discret."},
 tip:{en:"Serve it cold but not fridge-cold: ten minutes out and the fat softens and reads sweet. Raw onion, yes; vinegar, no — acid collapses the enzyme-ripened texture that separates it from a rollmop.",
@@ -461,7 +461,7 @@ svg:'<path class="f1 sf" d="M26 44q16-11 32-4t14 10q-14 9-30 6t-16-12z"/><path c
 
 {id:"meagre",cat:"seafood",price:2,pk:"12–22 €/kg",name:{en:"Meagre",fr:"Maigre (ombrine)"},latin:"Argyrosomus regius",
 origin:{en:"Gironde estuary and Atlantic coast",fr:"Estuaire de la Gironde et côte atlantique"},season:[5,6,7],
-flavor:["mild","meaty","marine"],
+flavor:["mild","meaty","marine"],texture:["firm","flaky"],
 story:{en:"Sciaenids drum: the males vibrate muscles against the swim bladder, and spawning meagre in the Gironde can be heard from a boat thirty metres off. Fishermen used to locate the shoals by ear, leaning over the side.",
 fr:"Les sciénidés tambourinent : les mâles font vibrer des muscles contre la vessie natatoire, et un maigre en fraie dans la Gironde s’entend d’une barque à trente mètres. Les pêcheurs repéraient autrefois les bancs à l’oreille, penchés par-dessus bord."},
 tip:{en:"Low fat means it dries fast. Cut 3 cm steaks on the bone, salt them an hour ahead and roast at 140 °C until a skewer meets no resistance — treat it like veal, not like bass.",
@@ -471,7 +471,7 @@ svg:'<path class="f2 sf" d="M24 50q12-14 28-13t22 13q-6 13-22 14T24 50z"/><path 
 
 {id:"mefun",cat:"seafood",rare:true,price:4,pk:"150–300 €/kg",name:{en:"Mefun (salted salmon kidney)",fr:"Mefun"},latin:"Oncorhynchus keta (kidney)",
 origin:{en:"Hokkaidō",fr:"Hokkaidō"},season:[],
-flavor:["salty","umami","marine","rich"],
+flavor:["salty","umami","marine","rich"],texture:["soft","viscous"],
 story:{en:"The dark line a cook scrapes from a salmon’s backbone is not blood but the kidney, and Hokkaidō salts it and matures it for months until it is near-black and glossy. The word is Ainu in origin, and the product is made almost only from autumn chum, the one run in which the strip is thick enough to be worth taking.",
 fr:"La ligne sombre que l’on gratte le long de l’arête du saumon n’est pas du sang mais le rein, et Hokkaidō le sale puis le laisse mûrir des mois, jusqu’au presque noir luisant. Le mot vient de l’aïnou, et le produit se fait presque uniquement sur le keta d’automne, seul moment où la bande est assez épaisse pour valoir la peine."},
 tip:{en:"It is intensely salty and faintly bitter — a few grams on hot rice or beside sake, never a spoonful. If it is too strong, rinse it briefly in sake rather than water; water carries the flavour off with the salt.",
@@ -481,7 +481,7 @@ svg:'<path class="s" d="M18 44h60"/><path class="s" d="M24 44l-4-8M32 44l-3-9M40
 
 {id:"mojama",cat:"seafood",price:3,pk:"80–150 €/kg",name:{en:"Mojama",fr:"Mojama (thon séché)"},latin:"Thunnus thynnus (air-dried loin)",
 origin:{en:"Cádiz and Huelva, Andalusia",fr:"Cadix et Huelva, Andalousie"},season:[],
-flavor:["salty","umami","rich","meaty"],
+flavor:["salty","umami","rich","meaty"],texture:["hard","chewy","dry"],
 story:{en:"The word comes from the Arabic musama, dried, but the practice is Phoenician: the salting works at Gadir — today's Cádiz — were curing tuna from the almadraba traps three thousand years ago. Two days buried in salt and fifteen to twenty in the sea wind leave a loin that has lost most of its water and behaves like a ham rather than a fish.",
 fr:"Le mot vient de l'arabe musama, séché, mais la pratique est phénicienne : les salaisons de Gadir — Cadix aujourd'hui — traitaient déjà le thon des madragues il y a trois mille ans. Deux jours enfoui dans le sel, quinze à vingt au vent marin, et le filet, vidé de presque toute son eau, se comporte comme un jambon plutôt que comme un poisson."},
 tip:{en:"Slice it against the grain, as thin as a long knife will allow, then let the slices sit ten minutes under olive oil before serving. Straight from the block it is merely salty and tough.",
@@ -491,7 +491,7 @@ svg:'<path class="f3 sf" d="M28 38h32v26H28z"/><path class="f2 sf" d="M28 38l8-6
 
 {id:"monkfish",cat:"seafood",price:3,pk:"22–35 €/kg",name:{en:"Monkfish",fr:"Lotte"},latin:"Lophius piscatorius",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[10,11,12,1,2,3],
-flavor:["sweet","meaty","marine","rich"],
+flavor:["sweet","meaty","marine","rich"],texture:["firm","smooth"],
 story:{en:"So ugly that fishmongers traditionally removed the head before display, and it was once thrown back as worthless. Its dense tail meat behaves like meat rather than fish, which is why it is called the poor man's lobster — a name it has long outgrown in price.",
 fr:"Si laide que les poissonniers ôtaient traditionnellement la tête avant l’étal, et qu’on la rejetait jadis comme sans valeur. La chair dense de la queue se comporte comme de la viande plutôt que du poisson, d’où le surnom de homard du pauvre — que son prix a depuis longtemps démenti."},
 tip:{en:"Strip off every trace of the grey membrane. It shrinks violently in the pan and curls the fillet into a knot.",
@@ -501,7 +501,7 @@ svg:'<path class="f1 sf" d="M18 54q10-14 26-10t30 12q-10 12-32 10T18 54z"/><path
 
 {id:"joue-de-lotte",cat:"seafood",price:3,pk:"25–45 €/kg",name:{en:"Monkfish cheek",fr:"Joue de lotte"},latin:"Lophius piscatorius (masseter)",
 origin:{en:"The monkfish head",fr:"La tête de lotte"},season:[],
-flavor:["delicate","marine","mild","umami"],
+flavor:["delicate","marine","mild","umami"],texture:["firm","moist"],
 story:{en:"A monkfish is very nearly half head, and most boats behead it at sea and land only the tail — which is why the cheeks, two round nuggets of dense white muscle, reach so few counters. Where the tail is roasted on the bone like a small leg of lamb, the cheek is treated as a scallop: hot pan, ninety seconds a side.",
 fr:"Une lotte, c’est presque une moitié de tête, et la plupart des bateaux l’étêtent en mer pour ne débarquer que la queue — d’où la rareté des joues, deux noix rondes de chair blanche et dense. Quand la queue se rôtit sur l’arête comme un petit gigot, la joue se traite en saint-jacques : poêle brûlante, quatre-vingt-dix secondes par face."},
 tip:{en:"Pat them dry, salt at the last second and give them a very hot pan — they are wet muscle and will steam rather than colour. They are done when the centre loses its translucency, and not a moment after.",
@@ -511,7 +511,7 @@ svg:'<circle class="f1 sf" cx="48" cy="50" r="20"/><circle class="s" cx="48" cy=
 
 {id:"niboshi",cat:"seafood",price:2,pk:"30–60 €/kg",name:{en:"Niboshi",fr:"Niboshi (sardines séchées)"},latin:"Engraulis japonicus (dried)",
 origin:{en:"Seto Inland Sea",fr:"Mer intérieure de Seto"},season:[],
-flavor:["umami","briny","bitter","marine"],
+flavor:["umami","briny","bitter","marine"],texture:["hard","brittle","dry"],
 story:{en:"Niboshi are boiled and sun-dried within a single day, and west of Osaka the same fish is called iriko instead — one product, two names, split along an old dialect line. Their oils oxidise quickly, so unlike katsuobushi they are kept cold and thrown out at the end of a season rather than aged.",
 fr:"Les niboshi sont bouillis puis séchés au soleil dans la même journée, et à l'ouest d'Osaka le même poisson s'appelle iriko : un seul produit, deux noms, séparés par une vieille frontière dialectale. Leurs huiles s'oxydent vite ; contrairement au katsuobushi, on les garde au froid et on les jette en fin de saison au lieu de les affiner."},
 tip:{en:"Pinch off the head and pull out the black gut before brewing, then steep them cold overnight instead of boiling. Anything above a simmer draws out exactly the bitterness the gutting was meant to prevent.",
@@ -521,7 +521,7 @@ svg:'<path class="f2 sf" d="M18 40q16-10 32 0l10-6v12l-10-6q-16 10-32 0z"/><path
 
 {id:"hirame",cat:"seafood",price:3,pk:"45–80 €/kg",name:{en:"Olive flounder (hirame)",fr:"Cardeau hirame"},latin:"Paralichthys olivaceus",
 origin:{en:"Cold Japanese coast, winter",fr:"Côtes froides du Japon, en hiver"},season:[11,12,1,2],
-flavor:["delicate","mild","sweet"],
+flavor:["delicate","mild","sweet"],texture:["firm","smooth"],
 story:{en:"Japanese cooks separate the two flatfish with a rule: hidari-birame, migi-garei — head towards you, hirame's eyes are on the left, karei's on the right. The two strips of frilled muscle that drive the fin, the engawa, are cut away and sold separately, often above the price of the fillet.",
 fr:"Les cuisiniers japonais distinguent les deux poissons plats par une règle : hidari-birame, migi-garei — tête vers soi, les yeux du hirame sont à gauche, ceux du karei à droite. Les deux bandes de muscle frangé qui commandent la nageoire, l’engawa, se détachent et se vendent à part, souvent plus cher que le filet."},
 tip:{en:"Hirame is too firm and too lean to slice thick. Cure the fillet two hours in kombu, then cut usuzukuri thin enough to read through, on one long draw of the blade rather than a sawing motion.",
@@ -531,7 +531,7 @@ svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f2 sf" d="M30
 
 {id:"sanma",cat:"seafood",price:2,pk:"12–20 €/kg",name:{en:"Pacific saury (sanma)",fr:"Balaou du Japon (sanma)"},latin:"Cololabis saira",
 origin:{en:"Northwest Pacific, autumn run",fr:"Pacifique nord-ouest, passage d’automne"},season:[9,10,11],
-flavor:["rich","bitter","umami"],
+flavor:["rich","bitter","umami"],texture:["tender","silky"],
 story:{en:"Its kanji spells autumn-sword-fish, and a September sanma can carry many times the fat of the same fish in spring. The guts are eaten on purpose: sanma has no stomach at all, so food passes through in about half an hour and the innards stay clean and bitter rather than foul.",
 fr:"Son kanji s’écrit automne-sabre-poisson, et un sanma de septembre peut être bien des fois plus gras que le même poisson au printemps. On mange ses viscères exprès : le sanma n’a pas d’estomac, il digère en une demi-heure, et ses entrailles restent amères et propres plutôt que gâtées."},
 tip:{en:"Salt it 20 minutes ahead, wipe the brine off and grill over a high fire, turning once at most — the skin should split. Squeeze sudachi over it and eat the dark part with grated daikon; skip that and you have missed the fish.",
@@ -541,7 +541,7 @@ svg:'<path class="f1 sf" d="M24 42q14-9 28-8t22 6q-8 6-22 7t-28-5z"/><path class
 
 {id:"perch",cat:"seafood",price:3,pk:"25–50 €/kg",name:{en:"Perch",fr:"Perche"},latin:"Perca fluviatilis",
 origin:{en:"European lakes",fr:"Lacs d’Europe"},season:[6,7,8,9,10,11],
-flavor:["sweet","delicate","mild"],
+flavor:["sweet","delicate","mild"],texture:["tender","flaky"],
 story:{en:"Around Lake Geneva roughly nine perch fillets in ten served in restaurants arrive from Estonia, Poland or Russia; the lakes themselves supply a small fraction of what is eaten. Swiss consumer associations have tested the menus more than once and found the labels optimistic.",
 fr:"Autour du Léman, environ neuf filets de perche sur dix servis au restaurant arrivent d’Estonie, de Pologne ou de Russie ; les lacs eux-mêmes ne fournissent qu’une petite part de ce qui se mange. Les associations de consommateurs suisses ont testé les cartes plus d’une fois et trouvé les étiquettes optimistes."},
 tip:{en:"A perch fillet is 8 mm thick and cooks in ninety seconds. Flour it dry, use clarified butter hot enough to sing, and salt only once it leaves the pan — salted early the fillets weep and stew.",
@@ -551,7 +551,7 @@ svg:'<path class="f2 sf" d="M26 52q6-14 22-14t22 12q-2 12-22 14T26 52z"/><path c
 
 {id:"pike",cat:"seafood",price:2,pk:"15–25 €/kg",name:{en:"Pike",fr:"Brochet"},latin:"Esox lucius",
 origin:{en:"Northern hemisphere fresh water",fr:"Eaux douces de l’hémisphère nord"},season:[10,11,12,1,2,3],
-flavor:["delicate","mild","sweet","earthy"],
+flavor:["delicate","mild","sweet","earthy"],texture:["firm","flaky"],
 story:{en:"Lyon built a dish around its worst feature: pike is riddled with fine forked bones, so cooks pounded the flesh, sieved it and bound it into quenelles. The bones are the reason the technique exists.",
 fr:"Lyon a bâti un plat sur son pire défaut : le brochet est truffé d’arêtes fines et fourchues, si bien que les cuisiniers ont pilé la chair, l’ont tamisée et liée en quenelles. Les arêtes sont la raison d’être de la technique."},
 tip:{en:"Do not attempt a plain fillet unless someone very skilled has boned it. Quenelles or a terrine are the safe routes.",
@@ -561,7 +561,7 @@ svg:'<path class="f2 sf" d="M14 56q22-12 48-8t20 8q-10 12-36 10T14 56z"/><path c
 
 {id:"hamo",cat:"seafood",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Pike conger (hamo)",fr:"Congre-brochet (hamo)"},latin:"Muraenesox cinereus",
 origin:{en:"Seto Inland Sea, Japan",fr:"Mer intérieure de Seto, Japon"},season:[6,7,8],
-flavor:["delicate","sweet","mild"],
+flavor:["delicate","sweet","mild"],texture:["tender","gelatinous"],
 story:{en:"Hamo is the fish of the Gion Matsuri in July, originally because it was the one that survived the journey inland to Kyoto alive. A cook is judged on honekiri: twenty-six cuts to each sun, about 3 cm, through the intramuscular bones and stopping dead at the skin.",
 fr:"Le hamo est le poisson du Gion Matsuri de juillet, à l’origine parce qu’il était le seul à arriver vivant jusqu’à Kyoto. On juge un cuisinier au honekiri : vingt-six coups par sun, soit environ 3 cm, à travers les arêtes intramusculaires et s’arrêtant net à la peau."},
 tip:{en:"After scoring, dip the pieces into water at 80 °C for a few seconds and they bloom open like a white flower — then straight into iced water. Serve with umeboshi paste: the acid is doing structural work on the fat, not decoration.",
@@ -571,7 +571,7 @@ svg:'<path class="f2 sf" d="M20 48q16-12 32-10t22 10q-8 10-24 11T20 48z"/><path 
 
 {id:"plaice",cat:"seafood",price:2,pk:"8–15 €/kg",name:{en:"Plaice",fr:"Carrelet"},latin:"Pleuronectes platessa",
 origin:{en:"North Atlantic & North Sea",fr:"Atlantique Nord & mer du Nord"},season:[4,5,6,7,8,9],
-flavor:["delicate","sweet","mild","marine"],
+flavor:["delicate","sweet","mild","marine"],texture:["soft","flaky","moist"],
 story:{en:"It is born symmetrical, swimming upright like any fish, and then one eye migrates across the skull over a few weeks until both sit on the same side. The orange spots are unmistakable and fade within hours of death.",
 fr:"Il naît symétrique, nageant droit comme tout poisson, puis un œil migre à travers le crâne en quelques semaines jusqu’à ce que les deux soient du même côté. Les taches orange sont sans équivoque et pâlissent dans les heures qui suivent la mort."},
 tip:{en:"It is thin and cooks in three or four minutes. Flour, butter, lemon — anything more elaborate buries it.",
@@ -581,7 +581,7 @@ svg:'<ellipse class="f2 sf" cx="46" cy="56" rx="28" ry="16"/><path class="f2 sf"
 
 {id:"pollack",cat:"seafood",price:2,pk:"15–25 €/kg",name:{en:"Pollack",fr:"Lieu jaune"},latin:"Pollachius pollachius",
 origin:{en:"Brittany, line-caught",fr:"Bretagne, pêché à la ligne"},season:[10,11,12,1,2,3],
-flavor:["sweet","mild","marine"],
+flavor:["sweet","mild","marine"],texture:["tender","flaky","moist"],
 story:{en:"Lieu jaune and lieu noir are two different fish and the price gap runs to about fivefold: the yellow one is line-caught from small boats off the Pointe de Bretagne and lands with its flanks unbruised. The curved lateral line and the jutting lower jaw are how you tell it at the stall.",
 fr:"Lieu jaune et lieu noir sont deux poissons différents, et l’écart de prix va du simple au quintuple : le jaune se pêche à la ligne, en petits bateaux, à la pointe de Bretagne, et débarque les flancs intacts. La ligne latérale courbe et la mâchoire inférieure proéminente sont les deux repères à l’étal."},
 tip:{en:"The flakes are large and let go all at once, so cook thick portions and stop early: 50 °C at the centre, then two minutes off the heat. Skin-on searing works here where it fails on cod.",
@@ -591,7 +591,7 @@ svg:'<path class="f1 sf" d="M26 50q14-14 28-12t18 10q-2 12-18 14T26 50z"/><path 
 
 {id:"pollock",cat:"seafood",price:2,pk:"8–14 €/kg",name:{en:"Pollock",fr:"Lieu noir"},latin:"Pollachius virens",
 origin:{en:"North Atlantic",fr:"Atlantique Nord"},season:[10,11,12,1,2,3],
-flavor:["mild","marine","delicate","sweet"],
+flavor:["mild","marine","delicate","sweet"],texture:["firm","flaky"],
 story:{en:"For decades it was the cheap alternative nobody wanted, sold as a filler and processed into surimi. Overfishing of cod turned it into the sustainable choice, and the same fish that was once a compromise is now the recommendation.",
 fr:"Pendant des décennies ce fut l’alternative bon marché dont personne ne voulait, vendue comme produit de remplissage et transformée en surimi. La surpêche du cabillaud en a fait le choix durable, et le poisson qui était un compromis est devenu la recommandation."},
 tip:{en:"It is drier than cod, so brine it briefly — twenty minutes in salted water before cooking makes a visible difference.",
@@ -601,7 +601,7 @@ svg:'<g transform="translate(4.27 4.45) scale(0.911)"><path class="f2 sf" d="M18
 
 {id:"poutine",cat:"seafood",rare:true,price:3,pk:"30–60 €/kg",name:{en:"Poutine (Niçoise whitebait)",fr:"Poutine"},latin:"Sardina pilchardus / Engraulis encrasicolus (fry)",
 origin:{en:"Riviera, Cagnes to Menton",fr:"Riviera, de Cagnes à Menton"},season:[2,3],
-flavor:["delicate","marine","briny","mild"],
+flavor:["delicate","marine","briny","mild"],texture:["soft","silky"],
 story:{en:"European law bans the landing of fry, and the Riviera holds one of the rare exemptions: a forty-five-day window in late winter, granted to a handful of prud’homies between Cagnes and Menton. Nice cooks it the day it lands — an omelette, a soup, or fried into a lace pancake — and the near-identical nonat, the fry of a goby, is a different fish under a different rule.",
 fr:"Le droit européen interdit le débarquement d’alevins, et la Riviera détient l’une des rares dérogations : une fenêtre de quarante-cinq jours en fin d’hiver, accordée à une poignée de prud’homies entre Cagnes et Menton. Nice la cuisine le jour même — en omelette, en soupe, ou frite en galette de dentelle — et le nonat, presque identique, est l’alevin d’un gobie soumis à une autre règle."},
 tip:{en:"It keeps for hours, not days, and it will not survive a tap: lift it out of its water with a slotted spoon and drain it on cloth. A minute in olive oil with garlic is the longest it should ever cook.",
@@ -611,7 +611,7 @@ svg:'<path class="f1 sf" d="M20 34q16-7 30 0 5 3 10-3-2 6 0 10-5-6-10-3-14 7-30-
 
 {id:"red-mullet",cat:"seafood",price:3,pk:"25–45 €/kg",name:{en:"Red mullet",fr:"Rouget barbet"},latin:"Mullus surmuletus",
 origin:{en:"Mediterranean & eastern Atlantic",fr:"Méditerranée & Atlantique Est"},season:[5,6,7,8,9,10],
-flavor:["rich","marine","sweet","earthy"],
+flavor:["rich","marine","sweet","earthy"],texture:["firm","flaky","moist"],
 story:{en:"Rome paid absurd sums for large ones and kept them alive at table so guests could watch the colour change as they died. Its liver is traditionally left inside during cooking, which is unusual and gives the flesh its distinctive depth.",
 fr:"Rome payait des sommes absurdes pour les gros individus et les gardait vivants à table pour que les convives voient la couleur changer à l’agonie. Son foie est traditionnellement laissé en place à la cuisson, fait rare qui donne à la chair sa profondeur particulière."},
 tip:{en:"Scale it gently — the skin is fragile and the colour is half the point. Grill it whole and eat it with your fingers.",
@@ -621,7 +621,7 @@ svg:'<path class="f1 sf" d="M20 56q16-16 40-12t16 12q-8 12-30 12T20 56z"/><path 
 
 {id:"red-porgy",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Red porgy",fr:"Pagre"},latin:"Pagrus pagrus",
 origin:{en:"Eastern Atlantic and Mediterranean",fr:"Atlantique Est et Méditerranée"},season:[9,10,11,12],
-flavor:["mild","sweet","marine"],
+flavor:["mild","sweet","marine"],texture:["firm","flaky"],
 story:{en:"Pagre and daurade royale sit side by side on French ice but belong to different genera: Pagrus pagrus has a rounder head, rose-edged scales and a coarser grain. Pagrus is also the genus that gave Japan its madai, so the pagre is a closer relative of the Japanese celebration bream than of the royale beside it.",
 fr:"Pagre et daurade royale voisinent sur la glace des étals français, mais ce sont deux genres distincts : Pagrus pagrus a la tête plus ronde, les écailles bordées de rose et le grain plus grossier. C’est aussi le genre Pagrus qui a donné le madai japonais — le pagre est donc plus proche parent de la daurade de fête du Japon que de la royale posée à côté de lui."},
 tip:{en:"Roast it whole on the bone at 200 °C, twenty minutes for a kilo, on a bed of sliced potato that catches the juices. The coarse flakes stay separate; filleted and pan-fried the same fish reads dry.",
@@ -631,7 +631,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="58" rx="28" ry="14"/><path class="f2 sf"
 
 {id:"red-scorpionfish",cat:"seafood",luxe:true,price:3,pk:"30–55 €/kg",name:{en:"Red scorpionfish (chapon)",fr:"Chapon (rascasse rouge)"},latin:"Scorpaena scrofa",
 origin:{en:"Deep Mediterranean rock",fr:"Roches profondes de Méditerranée"},season:[],
-flavor:["rich","marine","umami"],
+flavor:["rich","marine","umami"],texture:["firm","gelatinous","flaky"],
 story:{en:"The chapon is the same family as the little soup rascasse, but it lives deeper, reaches three kilos and is bought whole to hold the centre of a table rather than to be sieved out of a broth. Its dorsal spines stay venomous for hours after death, which is why fishmongers clip them at the stall.",
 fr:"Le chapon est de la même famille que la petite rascasse à soupe, mais il vit plus profond, atteint trois kilos et s’achète entier pour tenir le centre d’une table plutôt que pour finir passé au chinois. Ses épines dorsales restent venimeuses des heures après la mort : les poissonniers les coupent à l’étal."},
 tip:{en:"The head is a third of the weight and most of the flavour, so cook it on the bone — steamed, or roasted at 180 °C, allowing 25 minutes per kilo. The gelatinous head skin thickens the pan juices on its own: spoon them back over rather than straining them.",
@@ -641,7 +641,7 @@ svg:'<path class="f2 sf" d="M24 54q4-16 20-18t24 8q6 10 0 16-14 8-28 4T24 54z"/>
 
 {id:"saba-bushi",cat:"seafood",rare:true,price:3,pk:"60–100 €/kg",name:{en:"Saba-bushi",fr:"Saba-bushi (maquereau séché)"},latin:"Scomber japonicus (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["umami","smoky","rich","briny"],
+flavor:["umami","smoky","rich","briny"],texture:["airy","brittle","dry"],
 story:{en:"Tokyo soba shops rarely build a dipping broth on bonito alone — the kaeshi, dark with soy and sugar, swallows it. Mackerel dried into a bushi gives an oily, faintly bitter stock with enough weight to answer back, usually blended with round-herring and frigate-tuna shavings.",
 fr:"Les maisons de soba de Tokyo ne montent presque jamais leur sauce de trempage sur la seule bonite : le kaeshi, sombre de soja et de sucre, l’avale. Le maquereau séché en bushi donne un bouillon gras, légèrement amer, assez charpenté pour répondre, le plus souvent coupé de copeaux de sardinelle et de thonine."},
 tip:{en:"Use thick shavings and a long, gentle steep — ten minutes around 85°C. Boiled hard the oil emulsifies: the broth clouds and turns frankly fishy, which is why it stays out of clear soups.",
@@ -651,7 +651,7 @@ svg:'<path class="f2 sf" d="M22 52q14-16 32-13t20 13q-6 13-23 15T22 52z"/><path 
 
 {id:"salmon",cat:"seafood",price:2,pk:"15–28 €/kg",name:{en:"Salmon",fr:"Saumon"},latin:"Salmo salar",
 origin:{en:"North Atlantic rivers",fr:"Rivières de l’Atlantique Nord"},season:[],
-flavor:["rich","buttery","marine","delicate"],
+flavor:["rich","buttery","marine","delicate"],texture:["tender","silky","moist"],
 story:{en:"Its Latin name may come from salire, “to leap” — the fish that climbs waterfalls to die where it was born. Scandinavian fishermen once buried salted salmon in the sand above the tide line: grav lax, “buried salmon”, now cured in dill on every smörgåsbord.",
 fr:"Son nom latin viendrait de salire, « bondir » — le poisson qui remonte les cascades pour mourir là où il est né. Les pêcheurs scandinaves enterraient jadis le saumon salé dans le sable au-dessus des marées : grav lax, « saumon enterré », aujourd’hui confit à l’aneth sur chaque smörgåsbord."},
 tip:{en:"Cook it less than you dare — the centre should still be silk. Skin-side down almost the whole way, and the skin becomes the best part.",
@@ -661,7 +661,7 @@ svg:'<path class="f1 sf" d="M22 41q2-3 8-3 14 1 30 5 13 3 22 7-15 4-32 6-13 2-23
 
 {id:"morue-salee",cat:"seafood",price:2,pk:"15–30 €/kg",name:{en:"Salt cod",fr:"Morue salée"},latin:"Gadus morhua (salted)",
 origin:{en:"North Atlantic banks",fr:"Bancs de l’Atlantique Nord"},season:[],
-flavor:["salty","umami","marine","rich"],
+flavor:["salty","umami","marine","rich"],texture:["hard","fibrous","dry"],
 story:{en:"Basque crews were working the Newfoundland banks by the early sixteenth century and salted their catch aboard, because the damp air there made the Norwegian trick of simply drying it in the wind impossible. Salt cod then fed Catholic Europe through every lean Friday of the year — a fish caught in one hemisphere and eaten in another, centuries before refrigeration.",
 fr:"Les équipages basques travaillaient les bancs de Terre-Neuve dès le début du XVIe siècle et salaient leur pêche à bord : l’air humide y interdisait le simple séchage au vent des Norvégiens. La morue salée a ensuite nourri l’Europe catholique tous les vendredis maigres de l’année — un poisson pêché dans un hémisphère et mangé dans un autre, des siècles avant le froid industriel."},
 tip:{en:"Desalt it skin up in cold water in the fridge — 24 hours for the soft pale cure, 48 for the hard yellow one — changing the water four or five times. Taste a shred before you commit: over-salted brandade cannot be rescued.",
@@ -671,7 +671,7 @@ svg:'<path class="f1 sf" d="M48 18q14 14 16 34-4 16-16 26-12-10-16-26 2-20 16-34
 
 {id:"anago",cat:"seafood",rare:true,price:3,pk:"40–70 €/kg",name:{en:"Saltwater conger (anago)",fr:"Congre japonais (anago)"},latin:"Conger myriaster",
 origin:{en:"Tokyo Bay",fr:"Baie de Tokyo"},season:[6,7,8],
-flavor:["sweet","delicate","umami"],
+flavor:["sweet","delicate","umami"],texture:["soft","gelatinous"],
 story:{en:"Edo sushi cooks worked with what Tokyo Bay gave them, and anago is one of the handful of fish the style was built on — simmered rather than grilled, because it carries a fraction of the fat of freshwater unagi. The dark glaze brushed on at the end, tsume, is only that simmering liquid reduced with the bones.",
 fr:"Les cuisiniers d’Edo travaillaient ce que la baie de Tokyo leur donnait, et l’anago fait partie des quelques poissons sur lesquels le style s’est construit — mijoté et non grillé, car il a une fraction du gras de l’unagi d’eau douce. Le glaçage sombre passé au pinceau à la fin, le tsume, n’est que ce bouillon réduit avec les arêtes."},
 tip:{en:"Scald the eel and scrape the white slime off with the back of a knife, or the broth turns bitter. Simmer it skin-side up in sake, mirin, soy and sugar at a bare 85 °C for twenty minutes; a real boil breaks it into threads.",
@@ -681,7 +681,7 @@ svg:'<path class="f2 sf" d="M20 62q8-8 18-6t18-6 14-12q6 4 0 12-8 10-20 12t-16 6
 
 {id:"sardine",cat:"seafood",price:1,pk:"6–10 €/kg",name:{en:"Sardine",fr:"Sardine"},latin:"Sardina pilchardus",
 origin:{en:"Mediterranean & East Atlantic",fr:"Méditerranée & Atlantique Est"},season:[5,6,7,8,9],
-flavor:["rich","marine","salty","umami"],
+flavor:["rich","marine","salty","umami"],texture:["tender","silky"],
 story:{en:"Named for Sardinia, whose waters once teemed with them, and immortalised by Marseille, where a ship called the Sartine sank at the harbour mouth — letting the whole town claim, forever, that “a sardine once blocked the port”. Napoleon’s era canned them: the first fish to be sealed in tin.",
 fr:"Nommée d’après la Sardaigne, dont les eaux en regorgeaient, et immortalisée par Marseille, où un navire nommé la Sartine coula à l’entrée de la rade — permettant à toute la ville de jurer, pour toujours, qu’« une sardine a bouché le port ». L’époque napoléonienne la mit en boîte : premier poisson scellé dans le fer-blanc."},
 tip:{en:"Fresh, they want nothing but a grill, coarse salt and lemon. Tinned, they improve with age like wine — collectors cellar good vintages.",
@@ -691,7 +691,7 @@ svg:'<path class="f1 sf" d="M 17.2 46.2q 9.3-9.9 23.2-8.2 17.9 2.2 29 9.6 4.7 2.
 
 {id:"sea-bass",cat:"seafood",price:2,pk:"15–30 €/kg",name:{en:"Sea bass",fr:"Bar"},latin:"Dicentrarchus labrax",
 origin:{en:"Northeast Atlantic & Mediterranean",fr:"Atlantique Nord-Est & Méditerranée"},season:[9,10,11,12,1,2],
-flavor:["delicate","marine","sweet","mild"],
+flavor:["delicate","marine","sweet","mild"],texture:["firm","flaky","moist"],
 story:{en:"France calls it bar in the north and loup in the Mediterranean — the wolf, for the way it hunts. A line-caught bar de ligne carries a tag through the gill and sells for several times the price of a netted or farmed fish.",
 fr:"La France l’appelle bar au nord et loup en Méditerranée — le loup, pour sa façon de chasser. Un bar de ligne porte une étiquette passée dans l’ouïe et se vend plusieurs fois le prix d’un poisson de filet ou d’élevage."},
 tip:{en:"Its skin crisps better than almost any fish. Dry it thoroughly, press it flat in the pan for the first minute, and do not move it.",
@@ -701,7 +701,7 @@ svg:'<path class="f1 sf" d="M13 50q10-12 25-13 22-1 33 10l8-7q-4 12 0 24l-8-7q-1
 
 {id:"sea-trout",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
 origin:{en:"Atlantic rivers and estuaries",fr:"Rivières et estuaires atlantiques"},season:[4,5,6,7,8],
-flavor:["delicate","sweet","rich"],
+flavor:["delicate","sweet","rich"],texture:["tender","silky","moist"],
 story:{en:"Sea trout and brown trout are one species: in a single river some individuals drop down to the sea, grow far larger on marine feed and return silver, and their own offspring may do either. The coral colour is dietary, from crustaceans, and fades as the fish waits in fresh water to spawn.",
 fr:"Truite de mer et truite fario sont une seule espèce : dans une même rivière, certains individus descendent à la mer, y grossissent bien davantage et remontent argentés, et leur descendance peut faire l’un ou l’autre. La couleur corail vient du régime, des crustacés, et pâlit à mesure que le poisson attend la fraie en eau douce."},
 tip:{en:"It has less fat than salmon and no margin for error. Cure it forty minutes in equal salt and sugar, rinse, then cook to just-set at 45 °C — or serve it raw; a hot pan turns it to sawdust.",
@@ -711,7 +711,7 @@ svg:'<path class="f1 sf" d="M24 50q14-13 30-11t18 11q-2 11-18 13T24 50z"/><path 
 
 {id:"foie-de-raie",cat:"seafood",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Skate liver",fr:"Foie de raie"},latin:"Raja spp. (hepar)",
 origin:{en:"Channel and Atlantic day boats",fr:"Fileyeurs de la Manche et de l'Atlantique"},season:[],
-flavor:["rich","creamy","marine","delicate"],
+flavor:["rich","creamy","marine","delicate"],texture:["soft","creamy"],
 story:{en:"It melts at barely above room temperature and turns rancid within a day, so it never reaches a display case: it is ordered from the fishmonger the morning the boat lands. Where cod liver is cured and tinned, this one is used fresh and almost pouring, closer to a sauce than to an organ.",
 fr:"Il fond à peine plus haut que la température de la pièce et rancit en un jour : il ne rejoint donc jamais l'étal et se commande au poissonnier le matin même du débarquement. Là où le foie de morue est salé et mis en boîte, celui-ci s'emploie frais, presque coulant, plus proche d'une sauce que d'un abat."},
 tip:{en:"Poach it whole in a court-bouillon sharp with vinegar, five minutes at a bare tremble, and lift it before it slumps. Or whisk it raw into a beurre noisette off the heat — it thickens like an egg yolk, and splits the same way if it boils.",
@@ -721,7 +721,7 @@ svg:'<path class="f1 sf" d="M22 58h52q4 0 4 6t-4 6H22q-4 0-4-6t4-6z"/><path clas
 
 {id:"skate",cat:"seafood",price:2,pk:"14–24 €/kg",name:{en:"Skate wing",fr:"Aile de raie"},latin:"Raja clavata",
 origin:{en:"Northeast Atlantic",fr:"Atlantique Nord-Est"},season:[10,11,12,1,2,3],
-flavor:["sweet","marine","delicate","rich"],
+flavor:["sweet","marine","delicate","rich"],texture:["tender","fibrous","moist"],
 story:{en:"It has cartilage rather than bone, so the flesh comes away in ribbed strands rather than flakes. It also smells faintly of ammonia if it is even slightly old — one of the few fish where the nose gives an unambiguous verdict.",
 fr:"Elle a du cartilage plutôt que des arêtes : la chair se détache en filaments côtelés plutôt qu’en lamelles. Elle sent aussi légèrement l’ammoniaque dès qu’elle n’est plus très fraîche — l’un des rares poissons où le nez tranche sans ambiguïté."},
 tip:{en:"Raie au beurre noisette is the dish: browned butter, capers, a splash of vinegar. It has been the standard for two centuries because nothing beats it.",
@@ -731,7 +731,7 @@ svg:'<path class="f2 sf" d="M14 56q20-18 34-18t34 18q-16 12-34 12T14 56z"/><path
 
 {id:"smelt",cat:"seafood",price:2,pk:"10–18 €/kg",name:{en:"Smelt",fr:"Éperlan"},latin:"Osmerus eperlanus",
 origin:{en:"Northern European estuaries",fr:"Estuaires d’Europe du Nord"},season:[10,11,12,1,2,3],
-flavor:["fresh","delicate","marine"],
+flavor:["fresh","delicate","marine"],texture:["tender","moist"],
 story:{en:"The genus name Osmerus comes from the Greek for odour: a fresh smelt smells of cut cucumber, and a smelt that smells of fish is no longer fresh. That single test is the whole of quality control at the stall.",
 fr:"Le nom de genre Osmerus vient du grec « odeur » : un éperlan frais sent le concombre coupé, et un éperlan qui sent le poisson n’est plus frais. Ce seul test fait tout le contrôle qualité à l’étal."},
 tip:{en:"Do not gut them. Roll them in seasoned flour, shake off everything loose and fry at 190 °C for ninety seconds so the bones go crisp enough to eat — at 160 °C they turn greasy and the bones stay like wire.",
@@ -741,7 +741,7 @@ svg:'<path class="f1 sf" d="M24 34q10-5 20-3t14 5q-6 4-16 4t-18-6zM22 50q10-5 20
 
 {id:"anguille-fumee",cat:"seafood",price:3,pk:"50–90 €/kg",name:{en:"Smoked eel",fr:"Anguille fumée"},latin:"Anguilla anguilla (smoked)",
 origin:{en:"Zeeland, the IJsselmeer & Comacchio",fr:"Zélande, IJsselmeer et Comacchio"},season:[],
-flavor:["smoky","rich","buttery","meaty"],
+flavor:["smoky","rich","buttery","meaty"],texture:["tender","silky"],
 story:{en:"Eel blood carries a protein toxic to mammals, which is why the fish is never served raw; heat destroys it, and Charles Richet took the 1913 Nobel for the anaphylaxis he found while injecting dogs with eel serum. Hot-smoking answers the toxin and the fat in one move.",
 fr:"Le sang d’anguille contient une protéine toxique pour les mammifères — c’est pourquoi on ne la sert jamais crue ; la chaleur la détruit, et Charles Richet a reçu le Nobel 1913 pour l’anaphylaxie découverte en injectant du sérum d’anguille à des chiens. Le fumage à chaud règle la toxine et la graisse d’un même geste."},
 tip:{en:"Peel the skin back from the head end in one strip and lift the fillets off the backbone with your thumbs — no knife needed. Serve at room temperature: straight from the fridge the fat is wax.",
@@ -751,7 +751,7 @@ svg:'<path class="f2 sf" d="M72 28q-10-2-13 6-4 10-13 16-11 8-19 4-7-4-11 2-3 5 
 
 {id:"haddock-fume",cat:"seafood",price:2,pk:"18–28 €/kg",name:{en:"Smoked haddock",fr:"Haddock (églefin fumé)"},latin:"Melanogrammus aeglefinus (smoked)",
 origin:{en:"Aberdeenshire",fr:"Aberdeenshire, Écosse"},season:[],
-flavor:["smoky","salty","marine","mild"],
+flavor:["smoky","salty","marine","mild"],texture:["firm","flaky"],
 story:{en:"Fishwives in Findon, south of Aberdeen, hung lightly salted haddock in their chimneys over peat fires, and by the 1830s the result — finnan haddie — was selling in London. French kitchens borrowed the English name of the fish and made it mean the cure instead: ask for haddock in Paris and you are handed a smoked fillet.",
 fr:"Les femmes de pêcheurs de Findon, au sud d’Aberdeen, suspendaient l’églefin légèrement salé dans leurs cheminées au-dessus d’un feu de tourbe ; dans les années 1830, le finnan haddie se vendait à Londres. Les cuisines françaises ont emprunté le nom anglais du poisson pour désigner la salaison : demandez du haddock à Paris, on vous donne un filet fumé."},
 tip:{en:"Poach it in milk barely trembling, eight to ten minutes, and keep the milk — it is the base of cullen skink and of any sauce you build after. Bright yellow fillets are dyed; a real cure is pale straw.",
@@ -761,7 +761,7 @@ svg:'<path class="f1 sf" d="M20 50q12-16 30-16t26 16q-8 16-26 16T20 50z"/><path 
 
 {id:"hareng-saur",cat:"seafood",price:2,pk:"12–20 €/kg",name:{en:"Smoked herring",fr:"Hareng saur"},latin:"Clupea harengus (salt-smoked)",
 origin:{en:"Boulogne & the North Sea",fr:"Boulogne et la mer du Nord"},season:[],
-flavor:["smoky","salty","briny","rich"],
+flavor:["smoky","salty","briny","rich"],texture:["firm","silky"],
 story:{en:"Saur has nothing to do with sauce: it comes from the Middle Dutch soor, dried. The oldest French record of the trade is a deed of 1230 in which the abbey of Fécamp grants a neighbouring commune a tree or two from its wood, to smoke herring with.",
 fr:"« Saur » n’a rien à voir avec la sauce : le mot vient du moyen néerlandais soor, séché. La plus ancienne trace française du métier est un acte de 1230 par lequel l’abbaye de Fécamp cède à une commune voisine un arbre ou deux de son bois, pour saurir le hareng."},
 tip:{en:"Skin and fillet it, then two hours in milk or a night in oil with bay and sliced onion — milk pulls the salt fastest, oil keeps it and makes it supple. Untreated it will out-salt everything else on the plate.",
@@ -771,7 +771,7 @@ svg:'<path class="s" d="M48 14v10"/><path class="f2 sf" d="M48 24q13 10 13 28 0 
 
 {id:"saumon-fume",cat:"seafood",price:3,pk:"40–80 €/kg",name:{en:"Smoked salmon",fr:"Saumon fumé"},latin:"Salmo salar (smoked)",
 origin:{en:"Scotland, Ireland & the Baltic",fr:"Écosse, Irlande et Baltique"},season:[],
-flavor:["smoky","rich","salty","marine"],
+flavor:["smoky","rich","salty","marine"],texture:["tender","silky","moist"],
 story:{en:"Cold-smoked salmon as we know it is a London invention of the 1880s: immigrants from the Baltic brought a heavy salt cure meant for fish that had to survive a journey, met Scottish salmon that did not, and cut the salt right back. The trade still calls it the London cure, though almost none of it is smoked there now.",
 fr:"Le fumage à froid tel qu’on le connaît est une invention londonienne des années 1880 : des immigrés venus de la Baltique apportent une salaison lourde, faite pour un poisson qui devait survivre au voyage, rencontrent un saumon écossais qui n’en avait pas besoin, et réduisent le sel d’autant. Le métier parle toujours de « London cure », bien qu’on n’en fume presque plus là-bas."},
 tip:{en:"Slice on a long flat blade held almost parallel to the board, tail towards head, and never through the dark band under the skin — that line is bitter. Take it out of the fridge twenty minutes ahead or the fat stays mute.",
@@ -781,7 +781,7 @@ svg:'<path class="f1 sf" d="M20 44q14-10 28-4 14 6 28-2-2 10-14 14-14 4-24-2-10-
 
 {id:"esturgeon-fume",cat:"seafood",luxe:true,price:3,pk:"60–120 €/kg",name:{en:"Smoked sturgeon",fr:"Esturgeon fumé"},latin:"Acipenser baerii (smoked)",
 origin:{en:"French & Italian caviar farms",fr:"Fermes à caviar de France et d’Italie"},season:[],
-flavor:["smoky","rich","nutty","meaty"],
+flavor:["smoky","rich","nutty","meaty"],texture:["firm","silky"],
 story:{en:"A caviar farm kills a fish for a kilo or two of roe and is left with twenty kilos of flesh, which is how smoked sturgeon became a product rather than a waste stream. New York’s appetizing counters were selling it long before that — cut as thin as smoked salmon and priced above it.",
 fr:"Une ferme à caviar tue un poisson pour un ou deux kilos d’œufs et se retrouve avec vingt kilos de chair : c’est ainsi que l’esturgeon fumé est devenu un produit plutôt qu’un déchet. Les comptoirs juifs de New York en vendaient bien avant cela — tranché aussi fin que le saumon fumé, et plus cher que lui."},
 tip:{en:"Slice it thick, three or four millimetres: the flesh has almost no flake and a thin slice simply falls apart. Horseradish cream and rye rather than lemon, which strips out the nutty fat.",
@@ -791,7 +791,7 @@ svg:'<path class="f2 sf" d="M20 52q10-6 21-8 15-3 28 2l7-8-2 14 3 12-8-6q-13 5-2
 
 {id:"kinmedai",cat:"seafood",rare:true,luxe:true,price:3,pk:"60–120 €/kg",name:{en:"Splendid alfonsino (kinmedai)",fr:"Béryx long (kinmedai)"},latin:"Beryx splendens",
 origin:{en:"Izu peninsula & deep Pacific",fr:"Péninsule d’Izu & Pacifique profond"},season:[1,2,3,10,11,12],
-flavor:["rich","delicate","sweet","marine"],
+flavor:["rich","delicate","sweet","marine"],texture:["tender","flaky","moist"],
 story:{en:"Despite the -dai in its name it is no bream at all: the alfonsinos are a family of their own, hanging between four and six hundred metres down where their gold-backed eyes gather what light is left. The scarlet skin that sells the fish is camouflage — at that depth red reflects nothing and the animal reads as black.",
 fr:"Malgré le -dai de son nom, ce n’est pas une daurade : les béryx forment une famille à part, suspendus entre quatre et six cents mètres de fond, où leurs yeux au tapis doré ramassent le peu de lumière qui reste. La peau écarlate qui fait vendre le poisson est un camouflage : à cette profondeur, le rouge ne renvoie rien et l’animal se lit noir."},
 tip:{en:"Never skin it: for sashimi pour boiling water over the skin side and drop it straight into iced water, which softens the scales without cooking the flesh beneath. Simmered, keep the liquid at a bare tremble — above a real boil the fat renders out and the flesh turns cottony.",
@@ -801,7 +801,7 @@ svg:'<path class="f2 sf" d="M26 50q10-18 26-18t22 18q-12 18-24 18T26 50z"/><path
 
 {id:"stockfisch",cat:"seafood",price:3,pk:"40–80 €/kg",name:{en:"Stockfish",fr:"Stockfisch (morue séchée)"},latin:"Gadus morhua (air-dried)",
 origin:{en:"Lofoten Islands",fr:"Îles Lofoten"},season:[],
-flavor:["umami","sweet","marine","meaty"],
+flavor:["umami","sweet","marine","meaty"],texture:["hard","fibrous","dry"],
 story:{en:"In 1432 a Venetian merchant named Pietro Querini was wrecked on Røst, at the outer end of Lofoten, wintered with the islanders and sailed home with their dried cod — the account Italy still tells as the start of its baccalà. Nothing but wind does the work: the Lofoten winter is too cold to rot the fish and too mild to freeze it solid, and three months on the racks takes it down to about a fifth of its weight.",
 fr:"En 1432, un marchand vénitien nommé Pietro Querini fit naufrage sur Røst, à la pointe des Lofoten, hiverna chez les insulaires et rentra avec leur morue séchée — le récit que l’Italie raconte encore comme l’origine de son baccalà. Rien d’autre que le vent ne travaille : l’hiver des Lofoten est trop froid pour que le poisson pourrisse et trop doux pour qu’il gèle, et trois mois sur les claies le ramènent à un cinquième de son poids."},
 tip:{en:"Beat it with a mallet to crack the fibres, then three to five days in cold running or daily-changed water, in the coldest place you have. Even fully soaked it stays chewier than salt cod: cook it long and wet, never fast.",
@@ -811,7 +811,7 @@ svg:'<path class="s" d="M20 26h56"/><path class="f1 sf" d="M40 26q-10 10-10 26 0
 
 {id:"shima-aji",cat:"seafood",price:3,pk:"50–90 €/kg",name:{en:"Striped jack (shima-aji)",fr:"Carangue dentue (shima-aji)"},latin:"Pseudocaranx dentex",
 origin:{en:"Kyushu & warm Japanese coasts",fr:"Kyūshū & côtes chaudes du Japon"},season:[6,7,8],
-flavor:["mild","delicate","umami","fresh"],
+flavor:["mild","delicate","umami","fresh"],texture:["firm","smooth"],
 story:{en:"It carries aji in its name and almost nothing of the fish: the horse mackerels are Trachurus, this is a Pseudocaranx, with clean white flesh and none of the blue-fish oil. Wild ones have become scarce enough that nearly every shima-aji on a counter is farmed, and the farmed fish is the fatter of the two — the reverse of what most people assume.",
 fr:"Il porte aji dans son nom et presque rien du poisson : les chinchards sont des Trachurus, celui-ci est un Pseudocaranx, chair blanche et nette, sans l’huile des poissons bleus. Les sauvages sont devenus si rares que presque tous les shima-aji d’un étal sont d’élevage — et l’élevage est le plus gras des deux, à l’inverse de ce qu’on imagine."},
 tip:{en:"Its firmness is the whole point, so cut it thicker than aji, about 8 mm, and salt it only at the moment of serving. Ten minutes between sheets of kombu adds depth; leave it longer and the clean edge disappears.",
@@ -821,7 +821,7 @@ svg:'<path class="f1 sf" d="M22 50q12-14 28-14t20 14q-8 14-22 14T22 50z"/><path 
 
 {id:"sturgeon",cat:"seafood",price:3,pk:"25–45 €/kg",name:{en:"Sturgeon",fr:"Esturgeon"},latin:"Acipenser baerii",
 origin:{en:"Siberian rivers & European farms",fr:"Fleuves de Sibérie & élevages européens"},season:[],
-flavor:["rich","meaty","mild","buttery"],
+flavor:["rich","meaty","mild","buttery"],texture:["firm","smooth"],
 story:{en:"A sturgeon has no bones at all — a frame of cartilage and a notochord running its whole length, which Russian cooks dried into a translucent ribbon called vesiga and layered into coulibiac. The flesh was the prize long before the roe was, smoked in slabs and baked into pies for centuries.",
 fr:"L’esturgeon n’a pas un seul os : une charpente de cartilage et une notocorde qui le traverse d’un bout à l’autre, que les cuisiniers russes séchaient en ruban translucide — la vésiga — pour la glisser dans le koulibiac. La chair fut le trophée bien avant les œufs : fumée en gros pavés et enfermée dans des tourtes pendant des siècles."},
 tip:{en:"Treat it as veal, not as fish: it wants 55–58 °C at the centre and a rest, and it dries hard past that. Colour it in butter in thick pieces, then finish it covered and off direct heat.",
@@ -831,7 +831,7 @@ svg:'<path class="f2 sf" d="M16 52q14-10 34-10t28 8l6 2-6 2q-8 8-28 8T16 52z"/><
 
 {id:"ayu",cat:"seafood",rare:true,price:3,pk:"60–120 €/kg",name:{en:"Sweetfish (ayu)",fr:"Ayu"},latin:"Plecoglossus altivelis",
 origin:{en:"Japanese rivers",fr:"Rivières du Japon"},season:[6,7,8,9,10],
-flavor:["delicate","bitter","fresh","grassy"],
+flavor:["delicate","bitter","fresh","grassy"],texture:["tender","moist"],
 story:{en:"Its Japanese name means fragrant fish: it grazes algae off river stones, and a live one smells of melon and cucumber straight through the skin. It lives a single year, spawns and dies, which is why an ayu out of season is not a lesser fish but a spent one.",
 fr:"Son nom japonais signifie « poisson parfumé » : il broute les algues des galets de rivière, et un ayu vivant sent le melon et le concombre à travers la peau. Il vit une seule année, fraie puis meurt — un ayu hors saison n’est pas un poisson médiocre, c’est un poisson épuisé."},
 tip:{en:"Salt it, pack a thick crust of salt onto the tail fin so it does not burn, and grill it whole on a skewer over charcoal — guts left in. The bitterness of the viscera is the dish; gut it and you are left with a small plain fish.",
@@ -841,7 +841,7 @@ svg:'<path class="f1 sf" d="M28 58q8-16 22-18t22 6q-6 14-20 18t-24-6z"/><path cl
 
 {id:"swordfish",cat:"seafood",price:3,pk:"25–40 €/kg",name:{en:"Swordfish",fr:"Espadon"},latin:"Xiphias gladius",
 origin:{en:"Strait of Messina & warm oceans",fr:"Détroit de Messine & océans chauds"},season:[6,7,8,9],
-flavor:["meaty","mild","rich","marine"],
+flavor:["meaty","mild","rich","marine"],texture:["firm","dry"],
 story:{en:"Behind its eyes sits a mass of modified muscle that burns fuel purely as a heater, holding eyes and brain up to fifteen degrees above the cold water it hunts in; those cells carry a higher density of mitochondria than any other known animal cell. The bill is not a spear but a blade — it slashes sideways through a shoal and turns back for whatever it stunned.",
 fr:"Derrière ses yeux se loge une masse de muscle modifié qui ne brûle du carburant que pour chauffer : elle maintient l’œil et le cerveau jusqu’à quinze degrés au-dessus de l’eau froide où il chasse, avec la plus forte densité de mitochondries connue chez un animal. Le rostre n’est pas une lance mais une lame : il fauche le banc de côté, puis revient sur ce qu’il a assommé."},
 tip:{en:"The flesh is dense and low in moisture and there is no fat to buy you time: sear it hard and pull it at 50–52 °C, still pink at the centre. If it must be cooked through, brine it twenty minutes in 5 % salt water first — nothing else keeps a well-done steak from going to rope.",
@@ -851,7 +851,7 @@ svg:'<path class="f2 sf" d="M40 52q10-10 22-8t16 8q-6 10-16 11t-22-11z"/><path c
 
 {id:"soda-bushi",cat:"seafood",rare:true,price:3,pk:"50–90 €/kg",name:{en:"Sōda-bushi",fr:"Sōda-bushi (auxide séchée)"},latin:"Auxis rochei",
 origin:{en:"Kochi and Shizuoka, Japan",fr:"Kōchi et Shizuoka, Japon"},season:[],
-flavor:["umami","meaty","smoky","rich"],
+flavor:["umami","meaty","smoky","rich"],texture:["airy","brittle","dry"],
 story:{en:"Sōda-gatsuo covers two small tunas, and the rounder one, Auxis rochei, is what the dryers want: more dark muscle, more inosinic acid, less fat. That dark muscle is why the stock comes out brown and iron-edged — the flavour a Tokyo soba shop builds its dipping sauce on, and the wrong flavour entirely for a clear soup.",
 fr:"Sous le nom de sōda-gatsuo se cachent deux petits thons, et c’est le plus rond, Auxis rochei, que recherchent les sécheurs : plus de muscle rouge, plus d’acide inosinique, moins de gras. Ce muscle rouge explique le bouillon brun, au fer marqué — exactement le goût sur lequel un soba de Tokyo bâtit sa sauce de trempage, et le mauvais goût pour un consommé clair."},
 tip:{en:"Use it as the backbone and not the whole stock: about a third sōda-bushi to two thirds katsuobushi keeps the body without the metallic finish. Simmer it longer than bonito, five to eight minutes, since the flakes are cut thicker.",
@@ -861,7 +861,7 @@ svg:'<path class="f2 sf" d="M22 52q14-16 32-13 11 2 17 11-7 10-17 12-19 3-32-10z
 
 {id:"kinki",cat:"seafood",luxe:true,price:4,pk:"150–350 €/kg",name:{en:"Thornyhead (kinki)",fr:"Kinki (sébaste épineux)"},latin:"Sebastolobus macrochir",
 origin:{en:"Cold waters off Hokkaido",fr:"Eaux froides d’Hokkaidō"},season:[1,2,11,12],
-flavor:["rich","umami","sweet","delicate"],
+flavor:["rich","umami","sweet","delicate"],texture:["tender","gelatinous"],
 story:{en:"A thornyhead taken from two hundred metres down off Hokkaido, it lays its fat between the muscle fibres rather than under the skin, so it stays wet however long it simmers. It is slow-growing and long-lived, which is why a fish the length of a forearm can cost more than the meal around it and why the price has never come back down.",
 fr:"Sébaste des grands fonds pêché par deux cents mètres au large d’Hokkaidō, il dépose son gras entre les fibres du muscle et non sous la peau : il reste humide quelle que soit la durée du mijotage. Il pousse lentement et vit longtemps — d’où le prix d’un poisson long comme l’avant-bras, qui n’est jamais redescendu."},
 tip:{en:"Score the skin twice and simmer it nitsuke-style in equal parts sake and water with soy and mirin, spooning the liquid over rather than turning the fish. Twelve minutes at a tremble is enough, and it needs no oil at any point.",
@@ -871,7 +871,7 @@ svg:'<path class="f3 sf" d="M28 52q8-16 24-14t20 14q-8 16-24 16T28 52z"/><path c
 
 {id:"fugu",cat:"seafood",luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Tiger pufferfish (torafugu)",fr:"Fugu (poisson-globe)"},latin:"Takifugu rubripes",
 origin:{en:"Shimonoseki & the Inland Sea",fr:"Shimonoseki & mer intérieure de Seto"},season:[1,2,3,10,11,12],
-flavor:["delicate","mild","umami","marine"],
+flavor:["delicate","mild","umami","marine"],texture:["firm","chewy"],
 story:{en:"The fish does not make tetrodotoxin itself — it accumulates it through its food, from bacteria, so farmed torafugu raised on controlled feed test clean, a point argued in Japan for decades without loosening a single rule. Handlers have needed a licence since Osaka issued the first ones in 1948, and the examination is still set prefecture by prefecture.",
 fr:"Le poisson ne fabrique pas la tétrodotoxine : il l’accumule par son alimentation, d’origine bactérienne, si bien que les torafugu d’élevage nourris sous contrôle se révèlent indemnes — un argument débattu au Japon depuis des décennies sans qu’une seule règle ait cédé. La licence est obligatoire depuis les premières délivrées à Osaka en 1948, et l’examen reste fixé préfecture par préfecture."},
 tip:{en:"Buy it only already dressed by a licensed handler, and never trim it yourself. Sliced transparently thin it is texture rather than flavour: it wants ponzu with grated daikon and chilli, and the milt is best charred and salted.",
@@ -881,7 +881,7 @@ svg:'<circle class="f1 sf" cx="46" cy="50" r="22"/><path class="f2 sf" d="M68 50
 
 {id:"trout",cat:"seafood",price:2,pk:"10–16 €/kg",name:{en:"Trout",fr:"Truite"},latin:"Salmo trutta",
 origin:{en:"Europe & western Asia",fr:"Europe & Asie occidentale"},season:[3,4,5,6,7,8,9],
-flavor:["delicate","sweet","marine","mild"],
+flavor:["delicate","sweet","marine","mild"],texture:["tender","flaky","moist"],
 story:{en:"Truite au bleu depends on the fish being killed moments before cooking — a film of natural mucus on the skin reacts with vinegar and turns steel blue. Touch the fish with your hands and the effect is ruined.",
 fr:"La truite au bleu exige un poisson tué juste avant cuisson — un film de mucus naturel sur la peau réagit au vinaigre et vire au bleu acier. Touchez le poisson à mains nues et l’effet est perdu."},
 tip:{en:"Stuff the cavity with lemon and herbs and bake it whole. Fillets of trout dry out faster than almost any other fish.",
@@ -891,7 +891,7 @@ svg:'<path class="f1 sf" d="M16 56q3-13 19-19 20-7 34 3l10-9q-3 10 1 20l-11-5q-1
 
 {id:"tuna",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Tuna",fr:"Thon"},latin:"Thunnus thynnus",
 origin:{en:"Mediterranean & open oceans",fr:"Méditerranée & océans"},season:[5,6,7,8,9],
-flavor:["meaty","rich","marine","umami"],
+flavor:["meaty","rich","marine","umami"],texture:["firm","moist"],
 story:{en:"Phoenicians and Sicilians netted bluefin in the same channels for three thousand years — the mattanza was fishing as ritual theatre. Today a single great bluefin can fetch the price of a house at Tokyo’s dawn auctions: the ocean’s most contested muscle.",
 fr:"Phéniciens et Siciliens prirent le thon rouge dans les mêmes passes pendant trois mille ans — la mattanza était une pêche en théâtre rituel. Aujourd’hui, un grand thon rouge peut atteindre le prix d’une maison aux enchères de l’aube à Tokyo : le muscle le plus disputé de l’océan."},
 tip:{en:"Treat it like beef: sear the outside hard, leave the centre rare, rest it. Cooked through, the king becomes cat food.",
@@ -901,7 +901,7 @@ svg:'<path class="f2 sf" d="M24 54q14-16 36-12l6-8 2 8 8 4-8 4-2 8-6-8q-22 4-36 
 
 {id:"tuna-belly-toro",cat:"seafood",luxe:true,price:4,pk:"70–140 €/kg",name:{en:"Tuna belly (toro)",fr:"Ventrèche de thon rouge (toro)"},latin:"Thunnus thynnus",
 origin:{en:"Bluefin tuna, Japan & the Mediterranean",fr:"Thon rouge, Japon & Méditerranée"},season:[1,11,12],
-flavor:["rich","buttery","umami","delicate"],
+flavor:["rich","buttery","umami","delicate"],texture:["soft","silky"],
 story:{en:"Edo sushi cured its tuna in soy, and fat will not take a cure — so the belly spoiled first and went to the cats, a piece the trade called neko-matagi, what even a cat steps over. It became the most expensive thing on the counter only once domestic refrigeration spread in the 1960s.",
 fr:"Le sushi d’Edo marinait son thon dans la sauce soja, et le gras refuse la marinade : le ventre tournait le premier et finissait aux chats — un morceau que le métier appelait neko-matagi, « ce qu’un chat enjambe ». Il n’est devenu la pièce la plus chère du comptoir qu’avec la diffusion du froid domestique, dans les années 1960."},
 tip:{en:"Cut it across the sinew and let it come up to about 12 °C before serving — straight from the fridge the fat stays waxy and reads as nothing at all. Rather than fighting the tough web at the base, scrape the flesh off it and serve that as negitoro.",
@@ -911,7 +911,7 @@ svg:'<path class="f2 sf" d="M24 62l8-24q1-4 5-4h30q4 0 3 4l-6 24q-1 4-5 4H27q-4 
 
 {id:"turbot",cat:"seafood",luxe:true,price:3,pk:"30–55 €/kg",name:{en:"Turbot",fr:"Turbot"},latin:"Scophthalmus maximus",
 origin:{en:"North-East Atlantic & Mediterranean",fr:"Atlantique Nord-Est & Méditerranée"},season:[],
-flavor:["delicate","marine","rich","buttery"],
+flavor:["delicate","marine","rich","buttery"],texture:["firm","gelatinous"],
 story:{en:"The “king of fish” has convened parliaments: in Juvenal’s satire, a turbot too vast for any dish forced Emperor Domitian to summon the Roman Senate, which gravely advised building a pot around it. France still forges the turbotière, a diamond-shaped vessel that exists for this fish alone.",
 fr:"Le « roi des poissons » a convoqué des parlements : dans la satire de Juvénal, un turbot trop vaste pour tout plat contraignit l’empereur Domitien à réunir le Sénat romain, qui conseilla gravement de bâtir une marmite autour. La France forge encore la turbotière, ustensile en losange qui n’existe que pour ce poisson."},
 tip:{en:"Cook it on the bone, always — the gelatine bastes the pearl-white flesh from within. Butter and lemon complete the coronation; a morel cream is the state occasion.",
@@ -921,7 +921,7 @@ svg:'<path class="f1 sf" d="M48 30q22 10 22 24T48 76Q26 66 26 54t22-24z" transfo
 
 {id:"urume-bushi",cat:"seafood",rare:true,price:3,pk:"60–110 €/kg",name:{en:"Urume-bushi",fr:"Urume-bushi (sardine ronde séchée)"},latin:"Etrumeus micropus",
 origin:{en:"Kyushu and Shikoku, Japan",fr:"Kyūshū et Shikoku, Japon"},season:[],
-flavor:["umami","toasty","rich","marine"],
+flavor:["umami","toasty","rich","marine"],texture:["hard","brittle","dry"],
 story:{en:"Urume-iwashi means moist-eye sardine, for eyes so large and glassy they look wet, and the round herring behind the name is not a sardine at all. Too small to survive the mould cure, it is only ever dried to the smoked arabushi stage, which is exactly why it gives Kansai udon and ramen broths their roasted, oily depth.",
 fr:"Urume-iwashi veut dire « sardine aux yeux humides », tant l’œil est grand et vitreux — et le poisson derrière ce nom n’est pas une sardine mais un hareng rond. Trop petit pour supporter l’affinage à la moisissure, il n’est séché que jusqu’au stade fumé de l’arabushi, ce qui lui vaut précisément sa profondeur grillée et grasse dans les bouillons d’udon et de ramen du Kansai."},
 tip:{en:"Snap the heads off and pull the dark guts before soaking, or the stock turns bitter. Cold-steep the bodies in water overnight, then bring it to just under a simmer — boiling urume clouds the broth.",
@@ -931,7 +931,7 @@ svg:'<path class="f2 sf" d="M22 40q15-9 31-5 9 3 13 8-5 5-13 7-17 4-31-10z"/><pa
 
 {id:"ventreche-de-thon",cat:"seafood",luxe:true,price:3,pk:"40–80 €/kg",name:{en:"Ventresca",fr:"Ventrèche de thon blanc"},latin:"Thunnus alalunga (belly, oil-packed)",
 origin:{en:"Cantabrian coast",fr:"Côte cantabrique"},season:[],
-flavor:["rich","buttery","meaty","delicate"],
+flavor:["rich","buttery","meaty","delicate"],texture:["soft","silky","moist"],
 story:{en:"Bonito del norte is albacore taken one fish at a time on pole and line off the Cantabrian coast between June and October, then filleted, cooked and packed by hand. The belly is a small fraction of each fish, which is why a jar of ventresca costs several times a jar of the same tuna’s loin.",
 fr:"Le bonito del norte est un germon pris un poisson à la fois, à la canne et à la ligne, au large de la côte cantabrique entre juin et octobre, puis levé, cuit et mis en bocal à la main. La ventrèche ne représente qu’une petite part de chaque poisson : c’est pourquoi un bocal coûte plusieurs fois celui du filet du même thon."},
 tip:{en:"Never drain it and never chill it — olive oil sets waxy in the fridge and takes the texture with it. Lift the fillets out whole with a fork and dress them with their own oil; anything you would do to tinned tuna, do not do.",
@@ -941,7 +941,7 @@ svg:'<ellipse class="f1 sf" cx="48" cy="54" rx="27" ry="18"/><path class="f2 sf"
 
 {id:"violet-sea-squirt",cat:"seafood",rare:true,price:2,pk:"8–16 €/kg",name:{en:"Violet sea squirt",fr:"Violet (figue de mer)"},latin:"Microcosmus sabatieri",
 origin:{en:"Marseille & Mediterranean rock beds",fr:"Marseille & fonds rocheux de Méditerranée"},season:[10,11,12,1,2,3,4],
-flavor:["briny","marine","bitter","pungent"],
+flavor:["briny","marine","bitter","pungent"],texture:["soft","viscous"],
 story:{en:"It is not a shellfish: tunicates are chordates, and the violet spent its larval life as a swimming tadpole with a notochord before cementing itself head-down onto a rock. Its leathery outer coat is built from cellulose, which no other animal on earth manufactures.",
 fr:"Ce n’est pas un coquillage : les tuniciers sont des cordés, et le violet a passé sa vie larvaire en têtard nageur pourvu d’une corde dorsale avant de se cimenter la tête en bas sur un rocher. Sa tunique coriace est faite de cellulose — aucun autre animal au monde n’en fabrique."},
 tip:{en:"Cut it open across the middle, scoop out the yellow alone and discard the whole leathery envelope with its fluid. Eat it within the hour of opening, at the stall if you can: nothing about it improves on the walk home, and lemon is the only seasoning it will take.",
@@ -951,7 +951,7 @@ svg:'<path class="f3 sf" d="M26 56q-4-18 10-24t28 2 8 22-14 14-24 2-8-16z"/><pat
 
 {id:"weever",cat:"seafood",price:2,pk:"7–14 €/kg",name:{en:"Weever",fr:"Vive"},latin:"Trachinus draco",
 origin:{en:"Sandy Atlantic & Mediterranean shores",fr:"Fonds sableux, Atlantique & Méditerranée"},season:[6,7,8,9],
-flavor:["sweet","delicate","marine","mild"],
+flavor:["sweet","delicate","marine","mild"],texture:["firm","flaky"],
 story:{en:"It lies buried in sand with only its eyes and its black first dorsal showing, and the venom in those spines stays active for hours in a fish that is already dead — which is why the spines come off at the quay rather than in the kitchen. The venom is a protein and heat unfolds it: a stung foot goes into water as hot as the bather can bear, and stays there.",
 fr:"Elle s’enfouit dans le sable, ne laissant dépasser que les yeux et la première dorsale noire, et le venin de ces épines reste actif des heures sur un poisson déjà mort — raison pour laquelle on coupe les épines sur le quai et non en cuisine. Le venin est une protéine que la chaleur défait : un pied piqué part dans l’eau la plus chaude que l’on puisse supporter, et y reste."},
 tip:{en:"Run a fingertip along the back before you take hold of the fish, and cut the whole first dorsal away with scissors. Firm and sweet, it deserves better than the soup it usually dissolves into: fillet it and grill it.",
@@ -961,7 +961,7 @@ svg:'<path class="f1 sf" d="M18 58q14-8 32-8t28 6q-12 10-30 10t-30-8z"/><path cl
 
 {id:"whitefish-fera",cat:"seafood",price:2,pk:"18–28 €/kg",name:{en:"Whitefish (féra)",fr:"Féra (corégone)"},latin:"Coregonus lavaretus",
 origin:{en:"Lake Geneva & Savoy lakes",fr:"Léman & lacs de Savoie"},season:[4,5,6,7,8,9,10],
-flavor:["delicate","mild","buttery","fresh"],
+flavor:["delicate","mild","buttery","fresh"],texture:["tender","flaky"],
 story:{en:"The true féra of Lake Geneva, Coregonus fera, was last seen around 1920 and is gone, taken by overfishing and by the lake's own enrichment. Everything sold as féra on the Léman today descends from coregonids restocked out of Neuchâtel and Constance, so the name has outlived the fish it named.",
 fr:"La vraie féra du Léman, Coregonus fera, a été vue pour la dernière fois vers 1920 : elle a disparu, emportée par la surpêche et par l’eutrophisation du lac. Tout ce qui se vend aujourd’hui sous ce nom descend de corégones réintroduits depuis Neuchâtel et le lac de Constance — le nom a survécu au poisson qu’il désignait."},
 tip:{en:"The fillet is lean and thin and leaves no margin: three minutes skin down in foaming butter, one minute over, finished. Flour it as it goes into the pan and not before — flour left to sit on that wet skin turns to paste.",
@@ -971,7 +971,7 @@ svg:'<path class="f1 sf" d="M76 52q-14-12-30-12t-26 12q10 12 26 12t30-12z"/><pat
 
 {id:"whiting",cat:"seafood",price:1,pk:"7–12 €/kg",name:{en:"Whiting",fr:"Merlan"},latin:"Merlangius merlangus",
 origin:{en:"North Sea & Channel",fr:"Mer du Nord & Manche"},season:[1,2,3,10,11,12],
-flavor:["delicate","mild","sweet","marine"],
+flavor:["delicate","mild","sweet","marine"],texture:["soft","flaky","moist"],
 story:{en:"Its flesh is so soft that classical cooking gave it two shapes to hold it together: opened flat and crumbed as merlan Colbert, which Escoffier fixed in print in 1921, or curled with its tail wedged in its mouth and fried, en colère. Old Parisian slang called a barber a merlan as well, after the powder that left him whitened like a floured fish.",
 fr:"Sa chair est si tendre que la cuisine classique lui a donné deux formes pour la tenir : ouvert à plat et pané en merlan Colbert, qu’Escoffier fixe par écrit en 1921, ou roulé la queue coincée dans la bouche et frit, en colère. L’argot parisien appelait aussi merlan le coiffeur, à cause de la poudre qui le laissait blanc comme un poisson fariné."},
 tip:{en:"It will not survive a wet cooking method: dry it thoroughly, take it through flour, egg and crumb, and fry at 180 °C. For quenelles work the flesh with ice-cold cream over a bowl of ice — above 8 °C the mixture splits, and no amount of beating brings it back.",
@@ -981,7 +981,7 @@ svg:'<path class="f2 sf" d="M48 26a24 24 0 1 1-18 40 12 12 0 1 0 8-28 24 24 0 0 
 
 {id:"yakiago",cat:"seafood",rare:true,price:3,pk:"80–150 €/kg",name:{en:"Yakiago",fr:"Yakiago (poisson volant grillé séché)"},latin:"Cypselurus agoo",
 origin:{en:"Kyushu and the Goto Islands, Japan",fr:"Kyushu et les îles Goto, Japon"},season:[8,9,10],
-flavor:["toasty","umami","marine","delicate"],
+flavor:["toasty","umami","marine","delicate"],texture:["hard","brittle","dry"],
 story:{en:"The flying fish are caught, split, grilled over charcoal and dried through the autumn on the Goto Islands, ready for the new year. Because the fish carries almost no fat — it spends its life gliding — the stock comes out clear and faintly sweet where an oily fish would leave it cloudy.",
 fr:"On pêche les exocets, on les ouvre, on les grille au charbon et on les sèche tout l’automne dans les îles Goto, pour le Nouvel An. Comme ce poisson ne porte presque pas de gras — il passe sa vie à planer — le bouillon sort limpide et légèrement sucré là où un poisson gras le troublerait."},
 tip:{en:"Steep about 20 g to the litre in cold water overnight rather than boiling: above a bare simmer the head and bones give up a bitterness. Snap the fish in half first so the water reaches the spine.",
@@ -991,7 +991,7 @@ svg:'<path class="f2 sf" d="M24 50q14-11 32-9 11 1 18 7-7 7-18 8-18 2-32-6z"/><p
 
 {id:"zander",cat:"seafood",price:2,pk:"16–28 €/kg",name:{en:"Zander",fr:"Sandre"},latin:"Sander lucioperca",
 origin:{en:"Central & eastern Europe",fr:"Europe centrale & orientale"},season:[9,10,11,12,1],
-flavor:["delicate","sweet","mild","marine"],
+flavor:["delicate","sweet","mild","marine"],texture:["firm","flaky"],
 story:{en:"A perch that behaves like a pike, and the freshwater fish French restaurants reach for when they want something firm and white without sea flavour. It was introduced to western European rivers deliberately in the twentieth century.",
 fr:"Une perche qui se comporte en brochet, et le poisson d’eau douce que les restaurants français choisissent quand ils veulent du ferme et du blanc sans goût de mer. Il fut introduit délibérément dans les rivières d’Europe de l’Ouest au XXe siècle."},
 tip:{en:"The skin is thin and crisps beautifully, unlike most freshwater fish. Cook it skin-side down and leave it alone.",
