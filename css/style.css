@@ -124,9 +124,18 @@ input,select{font:inherit}
   outline:none;
 }
 #search:focus{border-color:var(--ink-3);box-shadow:0 0 0 3px var(--ring)}
-.lang-toggle,.tier-toggle{display:flex;flex:0 0 auto;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;background:var(--card)}
-.lang-toggle button,.tier-toggle button{padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--ink-2);font-weight:600;font-size:13px}
-.lang-toggle button.active,.tier-toggle button.active{background:var(--accent);color:var(--on-accent)}
+.lang-toggle,.tier-toggle{display:flex;flex:0 0 auto;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;background:var(--card);position:relative}
+/* The pill slides between the choices. Its width is set from the active
+   button rather than assumed at 50%, because "Libre" and "Une assiette
+   entière" are nothing like the same width. */
+.seg-ind{position:absolute;top:0;left:0;height:100%;border-radius:999px;background:var(--accent);
+  pointer-events:none;z-index:0;opacity:0;
+  transition:transform .26s cubic-bezier(.4,0,.2,1),width .26s cubic-bezier(.4,0,.2,1),opacity .15s ease}
+@media (prefers-reduced-motion:reduce){.seg-ind{transition:none}}
+.lang-toggle button,.tier-toggle button{padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--ink-2);font-weight:600;font-size:13px;
+  position:relative;z-index:1;transition:color .2s ease;cursor:pointer;white-space:nowrap}
+/* the pill carries the fill now, so the button only changes its ink */
+.lang-toggle button.active,.tier-toggle button.active{background:transparent;color:var(--on-accent)}
 
 /* ---------- layout ---------- */
 main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
@@ -915,6 +924,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .plate-note.ok{border-left-style:solid;color:var(--ink-2);background:var(--bg)}
 .plate-note.info{border-left-style:dotted;color:var(--ink-3);background:var(--bg);font-style:italic}
 .plate-caveat{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+.plate-split{margin:0 0 18px;font-size:13px;line-height:1.55;color:var(--ink-2);
+  padding:10px 14px;border-radius:10px;background:var(--chip)}
 
 @media (max-width:600px){
   .axis-row{grid-template-columns:96px 1fr 24px;gap:9px}

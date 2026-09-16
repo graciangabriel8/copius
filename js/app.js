@@ -326,6 +326,8 @@
     el("tier-full").textContent = t.tierFull;
     el("tier-free").classList.toggle("active", FREE_MODE);
     el("tier-full").classList.toggle("active", !FREE_MODE);
+    paintSeg("tierToggle");
+    paintSeg("langToggle");
     el("tierNote").textContent = FREE_MODE ? t.tierNoteFree : "";
     var t2 = t;
     fillSel("priceBand", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceBand);
@@ -1410,7 +1412,9 @@
         esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
       '<div class="axis-grid wheel">' + wheel + "</div>" +
       (plateWhyOpen
-        ? (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
+        ? '<p class="plate-split">' +
+            esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
+          (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
           (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "")
         : "") +
       (r.structure.length
@@ -1419,6 +1423,26 @@
         : "") +
       cohesion +
       '<p class="plate-caveat">' + esc(t.plateNoTexture) + "</p>";
+  }
+
+  /* Slide the pill to whichever choice is active. Measured, not assumed: the
+     two labels in a group are rarely the same width. A group that is not on
+     screen measures zero, so this runs after the panel is shown, never before. */
+  function paintSeg(id) {
+    var g = el(id);
+    if (!g) return;
+    var on = g.querySelector("button.active");
+    var ind = g.querySelector(".seg-ind");
+    if (!ind) {
+      ind = document.createElement("span");
+      ind.className = "seg-ind";
+      ind.setAttribute("aria-hidden", "true");
+      g.insertBefore(ind, g.firstChild);
+    }
+    if (!on || !on.offsetWidth) { ind.style.opacity = "0"; return; }
+    ind.style.opacity = "1";
+    ind.style.width = on.offsetWidth + "px";
+    ind.style.transform = "translateX(" + on.offsetLeft + "px)";
   }
 
   function renderPlateAll() {
@@ -1439,6 +1463,8 @@
     el("plateFree").classList.toggle("active", plateMode === "free");
     el("labModePair").classList.toggle("active", labMode === "pair");
     el("labModePlate").classList.toggle("active", labMode === "plate");
+    paintSeg("labModes");
+    paintSeg("plateModes");
     fillPlateRole();
     fillPlateIng();
     renderPlateSlots();
@@ -1451,6 +1477,9 @@
     el("labPair").hidden = m !== "pair";
     el("labPlate").hidden = m !== "plate";
     renderPlateAll();
+    /* plateModes lives inside labPlate: while that was hidden it measured zero,
+       so the pill can only be placed once the panel is on screen. */
+    paintSeg("plateModes");
   }
   function setPlateMode(m) {
     if (m === plateMode) return;

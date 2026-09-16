@@ -186,7 +186,9 @@
        c carries everything a rule may look at: A (how many ingredients carry
        each axis), roles, n, loud (how many loud axes are doubled up) and
        distinct (how many axes appear at all). */
-    var loudCount = LOUD.filter(function (a) { return axisCount[a] >= 2; }).length;
+    var loudCount = LOUD.filter(function (a) {
+      return n && axisCount[a] / n >= 0.4;
+    }).length;
     var distinct = AXES.filter(function (a) { return axisCount[a] > 0; }).length;
     /* Salt and umami are two of the five tastes and one job on a plate: they
        are what the other flavours push against. The rules that ask for a
@@ -208,20 +210,30 @@
     var sweetPlate = flesh === 0 && roles.fruit >= Math.max(1, Math.ceil(n / 3)) &&
                      axisCount.sweet >= 2 && axisCount.sweet > savoury * 2;
 
-    var c = { A: axisCount, roles: roles, n: n, loud: loudCount, distinct: distinct,
+    /* Shares, not counts. A rule written as "fat >= 2" says something different
+       on a plate of three than on a plate of eight: it made the score reward
+       adding ingredients (random plates averaged 60 at three and 72 at eight)
+       and it missed salmon meeting lemon, which is the archetypal case of fat
+       cut by acid and has only one fatty thing on it. A share says the same
+       thing at every size. */
+    var S = {};
+    AXES.forEach(function (a) { S[a] = n ? axisCount[a] / n : 0; });
+    S.savoury = n ? savoury / n : 0;
+
+    var c = { A: axisCount, S: S, roles: roles, n: n, loud: loudCount, distinct: distinct,
               savoury: savoury, tastes: tastes, sweetPlate: sweetPlate };
 
     var RULES = [
       /* --- what is missing, heaviest first --- */
       { key: "plateNoAcid", level: "warn", points: -18,
-        test: function (c) { return c.A.fat >= 3 && c.A.sour === 0; } },
+        test: function (c) { return c.S.fat >= 0.5 && c.A.sour === 0; } },
 
       /* Sweetness has to be on the plate, not merely in the tasting notes.
          Cream and comté are both tagged sweet and a gratin is not a dessert,
          so the rule needs an actual sweet component before it says anything. */
       { key: "plateSweetFlat", level: "warn", points: -15,
         test: function (c) {
-          return c.roles.fruit >= 1 && c.A.sweet >= 2 && c.A.sour === 0 && c.A.bitter === 0;
+          return c.roles.fruit >= 1 && c.S.sweet >= 0.5 && c.A.sour === 0 && c.A.bitter === 0;
         } },
 
       { key: "plateNoSalt", level: "warn", points: -14,
@@ -231,16 +243,16 @@
         test: function (c) { return c.loud >= 4; } },
 
       { key: "plateAllQuiet", level: "warn", points: -12,
-        test: function (c) { return c.A.quiet >= c.n && c.loud === 0; } },
+        test: function (c) { return c.S.quiet >= 1 && c.loud === 0; } },
 
       { key: "plateHeatAlone", level: "warn", points: -10,
-        test: function (c) { return c.A.heat >= 2 && c.A.fat === 0 && c.A.sweet === 0; } },
+        test: function (c) { return c.S.heat >= 0.4 && c.A.fat === 0 && c.A.sweet === 0; } },
 
       { key: "plateBitterUnchecked", level: "warn", points: -10,
-        test: function (c) { return c.A.bitter >= 2 && c.A.fat === 0 && c.A.sweet === 0; } },
+        test: function (c) { return c.S.bitter >= 0.4 && c.A.fat === 0 && c.A.sweet === 0; } },
 
       { key: "plateAcidPiling", level: "warn", points: -10,
-        test: function (c) { return c.A.sour >= 3 && c.A.fat === 0; } },
+        test: function (c) { return c.S.sour >= 0.6 && c.A.fat === 0; } },
 
       /* Of the five tastes, two or fewer on a plate of four is a plate playing
          one idea — teachable in a way "four distinct axes" never was. */
@@ -251,43 +263,69 @@
         test: function (c) { return !c.sweetPlate && c.n >= 4 && c.A.aroma === 0 && c.A.depth === 0; } },
 
       /* --- what is working --- */
+      /* Each leg has to be a real presence, not a single token ingredient: on a
+         plate of eight, "one of each" is almost unavoidable and the bonus was
+         being collected for nothing. One is enough on a trio, two from five up. */
       { key: "plateTripod", level: "ok", points: 12,
-        test: function (c) { return !c.sweetPlate && c.A.sour >= 1 && c.A.fat >= 1 && c.savoury >= 1; } },
+        test: function (c) {
+          var need = Math.max(1, Math.round(c.n * 0.25));
+          return !c.sweetPlate && c.A.sour >= need && c.A.fat >= need && c.savoury >= need;
+        } },
 
       { key: "plateFatMeetsAcid", level: "ok", points: 6,
-        test: function (c) { return c.A.fat >= 2 && c.A.sour >= 1; } },
+        test: function (c) { return c.S.fat >= 0.3 && c.A.sour >= 1; } },
 
       { key: "plateSaltMeetsSweet", level: "ok", points: 4,
-        test: function (c) { return c.savoury >= 1 && c.A.sweet >= 1; } },
+        test: function (c) { return c.S.savoury >= 0.25 && c.S.sweet >= 0.25; } },
 
       /* The dessert’s own tripod: sugar, fat and something sharp or bitter to
          stop it cloying — the reason lemon meets butter and chocolate meets
          raspberry. Only ever read on a plate that is actually sweet. */
       { key: "plateSweetTripod", level: "ok", points: 12,
         test: function (c) {
-          return c.sweetPlate && c.A.fat >= 1 && (c.A.sour >= 1 || c.A.bitter >= 1);
+          var need = Math.max(1, Math.round(c.n * 0.25));
+          return c.sweetPlate && c.A.fat >= need && (c.A.sour >= need || c.A.bitter >= need);
         } },
 
       { key: "plateAromaLift", level: "ok", points: 3,
-        test: function (c) { return c.A.aroma >= 1 && c.loud < 4; } },
+        test: function (c) { return c.S.aroma >= 0.34 && c.loud < 4; } },
 
       { key: "plateDepthAnchor", level: "ok", points: 3,
-        test: function (c) { return c.A.depth >= 1 && c.savoury >= 1; } }
+        test: function (c) { return c.S.depth >= 0.34 && c.savoury >= 1; } }
     ];
 
     /* A neutral plate that trips nothing sits here. Not a half-mark out of a
        hundred — the score is a reading, and its meaning is the band. */
     var BASE = 55;
-    var score = null, band = null;
+    var flavour = null, cohesion = null, score = null, band = null;
 
     if (n >= MIN_JUDGED) {
       RULES.forEach(function (rule) {
         if (rule.test(c)) notes.push({ level: rule.level, key: rule.key, points: rule.points });
       });
-      score = BASE;
-      notes.forEach(function (nt) { score += nt.points; });
+      flavour = BASE;
+      notes.forEach(function (nt) { flavour += nt.points; });
+      flavour = Math.max(0, Math.min(100, flavour));
+
+      /* Balance alone does not say whether a plate is any good. Measured over
+         the trios and the chefs' dishes against 4 000 random plates, the
+         flavour reading separates real cooking from ingredients drawn out of a
+         hat by three points; the recorded accords separate them by fifty —
+         random plates have a median accord density of zero. Breadth across the
+         tastes is something a scattered plate gets by accident. Agreeing is
+         not. So the headline score is both, and weighted toward the half that
+         carries the signal.
+
+         A bridge counts, at 40%: two things that have never been recorded
+         together but share a neighbour are not strangers. */
+      cohesion = 0;
+      if (rows.length) {
+        var bridged = rows.filter(function (x) { return x.verdict === "mid"; }).length;
+        cohesion = Math.round(100 * (direct + 0.4 * bridged) / rows.length);
+      }
+      score = Math.round(0.4 * flavour + 0.6 * cohesion);
       score = Math.max(0, Math.min(100, score));
-      band = score >= 80 ? "balanced" : score >= 62 ? "sound" : score >= 42 ? "uneven" : "off";
+      band = score >= 74 ? "balanced" : score >= 56 ? "sound" : score >= 36 ? "uneven" : "off";
       /* Loudest first inside each level, so the biggest lever is the first
          thing read. */
       notes.sort(function (x, y) {
@@ -338,6 +376,8 @@
       direct: direct,
       lonely: lonely,
       score: score,        // null below MIN_JUDGED — too little to read
+      flavour: flavour,    // the sixteen readings alone
+      cohesion: cohesion,  // how much of the plate the atlas has recorded together
       band: band,
       notes: notes,        // the flavour reading, each note carrying its weight
       structure: structure // recorded-together, which earns no points
