@@ -30,7 +30,12 @@
     spices: "seasoning", herbs: "seasoning",
     condiments: "seasoning", flowers: "seasoning",
     fruits: "fruit", sweet: "fruit",
-    cellar: "aside", infusions: "aside", texture: "aside"
+    cellar: "aside", infusions: "aside", texture: "aside",
+    /* The bases — hollandaise, béchamel, the fonds — carry no flavour tags and
+       no pairings of their own. The caller synthesises a record for each from
+       the ingredients it lists, so by the time the engine sees one it is an
+       ingredient like any other, under this category. */
+    __base: "sauce"
   };
 
   var ROLE_OVERRIDE = {
@@ -41,7 +46,7 @@
     egg: "protein", "century-egg": "protein", "salted-duck-egg": "protein"
   };
 
-  var ROLES = ["protein", "vegetable", "starch", "fat", "seasoning", "fruit", "aside"];
+  var ROLES = ["protein", "vegetable", "starch", "fat", "sauce", "seasoning", "fruit", "aside"];
 
   function roleOf(ing) {
     return ROLE_OVERRIDE[ing.id] || ROLE_BY_CAT[ing.cat] || "aside";
@@ -384,15 +389,29 @@
     };
   }
 
-  /* The guided plate: the shape of a plate taught as a plate, one slot per
-     thing it needs. Not a rule about cooking — a scaffold for someone who has
-     not built one before, and Libre mode is there for everyone else. */
-  var GUIDED = [
-    { role: "protein", n: 1 },
-    { role: "vegetable", n: 2 },
-    { role: "starch", n: 1 },
-    { role: "fat", n: 1 },
-    { role: "seasoning", n: 2 }
+  /* The guided plate: what a plate of each kind usually wants, one slot per
+     thing. The slots are a suggestion and never a gate — nothing here refuses
+     an ingredient or holds a plate incomplete.
+
+     Sized against the atlas's own 40 trios and 39 chef dishes rather than
+     invented. Savoury plates there carry a protein in 65% of cases, a fat in
+     57%, a vegetable in 55%, a seasoning in 43%; sweet ones carry fruit or
+     sweet pantry in 100% and average 1.8 of them. The one place these
+     templates knowingly depart from that corpus is the starch, which appears
+     in 12% of records — the records are headline lists that leave out what a
+     cook assumes, and French service teaches the plate with a féculent on it. */
+  var TEMPLATES = [
+    { id: "main", slots: [
+      { role: "protein", n: 1 }, { role: "vegetable", n: 2 },
+      { role: "starch", n: 1 }, { role: "sauce", n: 1 }, { role: "seasoning", n: 1 }
+    ] },
+    { id: "starter", slots: [
+      { role: "vegetable", n: 2 }, { role: "protein", n: 1 },
+      { role: "sauce", n: 1 }, { role: "seasoning", n: 1 }
+    ] },
+    { id: "dessert", slots: [
+      { role: "fruit", n: 2 }, { role: "fat", n: 1 }, { role: "seasoning", n: 1 }
+    ] }
   ];
 
   var MAX_FREE = 15;
@@ -413,9 +432,9 @@
   window.COPIUS_PLATE = {
     ROLES: ROLES,
     AXES: AXES,
+    TEMPLATES: TEMPLATES,
     PRIMARY: PRIMARY,
     SUPPORT: SUPPORT,
-    GUIDED: GUIDED,
     MAX_FREE: MAX_FREE,
     AXIS_BY_TAG: AXIS_BY_TAG,
     roleOf: roleOf,

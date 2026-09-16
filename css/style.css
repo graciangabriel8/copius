@@ -839,7 +839,11 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 /* ---------- the plate builder ---------- */
 .lab-modes,.plate-modes{margin:0 0 18px;width:max-content;max-width:100%}
 .plate-modes{margin-top:2px}
-.plate-hint{margin:0 0 16px}
+.plate-hint{margin:0 0 10px}
+.plate-tpl-row{margin:0 0 16px}
+.plate-tpl-row[hidden]{display:none}
+.plate-tpl-row select{font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);
+  border-radius:10px;background:var(--card);color:var(--ink);max-width:100%}
 .plate-add{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
 .plate-add select{
   font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);

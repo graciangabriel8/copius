@@ -85,11 +85,59 @@
                });
   }
 
-  var ING, byId, PAIRS, EDGE_COUNT;
+  /* ---------- bases as plate items ----------
+     A sauce is a thing a cook puts on a plate, and the atlas already holds 45
+     of them — but as bases, with no flavour tags and no pairings of their own.
+     What every one of them does have is the list of what goes into it, so each
+     becomes a synthetic ingredient built from its parts.
+
+     Two judgements, both deliberately conservative. Its flavour is the notes
+     carried by at least two of its ingredients, capped at four, so a sauce
+     reads like one ingredient rather than a flavour bomb that swamps every
+     axis on the plate. Its pairings are the things that agree with at least
+     two of its parts, so hollandaise inherits what butter AND egg yolk like
+     rather than everything either of them has ever been served with. */
+  function buildBaseItems(byIngId) {
+    return BASES.map(function (b) {
+      var parts = (b.ingredients || []).filter(function (x) { return byIngId[x]; });
+      if (!parts.length) return null;
+      var flavN = {}, pairN = {};
+      parts.forEach(function (id) {
+        var ing = byIngId[id];
+        (ing.flavor || []).forEach(function (f) { flavN[f] = (flavN[f] || 0) + 1; });
+        (ing.pairs || []).forEach(function (pp) { pairN[pp] = (pairN[pp] || 0) + 1; });
+      });
+      var flavor = Object.keys(flavN).filter(function (f) { return flavN[f] >= 2; })
+        .sort(function (x, y) { return flavN[y] - flavN[x]; }).slice(0, 4);
+      /* A sauce of two ingredients can have nothing carried twice; fall back to
+         what its parts do say rather than shipping a tasteless sauce. */
+      if (!flavor.length) {
+        flavor = Object.keys(flavN).sort(function (x, y) { return flavN[y] - flavN[x]; }).slice(0, 3);
+      }
+      var pairs = Object.keys(pairN).filter(function (pp) {
+        return pairN[pp] >= 2 && byIngId[pp];
+      });
+      return {
+        id: BASE_PREFIX + b.id, cat: "__base", isBase: true,
+        name: { en: b.name.en, fr: b.name.fr },
+        latin: "", origin: { en: "", fr: "" }, season: [],
+        flavor: flavor, pairs: pairs, svg: "",
+        story: { en: "", fr: "" }, tip: { en: "", fr: "" }
+      };
+    }).filter(Boolean);
+  }
+
+  var ING, byId, PAIRS, EDGE_COUNT, BASE_ITEMS = [];
+  var BASE_PREFIX = "base:";
+
   function rebuildIndex() {
     ING = tierBase().concat(myIngs);
     byId = {};
     ING.forEach(function (i) { byId[i.id] = i; });
+    /* Built from the ingredient index, then added to it — the lab can reach a
+       sauce, and nothing else (grid, search, counters) iterates BASE_ITEMS. */
+    BASE_ITEMS = FREE_MODE ? [] : buildBaseItems(byId);
+    BASE_ITEMS.forEach(function (b) { byId[b.id] = b; });
     // Symmetric pairing graph: a declared pair counts in both directions.
     PAIRS = {};
     ING.forEach(function (i) { PAIRS[i.id] = new Set(); });
@@ -1132,6 +1180,7 @@
   var PLATE = window.COPIUS_PLATE;
   var labMode = "pair";           // pair | plate
   var plateMode = "guided";       // guided | free
+  var plateTpl = "main";          // which guided template, when guided
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
   var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
@@ -1158,40 +1207,44 @@
     return name(byId[it.id]) + (f ? " · " + f : "");
   }
 
-  /* Guided mode is a scaffold: the roles a plate needs, and how many of each.
-     A role with every slot filled drops out of the picker rather than being
-     refused after the fact. */
+  function template() {
+    return PLATE.TEMPLATES.filter(function (t) { return t.id === plateTpl; })[0] ||
+           PLATE.TEMPLATES[0];
+  }
+
+  /* What the chosen template suggests, and how much of it is on the plate.
+     A suggestion, not a gate: a filled slot no longer removes its role from the
+     picker, and a plate with empty slots is not incomplete. The atlas's own 79
+     curated plates do not fill any fixed grid — none of them satisfied the one
+     this used to enforce — so the slots show what a plate of this kind usually
+     wants and stop there. */
   function roleRoom() {
     var used = {};
     plate.forEach(function (it) {
       var r = PLATE.roleOf(byId[it.id]);
       used[r] = (used[r] || 0) + 1;
     });
-    return PLATE.GUIDED.map(function (g) {
+    return template().slots.map(function (g) {
       return { role: g.role, n: g.n, filled: Math.min(used[g.role] || 0, g.n) };
     });
   }
-  function plateFull() {
-    if (plateMode === "free") return plate.length >= PLATE.MAX_FREE;
-    return roleRoom().every(function (g) { return g.filled >= g.n; });
-  }
+  /* One ceiling, both modes. Guided never blocks on its slots. */
+  function plateFull() { return plate.length >= PLATE.MAX_FREE; }
 
   function fillPlateRole() {
     var t = T(), sel = el("plateRole"), prev = sel.value, opts;
-    if (plateMode === "guided") {
-      opts = roleRoom().filter(function (g) { return g.filled < g.n; })
-        .map(function (g) {
-          return '<option value="' + g.role + '">' + esc(t.roles[g.role]) +
-            " (" + g.filled + "/" + g.n + ")</option>";
-        }).join("");
-    } else {
-      opts = '<option value="">' + esc(t.plateRoleAll) + "</option>" +
-        PLATE.ROLES.map(function (r) {
-          return '<option value="' + r + '">' + esc(t.roles[r]) + "</option>";
-        }).join("");
-    }
+    opts = '<option value="">' + esc(t.plateRoleAll) + "</option>" +
+      PLATE.ROLES.map(function (r) {
+        return '<option value="' + r + '">' + esc(t.roles[r]) + "</option>";
+      }).join("");
     sel.innerHTML = opts;
     if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
+    else if (plateMode === "guided") {
+      /* Point at the next thing the template is still missing, without
+         refusing anything else. */
+      var gap = roleRoom().filter(function (g) { return g.filled < g.n; })[0];
+      if (gap) sel.value = gap.role;
+    }
   }
 
   /* The picker was one flat list of 1 838 names, which is unusable: finding a
@@ -1214,7 +1267,7 @@
     var sel = el("plateIng"), prev = sel.value, role = el("plateRole").value;
     var t = T(), q = norm(el("plateSearch").value || "");
 
-    var list = ING.filter(function (i) {
+    var list = ING.concat(BASE_ITEMS).filter(function (i) {
       if (role && PLATE.roleOf(i) !== role) return false;
       if (plate.some(function (it) { return it.id === i.id; })) return false;
       return plateMatches(i, q);
@@ -1469,6 +1522,14 @@
     el("labModePlate").classList.toggle("active", labMode === "plate");
     paintSeg("labModes");
     paintSeg("plateModes");
+    /* Only guided has a template to choose. */
+    el("plateTplRow").hidden = plateMode !== "guided";
+    var tsel = el("plateTpl");
+    tsel.innerHTML = PLATE.TEMPLATES.map(function (x) {
+      return '<option value="' + x.id + '">' + esc(t.templates[x.id]) + "</option>";
+    }).join("");
+    tsel.value = plateTpl;
+    tsel.setAttribute("aria-label", t.plateTplLabel);
     fillPlateRole();
     fillPlateIng();
     renderPlateSlots();
@@ -1493,17 +1554,9 @@
        family, which read as a broken search rather than as an active filter. */
     el("plateRole").value = "";
     el("plateSearch").value = "";
-    if (m === "guided") {
-      /* Guided has room for seven; keep the first seven rather than silently
-         dropping whichever the loop reached last. */
-      var room = {}, kept = [];
-      PLATE.GUIDED.forEach(function (g) { room[g.role] = g.n; });
-      plate.forEach(function (it) {
-        var role = PLATE.roleOf(byId[it.id]);
-        if (room[role] > 0) { room[role]--; kept.push(it); }
-      });
-      plate = kept;
-    }
+    /* Nothing is dropped on the way in or out: the slots are a suggestion, so a
+       plate that does not match the template is simply a plate with empty
+       slots rather than a plate that has to lose ingredients. */
     renderPlateAll();
   }
 
@@ -1912,6 +1965,11 @@
   el("labModePlate").addEventListener("click", function () { setLabMode("plate"); });
   el("plateGuided").addEventListener("click", function () { setPlateMode("guided"); });
   el("plateFree").addEventListener("click", function () { setPlateMode("free"); });
+  el("plateTpl").addEventListener("change", function (e) {
+    plateTpl = e.target.value;
+    el("plateRole").value = "";
+    renderPlateAll();
+  });
   el("plateRole").addEventListener("change", fillPlateIng);
   el("plateSearch").addEventListener("input", fillPlateIng);
   el("plateIng").addEventListener("change", fillPlateForm);

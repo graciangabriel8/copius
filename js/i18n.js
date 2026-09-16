@@ -114,7 +114,9 @@ window.I18N = {
     plateHintFree: "Anything you like, up to {n} ingredients.",
     plateRoleAll: "Any role",
     plateAddBtn: "Add to the plate",
-    plateSearchPh: "Search an ingredient, a family, a flavour\u2026",
+    plateSearchPh: "Search an ingredient, a sauce, a family, a flavour\u2026",
+    plateTplLabel: "What kind of plate",
+    templates: { main: "Main course", starter: "Starter or salad", dessert: "Dessert" },
     plateNoMatch: "Nothing matches",
     plateShowing: "{n} to choose from",
     plateWhy: "Why this grade",
@@ -130,8 +132,8 @@ window.I18N = {
     plateNoTexture: "The lab reads what is on the plate, as a finished plate — seasoning you would add without thinking is not counted unless you put it there. Texture is not in the atlas yet, so the lab says nothing about that at all.",
     roles: {
       protein: "Protein", vegetable: "Vegetable", starch: "Starch",
-      fat: "Fat or dairy", seasoning: "Seasoning", fruit: "Fruit or sweet",
-      aside: "On the side"
+      fat: "Fat or dairy", sauce: "Sauce", seasoning: "Seasoning",
+      fruit: "Fruit or sweet", aside: "On the side"
     },
     axes: {
       sweet: "Sweet", salty: "Salt", sour: "Acid", bitter: "Bitter", umami: "Umami",
@@ -230,6 +232,7 @@ window.I18N = {
       shellfish: "Shellfish & molluscs",
       roe: "Roe & caviar",
       texture: "Texture agents",
+      __base: "Sauces & bases",
       cellar: "Wines & spirits",
       infusions: "Tea & infusions",
       meat: "Meat & poultry",
@@ -363,7 +366,9 @@ window.I18N = {
     plateHintFree: "Ce que vous voulez, jusqu’à {n} ingrédients.",
     plateRoleAll: "Tous les postes",
     plateAddBtn: "Ajouter à l’assiette",
-    plateSearchPh: "Rechercher un ingr\u00e9dient, une famille, une saveur\u2026",
+    plateSearchPh: "Rechercher un ingr\u00e9dient, une sauce, une famille, une saveur\u2026",
+    plateTplLabel: "Quel genre d\u2019assiette",
+    templates: { main: "Plat principal", starter: "Entr\u00e9e ou salade", dessert: "Dessert" },
     plateNoMatch: "Aucun r\u00e9sultat",
     plateShowing: "{n} \u00e0 choisir",
     plateWhy: "Pourquoi cette note",
@@ -379,8 +384,8 @@ window.I18N = {
     plateNoTexture: "Le labo lit ce qui est dans l’assiette, comme une assiette finie — l’assaisonnement que vous ajouteriez sans y penser n’est pas compté tant que vous ne l’y mettez pas. La texture n’est pas encore dans l’atlas : le labo n’en dit donc rien.",
     roles: {
       protein: "Protéine", vegetable: "Légume", starch: "Féculent",
-      fat: "Gras ou laitier", seasoning: "Assaisonnement", fruit: "Fruit ou sucré",
-      aside: "À côté"
+      fat: "Gras ou laitier", sauce: "Sauce", seasoning: "Assaisonnement",
+      fruit: "Fruit ou sucré", aside: "À côté"
     },
     axes: {
       sweet: "Sucré", salty: "Salé", sour: "Acide", bitter: "Amer", umami: "Umami",
@@ -478,6 +483,7 @@ window.I18N = {
       shellfish: "Crustacés & coquillages",
       roe: "Œufs de poisson & caviar",
       texture: "Texturants",
+      __base: "Sauces & fonds",
       cellar: "Cave & spiritueux",
       infusions: "Thés & infusions",
       meat: "Viandes & volailles",
