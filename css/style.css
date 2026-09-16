@@ -836,6 +836,18 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);
   border-radius:10px;background:var(--card);color:var(--ink);max-width:100%}
 .plate-add .btn-primary{flex:0 0 auto}
+.plate-add input[type=search]{
+  font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);
+  border-radius:10px;background:var(--card);color:var(--ink);min-width:200px;flex:1 1 200px}
+.plate-add select{flex:0 1 auto}
+.plate-count{margin:-8px 0 16px;font-size:12.5px}
+.plate-count:empty{display:none}
+
+/* the grade is always on; its arithmetic is asked for */
+.score-why{grid-column:1/-1;justify-self:start;margin-top:2px;border:0;background:none;
+  padding:4px 0;font:inherit;font-size:12.5px;color:var(--ink-3);cursor:pointer;
+  text-decoration:underline;text-underline-offset:3px}
+.score-why:hover{color:var(--ink)}
 .plate-add .btn-primary[disabled]{opacity:.45;cursor:not-allowed}
 
 /* guided slots: what a plate needs, and how much of it is there */

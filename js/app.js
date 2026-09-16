@@ -1127,6 +1127,7 @@
   var labMode = "pair";           // pair | plate
   var plateMode = "guided";       // guided | free
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
+  var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
   /* A form is not a garnish on the name. js/data-trees.js records a different
      set of pairings for each preparation, because purée and frites do not agree
@@ -1187,18 +1188,58 @@
     if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
   }
 
+  /* The picker was one flat list of 1 838 names, which is unusable: finding a
+     duck meant scrolling past every fruit. Now it is grouped by family in the
+     atlas's own order, and a search box narrows it — the only way to reach
+     things the atlas records but does not file together, citrus being the one
+     that prompted this: 83 entries carry a citrus note and they sit under
+     fruits, condiments and the cellar alike, so no amount of scrolling finds
+     them as a group. Typing "citr" does. */
+  function plateMatches(i, q) {
+    if (!q) return true;
+    var t = T();
+    var hay = norm(i.name.en + " " + i.name.fr + " " + catLabel(i.cat) + " " +
+      (i.latin || "") + " " +
+      (i.flavor || []).map(function (f) { return t.flavors[f] + " " + f; }).join(" "));
+    return hay.indexOf(q) !== -1;
+  }
+
   function fillPlateIng() {
     var sel = el("plateIng"), prev = sel.value, role = el("plateRole").value;
-    var t = T();
+    var t = T(), q = norm(el("plateSearch").value || "");
+
     var list = ING.filter(function (i) {
       if (role && PLATE.roleOf(i) !== role) return false;
-      return !plate.some(function (it) { return it.id === i.id; });
-    }).sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); });
-    sel.innerHTML = '<option value="">' + esc(t.choose) + "</option>" +
-      list.map(function (i) {
-        return '<option value="' + i.id + '">' + esc(name(i)) + " · " + esc(catLabel(i.cat)) + "</option>";
+      if (plate.some(function (it) { return it.id === i.id; })) return false;
+      return plateMatches(i, q);
+    });
+
+    /* Grouped in CAT_ORDER, which is the order the atlas already presents its
+       families in — a second ordering here would be a second thing to keep. */
+    var order = window.CAT_ORDER || [];
+    var groups = {};
+    list.forEach(function (i) { (groups[i.cat] = groups[i.cat] || []).push(i); });
+    var cats = Object.keys(groups).sort(function (a, b) {
+      var ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+
+    var body = cats.map(function (cat) {
+      var opts = groups[cat].sort(function (a, b) {
+        return name(a).localeCompare(name(b), state.lang, CMP);
+      }).map(function (i) {
+        return '<option value="' + i.id + '">' + esc(name(i)) + "</option>";
       }).join("");
+      return '<optgroup label="' + esc(catLabel(cat)) + " \u00b7 " + groups[cat].length + '">' +
+        opts + "</optgroup>";
+    }).join("");
+
+    sel.innerHTML = '<option value="">' +
+      esc(list.length ? t.choose : t.plateNoMatch) + "</option>" + body;
     if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
+    el("plateCount").textContent = q || role
+      ? t.plateShowing.replace("{n}", list.length)
+      : "";
     fillPlateForm();
   }
 
@@ -1246,6 +1287,46 @@
     }).join("");
   }
 
+  /* One line per pair, chosen from what is actually true of that pair rather
+     than one of three sentences repeated down the column. Everything it reads
+     — the shared notes, the bridge ingredients, the family — is already in the
+     atlas; saying which is what makes the row worth reading twice. */
+  function pairNote(row) {
+    var t = T(), A = byId[row.a.id], B = byId[row.b.id];
+    var shared = (A.flavor || []).filter(function (f) {
+      return (B.flavor || []).indexOf(f) !== -1;
+    });
+    var notes = shared.map(function (f) { return t.flavors[f].toLowerCase(); });
+    function list(xs) {
+      if (xs.length < 2) return xs[0] || "";
+      return xs.slice(0, -1).join(", ") + " " + t.andWord + " " + xs[xs.length - 1];
+    }
+
+    if (row.verdict === "ok") {
+      if (A.cat === B.cat) return t.pairOkFamily.replace("{family}", catLabel(A.cat).toLowerCase());
+      if (notes.length >= 2) return t.pairOkNotes.replace("{notes}", list(notes.slice(0, 3)));
+      if (notes.length === 1) return t.pairOkOneNote.replace("{notes}", notes[0]);
+      return t.pairOkContrast;
+    }
+
+    if (row.verdict === "mid") {
+      var pa = itemPairs(row.a.id, row.a.form), pb = itemPairs(row.b.id, row.b.form);
+      var via = pa.filter(function (x) {
+        return x !== row.b.id && x !== row.a.id && pb.indexOf(x) !== -1 && byId[x];
+      }).map(function (x) { return name(byId[x]); })
+        .sort(function (x, y) { return x.localeCompare(y, state.lang, CMP); });
+      if (via.length > 3) {
+        return t.pairBridgeMany.replace("{n}", via.length).replace("{via}", list(via.slice(0, 2)));
+      }
+      if (via.length) return t.pairBridgeOne.replace("{via}", list(via));
+      return t.labBridgeShort;
+    }
+
+    if (A.cat === B.cat) return t.pairNoneFamily;
+    if (notes.length) return t.pairNoneNotes.replace("{notes}", list(notes.slice(0, 2)));
+    return t.pairNoneCold;
+  }
+
   function renderPlateVerdict() {
     var t = T(), box = el("plateVerdict");
     if (plate.length < 1) { box.innerHTML = ""; return; }
@@ -1280,7 +1361,10 @@
         '<div class="score-line"><span class="score-label">' + esc(t.plateScore) + "</span>" +
         '<span class="score-band ' + r.band + '">' + esc(t[bandKey]) + "</span></div>" +
         '<div class="score-bar"><span class="' + r.band + '" style="width:' + r.score + '%"></span></div>' +
-        '<div class="score-n"><b>' + r.score + "</b><span>/ 100</span></div></div>";
+        '<div class="score-n"><b>' + r.score + "</b><span>/ 100</span></div>" +
+        '<button type="button" class="score-why" data-plate-why aria-expanded="' +
+          (plateWhyOpen ? "true" : "false") + '">' +
+          esc(plateWhyOpen ? t.plateHide : t.plateWhy) + "</button></div>";
     }
 
     /* The five tastes are drawn in full, zeroes included: on this wheel an
@@ -1308,9 +1392,6 @@
     var cohesion = "";
     if (r.rows.length) {
       var order = { ok: 0, mid: 1, none: 2 };
-      /* The long bridge line ends in a colon that expects the bridge chips
-         after it, and a row has no room for them. */
-      var label = { ok: t.labDirect, mid: t.labBridgeShort, none: t.labNone };
       cohesion = "<h3>" + esc(t.plateCohesion) + ' <span class="lab-set-count">' +
         esc(t.labSetCount.replace("{n}", r.direct).replace("{t}", r.rows.length)) + "</span></h3>" +
         '<ul class="lab-set">' + r.rows.slice().sort(function (x, y) {
@@ -1320,7 +1401,7 @@
             esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
             esc(itemLabel(row.b)) + "</span>" +
             '<span class="verdict ' + row.verdict + '">' +
-            (row.verdict === "ok" ? "&#10003;&nbsp; " : "") + esc(label[row.verdict]) + "</span></li>";
+            (row.verdict === "ok" ? "&#10003;&nbsp; " : "") + esc(pairNote(row)) + "</span></li>";
         }).join("") + "</ul>";
     }
 
@@ -1328,8 +1409,10 @@
       "<h3>" + esc(t.plateTastes) + ' <span class="lab-set-count">' +
         esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
       '<div class="axis-grid wheel">' + wheel + "</div>" +
-      (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
-      (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "") +
+      (plateWhyOpen
+        ? (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
+          (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "")
+        : "") +
       (r.structure.length
         ? "<h3>" + esc(t.plateStructure) + "</h3>" +
           '<ul class="plate-notes">' + r.structure.map(noteLi).join("") + "</ul>"
@@ -1344,15 +1427,18 @@
       ? t.plateHintGuided
       : t.plateHintFree.replace("{n}", PLATE.MAX_FREE);
     el("plateAdd").textContent = t.plateAddBtn;
+    placeholder("plateSearch", t.plateSearchPh);
+    el("plateSearch").setAttribute("aria-label", t.plateSearchPh);
     el("plateAdd").disabled = plateFull();
     el("plateGuided").textContent = t.plateGuided;
     el("plateFree").textContent = t.plateFree;
     el("labModePair").textContent = t.labModePair;
     el("labModePlate").textContent = t.labModePlate;
-    el("plateGuided").className = plateMode === "guided" ? "on" : "";
-    el("plateFree").className = plateMode === "free" ? "on" : "";
-    el("labModePair").className = labMode === "pair" ? "on" : "";
-    el("labModePlate").className = labMode === "plate" ? "on" : "";
+    /* .active is what .lang-toggle/.tier-toggle style; .on lit nothing. */
+    el("plateGuided").classList.toggle("active", plateMode === "guided");
+    el("plateFree").classList.toggle("active", plateMode === "free");
+    el("labModePair").classList.toggle("active", labMode === "pair");
+    el("labModePlate").classList.toggle("active", labMode === "plate");
     fillPlateRole();
     fillPlateIng();
     renderPlateSlots();
@@ -1369,6 +1455,11 @@
   function setPlateMode(m) {
     if (m === plateMode) return;
     plateMode = m;
+    /* Guided derives the role from the next empty slot; open means no filter at
+       all. Carrying the slot's role across made open mode silently show one
+       family, which read as a broken search rather than as an active filter. */
+    el("plateRole").value = "";
+    el("plateSearch").value = "";
     if (m === "guided") {
       /* Guided has room for seven; keep the first seven rather than silently
          dropping whichever the loop reached last. */
@@ -1389,6 +1480,7 @@
     if (plate.some(function (it) { return it.id === id; })) return;
     plate.push({ id: id, form: el("plateForm").hidden ? "" : el("plateForm").value });
     el("plateIng").value = "";
+    el("plateSearch").value = "";
     fillPlateForm();
     renderPlateAll();
   }
@@ -1716,6 +1808,8 @@
     if (pp) { photoTarget = pp.getAttribute("data-photo-pick"); el("photoFile").click(); return; }
     var pd = e.target.closest("[data-photo-del]");
     if (pd) { deletePhoto(pd.getAttribute("data-photo-del")); return; }
+    var why = e.target.closest("[data-plate-why]");
+    if (why) { plateWhyOpen = !plateWhyOpen; renderPlateVerdict(); return; }
     var px = e.target.closest("[data-plate-del]");
     if (px) {
       plate.splice(parseInt(px.getAttribute("data-plate-del"), 10), 1);
@@ -1788,6 +1882,7 @@
   el("plateGuided").addEventListener("click", function () { setPlateMode("guided"); });
   el("plateFree").addEventListener("click", function () { setPlateMode("free"); });
   el("plateRole").addEventListener("change", fillPlateIng);
+  el("plateSearch").addEventListener("input", fillPlateIng);
   el("plateIng").addEventListener("change", fillPlateForm);
   el("plateAdd").addEventListener("click", addToPlate);
 
