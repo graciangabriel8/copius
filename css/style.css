@@ -893,11 +893,16 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .axis-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
 /* On the five-taste wheel a zero is drawn, not skipped — the gap is the reading. */
 .axis-grid.wheel .axis-row.empty .axis-name{color:var(--ink-3)}
+/* salt is taken for granted, not missing — it reads quietly, not as a gap */
+.axis-grid.wheel .axis-row.assumed .axis-name{color:var(--ink-2)}
+.axis-grid.wheel .axis-row.assumed .axis-bar{background:none;border:1px solid var(--border)}
+.axis-grid.wheel .axis-row.assumed .axis-n{color:var(--ink-3);font-size:11px;
+  letter-spacing:.04em;font-style:italic;white-space:nowrap}
 .axis-grid.wheel .axis-row.empty .axis-bar{border:1px dashed var(--border-strong);background:none}
 .axis-grid.wheel .axis-row.empty .axis-n{color:var(--ink-3)}
 .axis-grid.wheel .axis-bar>span{background:var(--ink)}
 .axis-row.support .axis-bar>span{background:var(--ink-3)}
-.axis-row{display:grid;grid-template-columns:132px 1fr 28px;align-items:center;gap:12px}
+.axis-row{display:grid;grid-template-columns:132px 1fr 58px;align-items:center;gap:12px}
 .axis-name{font-size:13px;color:var(--ink-2)}
 .axis-bar{height:7px;border-radius:999px;background:var(--chip);overflow:hidden}
 .axis-bar>span{display:block;height:100%;background:var(--ink-2);border-radius:999px}
@@ -938,7 +943,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   padding:10px 14px;border-radius:10px;background:var(--chip)}
 
 @media (max-width:600px){
-  .axis-row{grid-template-columns:96px 1fr 24px;gap:9px}
+  .axis-row{grid-template-columns:88px 1fr 52px;gap:9px}
   .plate-add select{width:100%}
   .plate-add .btn-primary{width:100%}
   /* The verdict is a whole sentence and carries flex:none, so on a narrow screen

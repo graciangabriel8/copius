@@ -1444,10 +1444,15 @@
     var topP = Math.max.apply(null, PLATE.PRIMARY.map(function (a) { return r.axes[a]; }).concat([1]));
     var wheel = PLATE.PRIMARY.map(function (a) {
       var v = r.axes[a];
-      return '<div class="axis-row' + (v ? "" : " empty") + '">' +
+      /* An empty spoke is a finding on four of the five. Not on salt: a cook
+         seasons, so nothing is missing when no salty ingredient is listed —
+         it is marked as taken for granted rather than drawn as a gap. */
+      var assumed = a === "salty" && !v;
+      var cls = "axis-row" + (assumed ? " assumed" : v ? "" : " empty");
+      return '<div class="' + cls + '">' +
         '<span class="axis-name">' + esc(t.axes[a]) + "</span>" +
         '<span class="axis-bar"><span style="width:' + (v ? Math.round(v / topP * 100) : 0) + '%"></span></span>' +
-        '<span class="axis-n">' + v + "</span></div>";
+        '<span class="axis-n">' + (assumed ? esc(t.plateSaltAssumed) : v) + "</span></div>";
     }).join("");
 
     var support = PLATE.SUPPORT.filter(function (a) { return r.axes[a] > 0; })

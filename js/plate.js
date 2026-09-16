@@ -195,11 +195,23 @@
       return n && axisCount[a] / n >= 0.4;
     }).length;
     var distinct = AXES.filter(function (a) { return axisCount[a] > 0; }).length;
-    /* Salt and umami are two of the five tastes and one job on a plate: they
-       are what the other flavours push against. The rules that ask for a
-       savoury anchor ask for either. */
+    /* Salt is not gradable the way the other four tastes are. A cook seasons:
+       if a plate is not salted, salt goes on it, and no tool should make
+       someone add fleur de sel to a list to stop being told the plate is
+       lacking. So salt is assumed present throughout — nothing here penalises
+       its absence, and nothing requires it to be listed before a bonus counts.
+
+       Umami is a different thing wearing the same word. It is not a seasoning
+       anyone reaches for but a property the ingredients either have or do not
+       — parmesan, anchovy, a dried mushroom — so it stays gradable. Merging the
+       two into one "savoury" quantity, as this did, was the mistake. */
     var savoury = axisCount.salty + axisCount.umami;
-    var tastes = PRIMARY.filter(function (a) { return axisCount[a] > 0; }).length;
+    var seasoned = Math.max(1, savoury);   // the cook salts; assume it
+    /* Salt counts among the five for the same reason: it is always on the
+       plate, whether or not anybody wrote it down. */
+    var tastes = PRIMARY.filter(function (a) {
+      return a === "salty" || axisCount[a] > 0;
+    }).length;
 
     /* Sweet and savoury plates are not balanced against the same rules, and
        judging a dessert by savoury ones is how this engine came to rate Pêche
@@ -226,7 +238,7 @@
     S.savoury = n ? savoury / n : 0;
 
     var c = { A: axisCount, S: S, roles: roles, n: n, loud: loudCount, distinct: distinct,
-              savoury: savoury, tastes: tastes, sweetPlate: sweetPlate };
+              savoury: savoury, seasoned: seasoned, tastes: tastes, sweetPlate: sweetPlate };
 
     var RULES = [
       /* --- what is missing, heaviest first --- */
@@ -240,9 +252,6 @@
         test: function (c) {
           return c.roles.fruit >= 1 && c.S.sweet >= 0.5 && c.A.sour === 0 && c.A.bitter === 0;
         } },
-
-      { key: "plateNoSalt", level: "warn", points: -14,
-        test: function (c) { return !c.sweetPlate && c.savoury === 0; } },
 
       { key: "plateCrowded", level: "warn", points: -14,
         test: function (c) { return c.loud >= 4; } },
@@ -274,7 +283,7 @@
       { key: "plateTripod", level: "ok", points: 12,
         test: function (c) {
           var need = Math.max(1, Math.round(c.n * 0.25));
-          return !c.sweetPlate && c.A.sour >= need && c.A.fat >= need && c.savoury >= need;
+          return !c.sweetPlate && c.A.sour >= need && c.A.fat >= need && c.seasoned >= need;
         } },
 
       { key: "plateFatMeetsAcid", level: "ok", points: 6,
@@ -296,7 +305,7 @@
         test: function (c) { return c.S.aroma >= 0.34 && c.loud < 4; } },
 
       { key: "plateDepthAnchor", level: "ok", points: 3,
-        test: function (c) { return c.S.depth >= 0.34 && c.savoury >= 1; } }
+        test: function (c) { return c.S.depth >= 0.34 && c.seasoned >= 1; } }
     ];
 
     /* A neutral plate that trips nothing sits here. Not a half-mark out of a
