@@ -62,9 +62,29 @@
   var myIngs = readList(LS_MYINGS).filter(function (i) { return i && typeof i.id === "string"; });
   myIngs.forEach(function (i) { i.custom = true; i.svg = ""; });
 
+  /* The free tier. One cut, here, because every surface reads ING: the grid,
+     search, the modal, the lab, the trios and the counters. Pairs are stripped
+     rather than filtered so a free entry shows no pairing UI at all — half a
+     pairing list is worse than none. User creations are never gated; they are
+     the visitor's own. */
+  var TIER = window.COPIUS_TIER || { MODE: "full", FREE_IDS: [] };
+  var FREE_MODE = TIER.MODE === "free";
+  var FREE_SET = FREE_MODE ? new Set(TIER.FREE_IDS) : null;
+
+  function tierBase() {
+    if (!FREE_MODE) return BASE;
+    return BASE.filter(function (i) { return FREE_SET.has(i.id); })
+               .map(function (i) {
+                 var c = {};
+                 for (var k in i) if (Object.prototype.hasOwnProperty.call(i, k)) c[k] = i[k];
+                 c.pairs = [];
+                 return c;
+               });
+  }
+
   var ING, byId, PAIRS, EDGE_COUNT;
   function rebuildIndex() {
-    ING = BASE.concat(myIngs);
+    ING = tierBase().concat(myIngs);
     byId = {};
     ING.forEach(function (i) { byId[i.id] = i; });
     // Symmetric pairing graph: a declared pair counts in both directions.
@@ -322,7 +342,10 @@
       s.luxeOnly || s.signOnly || s.priceBand !== "all" || s.flavour !== "all";
     el("stats").textContent = narrowed
       ? t.statsFiltered.replace("{n}", fmt(shown)).replace("{t}", fmt(ING.length))
-      : t.statsTpl.replace("{n}", fmt(ING.length))
+      /* The free tier has no pairings by design, and "0 recorded pairings"
+         reads as a broken site rather than as a tier. Drop the clause. */
+      : (FREE_MODE ? t.statsTplFree : t.statsTpl)
+          .replace("{n}", fmt(ING.length))
           .replace("{f}", CAT_ORDER.filter(function (c) { return ING.some(function (i) { return i.cat === c; }); }).length)
           .replace("{p}", fmt(EDGE_COUNT));
   }
@@ -901,13 +924,14 @@
       renderTree(i) +
       kinBlock(i) +
       evinNote(i) +
-      "<h3>" + esc(t.pairsWith) + "</h3>" +
-      pairBlock(pairs) +
-      (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
-        return '<p class="m-story" style="font-size:14px">· <strong>' + esc(tr.name[state.lang]) + "</strong> — " +
-          tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
-      }).join("") : "") +
-      '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>";
+      (FREE_MODE ? "" :
+        "<h3>" + esc(t.pairsWith) + "</h3>" +
+        pairBlock(pairs) +
+        (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
+          return '<p class="m-story" style="font-size:14px">· <strong>' + esc(tr.name[state.lang]) + "</strong> — " +
+            tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
+        }).join("") : "") +
+        '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>");
     el("modalBody").innerHTML = html;
   }
 
@@ -1215,9 +1239,16 @@
     renderCats();
     renderDaily();
     renderGrid();
-    fillLabSelects();
-    renderLabResult();
-    renderTrios();
+    /* The lab and the trios are the paid product. Hidden rather than emptied:
+       an empty lab invites a bug report, a missing one reads as a tier. */
+    var labEl = el("lab"), triosEl = el("triosSec");
+    if (labEl) labEl.hidden = FREE_MODE;
+    if (triosEl) triosEl.hidden = FREE_MODE;
+    if (!FREE_MODE) {
+      fillLabSelects();
+      renderLabResult();
+      renderTrios();
+    }
     renderCreations();
     /* every non-atlas view has to re-render too, or a language switch leaves it
        in the old language — keyed off state.view so a new view cannot be missed */
