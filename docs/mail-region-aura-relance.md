@@ -20,19 +20,13 @@ Monsieur,
 
 Je vous remercie pour votre réponse, et pour sa rapidité.
 
-Je me permets de revenir vers vous, car mon premier message vous a
-vraisemblablement présenté Copius comme une ressource destinée au BTS. C'est le
-cursus que je suis, et c'est de là que j'écrivais — mais ce n'est pas le public
-de l'atlas.
+Je me permets de revenir vers vous, car mon premier message a sans doute laissé
+entendre que Copius s'adressait au BTS. C'est le cursus que je suis ; ce n'est
+pas le public de l'atlas.
 
-Copius est un atlas illustré des ingrédients et des techniques de cuisine :
-1 838 produits, 135 techniques et 45 bases, en français et en anglais, chaque
-produit accompagné d'un dessin. Son usage se situe en amont du BTS — CAP
-Cuisine, CAP Commercialisation et Services en HCR, Baccalauréat professionnel
-Cuisine et CSR, Baccalauréat technologique STHR. Ce sont des formations de
-lycée, jusqu'au baccalauréat, et donc dans le périmètre que vous décrivez. C'est
-aussi à ces niveaux que la connaissance des produits s'acquiert, et que
-l'illustration manque le plus.
+Il sert les niveaux qui précèdent : CAP Cuisine et CSR, Baccalauréat
+professionnel Cuisine et CSR, Baccalauréat technologique STHR — des formations
+de lycée, jusqu'au baccalauréat, et donc dans le périmètre que vous décrivez.
 
 Dans ce cadre, les deux questions de mon précédent message restent entières :
 
@@ -46,7 +40,7 @@ Dans ce cadre, les deux questions de mon précédent message restent entières :
 Et si une édition 2026-2027 de l'appel à projets est prévue, quel en serait le
 calendrier de dépôt ?
 
-Je vous remercie par avance du temps que vous voudrez bien y consacrer.
+Je vous remercie par avance.
 
 Cordialement,
 
@@ -57,8 +51,9 @@ contact@copius.fr — https://copius.fr
 
 ## Notes avant envoi
 
-- **Les chiffres sont vérifiés au 17/09/2026** : 1 838 produits, 135 techniques,
-  45 bases. Ils bougent à chaque ajout — revérifier si l'envoi traîne.
+- **Aucun chiffre, aucune redescription.** Le premier mail décrivait déjà
+  l'atlas et il a été lu : le redécrire sonnerait comme une candidature, et une
+  candidature se classe là où deux questions se répondent.
 
 - **« Consultable sans authentification » est exact aujourd'hui.** Le site
   s'ouvre en version complète sans compte. La bascule gratuit/complet existe
@@ -75,12 +70,6 @@ contact@copius.fr — https://copius.fr
 - **La question 1 (LDE/PopLab) est celle qui décide.** Si le référencement est
   fermé aux indépendants, la voie s'arrête quel que soit le niveau visé, et il
   n'y a pas de suite à donner. C'est pour ça qu'elle est en tête cette fois.
-
-- **Ce que je n'ai pas vérifié :** que la connaissance des produits figure bien
-  aux référentiels CAP Cuisine, Bac Pro Cuisine/CSR et STHR sous cette forme. La
-  phrase reste prudente — « c'est à ces niveaux que la connaissance des produits
-  s'acquiert » est une observation, pas une citation de référentiel. Si tu veux
-  l'appuyer sur un référentiel précis, il faut le lire d'abord ; tu les as.
 
 - **Un point qu'ils peuvent soulever, et qu'il vaut mieux avoir en tête :**
   l'atlas comporte 46 entrées de cave (vins, spiritueux). Chaque page concernée
