@@ -1282,55 +1282,110 @@
     return hay.indexOf(q) !== -1;
   }
 
-  function fillPlateIng() {
-    var sel = el("plateIng"), prev = sel.value, role = el("plateRole").value;
-    var t = T(), q = norm(el("plateSearch").value || "");
+  /* The results a query offers, and which one the keyboard is on. */
+  var plateHits = [], plateCursor = -1;
 
-    var list = ING.concat(BASE_ITEMS).filter(function (i) {
+  function plateMatches(i, q) {
+    if (!q) return true;
+    var t = T();
+    var hay = norm(i.name.en + " " + i.name.fr + " " + catLabel(i.cat) + " " +
+      (i.latin || "") + " " +
+      (i.flavor || []).map(function (f) { return t.flavors[f] + " " + f; }).join(" "));
+    return hay.indexOf(q) !== -1;
+  }
+
+  /* Type, see, click. The old picker filtered a separate <select> that you then
+     had to open yourself, so the search and the choosing were two different
+     controls and adding one ingredient took four moves. Now the query and the
+     answer are the same place.
+
+     Search reaches names in both languages, the family, the latin name and the
+     flavour notes — the last of those is the only way to find a group the atlas
+     records but does not file together. 83 entries carry a citrus note and they
+     sit under fruits, condiments and the cellar alike; typing "agrume" is what
+     finds them. */
+  function plateSearchHits() {
+    var role = el("plateRole").value, q = norm(el("plateSearch").value || "");
+    var pool = ING.concat(BASE_ITEMS).filter(function (i) {
       if (role && PLATE.roleOf(i) !== role) return false;
       if (plate.some(function (it) { return it.id === i.id; })) return false;
       return plateMatches(i, q);
     });
-
-    /* Grouped in CAT_ORDER, which is the order the atlas already presents its
-       families in — a second ordering here would be a second thing to keep. */
-    var order = window.CAT_ORDER || [];
-    var groups = {};
-    list.forEach(function (i) { (groups[i.cat] = groups[i.cat] || []).push(i); });
-    var cats = Object.keys(groups).sort(function (a, b) {
-      var ia = order.indexOf(a), ib = order.indexOf(b);
-      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
-    });
-
-    var body = cats.map(function (cat) {
-      var opts = groups[cat].sort(function (a, b) {
+    /* A name that STARTS with the query is what was meant nine times in ten —
+       and the match is tested against BOTH names, because someone typing
+       "potato" into the French build means the potato, not the starch that
+       happens to sort first among things whose French name contains it. */
+    if (q) {
+      /* The reader's own language wins a tie, because the collisions are real:
+         "citron" is French for the lemon and English for the cédrat, and a
+         French reader typing it means the lemon. */
+      var rank = function (i) {
+        var here = norm(i.name[state.lang]);
+        var there = norm(i.name[state.lang === "fr" ? "en" : "fr"]);
+        if (here === q) return 0;
+        if (there === q) return 1;
+        if (here.indexOf(q) === 0) return 2;
+        if (there.indexOf(q) === 0) return 3;
+        return 4;                                                    // mentions it
+      };
+      pool.sort(function (a, b) {
+        var d = rank(a) - rank(b);
+        if (d) return d;
+        /* "Potato" and "Potato starch" both start with "potato"; the shorter is
+           the one that was meant. */
+        d = name(a).length - name(b).length;
+        if (d) return d;
         return name(a).localeCompare(name(b), state.lang, CMP);
-      }).map(function (i) {
-        return '<option value="' + i.id + '">' + esc(name(i)) + "</option>";
-      }).join("");
-      return '<optgroup label="' + esc(catLabel(cat)) + " \u00b7 " + groups[cat].length + '">' +
-        opts + "</optgroup>";
-    }).join("");
-
-    sel.innerHTML = '<option value="">' +
-      esc(list.length ? t.choose : t.plateNoMatch) + "</option>" + body;
-    if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
-    el("plateCount").textContent = q || role
-      ? t.plateShowing.replace("{n}", list.length)
-      : "";
-    fillPlateForm();
+      });
+    } else {
+      pool.sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); });
+    }
+    return pool;
   }
 
-  function fillPlateForm() {
-    var t = T(), sel = el("plateForm"), id = el("plateIng").value;
-    var br = id ? branchesOf(id) : [];
-    if (!br.length) { sel.hidden = true; sel.innerHTML = ""; return; }
-    sel.hidden = false;
-    sel.setAttribute("aria-label", t.plateFormLabel);
-    sel.innerHTML = '<option value="">' + esc(t.plateFormPlain) + "</option>" +
-      br.map(function (b) {
-        return '<option value="' + b.id + '">' + esc(b.name[state.lang]) + "</option>";
-      }).join("");
+  var PLATE_SHOWN = 8;
+
+  function renderPlateResults(open) {
+    var t = T(), box = el("plateResults"), input = el("plateSearch");
+    plateHits = plateSearchHits();
+    var q = (el("plateSearch").value || "").trim();
+
+    /* With no query and no role the list would be all 1 883 rows, which is the
+       old dropdown again. It opens on a query, or on a role in guided mode. */
+    if (!open || (!q && !el("plateRole").value)) {
+      box.hidden = true; box.innerHTML = "";
+      input.setAttribute("aria-expanded", "false");
+      plateCursor = -1;
+      el("plateCount").textContent = "";
+      return;
+    }
+
+    var shown = plateHits.slice(0, PLATE_SHOWN);
+    if (plateCursor >= shown.length) plateCursor = shown.length - 1;
+
+    box.innerHTML = shown.length
+      ? shown.map(function (i, k) {
+          return '<li class="plate-result' + (k === plateCursor ? " on" : "") +
+            '" role="option" aria-selected="' + (k === plateCursor) + '"' +
+            ' data-plate-pick="' + esc(i.id) + '">' +
+            '<span class="pr-name">' + esc(name(i)) + "</span>" +
+            '<span class="pr-cat">' + esc(catLabel(i.cat)) + "</span></li>";
+        }).join("")
+      : '<li class="plate-result empty" role="option" aria-selected="false">' +
+        esc(t.plateNoMatch) + "</li>";
+
+    box.hidden = false;
+    input.setAttribute("aria-expanded", "true");
+    el("plateCount").textContent = plateHits.length > PLATE_SHOWN
+      ? t.plateMore.replace("{n}", plateHits.length - PLATE_SHOWN)
+      : "";
+  }
+
+  function closePlateResults() {
+    el("plateResults").hidden = true;
+    el("plateSearch").setAttribute("aria-expanded", "false");
+    plateCursor = -1;
+    el("plateCount").textContent = "";
   }
 
   function renderPlateSlots() {
@@ -1359,9 +1414,21 @@
       return;
     }
     el("plateItems").innerHTML = plate.map(function (it, k) {
-      var i = byId[it.id];
+      var i = byId[it.id], br = branchesOf(it.id);
+      /* The form belongs to the thing on the plate, not to the search box: it
+         is only offered for the 11 entries that have one, and only once the
+         ingredient is chosen. */
+      var form = br.length
+        ? '<select class="chip-form" data-plate-form="' + k + '" aria-label="' +
+            esc(t.plateFormLabel) + '">' +
+            '<option value="">' + esc(t.plateFormPlain) + "</option>" +
+            br.map(function (b) {
+              return '<option value="' + b.id + '"' + (b.id === it.form ? " selected" : "") +
+                ">" + esc(b.name[state.lang]) + "</option>";
+            }).join("") + "</select>"
+        : "";
       return '<span class="plate-chip">' + art(i) +
-        '<span class="plate-chip-name">' + esc(itemLabel(it)) + "</span>" +
+        '<span class="plate-chip-name">' + esc(name(i)) + "</span>" + form +
         '<span class="plate-chip-role">' + esc(t.roles[PLATE.roleOf(i)]) + "</span>" +
         '<button type="button" class="plate-x" data-plate-del="' + k + '" aria-label="' +
         esc(t.plateRemove.replace("{name}", itemLabel(it))) + '">\u00d7</button></span>';
@@ -1557,10 +1624,8 @@
     el("plateHint").textContent = plateMode === "guided"
       ? t.plateHintGuided
       : t.plateHintFree.replace("{n}", PLATE.MAX_FREE);
-    el("plateAdd").textContent = t.plateAddBtn;
     placeholder("plateSearch", t.plateSearchPh);
     el("plateSearch").setAttribute("aria-label", t.plateSearchPh);
-    el("plateAdd").disabled = plateFull();
     el("plateGuided").textContent = t.plateGuided;
     el("plateFree").textContent = t.plateFree;
     el("labModePair").textContent = t.labModePair;
@@ -1581,7 +1646,7 @@
     tsel.value = plateTpl;
     tsel.setAttribute("aria-label", t.plateTplLabel);
     fillPlateRole();
-    fillPlateIng();
+    renderPlateResults(!el("plateResults").hidden);
     renderPlateSlots();
     renderPlateItems();
     renderPlateVerdict();
@@ -1610,16 +1675,19 @@
     renderPlateAll();
   }
 
-  function addToPlate() {
-    var id = el("plateIng").value;
+  function addToPlate(id) {
     if (!id || !byId[id] || plateFull()) return;
     if (plate.some(function (it) { return it.id === id; })) return;
-    plate.push({ id: id, form: el("plateForm").hidden ? "" : el("plateForm").value });
-    el("plateIng").value = "";
+    /* No form is chosen here. Only 11 of 1 838 entries have one, so asking
+       before every add is noise for the other 1 827 — the chip carries the
+       choice, for the few that offer it. */
+    plate.push({ id: id, form: "" });
     el("plateSearch").value = "";
-    fillPlateForm();
+    closePlateResults();
     renderPlateAll();
+    el("plateSearch").focus();
   }
+
 
   /* ---------- trios section ---------- */
   function renderTrios() {
@@ -2033,10 +2101,53 @@
     el("plateRole").value = "";
     renderPlateAll();
   });
-  el("plateRole").addEventListener("change", fillPlateIng);
-  el("plateSearch").addEventListener("input", fillPlateIng);
-  el("plateIng").addEventListener("change", fillPlateForm);
-  el("plateAdd").addEventListener("click", addToPlate);
+  /* Delegated, because the chips are rebuilt on every render. */
+  el("plateItems").addEventListener("change", function (e) {
+    var sel = e.target.closest("[data-plate-form]");
+    if (!sel) return;
+    var k = parseInt(sel.getAttribute("data-plate-form"), 10);
+    if (plate[k]) { plate[k].form = sel.value; renderPlateAll(); }
+  });
+  el("plateRole").addEventListener("change", function () {
+    plateCursor = -1;
+    renderPlateResults(true);
+  });
+  el("plateSearch").addEventListener("input", function () {
+    plateCursor = -1;
+    renderPlateResults(true);
+  });
+  el("plateSearch").addEventListener("focus", function () { renderPlateResults(true); });
+  /* Blur has to lose to the click that caused it, or picking a result closes
+     the list before the click lands. */
+  el("plateSearch").addEventListener("blur", function () {
+    setTimeout(closePlateResults, 140);
+  });
+  el("plateSearch").addEventListener("keydown", function (e) {
+    var shown = Math.min(plateHits.length, PLATE_SHOWN);
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (el("plateResults").hidden) { renderPlateResults(true); return; }
+      if (!shown) return;
+      plateCursor += e.key === "ArrowDown" ? 1 : -1;
+      if (plateCursor < 0) plateCursor = shown - 1;
+      if (plateCursor >= shown) plateCursor = 0;
+      renderPlateResults(true);
+      return;
+    }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      /* Enter with nothing highlighted takes the first match, which is what
+         someone who typed a name and hit Enter meant. */
+      var pick = plateHits[plateCursor >= 0 ? plateCursor : 0];
+      if (pick) addToPlate(pick.id);
+      return;
+    }
+    if (e.key === "Escape") { closePlateResults(); }
+  });
+  el("plateResults").addEventListener("mousedown", function (e) {
+    var li = e.target.closest("[data-plate-pick]");
+    if (li) { e.preventDefault(); addToPlate(li.getAttribute("data-plate-pick")); }
+  });
 
   /* creations events */
   el("createBtn").addEventListener("click", function () { openCreate(); });
