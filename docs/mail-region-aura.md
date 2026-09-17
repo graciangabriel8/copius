@@ -12,6 +12,35 @@
 > référencement LDE/PopLab est fermé aux indépendants (question 2), cette voie
 > s'arrête et il n'y a pas de dossier à préparer.
 
+## RÉPONSE REÇUE — 17 septembre 2026, 09:18
+
+De **François TESSIER**, Région Auvergne-Rhône-Alpes.
+
+> « À ce jour, le dispositif de gratuité des manuels scolaires est destiné aux
+> élèves relevant des formations des lycées jusqu'au baccalauréat et ne
+> s'applique pas aux cursus de l'enseignement supérieur, notamment aux sections
+> de BTS. Dans ce cadre, les niveaux post-bac ne sont donc malheureusement pas
+> éligibles. »
+
+**Ce que ça répond : aucune des trois questions.** Ni le calendrier, ni le
+référencement LDE/PopLab, ni le GAR. La réponse porte sur le public du
+dispositif, pas sur les conditions posées.
+
+**Ce que ça ferme :** la voie telle qu'elle a été présentée. Le mail se
+présentait comme celui d'un étudiant de BTS écrivant pour un besoin de BTS, et
+c'est ce cadrage qui est jugé inéligible.
+
+**Ce que ça n'a pas fermé :** les niveaux que le dispositif couvre —
+jusqu'au baccalauréat — sont enseignés dans le même lycée hôtelier : CAP
+Cuisine, CAP CSR, Bac Pro Cuisine, Bac Pro CSR, Bac Techno STHR. Ce sont plus
+d'élèves que le BTS, et ce sont ceux qu'un atlas illustré sert le mieux. La
+réponse écarte le cursus de l'auteur, pas la ressource.
+
+**Si relance il y a**, elle repart de là : une ressource destinée aux niveaux
+CAP à bac, et les questions 2 et 3 restent entières — la question 2 pouvant
+fermer la voie quel que soit le niveau. Décision de Gabriel ; rien n'est
+préparé.
+
 **À :** gratuite_manuels_scolaires@auvergnerhonealpes.fr
 **Objet :** Appel à projets « Ressources numériques complémentaires » — édition 2026-2027 : calendrier et conditions de référencement
 
