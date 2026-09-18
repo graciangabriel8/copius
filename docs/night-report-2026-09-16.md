@@ -99,12 +99,15 @@ International Olive Council's world catalogue has no Cerignola entry at all.
 
 ## Waiting for you
 
-1. **Three entries say something the sources do not support** — rhubarb's tense,
-   pink peppercorn's grounds and ending, Cerignola's two size claims. Each came
-   back with a suggested rewrite in your register, in the workflow output. I
-   have not touched the prose; it is yours.
-2. **Génépi's date**, which needs either dropping or updating to the 2025
-   arrêté.
+1. ~~Three entries say something the sources do not support.~~ **Corrected
+   18/09, both languages.** Rhubarb keeps "legally a fruit" — Gabriel's call and
+   the right one: the EU jam directive is live law and it is the law that
+   governs the reader, so what was stale was the 1947 US court as the *reason*,
+   not the claim. Pink peppercorn now says what the FDA said (a severe toxic
+   reaction, not allergy) and admits no document dates the lifting. Cerignola
+   carries the register's 6–30 g and attributes "largest" to the growers.
+2. ~~Génépi's date.~~ **Corrected 18/09** — the cap holds, first set in 2021 and
+   renewed since, which is true without naming a superseded decree.
 3. **The nuts role**, if seasoning is the wrong home for them.
 4. **Five buckets still run uniform in places** — the cellar is fixed, but
    43 fresh herbs share `tender + moist` and 39 liquid condiments share
