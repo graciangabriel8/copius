@@ -953,6 +953,31 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .score-bar>span{display:block;height:100%;border-radius:999px;background:var(--ink-2)}
 .score-bar>span.balanced{background:var(--ink)}
 .score-bar>span.off,.score-bar>span.uneven{background:var(--ink-3)}
+.score-band.unrecorded{border-style:dashed;color:var(--ink-3)}
+/* The sentence that makes the number mean something. Spans the grid so it sits
+   under the bar rather than beside the figure. */
+.score-meaning{grid-column:1/-1;margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+
+/* The scale, opened with the rest of the arithmetic. Three columns on a wide
+   screen, the reason wrapping under the label on a narrow one. */
+.score-scale{margin:0 0 22px;padding:16px 18px;border:1px solid var(--border);
+  border-radius:12px;background:var(--chip)}
+.score-scale h3{margin:0 0 6px}
+.scale-intro{margin:0 0 14px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.scale-grid{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.scale-grid li{display:grid;grid-template-columns:62px 104px 1fr;gap:4px 12px;align-items:baseline;
+  padding:8px 10px;border-radius:8px;font-size:13.5px;line-height:1.5}
+.scale-grid li.on{background:var(--card);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.scale-range{font-variant-numeric:tabular-nums;color:var(--ink-3);font-size:12.5px}
+.scale-band{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.scale-band.balanced{color:var(--ink)}
+.scale-why{color:var(--ink-2)}
+.scale-grid li.on .scale-why,.scale-grid li.on .scale-band{color:var(--ink)}
+.scale-foot{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+@media (max-width:560px){
+  .scale-grid li{grid-template-columns:62px 1fr}
+  .scale-why{grid-column:1/-1}
+}
 
 .plate-notes{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
 .plate-note{font-size:14.5px;line-height:1.55;padding:11px 14px;border-radius:10px;

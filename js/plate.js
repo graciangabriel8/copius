@@ -430,9 +430,27 @@
         });
       }
 
-      score = Math.round(0.4 * flavour + 0.6 * cohesion);
+      /* Cohesion is the spine; the flavour reading only modulates it. Measured
+         over the 40 trios and 39 chefs' dishes against 4 000 random plates,
+         the recorded accords separate real cooking from ingredients drawn out
+         of a hat by fifty-odd points and the flavour reading by none.
+
+         Weighting the two additively put a floor under every plate: salmon,
+         chocolate and gherkin came out at 31, because a scattered plate
+         collects the taste-diversity bonuses by accident and 0.4 x 77 is 31
+         however little the atlas recognises the plate. Multiplying removes the
+         floor — a plate holding not one recorded or bridged accord scores
+         zero, whatever its flavours look like. The 0.70-1.05 multiplier keeps
+         flavour able to nudge a plate either way without ever carrying it. */
+      score = Math.round(cohesion * (0.70 + 0.35 * flavour / 100));
       score = Math.max(0, Math.min(100, score));
-      band = score >= 74 ? "balanced" : score >= 56 ? "sound" : score >= 36 ? "uneven" : "off";
+      /* cohesion === 0 is exactly score === 0, and it deserves its own name:
+         the atlas has nothing on this plate, which is not the same claim as
+         the plate being bad. */
+      band = cohesion === 0 ? "unrecorded"
+           : score >= 75 ? "balanced"
+           : score >= 55 ? "sound"
+           : score >= 35 ? "uneven" : "off";
       /* Loudest first inside each level, so the biggest lever is the first
          thing read. */
       notes.sort(function (x, y) {

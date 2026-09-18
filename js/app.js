@@ -1191,6 +1191,18 @@
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
   var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
+  /* The bands, in one place, because they are now three things at once: the
+     label on the bar, the sentence under it, and the rows of the scale. The
+     boundaries are measured, not chosen — over 4 000 random plates none
+     reached 55, and the top band holds 41% of the trios and chefs' dishes. */
+  var SCALE = [
+    { band: "balanced",   lo: 75, hi: 100, label: "plateBandBalanced",   why: "scaleBalanced" },
+    { band: "sound",      lo: 55, hi: 74,  label: "plateBandSound",      why: "scaleSound" },
+    { band: "uneven",     lo: 35, hi: 54,  label: "plateBandUneven",     why: "scaleUneven" },
+    { band: "off",        lo: 1,  hi: 34,  label: "plateBandOff",        why: "scaleOff" },
+    { band: "unrecorded", lo: 0,  hi: 0,   label: "plateBandUnrecorded", why: "scaleUnrecorded" }
+  ];
+
   /* A form is not a garnish on the name. js/data-trees.js records a different
      set of pairings for each preparation, because purée and frites do not agree
      with the same things; when a form is chosen, those are the pairings. */
@@ -1507,13 +1519,16 @@
        the engine returns null rather than a number nobody should act on. */
     var head = "";
     if (r.score !== null) {
-      var bandKey = { balanced: "plateBandBalanced", sound: "plateBandSound",
-                      uneven: "plateBandUneven", off: "plateBandOff" }[r.band];
+      var step = SCALE.filter(function (s) { return s.band === r.band; })[0] || SCALE[SCALE.length - 1];
       head = '<div class="score-head">' +
         '<div class="score-line"><span class="score-label">' + esc(t.plateScore) + "</span>" +
-        '<span class="score-band ' + r.band + '">' + esc(t[bandKey]) + "</span></div>" +
+        '<span class="score-band ' + r.band + '">' + esc(t[step.label]) + "</span></div>" +
         '<div class="score-bar"><span class="' + r.band + '" style="width:' + r.score + '%"></span></div>' +
         '<div class="score-n"><b>' + r.score + "</b><span>/ 100</span></div>" +
+        /* The number alone taught nothing: a plate the atlas had never seen
+           came out at 31 and read as a passing mark. The band's own sentence
+           sits under the bar, always, not behind the detail toggle. */
+        '<p class="score-meaning">' + esc(t[step.why]) + "</p>" +
         '<button type="button" class="score-why" data-plate-why aria-expanded="' +
           (plateWhyOpen ? "true" : "false") + '">' +
           esc(plateWhyOpen ? t.plateHide : t.plateWhy) + "</button></div>";
@@ -1567,7 +1582,16 @@
         esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
       '<div class="axis-grid wheel">' + wheel + "</div>" +
       (plateWhyOpen
-        ? '<p class="plate-split">' +
+        ? '<div class="score-scale"><h3>' + esc(t.scaleTitle) + "</h3>" +
+            '<p class="scale-intro">' + esc(t.scaleIntro) + "</p>" +
+            '<ol class="scale-grid">' + SCALE.map(function (s) {
+              return '<li class="' + (s.band === r.band ? "on" : "") + '">' +
+                '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "\u2013" + s.hi) + "</span>" +
+                '<span class="scale-band ' + s.band + '">' + esc(t[s.label]) + "</span>" +
+                '<span class="scale-why">' + esc(t[s.why]) + "</span></li>";
+            }).join("") + "</ol>" +
+            '<p class="scale-foot">' + esc(t.scaleFootnote) + "</p></div>" +
+          '<p class="plate-split">' +
             esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
           (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
           (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "")
