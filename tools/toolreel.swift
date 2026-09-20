@@ -16,7 +16,7 @@ struct Copy: Decodable { let lede, label, end: String; let chips, forms: [String
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 
-let W = 1080, H = 1920, FPS = 30, DUR = 9.0
+let W = 1080, H = 1920, FPS = 30, DUR = 14.0
 let SAFE_TOP: CGFloat = 300
 let guides = ProcessInfo.processInfo.environment["GUIDES"] != nil
 func rgb(_ hex: UInt32, _ al: CGFloat = 1) -> CGColor { CGColor(srgbRed: CGFloat((hex >> 16) & 0xff) / 255, green: CGFloat((hex >> 8) & 0xff) / 255, blue: CGFloat(hex & 0xff) / 255, alpha: al) }
@@ -71,21 +71,24 @@ func drawImage(_ ctx: CGContext, _ i: CGImage, top: CGFloat, width: CGFloat, alp
 }
 
 // ---- beats ----
-let T_FLIP = 3.0, T_END = 6.0
+let T_FLIP = 4.6, T_BACK = 9.0, T_END = 11.6
 
 func signed(_ v: Int) -> String { v < 0 ? "\u{2212}\(abs(v))" : "+\(v)" }
+/// Vertical position for a single-line label centred in a box: natural line height, no forced
+/// line height — forcing it AND offsetting centred the text twice and sank it below the middle.
+func labelTop(_ boxTop: CGFloat, _ boxH: CGFloat, _ fontSize: CGFloat) -> CGFloat { boxTop + (boxH - fontSize * 1.2) / 2 }
 
 func render(_ ctx: CGContext, _ t: Double) {
     ctx.setFillColor(rgb(BG)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
     var y: CGFloat = SAFE_TOP
 
-    // lede — on screen from the first frame, line by line
+    // lede, line by line, from the first frame
     let L = layout(attr(C.lede, font(serif, 90), rgb(INK), lineHeight: 100), top: y, width: 960)
     for (i, l) in L.lines.enumerated() {
         let p = outCubic(prog(t, 0.0 + 0.12 * Double(i), 0.4)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
         ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(30 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
     }
-    y += L.height + 70
+    y += L.height + 76
 
     // chips
     let chipF = font(sans, 40), chipH: CGFloat = 92, gap: CGFloat = 22
@@ -96,15 +99,15 @@ func render(_ ctx: CGContext, _ t: Double) {
         let w = widths[i], cxm = x + w / 2, cym = y + chipH / 2, s = CGFloat(0.85 + 0.15 * p)
         ctx.saveGState(); ctx.setAlpha(al)
         rrect(ctx, R(cxm - w * s / 2, cym - chipH * s / 2, w * s, chipH * s), chipH * s / 2, fill: rgb(ASOFT), stroke: rgb(ASOFTBD))
-        draw(ctx, attr(name, chipF, rgb(CHIPINK), lineHeight: chipH), top: y + (chipH - 48) / 2, width: w, x: x, alpha: al)
+        draw(ctx, attr(name, chipF, rgb(CHIPINK)), top: labelTop(y, chipH, 40), width: w, x: x, alpha: al)
         ctx.restoreGState(); x += w + gap
     }
-    y += chipH + 64
+    y += chipH + 70
 
-    // the toggle: pill slides at the flip
+    // the toggle: pill slides right at the flip, back at T_BACK
     let pt = outCubic(prog(t, 0.45, 0.4))
     let tw: CGFloat = 560, th: CGFloat = 110, tx = (CGFloat(W) - tw) / 2
-    let flip = outCubic(prog(t, T_FLIP, 0.45))
+    let flip = outCubic(prog(t, T_FLIP, 0.45)) - outCubic(prog(t, T_BACK, 0.45))
     ctx.saveGState(); ctx.setAlpha(CGFloat(pt))
     rrect(ctx, R(tx, y, tw, th), th / 2, fill: rgb(CHIP))
     let pw = tw / 2 - 7, px = tx + 7 + CGFloat(flip) * (tw / 2)
@@ -112,34 +115,37 @@ func render(_ ctx: CGContext, _ t: Double) {
     for (i, f) in C.forms.enumerated() {
         let on = i == 0 ? 1 - flip : flip
         let col = CGColor(srgbRed: 0.12 + CGFloat(on) * 0.85, green: 0.13 + CGFloat(on) * 0.83, blue: 0.10 + CGFloat(on) * 0.84, alpha: 1)
-        draw(ctx, attr(f, font(sansMed, 40), col, lineHeight: th), top: y + (th - 48) / 2, width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
+        draw(ctx, attr(f, font(sansMed, 40), col), top: labelTop(y, th, 40), width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
     }
     ctx.restoreGState()
-    y += th + 70
+    y += th + 80
 
-    // the card: label, the number counting in, the engine's line
-    let pc = outCubic(prog(t, 0.5, 0.45))
-    let cw: CGFloat = 880, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 64
-    let numIn = outCubic(prog(t, 0.55, 0.5))                                  // 0 -> a.pts
-    let toB = outCubic(prog(t, T_FLIP + 0.1, 0.55))                            // a.pts -> b.pts
-    let value = Int((Double(C.a.pts) * numIn + Double(C.b.pts - C.a.pts) * toB).rounded())
+    // the card: label, small badge, and the engine's sentence as the hero
+    let pc = outCubic(prog(t, 0.55, 0.45))
+    let cw: CGFloat = 880, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 76
+    let toB = outCubic(prog(t, T_FLIP + 0.1, 0.5)) - outCubic(prog(t, T_BACK + 0.1, 0.5))   // 0 = A, 1 = B
     let isB = toB > 0.5
-    let tA = outCubic(prog(t, 0.7, 0.4)), tOut = outCubic(prog(t, T_FLIP + 0.05, 0.3)), tB = outCubic(prog(t, T_FLIP + 0.35, 0.45))
-    let numH: CGFloat = 280, lineH: CGFloat = 62
-    let bodyAttr = attr(isB ? C.b.text : C.a.text, font(sans, 46), rgb(INK2), lineHeight: lineH)
-    let bodyH = layout(bodyAttr, top: 0, width: cw - pad * 2).height
-    let ch = pad + 36 + 18 + numH + 22 + bodyH + pad
+    let value = Int((Double(C.a.pts) + Double(C.b.pts - C.a.pts) * toB).rounded())
+    // sentence alpha: A in at 0.8, out at flip; B in after flip, out at back; A back in after
+    let aIn = outCubic(prog(t, 0.8, 0.45)), aOut = outCubic(prog(t, T_FLIP + 0.05, 0.3)), aBack = outCubic(prog(t, T_BACK + 0.35, 0.45))
+    let bIn = outCubic(prog(t, T_FLIP + 0.35, 0.45)), bOut = outCubic(prog(t, T_BACK + 0.05, 0.3))
+    let aA = CGFloat(max(aIn * (1 - aOut), aBack)), aB = CGFloat(bIn * (1 - bOut))
+    let sentF = font(serif, 72), sentLH: CGFloat = 86
+    let hA = layout(attr(C.a.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: 0, width: cw - pad * 2).height
+    let hB = layout(attr(C.b.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: 0, width: cw - pad * 2).height
+    let sentH = max(hA, hB)
+    let badgeW: CGFloat = 112, badgeH: CGFloat = 56
+    let ch = pad + 34 + 28 + badgeH + 34 + sentH + pad
     ctx.saveGState(); ctx.setAlpha(CGFloat(pc)); ctx.translateBy(x: 0, y: CGFloat(-22 * (1 - pc)))
     rrect(ctx, R(cx, y, cw, ch), 28, fill: rgb(CARD), stroke: rgb(BORDER))
-    ctx.setFillColor(rgb(isB ? ACCENT : INK3)); ctx.fill(R(cx, y + 60, 6, ch - 120))
+    ctx.setFillColor(rgb(isB ? ACCENT : INK3)); ctx.fill(R(cx, y + 70, 6, ch - 140))
     var yy = y + pad
-    yy += draw(ctx, attr(C.label, font(sans, 30), rgb(INK3), spacing: 3, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc)) + 18
-    let numAttr = attr(signed(value), font(serif, 260), rgb(isB ? ACCENT : INK), lineHeight: numH, left: true)
-    draw(ctx, numAttr, top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * max(numIn, 0.001) * 1))
-    yy += numH + 22
-    // the line: A rises in, leaves at the flip; B arrives
-    if tOut < 1 { draw(ctx, attr(C.a.text, font(sans, 46), rgb(INK2), lineHeight: lineH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * tA * (1 - tOut)), rise: CGFloat(-16 * (1 - tA) + 22 * tOut)) }
-    if tB > 0 { draw(ctx, attr(C.b.text, font(sans, 46), rgb(INK2), lineHeight: lineH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * tB), rise: CGFloat(-16 * (1 - tB))) }
+    yy += draw(ctx, attr(C.label, font(sans, 28), rgb(INK3), spacing: 3, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc)) + 28
+    rrect(ctx, R(cx + pad, yy, badgeW, badgeH), 10, fill: rgb(CHIP), stroke: rgb(BORDER))
+    draw(ctx, attr(signed(value), font(sansMed, 32), rgb(isB ? ACCENT : INK)), top: labelTop(yy, badgeH, 32), width: badgeW, x: cx + pad, alpha: CGFloat(pc))
+    yy += badgeH + 34
+    if aA > 0 { draw(ctx, attr(C.a.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc) * aA, rise: CGFloat(-18 * (1 - Double(aA)))) }
+    if aB > 0 { draw(ctx, attr(C.b.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc) * aB, rise: CGFloat(-18 * (1 - Double(aB)))) }
     ctx.restoreGState()
 
     // end card
