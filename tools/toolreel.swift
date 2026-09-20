@@ -11,12 +11,12 @@ func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m +
 let a = CommandLine.arguments
 guard a.count >= 5 else { die("usage: toolreel <lang> <logo.png> <out.mp4> <copy.json>") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
-struct Note: Decodable { let pts, text: String }
-struct Copy: Decodable { let mark, hook, formLabel, end: String; let chips, forms: [String]; let noteA, noteB: Note }
+struct Note: Decodable { let pts: Int; let text: String }
+struct Copy: Decodable { let lede, label, end: String; let chips, forms: [String]; let a, b: Note }
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 
-let W = 1080, H = 1920, FPS = 30, DUR = 9.5
+let W = 1080, H = 1920, FPS = 30, DUR = 9.0
 let SAFE_TOP: CGFloat = 300
 let guides = ProcessInfo.processInfo.environment["GUIDES"] != nil
 func rgb(_ hex: UInt32, _ al: CGFloat = 1) -> CGColor { CGColor(srgbRed: CGFloat((hex >> 16) & 0xff) / 255, green: CGFloat((hex >> 8) & 0xff) / 255, blue: CGFloat(hex & 0xff) / 255, alpha: al) }
@@ -71,87 +71,87 @@ func drawImage(_ ctx: CGContext, _ i: CGImage, top: CGFloat, width: CGFloat, alp
 }
 
 // ---- beats ----
-let T_FLIP = 3.2, T_END = 6.4
+let T_FLIP = 3.0, T_END = 6.0
 
-func noteCard(_ ctx: CGContext, _ n: Note, ok: Bool, top: CGFloat, alpha: CGFloat, rise: CGFloat) -> CGFloat {
-    let cw: CGFloat = 800, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 28
-    let badgeW: CGFloat = 92, badgeH: CGFloat = 46
-    let textAttr = attr(n.text, font(sans, 33), rgb(INK), lineHeight: 46, left: true)
-    let tw = cw - pad * 2 - badgeW - 18
-    let L = layout(textAttr, top: top + pad, width: tw, x: cx + pad + badgeW + 18)
-    let ch = L.height + pad * 2
-    ctx.saveGState(); ctx.setAlpha(alpha); ctx.translateBy(x: 0, y: rise)
-    rrect(ctx, R(cx, top, cw, ch), 14, fill: rgb(CHIP))
-    ctx.setFillColor(rgb(ok ? ACCENT : INK3)); ctx.fill(R(cx, top, 5, ch))                       // the note's left bar
-    rrect(ctx, R(cx + pad, top + pad + 2, badgeW, badgeH), 8, fill: rgb(CARD), stroke: rgb(BORDER))
-    let b = attr(n.pts, font(sansMed, 28), rgb(ok ? ACCENT : INK), lineHeight: badgeH)
-    draw(ctx, b, top: top + pad + 2 + (badgeH - 34) / 2, width: badgeW, x: cx + pad, alpha: alpha)
-    for (i, l) in L.lines.enumerated() { ctx.textPosition = L.origins[i]; CTLineDraw(l, ctx) }
-    ctx.restoreGState(); return ch
-}
+func signed(_ v: Int) -> String { v < 0 ? "\u{2212}\(abs(v))" : "+\(v)" }
 
 func render(_ ctx: CGContext, _ t: Double) {
     ctx.setFillColor(rgb(BG)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
-    let mark = NSMutableAttributedString(attributedString: attr("Copius", font(serif, 34), rgb(INK)))
-    mark.append(attr(" \u{2014} " + C.mark, font(serif, 34), rgb(INK2)))
-    ctx.textPosition = CGPoint(x: 100, y: CGFloat(H) - SAFE_TOP - 34); CTLineDraw(CTLineCreateWithAttributedString(mark), ctx)
+    var y: CGFloat = SAFE_TOP
 
-    // hook, line by line
-    var y: CGFloat = SAFE_TOP + 34 + 40
-    let L = layout(attr(C.hook, font(serif, 76), rgb(INK), lineHeight: 84), top: y, width: 900)
+    // lede — on screen from the first frame, line by line
+    let L = layout(attr(C.lede, font(serif, 90), rgb(INK), lineHeight: 100), top: y, width: 960)
     for (i, l) in L.lines.enumerated() {
-        let p = outCubic(prog(t, 0.05 + 0.13 * Double(i), 0.42)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
-        ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(34 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
+        let p = outCubic(prog(t, 0.0 + 0.12 * Double(i), 0.4)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
+        ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(30 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
     }
-    y += L.height + 44
+    y += L.height + 70
 
-    // chips, popping in
-    let chipF = font(sans, 34), chipH: CGFloat = 66, gap: CGFloat = 18
-    let widths = C.chips.map { measure(attr($0, chipF, rgb(CHIPINK))) + 60 }
+    // chips
+    let chipF = font(sans, 40), chipH: CGFloat = 92, gap: CGFloat = 22
+    let widths = C.chips.map { measure(attr($0, chipF, rgb(CHIPINK))) + 68 }
     var x = (CGFloat(W) - (widths.reduce(0, +) + gap * CGFloat(widths.count - 1))) / 2
     for (i, name) in C.chips.enumerated() {
-        let p = outBack(prog(t, 0.35 + 0.12 * Double(i), 0.45)), al = CGFloat(prog(t, 0.35 + 0.12 * Double(i), 0.25))
+        let p = outBack(prog(t, 0.2 + 0.1 * Double(i), 0.4)), al = CGFloat(prog(t, 0.2 + 0.1 * Double(i), 0.22))
         let w = widths[i], cxm = x + w / 2, cym = y + chipH / 2, s = CGFloat(0.85 + 0.15 * p)
         ctx.saveGState(); ctx.setAlpha(al)
         rrect(ctx, R(cxm - w * s / 2, cym - chipH * s / 2, w * s, chipH * s), chipH * s / 2, fill: rgb(ASOFT), stroke: rgb(ASOFTBD))
-        draw(ctx, attr(name, chipF, rgb(CHIPINK), lineHeight: chipH), top: y + (chipH - 40) / 2, width: w, x: x, alpha: al)
+        draw(ctx, attr(name, chipF, rgb(CHIPINK), lineHeight: chipH), top: y + (chipH - 48) / 2, width: w, x: x, alpha: al)
         ctx.restoreGState(); x += w + gap
     }
-    y += chipH + 34
+    y += chipH + 64
 
-    // "Prepared how?" + the toggle under the potato
-    let pt = outCubic(prog(t, 0.75, 0.4))
-    y += draw(ctx, attr(C.formLabel, font(sans, 28), rgb(INK3), spacing: 1), top: y, width: 600, alpha: CGFloat(pt), rise: CGFloat(-10 * (1 - pt))) + 14
-    let tw: CGFloat = 440, th: CGFloat = 78, tx = (CGFloat(W) - tw) / 2
+    // the toggle: pill slides at the flip
+    let pt = outCubic(prog(t, 0.45, 0.4))
+    let tw: CGFloat = 560, th: CGFloat = 110, tx = (CGFloat(W) - tw) / 2
     let flip = outCubic(prog(t, T_FLIP, 0.45))
     ctx.saveGState(); ctx.setAlpha(CGFloat(pt))
     rrect(ctx, R(tx, y, tw, th), th / 2, fill: rgb(CHIP))
-    let pw = tw / 2 - 6, px = tx + 6 + CGFloat(flip) * (tw / 2)
-    rrect(ctx, R(px, y + 6, pw, th - 12), (th - 12) / 2, fill: rgb(INK))
+    let pw = tw / 2 - 7, px = tx + 7 + CGFloat(flip) * (tw / 2)
+    rrect(ctx, R(px, y + 7, pw, th - 14), (th - 14) / 2, fill: rgb(INK))
     for (i, f) in C.forms.enumerated() {
         let on = i == 0 ? 1 - flip : flip
         let col = CGColor(srgbRed: 0.12 + CGFloat(on) * 0.85, green: 0.13 + CGFloat(on) * 0.83, blue: 0.10 + CGFloat(on) * 0.84, alpha: 1)
-        draw(ctx, attr(f, font(sansMed, 32), col, lineHeight: th), top: y + (th - 38) / 2, width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
+        draw(ctx, attr(f, font(sansMed, 40), col, lineHeight: th), top: y + (th - 48) / 2, width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
     }
     ctx.restoreGState()
-    y += th + 40
+    y += th + 70
 
-    // the reading: A rises in, then A leaves and B arrives on the flip
-    let pa = outCubic(prog(t, 1.0, 0.45)), aOut = outCubic(prog(t, T_FLIP + 0.05, 0.3))
-    let pb = outCubic(prog(t, T_FLIP + 0.3, 0.45))
-    if aOut < 1 { noteCard(ctx, C.noteA, ok: false, top: y, alpha: CGFloat(pa * (1 - aOut)), rise: CGFloat(-18 * (1 - pa) + 26 * aOut)) }
-    if pb > 0 { noteCard(ctx, C.noteB, ok: true, top: y, alpha: CGFloat(pb), rise: CGFloat(-18 * (1 - pb))) }
+    // the card: label, the number counting in, the engine's line
+    let pc = outCubic(prog(t, 0.5, 0.45))
+    let cw: CGFloat = 880, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 64
+    let numIn = outCubic(prog(t, 0.55, 0.5))                                  // 0 -> a.pts
+    let toB = outCubic(prog(t, T_FLIP + 0.1, 0.55))                            // a.pts -> b.pts
+    let value = Int((Double(C.a.pts) * numIn + Double(C.b.pts - C.a.pts) * toB).rounded())
+    let isB = toB > 0.5
+    let tA = outCubic(prog(t, 0.7, 0.4)), tOut = outCubic(prog(t, T_FLIP + 0.05, 0.3)), tB = outCubic(prog(t, T_FLIP + 0.35, 0.45))
+    let numH: CGFloat = 280, lineH: CGFloat = 62
+    let bodyAttr = attr(isB ? C.b.text : C.a.text, font(sans, 46), rgb(INK2), lineHeight: lineH)
+    let bodyH = layout(bodyAttr, top: 0, width: cw - pad * 2).height
+    let ch = pad + 36 + 18 + numH + 22 + bodyH + pad
+    ctx.saveGState(); ctx.setAlpha(CGFloat(pc)); ctx.translateBy(x: 0, y: CGFloat(-22 * (1 - pc)))
+    rrect(ctx, R(cx, y, cw, ch), 28, fill: rgb(CARD), stroke: rgb(BORDER))
+    ctx.setFillColor(rgb(isB ? ACCENT : INK3)); ctx.fill(R(cx, y + 60, 6, ch - 120))
+    var yy = y + pad
+    yy += draw(ctx, attr(C.label, font(sans, 30), rgb(INK3), spacing: 3, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc)) + 18
+    let numAttr = attr(signed(value), font(serif, 260), rgb(isB ? ACCENT : INK), lineHeight: numH, left: true)
+    draw(ctx, numAttr, top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * max(numIn, 0.001) * 1))
+    yy += numH + 22
+    // the line: A rises in, leaves at the flip; B arrives
+    if tOut < 1 { draw(ctx, attr(C.a.text, font(sans, 46), rgb(INK2), lineHeight: lineH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * tA * (1 - tOut)), rise: CGFloat(-16 * (1 - tA) + 22 * tOut)) }
+    if tB > 0 { draw(ctx, attr(C.b.text, font(sans, 46), rgb(INK2), lineHeight: lineH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc * tB), rise: CGFloat(-16 * (1 - tB))) }
+    ctx.restoreGState()
 
     // end card
     let ea = CGFloat(prog(t, T_END, 0.5))
     if ea > 0 {
         ctx.setFillColor(rgb(ENDBG, ea)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
-        let lh = 620 * CGFloat(logo.height) / CGFloat(logo.width), block = lh - 40 + 26 + 2 * 56 + 26 + 60
+        let lh = 620 * CGFloat(logo.height) / CGFloat(logo.width), block = lh - 40 + 26 + 56 + 26 + 60
         var ey = (CGFloat(H) - block) / 2 - 60
         let pg = outCubic(prog(t, T_END + 0.1, 0.55))
         ey += drawImage(ctx, logo, top: ey, width: 620, alpha: CGFloat(pg), scale: CGFloat(0.9 + 0.1 * pg)) - 40 + 26
         let ptx = outCubic(prog(t, T_END + 0.4, 0.45))
-        ey += draw(ctx, attr(C.end, font(sans, 40), rgb(INK2), lineHeight: 56), top: ey, width: 900, alpha: CGFloat(ptx), rise: CGFloat(-14 * (1 - ptx))) + 42
+        ey += draw(ctx, attr(C.end, font(sans, 44), rgb(INK2), lineHeight: 56), top: ey, width: 900, alpha: CGFloat(ptx), rise: CGFloat(-14 * (1 - ptx))) + 42
         let pu = outCubic(prog(t, T_END + 0.6, 0.45))
         draw(ctx, attr("copius.fr", font(serif, 52), rgb(ACCENT)), top: ey, width: 900, alpha: CGFloat(pu), rise: CGFloat(-14 * (1 - pu)))
     }
