@@ -33,7 +33,7 @@
        already holds. Filed here rather than under fat, though it is rich, and
        rather than protein, though it is that too — on a plate it is the thing
        scattered last. Overrule it if the kitchen says otherwise. */
-    nuts: "seasoning",
+    nuts: "nuts",
     fruits: "fruit", sweet: "fruit",
     cellar: "aside", infusions: "aside", texture: "aside",
     /* The bases — hollandaise, béchamel, the fonds — carry no flavour tags and
@@ -51,7 +51,23 @@
     egg: "protein", "century-egg": "protein", "salted-duck-egg": "protein"
   };
 
-  var ROLES = ["protein", "vegetable", "starch", "fat", "sauce", "seasoning", "fruit", "aside"];
+  /* The declarable allergens that live in the nuts family, by id. EU Regulation
+     1169/2011 Annex II names fourteen substances; three of them sit in this one
+     family and they are three different declarations — tree nuts (eight species
+     and what is made from them), peanut, sesame — while chestnut, coconut, pine
+     nut and most seeds in the same family are not on the list. So never by
+     family. Oils are included: only fully refined soybean oil is exempt. */
+  function set(s) { var o = {}; s.split(" ").forEach(function (k) { o[k] = 1; }); return o; }
+  var TREE_NUTS = set("almond almond-flour marcona-almond largueta-almond avola-almond green-almond bitter-almond " +
+    "hazelnut fresh-hazelnut cervione-hazelnut piedmont-hazelnut tombul-hazelnut hazelnut-flour " +
+    "walnut fresh-walnut green-walnut grenoble-walnut perigord-walnut walnut-oil " +
+    "pistachio antep-pistachio bronte-pistachio pistachio-paste cashew pecan brazil-nut macadamia " +
+    "praline-paste gianduja marzipan");
+  var PEANUT = set("peanut peanut-oil");
+  var SESAME = set("sesame black-sesame black-sesame-paste chinese-sesame-paste tahini");
+  var ALLERGENS = [["treeNuts", TREE_NUTS], ["peanut", PEANUT], ["sesame", SESAME]];
+
+  var ROLES = ["protein", "vegetable", "starch", "fat", "sauce", "seasoning", "nuts", "fruit", "aside"];
 
   function roleOf(ing) {
     return ROLE_OVERRIDE[ing.id] || ROLE_BY_CAT[ing.cat] || "aside";
@@ -519,6 +535,18 @@
       structure.push({ level: "info", key: "plateThin" });
     }
 
+    /* ---------- flags ----------
+       Not a judgement on the plate: what a cook must write down. Runs from the
+       first ingredient, because an allergen is an allergen at any count. */
+    var flags = [], groups = [], hits = [];
+    ALLERGENS.forEach(function (g) {
+      var found = items.filter(function (it) { return g[1][it.id]; });
+      if (!found.length) return;
+      groups.push(g[0]);
+      found.forEach(function (it) { if (hits.indexOf(it.id) < 0) hits.push(it.id); });
+    });
+    if (groups.length) flags.push({ level: "info", key: "plateAllergen", ids: hits, groups: groups });
+
     return {
       count: n,
       roles: roles,
@@ -538,7 +566,8 @@
       textured: textured,
       band: band,
       notes: notes,        // the flavour reading, each note carrying its weight
-      structure: structure // recorded-together, which earns no points
+      structure: structure, // recorded-together, which earns no points
+      flags: flags          // declarable allergens; informational, earns nothing
     };
   }
 
@@ -605,6 +634,7 @@
     AXIS_BY_TAG: AXIS_BY_TAG,
     roleOf: roleOf,
     unmappedCats: unmappedCats,
+    ALLERGENS: ALLERGENS,
     axesOf: axesOf,
     judge: judge
   };

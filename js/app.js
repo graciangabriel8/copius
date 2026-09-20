@@ -1506,6 +1506,11 @@
       if (nt.key === "plateSpine") {
         return txt.replace("{a}", name(byId[nt.ids[0]])).replace("{b}", name(byId[nt.ids[1]]));
       }
+      if (nt.key === "plateAllergen") {
+        var gk = { treeNuts: "allergenTreeNuts", peanut: "allergenPeanut", sesame: "allergenSesame" };
+        return txt.replace("{names}", nt.ids.map(function (id) { return name(byId[id]); }).join(", "))
+                  .replace("{groups}", nt.groups.map(function (g) { return t[gk[g]]; }).join(" \u00b7 "));
+      }
       return txt;
     }
     function noteLi(nt) {
@@ -1606,6 +1611,11 @@
       (r.structure.length
         ? "<h3>" + esc(t.plateStructure) + "</h3>" +
           '<ul class="plate-notes">' + r.structure.map(noteLi).join("") + "</ul>"
+        : "") +
+      /* Declarable allergens: information a cook must write down, not a verdict. */
+      (r.flags && r.flags.length
+        ? "<h3>" + esc(t.plateFlags) + "</h3>" +
+          '<ul class="plate-notes">' + r.flags.map(noteLi).join("") + "</ul>"
         : "") +
       cohesion +
       '<p class="plate-caveat">' + esc(t.plateNoTexture) + "</p>";

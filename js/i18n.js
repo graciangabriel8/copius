@@ -135,7 +135,7 @@ window.I18N = {
     roles: {
       protein: "Protein", vegetable: "Vegetable", starch: "Starch",
       fat: "Fat or dairy", sauce: "Sauce", seasoning: "Seasoning",
-      fruit: "Fruit or sweet", aside: "On the side"
+      nuts: "Nuts & seeds", fruit: "Fruit or sweet", aside: "On the side"
     },
     axes: {
       sweet: "Sweet", salty: "Salt", sour: "Acid", bitter: "Bitter", umami: "Umami",
@@ -161,6 +161,11 @@ window.I18N = {
     plateSpine: "{a} and {b} are the spine: a recorded accord that also shares flavour notes. Build the rest around it.",
     plateTight: "A well-recorded set \u2014 most of these pairs are classics cooks already trust.",
     plateThin: "Add one or two more and the lab has something to judge.",
+    plateFlags: "Worth knowing",
+    plateAllergen: "{names}: a declarable allergen \u2014 {groups}. One of the fourteen that EU Regulation 1169/2011 requires restaurants and labels to state in writing.",
+    allergenTreeNuts: "tree nuts",
+    allergenPeanut: "peanut",
+    allergenSesame: "sesame",
     plateHeatAlone: "Heat with nothing to carry it. Capsaicin dissolves in fat, not in water \u2014 with neither fat nor sugar on the plate the burn sits on the tongue and everything else hides behind it.",
     plateBitterUnchecked: "Bitterness with nothing to pad it. Fat and sugar both blunt bitter compounds; on its own, bitterness reads as a fault rather than as a note.",
     plateAcidPiling: "Three sharp things and no fat. Acid needs something to land on \u2014 without it the plate cuts from the first mouthful to the last.",
@@ -406,7 +411,7 @@ window.I18N = {
     roles: {
       protein: "Protéine", vegetable: "Légume", starch: "Féculent",
       fat: "Gras ou laitier", sauce: "Sauce", seasoning: "Assaisonnement",
-      fruit: "Fruit ou sucré", aside: "À côté"
+      nuts: "Fruits à coque & graines", fruit: "Fruit ou sucré", aside: "À côté"
     },
     axes: {
       sweet: "Sucré", salty: "Salé", sour: "Acide", bitter: "Amer", umami: "Umami",
@@ -432,6 +437,11 @@ window.I18N = {
     plateSpine: "{a} et {b} font la colonne vertébrale : un accord recensé qui partage aussi des notes de saveur. Construisez le reste autour.",
     plateTight: "Un ensemble bien recensé — la plupart de ces duos sont des classiques auxquels les cuisiniers se fient déjà.",
     plateThin: "Ajoutez-en un ou deux et le labo aura de quoi juger.",
+    plateFlags: "À savoir",
+    plateAllergen: "{names} : allergène à déclarer — {groups}. L’un des quatorze que le règlement européen 1169/2011 impose de porter par écrit à la connaissance du client, en restauration comme sur l’étiquette.",
+    allergenTreeNuts: "fruits à coque",
+    allergenPeanut: "arachide",
+    allergenSesame: "sésame",
     plateHeatAlone: "Du piquant sans rien pour le porter. La capsa\u00efcine se dissout dans le gras, pas dans l\u2019eau \u2014 sans gras ni sucre dans l\u2019assiette, la br\u00fblure reste sur la langue et tout le reste se cache derri\u00e8re.",
     plateBitterUnchecked: "De l\u2019amertume sans rien pour l\u2019amortir. Le gras et le sucre \u00e9moussent tous deux les compos\u00e9s amers ; seule, l\u2019amertume se lit comme un d\u00e9faut plut\u00f4t que comme une note.",
     plateAcidPiling: "Trois \u00e9l\u00e9ments tranchants et aucun gras. L\u2019acidit\u00e9 a besoin de quelque chose sur quoi se poser \u2014 sans \u00e7a, l\u2019assiette coupe de la premi\u00e8re \u00e0 la derni\u00e8re bouch\u00e9e.",
