@@ -12,7 +12,7 @@ let a = CommandLine.arguments
 guard a.count >= 5 else { die("usage: toolreel <lang> <logo.png> <out.mp4> <copy.json>") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
 struct Note: Decodable { let pts: Int; let text: String }
-struct Copy: Decodable { let lede, label, end: String; let chips, forms: [String]; let a, b: Note }
+struct Copy: Decodable { let lede, why, label, end: String; let chips, forms: [String]; let a, b: Note }
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 
@@ -88,62 +88,72 @@ func render(_ ctx: CGContext, _ t: Double) {
         let p = outCubic(prog(t, 0.0 + 0.12 * Double(i), 0.4)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
         ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(30 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
     }
-    y += L.height + 76
+    y += L.height + 26
 
-    // chips
+    // why the toggle is on the potato: two yield, only one can change
+    let pwhy = outCubic(prog(t, 0.55, 0.45))
+    y += draw(ctx, attr(C.why, font(sans, 36), rgb(INK3)), top: y, width: 940, alpha: CGFloat(pwhy), rise: CGFloat(-10 * (1 - pwhy))) + 52
+
+    // chips: all pop in; once the action starts, the two fixed ones settle back
     let chipF = font(sans, 40), chipH: CGFloat = 92, gap: CGFloat = 22
     let widths = C.chips.map { measure(attr($0, chipF, rgb(CHIPINK))) + 68 }
     var x = (CGFloat(W) - (widths.reduce(0, +) + gap * CGFloat(widths.count - 1))) / 2
+    let settle = 1 - 0.45 * outCubic(prog(t, 1.1, 0.5))
+    var potatoCX: CGFloat = 0
     for (i, name) in C.chips.enumerated() {
-        let p = outBack(prog(t, 0.2 + 0.1 * Double(i), 0.4)), al = CGFloat(prog(t, 0.2 + 0.1 * Double(i), 0.22))
+        let p = outBack(prog(t, 0.25 + 0.1 * Double(i), 0.4)), al = CGFloat(prog(t, 0.25 + 0.1 * Double(i), 0.22)) * (i == 0 ? 1 : CGFloat(settle))
         let w = widths[i], cxm = x + w / 2, cym = y + chipH / 2, s = CGFloat(0.85 + 0.15 * p)
+        if i == 0 { potatoCX = cxm }
         ctx.saveGState(); ctx.setAlpha(al)
         rrect(ctx, R(cxm - w * s / 2, cym - chipH * s / 2, w * s, chipH * s), chipH * s / 2, fill: rgb(ASOFT), stroke: rgb(ASOFTBD))
         draw(ctx, attr(name, chipF, rgb(CHIPINK)), top: labelTop(y, chipH, 40), width: w, x: x, alpha: al)
         ctx.restoreGState(); x += w + gap
     }
-    y += chipH + 70
+    let chipsBottom = y + chipH
+    y += chipH + 30
 
-    // the toggle: pill slides right at the flip, back at T_BACK
-    let pt = outCubic(prog(t, 0.45, 0.4))
-    let tw: CGFloat = 560, th: CGFloat = 110, tx = (CGFloat(W) - tw) / 2
+    // the toggle, joined to the potato chip: pill slides right at the flip, back at T_BACK
+    let pt = outCubic(prog(t, 0.6, 0.4))
+    let tw: CGFloat = 440, th: CGFloat = 110
+    let tx = max(80, min(CGFloat(W) - 80 - tw, potatoCX - tw / 2))
     let flip = outCubic(prog(t, T_FLIP, 0.45)) - outCubic(prog(t, T_BACK, 0.45))
     ctx.saveGState(); ctx.setAlpha(CGFloat(pt))
+    ctx.setStrokeColor(rgb(ASOFTBD)); ctx.setLineWidth(3)
+    ctx.move(to: CGPoint(x: potatoCX, y: CGFloat(H) - chipsBottom)); ctx.addLine(to: CGPoint(x: potatoCX, y: CGFloat(H) - y)); ctx.strokePath()
     rrect(ctx, R(tx, y, tw, th), th / 2, fill: rgb(CHIP))
     let pw = tw / 2 - 7, px = tx + 7 + CGFloat(flip) * (tw / 2)
     rrect(ctx, R(px, y + 7, pw, th - 14), (th - 14) / 2, fill: rgb(INK))
     for (i, f) in C.forms.enumerated() {
         let on = i == 0 ? 1 - flip : flip
         let col = CGColor(srgbRed: 0.12 + CGFloat(on) * 0.85, green: 0.13 + CGFloat(on) * 0.83, blue: 0.10 + CGFloat(on) * 0.84, alpha: 1)
-        draw(ctx, attr(f, font(sansMed, 40), col), top: labelTop(y, th, 40), width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
+        draw(ctx, attr(f, font(sansMed, 38), col), top: labelTop(y, th, 38), width: tw / 2, x: tx + CGFloat(i) * tw / 2, alpha: CGFloat(pt))
     }
     ctx.restoreGState()
-    y += th + 80
+    y += th + 72
 
     // the card: label, small badge, and the engine's sentence as the hero
-    let pc = outCubic(prog(t, 0.55, 0.45))
-    let cw: CGFloat = 880, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 76
-    let toB = outCubic(prog(t, T_FLIP + 0.1, 0.5)) - outCubic(prog(t, T_BACK + 0.1, 0.5))   // 0 = A, 1 = B
+    let pc = outCubic(prog(t, 0.7, 0.45))
+    let cw: CGFloat = 880, cx = (CGFloat(W) - cw) / 2, pad: CGFloat = 64
+    let toB = outCubic(prog(t, T_FLIP + 0.1, 0.5)) - outCubic(prog(t, T_BACK + 0.1, 0.5))
     let isB = toB > 0.5
     let value = Int((Double(C.a.pts) + Double(C.b.pts - C.a.pts) * toB).rounded())
-    // sentence alpha: A in at 0.8, out at flip; B in after flip, out at back; A back in after
-    let aIn = outCubic(prog(t, 0.8, 0.45)), aOut = outCubic(prog(t, T_FLIP + 0.05, 0.3)), aBack = outCubic(prog(t, T_BACK + 0.35, 0.45))
-    let bIn = outCubic(prog(t, T_FLIP + 0.35, 0.45)), bOut = outCubic(prog(t, T_BACK + 0.05, 0.3))
+    let aIn = outCubic(prog(t, 0.95, 0.45)), aOut = outCubic(prog(t, T_FLIP + 0.05, 0.3)), aBack = outCubic(prog(t, T_BACK + 0.35, 0.45))
+    let bIn = outCubic(prog(t, T_FLIP + 0.3, 0.45)), bOut = outCubic(prog(t, T_BACK + 0.05, 0.3))
     let aA = CGFloat(max(aIn * (1 - aOut), aBack)), aB = CGFloat(bIn * (1 - bOut))
-    let sentF = font(serif, 72), sentLH: CGFloat = 86
+    let sentF = font(serif, 72), sentLH: CGFloat = 82
     let hA = layout(attr(C.a.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: 0, width: cw - pad * 2).height
     let hB = layout(attr(C.b.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: 0, width: cw - pad * 2).height
     let sentH = max(hA, hB)
     let badgeW: CGFloat = 112, badgeH: CGFloat = 56
-    let ch = pad + 34 + 28 + badgeH + 34 + sentH + pad
+    let ch = pad + 34 + 26 + badgeH + 30 + sentH + pad
     ctx.saveGState(); ctx.setAlpha(CGFloat(pc)); ctx.translateBy(x: 0, y: CGFloat(-22 * (1 - pc)))
     rrect(ctx, R(cx, y, cw, ch), 28, fill: rgb(CARD), stroke: rgb(BORDER))
-    ctx.setFillColor(rgb(isB ? ACCENT : INK3)); ctx.fill(R(cx, y + 70, 6, ch - 140))
+    ctx.setFillColor(rgb(isB ? ACCENT : INK3)); ctx.fill(R(cx, y + 64, 6, ch - 128))
     var yy = y + pad
-    yy += draw(ctx, attr(C.label, font(sans, 28), rgb(INK3), spacing: 3, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc)) + 28
+    yy += draw(ctx, attr(C.label, font(sans, 28), rgb(INK3), spacing: 3, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc)) + 26
     rrect(ctx, R(cx + pad, yy, badgeW, badgeH), 10, fill: rgb(CHIP), stroke: rgb(BORDER))
     draw(ctx, attr(signed(value), font(sansMed, 32), rgb(isB ? ACCENT : INK)), top: labelTop(yy, badgeH, 32), width: badgeW, x: cx + pad, alpha: CGFloat(pc))
-    yy += badgeH + 34
+    yy += badgeH + 30
     if aA > 0 { draw(ctx, attr(C.a.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc) * aA, rise: CGFloat(-18 * (1 - Double(aA)))) }
     if aB > 0 { draw(ctx, attr(C.b.text, sentF, rgb(INK), lineHeight: sentLH, left: true), top: yy, width: cw - pad * 2, x: cx + pad, alpha: CGFloat(pc) * aB, rise: CGFloat(-18 * (1 - Double(aB)))) }
     ctx.restoreGState()

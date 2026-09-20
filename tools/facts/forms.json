@@ -1,8 +1,48 @@
 {
- "fr": {"lede": "Purée, crème,\nmascarpone.", "chips": ["Pomme de terre", "Crème", "Mascarpone"], "forms": ["Purée", "Frites"],
-        "label": "LECTURE DE TEXTURE", "a": {"pts": -16, "text": "Rien ici ne résiste sous la dent."}, "b": {"pts": 6, "text": "Une belle amplitude de texture."},
-        "end": "Le labo lit la forme."},
- "en": {"lede": "Mash, cream,\nmascarpone.", "chips": ["Potato", "Cream", "Mascarpone"], "forms": ["Purée", "Chips"],
-        "label": "TEXTURE READING", "a": {"pts": -16, "text": "Nothing here resists the teeth."}, "b": {"pts": 6, "text": "A wide range of texture."},
-        "end": "The lab reads the form."}
+ "fr": {
+  "lede": "Purée, crème,\nmascarpone.",
+  "chips": [
+   "Pomme de terre",
+   "Crème",
+   "Mascarpone"
+  ],
+  "forms": [
+   "Purée",
+   "Frites"
+  ],
+  "label": "LECTURE DE TEXTURE",
+  "a": {
+   "pts": -16,
+   "text": "Rien ici ne résiste sous la dent."
+  },
+  "b": {
+   "pts": 6,
+   "text": "Une belle amplitude de texture."
+  },
+  "end": "Le labo lit la forme.",
+  "why": "Deux cèdent. Une seule peut changer."
+ },
+ "en": {
+  "lede": "Mash, cream,\nmascarpone.",
+  "chips": [
+   "Potato",
+   "Cream",
+   "Mascarpone"
+  ],
+  "forms": [
+   "Purée",
+   "Chips"
+  ],
+  "label": "TEXTURE READING",
+  "a": {
+   "pts": -16,
+   "text": "Nothing here resists the teeth."
+  },
+  "b": {
+   "pts": 6,
+   "text": "A wide range of texture."
+  },
+  "end": "The lab reads the form.",
+  "why": "Two yield. Only one can change."
+ }
 }
