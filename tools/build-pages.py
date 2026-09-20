@@ -513,8 +513,14 @@ def related(i, G):
 
 
 def page_title(name, alt_name, fam):
-    if alt_name and alt_name.lower() != name.lower():
-        return "%s (%s) — %s · Copius" % (name, alt_name, fam)
+    # A name may carry a gloss in parentheses — "Kokotxas (gorges de merlu)" —
+    # and the other language's name joins the title too, so the two used to
+    # nest: "Kokotxas (gorges de merlu) (Kokotxas (hake throat))". The other
+    # name is there for its head word alone: drop it when that head is already
+    # the name's, and drop its gloss otherwise.
+    head = lambda s: s.split(" (")[0].strip()
+    if alt_name and head(alt_name).lower() != head(name).lower():
+        return "%s (%s) — %s · Copius" % (name, head(alt_name), fam)
     return "%s — %s · Copius" % (name, fam)
 
 

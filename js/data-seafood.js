@@ -369,7 +369,7 @@ fr:"Demandez-le en filets et gardez l’arête — la tête et la carcasse font 
 pairs:["butter","lemon","shallot","cream","chives","white-wine-vinegar","spinach","thyme"],
 svg:'<path class="f2 sf" d="M24 56q6-22 26-22t26 22q-8 16-26 16t-26-16z"/><circle class="dot" cx="38" cy="52" r="4"/><path class="s" d="M32 40l4 6"/>'},
 
-{id:"katsuobushi",cat:"seafood",price:3,pk:"70–140 €/kg",name:{en:"Katsuobushi",fr:"Katsuobushi"},latin:"Katsuwonus pelamis (dried)",
+{id:"katsuobushi",cat:"seafood",price:3,pk:"70–140 €/kg",name:{en:"Katsuobushi (dried bonito)",fr:"Katsuobushi (bonite séchée)"},latin:"Katsuwonus pelamis (dried)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["umami","smoky","marine","toasty"],texture:["airy","brittle","dry"],
 story:{en:"Bonito simmered, smoked for weeks and dried with a noble mould until it becomes the hardest food on Earth — a fillet that rings like wood. Shaved into rosy petals, its inosinate meets kombu’s glutamate in dashi, a synergy that multiplies perceived umami nearly eightfold: broth as chemistry lesson.",
