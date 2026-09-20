@@ -9,21 +9,22 @@ import ImageIO
 
 func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m + "\n").data(using: .utf8)!); exit(1) }
 let a = CommandLine.arguments
-guard a.count >= 7 else { die("usage: searchreel <lang> <drawing1.png> <drawing2.png> <logo.png> <out.mp4> <copy.json>") }
-let lang = a[1], drawingPath = a[2], drawing2Path = a[3], logoPath = a[4], outURL = URL(fileURLWithPath: a[5])
-struct Second: Decodable { let query, name, highlight: String; let pairs: [String] }
-struct Copy: Decodable { let hook, placeholder, query, name, tap, end: String; let pairs: [String]; let second: Second }
-guard let cdata = FileManager.default.contents(atPath: a[6]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
+guard a.count >= 6 else { die("usage: searchreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png per step...>") }
+let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
+struct Step: Decodable { let query, name: String; let pairs: [String]; let highlight: String?; let tap: String? }
+struct Copy: Decodable { let hook, placeholder, end: String; let steps: [Step] }
+guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
-
-let W = 1080, H = 1920, FPS = 30, DUR = 11.8
+guard a.count - 5 == C.steps.count else { die("\(C.steps.count) steps but \(a.count - 5) drawings") }
+let W = 1080, H = 1920, FPS = 30
 let SAFE_TOP: CGFloat = 300
 let guides = ProcessInfo.processInfo.environment["GUIDES"] != nil
 func rgb(_ hex: UInt32, _ al: CGFloat = 1) -> CGColor { CGColor(srgbRed: CGFloat((hex >> 16) & 0xff) / 255, green: CGFloat((hex >> 8) & 0xff) / 255, blue: CGFloat(hex & 0xff) / 255, alpha: al) }
 let BG: UInt32 = 0xF7F6F1, CARD: UInt32 = 0xFFFEFC, INK: UInt32 = 0x1E211A, INK2: UInt32 = 0x565A4C, INK3: UInt32 = 0x6A6E5F, ACCENT: UInt32 = 0x4F5B3F, ENDBG: UInt32 = 0xF1F1F0
 let CHIP: UInt32 = 0xEDEFE3, CHIPINK: UInt32 = 0x4A5140, ASOFT: UInt32 = 0xDCE4CB, ASOFTBD: UInt32 = 0xBECBA4, BORDER: UInt32 = 0xD1D5C3
 func img(_ p: String) -> CGImage { guard let s = CGImageSourceCreateWithURL(URL(fileURLWithPath: p) as CFURL, nil), let i = CGImageSourceCreateImageAtIndex(s, 0, nil) else { die("cannot load " + p) }; return i }
-let logo = img(logoPath), drawing = img(drawingPath), drawing2 = img(drawing2Path)
+let logo = img(logoPath)
+let drawings = a[5...].map { img($0) }
 
 func prog(_ t: Double, _ from: Double, _ len: Double) -> Double { max(0, min(1, (t - from) / len)) }
 func outCubic(_ p: Double) -> Double { 1 - pow(1 - p, 3) }
@@ -71,7 +72,6 @@ func drawImage(_ ctx: CGContext, _ i: CGImage, top: CGFloat, width: CGFloat, alp
 }
 
 // ---- beats ----
-let T_TAP = 3.8, T_END = 8.8
 
 func signed(_ v: Int) -> String { v < 0 ? "\u{2212}\(abs(v))" : "+\(v)" }
 /// Vertical position for a single-line label centred in a box: natural line height, no forced
@@ -80,33 +80,48 @@ func labelTop(_ boxTop: CGFloat, _ boxH: CGFloat, _ fontSize: CGFloat) -> CGFloa
 
 /// One result card: drawing, name, pairings wrapping in centred rows. `appear(i)` gives each chip's
 /// progress; `tapIdx` gets the tap pulse at `tapT`; `highlight` is drawn last-in with the accent border.
-func card(_ ctx: CGContext, _ t: Double, top: CGFloat, img: CGImage, name: String, pairs: [String],
-          alpha: CGFloat, dx: CGFloat, appear: (Int) -> Double, tapIdx: Int?, highlight: String?) {
+
+// ---- timeline, from the chip counts: each card holds until its chips have landed and been read ----
+let N = C.steps.count
+var tIn = [Double](repeating: 0, count: N), tChip = [Double](repeating: 0, count: N), tTap = [Double?](repeating: nil, count: N)
+var lastLanded = 0.0
+for k in 0..<N {
+    if k > 0 { tIn[k] = tTap[k - 1]! + 0.62; tChip[k] = tIn[k] + 0.33 } else { tChip[0] = 1.05 }
+    let stagger = k == 0 ? 0.22 : 0.2
+    lastLanded = tChip[k] + stagger * Double(C.steps[k].pairs.count - 1) + (C.steps[k].highlight != nil ? 0.15 : 0) + 0.42
+    if C.steps[k].tap != nil { tTap[k] = lastLanded + 1.1 }
+}
+let T_END = lastLanded + 1.7
+let DUR = T_END + 3.0
+/// One result card: drawing, name, pairings wrapping in centred rows. `appear(i)` gives each chip's
+/// progress; the chip named `tap` pulses at `tapAt`; `highlight` is drawn with the accent border.
+func card(_ ctx: CGContext, _ t: Double, top: CGFloat, img: CGImage, step: Step, first: Bool,
+          alpha: CGFloat, dx: CGFloat, appear: (Int) -> Double, tapAt: Double?) {
     if alpha <= 0 { return }
     var y = top
     ctx.saveGState(); ctx.setAlpha(alpha); ctx.translateBy(x: dx, y: 0)
-    let pd = outBack(prog(t, 0.72, 0.5)), ad = CGFloat(prog(t, 0.72, 0.25))
-    y += drawImage(ctx, img, top: y, width: 470, alpha: min(1, ad + (alpha < 1 ? 1 : 0)), scale: CGFloat(0.75 + 0.25 * max(pd, alpha < 1 ? 1 : 0))) + 16
-    let pn = outCubic(prog(t, 0.9, 0.35))
-    y += draw(ctx, attr(name, font(sans, 34), rgb(INK3), spacing: 5), top: y, width: 900, alpha: CGFloat(max(pn, alpha < 1 ? 1 : 0))) + 36
+    let pd = first ? outBack(prog(t, 0.72, 0.5)) : 1, ad = first ? CGFloat(prog(t, 0.72, 0.25)) : 1
+    y += drawImage(ctx, img, top: y, width: 470, alpha: ad, scale: CGFloat(0.75 + 0.25 * pd)) + 16
+    let pn = first ? outCubic(prog(t, 0.9, 0.35)) : 1
+    y += draw(ctx, attr(step.name, font(sans, 34), rgb(INK3), spacing: 5), top: y, width: 900, alpha: CGFloat(pn)) + 36
     let chipF = font(sans, 36), chipH: CGFloat = 80, gap: CGFloat = 18, rowGap: CGFloat = 18, maxW: CGFloat = 920
-    let widths = pairs.map { measure(attr($0, chipF, rgb(CHIPINK))) + 56 }
+    let widths = step.pairs.map { measure(attr($0, chipF, rgb(CHIPINK))) + 56 }
     var rows: [[Int]] = [[]], rowW: CGFloat = 0
     for (i, w) in widths.enumerated() {
         if rowW > 0 && rowW + gap + w > maxW { rows.append([]); rowW = 0 }
         rows[rows.count - 1].append(i); rowW += (rowW > 0 ? gap : 0) + w
     }
+    let tapIdx = step.tap.flatMap { step.pairs.firstIndex(of: $0) }
     for row in rows {
         let total = row.map { widths[$0] }.reduce(0, +) + gap * CGFloat(row.count - 1)
         var x = (CGFloat(W) - total) / 2
         for i in row {
-            let hi = highlight != nil && pairs[i] == highlight!
-            let p = appear(i), pop = hi ? outBack(p) : outBack(p), al = CGFloat(min(1, p * 4))
+            let hi = step.highlight != nil && step.pairs[i] == step.highlight!
+            let p = appear(i), pop = outBack(p), al = CGFloat(min(1, p * 4))
             let w = widths[i], cxm = x + w / 2, cym = y + chipH / 2
             var s = CGFloat((hi ? 0.7 : 0.8) + (hi ? 0.3 : 0.2) * pop)
-            // the tap: a quick dip and a ring that grows and fades
-            if let k = tapIdx, k == i, t >= T_TAP {
-                let q = prog(t, T_TAP, 0.45)
+            if let k = tapIdx, k == i, let tt = tapAt, t >= tt {
+                let q = prog(t, tt, 0.45)
                 s *= CGFloat(1 - 0.06 * sin(q * .pi))
                 ctx.saveGState(); ctx.setAlpha(CGFloat(1 - q)); ctx.setStrokeColor(rgb(ACCENT)); ctx.setLineWidth(4)
                 let r = chipH / 2 + 14 + CGFloat(q) * 60
@@ -116,7 +131,7 @@ func card(_ ctx: CGContext, _ t: Double, top: CGFloat, img: CGImage, name: Strin
             ctx.saveGState(); ctx.setAlpha(al)
             rrect(ctx, R(cxm - w * s / 2, cym - chipH * s / 2, w * s, chipH * s), chipH * s / 2,
                   fill: rgb(hi ? CARD : ASOFT), stroke: rgb(hi ? ACCENT : ASOFTBD), lw: hi ? 4 : 2)
-            draw(ctx, attr(pairs[i], hi ? font(sansMed, 36) : chipF, rgb(hi ? ACCENT : CHIPINK)), top: labelTop(y, chipH, 36), width: w, x: x, alpha: al)
+            draw(ctx, attr(step.pairs[i], hi ? font(sansMed, 36) : chipF, rgb(hi ? ACCENT : CHIPINK)), top: labelTop(y, chipH, 36), width: w, x: x, alpha: al)
             ctx.restoreGState(); x += w + gap
         }
         y += chipH + rowGap
@@ -136,36 +151,42 @@ func render(_ ctx: CGContext, _ t: Double) {
     }
     y += L.height + 44
 
-    // the search box: the word types itself in, then swaps to the tapped ingredient
+    // the search box: the first word types itself in; each tap swaps it for the next
     let bw: CGFloat = 900, bh: CGFloat = 100, bx = (CGFloat(W) - bw) / 2
     rrect(ctx, R(bx, y, bw, bh), 22, fill: rgb(CARD), stroke: rgb(BORDER))
-    let typed = Int((Double(C.query.count) * prog(t, 0.12, 0.6)).rounded(.down))
-    let shown = String(C.query.prefix(typed)), typeF = font(sans, 42)
-    let swap = outCubic(prog(t, T_TAP + 0.5, 0.3))
-    if typed == 0 { draw(ctx, attr(C.placeholder, typeF, rgb(INK3), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
-    else {
-        draw(ctx, attr(shown, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(1 - swap))
-        draw(ctx, attr(C.second.query, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(swap))
-    }
-    if t < 2.4 && (t * 2.2).truncatingRemainder(dividingBy: 1) < 0.55 {
-        let cx = bx + 40 + (typed == 0 ? 0 : measure(attr(shown, typeF, rgb(INK))) + 4)
-        ctx.setFillColor(rgb(INK)); ctx.fill(R(cx, y + 26, 3, bh - 52))
+    let q0 = C.steps[0].query
+    let typed = Int((Double(q0.count) * prog(t, 0.12, 0.6)).rounded(.down))
+    let shown = String(q0.prefix(typed)), typeF = font(sans, 42)
+    var idx = 0, fade = 1.0
+    for k in 1..<N { let s = outCubic(prog(t, tTap[k - 1]! + 0.5, 0.3)); if s > 0 { idx = k; fade = s } }
+    if idx == 0 {
+        if typed == 0 { draw(ctx, attr(C.placeholder, typeF, rgb(INK3), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
+        else { draw(ctx, attr(shown, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
+        if t < 2.4 && (t * 2.2).truncatingRemainder(dividingBy: 1) < 0.55 {
+            let cx = bx + 40 + (typed == 0 ? 0 : measure(attr(shown, typeF, rgb(INK))) + 4)
+            ctx.setFillColor(rgb(INK)); ctx.fill(R(cx, y + 26, 3, bh - 52))
+        }
+    } else {
+        draw(ctx, attr(C.steps[idx - 1].query, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(1 - fade))
+        draw(ctx, attr(C.steps[idx].query, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(fade))
     }
     y += bh + 52
 
-    // card 1: strawberry — pops in, chips arrive, then slides out after the tap
-    let out1 = outCubic(prog(t, T_TAP + 0.3, 0.35))
-    let tapIdx = C.pairs.firstIndex(of: C.tap)
-    card(ctx, t, top: y, img: drawing, name: C.name, pairs: C.pairs, alpha: CGFloat(1 - out1), dx: CGFloat(-140 * out1),
-         appear: { i in prog(t, 1.05 + 0.22 * Double(i), 0.42) }, tapIdx: tapIdx, highlight: nil)
-
-    // card 2: mint — slides in, chips arrive with strawberry last and marked
-    let in2 = outCubic(prog(t, T_TAP + 0.62, 0.45))
-    let hiIdx = C.second.pairs.firstIndex(of: C.second.highlight) ?? -1
-    let order = C.second.pairs.indices.filter { $0 != hiIdx } + (hiIdx >= 0 ? [hiIdx] : [])
-    card(ctx, t, top: y, img: drawing2, name: C.second.name, pairs: C.second.pairs, alpha: CGFloat(in2), dx: CGFloat(140 * (1 - in2)),
-         appear: { i in let k = order.firstIndex(of: i) ?? 0; return prog(t, T_TAP + 0.95 + 0.2 * Double(k) + (i == hiIdx ? 0.15 : 0), 0.42) },
-         tapIdx: nil, highlight: C.second.highlight)
+    // the cards: each slides out on its tap, the next slides in; the first ingredient arrives last and marked
+    for k in 0..<N {
+        let step = C.steps[k]
+        let outK = tTap[k] != nil ? outCubic(prog(t, tTap[k]! + 0.3, 0.35)) : 0
+        let inK = k == 0 ? 1 : outCubic(prog(t, tIn[k], 0.45))
+        let hiIdx = step.highlight.flatMap { step.pairs.firstIndex(of: $0) } ?? -1
+        let order = step.pairs.indices.filter { $0 != hiIdx } + (hiIdx >= 0 ? [hiIdx] : [])
+        card(ctx, t, top: y, img: drawings[k], step: step, first: k == 0,
+             alpha: CGFloat(inK * (1 - outK)), dx: CGFloat(140 * (1 - inK) - 140 * outK),
+             appear: { i in
+                if k == 0 { return prog(t, tChip[0] + 0.22 * Double(i), 0.42) }
+                let pos = order.firstIndex(of: i) ?? 0
+                return prog(t, tChip[k] + 0.2 * Double(pos) + (i == hiIdx ? 0.15 : 0), 0.42) },
+             tapAt: tTap[k])
+    }
 
     // end card
     let ea = CGFloat(prog(t, T_END, 0.5))
@@ -182,6 +203,7 @@ func render(_ ctx: CGContext, _ t: Double) {
     }
 }
 
+FileHandle.standardError.write(String(format: "timeline: taps at %@, end %.2f, dur %.2f\n", tTap.map { $0 == nil ? "-" : String(format: "%.2f", $0!) }.joined(separator: " "), T_END, DUR).data(using: .utf8)!)
 // ---- write ----
 try? FileManager.default.removeItem(at: outURL)
 guard let writer = try? AVAssetWriter(outputURL: outURL, fileType: .mp4) else { die("cannot open writer") }

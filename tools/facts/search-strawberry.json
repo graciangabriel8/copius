@@ -1,12 +1,14 @@
 {
- "fr": {"hook": "Avec quoi va\nla fraise ?", "placeholder": "Rechercher un ingrédient…", "query": "fraise", "name": "FRAISE",
-        "pairs": ["Vinaigre balsamique", "Poivre noir", "Menthe", "Crème", "Basilic", "Chocolat noir"],
-        "tap": "Menthe", "second": {"query": "menthe", "name": "MENTHE", "highlight": "Fraise",
-        "pairs": ["Fraise", "Yaourt", "Agneau", "Chocolat noir", "Courgette", "Mangue", "Grenade"]},
-        "end": "Des accords infinis,\navec des ingrédients infinis."},
- "en": {"hook": "What goes with\nstrawberry?", "placeholder": "Search an ingredient…", "query": "strawberry", "name": "STRAWBERRY",
-        "pairs": ["Balsamic vinegar", "Black pepper", "Mint", "Cream", "Basil", "Dark chocolate"],
-        "tap": "Mint", "second": {"query": "mint", "name": "MINT", "highlight": "Strawberry",
-        "pairs": ["Strawberry", "Yogurt", "Lamb", "Dark chocolate", "Zucchini", "Mango", "Pomegranate"]},
-        "end": "Infinite pairings,\nwith infinite ingredients."}
+ "fr": {"hook": "Avec quoi va\nla fraise ?", "placeholder": "Rechercher un ingrédient…", "end": "Des accords infinis,\navec des ingrédients infinis.",
+   "steps": [
+     {"query": "fraise", "name": "FRAISE", "pairs": ["Vinaigre balsamique", "Poivre noir", "Menthe", "Crème", "Basilic", "Chocolat noir"], "tap": "Menthe"},
+     {"query": "menthe", "name": "MENTHE", "pairs": ["Fraise", "Yaourt", "Agneau", "Chocolat noir", "Courgette", "Mangue", "Grenade"], "highlight": "Fraise", "tap": "Agneau"},
+     {"query": "agneau", "name": "AGNEAU", "pairs": ["Romarin", "Ail", "Menthe", "Cumin", "Yaourt", "Cannelle"], "highlight": "Menthe"}
+   ]},
+ "en": {"hook": "What goes with\nstrawberry?", "placeholder": "Search an ingredient…", "end": "Infinite pairings,\nwith infinite ingredients.",
+   "steps": [
+     {"query": "strawberry", "name": "STRAWBERRY", "pairs": ["Balsamic vinegar", "Black pepper", "Mint", "Cream", "Basil", "Dark chocolate"], "tap": "Mint"},
+     {"query": "mint", "name": "MINT", "pairs": ["Strawberry", "Yogurt", "Lamb", "Dark chocolate", "Zucchini", "Mango", "Pomegranate"], "highlight": "Strawberry", "tap": "Lamb"},
+     {"query": "lamb", "name": "LAMB", "pairs": ["Rosemary", "Garlic", "Mint", "Cumin", "Yogurt", "Cinnamon"], "highlight": "Mint"}
+   ]}
 }
