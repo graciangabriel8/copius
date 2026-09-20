@@ -8,21 +8,13 @@ import ImageIO
 
 func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m + "\n").data(using: .utf8)!); exit(1) }
 let a = CommandLine.arguments
-guard a.count >= 5 else { die("usage: factreel <lang fr|en> <drawing.png> <logo.png> <out.mp4>") }
 let lang = a[1], drawingPath = a[2], logoPath = a[3], outURL = URL(fileURLWithPath: a[4])
 
-struct Copy { let mark, name, hook, key, line, end: String }
-let COPY: [String: Copy] = [
-  "fr": Copy(mark: "l\u{2019}atlas des ingr\u{e9}dients", name: "RHUBARBE",
-             hook: "La rhubarbe est\nl\u{e9}galement un fruit.", key: "l\u{e9}galement",
-             line: "C\u{2019}est un p\u{e9}tiole \u{2014} mais la directive europ\u{e9}enne sur les confitures la range parmi les fruits, ce qui permet d\u{2019}appeler sa confiture une confiture.",
-             end: "1 838 ingr\u{e9}dients.\nCompose ton assiette."),
-  "en": Copy(mark: "the ingredient atlas", name: "RHUBARB",
-             hook: "Rhubarb is\nlegally a fruit.", key: "legally",
-             line: "It\u{2019}s a leaf stalk \u{2014} but the EU jam directive counts it among the fruits, which is what lets rhubarb jam be called jam.",
-             end: "1,838 ingredients.\nBuild your plate."),
-]
-guard let C = COPY[lang] else { die("lang must be fr or en") }
+struct Copy: Decodable { let mark, name, hook, key, line, end: String }
+guard a.count >= 6 else { die("usage: factreel <lang fr|en> <drawing.png> <logo.png> <out.mp4> <copy.json>") }
+guard let cdata = FileManager.default.contents(atPath: a[5]),
+      let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json at " + a[5]) }
+guard let C = COPY[lang] else { die("no \"" + lang + "\" block in " + a[5]) }
 
 let W = 1080, H = 1920, FPS = 30, DUR = 8.5
 // Safe area, from how phones actually show a reel: top 220 px is under the status bar and header,

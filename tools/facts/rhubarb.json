@@ -1,0 +1,18 @@
+{
+ "fr": {
+  "mark": "l’atlas des ingrédients",
+  "name": "RHUBARBE",
+  "hook": "La rhubarbe est\nlégalement un fruit.",
+  "key": "légalement",
+  "line": "C’est un pétiole — mais la directive européenne sur les confitures la range parmi les fruits, ce qui permet d’appeler sa confiture une confiture.",
+  "end": "1 838 ingrédients.\nCompose ton assiette."
+ },
+ "en": {
+  "mark": "the ingredient atlas",
+  "name": "RHUBARB",
+  "hook": "Rhubarb is\nlegally a fruit.",
+  "key": "legally",
+  "line": "It’s a leaf stalk — but the EU jam directive counts it among the fruits, which is what lets rhubarb jam be called jam.",
+  "end": "1,838 ingredients.\nBuild your plate."
+ }
+}
