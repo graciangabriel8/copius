@@ -213,7 +213,7 @@ window.I18N = {
     contactLine: "contact@copius.fr",
     aboutLink: "About Copius",
     privacyLink: "Privacy",
-    alcoholWarning: "L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. \u00c0 consommer avec mod\u00e9ration.",
+    alcoholWarning: "Alcohol abuse is dangerous for your health. Drink in moderation.",
     disclaimer: "Copius is an independent project with no affiliation to, or endorsement by, the MICHELIN Guide, the World's 50 Best Restaurants, or any restaurant or chef named here. Star counts and awards are reported as public facts. MICHELIN is a trademark of its owner. Corrections welcome.",
     favAdd: "Add to favorites",
     favRemove: "Remove from favorites",

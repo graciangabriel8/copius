@@ -272,7 +272,8 @@ def season_text(months, lang):
 # message. The two exception sets are read out of js/app.js rather than retyped,
 # so a bottle added to the cellar is covered in the app and on the page by the
 # same edit.
-EVIN = "L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. \u00c0 consommer avec mod\u00e9ration."
+EVIN = {"fr": "L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. \u00c0 consommer avec mod\u00e9ration.",
+        "en": "Alcohol abuse is dangerous for your health. Drink in moderation."}
 
 
 def _js_id_set(name):
@@ -408,7 +409,7 @@ def page(i, lang, by_id, count, G):
         "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
                       % (e(t["pairs"]), " ".join(links))) if links else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
-        "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN)) if is_alcohol(i) else "",
+        "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN[lang])) if is_alcohol(i) else "",
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
         "tagline": e(t["tagline"]), "count": e(t["count"] % count),
     }

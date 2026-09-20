@@ -182,8 +182,9 @@ def tip_card(i):
 NOT_A_DRINK = {"champagne-vinegar", "raspberry-vinegar", "shanxi-vinegar",
                "verjus-rouge", "vincotto", "grape-must"}
 DRINKS_ELSEWHERE = {"shaoxing-wine", "hon-mirin"}
-EVIN = ("L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
-        "\u00c0 consommer avec mod\u00e9ration.")
+EVIN = ["L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
+        "\u00c0 consommer avec mod\u00e9ration.",
+        "Alcohol abuse is dangerous for your health. Drink in moderation."]
 
 
 def is_alcohol(i):
@@ -254,7 +255,7 @@ def caption(i):
     return "\n".join([
         "%s \u00b7 %s" % (i["en"], i["fr"]),
         i["latin"],
-    ] + ([EVIN] if is_alcohol(i) else []) + ["",
+    ] + (EVIN if is_alcohol(i) else []) + ["",
         "\U0001F1EC\U0001F1E7 " + un(i["story_en"]), "",
         "\U0001F1EB\U0001F1F7 " + un(i["story_fr"]), "",
         "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
