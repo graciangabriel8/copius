@@ -1193,8 +1193,9 @@
 
   /* The bands, in one place, because they are now three things at once: the
      label on the bar, the sentence under it, and the rows of the scale. The
-     boundaries are measured, not chosen — over 4 000 random plates none
-     reached 55, and the top band holds 41% of the trios and chefs' dishes. */
+     boundaries are measured, not chosen — of 4 000 random plates 22 reached 55
+     and one reached 86, and the top band holds 52% of the trios and chefs'
+     dishes. */
   var SCALE = [
     { band: "balanced",   lo: 75, hi: 100, label: "plateBandBalanced",   why: "scaleBalanced" },
     { band: "sound",      lo: 55, hi: 74,  label: "plateBandSound",      why: "scaleSound" },

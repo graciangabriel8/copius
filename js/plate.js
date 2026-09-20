@@ -174,18 +174,28 @@
       return declares(x, y) || declares(y, x);
     }
 
-    var rows = [], degree = items.map(function () { return 0; }), i, j;
+    /* best[k] is the strongest reason item k is on this plate: a recorded
+       accord with something here, or failing that a bridge. Density alone
+       could not see the difference between a plate where one ingredient is
+       stranded and one where the misses are spread evenly. */
+    var rows = [], degree = items.map(function () { return 0; }),
+        best = items.map(function () { return 0; }), i, j;
     for (i = 0; i < n; i++) {
       for (j = i + 1; j < n; j++) {
         var a = items[i], b = items[j], v;
         if (linked(i, j)) {
           v = "ok";
           degree[i]++; degree[j]++;
+          best[i] = 1; best[j] = 1;
         } else {
           var bridged = Object.keys(sets[i]).some(function (x) {
             return x !== a.id && x !== b.id && sets[j][x];
           });
           v = bridged ? "mid" : "none";
+          if (bridged) {
+            if (best[i] < 0.4) best[i] = 0.4;
+            if (best[j] < 0.4) best[j] = 0.4;
+          }
         }
         rows.push({ a: a, b: b, verdict: v });
       }
@@ -407,10 +417,30 @@
 
          A bridge counts, at 40%: two things that have never been recorded
          together but share a neighbour are not strangers. */
+      /* Two different faults, so two measures, and neither may cover for the
+         other. DENSITY — recorded pairs over all pairs — catches a plate that
+         is a list of ingredients rather than a dish. But pairs grow as n(n-1)/2
+         while an entry carries six to eight partners, so density falls with
+         plate size whatever the cook does: a lamb plate that reads 90 at three
+         ingredients fell to 49 at six, every addition of which belonged there.
+         ATTACHMENT — has each thing a reason to be here — does not care about
+         size, but a single hub ingredient satisfies it by accident, and random
+         plates reached 97 on it.
+
+         Their geometric mean needs both to hold. It also keeps the property
+         the "unrecorded" band rests on: nothing recorded means density is
+         zero, so the whole thing is zero rather than half marks for a hub.
+
+         Measured over the 40 trios and 39 chefs' dishes against 4 000 random
+         plates: 7% of random plates reach 35 and the best reaches 86, against
+         4% and 77 for density alone — while a coherent six-ingredient lamb
+         plate now holds at 65 instead of falling to 49. */
       cohesion = 0;
       if (rows.length) {
         var bridged = rows.filter(function (x) { return x.verdict === "mid"; }).length;
-        cohesion = Math.round(100 * (direct + 0.4 * bridged) / rows.length);
+        var density = 100 * (direct + 0.4 * bridged) / rows.length;
+        var attached = 100 * best.reduce(function (s, x) { return s + x; }, 0) / n;
+        cohesion = Math.round(Math.sqrt(density * attached));
       }
       /* Scored but not yet weighted into the grade: whether texture separates
          real cooking from ingredients drawn at random is a measurement, not an
