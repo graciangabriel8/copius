@@ -112,6 +112,13 @@
   var YIELDS = ["soft", "tender", "creamy", "silky", "gelatinous", "viscous",
                 "fluid", "airy", "smooth", "powdery"];
   var WET = ["juicy", "moist", "fluid"];
+  /* A quarter of the atlas carries no moisture tag, and rightly: honey is
+     "viscous, smooth", caviar "soft, creamy, granular", an oil "smooth,
+     silky". None of them is dry. So a body that flows or spreads counts as
+     wet for the dryness reading, and dryness itself needs positive evidence —
+     a plate is called dry only when something on it is tagged dry and nothing
+     on it is wet by any measure. Silence is not dryness. */
+  var WETISH = WET.concat(["viscous", "creamy", "silky", "gelatinous"]);
 
   /* A form changes texture more than it changes anything else — a purée and a
      frite are the same potato and nothing about how they eat is shared. The
@@ -283,7 +290,7 @@
     /* Texture, gathered the same way as the rest. A plate whose entries carry no
        texture at all (a tier that strips it, older data) reads as unknown
        rather than as a fault — `textured` says whether anything can be said. */
-    var textured = 0, nResist = 0, nYield = 0, nWet = 0, texTags = {};
+    var textured = 0, nResist = 0, nYield = 0, nWet = 0, nWetish = 0, nDry = 0, texTags = {};
     items.forEach(function (it) {
       var ing = ctx.byId(it.id);
       var tt = ctx.textureOf ? ctx.textureOf(it.id, it.form) : (ing.texture || []);
@@ -292,6 +299,8 @@
       if (hasAny(tt, RESISTS)) nResist++;
       if (hasAny(tt, YIELDS)) nYield++;
       if (hasAny(tt, WET)) nWet++;
+      if (hasAny(tt, WETISH)) nWetish++;
+      if (tt.indexOf("dry") >= 0) nDry++;
       tt.forEach(function (t) { texTags[t] = true; });
     });
     var texVariety = Object.keys(texTags).length;
@@ -311,7 +320,7 @@
 
     var c = { A: axisCount, S: S, roles: roles, n: n, loud: loudCount, distinct: distinct,
               savoury: savoury, seasoned: seasoned, tastes: tastes, sweetPlate: sweetPlate,
-              textured: textured, resist: nResist, yield: nYield, wet: nWet,
+              textured: textured, resist: nResist, yield: nYield, wet: nWet, wetish: nWetish, dry: nDry,
               texVariety: texVariety };
 
     var RULES = [
@@ -390,7 +399,7 @@
       { key: "plateAllHard", level: "warn", points: -12,
         test: function (c) { return c.textured >= 3 && c.yield === 0; } },
       { key: "plateAllDry", level: "warn", points: -10,
-        test: function (c) { return c.textured >= 3 && c.wet === 0; } },
+        test: function (c) { return c.textured >= 3 && c.wetish === 0 && c.dry >= 1; } },
       { key: "plateOneTexture", level: "warn", points: -8,
         test: function (c) { return c.textured >= 4 && c.texVariety <= 3; } },
       /* Shares, not presence. "Something resists and something yields" is true
