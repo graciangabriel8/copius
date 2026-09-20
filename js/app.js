@@ -1958,9 +1958,15 @@
     if (set) return set;
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
+  /* Drawn, not typed: U+2600 is the emoji sun on iOS, so the text glyph came
+     out as a yellow picture on phones. Two constant strings, no data in them. */
+  var ICON_SUN = '<svg class="theme-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/>' +
+    '<path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>';
+  var ICON_MOON = '<svg class="theme-ico" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path d="M14.5 3.2a8.8 8.8 0 1 0 6.3 12.6A7 7 0 0 1 14.5 3.2z"/></svg>';
   function paintThemeBtn() {
     var dark = currentTheme() === "dark", t = T();
-    el("themeBtn").textContent = dark ? "\u2600" : "\u263D";
+    el("themeBtn").innerHTML = dark ? ICON_SUN : ICON_MOON;
     el("themeBtn").setAttribute("aria-pressed", dark ? "true" : "false");
     el("themeBtn").title = dark ? t.themeLight : t.themeDark;
     // Browser chrome follows the page ground, whichever way the theme was set.
