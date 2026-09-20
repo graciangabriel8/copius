@@ -29,6 +29,26 @@ if not (ing and tech and chefs):
     sys.exit("counted zero of something — has a data file been renamed?")
 line = "%d INGREDIENTS · %d TECHNIQUES · %d CHEFS" % (len(ing), tech, chefs)
 
+# The landing page shows the same numbers, plus the bases. They are rewritten in
+# place here so they cannot drift again: the page said 59 bases when the file
+# held 45, and 81 chefs when there were 68.
+bases = len(re.findall(r'\{id:"', (ROOT / "js" / "data-bases.js").read_text()))
+def fmt(n):
+    return "{:,}".format(n).replace(",", "\u202f")   # 1 839, French style, unbreakable
+idx = ROOT / "index.html"
+html = idx.read_text(encoding="utf-8")
+for key, n in (("ingredients", len(ing)), ("techniques", tech), ("bases", bases), ("chefs", chefs)):
+    html, k = re.subn(r'(data-count="%s">)[^<]*' % key, lambda m: m.group(1) + fmt(n), html)
+    if k != 1:
+        sys.exit("index.html: expected one data-count=%s, found %d" % (key, k))
+html, k = re.subn(r'content="[^"]*? ingredients, [^"]*? techniques, [^"]*? bases and [^"]*? chefs, ',
+                  'content="%s ingredients, %s techniques, %s bases and %s chefs, '
+                  % (fmt(len(ing)), fmt(tech), fmt(bases), fmt(chefs)), html)
+if k != 1:
+    sys.exit("index.html: the og:description count line was not found")
+idx.write_text(html, encoding="utf-8")
+print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs" % (len(ing), tech, bases, chefs))
+
 # qlmanage renders into a square box and scales to fit, so a 1200x630 svg comes
 # out zoomed and clipped. Authoring it square and cropping the middle band back
 # out is what keeps the proportions honest.
