@@ -1,0 +1,8 @@
+{
+ "fr": {"hook": "Avec quoi va\nla fraise ?", "placeholder": "Rechercher un ingrédient…", "query": "fraise", "name": "FRAISE",
+        "pairs": ["Vinaigre balsamique", "Poivre noir", "Menthe", "Crème", "Basilic", "Chocolat noir"],
+        "end": "1 838 ingrédients.\n12 804 accords recensés."},
+ "en": {"hook": "What goes with\nstrawberry?", "placeholder": "Search an ingredient…", "query": "strawberry", "name": "STRAWBERRY",
+        "pairs": ["Balsamic vinegar", "Black pepper", "Mint", "Cream", "Basil", "Dark chocolate"],
+        "end": "1,838 ingredients.\n12,804 recorded pairings."}
+}
