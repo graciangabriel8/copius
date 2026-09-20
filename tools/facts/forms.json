@@ -1,0 +1,12 @@
+{
+ "fr": {"mark": "le Labo d’accords", "hook": "Même pomme de terre.\nDeux assiettes.",
+        "chips": ["Pomme de terre", "Crème", "Mascarpone"], "formLabel": "Préparé comment ?", "forms": ["Purée", "Frites"],
+        "noteA": {"pts": "−16", "text": "Rien ici ne résiste sous la dent. Tout cède, et l’assiette se joue en une seule texture — le défaut qu’on apprend à éviter avant tous les autres."},
+        "noteB": {"pts": "+6", "text": "Une belle amplitude de texture pour le nombre d’éléments."},
+        "end": "Le labo lit la forme,\npas seulement l’ingrédient."},
+ "en": {"mark": "the Pairing Lab", "hook": "Same potato.\nTwo plates.",
+        "chips": ["Potato", "Cream", "Mascarpone"], "formLabel": "Prepared how?", "forms": ["Purée", "Chips"],
+        "noteA": {"pts": "−16", "text": "Nothing here resists the teeth. Every element yields, so the plate is over in a single texture — the fault a cook is taught to avoid before any other."},
+        "noteB": {"pts": "+6", "text": "A wide range of texture for the number of things on the plate."},
+        "end": "The lab reads the form,\nnot just the ingredient."}
+}
