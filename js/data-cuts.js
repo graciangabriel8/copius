@@ -591,7 +591,7 @@ svg:'<path class="f1 sf" d="M22 38q12-6 26 0t26-4v26q-14 6-26 2t-26 4z"/><path c
 
 {id:"filet-mignon-porc",cat:"cuts",price:2,pk:"14–22 €/kg",name:{en:"Pork tenderloin",fr:"Filet mignon de porc"},latin:"Porc — filet",
 origin:{en:"France",fr:"France"},season:[],
-flavor:["delicate","mild","sweet","meaty"],texture:["tender","moist"],
+flavor:["delicate","mild","sweet","meaty"],texture:["tender","moist","smooth"],
 story:{en:"The least-used muscle on the pig and therefore the most tender, but also the leanest — it has almost no fat at all, which makes it the easiest cut in the shop to ruin. Confusingly, the French name means something different from the English.",
 fr:"Le muscle le moins sollicité du porc et donc le plus tendre, mais aussi le plus maigre — presque sans gras, ce qui en fait le morceau le plus facile à gâcher. Le nom français, prêtant à confusion, ne désigne pas la même chose que l’anglais."},
 tip:{en:"Take it out at 62°C and let it rest. Pork does not need to be cooked grey, and this cut punishes it more than any other.",

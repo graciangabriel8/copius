@@ -641,7 +641,7 @@ svg:'<path class="f3 sf" d="M30 26q-9 18-1 34 2 5 6 3t1-6q-5-13 0-27 2-5-2-6t-4 
 
 {id:"veau-sous-la-mere",cat:"meat",price:3,pk:"25–50 €/kg",name:{en:"Milk-fed veal",fr:"Veau sous la mère"},latin:"Bos taurus (veau de lait)",
 origin:{en:"Limousin and southwest France",fr:"Limousin et Sud-Ouest"},season:[],
-flavor:["milky","delicate","sweet","mild"],texture:["tender","moist"],
+flavor:["milky","delicate","sweet","mild"],texture:["tender","moist","smooth"],
 story:{en:"A calf raised sous la mère suckles two or three times a day and is usually given a nurse cow as well as its dam, because one cow cannot carry it to weight on milk alone. Nothing else is fed — no grain, no forage — and that is what keeps the flesh nearly white: iron from grass would redden it within days.",
 fr:"Un veau élevé sous la mère tète deux à trois fois par jour et reçoit le plus souvent une vache nourrice en plus de sa mère, car une seule ne le mène pas au poids. Rien d’autre ne lui est donné — ni grain, ni fourrage — et c’est ce qui garde la chair presque blanche : le fer de l’herbe la rougirait en quelques jours."},
 tip:{en:"Cook it pale — a blanquette, a braise held below a simmer, or a chop taken to just-set and no browner. A hard sear greys and tightens these delicate proteins, and the sweetness is the first thing to go.",
@@ -741,7 +741,7 @@ svg:'<circle class="f1 sf" cx="48" cy="50" r="22"/><path class="s" d="M48 50q0-5
 
 {id:"jambon-de-paris",cat:"meat",price:1,pk:"12–22 €/kg",name:{en:"Paris cooked ham",fr:"jambon de Paris"},latin:"Sus scrofa (leg, brined and poached)",
 origin:{en:"Paris",fr:"Paris"},season:[],
-flavor:["mild","salty","meaty","delicate"],texture:["tender","moist"],
+flavor:["mild","salty","meaty","delicate"],texture:["soft","moist","smooth"],
 story:{en:"A jambon blanc: the leg is boned, brined a few days, tied into a cloth or pressed into a mould, and poached at around 70 °C — cooked, never dried. It was defined against the smoked English style the French called jambon d'York, and the words that still matter on the label are jambon supérieur, the grade made without added phosphates or gelling agents.",
 fr:"Un jambon blanc : la cuisse est désossée, saumurée quelques jours, serrée dans un torchon ou moulée, puis pochée autour de 70 °C — cuite, jamais séchée. Il s’est défini contre le style anglais fumé que la France appelait jambon d’York, et les deux mots qui comptent encore sur l’étiquette sont « jambon supérieur », la mention sans polyphosphates ni gélifiants ajoutés."},
 tip:{en:"Have it cut to order at about 2 mm rather than machine-shaved; under a millimetre the slices weld into a block. It is already cooked — warm it in a sauce or a croque, never fry it.",

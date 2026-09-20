@@ -41,7 +41,7 @@ svg:'<path class="f2 sf" d="M20 50q14-24 28-24t28 24q-14 24-28 24T20 50z"/><path
 
 {id:"basil",cat:"herbs",price:1,pk:"2–4 €/pot",name:{en:"Basil",fr:"Basilic"},latin:"Ocimum basilicum",
 origin:{en:"India",fr:"Inde"},season:[6,7,8,9],
-flavor:["herbal","anise","peppery","fresh"],texture:["tender","moist"],
+flavor:["herbal","anise","peppery","fresh"],texture:["tender","smooth","moist"],
 story:{en:"Its name comes from basileus — Greek for king — and in India its cousin tulsi is holy enough to be planted in temple courtyards. A royal and sacred plant that ended up, gloriously, on tomatoes.",
 fr:"Son nom vient de basileus — « roi » en grec — et en Inde son cousin le tulsi est assez sacré pour pousser dans les cours des temples. Une plante royale et sainte qui a fini, glorieusement, sur des tomates."},
 tip:{en:"Heat murders it: tear the leaves by hand and add them off the flame, at the very last moment.",
@@ -311,7 +311,7 @@ svg:'<path class="f1 sf" d="M48 14q22 14 22 36T48 82Q26 62 26 50T48 14z"/><path 
 
 {id:"hoja-santa",cat:"herbs",rare:true,price:3,pk:"25–50 €/100 g",name:{en:"Hoja santa",fr:"Hoja santa (feuille sainte)"},latin:"Piper auritum",
 origin:{en:"Southern Mexico",fr:"Sud du Mexique"},season:[6,7,8,9],
-flavor:["anise","herbal","peppery"],texture:["tender","moist"],
+flavor:["anise","herbal","peppery"],texture:["tender","fibrous","moist"],
 story:{en:"The aroma is safrole, the compound that once flavoured sassafras root beer and that American regulators pulled from the market in 1960 — the leaf itself has stayed a daily herb across southern Mexico throughout. Piper auritum is a true pepper relative, and grows leaves the size of a dinner plate.",
 fr:"L’arôme vient du safrole, le composé qui parfumait la root beer au sassafras et que la réglementation américaine a retiré du marché en 1960 — la feuille, elle, est restée pendant tout ce temps une herbe quotidienne dans le sud du Mexique. Piper auritum est un vrai poivrier, et ses feuilles atteignent la taille d’une assiette."},
 tip:{en:"Use the leaf as the vessel: wrap fish or fresh cheese in it and the aroma transfers through the steam without the leaf being eaten. Blended into a green mole, strip out the thick central vein first or the sauce turns stringy and bitter.",
@@ -531,7 +531,7 @@ svg:'<path class="f2 sf" d="M46 28q14 0 14 12t-14 14-14-14 14-12z"/><path class=
 
 {id:"mugwort",cat:"herbs",rare:true,price:1,pk:"3–8 €/100 g",name:{en:"Mugwort",fr:"Armoise"},latin:"Artemisia vulgaris",
 origin:{en:"Eurasian roadsides and riverbanks",fr:"Bords de chemins et berges d'Eurasie"},season:[3,4,5,6],
-flavor:["bitter","herbal","resinous"],texture:["tender","moist"],
+flavor:["bitter","herbal","resinous"],texture:["tender","fibrous","moist"],
 story:{en:"German kitchens call it Beifuss and pack whole stems into a roast goose, where the bitterness cuts the fat; Japanese ones blanch the young spring leaves into the yomogi paste that turns mochi green. The two uses are months apart and the plant is barely recognisable between them.",
 fr:"Les cuisines allemandes l'appellent Beifuss et en garnissent l'oie rôtie, où l'amertume tranche le gras ; les japonaises blanchissent les jeunes pousses de printemps en pâte de yomogi, celle qui verdit les mochis. Les deux usages sont séparés de plusieurs mois, et la plante n'a presque rien à voir de l'un à l'autre."},
 tip:{en:"For yomogi, blanch only the young leaves with a pinch of bicarbonate of soda to hold the green, squeeze them hard and pound. For goose, use whole stems and pull them out before carving — they are inedible.",
@@ -611,7 +611,7 @@ svg:'<path class="s" d="M48 82q-1-12-1-18M47 66q-8-2-11-6M49 66q8-2 11-6"/><path
 
 {id:"purple-basil",cat:"herbs",price:1,pk:"3–5 €/pot",name:{en:"Purple basil",fr:"Basilic pourpre"},latin:"Ocimum basilicum var. purpurascens",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
-flavor:["anise","herbal","warm","floral"],texture:["tender","moist"],
+flavor:["anise","herbal","warm","floral"],texture:["tender","smooth","moist"],
 story:{en:"More clove and anise than green basil, and considerably tougher-leaved. Its anthocyanins bleed pink into vinegar within minutes, which is why it is grown as much for infusing as for the leaf itself.",
 fr:"Plus giroflé et anisé que le basilic vert, et à la feuille nettement plus coriace. Ses anthocyanes rosissent le vinaigre en quelques minutes, d’où une culture autant pour l’infusion que pour la feuille elle-même."},
 tip:{en:"It does not make good pesto — the colour turns muddy brown. Use it whole in salads or steep it in vinegar.",
@@ -681,7 +681,7 @@ svg:'<path class="s" d="M48 82q-3-20-2-32 0-14 0-25"/><path class="s" d="M47 58q
 
 {id:"rue",cat:"herbs",rare:true,price:1,pk:"5–10 €/100 g",name:{en:"Rue",fr:"Rue officinale (herbe de grâce)"},latin:"Ruta graveolens",
 origin:{en:"Mediterranean rocky ground",fr:"Rocailles méditerranéennes"},season:[5,6,7,8,9],
-flavor:["bitter","musky","pungent"],texture:["tender","moist"],
+flavor:["bitter","musky","pungent"],texture:["firm","smooth"],
 story:{en:"Apicius reaches for it constantly, and Roman offal cookery has never let it go — it is still the herb standing upright in a bottle of grappa alla ruta. Its sap is phototoxic: handle the plant bare-armed in summer sun and you can raise blisters that take weeks to fade.",
 fr:"Apicius y revient sans cesse, et la cuisine romaine des abats ne l'a jamais lâchée — c'est encore le rameau dressé dans une bouteille de grappa alla ruta. Sa sève est phototoxique : manipulez la plante bras nus en plein soleil d'été et vous provoquerez des cloques longues à s'effacer."},
 tip:{en:"Count leaves, not sprigs: two or three in a pan of kidneys or a litre of stock is the ceiling, and a fourth turns the whole dish acrid. Chop it into fat, never into acid.",
@@ -831,7 +831,7 @@ svg:'<path class="s" d="M42 26q13 8 0 16t0 16 0 16 0 12"/><path class="s" d="M54
 
 {id:"brede-mafane",cat:"herbs",rare:true,price:2,pk:"20–40 €/kg",name:{en:"Szechuan button (brède mafane)",fr:"Brède mafane (cresson de Para)"},latin:"Acmella oleracea",
 origin:{en:"Brazil, Madagascar, Réunion",fr:"Brésil, Madagascar, La Réunion"},season:[],
-flavor:["numbing","pungent","grassy"],texture:["tender","moist"],
+flavor:["numbing","pungent","grassy"],texture:["firm","moist"],
 story:{en:"The tingle is spilanthol, an alkylamide that fires the touch and salivary nerves rather than the taste buds — Brazilian dentists used the plant for toothache long before chefs bought it by the bud. In Madagascar the leaves and flower heads go into romazava, where the numbness is the point of the dish rather than a trick played on the diner.",
 fr:"Le picotement vient du spilanthol, un alkylamide qui excite les nerfs du toucher et de la salivation plutôt que les papilles : au Brésil, les dentistes s’en servaient contre les rages de dents bien avant que les cuisiniers ne l’achètent au bouton. À Madagascar, feuilles et capitules entrent dans le romazava, où l’engourdissement est le propos du plat et non un tour joué au convive."},
 tip:{en:"A quarter of a flower head per person is the working dose; a whole one floods the mouth and blanks the palate for several minutes. Cooking softens the tingle but never removes it, so serve nothing delicate alongside — and no wine you care about.",
@@ -851,7 +851,7 @@ svg:'<path class="s" d="M48 82q-3-24-1-40 1-10 0-18"/><path class="f1 sf" d="M47
 
 {id:"thai-basil",cat:"herbs",price:1,pk:"1,50–3 €/botte",name:{en:"Thai basil",fr:"Basilic thaï (horapha)"},latin:"Ocimum basilicum var. thyrsiflorum",
 origin:{en:"Thai and Lao kitchen gardens",fr:"Jardins potagers thaïs et laotiens"},season:[6,7,8,9],
-flavor:["anise","peppery","floral"],texture:["tender","moist"],
+flavor:["anise","peppery","floral"],texture:["tender","smooth","moist"],
 story:{en:"Thai kitchens keep three basils apart and never swap them: horapha with its purple stem and anise note, holy basil for stir-fries, lemon basil for soups. Horapha runs on a different balance of aromatics from Genovese basil, and its firmer leaf survives a simmering curry instead of going black.",
 fr:"Les cuisines thaïes distinguent trois basilics et ne les échangent jamais : le horapha, à tige violette et note anisée, le basilic sacré pour les sautés, le basilic-citron pour les soupes. Le horapha repose sur un autre équilibre d'aromatiques que le basilic génois, et sa feuille plus ferme tient dans un curry qui mijote au lieu de noircir."},
 tip:{en:"Add it in the last minute of a curry, whole leaves and tender stem tips together, pressed under the sauce. Unlike Genovese it takes heat, but chopping it releases the oils that turn the anise medicinal.",
@@ -931,7 +931,7 @@ svg:'<path class="f2 sf" d="M34 52q0-13 14-13t14 13q-5 9-14 9t-14-9z"/><path cla
 
 {id:"wild-fennel-fronds",cat:"herbs",price:1,pk:"1,50–4 €/botte",name:{en:"Wild fennel fronds",fr:"Fenouil sauvage"},latin:"Foeniculum vulgare subsp. piperitum",
 origin:{en:"Sicily and the Mediterranean scrub",fr:"Sicile et garrigue méditerranéenne"},season:[3,4,5],
-flavor:["anise","bitter","resinous","herbal"],texture:["tender","moist"],
+flavor:["anise","bitter","resinous","herbal"],texture:["tender","fibrous","moist"],
 story:{en:"The wild subspecies makes no bulb at all — it puts everything into thread-fine fronds that are more bitter and more resinous than the cultivated plant’s. In pasta con le sarde the fronds are boiled first and the green cooking water is kept to cook the pasta, so half the flavour of the dish comes out of a pot most cooks would tip away.",
 fr:"La sous-espèce sauvage ne fait aucun bulbe : elle met tout dans des frondes filiformes, plus amères et plus résineuses que celles de la plante cultivée. Dans les pasta con le sarde, on blanchit d’abord les frondes et l’on garde l’eau verte pour y cuire les pâtes : la moitié du goût du plat sort d’une casserole que la plupart jetteraient."},
 tip:{en:"Boil the fronds ten minutes, chop them, and cook the pasta in that same water — salt it as you would any pasta water, since it is now the backbone of the sauce. Pick before the plant flowers: once the umbels open the fronds toughen and the anise turns harsh.",
@@ -981,7 +981,7 @@ svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 66q-10-2-14-8M48 66q1
 
 {id:"yomogi",cat:"herbs",rare:true,price:2,pk:"80–180 €/kg",name:{en:"Yomogi",fr:"Armoise japonaise"},latin:"Artemisia princeps",
 origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
-flavor:["bitter","herbal","grassy","fresh"],texture:["tender","moist"],
+flavor:["bitter","herbal","grassy","fresh"],texture:["tender","fibrous","moist"],
 story:{en:"The same plant is the source of moxa, the smouldering cone of dried leaf used in moxibustion, so the kitchen and the clinic come out of one spring picking. Pounded into rice cake it makes kusamochi, grass cake, whose green is the leaf itself and not a colouring.",
 fr:"La même plante fournit le moxa, ce cône de feuille séchée que l’on fait se consumer en moxibustion : la cuisine et la médecine sortent d’une seule cueillette de printemps. Pilée dans la pâte de riz, elle donne le kusamochi, le « gâteau d’herbe », dont le vert est celui de la feuille et non un colorant."},
 tip:{en:"Take only the pale tips before the plant flowers, since older leaves turn harsh. Blanch thirty seconds in water with a pinch of bicarbonate to hold the green, squeeze hard, and pound while still warm — cold leaves will not break down into the dough.",

@@ -31,7 +31,7 @@ svg:'<path class="f2 sf" d="M28 34h40l-4 38H32z"/><path class="s" d="M28 44h40M3
 
 {id:"akazu",cat:"condiments",price:3,pk:"25–50 €/L",name:{en:"Akazu",fr:"Akazu (vinaigre rouge japonais)"},latin:"Oryza sativa",
 origin:{en:"Handa, Aichi",fr:"Handa, préfecture d’Aichi"},season:[],
-flavor:["umami","sour","mild"],texture:["smooth","moist"],
+flavor:["umami","sour","mild"],texture:["smooth","fluid"],
 story:{en:"In 1804 Matazaemon Nakano, founder of the house that became Mizkan, tasted the fast sushi of Edo and worked out that vinegar from aged sake lees would suit it better, and cost far less, than rice vinegar that ordinary people could not afford. He brewed it in Handa and shipped it to Edo, and the amber rice of Edomae sushi descends directly from that decision.",
 fr:"En 1804, Matazaemon Nakano, fondateur de la maison devenue Mizkan, goûte le sushi rapide d’Edo et conclut qu’un vinaigre de lies de saké vieillies lui irait mieux, et coûterait bien moins cher, que le vinaigre de riz hors de portée du peuple. Il le brasse à Handa et l’expédie à Edo : le riz ambré du sushi edomae descend directement de cette décision."},
 tip:{en:"Cut the sugar in your sushi vinegar by at least half — the aged lees already read sweet and heavy with umami, and the usual rice-vinegar ratio makes the shari cloying. Expect the rice to turn amber; that colour is the point, not a fault.",
@@ -111,7 +111,7 @@ svg:'<path class="f2 sf" d="M36 22h24v54H36z"/><path class="s" d="M36 38h24M36 6
 
 {id:"banyuls-vinegar",cat:"condiments",price:2,pk:"14–26 €/L",name:{en:"Banyuls vinegar",fr:"Vinaigre de Banyuls"},latin:"Vinaigre de Banyuls",
 origin:{en:"Roussillon, France",fr:"Roussillon, France"},season:[],
-flavor:["sour","sweet","nutty","rich"],texture:["smooth","moist"],
+flavor:["sour","sweet","nutty","rich"],texture:["smooth","fluid"],
 story:{en:"Made from Banyuls, a fortified sweet wine from the terraced vineyards above the Mediterranean, and aged in oak barrels left outdoors through the seasons. The result is closer to sherry vinegar than to any French one.",
 fr:"Fait à partir du banyuls, vin doux naturel des terrasses surplombant la Méditerranée, et vieilli en fûts de chêne laissés dehors au fil des saisons. Le résultat est plus proche du vinaigre de Xérès que d’aucun français."},
 tip:{en:"Its sweetness lets it stand alone — a spoonful on a warm salad of duck or foie gras needs no oil at all.",
@@ -141,7 +141,7 @@ svg:'<path class="f1 sf" d="M36 34h24v34H36z"/><path class="f3 sf" d="M33 68h30v
 
 {id:"beer-vinegar",cat:"condiments",price:2,pk:"10–20 €/L",name:{en:"Beer vinegar",fr:"Vinaigre de bière"},latin:"Hordeum vulgare",
 origin:{en:"Brewing countries of Northern Europe",fr:"Pays brassicoles d’Europe du Nord"},season:[],
-flavor:["sour","bitter","toasty"],texture:["smooth","moist"],
+flavor:["sour","bitter","toasty"],texture:["smooth","fluid"],
 story:{en:"Beer vinegar is what happens when acetobacter reaches a beer left open, and northern kitchens have made it deliberately since long before anyone bottled it — the malt and the hop bitterness both survive acetification. Malt vinegar is a different animal: it starts from unhopped malted barley wort, which is why it reads sweet and caramel where beer vinegar stays dry and bitter.",
 fr:"Le vinaigre de bière est ce qui arrive quand l’acetobacter atteint une bière laissée ouverte, et les cuisines du Nord le font exprès depuis bien avant sa mise en bouteille : l’amertume du malt et celle du houblon survivent toutes deux à l’acétification. Le vinaigre de malt est autre chose : il part d’un moût d’orge maltée non houblonné, d’où son goût sucré et caramel là où le vinaigre de bière reste sec et amer."},
 tip:{en:"Its acidity rarely tops 5 per cent, so it will not make a preserve safe on its own — top up with cider vinegar for anything you mean to keep. Deglaze pork chops or braised red cabbage with it: the hop bitterness reads as depth once it has cooked out.",
@@ -221,7 +221,7 @@ svg:'<path class="f3 sf" d="M35 24h26v8H35z"/><path class="f1 sf" d="M32 32h32v4
 
 {id:"cane-vinegar",cat:"condiments",price:1,pk:"6–12 €/L",name:{en:"Cane vinegar",fr:"Vinaigre de canne"},latin:"Saccharum officinarum",
 origin:{en:"Ilocos, Philippines",fr:"Ilocos, Philippines"},season:[],
-flavor:["sour","sweet","tangy"],texture:["smooth","moist"],
+flavor:["sour","sweet","tangy"],texture:["smooth","fluid"],
 story:{en:"Sukang Iloko is fermented from basi, the Ilocano sugarcane wine, in the same burnay clay jars used to age the wine itself, the juice having first been boiled down to a syrup. The Philippines runs on four native vinegars — cane, coconut, nipa and kaong palm — and an adobo made with each one tastes measurably different.",
 fr:"Le sukang iloko fermente à partir du basi, le vin de canne ilocano, dans les mêmes jarres de terre burnay qui servent à vieillir ce vin, le jus ayant d’abord été réduit en sirop. Les Philippines vivent sur quatre vinaigres indigènes — canne, coco, nipa et palmier kaong — et un adobo change de goût de façon mesurable selon celui qu’on verse."},
 tip:{en:"Rounder and milder than rice or coconut vinegar, it goes into a Filipino adobo undiluted: pour it in and leave it unstirred for the first few minutes of simmering so the raw acetic edge boils off. In kinilaw it needs its acidity propped up with calamansi.",
@@ -291,7 +291,7 @@ svg:'<path class="f2 sf" d="M34 36h28v28q0 6-6 6H40q-6 0-6-6z"/><path class="s" 
 
 {id:"sheng-chou",cat:"condiments",price:1,pk:"4–9 €/L",name:{en:"Chinese light soy sauce (sheng chou)",fr:"Sauce soja claire chinoise (sheng chou)"},latin:"Glycine max",
 origin:{en:"Guangdong, China",fr:"Guangdong, Chine"},season:[],
-flavor:["salty","umami","tangy"],texture:["smooth","moist"],
+flavor:["salty","umami","tangy"],texture:["smooth","fluid"],
 story:{en:"The characters read raw-drawn: this is liquid taken off the top of the mash rather than pressed and darkened afterwards, and the very first draw, tou chou, is bottled separately and graded on nitrogen content. Saltier and thinner than the dark soy beside it, it carries no caramel at all — it seasons without colouring.",
 fr:"Les caractères disent « tirée crue » : c’est le liquide prélevé en surface de la masse en fermentation, et non pressé puis foncé ensuite ; le tout premier soutirage, le tou chou, est embouteillé à part et classé sur sa teneur en azote. Plus salée et plus fluide que la sauce foncée qu’elle côtoie, elle ne contient aucun caramel — elle assaisonne sans colorer."},
 tip:{en:"Light for salt, dark for colour, and never one for the other: a tablespoon of dark soy in place of light leaves a dish black and undersalted. In a stir-fry, pour it down the hot side of the wok rather than onto the food, so it sizzles for a second before it lands.",
@@ -301,7 +301,7 @@ svg:'<g transform="translate(3.65 3.8) scale(0.924)"><path class="f3 sf" d="M38 
 
 {id:"chinkiang-vinegar",cat:"condiments",price:1,pk:"5–10 €/L",name:{en:"Chinkiang vinegar",fr:"Vinaigre noir de Chinkiang"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Zhenjiang, Jiangsu",fr:"Zhenjiang, Jiangsu"},season:[],
-flavor:["sour","smoky","toasty"],texture:["smooth","moist"],
+flavor:["sour","smoky","toasty"],texture:["smooth","fluid"],
 story:{en:"It is fermented solid rather than liquid: glutinous rice is mixed with wheat bran into a damp mash turned by hand in open vats, and that bran is where the smoke and the toast come from. Zhenjiang holds a protected origin designation, and the serious jars are labelled by the number of years they stood outside.",
 fr:"La fermentation se fait en milieu solide et non liquide : le riz gluant est mêlé au son de blé en une masse humide retournée à la main dans des cuves ouvertes, et c'est ce son qui apporte le fumé et le grillé. Zhenjiang bénéficie d'une appellation d'origine protégée, et les bons flacons portent le nombre d'années passées dehors."},
 tip:{en:"Add it off the heat — the aromatics are volatile and a long simmer leaves nothing but the acid. For a dumpling dip work to roughly two parts vinegar to one of ginger julienne with a pinch of sugar; the sugar is what makes it read as balsamic rather than merely sour.",
@@ -321,7 +321,7 @@ svg:'<path class="f3 sf" d="M30 40h36l-4 30q-1 4-5 4H39q-4 0-5-4z"/><path class=
 
 {id:"cider-vinegar",cat:"condiments",price:1,pk:"3–7 €/L",name:{en:"Cider vinegar",fr:"Vinaigre de cidre"},latin:"Acetum pomorum",
 origin:{en:"Normandy & Brittany",fr:"Normandie & Bretagne"},season:[],
-flavor:["sour","fruity","tangy","sweet"],texture:["smooth","moist"],
+flavor:["sour","fruity","tangy","sweet"],texture:["smooth","fluid"],
 story:{en:"The cloudy strand that forms in an unfiltered bottle is the mother — a living mat of bacteria and cellulose that turns alcohol into acid. It is not spoilage, and it can be lifted out and used to start the next batch.",
 fr:"Le voile trouble qui se forme dans une bouteille non filtrée est la mère — un tapis vivant de bactéries et de cellulose qui change l’alcool en acide. Ce n’est pas une altération, et on peut la prélever pour lancer la fournée suivante."},
 tip:{en:"It is gentler than wine vinegar, so use a little more. It suits pork, cabbage and anything with apple in it.",
@@ -331,7 +331,7 @@ svg:'<path class="f1 sf" d="M38 24h8v9q12 5 12 14v25q0 4-4 4H30q-4 0-4-4V47q0-9 
 
 {id:"coconut-vinegar",cat:"condiments",price:1,pk:"6–12 €/L",name:{en:"Coconut vinegar",fr:"Vinaigre de coco"},latin:"Cocos nucifera",
 origin:{en:"The Philippines",fr:"Philippines"},season:[],
-flavor:["sour","tangy","mild","fruity"],texture:["smooth","moist"],
+flavor:["sour","tangy","mild","fruity"],texture:["smooth","fluid"],
 story:{en:"Sukang tuba begins as tuba, the sap a climber cuts from the coconut flower spike twice a day, which ferments into palm wine and then, left alone, into vinegar. The mother keeps working in the bottle, so it stays cloudy and its acidity is still moving when you buy it.",
 fr:"Le sukang tuba commence en tuba, la sève que le grimpeur entaille deux fois par jour sur la hampe florale du cocotier, qui fermente en vin de palme puis, laissée seule, en vinaigre. La mère continue de travailler dans la bouteille : il reste trouble et son acidité bouge encore quand vous l’achetez."},
 tip:{en:"It is softer than cider or rice vinegar, around 4%, so a kinilaw or an adobo takes more of it than a recipe written for wine vinegar suggests — start at half again as much. Shake before pouring: the sediment carries most of the flavour.",
@@ -341,7 +341,7 @@ svg:'<path class="f3 sf" d="M22 46a26 26 0 0 0 52 0z"/><path class="f1" d="M27 4
 
 {id:"colatura-d-anchois",cat:"condiments",price:3,pk:"100–200 €/L (flacon de 100 ml)",name:{en:"Colatura di alici",fr:"Colatura d'anchois"},latin:"Engraulis encrasicolus (anchovy liquid)",
 origin:{en:"Cetara, Amalfi coast",fr:"Cetara, côte amalfitaine"},season:[],
-flavor:["umami","salty","briny","marine"],texture:["smooth","moist"],
+flavor:["umami","salty","briny","marine"],texture:["smooth","fluid"],
 story:{en:"Cetara packs its anchovies in salt inside small chestnut barrels called terzigni, then pierces the base after two or three years and lets the amber liquid fall drop by drop. Legend has it that medieval monks found the method by accident, when brine seeped through the worn staves of old wine casks; the sauce only received its protected designation in 2020.",
 fr:"À Cetara, les anchois sont tassés au sel dans de petits fûts de châtaignier, les terzigni, dont on perce le fond au bout de deux ou trois ans pour recueillir goutte à goutte un liquide ambré. La légende veut que des moines médiévaux l'aient découvert par accident, la saumure suintant entre les douves usées de vieux fûts à vin ; l'appellation protégée, elle, ne date que de 2020."},
 tip:{en:"Cook the pasta in unsalted water and stir the colatura in off the heat, about a tablespoon for 100 g, with raw garlic and oil. Boiled, it loses its sweetness and turns flatly fishy.",
@@ -471,7 +471,7 @@ svg:'<path class="f3 sf" d="M30 46q18-8 36 0 4 14-4 22-14 6-28 0-4-8-4-22z"/><pa
 
 {id:"fish-sauce",cat:"condiments",price:1,pk:"5–12 €/L",name:{en:"Fish sauce",fr:"Nuoc-mâm"},latin:"Engraulidae (fermented)",
 origin:{en:"Vietnam & Thailand",fr:"Vietnam & Thaïlande"},season:[],
-flavor:["salty","umami","pungent","rich"],texture:["smooth","moist"],
+flavor:["salty","umami","pungent","rich"],texture:["smooth","fluid"],
 story:{en:"Anchovies and salt, stacked in wooden barrels under the tropical sun for a year — the direct heir of Rome’s garum, still pressed the old way in Cetara, Italy, as colatura. The first amber run of the barrel, nhĩ, is graded and prized like an extra-virgin oil.",
 fr:"Des anchois et du sel, empilés en fûts de bois sous le soleil tropical pendant un an — l’héritier direct du garum romain, encore pressé à l’ancienne à Cetara, en Italie, sous le nom de colatura. La première coulée ambrée du fût, le nhĩ, se classe et se dispute comme une huile extra-vierge."},
 tip:{en:"Smell the bottle, then trust the pot: cooked, it sheds its roar and leaves pure depth. A teaspoon secretly improves a bolognese or a vinaigrette.",
@@ -571,7 +571,7 @@ svg:'<path class="f2 sf" d="M22 70q10-22 26-22t26 22z"/><path class="s" d="M30 6
 
 {id:"guk-ganjang",cat:"condiments",rare:true,price:2,pk:"8–16 €/L",name:{en:"Guk-ganjang",fr:"Ganjang de soupe (guk-ganjang)"},latin:"Glycine max",
 origin:{en:"Korea",fr:"Corée"},season:[],
-flavor:["salty","umami","earthy"],texture:["smooth","moist"],
+flavor:["salty","umami","earthy"],texture:["smooth","fluid"],
 story:{en:"It is the liquid poured off the meju jar, the same ferment that leaves doenjang behind, and it contains no wheat at all — the wheat-brewed style Koreans call waeganjang came later, from Japan. Cooks still name this one joseon-ganjang, the Korean soy, and keep it for soups where the broth has to stay pale.",
 fr:"C'est le liquide soutiré de la jarre de meju, la fermentation même qui laisse le doenjang au fond, et il ne contient aucun blé — le style brassé au blé, que les Coréens appellent waeganjang, est venu plus tard du Japon. Les cuisiniers nomment toujours celui-ci joseon-ganjang, la sauce soja coréenne, et le réservent aux soupes dont le bouillon doit rester clair."},
 tip:{en:"It is far saltier than Japanese shoyu — start at a third of the volume you would use of ordinary soy sauce and taste before adding more. It seasons, it should not colour: if the broth is going brown you have already used too much.",
@@ -751,7 +751,7 @@ svg:'<path class="f1 sf" d="M40 28L55 37L40 46L25 37Z"/><path class="f2 sf" d="M
 
 {id:"koikuchi-shoyu",cat:"condiments",price:1,pk:"5–12 €/L",name:{en:"Koikuchi shoyu",fr:"Sauce soja koikuchi"},latin:"Glycine max, Triticum aestivum",
 origin:{en:"Chiba and Hyogo, Japan",fr:"Chiba et Hyōgo, Japon"},season:[],
-flavor:["salty","umami","toasty","rich"],texture:["smooth","moist"],
+flavor:["salty","umami","toasty","rich"],texture:["smooth","fluid"],
 story:{en:"Roughly equal parts soybean and roasted wheat, koikuchi is about four fifths of everything Japan brews, and the wheat is what separates it from Chinese soy sauce — it supplies the alcohol and the sweet, almost floral aromatics. Counterintuitively it is the less salty of the two standard grades: about 16 per cent against usukuchi’s 19.",
 fr:"Fait de parts à peu près égales de soja et de blé grillé, le koikuchi représente environ quatre cinquièmes de tout ce que brasse le Japon, et c’est le blé qui le sépare des sauces chinoises : il fournit l’alcool et les arômes doux, presque floraux. Contre-intuitivement, c’est le moins salé des deux crus courants : environ 16 % contre 19 % pour l’usukuchi."},
 tip:{en:"Its aromatics are volatile — add it at the end, or in two goes, because a sauce simmered from the start with koikuchi tastes only of salt by service. Once opened it oxidises in about a month at room temperature; keep it cold.",
@@ -771,7 +771,7 @@ svg:'<path class="f1 sf" d="M26 56h44q-4 16-14 16H40q-10 0-14-16z"/><path class=
 
 {id:"kurozu",cat:"condiments",price:2,pk:"20–40 €/L",name:{en:"Kurozu",fr:"Vinaigre noir japonais (kurozu)"},latin:"Oryza sativa",
 origin:{en:"Fukuyama, Kagoshima",fr:"Fukuyama, Kagoshima"},season:[],
-flavor:["sour","umami","nutty"],texture:["smooth","moist"],
+flavor:["sour","umami","nutty"],texture:["smooth","fluid"],
 story:{en:"Unpolished rice, koji and water go into one earthenware jar standing in an open field, and all three stages — saccharification, alcohol, then acetic acid — run in that single vessel over one to three years. The jars have stood in rows at Fukuyama in Kagoshima since about 1800, worked without lids, pumps or any transfer between tanks.",
 fr:"Riz complet, koji et eau entrent dans une seule jarre de terre posée en plein champ, et les trois étapes — saccharification, alcool, puis acide acétique — s'y déroulent dans ce même récipient pendant un à trois ans. Les jarres s'alignent à Fukuyama, dans le Kagoshima, depuis 1800 environ, menées sans couvercle, sans pompe et sans aucun transvasement."},
 tip:{en:"It is rounder and far less aggressive than rice vinegar, so use it undiluted where you would otherwise cut a vinegar with water. A spoonful stirred into a pork stir-fry at the end reads as depth rather than as acidity.",
@@ -791,7 +791,7 @@ svg:'<path class="f1 sf" d="M36 22C64 32 66 62 52 76C56 56 46 38 30 28Z"/><path 
 
 {id:"malt-vinegar",cat:"condiments",price:1,pk:"4–8 €/L",name:{en:"Malt vinegar",fr:"Vinaigre de malt"},latin:"Acetum brasii",
 origin:{en:"Britain",fr:"Grande-Bretagne"},season:[],
-flavor:["sour","toasty","earthy","tangy"],texture:["smooth","moist"],
+flavor:["sour","toasty","earthy","tangy"],texture:["smooth","fluid"],
 story:{en:"Made from soured ale rather than wine, in a country that never had vineyards to spare. It is the one vinegar built for fried food — the malt sweetness stands up to hot fat where a wine vinegar just tastes thin.",
 fr:"Fait de bière tournée plutôt que de vin, dans un pays qui n’avait pas de vignes à perdre. C’est le seul vinaigre conçu pour la friture — la douceur maltée tient contre le gras chaud là où un vinaigre de vin paraît maigre."},
 tip:{en:"Shake it on hot chips the moment they leave the fryer, before they cool. Steam carries it into the potato.",
@@ -831,7 +831,7 @@ svg:'<path class="f1 sf" d="M32 52h32v6q0 14-16 14T32 58z"/><path class="f2 sf" 
 
 {id:"moscatel-vinegar",cat:"condiments",price:2,pk:"8–18 €/L",name:{en:"Moscatel vinegar",fr:"Vinaigre de Moscatel"},latin:"Vitis vinifera",
 origin:{en:"Andalusia, Spain",fr:"Andalousie, Espagne"},season:[],
-flavor:["sour","sweet","floral"],texture:["smooth","moist"],
+flavor:["sour","sweet","floral"],texture:["smooth","fluid"],
 story:{en:"Muscat of Alexandria is among the oldest grapes still farmed, and in Andalusia its wine is sweet enough that vinegar made from it keeps a residue of sugar the acetobacter never reaches. The sherry vinegar rules give it a category of its own, aged in the same soleras as the rest.",
 fr:"Le muscat d’Alexandrie est l’un des plus anciens cépages encore cultivés, et en Andalousie son vin est assez sucré pour que le vinaigre garde un reste de sucre que l’acétobacter n’atteint jamais. La réglementation du vinaigre de Xérès lui réserve sa propre catégorie, élevée dans les mêmes soleras que le reste."},
 tip:{en:"It carries sugar, so it glazes: reduce it by half in the pan after searing foie gras or duck and it naps on its own. In a vinaigrette use less oil than usual — three to one is plenty.",
@@ -881,7 +881,7 @@ svg:'<path class="f1 sf" d="M31 47q-2-5 4-6h26q6 1 4 6v22q0 9-17 9t-17-9z"/><pat
 
 {id:"myeolchi-aekjeot",cat:"condiments",price:2,pk:"8–16 €/L",name:{en:"Myeolchi-aekjeot",fr:"Sauce d’anchois coréenne (myeolchi-aekjeot)"},latin:"Engraulis japonicus",
 origin:{en:"South coast of Korea",fr:"Côte sud de la Corée"},season:[],
-flavor:["salty","umami","briny","marine"],texture:["smooth","moist"],
+flavor:["salty","umami","briny","marine"],texture:["smooth","fluid"],
 story:{en:"Anchovies packed under coarse salt at about a fifth of their weight collapse over six months to a year; the clear brown liquid drawn off the top is aekjeot, and the sludge left below is myeolchi-jeot, sold separately. Jeolla kimchi leans on it hard while Seoul kimchi stays pale — you can taste the province in the jar.",
 fr:"Les anchois salés à environ un cinquième de leur poids s’effondrent en six mois à un an ; le liquide brun et clair soutiré en surface est l’aekjeot, et la lie qui reste au fond est le myeolchi-jeot, vendu à part. Les kimchi du Jeolla en sont chargés quand ceux de Séoul restent pâles : on goûte la province dans le bocal."},
 tip:{en:"Use it where you want depth without sweetness — two tablespoons per kilo of cabbage for kimchi. It carries more salt and less sugar than Southeast Asian fish sauce, so if you swap one for the other, taste for both before seasoning further.",
@@ -971,7 +971,7 @@ svg:'<ellipse class="f3 sf" cx="42" cy="56" rx="9" ry="11"/><ellipse class="f1 s
 
 {id:"orange-blossom-water",cat:"condiments",price:1,pk:"8–16 €/L",name:{en:"Orange blossom water",fr:"Eau de fleur d’oranger"},latin:"Citrus × aurantium",
 origin:{en:"Tunisia & Morocco",fr:"Tunisie & Maroc"},season:[],
-flavor:["floral","citrus","honeyed","fresh"],texture:["smooth","moist"],
+flavor:["floral","citrus","honeyed","fresh"],texture:["smooth","fluid"],
 story:{en:"It is distilled from the flowers of the bitter orange, the same blossom that yields neroli oil — named, the story goes, after Anne-Marie de La Trémoille, princess of Nerola, who scented her gloves with it in the 1680s. The water is what stays in the still once the oil has been drawn off, and it keeps the green, honeyed side of the flower rather than the sweet one.",
 fr:"Elle est distillée à partir des fleurs de bigaradier, la même fleur qui donne l’essence de néroli — nommée, dit-on, d’après Anne-Marie de La Trémoille, princesse de Nerola, qui en parfumait ses gants dans les années 1680. L’eau est ce qui reste dans l’alambic une fois l’essence séparée, et elle garde le côté vert et miellé de la fleur plutôt que son côté sucré."},
 tip:{en:"It loses aroma to heat, so add it after baking or off the flame — a teaspoon per litre of cream, then taste before you consider a second. Past two it slides straight into soap.",
@@ -1001,7 +1001,7 @@ svg:'<path class="f3 sf" d="M41 18h14v10l7 13v26q0 5-5 5H39q-5 0-5-5V41l7-13z"/>
 
 {id:"perry-vinegar",cat:"condiments",price:2,pk:"12–25 €/L",name:{en:"Perry vinegar",fr:"Vinaigre de poiré"},latin:"Pyrus communis",
 origin:{en:"Domfront, Normandy",fr:"Domfront, Normandie"},season:[],
-flavor:["sour","fruity","floral"],texture:["smooth","moist"],
+flavor:["sour","fruity","floral"],texture:["smooth","fluid"],
 story:{en:"A perry pear takes fifteen years or more to come into fruit, which is where the English advice about planting pears for your heirs comes from; the Domfront orchards still hold trees two centuries old. Vinegar from their cider is softer than an apple's, because pears leave behind sorbitol the yeasts cannot ferment.",
 fr:"Un poirier à poiré met quinze ans ou plus à entrer en production — d’où le conseil anglais de planter des poires pour ses héritiers ; les vergers de Domfront gardent des arbres bicentenaires. Le vinaigre tiré de leur cidre est plus doux que celui de pomme : la poire laisse du sorbitol que les levures ne fermentent pas."},
 tip:{en:"Deglaze pork or andouille with it and add no sugar — it carries some already. One spoonful into the pan juices off the heat is the whole seasoning.",
@@ -1041,7 +1041,7 @@ svg:'<path class="f2 sf" d="M40 22h16v14q10 8 10 20v22a6 6 0 0 1-6 6H36a6 6 0 0 
 
 {id:"ponzu",cat:"condiments",price:2,pk:"12–25 €/L",name:{en:"Ponzu",fr:"Ponzu"},latin:"Citrus junos",
 origin:{en:"Japan",fr:"Japon"},season:[],
-flavor:["citrus","salty","umami","tangy"],texture:["smooth","moist"],
+flavor:["citrus","salty","umami","tangy"],texture:["smooth","fluid"],
 story:{en:"The name is half Dutch: pons, the Nagasaki traders' word for punch, joined to su, vinegar. Strictly, ponzu is only the citrus juice — what is sold in bottles is ponzu shoyu, that juice let down with soy, mirin, kombu and katsuobushi and rested for weeks.",
 fr:"Le nom est à moitié néerlandais : pons, le mot des marchands de Nagasaki pour le punch, soudé à su, vinaigre. À la lettre, le ponzu n’est que le jus d’agrume ; ce qu’on vend en bouteille est du ponzu shoyu, ce jus allongé de sauce soja, de mirin, de kombu et de katsuobushi, puis reposé des semaines."},
 tip:{en:"Add it at the table, never in the pan — the citrus aromatics are gone within a minute of heat. Cut it half and half with dashi for a dressing that will not overwhelm raw fish.",
@@ -1081,7 +1081,7 @@ svg:'<path class="f1 sf" d="M18 56q1-14 16-14 11 0 15 8l23-16q4-2 6 1t-3 6L57 59
 
 {id:"red-wine-vinegar",cat:"condiments",price:1,pk:"2–6 €/L",name:{en:"Red wine vinegar",fr:"Vinaigre de vin rouge"},latin:"Acetum vini rubri",
 origin:{en:"France & Italy",fr:"France & Italie"},season:[],
-flavor:["sour","tangy","fruity","earthy"],texture:["smooth","moist"],
+flavor:["sour","tangy","fruity","earthy"],texture:["smooth","fluid"],
 story:{en:"The word is a plain description — vin aigre, sour wine — and for most of history it was an accident rather than a product. Roman soldiers drank it diluted as posca, which is what was offered to Christ on the cross.",
 fr:"Le mot est une description sans détour — vin aigre — et pendant presque toute l’histoire ce fut un accident plutôt qu’un produit. Les soldats romains le buvaient allongé d’eau sous le nom de posca, et c’est ce qui fut offert au Christ en croix."},
 tip:{en:"Deglaze a pan with it rather than wine when you want the acidity to survive reduction. Wine loses its edge, vinegar keeps it.",
@@ -1111,7 +1111,7 @@ svg:'<path class="f2 sf" d="M22 54h52l-6 20H28z"/><path class="f1 sf" d="M28 54q
 
 {id:"rice-vinegar",cat:"condiments",price:1,pk:"4–9 €/L",name:{en:"Rice vinegar",fr:"Vinaigre de riz"},latin:"Acetum oryzae",
 origin:{en:"China & Japan",fr:"Chine & Japon"},season:[],
-flavor:["sour","sweet","mild","delicate"],texture:["smooth","moist"],
+flavor:["sour","sweet","mild","delicate"],texture:["smooth","fluid"],
 story:{en:"Far gentler than any European vinegar — around half the acidity — which is why sushi rice can be seasoned with it heavily without becoming sharp. Japan has made it since rice wine has existed, which is a very long time.",
 fr:"Bien plus doux que tout vinaigre européen — environ moitié moins acide — d’où la possibilité d’en assaisonner généreusement le riz à sushi sans le rendre mordant. Le Japon en fait depuis que le saké existe, c’est-à-dire depuis très longtemps."},
 tip:{en:"Check whether it is seasoned. Sushi vinegar already contains sugar and salt, and using it as plain vinegar wrecks a dressing.",
@@ -1121,7 +1121,7 @@ svg:'<path class="f1 sf" d="M36 22h8v12q6 3 6 10v28q0 4-4 4H34q-4 0-4-4V44q0-7 6
 
 {id:"rose-water",cat:"condiments",price:1,pk:"8–18 €/L",name:{en:"Rose water",fr:"Eau de rose"},latin:"Rosa damascena",
 origin:{en:"Qamsar, Iran",fr:"Qamsar, Iran"},season:[],
-flavor:["floral","delicate","fresh"],texture:["smooth","moist"],
+flavor:["floral","delicate","fresh"],texture:["smooth","fluid"],
 story:{en:"Around Kashan the harvest lasts only a few weeks from mid-May, and the best golab is distilled twice — do atisheh, two fires — from flowers picked before the sun is up. Rose water from these villages has been sent to wash the Kaaba since the Safavid era.",
 fr:"Autour de Kashan, la récolte ne dure que quelques semaines à partir de la mi-mai, et le meilleur golab est distillé deux fois — do atisheh, « deux feux » — à partir de fleurs cueillies avant le lever du soleil. L’eau de rose de ces villages sert à laver la Kaaba depuis l’époque safavide."},
 tip:{en:"Add it at the very end, off the heat and by the half teaspoon: the aroma rides on volatiles that boil away, and a cold cream will take three times more than you expect before it reads. Too much tastes of soap, and nothing fixes it.",
@@ -1271,7 +1271,7 @@ svg:'<path class="f1 sf" d="M32 36h32v34a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><path
 
 {id:"sherry-vinegar",cat:"condiments",price:2,pk:"8–20 €/L",name:{en:"Sherry vinegar",fr:"Vinaigre de Xérès"},latin:"Vinagre de Jerez DOP",
 origin:{en:"Jerez, Andalusia",fr:"Jerez, Andalousie"},season:[],
-flavor:["sour","nutty","rich","woody"],texture:["smooth","moist"],
+flavor:["sour","nutty","rich","woody"],texture:["smooth","fluid"],
 story:{en:"Aged in the solera system, the same cascade of stacked barrels used for the wine: each cask is partly drawn off and topped up from the one above, so a bottle contains a blend of many years and no single vintage exists.",
 fr:"Vieilli en solera, la même cascade de fûts empilés que pour le vin : chaque tonneau est partiellement soutiré et complété par celui du dessus, si bien qu’une bouteille contient un assemblage de nombreuses années et qu’aucun millésime n’existe."},
 tip:{en:"It is strong enough to use by the teaspoon. A few drops finish a lentil soup or a gazpacho better than a whole lemon.",
@@ -1311,7 +1311,7 @@ svg:'<path class="f1 sf" d="M28 46h40l-4 26q-1 6-16 6t-16-6z"/><path class="s" d
 
 {id:"shiro-shoyu",cat:"condiments",rare:true,price:3,pk:"14–24 €/L",name:{en:"Shiro shoyu",fr:"Sauce soja blanche (shiro)"},latin:"Triticum aestivum (fermented)",
 origin:{en:"Hekinan, Aichi",fr:"Hekinan, Aichi"},season:[],
-flavor:["salty","umami","sweet","mild"],texture:["smooth","moist"],
+flavor:["salty","umami","sweet","mild"],texture:["smooth","fluid"],
 story:{en:"Shiro shoyu inverts the recipe — roughly nine parts wheat to one of soybean — and brews for months rather than years, around Hekinan in Aichi. It comes out the colour of straw, which is the entire point: it seasons a clear broth or a chawanmushi without tinting it.",
 fr:"Le shiro shoyu inverse la recette — environ neuf parts de blé pour une de soja — et fermente des mois plutôt que des années, autour de Hekinan, dans l’Aichi. Il en sort couleur paille, et c’est tout l’intérêt : il assaisonne un bouillon clair ou un chawanmushi sans le teinter."},
 tip:{en:"It is as salty as any shoyu, so dose it like one. What it cannot do is last: add it at the end of cooking, keep the bottle cold and finish it within two months, because it browns and goes flat quickly once opened.",
@@ -1331,7 +1331,7 @@ svg:'<path class="f1 sf" d="M28 60h40q-4 14-20 14t-20-14z"/><path class="s" d="M
 
 {id:"soy-sauce",cat:"condiments",price:1,pk:"4–9 €/L",name:{en:"Soy sauce",fr:"Sauce soja"},latin:"Glycine max (fermented)",
 origin:{en:"China",fr:"Chine"},season:[],
-flavor:["salty","umami","rich","toasty"],texture:["smooth","moist"],
+flavor:["salty","umami","rich","toasty"],texture:["smooth","fluid"],
 story:{en:"Born in China over two thousand years ago as a way to stretch precious salt, brewed from soybeans, wheat and patient moulds. Some Japanese breweries have kept their mash tubs alive for centuries — the microbes are the family heirloom.",
 fr:"Née en Chine il y a plus de deux mille ans pour économiser le sel précieux, brassée à partir de soja, de blé et de moisissures patientes. Certaines brasseries japonaises font vivre leurs cuves depuis des siècles — les microbes sont l’héritage de famille."},
 tip:{en:"Think of it as liquid seasoning, not just an Asian marker: a teaspoon deepens a beef stew, a vinaigrette or even a caramel.",
@@ -1421,7 +1421,7 @@ svg:'<path class="f2 sf" d="M28 42h30v26H28z"/><ellipse class="f2 sf" cx="58" cy
 
 {id:"tamari",cat:"condiments",price:2,pk:"9–16 €/L",name:{en:"Tamari",fr:"Tamari"},latin:"たまり",
 origin:{en:"Chūbu region, Japan",fr:"Région du Chūbu, Japon"},season:[],
-flavor:["umami","salty","rich","earthy"],texture:["smooth","moist"],
+flavor:["umami","salty","rich","earthy"],texture:["smooth","fluid"],
 story:{en:"Originally the liquid that pooled on top of fermenting miso — tamari means that which accumulates. It is made with little or no wheat, which is why it is darker, rounder and less sharp than ordinary soy sauce.",
 fr:"À l’origine le liquide qui s’accumulait sur le miso en fermentation — tamari signifie ce qui s’amasse. Il se fait avec peu ou pas de blé, d’où sa couleur plus sombre, sa rondeur et sa moindre vivacité que la sauce soja ordinaire."},
 tip:{en:"Use it where soy sauce would dominate — as a dipping sauce, or brushed on grilled fish. It seasons without shouting.",
@@ -1461,7 +1461,7 @@ svg:'<path class="f2 sf" d="M28 40h40v26q0 6-6 6H34q-6 0-6-6z"/><path class="f1 
 
 {id:"truffle-juice",cat:"condiments",luxe:true,price:4,pk:"150–400 €/L",name:{en:"Truffle juice",fr:"Jus de truffe"},latin:"Tuber melanosporum",
 origin:{en:"Périgord canneries",fr:"Conserveries du Périgord"},season:[],
-flavor:["earthy","umami","woody","rich"],texture:["smooth","moist"],
+flavor:["earthy","umami","woody","rich"],texture:["smooth","fluid"],
 story:{en:"When truffles are sterilised in the tin they give up a dark liquor, and that liquor is drawn off and sold on its own, the first cooking yielding the strongest. The tinned truffle has by then lost most of what it had; the juice is where it went.",
 fr:"À la stérilisation en boîte, la truffe rend une liqueur sombre : cette liqueur est mise à part et vendue seule, la première cuisson donnant le jus le plus puissant. La truffe en conserve, elle, a déjà perdu l'essentiel — le jus, c'est là qu'il est passé."},
 tip:{en:"It is salted and concentrated, so a tablespoon finishes a sauce for four and you season afterwards, never before. Add it off the heat: boiling drives the aroma straight out of the pan.",
@@ -1481,7 +1481,7 @@ svg:'<path class="f2 sf" d="M24 40q-5-9 2-13 8-4 16 1 5 4 4 9-3 6-10 7-8 1-12-4z
 
 {id:"umezu",cat:"condiments",price:2,pk:"12–22 €/L",name:{en:"Umezu",fr:"Vinaigre d’umeboshi (umezu)"},latin:"Prunus mume",
 origin:{en:"Japan, the umeboshi barrels",fr:"Japon, les barriques d’umeboshi"},season:[],
-flavor:["salty","sour","fresh","herbal"],texture:["smooth","moist"],
+flavor:["salty","sour","fresh","herbal"],texture:["smooth","fluid"],
 story:{en:"Despite the name, umezu is not a vinegar: it is the brine the ume plums give up under salt, drawn off before the fruit goes out to dry in the July sun. The pink arrives only afterwards, when red shiso leaves are packed in and their pigment turns scarlet against the acid.",
 fr:"Malgré son nom, l’umezu n’est pas un vinaigre : c’est la saumure que les prunes ume rendent sous le sel, soutirée avant que les fruits ne partent sécher au soleil de juillet. Le rose ne vient qu’ensuite, lorsqu’on tasse les feuilles de shiso rouge dont le pigment vire à l’écarlate au contact de l’acide."},
 tip:{en:"Count it as salt and acid at once — a teaspoon replaces both the vinegar and the salt in a vinaigrette, so season only after tasting. Never reduce it: heat carries off the shiso perfume and leaves flat brine behind.",
@@ -1491,7 +1491,7 @@ svg:'<path class="f2 sf" d="M34 34h28v28q0 8-8 8H42q-8 0-8-8z"/><path class="s" 
 
 {id:"usukuchi-shoyu",cat:"condiments",price:2,pk:"8–15 €/L",name:{en:"Usukuchi shoyu",fr:"Sauce soja claire (usukuchi)"},latin:"Glycine max",
 origin:{en:"Tatsuno, Harima, Japan",fr:"Tatsuno, Harima, Japon"},season:[],
-flavor:["salty","umami","mild","delicate"],texture:["smooth","moist"],
+flavor:["salty","umami","mild","delicate"],texture:["smooth","fluid"],
 story:{en:"Brewed at Tatsuno in the 1660s so that the clear broths of Kansai would stay clear, usukuchi is paler than ordinary shoyu and yet saltier: the brine is stronger and the mash pressed younger, so it never darkens. Amazake, a sweet rice mash, goes in at the end of brewing, which is why so pale a sauce tastes so round.",
 fr:"Brassée à Tatsuno dans les années 1660 pour que les bouillons clairs du Kansai le restent, l’usukuchi est plus pâle que la sauce courante et pourtant plus salée : la saumure est plus forte et le moût pressé plus jeune, si bien qu’elle ne fonce jamais. On y ajoute en fin de brassage de l’amazake, une bouillie de riz sucrée, ce qui explique qu’une sauce si claire ait autant de rondeur."},
 tip:{en:"Use about three quarters of what a recipe asks in ordinary shoyu and taste before adding more: usukuchi carries a couple of points more salt. In a dashi for chawanmushi or udon it seasons without browning the egg or the broth.",
@@ -1501,7 +1501,7 @@ svg:'<path class="f2 sf" d="M44 24h8v10l10 12v22q0 4-4 4H38q-4 0-4-4V46l10-12z"/
 
 {id:"verjus",cat:"condiments",price:2,pk:"10–18 €/L",name:{en:"Verjuice",fr:"Verjus"},latin:"Vitis vinifera (green juice)",
 origin:{en:"Medieval Europe & Persia",fr:"Europe médiévale & Perse"},season:[],
-flavor:["sour","fruity","fresh","tangy"],texture:["smooth","moist"],
+flavor:["sour","fruity","fresh","tangy"],texture:["smooth","fluid"],
 story:{en:"The pressed juice of unripe grapes — medieval Europe’s everyday acid before lemons were affordable, and the original soul of Dijon mustard. Sommeliers revived it for a precise reason: unlike vinegar, its gentle acidity doesn’t wage war on the wine in your glass.",
 fr:"Le jus pressé de raisins verts — l’acide quotidien de l’Europe médiévale avant que le citron ne soit abordable, et l’âme originelle de la moutarde de Dijon. Les sommeliers l’ont ressuscité pour une raison précise : contrairement au vinaigre, son acidité douce ne fait pas la guerre au vin dans votre verre."},
 tip:{en:"Deglaze a chicken pan with it, or dress a salad destined to meet a good bottle. It sharpens without stinging.",
@@ -1531,7 +1531,7 @@ svg:'<g transform="translate(2.59 2.7) scale(0.946)"><path class="sf" d="M28 44h
 
 {id:"white-balsamic-condiment",cat:"condiments",price:2,pk:"8–18 €/L",name:{en:"White balsamic condiment",fr:"Condiment balsamique blanc"},latin:"Vitis vinifera (condimento bianco)",
 origin:{en:"Modena & Reggio Emilia",fr:"Modène & Reggio d’Émilie"},season:[],
-flavor:["sweet","tangy","fruity","mild"],texture:["smooth","moist"],
+flavor:["sweet","tangy","fruity","mild"],texture:["smooth","fluid"],
 story:{en:"It is sold as a condimento and never as aceto balsamico, because the protected names require the dark cooked must. The trick is vacuum: cooking the must under reduced pressure lets it concentrate at a temperature too low to caramelise, so the sugar arrives without the colour.",
 fr:"Il se vend comme condimento, jamais comme aceto balsamico : les appellations protégées exigent le moût cuit et sombre. Le procédé tient au vide — cuit sous pression réduite, le moût se concentre à une température trop basse pour caraméliser, et le sucre arrive sans la couleur."},
 tip:{en:"Its acidity sits close to a wine vinegar's, so build the vinaigrette at one part to three of oil and leave out any added sugar. Reach for it wherever browning would be a fault - white fish, a pale mayonnaise, a beurre blanc, a risotto that must stay ivory.",
@@ -1541,7 +1541,7 @@ svg:'<path class="f1 sf" d="M44 20h8v16l8 16v28q0 4-4 4H40q-4 0-4-4V52l8-16z"/><
 
 {id:"white-wine-vinegar",cat:"condiments",price:1,pk:"2–5 €/L",name:{en:"White wine vinegar",fr:"Vinaigre de vin blanc"},latin:"Acetum vini",
 origin:{en:"Orléans, France",fr:"Orléans, France"},season:[],
-flavor:["sour","tangy","fresh","fruity"],texture:["smooth","moist"],
+flavor:["sour","tangy","fresh","fruity"],texture:["smooth","fluid"],
 story:{en:"Orléans became the vinegar capital of France by geography: barrels of wine came up the Loire towards Paris, and whatever soured on the journey was unloaded there. A failure of transport became a protected craft.",
 fr:"Orléans devint la capitale française du vinaigre par géographie : les barriques remontaient la Loire vers Paris, et tout ce qui tournait en route y était débarqué. Un échec de transport est devenu un artisanat protégé."},
 tip:{en:"The Orléans method ferments slowly in oak over weeks. Industrial vinegar is made in hours and tastes only of acid.",
@@ -1561,7 +1561,7 @@ svg:'<path class="f1 sf" d="M30 46h36v26q0 6-6 6H36q-6 0-6-6z"/><path class="s" 
 
 {id:"worcestershire",cat:"condiments",price:2,pk:"12–20 €/L",name:{en:"Worcestershire sauce",fr:"Sauce Worcestershire"},latin:"Garum anglicum",
 origin:{en:"Worcester, England",fr:"Worcester, Angleterre"},season:[],
-flavor:["umami","salty","sour","smoky"],texture:["smooth","moist"],
+flavor:["umami","salty","sour","smoky"],texture:["smooth","fluid"],
 story:{en:"Two chemists made a batch in 1835, found it undrinkable and left the barrel in the cellar. Eighteen months later they tasted it again out of curiosity and it had fermented into something extraordinary. Anchovies are the source of the umami.",
 fr:"Deux pharmaciens en firent un lot en 1835, le trouvèrent imbuvable et laissèrent le fût à la cave. Dix-huit mois plus tard ils y goûtèrent par curiosité : il avait fermenté en quelque chose d’extraordinaire. Ce sont les anchois qui apportent l’umami."},
 tip:{en:"A few drops deepen anything brown — stews, gravies, a shepherd's pie. It is a seasoning, not a sauce to pour.",
@@ -1701,7 +1701,7 @@ svg:'<path class="s" d="M34 32h28v7H34z"/><path class="f1 sf" d="M36 39h24v35q0 
 
 {id:"champagne-vinegar",cat:"condiments",price:2,pk:"10–20 €/L",name:{en:"Champagne vinegar",fr:"Vinaigre de Champagne"},latin:"Vitis vinifera 'Chardonnay'",
 origin:{en:"Champagne & Reims",fr:"Champagne, Reims"},season:[],
-flavor:["sour","delicate","floral","fresh"],texture:["smooth","moist"],
+flavor:["sour","delicate","floral","fresh"],texture:["smooth","fluid"],
 story:{en:"Vinegar became an Orleans trade because wine barged up the Loire towards Paris turned before it arrived, and the slow surface method that took the town's name is still how the good Champagne vinegars are made - weeks in oak rather than a day in a tank. The wine behind it is the region's still base wine, taken before it ever sees a second fermentation.",
 fr:"Le vinaigre est devenu un métier orléanais parce que le vin remonté vers Paris tournait en chemin, et la méthode lente de surface qui porte le nom de la ville reste celle des bons vinaigres de Champagne - des semaines en fût de chêne plutôt qu’un jour en cuve. Le vin qui les fait est le vin de base de la région, tranquille, pris avant toute seconde fermentation."},
 tip:{en:"It is usually bottled near six percent against seven for an ordinary white wine vinegar, so a vinaigrette can go to one part in three of oil rather than one in four. On raw fish or oysters serve it neat as a mignonette with shallot, since the acid is low enough not to cook the flesh.",
@@ -1711,7 +1711,7 @@ svg:'<path class="f1 sf" d="M42 34h12v6q12 8 12 22v14q0 4-4 4H36q-4 0-4-4V62q0-1
 
 {id:"raspberry-vinegar",cat:"condiments",price:2,pk:"8–18 €/L",name:{en:"Raspberry vinegar",fr:"Vinaigre de framboise"},latin:"Rubus idaeus",
 origin:{en:"French vinegar houses",fr:"Vinaigreries françaises"},season:[],
-flavor:["sour","fruity","tangy"],texture:["smooth","moist"],
+flavor:["sour","fruity","tangy"],texture:["smooth","fluid"],
 story:{en:"For two centuries raspberry vinegar was a drink rather than a seasoning: a sweetened vinegar syrup let down with cold water in summer and given for sore throats in winter. It only crossed into the kitchen in the 1970s, when nouvelle cuisine deglazed so much calf liver and duck with it that the bottle became the decade's punchline.",
 fr:"Pendant deux siècles, le vinaigre de framboise fut une boisson plutôt qu'un assaisonnement : un sirop vinaigré que l'on allongeait d'eau fraîche l'été et que l'on donnait contre les maux de gorge l'hiver. Il n'est passé en cuisine que dans les années 1970, lorsque la nouvelle cuisine en a déglacé tant de foies de veau et de magrets que la bouteille est devenue la caricature de l'époque."},
 tip:{en:"Add it off the heat. The fruit esters boil away in seconds while the acid stays, so a pan deglazed and then reduced tastes only sharp — a spoonful into the resting juices with a knob of butter is the whole technique.",
@@ -1721,7 +1721,7 @@ svg:'<path class="f2 sf" d="M43 22h10v12l7 11v33q0 4-4 4H40q-4 0-4-4V45l7-11z"/>
 
 {id:"shanxi-vinegar",cat:"condiments",rare:true,price:1,pk:"4–9 €/L",name:{en:"Shanxi aged vinegar",fr:"Vinaigre noir du Shanxi"},latin:"Sorghum bicolor",
 origin:{en:"Qingxu, Shanxi",fr:"Qingxu, Shanxi (Chine)"},season:[],
-flavor:["sour","smoky","umami","pungent"],texture:["smooth","moist"],
+flavor:["sour","smoky","umami","pungent"],texture:["smooth","fluid"],
 story:{en:"After fermenting on sorghum, barley and pea, the solid mash is smoked in sealed jars for several days — that is where the colour and the burnt edge come from, not from any added caramel. The raw vinegar then ages outdoors by a rule of two seasons: evaporate under the summer sun, lift the ice off in winter, and what stays behind is thicker and sharper every year.",
 fr:"Après fermentation sur sorgho, orge et pois, la drêche solide est fumée plusieurs jours en jarres closes : c'est de là que viennent la couleur et l'amertume grillée, non d'un caramel ajouté. Le vinaigre jeune vieillit ensuite dehors selon une règle de deux saisons : s'évaporer au soleil d'été, se laisser retirer sa glace en hiver. Ce qui reste s'épaissit et s'aiguise chaque année."},
 tip:{en:"It is drier and far more pungent than Chinkiang, so a straight swap into a sweet Shanghai braise tastes thin — add a pinch of rock sugar if you substitute. On dumplings and cold noodles use it neat, with nothing but slivered garlic.",
@@ -1731,7 +1731,7 @@ svg:'<path class="f2 sf" d="M34 42q-4 12-4 20 0 14 18 14t18-14q0-8-4-20z"/><path
 
 {id:"verjus-rouge",cat:"condiments",rare:true,price:2,pk:"12–22 €/L",name:{en:"Red verjuice",fr:"Verjus rouge"},latin:"Vitis vinifera",
 origin:{en:"Périgord & the Loire",fr:"Périgord et Val de Loire"},season:[],
-flavor:["sour","fruity","tangy"],texture:["smooth","moist"],
+flavor:["sour","fruity","tangy"],texture:["smooth","fluid"],
 story:{en:"Before lemons were cheap, verjuice was the everyday acid of French kitchens, and the red kind came from the grappillons - the second, late bunches a vine sets that never ripen and were otherwise dropped on the ground. Because it is never fermented it has no alcohol and no acetic sting: its acidity is tartaric and malic, which is why it does not fight the wine at the table.",
 fr:"Avant que le citron ne devienne bon marché, le verjus était l’acide quotidien des cuisines françaises, et le rouge venait des grappillons - ces secondes grappes tardives que la vigne noue et qui ne mûrissent jamais, autrefois laissées au sol. Comme il n’est jamais fermenté, il n’a ni alcool ni piquant acétique : son acidité est tartrique et malique, et c’est pourquoi il ne se bat pas avec le vin à table."},
 tip:{en:"It reduces without turning sharp, so deglaze game or duck with it neat and let it fall by half before the stock goes in, with no sugar to correct it. In a vinaigrette work at one part to two of oil rather than the one to three a vinegar takes, since it is roughly half as acidic.",
@@ -1760,7 +1760,7 @@ pairs:["napa-cabbage","gochugaru","garlic","pork-belly","daikon","ginger","kimch
 svg:'<path class="f1 sf" d="M22 56q0 13 8 20 6 5 18 5t18-5q8-7 8-20z"/><path class="f2 sf" d="M22 56q10 6 26 6t26-6q-10-6-26-6t-26 6z"/><path class="f1 sf" d="M24 48 Q30 40 38 44 44 46 46 52 47 56 44 59L40 56 Q32 61 25 56 21 53 24 48zM47 41 Q54 36 59 41 64 44 64 50 64 53 61 55L59 52 Q51 54 46 48 43 44 47 41zM38 58 Q41 50 48 51 55 52 57 56 60 59 58 63L54 61 Q48 67 41 65 36 64 38 58z"/><path class="s" d="M26 45q-6-2-9 1M50 39q-6-2-9 1M38 56q-6-1-9 2" stroke-width="1.5"/><path class="dot" d="M31 48Q31 50 29 50 27 50 27 48 27 47 29 46 31 46 31 48zM53 42Q53 44 51 44 49 44 49 42 49 41 51 41 53 41 53 42zM44 58Q44 59 42 59 40 59 40 58 40 56 42 56 44 56 44 58z"/>'},
 {id:"grape-must",cat:"condiments",price:1,pk:"4–9 €/L",name:{en:"Grape must",fr:"Moût de raisin"},latin:"Vitis vinifera",
 origin:{en:"Wine regions, at harvest",fr:"Vignobles, à la vendange"},season:[9,10],
-flavor:["sweet","fruity","tangy"],texture:["smooth","moist"],
+flavor:["sweet","fruity","tangy"],texture:["smooth","fluid"],
 story:{en:"The word mostarda comes from mustum ardens, burning must - grape must cooked down with ground mustard, long before it came to mean candied fruit in syrup. Must is only itself for a few days, since the wild yeast on the skins starts fermenting it in the vat, so everything made from it is made at harvest or not at all.",
 fr:"Le mot mostarda vient de mustum ardens, le moût brûlant - du moût de raisin cuit avec de la moutarde broyée, bien avant qu’il ne désigne des fruits confits au sirop. Le moût n’est lui-même que quelques jours, les levures des peaux le faisant partir en fermentation dans la cuve : tout ce qu’on en tire se fait aux vendanges ou pas du tout."},
 tip:{en:"Reduce it uncovered in a wide pan and skim as you go: it falls by three quarters to a syrup, while a lid turns the same must into jam. In the fridge it will ferment inside a week, so freeze whatever you are not cooking down that day.",
