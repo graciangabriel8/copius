@@ -266,37 +266,37 @@
     $("cardLab").textContent = C.lab;
     $("endSub").textContent = C.end;
 
-    /* --- beat 1: the classic, 0.0s - 7.0s ---
+    /* --- beat 1: the classic, 0.0s - 4.0s ---
        The lede is on screen at t=0 rather than 200 ms in. Instagram takes an
        early frame as the cover, and the first frame was the header over an
        otherwise empty page \u2014 a blank cover for a reel whose whole hook is a
        line of text. */
     $("lede").textContent = C.lede1;
     var c1 = chips(C.chips1);
-    c1.forEach(function (el, i) { at(600 + i * 260, function () { el.classList.add("in"); }); });
-    at(1500, function () {
+    c1.forEach(function (el, i) { at(100 + i * 100, function () { el.classList.add("in"); }); });
+    at(400, function () {
       $("card").classList.add("in");
       $("cardBand").textContent = C.band1;
       $("cardBand").className = "band balanced";
       $("cardWhy").textContent = C.why1;
-      countTo(98, 1100);
+      countTo(98, 500);
       $("cardBar").className = "balanced";
       $("cardBar").style.width = "98%";
     });
-    at(2900, function () {
+    at(1300, function () {
       var rows = pairs(C.pairs1, true);
       rows.forEach(function (el, i) { at(i * 300, function () { el.classList.add("in"); }); });
     });
 
-    /* --- beat 2: the turn, 7.0s - 13.5s --- */
-    at(7000, function () {
+    /* --- beat 2: the turn, 4.0s - 9.5s --- */
+    at(4000, function () {
       clearStage();
       $("cardLab").textContent = C.lab;
       $("lede").textContent = C.lede2;
       var c2 = chips(C.chips2);
-      c2.forEach(function (el, i) { at(300 + i * 300, function () { el.classList.add("in"); }); });
+      c2.forEach(function (el, i) { at(200 + i * 200, function () { el.classList.add("in"); }); });
     });
-    at(8600, function () {
+    at(5200, function () {
       $("card").classList.add("in");
       $("cardBand").textContent = C.band2;
       $("cardBand").className = "band unrecorded";
@@ -304,14 +304,14 @@
       $("cardNum").textContent = "0";
       $("cardBar").style.width = "0";
     });
-    at(9400, function () {
+    at(5800, function () {
       var rows = pairs(C.pairs2, false);
       rows.forEach(function (el, i) { at(i * 300, function () { el.classList.add("in"); }); });
     });
 
-    /* --- beat 3: the end card, 13.5s - 18.0s --- */
-    at(13500, function () { $("end").classList.add("in"); });
-    at(18000, play);   /* loops, so a capture can start anywhere */
+    /* --- beat 3: the end card, 9.5s - 13.0s --- */
+    at(9500, function () { $("end").classList.add("in"); });
+    at(13000, play);   /* loops, so a capture can start anywhere */
 
     (function tick(now) {
       $("clock").textContent = ((now - t0) / 1000).toFixed(1) + "s";
