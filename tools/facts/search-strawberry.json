@@ -1,8 +1,12 @@
 {
  "fr": {"hook": "Avec quoi va\nla fraise ?", "placeholder": "Rechercher un ingrédient…", "query": "fraise", "name": "FRAISE",
         "pairs": ["Vinaigre balsamique", "Poivre noir", "Menthe", "Crème", "Basilic", "Chocolat noir"],
-        "end": "1 838 ingrédients.\n12 804 accords recensés."},
+        "tap": "Menthe", "second": {"query": "menthe", "name": "MENTHE", "highlight": "Fraise",
+        "pairs": ["Fraise", "Yaourt", "Agneau", "Chocolat noir", "Courgette", "Mangue", "Grenade"]},
+        "end": "Des accords infinis,\navec des ingrédients infinis."},
  "en": {"hook": "What goes with\nstrawberry?", "placeholder": "Search an ingredient…", "query": "strawberry", "name": "STRAWBERRY",
         "pairs": ["Balsamic vinegar", "Black pepper", "Mint", "Cream", "Basil", "Dark chocolate"],
-        "end": "1,838 ingredients.\n12,804 recorded pairings."}
+        "tap": "Mint", "second": {"query": "mint", "name": "MINT", "highlight": "Strawberry",
+        "pairs": ["Strawberry", "Yogurt", "Lamb", "Dark chocolate", "Zucchini", "Mango", "Pomegranate"]},
+        "end": "Infinite pairings,\nwith infinite ingredients."}
 }
