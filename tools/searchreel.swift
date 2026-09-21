@@ -182,21 +182,23 @@ func render(_ ctx: CGContext, _ t: Double) {
     // the search box: the first word types itself in; each tap swaps it for the next
     let bw: CGFloat = 900, bh: CGFloat = 100, bx = (CGFloat(W) - bw) / 2
     rrect(ctx, R(bx, y, bw, bh), 22, fill: rgb(CARD), stroke: rgb(BORDER))
-    let q0 = C.steps[0].query
+    // the first word types itself in; on each tap the old one backspaces out and the next types in,
+    // on the same clock as the question above
+    let q0 = C.steps[0].query, typeF = font(sans, 42)
     let typed = Int((Double(q0.count) * prog(t, 0.12, 0.6)).rounded(.down))
-    let shown = String(q0.prefix(typed)), typeF = font(sans, 42)
-    var idx = 0, fade = 1.0
-    for k in 1..<N { let s = outCubic(prog(t, tTap[k - 1]! + 0.5, 0.3)); if s > 0 { idx = k; fade = s } }
-    if idx == 0 {
-        if typed == 0 { draw(ctx, attr(C.placeholder, typeF, rgb(INK3), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
-        else { draw(ctx, attr(shown, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
-        if t < 2.4 && (t * 2.2).truncatingRemainder(dividingBy: 1) < 0.55 {
-            let cx = bx + 40 + (typed == 0 ? 0 : measure(attr(shown, typeF, rgb(INK))) + 4)
-            ctx.setFillColor(rgb(INK)); ctx.fill(R(cx, y + 26, 3, bh - 52))
-        }
-    } else {
-        draw(ctx, attr(C.steps[idx - 1].query, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(1 - fade))
-        draw(ctx, attr(C.steps[idx].query, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40, alpha: CGFloat(fade))
+    var shown = String(q0.prefix(typed)), caretOn = t < 2.4, placeholder = typed == 0
+    for k in 1..<N {
+        let s0 = tTap[k - 1]! + 0.3, eraseD = 0.25, typeD = 0.6
+        if t < s0 { break }
+        let old = C.steps[k - 1].query, new = C.steps[k].query; placeholder = false
+        if t < s0 + eraseD { shown = String(old.prefix(Int((Double(old.count) * (1 - (t - s0) / eraseD)).rounded(.down)))); caretOn = true }
+        else { shown = String(new.prefix(Int((Double(new.count) * min(1, (t - s0 - eraseD) / typeD)).rounded(.down)))); caretOn = t < s0 + eraseD + typeD + 0.6 }
+    }
+    if placeholder { draw(ctx, attr(C.placeholder, typeF, rgb(INK3), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
+    else { draw(ctx, attr(shown, typeF, rgb(INK), left: true), top: labelTop(y, bh, 42), width: bw - 80, x: bx + 40) }
+    if caretOn && (t * 2.2).truncatingRemainder(dividingBy: 1) < 0.55 {
+        let cx = bx + 40 + (shown.isEmpty ? 0 : measure(attr(shown, typeF, rgb(INK))) + 4)
+        ctx.setFillColor(rgb(INK)); ctx.fill(R(cx, y + 26, 3, bh - 52))
     }
     y += bh + 52
 
