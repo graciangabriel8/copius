@@ -105,7 +105,7 @@ func card(_ ctx: CGContext, _ t: Double, top: CGFloat, img: CGImage, step: Step,
     let pd = first ? outBack(prog(t, 0.72, 0.5)) : 1, ad = first ? CGFloat(prog(t, 0.72, 0.25)) : 1
     y += drawImage(ctx, img, top: y, width: 470, alpha: ad, scale: CGFloat(0.75 + 0.25 * pd)) + 16
     let pn = first ? outCubic(prog(t, 0.9, 0.35)) : 1
-    y += draw(ctx, attr(step.name, font(sans, 34), step.color.map(hex) ?? rgb(INK3), spacing: 5), top: y, width: 900, alpha: CGFloat(pn)) + 36
+    y += draw(ctx, attr(step.name, font(sans, 34), rgb(INK), spacing: 5), top: y, width: 900, alpha: CGFloat(pn)) + 36
     let chipF = font(sans, 36), chipH: CGFloat = 80, gap: CGFloat = 18, rowGap: CGFloat = 18, maxW: CGFloat = 920
     let widths = step.pairs.map { measure(attr($0, chipF, rgb(CHIPINK))) + 56 }
     var rows: [[Int]] = [[]], rowW: CGFloat = 0
