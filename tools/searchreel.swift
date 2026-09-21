@@ -11,8 +11,8 @@ func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m +
 let a = CommandLine.arguments
 guard a.count >= 6 else { die("usage: searchreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png per step...>") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
-struct Step: Decodable { let query, name: String; let pairs: [String]; let highlight: String?; let tap: String?; let color: String? }
-struct Copy: Decodable { let hook, placeholder, end: String; let steps: [Step]; let hookWord: String?; let hookColor: String? }
+struct Step: Decodable { let query, name: String; let pairs: [String]; let highlight: String?; let tap: String?; let color: String?; let hook: String?; let hookWord: String? }
+struct Copy: Decodable { let placeholder, end: String; let steps: [Step] }
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 guard a.count - 5 == C.steps.count else { die("\(C.steps.count) steps but \(a.count - 5) drawings") }
@@ -46,12 +46,6 @@ func attr(_ s: String, _ f: CTFont, _ color: CGColor, spacing: CGFloat = 0, line
 }
 /// "#RRGGBB" from the copy file; the ingredient's own colour on its name (red for the fruit and the lamb, green for the mint).
 func hex(_ s: String) -> CGColor { rgb(UInt32(s.trimmingCharacters(in: CharacterSet(charactersIn: "#")), radix: 16) ?? INK) }
-/// The same text with one word in another colour, found case-insensitively; the word must sit inside the text.
-func colourWord(_ t: NSAttributedString, _ word: String?, _ color: CGColor) -> NSAttributedString {
-    guard let w = word, let r = t.string.range(of: w, options: .caseInsensitive) else { return t }
-    let m = NSMutableAttributedString(attributedString: t)
-    m.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key, value: color, range: NSRange(r, in: t.string)); return m
-}
 func measure(_ t: NSAttributedString) -> CGFloat { CGFloat(CTLineGetTypographicBounds(CTLineCreateWithAttributedString(t), nil, nil, nil)) }
 func layout(_ text: NSAttributedString, top: CGFloat, width: CGFloat, x: CGFloat? = nil) -> (lines: [CTLine], origins: [CGPoint], height: CGFloat) {
     let fs = CTFramesetterCreateWithAttributedString(text)
@@ -151,13 +145,39 @@ func render(_ ctx: CGContext, _ t: Double) {
     ctx.setFillColor(rgb(BG)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
     var y: CGFloat = SAFE_TOP
 
-    // the question, on the first frame
-    let L = layout(colourWord(attr(C.hook, font(serif, 92), rgb(INK), lineHeight: 102), C.hookWord, C.hookColor.map(hex) ?? rgb(INK)), top: y, width: 960)
-    for (i, l) in L.lines.enumerated() {
-        let p = outCubic(prog(t, 0.0 + 0.1 * Double(i), 0.35)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
-        ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(26 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
+    // the question: line one stays; the ingredient on line two arrives with the first frame and is
+    // retyped on each tap, in its own colour, at the speed the search box types (0.6 s a word).
+    let hookF = font(serif, 92)
+    func hookParts(_ k: Int) -> (l1: String, pre: String, word: String, post: String) {
+        let lines = (C.steps[k].hook ?? "{w}").components(separatedBy: "\n")
+        let parts = (lines.count > 1 ? lines[1] : lines[0]).components(separatedBy: "{w}")
+        return (lines.count > 1 ? lines[0] : "", parts[0], C.steps[k].hookWord ?? "", parts.count > 1 ? parts[1] : "")
     }
-    y += L.height + 44
+    var hk = 0, shownWord = hookParts(0).word, complete = true, caret = false
+    for k in 1..<N {
+        let s0 = tTap[k - 1]! + 0.3, eraseD = 0.25, typeD = 0.6
+        if t < s0 { break }
+        let old = hookParts(k - 1).word, new = hookParts(k).word
+        if t < s0 + eraseD {
+            let p = (t - s0) / eraseD; hk = k - 1; complete = false; caret = true
+            shownWord = String(old.prefix(Int((Double(old.count) * (1 - p)).rounded(.down))))
+        } else {
+            let n = Int((Double(new.count) * min(1, (t - s0 - eraseD) / typeD)).rounded(.down)); hk = k
+            shownWord = String(new.prefix(n)); complete = n == new.count; caret = t < s0 + eraseD + typeD + 0.6
+        }
+    }
+    let hp = hookParts(hk), wcol = C.steps[hk].color.map(hex) ?? rgb(INK)
+    let p1 = outCubic(prog(t, 0.0, 0.35)), p2 = outCubic(prog(t, 0.1, 0.35))
+    draw(ctx, attr(hp.l1, hookF, rgb(INK), lineHeight: 102), top: y, width: 960, alpha: CGFloat(p1), rise: CGFloat(26 * (1 - p1)))
+    // line two grows to the right from where the finished line will start, so nothing re-centres mid-word
+    let x2 = (CGFloat(W) - measure(attr(hp.pre + hp.word + hp.post, hookF, rgb(INK)))) / 2, y2 = y + 102
+    let l2 = NSMutableAttributedString(attributedString: attr(hp.pre + shownWord + (complete ? hp.post : ""), hookF, rgb(INK), lineHeight: 102, left: true))
+    if !shownWord.isEmpty { l2.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key, value: wcol, range: NSRange(location: hp.pre.utf16.count, length: shownWord.utf16.count)) }
+    draw(ctx, l2, top: y2, width: 960, x: x2, alpha: CGFloat(p2), rise: CGFloat(26 * (1 - p2)))
+    if caret && (t * 2.2).truncatingRemainder(dividingBy: 1) < 0.55 {
+        ctx.setFillColor(wcol); ctx.fill(R(x2 + measure(attr(hp.pre + shownWord + (complete ? hp.post : ""), hookF, rgb(INK))) + 8, y2 + 14, 5, 80))
+    }
+    y += 208 + 44
 
     // the search box: the first word types itself in; each tap swaps it for the next
     let bw: CGFloat = 900, bh: CGFloat = 100, bx = (CGFloat(W) - bw) / 2

@@ -1,6 +1,5 @@
 {
  "fr": {
-  "hook": "Avec quoi va\nla fraise ?",
   "placeholder": "Rechercher un ingrédient…",
   "end": "Des accords infinis,\navec des ingrédients infinis.",
   "steps": [
@@ -16,7 +15,9 @@
      "Chocolat noir"
     ],
     "tap": "Menthe",
-    "color": "#B53F35"
+    "color": "#B53F35",
+    "hook": "Avec quoi va\nla {w} ?",
+    "hookWord": "fraise"
    },
    {
     "query": "menthe",
@@ -32,7 +33,9 @@
     ],
     "highlight": "Fraise",
     "tap": "Agneau",
-    "color": "#3E7D4B"
+    "color": "#3E7D4B",
+    "hook": "Avec quoi va\nla {w} ?",
+    "hookWord": "menthe"
    },
    {
     "query": "agneau",
@@ -46,14 +49,13 @@
      "Cannelle"
     ],
     "highlight": "Menthe",
-    "color": "#B53F35"
+    "color": "#B53F35",
+    "hook": "Avec quoi va\nl’{w} ?",
+    "hookWord": "agneau"
    }
-  ],
-  "hookWord": "fraise",
-  "hookColor": "#B53F35"
+  ]
  },
  "en": {
-  "hook": "What goes with\nstrawberry?",
   "placeholder": "Search an ingredient…",
   "end": "Infinite pairings,\nwith infinite ingredients.",
   "steps": [
@@ -69,7 +71,9 @@
      "Dark chocolate"
     ],
     "tap": "Mint",
-    "color": "#B53F35"
+    "color": "#B53F35",
+    "hook": "What goes with\n{w}?",
+    "hookWord": "strawberry"
    },
    {
     "query": "mint",
@@ -85,7 +89,9 @@
     ],
     "highlight": "Strawberry",
     "tap": "Lamb",
-    "color": "#3E7D4B"
+    "color": "#3E7D4B",
+    "hook": "What goes with\n{w}?",
+    "hookWord": "mint"
    },
    {
     "query": "lamb",
@@ -99,10 +105,10 @@
      "Cinnamon"
     ],
     "highlight": "Mint",
-    "color": "#B53F35"
+    "color": "#B53F35",
+    "hook": "What goes with\n{w}?",
+    "hookWord": "lamb"
    }
-  ],
-  "hookWord": "strawberry",
-  "hookColor": "#B53F35"
+  ]
  }
 }
