@@ -220,10 +220,13 @@ func render(_ ctx: CGContext, _ t: Double) {
     let ea = CGFloat(prog(t, T_END, 0.5))
     if ea > 0 {
         ctx.setFillColor(rgb(ENDBG, ea)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
-        let lh = 620 * CGFloat(logo.height) / CGFloat(logo.width), block = lh - 40 + 26 + 2 * 56 + 26 + 60
+        // mark, then the name in the site's own serif, then the line, then the address
+        let lh = 620 * CGFloat(logo.height) / CGFloat(logo.width), block = lh - 40 + 8 + 120 + 30 + 2 * 56 + 42 + 60
         var ey = (CGFloat(H) - block) / 2 - 60
         let pg = outCubic(prog(t, T_END + 0.1, 0.55))
-        ey += drawImage(ctx, logo, top: ey, width: 620, alpha: CGFloat(pg), scale: CGFloat(0.9 + 0.1 * pg)) - 40 + 26
+        ey += drawImage(ctx, logo, top: ey, width: 620, alpha: CGFloat(pg), scale: CGFloat(0.9 + 0.1 * pg)) - 40 + 8
+        let pw = outCubic(prog(t, T_END + 0.25, 0.5))
+        ey += draw(ctx, attr("Copius", font(serif, 112), rgb(INK), spacing: 1.5), top: ey, width: 900, alpha: CGFloat(pw), rise: CGFloat(-14 * (1 - pw))) + 30
         let ptx = outCubic(prog(t, T_END + 0.4, 0.45))
         ey += draw(ctx, attr(C.end, font(sans, 42), rgb(INK2), lineHeight: 56), top: ey, width: 900, alpha: CGFloat(ptx), rise: CGFloat(-14 * (1 - ptx))) + 42
         let pu = outCubic(prog(t, T_END + 0.6, 0.45))
