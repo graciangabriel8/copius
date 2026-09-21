@@ -11,8 +11,8 @@ func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m +
 let a = CommandLine.arguments
 guard a.count >= 6 else { die("usage: searchreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png per step...>") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
-struct Step: Decodable { let query, name: String; let pairs: [String]; let highlight: String?; let tap: String? }
-struct Copy: Decodable { let hook, placeholder, end: String; let steps: [Step] }
+struct Step: Decodable { let query, name: String; let pairs: [String]; let highlight: String?; let tap: String?; let color: String? }
+struct Copy: Decodable { let hook, placeholder, end: String; let steps: [Step]; let hookWord: String?; let hookColor: String? }
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 guard a.count - 5 == C.steps.count else { die("\(C.steps.count) steps but \(a.count - 5) drawings") }
@@ -43,6 +43,14 @@ func attr(_ s: String, _ f: CTFont, _ color: CGColor, spacing: CGFloat = 0, line
     let para = CTParagraphStyleCreate(&settings, settings.count)
     return NSAttributedString(string: s, attributes: [kCTFontAttributeName as NSAttributedString.Key: f, kCTForegroundColorAttributeName as NSAttributedString.Key: color,
         kCTParagraphStyleAttributeName as NSAttributedString.Key: para, kCTKernAttributeName as NSAttributedString.Key: spacing])
+}
+/// "#RRGGBB" from the copy file; the ingredient's own colour on its name (red for the fruit and the lamb, green for the mint).
+func hex(_ s: String) -> CGColor { rgb(UInt32(s.trimmingCharacters(in: CharacterSet(charactersIn: "#")), radix: 16) ?? INK) }
+/// The same text with one word in another colour, found case-insensitively; the word must sit inside the text.
+func colourWord(_ t: NSAttributedString, _ word: String?, _ color: CGColor) -> NSAttributedString {
+    guard let w = word, let r = t.string.range(of: w, options: .caseInsensitive) else { return t }
+    let m = NSMutableAttributedString(attributedString: t)
+    m.addAttribute(kCTForegroundColorAttributeName as NSAttributedString.Key, value: color, range: NSRange(r, in: t.string)); return m
 }
 func measure(_ t: NSAttributedString) -> CGFloat { CGFloat(CTLineGetTypographicBounds(CTLineCreateWithAttributedString(t), nil, nil, nil)) }
 func layout(_ text: NSAttributedString, top: CGFloat, width: CGFloat, x: CGFloat? = nil) -> (lines: [CTLine], origins: [CGPoint], height: CGFloat) {
@@ -103,7 +111,7 @@ func card(_ ctx: CGContext, _ t: Double, top: CGFloat, img: CGImage, step: Step,
     let pd = first ? outBack(prog(t, 0.72, 0.5)) : 1, ad = first ? CGFloat(prog(t, 0.72, 0.25)) : 1
     y += drawImage(ctx, img, top: y, width: 470, alpha: ad, scale: CGFloat(0.75 + 0.25 * pd)) + 16
     let pn = first ? outCubic(prog(t, 0.9, 0.35)) : 1
-    y += draw(ctx, attr(step.name, font(sans, 34), rgb(INK3), spacing: 5), top: y, width: 900, alpha: CGFloat(pn)) + 36
+    y += draw(ctx, attr(step.name, font(sans, 34), step.color.map(hex) ?? rgb(INK3), spacing: 5), top: y, width: 900, alpha: CGFloat(pn)) + 36
     let chipF = font(sans, 36), chipH: CGFloat = 80, gap: CGFloat = 18, rowGap: CGFloat = 18, maxW: CGFloat = 920
     let widths = step.pairs.map { measure(attr($0, chipF, rgb(CHIPINK))) + 56 }
     var rows: [[Int]] = [[]], rowW: CGFloat = 0
@@ -144,7 +152,7 @@ func render(_ ctx: CGContext, _ t: Double) {
     var y: CGFloat = SAFE_TOP
 
     // the question, on the first frame
-    let L = layout(attr(C.hook, font(serif, 92), rgb(INK), lineHeight: 102), top: y, width: 960)
+    let L = layout(colourWord(attr(C.hook, font(serif, 92), rgb(INK), lineHeight: 102), C.hookWord, C.hookColor.map(hex) ?? rgb(INK)), top: y, width: 960)
     for (i, l) in L.lines.enumerated() {
         let p = outCubic(prog(t, 0.0 + 0.1 * Double(i), 0.35)); ctx.saveGState(); ctx.setAlpha(CGFloat(p))
         ctx.textPosition = CGPoint(x: L.origins[i].x, y: L.origins[i].y - CGFloat(26 * (1 - p))); CTLineDraw(l, ctx); ctx.restoreGState()
