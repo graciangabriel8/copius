@@ -1,0 +1,67 @@
+{
+ "en": {
+  "header": "Copius — the Pairing Lab",
+  "words": [
+   "Beetroot",
+   "Goat cheese",
+   "Walnut"
+  ],
+  "swapIndex": 1,
+  "swapWord": "Cheddar",
+  "label": "Recorded agreement",
+  "before": {
+   "score": 97,
+   "band": "Balanced",
+   "line": "Nearly every pair is recorded. This is how a classic reads.",
+   "rows": [
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  "after": {
+   "score": 46,
+   "band": "Uneven",
+   "line": "Some pairs are recorded; others stand alone.",
+   "rows": [
+    "none",
+    "ok",
+    "none"
+   ]
+  },
+  "end": "Swap anything.\nThe score follows.",
+  "source": "Live engine (js/plate.js judge, 22 Sept 2026): beetroot+goat-cheese+walnut 97 balanced, 3/3 recorded; beetroot+cheddar+walnut 46 uneven, beetroot·walnut the one recorded pair."
+ },
+ "fr": {
+  "header": "Copius — le Labo d’accords",
+  "words": [
+   "Betterave",
+   "Fromage de chèvre",
+   "Noix"
+  ],
+  "swapIndex": 1,
+  "swapWord": "Cheddar",
+  "label": "Accords recensés",
+  "before": {
+   "score": 97,
+   "band": "Équilibrée",
+   "line": "Presque toutes les paires sont recensées. C’est ainsi que se lit un classique.",
+   "rows": [
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  "after": {
+   "score": 46,
+   "band": "Inégale",
+   "line": "Certaines paires sont recensées, d’autres restent seules.",
+   "rows": [
+    "none",
+    "ok",
+    "none"
+   ]
+  },
+  "end": "Changez un produit.\nLa note suit."
+ }
+}

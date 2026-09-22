@@ -97,8 +97,11 @@ func render(_ ctx: CGContext, _ t: Double) {
     y += draw(ctx, attr(C.header, font(serif, 34), rgb(INK3), spacing: 0.5), top: y, width: 960, alpha: CGFloat(ph)) + 22
 
     // the plate as a sentence; the whole line crossfades on the swap
-    let titleF = font(serif, 64)
     let title0 = words.map { $0 + "." }.joined(separator: " "), title1 = wordsAfter.map { $0 + "." }.joined(separator: " ")
+    // one line before and after, whatever the names' length: the size steps down until both fit
+    var tf: CGFloat = 64
+    while tf > 44 && max(measure(attr(title0, font(serif, tf), rgb(INK))), measure(attr(title1, font(serif, tf), rgb(INK)))) > 1000 { tf -= 2 }
+    let titleF = font(serif, tf)
     let pt = outCubic(prog(t, 0.05, 0.4))
     let th = max(layout(attr(title0, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000).height, layout(attr(title1, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000).height)
     let tOut = min(1, swapP * 2), tIn = max(0, swapP * 2 - 1)   // out, then in: the two lines never overlap
