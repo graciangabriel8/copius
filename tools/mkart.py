@@ -7,7 +7,8 @@ s = io.open(os.path.join(root, "img", ident + ".svg"), encoding="utf-8").read()
 s = s.replace('width="104" height="104"', 'width="1200" height="1200"', 1)
 i, j = s.find("@media"), s.find("</style>")
 if i > 0 and j > i: s = s[:i] + s[j:]
-s = s.replace("</style>", '</style><rect width="96" height="96" fill="#F7F6F1"/>', 1)
+if not os.environ.get("NOBG"):   # NOBG=1: keep the transparency, for a drawing set inside a chip
+    s = s.replace("</style>", '</style><rect width="96" height="96" fill="#F7F6F1"/>', 1)
 svg = os.path.join(out, ident + "-art.svg"); io.open(svg, "w", encoding="utf-8").write(s)
 png = svg + ".png"
 if os.path.exists(png): os.remove(png)

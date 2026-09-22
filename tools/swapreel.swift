@@ -10,7 +10,7 @@ import ImageIO
 
 func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m + "\n").data(using: .utf8)!); exit(1) }
 let a = CommandLine.arguments
-guard a.count == 5 else { die("usage: swapreel <lang> <logo.png> <out.mp4> <copy.json>") }
+guard a.count == 9 else { die("usage: swapreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png x3, plate order> <drawing.png of the swap word>") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
 struct Side: Decodable { let score: Int; let band, line: String; let rows: [String] }
 struct Copy: Decodable { let header: String; let words: [String]; let swapIndex: Int; let swapWord, label: String; let before, after: Side; let end: String }
@@ -24,6 +24,7 @@ let BG: UInt32 = 0xF7F6F1, CARD: UInt32 = 0xFFFEFC, INK: UInt32 = 0x1E211A, INK2
 let CHIP: UInt32 = 0xEDEFE3, CHIPINK: UInt32 = 0x4A5140, ASOFT: UInt32 = 0xDCE4CB, ASOFTBD: UInt32 = 0xBECBA4, BORDER: UInt32 = 0xD1D5C3
 func img(_ p: String) -> CGImage { guard let s = CGImageSourceCreateWithURL(URL(fileURLWithPath: p) as CFURL, nil), let i = CGImageSourceCreateImageAtIndex(s, 0, nil) else { die("cannot load " + p) }; return i }
 let logo = img(logoPath)
+let icons = a[5...8].map { img($0) }   // the three chips, then the swap word
 
 func prog(_ t: Double, _ from: Double, _ len: Double) -> Double { max(0, min(1, (t - from) / len)) }
 func outCubic(_ p: Double) -> Double { 1 - pow(1 - p, 3) }
@@ -110,8 +111,11 @@ func render(_ ctx: CGContext, _ t: Double) {
     y += th + 26
 
     // chips: the swapped one gets the tap ring, then its label rolls up and the new one rolls in
-    let chipF = font(sans, 40), chipH: CGFloat = 88, gap: CGFloat = 18
-    let widths = words.map { measure(attr($0, chipF, rgb(CHIPINK))) + 60 }, widthsAfter = wordsAfter.map { measure(attr($0, chipF, rgb(CHIPINK))) + 60 }
+    let chipF = font(sans, 38), chipH: CGFloat = 96, gap: CGFloat = 16, ico: CGFloat = 72, padL: CGFloat = 14, padR: CGFloat = 26
+    let widths = words.map { measure(attr($0, chipF, rgb(CHIPINK))) + padL + ico + 12 + padR }, widthsAfter = wordsAfter.map { measure(attr($0, chipF, rgb(CHIPINK))) + padL + ico + 12 + padR }
+    func icon(_ i: CGImage, _ x: CGFloat, _ top: CGFloat, _ al: CGFloat) {
+        ctx.saveGState(); ctx.setAlpha(al); ctx.draw(i, in: CGRect(x: x, y: CGFloat(H) - top - ico, width: ico, height: ico)); ctx.restoreGState()
+    }
     func rowW(_ ws: [CGFloat]) -> CGFloat { ws.reduce(0, +) + gap * CGFloat(ws.count - 1) }
     let rw = rowW(widths) * CGFloat(1 - swapP) + rowW(widthsAfter) * CGFloat(swapP)
     var x = (CGFloat(W) - rw) / 2
@@ -121,9 +125,12 @@ func render(_ ctx: CGContext, _ t: Double) {
         let isSwap = i == C.swapIndex, hi = isSwap && swapP > 0
         let top = y + CGFloat(1 - pc) * 14
         rrect(ctx, R(x, top, w, chipH), chipH / 2, fill: rgb(hi ? CARD : CHIP, al), stroke: rgb(hi ? ACCENT : CHIP, al), lw: hi ? 4 : 2)
+        let lx = x + padL + ico + 12, iy = top + (chipH - ico) / 2
         if isSwap {
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK)), top: labelTop(top, chipH, 40) - CGFloat(30 * swapP), width: w, x: x, alpha: al * CGFloat(1 - swapP))
-            draw(ctx, attr(wordsAfter[i], font(sansMed, 40), rgb(ACCENT)), top: labelTop(top, chipH, 40) + CGFloat(30 * (1 - swapP)), width: w, x: x, alpha: al * CGFloat(swapP))
+            icon(icons[i], x + padL, iy - CGFloat(30 * swapP), al * CGFloat(1 - swapP))
+            icon(icons[3], x + padL, iy + CGFloat(30 * (1 - swapP)), al * CGFloat(swapP))
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, 38) - CGFloat(30 * swapP), width: w, x: lx, alpha: al * CGFloat(1 - swapP))
+            draw(ctx, attr(wordsAfter[i], font(sansMed, 38), rgb(ACCENT), left: true), top: labelTop(top, chipH, 38) + CGFloat(30 * (1 - swapP)), width: w, x: lx, alpha: al * CGFloat(swapP))
             let q = prog(t, T_TAP, 0.5)
             if q > 0 && q < 1 {
                 ctx.saveGState(); ctx.setAlpha(CGFloat(1 - q)); ctx.setStrokeColor(rgb(ACCENT)); ctx.setLineWidth(4)
@@ -131,7 +138,8 @@ func render(_ ctx: CGContext, _ t: Double) {
                 ctx.addPath(CGPath(roundedRect: R(x - g, top - g, w + 2 * g, chipH + 2 * g), cornerWidth: chipH / 2 + g, cornerHeight: chipH / 2 + g, transform: nil)); ctx.strokePath(); ctx.restoreGState()
             }
         } else {
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK)), top: labelTop(top, chipH, 40), width: w, x: x, alpha: al)
+            icon(icons[i], x + padL, iy, al)
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, 38), width: w, x: lx, alpha: al)
         }
         x += w + gap
     }
