@@ -3,7 +3,7 @@
   "use strict";
 
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
-  var LS_MYINGS = "atlas-my-ingredients", LS_VIEW = "copius-view";
+  var LS_MYINGS = "atlas-my-ingredients";
   var BASE = window.INGREDIENTS, TRIOS = window.TRIOS, I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
   var TECHNIQUES = window.TECHNIQUES || [], BASES = window.BASES || [];
   var techById = {}, baseById = {};
@@ -161,7 +161,7 @@
 
   var state = {
     lang: readItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
-    view: readItem(LS_VIEW) || "atlas",
+    view: "atlas",   // every visit opens on the atlas; the last tab used to be restored and a visit ending in the lab reopened there
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
     cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, signOnly: false, priceBand: "all", flavour: "all", sort: "name",
     techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
@@ -766,7 +766,6 @@
   function setView(v) {
     if (!viewAllowed(v)) v = "atlas";
     state.view = v;
-    try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
     var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView" };
     var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab" };
     Object.keys(views).forEach(function (k) {
