@@ -1,0 +1,67 @@
+{
+ "en": {
+  "header": "Copius — the Pairing Lab",
+  "words": [
+   "Tomato",
+   "Mozzarella",
+   "Basil"
+  ],
+  "swapIndex": 0,
+  "swapWord": "Pineapple",
+  "label": "Recorded agreement",
+  "before": {
+   "score": 98,
+   "band": "Balanced",
+   "line": "Nearly every pair is recorded. This is how a classic reads.",
+   "rows": [
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  "after": {
+   "score": 45,
+   "band": "Uneven",
+   "line": "Some pairs are recorded; others stand alone.",
+   "rows": [
+    "none",
+    "none",
+    "ok"
+   ]
+  },
+  "end": "Swap anything.\nThe score follows.",
+  "source": "Scores, bands, sentences and rows are the live engine's (js/plate.js judge, 22 Sept 2026): tomato+mozzarella+basil 98 balanced 3/3; pineapple+mozzarella+basil 45 uneven, mozzarella·basil the one recorded pair."
+ },
+ "fr": {
+  "header": "Copius — le Labo d’accords",
+  "words": [
+   "Tomate",
+   "Mozzarella",
+   "Basilic"
+  ],
+  "swapIndex": 0,
+  "swapWord": "Ananas",
+  "label": "Accords recensés",
+  "before": {
+   "score": 98,
+   "band": "Équilibrée",
+   "line": "Presque toutes les paires sont recensées. C’est ainsi que se lit un classique.",
+   "rows": [
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  "after": {
+   "score": 45,
+   "band": "Inégale",
+   "line": "Certaines paires sont recensées, d’autres restent seules.",
+   "rows": [
+    "none",
+    "none",
+    "ok"
+   ]
+  },
+  "end": "Changez un produit.\nLa note suit."
+ }
+}
