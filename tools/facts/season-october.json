@@ -1,0 +1,79 @@
+{
+ "en": {
+  "header": "Copius — the ingredient atlas",
+  "title": "New in October.",
+  "month": 10,
+  "months": [
+   "J",
+   "F",
+   "M",
+   "A",
+   "M",
+   "J",
+   "J",
+   "A",
+   "S",
+   "O",
+   "N",
+   "D"
+  ],
+  "arriving": [
+   "White truffle",
+   "Chestnut",
+   "Quince",
+   "Wood pigeon",
+   "Persimmon",
+   "Blue foot mushroom",
+   "Cranberry",
+   "Pecan",
+   "Date"
+  ],
+  "lastLabel": "LAST MONTH FOR",
+  "leaving": [
+   "Grape",
+   "Blackberry",
+   "Hazelnut",
+   "Coco de Paimpol"
+  ],
+  "end": "The season,\nmonth by month.",
+  "source": "Computed as tools/build-pages.py season_page does (seasons of three months or less; arriving = in October and not in September, leaving = in October and not in November), 23 Sept 2026: 21 arrive, 42 leave. The nine and the four shown are chosen from those lists for how widely a cook knows them."
+ },
+ "fr": {
+  "header": "Copius — l’atlas des ingrédients",
+  "title": "Nouveau en octobre.",
+  "month": 10,
+  "months": [
+   "J",
+   "F",
+   "M",
+   "A",
+   "M",
+   "J",
+   "J",
+   "A",
+   "S",
+   "O",
+   "N",
+   "D"
+  ],
+  "arriving": [
+   "Truffe blanche d’Alba",
+   "Châtaigne",
+   "Coing",
+   "Palombe",
+   "Kaki",
+   "Pied-bleu",
+   "Canneberge",
+   "Noix de pécan",
+   "Datte"
+  ],
+  "lastLabel": "DERNIER MOIS POUR",
+  "leaving": [
+   "Raisin",
+   "Mûre",
+   "Noisette",
+   "Coco de Paimpol"
+  ],
+  "end": "La saison,\nmois par mois."
+ }
+}
