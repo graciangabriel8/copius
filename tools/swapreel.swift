@@ -147,13 +147,16 @@ func render(_ ctx: CGContext, _ t: Double) {
         let pc = outBack(prog(t, 0.15 + 0.1 * Double(i), 0.4)), al = CGFloat(min(1, max(0, pc)))
         let isSwap = SWAP && i == C.swapIndex!, hi = isSwap && swapP > 0
         let top = y + CGFloat(1 - pc) * 14
-        rrect(ctx, R(x, top, w, chipH), chipH / 2, fill: rgb(hi ? CARD : CHIP, al), stroke: rgb(hi ? ACCENT : CHIP, al), lw: hi ? 4 : 2)
+        // one layer per chip, faded as a whole: the drawings' ground is the chip colour, so
+        // the chip stays that colour even when marked (the accent ring marks it)
+        ctx.saveGState(); ctx.setAlpha(al); ctx.beginTransparencyLayer(auxiliaryInfo: nil)
+        rrect(ctx, R(x, top, w, chipH), chipH / 2, fill: rgb(CHIP), stroke: rgb(hi ? ACCENT : CHIP), lw: hi ? 4 : 2)
         let lx = x + padL + ico + 12 * k, iy = top + (chipH - ico) / 2
         if isSwap {
-            icon(icons[i], x + padL, iy - CGFloat(30 * swapP), al * CGFloat(1 - swapP))
-            icon(icons[N], x + padL, iy + CGFloat(30 * (1 - swapP)), al * CGFloat(swapP))
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs) - CGFloat(30 * swapP), width: w, x: lx, alpha: al * CGFloat(1 - swapP))
-            draw(ctx, attr(wordsAfter[i], font(sansMed, fs), rgb(ACCENT), left: true), top: labelTop(top, chipH, fs) + CGFloat(30 * (1 - swapP)), width: w, x: lx, alpha: al * CGFloat(swapP))
+            icon(icons[i], x + padL, iy - CGFloat(30 * swapP), CGFloat(1 - swapP))
+            icon(icons[N], x + padL, iy + CGFloat(30 * (1 - swapP)), CGFloat(swapP))
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs) - CGFloat(30 * swapP), width: w, x: lx, alpha: CGFloat(1 - swapP))
+            draw(ctx, attr(wordsAfter[i], font(sansMed, fs), rgb(ACCENT), left: true), top: labelTop(top, chipH, fs) + CGFloat(30 * (1 - swapP)), width: w, x: lx, alpha: CGFloat(swapP))
             let q = prog(t, T_TAP, 0.5)
             if q > 0 && q < 1 {
                 ctx.saveGState(); ctx.setAlpha(CGFloat(1 - q)); ctx.setStrokeColor(rgb(ACCENT)); ctx.setLineWidth(4)
@@ -161,9 +164,10 @@ func render(_ ctx: CGContext, _ t: Double) {
                 ctx.addPath(CGPath(roundedRect: R(x - g, top - g, w + 2 * g, chipH + 2 * g), cornerWidth: chipH / 2 + g, cornerHeight: chipH / 2 + g, transform: nil)); ctx.strokePath(); ctx.restoreGState()
             }
         } else {
-            icon(icons[i], x + padL, iy, al)
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs), width: w, x: lx, alpha: al)
+            icon(icons[i], x + padL, iy, 1)
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs), width: w, x: lx)
         }
+        ctx.endTransparencyLayer(); ctx.restoreGState()
         x += w + gap
     }
     y += chipH + 36

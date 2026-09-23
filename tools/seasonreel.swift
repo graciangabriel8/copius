@@ -143,9 +143,13 @@ func render(_ ctx: CGContext, _ t: Double) {
     for i in 0..<C.leaving.count {
         let pc = outBack(prog(t, T_LAST + 0.12 + 0.12 * Double(i), 0.4)), al = CGFloat(min(1, max(0, pc)))
         let top = y + CGFloat(1 - pc) * 12, h = chipH * k, ic = ico * k
-        rrect(ctx, R(x, top, ws[i], h), h / 2, fill: rgb(CHIP, al))
-        ctx.saveGState(); ctx.setAlpha(al * 0.85); ctx.draw(arts[9 + i], in: CGRect(x: x + 12 * k, y: CGFloat(H) - top - (h + ic) / 2, width: ic, height: ic)); ctx.restoreGState()
-        draw(ctx, attr(C.leaving[i], font(sans, fs * k), rgb(INK3), left: true), top: labelTop(top, h, fs * k), width: ws[i], x: x + (12 + ico + 10) * k, alpha: al)
+        // one layer per chip: the drawing's ground is the chip's colour, and fading chip and
+        // drawing separately would show that ground as a square during the entrance
+        ctx.saveGState(); ctx.setAlpha(al); ctx.beginTransparencyLayer(auxiliaryInfo: nil)
+        rrect(ctx, R(x, top, ws[i], h), h / 2, fill: rgb(CHIP))
+        ctx.draw(arts[9 + i], in: CGRect(x: x + 12 * k, y: CGFloat(H) - top - (h + ic) / 2, width: ic, height: ic))
+        draw(ctx, attr(C.leaving[i], font(sans, fs * k), rgb(INK3), left: true), top: labelTop(top, h, fs * k), width: ws[i], x: x + (12 + ico + 10) * k)
+        ctx.endTransparencyLayer(); ctx.restoreGState()
         x += ws[i] + gap * k
     }
 
