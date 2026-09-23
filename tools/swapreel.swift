@@ -1,7 +1,8 @@
-// A tool reel: the lab's plate card, then one ingredient swapped. Tomato, mozzarella, basil
-// scores 98; tap tomato, it becomes pineapple, and the same card rolls down to 45 with two of
-// its three pairs unrecorded. 1080x1920, 30 fps, CoreGraphics frames through AVAssetWriter.
-// Copy and both verdicts come from a JSON file (fr/en blocks); the numbers are the engine's.
+// A tool reel: the lab's plate card. Three or four ingredients, the number, the band, the
+// engine's sentence and every pair on the plate. Two modes, from the copy file: a swap (one
+// chip is tapped, its word rolls to another, the same card rolls to the second verdict) or a
+// plain verdict (the rows land one by one, one row is marked at the end). 1080x1920, 30 fps,
+// CoreGraphics frames through AVAssetWriter. Every number in the copy files is the engine's.
 import AVFoundation
 import CoreGraphics
 import CoreText
@@ -10,10 +11,15 @@ import ImageIO
 
 func die(_ m: String) -> Never { FileHandle.standardError.write(("ERROR: " + m + "\n").data(using: .utf8)!); exit(1) }
 let a = CommandLine.arguments
-guard a.count == 9 else { die("usage: swapreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png x3, plate order> <drawing.png of the swap word>") }
+guard a.count >= 8 else { die("usage: swapreel <lang> <logo.png> <out.mp4> <copy.json> <drawing.png per ingredient, plate order> [<drawing.png of the swap word>]") }
 let lang = a[1], logoPath = a[2], outURL = URL(fileURLWithPath: a[3])
 struct Side: Decodable { let score: Int; let band, line: String; let rows: [String] }
-struct Copy: Decodable { let header: String; let words: [String]; let swapIndex: Int; let swapWord, label: String; let before, after: Side; let end: String }
+struct Copy: Decodable {
+    let header, label, end: String; let words: [String]; let before: Side
+    let title: String?                                   // replaces "Word. Word. Word." when set
+    let swapIndex: Int?; let swapWord: String?; let after: Side?   // all three, or none: swap mode
+    let highlightRow: Int?                               // verdict mode: the row marked at the end
+}
 guard let cdata = FileManager.default.contents(atPath: a[4]), let COPY = try? JSONDecoder().decode([String: Copy].self, from: cdata) else { die("cannot read copy json") }
 guard let C = COPY[lang] else { die("no \"" + lang + "\" block") }
 let W = 1080, H = 1920, FPS = 30
@@ -24,7 +30,7 @@ let BG: UInt32 = 0xF7F6F1, CARD: UInt32 = 0xFFFEFC, INK: UInt32 = 0x1E211A, INK2
 let CHIP: UInt32 = 0xEDEFE3, CHIPINK: UInt32 = 0x4A5140, ASOFT: UInt32 = 0xDCE4CB, ASOFTBD: UInt32 = 0xBECBA4, BORDER: UInt32 = 0xD1D5C3
 func img(_ p: String) -> CGImage { guard let s = CGImageSourceCreateWithURL(URL(fileURLWithPath: p) as CFURL, nil), let i = CGImageSourceCreateImageAtIndex(s, 0, nil) else { die("cannot load " + p) }; return i }
 let logo = img(logoPath)
-let icons = a[5...8].map { img($0) }   // the three chips, then the swap word
+let icons = a[5...].map { img($0) }   // one per chip in plate order, then the swap word
 
 func prog(_ t: Double, _ from: Double, _ len: Double) -> Double { max(0, min(1, (t - from) / len)) }
 func outCubic(_ p: Double) -> Double { 1 - pow(1 - p, 3) }
@@ -81,56 +87,73 @@ func signed(_ v: Int) -> String { v < 0 ? "\u{2212}\(abs(v))" : "+\(v)" }
 func labelTop(_ boxTop: CGFloat, _ boxH: CGFloat, _ fontSize: CGFloat) -> CGFloat { boxTop + (boxH - fontSize * 1.2) / 2 }
 
 // ---- timeline ----
-let T_TAP = 2.6, T_SWAP = 3.0, T_ROLL = 3.25, T_END = 7.4
+let N = C.words.count
+let SWAP = C.swapIndex != nil && C.swapWord != nil && C.after != nil
+guard N >= 2 && N <= 4 else { die("2 to 4 ingredients") }
+guard icons.count == N + (SWAP ? 1 : 0) else { die("\(N + (SWAP ? 1 : 0)) drawings expected, got \(icons.count)") }
+var PAIRS: [(Int, Int)] = []
+for i in 0..<N { for j in (i + 1)..<N { PAIRS.append((i, j)) } }
+guard C.before.rows.count == PAIRS.count && (C.after?.rows.count ?? PAIRS.count) == PAIRS.count else { die("rows must list every pair, \(PAIRS.count)") }
+let ROW0 = 1.2, ROWSTEP = SWAP ? 0.2 : 0.25
+let T_TAP = 2.6, T_SWAP = 3.0, T_ROLL = 3.25
+let T_MARK = ROW0 + ROWSTEP * Double(PAIRS.count - 1) + 0.6
+let T_END = SWAP ? 7.4 : T_MARK + 1.7
 let DUR = T_END + 3.0
-let PAIRS = [(0, 1), (0, 2), (1, 2)]
-func plateWords(_ swapped: Bool) -> [String] { var w = C.words; if swapped { w[C.swapIndex] = C.swapWord }; return w }
+let AFTER = C.after ?? C.before
+func plateWords(_ swapped: Bool) -> [String] { var w = C.words; if swapped, let k = C.swapIndex, let sw = C.swapWord { w[k] = sw }; return w }
 func pairName(_ w: [String], _ p: (Int, Int)) -> String { w[p.0] + " \u{00B7} " + w[p.1] }
+// six rows need a tighter card than three to stay above the caption band (bottom 420 px)
+let COMPACT = PAIRS.count > 3
+let ROWH: CGFloat = COMPACT ? 58 : 72, ROWGAP: CGFloat = COMPACT ? 10 : 14, ROWF: CGFloat = COMPACT ? 30 : 34
+let NUMF: CGFloat = COMPACT ? 130 : 150, NUMBLOCK: CGFloat = COMPACT ? 150 : 170, CPAD: CGFloat = COMPACT ? 44 : 52
 
 func render(_ ctx: CGContext, _ t: Double) {
     ctx.setFillColor(rgb(BG)); ctx.fill(CGRect(x: 0, y: 0, width: W, height: H))
     var y: CGFloat = SAFE_TOP
-    let swapP = outCubic(prog(t, T_SWAP, 0.4))
+    let swapP = SWAP ? outCubic(prog(t, T_SWAP, 0.4)) : 0
     let words = plateWords(false), wordsAfter = plateWords(true)
 
     // header
     let ph = outCubic(prog(t, 0.0, 0.3))
     y += draw(ctx, attr(C.header, font(serif, 34), rgb(INK3), spacing: 0.5), top: y, width: 960, alpha: CGFloat(ph)) + 22
 
-    // the plate as a sentence; the whole line crossfades on the swap
-    let title0 = words.map { $0 + "." }.joined(separator: " "), title1 = wordsAfter.map { $0 + "." }.joined(separator: " ")
-    // one line before and after, whatever the names' length: the size steps down until both fit
-    var tf: CGFloat = 64
+    // the title: the plate as a sentence, or the dish's name; it crossfades on a swap
+    let title0 = C.title ?? words.map { $0 + "." }.joined(separator: " ")
+    let title1 = C.title ?? wordsAfter.map { $0 + "." }.joined(separator: " ")
+    var tf: CGFloat = C.title != nil ? 84 : 64       // a named dish is the hook: it is set larger
     while tf > 44 && max(measure(attr(title0, font(serif, tf), rgb(INK))), measure(attr(title1, font(serif, tf), rgb(INK)))) > 1000 { tf -= 2 }
-    let titleF = font(serif, tf)
+    let titleF = font(serif, tf), tlh = round(tf * 1.16)
     let pt = outCubic(prog(t, 0.05, 0.4))
-    let th = max(layout(attr(title0, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000).height, layout(attr(title1, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000).height)
     let tOut = min(1, swapP * 2), tIn = max(0, swapP * 2 - 1)   // out, then in: the two lines never overlap
-    draw(ctx, attr(title0, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000, alpha: CGFloat(pt * (1 - tOut)), rise: CGFloat(20 * (1 - pt) - 14 * tOut))
-    draw(ctx, attr(title1, titleF, rgb(INK), lineHeight: 76), top: y, width: 1000, alpha: CGFloat(tIn), rise: CGFloat(-14 * (1 - tIn)))
-    y += th + 26
+    draw(ctx, attr(title0, titleF, rgb(INK), lineHeight: tlh), top: y, width: 1000, alpha: CGFloat(pt * (1 - tOut)), rise: CGFloat(20 * (1 - pt) - 14 * tOut))
+    if SWAP { draw(ctx, attr(title1, titleF, rgb(INK), lineHeight: tlh), top: y, width: 1000, alpha: CGFloat(tIn), rise: CGFloat(-14 * (1 - tIn))) }
+    y += tlh + 22
 
-    // chips: the swapped one gets the tap ring, then its label rolls up and the new one rolls in
-    let chipF = font(sans, 38), chipH: CGFloat = 96, gap: CGFloat = 16, ico: CGFloat = 72, padL: CGFloat = 14, padR: CGFloat = 26
-    let widths = words.map { measure(attr($0, chipF, rgb(CHIPINK))) + padL + ico + 12 + padR }, widthsAfter = wordsAfter.map { measure(attr($0, chipF, rgb(CHIPINK))) + padL + ico + 12 + padR }
+    // chips, each with its atlas drawing; the row shrinks as a whole when it would pass 960 px
+    func chipWidths(_ ws: [String], _ k: CGFloat) -> [CGFloat] { ws.map { measure(attr($0, font(sans, 38 * k), rgb(CHIPINK))) + (14 + 72 + 12 + 26) * k } }
+    let gap: CGFloat = 16
+    let natural = max(chipWidths(words, 1).reduce(0, +), chipWidths(wordsAfter, 1).reduce(0, +)) + gap * CGFloat(N - 1)
+    let k: CGFloat = min(1, 960 / natural)
+    let chipF = font(sans, 38 * k), chipH: CGFloat = 96 * k, ico: CGFloat = 72 * k, padL: CGFloat = 14 * k, fs: CGFloat = 38 * k
+    let widths = chipWidths(words, k), widthsAfter = chipWidths(wordsAfter, k)
     func icon(_ i: CGImage, _ x: CGFloat, _ top: CGFloat, _ al: CGFloat) {
         ctx.saveGState(); ctx.setAlpha(al); ctx.draw(i, in: CGRect(x: x, y: CGFloat(H) - top - ico, width: ico, height: ico)); ctx.restoreGState()
     }
     func rowW(_ ws: [CGFloat]) -> CGFloat { ws.reduce(0, +) + gap * CGFloat(ws.count - 1) }
     let rw = rowW(widths) * CGFloat(1 - swapP) + rowW(widthsAfter) * CGFloat(swapP)
     var x = (CGFloat(W) - rw) / 2
-    for i in 0..<3 {
+    for i in 0..<N {
         let w = widths[i] * CGFloat(1 - swapP) + widthsAfter[i] * CGFloat(swapP)
-        let pc = outBack(prog(t, 0.15 + 0.12 * Double(i), 0.4)), al = CGFloat(min(1, max(0, pc)))
-        let isSwap = i == C.swapIndex, hi = isSwap && swapP > 0
+        let pc = outBack(prog(t, 0.15 + 0.1 * Double(i), 0.4)), al = CGFloat(min(1, max(0, pc)))
+        let isSwap = SWAP && i == C.swapIndex!, hi = isSwap && swapP > 0
         let top = y + CGFloat(1 - pc) * 14
         rrect(ctx, R(x, top, w, chipH), chipH / 2, fill: rgb(hi ? CARD : CHIP, al), stroke: rgb(hi ? ACCENT : CHIP, al), lw: hi ? 4 : 2)
-        let lx = x + padL + ico + 12, iy = top + (chipH - ico) / 2
+        let lx = x + padL + ico + 12 * k, iy = top + (chipH - ico) / 2
         if isSwap {
             icon(icons[i], x + padL, iy - CGFloat(30 * swapP), al * CGFloat(1 - swapP))
-            icon(icons[3], x + padL, iy + CGFloat(30 * (1 - swapP)), al * CGFloat(swapP))
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, 38) - CGFloat(30 * swapP), width: w, x: lx, alpha: al * CGFloat(1 - swapP))
-            draw(ctx, attr(wordsAfter[i], font(sansMed, 38), rgb(ACCENT), left: true), top: labelTop(top, chipH, 38) + CGFloat(30 * (1 - swapP)), width: w, x: lx, alpha: al * CGFloat(swapP))
+            icon(icons[N], x + padL, iy + CGFloat(30 * (1 - swapP)), al * CGFloat(swapP))
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs) - CGFloat(30 * swapP), width: w, x: lx, alpha: al * CGFloat(1 - swapP))
+            draw(ctx, attr(wordsAfter[i], font(sansMed, fs), rgb(ACCENT), left: true), top: labelTop(top, chipH, fs) + CGFloat(30 * (1 - swapP)), width: w, x: lx, alpha: al * CGFloat(swapP))
             let q = prog(t, T_TAP, 0.5)
             if q > 0 && q < 1 {
                 ctx.saveGState(); ctx.setAlpha(CGFloat(1 - q)); ctx.setStrokeColor(rgb(ACCENT)); ctx.setLineWidth(4)
@@ -139,55 +162,60 @@ func render(_ ctx: CGContext, _ t: Double) {
             }
         } else {
             icon(icons[i], x + padL, iy, al)
-            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, 38), width: w, x: lx, alpha: al)
+            draw(ctx, attr(words[i], chipF, rgb(CHIPINK), left: true), top: labelTop(top, chipH, fs), width: w, x: lx, alpha: al)
         }
         x += w + gap
     }
-    y += chipH + 40
+    y += chipH + 36
 
-    // the verdict card: label and band, the number, its bar, the engine's sentence, the three pairs
+    // the verdict card: label and band, the number, its bar, the engine's sentence, every pair
     let pcard = outCubic(prog(t, 0.45, 0.4))
-    let cx: CGFloat = 60, cw: CGFloat = 960, pad: CGFloat = 52, inner = cw - 2 * pad
+    let cx: CGFloat = 60, cw: CGFloat = 960, pad = CPAD, inner = cw - 2 * pad
     let lineF = font(sans, 32)
-    let lineH = max(layout(attr(C.before.line, lineF, rgb(INK2), lineHeight: 44), top: 0, width: inner).height, layout(attr(C.after.line, lineF, rgb(INK2), lineHeight: 44), top: 0, width: inner).height)
-    let rowsH: CGFloat = 3 * 72 + 2 * 14
-    let ch = pad + 56 + 24 + 170 + 20 + 12 + 28 + lineH + 30 + rowsH + pad
+    let lineH = max(layout(attr(C.before.line, lineF, rgb(INK2), lineHeight: 44), top: 0, width: inner).height, layout(attr(AFTER.line, lineF, rgb(INK2), lineHeight: 44), top: 0, width: inner).height)
+    let rowsH = CGFloat(PAIRS.count) * ROWH + CGFloat(PAIRS.count - 1) * ROWGAP
+    let ch = pad + 56 + 20 + NUMBLOCK + 18 + 12 + 24 + lineH + 24 + rowsH + pad
     rrect(ctx, R(cx, y + CGFloat(1 - pcard) * 24, cw, ch), 28, fill: rgb(CARD, CGFloat(pcard)), stroke: rgb(BORDER, CGFloat(pcard)))
     var cy = y + pad
     draw(ctx, attr(C.label, font(serif, 40), rgb(INK), left: true), top: cy, width: 600, x: cx + pad, alpha: CGFloat(pcard))
-    let pband0 = outCubic(prog(t, 1.0, 0.3)), pb = outCubic(prog(t, T_ROLL + 0.35, 0.3))
+    let pband0 = outCubic(prog(t, 1.0, 0.3)), pb = SWAP ? outCubic(prog(t, T_ROLL + 0.35, 0.3)) : 0
     func pill(_ text: String, _ al: CGFloat) {
         if al <= 0 { return }
         let f = font(sansMed, 26), s = attr(text.uppercased(), f, rgb(INK), spacing: 2), tw = measure(s) + 44, px = cx + cw - pad - tw
         rrect(ctx, R(px, cy + 2, tw, 52), 26, fill: nil, stroke: rgb(INK, al), lw: 2.5)
         draw(ctx, s, top: labelTop(cy + 2, 52, 26), width: tw, x: px, alpha: al)
     }
-    pill(C.before.band, CGFloat(pband0 * (1 - pb))); pill(C.after.band, CGFloat(pb))
-    cy += 56 + 24
-    let up = outCubic(prog(t, 0.5, 0.6)), roll = outCubic(prog(t, T_ROLL, 0.7))
-    let value = Double(C.before.score) * up * (1 - roll) + Double(C.after.score) * roll
-    let ns = attr(String(Int(value.rounded())), font(serif, 150), rgb(INK), left: true), nw = measure(ns)
+    pill(C.before.band, CGFloat(pband0 * (1 - pb))); if SWAP { pill(AFTER.band, CGFloat(pb)) }
+    cy += 56 + 20
+    let up = outCubic(prog(t, 0.5, 0.6)), roll = SWAP ? outCubic(prog(t, T_ROLL, 0.7)) : 0
+    let value = Double(C.before.score) * up * (1 - roll) + Double(AFTER.score) * roll
+    let ns = attr(String(Int(value.rounded())), font(serif, NUMF), rgb(INK), left: true), nw = measure(ns)
     draw(ctx, ns, top: cy, width: 500, x: cx + pad, alpha: CGFloat(pcard))
-    draw(ctx, attr("/ 100", font(sans, 36), rgb(INK3), left: true), top: cy + 100, width: 200, x: cx + pad + nw + 14, alpha: CGFloat(pcard))
-    cy += 170 + 20
+    draw(ctx, attr("/ 100", font(sans, 36), rgb(INK3), left: true), top: cy + NUMF * 0.66, width: 200, x: cx + pad + nw + 14, alpha: CGFloat(pcard))
+    cy += NUMBLOCK + 18
     rrect(ctx, R(cx + pad, cy, inner, 12), 6, fill: rgb(BORDER, CGFloat(pcard)))
-    rrect(ctx, R(cx + pad, cy, inner * CGFloat(value / 100), 12), 6, fill: rgb(INK, CGFloat(pcard)))
-    cy += 12 + 28
-    let pl0 = outCubic(prog(t, 1.3, 0.35)), pl = outCubic(prog(t, T_ROLL + 0.6, 0.35))
+    rrect(ctx, R(cx + pad, cy, max(12, inner * CGFloat(value / 100)), 12), 6, fill: rgb(INK, CGFloat(pcard * min(1, value))))
+    cy += 12 + 24
+    let pl0 = outCubic(prog(t, 1.3, 0.35)), pl = SWAP ? outCubic(prog(t, T_ROLL + 0.6, 0.35)) : 0
     draw(ctx, attr(C.before.line, lineF, rgb(INK2), lineHeight: 44, left: true), top: cy, width: inner, x: cx + pad, alpha: CGFloat(pl0 * (1 - pl)))
-    draw(ctx, attr(C.after.line, lineF, rgb(INK2), lineHeight: 44, left: true), top: cy, width: inner, x: cx + pad, alpha: CGFloat(pl))
-    cy += lineH + 30
+    if SWAP { draw(ctx, attr(AFTER.line, lineF, rgb(INK2), lineHeight: 44, left: true), top: cy, width: inner, x: cx + pad, alpha: CGFloat(pl)) }
+    cy += lineH + 24
     for (i, pr) in PAIRS.enumerated() {
-        let pin = outCubic(prog(t, 1.2 + 0.2 * Double(i), 0.35))
-        let pf = C.before.rows[i] == C.after.rows[i] ? 0.0 : outCubic(prog(t, T_ROLL + 0.1 + 0.2 * Double(i), 0.35))
-        let ok = (pf < 0.5 ? C.before.rows[i] : C.after.rows[i]) == "ok"
-        let shake = pf > 0 && pf < 1 ? CGFloat(sin(pf * Double.pi * 3) * 6 * (1 - pf)) : 0
+        let pin = outCubic(prog(t, ROW0 + ROWSTEP * Double(i), 0.35))
+        let pf = C.before.rows[i] == AFTER.rows[i] ? 0.0 : outCubic(prog(t, T_ROLL + 0.1 + 0.2 * Double(i), 0.35))
+        let ok = (pf < 0.5 ? C.before.rows[i] : AFTER.rows[i]) == "ok"
+        // a row flipping on the swap shakes; in a plain verdict, a row with no record shakes as it lands
+        var shake: CGFloat = pf > 0 && pf < 1 ? CGFloat(sin(pf * Double.pi * 3) * 6 * (1 - pf)) : 0
+        if !SWAP && !ok && pin > 0 && pin < 1 { shake = CGFloat(sin(pin * Double.pi * 3) * 5 * (1 - pin)) }
         let name = pairName(pf < 0.5 ? words : wordsAfter, pr)   // name and mark flip together: a row is never false
         ctx.saveGState(); ctx.translateBy(x: shake, y: 0)
-        rrect(ctx, R(cx + pad, cy, inner, 72), 14, fill: rgb(ok ? ASOFT : CHIP, CGFloat(pin)))
-        draw(ctx, attr((ok ? "\u{2713}" : "\u{2715}") + "  " + name, font(sans, 34), rgb(ok ? CHIPINK : INK3), left: true), top: labelTop(cy, 72, 34), width: inner - 40, x: cx + pad + 24, alpha: CGFloat(pin))
+        rrect(ctx, R(cx + pad, cy, inner, ROWH), 14, fill: rgb(ok ? ASOFT : CHIP, CGFloat(pin)))
+        let marked = !SWAP && C.highlightRow == i
+        let mk = marked ? outCubic(prog(t, T_MARK, 0.4)) : 0
+        if mk > 0 { rrect(ctx, R(cx + pad - 4 * CGFloat(mk), cy - 4 * CGFloat(mk), inner + 8 * CGFloat(mk), ROWH + 8 * CGFloat(mk)), 16, fill: nil, stroke: rgb(ACCENT, CGFloat(mk)), lw: 4) }
+        draw(ctx, attr((ok ? "\u{2713}" : "\u{2715}") + "  " + name, font(mk > 0.5 ? sansMed : sans, ROWF), rgb(ok ? CHIPINK : INK3), left: true), top: labelTop(cy, ROWH, ROWF), width: inner - 40, x: cx + pad + 24, alpha: CGFloat(pin))
         ctx.restoreGState()
-        cy += 72 + 14
+        cy += ROWH + ROWGAP
     }
 
     // the end card: mark, the name in the site's own serif, the line, the address
