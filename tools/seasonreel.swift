@@ -115,7 +115,7 @@ func render(_ ctx: CGContext, _ t: Double) {
     y += d + 34
 
     // nine arrivals: drawing on its plate, name under it, one after the other
-    let cellW: CGFloat = 300, colGap: CGFloat = 30, art: CGFloat = 172, nameF = font(serif, 34), cellH: CGFloat = art + 8 + 76, rowGap: CGFloat = 12
+    let cellW: CGFloat = 300, colGap: CGFloat = 30, art: CGFloat = 156, nameF = font(serif, 33), cellH: CGFloat = art + 6 + 74, rowGap: CGFloat = 8
     let gx = (CGFloat(W) - 3 * cellW - 2 * colGap) / 2
     for i in 0..<9 {
         let c = i % 3, r = i / 3, x0 = gx + CGFloat(c) * (cellW + colGap), y0 = y + CGFloat(r) * (cellH + rowGap)
@@ -126,14 +126,14 @@ func render(_ ctx: CGContext, _ t: Double) {
         ctx.draw(arts[i], in: CGRect(x: x0 + (cellW - aw) / 2, y: CGFloat(H) - y0 - art / 2 - aw / 2, width: aw, height: aw))
         ctx.restoreGState()
         let pn = outCubic(prog(t, T_GRID + 0.16 * Double(i) + 0.12, 0.35))
-        draw(ctx, attr(C.arriving[i], nameF, rgb(INK), lineHeight: 38), top: y0 + art + 8, width: cellW - 10, x: x0 + 5, alpha: CGFloat(pn), rise: CGFloat(10 * (1 - pn)))
+        draw(ctx, attr(C.arriving[i], nameF, rgb(INK), lineHeight: 37), top: y0 + art + 6, width: cellW - 10, x: x0 + 5, alpha: CGFloat(pn), rise: CGFloat(10 * (1 - pn)))
     }
-    y += 3 * cellH + 2 * rowGap + 26
+    y += 3 * cellH + 2 * rowGap + 58   // the last call gets air of its own
 
     // the last call: what leaves after this month, quieter
     let pl = outCubic(prog(t, T_LAST, 0.35))
-    y += draw(ctx, attr(C.lastLabel, font(sansMed, 28), rgb(INK3), spacing: 1.5), top: y, width: 960, alpha: CGFloat(pl)) + 12
-    let fs: CGFloat = 32, ico: CGFloat = 60, chipH: CGFloat = 76, gap: CGFloat = 14
+    y += draw(ctx, attr(C.lastLabel, font(sansMed, 28), rgb(INK3), spacing: 1.5), top: y, width: 960, alpha: CGFloat(pl)) + 18
+    let fs: CGFloat = 34, ico: CGFloat = 66, chipH: CGFloat = 86, gap: CGFloat = 14
     var ws = C.leaving.map { measure(attr($0, font(sans, fs), rgb(CHIPINK))) + 12 + ico + 10 + 24 }
     // this row sits in the lower half, where the like/share column covers the right 130 px:
     // it stays inside 70..930, centred on 500 rather than on the frame
