@@ -176,6 +176,22 @@ listJs().forEach(function (f) {
   var f = m.slice(5);
   if (PUBLISHED_JS.indexOf(f) < 0) errors.push("atlas.html loads " + f + ", which is not a published file");
 });
+// On OVH the whole checkout is served and .htaccess does Jekyll's job: once it is
+// committed, it must refuse every js file but these same six (the OVH switch script
+// writes it; both its rules must carry the list).
+var htaccess = null;
+try { htaccess = read(".htaccess"); } catch (e) { /* not moved to OVH yet: nothing to check */ }
+if (htaccess !== null) {
+  var want = PUBLISHED_JS.map(function (f) { return f.slice(3, -3); }).sort().join("|"), rules = 0;
+  htaccess.split("\n").forEach(function (l) {
+    var m = /js\/\(\?!\(([^)]*)\)/.exec(l);
+    if (!m || /^\s*#/.test(l)) return;
+    rules++;
+    if (m[1].split("|").sort().join("|") !== want)
+      errors.push(".htaccess lets through js/(" + m[1] + "), not the published files (" + want + ")");
+  });
+  if (rules < 2) errors.push(".htaccess: the js/ rule is missing from " + (rules ? "one of its two rule sets" : "both rule sets"));
+}
 var ignored = read(".gitignore").split("\n").map(function (l) { return l.trim(); });
 if (ignored.indexOf("js/_premium.js") < 0 && ignored.indexOf("/js/_premium.js") < 0)
   errors.push(".gitignore: js/_premium.js is not listed, so the full version could be committed");
