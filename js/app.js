@@ -1103,19 +1103,30 @@
   function openBase(id) { if (FREE_MODE) return; openItem("base", id); }
 
   /* ---------- pairing lab ---------- */
-  function fillLabSelects() {
+  /* The two slots hold ids; the boxes show names. A box is searched like the
+     plate's (see makeFinder), and a pick writes the name back into it. */
+  var labPick = { A: "", B: "" };
+
+  function setLabPick(slot, id) {
+    labPick[slot] = id && byId[id] ? id : "";
+    el("lab" + slot).value = labPick[slot] ? name(byId[labPick[slot]]) : "";
+    renderLabResult();
+  }
+
+  /* A language switch renames what the boxes show; a creation deleted since it
+     was picked leaves its slot. */
+  function fillLabInputs() {
     var t = T();
-    var opts = ING.slice().sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); })
-      .map(function (i) { return '<option value="' + i.id + '">' + esc(name(i)) + " · " + esc(catLabel(i.cat)) + "</option>"; }).join("");
-    ["labA", "labB"].forEach(function (id) {
-      var sel = el(id), prev = sel.value;
-      sel.innerHTML = '<option value="">' + esc(t.choose) + "</option>" + opts;
-      if (prev && byId[prev]) sel.value = prev;
+    ["A", "B"].forEach(function (slot) {
+      /* Placeholder only: the box's name stays "first/second ingredient". */
+      el("lab" + slot).setAttribute("placeholder", t.labFindPh);
+      if (labPick[slot] && !byId[labPick[slot]]) { labPick[slot] = ""; el("lab" + slot).value = ""; }
+      if (labPick[slot]) el("lab" + slot).value = name(byId[labPick[slot]]);
     });
   }
 
   function renderLabResult() {
-    var t = T(), a = el("labA").value, b = el("labB").value, box = el("labResult");
+    var t = T(), a = labPick.A, b = labPick.B, box = el("labResult");
     if (!a || !b) { box.innerHTML = ""; return; }
     if (a === b) { box.innerHTML = '<div class="verdict mid">' + esc(t.labSame) + "</div>"; return; }
     var A = byId[a], B = byId[b];
@@ -1136,7 +1147,7 @@
   }
 
   /* The same verdict, for one pair, without the DOM: renderLabResult reads the
-     two selects, and a set has no selects to read. */
+     two slots, and a set has no slots to read. */
   function verdict(a, b) {
     if (PAIRS[a].has(b)) return "ok";
     return Array.from(PAIRS[a]).some(function (x) { return x !== b && PAIRS[b].has(x); }) ? "mid" : "none";
@@ -1144,8 +1155,8 @@
 
   /* A dish, judged as a set: every pair among its ingredients, and what the
      12 778 recorded accords say about each one. Four ingredients is six pairs.
-     Touching either select afterwards returns the box to pair mode on its own,
-     because the change listeners overwrite exactly this element. */
+     Picking in either box afterwards returns it to pair mode on its own,
+     because renderLabResult overwrites exactly this element. */
   function renderLabSet(ids, dishName) {
     var t = T(), box = el("labResult");
     ids = ids.filter(function (x) { return byId[x]; });
@@ -1278,14 +1289,12 @@
     }
   }
 
-  /* The picker was one flat list of 1 838 names, which is unusable: finding a
-     duck meant scrolling past every fruit. Now it is grouped by family in the
-     atlas's own order, and a search box narrows it — the only way to reach
-     things the atlas records but does not file together, citrus being the one
-     that prompted this: 83 entries carry a citrus note and they sit under
-     fruits, condiments and the cellar alike, so no amount of scrolling finds
-     them as a group. Typing "citr" does. */
-  function plateMatches(i, q) {
+  /* One search for the plate's box and the lab's two. It reaches names in both
+     languages, the family, the latin name and the flavour notes — the last of
+     those is the only way to find a group the atlas records but does not file
+     together. 83 entries carry a citrus note and they sit under fruits,
+     condiments and the cellar alike; typing "agrume" is what finds them. */
+  function searchMatches(i, q) {
     if (!q) return true;
     var t = T();
     var hay = norm(i.name.en + " " + i.name.fr + " " + catLabel(i.cat) + " " +
@@ -1294,39 +1303,11 @@
     return hay.indexOf(q) !== -1;
   }
 
-  /* The results a query offers, and which one the keyboard is on. */
-  var plateHits = [], plateCursor = -1;
-
-  function plateMatches(i, q) {
-    if (!q) return true;
-    var t = T();
-    var hay = norm(i.name.en + " " + i.name.fr + " " + catLabel(i.cat) + " " +
-      (i.latin || "") + " " +
-      (i.flavor || []).map(function (f) { return t.flavors[f] + " " + f; }).join(" "));
-    return hay.indexOf(q) !== -1;
-  }
-
-  /* Type, see, click. The old picker filtered a separate <select> that you then
-     had to open yourself, so the search and the choosing were two different
-     controls and adding one ingredient took four moves. Now the query and the
-     answer are the same place.
-
-     Search reaches names in both languages, the family, the latin name and the
-     flavour notes — the last of those is the only way to find a group the atlas
-     records but does not file together. 83 entries carry a citrus note and they
-     sit under fruits, condiments and the cellar alike; typing "agrume" is what
-     finds them. */
-  function plateSearchHits() {
-    var role = el("plateRole").value, q = norm(el("plateSearch").value || "");
-    var pool = ING.concat(BASE_ITEMS).filter(function (i) {
-      if (role && PLATE.roleOf(i) !== role) return false;
-      if (plate.some(function (it) { return it.id === i.id; })) return false;
-      return plateMatches(i, q);
-    });
-    /* A name that STARTS with the query is what was meant nine times in ten —
-       and the match is tested against BOTH names, because someone typing
-       "potato" into the French build means the potato, not the starch that
-       happens to sort first among things whose French name contains it. */
+  /* A name that STARTS with the query is what was meant nine times in ten —
+     and the match is tested against BOTH names, because someone typing
+     "potato" into the French build means the potato, not the starch that
+     happens to sort first among things whose French name contains it. */
+  function rankHits(pool, q) {
     if (q) {
       /* The reader's own language wins a tie, because the collisions are real:
          "citron" is French for the lemon and English for the cédrat, and a
@@ -1340,7 +1321,7 @@
         if (there.indexOf(q) === 0) return 3;
         return 4;                                                    // mentions it
       };
-      pool.sort(function (a, b) {
+      return pool.sort(function (a, b) {
         var d = rank(a) - rank(b);
         if (d) return d;
         /* "Potato" and "Potato starch" both start with "potato"; the shorter is
@@ -1349,56 +1330,126 @@
         if (d) return d;
         return name(a).localeCompare(name(b), state.lang, CMP);
       });
-    } else {
-      pool.sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); });
     }
-    return pool;
+    return pool.sort(function (a, b) { return name(a).localeCompare(name(b), state.lang, CMP); });
   }
 
-  var PLATE_SHOWN = 8;
+  function plateSearchHits(q) {
+    var role = el("plateRole").value;
+    return rankHits(ING.concat(BASE_ITEMS).filter(function (i) {
+      if (role && PLATE.roleOf(i) !== role) return false;
+      if (plate.some(function (it) { return it.id === i.id; })) return false;
+      return searchMatches(i, q);
+    }), q);
+  }
 
-  function renderPlateResults(open) {
-    var t = T(), box = el("plateResults"), input = el("plateSearch");
-    plateHits = plateSearchHits();
-    var q = (el("plateSearch").value || "").trim();
+  /* A lab box offers every ingredient but the one already in the other box:
+     a pair of the same thing has nothing to judge. Bases have no recorded
+     pairs, so they stay in the plate's search only. */
+  function labSlotHits(slot) {
+    var other = slot === "A" ? "B" : "A";
+    return function (q) {
+      return rankHits(ING.filter(function (i) {
+        return i.id !== labPick[other] && searchMatches(i, q);
+      }), q);
+    };
+  }
 
-    /* With no query and no role the list would be all 1 883 rows, which is the
-       old dropdown again. It opens on a query, or on a role in guided mode. */
-    if (!open || (!q && !el("plateRole").value)) {
-      box.hidden = true; box.innerHTML = "";
-      input.setAttribute("aria-expanded", "false");
-      plateCursor = -1;
-      el("plateCount").textContent = "";
-      return;
+  /* Type, see, click. The old pickers were dropdowns, or a search that filtered
+     a separate dropdown you then had to open yourself, so adding one
+     ingredient took four moves. Now the query and the answer are the same
+     place. o: input, list, hits(q), opens(q), pick(id); count, typed() and
+     holds() optional. */
+  var FINDER_SHOWN = 8;
+  function makeFinder(o) {
+    var hits = [], cursor = -1;
+    function close() {
+      o.list.hidden = true; o.list.innerHTML = "";
+      o.input.setAttribute("aria-expanded", "false");
+      o.input.removeAttribute("aria-activedescendant");
+      cursor = -1;
+      if (o.count) o.count.textContent = "";
     }
-
-    var shown = plateHits.slice(0, PLATE_SHOWN);
-    if (plateCursor >= shown.length) plateCursor = shown.length - 1;
-
-    box.innerHTML = shown.length
-      ? shown.map(function (i, k) {
-          return '<li class="plate-result' + (k === plateCursor ? " on" : "") +
-            '" role="option" aria-selected="' + (k === plateCursor) + '"' +
-            ' data-plate-pick="' + esc(i.id) + '">' +
-            '<span class="pr-name">' + esc(name(i)) + "</span>" +
-            '<span class="pr-cat">' + esc(catLabel(i.cat)) + "</span></li>";
-        }).join("")
-      : '<li class="plate-result empty" role="option" aria-selected="false">' +
-        esc(t.plateNoMatch) + "</li>";
-
-    box.hidden = false;
-    input.setAttribute("aria-expanded", "true");
-    el("plateCount").textContent = plateHits.length > PLATE_SHOWN
-      ? t.plateMore.replace("{n}", plateHits.length - PLATE_SHOWN)
-      : "";
+    function render(open) {
+      var t = T(), q = (o.input.value || "").trim();
+      hits = o.hits(norm(q));
+      /* Opened on nothing, the list would be every row: the old dropdown again. */
+      if (!open || !o.opens(q)) { close(); return; }
+      var shown = hits.slice(0, FINDER_SHOWN);
+      if (cursor >= shown.length) cursor = shown.length - 1;
+      /* Focus stays in the box, so a screen reader follows the highlighted row
+         through aria-activedescendant, which needs every row to have an id. */
+      o.list.innerHTML = shown.length
+        ? shown.map(function (i, k) {
+            return '<li id="' + o.list.id + "-" + k + '" class="plate-result' + (k === cursor ? " on" : "") +
+              '" role="option" aria-selected="' + (k === cursor) + '"' +
+              ' data-pick="' + esc(i.id) + '">' +
+              '<span class="pr-name">' + esc(name(i)) + "</span>" +
+              '<span class="pr-cat">' + esc(catLabel(i.cat)) + "</span></li>";
+          }).join("")
+        : '<li class="plate-result empty" role="presentation">' + esc(t.plateNoMatch) + "</li>";
+      o.list.hidden = false;
+      o.input.setAttribute("aria-expanded", "true");
+      if (cursor >= 0) o.input.setAttribute("aria-activedescendant", o.list.id + "-" + cursor);
+      else o.input.removeAttribute("aria-activedescendant");
+      if (o.count) {
+        o.count.textContent = hits.length > FINDER_SHOWN
+          ? t.plateMore.replace("{n}", hits.length - FINDER_SHOWN) : "";
+      }
+    }
+    function pick(id) { close(); o.pick(id); }
+    o.input.addEventListener("input", function () {
+      cursor = -1;
+      if (o.typed) o.typed();
+      render(true);
+    });
+    o.input.addEventListener("focus", function () { render(true); });
+    /* Blur has to lose to the click that caused it, or picking a result closes
+       the list before the click lands. */
+    o.input.addEventListener("blur", function () { setTimeout(close, 140); });
+    o.input.addEventListener("keydown", function (e) {
+      /* The Enter that confirms an input-method composition belongs to it. */
+      if (e.isComposing || e.keyCode === 229) return;
+      var shown = Math.min(hits.length, FINDER_SHOWN);
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (o.list.hidden) { render(true); return; }
+        if (!shown) return;
+        cursor += e.key === "ArrowDown" ? 1 : -1;
+        if (cursor < 0) cursor = shown - 1;
+        if (cursor >= shown) cursor = 0;
+        render(true);
+        return;
+      }
+      if (e.key === "Enter") {
+        e.preventDefault();
+        /* Enter with nothing highlighted takes the first match, which is what
+           someone who typed a name and hit Enter meant. A closed list offers
+           nothing, so Enter there picks nothing. */
+        if (o.list.hidden) return;
+        var first = hits[cursor >= 0 ? cursor : 0];
+        if (first) pick(first.id);
+        return;
+      }
+      /* A search box clears its text on Escape by default. With the list open,
+         Escape closes the list and nothing else; a second Escape still clears. */
+      if (e.key === "Escape" && !o.list.hidden) { e.preventDefault(); close(); }
+      /* A box showing a chosen ingredient keeps it on Escape; the clear button
+         is there for emptying it on purpose. */
+      else if (e.key === "Escape" && o.holds && o.holds()) e.preventDefault();
+    });
+    o.list.addEventListener("mousedown", function (e) {
+      var li = e.target.closest("[data-pick]");
+      if (li) { e.preventDefault(); pick(li.getAttribute("data-pick")); }
+    });
+    return {
+      render: render,
+      close: close,
+      reset: function () { cursor = -1; render(true); },
+      isOpen: function () { return !o.list.hidden; }
+    };
   }
-
-  function closePlateResults() {
-    el("plateResults").hidden = true;
-    el("plateSearch").setAttribute("aria-expanded", "false");
-    plateCursor = -1;
-    el("plateCount").textContent = "";
-  }
+  var plateFinder = null;   // built with the other events, below
 
   function renderPlateSlots() {
     var t = T();
@@ -1680,7 +1731,7 @@
     tsel.value = plateTpl;
     tsel.setAttribute("aria-label", t.plateTplLabel);
     fillPlateRole();
-    renderPlateResults(!el("plateResults").hidden);
+    if (plateFinder) plateFinder.render(plateFinder.isOpen());
     renderPlateSlots();
     renderPlateItems();
     renderPlateVerdict();
@@ -1717,7 +1768,7 @@
        choice, for the few that offer it. */
     plate.push({ id: id, form: "" });
     el("plateSearch").value = "";
-    closePlateResults();
+    plateFinder.close();
     renderPlateAll();
     el("plateSearch").focus();
   }
@@ -1878,7 +1929,7 @@
        visitor, not leave them on a tab whose button has just disappeared. */
     if (!viewAllowed(state.view)) { setView("atlas"); return renderAll(); }
     if (!FREE_MODE) {
-      fillLabSelects();
+      fillLabInputs();
       renderLabResult();
       renderPlateAll();
       renderTrios();
@@ -2095,10 +2146,9 @@
       // has to switch to the lab's tab or it scrolls to a hidden element.
       setView("lab");
       setLabMode("pair");
-      el("labA").value = id;
-      renderLabResult();
+      setLabPick("A", id);
       el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
-      el("labB").focus();
+      if (!labPick.B) el("labB").focus();
       return;
     }
     /* A dish carries more than two ingredients, and the lab's two slots hold a
@@ -2108,6 +2158,7 @@
     if (dishLab) {
       setView("lab");
       setLabMode("pair");
+      labPick.A = labPick.B = ""; el("labA").value = el("labB").value = "";
       renderLabSet(dishLab.getAttribute("data-dishlab").split(","),
                    dishLab.getAttribute("data-dishname") || "");
       el("lab").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
@@ -2128,8 +2179,6 @@
   el("backBtn").addEventListener("click", backModal);
   el("overlay").addEventListener("click", function (e) { if (e.target === el("overlay")) closeModal(); });
 
-  el("labA").addEventListener("change", renderLabResult);
-  el("labB").addEventListener("change", renderLabResult);
 
   /* plate events */
   el("labModePair").addEventListener("click", function () { setLabMode("pair"); });
@@ -2148,45 +2197,37 @@
     var k = parseInt(sel.getAttribute("data-plate-form"), 10);
     if (plate[k]) { plate[k].form = sel.value; renderPlateAll(); }
   });
-  el("plateRole").addEventListener("change", function () {
-    plateCursor = -1;
-    renderPlateResults(true);
+  plateFinder = makeFinder({
+    input: el("plateSearch"), list: el("plateResults"), count: el("plateCount"),
+    hits: plateSearchHits,
+    /* It opens on a query, or on a role in guided mode. */
+    opens: function (q) { return !!q || !!el("plateRole").value; },
+    pick: addToPlate
   });
-  el("plateSearch").addEventListener("input", function () {
-    plateCursor = -1;
-    renderPlateResults(true);
-  });
-  el("plateSearch").addEventListener("focus", function () { renderPlateResults(true); });
-  /* Blur has to lose to the click that caused it, or picking a result closes
-     the list before the click lands. */
-  el("plateSearch").addEventListener("blur", function () {
-    setTimeout(closePlateResults, 140);
-  });
-  el("plateSearch").addEventListener("keydown", function (e) {
-    var shown = Math.min(plateHits.length, PLATE_SHOWN);
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-      e.preventDefault();
-      if (el("plateResults").hidden) { renderPlateResults(true); return; }
-      if (!shown) return;
-      plateCursor += e.key === "ArrowDown" ? 1 : -1;
-      if (plateCursor < 0) plateCursor = shown - 1;
-      if (plateCursor >= shown) plateCursor = 0;
-      renderPlateResults(true);
-      return;
+  el("plateRole").addEventListener("change", function () { plateFinder.reset(); });
+  ["A", "B"].forEach(function (slot) {
+    function holds() {
+      return !!labPick[slot] && el("lab" + slot).value.trim() === name(byId[labPick[slot]]);
     }
-    if (e.key === "Enter") {
-      e.preventDefault();
-      /* Enter with nothing highlighted takes the first match, which is what
-         someone who typed a name and hit Enter meant. */
-      var pick = plateHits[plateCursor >= 0 ? plateCursor : 0];
-      if (pick) addToPlate(pick.id);
-      return;
-    }
-    if (e.key === "Escape") { closePlateResults(); }
-  });
-  el("plateResults").addEventListener("mousedown", function (e) {
-    var li = e.target.closest("[data-plate-pick]");
-    if (li) { e.preventDefault(); addToPlate(li.getAttribute("data-plate-pick")); }
+    makeFinder({
+      input: el("lab" + slot), list: el("lab" + slot + "Results"), count: el("labCount"),
+      hits: labSlotHits(slot),
+      /* A box that already shows its chosen ingredient stays shut on focus: the
+         list would cover the verdict to offer what is already chosen. */
+      opens: function (q) { return !!q && !holds(); },
+      holds: holds,
+      /* Typing over a chosen name un-chooses it: the verdict must never belong
+         to a pair the boxes no longer show. */
+      typed: function () {
+        if (labPick[slot]) { labPick[slot] = ""; renderLabResult(); }
+      },
+      pick: function (id) {
+        setLabPick(slot, id);
+        /* The first pick leads straight on to the second box; otherwise focus
+           stays put, and the verdict is announced from its live region. */
+        if (slot === "A" && !labPick.B) el("labB").focus();
+      }
+    });
   });
 
   /* creations events */

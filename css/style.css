@@ -306,10 +306,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .lab h2{margin:0 0 4px;font-size:24px}
 .muted{color:var(--ink-3);margin:0 0 18px;font-size:13.5px}
 .lab-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.lab-row select{
-  flex:1;min-width:220px;padding:10px 12px;border-radius:12px;
-  border:1px solid var(--border-strong);background:var(--bg);color:var(--ink);
-}
+.lab-row .plate-find{flex:1 1 220px;min-width:220px}
 .lab-x{font-family:var(--serif);font-size:22px;color:var(--ink-3)}
 .lab-result{margin-top:20px}
 /* A dish read as a set: one row per pair, the recorded ones first. The verdict
@@ -859,7 +856,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   border-radius:10px;background:var(--card);color:var(--ink);max-width:100%}
 .plate-add .btn-primary{flex:0 0 auto}
 .plate-find{position:relative;flex:1 1 260px;min-width:0}
-.plate-add input[type=search]{
+.plate-find input[type=search]{
   font:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--border-strong);
   border-radius:10px;background:var(--card);color:var(--ink);width:100%;box-sizing:border-box}
 .plate-add select{flex:0 0 auto}
@@ -875,8 +872,10 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .plate-result.on{outline:1px solid var(--border-strong)}
 .plate-result.empty{cursor:default;color:var(--ink-3);font-style:italic}
 .plate-result.empty:hover{background:none}
-.pr-name{flex:1 1 auto;min-width:0}
-.pr-cat{flex:0 0 auto;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+/* In a narrow list the family gives way, not the name: it wraps onto two lines
+   rather than overlapping or splitting a one-word name like "Bettarazuke". */
+.pr-name{flex:1 1 auto}
+.pr-cat{flex:0 1 auto;text-align:right;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
 
 /* the form is chosen on the thing itself, once it is on the plate */
 .chip-form{font:inherit;font-size:12px;padding:3px 6px;border-radius:7px;
@@ -999,6 +998,11 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   .axis-row{grid-template-columns:88px 1fr 52px;gap:9px}
   .plate-add select{width:100%}
   .plate-find{flex:1 1 100%}
+  /* Two boxes side by side leave the × at the end of the first row on a phone:
+     stack them, the × between. */
+  .lab-row{gap:6px}
+  .lab-row .plate-find{flex:1 1 100%;min-width:0}
+  .lab-row .lab-x{flex:1 1 100%;text-align:center;line-height:1}
   /* The verdict is a whole sentence and carries flex:none, so on a narrow screen
      it pushed the page 100px wider than the viewport rather than wrapping.
      Stack the row instead — this reaches the dish sets as well, which had the

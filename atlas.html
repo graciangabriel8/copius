@@ -17,7 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=180">
+<link rel="stylesheet" href="css/style.css?v=187">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -114,12 +114,23 @@
     </div>
 
     <div id="labPair">
+      <!-- Type, see, click, as in the plate: two dropdowns of 1 839 names each
+           meant scrolling past every fruit to reach a duck. -->
       <div class="lab-row">
-        <select id="labA"></select>
+        <div class="plate-find">
+          <input type="search" id="labA" autocomplete="off" role="combobox"
+                 aria-expanded="false" aria-controls="labAResults" aria-autocomplete="list">
+          <ul id="labAResults" class="plate-results" role="listbox" hidden></ul>
+        </div>
         <span class="lab-x" aria-hidden="true">×</span>
-        <select id="labB"></select>
+        <div class="plate-find">
+          <input type="search" id="labB" autocomplete="off" role="combobox"
+                 aria-expanded="false" aria-controls="labBResults" aria-autocomplete="list">
+          <ul id="labBResults" class="plate-results" role="listbox" hidden></ul>
+        </div>
       </div>
-      <div id="labResult" class="lab-result"></div>
+      <p id="labCount" class="muted plate-count"></p>
+      <div id="labResult" class="lab-result" aria-live="polite"></div>
     </div>
 
     <div id="labPlate" hidden>
@@ -215,40 +226,40 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/tier.js?v=180"></script>
-<script src="js/i18n.js?v=180"></script>
-<script src="js/photos.js?v=180"></script>
-  <script src="js/data-cellar.js?v=180"></script>
-  <script src="js/data-condiments.js?v=180"></script>
-  <script src="js/data-cuts.js?v=180"></script>
-  <script src="js/data-dairy.js?v=180"></script>
-  <script src="js/data-flowers.js?v=180"></script>
-  <script src="js/data-fats.js?v=180"></script>
-  <script src="js/data-fruits.js?v=180"></script>
-  <script src="js/data-grains.js?v=180"></script>
-  <script src="js/data-herbs.js?v=180"></script>
-  <script src="js/data-infusions.js?v=180"></script>
-  <script src="js/data-legumes.js?v=180"></script>
-  <script src="js/data-meat.js?v=180"></script>
-  <script src="js/data-mushrooms.js?v=180"></script>
-  <script src="js/data-nuts.js?v=180"></script>
-  <script src="js/data-roe.js?v=180"></script>
-  <script src="js/data-seafood.js?v=180"></script>
-  <script src="js/data-seaweed.js?v=180"></script>
-  <script src="js/data-shellfish.js?v=180"></script>
-  <script src="js/data-spices.js?v=180"></script>
-  <script src="js/data-sweet.js?v=180"></script>
-  <script src="js/data-texture.js?v=180"></script>
-  <script src="js/data-vegetables.js?v=180"></script>
-<script src="js/data-bases.js?v=180"></script>
-  <script src="js/data-techniques.js?v=180"></script>
-  <script src="js/data-trees.js?v=180"></script>
-<script src="js/data-chefs.js?v=180"></script>
-<script src="js/trios.js?v=180"></script>
-<script src="js/trios-gastronomy.js?v=180"></script>
-<script src="js/trios-premium.js?v=180"></script>
-<script src="js/plate.js?v=180"></script>
-<script src="js/app.js?v=180"></script>
+<script src="js/tier.js?v=187"></script>
+<script src="js/i18n.js?v=187"></script>
+<script src="js/photos.js?v=187"></script>
+  <script src="js/data-cellar.js?v=187"></script>
+  <script src="js/data-condiments.js?v=187"></script>
+  <script src="js/data-cuts.js?v=187"></script>
+  <script src="js/data-dairy.js?v=187"></script>
+  <script src="js/data-flowers.js?v=187"></script>
+  <script src="js/data-fats.js?v=187"></script>
+  <script src="js/data-fruits.js?v=187"></script>
+  <script src="js/data-grains.js?v=187"></script>
+  <script src="js/data-herbs.js?v=187"></script>
+  <script src="js/data-infusions.js?v=187"></script>
+  <script src="js/data-legumes.js?v=187"></script>
+  <script src="js/data-meat.js?v=187"></script>
+  <script src="js/data-mushrooms.js?v=187"></script>
+  <script src="js/data-nuts.js?v=187"></script>
+  <script src="js/data-roe.js?v=187"></script>
+  <script src="js/data-seafood.js?v=187"></script>
+  <script src="js/data-seaweed.js?v=187"></script>
+  <script src="js/data-shellfish.js?v=187"></script>
+  <script src="js/data-spices.js?v=187"></script>
+  <script src="js/data-sweet.js?v=187"></script>
+  <script src="js/data-texture.js?v=187"></script>
+  <script src="js/data-vegetables.js?v=187"></script>
+<script src="js/data-bases.js?v=187"></script>
+  <script src="js/data-techniques.js?v=187"></script>
+  <script src="js/data-trees.js?v=187"></script>
+<script src="js/data-chefs.js?v=187"></script>
+<script src="js/trios.js?v=187"></script>
+<script src="js/trios-gastronomy.js?v=187"></script>
+<script src="js/trios-premium.js?v=187"></script>
+<script src="js/plate.js?v=187"></script>
+<script src="js/app.js?v=187"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
