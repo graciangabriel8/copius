@@ -499,7 +499,7 @@ fr:"Ôtez toute trace de la membrane grise. Elle se rétracte violemment à la c
 pairs:["lard","garlic","saffron","tomato","thyme","white-wine-vinegar","leek","olive-oil"],
 svg:'<path class="f1 sf" d="M18 54q10-14 26-10t30 12q-10 12-32 10T18 54z"/><path class="s" d="M28 48q4-8 10-6"/><circle class="dot" cx="30" cy="54" r="2.5"/>'},
 
-{id:"joue-de-lotte",cat:"seafood",price:3,pk:"25–45 €/kg",name:{en:"Monkfish cheek",fr:"Joue de lotte"},latin:"Lophius piscatorius (masseter)",
+{id:"joue-de-lotte",cat:"seafood",parent:"monkfish",price:3,pk:"25–45 €/kg",name:{en:"Monkfish cheek",fr:"Joue de lotte"},latin:"Lophius piscatorius (masseter)",
 origin:{en:"The monkfish head",fr:"La tête de lotte"},season:[],
 flavor:["delicate","marine","mild","umami"],texture:["firm","moist"],
 story:{en:"A monkfish is very nearly half head, and most boats behead it at sea and land only the tail — which is why the cheeks, two round nuggets of dense white muscle, reach so few counters. Where the tail is roasted on the bone like a small leg of lamb, the cheek is treated as a scallop: hot pan, ninety seconds a side.",
@@ -669,7 +669,7 @@ fr:"Dessalez-la peau vers le haut dans l’eau froide au réfrigérateur — vin
 pairs:["potato","olive-oil","garlic","cream","parsley","piquillo","onion","bay-leaf"],
 svg:'<path class="f1 sf" d="M48 18q14 14 16 34-4 16-16 26-12-10-16-26 2-20 16-34z"/><path class="s" d="M48 22v54"/><path class="s" d="M40 38q8 4 16 0M38 52q10 4 20 0"/><circle class="dot" cx="38" cy="30" r="1.4"/><circle class="dot" cx="58" cy="46" r="1.4"/><circle class="dot" cx="44" cy="66" r="1.4"/>'},
 
-{id:"anago",cat:"seafood",rare:true,price:3,pk:"40–70 €/kg",name:{en:"Saltwater conger (anago)",fr:"Congre japonais (anago)"},latin:"Conger myriaster",
+{id:"anago",cat:"seafood",parent:"conger",rare:true,price:3,pk:"40–70 €/kg",name:{en:"Saltwater conger (anago)",fr:"Congre japonais (anago)"},latin:"Conger myriaster",
 origin:{en:"Tokyo Bay",fr:"Baie de Tokyo"},season:[6,7,8],
 flavor:["sweet","delicate","umami"],texture:["soft","gelatinous"],
 story:{en:"Edo sushi cooks worked with what Tokyo Bay gave them, and anago is one of the handful of fish the style was built on — simmered rather than grilled, because it carries a fraction of the fat of freshwater unagi. The dark glaze brushed on at the end, tsume, is only that simmering liquid reduced with the bones.",
@@ -699,7 +699,7 @@ fr:"Sa peau croustille mieux que celle de presque tout poisson. Séchez-la bien,
 pairs:["fennel","lemon","olive-oil","thyme","white-wine-vinegar","tomato","butter","dill"],
 svg:'<path class="f1 sf" d="M13 50q10-12 25-13 22-1 33 10l8-7q-4 12 0 24l-8-7q-11 11-33 10Q23 62 13 50z"/><path class="f2 sf" d="M36 38l3-12 3 11 3-13 3 12 3-11 3 11 2-8 1 8z"/><path class="f2 sf" d="M60 39q7 0 10 6-6 2-10-1zM52 64q7 1 11-4-6-3-11 0z"/><path class="s" d="M30 38q5 10 2 21M14 52q7 3 12 2" stroke-width="2"/><path class="s" d="M34 47q17 1 33-2" stroke-width="1.5"/><path class="dot" d="M22 44q5-3 6 1t-5 5-1-6z"/>'},
 
-{id:"sea-trout",cat:"seafood",price:2,pk:"18–30 €/kg",name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
+{id:"sea-trout",cat:"seafood",parent:"trout",price:2,pk:"18–30 €/kg",name:{en:"Sea trout",fr:"Truite de mer"},latin:"Salmo trutta trutta",
 origin:{en:"Atlantic rivers and estuaries",fr:"Rivières et estuaires atlantiques"},season:[4,5,6,7,8],
 flavor:["delicate","sweet","rich"],texture:["tender","silky","moist"],
 story:{en:"Sea trout and brown trout are one species: in a single river some individuals drop down to the sea, grow far larger on marine feed and return silver, and their own offspring may do either. The coral colour is dietary, from crustaceans, and fades as the fish waits in fresh water to spawn.",
@@ -899,7 +899,7 @@ fr:"Traitez-le comme du bœuf : saisissez fort l’extérieur, laissez le cœur 
 pairs:["sesame","soy-sauce","ginger","olive","capers"],
 svg:'<path class="f2 sf" d="M24 54q14-16 36-12l6-8 2 8 8 4-8 4-2 8-6-8q-22 4-36 4z" transform="translate(0 2)"/><path class="s" d="M44 44v16" transform="translate(0 2)"/><path class="dot" d="M32 52a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/>'},
 
-{id:"tuna-belly-toro",cat:"seafood",luxe:true,price:4,pk:"70–140 €/kg",name:{en:"Tuna belly (toro)",fr:"Ventrèche de thon rouge (toro)"},latin:"Thunnus thynnus",
+{id:"tuna-belly-toro",cat:"seafood",parent:"tuna",luxe:true,price:4,pk:"70–140 €/kg",name:{en:"Tuna belly (toro)",fr:"Ventrèche de thon rouge (toro)"},latin:"Thunnus thynnus",
 origin:{en:"Bluefin tuna, Japan & the Mediterranean",fr:"Thon rouge, Japon & Méditerranée"},season:[1,11,12],
 flavor:["rich","buttery","umami","delicate"],texture:["soft","silky"],
 story:{en:"Edo sushi cured its tuna in soy, and fat will not take a cure — so the belly spoiled first and went to the cats, a piece the trade called neko-matagi, what even a cat steps over. It became the most expensive thing on the counter only once domestic refrigeration spread in the 1960s.",

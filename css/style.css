@@ -163,6 +163,9 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 
 /* ---------- category chips ---------- */
 .cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+/* While a search stands, only the results and their count stay under the box. */
+#atlasView.searching #tierNote,#atlasView.searching #daily,#atlasView.searching #cats,
+#atlasView.searching .toolbar > :not(#stats){display:none}
 .cats .chip{
   padding:7px 14px;border-radius:999px;border:1px solid var(--border-strong);
   background:var(--card);color:var(--ink-2);font-size:13px;
@@ -309,6 +312,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .lab-row .plate-find{flex:1 1 220px;min-width:220px}
 .lab-x{font-family:var(--serif);font-size:22px;color:var(--ink-3)}
 .lab-result{margin-top:20px}
+.lab-via{margin:-4px 0 12px;font-size:13px;color:var(--ink-3)}
 /* A dish read as a set: one row per pair, the recorded ones first. The verdict
    keeps its own classes from the pair view, so the two modes agree on colour;
    here it is a chip at the end of a row rather than a banner, because there are
@@ -321,6 +325,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .lab-set-row:last-child{border-bottom:0;padding-bottom:0}
 .lab-set-pair{font-size:14.5px;color:var(--ink)}
+.lab-set-via{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-3)}
 .lab-set-row .lab-x{font-size:16px}
 .lab-set-row .verdict{margin-bottom:0;padding:6px 12px;font-size:13px;flex:none}
 .verdict{
@@ -407,12 +412,15 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
             fill-in .58s ease .46s both}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fill-in{from{opacity:0}to{opacity:1}}
-/* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. */
+/* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. The bar
+   itself is see-through: as a solid band it cut through the title of every
+   scrolled entry. Only the two round buttons float over the text. */
 .modal-bar{display:flex;justify-content:space-between;padding:12px 14px 6px;
-  position:sticky;top:0;z-index:1;background:var(--card);border-radius:22px 22px 0 0}
+  position:sticky;top:0;z-index:1;background:transparent;pointer-events:none}
 .modal-bar .ghost{
   border:1px solid var(--border);background:var(--bg);color:var(--ink-2);
   width:40px;height:40px;border-radius:50%;font-size:15px;line-height:1;
+  pointer-events:auto;box-shadow:0 2px 10px rgba(0,0,0,.14);
 }
 .modal-bar .ghost:hover{border-color:var(--ink-3);color:var(--ink)}
 /* Phones: the entry becomes a sheet from the top edge, so the sticky bar sits at the very top. */
@@ -768,6 +776,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   background:var(--chip);color:var(--ink-3);font-size:12px;font-weight:600;vertical-align:2px}
 .kin-latin{margin:-2px 0 8px;font-style:italic;color:var(--ink-3);font-size:13px}
 .kin-more{margin:6px 0 0;font-size:12.5px;color:var(--ink-3)}
+.kin-sub{margin:14px 0 8px;font-size:13px;font-weight:600;color:var(--ink-2)}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
 .chip-link{display:inline-flex;align-items:center;gap:6px;
   border:1px solid var(--border);background:var(--chip);border-radius:999px;

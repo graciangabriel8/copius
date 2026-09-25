@@ -389,7 +389,7 @@ fr:"Faites-le cuire dix minutes à la vapeur avant de le mariner : il s’ouvre,
 pairs:["soy-sauce","garlic","palm-sugar","coriander-seed","tamarind-paste","chili","lime","peanut"],
 svg:'<path class="f1 sf" d="M24 42h40v22H24z"/><path class="f2 sf" d="M24 42l8-8h40l-8 8z"/><path class="f2 sf" d="M64 42l8-8v22l-8 8z"/><path class="dot" d="M32 50a3 2 0 106 0 3 2 0 10-6 0M44 56a3 2 0 106 0 3 2 0 10-6 0M52 48a3 2 0 106 0 3 2 0 10-6 0"/>'},
 
-{id:"tolosa-black-bean",cat:"legumes",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Tolosa black bean",fr:"Haricot noir de Tolosa"},latin:"Phaseolus vulgaris",
+{id:"tolosa-black-bean",cat:"legumes",parent:"black-bean",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Tolosa black bean",fr:"Haricot noir de Tolosa"},latin:"Phaseolus vulgaris",
 origin:{en:"Tolosaldea, Gipuzkoa",fr:"Tolosaldea, Guipuscoa"},season:[9,10],
 flavor:["earthy","rich","meaty"],texture:["hard","dry","smooth"],
 story:{en:"Cooked, it throws a broth so dark and so bound by its own dissolved skins that Basque cooks judge the dish by the liquid rather than the bean — nothing like the firm, dry turtle bean the name suggests. The growers organised formally only in 1994, as Tolosako Babarruna, to defend a bean that had been local currency for far longer.",

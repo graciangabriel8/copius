@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"kombu-breton",cat:"seaweed",price:2,pk:"60–120 €/kg",name:{en:"Breton kombu",fr:"Kombu breton"},latin:"Laminaria digitata",
+{id:"kombu-breton",cat:"seaweed",parent:"kombu",price:2,pk:"60–120 €/kg",name:{en:"Breton kombu",fr:"Kombu breton"},latin:"Laminaria digitata",
 origin:{en:"Iroise sea, Brittany",fr:"Mer d'Iroise, Bretagne"},season:[5,6,7,8,9,10],
 flavor:["marine","briny","umami"],texture:["tough","smooth","dry"],
 story:{en:"Breton goémoniers still take it from the boat with the scoubidou, a hooked steel rod that twists the stipe off the rock, a tool designed in the 1960s and used almost nowhere else. The kelp fields around the Molène archipelago are among the largest in Europe, and the cut is governed by a season and a quota like a fishery.",
@@ -19,7 +19,7 @@ fr:"Faites-la revenir vingt à trente secondes dans un voile d'huile, pas davant
 pairs:["butter","oats","potato","scallop","oyster","cream","egg","lemon"],
 svg:'<path class="f2 sf" d="M48 80v-16q-14-2-18-14 8-4 14 2-6-10-2-20 8 4 8 16 4-10 12-10-1 12-8 18 8-2 12 4-6 8-18 4z"/><path class="s" d="M48 64V42M48 56l-8-6M48 50l8-6"/><path class="s" d="M43 80h10"/>'},
 
-{id:"gagome-kombu",cat:"seaweed",rare:true,price:3,pk:"120–220 €/kg",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
+{id:"gagome-kombu",cat:"seaweed",parent:"kombu",rare:true,price:3,pk:"120–220 €/kg",name:{en:"Gagome kombu",fr:"Kombu gagome"},latin:"Saccharina sculpera",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaidō"},season:[7,8,9],
 flavor:["marine","mild","umami"],texture:["tough","brittle","dry"],
 story:{en:"Gagome names the basket-weave: the blade is embossed all over with a lattice of pits, which is how it is told from every other kelp growing on the same rocks. It holds to a short stretch of sea around Hakodate and almost nowhere else, and it is gathered for the slime rather than in spite of it.",
@@ -49,7 +49,7 @@ fr:"Ne le faites jamais bouillir — l’amertume s’échappe au-delà de 60 °
 pairs:["katsuobushi","shiitake","rice","miso","soy-sauce"],
 svg:'<path class="f1 sf" d="M20 70C22 54 30 36 42 22C46 18 54 20 54 26C46 38 38 54 36 70C34 76 24 75 20 70Z"/><path class="f2 sf" d="M42 22C46 18 54 20 54 26C50 28 45 27 44 24Z"/><path class="f2 sf" d="M46 76C48 60 54 44 64 32C68 27 76 30 74 36C66 46 60 60 58 76C56 80 48 80 46 76Z"/><path class="s" d="M28 69C30 55 37 39 47 28M54 74C56 60 61 47 69 37" stroke-width="1.5"/><path class="dot" d="M32 54q3-2 4 1t-3 3q-2-1-1-4zM42 32q3-2 4 1t-3 3q-2-1-1-4zM60 58q3-2 4 1t-3 3q-2-1-1-4zM66 40q3-2 4 1t-3 3q-2-1-1-4z"/>'},
 
-{id:"ma-kombu",cat:"seaweed",price:3,pk:"150–300 €/kg",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
+{id:"ma-kombu",cat:"seaweed",parent:"kombu",price:3,pk:"150–300 €/kg",name:{en:"Ma-kombu",fr:"Ma-kombu"},latin:"Saccharina japonica",
 origin:{en:"Hakodate, Hokkaido",fr:"Hakodate, Hokkaido"},season:[],
 flavor:["umami","sweet","marine","delicate"],texture:["tough","smooth","dry"],
 story:{en:"Ma-kombu is cut off Hakodate in southern Hokkaido and travelled south for centuries aboard the kitamae-bune cargo ships, on what is still called the kombu road. Kyoto built its kitchen on it partly as a matter of water: the city's is soft, and soft water pulls glutamate out of the leaf where hard water leaves much of it behind.",
@@ -79,7 +79,7 @@ fr:"Passez une feuille au-dessus d’une flamme jusqu’à ce qu’elle vire ém
 pairs:["rice","sesame","egg","butter","salmon","tuna"],
 svg:'<path class="f2 sf" d="M28 42C42 38 60 37 74 40C76 50 76 62 74 72C60 75 42 75 28 72C26 62 26 52 28 42Z"/><path class="f1 sf" d="M19 31C28 28 38 30 48 27C55 25 60 29 64 28C67 39 67 51 65 61C56 64 46 62 36 64C29 65 24 61 20 61C17 51 17 41 19 31Z"/><path class="f2 sf" d="M64 28C71 25 76 27 78 33C73 31 69 32 66 37C65 33 64 30 64 28Z"/><path class="s" d="M25 36l2 4M31 35l2 4M37 36l2 4M43 34l2 4M49 35l2 4M55 34l2 4M23 44l2 4M29 43l2 4M35 44l2 4M41 42l2 4M47 43l2 4M53 42l2 4M59 43l2 4M24 51l2 4M30 50l2 4M36 51l2 4M42 49l2 4M48 50l2 4M54 49l2 4M60 50l2 4M26 57l2 4M32 56l2 4M38 57l2 4M44 55l2 4M50 56l2 4M56 55l2 4" stroke-width="2"/><path class="dot" d="M22 55q3-1 3 1t-3 2q-2-1 0-3z"/>'},
 
-{id:"kombu-royal",cat:"seaweed",price:3,pk:"150–280 €/kg",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
+{id:"kombu-royal",cat:"seaweed",parent:"kombu",price:3,pk:"150–280 €/kg",name:{en:"Royal kombu",fr:"Kombu royal"},latin:"Saccharina latissima",
 origin:{en:"Brittany",fr:"Bretagne"},season:[4,5,6,7],
 flavor:["umami","marine","sweet","mild"],texture:["tough","smooth","dry"],
 story:{en:"Breton harvesters sell Saccharina latissima as kombu royal, though it is a different species from the Japanese kelp — sugar kelp, named for the mannitol that dries to a white bloom on the blade. France drew up a legal list of seaweeds permitted as vegetables at the start of the 1990s, and this was among the first on it.",

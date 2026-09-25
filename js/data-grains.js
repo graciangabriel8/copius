@@ -9,7 +9,7 @@ fr:"La faire éclater à sec, une cuillerée à soupe à la fois dans une poêle
 pairs:["honey","molasses","pumpkin-seed","cocoa-nibs","corn","dark-chocolate"],
 svg:'<path class="f2 sf" d="M44 20Q60 30 62 48Q66 66 72 74Q58 70 50 54Q42 36 44 20Z"/><path class="s" d="M50 30q6 12 8 26"/><path class="s" d="M44 24q-8 20-6 60"/><path class="f1 sf" d="M38 62q-14-2-18-12 16-4 18 12z"/>'},
 
-{id:"arborio",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Arborio rice",fr:"Riz arborio"},latin:"Oryza sativa",
+{id:"arborio",cat:"grains",parent:"rice",price:1,pk:"3–6 €/kg",name:{en:"Arborio rice",fr:"Riz arborio"},latin:"Oryza sativa",
 origin:{en:"Po valley, Italy",fr:"Plaine du Pô, Italie"},season:[],
 flavor:["mild","creamy","sweet","delicate"],texture:["hard","dry","granular"],
 story:{en:"The creaminess of a risotto is not cream but amylopectin, a starch that leaches out of these short fat grains as they are stirred. Arborio holds a firm core longest, which is why it forgives an inattentive cook.",
@@ -29,7 +29,7 @@ fr:"L’orge perlé ne demande aucun trempage et adore les champignons ; traitez
 pairs:["mushroom","beef","onion","thyme","carrot"],
 svg:'<path class="s" d="M48 78V30"/><path class="f2 sf" d="M44 62q-6 0-8-8 8-2 10 4zM52 62q6 0 8-8-8-2-10 4zM44 50q-6 0-8-8 8-2 10 4zM52 50q6 0 8-8-8-2-10 4zM44 38q-6 0-8-8 8-2 10 4zM52 38q6 0 8-8-8-2-10 4z"/><path class="s" d="M44 30l-4-8M48 30v-9M52 30l4-8"/>'},
 
-{id:"basmati",cat:"grains",price:1,pk:"3–7 €/kg",name:{en:"Basmati rice",fr:"Riz basmati"},latin:"Oryza sativa",
+{id:"basmati",cat:"grains",parent:"rice",price:1,pk:"3–7 €/kg",name:{en:"Basmati rice",fr:"Riz basmati"},latin:"Oryza sativa",
 origin:{en:"Himalayan foothills",fr:"Contreforts himalayens"},season:[],
 flavor:["floral","nutty","delicate","mild"],texture:["hard","dry","granular"],
 story:{en:"The name means fragrant in Hindi, and the aroma comes from a compound also found in pandan leaf and fresh bread. Unusually for rice, it is aged a year or more before sale — the drying intensifies the perfume and makes the grains elongate further.",
@@ -39,7 +39,7 @@ fr:"Rincez jusqu’à eau claire, puis trempez trente minutes. Les grains double
 pairs:["cardamom","cumin","ghee","saffron","clove","cilantro","turmeric","cinnamon"],
 svg:'<path class="f3 sf" d="M34 60q6-14 14-14t-2 18z"/><path class="f3 sf" d="M48 58q6-14 14-14t-2 18z"/><path class="f3 sf" d="M40 72q6-12 13-12t-2 16z"/>'},
 
-{id:"black-glutinous-rice",cat:"grains",price:2,pk:"6–12 €/kg",name:{en:"Black glutinous rice",fr:"Riz gluant noir"},latin:"Oryza sativa var. glutinosa",
+{id:"black-glutinous-rice",cat:"grains",parent:"glutinous-rice",price:2,pk:"6–12 €/kg",name:{en:"Black glutinous rice",fr:"Riz gluant noir"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Thailand, Laos and the Philippines",fr:"Thaïlande, Laos et Philippines"},season:[],
 flavor:["nutty","earthy","mild"],texture:["hard","dry","granular"],
 story:{en:"The purple is in the bran, not the endosperm: mill it white and it cooks like any other sticky rice, colourless and unremarkable. It is one of the rices sold as forbidden rice, on the story that it was reserved for the emperor — a good line, though the documentary record behind it is thin.",
@@ -49,7 +49,7 @@ fr:"Trempez une nuit, puis cuisez à la vapeur plutôt qu’à l’eau : bouilli
 pairs:["coconut-milk","palm-sugar","mango","pandan","black-sesame","ginger","banana"],
 svg:'<path class="f3 sf" d="M30 50q6-13 18-13t18 13z"/><path class="f1 sf" d="M24 50h48q-4 24-24 24T24 50z"/><path class="s" d="M22 50h52"/><path class="s" d="M40 43h6M50 45h6"/><ellipse class="f3 sf" cx="76" cy="68" rx="4" ry="2"/>'},
 
-{id:"black-rice",cat:"grains",price:2,pk:"6–12 €/kg",name:{en:"Black rice",fr:"Riz noir"},latin:"Oryza sativa",
+{id:"black-rice",cat:"grains",parent:"rice",price:2,pk:"6–12 €/kg",name:{en:"Black rice",fr:"Riz noir"},latin:"Oryza sativa",
 origin:{en:"China",fr:"Chine"},season:[],
 flavor:["nutty","earthy","sweet","toasty"],texture:["hard","dry","granular"],
 story:{en:"Chinese tradition calls it forbidden rice, reserved for the emperor and denied to everyone else — a story that may be embroidered, but the rarity was real. The colour is anthocyanin, the same pigment as blackcurrant and red cabbage.",
@@ -69,7 +69,7 @@ fr:"Le pigment est un indicateur de pH : une pincée de chaux alimentaire ou de 
 pairs:["pinyon-pine-nut","honey","butter","chili","cheddar","lime","pumpkin-seed"],
 svg:'<path class="f3 sf" d="M48 14q14 8 14 28t-14 34q-14-14-14-34t14-28z"/><path class="s" d="M40 26q4 22 0 40M48 20v52M56 26q-4 22 0 40M35 36h26M34 48h28M36 60h24"/><path class="f1 sf" d="M34 46q-12 12-10 30 14-4 16-18z"/><path class="f2 sf" d="M62 46q12 12 10 30-14-4-16-18z"/>'},
 
-{id:"bomba",cat:"grains",price:2,pk:"10–18 €/kg",name:{en:"Bomba rice",fr:"Riz bomba"},latin:"Oryza sativa",
+{id:"bomba",cat:"grains",parent:"rice",price:2,pk:"10–18 €/kg",name:{en:"Bomba rice",fr:"Riz bomba"},latin:"Oryza sativa",
 origin:{en:"Valencia, Spain",fr:"Valence, Espagne"},season:[],
 flavor:["mild","nutty","delicate","sweet"],texture:["hard","dry","granular"],
 story:{en:"It absorbs about three times its volume in liquid while staying separate — the opposite of risotto rice, and exactly what paella needs, since the grains must never be stirred or turn creamy. It is slow to grow and low-yielding, hence the price.",
@@ -109,7 +109,7 @@ fr:"Le boulgour fin du taboulé ne se cuit pas — le jus de citron et l’eau d
 pairs:["parsley","mint","lemon","tomato","olive-oil","spring-onion","cumin","pomegranate"],
 svg:'<path class="f1 sf" d="M27.7 25.8C33.9 22.5 31.4 23.1 37.5 23.5C43.6 24 41.2 23.1 41.7 28C42.3 32.8 44 30.7 39.1 35.2C34.2 39.7 36.4 37.5 29.5 38.8C22.6 40.1 25.4 42.1 21.6 38.7C17.7 35.3 16.7 38.4 19.5 32.7C22.3 27.1 21.5 29.1 27.7 25.8ZM33.1 56.2C37.2 62.8 36.3 60.6 35.7 65.7C35.2 70.8 35.7 68.7 31.3 69.6C27 70.4 29.7 72.1 24.6 67.3C19.4 62.5 20.7 65 19.2 59C17.7 52.9 18.1 55.1 20.4 52C22.7 48.9 20.5 48.5 25.8 50.6C31.2 52.7 29 49.6 33.1 56.2Z"/><path class="f2 sf" d="M65.9 26.5C72.8 29.5 70.9 28 73.6 32.9C76.2 37.8 74.7 35.3 71.7 38.3C68.7 41.3 72.9 42.4 65.3 41C57.7 39.6 61.2 41.1 55.7 36.6C50.2 32 51.9 33.9 51.8 29.7C51.7 25.4 49.9 25.5 55.6 24.6C61.4 23.8 59.1 23.4 65.9 26.5ZM61.6 55.8C66.3 50.9 64.4 50.8 69.4 50.3C74.4 49.7 73.3 49.4 74.8 53C76.3 56.6 76.2 55.1 73.1 60.5C70 66 72.9 64.4 66.9 68C60.8 71.6 63.5 71.1 59.2 69.2C54.9 67.3 56.1 68.8 57 63.5C57.9 58.1 56.9 60.6 61.6 55.8Z"/><path class="f1 sf" d="M47.7 43.2C55.6 44 53.3 42 57.6 46.4C61.9 50.8 61 49 58.7 52.8C56.5 56.7 57.5 54.8 51.1 56.1C44.6 57.4 46.6 58.7 40.8 56.1C34.9 53.4 35 55.3 33.9 50.4C32.9 45.4 32.1 46.9 37.1 44.1C42.1 41.2 39.8 42.4 47.7 43.2ZM43.7 71.5C48.4 70.1 46.6 69.9 50.4 71.1C54.1 72.3 53.4 71.4 53 74.9C52.7 78.4 53.8 76.4 49.4 79.2C44.9 82.1 48 81.7 42.6 82C37.3 82.2 39 81.8 37.2 79.5C35.4 77.2 35 78.1 37.3 74.6C39.7 71 39 72.8 43.7 71.5Z"/><path class="s" d="M36.6 29Q30.2 32 25.7 35.5M30.2 65.1Q26.2 60 23.3 55.2M68.5 35.4Q62.2 33 57.3 31.1M70.2 55.7Q65.2 60 62.3 64.7M53.7 50.7Q46.2 50 40.2 49.9" stroke-width="1.5"/><path class="dot" d="M47.1 20q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 zM71.1 45q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 zM20.1 44q.4-2.7 3.6 .4-.4 2.8-3.4 .4-.4-.2 3.2-.4 z"/>'},
 
-{id:"camargue-red-rice",cat:"grains",price:2,pk:"5–10 €/kg",name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
+{id:"camargue-red-rice",cat:"grains",parent:"rice",price:2,pk:"5–10 €/kg",name:{en:"Camargue red rice",fr:"Riz rouge de Camargue"},latin:"Oryza sativa",
 origin:{en:"Rhone delta, Camargue",fr:"Delta du Rhône, Camargue"},season:[],
 flavor:["nutty","earthy","toasty"],texture:["hard","dry","granular"],
 story:{en:"Camargue red rice is barely forty years old: trialled from 1982 with INRA, first harvested in 1988, on shelves from 1992. It sits under the Riz de Camargue IGP granted in 1998 - a protected name for a grain younger than most of the cooks using it.",
@@ -119,7 +119,7 @@ fr:"Un volume de riz pour deux volumes et demi d’eau froide non salée, trente
 pairs:["olive-oil","saffron","mussel","tomato","fennel","thyme"],
 svg:'<path class="s" d="M48 84V52"/><path class="f2 sf" d="M46 52q-10-3-14-12 10-2 16 6zM52 48q4-9 2-18-9 5-8 15zM46 40q-9-4-11-13 10-1 14 8zM54 62q9-2 13-11-10-2-15 5z"/><path class="f1 sf" d="M28 78q7-4 13 0-6 5-13 0zM58 80q7-3 12 1-6 4-12-1z"/>'},
 
-{id:"carnaroli",cat:"grains",price:2,pk:"5–10 €/kg",name:{en:"Carnaroli rice",fr:"Riz carnaroli"},latin:"Oryza sativa",
+{id:"carnaroli",cat:"grains",parent:"rice",price:2,pk:"5–10 €/kg",name:{en:"Carnaroli rice",fr:"Riz carnaroli"},latin:"Oryza sativa",
 origin:{en:"Piedmont & Lombardy",fr:"Piémont & Lombardie"},season:[],
 flavor:["mild","creamy","nutty","delicate"],texture:["hard","dry","granular"],
 story:{en:"Italian cooks call it the king of risotto rices. It carries more amylose than arborio, so the grain holds its shape almost indefinitely while still releasing starch — it is harder to overcook and more expensive for exactly that reason.",
@@ -129,7 +129,7 @@ fr:"Nacrez les grains à sec dans la matière grasse jusqu’à ce que les bords
 pairs:["parmesan","butter","porcini","saffron","shallot","white-wine-vinegar","black-pepper","scallop"],
 svg:'<path class="f3 sf" d="M30 33q8-2 10 6 4 14 1 25-4 9-9 6-5-5-4-17 0-16 2-20z"/><path class="f3 sf" d="M47 38q8-2 10 6 3 13 0 22-4 8-8 5-5-4-4-15 0-14 2-18z"/><path class="f3 sf" d="M63 35q7-2 9 6 3 12 1 21-4 7-8 4-4-4-4-14 0-13 2-17z"/><path class="s" d="M35 44q1 12 0 20M52 49q1 10 0 17" stroke-width="1.4"/>'},
 
-{id:"carolina-gold-rice",cat:"grains",rare:true,price:3,pk:"20–40 €/kg",name:{en:"Carolina Gold rice",fr:"Riz Carolina Gold"},latin:"Oryza sativa",
+{id:"carolina-gold-rice",cat:"grains",parent:"rice",rare:true,price:3,pk:"20–40 €/kg",name:{en:"Carolina Gold rice",fr:"Riz Carolina Gold"},latin:"Oryza sativa",
 origin:{en:"Lowcountry, South Carolina",fr:"Lowcountry, Caroline du Sud"},season:[],
 flavor:["nutty","mild","buttery"],texture:["hard","dry","granular"],
 story:{en:"It had gone out of commercial fields by the 1920s and came back out of a USDA seed bank in the 1980s: fourteen pounds of seed sent to a Savannah eye surgeon, twelve acres planted in 1986, and a crop rebuilt from there. Its history is West African as much as Carolinian — the tidal-field system it grew under arrived with enslaved rice growers who already knew it.",
@@ -159,7 +159,7 @@ fr:"Le couscous instantané réhydraté dans un bol est un autre aliment que le 
 pairs:["lamb","harissa","cumin","carrot","chickpeas","preserved-lemon","cilantro","turnip"],
 svg:'<path class="f1 sf" d="M23 57q3 17 25 17q22 0 25-17q-25 5-50 0z"/><path class="f1 sf" d="M25 57q-1-8 5-12q3 3 6 0q2-5 6-3q2-5 6-2q3-5 6 0q3-3 6 1q3-2 5 2q6 4 6 14z"/><path class="s" d="M24 57q24 6 48 0" stroke-width="1.6"/><path class="dot" d="M33 52q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM40 48q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM47 51q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM54 47q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM61 52q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM37 56q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM51 56q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5z"/><path class="dot" d="M76 61q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5zM72 69q2-1 2 1.5q0 2-2 2q-2 0-2-2q0-2 2-1.5z"/>'},
 
-{id:"dangmyeon",cat:"grains",price:2,pk:"8–15 €/kg",name:{en:"Dangmyeon",fr:"Dangmyeon (vermicelles de patate douce)"},latin:"Ipomoea batatas",
+{id:"dangmyeon",cat:"grains",kin:"made",price:2,pk:"8–15 €/kg",name:{en:"Dangmyeon",fr:"Dangmyeon (vermicelles de patate douce)"},latin:"Ipomoea batatas",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["mild","sweet"],texture:["hard","dry","brittle"],
 story:{en:"Japchae was composed for a banquet of King Gwanghaegun in the early seventeenth century and contained no noodles at all — only stir-fried vegetables and mushrooms. The dangmyeon arrived three hundred years later, once a sweet potato starch noodle factory opened at Sariwon in 1919 and made them cheap.",
@@ -229,7 +229,7 @@ fr:"Rincez-le bien et triez-le — fragments carbonisés et petits cailloux sont
 pairs:["lamb","yogurt","mint","cumin","pomegranate","olive-oil","almond","cilantro"],
 svg:'<path class="f1 sf" d="M19 73q2-13 12-17 7-5 14-2 7-3 14 2 10 5 10 17z"/><path class="s" d="M26 68q5-4 10-1M38 63q5-4 10-1M50 68q5-4 10-1M32 58q5-4 10-1M45 56q5-4 10-1" stroke-width="1.5"/><path class="s" d="M34 44q-8-6-2-12 7-7 0-13" stroke-width="2"/><path class="s" d="M56 42q-7-5-2-10 6-6 0-11" stroke-width="2"/><path class="dot" d="M19.9 52q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 zM67.9 60q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 zM64.9 45q.4-2.9 4 .4-.4 3.2-3.8 .4-.4-.2 3.6-.4 z"/>'},
 
-{id:"glutinous-rice",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Glutinous rice",fr:"Riz gluant"},latin:"Oryza sativa var. glutinosa",
+{id:"glutinous-rice",cat:"grains",parent:"rice",price:1,pk:"3–6 €/kg",name:{en:"Glutinous rice",fr:"Riz gluant"},latin:"Oryza sativa var. glutinosa",
 origin:{en:"Laos, Thailand, Japan",fr:"Laos, Thaïlande, Japon"},season:[],
 flavor:["sweet","milky","mild"],texture:["hard","dry","granular"],
 story:{en:"Glutinous rice has nothing to do with gluten - the name records a waxy starch with essentially no amylose, which is what makes the cooked grains cling into a single mass. It is also why the grain is steamed above water rather than boiled in it.",
@@ -269,7 +269,7 @@ fr:"Réservez-la aux pâtes qui doivent s’étirer sans se déchirer — brioch
 pairs:["butter","egg","sugar","laminating-butter","yeast","vanilla","orange-blossom-water"],
 svg:'<path class="f1 sf" d="M26 42h32v18a10 10 0 0 1-10 10H36a10 10 0 0 1-10-10z"/><path class="f2 sf" d="M26 42q16-10 32 0z"/><path class="s" d="M58 46h10a6 6 0 0 1 0 12h-8"/><circle class="dot" cx="22" cy="74" r="2"/>'},
 
-{id:"harusame",cat:"grains",price:2,pk:"8–16 €/kg",name:{en:"Harusame (mung bean vermicelli)",fr:"Harusame (vermicelles de haricot mungo)"},latin:"Vigna radiata",
+{id:"harusame",cat:"grains",kin:"made",price:2,pk:"8–16 €/kg",name:{en:"Harusame (mung bean vermicelli)",fr:"Harusame (vermicelles de haricot mungo)"},latin:"Vigna radiata",
 origin:{en:"China",fr:"Chine"},season:[],
 flavor:["mild","fresh","delicate"],texture:["hard","dry","brittle"],
 story:{en:"Harusame means spring rain, for threads fine and clear enough to look like it. The name travelled further than the recipe: Chinese-made harusame is mung bean starch and holds firm for hours in broth, while much of what is made in Japan is potato and sweet potato starch and softens far sooner — the packet tells you which you have.",
@@ -289,7 +289,7 @@ fr:"Au sec, comptez deux à trois heures à frémissement à peine visible et ne
 pairs:["pork","chili","lime","oregano","ancho-chilli","radish","cilantro","guajillo"],
 svg:'<path class="f1 sf" d="M32 30q12-6 20 2t-2 26q-10 8-18 0t0-28z"/><path class="s" d="M34 34q10 4 14 14M36 56q8-4 12-14"/><path class="f2 sf" d="M58 44q10-4 14 6t-6 20q-9 4-12-6t4-20z"/><path class="s" d="M60 50q7 3 9 10"/><path class="f1 sf" d="M30 62q10-4 14 4t-6 16q-9 3-12-5t4-15z"/>'},
 
-{id:"jasmine-rice",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Jasmine rice",fr:"Riz jasmin"},latin:"Oryza sativa",
+{id:"jasmine-rice",cat:"grains",parent:"rice",price:1,pk:"3–6 €/kg",name:{en:"Jasmine rice",fr:"Riz jasmin"},latin:"Oryza sativa",
 origin:{en:"Thailand",fr:"Thaïlande"},season:[],
 flavor:["floral","sweet","delicate","mild"],texture:["hard","dry","granular"],
 story:{en:"Named for the colour of the milled grain rather than any scent of jasmine — Thai calls it hom mali, fragrant jasmine-white. Unlike basmati it is best fresh from the harvest, and Thai cooks pay attention to the crop year.",
@@ -329,7 +329,7 @@ fr:"Le grain fait le double d’un blé tendre : trempage d’une nuit, puis qua
 pairs:["olive-oil","lemon","parsley","chickpeas","pecorino","tomato"],
 svg:'<path class="f2 sf" d="M40 22q11 0 11 22v14q0 22-11 22t-11-22V44q0-22 11-22z"/><path class="s" d="M40 26v52"/><path class="f1 sf" d="M62 36q8 0 8 15v9q0 15-8 15t-8-15v-9q0-15 8-15z"/><path class="s" d="M62 40v34"/>'},
 
-{id:"koshihikari",cat:"grains",price:2,pk:"8–16 €/kg",name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
+{id:"koshihikari",cat:"grains",parent:"rice",price:2,pk:"8–16 €/kg",name:{en:"Koshihikari rice",fr:"Riz koshihikari"},latin:"Oryza sativa",
 origin:{en:"Fukui and Niigata, Japan",fr:"Fukui et Niigata, Japon"},season:[],
 flavor:["sweet","milky","mild"],texture:["hard","dry","granular"],
 story:{en:"Bred at Fukui and released in 1956, its name means the light of Koshi, the old province strung along the Japan Sea coast. It is an awkward plant — tall, weak-strawed, apt to fall in wind — and was adopted for eating quality alone, which is how it came to cover more Japanese paddy than any other variety.",
@@ -409,7 +409,7 @@ fr:"Remplacez-en le quart au tiers de la farine de blé d’une pâte à frire, 
 pairs:["shrimp","coconut-milk","pandan","glutinous-rice","egg","palm-sugar"],
 svg:'<path class="f1 sf" d="M20 74q13-26 28-26t28 26z"/><path class="s" d="M30 68q18-10 36 0"/><path class="f2 sf" d="M54 24q6 0 6 8t-6 9q-6-1-6-9t6-8z"/><path class="f2 sf" d="M38 30q6 0 6 8t-6 9q-6-1-6-9t6-8z"/>'},
 
-{id:"banh-trang",cat:"grains",price:1,pk:"5–10 €/kg",name:{en:"Rice paper (bánh tráng)",fr:"Galette de riz (bánh tráng)"},latin:"Oryza sativa",
+{id:"banh-trang",cat:"grains",kin:"made",price:1,pk:"5–10 €/kg",name:{en:"Rice paper (bánh tráng)",fr:"Galette de riz (bánh tráng)"},latin:"Oryza sativa",
 origin:{en:"Tây Ninh, Vietnam",fr:"Tây Ninh, Viêt Nam"},season:[],
 flavor:["mild","delicate"],texture:["brittle","dry","firm"],
 story:{en:"Rice batter is spread on cloth stretched over a boiling pot, steamed for half a minute and lifted onto woven bamboo racks to dry in the sun; the crosshatch printed on every sheet is the rack. At Trảng Bàng in Tây Ninh the dried sheets are grilled and then left out overnight to take the dew, which makes them pliable with no dipping at all — a craft listed as national heritage in 2016.",
@@ -439,7 +439,7 @@ fr:"Son gluten est faible et ses pentosanes rendent la pâte collante. Mouillez-
 pairs:["caraway","honey","butter","salmon","flour-t65","walnut","beurre-demi-sel","juniper"],
 svg:'<path class="f2 sf" d="M23 71q0-13 11-18 12-5 20 3 6 6 6 15-19 6-37 0z"/><path class="s" d="M28 66q8-7 16-6" stroke-width="1.6"/><path class="dot" d="M34 61q3-1 3 1t-3 2-1-2 1-1z"/><path class="s" d="M52.7 61.8L59.4 59.3M44.1 55.6L44.2 48.4M56.7 55.5L63.9 52.5M48.7 49.8L49.1 42M60.6 49.3L68.4 45.7M53.3 44L54.1 35.5M64.6 43L72.9 38.9M57.9 38.2L59.1 29.1M66.4 33.4L73.8 25.3" stroke-width="1.5"/><path class="f1 sf" d="M43.3 60.1Q41.4 54.2 46.1 53Q46 48.4 50.8 47.2Q50.6 42.6 55.4 41.4Q55.2 36.8 60 35.6Q62.4 34.4 66.4 33.4Q66.8 37.6 66.4 40.2Q67.2 45.3 62.4 46.4Q63.2 51.6 58.4 52.7Q59.2 57.8 54.4 58.9Q55.2 64 50.4 65.1Z"/><path class="s" d="M44.9 52.1L55.7 59.8M49.5 46.3L59.7 53.6M54.1 40.5L63.7 47.3" stroke-width="1.5"/>'},
 
-{id:"semola-rimacinata",cat:"grains",price:1,pk:"3–6 €/kg",name:{en:"Semola rimacinata",fr:"Semoule de blé dur remoulue"},latin:"Triticum turgidum subsp. durum",
+{id:"semola-rimacinata",cat:"grains",parent:"semolina",price:1,pk:"3–6 €/kg",name:{en:"Semola rimacinata",fr:"Semoule de blé dur remoulue"},latin:"Triticum turgidum subsp. durum",
 origin:{en:"Puglia and Sicily",fr:"Pouilles et Sicile"},season:[],
 flavor:["nutty","toasty","sweet"],texture:["powdery","dry","smooth"],
 story:{en:"Rimacinata means only milled again: durum semolina sent back through the rolls until it is as fine as flour, which is the single step that lets Altamura bread and orecchiette be made from durum wheat at all. Coarse semola will not close into a smooth dough — the second pass is the whole technology.",
@@ -469,7 +469,7 @@ fr:"N’ajoutez pas l’eau d’un coup. Versez-la cuillerée par cuillerée en 
 pairs:["adzuki","matcha","kinako","kokuto","black-sesame","strawberry"],
 svg:'<ellipse class="f1 sf" cx="40" cy="50" rx="18" ry="11"/><path class="f2 sf" d="M57 47h16a3 3 0 0 1 0 6H57z"/><circle class="dot" cx="34" cy="47" r="2.4"/><circle class="dot" cx="42" cy="51" r="2.4"/><circle class="dot" cx="48" cy="45" r="2.4"/>'},
 
-{id:"soba-noodles",cat:"grains",price:2,pk:"8–25 €/kg",name:{en:"Soba noodles",fr:"Nouilles soba"},latin:"Fagopyrum esculentum",
+{id:"soba-noodles",cat:"grains",kin:"made",price:2,pk:"8–25 €/kg",name:{en:"Soba noodles",fr:"Nouilles soba"},latin:"Fagopyrum esculentum",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["nutty","earthy","toasty","mild"],texture:["hard","dry","brittle"],
 story:{en:"Buckwheat has no gluten, so soba dough holds together only by hand technique or by wheat: juwari is a hundred percent buckwheat and breaks easily, nihachi is the usual eighty-twenty. The cloudy cooking water is not thrown out — it goes into what is left of the dipping sauce and is drunk at the end as soba-yu.",
@@ -509,7 +509,7 @@ fr:"Comptez quarante-cinq minutes et quatre volumes d’eau pour un de semoule, 
 pairs:["butter","parmesan","porcini","sage","gorgonzola-dolce","olive-oil"],
 svg:'<path class="f2 sf" d="M24 52h48q-2 20-24 20T24 52z"/><path class="f1 sf" d="M30 52q6-12 18-12t18 12z"/><circle class="dot" cx="40" cy="46" r="1.6"/><circle class="dot" cx="48" cy="42" r="1.6"/><circle class="dot" cx="56" cy="46" r="1.6"/><path class="s" d="M62 40l10-16"/>'},
 
-{id:"somen",cat:"grains",price:2,pk:"8–18 €/kg",name:{en:"Sōmen",fr:"Nouilles sōmen"},latin:"Triticum aestivum",
+{id:"somen",cat:"grains",kin:"made",price:2,pk:"8–18 €/kg",name:{en:"Sōmen",fr:"Nouilles sōmen"},latin:"Triticum aestivum",
 origin:{en:"Miwa, Nara",fr:"Miwa, Nara"},season:[],
 flavor:["mild","delicate","fresh"],texture:["hard","dry","brittle"],
 story:{en:"Sōmen dough is stretched by hand with cottonseed oil worked into it, drawn thinner on every pass until the strands measure under 1.3 millimetres. The better Miwa makers then store the dried bundles a year or more: that ageing, called hine, burns off the oil note and gives the noodle a bite that does not slacken in cold water.",
@@ -599,7 +599,7 @@ fr:"Lisez le W, pas les zéros. Pour des pâtes fraîches, 100 g d’une 00 soup
 pairs:["egg","semola-rimacinata","olive-oil","mozzarella","san-marzano-tomato","basil","parmesan"],
 svg:'<path class="f1 sf" d="M32 36h32v34a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4z"/><path class="f2 sf" d="M32 36l6-8h20l6 8z"/><path class="s" d="M40 50h16M40 58h11"/>'},
 
-{id:"vialone-nano",cat:"grains",price:2,pk:"8–15 €/kg",name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
+{id:"vialone-nano",cat:"grains",parent:"rice",price:2,pk:"8–15 €/kg",name:{en:"Vialone Nano rice",fr:"Riz vialone nano"},latin:"Oryza sativa",
 origin:{en:"Veronese lowlands",fr:"Basse plaine véronaise"},season:[],
 flavor:["mild","creamy","nutty"],texture:["hard","dry","granular"],
 story:{en:"Crossed in 1937 from a tall Vialone and a dwarf variety called Nano, it became in 1996 the first rice in Europe granted a protected geographical indication, as Riso Nano Vialone Veronese. It is a semifino, a shorter and rounder class than the superfino Arborio and Carnaroli, and it gives up its starch faster than either — which is why Veneto risotto is served loose enough to move on the plate.",

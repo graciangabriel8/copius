@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"caviar-beluga",cat:"roe",luxe:true,price:4,pk:"6–12 €/g",name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
+{id:"caviar-beluga",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"6–12 €/g",name:{en:"Beluga caviar",fr:"Caviar beluga"},latin:"Huso huso (roe)",
 origin:{en:"Caspian basin, now farmed",fr:"Bassin caspien, aujourd'hui d'élevage"},season:[],
 flavor:["creamy","marine","delicate","mild"],texture:["soft","creamy","granular"],
 story:{en:"A beluga sturgeon can take twenty years to spawn for the first time, which is why its roe has sat on CITES Appendix II since 1998 and has been barred from the United States since 2005. What reaches a French table now comes from farms in Italy, China or the Gulf, and arrives under a numbered CITES label rather than a fisherman's name.",
@@ -39,7 +39,7 @@ fr:"C’est déjà salé : salez le plat après l’avoir ajoutée, jamais avant
 pairs:["sheng-chou","lard","spring-onion","silken-tofu","shaoxing-wine","ginger"],
 svg:'<ellipse class="f1 sf" cx="38" cy="46" rx="17" ry="13"/><path class="s" d="M54 46 78 62"/><path class="f3 sf" d="M28 44q10-8 20 0-4 6-10 6t-10-6z"/><circle class="dot" cx="60" cy="34" r="1.8"/><circle class="dot" cx="66" cy="29" r="1.8"/><circle class="dot" cx="56" cy="26" r="1.8"/>'},
 
-{id:"fugu-shirako",cat:"roe",rare:true,luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Fugu shirako",fr:"Laitance de fugu"},latin:"Takifugu rubripes (milt)",
+{id:"fugu-shirako",cat:"roe",parent:"shirako",rare:true,luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Fugu shirako",fr:"Laitance de fugu"},latin:"Takifugu rubripes (milt)",
 origin:{en:"Shimonoseki, in winter",fr:"Shimonoseki, en hiver"},season:[12,1,2],
 flavor:["creamy","rich","marine","delicate"],texture:["soft","creamy"],
 story:{en:"In a fish whose liver and ovaries can kill, the milt is harmless — it is the one internal organ a licensed fugu cook may serve, and it peaks in the weeks before the winter spawn. It has nothing to do with the cod milt sold under the same word: firmer, sweeter, and priced accordingly.",
@@ -69,7 +69,7 @@ fr:"Détachez les grains dans une saumure à 3 % à peine chaude plutôt qu'à l
 pairs:["rice","nori","soy-sauce","wasabi","shiso","cucumber","junmai-sake","daikon"],
 svg:'<path class="f3 sf" d="M28 46h40v22q0 4-4 4H32q-4 0-4-4z"/><path class="f1" d="M32 58h32v10H32z"/><circle class="f2 sf" cx="38" cy="44" r="6"/><circle class="f2 sf" cx="50" cy="42" r="6"/><circle class="f2 sf" cx="61" cy="45" r="6"/>'},
 
-{id:"caviar-kaluga",cat:"roe",luxe:true,price:4,pk:"2,5–5 €/g",name:{en:"Kaluga caviar",fr:"Caviar kaluga"},latin:"Huso dauricus (roe)",
+{id:"caviar-kaluga",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"2,5–5 €/g",name:{en:"Kaluga caviar",fr:"Caviar kaluga"},latin:"Huso dauricus (roe)",
 origin:{en:"Amur basin, farmed in Zhejiang",fr:"Bassin de l'Amour, élevé au Zhejiang"},season:[],
 flavor:["buttery","marine","rich","mild"],texture:["firm","creamy","granular"],
 story:{en:"Kaluga is the beluga's eastern cousin, the other giant Huso, native to the Amur and reaching the same grain calibre. Almost all of it now comes from farms at Qiandao Lake in Zhejiang, frequently as a cross with the Amur sturgeon — the shift that made China the largest caviar producer in the world.",
@@ -119,7 +119,7 @@ fr:"Fendez la poche et raclez les œufs de la membrane avec le dos d'un couteau,
 pairs:["rice","butter","nori","spring-onion","cream","soy-sauce","egg","shiso"],
 svg:'<path class="f2 sf" d="M24 52q6-14 22-12t14 10-8 14-22 2-6-14z"/><path class="f1 sf" d="M52 58q10-14 22-6t-4 18-20-4z"/><path class="s" d="M30 48q10 8 22 6M58 60q8 2 12 8"/><circle class="dot" cx="36" cy="54" r="1.6"/><circle class="dot" cx="46" cy="50" r="1.6"/><circle class="dot" cx="64" cy="63" r="1.6"/>'},
 
-{id:"caviar-oscietre",cat:"roe",luxe:true,price:4,pk:"2–4 €/g",name:{en:"Osetra caviar",fr:"Caviar osciètre"},latin:"Acipenser gueldenstaedtii (roe)",
+{id:"caviar-oscietre",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"2–4 €/g",name:{en:"Osetra caviar",fr:"Caviar osciètre"},latin:"Acipenser gueldenstaedtii (roe)",
 origin:{en:"Caspian and Black Sea basins",fr:"Bassins caspien et de la mer Noire"},season:[],
 flavor:["nutty","marine","buttery","rich"],texture:["firm","creamy","granular"],
 story:{en:"Osetra is simply the Russian word for sturgeon, and the grain runs from near-black to the pale amber that trade calls imperial — a colour that comes with the age of the fish rather than with quality, though it is priced as though it were the same thing. It remains the reference caviar of French service: firm shell, walnut finish, a grain that survives a warm spoon.",
@@ -129,7 +129,7 @@ fr:"Laissez la boîte revenir vers 12 °C avant de l'ouvrir, une demi-heure hors
 pairs:["beurre-de-baratte","egg","potato","creme-fraiche","chives","vin-jaune"],
 svg:'<ellipse class="f1 sf" cx="38" cy="58" rx="18" ry="12"/><path class="s" d="M55 51q10-6 19-15"/><path class="f3 sf" d="M24 55q7-11 21-9t9 9q-14 7-30 0z"/><circle class="dot" cx="34" cy="51" r="2"/><circle class="dot" cx="44" cy="50" r="2"/>'},
 
-{id:"caviar-polyodon",cat:"roe",rare:true,price:4,pk:"0,7–1,2 €/g",name:{en:"Paddlefish caviar",fr:"Caviar de polyodon"},latin:"Polyodon spathula (roe)",
+{id:"caviar-polyodon",cat:"roe",parent:"caviar",rare:true,price:4,pk:"0,7–1,2 €/g",name:{en:"Paddlefish caviar",fr:"Caviar de polyodon"},latin:"Polyodon spathula (roe)",
 origin:{en:"Mississippi basin, United States",fr:"Bassin du Mississippi, États-Unis"},season:[],
 flavor:["earthy","marine","mild","creamy"],texture:["soft","creamy","granular"],
 story:{en:"The paddlefish is not a sturgeon at all: it sits in its own family, filters plankton through a rostrum nearly a third of its own length, and lives in the Mississippi basin. Its roe travels under the CITES species code SPA, and those three letters are how you tell a legitimate tin from one quietly calling itself something dearer.",
@@ -149,7 +149,7 @@ fr:"Tranchez-le froid, à la lame chaude, en fines feuilles, ou faites fondre un
 pairs:["butter","rye","egg","shallot","creme-fraiche","black-pepper"],
 svg:'<ellipse class="f3 sf" cx="44" cy="42" rx="22" ry="9"/><path class="f3 sf" d="M22 42v14q0 9 22 9t22-9V42"/><path class="s" d="M30 46q14 5 28 0"/><path class="f2 sf" d="M58 72q12-7 20-3-8 9-20 7z"/>'},
 
-{id:"caviar-schrenckii",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Schrenckii caviar",fr:"Caviar schrenckii"},latin:"Acipenser schrenckii (roe)",
+{id:"caviar-schrenckii",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Schrenckii caviar",fr:"Caviar schrenckii"},latin:"Acipenser schrenckii (roe)",
 origin:{en:"Amur basin & Chinese farms",fr:"Bassin de l’Amour et fermes chinoises"},season:[],
 flavor:["briny","marine","mild","umami"],texture:["firm","granular"],
 story:{en:"The Amur sturgeon is named for the river that divides Russia from China, and its roe is the backbone of a Chinese industry that in 2017 produced over a hundred of the world’s roughly 360 tonnes of caviar. A trade the Caspian held for two centuries moved east in barely one decade.",
@@ -159,7 +159,7 @@ fr:"Le grain a une membrane exceptionnellement résistante : c’est le caviar q
 pairs:["potato","creme-fraiche","egg","chives","butter","scallop","vin-jaune"],
 svg:'<path class="f1 sf" d="M20 44h56v6q0 16-28 16T20 50z"/><path class="s" d="M20 44q6-6 28-6t28 6" stroke-width="2.5"/><path class="dot" d="M31 52q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M44 55q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M57 52q4-4 8 0t-4 6-5-2 1-4z"/>'},
 
-{id:"caviar-sevruga",cat:"roe",luxe:true,price:4,pk:"2–4 €/g",name:{en:"Sevruga caviar",fr:"Caviar sévruga"},latin:"Acipenser stellatus (roe)",
+{id:"caviar-sevruga",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"2–4 €/g",name:{en:"Sevruga caviar",fr:"Caviar sévruga"},latin:"Acipenser stellatus (roe)",
 origin:{en:"Caspian & Black Sea",fr:"Caspienne et mer Noire"},season:[],
 flavor:["briny","salty","marine","umami"],texture:["firm","granular"],
 story:{en:"Stellatus means starry — the fish carries star-shaped bony plates along its flanks and a snout like a blade. It ripens in about seven years where beluga needs twenty, which once made it the cheapest of the Caspian three and now, with the wild stock collapsed, one of the hardest to find.",
@@ -199,7 +199,7 @@ fr:"Pelez la poche avant de mixer, sinon vous garderez du grain sous la dent : f
 pairs:["olive-oil","lemon","potato","garlic","red-onion","dill","cucumber"],
 svg:'<path class="f2 sf" d="M48 20q6 10 4 18 12 10 12 26 0 14-16 14t-16-14q0-16 12-26 2-8 4-18z"/><path class="s" d="M42 38q6 3 12 0"/><path class="s" d="M40 56q8 5 16 0M38 66q10 5 20 0"/>'},
 
-{id:"caviar-sterlet",cat:"roe",price:4,pk:"2–4 €/g",name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
+{id:"caviar-sterlet",cat:"roe",parent:"caviar",price:4,pk:"2–4 €/g",name:{en:"Sterlet caviar",fr:"Caviar sterlet"},latin:"Acipenser ruthenus (roe)",
 origin:{en:"Volga & Danube",fr:"Volga et Danube"},season:[],
 flavor:["nutty","delicate","mild","creamy"],texture:["soft","creamy","granular"],
 story:{en:"Before Russia reached the Caspian and its giant sturgeons, the caviar it sold to the courts of Europe through the eighteenth and nineteenth centuries came from the Volga sterlet — a fish rarely a metre long, called the tsar fish for the table it was kept for. It ripens in a handful of years where beluga needs twenty, which is why it is the sturgeon small European farms now stock.",
@@ -239,7 +239,7 @@ fr:"La salaison est légère et retient bien moins de sel que la rogue de saumon
 pairs:["egg","potato","creme-fraiche","chives","cucumber","butter","dill"],
 svg:'<path class="f3 sf" d="M26 46q1-11 12-11t12 10q1 11-11 12-12 1-13-11z"/><path class="dot" d="M33 45q3-3 6 0t-3 5-4-2 1-3z"/><path class="f3 sf" d="M52 40q1-10 11-10t11 9q0 10-10 11-11 1-12-10z"/><path class="dot" d="M58 39q3-3 6 0t-3 5-4-2 1-3z"/><path class="f3 sf" d="M38 66q1-10 11-10t11 9q0 10-10 11-11 1-12-10z"/><path class="dot" d="M44 65q3-3 6 0t-3 5-4-2 1-3z"/>'},
 
-{id:"poutargue-de-thon",cat:"roe",price:3,pk:"120–250 €/kg",name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
+{id:"poutargue-de-thon",cat:"roe",parent:"bottarga",price:3,pk:"120–250 €/kg",name:{en:"Tuna bottarga",fr:"Poutargue de thon"},latin:"Thunnus thynnus (roe)",
 origin:{en:"Sicily & Sardinia",fr:"Sicile et Sardaigne"},season:[],
 flavor:["umami","salty","meaty","rich"],texture:["hard","granular","dry"],
 story:{en:"The trap fisheries of western Sicily took bluefin on their spawning run, and the roe of the trapped females was salted and pressed into slabs; the great tonnara of Favignana ran from 1859 until it closed in 1977. What comes out is darker, meatier and far louder than mullet bottarga — the same technique on a fish twenty times the size.",
@@ -259,7 +259,7 @@ fr:"Tenez-le à l’écart de la chaleur et de tout vinaigre : dressez-le froid 
 pairs:["creme-fraiche","red-onion","dill","potato","butter","rye","lemon"],
 svg:'<g transform="translate(4.08 4.25) scale(0.915)"><path class="s" d="M60 46q14-8 24-18"/><ellipse class="f1 sf" cx="44" cy="54" rx="19" ry="13"/><circle class="dot" cx="38" cy="49" r="2"/><circle class="dot" cx="48" cy="47" r="2"/><circle class="dot" cx="42" cy="58" r="2"/><circle class="dot" cx="52" cy="55" r="2"/></g>'},
 
-{id:"caviar-esturgeon-blanc",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"White sturgeon caviar",fr:"Caviar d’esturgeon blanc"},latin:"Acipenser transmontanus (roe)",
+{id:"caviar-esturgeon-blanc",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"White sturgeon caviar",fr:"Caviar d’esturgeon blanc"},latin:"Acipenser transmontanus (roe)",
 origin:{en:"Sacramento valley, California",fr:"Vallée du Sacramento, Californie"},season:[],
 flavor:["buttery","rich","marine","delicate"],texture:["firm","creamy","granular"],
 story:{en:"North America's largest freshwater fish gave the continent its first farmed caviar: white sturgeon roe was harvested at Wilton, California in 1993, from broodstock that began as a UC Davis research project in 1979. The Po valley now raises the same Pacific species, so a tin stamped Italian may hold a fish native to the Sacramento River.",
@@ -269,7 +269,7 @@ fr:"Servez-le entre 8 et 10 °C à la cuillère de nacre ou de corne : l’acier
 pairs:["creme-fraiche","egg","potato","chives","butter","cream"],
 svg:'<path class="f1 sf" d="M22 52q0-14 22-14t22 14q0 14-22 14T22 52z"/><path class="dot" d="M32 50q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M44 54q4-4 8 0t-4 6-5-2 1-4z"/><path class="dot" d="M54 49q4-4 8 0t-4 6-5-2 1-4z"/><path class="f2 sf" d="M68 34q10 4 8 16-1 11-10 14-5-14-2-30z"/>'},
 
-{id:"caviar-baeri",cat:"roe",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Baerii caviar",fr:"Caviar baeri"},latin:"Acipenser baerii",
+{id:"caviar-baeri",cat:"roe",parent:"caviar",luxe:true,price:4,pk:"1,5–3 €/g",name:{en:"Baerii caviar",fr:"Caviar baeri"},latin:"Acipenser baerii",
 origin:{en:"Ponds of Aquitaine and Sologne",fr:"Étangs d’Aquitaine et de Sologne"},season:[],
 flavor:["buttery","briny","delicate"],texture:["firm","creamy","granular"],
 story:{en:"France banned fishing its native Gironde sturgeon in 1982; a decade later the farms restarted with Siberian baerii imported for the purpose, and the Aquitaine caviar trade is entirely built on that substitution. The fish gives roe at around seven years where a beluga needs fifteen, which is why baerii is the caviar a kitchen can afford to put near heat.",
@@ -279,7 +279,7 @@ fr:"C’est le seul caviar à tiédir : posez les grains sur une sauce hors du f
 pairs:["cream","potato","egg","chives","scallop","leek"],
 svg:'<ellipse class="f1 sf" cx="40" cy="56" rx="16" ry="11"/><path class="f2 sf" d="M54 50q9-8 16-14-4 9-12 17z"/><path class="s" d="M30 53q9-7 19-2"/><circle class="dot" cx="36" cy="57" r="2.3"/><circle class="dot" cx="44" cy="59" r="2.3"/><circle class="dot" cx="42" cy="51" r="2.3"/>'},
 
-{id:"caviar-naccarii",cat:"roe",rare:true,price:4,pk:"2–3,5 €/g",name:{en:"Adriatic sturgeon caviar",fr:"Caviar naccarii"},latin:"Acipenser naccarii",
+{id:"caviar-naccarii",cat:"roe",parent:"caviar",rare:true,price:4,pk:"2–3,5 €/g",name:{en:"Adriatic sturgeon caviar",fr:"Caviar naccarii"},latin:"Acipenser naccarii",
 origin:{en:"Po valley, Lombardy",fr:"Vallée du Pô, Lombardie"},season:[],
 flavor:["nutty","milky","briny","delicate"],texture:["soft","creamy","granular"],
 story:{en:"The Adriatic sturgeon was fished out of the Po and its tributaries and is now listed as critically endangered in the wild, so every grain sold comes from farms that also raise fingerlings for restocking the river. Its roe carries an almond-milk sweetness no other species gives, which is the only reason the fish had a commercial future at all.",

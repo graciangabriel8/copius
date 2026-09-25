@@ -1,5 +1,5 @@
 window.INGREDIENTS = (window.INGREDIENTS || []).concat([
-{id:"acacia-honey",cat:"sweet",price:2,pk:"10–20 €/kg",name:{en:"Acacia honey",fr:"Miel d’acacia"},latin:"Robinia pseudoacacia",
+{id:"acacia-honey",cat:"sweet",parent:"honey",price:2,pk:"10–20 €/kg",name:{en:"Acacia honey",fr:"Miel d’acacia"},latin:"Robinia pseudoacacia",
 origin:{en:"Europe & North America",fr:"Europe & Amérique du Nord"},season:[5,6],
 flavor:["sweet","floral","delicate","mild"],texture:["viscous","smooth"],
 story:{en:"From the false acacia, which flowers for barely two weeks in late spring — a single storm can wipe out an entire year's crop. Its very high fructose content is why it stays liquid for years while other honeys crystallise.",
@@ -99,7 +99,7 @@ fr:"Remplacez le sucre à raison d’environ 1,3 pour 1 en poids, et retirez d�
 pairs:["sesame","ginger","soy-sauce","walnut","matcha","black-sesame","peanut","miso"],
 svg:'<path class="f1 sf" d="M30 34h36v40a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f2 sf" d="M30 54h36v20a6 6 0 0 1-6 6H36a6 6 0 0 1-6-6z"/><path class="f3 sf" d="M28 26h40v8H28z"/><path class="s" d="M40 26v-4h16v4"/>'},
 
-{id:"buckwheat-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Buckwheat honey",fr:"Miel de sarrasin"},latin:"Fagopyrum esculentum",
+{id:"buckwheat-honey",cat:"sweet",parent:"honey",price:2,pk:"14–25 €/kg",name:{en:"Buckwheat honey",fr:"Miel de sarrasin"},latin:"Fagopyrum esculentum",
 origin:{en:"Brittany & northern Europe",fr:"Bretagne & Europe du Nord"},season:[7,8],
 flavor:["earthy","musky","rich","smoky"],texture:["viscous","smooth"],
 story:{en:"Almost black, and it smells of molasses, malt and the farmyard — it is the most divisive honey there is, and the one with by far the most antioxidants. Brittany makes it because Brittany grows buckwheat for its galettes.",
@@ -189,7 +189,7 @@ fr:"Pour un hongshao, faites fondre un morceau de deux centimètres dans l’hui
 pairs:["pork-belly","soy-sauce","star-anise","ginger","shaoxing-wine","chenpi"],
 svg:'<path class="f1 sf" d="M26 46l16-16 22 6 6 20-14 16-24-4z"/><path class="s" d="M42 30l6 22 20-4M48 52l-6 24"/><path class="f2 sf" d="M62 66l10-3 3 10-10 3z"/>'},
 
-{id:"cocoa-husk",cat:"sweet",rare:true,price:1,pk:"12–25 €/kg",name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
+{id:"cocoa-husk",cat:"sweet",kin:"form",rare:true,price:1,pk:"12–25 €/kg",name:{en:"Cocoa bean husk",fr:"Coques de cacao"},latin:"Theobroma cacao",
 origin:{en:"Chocolate roasting rooms",fr:"Ateliers de torréfaction du cacao"},season:[],
 flavor:["smoky","woody","toasty"],texture:["brittle","dry","flaky"],
 story:{en:"The husk is about a tenth of the bean's weight, winnowed off after roasting, and in nineteenth-century Britain and France it was sold on its own as cocoa shell tea to households that could not afford the nib. It carries the smoke of the roast with almost none of the fat and almost none of the bitterness.",
@@ -209,7 +209,7 @@ fr:"Elle sert à monter le pourcentage de cacao d’une couverture sans sucre su
 pairs:["cocoa-butter","sugar","vanilla","hazelnut","coffee","raspberry"],
 svg:'<path class="f3 sf" d="M26 42h44l6 10-6 22H26l-6-22z"/><path class="f2 sf" d="M26 42h44l6 10H20z"/><path class="s" d="M48 52v22"/>'},
 
-{id:"cocoa-nibs",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Cocoa nibs",fr:"Grué de cacao"},latin:"Theobroma cacao",
+{id:"cocoa-nibs",cat:"sweet",kin:"form",price:2,pk:"25–45 €/kg",name:{en:"Cocoa nibs",fr:"Grué de cacao"},latin:"Theobroma cacao",
 origin:{en:"Central & South America",fr:"Amérique centrale et du Sud"},season:[],
 flavor:["bitter","toasty","earthy","nutty"],texture:["hard","crunchy","dry"],
 story:{en:"Roasted cocoa beans cracked into fragments, before any sugar or grinding — this is what chocolate is made from, and it is unrecognisably bitter. The Aztecs drank it with chilli and used the beans as currency.",
@@ -219,7 +219,7 @@ fr:"Employez-le comme un fruit sec, pour le croquant et l’amertume contre un �
 pairs:["dark-chocolate","cream","raspberry","banana","coffee","honey","hazelnut","orange"],
 svg:'<path class="f1 sf" d="M38 60q-7-8-2-17t18-7q7 5 3 14t-19 10z"/><path class="s" d="M42 54q5-6 12-9M40 60q6-6 13-9" stroke-width="1.5"/><path class="f2 sf" d="M18 38l9-5 6 8-5 7-10-3zM66 64l9-3 4 8-6 5-8-4z"/><path class="f1 sf" d="M24 69l8-2 3 7-6 5-6-6zM70 29l9 2-1 9-8 3-4-9z"/><path class="dot" d="M45 71l5-1 1 5-5 1zM57 21l5 1-1 5-5-1z"/>'},
 
-{id:"criollo-cacao",cat:"sweet",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
+{id:"criollo-cacao",cat:"sweet",kin:"form",price:3,pk:"40–90 €/kg",name:{en:"Criollo cacao",fr:"Cacao criollo"},latin:"Theobroma cacao (Criollo)",
 origin:{en:"Venezuela, Mexico and Central America",fr:"Venezuela, Mexique et Amérique centrale"},season:[],
 flavor:["nutty","mild","fruity","honeyed"],texture:["hard","brittle","dry"],
 story:{en:"Cut a criollo pod and the beans are white or pale violet, not the deep purple of the forastero that fills the commodity trade — the group simply lacks the anthocyanins that carry most of chocolate's bitterness and astringency. It lacks the vigour too: the trees are fragile and shy-bearing, which is why criollo remains a sliver of the world crop.",
@@ -299,7 +299,7 @@ fr:"N’ayant plus d’acidité, il ne fera pas lever le bicarbonate : une recet
 pairs:["butter","coffee","cream","flour-t55","cocoa-butter","orange"],
 svg:'<path class="f2 sf" d="M34 42h28v34H34z"/><path class="f1 sf" d="M34 42q14-16 28 0z"/><path class="s" d="M42 34v3M48 32v3M54 34v3"/><path class="s" d="M38 82v4M48 84v4M58 82v4"/>'},
 
-{id:"eucalyptus-honey",cat:"sweet",price:2,pk:"12–22 €/kg",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
+{id:"eucalyptus-honey",cat:"sweet",parent:"honey",price:2,pk:"12–22 €/kg",name:{en:"Eucalyptus honey",fr:"Miel d’eucalyptus"},latin:"Eucalyptus spp.",
 origin:{en:"Iberia, Italy, Australia",fr:"Péninsule Ibérique, Italie, Australie"},season:[],
 flavor:["resinous","bitter","warm"],texture:["viscous","smooth"],
 story:{en:"The eucalyptus honey of Portugal, Spain and Italy comes from trees that were not on the continent two centuries ago - Australian seed planted through the 1800s for timber and for drying out marshland. It tastes of malt and camphor, nearer a medicine chest than a dessert.",
@@ -319,7 +319,7 @@ fr:"Incorporez-la dans un praliné ou un chocolat sous 30 °C et façonnez aussi
 pairs:["praline-paste","gianduja","dark-chocolate","milk-chocolate","white-chocolate","hazelnut","almond","butter"],
 svg:'<path class="f1 sf" d="M24 44q14-10 28-4-12 7-28 4z"/><path class="f2 sf" d="M44 32q16-6 26 4-16 3-26-4z"/><path class="f2 sf" d="M28 60q16-9 30 0-14 9-30 0z"/><path class="f1 sf" d="M52 68q14-6 21 3-15 4-21-3z"/><path class="s" d="M32 52h14M60 50h9"/>'},
 
-{id:"fir-honeydew-honey",cat:"sweet",price:2,pk:"18–32 €/kg",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
+{id:"fir-honeydew-honey",cat:"sweet",parent:"honey",price:2,pk:"18–32 €/kg",name:{en:"Fir honeydew honey",fr:"Miel de sapin (miellat)"},latin:"Abies alba",
 origin:{en:"Fir forests of the Vosges and Jura",fr:"Sapinières des Vosges et du Jura"},season:[7,8],
 flavor:["resinous","woody","warm"],texture:["viscous","smooth"],
 story:{en:"Fir honey comes from no flower at all: aphids drink the tree's sap, void the excess as honeydew on the needles, and the bees collect that. Carrying almost no glucose, it stays liquid for years — and since the flow depends on an insect that may or may not appear, whole seasons pass with no crop.",
@@ -369,7 +369,7 @@ fr:"Râpez-le plutôt que de le couper — le cylindre est assez dur pour faire 
 pairs:["coconut-milk","pandan","glutinous-rice","banana","tapioca-starch","salt"],
 svg:'<ellipse class="f2 sf" cx="48" cy="36" rx="24" ry="9"/><path class="f3 sf" d="M24 36v22a24 9 0 0 0 48 0V36"/><path class="s" d="M34 44q6 5 12 0t12 3"/>'},
 
-{id:"heather-honey",cat:"sweet",price:2,pk:"22–40 €/kg",name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
+{id:"heather-honey",cat:"sweet",parent:"honey",price:2,pk:"22–40 €/kg",name:{en:"Heather honey",fr:"Miel de bruyère (callune)"},latin:"Calluna vulgaris",
 origin:{en:"Northern moors — Scotland, Brittany, the Landes",fr:"Landes et tourbières du nord — Écosse, Bretagne, Landes"},season:[8,9],
 flavor:["bitter","woody","rich"],texture:["gelatinous","smooth"],
 story:{en:"Ling heather honey is thixotropic: it sets to a jelly in the comb and returns to that jelly faster than any other honey the moment you stop stirring it. That is why it cannot be spun out in an extractor at all — the comb is pressed, or sold whole, which is half the reason for the price.",
@@ -389,7 +389,7 @@ fr:"Un miel cristallisé n’est pas perdu — tiédissez le pot au bain-marie e
 pairs:["blue-cheese","walnut","yogurt","fig","lemon","ginger","goat-cheese","rosemary"],
 svg:'<path class="s" d="M60 36L44 52"/><path class="f2 sf" d="M34 58h20M32 63h24M34 68h20M38 73h12" stroke-width="4"/><path class="f2 sf" d="M40 50a8 8 0 0016 0 8 8 0 00-16 0z" transform="translate(-6 8)"/>'},
 
-{id:"honeycomb",cat:"sweet",price:2,pk:"25–45 €/kg",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
+{id:"honeycomb",cat:"sweet",parent:"honey",price:2,pk:"25–45 €/kg",name:{en:"Honeycomb",fr:"Miel en rayon"},latin:"Apis mellifera",
 origin:{en:"Hive frames, wherever bees are kept",fr:"Cadres de ruche, partout où l’on élève des abeilles"},season:[6,7,8,9],
 flavor:["honeyed","floral","sweet"],texture:["soft","chewy","moist"],
 story:{en:"Worker bees secrete wax from glands on the underside of the abdomen, spending several kilos of honey for every kilo of comb they build. Until the centrifugal extractor arrived in the 1860s all honey was sold this way — the jar is the modern form, not the comb.",
@@ -429,7 +429,7 @@ fr:"Cuisez-le à sec vers 170 °C : ni glucose ni acide, et il se refond indéfi
 pairs:["dark-chocolate","raspberry","vanilla","pistachio","blood-orange","mint"],
 svg:'<circle class="f1 sf" cx="44" cy="34" r="17"/><path class="s" d="M35 27q5-6 13-4"/><path class="f2 sf" d="M24 64q22-11 46 1-16 13-30 9-9-3-16-10z"/><path class="s" d="M31 67q17-6 32 1"/>'},
 
-{id:"lavender-honey",cat:"sweet",price:2,pk:"18–30 €/kg",name:{en:"Lavender honey",fr:"Miel de lavande"},latin:"Lavandula angustifolia",
+{id:"lavender-honey",cat:"sweet",parent:"honey",price:2,pk:"18–30 €/kg",name:{en:"Lavender honey",fr:"Miel de lavande"},latin:"Lavandula angustifolia",
 origin:{en:"Haute-Provence",fr:"Haute-Provence"},season:[7,8],
 flavor:["floral","sweet","delicate","herbal"],texture:["viscous","smooth"],
 story:{en:"Hives are trucked up to the Provençal plateaux in July when the lavender opens, a migration beekeepers have made for generations. It crystallises into a fine white cream rather than gritty crystals, which is the mark of the real thing.",
@@ -439,7 +439,7 @@ fr:"Employez-le là où son parfum compte — sur du chèvre, dans une glace, av
 pairs:["goat-cheese","apricot","peach","almond","cream","fig","lemon","yogurt"],
 svg:'<path class="s" d="M32 43q-2 18-1 32 0 7 8 7h17q8 0 8-7 1-14-1-32z"/><path class="f2 sf" d="M33 56q8 5 15 5t15-5l1 19q0 7-8 7H40q-8 0-8-7z"/><path class="f2 sf" d="M29 40q-1-6 19-6t19 6q0 5-19 5t-19-5z"/><path class="s" d="M26 78q1-10 2-17" stroke-width="2"/><path class="f1 sf" d="M28 58c-6-2-4-7 0-9c-5-2-3-7 1-9c-4-2-2-7 1-9c-3-2-1-6 4-7c5 1 6 6 3 8c4 2 5 7 1 9c3 2 4 7 0 9c3 2 3 6-2 8z"/><path class="s" d="M27 50q6 1 10-1M28 41q6 1 10-1M29 32q5 1 8-1" stroke-width="1.5"/>'},
 
-{id:"leatherwood-honey",cat:"sweet",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
+{id:"leatherwood-honey",cat:"sweet",parent:"honey",rare:true,price:3,pk:"40–80 €/kg",name:{en:"Leatherwood honey",fr:"Miel de leatherwood"},latin:"Eucryphia lucida",
 origin:{en:"Rainforest of western Tasmania",fr:"Forêts pluviales de l’ouest de la Tasmanie"},season:[1,2,3],
 flavor:["floral","resinous","warm"],texture:["viscous","smooth"],
 story:{en:"Leatherwood grows nowhere but the wet west of Tasmania, and it supplies roughly seven tenths of all the honey the island produces; hives are trucked to forestry-road camps for the January flowering. The trees take decades to come into full flower, so the crop rests on forest nobody can replant on a beekeeper's timescale.",
@@ -449,7 +449,7 @@ fr:"Il écrase tout ce à quoi on l’associe : commencez au tiers de la quantit
 pairs:["blue-cheese","goat-cheese","yogurt","walnut","pear","ginger"],
 svg:'<path class="s" d="M48 14v18"/><path class="f2 sf" d="M48 32q11 0 11 15t-11 21q-11-6-11-21t11-15z"/><path class="s" d="M38 42h20M37 50h22M39 58h18"/><path class="f1 sf" d="M48 72q7 8 0 13-7-5 0-13z"/>'},
 
-{id:"linden-honey",cat:"sweet",price:2,pk:"14–25 €/kg",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
+{id:"linden-honey",cat:"sweet",parent:"honey",price:2,pk:"14–25 €/kg",name:{en:"Linden honey",fr:"Miel de tilleul"},latin:"Tilia cordata",
 origin:{en:"Lime avenues of central and eastern Europe",fr:"Allées de tilleuls d’Europe centrale et orientale"},season:[6,7],
 flavor:["fresh","herbal","floral"],texture:["viscous","granular"],
 story:{en:"Limes were planted along town avenues across central Europe long before anyone valued them for honey, and a mature tree in flower can out-yield a field of clover for the fortnight it lasts. The cool, menthol edge in the jar comes from the same aromatics you taste in a cup of lime-flower tisane.",
@@ -489,7 +489,7 @@ fr:"Utilisez-le partout où une sauce réclame en même temps du sucre et de l�
 pairs:["gochujang","soy-sauce","sesame-oil","garlic","ginger","cucumber","rice-vinegar"],
 svg:'<path class="f1 sf" d="M32 34h32v34a6 6 0 0 1-6 6H38a6 6 0 0 1-6-6z"/><rect class="f3 sf" x="36" y="24" width="24" height="9" rx="2"/><path class="s" d="M32 46q16 6 32 0"/><circle class="f2 sf" cx="43" cy="57" r="7"/><circle class="f2 sf" cx="55" cy="64" r="6"/>'},
 
-{id:"manuka-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
+{id:"manuka-honey",cat:"sweet",parent:"honey",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Manuka honey",fr:"Miel de manuka"},latin:"Leptospermum scoparium",
 origin:{en:"Scrubland of New Zealand",fr:"Broussailles de Nouvelle-Zélande"},season:[11,12,1],
 flavor:["earthy","musky","warm"],texture:["firm","viscous","smooth"],
 story:{en:"Manuka nectar contains no methylglyoxal at all: it carries dihydroxyacetone, which turns into MGO slowly as the honey stands, so a jar's rating climbs with storage. Chemists at Waikato only worked this out in 2008, and before that manuka was scrub that farmers paid to clear.",
@@ -579,7 +579,7 @@ fr:"Il durcit en bloc. Gardez un morceau de pain ou un disque de terre cuite dan
 pairs:["dark-chocolate","coffee","ginger","butter","cream","banana","cinnamon","pecan"],
 svg:'<path class="f1 sf" d="M22 54q0 14 11 19q16 6 33 0q11-5 11-19q-28 8-55 0z"/><path class="f2 sf" d="M22 54q3-10 12-13q4-6 9-3q4-7 11-3q6-4 10 3q10 4 12 16q-28 8-54 0z"/><path class="f1 sf" d="M40 74q8 3 16 0l-2 6q-6 2-12 0z"/><path class="s" d="M28 52q6-4 12-2M40 57q8-4 14-1M56 50q6-3 11 0" stroke-width="1.5"/><path class="dot" d="M30 49l2 2l-2 2l-2-2zM38 45l2 2l-2 2l-2-2zM46 42l2 2l-2 2l-2-2zM55 44l2 2l-2 2l-2-2zM63 48l2 2l-2 2l-2-2zM34 56l2 2l-2 2l-2-2zM45 52l2 2l-2 2l-2-2zM57 54l2 2l-2 2l-2-2zM68 53l2 2l-2 2l-2-2zM16 60l2 2l-2 2l-2-2zM19 68l2 2l-2 2l-2-2z"/>'},
 
-{id:"nacional-arriba-cacao",cat:"sweet",price:3,pk:"40–80 €/kg",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
+{id:"nacional-arriba-cacao",cat:"sweet",kin:"form",price:3,pk:"40–80 €/kg",name:{en:"Nacional Arriba cacao",fr:"Cacao Nacional Arriba"},latin:"Theobroma cacao (Nacional)",
 origin:{en:"Guayas river basin, Ecuador",fr:"Bassin du Guayas, Équateur"},season:[],
 flavor:["floral","fruity","nutty","delicate"],texture:["hard","brittle","dry"],
 story:{en:"Arriba is a shipping word, not a botanical one: cacao floated down the Guayas to Guayaquil was said to come from río arriba, upriver, and the buyers kept the term for the perfume that came with it. The blight years from 1916 took most of the old Nacional groves, so much of what is sold as Arriba today carries the blood of the high-yield clones planted to replace them.",
@@ -689,7 +689,7 @@ fr:"Elle ne se dissout pas comme le sucre blanc. Faites-la fondre d’abord dans
 pairs:["lime","coffee","cinnamon","dark-chocolate","banana","ginger","coconut-flakes","clove"],
 svg:'<path class="f2 sf" d="M34 44q14-5 26 0l9 28q-23 8-44 0z"/><path class="f1 sf" d="M34 44q14-5 26 0-13 5-26 0z"/><path class="s" d="M47 48q-1 12-1 24M29 60q9 3 18 3" stroke-width="1.5"/><path class="f1 sf" d="M60 65l10 2q3 4 0 8l-9 2q-4-4-1-12z"/><path class="dot" d="M38 54l3-1 1 3-3 1zM53 57l3-1 1 3-3 1zM41 66l3-1 1 3-3 1zM57 50l3-1 1 3-3 1z"/>'},
 
-{id:"rapeseed-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
+{id:"rapeseed-honey",cat:"sweet",parent:"honey",price:1,pk:"8–14 €/kg",name:{en:"Rapeseed honey",fr:"Miel de colza"},latin:"Brassica napus",
 origin:{en:"Oilseed fields of northern Europe",fr:"Champs de colza d’Europe du Nord"},season:[4,5],
 flavor:["sweet","mild","grassy","buttery"],texture:["firm","granular"],
 story:{en:"Its glucose load is so high that it will set solid inside the comb if the beekeeper is slow: the frames have to come off within days of capping or the honey must be cut out rather than spun. French producers turned the defect into the product, whipping it as it crystallises to make crème de miel.",
@@ -729,7 +729,7 @@ fr:"Traitez-la comme un miel, non comme un vinaigre : aucune acidité ne vient y
 pairs:["pecorino","parmesan","walnut","ricotta","fig","chestnut","pork","radicchio"],
 svg:'<path class="f3 sf" d="M34 44h26l-4 30q-1 4-5 4H43q-4 0-5-4z"/><path class="s" d="M60 48q8 2 8 8t-8 8"/><path class="f2 sf" d="M34 44l-8-6 4-4 10 6z"/><path class="s" d="M26 40q-4 8-2 18"/><circle class="dot" cx="24" cy="62" r="3"/>'},
 
-{id:"sidr-honey",cat:"sweet",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
+{id:"sidr-honey",cat:"sweet",parent:"honey",luxe:true,price:4,pk:"150–500 €/kg",name:{en:"Sidr honey",fr:"Miel de sidr (jujubier)"},latin:"Ziziphus spina-christi",
 origin:{en:"Wadi Do’an, Hadhramaut",fr:"Wadi Do’an, Hadramaout"},season:[10,11],
 flavor:["sweet","rich","toasty","warm"],texture:["firm","viscous","smooth"],
 story:{en:"The sidr trees of Wadi Do’an in Hadhramaut flower for roughly three weeks a year, and hives are carried into the valleys for that window alone — which is most of the reason a kilo can pass two hundred dollars. The bloom comes twice, autumn and spring, and beekeepers rate the autumn crop the darker and denser of the two.",
@@ -759,7 +759,7 @@ fr:"Servez-le face au sel et au gras — un éclat de pecorino affiné, une tran
 pairs:["pecorino","foie-gras","walnut","ricotta","blue-cheese","chestnut","dark-chocolate"],
 svg:'<path class="f2 sf" d="M34 36h28v34a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8z"/><path class="f3 sf" d="M32 28h32v8H32z"/><circle class="f1 sf" cx="66" cy="62" r="12"/><circle class="dot" cx="62" cy="58" r="1.6"/><circle class="dot" cx="70" cy="60" r="1.6"/><circle class="dot" cx="66" cy="68" r="1.6"/>'},
 
-{id:"sunflower-honey",cat:"sweet",price:1,pk:"8–14 €/kg",name:{en:"Sunflower honey",fr:"Miel de tournesol"},latin:"Helianthus annuus",
+{id:"sunflower-honey",cat:"sweet",parent:"honey",price:1,pk:"8–14 €/kg",name:{en:"Sunflower honey",fr:"Miel de tournesol"},latin:"Helianthus annuus",
 origin:{en:"Sunflower plains of France, Spain and the Balkans",fr:"Plaines à tournesol de France, d’Espagne et des Balkans"},season:[7,8],
 flavor:["sweet","grassy","herbal","floral"],texture:["viscous","granular"],
 story:{en:"A sunflower head is hundreds of separate florets that open in a spiral from the rim inward over about a week, so one field gives the hive a long staggered flow rather than a burst. What comes out is a hard yellow honey that grains coarsely within weeks — a flaw on a breakfast table, and exactly the backbone that nougat and pain d'épices need.",
@@ -769,7 +769,7 @@ fr:"Son mordant herbacé traverse le four là où un miel d’acacia disparaîtr
 pairs:["rye-flour","orange","anise","ginger","almond","clove","hazelnut"],
 svg:'<path class="f1 sf" d="M30 34l9-14h18l9 14-9 14H39z"/><path class="f2 sf" d="M39 48h18l9 14-9 14H39l-9-14z"/><path class="s" d="M39 20l9 14 9-14M39 48l9 14 9-14"/><path class="f3 sf" d="M48 76q4 6 4 9t-4 3-4-3 4-9z"/>'},
 
-{id:"thyme-honey",cat:"sweet",price:2,pk:"20–40 €/kg",name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
+{id:"thyme-honey",cat:"sweet",parent:"honey",price:2,pk:"20–40 €/kg",name:{en:"Thyme honey",fr:"Miel de thym"},latin:"Thymus capitatus",
 origin:{en:"Attica and Provence",fr:"Attique et Provence"},season:[7,8],
 flavor:["sweet","herbal","warm","pungent"],texture:["viscous","smooth"],
 story:{en:"Thyme honey from Mount Hymettus was the honey of ancient Athens, sold and taxed under its own name, with the hillsides above the city kept for hives. What sets it apart is phenolic rather than floral: it reads almost savoury, which is why Greek and Provençal kitchens put it on cheese and lamb rather than on cake.",
@@ -779,7 +779,7 @@ fr:"Employez-le là où vous prendriez un aigre-doux : une cuillerée montée au
 pairs:["feta","lamb","walnut","yogurt","olive-oil","manouri"],
 svg:'<path class="s" d="M40 16v18"/><path class="f2 sf" d="M40 34q-8 0-8 9t8 15q8-6 8-15t-8-9z"/><path class="s" d="M32 42h16M33 48h14M35 54h10"/><path class="s" d="M62 74V46"/><path class="s" d="M62 52q6-3 8-8M62 60q6-3 8-8M62 68q6-3 8-8"/>'},
 
-{id:"tupelo-honey",cat:"sweet",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
+{id:"tupelo-honey",cat:"sweet",parent:"honey",rare:true,price:3,pk:"50–100 €/kg",name:{en:"Tupelo honey",fr:"Miel de tupelo"},latin:"Nyssa ogeche",
 origin:{en:"Apalachicola river swamps, Florida",fr:"Marais de l’Apalachicola, Floride"},season:[4,5],
 flavor:["sweet","floral","delicate","fruity"],texture:["viscous","smooth"],
 story:{en:"The white tupelo blooms for two or three weeks in April along one Florida river system, and beekeepers barge their hives onto platforms in the swamp to reach it; a wet fortnight cancels the year. The hives are stripped of every other frame first, because a single day of a different nectar shows up in the jar.",

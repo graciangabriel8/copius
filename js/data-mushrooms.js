@@ -59,7 +59,7 @@ fr:"Elle tient trois ou quatre jours et son parfum meurt dès qu’elle touche l
 pairs:["egg","butter","parmesan","garlic","olive-oil","artichoke","cream"],
 svg:'<path class="f1 sf" d="M26 62q0-24 22-24t22 24z"/><path class="s" d="M48 62V42M40 62q2-10-6-14M56 62q-2-10 6-14"/><path class="s" d="M26 62h44"/>'},
 
-{id:"black-morel",cat:"mushrooms",luxe:true,price:4,pk:"120–250 €/kg",name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
+{id:"black-morel",cat:"mushrooms",parent:"morel",luxe:true,price:4,pk:"120–250 €/kg",name:{en:"Black morel",fr:"Morille conique"},latin:"Morchella conica",
 origin:{en:"Conifer edges and burnt ground",fr:"Lisières de conifères et terres brûlées"},season:[3,4,5],
 flavor:["smoky","earthy","meaty","woody"],texture:["brittle","airy","dry"],
 story:{en:"It comes up in March, a good month before the blonde, taller and sharper-capped, its pits so dark they read as black in the leaf litter. Fresh it smells of surprisingly little; dried it is by far the more perfumed of the two, which is why the conique dominates the dried trade while the blonde is sold fresh.",
@@ -89,7 +89,7 @@ fr:"Fendez chaque trompette en long pour déloger aiguilles et sable cachés. S�
 pairs:["egg","cream","chestnut","parmesan","garlic"],
 svg:'<path class="f1 sf" d="M22 32Q28 40 35 33Q42 40 47 30Q50 26 53 25C59 42 54 62 47 79q-3 4-6 0C33 62 20 46 22 32Z"/><path class="dot" d="M24 33Q29 41 36 34Q42 41 48 31Q51 27 54 26Q48 44 38 46Q28 43 24 33Z"/><path class="f2 sf" d="M57 38Q62 45 68 39Q73 35 78 34C81 48 74 62 66 74q-3 3-5 0C58 60 54 48 57 38Z"/><path class="dot" d="M58 39Q63 46 69 40Q73 36 77 35Q72 49 65 50Q60 47 58 39Z"/><path class="s" d="M31 46q3 14 9 30M43 46q1 14 2 30M63 52q0 10 2 18" stroke-width="1.5"/>'},
 
-{id:"blonde-morel",cat:"mushrooms",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Blonde morel",fr:"Morille blonde"},latin:"Morchella esculenta",
+{id:"blonde-morel",cat:"mushrooms",parent:"morel",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Blonde morel",fr:"Morille blonde"},latin:"Morchella esculenta",
 origin:{en:"Ash and elm woods, spring",fr:"Bois de frênes et d'ormes, au printemps"},season:[4,5,6],
 flavor:["earthy","nutty","delicate"],texture:["tender","airy","moist"],
 story:{en:"The name comes from Old High German morhila, a little carrot, for the pitted cone that pushes up through leaf litter in spring. Chinese growers now raise several black morel species under plastic; the blonde is still lifted from the ground, one at a time.",
@@ -119,7 +119,7 @@ fr:"Ne le mangez jamais cru ni à peine cuit — mal cuit, le pied-bleu dérange
 pairs:["butter","garlic","parsley","cream","chestnut","thyme","shallot","hazelnut"],
 svg:'<path class="f2 sf" d="M24 50q6-18 24-18t24 18q-10 6-24 6t-24-6z"/><path class="s" d="M32 50q16 5 32 0"/><path class="f1 sf" d="M42 56h12l2 16q0 4-8 4t-8-4z"/><path class="s" d="M44 62q4 3 8 0M44 70q4 3 8 0"/>'},
 
-{id:"bronze-bolete",cat:"mushrooms",price:3,pk:"35–60 €/kg",name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
+{id:"bronze-bolete",cat:"mushrooms",parent:"porcini",price:3,pk:"35–60 €/kg",name:{en:"Bronze bolete",fr:"Cèpe bronzé"},latin:"Boletus aereus",
 origin:{en:"Warm oak and chestnut woods",fr:"Chênaies et châtaigneraies chaudes"},season:[6,7,8,9],
 flavor:["nutty","earthy","woody","meaty"],texture:["firm","smooth","moist"],
 story:{en:"Boletus aereus takes its name from aereus, of bronze: the cap is nearly black on a young one and fades towards the colour of an old coin. It fruits in hot oak and chestnut woods weeks before the cèpe de Bordeaux and holds its flesh far firmer, which is why southern markets sell it apart from it and above it.",
@@ -299,7 +299,7 @@ fr:"Coupez-la en deux avant de l’acheter ou de la rapporter : le moindre jaune
 pairs:["butter","garlic","parsley","egg","parmesan","black-pepper"],
 svg:'<circle class="f1 sf" cx="42" cy="48" r="24"/><path class="s" d="M28 38q6-4 12 0M34 58q8 4 16 0"/><path class="f2 sf" d="M62 58h14v14H62z"/><path class="s" d="M20 76h56"/>'},
 
-{id:"golden-oyster",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Golden oyster",fr:"Pleurote jaune"},latin:"Pleurotus citrinopileatus",
+{id:"golden-oyster",cat:"mushrooms",parent:"pleurote",price:2,pk:"15–30 €/kg",name:{en:"Golden oyster",fr:"Pleurote jaune"},latin:"Pleurotus citrinopileatus",
 origin:{en:"Dead elm, East Asia",fr:"Ormes morts d'Asie orientale"},season:[],
 flavor:["nutty","woody","mild"],texture:["tender","juicy","chewy"],
 story:{en:"Tamogitake in Japan, where it fruits on dead elm, this yellow oyster travelled the world in grow kits and then escaped them - it now fruits wild across the American Midwest, where it is treated as an invasive species. Raw, the cluster smells closer to cashew than to mushroom.",
@@ -329,7 +329,7 @@ fr:"Grattez les aiguillons s’il est gros — ils amèrent avec l’âge. Les j
 pairs:["butter","parsley","garlic","cream","shallot","thyme","egg","chicken"],
 svg:'<path class="f2 sf" d="M26 52q0-16 22-16t22 16q-20 10-44 0z"/><path class="f3 sf" d="M42 52h12v22h-12z"/><path class="s" d="M32 54v4M40 55v4M48 55v4M56 55v4M64 54v4"/>'},
 
-{id:"hon-shimeji",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Hon-shimeji",fr:"Hon-shimeji"},latin:"Lyophyllum shimeji",
+{id:"hon-shimeji",cat:"mushrooms",parent:"shimeji",price:2,pk:"15–30 €/kg",name:{en:"Hon-shimeji",fr:"Hon-shimeji"},latin:"Lyophyllum shimeji",
 origin:{en:"Pine and oak woods, Japan",fr:"Sous les pins et les chênes du Japon"},season:[9,10,11],
 flavor:["umami","nutty","sweet"],texture:["firm","crunchy","moist"],
 story:{en:"A Japanese proverb ranks the mushrooms: matsutake for scent, shimeji for taste - and the shimeji it means is this wild, mycorrhizal one, not the cheap cultivated cluster. It resisted farming until the very end of the twentieth century, which is why the name on the punnet matters more here than for any other mushroom.",
@@ -359,7 +359,7 @@ fr:"Utilisez-le le jour même de la récolte : les galles passent de fermes à u
 pairs:["corn","epazote","onion","chili","masa-harina","garlic"],
 svg:'<path class="f1 sf" d="M48 20q11 0 11 16v24q0 14-11 14t-11-14V36q0-16 11-16z"/><circle class="f3 sf" cx="42" cy="34" r="7"/><circle class="f3 sf" cx="56" cy="46" r="8"/><circle class="f3 sf" cx="43" cy="60" r="7"/><path class="s" d="M37 62q-10 6-9 18 10-2 12-12M59 62q10 6 9 18-10-2-12-12"/>'},
 
-{id:"king-oyster",cat:"mushrooms",price:2,pk:"12–25 €/kg",name:{en:"King oyster",fr:"Pleurote du panicaut"},latin:"Pleurotus eryngii",
+{id:"king-oyster",cat:"mushrooms",parent:"pleurote",price:2,pk:"12–25 €/kg",name:{en:"King oyster",fr:"Pleurote du panicaut"},latin:"Pleurotus eryngii",
 origin:{en:"Mediterranean grassland",fr:"Prairies méditerranéennes"},season:[9,10,11],
 flavor:["meaty","umami","nutty","mild"],texture:["firm","smooth","moist"],
 story:{en:"It grows on the roots of eryngo, the sea holly — hence panicaut in French, after the plant it parasitises. Its stem is unusually thick and dense, and it is the mushroom most often used as a scallop substitute because of the texture.",
@@ -509,7 +509,7 @@ fr:"Sa note de noyer fumé est liposoluble et bien plus discrète que celle d’
 pairs:["pecan","butter","egg","cream","chicken","corn","sweet-potato"],
 svg:'<ellipse class="f2 sf" cx="36" cy="54" rx="16" ry="14"/><path class="s" d="M28 48q6 6 4 12M43 46q-3 8 3 12"/><path class="f3 sf" d="M66 36q9 8 9 18t-9 18q-9-8-9-18t9-18z"/><path class="s" d="M66 38v32"/>'},
 
-{id:"pine-bolete",cat:"mushrooms",price:3,pk:"25–50 €/kg",name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
+{id:"pine-bolete",cat:"mushrooms",parent:"porcini",price:3,pk:"25–50 €/kg",name:{en:"Pine bolete",fr:"Cèpe des pins"},latin:"Boletus pinophilus",
 origin:{en:"Mountain pinewoods, Europe",fr:"Pinèdes de montagne, Europe"},season:[5,6,9,10,11],
 flavor:["resinous","nutty","earthy","woody"],texture:["firm","smooth","moist"],
 story:{en:"It fruits twice where the oak cep fruits once — a flush after the May rains, a heavier one from late September into November — which is why the trade names and prices it apart from edulis. Mahogany cap, orange-red netting on a swollen stem, and flesh underneath that stays white and does not blue.",
@@ -519,7 +519,7 @@ fr:"Les sujets de printemps se taillent crus en fines lamelles, huile d'olive et
 pairs:["butter","garlic","parsley","olive-oil","parmesan","thyme","pork","egg"],
 svg:'<path class="f3 sf" d="M20 46q0-18 24-18t24 18q-10 8-24 8t-24-8z"/><path class="f1 sf" d="M36 52q8 4 16 0l-2 22q-6 5-12 0z"/><path class="s" d="M40 58q6 3 10 0M39 66q7 3 12 0"/><path class="s" d="M70 32l8-6M70 36l10-1M70 40l8 5"/>'},
 
-{id:"pink-oyster",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Pink oyster",fr:"Pleurote rose"},latin:"Pleurotus djamor",
+{id:"pink-oyster",cat:"mushrooms",parent:"pleurote",price:2,pk:"15–30 €/kg",name:{en:"Pink oyster",fr:"Pleurote rose"},latin:"Pleurotus djamor",
 origin:{en:"Tropical hardwoods",fr:"Bois tropicaux"},season:[6,7,8,9],
 flavor:["meaty","umami","mild"],texture:["tender","chewy","moist"],
 story:{en:"An oyster of the warm half of the world, it fruits faster than any other cultivated mushroom - days from pinning to harvest - and keeps for barely two more. The pink is a pigment, not a flavour: it drains out in the pan and leaves the strips grey-brown.",
@@ -589,7 +589,7 @@ fr:"Cru il est amer, et il le reste s'il mijote : l'amertume ne part qu'à feu v
 pairs:["soy-sauce","butter","garlic","junmai-sake","hon-mirin","negi","chicken","sesame-oil"],
 svg:'<path class="f2 sf" d="M22 52q1-8 8-8t8 8q-4 4-8 4t-8-4zM38 44q1-8 8-8t8 8q-4 4-8 4t-8-4zM54 50q1-8 8-8t8 8q-4 4-8 4t-8-4z"/><path class="f1 sf" d="M27 56h5l-3 18h-2zM43 48h5l-2 26h-3zM59 54h5l-3 20h-2z"/><circle class="dot" cx="30" cy="48" r="2"/><circle class="dot" cx="46" cy="40" r="2"/><path class="s" d="M24 74q22 6 44-2"/>'},
 
-{id:"smooth-black-truffle",cat:"mushrooms",rare:true,luxe:true,price:4,pk:"300–700 €/kg",name:{en:"Smooth black truffle",fr:"Truffe noire lisse"},latin:"Tuber macrosporum",
+{id:"smooth-black-truffle",cat:"mushrooms",parent:"truffle",rare:true,luxe:true,price:4,pk:"300–700 €/kg",name:{en:"Smooth black truffle",fr:"Truffe noire lisse"},latin:"Tuber macrosporum",
 origin:{en:"Clay under poplar and willow, Italy",fr:"Argiles sous peupliers et saules, Italie"},season:[9,10,11,12],
 flavor:["pungent","musky","earthy","woody"],texture:["firm","granular"],
 story:{en:"Black-skinned and nearly smooth, its warts flattened almost away — and it smells of garlic, so plainly that the trade calls it the garlic truffle. It shares its host trees with the white truffle, poplar and willow, and fills the autumn gap before magnatum is up.",
@@ -639,7 +639,7 @@ fr:"Égouttez les champignons en boîte et blanchissez-les trente secondes à l'
 pairs:["oyster-sauce","garlic","ginger","chicken","silken-tofu","spring-onion","soy-sauce","chili"],
 svg:'<path class="f1 sf" d="M48 20q16 0 16 24t-16 30q-16-6-16-30t16-24z"/><path class="s" d="M34 50q6 8 14 8t14-8"/><path class="f3 sf" d="M40 34q0-10 8-10t8 10q-4 3-8 3t-8-3z"/><path class="s" d="M48 37v22"/>'},
 
-{id:"summer-cep",cat:"mushrooms",price:3,pk:"20–45 €/kg",name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
+{id:"summer-cep",cat:"mushrooms",parent:"porcini",price:3,pk:"20–45 €/kg",name:{en:"Summer cep",fr:"Cèpe d’été"},latin:"Boletus reticulatus",
 origin:{en:"Oak and beech woods, Europe",fr:"Chênaies et hêtraies d’Europe"},season:[5,6,7,8,9],
 flavor:["nutty","earthy","delicate","woody"],texture:["soft","smooth","juicy"],
 story:{en:"Its name comes from the net that runs the whole length of the stem, where the autumn cep carries one only at the top, and it fruits from May under oak and beech — weeks ahead of Boletus edulis. In dry heat the cap goes suede-matt and crazes into fine cracks, which is the mark most foragers actually go by.",
@@ -679,7 +679,7 @@ fr:"Elle ne doit jamais voir la poêle : rasez-la crue, à table, sur une soie c
 pairs:["egg","rice","butter","parmesan","potato"],
 svg:'<path class="f1 sf" d="M32 64C23 60 18 55 19 48C18 39 25 31 34 28C39 26 43 30 45 35C48 29 55 24 62 27C71 30 75 35 74 42C72 47 68 48 63 47C68 50 73 52 73 58C73 66 68 71 61 70C55 69 51 67 48 63C46 68 41 73 35 71C32 70 30 67 32 64Z"/><path class="f2 sf" d="M63 47C68 50 73 52 73 58C73 66 68 71 61 70C55 69 51 67 48 63C53 58 58 52 63 47Z"/><path class="s" d="M24 46C26 52 30 56 36 58M28 38C32 34 37 33 42 35" stroke-width="1.5"/><path class="f1 sf" d="M28 77C36 72 46 70 56 72C59 73 59 76 55 77C46 79 34 79 28 78C27 78 27 77 28 77Z"/><path class="s" d="M31 76q11-3 20-1" stroke-width="1.5"/>'},
 
-{id:"winter-chanterelle",cat:"mushrooms",price:2,pk:"15–30 €/kg",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
+{id:"winter-chanterelle",cat:"mushrooms",parent:"chanterelle",price:2,pk:"15–30 €/kg",name:{en:"Winter chanterelle",fr:"Chanterelle en tube"},latin:"Craterellus tubaeformis",
 origin:{en:"Mossy conifer woods, northern Europe",fr:"Sous-bois moussus de conifères, Europe du Nord"},season:[9,10,11,12],
 flavor:["peppery","woody","delicate"],texture:["tender","dry"],
 story:{en:"It runs months after the girolle has finished, on into the frosts, and grows so thick in the moss that a good patch is picked by the kilo rather than the handful. Hollow-stemmed and papery, it dries better than any other chanterelle and comes back in five minutes, which is how most of the Nordic crop is sold.",

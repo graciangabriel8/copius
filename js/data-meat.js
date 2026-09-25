@@ -39,7 +39,7 @@ fr:"Incisez le boyau en deux ou trois endroits avant la cuisson, sinon il éclat
 pairs:["dijon-mustard","shallot","potato","cider-vinegar","onion","parsley"],
 svg:'<path class="f1 sf" d="M24 50q0-13 26-13t26 13q0 13-26 13t-26-13z"/><ellipse class="f2 sf" cx="26" cy="50" rx="5" ry="11"/><path class="s" d="M24 42v16M28 41v18M32 42v16"/><path class="s" d="M70 39q5 11 0 22"/>'},
 
-{id:"boeuf-aubrac",cat:"meat",price:2,pk:"15–35 €/kg",name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
+{id:"boeuf-aubrac",cat:"meat",parent:"beef",price:2,pk:"15–35 €/kg",name:{en:"Aubrac beef",fr:"Bœuf Aubrac"},latin:"Bos taurus",
 origin:{en:"Aubrac plateau, Aveyron",fr:"Plateau de l’Aubrac, Aveyron"},season:[],
 flavor:["meaty","rich","earthy","umami"],texture:["firm","juicy"],
 story:{en:"The Aubrac was a dairy breed first: it filled the burons of the plateau with milk for Laguiole cheese and aligot, and the beef was what was left over — when the mountain dairies emptied in the twentieth century the breed nearly went with them. What survived is a very late-maturing animal, finished well past thirty months, with dense muscle and deep yellow grass fat.",
@@ -109,7 +109,7 @@ fr:"Cuisez-le doucement et ne percez jamais la peau. Une chaleur vive fend le bo
 pairs:["apple","onion","potato","cider-vinegar","butter","thyme","mustard","cream"],
 svg:'<path class="f2 sf" d="M34.3 70Q56.8 63.5 73.1 46.6Q80.4 42.3 76.6 32.9Q70.2 25.1 62.9 29.4Q46.3 45.8 23.7 52Q16 56.5 20 66.3Q26.6 74.6 34.3 70Z"/><path class="dot" d="M33.1 58.4C35.5 62.5 35.9 66.7 33.9 67.9C31.9 69.1 28.3 66.7 25.9 62.6C23.5 58.5 23.1 54.3 25.1 53.1C27.1 51.9 30.7 54.3 33.1 58.4ZM70.8 36.6C73.1 40.5 73.5 44.5 71.7 45.6C69.9 46.6 66.5 44.3 64.2 40.4C61.9 36.5 61.5 32.5 63.3 31.4C65.1 30.4 68.5 32.7 70.8 36.6Z"/><path class="s" d="M44 61 Q39 53 35 46M36 49 q-5-2-7 1" stroke-width="2"/><path class="f1 sf" d="M44 67 q0-13 13-13 14 0 14 13 0 13-14 13-13 0-13-13 z"/><path class="dot" d="M49 67 q0-8 8-8 9 0 9 8 0 8-9 8-8 0-8-8 z"/>'},
 
-{id:"boeuf-blonde-aquitaine",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Blonde d’Aquitaine beef",fr:"Bœuf Blonde d’Aquitaine"},latin:"Bos taurus",
+{id:"boeuf-blonde-aquitaine",cat:"meat",parent:"beef",price:2,pk:"15–30 €/kg",name:{en:"Blonde d’Aquitaine beef",fr:"Bœuf Blonde d’Aquitaine"},latin:"Bos taurus",
 origin:{en:"South-west France",fr:"Sud-Ouest de la France"},season:[],
 flavor:["meaty","mild","delicate","fresh"],texture:["firm","fibrous"],
 story:{en:"The breed is younger than most of the cheeses it shares a table with: on 20 February 1962 three blond draught breeds of the south-west — the Garonnaise, the Blonde de Quercy and the Blonde des Pyrénées — were merged into a single herd book. They had been bred to pull carts rather than to fatten, and sixty years of selection for meat has piled on muscle without ever adding marbling.",
@@ -149,7 +149,7 @@ fr:"Tranchez fin et assaisonnez seulement à table : le jus de citron cuit et gr
 pairs:["lemon","olive-oil","parmesan","roquette","black-pepper","fig"],
 svg:'<circle class="f2 sf" cx="35" cy="54" r="15"/><circle class="f1 sf" cx="48" cy="48" r="15"/><circle class="f3 sf" cx="61" cy="54" r="15"/><path class="s" d="M56 47q6 3 11 1M54 59q8 3 13 0"/>'},
 
-{id:"bresse-chicken",cat:"meat",sign:"AOP",luxe:true,price:3,pk:"20–32 €/kg",name:{en:"Bresse chicken",fr:"Poulet de Bresse"},latin:"Gallus gallus (Bresse AOP)",
+{id:"bresse-chicken",cat:"meat",parent:"chicken",sign:"AOP",luxe:true,price:3,pk:"20–32 €/kg",name:{en:"Bresse chicken",fr:"Poulet de Bresse"},latin:"Gallus gallus (Bresse AOP)",
 origin:{en:"Bresse, France",fr:"Bresse, France"},season:[],
 flavor:["meaty","delicate","rich","milky"],texture:["tender","juicy"],
 story:{en:"Blue feet, white feathers, red comb — a bird in the colours of the flag, and the only poultry ever granted appellation d’origine status, in 1957. Finished on corn and milk, judged each December at the Glorieuses contests, it earned Brillat-Savarin’s verdict: the queen of poultry, the poultry of kings.",
@@ -199,7 +199,7 @@ fr:"La fibre grossière est un atout en braisé : taillez le paleron ou le gît
 pairs:["red-wine-vinegar","carrot","onion","bay-leaf","thyme","garlic","bone-marrow","mushroom"],
 svg:'<path class="f1 sf" d="M24 40l24-12 24 12-24 12z"/><path class="f2 sf" d="M24 40v22l24 12V52z"/><path class="f3 sf" d="M72 40v22L48 74V52z"/><path class="s" d="M36 34l24 12M36 68V46M60 68V46"/>'},
 
-{id:"boeuf-chianina",cat:"meat",price:3,pk:"30–60 €/kg",name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
+{id:"boeuf-chianina",cat:"meat",parent:"beef",price:3,pk:"30–60 €/kg",name:{en:"Chianina beef",fr:"Bœuf Chianina"},latin:"Bos taurus",
 origin:{en:"Val di Chiana, Tuscany",fr:"Val di Chiana, Toscane"},season:[],
 flavor:["meaty","mild","umami","rich"],texture:["firm","fibrous"],
 story:{en:"The Chianina is among the largest cattle in the world — a mature bull stands over 1.7 metres at the shoulder — and the white oxen of the Val di Chiana were draught animals for two thousand years before anyone bred them for meat. That scale is the whole point of a fiorentina: only a loin this broad yields a T-bone cut five centimetres thick that is still a steak and not a roast.",
@@ -389,7 +389,7 @@ fr:"Piquez la peau partout et retirez la graisse trois ou quatre fois pendant la
 pairs:["apple","red-cabbage","chestnut","onion","sage","thyme","juniper","potato"],
 svg:'<path class="f3 sf" d="M28 62q2-22 22-22t20 20q-16 14-42 2z"/><path class="s" d="M50 40q10-16 20-12"/><circle class="dot" cx="60" cy="32" r="1.8"/>'},
 
-{id:"foie-gras-doie",cat:"meat",luxe:true,price:3,pk:"80–140 €/kg",name:{en:"Goose foie gras",fr:"foie gras d’oie"},latin:"Anser anser (fattened liver)",
+{id:"foie-gras-doie",cat:"meat",parent:"foie-gras",luxe:true,price:3,pk:"80–140 €/kg",name:{en:"Goose foie gras",fr:"foie gras d’oie"},latin:"Anser anser (fattened liver)",
 origin:{en:"South-West France and Alsace",fr:"Sud-Ouest et Alsace"},season:[11,12,1],
 flavor:["rich","buttery","delicate","mild"],texture:["soft","creamy"],
 story:{en:"Goose liver is paler, larger and finer-grained than duck: its fat cells are smaller, so it renders almost nothing in the pan or the terrine where a duck liver loses a fifth of itself. That structure is why it was the Alsatian and Périgord terrine liver long before duck took the market on price.",
@@ -399,7 +399,7 @@ fr:"Ramenez-le à 18 °C avant de le déveiner : froid il casse, tiède il s’�
 pairs:["fig","quince","black-pepper","fleur-de-sel-guerande","pear","vin-de-paille"],
 svg:'<path class="f1 sf" d="M22 52q-1-14 14-17t16 6q5-9 17-5 12 4 10 18t-16 17-21-3-20-16z"/><path class="s" d="M46 40v12q-7 6-15 6M46 52q7 6 16 6"/><path class="f2 sf" d="M52 40q11-6 18 3t-3 20q7-14-3-20t-12-3z"/>'},
 
-{id:"perdreau-gris",cat:"meat",luxe:true,price:3,pk:"20–35 €/pièce",name:{en:"Grey partridge",fr:"Perdreau gris"},latin:"Perdix perdix",
+{id:"perdreau-gris",cat:"meat",parent:"partridge",luxe:true,price:3,pk:"20–35 €/pièce",name:{en:"Grey partridge",fr:"Perdreau gris"},latin:"Perdix perdix",
 origin:{en:"Cereal plains of Europe",fr:"Plaines céréalières d’Europe"},season:[9,10,11,12],
 flavor:["delicate","mild","meaty","earthy"],texture:["tender","fibrous"],
 story:{en:"Escoffier placed the grey partridge above the red-legged for finesse and the classical repertoire followed him, but the bird has since become far the scarcer of the two: British breeding numbers are down around ninety percent since 1970 as the hedgerows went. The word on the menu matters — a perdreau is a bird of the year and is roasted; after the turn of the year it is a perdrix and goes in a pot.",
@@ -469,7 +469,7 @@ fr:"Une selle ou un filet demandent quatre minutes par face et un repos, pas dav
 pairs:["blackcurrant","chestnut","celeriac","butter","quince","black-pepper","cream","mushroom"],
 svg:'<path class="f1 sf" d="M40 46q8-4 16 0 4 10 2 18-2 12-10 12t-10-12q-2-8 2-18z"/><path class="s" d="M44 44V31l-4-6M44 34l5-7M52 44V31l4-6M52 34l-5-7" stroke-width="1.8"/><path class="f2 sf" d="M40 48q-13-9-15-2t13 10zM56 48q13-9 15-2t-13 10z"/><path class="dot" d="M42 57a2 2 0 104 0 2 2 0 10-4 0M50 57a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M45 70q3 3 6 0"/>'},
 
-{id:"porc-iberique-bellota",cat:"meat",luxe:true,price:3,pk:"30–55 €/kg",name:{en:"Iberian pork (bellota)",fr:"Porc ibérique de bellota"},latin:"Sus scrofa domesticus",
+{id:"porc-iberique-bellota",cat:"meat",parent:"pork",luxe:true,price:3,pk:"30–55 €/kg",name:{en:"Iberian pork (bellota)",fr:"Porc ibérique de bellota"},latin:"Sus scrofa domesticus",
 origin:{en:"Dehesa, Extremadura and Andalusia",fr:"Dehesa, Estrémadure et Andalousie"},season:[12,1,2,3],
 flavor:["rich","nutty","meaty","sweet"],texture:["tender","juicy"],
 story:{en:"Between October and March the pigs are turned loose on the dehesa for the montanera and eat several kilos of acorns a day; the oleic acid from the acorns goes straight into their fat, which is why it glosses and softens at room temperature. Almost every animal is destined to become ham — the fresh cuts sold as presa, secreto and pluma are simply what is left of the carcass once the four legs have gone to the drying loft.",
@@ -519,7 +519,7 @@ fr:"Sans gras protecteur, rôtissez-le à couvert avec un fond de liquide dans l
 pairs:["lemon","garlic","rosemary","thyme","olive-oil","potato","artichoke","yogurt"],
 svg:'<path class="f1 sf" d="M26 50q0-10 12-10h20q8 0 10 8t-4 12H36q-10 0-10-10z"/><path class="f2 sf" d="M64 34q6-2 8 4t-2 12-10 2-2-14z"/><path class="s" d="M64 32q-2-8 2-10M72 34q4-6 8-6"/><path class="s" d="M34 60v14M46 60v14M56 60v12"/><circle class="dot" cx="68" cy="42" r="1.4"/>'},
 
-{id:"porc-kintoa",cat:"meat",sign:"AOP",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Kintoa pork",fr:"Porc Kintoa"},latin:"Sus scrofa domesticus",
+{id:"porc-kintoa",cat:"meat",parent:"pork",sign:"AOP",rare:true,price:3,pk:"25–45 €/kg",name:{en:"Kintoa pork",fr:"Porc Kintoa"},latin:"Sus scrofa domesticus",
 origin:{en:"Basque Country, Pyrénées-Atlantiques",fr:"Pays basque, Pyrénées-Atlantiques"},season:[],
 flavor:["rich","sweet","nutty","meaty"],texture:["tender","juicy"],
 story:{en:"When the Ministry of Agriculture listed the Pie noir du Pays basque as endangered in 1981 there were twenty-five sows and a handful of boars left in the entire breed; the fresh meat took its AOC in July 2016 and its AOP the following October. The name is said to come from the quint, the one pig in five that Basque herders owed the Kingdom of Navarre for the right to graze the border valleys.",
@@ -529,7 +529,7 @@ fr:"Le gras est plus tendre et plus doux que celui du Bigorre et fond plus vite�
 pairs:["espelette","garlic","piquillo","thyme","onion","cider-vinegar","apple","black-pepper"],
 svg:'<path class="f1 sf" d="M18 54q0-14 14-16h26q10 0 14 8l6 2q4 1 4 4t-4 4l-6 2q0 10-4 12h-6l-2-8H34l-2 8h-6q-8-2-8-16z"/><path class="f3 sf" d="M56 38q10 0 14 8l6 2q4 1 4 4t-4 4l-6 2q0 10-4 12h-6l-2-8h-2z"/><path class="f3 sf" d="M18 54q0-14 14-16h4v32h-2l-2 8h-6q-8-2-8-16z"/><circle class="dot" cx="70" cy="46" r="1.4"/><path class="s" d="M34 70v6M46 70v6M58 70v6"/>'},
 
-{id:"boeuf-de-kobe",cat:"meat",luxe:true,price:4,pk:"400–800 €/kg",name:{en:"Kobe beef",fr:"Bœuf de Kobe (Tajima)"},latin:"Bos taurus",
+{id:"boeuf-de-kobe",cat:"meat",parent:"beef",luxe:true,price:4,pk:"400–800 €/kg",name:{en:"Kobe beef",fr:"Bœuf de Kobe (Tajima)"},latin:"Bos taurus",
 origin:{en:"Hyōgo prefecture, Japan",fr:"Préfecture de Hyōgo, Japon"},season:[],
 flavor:["rich","buttery","umami","sweet"],texture:["tender","silky","juicy"],
 story:{en:"Kobe is not a breed but a certificate: Tajima-strain Japanese Black, born, fattened and slaughtered inside Hyōgo prefecture and clearing the grading thresholds of an association founded in 1983, which certifies fewer than three thousand carcasses in a year. The Tajima line's fat melts at around 25 °C — below blood heat, and below the temperature of a warm hand.",
@@ -569,7 +569,7 @@ fr:"Tranchez-le presque transparent et posez-le sur quelque chose de chaud — u
 pairs:["rosemary","black-pepper","potato","fig","sage","scallop","garlic"],
 svg:'<path class="f1 sf" d="M26 46h44l-5 26H31z"/><path class="f2 sf" d="M33 51h30l-2 13H35z"/><path class="s" d="M48 44V28M48 36l-7-5M48 40l7-5M48 32l-6-5"/>'},
 
-{id:"boeuf-limousin",cat:"meat",price:2,pk:"15–30 €/kg",name:{en:"Limousin beef",fr:"Bœuf Limousin"},latin:"Bos taurus (Limousine)",
+{id:"boeuf-limousin",cat:"meat",parent:"beef",price:2,pk:"15–30 €/kg",name:{en:"Limousin beef",fr:"Bœuf Limousin"},latin:"Bos taurus (Limousine)",
 origin:{en:"Limousin plateau, central France",fr:"Plateau limousin, France centrale"},season:[],
 flavor:["meaty","mild","earthy"],texture:["firm","fibrous"],
 story:{en:"The Limousin pulled ploughs across the granite soils of its plateau long before anyone selected it for meat — the herd book opened in 1886 and turned a draught ox into a butcher's breed. Its thin hide and light bone are why the carcass yields more sellable meat than almost any other animal in France.",
@@ -609,7 +609,7 @@ fr:"Pochez-le à frémissement à peine visible, autour de 80 °C, pendant 40 mi
 pairs:["potato","pistachio","truffle","dijon-mustard","parsley","grey-shallot"],
 svg:'<path class="f2 sf" d="M20 48q0-14 16-14h22v28H36q-16 0-16-14z"/><ellipse class="f1 sf" cx="60" cy="48" rx="8" ry="14"/><circle class="dot" cx="58" cy="41" r="1.8"/><circle class="dot" cx="62" cy="50" r="1.8"/><circle class="dot" cx="57" cy="55" r="1.8"/>'},
 
-{id:"canard-colvert",cat:"meat",luxe:true,price:3,pk:"15–30 €/pièce",name:{en:"Mallard",fr:"Canard colvert"},latin:"Anas platyrhynchos",
+{id:"canard-colvert",cat:"meat",parent:"duck",luxe:true,price:3,pk:"15–30 €/pièce",name:{en:"Mallard",fr:"Canard colvert"},latin:"Anas platyrhynchos",
 origin:{en:"Wetlands of Europe and North America",fr:"Zones humides d’Europe et d’Amérique du Nord"},season:[9,10,11,12,1],
 flavor:["meaty","earthy","umami"],texture:["firm","fibrous"],
 story:{en:"Every farmed duck except the Muscovy descends from this bird, yet the wild one carries almost none of the fat domestication built in. A shot mallard has been flying and eating whatever it found, so no two taste alike — birds off grain stubble are noticeably sweeter than birds off open water.",
@@ -619,7 +619,7 @@ fr:"Ne gardez que les magrets et sortez-les à 52 °C à cœur : sans couche de 
 pairs:["turnip","juniper","blackcurrant","cabbage","red-wine-vinegar","celeriac","quince","black-pepper"],
 svg:'<path class="f2 sf" d="M22 62q-4-10 6-14t20-2q10 2 12 8 2 8-6 12H32q-8 0-10-4z"/><path class="s" d="M22 58q-7-3-10-9 7 1 12 4"/><path class="f3 sf" d="M52 46q-5-8 1-13t12 1q3 6-1 10l12 2-12 3q-7 2-10-1z"/><circle class="dot" cx="60" cy="36" r="1.6"/><path class="s" d="M18 74q7-3 14 0t14 0 14 0 14 0"/>'},
 
-{id:"porc-mangalitza",cat:"meat",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Mangalitsa pork",fr:"Porc mangalitza"},latin:"Sus scrofa domesticus (Mangalica)",
+{id:"porc-mangalitza",cat:"meat",parent:"pork",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Mangalitsa pork",fr:"Porc mangalitza"},latin:"Sus scrofa domesticus (Mangalica)",
 origin:{en:"Hungarian plain",fr:"Plaine hongroise"},season:[],
 flavor:["nutty","rich","buttery","meaty"],texture:["soft","silky"],
 story:{en:"Bred in Hungary in the 1830s for lard, the woolly Mangalitsa was down to a few dozen purebred sows by 1990 and was rebuilt by a geneticist who bought up what was left. A mature carcass is roughly two-thirds fat, and that fat is unusually unsaturated — it softens at hand temperature.",
@@ -689,7 +689,7 @@ fr:"Faites-la frémir 45 minutes sans ébullition, cheville comprise, et cuisez 
 pairs:["potato","comte","lentille-du-puy","savoy-cabbage","vin-jaune","leek","cream"],
 svg:'<path class="f3 sf" d="M26 42q20-10 42 0 4 3 4 8t-4 8q-22 10-42 0-4-3-4-8t4-8z"/><path class="f1 sf" d="M70 46h11l-2 8h-9z"/><path class="s" d="M40 32q5-5 1-10t4-8M56 32q5-5 1-10t4-8"/><path class="s" d="M27 44q-4 6 0 12"/>'},
 
-{id:"canard-mulard",cat:"meat",price:2,pk:"10–18 €/kg",name:{en:"Mulard duck",fr:"Canard mulard"},latin:"Cairina moschata × Anas platyrhynchos",
+{id:"canard-mulard",cat:"meat",parent:"duck",price:2,pk:"10–18 €/kg",name:{en:"Mulard duck",fr:"Canard mulard"},latin:"Cairina moschata × Anas platyrhynchos",
 origin:{en:"Southwest France and the Vendée",fr:"Sud-Ouest et Vendée"},season:[],
 flavor:["rich","meaty","umami"],texture:["tender","juicy"],
 story:{en:"A male Muscovy crossed with a Pekin female gives a bird that cannot breed — the parents are not even the same genus, so every mulard is a dead end that has to be made again. It is raised for the liver, and everything a French cook calls duck — the magret, the confit leg, the jar of fat — is what is left of the carcass afterwards.",
@@ -699,7 +699,7 @@ fr:"Quadrillez le gras du magret, démarrez-le à sec dans une poêle froide cô
 pairs:["duck-fat","orange","fig","juniper","armagnac","black-pepper","turnip","garlic"],
 svg:'<path class="f1 sf" d="M38 52 Q40 42 54 40 Q70 40 76 50 Q80 56 72 58 Q78 62 70 68 Q56 78 44 72 Q34 66 38 52 Z"/><path class="f1 sf" d="M30 24 Q40 25 42 34 Q43 44 50 50 Q42 56 35 47 Q27 40 26 33 Q25 25 30 24 Z"/><path class="f1 sf" d="M27 31 Q20 29 20 33 Q21 38 28 38 Q31 35 27 31 Z"/><path class="f2 sf" d="M46 54 Q58 48 70 54 Q62 65 50 63 Q44 59 46 54 Z"/><path class="dot" d="M31 29 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
-{id:"canard-de-barbarie",cat:"meat",price:2,pk:"12–20 €/kg",name:{en:"Muscovy duck",fr:"Canard de Barbarie"},latin:"Cairina moschata",
+{id:"canard-de-barbarie",cat:"meat",parent:"duck",price:2,pk:"12–20 €/kg",name:{en:"Muscovy duck",fr:"Canard de Barbarie"},latin:"Cairina moschata",
 origin:{en:"Tropical South America",fr:"Amérique du Sud tropicale"},season:[],
 flavor:["meaty","musky","mild"],texture:["firm","fibrous"],
 story:{en:"Nothing in the name is right: the bird comes from tropical South America, was domesticated by Amerindians and carried to Europe on Spanish ships in the sixteenth century, when Barbary simply meant somewhere far off. Its species name, moschata, means musky, which is a fair account of the smell of the raw flesh.",
@@ -719,7 +719,7 @@ fr:"Parez sévèrement le gras dur avant cuisson — c’est là que loge le go�
 pairs:["turnip","barley","cumin","garlic","onion","carrot","bay-leaf","harissa"],
 svg:'<path class="f1 sf" d="M38 36q10-6 20 0 5 10 3 20-3 14-13 14t-13-14q-2-10 3-20z"/><path class="s" d="M38 36q-11-3-14 6t7 12 10-5M58 36q11-3 14 6t-7 12-10-5" stroke-width="2"/><path class="s" d="M38 33q4-7 10-7t10 7"/><path class="dot" d="M42 49a2 2 0 104 0 2 2 0 10-4 0M50 49a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M44 63q4 3 8 0"/>'},
 
-{id:"porc-noir-de-bigorre",cat:"meat",sign:"AOP",price:3,pk:"25–45 €/kg",name:{en:"Noir de Bigorre pork",fr:"Porc noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon)",
+{id:"porc-noir-de-bigorre",cat:"meat",parent:"pork",sign:"AOP",price:3,pk:"25–45 €/kg",name:{en:"Noir de Bigorre pork",fr:"Porc noir de Bigorre"},latin:"Sus scrofa domesticus (Gascon)",
 origin:{en:"Bigorre, Hautes-Pyrénées",fr:"Bigorre, Hautes-Pyrénées"},season:[],
 flavor:["nutty","rich","meaty","earthy"],texture:["tender","juicy"],
 story:{en:"By 1981 the Gascon black pig was down to thirty-four sows and two boars across twenty farms — too fat and too slow for the intensive sheds. The whole trade was rebuilt from those animals, and the AOP now requires at least twelve months on Pyrenean pasture, acorns and chestnuts.",
@@ -779,7 +779,7 @@ fr:"La dernière étape est la vapeur, pas la fumée : une heure ou plus, jusqu�
 pairs:["rye","dijon-mustard","cornichon","sauerkraut","black-pepper","coriander-seed","gruyere"],
 svg:'<path class="f2 sf" d="M28 44q20-9 40 0-20 7-40 0zM28 53q20-9 40 0-20 7-40 0zM28 62q20-9 40 0-20 7-40 0z"/><path class="dot" d="M40 42a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M53 43a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/><path class="s" d="M22 71h52"/>'},
 
-{id:"agneau-de-pauillac",cat:"meat",sign:"IGP",luxe:true,price:3,pk:"35–60 €/kg",name:{en:"Pauillac lamb",fr:"Agneau de Pauillac"},latin:"Ovis aries (agneau de lait)",
+{id:"agneau-de-pauillac",cat:"meat",parent:"lamb",sign:"IGP",luxe:true,price:3,pk:"35–60 €/kg",name:{en:"Pauillac lamb",fr:"Agneau de Pauillac"},latin:"Ovis aries (agneau de lait)",
 origin:{en:"Médoc, Gironde",fr:"Médoc, Gironde"},season:[1,2,3,4],
 flavor:["delicate","milky","sweet","mild"],texture:["tender","juicy"],
 story:{en:"The lamb stays in the fold and never grazes: seventy-five days at most on its mother's milk, for a carcass of eleven to fifteen kilos. The Médoc kept the practice because lambing fell in the quiet weeks before the vines needed work, and the flock manured the rows.",
@@ -789,7 +789,7 @@ fr:"Salez, et à peu près rien d’autre : épaule ou gigot entier au four à 1
 pairs:["butter","thyme","flageolet","shallot","parsley","white-asparagus","olive-oil","fleur-de-sel-guerande"],
 svg:'<path class="f1 sf" d="M30 54q-4-14 10-18t22 6q4 12-6 18t-22 2q-4-2-4-8z"/><path class="f2 sf" d="M60 44q9-4 13 2t-7 11q-6 0-7-5z"/><path class="s" d="M34 68q7-5 15-3M42 71q7-5 13-4"/><path class="s" d="M32 44q3-4 6 0t6 0 6 0M30 54q3-4 6 0t6 0 6 0 6 0"/><circle class="dot" cx="68" cy="48" r="1.4"/>'},
 
-{id:"canard-de-pekin",cat:"meat",price:2,pk:"12–20 €/kg",name:{en:"Pekin duck",fr:"Canard de Pékin"},latin:"Anas platyrhynchos domesticus (Pekin)",
+{id:"canard-de-pekin",cat:"meat",parent:"duck",price:2,pk:"12–20 €/kg",name:{en:"Pekin duck",fr:"Canard de Pékin"},latin:"Anas platyrhynchos domesticus (Pekin)",
 origin:{en:"Beijing; now worldwide",fr:"Pékin ; aujourd’hui partout"},season:[],
 flavor:["rich","meaty","mild"],texture:["tender","juicy"],
 story:{en:"Almost every white duck farmed in the West descends from a handful of birds shipped from China to Long Island in 1873. The breed's value is structural — a thin skin sitting loose over a thick fat layer, which is what lets scalding and air-drying separate the two so the skin can crisp on its own.",
@@ -929,7 +929,7 @@ fr:"Coffre au four à 230 °C douze minutes, pas davantage ; le filet doit sorti
 pairs:["blackberry","juniper","cream","butter","blackcurrant","cabbage","black-pepper","chanterelle"],
 svg:'<path class="f3 sf" d="M26 60q-3-16 13-22t25 5q3 9-4 15l6 2-6 3q-6 6-18 6t-16-9z"/><circle class="dot" cx="58" cy="43" r="1.5"/><path class="s" d="M54 38q5-3 9-1" stroke-width="2"/><path class="s" d="M74 76q-5-16-3-28"/><path class="dot" d="M67 48a2 2 0 104 0 2 2 0 10-4 0M71 41a2 2 0 104 0 2 2 0 10-4 0M66 58a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"perdrix-rouge",cat:"meat",luxe:true,price:3,pk:"15–28 €/pièce",name:{en:"Red-legged partridge",fr:"Perdrix rouge"},latin:"Alectoris rufa",
+{id:"perdrix-rouge",cat:"meat",parent:"partridge",luxe:true,price:3,pk:"15–28 €/pièce",name:{en:"Red-legged partridge",fr:"Perdrix rouge"},latin:"Alectoris rufa",
 origin:{en:"Iberia and southwest France",fr:"Péninsule Ibérique et Sud-Ouest"},season:[9,10,11,12],
 flavor:["meaty","earthy","woody"],texture:["tender","fibrous"],
 story:{en:"The hen often lays two clutches and leaves one to the cock to sit on, a division of labour almost unknown among European game birds. She is a bigger, darker and firmer bird than the grey partridge, and wants a different treatment entirely from the one most recipes mean by partridge.",
@@ -959,7 +959,7 @@ fr:"Marinez la nuit dans le vin, puis braisez à frémissement à peine percepti
 pairs:["red-wine-vinegar","lard","onion","mushroom","thyme","garlic","bay-leaf","carrot"],
 svg:'<path class="f3 sf" d="M38 33q1-8 6-4 1-8 6-3 3-6 7-1t2 9z"/><path class="f2 sf" d="M36 37q10-6 20 0 6 6 5 13l11 3-11 4q-3 9-13 9t-15-11q-2-12 3-18z"/><path class="f3 sf" d="M50 64q7 2 7 9t-8 6-4-9z"/><circle class="dot" cx="55" cy="45" r="2"/><path class="s" d="M36 60q-6 8-4 16M42 67q-4 7-2 11"/>'},
 
-{id:"boeuf-rouge-des-pres",cat:"meat",sign:"AOP",price:2,pk:"18–35 €/kg",name:{en:"Rouge des Prés beef",fr:"Bœuf Rouge des Prés"},latin:"Bos taurus (Rouge des Prés)",
+{id:"boeuf-rouge-des-pres",cat:"meat",parent:"beef",sign:"AOP",price:2,pk:"18–35 €/kg",name:{en:"Rouge des Prés beef",fr:"Bœuf Rouge des Prés"},latin:"Bos taurus (Rouge des Prés)",
 origin:{en:"Loire valley, Maine-et-Loire",fr:"Val de Loire, Maine-et-Loire"},season:[],
 flavor:["meaty","rich","buttery","earthy"],texture:["firm","juicy"],
 story:{en:"The breed had to surrender its own name: it was called Maine-Anjou until 2003, when the meat won its appellation and European rules forbade a protected name that is also a breed's — so the cattle became Rouge des Prés and the AOP kept Maine-Anjou. The animals are mostly cull cows finished on Loire valley grass, which is where the marbling and the yellow fat come from.",
@@ -969,7 +969,7 @@ fr:"Un gras jaune signale le carotène et une longue vie à l’herbe : ne le pa
 pairs:["bone-marrow","shallot","mushroom","beurre-de-baratte","black-pepper","carrot","thyme","red-wine-vinegar"],
 svg:'<path class="f2 sf" d="M24 44q10-6 24-6t20 4l8-3-2 9q2 11-4 15H28q-6-4-4-19z"/><path class="f1" d="M34 48q9-4 15 0t-3 11-15-4z"/><path class="s" d="M32 62v14M42 62v14M58 62v14M68 62v12" stroke-width="2"/><path class="s" d="M70 40q4-4 6-3M70 43q4 0 6 3"/><path class="s" d="M24 46q-7 6-5 19"/>'},
 
-{id:"boeuf-rubia-gallega",cat:"meat",luxe:true,price:3,pk:"40–90 €/kg",name:{en:"Rubia Gallega old-cow beef",fr:"Bœuf Rubia Gallega"},latin:"Bos taurus (Rubia Gallega)",
+{id:"boeuf-rubia-gallega",cat:"meat",parent:"beef",luxe:true,price:3,pk:"40–90 €/kg",name:{en:"Rubia Gallega old-cow beef",fr:"Bœuf Rubia Gallega"},latin:"Bos taurus (Rubia Gallega)",
 origin:{en:"Galicia, northwest Spain",fr:"Galice, Espagne"},season:[],
 flavor:["rich","meaty","buttery","earthy"],texture:["tender","juicy"],
 story:{en:"The blonde Galician cow works or milks for eight to fourteen years before she is taken, and it is the age rather than the breed that makes the meat: deep purple, dense, carrying fat the colour of daffodils from a lifetime of Atlantic grass. Hung for weeks, that yellow fat picks up a faint blue-cheese note, which is exactly what buyers are after.",
@@ -999,7 +999,7 @@ fr:"Une côte de trois doigts, salée une heure à l’avance, grillée fort pui
 pairs:["shallot","black-pepper","beurre-de-baratte","cantal","potato","thyme","garlic","red-wine-vinegar"],
 svg:'<path class="f3 sf" d="M36 42q12-6 24 0 5 12 1 22-4 12-13 12t-13-12q-4-10 1-22z"/><path class="s" d="M36 42q-11-6-13-17 0-6 6-6 5 0 5 7M60 42q11-6 13-17 0-6-6-6-5 0-5 7" stroke-width="2"/><path class="f3 sf" d="M36 49q-10-4-12 1t12 6zM60 49q10-4 12 1t-12 6z"/><path class="dot" d="M42 55a2 2 0 104 0 2 2 0 10-4 0M50 55a2 2 0 104 0 2 2 0 10-4 0"/><path class="s" d="M42 69q6 4 12 0"/>'},
 
-{id:"agneau-de-pre-sale",cat:"meat",sign:"AOP",luxe:true,price:3,pk:"30–50 €/kg",name:{en:"Salt marsh lamb",fr:"Agneau de pré-salé"},latin:"Ovis aries (pré-salé)",
+{id:"agneau-de-pre-sale",cat:"meat",parent:"lamb",sign:"AOP",luxe:true,price:3,pk:"30–50 €/kg",name:{en:"Salt marsh lamb",fr:"Agneau de pré-salé"},latin:"Ovis aries (pré-salé)",
 origin:{en:"Bays of Mont-Saint-Michel and the Somme",fr:"Baies du Mont-Saint-Michel et de Somme"},season:[7,8,9,10,11],
 flavor:["briny","herbal","meaty","mild"],texture:["tender","juicy"],
 story:{en:"The appellation requires the lambs to spend most of their lives on the herbus of the bay, grazing sea purslane and samphire washed by the tide — it is the halophyte plants that put iodine into the fat, not salt settling on the grass. Shepherds still walk the flocks out between tides, and the animals learn the channels.",
@@ -1029,7 +1029,7 @@ fr:"C’est le jambon avec lequel on cuisine : enroulé autour d’un poisson ou
 pairs:["cantaloupe","tomato","olive-oil","chickpeas","manchego","white-beans","egg"],
 svg:'<path class="f2 sf" d="M26 56q-5-13 6-19t23-2 8 18-14 13-23-10z"/><path class="f3 sf" d="M61 35l11-9-3 12z"/><path class="f3 sf" d="M44 62h8v8h-8z"/><path class="s" d="M26 76h44M48 76v-6"/>'},
 
-{id:"agneau-de-sisteron",cat:"meat",sign:"IGP",price:3,pk:"25–45 €/kg",name:{en:"Sisteron lamb",fr:"Agneau de Sisteron"},latin:"Ovis aries",
+{id:"agneau-de-sisteron",cat:"meat",parent:"lamb",sign:"IGP",price:3,pk:"25–45 €/kg",name:{en:"Sisteron lamb",fr:"Agneau de Sisteron"},latin:"Ovis aries",
 origin:{en:"Provence and the southern Alps",fr:"Provence et Alpes du Sud"},season:[],
 flavor:["herbal","meaty","rich"],texture:["tender","juicy"],
 story:{en:"The IGP granted in 2007 covers lambs of rustic Provençal ewes — Mérinos d’Arles, Préalpes du Sud, Mourérous — raised under the mother and finished on dry pastoral ground. The name comes from the market town where the region’s lambs were graded and sold, not from any flock the town keeps itself.",
@@ -1159,7 +1159,7 @@ fr:"Servez-le saignant et laissez-le reposer longtemps. Il n’a pas de gras pou
 pairs:["juniper","red-wine-vinegar","blackberry","chestnut","cubeb","thyme","celeriac","dark-chocolate"],
 svg:'<path class="f1 sf" d="M38 47 Q38 38 48 36 Q58 38 58 47 Q58 56 56 64 Q54 75 48 78 Q42 75 40 64 Q38 56 38 47 Z"/><path class="f2 sf" d="M42 65 Q48 61 54 65 Q55 74 48 78 Q41 74 42 65 Z"/><path class="f1 sf" d="M39 47 Q30 42 25 46 Q29 53 39 53 ZM57 47 Q66 42 71 46 Q67 53 57 53 Z"/><path class="s" d="M43 38 Q37 29 28 23M41 33 Q35 31 30 33M38 28 Q33 25 27 26M31 25 Q29 21 30 18M53 38 Q59 29 68 23M55 33 Q61 31 66 33M58 28 Q63 25 69 26M65 25 Q67 21 66 18"/><path class="dot" d="M43 49 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM53 49 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM45 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 zM50 70 q2 0 2 2 0 2-2 2-2 0-2-2 0-2 2-2 z"/>'},
 
-{id:"wagyu",cat:"meat",luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Wagyu beef",fr:"Bœuf wagyu"},latin:"Bos taurus (wagyū)",
+{id:"wagyu",cat:"meat",parent:"beef",luxe:true,price:4,pk:"150–400 €/kg",name:{en:"Wagyu beef",fr:"Bœuf wagyu"},latin:"Bos taurus (wagyū)",
 origin:{en:"Japan",fr:"Japon"},season:[],
 flavor:["rich","buttery","meaty","umami"],texture:["tender","silky","juicy"],
 story:{en:"Closed Japanese bloodlines bred for a century until the marbling threads through the muscle like frost on a window — graded to the strictest scale in meat, up to A5. The legends of beer rations and daily massages are mostly folklore; the miracle is genetics, and fat that melts below body temperature.",
@@ -1179,7 +1179,7 @@ fr:"Marinez-le une nuit au vin rouge avec genièvre et laurier. Un jeune en dema
 pairs:["juniper","red-wine-vinegar","chestnut","bay-leaf","thyme","onion","carrot","dark-chocolate"],
 svg:'<path class="f1 sf" d="M28 62q4-20 22-20t18 18q-14 12-40 2z"/><path class="s" d="M30 56l-6 4 6 2"/><circle class="dot" cx="40" cy="54" r="1.6"/>'},
 
-{id:"lapin-de-garenne",cat:"meat",price:2,pk:"15–25 €/kg",name:{en:"Wild rabbit",fr:"Lapin de garenne"},latin:"Oryctolagus cuniculus",
+{id:"lapin-de-garenne",cat:"meat",parent:"rabbit",price:2,pk:"15–25 €/kg",name:{en:"Wild rabbit",fr:"Lapin de garenne"},latin:"Oryctolagus cuniculus",
 origin:{en:"Sandy warrens and scrub",fr:"Garennes sableuses et maquis"},season:[9,10,11,12,1],
 flavor:["meaty","herbal","earthy"],texture:["firm","fibrous"],
 story:{en:"The Romans kept this species in walled enclosures they called leporaria, the ancestor of the medieval warren and, eventually, of every hutch rabbit alive. Shot wild it weighs half what its domestic descendants do and carries almost no fat, so the recipe written for one will ruin the other.",
@@ -1189,7 +1189,7 @@ fr:"Ne rôtissez que le râble, huit minutes à 220 °C, bardé de lard gras pui
 pairs:["thyme","mustard","white-wine-vinegar","fatback","prune","savory","shallot","bay-leaf"],
 svg:'<path class="f2 sf" d="M24 62q-2-16 14-20t28 2q8 4 8 12t-10 12q-18 4-32 0t-8-6z"/><path class="sf" d="M58 44q-4-16 2-20t8 6-2 15zM66 46q0-16 7-18t5 10-6 12z"/><path class="s" d="M24 60q-6 2-6 6M40 70v6M60 70v6"/><circle class="dot" cx="70" cy="52" r="1.6"/>'},
 
-{id:"palombe",cat:"meat",luxe:true,price:3,pk:"12–22 €/pièce",name:{en:"Wood pigeon",fr:"Palombe"},latin:"Columba palumbus",
+{id:"palombe",cat:"meat",parent:"pigeon",luxe:true,price:3,pk:"12–22 €/pièce",name:{en:"Wood pigeon",fr:"Palombe"},latin:"Columba palumbus",
 origin:{en:"South-West France, autumn flyway",fr:"Sud-Ouest, couloir migratoire d’automne"},season:[10,11],
 flavor:["meaty","rich","earthy","woody"],texture:["tender","juicy"],
 story:{en:"Every October the flocks funnel through the passes of the Basque country and the Landes, where hunters wait in palombières — huts built up in the oaks and joined by walkways through the canopy. The birds arrive muscled from the crossing, which is why the breast is firmer and far darker than any farmed squab.",
@@ -1209,7 +1209,7 @@ fr:"Quinze minutes à 230 °C, le canapé dessous pour recueillir tout ce qui co
 pairs:["butter","armagnac","juniper","shallot","black-pepper","lemon","porcini","foie-gras"],
 svg:'<path class="f2 sf" d="M32 52q6-14 22-14t24 12q4 12-8 18-18 8-32 0t-6-16z"/><path class="f3" d="M46 42q12-4 22 4-10 6-22 2z"/><path class="s" d="M34 46 20 62M22 74h52M50 70v6M62 70v6"/><circle class="dot" cx="40" cy="44" r="2.4"/>'},
 
-{id:"marcassin",cat:"meat",price:2,pk:"16–28 €/kg",name:{en:"Young wild boar",fr:"Marcassin"},latin:"Sus scrofa",
+{id:"marcassin",cat:"meat",parent:"wild-boar",price:2,pk:"16–28 €/kg",name:{en:"Young wild boar",fr:"Marcassin"},latin:"Sus scrofa",
 origin:{en:"European woodland",fr:"Forêts d’Europe"},season:[9,10,11,12],
 flavor:["meaty","mild","delicate","earthy"],texture:["tender","fibrous"],
 story:{en:"Under six months the animal still carries the pale longitudinal stripes it was born with, and a hunter can read its age from them: they begin to fade at three or four months and are gone by six. It has not yet built the strong-smelling fat of an adult, so the marinade a mature boar needs would only strip it.",

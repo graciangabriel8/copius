@@ -9,7 +9,7 @@ fr:"Attendrir ou braiser — pas de voie médiane : battez les escalopes et sais
 pairs:["butter","kombu","soy-sauce","shiitake"],
 svg:'<path class="f2 sf" d="M30 70q14 7 30 1 6-2 10-6 1 7-10 10-16 4-26-2-6-2-4-3z"/><path class="f1 sf" d="M20 60q-4-12 6-19 10-8 24-9 16-2 25 6 8 8 4 17-4 11-18 15-16 5-28 0-13-4-13-10z"/><path class="s" d="M26 50q4-8 14-12 12-6 24-6" stroke-width="2"/><path class="s" d="M28 56q6-8 16-12 12-5 22-5M31 62q6-8 16-11 12-4 22-4M36 68q6-7 15-10 10-3 18-3" stroke-width="1.5"/><path class="dot" d="M30 45q6-1 7 3-1 4-7 3-3-2 0-6zM36 40q6-1 7 3-1 4-7 3-3-2 0-6zM43 37q6-1 7 3-1 4-7 3-3-2 0-6zM51 35q6-1 7 3-1 4-7 3-3-2 0-6zM59 35q6-1 7 3-1 4-7 3-3-2 0-6z"/>'},
 
-{id:"american-lobster",cat:"shellfish",price:3,pk:"25–45 €/kg",name:{en:"American lobster",fr:"Homard américain (canadien)"},latin:"Homarus americanus",
+{id:"american-lobster",cat:"shellfish",parent:"lobster",price:3,pk:"25–45 €/kg",name:{en:"American lobster",fr:"Homard américain (canadien)"},latin:"Homarus americanus",
 origin:{en:"Northwest Atlantic, Maine to Nova Scotia",fr:"Atlantique Nord-Ouest, du Maine à la Nouvelle-Écosse"},season:[11,12,1,2,3,4],
 flavor:["sweet","marine","rich"],texture:["firm","juicy"],
 story:{en:"It is a different animal from the European homard, and its year falls in two: after the summer moult a new-shell lobster has taken on seawater to stretch its shell, and yields something like 15 to 18 percent meat where a hard-shell gives 20 to 28. On the docks buyers judge it by squeezing the shell behind the claw, never by weight.",
@@ -19,7 +19,7 @@ fr:"Pressez la carapace derrière la pince : si elle plie, c’est une carapace 
 pairs:["butter","tarragon","cognac","cream","lemon","corn","chives","celery"],
 svg:'<path class="f2 sf" d="M48 32q8 4 8 14l-2 22q-6 6-12 0l-2-22q0-10 8-14z"/><path class="f1 sf" d="M42 68q6 8 12 0 6 6 2 12-8 4-16 0-4-6 2-12z"/><path class="f1 sf" d="M40 41q-12-4-16-13-8 5-4 13 5 8 13 6z"/><path class="f1 sf" d="M56 41q12-4 16-13 8 5 4 13-5 8-13 6z"/><path class="s" d="M44 32l-8-12M52 32l8-12"/>'},
 
-{id:"belon-flat-oyster",cat:"shellfish",luxe:true,price:3,pk:"20–40 €/douzaine",name:{en:"Belon flat oyster",fr:"Huître plate (belon)"},latin:"Ostrea edulis",
+{id:"belon-flat-oyster",cat:"shellfish",parent:"oyster",luxe:true,price:3,pk:"20–40 €/douzaine",name:{en:"Belon flat oyster",fr:"Huître plate (belon)"},latin:"Ostrea edulis",
 origin:{en:"Brittany, the Belon estuary",fr:"Bretagne, estuaire du Belon"},season:[9,10,11,12,1,2,3,4],
 flavor:["briny","marine","nutty","bitter"],texture:["firm","silky","juicy"],
 story:{en:"France was producing close to 30,000 tonnes of flat oysters a year at the end of the 1960s; then came the parasite Marteilia refringens, then Bonamia ostreae in 1979, and output fell below 2,000 tonnes, where it has stayed. What survives is a different species from the cupped oyster on the next tray, and it tastes like one — metallic, hazelnut, faintly bitter at the finish.",
@@ -39,7 +39,7 @@ fr:"Achetez-le vivant et lourd pour sa taille. Un tourteau léger vient de muer 
 pairs:["egg","lemon","chives","cream","flour-t65","chili","butter","parsley"],
 svg:'<ellipse class="f1 sf" cx="48" cy="56" rx="20" ry="14"/><path class="s" d="M30 46l-10-8M66 46l10-8M28 62l-10 6M68 62l10 6"/><circle class="dot" cx="42" cy="52" r="2"/><circle class="dot" cx="54" cy="52" r="2"/>'},
 
-{id:"brown-shrimp",cat:"shellfish",price:2,pk:"12–22 €/kg",name:{en:"Brown shrimp",fr:"Crevette grise"},latin:"Crangon crangon",
+{id:"brown-shrimp",cat:"shellfish",parent:"shrimp",price:2,pk:"12–22 €/kg",name:{en:"Brown shrimp",fr:"Crevette grise"},latin:"Crangon crangon",
 origin:{en:"North Sea sandflats and estuaries",fr:"Estrans sableux et estuaires de la mer du Nord"},season:[5,6,7,8,9,10],
 flavor:["briny","nutty","marine"],texture:["firm","juicy"],
 story:{en:"At Oostduinkerke on the Belgian coast fishermen still drag their nets through the surf behind Brabant draught horses, a practice UNESCO listed as intangible heritage in December 2013, and the catch goes into the pot on the beach. The shrimp is boiled within minutes because otherwise it goes to mush, which is why it reaches a kitchen already cooked and never raw.",
@@ -209,7 +209,7 @@ fr:"Ficelez-le et cuisez-le à la vapeur ventre en l’air, douze à quinze minu
 pairs:["chinkiang-vinegar","ginger","shaoxing-wine","shiso","spring-onion","soy-sauce","dried-chrysanthemum-flower"],
 svg:'<g transform="translate(3.02 3.15) scale(0.937)"><path class="f3 sf" d="M34 40h28q5 0 5 5v14q0 6-6 6H35q-6 0-6-6V45q0-5 5-5z"/><path class="f1 sf" d="M29 45q-11-2-15-11 7-2 11 2 0-6 6-6 0 9 5 11zM67 45q11-2 15-11-7-2-11 2 0-6-6-6 0 9-5 11z"/><path class="s" d="M18 33l-5-5M23 31l-3-6M78 33l5-5M73 31l3-6"/><path class="s" d="M34 65 26 77M44 66l-4 12M52 66l4 12M62 65l8 12"/><path class="s" d="M40 41v-5M56 41v-5"/></g>'},
 
-{id:"hotate",cat:"shellfish",price:3,pk:"40–75 €/kg",name:{en:"Hotate scallop",fr:"Hotate (Saint-Jacques du Japon)"},latin:"Mizuhopecten yessoensis",
+{id:"hotate",cat:"shellfish",parent:"scallop",price:3,pk:"40–75 €/kg",name:{en:"Hotate scallop",fr:"Hotate (Saint-Jacques du Japon)"},latin:"Mizuhopecten yessoensis",
 origin:{en:"Hokkaido and Mutsu Bay",fr:"Hokkaidō et baie de Mutsu"},season:[],
 flavor:["sweet","marine","creamy","delicate"],texture:["tender","silky"],
 story:{en:"Hotate-gai means sail-raising shell: the story goes that the scallop lifts one valve like a sail and lets the wind push it across the bay, which it does not do, although it can swim by clapping. Almost all of it now comes from hanging culture in Mutsu Bay and off Hokkaido, where the spat is caught on nets suspended in open water.",
@@ -219,7 +219,7 @@ fr:"Pour le sashimi, raffermissez-le quinze minutes au congélateur, puis tranch
 pairs:["yuzu","soy-sauce","butter","wasabi","kombu","sudachi","junmai-sake","chives"],
 svg:'<path class="f2 sf" d="M40 30h16l14 31q4 8-4 12H30q-8-4-4-12z"/><path class="s" d="M40 30l-9 4 9 3M56 30l9 4-9 3"/><path class="s" d="M48 34v38M42 34l-6 36M54 34l6 36M36 43l-4 27M60 43l4 27"/>'},
 
-{id:"awabi",cat:"shellfish",luxe:true,price:4,pk:"200–450 €/kg",name:{en:"Japanese abalone",fr:"Awabi (ormeau du Japon)"},latin:"Haliotis discus hannai",
+{id:"awabi",cat:"shellfish",parent:"abalone",luxe:true,price:4,pk:"200–450 €/kg",name:{en:"Japanese abalone",fr:"Awabi (ormeau du Japon)"},latin:"Haliotis discus hannai",
 origin:{en:"Northern Japan, dived by ama",fr:"Nord du Japon, pêché par les ama"},season:[6,7,8,9],
 flavor:["marine","umami","briny","mild"],texture:["tough","chewy"],
 story:{en:"At Kuzaki in Mie prefecture, elders still slice abalone thin, stretch it and dry it into strips offered at the Ise Shrine three times a year. That dried strip is the origin of the noshi, the folded paper flash printed on Japanese gift envelopes ever since — a stretched abalone standing for good fortune drawn out and prolonged.",
@@ -239,7 +239,7 @@ fr:"Tout le trésor est dans les pattes, presque toujours vendues cuites : ne le
 pairs:["butter","lemon","ginger","chives"],
 svg:'<circle class="f2 sf" cx="48" cy="52" r="12"/><path class="s" d="M38 44l-10-8M36 52H22M38 60l-10 8M58 44l10-8M60 52h14M58 60l10 8"/><path class="s" d="M28 36l-2-5M68 36l2-5"/>'},
 
-{id:"kumamoto-oyster",cat:"shellfish",price:3,pk:"25–45 €/douzaine",name:{en:"Kumamoto oyster",fr:"Huître kumamoto"},latin:"Magallana sikamea",
+{id:"kumamoto-oyster",cat:"shellfish",parent:"oyster",price:3,pk:"25–45 €/douzaine",name:{en:"Kumamoto oyster",fr:"Huître kumamoto"},latin:"Magallana sikamea",
 origin:{en:"Kumamoto, Japan; farmed on the US Pacific coast",fr:"Kumamoto, Japon ; élevée sur la côte pacifique américaine"},season:[],
 flavor:["sweet","fruity","marine","mild"],texture:["soft","silky","juicy"],
 story:{en:"It reached Seattle in 1946 by accident: Japan could not fill an American order for Pacific oyster seed and made up the shortfall with sikamea from Kumamoto. By 1994 researchers believed the species extinct in its home waters, until it was found again in the Ariake Sea in 1996 and confirmed by DNA.",
@@ -249,7 +249,7 @@ fr:"Le creux est profond et la coquille cassante : entrez par la charnière et 
 pairs:["lemon","cucumber","fleur-de-sel-guerande","shallot","white-wine-vinegar","dill","champagne-vinegar","apple"],
 svg:'<path class="f2 sf" d="M24 50q4-19 24-19t24 19q0 17-24 21T24 50z"/><path class="f1 sf" d="M36 51q3-9 12-9t12 9q0 9-12 11t-12-11z"/><path class="s" d="M28 42q6-5 12-7M68 42q-6-5-12-7M26 55q9 2 15 7M70 55q-9 2-15 7M48 31v-5"/>'},
 
-{id:"kuruma-ebi",cat:"shellfish",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Kuruma prawn",fr:"Crevette kuruma"},latin:"Marsupenaeus japonicus",
+{id:"kuruma-ebi",cat:"shellfish",parent:"shrimp",luxe:true,price:4,pk:"150–300 €/kg",name:{en:"Kuruma prawn",fr:"Crevette kuruma"},latin:"Marsupenaeus japonicus",
 origin:{en:"Coastal Japan, farmed since the 1930s",fr:"Côtes japonaises, élevée depuis les années 1930"},season:[1,2,11,12],
 flavor:["sweet","marine","delicate"],texture:["firm","juicy"],
 story:{en:"Kuruma means wheel, for the brown and blue bands that close into a ring when the prawn curls on itself. Motosaku Fujinaga spawned and reared it in tanks in 1933, the first penaeid prawn ever farmed, and every warm-water shrimp farm in the world descends from that method.",
@@ -310,7 +310,7 @@ pairs:["white-wine-vinegar","shallot","parsley","cream","garlic","butter","leek"
 svg:'<path class="f1 sf" d="M20 71Q31 52 46 42Q62 32 74 40Q82 46 78 56Q72 66 56 70Q37 75 20 71Z"/><path class="f2 sf" d="M20 71q4-14 14-22 3 5 1 12-6 8-13 10-3 1-2 0z"/><path class="s" d="M56 40q8 8 8 22M66 41q6 7 6 16" stroke-width="1.5"/><path class="s" d="M32 72q-4 3-7 4M38 73q-4 3-7 4" stroke-width="2"/><path class="dot" d="M24 68q5-1 6 2-1 3-6 2-2-2 0-4z"/>'},
 
 
-{id:"moule-bouchot-mont-saint-michel",cat:"shellfish",sign:"AOP",price:1,pk:"5–8 €/kg",name:{en:"Bouchot mussel, Bay of Mont-Saint-Michel",fr:"Moule de bouchot de la baie du Mont-Saint-Michel"},latin:"Mytilus edulis",
+{id:"moule-bouchot-mont-saint-michel",cat:"shellfish",parent:"mussel",sign:"AOP",price:1,pk:"5–8 €/kg",name:{en:"Bouchot mussel, Bay of Mont-Saint-Michel",fr:"Moule de bouchot de la baie du Mont-Saint-Michel"},latin:"Mytilus edulis",
 origin:{en:"Bay of Mont-Saint-Michel, Ille-et-Vilaine",fr:"Baie du Mont-Saint-Michel, Ille-et-Vilaine"},season:[7,8,9,10,11,12,1,2],
 flavor:["sweet","briny","marine","umami"],texture:["tender","creamy","juicy"],
 story:{en:"The appellation is written in numbers: a shell at least 4 cm long, a meat content of 120 or more on the Lawrence index, and over 4% carbohydrate in the cooked flesh — the glycogen behind the sweetness its specification names as the dominant taste. The posts stand in the flats south of a line from the bell tower of Carolles to the pointe de la Chaîne, where the largest tidal range in France feeds them twice a day. Protected across Europe since May 2011, when the AOP replaced the French AOC.",
@@ -319,7 +319,7 @@ tip:{en:"The specification rules out sand and crabs, so there is nothing to soak
 fr:"Le cahier des charges exclut sable et crabes : rien à faire dégorger. Rincez-les, et n’ôtez le byssus qu’au moment de cuire, car la moule ne survit guère sans lui. Cinq minutes à couvert, dans une cocotte à peine mouillée : elles cuisent dans leur propre eau."},
 pairs:["shallot","parsley","cream","butter","garlic","potato","leek"],
 svg:'<rect class="f2 sf" x="62" y="17" width="9" height="61" rx="2"/><path class="f1 sf" d="M20 71Q31 52 46 42Q62 32 74 40Q82 46 78 56Q72 66 56 70Q37 75 20 71Z"/><path class="f2 sf" d="M20 71q4-14 14-22 3 5 1 12-6 8-13 10-3 1-2 0z"/><path class="s" d="M56 40q8 8 8 22M66 41q6 7 6 16" stroke-width="1.5"/><path class="s" d="M32 72q-4 3-7 4M38 73q-4 3-7 4" stroke-width="2"/><path class="dot" d="M24 68q5-1 6 2-1 3-6 2-2-2 0-4z"/>'},
-{id:"bay-scallop",cat:"shellfish",rare:true,luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Nantucket bay scallop",fr:"Pétoncle de baie"},latin:"Argopecten irradians",
+{id:"bay-scallop",cat:"shellfish",parent:"queen-scallop",rare:true,luxe:true,price:3,pk:"70–140 €/kg",name:{en:"Nantucket bay scallop",fr:"Pétoncle de baie"},latin:"Argopecten irradians",
 origin:{en:"Nantucket eelgrass beds",fr:"Herbiers de zostère de Nantucket"},season:[1,2,3,11,12],
 flavor:["sweet","delicate","marine","creamy"],texture:["tender","juicy"],
 story:{en:"The commercial season runs from the first of November to the end of March, worked by hand from small boats, and the scallop lives out its two years in eelgrass meadows that hide it from crabs. When wasting disease stripped up to ninety per cent of North Atlantic eelgrass in the 1930s, the bay scallop went with it almost everywhere but here.",
@@ -329,7 +329,7 @@ fr:"Gros comme un ongle et gorgés d’eau : épongez-les, prenez une poêle la
 pairs:["butter","lemon","chives","tarragon","cream","fleur-de-sel-guerande","hazelnut","apple"],
 svg:'<path class="f2 sf" d="M25 50v11q0 7 11 7t11-7V50z"/><ellipse class="f1 sf" cx="36" cy="50" rx="11" ry="7"/><path class="f2 sf" d="M51 57v8q0 6 9 6t9-6v-8z"/><ellipse class="f1 sf" cx="60" cy="57" rx="9" ry="6"/><path class="s" d="M31 58v8M41 58v8M56 63v6M64 63v6"/>'},
 
-{id:"amaebi",cat:"shellfish",price:3,pk:"40–80 €/kg",name:{en:"Northern sweet shrimp",fr:"Crevette nordique (amaebi)"},latin:"Pandalus borealis",
+{id:"amaebi",cat:"shellfish",parent:"shrimp",price:3,pk:"40–80 €/kg",name:{en:"Northern sweet shrimp",fr:"Crevette nordique (amaebi)"},latin:"Pandalus borealis",
 origin:{en:"Cold North Atlantic and Sea of Japan",fr:"Eaux froides de l’Atlantique Nord et de la mer du Japon"},season:[1,2,3,11,12],
 flavor:["sweet","marine","delicate","creamy"],texture:["soft","silky"],
 story:{en:"Every northern shrimp is born male and turns female at around four years old, so the egg-carrying ones behind a sushi counter are the oldest animals in the case. Its gelatinous sweetness comes from free amino acids that build up in cold water and break down within hours of death, which is why the boats freeze it on board rather than land it fresh.",
@@ -349,7 +349,7 @@ fr:"Faites-le mijoter avec un bouchon de liège si vous voulez — la tradition 
 pairs:["paprika","olive-oil","potato","lemon","garlic","bay-leaf","chili","parsley"],
 svg:'<path class="f1 sf" d="M32 46q0-16 16-16t16 16-6 18H38q-6-6-6-18z"/><path class="s" d="M38 64q-6 14-14 16M44 64q-4 14-6 18M52 64q4 14 6 18M58 64q6 14 14 16"/><circle class="dot" cx="42" cy="44" r="2"/><circle class="dot" cx="54" cy="44" r="2"/>'},
 
-{id:"olympia-oyster",cat:"shellfish",rare:true,price:3,pk:"25–45 €/douzaine",name:{en:"Olympia oyster",fr:"Huître olympia"},latin:"Ostrea lurida",
+{id:"olympia-oyster",cat:"shellfish",parent:"oyster",rare:true,price:3,pk:"25–45 €/douzaine",name:{en:"Olympia oyster",fr:"Huître olympia"},latin:"Ostrea lurida",
 origin:{en:"Pacific Northwest bays",fr:"Baies du Nord-Ouest pacifique"},season:[],
 flavor:["marine","briny","bitter"],texture:["soft","silky","juicy"],
 story:{en:"It is the only oyster native to the Pacific coast of North America, and Gold Rush San Francisco ate it down to almost nothing inside thirty years. Unlike the Pacific oyster it broods its larvae inside the shell instead of casting them into the water, and it takes four or five years to reach the size of a coin.",
@@ -389,7 +389,7 @@ fr:"Ôtez l’opercule orange et la peau sombre, puis aplatissez le pied blanc a
 pairs:["colombo-powder","lime","garlic","thyme","onion","chili","coconut-milk","bay-leaf"],
 svg:'<path class="f2 sf" d="M62 20q9 12 4 27-5 16-17 26-11 8-23 4 9-4 11-12-8 2-12-5 11-2 15-13 4-12 10-18t12-9z"/><path class="f1 sf" d="M46 46q-15 7-19 21 13 6 25-2 8-6 8-14z"/><path class="s" d="M60 24q5 8 3 17M53 23q4 8 3 15"/><path class="s" d="M63 34l7-3M58 44l8 1M52 55l7 3"/>'},
 
-{id:"queen-scallop",cat:"shellfish",price:2,pk:"8–15 €/kg",name:{en:"Queen scallop",fr:"Pétoncle"},latin:"Aequipecten opercularis",
+{id:"queen-scallop",cat:"shellfish",parent:"scallop",price:2,pk:"8–15 €/kg",name:{en:"Queen scallop",fr:"Pétoncle"},latin:"Aequipecten opercularis",
 origin:{en:"Irish Sea, Isle of Man",fr:"Mer d’Irlande, île de Man"},season:[6,7,8,9,10,11,12],
 flavor:["sweet","marine","delicate"],texture:["tender","juicy"],
 story:{en:"The Manx queenie fishery works by provoking the animal: a light chain towed ahead of the trawl makes the scallop clap its valves and swim straight up into the net. That escape response is sluggish in cold water, so the fishery opens only in June, once the sea has warmed enough for the queenies to jump.",
@@ -549,7 +549,7 @@ fr:"Trois secondes dans l’eau bouillante, puis aussitôt dans l’eau glacée 
 pairs:["rice-vinegar","wasabi","soy-sauce","shiso","sudachi","cucumber","rice","kombu"],
 svg:'<path class="f3 sf" d="M30 62q4-24 20-28 16 4 20 28-20 8-40 0z"/><path class="s" d="M40 40q8-4 16 0M36 50q12-5 24 0M33 58q15-6 30 0"/><path class="f1 sf" d="M26 64q22 10 44 0-6 10-22 10t-22-10z"/>'},
 
-{id:"sydney-rock-oyster",cat:"shellfish",rare:true,price:3,pk:"30–50 €/douzaine",name:{en:"Sydney rock oyster",fr:"Huître de roche de Sydney"},latin:"Saccostrea glomerata",
+{id:"sydney-rock-oyster",cat:"shellfish",parent:"oyster",rare:true,price:3,pk:"30–50 €/douzaine",name:{en:"Sydney rock oyster",fr:"Huître de roche de Sydney"},latin:"Saccostrea glomerata",
 origin:{en:"New South Wales estuaries, Australia",fr:"Estuaires de Nouvelle-Galles du Sud, Australie"},season:[],
 flavor:["briny","marine","sweet","rich"],texture:["soft","silky","juicy"],
 story:{en:"It is not a Crassostrea at all but a Saccostrea, and it needs about three years to reach sixty grams where an introduced Pacific gets there in eighteen months. New South Wales growers spent decades scraping the faster oyster off their racks as a pest, which tells you plainly what they think the extra eighteen months buys.",
@@ -569,7 +569,7 @@ fr:"Faites bien colorer les carapaces concassées à l’huile avant tout mouill
 pairs:["tomato","fennel","saffron","cognac","olive-oil","garlic","leek","thyme"],
 svg:'<path class="f3 sf" d="M26 48q22-14 44 0 2 16-22 18T26 48z"/><path class="s" d="M30 44q4-6 10-6M66 44q-4-6-10-6"/><circle class="dot" cx="41" cy="46" r="2.2"/><circle class="dot" cx="55" cy="46" r="2.2"/><path class="f1 sf" d="M28 62q-10 6-8 12 8-2 12-8zM68 62q10 6 8 12-8-2-12-8z"/>'},
 
-{id:"praire",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Warty venus clam",fr:"Praire"},latin:"Venus verrucosa",
+{id:"praire",cat:"shellfish",parent:"clam",price:2,pk:"10–18 €/kg",name:{en:"Warty venus clam",fr:"Praire"},latin:"Venus verrucosa",
 origin:{en:"Atlantic & Mediterranean sands",fr:"Sables de l’Atlantique & de la Méditerranée"},season:[9,10,11,12,1,2,3,4],
 flavor:["briny","marine","sweet","mild"],texture:["firm","chewy"],
 story:{en:"Verrucosa means warty: the concentric ribs break up into blunt tubercles towards the edge of the shell, and nothing else on a plateau de fruits de mer has that texture under the thumb. It takes four to five years to reach the size the dredges may legally keep, which is most of the reason it costs what it does beside a palourde raised in two.",
@@ -659,7 +659,7 @@ fr:"Faites-les jeûner une semaine, blanchissez deux minutes, tirez-les de la co
 pairs:["garlic","parsley","butter","thyme","shallot","bay-leaf","poitrine-fumee","tomato"],
 svg:'<circle class="f2 sf" cx="55" cy="41" r="17"/><path class="s" d="M55 24q-11 5-11 17t11 12 12-11-9-11-6 8"/><path class="f1 sf" d="M40 52q-14 5-18 18 0 4 6 4h32q5 0 5-4t-7-4H33q5-7 12-9z"/><path class="s" d="M25 62 19 51M30 60l-2-12"/><circle class="dot" cx="18" cy="49" r="2"/><circle class="dot" cx="28" cy="46" r="2"/>'},
 
-{id:"quahog",cat:"shellfish",price:2,pk:"10–18 €/kg",name:{en:"Quahog",fr:"Palourde américaine (quahog)"},latin:"Mercenaria mercenaria",
+{id:"quahog",cat:"shellfish",parent:"clam",price:2,pk:"10–18 €/kg",name:{en:"Quahog",fr:"Palourde américaine (quahog)"},latin:"Mercenaria mercenaria",
 origin:{en:"US Atlantic sandflats",fr:"Estrans sableux de l’Atlantique américain"},season:[],
 flavor:["briny","marine","umami"],texture:["firm","chewy"],
 story:{en:"Linnaeus named it Mercenaria in 1758, from the Latin for wages, having read that the purple rim of its shell was cut into wampum beads by the Narragansett and their neighbours and later taken as payment by colonists. The English name comes from the Narragansett poquauhock.",
@@ -679,7 +679,7 @@ fr:"On ne garde que la grosse noix et la bande de manteau qui l’entoure, le re
 pairs:["soy-sauce","wasabi","yuzu","butter","kombu","sudachi","junmai-sake","chives"],
 svg:'<path class="f2 sf" d="M48 80 29 30q9-6 19-6t19 6z"/><path class="s" d="M33 44q15-6 30 0M37 56q11-5 22 0M41 66q7-4 14 0"/><ellipse class="f1 sf" cx="48" cy="38" rx="9" ry="6"/><path class="s" d="M14 72q13 5 22 1M60 73q10 4 21 0"/>'},
 
-{id:"oursin-murasaki",cat:"shellfish",rare:true,luxe:true,price:4,pk:"800–1500 €/kg",name:{en:"Murasaki uni",fr:"Oursin murasaki"},latin:"Heliocidaris crassispina",
+{id:"oursin-murasaki",cat:"shellfish",parent:"sea-urchin",rare:true,luxe:true,price:4,pk:"800–1500 €/kg",name:{en:"Murasaki uni",fr:"Oursin murasaki"},latin:"Heliocidaris crassispina",
 origin:{en:"Warm coasts of western Japan",fr:"Côtes chaudes de l'ouest du Japon"},season:[6,7,8,9],
 flavor:["creamy","marine","sweet","delicate"],texture:["soft","creamy"],
 story:{en:"Murasaki is the long-spined purple urchin of warmer Japanese water, and its tongues of roe come out larger, paler and gentler than the deep orange bafun. Chefs name the species and often the bay, never simply uni, because the two ripen in opposite halves of the year and taste nothing alike.",
@@ -689,7 +689,7 @@ fr:"N'achetez les plateaux de bois ita que si les langues gardent une arête net
 pairs:["rice","nori","wasabi","sudachi","junmai-sake","soy-sauce"],
 svg:'<path class="f2 sf" d="M22 50a26 26 0 0 1 52 0q-4 15-26 15T22 50z"/><path class="s" d="M22 50l-9-5M31 34l-6-10M48 27V15M65 34l6-10M74 50l9-5"/><path class="f1 sf" d="M33 46q6-9 12 0t-6 9-6-9z"/><path class="f1 sf" d="M51 46q6-9 12 0t-6 9-6-9z"/>'},
 
-{id:"oursin-bafun",cat:"shellfish",rare:true,luxe:true,price:4,pk:"600–1200 €/kg",name:{en:"Bafun uni",fr:"Oursin bafun"},latin:"Hemicentrotus pulcherrimus",
+{id:"oursin-bafun",cat:"shellfish",parent:"sea-urchin",rare:true,luxe:true,price:4,pk:"600–1200 €/kg",name:{en:"Bafun uni",fr:"Oursin bafun"},latin:"Hemicentrotus pulcherrimus",
 origin:{en:"Rocky shallows of Japan",fr:"Fonds rocheux du Japon"},season:[6,7,8],
 flavor:["umami","briny","marine","sweet"],texture:["soft","creamy"],
 story:{en:"The Japanese name means horse-dung urchin, for a flattened, dull shell that sits on the rock like a dropping. Under it are five short tongues of gonad, darker and far denser than the Mediterranean urchin's, tasting closer to caramel than to sea water.",

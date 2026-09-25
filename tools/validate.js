@@ -59,8 +59,19 @@ INGREDIENTS.forEach(function (i) {
   else i.season.forEach(function (m) { if (m < 1 || m > 12) errors.push(i.id + ": bad month " + m); });
   if (!i.pairs || i.pairs.length < 3) errors.push(i.id + ": fewer than 3 pairings");
 });
+var byIdV = {}; INGREDIENTS.forEach(function (x) { byIdV[x.id] = x; });
 INGREDIENTS.forEach(function (i) {
   var seen = {};
+  /* A variety names its species; the lab reads it with the species' record.
+     The parent must exist and the chain of parents must end. */
+  if (i.parent !== undefined) {
+    if (!ids[i.parent]) errors.push(i.id + ": parent '" + i.parent + "' does not exist");
+    if (i.parent === i.id) errors.push(i.id + ": is its own parent");
+    var hop = i.parent, steps = 0;
+    while (hop && byIdV[hop] && steps < 6) { if (hop === i.id) { errors.push(i.id + ": parent chain loops"); break; } hop = byIdV[hop].parent; steps++; }
+  }
+  // Where the same-species block files it, when its family would mislead (js/app.js isMade).
+  if (i.kin !== undefined && i.kin !== "form" && i.kin !== "made") errors.push(i.id + ": kin must be \"form\" or \"made\"");
   i.pairs.forEach(function (p) {
     if (!ids[p]) errors.push(i.id + ": pairing ref '" + p + "' does not exist");
     if (p === i.id) errors.push(i.id + ": pairs with itself");

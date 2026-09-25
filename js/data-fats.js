@@ -219,7 +219,7 @@ fr:"Ne la chauffez jamais : elle se dégrade en dessous de 165 °C. Gardez-la au
 pairs:["goat-cheese","tomato","beetroot","walnut","yogurt","potato","lemon"],
 svg:'<path class="f3 sf" d="M44 20h8v14l6 10v30q0 4-4 4H42q-4 0-4-4V44l6-10z"/><path class="s" d="M38 56h20"/><path class="f2 sf" d="M62 24q-3 9 0 15 3-6 0-15zM62 30q-8 3-8 11 8-2 8-11zM62 30q8 3 8 11-8-2-8-11z"/>'},
 
-{id:"iberico-lard",cat:"fats",price:2,pk:"20–35 €/kg",name:{en:"Ibérico lard (manteca ibérica)",fr:"Saindoux ibérique (manteca ibérica)"},latin:"Sus scrofa domesticus",
+{id:"iberico-lard",cat:"fats",parent:"lard",price:2,pk:"20–35 €/kg",name:{en:"Ibérico lard (manteca ibérica)",fr:"Saindoux ibérique (manteca ibérica)"},latin:"Sus scrofa domesticus",
 origin:{en:"Extremadura & Andalusia, Spain",fr:"Estrémadure & Andalousie, Espagne"},season:[],
 flavor:["rich","nutty","meaty"],texture:["soft","smooth","creamy"],
 story:{en:"Acorns are so heavy in oleic acid that Extremadura calls the pigs that eat them olive trees on four legs, and the fat takes on the same chemistry. Rendered, it sets to a spreadable cream instead of the hard white block ordinary lard makes.",
@@ -249,7 +249,7 @@ fr:"Demandez la panne, prise autour des rognons, si vous pâtissez. Le lard dors
 pairs:["potato","onion","garlic","black-pepper","thyme","cabbage","flour-t65","paprika"],
 svg:'<path class="f3 sf" d="M32 70V50h32v20z"/><path class="s" d="M32 58h32"/><path class="s" d="M42 50v20M54 50v20"/>'},
 
-{id:"panne-de-porc",cat:"fats",price:1,pk:"5–10 €/kg",name:{en:"Leaf lard",fr:"Panne de porc"},latin:"Sus scrofa domesticus (adeps perirenalis)",
+{id:"panne-de-porc",cat:"fats",parent:"lard",price:1,pk:"5–10 €/kg",name:{en:"Leaf lard",fr:"Panne de porc"},latin:"Sus scrofa domesticus (adeps perirenalis)",
 origin:{en:"Around the pig’s kidneys",fr:"Autour des rognons du porc"},season:[],
 flavor:["mild","creamy","rich"],texture:["firm","granular","dry"],
 story:{en:"Panne is the sheet of fat hanging around the kidneys, and it is not interchangeable with back fat: it renders whiter, firmer and almost without pork flavour, which is why pastry cooks order it by name. Rendered slowly it gives the saindoux that made pie crusts flake long before anyone bought shortening in a tin.",

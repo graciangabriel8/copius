@@ -389,7 +389,7 @@ fr:"N’utilisez jamais d’eau bouillante — 70 à 80 °C au plus. L’eau bou
 pairs:["white-chocolate","cream","adzuki","sugar","sesame","vanilla","lemon","rice"],
 svg:'<path class="f1 sf" d="M20 52q1 16 12 23 16 7 32 0 11-7 12-23z"/><path class="f2 sf" d="M20 52q13 7 28 7t28-7q-13-5-28-5t-28 5z"/><path class="s" d="M38 76q10 4 20 0" stroke-width="2"/><path class="f1 sf" d="M55 18q5-1 7 1l-3 25q-4 2-7 0z"/><path class="s" d="M55 44q-10 3-14 10M56 44q-5 6-6 12M58 44q0 7 2 11M60 44q5 5 9 7" stroke-width="1.5"/><path class="dot" d="M31 52Q31 54 29 54 26 54 27 52 27 50 29 50 31 50 31 52zM39 56Q40 58 37 57 35 58 35 56 34 54 37 54 39 55 39 56zM70 51Q70 53 68 53 65 53 66 51 66 49 68 49 70 49 70 51z"/>'},
 
-{id:"hibiscus-flower",cat:"infusions",price:1,pk:"20–40 €/kg",name:{en:"Hibiscus flower",fr:"Fleur d’hibiscus (karkadé)"},latin:"Hibiscus sabdariffa",
+{id:"hibiscus-flower",cat:"infusions",parent:"hibiscus-roselle",price:1,pk:"20–40 €/kg",name:{en:"Hibiscus flower",fr:"Fleur d’hibiscus (karkadé)"},latin:"Hibiscus sabdariffa",
 origin:{en:"West Africa & Mexico",fr:"Afrique de l’Ouest & Mexique"},season:[],
 flavor:["sour","tangy","fruity","floral"],texture:["brittle","dry"],
 story:{en:"Bissap in Dakar, karkadé in Cairo, agua de jamaica in Mexico City — the same dried calyx, brewed hot or steeped cold overnight, and the same deep red, cranberry-sour glass at the end of it. The colour is an anthocyanin that behaves like litmus: a squeeze of lime turns it scarlet, a pinch of bicarbonate pushes it towards violet.",

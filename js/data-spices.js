@@ -29,7 +29,7 @@ fr:"Trempez les gousses trente minutes à l’eau chaude et mixez avec un peu de
 pairs:["aji-amarillo","beef","cumin","garlic","red-wine-vinegar","oregano","potato"],
 svg:'<path class="f3 sf" d="M32 40q16-8 32 0 2 18-6 30-6 8-10 8t-10-8q-8-12-6-30z"/><path class="s" d="M36 40q-6-6-2-10 8 4 14 2 6 2 14-2 4 4-2 10"/><path class="s" d="M48 30v-8"/><path class="s" d="M42 52q6 4 12 0"/>'},
 
-{id:"aleppo-pepper",cat:"spices",price:2,pk:"30–50 €/kg",name:{en:"Aleppo pepper",fr:"Piment d’Alep"},latin:"Capsicum annuum",
+{id:"aleppo-pepper",cat:"spices",parent:"chili",price:2,pk:"30–50 €/kg",name:{en:"Aleppo pepper",fr:"Piment d’Alep"},latin:"Capsicum annuum",
 origin:{en:"Aleppo & Kahramanmaraş",fr:"Alep & Kahramanmaraş"},season:[],
 flavor:["fruity","salty","warm","hot"],texture:["flaky","moist"],
 story:{en:"The flakes are not merely dried: the pods are sun-dried, deseeded, salted and worked with oil, which is why a good one feels faintly damp in the jar and reads dull red rather than bright. Almost nothing sold under the name has come from Aleppo since 2011 — the trade crossed the border to Kahramanmaraş, and careful sellers now write Aleppo-style or name Turkey outright.",
@@ -69,7 +69,7 @@ fr:"Broyez-la avec une pincée du sel ou du sucre du plat, sinon elle empâte le
 pairs:["chickpeas","cumin","ginger","chili","spinach","potato","garam-masala","mint"],
 svg:'<path class="f2 sf" d="M26 52q0-20 22-20t22 20q0 16-22 20T26 52z"/><path class="f1 sf" d="M36 50q12-8 24 0-2 14-12 16t-12-16z"/><path class="s" d="M48 32l-2-9 7-1"/><path class="s" d="M40 54q8 4 16-1M42 62q6 3 12-1"/>'},
 
-{id:"ancho-chilli",cat:"spices",price:2,pk:"40–70 €/kg",name:{en:"Ancho chilli",fr:"Piment ancho"},latin:"Capsicum annuum",
+{id:"ancho-chilli",cat:"spices",parent:"chili",price:2,pk:"40–70 €/kg",name:{en:"Ancho chilli",fr:"Piment ancho"},latin:"Capsicum annuum",
 origin:{en:"Puebla, Mexico",fr:"Puebla, Mexique"},season:[],
 flavor:["fruity","sweet","earthy","warm"],texture:["tough","dry"],
 story:{en:"Ancho means wide, and the name says nothing more than that: it is a poblano left to ripen red on the plant and dried flat. Hold one up to a lamp — if the light through the skin is red you have an ancho, and if it is brown you have a mulato, a different strain of the same pod that tastes of chocolate rather than raisin.",
@@ -179,7 +179,7 @@ fr:"Moulez-le au dernier moment — le poivre pré-moulu n’est que poussière 
 pairs:["strawberry","beef","egg","lemon","parmesan","oyster"],
 svg:'<path class="f2 sf" d="M47 38Q47 48 39 52Q30 52 24 45Q18 39 22 32Q27 26 37 27Q45 30 47 38Z"/><path class="f1 sf" d="M74 42Q73 48 67 51Q60 52 55 48Q52 43 54 37Q59 30 66 31Q72 34 74 42Z"/><path class="f2 sf" d="M58 68Q56 76 48 80Q41 81 36 75Q33 69 36 62Q42 55 50 56Q58 59 58 68Z"/><path class="f1 sf" d="M73 66Q73 72 68 74Q63 74 59 70Q58 67 60 63Q64 59 69 59Q73 62 73 66Z"/><path class="s" d="M31 30q-6 6-6 13M31 30q0 10 3 17M31 30q8 4 10 12M62 34q-6 4-7 10M62 34q0 8 2 14M62 34q7 4 8 11M44 61q-6 5-7 12M44 61q1 9 3 15M44 61q7 5 8 12" stroke-width="1.6"/>'},
 
-{id:"byadgi-chilli",cat:"spices",price:1,pk:"15–30 €/kg",name:{en:"Byadgi chilli",fr:"Piment byadgi"},latin:"Capsicum annuum",
+{id:"byadgi-chilli",cat:"spices",parent:"chili",price:1,pk:"15–30 €/kg",name:{en:"Byadgi chilli",fr:"Piment byadgi"},latin:"Capsicum annuum",
 origin:{en:"Haveri district, Karnataka",fr:"District de Haveri, Karnataka"},season:[],
 flavor:["smoky","sweet","mild","warm"],texture:["tough","dry"],
 story:{en:"Byadgi is named for a town in the Haveri district of Karnataka and carries an ASTA colour value near 157, roughly three times that of a Kashmiri chilli. A large share of the crop never reaches a kitchen: the oleoresin is extracted for the capsanthin that colours lipstick and nail varnish.",
@@ -209,7 +209,7 @@ fr:"Écrasez les gousses vertes pour libérer les graines noires ; ne moulez que
 pairs:["coffee","orange","honey","rice","dark-chocolate","cinnamon","saffron"],
 svg:'<path class="f1 sf" d="M34 22Q24 30 22 44Q20 60 32 68Q46 70 50 56Q54 38 44 28Q39 23 34 22Z"/><path class="s" d="M30 28q-4 16 0 34M38 26q-2 18 1 38M46 32q3 14 0 28" stroke-width="1.5"/><path class="s" d="M34 22l-2-5"/><path class="s" d="M62 40q-4 12-2 24M70 40q2 12 0 24" stroke-width="1.5"/><path class="f2 sf" d="M64 32Q56 40 56 52Q56 64 64 70Q74 70 76 58Q78 42 70 34Q67 31 64 32Z"/><path class="dot" d="M36 74q5-2 5 3 0 4-5 3-4-1 0-6zM45 78q5-2 5 3 0 4-5 3-4-1 0-6zM54 74q5-2 5 3 0 4-5 3-4-1 0-6z"/>'},
 
-{id:"cassia",cat:"spices",price:1,pk:"12–25 €/kg",name:{en:"Cassia",fr:"Cannelle de Chine"},latin:"Cinnamomum cassia",
+{id:"cassia",cat:"spices",parent:"cinnamon",price:1,pk:"12–25 €/kg",name:{en:"Cassia",fr:"Cannelle de Chine"},latin:"Cinnamomum cassia",
 origin:{en:"Southern China",fr:"Chine du Sud"},season:[],
 flavor:["sweet","warm","woody","hot"],texture:["hard","brittle","dry"],
 story:{en:"Most of what is sold as cinnamon in the world is actually cassia — thicker, harder, redder bark from a different tree, and much stronger. True Ceylon cinnamon is pale, brittle and layered like a cigar; cassia curls into a single thick scroll.",
@@ -339,7 +339,7 @@ fr:"Dominé par la badiane, il prend vite le dessus : une cuillère à café ras
 pairs:["pork","duck","soy-sauce","shaoxing-wine","ginger","chinese-rock-sugar","star-anise","orange"],
 svg:'<path class="f1 sf" d="M32 48q16-10 32 0 8 18-2 28-14 8-28 0-8-10-2-28z"/><path class="s" d="M40 46l-4-16M56 46l4-16M48 44V26"/><path class="s" d="M33 46q15 7 30 0" stroke-width="2.4"/><path class="s" d="M39 62q5 5 9 0t9 0"/>'},
 
-{id:"chipotle",cat:"spices",price:2,pk:"40–80 €/kg",name:{en:"Chipotle",fr:"Piment chipotle"},latin:"Capsicum annuum",
+{id:"chipotle",cat:"spices",parent:"chili",price:2,pk:"40–80 €/kg",name:{en:"Chipotle",fr:"Piment chipotle"},latin:"Capsicum annuum",
 origin:{en:"Mexico",fr:"Mexique"},season:[],
 flavor:["smoky","fruity","hot","woody"],texture:["tough","chewy","dry"],
 story:{en:"The word is Nahuatl, chīlpoctli, smoked chilli: jalapeños left on the bush until they redden, then dried for days over smouldering wood. Ten kilos of fresh fruit give roughly one kilo, which is why the leathery meco, smoked twice as long, is now far scarcer than the softer morita most shops sell.",
@@ -349,7 +349,7 @@ fr:"Traitez-le comme un agent fumant plutôt que comme une source de force : un 
 pairs:["pork","tomato","garlic","lime","onion","cumin","dark-chocolate","oregano"],
 svg:'<path class="f3 sf" d="M58 40q6 14-2 26-7 11-16 8-6-3-2-9 8-11 12-25z"/><path class="s" d="M58 40q1-6 7-7"/><path class="s" d="M55 48q-7 4-11 13M59 55q-7 4-11 13"/><path class="s" d="M32 42q7-4 3-10t4-9M40 32q5-3 2-8"/>'},
 
-{id:"chipotle-meco",cat:"spices",price:2,pk:"50–100 €/kg",name:{en:"Chipotle meco",fr:"Chipotle meco"},latin:"Capsicum annuum 'Jalapeño'",
+{id:"chipotle-meco",cat:"spices",parent:"chipotle",price:2,pk:"50–100 €/kg",name:{en:"Chipotle meco",fr:"Chipotle meco"},latin:"Capsicum annuum 'Jalapeño'",
 origin:{en:"Chihuahua and Veracruz, Mexico",fr:"Chihuahua et Veracruz, Mexique"},season:[],
 flavor:["smoky","hot","woody","toasty"],texture:["tough","dry"],
 story:{en:"Both chipotles begin as a red jalapeño, but the meco is left longer on the plant and then smoked roughly twice as long as the morita — long enough to come out ash-grey and stiff as cardboard. The morita, softer and purple-brown, is what nearly every tin and packet labelled chipotle actually contains.",
@@ -359,7 +359,7 @@ fr:"Il ne se réhydrate pas comme un morita : comptez trente minutes à l’eau 
 pairs:["tomato","garlic","onion","black-bean","pork","lime","molasses","cumin"],
 svg:'<path class="f2 sf" d="M48 28c8 0 12 5 12 11v30c0 8-4 14-12 14s-12-6-12-14V39c0-6 4-11 12-11z"/><path class="s" d="M48 28V16"/><path class="s" d="M38 44h20M38 56h20M40 68h16"/>'},
 
-{id:"choricero",cat:"spices",price:2,pk:"35–70 €/kg",name:{en:"Choricero pepper",fr:"Piment choricero"},latin:"Capsicum annuum 'Choricero'",
+{id:"choricero",cat:"spices",parent:"chili",price:2,pk:"35–70 €/kg",name:{en:"Choricero pepper",fr:"Piment choricero"},latin:"Capsicum annuum 'Choricero'",
 origin:{en:"Basque Country and Navarre",fr:"Pays basque et Navarre"},season:[],
 flavor:["sweet","fruity","earthy","mild"],texture:["tough","dry"],
 story:{en:"The choricero dries whole on strings and is then used inside out: soaked soft, split open, and the flesh scraped off the skin with a spoon, so the skin is discarded and only the pulp reaches the pot. Salsa vizcaína is built on that pulp and onion — the tomato most modern recipes add is a later arrival, not part of it.",
@@ -459,7 +459,7 @@ fr:"Arrêtez de piler tant que le mélange crisse encore sous le pilon. Poussé 
 pairs:["hazelnut","sesame","coriander-seed","cumin","olive-oil","egg","yogurt","chickpeas"],
 svg:'<path class="f1 sf" d="M30 36h36L52 80q-4 6-8 0z"/><path class="s" d="M30 36q18 8 36 0"/><path class="s" d="M48 40v34"/><path class="dot" d="M35 32a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M45 27a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M55 31a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0M49 36a2.2 2.2 0 104.4 0 2.2 2.2 0 10-4.4 0"/>'},
 
-{id:"erjingtiao",cat:"spices",rare:true,price:2,pk:"25–50 €/kg",name:{en:"Erjingtiao chilli",fr:"Piment erjingtiao"},latin:"Capsicum annuum",
+{id:"erjingtiao",cat:"spices",parent:"chili",rare:true,price:2,pk:"25–50 €/kg",name:{en:"Erjingtiao chilli",fr:"Piment erjingtiao"},latin:"Capsicum annuum",
 origin:{en:"Sichuan basin",fr:"Bassin du Sichuan"},season:[],
 flavor:["fruity","warm","toasty"],texture:["brittle","dry"],
 story:{en:"Er jing tiao means roughly two gold strips, for the long grooved pods grown in the Sichuan basin around Pixian. It is the only chilli the traditional Pixian doubanjiang makers will take, chosen for fragrance and red pigment rather than pure burn at 15,000 to 20,000 Scoville.",
@@ -469,7 +469,7 @@ fr:"Pour l’huile pimentée, concassez-les gros et versez l’huile de colza à
 pairs:["doubanjiang","sichuan-pepper","rapeseed-oil","star-anise","cassia","black-cardamom","garlic"],
 svg:'<path class="f2 sf" d="M38 22q5 1 5 7 0 26 8 36 8 10 18 4 6-4 7 1t-8 8q-16 4-24-8Q36 56 36 30q0-6 2-8z"/><path class="s" d="M38 18q0-5 6-5"/><path class="s" d="M41 32q0 22 8 32"/>'},
 
-{id:"espelette",cat:"spices",sign:"AOP",price:3,pk:"200–400 €/kg",name:{en:"Espelette pepper",fr:"Piment d’Espelette"},latin:"Capsicum annuum 'Gorria'",
+{id:"espelette",cat:"spices",parent:"chili",sign:"AOP",price:3,pk:"200–400 €/kg",name:{en:"Espelette pepper",fr:"Piment d’Espelette"},latin:"Capsicum annuum 'Gorria'",
 origin:{en:"Basque Country, France",fr:"Pays basque, France"},season:[],
 flavor:["fruity","warm","hot","smoky"],texture:["powdery","dry"],
 story:{en:"Brought back from the Americas in the 16th century, the pepper found its terroir in ten Basque villages, where autumn façades disappear under garlands of drying red pods. Protected like a great wine, it long replaced black pepper in Basque kitchens — warmth with a sunset colour.",
@@ -479,7 +479,7 @@ fr:"Plus doux que le cayenne, plus fruité que le paprika : poudrez-le sur des �
 pairs:["cod","egg","tomato","olive-oil","dark-chocolate"],
 svg:'<path class="f2 sf" d="M56 32q6 18-6 32-7 8-14 5 4-3 7-9 8-14 8-28z" transform="rotate(8 48 50)"/><path class="s" d="M56 32q1-5 6-6"/><path class="s" d="M34 66h8M32 71h12" stroke-width="1.6"/>'},
 
-{id:"chaotianjiao",cat:"spices",price:2,pk:"25–50 €/kg",name:{en:"Facing-heaven chilli",fr:"Piment chaotianjiao"},latin:"Capsicum annuum",
+{id:"chaotianjiao",cat:"spices",parent:"chili",price:2,pk:"25–50 €/kg",name:{en:"Facing-heaven chilli",fr:"Piment chaotianjiao"},latin:"Capsicum annuum",
 origin:{en:"Sichuan and Hunan",fr:"Sichuan et Hunan"},season:[],
 flavor:["hot","citrus","pungent"],texture:["brittle","dry"],
 story:{en:"Facing-heaven chillies grow pointing upward instead of hanging, which is exactly what the name records; the pods are short, thick-skinned and land somewhere around 50,000 to 75,000 Scoville. In a Sichuan kitchen they mostly go whole into hot oil rather than into a grinder, because the aroma comes off the skin and the seeds stay shut inside.",
@@ -619,7 +619,7 @@ fr:"Écrasez ceux en saumure du plat du couteau directement dans une sauce crèm
 pairs:["cream","duck","beef","butter","thyme","shallot","mustard","tenderloin"],
 svg:'<path class="s" d="M26 78q3-22 14-34 9-11 20-22"/><path class="f1 sf" d="M44 68q0 8-8 8-8 0-8-8 0-7 8-8 8 0 8 8zM42 48q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7zM56 46q0 8-8 8-8 0-8-8 0-7 8-7 8 0 8 7z"/><path class="f2 sf" d="M36 58q0 7-7 7-7 0-7-7 0-7 7-7 7 0 7 7zM50 36q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7zM62 34q0 7-7 7-7 0-7-7 0-6 7-7 7 0 7 7z"/><path class="s" d="M32 64q4-3 7-1M31 44q3-2 6 0M45 42q4-2 7 0M53 30q4-2 6 0" stroke-width="1.5"/>'},
 
-{id:"green-sichuan-pepper",cat:"spices",price:3,pk:"150–300 €/kg",name:{en:"Green Sichuan pepper",fr:"Poivre de Sichuan vert"},latin:"Zanthoxylum schinifolium",
+{id:"green-sichuan-pepper",cat:"spices",parent:"sichuan-pepper",price:3,pk:"150–300 €/kg",name:{en:"Green Sichuan pepper",fr:"Poivre de Sichuan vert"},latin:"Zanthoxylum schinifolium",
 origin:{en:"Sichuan & Chongqing",fr:"Sichuan & Chongqing"},season:[],
 flavor:["numbing","citrus","fresh","herbal"],texture:["brittle","dry"],
 story:{en:"A different species from the red huajiao, picked while the husks are still green. The tingle comes from hydroxy-alpha-sanshool, which does not act on taste at all: it fires the mouth’s touch receptors at around fifty vibrations a second, so what you register is a frequency rather than a flavour.",
@@ -629,7 +629,7 @@ fr:"La chaleur le détruit. Faites tiédir les péricarpes dans l’huile à 100
 pairs:["chicken","cucumber","soy-sauce","rice-vinegar","chili","sesame-oil","spring-onion","ginger"],
 svg:'<path class="f1 sf" d="M42 28h10v14l10 12v22a4 4 0 01-4 4H36a4 4 0 01-4-4V54l10-12z"/><path class="f3 sf" d="M41 21h12v7H41z"/><path class="s" d="M32 60h30"/><path class="dot" d="M37 66a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M47 70a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0M41 75a2.4 2.4 0 104.8 0 2.4 2.4 0 10-4.8 0"/>'},
 
-{id:"guajillo",cat:"spices",price:2,pk:"30–60 €/kg",name:{en:"Guajillo chilli",fr:"Piment guajillo"},latin:"Capsicum annuum",
+{id:"guajillo",cat:"spices",parent:"chili",price:2,pk:"30–60 €/kg",name:{en:"Guajillo chilli",fr:"Piment guajillo"},latin:"Capsicum annuum",
 origin:{en:"Mexico",fr:"Mexique"},season:[],
 flavor:["fruity","tangy","mild","woody"],texture:["tough","dry"],
 story:{en:"The guajillo is the dried mirasol, a chilli named for growing upward — mirando al sol, looking at the sun — instead of hanging down. With ancho and pasilla it makes up the three dried chillies Mexican cooks build almost every red sauce on.",
@@ -679,7 +679,7 @@ fr:"Torréfiez-le à sec dans une poêle nue jusqu’à ce qu’il sente le feu 
 pairs:["lamb","rice","yogurt","onion","black-cardamom","ghee","saffron","clove"],
 svg:'<path class="f1 sf" d="M28 48Q32 50 35 51Q38 52 41 52Q43 53 45 52Q47 51 48 50Q49 48 50 46Q50 43 51 40Q51 37 50 33Q49 28 49 28Q49 29 48 30Q47 31 46 33Q44 35 43 36Q42 37 40 38Q38 39 37 40Q35 41 34 42Q32 43 30 44Q28 44 27 45Q25 46 25 46Q25 45 28 48Z"/><path class="s" d="M30 44Q36 44 41 42Q44 39 46 33M32 47Q38 47 43 45Q46 41 48 36M34 50Q40 50 45 48Q48 44 50 39" stroke-width="1.4"/><path class="dot" d="M57 27Q56 30 56 32Q56 34 57 36Q57 38 58 39Q59 40 60 41Q61 42 63 42Q65 42 67 41Q69 41 72 41Q74 40 75 40Q75 40 73 40Q71 40 69 39Q68 39 66 38Q65 37 64 36Q63 36 62 35Q61 33 60 32Q59 31 59 29Q58 28 58 26Q57 24 57 24Q57 24 57 27ZM66 45Q64 46 62 48Q61 50 60 52Q60 53 59 55Q59 56 60 58Q61 59 62 60Q63 61 65 62Q67 63 70 64Q73 65 72 65Q72 65 71 64Q69 63 68 62Q67 60 67 59Q66 58 66 56Q65 55 65 54Q65 52 65 51Q65 49 65 48Q66 46 67 44Q68 43 68 43Q68 43 66 45ZM21 66Q23 68 25 69Q27 70 29 70Q31 71 32 70Q34 70 35 69Q36 68 37 66Q38 65 38 63Q39 60 39 58Q39 55 39 55Q39 55 39 57Q38 59 37 60Q36 61 35 62Q34 63 32 64Q31 65 30 65Q28 65 27 66Q26 66 24 66Q22 66 20 66Q19 65 19 65Q19 65 21 66Z"/><path class="dot" d="M34 76Q36 78 38 80Q40 81 41 82Q43 83 44 83Q46 83 47 82Q49 82 50 80Q51 79 52 77Q53 75 54 73Q55 70 55 70Q55 70 54 71Q53 73 52 74Q50 75 49 76Q48 76 46 77Q45 77 43 77Q42 77 40 77Q39 77 37 76Q36 76 34 75Q33 74 33 74Q33 74 34 76ZM56 64Q55 66 54 69Q54 71 54 73Q54 75 55 76Q56 77 57 78Q58 79 60 79Q62 80 64 80Q66 80 69 79Q71 79 71 79Q71 79 70 78Q68 78 66 78Q65 77 63 76Q62 75 61 74Q60 73 59 72Q59 71 58 69Q57 68 57 66Q57 65 57 63Q57 61 57 61Q57 61 56 64ZM53 60Q55 60 57 59Q60 58 61 57Q63 56 64 55Q65 54 64 52Q64 51 64 49Q64 47 63 45Q61 44 60 41Q58 39 58 39Q58 39 58 41Q59 43 59 44Q59 46 60 47Q60 49 59 50Q58 52 58 53Q58 54 57 56Q56 57 55 58Q53 59 52 60Q50 61 50 61Q50 61 53 60Z"/>'},
 
-{id:"kashmiri-chilli",cat:"spices",price:1,pk:"20–40 €/kg",name:{en:"Kashmiri chilli",fr:"Piment du Cachemire"},latin:"Capsicum annuum",
+{id:"kashmiri-chilli",cat:"spices",parent:"chili",price:1,pk:"20–40 €/kg",name:{en:"Kashmiri chilli",fr:"Piment du Cachemire"},latin:"Capsicum annuum",
 origin:{en:"Kashmir and northern India",fr:"Cachemire et Inde du Nord"},season:[],
 flavor:["mild","fruity","warm"],texture:["powdery","dry"],
 story:{en:"Kashmiri chilli reads only 1,000 to 2,000 Scoville units, a fraction of a cayenne, so a cook can put a dozen pods into a pot for colour where one hot chilli would already be too much. Very little is now actually grown in Kashmir: most powder sold under the name is Byadgi from Karnataka or a blend, which is why heat varies so much between packets.",
@@ -949,7 +949,7 @@ fr:"Pensez-le comme du jus de citron sec : sur une viande grillée, un yaourt ou
 pairs:["onion","yogurt","lamb","chickpeas","tomato"],
 svg:'<path class="f1 sf" d="M46 17Q49.1 15.8 51 24Q55 23.5 55 31Q61.3 32 59 39Q65 43.1 62 47Q67.2 54.6 63 57Q63.5 65.5 57 65Q54 71.5 48 68Q42.4 72.4 38 66Q31.9 67.2 31 59Q26.1 57.4 29 50Q25.3 46.3 31 41Q28.1 35 34 33Q33 24.6 38 25Q39 18.9 42 20Q43.8 15.6 46 17Z"/><path class="f2 sf" d="M50 35.2Q48.6 37 46.4 38.1Q44.1 39.2 41.8 39.1Q39.8 37.8 38.6 35.5Q37.9 33.3 38.5 31Q39.4 28.7 41.4 27.4Q43.6 26.9 45.9 27.7Q47.7 29 49.1 30.6Q49.9 32.9 50 35.2ZM44.8 53.5Q42.7 55.1 40.4 55.9Q38 54.9 35.8 53.3Q34.9 51.1 35.1 48.5Q35.6 46.1 36.8 44Q39 42.9 41.5 42.8Q44.1 43.4 46.3 44.5Q47.9 46.8 47.9 49.6Q46.9 51.8 44.8 53.5ZM54.1 62.4Q51.8 62.2 49.8 60.6Q48.2 59.1 47.5 57Q47.4 54.8 48.5 52.8Q50.1 51.1 51.9 49.8Q54.4 49.7 56.7 50.7Q58.6 52.5 59.5 54.9Q59.3 57.3 58.1 59.6Q56.4 61.4 54.1 62.4Z"/><path class="dot" d="M53 43q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3zM45 60q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3zM38 39q4-1 5 2 0 4-4 4-4 0-4-3 0-3 3-3z"/><path class="s" d="M46 68q1 7-5 12"/><path class="f2 sf" d="M40 74q-9-5-15-1 5 8 14 6zM53 75q8-5 14-1-5 8-14 5z"/>'},
 
-{id:"tahitian-vanilla",cat:"spices",luxe:true,price:3,pk:"5–10 €/pièce",name:{en:"Tahitian vanilla",fr:"Vanille de Tahiti"},latin:"Vanilla × tahitensis",
+{id:"tahitian-vanilla",cat:"spices",parent:"vanilla",luxe:true,price:3,pk:"5–10 €/pièce",name:{en:"Tahitian vanilla",fr:"Vanille de Tahiti"},latin:"Vanilla × tahitensis",
 origin:{en:"French Polynesia",fr:"Polynésie française"},season:[],
 flavor:["floral","anise","fruity","delicate"],texture:["soft","fibrous","moist"],
 story:{en:"Admiral Hamelin landed the first cuttings in Tahiti in 1848, and what grew there turned out to be a separate species — a natural hybrid, low in vanillin and heavy instead in anisaldehyde and heliotropin. That is where the prune, cherry and liquorice come from; it is not Bourbon vanilla done differently.",
@@ -999,7 +999,7 @@ fr:"Une pincée de poivre noir démultiplie ce que le corps en absorbe — les d
 pairs:["rice","coconut-milk","lentils","chickpeas","ginger","yogurt"],
 svg:'<path class="f1 sf" d="M22 48q-3-8 5-10 9-2 17-6 9-4 15-11 5-5 9 0 3 6-3 11-8 8-18 12-9 4-17 7-5 2-8-3z"/><path class="f2 sf" d="M36 44q7 3 9 10 2 7-1 11-5 3-8-2-3-7-4-14 0-4 4-5z"/><path class="s" d="M30 43q4 5 9 4M42 38q3 5 8 5M54 32q3 5 8 5M38 52q5 2 7 0" stroke-width="1.5"/><path class="f2 sf" d="M72.4 71.4Q70.9 74.1 68.5 76.2Q65.8 77.9 62.6 78.1Q59.5 77.7 57 75.7Q53.9 74 52.8 70.9Q52.4 67.8 54.2 64.8Q55 61.6 57.5 59.8Q60.2 57.7 63.4 57.5Q66.5 58.3 69.3 60Q72.2 61.9 73.3 65Q73.6 68.3 72.4 71.4Z"/><path class="f1 sf" d="M66.9 72.4Q65.1 73.8 62.9 73.9Q61 73.3 59.6 71.4Q58.4 69.8 57.7 68Q58.2 66.1 59 64.4Q60 62.3 61.9 61.5Q63.9 61.6 65.9 62.4Q67.5 63.5 68.7 65.1Q69.7 67.1 69.7 69.2Q68.7 71.1 66.9 72.4Z"/>'},
 
-{id:"urfa-biber",cat:"spices",rare:true,price:2,pk:"40–80 €/kg",name:{en:"Urfa biber",fr:"Piment d’Urfa"},latin:"Capsicum annuum",
+{id:"urfa-biber",cat:"spices",parent:"chili",rare:true,price:2,pk:"40–80 €/kg",name:{en:"Urfa biber",fr:"Piment d’Urfa"},latin:"Capsicum annuum",
 origin:{en:"Şanlıurfa, south-eastern Turkey",fr:"Şanlıurfa, sud-est de la Turquie"},season:[],
 flavor:["smoky","fruity","earthy","rich"],texture:["flaky","moist"],
 story:{en:"For a week or more the peppers are laid out in the sun by day and wrapped tight in cloth at night, so the moisture drawn to the surface is pushed back into the flesh and the fruit ferments as it dries. No smoke ever touches them: the tobacco, raisin and cocoa are made by that sweating alone.",
@@ -1119,7 +1119,7 @@ fr:"Le trancher cru et fin dans une pâte pilée, et ne pas le traiter comme le 
 pairs:["galangal","lemongrass","kaffir-lime-leaf","shrimp-paste","coconut-milk","turmeric"],
 svg:'<g transform="translate(6.0 6.25) scale(0.875)"><path class="f1 sf" d="M20 62q-2-10 8-12t12 4q2-12 10-12t10 10q6-8 14-4t2 16-14 12-20 4-20-6-2-12z"/><path class="s" d="M28 56q2 8 0 14M44 52q3 8 1 16M60 56q2 8 0 12"/><circle class="f2 sf" cx="66" cy="76" r="9"/><circle class="s" cx="66" cy="76" r="4"/></g>'},
 
-{id:"nora-pepper",cat:"spices",price:2,pk:"35–70 €/kg",name:{en:"Ñora pepper",fr:"Piment ñora"},latin:"Capsicum annuum",
+{id:"nora-pepper",cat:"spices",parent:"chili",price:2,pk:"35–70 €/kg",name:{en:"Ñora pepper",fr:"Piment ñora"},latin:"Capsicum annuum",
 origin:{en:"Guardamar del Segura, Alicante",fr:"Guardamar del Segura, Alicante"},season:[],
 flavor:["sweet","fruity","mild","earthy"],texture:["tough","dry"],
 story:{en:"The pepper is grown across Murcia and the Vega Baja but dried only at Guardamar del Segura, threaded on strings and hung in the sea air until the skin goes dark and leathery. It carries no heat at all — the point is a concentrated sweetness a fresh pepper never reaches.",

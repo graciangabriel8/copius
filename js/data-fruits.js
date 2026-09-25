@@ -59,7 +59,7 @@ fr:"Traitez le zeste comme une épice et le jus comme un vinaigre. Une goutte tr
 pairs:["dark-chocolate","honey","cream","almond","olive-oil"],
 svg:'<path class="f1 sf" d="M44 33q-16 1-20 13-4 11 0 21 5 12 20 12 15 0 20-12 4-10 0-21-4-12-20-13z"/><path class="f2 sf" d="M56 39q8 9 7 20-1 12-11 16 12-3 13-16 1-13-9-20z"/><path class="s" d="M44 33q-2-9 2-14"/><path class="f1 sf" d="M48 26q10-8 20-5 1 11-10 13-8 1-10-8z"/><path class="dot" d="M33 50C34 50 35 51 35 52C35 53 34 54 33 54C32 54 31 53 31 52C31 51 32 50 33 50ZM39 60C40 60 41 61 41 62C41 63 40 64 39 64C38 64 37 63 37 62C37 61 38 60 39 60ZM30 59C31 59 32 60 32 61C32 62 31 63 30 63C29 63 28 62 28 61C28 60 29 59 30 59Z"/>'},
 
-{id:"abricot-bergeron",cat:"fruits",price:2,pk:"5–9 €/kg",name:{en:"Bergeron apricot",fr:"Abricot Bergeron"},latin:"Prunus armeniaca 'Bergeron'",
+{id:"abricot-bergeron",cat:"fruits",parent:"apricot",price:2,pk:"5–9 €/kg",name:{en:"Bergeron apricot",fr:"Abricot Bergeron"},latin:"Prunus armeniaca 'Bergeron'",
 origin:{en:"Saint-Cyr-au-Mont-d'Or, Rhône",fr:"Saint-Cyr-au-Mont-d’Or, Rhône"},season:[7,8],
 flavor:["sour","sweet","floral","fruity"],texture:["firm","juicy","smooth"],
 story:{en:"It began as a chance seedling in an orchard at Saint-Cyr-au-Mont-d'Or above Lyon, and carries the name of the grower who put it into commerce around 1920. It now stands at roughly a quarter of the French apricot crop, almost entirely because it ripens late and firm, when the early varieties have already gone to mush.",
@@ -89,7 +89,7 @@ fr:"Les feuilles valent le fruit — infusez-en quelques-unes dans une crème ou
 pairs:["dark-chocolate","cream","vanilla","mint","almond","honey","duck","black-pepper"],
 svg:'<path class="f1 sf" d="M46 44Q40 42 36 44Q28 48 22 44Q26 40 25 36Q19 34 19 28Q26 28 29 30Q27 21 34 18Q40 22 41 27Q48 23 53 26Q50 37 46 44Z"/><path class="s" d="M46 45q1 5 2 9M48 54l-10 7M48 54l13 3M48 54l1 15"/><path class="dot" d="M37 58C41 58 45 62 45 66C45 71 41 74 37 74C33 74 29 71 29 66C29 62 33 58 37 58ZM62 54C66 54 70 58 70 62C70 67 66 70 62 70C58 70 54 67 54 62C54 58 58 54 62 54ZM50 70C54 70 58 74 58 78C58 82 54 86 50 86C46 86 43 82 43 78C43 74 46 70 50 70Z"/><path class="f1 sf" d="M49 56C54 56 58 60 58 65C58 70 54 74 49 74C44 74 40 70 40 65C40 60 44 56 49 56Z"/><path class="s" d="M46 61q3 3 6 0" stroke-width="1.5"/>'},
 
-{id:"blood-orange",cat:"fruits",price:2,pk:"3,50–7 €/kg",name:{en:"Blood orange",fr:"Orange sanguine"},latin:"Citrus × sinensis",
+{id:"blood-orange",cat:"fruits",parent:"orange",price:2,pk:"3,50–7 €/kg",name:{en:"Blood orange",fr:"Orange sanguine"},latin:"Citrus × sinensis",
 origin:{en:"Sicily",fr:"Sicile"},season:[1,2,3,4],
 flavor:["sweet","sour","fruity","floral"],texture:["tender","juicy","fibrous"],
 story:{en:"The crimson comes from anthocyanins, and the tree only makes them when nights turn cold — which is why Sicily's slopes under Etna produce them and warmer groves cannot. A mild winter yields a disappointingly orange orange.",
@@ -149,7 +149,7 @@ fr:"Jugez au poids et au parfum côté pédoncule. Un melon lourd qui ne sent ri
 pairs:["prosciutto","mint","black-pepper","basil","lime","goat-cheese","olive-oil","honey"],
 svg:'<path class="f1 sf" d="M39 22C51 22 61 32 61 44C61 56 51 66 39 66C27 66 17 56 17 44C17 32 27 22 39 22Z"/><path class="s" d="M19 36q10 7 19 0 9-6 18 1M18 51q10 6 18 0 9-7 19 1M30 23q-6 9-1 16 5 8-2 14-6 7 0 12M48 24q4 9 0 16-5 8 2 15" stroke-width="2"/><path class="f2 sf" d="M46 80l24-26q8 10 0 18-9 9-24 8z"/><path class="s" d="M52 76q11 1 16-5 4-6 2-11" stroke-width="1.5"/><path class="dot" d="M55 70q4-1 4 2t-4 2-4-2 4-2zM60 64q4-1 4 2t-4 2-4-2 4-2z"/>'},
 
-{id:"pomme-chantecler",cat:"fruits",price:1,pk:"2,50–4,50 €/kg",name:{en:"Chantecler apple",fr:"Pomme Chantecler"},latin:"Malus domestica",
+{id:"pomme-chantecler",cat:"fruits",parent:"apple",price:1,pk:"2,50–4,50 €/kg",name:{en:"Chantecler apple",fr:"Pomme Chantecler"},latin:"Malus domestica",
 origin:{en:"INRA Angers, Anjou",fr:"INRA d’Angers, Anjou"},season:[1,2,3,10,11,12],
 flavor:["sweet","sour","fresh","honeyed"],texture:["firm","crisp","juicy"],
 story:{en:"It was bred at INRA in Angers in 1958, Golden Delicious crossed with the old Loire reinette Clochard, and only reached growers in the 1970s; some markets still sell it under the breeder's code name, Belchard. The dull gold skin scattered with russet dots is the whole point of the cross — a reinette's acidity on a tree that actually crops.",
@@ -239,7 +239,7 @@ fr:"Ne secouez pas la boîte : la crème épaisse du dessus sert à frire la pâ
 pairs:["chili","cilantro","ginger","rice","mango","shrimp","turmeric"],
 svg:'<circle class="f3 sf" cx="48" cy="54" r="19"/><path class="f1 sf" d="M48 54a19 19 0 010-38v19z" transform="rotate(30 48 45)"/><path class="f1 sf" d="M34 46a19 14 0 0128 0 22 22 0 01-28 0z"/><path class="s" d="M42 30l2 4M52 30l-2 4"/>'},
 
-{id:"poire-comice",cat:"fruits",price:1,pk:"3–5,50 €/kg",name:{en:"Comice pear",fr:"Poire Doyenné du Comice"},latin:"Pyrus communis 'Doyenné du Comice'",
+{id:"poire-comice",cat:"fruits",parent:"pear",price:1,pk:"3–5,50 €/kg",name:{en:"Comice pear",fr:"Poire Doyenné du Comice"},latin:"Pyrus communis 'Doyenné du Comice'",
 origin:{en:"Angers, Anjou",fr:"Angers, Anjou"},season:[1,10,11,12],
 flavor:["sweet","buttery","floral","honeyed"],texture:["tender","juicy","granular"],
 story:{en:"It was raised in the garden of the Comice Horticole at Angers and first fruited around 1849; a plaque there still names the gardener Dhommé and the society's president, Millet de la Turtaudière. The greatest dessert pear in France is therefore named after a committee.",
@@ -279,7 +279,7 @@ fr:"Pauvre en sucre comme en acidité, elle ne dit rien seule : pressez-la et re
 pairs:["juniper","venison","cream","sugar","rye","angelica"],
 svg:'<path class="s" d="M20 62q14-8 28-8t28 8"/><path class="s" d="M30 58l-4-8M40 54l-2-9M56 54l2-9M66 58l4-8"/><circle class="f3 sf" cx="38" cy="64" r="6"/><circle class="f3 sf" cx="56" cy="64" r="6"/><circle class="f3 sf" cx="47" cy="71" r="6"/>'},
 
-{id:"damson",cat:"fruits",price:2,pk:"5–10 €/kg",name:{en:"Damson",fr:"Prune de Damas"},latin:"Prunus domestica subsp. insititia",
+{id:"damson",cat:"fruits",parent:"plum",price:2,pk:"5–10 €/kg",name:{en:"Damson",fr:"Prune de Damas"},latin:"Prunus domestica subsp. insititia",
 origin:{en:"Damascus, Syria",fr:"Damas, Syrie"},season:[8,9,10],
 flavor:["sour","bitter","fruity","tangy"],texture:["firm","juicy","smooth"],
 story:{en:"Named for Damascus, where Roman traders found it, and far too astringent to eat off the tree. Its whole purpose is transformation: the acidity and heavy pectin make a jam and a gin that no sweeter plum can match.",
@@ -359,7 +359,7 @@ fr:"Coupez-le en deux et pressez doucement — les perles s’écoulent intactes
 pairs:["oyster","scallop","shrimp","salmon"],
 svg:'<path class="f1 sf" d="M27 68q-6-6 1-14 8-12 18-21 11-8 18-5 6 4 1 13-7 12-18 21-10 8-17 8-4 0-3-2z"/><path class="f2 sf" d="M33 64q-3-5 2-11 7-10 16-17 8-6 13-4 3 3-2 10-6 9-15 16-9 7-14 7-2 0 0-1z"/><path class="dot" d="M34 63.4q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM33.3 55.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40.8 56.7q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40 49.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM47.5 49.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM46.7 42.5q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM54.2 43.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM53.4 35.7q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM33.7 59.6q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM40.4 52.9q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM47.1 46.2q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7zM53.8 39.5q0 -2.7 2.7 -2.7q2.7 0 2.7 2.7q0 2.7 -2.7 2.7q-2.7 0 -2.7 -2.7z"/><path class="f2 sf" d="M21.6 74q0 -3.4 3.4 -3.4q3.4 0 3.4 3.4q0 3.4 -3.4 3.4q-3.4 0 -3.4 -3.4zM29.6 79q0 -3.4 3.4 -3.4q3.4 0 3.4 3.4q0 3.4 -3.4 3.4q-3.4 0 -3.4 -3.4z"/><path class="s" d="M63 27q4-3 7-1" stroke-width="2"/>'},
 
-{id:"fraise-gariguette",cat:"fruits",price:2,pk:"12–22 €/kg",name:{en:"Gariguette strawberry",fr:"Fraise Gariguette"},latin:"Fragaria × ananassa 'Gariguette'",
+{id:"fraise-gariguette",cat:"fruits",parent:"strawberry",price:2,pk:"12–22 €/kg",name:{en:"Gariguette strawberry",fr:"Fraise Gariguette"},latin:"Fragaria × ananassa 'Gariguette'",
 origin:{en:"Montfavet, Provence",fr:"Montfavet, Provence"},season:[3,4,5],
 flavor:["sour","fruity","floral"],texture:["tender","juicy"],
 story:{en:"Bred at the INRA station in Montfavet and released in 1976 from a cross of Belrubi and Favette, it takes its name from Les Garrigues, the experimental farm where it was raised. It was selected for aroma and acidity at the moment the trade was breeding for firmness, which is why it still bruises if you look at it.",
@@ -499,7 +499,7 @@ fr:"Traitez-le comme un fruit à jus, non à zeste : comptez vingt à trente mil
 pairs:["soy-sauce","katsuobushi","sea-bream","mackerel","silken-tofu","daikon","hon-mirin","matsutake"],
 svg:'<path class="f1 sf" d="M26 56a22 22 0 0 1 44 0z"/><path class="s" d="M48 56V34M48 56 32 46M48 56l16-10M48 56l-20-1M48 56l20-1"/><path class="f3 sf" d="M40 66q3 5 0 8-3-3 0-8zM54 68q3 5 0 8-3-3 0-8z"/>'},
 
-{id:"lime-mexicaine",cat:"fruits",price:2,pk:"6–12 €/kg",name:{en:"Key lime",fr:"Lime mexicaine"},latin:"Citrus × aurantiifolia",
+{id:"lime-mexicaine",cat:"fruits",parent:"lime",price:2,pk:"6–12 €/kg",name:{en:"Key lime",fr:"Lime mexicaine"},latin:"Citrus × aurantiifolia",
 origin:{en:"Maritime Southeast Asia",fr:"Asie du Sud-Est insulaire"},season:[],
 flavor:["sour","citrus","bitter","floral"],texture:["firm","juicy"],
 story:{en:"The Florida Keys grew it commercially until the 1926 hurricane tore out the groves, which were replanted with the tougher, thornless Persian lime — so the pie is named after a place that has barely grown the fruit in a century. Nearly all of it now comes from Mexico and Central America.",
@@ -519,7 +519,7 @@ fr:"Sa protéase, l’actinidine, digère la gélatine comme les protéines du l
 pairs:["lime","mint","honey","banana","strawberry","ginger","coconut-flakes","yogurt"],
 svg:'<circle class="f2 sf" cx="48" cy="50" r="22"/><circle class="f1 sf" cx="48" cy="50" r="18"/><circle class="f3 sf" cx="48" cy="50" r="6"/><path class="s" d="M48 37v3M39 41l2 2M57 41l-2 2M35 50h3M61 50h-3M39 59l2-2M57 59l-2-2M48 63v-3"/>'},
 
-{id:"kiwai",cat:"fruits",price:2,pk:"20–40 €/kg",name:{en:"Kiwi berry",fr:"Kiwaï"},latin:"Actinidia arguta",
+{id:"kiwai",cat:"fruits",parent:"kiwi",price:2,pk:"20–40 €/kg",name:{en:"Kiwi berry",fr:"Kiwaï"},latin:"Actinidia arguta",
 origin:{en:"Northeast Asia",fr:"Asie du Nord-Est"},season:[9,10],
 flavor:["sweet","fruity","fresh"],texture:["firm","juicy","smooth"],
 story:{en:"The same genus as the kiwi, but the vine survives winters near −30 °C, which is why it fruits in Burgundy, Poland and Ontario where kiwi will not set. The skin is smooth and thin enough to eat, so it goes in whole like a grape — and there is nowhere to hide a bruise.",
@@ -639,7 +639,7 @@ fr:"Pressez l’écorce entre les deux paumes jusqu’à ce qu’elle craque, pu
 pairs:["lime","coconut-milk","vanilla","lychee","passion-fruit","scallop"],
 svg:'<circle class="f3 sf" cx="48" cy="55" r="20"/><circle class="f1 sf" cx="48" cy="55" r="11"/><path class="s" d="M48 44v22M37 55h22M40 47l16 16M56 47 40 63"/><path class="f2 sf" d="M35 36q13-8 26 0-7 6-13 6t-13-6z"/><path class="s" d="M48 33v-7"/>'},
 
-{id:"fraise-mara-des-bois",cat:"fruits",price:2,pk:"16–28 €/kg",name:{en:"Mara des Bois strawberry",fr:"Fraise Mara des Bois"},latin:"Fragaria × ananassa 'Mara des Bois'",
+{id:"fraise-mara-des-bois",cat:"fruits",parent:"strawberry",price:2,pk:"16–28 €/kg",name:{en:"Mara des Bois strawberry",fr:"Fraise Mara des Bois"},latin:"Fragaria × ananassa 'Mara des Bois'",
 origin:{en:"Sologne, France",fr:"Sologne, France"},season:[6,7,8,9,10],
 flavor:["sweet","floral","fruity"],texture:["tender","juicy"],
 story:{en:"Jacques Marionnet bred it in Sologne in 1991, crossing four older cultivars to put the scent of the wild strawberry into a plant that crops all season. Being everbearing, it is still fruiting in October when the spring varieties are long finished — and it is far too soft to travel, so it is sold close to where it grew.",
@@ -659,7 +659,7 @@ fr:"Attendez qu’elle soit brune et molle — c’est mûr, non gâté. Prélev
 pairs:["cream","honey","cinnamon","clove","apple","walnut","quince","vanilla"],
 svg:'<path class="f1 sf" d="M48 32C63 32 75 43 75 56C75 70 63 82 48 82C33 82 21 70 21 56C21 43 33 32 48 32Z"/><path class="f2 sf" d="M34 49q2-8 12-9 11-2 16 4 5 6 1 12-4 7-14 6-12-1-14-6-3-4-2-7z"/><path class="f2 sf" d="M42 39q-3-8 0-15 6 6 6 15zM33 44q-10-5-15-12 10-4 18 5zM63 43q10-6 15-13-10-4-18 5zM34 60q-10 2-15 8 8 6 18-3zM62 61q9 3 14 9-9 5-18-4z"/><path class="dot" d="M53 48C54 48 55 49 55 50C55 51 54 52 53 52C52 52 51 51 51 50C51 49 52 48 53 48ZM49 54C50 54 51 55 51 56C51 57 50 58 49 58C48 58 47 57 47 56C47 55 48 54 49 54ZM43 51C44 51 45 52 45 53C45 54 44 55 43 55C42 55 41 54 41 53C41 52 42 51 43 51ZM43 44C44 44 45 45 45 46C45 47 44 48 43 48C42 48 41 47 41 46C41 45 42 44 43 44ZM50 42C51 42 52 43 52 44C52 45 51 46 50 46C49 46 48 45 48 44C48 43 49 42 50 42Z"/><path class="s" d="M28 65q7 7 15 8M69 44q4 6 4 13" stroke-width="1.5"/>'},
 
-{id:"citron-de-menton",cat:"fruits",sign:"IGP",price:2,pk:"10–20 €/kg",name:{en:"Menton lemon",fr:"Citron de Menton"},latin:"Citrus limon",
+{id:"citron-de-menton",cat:"fruits",parent:"lemon",sign:"IGP",price:2,pk:"10–20 €/kg",name:{en:"Menton lemon",fr:"Citron de Menton"},latin:"Citrus limon",
 origin:{en:"Menton, Alpes-Maritimes",fr:"Menton, Alpes-Maritimes"},season:[12,1,2,3],
 flavor:["citrus","sweet","floral","sour"],texture:["firm","juicy"],
 story:{en:"Lemons have been grown on the terraces above Menton since the fourteenth century, the town has held its Fête du Citron every year since 1934, and the IGP was granted in 2015. The fruit is elliptical rather than round, modest in acid and heavy in essential oil: the peel is what you are buying.",
@@ -669,7 +669,7 @@ fr:"Utilisez-le entier, écorce comprise : tranché cru dans une salade ou confi
 pairs:["olive-oil","sea-bass","sugar","almond","vanilla","fleur-de-sel-guerande","basil","ricotta"],
 svg:'<path class="f1 sf" d="M28 50q0-20 12-20t12 20-12 22-12-22z"/><path class="s" d="M40 30v-5M40 72v5"/><circle class="f1 sf" cx="66" cy="60" r="12"/><circle class="f2 sf" cx="66" cy="60" r="7"/>'},
 
-{id:"citron-meyer",cat:"fruits",price:2,pk:"8–15 €/kg",name:{en:"Meyer lemon",fr:"Citron Meyer"},latin:"Citrus × meyeri",
+{id:"citron-meyer",cat:"fruits",parent:"lemon",price:2,pk:"8–15 €/kg",name:{en:"Meyer lemon",fr:"Citron Meyer"},latin:"Citrus × meyeri",
 origin:{en:"China, via California",fr:"Chine, via la Californie"},season:[12,1,2,3],
 flavor:["citrus","floral","sweet","sour"],texture:["tender","juicy","smooth"],
 story:{en:"Frank Meyer found it growing in a dooryard near Peking in 1908 and shipped it home to the USDA; it is a lemon crossed with a mandarin, which accounts for the orange cast and the missing sharpness. Most American trees were destroyed in the 1940s once they were found to carry tristeza virus, and the variety was reissued clean in 1975 as the Improved Meyer.",
@@ -839,7 +839,7 @@ fr:"Manipulez-la avec des gants ou un torchon plié : les glochides, fins comme 
 pairs:["lime","mint","yogurt","honey","chili","cucumber","watermelon","cilantro"],
 svg:'<path class="f3 sf" d="M39 26q10-4 17 4 4 20 0 32-9 8-17 0-4-14 0-36z"/><path class="s" d="M41 28q7 4 13 0M37 36h-5M37 46h-5M37 56h-5M58 38h5M58 48h5M58 58h5M45 23v-5M52 23v-5"/><path class="f2 sf" d="M32 68q16-5 32 0 3 9-16 13t-16-13z"/>'},
 
-{id:"quetsche",cat:"fruits",price:1,pk:"3–6 €/kg",name:{en:"Quetsche plum",fr:"Quetsche"},latin:"Prunus domestica subsp. domestica",
+{id:"quetsche",cat:"fruits",parent:"plum",price:1,pk:"3–6 €/kg",name:{en:"Quetsche plum",fr:"Quetsche"},latin:"Prunus domestica subsp. domestica",
 origin:{en:"Orchards of Alsace and Lorraine",fr:"Vergers d’Alsace et de Lorraine"},season:[8,9,10],
 flavor:["sweet","tangy","fruity"],texture:["firm","juicy","smooth"],
 story:{en:"The name travelled: Middle High German Zwetschge came through Vulgar Latin from damascena, the plum of Damascus, and reached French as quetsche by way of the German spoken in Lorraine. What settled in Alsace was a fruit dry enough to sit on raw pastry for forty minutes without soaking it.",
@@ -889,7 +889,7 @@ fr:"Elles sont riches en pectine : une gelée prend sans rien ajouter. Égrappez
 pairs:["cream","vanilla","almond","honey","raspberry","mint","dark-chocolate","lemon"],
 svg:'<path class="s" d="M34 17q3 13 6 23 4 15 9 30"/><path class="s" d="M37 28l-9 3M38 31l10 1M42 46l-11 4M43 44l12 2M47 60l-9 5M48 60l10 2M51 71l-3 4" stroke-width="1.5"/><path class="f1 sf" d="M26 28C30 28 33 30 33 34C33 38 30 41 26 41C22 41 20 38 20 34C20 30 22 28 26 28ZM29 46C33 46 36 48 36 52C36 56 33 59 29 59C25 59 23 56 23 52C23 48 25 46 29 46ZM36 62C40 62 43 64 43 68C43 72 40 75 36 75C32 75 30 72 30 68C30 64 32 62 36 62ZM60 58C64 58 67 60 67 64C67 68 64 71 60 71C56 71 54 68 54 64C54 60 56 58 60 58Z"/><path class="f2 sf" d="M50 28C54 28 57 30 57 34C57 38 54 41 50 41C46 41 44 38 44 34C44 30 46 28 50 28ZM57 42C61 42 64 44 64 48C64 52 61 55 57 55C53 55 51 52 51 48C51 44 53 42 57 42ZM47 72C51 72 54 74 54 78C54 82 51 85 47 85C43 85 41 82 41 78C41 74 43 72 47 72Z"/><path class="dot" d="M26 38C27 38 28 39 28 40C28 41 27 42 26 42C25 42 24 41 24 40C24 39 25 38 26 38ZM50 38C51 38 52 39 52 40C52 41 51 42 50 42C49 42 48 41 48 40C48 39 49 38 50 38ZM29 56C30 56 31 57 31 58C31 59 30 60 29 60C28 60 27 59 27 58C27 57 28 56 29 56ZM57 52C58 52 59 53 59 54C59 55 58 56 57 56C56 56 55 55 55 54C55 53 56 52 57 52ZM36 72C37 72 38 73 38 74C38 75 37 76 36 76C35 76 34 75 34 74C34 73 35 72 36 72ZM60 68C61 68 62 69 62 70C62 71 61 72 60 72C59 72 58 71 58 70C58 69 59 68 60 68ZM47 82C48 82 49 83 49 84C49 85 48 86 47 86C46 86 45 85 45 84C45 83 46 82 47 82Z"/>'},
 
-{id:"whitecurrant",cat:"fruits",price:2,pk:"15–25 €/kg",name:{en:"White currant",fr:"Groseille blanche"},latin:"Ribes rubrum",
+{id:"whitecurrant",cat:"fruits",parent:"redcurrant",price:2,pk:"15–25 €/kg",name:{en:"White currant",fr:"Groseille blanche"},latin:"Ribes rubrum",
 origin:{en:"Western Europe",fr:"Europe de l’Ouest"},season:[6,7,8],
 flavor:["sour","fresh","fruity","delicate"],texture:["tender","juicy"],
 story:{en:"The same species as the redcurrant, minus the pigment: a cultivar that never makes the anthocyanin, so the berry stays translucent and you can count its seeds through the skin. Bar-le-Duc has seeded white currants as well as red with a goose quill since the recipe was first recorded in 1344 — the jam the town calls its caviar.",
@@ -898,7 +898,7 @@ tip:{en:"Sweeter and less sharp than the red, with a thinner skin that bruises: 
 fr:"Plus douce et moins vive que la rouge, avec une peau plus fine qui marque : gardez-les sur la grappe jusqu’au dernier moment. Elles prennent en gelée aussi bien, et plus pâle."},
 pairs:["cream","vanilla","honey","raspberry","elderflower","almond","lemon","white-chocolate"],
 svg:'<path class="s" d="M34 17q3 13 6 23 4 15 9 30"/><path class="s" d="M37 28l-9 3M38 31l10 1M42 46l-11 4M43 44l12 2M47 60l-9 5M48 60l10 2M51 71l-3 4" stroke-width="1.5"/><path class="f1 sf" d="M26 28C30 28 33 30 33 34C33 38 30 41 26 41C22 41 20 38 20 34C20 30 22 28 26 28ZM29 46C33 46 36 48 36 52C36 56 33 59 29 59C25 59 23 56 23 52C23 48 25 46 29 46ZM36 62C40 62 43 64 43 68C43 72 40 75 36 75C32 75 30 72 30 68C30 64 32 62 36 62ZM60 58C64 58 67 60 67 64C67 68 64 71 60 71C56 71 54 68 54 64C54 60 56 58 60 58Z"/><path class="f1 sf" d="M50 28C54 28 57 30 57 34C57 38 54 41 50 41C46 41 44 38 44 34C44 30 46 28 50 28ZM57 42C61 42 64 44 64 48C64 52 61 55 57 55C53 55 51 52 51 48C51 44 53 42 57 42ZM47 72C51 72 54 74 54 78C54 82 51 85 47 85C43 85 41 82 41 78C41 74 43 72 47 72Z"/><path class="dot" d="M26 38C27 38 28 39 28 40C28 41 27 42 26 42C25 42 24 41 24 40C24 39 25 38 26 38ZM50 38C51 38 52 39 52 40C52 41 51 42 50 42C49 42 48 41 48 40C48 39 49 38 50 38ZM29 56C30 56 31 57 31 58C31 59 30 60 29 60C28 60 27 59 27 58C27 57 28 56 29 56ZM57 52C58 52 59 53 59 54C59 55 58 56 57 56C56 56 55 55 55 54C55 53 56 52 57 52ZM36 72C37 72 38 73 38 74C38 75 37 76 36 76C35 76 34 75 34 74C34 73 35 72 36 72ZM60 68C61 68 62 69 62 70C62 71 61 72 60 72C59 72 58 71 58 70C58 69 59 68 60 68ZM47 82C48 82 49 83 49 84C49 85 48 86 47 86C46 86 45 85 45 84C45 83 46 82 47 82Z"/>'},
-{id:"reinette-grise-du-canada",cat:"fruits",price:1,pk:"3–6 €/kg",name:{en:"Reinette grise du Canada apple",fr:"Pomme reinette grise du Canada"},latin:"Malus domestica",
+{id:"reinette-grise-du-canada",cat:"fruits",parent:"apple",price:1,pk:"3–6 €/kg",name:{en:"Reinette grise du Canada apple",fr:"Pomme reinette grise du Canada"},latin:"Malus domestica",
 origin:{en:"French orchards, in spite of the name",fr:"Vergers français, malgré le nom"},season:[10,11,12,1,2],
 flavor:["sour","nutty","fruity"],texture:["firm","dry","granular"],
 story:{en:"Described in France in 1771 and grown around Paris from the early nineteenth century, the variety has no documented tie to Canada whatever — the name appears to have been borrowed to make a plain russet sound like an import. Its dry, granular flesh is the whole point: where a juicier apple collapses into sauce, this one concentrates and keeps its walls.",
@@ -1048,7 +1048,7 @@ fr:"Faites tremper le bloc dans de l’eau chaude, environ une part de pulpe pou
 pairs:["fish-sauce","palm-sugar","chili","ginger","garlic","coconut-milk","cumin"],
 svg:'<path class="f2 sf" d="M32 22q22 14 34 46 2 6-4 8t-8-4Q44 44 26 30q-5-4-1-8t7 0z"/><path class="s" d="M41 34q-4 6-7 8M50 50q-5 5-8 7M58 65q-5 3-9 4"/><circle class="dot" cx="43" cy="39" r="2.2"/><circle class="dot" cx="54" cy="58" r="2.2"/>'},
 
-{id:"peche-de-vigne",cat:"fruits",price:2,pk:"5–10 €/kg",name:{en:"Vineyard peach",fr:"Pêche de vigne"},latin:"Prunus persica",
+{id:"peche-de-vigne",cat:"fruits",parent:"peach",price:2,pk:"5–10 €/kg",name:{en:"Vineyard peach",fr:"Pêche de vigne"},latin:"Prunus persica",
 origin:{en:"Vineyards of the Rhône and the Lyonnais",fr:"Vignobles du Rhône et du Lyonnais"},season:[8,9],
 flavor:["floral","fruity","tangy"],texture:["tender","juicy","fibrous"],
 story:{en:"Growers set these peaches at the ends of the vine rows because the tree takes powdery mildew before the vine does, buying a fortnight’s warning; that the fruit ripened at harvest time was the second reason. Its flesh is blood-red to the stone and carries less sugar than a table peach, which is why it ends up in wine rather than in a fruit bowl.",
@@ -1068,7 +1068,7 @@ fr:"Le sel exalte spectaculairement le sucré, d’où la réussite de l’accor
 pairs:["feta","mint","lime","black-pepper","basil","olive-oil","cucumber","red-onion"],
 svg:'<path class="f1 sf" d="M24 44a24 24 0 0 0 48 0z"/><path class="s" d="M24 44h48"/><circle class="dot" cx="40" cy="54" r="2"/><circle class="dot" cx="52" cy="52" r="2"/><circle class="dot" cx="46" cy="62" r="2"/>'},
 
-{id:"myrtille-sauvage",cat:"fruits",price:3,pk:"25–45 €/kg",name:{en:"Wild bilberry",fr:"Myrtille sauvage"},latin:"Vaccinium myrtillus",
+{id:"myrtille-sauvage",cat:"fruits",parent:"blueberry",price:3,pk:"25–45 €/kg",name:{en:"Wild bilberry",fr:"Myrtille sauvage"},latin:"Vaccinium myrtillus",
 origin:{en:"Upland heath and forest floor",fr:"Landes et sous-bois d’altitude"},season:[7,8,9],
 flavor:["sour","fruity","fresh"],texture:["soft","juicy"],
 story:{en:"Wartime Britain put about the story that RAF night-fighter crews ate bilberry jam to sharpen their night vision; it was cover for radar, and the claim has never held up in trials since. What is true is the colour: unlike the cultivated blueberry, the bilberry is purple all the way through, and one handful will stain a whole litre of cream.",
@@ -1078,7 +1078,7 @@ fr:"Elles n’ont presque pas de pectine : une confiture réclame de la pomme, d
 pairs:["cream","lemon","venison","butter","honey","vanilla","kirsch","sugar"],
 svg:'<circle class="f3 sf" cx="41" cy="53" r="15"/><path class="s" d="M41 41V33M41 41l-6-5M41 41l6-5"/><circle class="f3 sf" cx="64" cy="66" r="10"/><path class="s" d="M64 56v-6"/><path class="f1 sf" d="M56 33q10-8 18-3-7 10-18 5z"/>'},
 
-{id:"fraise-des-bois",cat:"fruits",luxe:true,price:4,pk:"80–160 €/kg",name:{en:"Wild strawberry",fr:"Fraise des bois"},latin:"Fragaria vesca",
+{id:"fraise-des-bois",cat:"fruits",parent:"strawberry",luxe:true,price:4,pk:"80–160 €/kg",name:{en:"Wild strawberry",fr:"Fraise des bois"},latin:"Fragaria vesca",
 origin:{en:"Woodland edges across Europe",fr:"Lisières de bois d’Europe"},season:[6,7,8,9],
 flavor:["sweet","floral","delicate"],texture:["tender","juicy"],
 story:{en:"Every garden strawberry descends from a cross made at Brest around 1766 between a Chilean plant Amédée-François Frézier carried home in 1714 and a Virginian one; the wild strawberry took no part in it and remains a species of its own. That is why its perfume differs in kind rather than degree — and why nobody has yet bred a large berry that keeps it.",
@@ -1088,7 +1088,7 @@ fr:"Ne les lavez jamais : la chair est ouverte et prend l’eau à l’instant. 
 pairs:["cream","creme-fraiche","lemon-verbena","mint","black-pepper","pistachio","sugar"],
 svg:'<path class="s" d="M47 39q-7-9-9-19"/><path class="f2 sf" d="M28 44q4-7 20-7t20 7q3 13-5 24-7 11-15 11t-15-11q-8-11-5-24z"/><path class="f1 sf" d="M48 40q-16-4-28 2 10 8 26 4zM48 40q-10-11-23-13 3 14 19 18zM48 40q0-13-5-22-7 10-3 22zM48 40q10-11 23-13-3 14-19 18zM48 40q16-4 28 2-10 8-26 4z"/><path class="f2 sf" d="M48 36C51 36 53 39 53 41C53 43 51 46 48 46C45 46 43 43 43 41C43 39 45 36 48 36Z"/><path class="dot" d="M40 50C41 50 42 51 42 52C42 53 41 54 40 54C39 54 38 53 38 52C38 51 39 50 40 50ZM50 48C51 48 52 49 52 50C52 51 51 52 50 52C49 52 48 51 48 50C48 49 49 48 50 48ZM59 53C60 53 61 54 61 55C61 56 60 57 59 57C58 57 57 56 57 55C57 54 58 53 59 53ZM36 60C37 60 38 61 38 62C38 63 37 64 36 64C35 64 34 63 34 62C34 61 35 60 36 60ZM46 60C47 60 48 61 48 62C48 63 47 64 46 64C45 64 44 63 44 62C44 61 45 60 46 60ZM56 62C57 62 58 63 58 64C58 65 57 66 56 66C55 66 54 65 54 64C54 63 55 62 56 62ZM42 69C43 69 44 70 44 71C44 72 43 73 42 73C41 73 40 72 40 71C40 70 41 69 42 69ZM52 70C53 70 54 71 54 72C54 73 53 74 52 74C51 74 50 73 50 72C50 71 51 70 52 70Z"/>'},
 
-{id:"poire-williams",cat:"fruits",price:1,pk:"2–4 €/kg",name:{en:"Williams pear",fr:"Poire Williams"},latin:"Pyrus communis",
+{id:"poire-williams",cat:"fruits",parent:"pear",price:1,pk:"2–4 €/kg",name:{en:"Williams pear",fr:"Poire Williams"},latin:"Pyrus communis",
 origin:{en:"Aldermaston, Berkshire, before 1770",fr:"Aldermaston, Berkshire, avant 1770"},season:[8,9],
 flavor:["sweet","musky","honeyed"],texture:["tender","juicy","granular"],
 story:{en:"The tree turned up in a schoolmaster’s garden at Aldermaston in Berkshire before 1770; the nurseryman Richard Williams attached his name to it in 1814, and when Enoch Bartlett planted it in Massachusetts in 1817 he renamed it after himself. It is one pear under two names, and the only one whose aroma survives distillation, which is why eau-de-vie is made from no other.",
@@ -1108,7 +1108,7 @@ fr:"Le zeste porte la magie — le jus est un bonus. Quelques râpures sur des S
 pairs:["honey","ginger","scallop","miso","soy-sauce","dark-chocolate"],
 svg:'<circle class="f1 sf" cx="48" cy="55" r="19"/><path class="s" d="M40 48q3-3 6 0M50 48q3-3 6 0" stroke-width="1.8"/><path class="f2 sf" d="M46 36q-2-8 4-11 4 5-1 11z"/>'},
 
-{id:"forced-rhubarb",cat:"fruits",price:2,pk:"8–15 €/kg",name:{en:"Forced rhubarb",fr:"Rhubarbe forcée"},latin:"Rheum rhabarbarum",
+{id:"forced-rhubarb",cat:"fruits",parent:"rhubarb",price:2,pk:"8–15 €/kg",name:{en:"Forced rhubarb",fr:"Rhubarbe forcée"},latin:"Rheum rhabarbarum",
 origin:{en:"The Rhubarb Triangle, Yorkshire",fr:"Le Rhubarb Triangle, Yorkshire"},season:[1,2,3],
 flavor:["sour","tangy","fresh"],texture:["tender","juicy","fibrous"],
 story:{en:"In the sheds of the Yorkshire Rhubarb Triangle the roots are lifted after a winter outdoors and brought into total darkness, where they grow on stored sugar alone and are cut by candlelight. The stalks move fast enough that you can hear the buds pop.",
@@ -1198,7 +1198,7 @@ fr:"Leur acidité coupe le gras, ce qui les rend bien meilleures qu’un raisin 
 pairs:["turkey","pecan","orange","wild-rice","goat-cheese","walnut","sage","hazelnut"],
 svg:'<path class="f2 sf" d="M26 54q2-11 14-10 13 1 13 10 0 10-13 10-15 0-14-10z"/><path class="s" d="M31 52q6 5 15 2M33 60q6-4 14-3" stroke-width="1.5"/><path class="f2 sf" d="M54 42q2-9 12-8 11 1 11 8 0 8-11 8-13 0-12-8z"/><path class="s" d="M58 41q5 4 12 1" stroke-width="1.5"/><path class="f2 sf" d="M50 70q2-8 11-7 10 1 10 7 0 7-10 7-12 0-11-7z"/>'},
 
-{id:"deglet-nour",cat:"fruits",price:1,pk:"6–12 €/kg",name:{en:"Deglet Nour date",fr:"Datte Deglet Nour"},latin:"Phoenix dactylifera",
+{id:"deglet-nour",cat:"fruits",parent:"date",price:1,pk:"6–12 €/kg",name:{en:"Deglet Nour date",fr:"Datte Deglet Nour"},latin:"Phoenix dactylifera",
 origin:{en:"Tolga oases, Algeria",fr:"Oasis de Tolga, Algérie"},season:[],
 flavor:["honeyed","sweet","delicate","nutty"],texture:["firm","granular","dry"],
 story:{en:"The name means roughly date of light: hold one up to a lamp and the amber flesh goes translucent around the stone. It comes from the Tolga oases of Biskra in Algeria and spread from there to the Tunisian Djerid, and it is still sold in France on the branch each December.",
@@ -1208,7 +1208,7 @@ fr:"À environ 20 % d’eau contre 30 % pour la Medjool, elle se tranche sans co
 pairs:["lamb","almond","cinnamon","orange","semolina","saffron","chickpeas"],
 svg:'<path class="s" d="M48 16v20q0 6-8 10M48 36q8 4 8 10"/><ellipse class="f1 sf" cx="36" cy="58" rx="10" ry="18"/><ellipse class="f1 sf" cx="60" cy="60" rx="10" ry="18"/><path class="s" d="M36 42v30M60 44v30"/>'},
 
-{id:"medjool-date",cat:"fruits",price:2,pk:"12–22 €/kg",name:{en:"Medjool date",fr:"Datte Medjool"},latin:"Phoenix dactylifera",
+{id:"medjool-date",cat:"fruits",parent:"date",price:2,pk:"12–22 €/kg",name:{en:"Medjool date",fr:"Datte Medjool"},latin:"Phoenix dactylifera",
 origin:{en:"Tafilalet oases, Morocco",fr:"Oasis du Tafilalet, Maroc"},season:[],
 flavor:["sweet","rich","honeyed","creamy"],texture:["soft","chewy","moist"],
 story:{en:"In 1927 the botanist Walter Swingle carried eleven offshoots out of Boudenib in Morocco, where bayoud disease was killing the palms; nine survived a nine-year quarantine on the Colorado River before being planted out in California. Almost every Medjool sold in the West descends from those nine.",

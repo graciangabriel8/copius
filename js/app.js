@@ -159,6 +159,63 @@
   }
   rebuildIndex();
 
+  /* An entry, then its parent, then the parent's parent: Tahitian vanilla,
+     vanilla. The parent field names the species a variety belongs to, so what
+     is recorded for the species holds for it (see recordedPair). Bounded and
+     cycle-safe; a parent missing from ING (free tier, deleted) ends the line. */
+  function lineage(id) {
+    var out = [id], seen = {}; seen[id] = 1;
+    var p = byId[id] && byId[id].parent;
+    while (p && byId[p] && !seen[p] && out.length < 4) { out.push(p); seen[p] = 1; p = byId[p].parent; }
+    return out;
+  }
+  /* The two sides of a pair: each entry, then those of its ancestors the other
+     side does not share. A shared species speaks for neither side: two honeys
+     are no classic because acacia honey lists honey, and vanilla's pairings
+     are no bridge between vanilla and Tahitian vanilla. When one entry is the
+     other's ancestor, the descendant speaks alone: glutinous rice's likeness
+     to rice is no bridge between rice and black glutinous rice. */
+  function pairSides(a, b) {
+    var la = lineage(a), lb = lineage(b);
+    return [
+      la.indexOf(b) !== -1 ? [a] : [a].concat(la.slice(1).filter(function (x) { return lb.indexOf(x) === -1; })),
+      lb.indexOf(a) !== -1 ? [b] : [b].concat(lb.slice(1).filter(function (x) { return la.indexOf(x) === -1; }))
+    ];
+  }
+  /* Is the pair recorded, and by whom? { via: null } when a or b records it
+     itself; { via: [x, y] } when it is recorded for a species of one or both
+     (lobster × vanilla, read for Tahitian vanilla); null when nothing does.
+     The nearest record wins, ties broken by id, so swapping the two slots
+     names the same pair. */
+  function recordedPair(a, b) {
+    if (PAIRS[a] && PAIRS[a].has(b)) return { via: null };
+    var s = pairSides(a, b), best = null, i, j, k;
+    for (i = 0; i < s[0].length; i++) {
+      for (j = 0; j < s[1].length; j++) {
+        if (!(i || j) || !PAIRS[s[0][i]] || !PAIRS[s[0][i]].has(s[1][j])) continue;
+        k = [s[0][i], s[1][j]].sort().join("|");
+        if (!best || i + j < best.n || (i + j === best.n && k < best.k)) best = { via: [s[0][i], s[1][j]], n: i + j, k: k };
+      }
+    }
+    return best ? { via: best.via } : null;
+  }
+  /* What both sides are recorded with, the two lineages themselves apart. */
+  function bridgesOf(a, b) {
+    var s = pairSides(a, b), own = lineage(a).concat(lineage(b));
+    function recs(side) {
+      var r = new Set();
+      side.forEach(function (x) { if (PAIRS[x]) PAIRS[x].forEach(function (p) { r.add(p); }); });
+      return r;
+    }
+    var nb = recs(s[1]);
+    return Array.from(recs(s[0])).filter(function (x) { return own.indexOf(x) === -1 && nb.has(x); });
+  }
+  /* "Recorded for lobster × vanilla." — said wherever an inherited pair is
+     shown, so a variety never claims a record of its own. */
+  function viaLine(via) {
+    return T().labVia.replace("{pair}", name(byId[via[0]]) + " × " + name(byId[via[1]]));
+  }
+
   var state = {
     lang: readItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: "atlas",   // every visit opens on the atlas; the last tab used to be restored and a visit ending in the lab reopened there
@@ -256,8 +313,10 @@
   function name(i) { return i.name[state.lang]; }
   // œ/æ are separate letters, not decomposable — NFD leaves them alone, so expand
   // them by hand. Applied to both query and names, so it matches either way round.
+  /* Folds case, accents, ligatures and apostrophes: a keyboard types ' and the
+     names are set with ’, so "miel d'acacia" has to find Miel d’acacia. */
   function norm(s) {
-    return s.toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae")
+    return s.toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae").replace(/[\u2018\u2019\u02bc`\u00b4]/g, "'")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
   // The only guard between data and markup, attribute values included — all five.
@@ -428,15 +487,20 @@
   function filtered() {
     var q = norm(state.q.trim()), t = T();
     return ING.filter(function (i) {
-      if (state.cat !== "all" && i.cat !== state.cat) return false;
-      if (state.seasonNow && !inSeasonNow(i)) return false;
-      if (state.favsOnly && !favs.has(i.id)) return false;
-      if (state.rareOnly && !i.rare) return false;
-      if (state.luxeOnly && !i.luxe) return false;
-      if (state.signOnly && !i.sign) return false;
-      if (state.priceBand !== "all" && (i.price || 2) !== +state.priceBand) return false;
-      if (state.flavour !== "all" && i.flavor.indexOf(state.flavour) === -1) return false;
-      if (!q) return true;
+      /* A standing query searches the whole atlas. The filters are folded away
+         while it stands (see onSearch), and a filter nobody can see must not
+         narrow what the reader gets. They apply again once the box is empty. */
+      if (!q) {
+        if (state.cat !== "all" && i.cat !== state.cat) return false;
+        if (state.seasonNow && !inSeasonNow(i)) return false;
+        if (state.favsOnly && !favs.has(i.id)) return false;
+        if (state.rareOnly && !i.rare) return false;
+        if (state.luxeOnly && !i.luxe) return false;
+        if (state.signOnly && !i.sign) return false;
+        if (state.priceBand !== "all" && (i.price || 2) !== +state.priceBand) return false;
+        if (state.flavour !== "all" && i.flavor.indexOf(state.flavour) === -1) return false;
+        return true;
+      }
       /* Names only: the latin name used to be searchable, so "rosa" returned
          nine unrelated entries. Family and flavour still match, because the
          placeholder offers them. */
@@ -465,11 +529,15 @@
        species (hyphens allowed: "uva-crispa"), an optional \u00d7 between, and
        nothing but a space, a comma, a parenthesis or the end after it \u2014 so
        "B\u0153uf \u2014 cuisse", "Lait ferment\u00e9" and "Halite (NaCl)" get no group rather
-       than a bogus one, and "Musa spp." names a genus, not a species. */
+       than a bogus one, and "Musa spp." names a genus, not a species. A cheese or a
+       ham carries its protected name in this slot ("Brie de Meaux AOP"), and no
+       epithet is a Romance preposition; pharmacopoeia Latin for a mineral or a
+       chemical ("Natrii chloridum", "Acetum vini", "Calcium lactate") names no
+       organism. Neither groups. */
     function kinKey(lat) {
       if (!lat) return null;
       var m = lat.replace(/\u00d7(?=\S)/g, "\u00d7 ").match(/^([A-Z][a-z]+) (?:\u00d7 )?([a-z]+(?:-[a-z]+)?)(?=$|[\s(,])/);
-      if (!m || /^(spp|var|subsp|cv)$/.test(m[2])) return null;
+      if (!m || /^(spp|var|subsp|cv|de|des|du|di|del|della)$/.test(m[2]) || /^(Natrii|Acetum|Calcium)$/.test(m[1])) return null;
       return (m[1] + " " + m[2]).toLowerCase();
     }
 
@@ -484,23 +552,40 @@
     })();
 
 
+    /* The plant or animal itself (its varieties, cuts, parts, dried or milled
+       forms) comes first; what is made from it (sauces, wines, oils, cheeses,
+       sugars, additives) is listed apart, so tofu's species reads as the bean
+       and its forms, with the soy sauces and the lecithin below them. */
     var KIN_SHOWN = 12;
-    function kinBlock(i) {
-      var k = kinOf(i);
-      if (!k.length) return "";
+    /* By family, and an entry's own kin:"form" or kin:"made" where its family
+       misleads: cacao beans filed with chocolate, noodles with their flour. A
+       form is the thing itself, whole, cut, dried, cured, smoked or milled. */
+    var MADE_CATS = ["condiments", "texture", "sweet", "cellar", "fats", "infusions", "dairy"];
+    function isMade(x) { return x.kin ? x.kin === "made" : MADE_CATS.indexOf(x.cat) !== -1; }
+    function kinRow(ids) {
       var t = T();
-      var sorted = k.slice().sort(function (a, b) {
+      var sorted = ids.slice().sort(function (a, b) {
         return name(byId[a]).localeCompare(name(byId[b]), state.lang);
       });
       var shown = sorted.slice(0, KIN_SHOWN);
       var more = sorted.length - shown.length;
-      return "<h3>" + esc(t.sameSpecies) + ' <span class="kin-n">' + sorted.length + "</span></h3>" +
-        '<p class="kin-latin">' + esc(i.latin) + "</p>" +
-        '<div class="chip-row">' + shown.map(function (x) {
+      return '<div class="chip-row">' + shown.map(function (x) {
           return '<button type="button" class="chip-link" data-open="' + esc(x) + '">' +
             art(byId[x]) + "<span>" + esc(name(byId[x])) + "</span></button>";
         }).join("") + "</div>" +
         (more ? '<p class="kin-more">' + esc(t.andMore.replace("{n}", more)) + "</p>" : "");
+    }
+    function kinBlock(i) {
+      var k = kinOf(i);
+      if (!k.length) return "";
+      var t = T();
+      var made = k.filter(function (x) { return isMade(byId[x]); });
+      var forms = k.filter(function (x) { return made.indexOf(x) === -1; });
+      return "<h3>" + esc(t.sameSpecies) + ' <span class="kin-n">' + k.length + "</span></h3>" +
+        '<p class="kin-latin">' + esc(i.latin) + "</p>" +
+        (forms.length ? kinRow(forms) : "") +
+        (made.length && forms.length ? '<p class="kin-sub">' + esc(t.madeFromIt) + ' <span class="kin-n">' + made.length + "</span></p>" : "") +
+        (made.length ? kinRow(made) : "");
     }
 
     function kinOf(i) {
@@ -1130,12 +1215,15 @@
     if (!a || !b) { box.innerHTML = ""; return; }
     if (a === b) { box.innerHTML = '<div class="verdict mid">' + esc(t.labSame) + "</div>"; return; }
     var A = byId[a], B = byId[b];
-    var direct = PAIRS[a].has(b);
-    var bridges = Array.from(PAIRS[a]).filter(function (x) { return x !== b && PAIRS[b].has(x); })
+    var rec = recordedPair(a, b), direct = !!rec;
+    var bridges = bridgesOf(a, b)
       .sort(function (x, y) { return name(byId[x]).localeCompare(name(byId[y]), state.lang, CMP); });
     var shared = A.flavor.filter(function (f) { return B.flavor.indexOf(f) !== -1; });
     var html = "";
-    if (direct) html += '<div class="verdict ok">&#10003;&nbsp; ' + esc(t.labDirect) + "</div>";
+    if (direct) {
+      html += '<div class="verdict ok">&#10003;&nbsp; ' + esc(t.labDirect) + "</div>";
+      if (rec.via) html += '<p class="lab-via">' + esc(viaLine(rec.via)) + "</p>";
+    }
     else if (bridges.length) html += '<div class="verdict mid">' + esc(t.labBridge) + "</div>";
     else html += '<div class="verdict none">' + esc(t.labNone) + "</div>";
     if (shared.length) {
@@ -1149,8 +1237,9 @@
   /* The same verdict, for one pair, without the DOM: renderLabResult reads the
      two slots, and a set has no slots to read. */
   function verdict(a, b) {
-    if (PAIRS[a].has(b)) return "ok";
-    return Array.from(PAIRS[a]).some(function (x) { return x !== b && PAIRS[b].has(x); }) ? "mid" : "none";
+    var rec = recordedPair(a, b);
+    if (rec) return { v: "ok", via: rec.via };
+    return { v: bridgesOf(a, b).length ? "mid" : "none", via: null };
   }
 
   /* A dish, judged as a set: every pair among its ingredients, and what the
@@ -1163,7 +1252,10 @@
     if (ids.length < 2) { box.innerHTML = ""; return; }
     var rows = [], i, j;
     for (i = 0; i < ids.length; i++) {
-      for (j = i + 1; j < ids.length; j++) rows.push([ids[i], ids[j], verdict(ids[i], ids[j])]);
+      for (j = i + 1; j < ids.length; j++) {
+        var vd = verdict(ids[i], ids[j]);
+        rows.push([ids[i], ids[j], vd.v, vd.via]);
+      }
     }
     var order = { ok: 0, mid: 1, none: 2 };
     rows.sort(function (x, y) { return order[x[2]] - order[y[2]]; });
@@ -1178,7 +1270,8 @@
       '<ul class="lab-set">' + rows.map(function (r) {
         return '<li class="lab-set-row"><span class="lab-set-pair">' +
           esc(name(byId[r[0]])) + ' <span class="lab-x" aria-hidden="true">×</span> ' +
-          esc(name(byId[r[1]])) + "</span>" +
+          esc(name(byId[r[1]])) +
+          (r[3] ? '<span class="lab-set-via">' + esc(viaLine(r[3])) + "</span>" : "") + "</span>" +
           '<span class="verdict ' + r[2] + '">' +
           (r[2] === "ok" ? "&#10003;&nbsp; " : "") + esc(label[r[2]]) + "</span></li>";
       }).join("") + "</ul>";
@@ -1203,9 +1296,9 @@
 
   /* The bands, in one place, because they are now three things at once: the
      label on the bar, the sentence under it, and the rows of the scale. The
-     boundaries are measured, not chosen — of 4 000 random plates 22 reached 55
-     and one reached 86, and the top band holds 52% of the trios and chefs'
-     dishes. */
+     boundaries are measured, not chosen — of 4 000 random plates 94 reached 55
+     and one reached 85, and the top band holds 63% of the trios and chefs'
+     dishes (tools/measure-scale.js). */
   var SCALE = [
     { band: "balanced",   lo: 75, hi: 100, label: "plateBandBalanced",   why: "scaleBalanced" },
     { band: "sound",      lo: 55, hi: 74,  label: "plateBandSound",      why: "scaleSound" },
@@ -1521,10 +1614,10 @@
     }
 
     if (row.verdict === "mid") {
-      var pa = itemPairs(row.a.id, row.a.form), pb = itemPairs(row.b.id, row.b.form);
-      var via = pa.filter(function (x) {
-        return x !== row.b.id && x !== row.a.id && pb.indexOf(x) !== -1 && byId[x];
-      }).map(function (x) { return name(byId[x]); })
+      /* The engine's own bridges, species included, so the note names what
+         the verdict was actually drawn from. */
+      var via = (row.bridges || []).filter(function (x) { return byId[x]; })
+        .map(function (x) { return name(byId[x]); })
         .sort(function (x, y) { return x.localeCompare(y, state.lang, CMP); });
       if (via.length > 3) {
         return t.pairBridgeMany.replace("{n}", via.length).replace("{via}", list(via.slice(0, 2)));
@@ -1544,7 +1637,9 @@
     var r = PLATE.judge(plate, {
       byId: function (id) { return byId[id] || null; },
       pairsOf: itemPairs,
-      textureOf: itemTexture
+      textureOf: itemTexture,
+      lineageOf: lineage,
+      neighboursOf: function (id) { return PAIRS[id] ? Array.from(PAIRS[id]) : []; }
     });
 
     /* One note may name ingredients; the rest are plain sentences. */
@@ -1627,7 +1722,8 @@
         }).map(function (row) {
           return '<li class="lab-set-row"><span class="lab-set-pair">' +
             esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
-            esc(itemLabel(row.b)) + "</span>" +
+            esc(itemLabel(row.b)) +
+            (row.via ? '<span class="lab-set-via">' + esc(viaLine(row.via)) + "</span>" : "") + "</span>" +
             '<span class="verdict ' + row.verdict + '">' +
             (row.verdict === "ok" ? "&#10003;&nbsp; " : "") + esc(pairNote(row)) + "</span></li>";
         }).join("") + "</ul>";
@@ -1639,7 +1735,7 @@
       '<div class="axis-grid wheel">' + wheel + "</div>" +
       (plateWhyOpen
         ? '<div class="score-scale"><h3>' + esc(t.scaleTitle) + "</h3>" +
-            '<p class="scale-intro">' + esc(t.scaleIntro) + "</p>" +
+            '<p class="scale-intro">' + esc(t.scaleIntro.replace("{p}", fmt(EDGE_COUNT))) + "</p>" +
             '<ol class="scale-grid">' + SCALE.map(function (s) {
               return '<li class="' + (s.band === r.band ? "on" : "") + '">' +
                 '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "\u2013" + s.hi) + "</span>" +
@@ -2052,7 +2148,27 @@
   el("tier-free").addEventListener("click", function () { setTier("free"); });
   el("tier-full").addEventListener("click", function () { setTier("full"); });
 
-  el("search").addEventListener("input", function (e) { state.q = e.target.value; renderGrid(); });
+  /* Typing in the top search is looking for an ingredient, whatever tab it
+     starts from: the atlas comes forward and everything between the box and
+     the grid folds away (the day's ingredient, the families, the filters), so
+     the results are the first thing under it. The header stays pinned, so
+     bringing the grid up under it never hides the box being typed in. */
+  function onSearch(value) {
+    var was = !!state.q.trim();
+    state.q = value;
+    var on = !!state.q.trim(), moved = on && state.view !== "atlas";
+    el("atlasView").classList.toggle("searching", on);
+    if (moved) setView("atlas");
+    renderGrid();
+    /* Brought up when a search starts, and again when it pulls the atlas back
+       from another tab, which left the page at that tab's scroll. */
+    if (on && (!was || moved)) {
+      var head = document.querySelector(".site-head");
+      var gap = el("grid").getBoundingClientRect().top - (head ? head.offsetHeight : 0) - 12;
+      if (Math.abs(gap) > 4) window.scrollBy({ top: gap, behavior: reducedMotion() ? "auto" : "smooth" });
+    }
+  }
+  el("search").addEventListener("input", function (e) { onSearch(e.target.value); });
   el("seasonNow").addEventListener("change", function (e) { state.seasonNow = e.target.checked; renderGrid(); });
   el("favsOnly").addEventListener("change", function (e) { state.favsOnly = e.target.checked; renderGrid(); });
   el("rareOnly").addEventListener("change", function (e) { state.rareOnly = e.target.checked; renderGrid(); });

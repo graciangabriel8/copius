@@ -99,7 +99,7 @@ fr:"Employez des feuilles entières, une ou deux, et retirez-les avant de servir
 pairs:["juniper","venison","salmon","bay-leaf","butter","beer-vinegar","wild-boar"],
 svg:'<path class="s" d="M28 76q12-20 20-32t14-24"/><path class="f2 sf" d="M38 58q-11-6-15 0t7 10 8-10zM47 43q11-6 16 0t-8 10-8-10zM34 70q-11-4-14 2t9 8 5-10zM53 31q9-6 14-1t-7 10-7-9z"/><path class="f3 sf" d="M62 18q4 0 4 5t-4 10-4-10 4-5z"/>'},
 
-{id:"buckler-leaf-sorrel",cat:"herbs",price:2,pk:"4–7 €/barquette (30 g)",name:{en:"Buckler-leaf sorrel",fr:"Oseille ronde"},latin:"Rumex scutatus",
+{id:"buckler-leaf-sorrel",cat:"herbs",parent:"sorrel",price:2,pk:"4–7 €/barquette (30 g)",name:{en:"Buckler-leaf sorrel",fr:"Oseille ronde"},latin:"Rumex scutatus",
 origin:{en:"French kitchen gardens",fr:"Potagers français"},season:[4,5,6,7,8,9,10],
 flavor:["sour","citrus","fresh"],texture:["tender","juicy"],
 story:{en:"Scutatus means shielded, and Linnaeus named it for the little bucklers the leaves cut against the light. English seedsmen have sold it as French sorrel for three centuries, which is how one country’s garden herb ended up carrying another country’s name on the packet.",
@@ -609,7 +609,7 @@ fr:"Le plat pour le goût, le frisé pour l’œil. Les tiges ont plus de goût 
 pairs:["garlic","lemon","mushroom","cod","chickpeas","egg","potato"],
 svg:'<path class="s" d="M48 82q-1-12-1-18M47 66q-8-2-11-6M49 66q8-2 11-6"/><path class="f2 sf" d="M44 42q-4 0 -6 -3q0 -1 3 -4q-5 -1 -6 -3q0 -1 5 -3q-4 -3 -4 -5q2 -2 7 -1q0 -5 1 -5q3 0 6 4q3 -4 5 -4q2 1 1 6q5 0 5 2q0 2 -5 5q4 3 4 5q-2 1 -7 0q1 5 -1 6q-4 2 -8 0z"/><path class="f1 sf" d="M32 62q-4 2 -6 -1q-1 0 1 -4q-5 1 -6 -1q-1 -1 3 -4q-5 -1 -5 -3q1 -2 5 -3q-2 -4 0 -5q2 -1 6 2q2 -5 3 -6q2 1 3 5q4 -1 5 0q1 2 -3 6q5 2 5 3q0 2 -5 2q2 5 1 6q-3 3 -7 3z"/><path class="f1 sf" d="M57 59q-4 -1 -4 -5q0 0 4 -2q-4 -2 -4 -5q1 -1 5 -1q-2 -4 -1 -5q2 -1 6 1q1 -4 3 -4q2 1 3 6q5 -2 6 -2q1 2 -1 6q4 1 3 3q-1 2 -6 3q3 4 2 5q-2 1 -6 -2q-1 4 -3 5q-4 0 -7 -3z"/><path class="s" d="M34 54q3 3 2 6M40 50q-1 4 2 6M58 54q-3 3-2 6M52 50q1 4-2 6M45 34q1 4 4 5M53 36q-2 3-4 3" stroke-width="1.5"/>'},
 
-{id:"purple-basil",cat:"herbs",price:1,pk:"3–5 €/pot",name:{en:"Purple basil",fr:"Basilic pourpre"},latin:"Ocimum basilicum var. purpurascens",
+{id:"purple-basil",cat:"herbs",parent:"basil",price:1,pk:"3–5 €/pot",name:{en:"Purple basil",fr:"Basilic pourpre"},latin:"Ocimum basilicum var. purpurascens",
 origin:{en:"India & Southeast Asia",fr:"Inde & Asie du Sud-Est"},season:[6,7,8,9],
 flavor:["anise","herbal","warm","floral"],texture:["tender","smooth","moist"],
 story:{en:"More clove and anise than green basil, and considerably tougher-leaved. Its anthocyanins bleed pink into vinegar within minutes, which is why it is grown as much for infusing as for the leaf itself.",
@@ -619,7 +619,7 @@ fr:"Il ne fait pas un bon pesto — la couleur vire au brun boueux. Employez-le 
 pairs:["tomato","white-wine-vinegar","olive-oil","peach","mozzarella","garlic","strawberry","lemon"],
 svg:'<path class="f2 sf" d="M52 78q-16-10-18-29-2-21 10-31 7 6 10 14 4 7 5 15 1 7 0 14-1 8-3 13-1 2-4 4z"/><path class="f2 sf" d="M46 70q-14 4-22-4-9-9-2-17 13 3 19 11 5 6 5 10z"/><path class="s" d="M50 74q-9-13-10-25-1-14 4-29" stroke-width="2"/><path class="s" d="M42 63q5 1 8 4M41 52q5 0 8 3M42 42q5 0 8 3M45 32q4 1 6 3" stroke-width="1.5"/><path class="s" d="M50 76q1 4 2 5"/>'},
 
-{id:"red-shiso",cat:"herbs",price:2,pk:"4–8 €/paquet (20 feuilles)",name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
+{id:"red-shiso",cat:"herbs",parent:"shiso",price:2,pk:"4–8 €/paquet (20 feuilles)",name:{en:"Red shiso",fr:"Shiso rouge (aka-jiso)"},latin:"Perilla frutescens var. crispa f. purpurea",
 origin:{en:"Japan, Korea and highland China",fr:"Japon, Corée et hautes terres chinoises"},season:[6,7],
 flavor:["herbal","anise","tangy"],texture:["tender","moist"],
 story:{en:"The purple is shisonin, an anthocyanin that sits dull violet until it meets acid — dropped into the brine of salting plums it flares scarlet, and that reaction is what colours umeboshi. Dried and ground with salt the same leaf becomes yukari, a name that traces back to an old poetic word for the colour purple.",
@@ -949,7 +949,7 @@ fr:"Gare à son sosie mortel, le muguet : froissez une feuille — pas d’odeur
 pairs:["potato","butter","egg","pine-nut","parmesan","salmon"],
 svg:'<path class="f1 sf" d="M40 30q8 14 4 46-8-10-8-28 0-12 4-18z"/><path class="f1 sf" d="M56 30q-8 14-4 46 8-10 8-28 0-12-4-18z"/><path class="dot" d="M46 26a2 2 0 104 0 2 2 0 10-4 0"/>'},
 
-{id:"wild-thyme",cat:"herbs",price:1,pk:"1,50–4 €/botte",name:{en:"Wild thyme",fr:"Serpolet"},latin:"Thymus serpyllum",
+{id:"wild-thyme",cat:"herbs",parent:"thyme",price:1,pk:"1,50–4 €/botte",name:{en:"Wild thyme",fr:"Serpolet"},latin:"Thymus serpyllum",
 origin:{en:"Limestone and alpine pasture",fr:"Causses et pâturages d'altitude"},season:[6,7,8],
 flavor:["herbal","woody","floral"],texture:["firm","fibrous"],
 story:{en:"Serpyllum comes from the Latin serpere, to creep, and the plant does exactly that, flattening itself across limestone and alpine turf instead of making a bush. It carries far less thymol than garden thyme, which is why a whole flowering stem can go into a dish where common thyme would have to be stripped and rationed.",
@@ -979,7 +979,7 @@ fr:"N'utilisez que les jeunes feuilles plumeuses, finement ciselées, et pas plu
 pairs:["butter","cream","cucumber","trout","potato","lemon"],
 svg:'<path class="s" d="M48 78V34"/><path class="s" d="M48 66q-10-2-14-8M48 66q10-2 14-8M48 56q-9-2-12-7M48 56q9-2 12-7M48 46q-7-2-10-6M48 46q7-2 10-6"/><ellipse class="f2 sf" cx="48" cy="28" rx="18" ry="6"/><path class="s" d="M36 28q6-6 12-6t12 6"/>'},
 
-{id:"yomogi",cat:"herbs",rare:true,price:2,pk:"80–180 €/kg",name:{en:"Yomogi",fr:"Armoise japonaise"},latin:"Artemisia princeps",
+{id:"yomogi",cat:"herbs",parent:"mugwort",rare:true,price:2,pk:"80–180 €/kg",name:{en:"Yomogi",fr:"Armoise japonaise"},latin:"Artemisia princeps",
 origin:{en:"Japan and Korea",fr:"Japon et Corée"},season:[3,4,5],
 flavor:["bitter","herbal","grassy","fresh"],texture:["tender","fibrous","moist"],
 story:{en:"The same plant is the source of moxa, the smouldering cone of dried leaf used in moxibustion, so the kitchen and the clinic come out of one spring picking. Pounded into rice cake it makes kusamochi, grass cake, whose green is the leaf itself and not a colouring.",

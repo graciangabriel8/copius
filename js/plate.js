@@ -153,6 +153,12 @@
        pairsOf(id,form)  -> array of ids this item pairs with, in this form
        textureOf(id,form) -> texture tags in this form (optional; falls back to
                             the ingredient's own)
+       lineageOf(id)     -> [id, its parent, the parent's parent…] (optional):
+                            a variety is judged with what is recorded for its
+                            species, so Tahitian vanilla meets lobster as vanilla does
+       neighboursOf(id)  -> every id recorded with it, either way round (optional,
+                            falls back to pairsOf): bridges are drawn from it, as
+                            the two-slot lab draws them
 
      A form matters here. Potato purée and potato frites are the same entry and
      not the same ingredient: js/data-trees.js records different pairings for
@@ -176,11 +182,31 @@
 
     /* Cohesion. Every pair among the selection, judged the way the two-slot lab
        judges one: recorded, bridged through a shared neighbour, or neither. */
-    var sets = items.map(function (it) {
+    /* A variety speaks with its species' voice as well as its own: what is
+       recorded for vanilla holds for Tahitian vanilla. A chosen form is the
+       exception — it is a specific claim (see below), so only it speaks. */
+    function kin(it) { return it.form || !ctx.lineageOf ? [it.id] : ctx.lineageOf(it.id); }
+    function lin(it) { return ctx.lineageOf ? ctx.lineageOf(it.id) : [it.id]; }
+    /* One side of a pair: the item, then those of its ancestors the other item
+       does not share. A shared species speaks for neither side — two honeys are
+       no classic because acacia honey lists honey — and when the other item is
+       one of its ancestors, the item speaks alone. */
+    function side(k, other) {
+      if (lin(items[k]).indexOf(items[other].id) !== -1) return [items[k].id];
+      var theirs = lin(items[other]);
+      return kin(items[k]).filter(function (x, m) { return m === 0 || theirs.indexOf(x) === -1; });
+    }
+    /* What one side is recorded with, for bridging: a chosen form's own list,
+       otherwise every record either way round, as the two-slot lab reads it. */
+    function recs(k, other) {
       var s = {};
-      ctx.pairsOf(it.id, it.form).forEach(function (p) { s[p] = true; });
+      side(k, other).forEach(function (x, m) {
+        var form = m === 0 ? items[k].form : "";
+        (form || !ctx.neighboursOf ? ctx.pairsOf(x, form) : ctx.neighboursOf(x))
+          .forEach(function (p) { s[p] = true; });
+      });
       return s;
-    });
+    }
     /* A pairing is normally symmetric: comté lists potato, so potato pairs with
        comté whichever way round it is read. A form breaks that symmetry on
        purpose. Comté is recorded against a potato gratin and not against
@@ -188,13 +214,29 @@
        would otherwise put the edge back and make the whole form selector
        decorative. So the specific claim governs: when an item carries a form,
        only that form's list can speak for it. */
-    function declares(from, to) { return !!sets[from][items[to].id]; }
+    /* Every record in from's list, or its species', naming to or its species:
+       [from-side id, to-side id, steps], steps 0 for the two items themselves. */
+    function declares(from, to) {
+      var mine = side(from, to), theirs = side(to, from), out = [], m, q, p;
+      for (m = 0; m < mine.length; m++) {
+        p = ctx.pairsOf(mine[m], m === 0 ? items[from].form : "");
+        for (q = 0; q < theirs.length; q++) {
+          if (p.indexOf(theirs[q]) !== -1) out.push([mine[m], theirs[q], m + q]);
+        }
+      }
+      return out;
+    }
+    /* The record for x × y as { via }: null when it is the items' own, else the
+       nearest species pair, in x, y order. Ties go by id, so neither the order
+       the items were added nor the direction a list was read changes it. */
     function linked(x, y) {
-      var fx = !!items[x].form, fy = !!items[y].form;
-      if (fx && fy) return declares(x, y) || declares(y, x);
-      if (fx) return declares(x, y);
-      if (fy) return declares(y, x);
-      return declares(x, y) || declares(y, x);
+      var fx = !!items[x].form, fy = !!items[y].form, c = [];
+      if (!fy || fx) c = c.concat(declares(x, y));
+      if (!fx || fy) c = c.concat(declares(y, x).map(function (r) { return [r[1], r[0], r[2]]; }));
+      if (!c.length) return null;
+      function key(r) { return [r[0], r[1]].sort().join("|"); }
+      c.sort(function (r, s) { return r[2] - s[2] || (key(r) < key(s) ? -1 : key(r) > key(s) ? 1 : 0); });
+      return { via: c[0][2] ? [c[0][0], c[0][1]] : null };
     }
 
     /* best[k] is the strongest reason item k is on this plate: a recorded
@@ -205,22 +247,24 @@
         best = items.map(function () { return 0; }), i, j;
     for (i = 0; i < n; i++) {
       for (j = i + 1; j < n; j++) {
-        var a = items[i], b = items[j], v;
-        if (linked(i, j)) {
-          v = "ok";
+        var a = items[i], b = items[j], v, rec = linked(i, j), via = null, bridges = [];
+        if (rec) {
+          v = "ok"; via = rec.via;
           degree[i]++; degree[j]++;
           best[i] = 1; best[j] = 1;
         } else {
-          var bridged = Object.keys(sets[i]).some(function (x) {
-            return x !== a.id && x !== b.id && sets[j][x];
+          var ri = recs(i, j), rj = recs(j, i), own = lin(a).concat(lin(b));
+          bridges = Object.keys(ri).filter(function (x) {
+            return own.indexOf(x) === -1 && rj[x];
           });
+          var bridged = bridges.length > 0;
           v = bridged ? "mid" : "none";
           if (bridged) {
             if (best[i] < 0.4) best[i] = 0.4;
             if (best[j] < 0.4) best[j] = 0.4;
           }
         }
-        rows.push({ a: a, b: b, verdict: v });
+        rows.push({ a: a, b: b, verdict: v, via: via, bridges: bridges });
       }
     }
     var direct = rows.filter(function (r) { return r.verdict === "ok"; }).length;
@@ -524,10 +568,11 @@
     });
 
     /* The spine: the recorded pair that also shares the most flavour notes.
-       Two ingredients agreeing on both counts is what the rest hangs off. */
+       Two ingredients agreeing on both counts is what the rest hangs off. Only
+       a pair recorded for the two themselves, since the note calls it theirs. */
     var spine = null, best = -1;
     rows.forEach(function (r) {
-      if (r.verdict !== "ok") return;
+      if (r.verdict !== "ok" || r.via) return;
       var A = ctx.byId(r.a.id), B = ctx.byId(r.b.id);
       var shared = (A.flavor || []).filter(function (f) {
         return (B.flavor || []).indexOf(f) !== -1;

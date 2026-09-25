@@ -139,7 +139,7 @@ fr:"Sortez-le une heure avant. Froid, le brie est plâtreux ; à température il
 pairs:["apple","walnut","honey","grape","butter","mushroom","truffle","fig"],
 svg:'<circle class="f3 sf" cx="48" cy="52" r="24"/><path class="s" d="M48 28v48M24 52h48"/><circle class="s" cx="48" cy="52" r="16"/>'},
 
-{id:"brie-de-meaux",cat:"dairy",sign:"AOP",price:2,pk:"18–28 €/kg",name:{en:"Brie de Meaux",fr:"Brie de Meaux"},latin:"Brie de Meaux AOP",
+{id:"brie-de-meaux",cat:"dairy",parent:"brie",sign:"AOP",price:2,pk:"18–28 €/kg",name:{en:"Brie de Meaux",fr:"Brie de Meaux"},latin:"Brie de Meaux AOP",
 origin:{en:"Seine-et-Marne, Île-de-France",fr:"Seine-et-Marne, Île-de-France"},season:[],
 flavor:["creamy","earthy","buttery","mild"],texture:["soft","creamy","moist"],
 story:{en:"The curd goes into the mould in layers, lifted by hand with a pelle à brie — a flat perforated shovel — because a pump would shear it. Some twenty-five litres of raw milk make a single wheel a little over thirty-six centimetres across, most of which then leaves again as whey.",
@@ -149,7 +149,7 @@ fr:"À point, la pâte bombe mais tient encore. Un trait blanc crayeux au cœur 
 pairs:["butter","apple","walnut","flour-t65","grape","truffle","black-pepper","cider-vinegar"],
 svg:'<path class="f1 sf" d="M46 27a22 22 0 1 0 18 32l-18-9z"/><path class="f2 sf" d="M53 60l17-8q4 8 1 16z"/><path class="s" d="M32 40q6-6 13-7" stroke-width="1.5"/>'},
 
-{id:"brie-de-melun",cat:"dairy",sign:"AOP",price:2,pk:"22–32 €/kg",name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
+{id:"brie-de-melun",cat:"dairy",parent:"brie",sign:"AOP",price:2,pk:"22–32 €/kg",name:{en:"Brie de Melun",fr:"Brie de Melun"},latin:"Brie de Melun AOP",
 origin:{en:"Melun, Seine-et-Marne",fr:"Melun, Seine-et-Marne"},season:[],
 flavor:["salty","earthy","pungent","umami"],texture:["firm","creamy","granular"],
 story:{en:"Its curd is set by acidity over at least eighteen hours rather than by rennet in under one, the older method and the reason the paste stays dense and salty instead of flowing. Carried past six months it dries into brie noir, which farm workers in the Brie are said to have dunked in their morning coffee.",
@@ -339,7 +339,7 @@ fr:"Sa croûte est vivante et se mange : essuyez-la, ne la grattez jamais. À te
 pairs:["potato","onion","walnut","rye","cornichon","white-wine-vinegar","apple","thyme"],
 svg:'<path class="f2 sf" d="M22 54q0-16 26-16t26 16v6q0 8-26 8t-26-8z"/><path class="s" d="M24 58q12 6 24 0t24 2"/><path class="s" d="M30 44q6-4 12 0t12-1"/>'},
 
-{id:"beurre-de-baratte",cat:"dairy",price:2,pk:"12–20 €/kg",name:{en:"Churned butter",fr:"Beurre de baratte"},latin:"Beurre de baratte AOP",
+{id:"beurre-de-baratte",cat:"dairy",parent:"butter",price:2,pk:"12–20 €/kg",name:{en:"Churned butter",fr:"Beurre de baratte"},latin:"Beurre de baratte AOP",
 origin:{en:"Normandy & Poitou-Charentes",fr:"Normandie & Poitou-Charentes"},season:[],
 flavor:["creamy","rich","nutty","milky"],texture:["soft","smooth","creamy"],
 story:{en:"Made in a slow rotating churn from cream that has been left to ripen with lactic cultures for up to twenty hours before churning. That maturation is where the hazelnut note comes from — industrial butter skips it entirely.",
@@ -389,7 +389,7 @@ fr:"Achetez-le à son stade, non à son poids : à dix jours il est blanc et dou
 pairs:["walnut","walnut-oil","honey","frisee","apple","chives","white-wine-vinegar","thyme"],
 svg:'<path class="f2 sf" d="M22 58h52v12q0 4-4 4H26q-4 0-4-4z"/><path class="f1 sf" d="M36 44v14h24V44z"/><ellipse class="f1 sf" cx="48" cy="44" rx="12" ry="5"/><path class="s" d="M37 50q11 4 22 0"/>'},
 
-{id:"creme-fraiche",cat:"dairy",price:1,pk:"4–8 €/kg",name:{en:"Crème fraîche",fr:"Crème fraîche"},latin:"Crème fraîche d’Isigny AOP",
+{id:"creme-fraiche",cat:"dairy",parent:"cream",price:1,pk:"4–8 €/kg",name:{en:"Crème fraîche",fr:"Crème fraîche"},latin:"Crème fraîche d’Isigny AOP",
 origin:{en:"Normandy, France",fr:"Normandie, France"},season:[],
 flavor:["creamy","tangy","rich","milky"],texture:["smooth","creamy"],
 story:{en:"Cream left to ripen with its own lactic bacteria until it thickens and turns faintly sour. That acidity is the whole trick: it holds the fat together, so crème fraîche can boil in a sauce without splitting where ordinary cream curdles.",
@@ -599,7 +599,7 @@ fr:"Seule la tome fraîche fait l’aligot : un laguiole affiné ne filera pas. 
 pairs:["potato","garlic","cream","butter","saucisse-de-toulouse","parsley"],
 svg:'<path class="f2 sf" d="M24 40h44q-3 18-22 18t-22-18z"/><path class="s" d="M18 40h56"/><path class="s" d="M38 58q-3 14 3 20M56 56q5 12-1 20"/>'},
 
-{id:"laminating-butter",cat:"dairy",price:2,pk:"12–18 €/kg",name:{en:"Laminating butter (dry butter, 84%)",fr:"Beurre de tourage (beurre sec)"},latin:"Butyrum siccum",
+{id:"laminating-butter",cat:"dairy",parent:"butter",price:2,pk:"12–18 €/kg",name:{en:"Laminating butter (dry butter, 84%)",fr:"Beurre de tourage (beurre sec)"},latin:"Butyrum siccum",
 origin:{en:"Charentes-Poitou, France",fr:"Charentes-Poitou, France"},season:[],
 flavor:["buttery","rich","milky"],texture:["firm","smooth","dry"],
 story:{en:"Ordinary butter cracks when cold and leaks when warm; laminating butter is churned and worked so its fat crystals stay plastic across roughly 14 to 18 °C, the window a croissant is folded in. Three letter folds turn one sheet of it into twenty-seven, each thinner than a page.",
@@ -739,7 +739,7 @@ fr:"Sortez-la du réfrigérateur une heure avant — le froid engourdit son parf
 pairs:["tomato","basil","olive-oil","prosciutto","peach","oregano"],
 svg:'<circle class="f1 sf" cx="48" cy="54" r="19"/><path class="s" d="M40 44q6-6 16-2" stroke-width="1.8"/><path class="f2 sf" d="M56 38q4-4 8-3-1 5-6 6z"/>'},
 
-{id:"mozzarella-di-bufala-campana",cat:"dairy",sign:"DOP",price:2,pk:"20–32 €/kg",name:{en:"Mozzarella di bufala campana",fr:"Mozzarella di bufala campana"},latin:"Mozzarella di Bufala Campana DOP",
+{id:"mozzarella-di-bufala-campana",cat:"dairy",parent:"mozzarella",sign:"DOP",price:2,pk:"20–32 €/kg",name:{en:"Mozzarella di bufala campana",fr:"Mozzarella di bufala campana"},latin:"Mozzarella di Bufala Campana DOP",
 origin:{en:"Campania, Italy",fr:"Campanie, Italie"},season:[],
 flavor:["milky","tangy","delicate","rich"],texture:["soft","creamy","juicy"],
 story:{en:"Twelfth-century records from the monastery of San Lorenzo in Capua describe monks handing pilgrims a slice of bread and a cheese called mozza. The animal has not changed since: buffalo milk carries roughly twice the fat of cow's milk, and it is that, with the lactic tang, that no cow mozzarella imitates.",
@@ -919,7 +919,7 @@ fr:"Prenez-le affiné au-delà d'un an et râpez-le ; jeune, il reste élastique
 pairs:["tomato","olive-oil","eggplant","onion","black-pepper","oregano","fava-bean","san-marzano-tomato"],
 svg:'<path class="f1 sf" d="M26 32h34v40H26z"/><path class="f2 sf" d="M60 32l10-8v40l-10 8z"/><path class="f3 sf" d="M26 32l10-8h34l-10 8z"/><path class="s" d="M53 24v-8"/>'},
 
-{id:"raw-milk-butter",cat:"dairy",price:2,pk:"12–20 €/kg",name:{en:"Raw-milk butter",fr:"Beurre cru"},latin:"Butyrum crudum",
+{id:"raw-milk-butter",cat:"dairy",parent:"butter",price:2,pk:"12–20 €/kg",name:{en:"Raw-milk butter",fr:"Beurre cru"},latin:"Butyrum crudum",
 origin:{en:"Normandy & Brittany",fr:"Normandie & Bretagne"},season:[],
 flavor:["creamy","rich","grassy","milky"],texture:["soft","smooth","creamy"],
 story:{en:"Colour tells you the season: spring grass is loaded with carotene and the butter comes out deep yellow, while winter butter made on hay is nearly white. Because the cream is never heated the milk's own bacteria stay in the churn, so two farms a valley apart give two different butters.",
@@ -1039,7 +1039,7 @@ fr:"Demandez une meule de plein été et lisez la date sur la plaque d'identific
 pairs:["rye","walnut","potato","onion","apple","black-pepper","lentille-du-puy","butter"],
 svg:'<path class="f2 sf" d="M30 30v40q0 6 18 6t18-6V30z"/><ellipse class="f1 sf" cx="48" cy="30" rx="18" ry="7"/><path class="s" d="M40 34v40M48 35v41M56 34v40"/>'},
 
-{id:"beurre-demi-sel",cat:"dairy",price:1,pk:"9–15 €/kg",name:{en:"Salted butter",fr:"Beurre demi-sel"},latin:"Beurre demi-sel",
+{id:"beurre-demi-sel",cat:"dairy",parent:"butter",price:1,pk:"9–15 €/kg",name:{en:"Salted butter",fr:"Beurre demi-sel"},latin:"Beurre demi-sel",
 origin:{en:"Brittany, France",fr:"Bretagne, France"},season:[],
 flavor:["salty","creamy","rich","buttery"],texture:["soft","smooth","creamy"],
 story:{en:"Brittany was exempt from the gabelle, the salt tax that crushed the rest of France, so Breton dairies salted their butter freely while everyone else could not afford to. A tax boundary drawn centuries ago still divides French breakfast tables.",
@@ -1099,7 +1099,7 @@ fr:"L'orange vient du rocou, un colorant de graine sans goût : jugez plutôt la
 pairs:["pear","walnut","celery","pickled-walnut","honey","fig","apple","ruby-port"],
 svg:'<path class="f2 sf" d="M48 50V24a26 26 0 1 1-18 45z"/><path class="s" d="M48 32a18 18 0 0 1 11 33"/><path class="s" d="M40 40q4 7 0 13M52 48q-3 6-1 12M42 62q6-2 9 4"/>'},
 
-{id:"smoked-butter",cat:"dairy",price:2,pk:"20–35 €/kg",name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
+{id:"smoked-butter",cat:"dairy",parent:"butter",price:2,pk:"20–35 €/kg",name:{en:"Smoked butter",fr:"Beurre fumé"},latin:"Bos taurus",
 origin:{en:"Northern European smokehouses",fr:"Fumoirs d’Europe du Nord"},season:[],
 flavor:["smoky","buttery","creamy"],texture:["soft","smooth","creamy"],
 story:{en:"The smoke has to be cold, under about 30 °C, or the butter simply melts and separates in the chamber, so producers either smoke the cream before churning or hold finished blocks over smouldering wood at low temperature. Smoking the cream gives the rounder result, because the fat takes up the phenols evenly, while a smoked block carries most of its flavour in the outer few millimetres.",
@@ -1169,7 +1169,7 @@ fr:"Il fond sans rendre son gras, ce qui en fait le meilleur rarebit : râpez-l
 pairs:["worcestershire","english-mustard","onion","apple","chives","butter"],
 svg:'<path class="f2 sf" d="M24 36v28q0 8 24 8t24-8V36z"/><ellipse class="f1 sf" cx="48" cy="36" rx="24" ry="8"/><path class="s" d="M44 44l-6 10 8 4"/><circle class="dot" cx="30" cy="76" r="2"/><circle class="dot" cx="40" cy="79" r="1.6"/>'},
 
-{id:"creme-epaisse",cat:"dairy",price:1,pk:"5–9 €/L",name:{en:"Thick double cream",fr:"Crème épaisse"},latin:"Crème épaisse, 30–40% MG",
+{id:"creme-epaisse",cat:"dairy",parent:"cream",price:1,pk:"5–9 €/L",name:{en:"Thick double cream",fr:"Crème épaisse"},latin:"Crème épaisse, 30–40% MG",
 origin:{en:"Normandy, France",fr:"Normandie, France"},season:[],
 flavor:["rich","creamy","milky","sweet"],texture:["smooth","viscous"],
 story:{en:"French dairy counters split cream two ways and the difference matters more than shoppers think: liquide whips and pours, épaisse does neither well but enriches without thinning. Confusing the two is the most common reason a home sauce goes wrong.",
@@ -1249,7 +1249,7 @@ fr:"C’est un caillé lactique qui ne fond pas : la chaleur en chasse le petit
 pairs:["apple","fig","honey","dried-cranberry","walnut","celery","quince"],
 svg:'<path class="f1 sf" d="M22 34h34v40H22z"/><path class="s" d="M22 46h34M22 58h34"/><path class="f2 sf" d="M60 52l10-4 4 10-8 6-8-4z"/><circle class="dot" cx="63" cy="70" r="2"/>'},
 
-{id:"whey-butter",cat:"dairy",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Whey butter",fr:"Beurre de petit-lait"},latin:"Bos taurus",
+{id:"whey-butter",cat:"dairy",parent:"butter",rare:true,price:2,pk:"20–35 €/kg",name:{en:"Whey butter",fr:"Beurre de petit-lait"},latin:"Bos taurus",
 origin:{en:"Cheese dairies, England and the Alps",fr:"Fromageries d’Angleterre et des Alpes"},season:[],
 flavor:["tangy","buttery","nutty"],texture:["soft","smooth","creamy"],
 story:{en:"Whey butter is what Cheddar dairies made from the cream that rose off drained whey, a farmhouse perquisite in Somerset, Devon and Lancashire rather than a product anyone set out to make. The whey has already been acidified by the cheese starter, so the cream churns out tangy and keeps residual lactose that milk butter does not have.",

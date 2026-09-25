@@ -29,7 +29,7 @@ fr:"Faites-les tremper une heure à l’eau froide, puis retirez la fine membran
 pairs:["butter","lemon","parsley","capers","mushroom","madeira-sercial","egg","truffle"],
 svg:'<path class="f2 sf" d="M26 40q12-8 24 0t22 0v12q-10 8-22 0t-24 0z"/><path class="s" d="M26 46q12-8 24 0t22 0"/><circle class="f1 sf" cx="26" cy="46" r="6"/>'},
 
-{id:"beef-cheek",cat:"cuts",price:2,pk:"12–18 €/kg",name:{en:"Beef cheek",fr:"Joue de bœuf"},latin:"Bos taurus (masseter)",
+{id:"beef-cheek",cat:"cuts",parent:"beef",price:2,pk:"12–18 €/kg",name:{en:"Beef cheek",fr:"Joue de bœuf"},latin:"Bos taurus (masseter)",
 origin:{en:"The chewing muscle of the jaw",fr:"Le muscle masticateur de la mâchoire"},season:[],
 flavor:["meaty","rich","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"A muscle that worked every waking hour of the animal’s life, woven through with collagen as payment. Braised three hours it performs the great conversion: sinew into gloss, toughness into spoon-soft daube — the cut that taught cooks that time is an ingredient.",
@@ -39,7 +39,7 @@ fr:"Ne chassez pas obsessionnellement les parures — cette gélatine est le fut
 pairs:["carrot","onion","bay-leaf","orange","clove"],
 svg:'<path class="f1 sf" d="M17 61q-2-10 5-17 6-8 16-8 9-5 19-2 13 3 17 11 5 10-4 17-6 5-13 6-4 4-9 1-6 3-11 0-6 2-11-2-6 1-9-6z"/><path class="f1 sf" d="M21 55q12-8 26-7 11 1 18 6-10 6-23 5-14-1-21-4z" stroke-width="2"/><path class="s" d="M25 61q13-3 26-2M32 66q11-2 20-1" stroke-width="2.2"/><path class="s" d="M27 45q13-6 26-5M36 39q12-4 21-2" stroke-width="2.2"/><path class="dot" d="M61 45q6-2 7 1t-5 3-3-2 1-2zM29 38q5-2 6 1t-4 3-3-2 1-2z"/>'},
 
-{id:"jarret-de-boeuf",cat:"cuts",price:1,pk:"9–14 €/kg",name:{en:"Beef shin",fr:"Jarret de bœuf"},latin:"Bœuf — jarret",
+{id:"jarret-de-boeuf",cat:"cuts",parent:"beef",price:1,pk:"9–14 €/kg",name:{en:"Beef shin",fr:"Jarret de bœuf"},latin:"Bœuf — jarret",
 origin:{en:"France",fr:"France"},season:[],
 flavor:["rich","meaty","umami","earthy"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The hardest-working muscle on the animal, and therefore the most collagen-rich — which is exactly why it makes the best braise and the best stock. Cut across the bone it becomes osso buco, though Milan uses veal.",
@@ -49,7 +49,7 @@ fr:"Trois heures minimum, et c’est meilleur le lendemain. Le presser produit l
 pairs:["bone-marrow","carrot","onion","red-wine-vinegar","bay-leaf","thyme","celery","garlic"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="20"/><circle class="f3 sf" cx="48" cy="56" r="7"/><path class="s" d="M28 56h40"/>'},
 
-{id:"tenderloin",cat:"cuts",price:3,pk:"38–70 €/kg",name:{en:"Beef tenderloin",fr:"Filet de bœuf"},latin:"Bos taurus (psoas major)",
+{id:"tenderloin",cat:"cuts",parent:"beef",price:3,pk:"38–70 €/kg",name:{en:"Beef tenderloin",fr:"Filet de bœuf"},latin:"Bos taurus (psoas major)",
 origin:{en:"Along the spine — the muscle that never works",fr:"Le long de l’échine — le muscle qui ne travaille jamais"},season:[],
 flavor:["delicate","meaty","mild"],texture:["tender","smooth","moist"],
 story:{en:"The laziest muscle on the animal, and therefore the tenderest — and the mildest, which is why it attracts escorts: its centre cut was named Chateaubriand by the writer’s own chef, and Rossini lent his name to the version crowned with foie gras and truffle. Tenderness invites orchestras.",
@@ -219,7 +219,7 @@ fr:"Frottez-les au gros sel encore tièdes d'un court blanchiment et la peau ext
 pairs:["chicken","butter","madeira-malmsey","morel","rognons-de-coq","white-pepper"],
 svg:'<path class="f2 sf" d="M24 66 28 44 34 58 40 32 46 56 52 34 58 56 64 42 70 66q-12 8-24 6t-22-6z"/><path class="s" d="M30 62q4-8 4-14M42 62q4-10 4-16M54 62q4-8 4-14"/><path class="s" d="M28 72q18 6 40 0"/>'},
 
-{id:"magret",cat:"cuts",price:2,pk:"18–28 €/kg",name:{en:"Duck breast",fr:"Magret de canard"},latin:"Anas (pectoralis, canard gras)",
+{id:"magret",cat:"cuts",parent:"duck",price:2,pk:"18–28 €/kg",name:{en:"Duck breast",fr:"Magret de canard"},latin:"Anas (pectoralis, canard gras)",
 origin:{en:"The breast of a fattened duck",fr:"La poitrine d’un canard gras"},season:[],
 flavor:["rich","meaty","sweet"],texture:["firm","juicy"],
 story:{en:"A cut with a birth certificate: in 1959, chef André Daguin at the Hôtel de France in Auch first cooked a fattened duck’s breast rare, like a steak — scandal, then triumph. So particular is the magret that French law reserves the name for breasts of ducks raised for foie gras.",
@@ -349,7 +349,7 @@ fr:"Ôtez le cœur blanc aux ciseaux avant la poêle : sans quoi le rognon pleur
 pairs:["dijon-mustard","shallot","butter","parsley","cognac","thyme","black-pepper"],
 svg:'<path class="f2 sf" d="M22 50q-2-12 10-14t14 8q4 10-4 14t-18-2z"/><path class="f2 sf" d="M52 50q-2-12 10-14t14 8q4 10-4 14t-18-2z"/><path class="s" d="M14 44h68"/><path class="s" d="M30 44q6 4 4 10M60 44q6 4 4 10"/>'},
 
-{id:"collier-agneau",cat:"cuts",price:1,pk:"9–15 €/kg",name:{en:"Lamb neck",fr:"Collier d’agneau"},latin:"Agneau — collier",
+{id:"collier-agneau",cat:"cuts",parent:"lamb",price:1,pk:"9–15 €/kg",name:{en:"Lamb neck",fr:"Collier d’agneau"},latin:"Agneau — collier",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
 flavor:["rich","meaty","earthy","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The cut navarin is built on, and the one most likely to be sold cheap because it looks like offcuts. It is threaded with connective tissue that turns to gelatine, giving a sauce body no leaner cut can produce.",
@@ -359,7 +359,7 @@ fr:"Achetez-le avec l’os, en tranches épaisses. Désossé et taillé en dés,
 pairs:["turnip","carrot","onion","thyme","tomato","garlic","bay-leaf","pea"],
 svg:'<circle class="f1 sf" cx="48" cy="56" r="18"/><circle class="f3 sf" cx="48" cy="56" r="6"/><path class="s" d="M32 48q16 6 32 0"/>'},
 
-{id:"lamb-shank",cat:"cuts",price:2,pk:"16–26 €/kg",name:{en:"Lamb shank",fr:"Souris d’agneau"},latin:"Ovis aries (shank)",
+{id:"lamb-shank",cat:"cuts",parent:"lamb",price:2,pk:"16–26 €/kg",name:{en:"Lamb shank",fr:"Souris d’agneau"},latin:"Ovis aries (shank)",
 origin:{en:"The plump muscle hugging the leg bone",fr:"Le muscle dodu qui enrobe l’os du gigot"},season:[],
 flavor:["meaty","rich","sweet"],texture:["tough","gelatinous","fibrous"],
 story:{en:"The French call it the souris — the mouse — for the plump, rounded shape of the muscle clinging to the shin. Too sinewy to grill, it exists for the long braise, collapsing after hours into sweet strands that slide from the bone at the touch of a spoon.",
@@ -369,7 +369,7 @@ fr:"Une souris par personne, bien colorée, puis des heures au four doux avec mi
 pairs:["honey","thyme","garlic","white-beans","cinnamon"],
 svg:'<path class="f1 sf" d="M48 46c3-7 5-13 7-17 2-4 12 0 10 5-2 4-3 9-5 16z"/><path class="f2 sf" d="M56 29c-3-5 0-11 5-11 4 0 7 3 7 6 3 0 6 3 5 7-1 4-5 6-9 5-4-1-7-4-8-7z"/><path class="f1 sf" d="M52 38c8 2 15 10 18 19 2 8 1 14-4 17-7 4-19 4-30 1-8-2-14-6-15-11-1-6 3-13 11-19 6-5 13-8 20-7z"/><path class="f2 sf" d="M69 62c1 6-1 11-6 13-7 4-19 4-30 1-6-2-11-4-13-7 8 3 18 5 28 4 10-1 18-5 21-11z"/><path class="s" d="M26 60c8 7 20 11 32 10M30 70c8 3 17 4 25 2" stroke-width="1.5"/><path class="dot" d="M60 22c3-2 6 0 5 2-1 2-5 3-6 1-1-1 0-2 1-3z"/>'},
 
-{id:"epaule-agneau",cat:"cuts",price:2,pk:"15–24 €/kg",name:{en:"Lamb shoulder",fr:"Épaule d’agneau"},latin:"Agneau — épaule",
+{id:"epaule-agneau",cat:"cuts",parent:"lamb",price:2,pk:"15–24 €/kg",name:{en:"Lamb shoulder",fr:"Épaule d’agneau"},latin:"Agneau — épaule",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
 flavor:["rich","meaty","earthy","umami"],texture:["firm","fibrous","juicy"],
 story:{en:"Fattier and far more forgiving than the leg, and the cut that made seven-hour lamb possible — cooked until a spoon goes through it. Butchers sell it cheaper than gigot for reasons of appearance rather than eating quality.",
@@ -419,7 +419,7 @@ fr:"Faites-la bouillir une heure et demie dans un bouillon de céleri, tomate et
 pairs:["parsley","garlic","capers","anchovy","olive-oil","chili","tomato","celery"],
 svg:'<path class="f3 sf" d="M32 30q16-6 30 4 8 8 4 20-4 14-20 14t-20-14q-4-14 6-24z"/><path class="s" d="M34 44q14 6 28 0M32 54q16 6 32 0M36 64q12 4 24 0"/><path class="s" d="M48 24v8"/>'},
 
-{id:"gigot",cat:"cuts",price:2,pk:"18–30 €/kg",name:{en:"Leg of lamb",fr:"Gigot d’agneau"},latin:"Ovis aries (leg)",
+{id:"gigot",cat:"cuts",parent:"lamb",price:2,pk:"18–30 €/kg",name:{en:"Leg of lamb",fr:"Gigot d’agneau"},latin:"Ovis aries (leg)",
 origin:{en:"The hind leg, whole",fr:"La cuisse arrière, entière"},season:[3,4,5,6],
 flavor:["meaty","rich","grassy"],texture:["firm","fibrous","juicy"],
 story:{en:"France’s Easter centrepiece, studded with garlic slivers and carved at the table by whoever holds rank. The seven-hour version — gigot de sept heures — cooks until it is served with a spoon, a dish old cookbooks sealed shut with a flour-and-water lute so no perfume could escape.",
@@ -459,7 +459,7 @@ fr:"Pelez la peau tant qu’elle est brûlante à la sortie du bouillon. Laissez
 pairs:["cornichon","capers","mustard","parsley","white-wine-vinegar","shallot","carrot","bay-leaf"],
 svg:'<path class="f1 sf" d="M19 46c1-10 9-16 20-15 14 1 29 7 38 15 3 3 2 7-2 9-6 4-16 3-27 2-11-1-21 1-27 3-3 1-5-2-4-6 1-3 1-5 2-8z"/><path class="f2 sf" d="M19 46c-2 3-3 7-2 10 1 4 5 5 9 4-3-3-5-7-5-10 0-2 0-3-2-4z"/><path class="s" d="M26 47c14-6 32-4 46 4" stroke-width="2"/><path class="s" d="M34 52c0 2 0 3 1 4M44 50c0 2 0 3 1 4M54 50c0 2 0 3 1 4M64 51c0 2 0 3 1 4" stroke-width="1.5"/><path class="f2 sf" d="M21 60c10-2 22-4 34-3 9 1 16 0 20-4 0 5-4 8-11 9-14 2-30 1-43-2z"/>'},
 
-{id:"oxtail",cat:"cuts",price:2,pk:"10–18 €/kg",name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
+{id:"oxtail",cat:"cuts",parent:"beef",price:2,pk:"10–18 €/kg",name:{en:"Oxtail",fr:"Queue de bœuf"},latin:"Bos taurus (cauda)",
 origin:{en:"The tail, ring by ring",fr:"La queue, anneau par anneau"},season:[],
 flavor:["rich","meaty","umami"],texture:["tough","gelatinous","fibrous"],
 story:{en:"In Rome’s old slaughterhouse district of Testaccio, workers were paid partly in the quinto quarto — the “fifth quarter” of offal and tail — and from that wage they built coda alla vaccinara, the tail braise that now anchors trattoria menus. Poverty’s invention, gelatine’s triumph.",
@@ -529,7 +529,7 @@ fr:"Deux minutes par face sur une braise vive, et rien de plus : c’est mince, 
 pairs:["pimenton-de-la-vera","olive-oil","fleur-de-sel-guerande","piquillo","sherry-vinegar","garlic","rosemary","potato"],
 svg:'<path class="f2 sf" d="M22 60q10-25 30-29 15-2 21 8-15 6-25 18t-20 12q-7 0-6-9z"/><path class="s" d="M25 62q17-7 31-23" stroke-width="1.8"/><path class="s" d="M29 54q10-10 20-16M34 60q10-10 20-16M25 48q8-8 16-13"/>'},
 
-{id:"pork-belly",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Pork belly",fr:"Poitrine de porc"},latin:"Sus scrofa (venter)",
+{id:"pork-belly",cat:"cuts",parent:"pork",price:1,pk:"8–14 €/kg",name:{en:"Pork belly",fr:"Poitrine de porc"},latin:"Sus scrofa (venter)",
 origin:{en:"The pig’s striped underside",fr:"Le ventre rayé du cochon"},season:[],
 flavor:["rich","meaty","sweet","buttery"],texture:["soft","juicy"],
 story:{en:"Bacon before it becomes bacon: alternating strata of fat and lean that answer to every slow method on Earth. Nagasaki braises it as kakuni, a technique borrowed from Chinese dongpo pork; Italy rolls it into porchetta — and the 2000s gastropub made its crisp-topped square a signature of the decade.",
@@ -539,7 +539,7 @@ fr:"Deux actes, toujours : long et doux jusqu’à ce que la brochette n’y tro
 pairs:["soy-sauce","ginger","miso","apple","fennel"],
 svg:'<path class="f1 sf" d="M16 56c4-12 10-20 18-24 13-7 28-9 38-6 5 1 7 4 5 8-4 8-11 15-21 20-13 6-26 8-36 6-4-1-5-2-4-4z"/><path class="f2 sf" d="M16 56c4-12 10-20 18-24 13-7 28-9 38-6-12-1-25 2-35 7-11 6-18 14-21 23z"/><path class="f2 sf" d="M20 52c4-9 11-15 20-19 9-5 19-7 27-7 3 0 5 1 6 2-9 0-19 2-28 7-10 5-18 11-23 19-1 1-2 0-2-2z"/><path class="f2 sf" d="M22 62c5-8 12-14 21-18 10-5 20-8 28-8 2 0 4 1 4 2-9 1-19 3-28 8-9 4-17 10-22 17-1 1-3 0-3-1z"/><path class="s" d="M28 34c1 3 1 5 1 7M40 30c1 3 1 5 1 7M52 28c1 3 1 5 1 7M64 30c1 2 1 4 1 6" stroke-width="1.5"/>'},
 
-{id:"joue-de-porc",cat:"cuts",price:1,pk:"8–14 €/kg",name:{en:"Pork cheek",fr:"Joue de porc"},latin:"Sus scrofa domesticus (masseter)",
+{id:"joue-de-porc",cat:"cuts",parent:"pork",price:1,pk:"8–14 €/kg",name:{en:"Pork cheek",fr:"Joue de porc"},latin:"Sus scrofa domesticus (masseter)",
 origin:{en:"The jowl, two per pig",fr:"La joue, deux par porc"},season:[],
 flavor:["rich","meaty","umami"],texture:["firm","fibrous"],
 story:{en:"Each pig gives two, at around eighty grams apiece: the lean masseter buried inside the jowl whose surrounding fat is cured into guanciale. Where a beef cheek is a four-hour braise, this one is done in ninety minutes, and it carries so much fat within the muscle that it can be braised with none added.",
@@ -549,7 +549,7 @@ fr:"Une heure et demie à petit frémissement, puis on s’arrête : la joue de 
 pairs:["cider-vinegar","onion","bay-leaf","garlic","carrot","white-beans","thyme","pimenton-de-la-vera"],
 svg:'<path class="f2 sf" d="M26 44q10-11 18-3 7 7 1 15-10 8-19 0-5-6 0-12z"/><path class="f2 sf" d="M52 44q10-11 18-3 7 7 1 15-10 8-19 0-5-6 0-12z"/><path class="s" d="M32 50q6 3 10-1M58 50q6 3 10-1"/>'},
 
-{id:"echine",cat:"cuts",price:1,pk:"8–13 €/kg",name:{en:"Pork collar",fr:"Échine de porc"},latin:"Porc — échine",
+{id:"echine",cat:"cuts",parent:"pork",price:1,pk:"8–13 €/kg",name:{en:"Pork collar",fr:"Échine de porc"},latin:"Porc — échine",
 origin:{en:"France",fr:"France"},season:[],
 flavor:["rich","meaty","sweet","umami"],texture:["tender","juicy"],
 story:{en:"The neck end of the loin, and the most marbled part of a pig — which is why it is the only pork cut that survives a barbecue without drying. Italy cures the same muscle into coppa and charges ten times as much.",
@@ -559,7 +559,7 @@ fr:"C’est le meilleur rapport qualité-prix de la boutique. Rôtissez-la enti�
 pairs:["mustard","sage","apple","garlic","thyme","cider-vinegar","fennel-seed","onion"],
 svg:'<path class="f1 sf" d="M18 42c5-9 17-13 30-13 14 0 26 4 32 11 4 5 2 13-5 18-9 6-22 9-35 8-12-1-21-5-24-11-2-4-1-9 2-13z"/><path class="f2 sf" d="M18 42c5-9 17-13 30-13 14 0 26 4 32 11-8-4-19-7-32-7-13 0-24 3-30 9z"/><path class="f2 sf" d="M22 56c5 6 13 10 22 11 5 1 9 0 13-1-3 5-11 8-20 7-9-1-15-6-17-12-1-2-1-4 2-5z"/><path class="s" d="M29 48l5 2M38 45l5 1M46 49l5 2M55 46l5 1M33 58l4 2M43 61l5 1M53 58l4 2M62 53l4 1M62 44l4 2" stroke-width="2"/><path class="s" d="M25 52c3 4 7 7 12 9" stroke-width="1.5"/>'},
 
-{id:"jarret-de-porc",cat:"cuts",price:1,pk:"6–11 €/kg",name:{en:"Pork knuckle",fr:"Jarret de porc"},latin:"Porc — jarret",
+{id:"jarret-de-porc",cat:"cuts",parent:"pork",price:1,pk:"6–11 €/kg",name:{en:"Pork knuckle",fr:"Jarret de porc"},latin:"Porc — jarret",
 origin:{en:"France & Germany",fr:"France & Allemagne"},season:[],
 flavor:["rich","salty","meaty","smoky"],texture:["tough","gelatinous"],
 story:{en:"Alsace and Germany brine it and serve it on sauerkraut; Bavaria roasts it to a lacquered Schweinshaxe. Either way it is one joint feeding two people for the price of a sandwich, which is most of its appeal.",
@@ -589,7 +589,7 @@ fr:"Grattez le gras du dessous et blanchissez les plaques dix minutes à départ
 pairs:["haricot-tarbais","garlic","confit-de-canard","onion","bay-leaf","carrot","black-pepper","thyme"],
 svg:'<path class="f1 sf" d="M22 38q12-6 26 0t26-4v26q-14 6-26 2t-26 4z"/><path class="s" d="M22 52q12-4 26 0t26-2"/><circle class="dot" cx="36" cy="46" r="1.5"/><circle class="dot" cx="50" cy="50" r="1.5"/><circle class="dot" cx="62" cy="44" r="1.5"/>'},
 
-{id:"filet-mignon-porc",cat:"cuts",price:2,pk:"14–22 €/kg",name:{en:"Pork tenderloin",fr:"Filet mignon de porc"},latin:"Porc — filet",
+{id:"filet-mignon-porc",cat:"cuts",parent:"pork",price:2,pk:"14–22 €/kg",name:{en:"Pork tenderloin",fr:"Filet mignon de porc"},latin:"Porc — filet",
 origin:{en:"France",fr:"France"},season:[],
 flavor:["delicate","mild","sweet","meaty"],texture:["tender","moist","smooth"],
 story:{en:"The least-used muscle on the pig and therefore the most tender, but also the leanest — it has almost no fat at all, which makes it the easiest cut in the shop to ruin. Confusingly, the French name means something different from the English.",
@@ -629,7 +629,7 @@ fr:"Assez épaisse pour être traitée comme un filet de bœuf : saisissez fort,
 pairs:["pimenton-de-la-vera","sherry-vinegar","olive-oil","garlic","piquillo","thyme","potato","oloroso"],
 svg:'<path class="f2 sf" d="M22 46a26 13 0 1152 0v10a26 13 0 01-52 0z"/><ellipse class="f1 sf" cx="48" cy="46" rx="26" ry="13"/><path class="s" d="M32 46q8-6 16-2t14-3M34 51q8-4 14 0t12-3"/>'},
 
-{id:"rack-of-lamb",cat:"cuts",price:3,pk:"28–45 €/kg",name:{en:"Rack of lamb",fr:"Carré d’agneau"},latin:"Ovis aries (rib rack)",
+{id:"rack-of-lamb",cat:"cuts",parent:"lamb",price:3,pk:"28–45 €/kg",name:{en:"Rack of lamb",fr:"Carré d’agneau"},latin:"Ovis aries (rib rack)",
 origin:{en:"The first eight ribs, frenched",fr:"Les huit premières côtes, manchonnées"},season:[3,4,5,6],
 flavor:["meaty","delicate","rich"],texture:["tender","juicy"],
 story:{en:"Eight ribs scraped clean to the bone — “frenched” — until the rack looks architectural; two racks interlocked become the guard of honour of British wedding tables. Under its thin cap of fat sits the tenderest lamb on the animal, built for a green persillade crust.",
@@ -639,7 +639,7 @@ fr:"Saisissez d’abord la coiffe de gras, badigeonnez de moutarde, pressez la c
 pairs:["rosemary","garlic","mustard","honey","thyme"],
 svg:'<path class="f1 sf" d="M26 61q-5-16-6-31 0-3 3-4 3 0 4 3 2 15 5 32zM39 60q-3-17-4-32 0-3 3-4 3 0 3 3 1 15 4 33zM53 59q1-17 3-31 1-3 4-3 3 1 2 4-1 15 0 30zM66 60q4-15 5-29 1-3 4-3 3 1 2 4-2 15-3 28z"/><path class="f1 sf" d="M18 64q0-8 8-10 10-3 22-2 14 1 24 4 6 2 6 8 0 6-9 8-12 3-26 2-14 0-22-3-5-2-5-10z"/><path class="f2 sf" d="M20 68q12 6 27 6 16 1 29-5-1 3-4 4-12 3-23 2-14 0-21-3-5-2-8-4z"/><path class="f2 sf" d="M22 59q-4 4-3 8 2 5 8 5 3 0 3-2-6-3-6-8 0-4-2-3z"/><path class="s" d="M34 62q12 4 24 3M40 68q9 2 18 1" stroke-width="1.5"/>'},
 
-{id:"cote-de-boeuf",cat:"cuts",price:3,pk:"25–45 €/kg",name:{en:"Rib of beef",fr:"Côte de bœuf"},latin:"Bos taurus (rib section)",
+{id:"cote-de-boeuf",cat:"cuts",parent:"beef",price:3,pk:"25–45 €/kg",name:{en:"Rib of beef",fr:"Côte de bœuf"},latin:"Bos taurus (rib section)",
 origin:{en:"The rib cage, bone left in",fr:"Le train de côtes, avec son os"},season:[],
 flavor:["meaty","rich","umami","toasty"],texture:["tender","juicy"],
 story:{en:"The celebration cut: marbled enough to baste itself, big enough to demand company, always carved and shared. Dry-aged for a month or two, its edges develop the nutty, almost blue-cheese depth of enzymes at slow work — beef that has learned patience.",
@@ -649,7 +649,7 @@ fr:"Salez généreusement, saisissez toutes les faces y compris la tranche de gr
 pairs:["rosemary","garlic","black-pepper","bone-marrow","shallot"],
 svg:'<path class="f2 sf" d="M38 40q16-8 26 2 6 7 0 16-8 12-22 8-12-4-10-16 2-7 6-10z"/><path class="f1 sf" d="M34 42q-6-2-8-8 6-2 10 2z"/><path class="s" d="M44 50q8-2 14 2" stroke-width="1.4"/>'},
 
-{id:"selle-agneau",cat:"cuts",price:3,pk:"22–35 €/kg",name:{en:"Saddle of lamb",fr:"Selle d’agneau"},latin:"Agneau — selle",
+{id:"selle-agneau",cat:"cuts",parent:"lamb",price:3,pk:"22–35 €/kg",name:{en:"Saddle of lamb",fr:"Selle d’agneau"},latin:"Agneau — selle",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],
 flavor:["delicate","rich","meaty","sweet"],texture:["tender","juicy"],
 story:{en:"Both loins still joined across the backbone, and the grandest thing a butcher can hand you — it is a restaurant cut, carved at the table. Escoffier's selle d'agneau was a set piece of the classical service.",
@@ -769,7 +769,7 @@ fr:"Rôtissez-le juste rosé et laissez-le reposer vingt minutes. Un veau cuit �
 pairs:["morel","cream","tarragon","butter","shallot","white-wine-vinegar","lemon","asparagus"],
 svg:'<path class="f1 sf" d="M18 52c0-8 6-13 16-15 12-2 26-2 38 1 8 2 12 7 12 13 0 9-7 15-18 17-12 3-26 2-36-2-8-3-12-8-12-14z"/><path class="f2 sf" d="M18 52c0-8 6-13 16-15 6-1 12-2 18-2-10 1-19 4-25 8-5 4-8 8-8 12-1-1-1-2-1-3z"/><path class="s" d="M36 37c-2 11-2 22 0 31M56 36c-1 11-1 22 0 32" stroke-width="2.5"/><path class="s" d="M36 37c-2-3-5-4-8-3M56 36c2-3 5-4 8-2M36 68c-1 3-3 4-6 4M56 68c1 3 4 4 7 3" stroke-width="1.5"/><path class="f2 sf" d="M77 43c4 3 7 6 7 10 0 5-4 9-10 12 2-7 3-15 3-22z"/>'},
 
-{id:"ris-de-veau-noix",cat:"cuts",luxe:true,price:3,pk:"55–95 €/kg",name:{en:"Veal sweetbread heart (noix)",fr:"Ris de veau — noix (pomme)"},latin:"Bos taurus (thymus, thoracic lobe)",
+{id:"ris-de-veau-noix",cat:"cuts",parent:"sweetbreads",luxe:true,price:3,pk:"55–95 €/kg",name:{en:"Veal sweetbread heart (noix)",fr:"Ris de veau — noix (pomme)"},latin:"Bos taurus (thymus, thoracic lobe)",
 origin:{en:"The thoracic lobe of the calf's thymus",fr:"Le lobe thoracique du thymus de veau"},season:[],
 flavor:["delicate","creamy","milky","rich"],texture:["soft","creamy"],
 story:{en:"Butchers split the calf's thymus in two and sell the halves as different goods: the round thoracic lobe — the noix, or pomme — fetches roughly double the ragged throat piece that runs on from it. One calf yields one noix, so a menu that lists it whole-roasted is quietly telling you how many it bought.",
@@ -779,7 +779,7 @@ fr:"Faites-la dégorger trois heures à l’eau froide changée deux fois, blanc
 pairs:["morel","cream","butter","capers","lemon","shallot","white-wine-vinegar","parsley"],
 svg:'<path class="f1 sf" d="M30 60q0-16 18-16t18 16q0 10-18 10T30 60z"/><path class="s" d="M24 40h48"/><rect class="f2 sf" x="40" y="28" width="16" height="10" rx="2"/><path class="s" d="M38 64q10 4 20 0"/>'},
 
-{id:"ris-de-veau-gorge",cat:"cuts",price:3,pk:"30–50 €/kg",name:{en:"Veal throat sweetbread (gorge)",fr:"Ris de veau — gorge"},latin:"Bos taurus (thymus, cervical lobe)",
+{id:"ris-de-veau-gorge",cat:"cuts",parent:"sweetbreads",price:3,pk:"30–50 €/kg",name:{en:"Veal throat sweetbread (gorge)",fr:"Ris de veau — gorge"},latin:"Bos taurus (thymus, cervical lobe)",
 origin:{en:"The cervical lobe, along the calf's windpipe",fr:"Le lobe cervical, le long de la trachée du veau"},season:[],
 flavor:["delicate","milky","mild","rich"],texture:["soft","creamy"],
 story:{en:"The gorge is the long lobe that runs up the throat toward the jaw, and it never sets into the neat cushion the noix makes — it comes away in ragged strips. Classical kitchens wasted none of it: this is the sweetbread of vol-au-vent, financière garnish and quenelle farce, where shape stops mattering.",

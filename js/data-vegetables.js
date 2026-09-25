@@ -79,7 +79,7 @@ fr:"Les pousses en conserve gardent un goût métallique. Cinq minutes d’ébul
 pairs:["soy-sauce","ginger","sesame","shiitake","chili","spring-onion","garlic","fish-sauce"],
 svg:'<path class="f1 sf" d="M48 16q10 13 14 33 3 13 3 31-17 5-34 0 0-18 3-31 4-20 14-33z"/><path class="f2 sf" d="M48 16q-10 13-14 33-3 13-3 31 8 3 17 3-5-15-3-33t3-34z"/><path class="f2 sf" d="M62 44q9-6 14-14-2 13-8 21zM34 46q-9-5-13-13 1 13 7 20z"/><path class="s" d="M32 72q17-11 31 2M36 59q11-8 24 2M40 45q8-6 16 2" stroke-width="2"/><path class="s" d="M34 76q13 6 27 0M44 30q5-4 9 1" stroke-width="1.5"/>'},
 
-{id:"banana-shallot",cat:"vegetables",price:1,pk:"4–7 €/kg",name:{en:"Banana shallot",fr:"Échalote banane"},latin:"Allium cepa var. aggregatum",
+{id:"banana-shallot",cat:"vegetables",parent:"shallot",price:1,pk:"4–7 €/kg",name:{en:"Banana shallot",fr:"Échalote banane"},latin:"Allium cepa var. aggregatum",
 origin:{en:"Northern Europe, seed-grown",fr:"Europe du Nord, semée en graine"},season:[],
 flavor:["mild","sweet","delicate"],texture:["firm","smooth","juicy"],
 story:{en:"It is raised from seed rather than from a mother bulb, and that is why French growers spent the 2000s in court trying to stop it being sold as échalote - the compromise word was échalion. One lobe means no wasted double bulbs and a long, even body.",
@@ -129,7 +129,7 @@ fr:"Faites cloquer la peau au gril jusqu’au noir et laissez suer dix minutes d
 pairs:["olive-oil","garlic","tomato","onion","anchovy","basil","paprika","thyme"],
 svg:'<path class="f1 sf" d="M48 28q13-1 19 8 6 9 5 20-1 12-5 19-3 5-8 4-4-1-5-7-4 8-9 8t-9-8q-1 6-5 7-5 1-8-4-4-7-5-19-1-11 5-20 6-9 25-8z"/><path class="f2 sf" d="M60 32q9 8 10 22 1 14-4 24-4 4-8 3 7-11 7-26 0-16-5-23z"/><path class="f2 sf" d="M38 30q4-6 10-6t10 6q-4 5-10 5t-10-5z"/><path class="s" d="M48 26q2-6 5-9"/><path class="s" d="M54 72q3-16 1-30M36 72q-3-16-1-30" stroke-width="1.5"/>'},
 
-{id:"bintje-potato",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Bintje potato",fr:"Bintje"},latin:"Solanum tuberosum",
+{id:"bintje-potato",cat:"vegetables",parent:"potato",price:1,pk:"1,50–3 €/kg",name:{en:"Bintje potato",fr:"Bintje"},latin:"Solanum tuberosum",
 origin:{en:"Friesland, Netherlands",fr:"Frise, Pays-Bas"},season:[8,9,10,11],
 flavor:["earthy","mild","nutty"],texture:["firm","granular","dry"],
 story:{en:"A Frisian schoolmaster, Kornelis Lieuwes de Vries, bred it in 1904 and named it after a former pupil, Bintje Jansma, then seventeen — he named most of his 125 varieties after his children and his students. Its dry, high-starch flesh is exactly what a two-bath fry wants, and exactly why it disintegrates in a pot of boiling water.",
@@ -159,7 +159,7 @@ fr:"Faites-les bouillir 5 à 8 minutes dans un grand volume d’eau non salée, 
 pairs:["egg","olive-oil","red-wine-vinegar","shallot","walnut-oil","garlic","poitrine-fumee"],
 svg:'<path class="s" d="M36 82q2-30 8-46 3-9 8-14M45 82q1-30 7-46 3-9 9-13M54 82q0-28 7-44 3-8 9-12"/><path class="f3 sf" d="M33 58h30v7H33z"/><path class="f2 sf" d="M62 40q10-5 11-13-12 0-11 13z"/><path class="s" d="M52 22q5-4 7 0t-5 4"/>'},
 
-{id:"black-krim-tomato",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Black Krim tomato",fr:"Tomate noire de Crimée"},latin:"Solanum lycopersicum",
+{id:"black-krim-tomato",cat:"vegetables",parent:"tomato",price:2,pk:"5–9 €/kg",name:{en:"Black Krim tomato",fr:"Tomate noire de Crimée"},latin:"Solanum lycopersicum",
 origin:{en:"Crimean peninsula",fr:"Péninsule de Crimée"},season:[7,8,9],
 flavor:["umami","sweet","fruity"],texture:["soft","smooth","juicy"],
 story:{en:"Seed collected from a farmer near the Crimean coast reached the Seed Savers Exchange in 1991 through a Swedish gardener, Lars Olov Rosenström, and it became the first dark tomato sold widely in the West. Its acidity is unusually low, which is why the fruit reads as savoury rather than sharp.",
@@ -169,7 +169,7 @@ fr:"Assaisonnez-la d’huile d’olive et de sel, rien d’autre : le vinaigre �
 pairs:["olive-oil","fleur-de-sel-guerande","basil","burrata","anchovy","red-onion","oregano","black-pepper"],
 svg:'<circle class="f2 sf" cx="48" cy="54" r="24"/><path class="f3" d="M26 46q10-8 22-8t22 8q-8 6-22 6t-22-6z"/><path class="s" d="M48 30v-8M48 30l-10-6M48 30l10-6M48 30l-13 1M48 30l13 1"/><path class="s" d="M36 62q10 6 22 0"/>'},
 
-{id:"black-radish",cat:"vegetables",price:1,pk:"3–5 €/kg",name:{en:"Black radish",fr:"Radis noir"},latin:"Raphanus sativus var. niger",
+{id:"black-radish",cat:"vegetables",parent:"radish",price:1,pk:"3–5 €/kg",name:{en:"Black radish",fr:"Radis noir"},latin:"Raphanus sativus var. niger",
 origin:{en:"Eastern Europe",fr:"Europe de l’Est"},season:[10,11,12,1,2],
 flavor:["hot","peppery","bitter","earthy"],texture:["hard","crisp","dry"],
 story:{en:"Coal-black outside, bone-white within, and considerably fiercer than its pink cousin. Central European kitchens grated it with goose fat and salt as a winter relish, and pharmacists sold it for the liver — a claim it still carries in French health-food shops.",
@@ -279,7 +279,7 @@ fr:"Brûlez-les noirs sur des sarments — il faut du charbon, pas de la couleur
 pairs:["almond","hazelnut","olive-oil","garlic","nora-pepper","tomato","sherry-vinegar","chili"],
 svg:'<path class="f1 sf" d="M32 80q-2-34 3-44t5 44z"/><path class="f1 sf" d="M46 82q-1-40 4-50t5 50z"/><path class="f1 sf" d="M60 80q0-32 4-42t3 42z"/><path class="f3 sf" d="M30 32q22-10 40 0-18 8-40 0z"/><path class="s" d="M26 62h44"/>'},
 
-{id:"camus-artichoke",cat:"vegetables",price:1,pk:"1,50–3 €/pièce",name:{en:"Camus de Bretagne artichoke",fr:"Artichaut camus de Bretagne"},latin:"Cynara scolymus",
+{id:"camus-artichoke",cat:"vegetables",parent:"artichoke",price:1,pk:"1,50–3 €/pièce",name:{en:"Camus de Bretagne artichoke",fr:"Artichaut camus de Bretagne"},latin:"Cynara scolymus",
 origin:{en:"Finistère and the Breton coast",fr:"Finistère et littoral breton"},season:[5,6,7,8,9,10,11],
 flavor:["earthy","bitter","nutty"],texture:["firm","fibrous","moist"],
 story:{en:"The variety was bred around 1810 by an agronomist near Paris and then moved west, and Brittany now grows the bulk of France’s artichokes with it. It is a heavy head bought for a thick fond and fleshy leaf bases; a poivrade of the same weight would be mostly waste.",
@@ -419,7 +419,7 @@ fr:"Trente secondes à l’eau bouillante d’abord — la couleur vire au vert 
 pairs:["egg","sesame-oil","salt","silken-tofu","chili","soy-sauce"],
 svg:'<path class="s" d="M48 84V22"/><path class="f2 sf" d="M48 32q-14-4-18-12 14-2 18 12zM48 32q14-4 18-12-14-2-18 12z"/><path class="f2 sf" d="M48 48q-16-4-20-12 16-2 20 12zM48 48q16-4 20-12-16-2-20 12z"/><path class="f1 sf" d="M48 64q-14-4-18-12 14-2 18 12zM48 64q14-4 18-12-14-2-18 12z"/><path class="s" d="M48 22q-4-6 0-8"/>'},
 
-{id:"chioggia-beetroot",cat:"vegetables",price:2,pk:"4–7 €/kg",name:{en:"Chioggia beetroot",fr:"Betterave de Chioggia"},latin:"Beta vulgaris",
+{id:"chioggia-beetroot",cat:"vegetables",parent:"beetroot",price:2,pk:"4–7 €/kg",name:{en:"Chioggia beetroot",fr:"Betterave de Chioggia"},latin:"Beta vulgaris",
 origin:{en:"Venetian lagoon, Italy",fr:"Lagune de Venise, Italie"},season:[6,7,8,9,10],
 flavor:["sweet","fresh","mild"],texture:["firm","crisp","juicy"],
 story:{en:"It is named for Chioggia, the fishing town at the southern end of the Venetian lagoon, and reached American seed catalogues by the middle of the nineteenth century. The rings are pigment laid down in alternating layers as the root swells, and they are chemically fragile: the betalains bleed and blur the moment heat arrives.",
@@ -469,7 +469,7 @@ fr:"Blanchissez-le deux minutes dans une grande eau salée avant tout passage à
 pairs:["garlic","anchovy","chili","olive-oil","pecorino","lemon"],
 svg:'<path class="f2 sf" d="M46 76q-14-14-18-30 12 2 18 14zM50 76q14-14 18-30-12 2-18 14zM46 74q-2-20 2-34 4 14 2 34z"/><circle class="dot" cx="28" cy="44" r="3.2"/><circle class="dot" cx="48" cy="38" r="3.2"/><circle class="dot" cx="68" cy="44" r="3.2"/><path class="s" d="M40 76h16M40 80h16"/>'},
 
-{id:"cipollini-onion",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Cipollini onion",fr:"Oignon cipollini"},latin:"Allium cepa",
+{id:"cipollini-onion",cat:"vegetables",parent:"onion",price:2,pk:"5–9 €/kg",name:{en:"Cipollini onion",fr:"Oignon cipollini"},latin:"Allium cepa",
 origin:{en:"Emilia-Romagna, Italy",fr:"Émilie-Romagne, Italie"},season:[8,9,10,11],
 flavor:["sweet","mild","rich"],texture:["firm","smooth","juicy"],
 story:{en:"The flat shape comes from an old Emilian landrace, the Borettana, named for Boretto on the Po and selected for sugar rather than for keeping. In Italy the word cipollina also covers the bitter bulbs of grape hyacinth, so a market label does not always mean an onion.",
@@ -489,7 +489,7 @@ fr:"Le sucre décline dès la cueillette : cuisez les épis frais le jour même,
 pairs:["butter","chili","black-pepper","cream","paprika","quinoa"],
 svg:'<path class="f1 sf" d="M48 22q10 8 11 24 2 18-2 29-2 8-9 8t-9-8q-4-11-2-29 1-16 11-24z"/><path class="f2 sf" d="M40 50q-9 5-12 13-3 9 0 14 4-3 6-10 2-11 6-17z"/><path class="f2 sf" d="M57 52q9 5 12 13 3 9 0 13-4-3-6-10-2-10-6-16z"/><path class="s" d="M39 36q9 4 18 0M38 46q10 5 20 0M38 57q10 5 20 0M40 67q8 4 16 0M48 27v48M42 30q-1 22 0 44M54 30q1 22 0 44" stroke-width="1.5"/><path class="s" d="M45 23q-3-2-5-5M47 22q-1-3-1-6M50 22q2-3 5-5M49 22q1-3 2-5" stroke-width="2"/>'},
 
-{id:"crapaudine-beetroot",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Crapaudine beetroot",fr:"Betterave crapaudine"},latin:"Beta vulgaris",
+{id:"crapaudine-beetroot",cat:"vegetables",parent:"beetroot",price:2,pk:"5–10 €/kg",name:{en:"Crapaudine beetroot",fr:"Betterave crapaudine"},latin:"Beta vulgaris",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[10,11,12,1,2],
 flavor:["earthy","sweet","rich"],texture:["hard","granular","dry"],
 story:{en:"The name is from crapaud, toad: the skin cracks into rough dark plates as the root swells, and growers call it the oldest beetroot still in cultivation, a claim repeated everywhere and documented nowhere. What is certain is the flesh — dense, low in water, with none of the wet sweetness of a round table beet.",
@@ -529,7 +529,7 @@ fr:"Salez le concombre émincé vingt minutes et égouttez-le avant d’assaison
 pairs:["dill","yogurt","mint","garlic","lemon","feta","tomato","white-wine-vinegar"],
 svg:'<path class="f2 sf" d="M36 26q10-2 14 8t2 34q-2 10-10 8t-8-14 0-28 2-8z"/><path class="s" d="M42 36v34"/><circle class="dot" cx="38" cy="46" r="1.5"/><circle class="dot" cx="46" cy="58" r="1.5"/>'},
 
-{id:"cevennes-sweet-onion",cat:"vegetables",sign:"AOP",price:2,pk:"3,50–6 €/kg",name:{en:"Cévennes sweet onion",fr:"Oignon doux des Cévennes"},latin:"Allium cepa",
+{id:"cevennes-sweet-onion",cat:"vegetables",parent:"onion",sign:"AOP",price:2,pk:"3,50–6 €/kg",name:{en:"Cévennes sweet onion",fr:"Oignon doux des Cévennes"},latin:"Allium cepa",
 origin:{en:"Cévennes terraces, Gard",fr:"Bancels des Cévennes, Gard"},season:[8,9,10,11],
 flavor:["sweet","mild","fresh"],texture:["tender","crisp","juicy"],
 story:{en:"It is grown on bancels, the dry-stone terraces monks began cutting into the Cévennes hillsides in the Middle Ages, and a tithe record of 1409 already mentions the local onion. It took the first AOC ever granted to an onion in 2003 and the European AOP in 2008.",
@@ -559,7 +559,7 @@ fr:"Cueillez-le ou achetez-le avant la floraison. Dès que la fleur jaune paraî
 pairs:["lard","egg","white-wine-vinegar","garlic","shallot","walnut","mustard","black-pepper"],
 svg:'<path class="s" d="M47 72q1-16 1-26"/><path class="f1 sf" d="M47 76l-9-3 2-6-9-4 3-6-9-4 3-6-8-6C30 50 40 62 47 76z"/><path class="f1 sf" d="M49 76l9-3-2-6 9-4-3-6 9-4-3-6 8-6C66 50 56 62 49 76z"/><path class="f2 sf" d="M40 40q8 4 16 0 1 6-8 7-9-1-8-7z"/><path class="f1 sf" d="M34 36q-1-10 6-13 3-4 8-3 6-1 9 3 7 3 7 13-7 5-15 5-14 0-15-5z"/><path class="s" d="M38 26l-4-5M44 22l-2-6M52 22l2-6M58 26l4-5M34 32l-6-3M62 32l6-3" stroke-width="2"/>'},
 
-{id:"datterino-tomato",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Datterino tomato",fr:"Tomate datterino"},latin:"Solanum lycopersicum",
+{id:"datterino-tomato",cat:"vegetables",parent:"tomato",price:2,pk:"6–11 €/kg",name:{en:"Datterino tomato",fr:"Tomate datterino"},latin:"Solanum lycopersicum",
 origin:{en:"Sicily and Puglia",fr:"Sicile et Pouilles"},season:[6,7,8,9],
 flavor:["sweet","fruity","tangy"],texture:["firm","smooth","juicy"],
 story:{en:"The name is simply dattero, date, for a fruit no bigger than one; Sicilian growers irrigate it with brackish water and the sugar climbs to roughly double a field tomato's. The skin stays thin at that sweetness, which is why it splits at the first excess of heat.",
@@ -769,7 +769,7 @@ fr:"Salez fortement l’eau de cuisson et rafraîchissez dans la glace. Les deux
 pairs:["shallot","butter","almond","garlic","lemon","savory","olive-oil","hazelnut"],
 svg:'<path class="f2 sf" d="M30 68q10-30 34-42"/><path class="f2 sf" d="M36 72q10-30 34-42"/><circle class="dot" cx="44" cy="54" r="1.6"/><circle class="dot" cx="52" cy="46" r="1.6"/>'},
 
-{id:"green-garlic",cat:"vegetables",price:1,pk:"6–12 €/kg",name:{en:"Green garlic",fr:"Ail nouveau"},latin:"Allium sativum",
+{id:"green-garlic",cat:"vegetables",parent:"garlic",price:1,pk:"6–12 €/kg",name:{en:"Green garlic",fr:"Ail nouveau"},latin:"Allium sativum",
 origin:{en:"Spring garlic beds",fr:"Planches d’ail de printemps"},season:[4,5,6],
 flavor:["sweet","mild","pungent"],texture:["tender","fibrous","juicy"],
 story:{en:"Curing is what makes garlic sharp: weeks of drying concentrate the bulb's sulphur compounds as it loses water and the cloves seal themselves into papery jackets. Pulled in spring before any of that, it is one soft undivided bulb on a juicy stalk, and the whole plant is edible.",
@@ -789,7 +789,7 @@ fr:"Pour la friture, salez les tranches et laissez-les dégorger vingt minutes a
 pairs:["onion","mustard-seed","cider-vinegar","sugar","ginger","raisin","polenta-bramata","chili"],
 svg:'<circle class="f1 sf" cx="48" cy="54" r="26"/><path class="f2 sf" d="M48 34q-16 5-16 20t16 20 16-20-16-20z"/><path class="s" d="M40 44q-4 9 0 19M56 44q4 9 0 19M44 30h8"/>'},
 
-{id:"green-zebra-tomato",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Green Zebra tomato",fr:"Tomate Green Zebra"},latin:"Solanum lycopersicum",
+{id:"green-zebra-tomato",cat:"vegetables",parent:"tomato",price:2,pk:"6–11 €/kg",name:{en:"Green Zebra tomato",fr:"Tomate Green Zebra"},latin:"Solanum lycopersicum",
 origin:{en:"Everett, Washington",fr:"Everett, État de Washington"},season:[7,8,9],
 flavor:["sour","tangy","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"Tom Wagner crossed four varieties in his garden at Everett, Washington, and listed the result in his Tater-Mater seed catalogue in 1983. Every seed list sells it as an heirloom: it is a deliberate modern cross, bred for skin that will not crack the way its green-when-ripe parent did.",
@@ -799,7 +799,7 @@ fr:"Jugez la maturité au toucher, pas à la couleur : elle reste verte, on cher
 pairs:["olive-oil","basil","goat-cheese","shallot","sherry-vinegar","cucumber","tarragon","fleur-de-sel-guerande"],
 svg:'<g transform="translate(3.02 3.15) scale(0.937)"><circle class="f2 sf" cx="48" cy="56" r="26"/><path class="s" d="M28 40q6 9 4 23M40 33q4 15 2 31M56 33q-4 15-2 31M68 40q-6 9-4 23"/><path class="f3 sf" d="M48 30q-10-2-14-8 6 0 10 2-2-6 4-8 6 2 4 8 4-2 10-2-4 6-14 8z"/></g>'},
 
-{id:"grey-shallot",cat:"vegetables",price:2,pk:"8–15 €/kg",name:{en:"Grey shallot",fr:"Échalote grise"},latin:"Allium oschaninii",
+{id:"grey-shallot",cat:"vegetables",parent:"shallot",price:2,pk:"8–15 €/kg",name:{en:"Grey shallot",fr:"Échalote grise"},latin:"Allium oschaninii",
 origin:{en:"Central Asian foothills",fr:"Piémonts d’Asie centrale"},season:[8,9,10,11,12,1],
 flavor:["pungent","sweet","warm"],texture:["firm","smooth","dry"],
 story:{en:"It is not a variety of the common shallot but a separate species, and it sets no usable seed: every grey shallot in France descends by division from the one before it. Cooks call it the true shallot, and the seed-grown shallots of most supermarkets are, botanically, onions.",
@@ -809,7 +809,7 @@ fr:"Elle est pénible à éplucher : une minute dans l’eau chaude et la peau g
 pairs:["red-wine-vinegar","butter","tarragon","thyme","beef","bone-marrow","white-wine-vinegar","black-pepper"],
 svg:'<path class="f3 sf" d="M40 46q-7 10-5 21t13 13 13-13-5-21q-4-8-8-8t-8 8z"/><path class="s" d="M48 40V22M43 26q5-7 10 0"/><path class="s" d="M48 44v34M40 54q-2 12 2 20M56 54q2 12-2 20M45 80l-3 7M51 80l3 7"/>'},
 
-{id:"hakurei-turnip",cat:"vegetables",price:2,pk:"6–11 €/kg",name:{en:"Hakurei turnip",fr:"Navet hakurei"},latin:"Brassica rapa",
+{id:"hakurei-turnip",cat:"vegetables",parent:"turnip",price:2,pk:"6–11 €/kg",name:{en:"Hakurei turnip",fr:"Navet hakurei"},latin:"Brassica rapa",
 origin:{en:"Japan",fr:"Japon"},season:[4,5,6,10,11],
 flavor:["sweet","fresh","mild"],texture:["tender","crisp","juicy"],
 story:{en:"It was bred in Japan in the years after the war as a kabu you could eat without cooking, and its skin is thin enough that peeling removes flavour rather than toughness. The tops are not a bonus but half the crop, and a bunch sold without them has usually sat long enough for someone to cut them away.",
@@ -869,7 +869,7 @@ fr:"Montez les blancs en mousse, réincorporez les jaunes, et faites frire la bo
 pairs:["egg","tomato","ancho-chilli","onion","epazote","garlic","manchego"],
 svg:'<path class="f2 sf" d="M48 18q9 4 9 13t-9 10q-9-2-9-10t9-13z"/><path class="f1 sf" d="M34 32q9 2 10 11t-8 10q-9-2-9-11t7-10zM62 32q-9 2-10 11t8 10q9-2 9-11t-7-10z"/><path class="f2 sf" d="M48 41q10 4 10 14t-10 11q-10-1-10-11t10-14z"/><path class="f3 sf" d="M46 63h5l-2 20h-3z"/><path class="s" d="M39 65h19"/>'},
 
-{id:"gobbo-cardoon",cat:"vegetables",price:2,pk:"5–10 €/kg",name:{en:"Hunchback cardoon",fr:"Cardon gobbo"},latin:"Cynara cardunculus",
+{id:"gobbo-cardoon",cat:"vegetables",parent:"cardoon",price:2,pk:"5–10 €/kg",name:{en:"Hunchback cardoon",fr:"Cardon gobbo"},latin:"Cynara cardunculus",
 origin:{en:"Nizza Monferrato, Piedmont",fr:"Nizza Monferrato, Piémont"},season:[11,12,1,2],
 flavor:["bitter","earthy","fresh"],texture:["firm","fibrous","moist"],
 story:{en:"Around Nizza Monferrato the plants are bent over in autumn and buried in earth; deprived of light they grow back up towards it, which is where the hunch and the name come from. The burial also strips the bitterness, and this is the one cardoon eaten raw, dipped straight into bagna cauda.",
@@ -1029,7 +1029,7 @@ fr:"Épluchez-les et laissez-les tremper une journée à l'eau froide, changée 
 pairs:["olive-oil","red-wine-vinegar","garlic","egg","pork","chili","parsley","potato"],
 svg:'<path class="f2 sf" d="M48 40q16 0 16 17t-16 17-16-17 16-17z"/><path class="s" d="M48 40V20M43 30q5-10 11-13M53 30q-5-10-11-13"/><circle class="dot" cx="41" cy="16" r="2.5"/><circle class="dot" cx="55" cy="15" r="2.5"/><path class="s" d="M44 74v6M52 74v6"/>'},
 
-{id:"lautrec-pink-garlic",cat:"vegetables",sign:"IGP",price:2,pk:"12–20 €/kg",name:{en:"Lautrec pink garlic",fr:"Ail rose de Lautrec"},latin:"Allium sativum",
+{id:"lautrec-pink-garlic",cat:"vegetables",parent:"garlic",sign:"IGP",price:2,pk:"12–20 €/kg",name:{en:"Lautrec pink garlic",fr:"Ail rose de Lautrec"},latin:"Allium sativum",
 origin:{en:"Lautrec, Tarn",fr:"Lautrec, Tarn"},season:[7,8,9,10,11,12],
 flavor:["sweet","pungent","mild"],texture:["firm","smooth","dry"],
 story:{en:"It took Label Rouge in 1966, among the very first French agricultural products to hold one, and the IGP thirty years later. The pink is only the tunic over the cloves — the clove itself is white — and the trade sells it plaited into manouilles because the braid keeps the necks dry.",
@@ -1079,7 +1079,7 @@ fr:"Tranchez-la et réservez-la dans une eau vinaigrée : la coupe brunit en que
 pairs:["soy-sauce","rice-vinegar","sesame-oil","pork","kombu","hon-mirin","black-sesame","chili"],
 svg:'<circle class="f1 sf" cx="48" cy="50" r="27"/><circle class="s" cx="48" cy="50" r="23"/><path class="f3" d="M48 32a5 5 0 1 0 .1 0zM59 37a5 5 0 1 0 .1 0zM61 50a5 5 0 1 0 .1 0zM52 59a5 5 0 1 0 .1 0zM39 57a5 5 0 1 0 .1 0zM35 43a5 5 0 1 0 .1 0zM48 45a5 5 0 1 0 .1 0z"/>'},
 
-{id:"mammola-artichoke",cat:"vegetables",price:2,pk:"2–4 €/pièce",name:{en:"Mammola artichoke",fr:"Artichaut mammola"},latin:"Cynara cardunculus var. scolymus",
+{id:"mammola-artichoke",cat:"vegetables",parent:"artichoke",price:2,pk:"2–4 €/pièce",name:{en:"Mammola artichoke",fr:"Artichaut mammola"},latin:"Cynara cardunculus var. scolymus",
 origin:{en:"Roman countryside, Lazio",fr:"Campagne romaine, Latium"},season:[2,3,4,5],
 flavor:["earthy","bitter","nutty"],texture:["firm","fibrous","moist"],
 story:{en:"In Rome the crown head of the plant is the cimarolo, cut first and sold as the mammola: round, spineless, and with a choke so young it barely exists. The side buds that follow are the same plant and a different vegetable — they go to the pan, never whole into the fryer.",
@@ -1279,7 +1279,7 @@ fr:"Les feuilles rouges dégorgent leur magenta dès qu’elles rencontrent la c
 pairs:["butter","egg","garlic","lemon","olive-oil","ricotta","nutmeg"],
 svg:'<path class="s" d="M48 82V28M46 50 32 34M50 62l14-14"/><path class="f2 sf" d="M47 52 24 30q-5 12 1 20t22 2z"/><path class="f1 sf" d="M49 64 72 44q5 12-1 20t-22 0z"/><path class="f2 sf" d="M48 36q-8-8-7-18 10 5 12 12t-5 6z"/>'},
 
-{id:"oxheart-tomato",cat:"vegetables",price:2,pk:"4–8 €/kg",name:{en:"Oxheart tomato",fr:"Tomate cœur de bœuf"},latin:"Solanum lycopersicum",
+{id:"oxheart-tomato",cat:"vegetables",parent:"tomato",price:2,pk:"4–8 €/kg",name:{en:"Oxheart tomato",fr:"Tomate cœur de bœuf"},latin:"Solanum lycopersicum",
 origin:{en:"Northern Italy",fr:"Italie du Nord"},season:[7,8,9],
 flavor:["sweet","fresh","mild"],texture:["firm","smooth","juicy"],
 story:{en:"The cuor di bue type is old Italian, selected for flesh rather than juice: under the ribbed shoulders there is almost no seed cavity, which is why a slice holds together instead of flooding the plate. Its thin skin and low acidity are also why it travels badly and is rarely found far from where it grew.",
@@ -1319,7 +1319,7 @@ fr:"Séparez les côtes des feuilles. Les côtes d’abord, une minute à feu vi
 pairs:["ginger","garlic","soy-sauce","sesame","chili","shiitake","fish-sauce","spring-onion"],
 svg:'<path class="f3 sf" d="M40 76V50q-8-4-6-14 8 0 10 8V76z"/><path class="f2 sf" d="M42 44q6-16 18-14 2 14-12 20z"/><path class="f3 sf" d="M56 76V52q8-4 8-14-9 0-12 10v28z"/>'},
 
-{id:"pardailhan-turnip",cat:"vegetables",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Pardailhan black turnip",fr:"Navet noir de Pardailhan"},latin:"Brassica rapa",
+{id:"pardailhan-turnip",cat:"vegetables",parent:"turnip",rare:true,price:2,pk:"10–18 €/kg",name:{en:"Pardailhan black turnip",fr:"Navet noir de Pardailhan"},latin:"Brassica rapa",
 origin:{en:"Pardailhan, Hérault",fr:"Pardailhan, Hérault"},season:[11,12,1,2],
 flavor:["sweet","nutty","earthy"],texture:["firm","dry"],
 story:{en:"Pardailhan sits at 500 metres in the Hérault, and its black turnip took medals at nineteenth-century exhibitions and shipped some 500 tonnes a year in the 1910s before rural exodus after the war nearly ended it. Nineteen growers rebuilt it through the association Lou Nap del Pardailha in 1993, and Slow Food made it a Presidium in 2003.",
@@ -1369,7 +1369,7 @@ fr:"Faites-les tomber à la poêle très chaude en moins de trente secondes, ave
 pairs:["butter","egg","scallop","lemon","parmesan","mint"],
 svg:'<path class="s" d="M32 80q7-20 16-30"/><path class="f2 sf" d="M44 58q-14-5-19 3 11 9 19-3zM49 46q14-5 19 3-11 9-19-3z"/><path class="s" d="M48 46q10-9 16-6 7 3 3 10t-10 0 7-7"/><path class="s" d="M46 54v-9"/>'},
 
-{id:"pearl-onion",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"Pearl onion",fr:"Oignon grelot"},latin:"Allium cepa",
+{id:"pearl-onion",cat:"vegetables",parent:"onion",price:2,pk:"6–12 €/kg",name:{en:"Pearl onion",fr:"Oignon grelot"},latin:"Allium cepa",
 origin:{en:"French market gardens",fr:"Maraîchage français"},season:[6,7,8,9],
 flavor:["sweet","mild","pungent"],texture:["firm","smooth","juicy"],
 story:{en:"The grelot is not a variety but a stage: an onion pulled young and small, before the bulb has built the dry layers that make a keeping onion. Classic garnitures split them two ways, glazed à blanc in butter, water and sugar for white stews, and glazed à brun until that sugar caramelises for a bourguignon.",
@@ -1399,7 +1399,7 @@ fr:"Ils sont prêts à l’emploi en bocal. Farcissez-les de brandade ou de chè
 pairs:["olive-oil","garlic","cod","goat-cheese","iberico-ham","paprika","almond","sherry-vinegar"],
 svg:'<path class="f1 sf" d="M29 44q1-13 15-15t20 12q3 14-4 25-6 10-11 15-4 4-8-3-9-16-12-34z"/><path class="f2 sf" d="M60 37q6 12 1 24-4 12-12 19 3-17 3-26 0-11 8-17z"/><path class="f2 sf" d="M38 28q4-6 12-5 6 1 6 5-5 4-10 3-7 0-8-3z"/><path class="s" d="M44 29q-2-7-9-10"/><path class="s" d="M34 48q9 5 16-2M38 62q7 4 12-2" stroke-width="1.5"/>'},
 
-{id:"pointed-cabbage",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Pointed cabbage",fr:"Chou pointu"},latin:"Brassica oleracea var. capitata",
+{id:"pointed-cabbage",cat:"vegetables",parent:"cabbage",price:1,pk:"2–4 €/kg",name:{en:"Pointed cabbage",fr:"Chou pointu"},latin:"Brassica oleracea var. capitata",
 origin:{en:"Northern European spring gardens",fr:"Potagers de printemps d’Europe du Nord"},season:[4,5,6,7],
 flavor:["sweet","mild","grassy"],texture:["tender","crisp","juicy"],
 story:{en:"The pointed spring cabbage, whose old Paris market form is the cœur de bœuf des Vertus, is cut before the head packs tight, which is why its leaves carry no woody rib to trim out. Sown in autumn, it arrives in April, months ahead of any storable white cabbage.",
@@ -1409,7 +1409,7 @@ fr:"Fendez-le en quartiers par le trognon, huilez les faces coupées et enfourne
 pairs:["butter","caraway","cream","mustard-seed","pancetta","lemon","olive-oil"],
 svg:'<path class="f1 sf" d="M48 16q15 23 15 40 0 17-15 17t-15-17q0-17 15-40z"/><path class="f2 sf" d="M33 52q-13 3-14 13 5 8 15 5-3-10-1-18zM63 52q13 3 14 13-5 8-15 5 3-10 1-18z"/><path class="s" d="M48 18v54M40 34q-3 22 3 36M56 34q3 22-3 36"/>'},
 
-{id:"poivrade-artichoke",cat:"vegetables",price:2,pk:"1–2,50 €/pièce",name:{en:"Poivrade artichoke",fr:"Artichaut poivrade"},latin:"Cynara cardunculus var. scolymus",
+{id:"poivrade-artichoke",cat:"vegetables",parent:"artichoke",price:2,pk:"1–2,50 €/pièce",name:{en:"Poivrade artichoke",fr:"Artichaut poivrade"},latin:"Cynara cardunculus var. scolymus",
 origin:{en:"Provence",fr:"Provence"},season:[4,5,6,7],
 flavor:["bitter","nutty","fresh"],texture:["tender","crisp","moist"],
 story:{en:"The poivrade is the Provençal violet picked small, before the choke has had time to form, so nothing inside needs removing. Cut in half it shows a solid pale heart the whole way down, where the same variety left three more weeks would have to be gutted before cooking.",
@@ -1419,7 +1419,7 @@ fr:"Tournez-les dans une eau citronnée et taillez-les crues à la mandoline, ou
 pairs:["olive-oil","lemon","garlic","thyme","parmesan","parsley","bay-leaf"],
 svg:'<path class="f2 sf" d="M48 16q15 9 15 26t-15 22q-15-5-15-22T48 16z"/><path class="s" d="M34 40q14 6 28 0M36 52q12 6 24 0M40 28q8 4 16 0M48 18v50M48 64v18"/><path class="f1 sf" d="M48 72q-13-7-21-3 6 11 21 9zM48 78q11-6 19-2-4 9-19 7z"/>'},
 
-{id:"piennolo-tomato",cat:"vegetables",price:3,pk:"12–22 €/kg",name:{en:"Pomodorino del Piennolo del Vesuvio",fr:"Tomate du Piennolo del Vesuvio"},latin:"Solanum lycopersicum",
+{id:"piennolo-tomato",cat:"vegetables",parent:"tomato",price:3,pk:"12–22 €/kg",name:{en:"Pomodorino del Piennolo del Vesuvio",fr:"Tomate du Piennolo del Vesuvio"},latin:"Solanum lycopersicum",
 origin:{en:"Slopes of Vesuvius, Campania",fr:"Pentes du Vésuve, Campanie"},season:[7,8,9,10,11,12,1,2,3],
 flavor:["tangy","sweet","umami","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"Whole clusters are threaded onto a hemp cord tied into a ring — the piennolo, Neapolitan for pendulum — and hung indoors, where the fruit goes on ripening for seven or eight months with no refrigeration at all. The volcanic soil gives a thick skin and very little water, and it is that skin, not any treatment, that does the preserving.",
@@ -1469,7 +1469,7 @@ fr:"La sauce se pile — anchois, ail, vinaigre, puis l’huile ; pas de citron,
 pairs:["anchovy","garlic","olive-oil","white-wine-vinegar","black-pepper","lemon","parsley"],
 svg:'<path class="f2 sf" d="M35 66q13 6 26 0 2 11-13 15t-13-15z"/><path class="f1 sf" d="M41 66q-5-22 0-34 9 5 8 34zM52 66q2-26 11-34 4 13-2 34z"/><path class="s" d="M26 42q-9 7-4 16t13 2M69 46q9 7 4 16t-13 2"/>'},
 
-{id:"purple-asparagus",cat:"vegetables",price:2,pk:"12–20 €/kg",name:{en:"Purple asparagus",fr:"Asperge violette"},latin:"Asparagus officinalis",
+{id:"purple-asparagus",cat:"vegetables",parent:"asparagus",price:2,pk:"12–20 €/kg",name:{en:"Purple asparagus",fr:"Asperge violette"},latin:"Asparagus officinalis",
 origin:{en:"Albenga, Liguria",fr:"Albenga, Ligurie"},season:[4,5,6],
 flavor:["sweet","grassy","delicate"],texture:["tender","crisp","juicy"],
 story:{en:"The Violetto d'Albenga owes its colour to a doubled chromosome count, forty instead of twenty, rather than to any growing method, and it carries roughly a fifth more sugar than a green spear. Cut as the tip breaks daylight, it never builds the fibre a green spear develops standing up.",
@@ -1479,7 +1479,7 @@ fr:"L’eau bouillante la fait virer au vert en moins d’une minute : les antho
 pairs:["butter","egg","parmesan","olive-oil","lemon","hazelnut","morel"],
 svg:'<path class="f2 sf" d="M36 84q-5-32 0-50 2-11 4-15 2 4 4 15 5 18 0 50-4 2-8 0z"/><path class="s" d="M35 34q5 5 10 0M34 46q6 6 12 0M33 58q7 6 14 0"/><path class="f1 sf" d="M58 84q-4-24 0-38 2-9 3-12 2 3 3 12 4 14 0 38-3 2-6 0z"/>'},
 
-{id:"purple-sprouting-broccoli",cat:"vegetables",price:2,pk:"6–10 €/kg",name:{en:"Purple sprouting broccoli",fr:"Brocoli à jets violets"},latin:"Brassica oleracea var. italica",
+{id:"purple-sprouting-broccoli",cat:"vegetables",parent:"broccoli",price:2,pk:"6–10 €/kg",name:{en:"Purple sprouting broccoli",fr:"Brocoli à jets violets"},latin:"Brassica oleracea var. italica",
 origin:{en:"British kitchen gardens",fr:"Potagers britanniques"},season:[1,2,3,4],
 flavor:["nutty","sweet","bitter"],texture:["tender","crisp","moist"],
 story:{en:"It needs a winter to work: sown in spring, it stands through the cold, and only a proper chill makes it throw its purple side shoots the following February. That timing lands it in the hungry gap, the weeks when the stores are empty and nothing new has come out of the ground yet.",
@@ -1549,7 +1549,7 @@ fr:"Choisissez-les jeunes, pas plus épaisses qu’un crayon : au-delà, une fib
 pairs:["rice-vinegar","sesame-oil","soy-sauce","chili","cucumber","fish-sauce"],
 svg:'<path class="f2 sf" d="M46 76q-4-20-16-30 2-4 6-2 12 12 14 32z"/><path class="f2 sf" d="M50 76q1-24-4-38 3-3 6-1 4 16 2 39z"/><path class="f2 sf" d="M54 76q6-20 20-28 3 3 1 6-12 8-17 23z"/><path class="s" d="M38 48q-2 3 0 6M46 40q-2 3 0 6M62 52q0 3 2 5"/><path class="f3 sf" d="M42 76h12v8h-12z"/>'},
 
-{id:"ratte-potato",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Ratte potato",fr:"Pomme de terre ratte"},latin:"Solanum tuberosum",
+{id:"ratte-potato",cat:"vegetables",parent:"potato",price:1,pk:"3–6 €/kg",name:{en:"Ratte potato",fr:"Pomme de terre ratte"},latin:"Solanum tuberosum",
 origin:{en:"France and Denmark",fr:"France et Danemark"},season:[5,6,7,8,9],
 flavor:["nutty","buttery","earthy"],texture:["firm","smooth","moist"],
 story:{en:"La Ratte dates from 1872 and had nearly disappeared by the 1930s through seed degeneration before French growers rebuilt the stock. Its density is the point: low-water, high-starch flesh that absorbs an absurd quantity of fat, which is why Robuchon built his purée on it at a restaurant ratio of two parts potato to one part butter.",
@@ -1569,7 +1569,7 @@ fr:"Faites-la sauter à feu très vif dans une poêle sèche avec de l’ail et 
 pairs:["garlic","chili","furu","sesame-oil","shrimp-paste","coconut-milk"],
 svg:'<path class="s" d="M48 84V28"/><path class="f2 sf" d="M46 62q-20 4-24-8t8-22q14 4 16 30z"/><path class="f2 sf" d="M50 48q20 4 24-8t-8-22q-14 4-16 30z"/><path class="f3 sf" d="M34 50q-6-6-2-12 8 2 8 12z"/><path class="f3 sf" d="M60 36q6-6 2-12-8 2-8 12z"/><path class="f1 sf" d="M48 28q-6-8-2-16 8 6 6 16z"/>'},
 
-{id:"red-cabbage",cat:"vegetables",price:1,pk:"1,50–3 €/kg",name:{en:"Red cabbage",fr:"Chou rouge"},latin:"Brassica oleracea var. rubra",
+{id:"red-cabbage",cat:"vegetables",parent:"cabbage",price:1,pk:"1,50–3 €/kg",name:{en:"Red cabbage",fr:"Chou rouge"},latin:"Brassica oleracea var. rubra",
 origin:{en:"Northern Europe",fr:"Europe du Nord"},season:[9,10,11,12,1,2],
 flavor:["sweet","earthy","tangy","mild"],texture:["firm","crisp","moist"],
 story:{en:"Its colour is a working pH meter: the anthocyanins turn blue in alkali and red in acid, which is why an unacidulated pot comes out an unappetising grey-violet. German and Flemish cooks solved this centuries before chemistry explained it, by always adding apple or vinegar.",
@@ -1589,7 +1589,7 @@ fr:"Ne l’épluchez pas. La peau fond entièrement à la cuisson et porte l’e
 pairs:["chestnut","cream","nutmeg","sage","butter","hazelnut","ginger","coconut-milk"],
 svg:'<path class="f1 sf" d="M26 56q0-18 22-18t22 18-22 20-22-20z"/><path class="s" d="M40 40q-4 16 0 32M56 40q4 16 0 32"/><path class="s" d="M48 38v-10"/>'},
 
-{id:"red-onion",cat:"vegetables",price:1,pk:"2–4 €/kg",name:{en:"Red onion",fr:"Oignon rouge"},latin:"Allium cepa var. cepa",
+{id:"red-onion",cat:"vegetables",parent:"onion",price:1,pk:"2–4 €/kg",name:{en:"Red onion",fr:"Oignon rouge"},latin:"Allium cepa var. cepa",
 origin:{en:"Central Asia",fr:"Asie centrale"},season:[7,8,9,10],
 flavor:["sweet","pungent","fresh","mild"],texture:["firm","crisp","juicy"],
 story:{en:"Milder and sweeter than a yellow onion because it carries less of the sulphur compound that makes you cry, which is why it is the one eaten raw. Its purple comes from the same anthocyanins as red cabbage, and it bleeds them into vinegar within minutes.",
@@ -1599,7 +1599,7 @@ fr:"Trempez les tranches crues dix minutes à l’eau froide pour ôter l’âcr
 pairs:["tomato","feta","olive-oil","cucumber","balsamic","olive","lime","cilantro"],
 svg:'<path class="f1 sf" d="M30 54q0-16 18-16t18 16-18 22-18-22z"/><path class="s" d="M48 38v38M38 46q4 16 4 26M58 46q-4 16-4 26"/><path class="s" d="M48 38q2-10 6-12"/>'},
 
-{id:"red-orache",cat:"vegetables",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Red orache",fr:"Arroche rouge"},latin:"Atriplex hortensis var. rubra",
+{id:"red-orache",cat:"vegetables",parent:"orach",rare:true,price:2,pk:"15–30 €/kg",name:{en:"Red orache",fr:"Arroche rouge"},latin:"Atriplex hortensis var. rubra",
 origin:{en:"Old European kitchen gardens",fr:"Anciens potagers européens"},season:[6,7,8,9],
 flavor:["mild","salty","earthy"],texture:["tender","moist"],
 story:{en:"European gardeners grew orache as their summer green for centuries and abandoned it when spinach arrived, which crops earlier and does not bolt through July. The crimson form was kept on for its colour: the leaves bleed into a pale sauce or a dough and stain it pink.",
@@ -1609,7 +1609,7 @@ fr:"Cuisez-la à couvert dans sa seule eau et tenez l'acide à l'écart : un fil
 pairs:["beetroot","goat-cheese","olive-oil","egg","walnut","ricotta","butter"],
 svg:'<path class="f3 sf" d="M48 18q14 22 16 32-9-3-12 2 0 8-4 14-4-6-4-14-3-5-12-2 2-10 16-32z"/><path class="s" d="M48 26v34M48 40l-9 6M48 40l9 6"/><path class="s" d="M48 62v14"/>'},
 
-{id:"rocambole-garlic",cat:"vegetables",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Rocambole garlic",fr:"Ail rocambole"},latin:"Allium scorodoprasum",
+{id:"rocambole-garlic",cat:"vegetables",parent:"garlic",rare:true,price:3,pk:"25–50 €/kg",name:{en:"Rocambole garlic",fr:"Ail rocambole"},latin:"Allium scorodoprasum",
 origin:{en:"Hedges and old gardens, Europe",fr:"Haies et vieux jardins d'Europe"},season:[5,6,7],
 flavor:["mild","grassy","pungent"],texture:["firm","smooth","dry"],
 story:{en:"Rocambole is a German word gone French - Rockenbolle, the rye bulb - and the plant is not garlic at all but a sand leek, Allium scorodoprasum. What is sold is the bulbil head at the top of the stem, which coils into a loop before it straightens, and the taste sits closer to a mild leek than to a clove.",
@@ -1659,7 +1659,7 @@ fr:"Ne l’émincez pas : c’est la rose que vous payez. Ne détachez les feuil
 pairs:["olive-oil","pancetta","egg","walnut","balsamic","polenta-bramata"],
 svg:'<path class="f1 sf" d="M48 20q22 4 26 24t-26 32-26-32 26-24z"/><path class="f2 sf" d="M48 32q16 3 18 17t-18 22-18-22 18-17z"/><path class="f3 sf" d="M48 44q10 2 11 11t-11 13-11-13 11-11z"/><path class="s" d="M28 40q10 6 20 4t20-4M34 62q8-6 14-6t14 6"/><path class="s" d="M48 76v8"/>'},
 
-{id:"roscoff-pink-onion",cat:"vegetables",sign:"AOP",price:2,pk:"4–7 €/kg",name:{en:"Roscoff pink onion",fr:"Oignon rosé de Roscoff"},latin:"Allium cepa",
+{id:"roscoff-pink-onion",cat:"vegetables",parent:"onion",sign:"AOP",price:2,pk:"4–7 €/kg",name:{en:"Roscoff pink onion",fr:"Oignon rosé de Roscoff"},latin:"Allium cepa",
 origin:{en:"Roscoff, Brittany (AOP)",fr:"Roscoff, Bretagne (AOP)"},season:[8,9,10,11,12,1,2,3,4],
 flavor:["sweet","mild","fresh"],texture:["firm","smooth","juicy"],
 story:{en:"From 1828 Breton growers sailed to Britain with this onion and sold it door to door from bicycles, strings across the handlebars - the Onion Johnnies, who gave the English their picture of a Frenchman in a beret. It took AOC status in 2009, the first French onion to be given one.",
@@ -1689,7 +1689,7 @@ fr:"Ne salez jamais. Blanchissez trente secondes, rafraîchissez, roulez au beur
 pairs:["butter","lemon","cod","salmon","oyster"],
 svg:'<path class="f1 sf" d="M44 82q-3-16-1-26 1-9 2-16 1-7 4-14 4 8 4 15t1 17q1 10-1 24z"/><path class="f2 sf" d="M42 60q-8-10-12-18-3-6-4-12 6 3 9 9 5 8 11 17z"/><path class="f2 sf" d="M53 58q7-9 11-16 3-6 5-12-6 2-10 8-5 8-11 16z"/><path class="f2 sf" d="M45 74q-8-6-13-10-4-4-6-9 7 1 11 6 5 5 9 11z"/><path class="s" d="M43 70q5 3 10 0M43 56q5 3 10 0M45 42q4 2 7 0M31 52q4 2 7-1M60 50q4 2 7-1" stroke-width="1.5"/>'},
 
-{id:"san-marzano-tomato",cat:"vegetables",price:2,pk:"6–12 €/kg",name:{en:"San Marzano tomato",fr:"Tomate San Marzano"},latin:"Solanum lycopersicum",
+{id:"san-marzano-tomato",cat:"vegetables",parent:"tomato",price:2,pk:"6–12 €/kg",name:{en:"San Marzano tomato",fr:"Tomate San Marzano"},latin:"Solanum lycopersicum",
 origin:{en:"Agro Sarnese-Nocerino, Campania",fr:"Agro Sarnese-Nocerino, Campanie"},season:[7,8,9],
 flavor:["sweet","umami","tangy"],texture:["firm","smooth","juicy"],
 story:{en:"San Marzano grows in the volcanic Agro Sarnese-Nocerino south of Vesuvius, and the story goes that the first seed reached the Kingdom of Naples around 1770 as a gift from the Viceroyalty of Peru. What the DOP protects is a shape and a chemistry: thick walls, few seeds, little water and high pectin, bred to be reduced rather than sliced.",
@@ -1699,7 +1699,7 @@ fr:"Écrasez les fruits en conserve à la main et laissez cuire vingt minutes à
 pairs:["basil","olive-oil","garlic","oregano","mozzarella","anchovy","onion"],
 svg:'<path class="f2 sf" d="M48 30q15 0 17 17t-4 27q-6 10-13 10t-13-10-4-27 17-17z"/><path class="s" d="M41 40q-5 21 2 38M55 40q5 21-2 38"/><path class="f3 sf" d="M48 33q-10-7-17-5 4 7 13 9-11 0-15 4 10 5 19 2 9 3 19-2-4-4-15-4 9-2 13-9-7-2-17 5z"/><path class="s" d="M48 28v-9"/>'},
 
-{id:"savoy-cabbage",cat:"vegetables",price:1,pk:"2–3,50 €/kg",name:{en:"Savoy cabbage",fr:"Chou frisé de Milan"},latin:"Brassica oleracea var. sabauda",
+{id:"savoy-cabbage",cat:"vegetables",parent:"cabbage",price:1,pk:"2–3,50 €/kg",name:{en:"Savoy cabbage",fr:"Chou frisé de Milan"},latin:"Brassica oleracea var. sabauda",
 origin:{en:"Northern Italy",fr:"Italie du Nord"},season:[10,11,12,1,2,3],
 flavor:["sweet","mild","earthy","delicate"],texture:["firm","crisp","moist"],
 story:{en:"The crimped leaves are looser and thinner than a white cabbage's, which is why they were the wrapper of choice long before cling film: blanched, a single leaf will hold a stuffing through an hour of braising without tearing.",
@@ -1979,7 +1979,7 @@ fr:"Ne mettez jamais les tomates au réfrigérateur : le froid tue leur parfum. 
 pairs:["basil","garlic","olive-oil","mozzarella","onion","balsamic","capers","anchovy"],
 svg:'<circle class="f2 sf" cx="48" cy="55" r="21"/><path class="s" d="M48 34c-1-6 2-9 6-11"/><path class="f3 sf" d="M48 34l-9-5 6 8-11 1 10 4-6 7 10-4 3 10 3-10 10 4-6-7 10-4-11-1 6-8z" transform="scale(.62) translate(29 18)"/>'},
 
-{id:"treviso-tardivo",cat:"vegetables",price:3,pk:"12–20 €/kg",name:{en:"Treviso tardivo",fr:"Trévise tardive"},latin:"Cichorium intybus",
+{id:"treviso-tardivo",cat:"vegetables",parent:"radicchio",price:3,pk:"12–20 €/kg",name:{en:"Treviso tardivo",fr:"Trévise tardive"},latin:"Cichorium intybus",
 origin:{en:"Veneto, Italy",fr:"Vénétie, Italie"},season:[11,12,1,2],
 flavor:["bitter","fresh","earthy"],texture:["firm","crunchy","moist"],
 story:{en:"Tardivo is less harvested than re-grown: after the first frosts the plants are lifted and stood root-deep in running spring water at around 13 °C in the dark, and three weeks later pale new leaves have pushed out and curled into claws. Everything green is then stripped away, so what leaves the field is several times what reaches the stall.",
@@ -1989,7 +1989,7 @@ fr:"Fendez les pommes en deux dans la longueur en gardant le talon, puis grillez
 pairs:["olive-oil","balsamic","pancetta","gorgonzola-dolce","walnut","orange","anchovy"],
 svg:'<path class="f2 sf" d="M48 78q-8-4-9-16t3-24q2-8 6-14 4 6 6 14t3 24-9 16z"/><path class="s" d="M48 76V26"/><path class="s" d="M39 40q-8-6-12-14 8 0 14 6M57 40q8-6 12-14-8 0-14 6"/><path class="s" d="M41 56q-9-3-14-10 8-1 15 4M55 56q9-3 14-10-8-1-15 4"/>'},
 
-{id:"trombetta-squash",cat:"vegetables",price:2,pk:"4–8 €/kg",name:{en:"Trombetta squash",fr:"Courgette trompette d’Albenga"},latin:"Cucurbita moschata",
+{id:"trombetta-squash",cat:"vegetables",parent:"zucchini",price:2,pk:"4–8 €/kg",name:{en:"Trombetta squash",fr:"Courgette trompette d’Albenga"},latin:"Cucurbita moschata",
 origin:{en:"Albenga, Liguria",fr:"Albenga, Ligurie"},season:[7,8,9],
 flavor:["mild","fresh","nutty"],texture:["firm","smooth","dry"],
 story:{en:"On the Albenga plain it is grown up frames so the trumpet hangs and lengthens straight; left on the ground it curls into a hook. Botanically it is a moschata, the butternut family, picked deliberately unripe — left on the vine it goes on to harden into an orange winter squash.",
@@ -1999,7 +1999,7 @@ fr:"Le col est plein, sans loge à graines, et ne rend pas d’eau : les rubans 
 pairs:["olive-oil","basil","garlic","pine-nut","parmesan","lemon","mint"],
 svg:'<path class="f2 sf" d="M32 22q-6 18 4 32t26 14q10 0 12-9t-8-13q-14-4-20-14t-4-20z"/><path class="s" d="M38 28q-4 15 6 26t20 11"/><path class="s" d="M32 22q-2-6 4-6"/>'},
 
-{id:"tropea-red-onion",cat:"vegetables",price:2,pk:"6–10 €/kg",name:{en:"Tropea red onion",fr:"Oignon rouge de Tropea"},latin:"Allium cepa",
+{id:"tropea-red-onion",cat:"vegetables",parent:"red-onion",price:2,pk:"6–10 €/kg",name:{en:"Tropea red onion",fr:"Oignon rouge de Tropea"},latin:"Allium cepa",
 origin:{en:"Tyrrhenian coast, Calabria (IGP)",fr:"Côte tyrrhénienne, Calabre (IGP)"},season:[5,6,7,8],
 flavor:["sweet","mild","fruity"],texture:["tender","crisp","juicy"],
 story:{en:"Grown on a narrow strip of Calabrian coast and plaited into trecce for market, it is low enough in sulphur to be eaten raw by the slice - Calabria also turns it into jam and into ice cream. Its IGP fixes both the strip of coast and the shape of the bulb.",
@@ -2059,7 +2059,7 @@ fr:"L’urui du commerce ne demande aucune cuisson : parez la base, fendez les t
 pairs:["miso","rice-vinegar","karashi","sesame","soy-sauce","katsuobushi"],
 svg:'<path class="f2 sf" d="M42 62q-14-16-14-34 14 12 18 32z"/><path class="f2 sf" d="M48 60q-6-20 0-38 6 18 0 38z"/><path class="f2 sf" d="M54 62q4-20 18-32 0 18-14 34z"/><path class="f1 sf" d="M40 60h16v22h-16z"/><path class="s" d="M40 68h16M44 60v22M52 60v22"/>'},
 
-{id:"vineyard-wild-leek",cat:"vegetables",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Vineyard wild leek",fr:"Poireau des vignes"},latin:"Allium polyanthum",
+{id:"vineyard-wild-leek",cat:"vegetables",parent:"leek",rare:true,price:2,pk:"10–20 €/kg",name:{en:"Vineyard wild leek",fr:"Poireau des vignes"},latin:"Allium polyanthum",
 origin:{en:"Southern French vineyards",fr:"Vignobles du Midi"},season:[2,3,4],
 flavor:["sweet","pungent","fruity"],texture:["firm","fibrous","juicy"],
 story:{en:"Around the Gard and the Hérault it is called baragane, and it is pulled from between the vine rows from February until the flower stalk shows in April. Only untreated parcels are worth walking: the plant is a perennial bulb sitting in the ground all year and takes up whatever has been sprayed on the vines above it.",
@@ -2069,7 +2069,7 @@ fr:"C’est le blanc tendre qui compte : dix minutes à l’eau bouillante, assa
 pairs:["egg","olive-oil","red-wine-vinegar","anchovy","walnut-oil","dijon-mustard"],
 svg:'<path class="f1 sf" d="M44 78q-5-4-5-11t5-9h8q5 2 5 9t-5 11z"/><path class="s" d="M46 58q-9-16-16-24-1 20 8 26"/><path class="s" d="M50 58q7-18 16-28 1 23-9 31"/><path class="s" d="M48 58V24"/>'},
 
-{id:"vitelotte-potato",cat:"vegetables",price:2,pk:"5–9 €/kg",name:{en:"Vitelotte potato",fr:"Vitelotte"},latin:"Solanum tuberosum",
+{id:"vitelotte-potato",cat:"vegetables",parent:"potato",price:2,pk:"5–9 €/kg",name:{en:"Vitelotte potato",fr:"Vitelotte"},latin:"Solanum tuberosum",
 origin:{en:"Andes, by way of France",fr:"Andes, par la France"},season:[9,10,11,12],
 flavor:["earthy","nutty","mild"],texture:["firm","granular","dry"],
 story:{en:"The violet flesh came out of the Andes and made its French name in the nineteenth century, under the Second Empire, when it was sold as truffe de Chine. The colour is anthocyanin, the same class of pigment as in blackcurrant, and it behaves like one — it bleeds out into plain cooking water and holds far better in acid.",
@@ -2129,7 +2129,7 @@ fr:"Taillez-le en tranches très fines en travers, salez-les et attendez dix min
 pairs:["butter","fleur-de-sel-guerande","lemon","olive-oil","goat-cheese","dill","rice-vinegar"],
 svg:'<path class="f1 sf" d="M48 22q26 0 26 24T48 74 22 46 48 22z"/><path class="f3 sf" d="M48 30q18 0 18 16T48 66 30 46 48 30z"/><path class="s" d="M48 74v8M40 30q-6-8-14-10M56 30q6-8 14-10"/>'},
 
-{id:"white-asparagus",cat:"vegetables",price:2,pk:"8–16 €/kg",name:{en:"White asparagus",fr:"Asperge blanche"},latin:"Asparagus officinalis",
+{id:"white-asparagus",cat:"vegetables",parent:"asparagus",price:2,pk:"8–16 €/kg",name:{en:"White asparagus",fr:"Asperge blanche"},latin:"Asparagus officinalis",
 origin:{en:"Northern European sand beds",fr:"Sables du nord de l’Europe"},season:[4,5,6],
 flavor:["bitter","sweet","delicate"],texture:["firm","fibrous","juicy"],
 story:{en:"White and green are the same plant: the spear stays white only because it is cut before it ever meets light, out of a soil ridge the grower watches for the crack that says a tip is coming. In Germany the season closes by tradition on 24 June, Johannistag, leaving the crowns the rest of the summer to feed themselves for the next year.",
@@ -2139,7 +2139,7 @@ fr:"Épluchez le turion entier depuis juste sous la pointe jusqu’au talon, deu
 pairs:["butter","egg","lemon","morel","cream","jambon-de-bayonne","chervil"],
 svg:'<path class="f2 sf" d="M32 28q4-6 8 0v48h-8z"/><path class="f1 sf" d="M44 24q4-6 8 0v52h-8z"/><path class="f1 sf" d="M56 28q4-6 8 0v48h-8z"/><path class="s" d="M32 62h32"/><path class="s" d="M34 34l4 4 4-4M46 30l4 4 4-4M58 34l4 4 4-4"/>'},
 
-{id:"wild-asparagus",cat:"vegetables",price:3,pk:"30–60 €/kg",name:{en:"Wild asparagus",fr:"Asperge sauvage"},latin:"Asparagus acutifolius",
+{id:"wild-asparagus",cat:"vegetables",parent:"asparagus",price:3,pk:"30–60 €/kg",name:{en:"Wild asparagus",fr:"Asperge sauvage"},latin:"Asparagus acutifolius",
 origin:{en:"Mediterranean scrub",fr:"Garrigue méditerranéenne"},season:[3,4,5],
 flavor:["bitter","grassy","earthy"],texture:["tender","fibrous","moist"],
 story:{en:"The spears come from a spiny evergreen shrub of Mediterranean scrub, not from a cultivated bed, and they are thread-thin and markedly more bitter than anything grown for market. In Spain they go into a revuelto — eggs barely set — which takes roughly as long to cook as the spears do.",
@@ -2149,7 +2149,7 @@ fr:"Cassez-les à la main plutôt que de les couper, et comptez moins d’une mi
 pairs:["egg","olive-oil","garlic","jamon-serrano","sherry-vinegar","manchego"],
 svg:'<path class="s" d="M48 78q-4-24 0-48M48 78q-10-22-16-38M48 78q10-22 16-40M48 78q-16-16-24-24M48 78q16-16 24-26"/><circle class="dot" cx="48" cy="28" r="2.5"/><circle class="dot" cx="31" cy="38" r="2.5"/><circle class="dot" cx="65" cy="36" r="2.5"/><circle class="dot" cx="23" cy="53" r="2.5"/><circle class="dot" cx="73" cy="51" r="2.5"/>'},
 
-{id:"wild-rocket",cat:"vegetables",price:2,pk:"10–18 €/kg",name:{en:"Wild rocket",fr:"Roquette sauvage"},latin:"Diplotaxis tenuifolia",
+{id:"wild-rocket",cat:"vegetables",parent:"roquette",price:2,pk:"10–18 €/kg",name:{en:"Wild rocket",fr:"Roquette sauvage"},latin:"Diplotaxis tenuifolia",
 origin:{en:"Mediterranean basin",fr:"Bassin méditerranéen"},season:[4,5,6,7,8,9,10],
 flavor:["peppery","pungent","bitter"],texture:["tender","moist"],
 story:{en:"Salad rocket is an annual Eruca; this is a Diplotaxis, a perennial in a different genus, with a narrow deeply cut leaf and several times the mustard oil. It is what rucola usually means on an Italian menu, and it is why the leaf goes onto the pizza after the oven rather than before.",
