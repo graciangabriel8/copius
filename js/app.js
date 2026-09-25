@@ -2178,12 +2178,12 @@
     el("atlasView").classList.toggle("searching", on);
     if (moved) setView("atlas");
     renderGrid();
-    /* Brought up when a search starts, and again when it pulls the atlas back
-       from another tab, which left the page at that tab's scroll. */
-    if (on && (!was || moved)) {
-      var head = document.querySelector(".site-head");
-      var gap = el("grid").getBoundingClientRect().top - (head ? head.offsetHeight : 0) - 12;
-      if (Math.abs(gap) > 4) window.scrollBy({ top: gap, behavior: reducedMotion() ? "auto" : "smooth" });
+    /* The top of the page when a search starts, and again when it pulls the
+       atlas back from another tab, which left the page at that tab's scroll.
+       With the filters folded away the results already sit under the tabs;
+       scrolling them up under the header hid the tabs for nothing. */
+    if (on && (!was || moved) && window.scrollY > 0) {
+      window.scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
     }
   }
   el("search").addEventListener("input", function (e) { onSearch(e.target.value); });
