@@ -1,0 +1,37 @@
+# The source data, in the order the full atlas loads it. Every tool that reads
+# the data reads this list, never atlas.html: the public atlas.html loads only the
+# generated free file (js/free.js), so its script tags no longer name the sources.
+# Order matters: INGREDIENTS is concatenated file by file, and seeded measures
+# (tools/measure-scale.js) depend on the array order.
+# js/data-techniques.js is also published as is (techniques are free); every other
+# file here is premium and listed in _config.yml's exclude.
+js/data-cellar.js
+js/data-condiments.js
+js/data-cuts.js
+js/data-dairy.js
+js/data-flowers.js
+js/data-fats.js
+js/data-fruits.js
+js/data-grains.js
+js/data-herbs.js
+js/data-infusions.js
+js/data-legumes.js
+js/data-meat.js
+js/data-mushrooms.js
+js/data-nuts.js
+js/data-roe.js
+js/data-seafood.js
+js/data-seaweed.js
+js/data-shellfish.js
+js/data-spices.js
+js/data-sweet.js
+js/data-texture.js
+js/data-vegetables.js
+js/data-bases.js
+js/data-techniques.js
+js/data-trees.js
+js/data-chefs.js
+js/trios.js
+js/trios-gastronomy.js
+js/trios-premium.js
+js/plate.js

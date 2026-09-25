@@ -3,3 +3,6 @@
 .vscode/
 .idea/
 _measure.html
+
+# The full version, built locally by tools/build-free.js; never committed or published.
+js/_premium.js

@@ -14,6 +14,29 @@ version = m.group(1)
 
 assets = re.findall(r'(?:src|href)="((?:js|css)/[^"]+)"', html)
 assets = sorted(set(assets))
+
+# One URL the site does not serve fails addAll, and with it the whole install.
+# Jekyll skips any _-prefixed name and the paths _config.yml excludes (the
+# premium sources); a path a script builds by concatenation lands here garbled.
+excluded, inside = [], False
+for line in (root / "_config.yml").read_text().splitlines():
+    if line.startswith("exclude:"):
+        inside = True
+    elif inside and re.match(r"[^\s#]", line):
+        inside = False
+    elif inside:
+        # quoted items and trailing comments count, as they do for Jekyll and validate.js
+        m = re.match(r'''^\s+-\s+["']?([^"'\s#]+)["']?\s*(#.*)?$''', line)
+        if m:
+            excluded.append(m.group(1))
+def served(a):
+    f = a.split("?")[0]
+    return ((root / f).is_file() and not any(s.startswith("_") for s in f.split("/"))
+            and not any(f == e or f.startswith(e.rstrip("/") + "/") for e in excluded))
+unserved = [a for a in assets if not served(a)]
+if unserved:
+    sys.exit("%s names assets the site does not serve: %s" % (APP, ", ".join(unserved)))
+
 extra = ["./", "./" + APP, "icons/icon-192.png", "icons/icon-512.png",
          "icons/apple-touch-icon.png", "manifest.json"]
 urls = extra + assets

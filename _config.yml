@@ -8,3 +8,37 @@ exclude:
   - PLAN-ingredients-500.md
   - ROADMAP.md
   - .github
+  # The full version: every source file of tools/sources.txt but
+  # js/data-techniques.js (techniques are free, and the atlas loads that file as
+  # is). The public atlas loads the generated js/free.js instead. Listed by path,
+  # since js/ also holds the published scripts; tools/validate.js fails on a
+  # source missing here.
+  - js/data-cellar.js
+  - js/data-condiments.js
+  - js/data-cuts.js
+  - js/data-dairy.js
+  - js/data-flowers.js
+  - js/data-fats.js
+  - js/data-fruits.js
+  - js/data-grains.js
+  - js/data-herbs.js
+  - js/data-infusions.js
+  - js/data-legumes.js
+  - js/data-meat.js
+  - js/data-mushrooms.js
+  - js/data-nuts.js
+  - js/data-roe.js
+  - js/data-seafood.js
+  - js/data-seaweed.js
+  - js/data-shellfish.js
+  - js/data-spices.js
+  - js/data-sweet.js
+  - js/data-texture.js
+  - js/data-vegetables.js
+  - js/data-bases.js
+  - js/data-trees.js
+  - js/data-chefs.js
+  - js/trios.js
+  - js/trios-gastronomy.js
+  - js/trios-premium.js
+  - js/plate.js

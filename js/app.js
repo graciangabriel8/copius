@@ -4,12 +4,35 @@
 
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
   var LS_MYINGS = "atlas-my-ingredients";
-  var BASE = window.INGREDIENTS, TRIOS = window.TRIOS, I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
+  var BASE = window.INGREDIENTS || [], TRIOS = window.TRIOS || [], I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
   var TECHNIQUES = window.TECHNIQUES || [], BASES = window.BASES || [];
   var techById = {}, baseById = {};
   TECHNIQUES.forEach(function (x) { techById[x.id] = x; });
   BASES.forEach(function (x) { baseById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
+
+  /* The version. js/free.js carries the free cut and COPIUS_LOCKED, the teaser
+     for the rest: the paid entries' names and families, and the counts the
+     locked panels quote. js/_premium.js, when atlas.html loads it, replaces the
+     data with all of it and sets COPIUS_PREMIUM. Nothing else opens the full
+     version, so a missing or broken bundle leaves the free one. Locked is keyed
+     on that flag alone, never on which data happens to be present: the pairings,
+     trees and views stay shut even if a paid record arrived without it. */
+  var LOCKED = window.COPIUS_PREMIUM !== true;
+  var LK = window.COPIUS_LOCKED || {};
+  LK = {
+    counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0 },
+    familyPaid: LK.familyPaid || {}, pairs: LK.pairs || {}, kin: LK.kin || {},
+    trees: LK.trees || {}, basesUsing: LK.basesUsing || {}, items: LK.items || []
+  };
+  var PAID = {};   // id -> [id, name en, name fr, family]
+  LK.items.forEach(function (x) { PAID[x[0]] = x; });
+  if (LOCKED) BASE = BASE.filter(function (i) { return !PAID[i.id]; });
+  /* The three paid views. Their tabs stay, marked, and open a panel saying what
+     is behind them. */
+  var PAID_VIEWS = ["chefs", "bases", "lab"];
+  var LOCK_ICON = '<svg class="lock-ico" viewBox="0 0 16 16" aria-hidden="true">' +
+    '<rect x="3" y="7.2" width="10" height="7" rx="1.6"/><path d="M5.4 7.2V5.1a2.6 2.6 0 0 1 5.2 0v2.1"/></svg>';
 
   /* A data file that fails to load says nothing: its family is simply absent and
      the count quietly drops, which is how one bad fetch of data-vegetables.js
@@ -18,11 +41,15 @@
      cached until the next version bump — it does not heal on a reload. Compare
      the families the app expects against the ones that arrived, and if any are
      missing, drop the caches and reload once. Once: a family that is genuinely
-     empty must not put the page in a loop. */
+     empty must not put the page in a loop. The free data is one file, loaded
+     whole or not at all, and its cut need not cover every family; so locked,
+     the check is that the file arrived, not that each family did. */
   (function () {
-    var missing = (CAT_ORDER || []).filter(function (c) {
-      return !BASE.some(function (i) { return i.cat === c; });
-    });
+    var missing = LOCKED
+      ? (BASE.length && window.COPIUS_LOCKED ? [] : ["js/free.js"])
+      : (CAT_ORDER || []).filter(function (c) {
+          return !BASE.some(function (i) { return i.cat === c; });
+        });
     if (!missing.length) return;
     var KEY = "copius-reloaded-for-missing-data";
     try {
@@ -61,29 +88,6 @@
   // creation, whatever its JSON says: the flag and the drawn art are ours.
   var myIngs = readList(LS_MYINGS).filter(function (i) { return i && typeof i.id === "string"; });
   myIngs.forEach(function (i) { i.custom = true; i.svg = ""; });
-
-  /* The free tier. One cut, here, because every surface reads ING: the grid,
-     search, the modal, the lab, the trios and the counters. Pairs are stripped
-     rather than filtered so a free entry shows no pairing UI at all — half a
-     pairing list is worse than none. User creations are never gated; they are
-     the visitor's own. */
-  var TIER = window.COPIUS_TIER || { MODE: "full", FREE_IDS: [] };
-  var LS_TIER = "copius-tier";
-  var FREE_SET = new Set(TIER.FREE_IDS);
-  /* The visitor may look at either version. Nothing is withheld by this switch
-     — it is a showcase, not a gate, and it says so on the label. */
-  var FREE_MODE = (readItem(LS_TIER) || TIER.MODE) === "free";
-
-  function tierBase() {
-    if (!FREE_MODE) return BASE;
-    return BASE.filter(function (i) { return FREE_SET.has(i.id); })
-               .map(function (i) {
-                 var c = {};
-                 for (var k in i) if (Object.prototype.hasOwnProperty.call(i, k)) c[k] = i[k];
-                 c.pairs = [];
-                 return c;
-               });
-  }
 
   /* ---------- bases as plate items ----------
      A sauce is a thing a cook puts on a plate, and the atlas already holds 45
@@ -131,18 +135,20 @@
   var BASE_PREFIX = "base:";
 
   function rebuildIndex() {
-    ING = tierBase().concat(myIngs);
+    ING = BASE.concat(myIngs);
     byId = {};
     ING.forEach(function (i) { byId[i.id] = i; });
     /* Built from the ingredient index, then added to it — the lab can reach a
        sauce, and nothing else (grid, search, counters) iterates BASE_ITEMS. */
-    BASE_ITEMS = FREE_MODE ? [] : buildBaseItems(byId);
+    BASE_ITEMS = LOCKED ? [] : buildBaseItems(byId);
     BASE_ITEMS.forEach(function (b) { byId[b.id] = b; });
     // Symmetric pairing graph: a declared pair counts in both directions.
     PAIRS = {};
     ING.forEach(function (i) { PAIRS[i.id] = new Set(); });
     ING.forEach(function (i) {
-      i.pairs.forEach(function (p) {
+      /* Locked, only a creation's pairings count: they are the visitor's own. */
+      if (LOCKED && !i.custom) return;
+      (i.pairs || []).forEach(function (p) {
         if (!byId[p]) return;
         PAIRS[i.id].add(p);
         PAIRS[p].add(i.id);
@@ -401,9 +407,12 @@
     sl.textContent = t.seasonPage;
     el("favsOnlyLbl").textContent = t.favsOnly;
     el("rareOnlyLbl").textContent = t.rareOnly + " ✦";
+    /* No free entry is a connoisseur's one, so locked the filter could only
+       ever empty the grid. */
+    el("rareOnly").closest(".check").hidden = LOCKED;
     el("luxeOnlyLbl").textContent = t.luxeOnly + " ◆";
     var signs = [];
-    INGREDIENTS.forEach(function (i) {
+    BASE.forEach(function (i) {
       if (i.sign && signs.indexOf(i.sign) === -1) signs.push(i.sign);
     });
     signs.sort();
@@ -420,24 +429,29 @@
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabTech").textContent = t.tabTech;
-    el("tabBases").textContent = t.tabBases;
-    el("tabLab").textContent = t.tabLab;
+    /* A paid tab carries a lock, and says so to assistive tech. */
+    [["tabChefs", t.tabChefs], ["tabBases", t.tabBases], ["tabLab", t.tabLab]].forEach(function (p) {
+      var b = el(p[0]);
+      b.innerHTML = esc(p[1]) + (LOCKED ? LOCK_ICON : "");
+      if (LOCKED) {
+        b.setAttribute("aria-label", p[1] + " — " + t.lockedTag);
+        b.setAttribute("aria-controls", "lockedView");
+      }
+    });
     paintSeg("viewTabs");
-    /* a tab with nothing behind it reads as broken — hide it until it has data */
+    /* a tab with nothing behind it reads as broken — hide it until it has data.
+       A locked tab has its panel whatever data is loaded. */
     el("tabTech").hidden = TECHNIQUES.length === 0;
-    el("tabBases").hidden = BASES.length === 0;
-    el("tabChefs").textContent = t.tabChefs;
+    el("tabBases").hidden = !LOCKED && BASES.length === 0;
     el("creationsTitle").textContent = t.myCreations;
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
-    el("tier-free").textContent = t.tierFree;
-    el("tier-full").textContent = t.tierFull;
-    el("tier-free").classList.toggle("active", FREE_MODE);
-    el("tier-full").classList.toggle("active", !FREE_MODE);
-    paintSeg("tierToggle");
+    el("fullBtn").hidden = !LOCKED;
+    el("fullBtn").innerHTML = LOCK_ICON + esc(t.fullBtn);
     paintSeg("langToggle");
-    el("tierNote").textContent = FREE_MODE ? t.tierNoteFree : "";
+    el("tierNote").textContent = LOCKED
+      ? t.tierNote.replace("{n}", fmt(LK.counts.free)) : "";
     var t2 = t;
     fillSel("priceBand", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceBand);
     /* Built from the tags that exist rather than a hand-kept list, so a new
@@ -461,12 +475,12 @@
       s.luxeOnly || s.signOnly || s.priceBand !== "all" || s.flavour !== "all";
     el("stats").textContent = narrowed
       ? t.statsFiltered.replace("{n}", fmt(shown)).replace("{t}", fmt(ING.length))
-      /* The free tier has no pairings by design, and "0 recorded pairings"
-         reads as a broken site rather than as a tier. Drop the clause. */
-      : (FREE_MODE ? t.statsTplFree : t.statsTpl)
+      /* The free version has no pairings, and "0 recorded pairings" reads as a
+         broken site rather than as a version. It says what the full one adds. */
+      : (LOCKED ? t.statsTplFree : t.statsTpl)
           .replace("{n}", fmt(ING.length))
           .replace("{f}", CAT_ORDER.filter(function (c) { return ING.some(function (i) { return i.cat === c; }); }).length)
-          .replace("{p}", fmt(EDGE_COUNT));
+          .replace("{p}", fmt(LOCKED ? LK.counts.paid : EDGE_COUNT));
   }
 
   /* ---------- category chips ---------- */
@@ -577,15 +591,19 @@
     }
     function kinBlock(i) {
       var k = kinOf(i);
-      if (!k.length) return "";
+      /* Locked, the same species past the free cut is a count, not a list. */
+      var paid = LOCKED && !i.custom ? (LK.kin[i.id] || 0) : 0;
+      if (!k.length && !paid) return "";
       var t = T();
       var made = k.filter(function (x) { return isMade(byId[x]); });
       var forms = k.filter(function (x) { return made.indexOf(x) === -1; });
-      return "<h3>" + esc(t.sameSpecies) + ' <span class="kin-n">' + k.length + "</span></h3>" +
+      return "<h3>" + esc(t.sameSpecies) + (k.length ? ' <span class="kin-n">' + k.length + "</span>" : "") + "</h3>" +
         '<p class="kin-latin">' + esc(i.latin) + "</p>" +
         (forms.length ? kinRow(forms) : "") +
         (made.length && forms.length ? '<p class="kin-sub">' + esc(t.madeFromIt) + ' <span class="kin-n">' + made.length + "</span></p>" : "") +
-        (made.length ? kinRow(made) : "");
+        (made.length ? kinRow(made) : "") +
+        (paid ? '<button type="button" class="kin-locked" data-full>' + LOCK_ICON +
+          esc(t.lockedKin.replace("{n}", paid)) + "</button>" : "");
     }
 
     function kinOf(i) {
@@ -602,10 +620,78 @@
     return 3;                                                          // family or flavour only
   }
 
+  /* ---------- the free version's edge ----------
+     Paid names are searched as the grid is — the same folding, both languages —
+     and listed under the free results, greyed and capped. With no query, the
+     grid ends on how many the full version adds, in the family on screen. */
+  var LOCKED_SHOWN = 12;
+  function lockedName(x) { return state.lang === "fr" ? x[2] : x[1]; }
+  function lockedHits(q) {
+    if (!q) return [];
+    /* The family is public in the teaser, so a family search ("légumes") also
+       says how many more the full version holds; name matches come first. */
+    return LK.items.filter(function (x) { return norm(x[1] + " " + x[2] + " " + catLabel(x[3])).indexOf(q) !== -1; })
+      .map(function (x) {
+        var here = norm(lockedName(x)), there = norm(state.lang === "fr" ? x[1] : x[2]);
+        return { x: x, r: here.indexOf(q) === 0 ? 0 : there.indexOf(q) === 0 ? 1 : here.indexOf(q) !== -1 ? 2 :
+          there.indexOf(q) !== -1 ? 3 : 4 };
+      })
+      .sort(function (a, b) {
+        return a.r - b.r || lockedName(a.x).localeCompare(lockedName(b.x), state.lang, CMP);
+      })
+      .map(function (h) { return h.x; });
+  }
+  function paidFavCount() {
+    var n = 0;
+    favs.forEach(function (id) { if (PAID[id] && (state.cat === "all" || PAID[id][3] === state.cat)) n++; });
+    return n;
+  }
+  /* Returns how many paid names the query found, for the empty line. */
+  function renderLockedEnd() {
+    var box = el("lockedEnd");
+    if (!LOCKED) { box.hidden = true; box.innerHTML = ""; return 0; }
+    var t = T(), q = norm(state.q.trim()), html = "", hits = lockedHits(q);
+    if (q) {
+      if (hits.length) {
+        html = '<h2 class="locked-h">' + LOCK_ICON + esc(t.lockedHits) +
+          ' <span class="kin-n">' + fmt(hits.length) + "</span></h2>" +
+          '<div class="locked-rows">' + hits.slice(0, LOCKED_SHOWN).map(function (x) {
+            return '<button type="button" class="locked-row" data-locked="' + esc(x[0]) + '">' +
+              LOCK_ICON + '<span class="lr-name">' + esc(lockedName(x)) + "</span>" +
+              '<span class="lr-cat">' + esc(catLabel(x[3])) + "</span></button>";
+          }).join("") + "</div>" +
+          (hits.length > LOCKED_SHOWN
+            ? '<button type="button" class="linkish locked-more" data-full>' +
+                esc(t.lockedHitsMore.replace("{n}", fmt(hits.length - LOCKED_SHOWN))) + "</button>"
+            : "");
+      }
+    } else {
+      var pf = state.favsOnly ? paidFavCount() : 0;
+      if (pf) {
+        html += '<p class="locked-favs">' +
+          esc(pf === 1 ? t.lockedFavsOne : t.lockedFavs.replace("{n}", fmt(pf))) + "</p>";
+      }
+      /* A count under any other filter would read as that many more matches:
+         the teaser does not know which paid entries are in season or prestige. */
+      var narrowed = state.seasonNow || state.favsOnly || state.rareOnly || state.luxeOnly ||
+        state.signOnly || state.priceBand !== "all" || state.flavour !== "all";
+      var n = narrowed ? 0 : state.cat === "all" ? LK.counts.paid : (LK.familyPaid[state.cat] || 0);
+      if (n) {
+        html += '<button type="button" class="locked-line" data-full>' + LOCK_ICON +
+          esc(state.cat === "all" ? t.lockedGrid.replace("{n}", fmt(n))
+            : t.lockedGridCat.replace("{family}", catLabel(state.cat)).replace("{n}", fmt(n))) + "</button>";
+      }
+    }
+    box.innerHTML = html;
+    box.hidden = !html;
+    return hits.length;
+  }
+
   function renderGrid() {
     var t = T(), list = filtered();
+    var paidHits = renderLockedEnd();
     el("empty").hidden = list.length > 0;
-    el("empty").textContent = t.empty;
+    el("empty").textContent = paidHits ? t.emptyFree : t.empty;
     renderStats(list.length);
     /* The star is a sibling of the keyboard target, not a child: a button
        inside a role=button is one control to assistive tech. The whole card
@@ -637,10 +723,12 @@
      length, so every ingredient shows exactly once before any repeat, and
      neighbours in the data files never land on consecutive days. The old
      version added 1 to the index each day, which walked the files in order and
-     served twelve spices in a row. */
+     served twelve spices in a row. Over the loaded entries only, so a locked
+     visitor is never handed a paid one. */
   function gcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
   function dailyIngredient() {
     var d = new Date(), n = BASE.length;
+    if (!n) return null;
     var day = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
     var k = Math.round(n * 0.6180339887);
     while (k > 1 && gcd(k, n) !== 1) k--;
@@ -648,6 +736,7 @@
   }
   function renderDaily() {
     var t = T(), i = dailyIngredient();
+    if (!i) { el("daily").hidden = true; return; }
     el("daily").innerHTML =
       '<div class="d-art">' + art(i) + "</div>" +
       "<div>" +
@@ -723,8 +812,10 @@
     return '<button type="button" class="pair-chip" data-open="' + id + '">' + art(i) + "<span>" + esc(name(i)) + "</span></button>";
   }
 
+  /* A trio whose ingredients are not all loaded is not shown at all. */
+  function trioKnown(tr) { return tr.ids.every(function (x) { return byId[x]; }); }
   function triosOf(id) {
-    return TRIOS.filter(function (tr) { return tr.ids.indexOf(id) !== -1; });
+    return TRIOS.filter(function (tr) { return tr.ids.indexOf(id) !== -1 && trioKnown(tr); });
   }
 
   /* ---------- work trees: an ingredient and its preparations ---------- */
@@ -776,7 +867,22 @@
   };
 
 
+  /* What a locked section says in place of its content, and the way to the
+     panel that says what the full version holds. */
+  function lockedBox(text) {
+    return '<div class="locked-box"><p>' + esc(text) + "</p>" +
+      '<button type="button" class="linkish" data-full>' + esc(T().fullMore) + "</button></div>";
+  }
+
   function renderTree(ing) {
+    if (LOCKED) {
+      /* The branches carry pairings: locked, only how many there are. */
+      var nb = ing.custom ? 0 : LK.trees[ing.id];
+      if (!nb) return "";
+      return '<section class="tw" id="treeSec"><h3 class="tw-title" id="treeTitle">' +
+        esc(T().preparations) + LOCK_ICON + "</h3>" +
+        lockedBox(T().lockedTree.replace("{n}", nb)) + "</section>";
+    }
     var tr = treeById[ing.id];
     if (!tr) return "";
     var t = T(), n = tr.branches.length;
@@ -841,26 +947,41 @@
     return (parts[0] || "?").charAt(0) + (parts.length > 1 ? parts[parts.length - 1].charAt(0) : "");
   }
 
-  /* What the free tier does not carry. Ingredients and techniques are the part a
-     cook is expected to know and the part a school can teach from; the bases,
-     the chefs, the lab and the trios are the product. Named here once, because
-     setView, renderAll and the tier switch all have to agree. */
-  var PAID_VIEWS = ["chefs", "bases", "lab"];
-  function viewAllowed(v) { return !FREE_MODE || PAID_VIEWS.indexOf(v) === -1; }
+  /* Ingredients and techniques are the part a cook is expected to know and the
+     part a school can teach from; the bases, the chefs and the lab (PAID_VIEWS,
+     above) are the full version. Locked, their tab opens #lockedView, which
+     says what is behind it. */
+  function viewLocked(v) { return LOCKED && PAID_VIEWS.indexOf(v) !== -1; }
+
+  function renderLockedView(v) {
+    var t = T(), c = LK.counts;
+    var title = { chefs: t.chefsTitle, bases: t.basesTitle, lab: t.labTitle }[v];
+    var body = v === "chefs" ? t.lockedChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes))
+      : v === "bases" ? t.lockedBases.replace("{n}", fmt(c.bases))
+      : t.lockedLab.replace("{p}", fmt(c.pairings)).replace("{t}", fmt(c.trios));
+    el("lockedPanel").innerHTML =
+      '<p class="locked-kicker">' + LOCK_ICON + esc(t.lockedIn) + "</p>" +
+      "<h2>" + esc(title) + "</h2>" +
+      '<p class="locked-body">' + esc(body) + "</p>" +
+      '<p class="locked-price">' + esc(t.fullPrice) + " · " + esc(t.fullSoon) + "</p>" +
+      '<button type="button" class="m-lab-btn locked-open" data-full>' + esc(t.fullMore) + "</button>";
+  }
 
   function setView(v) {
-    if (!viewAllowed(v)) v = "atlas";
     state.view = v;
+    var shut = viewLocked(v);
     var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView" };
     var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab" };
     Object.keys(views).forEach(function (k) {
-      el(views[k]).hidden = v !== k;
+      el(views[k]).hidden = shut || v !== k;
       el(tabs[k]).classList.toggle("active", v === k);
       el(tabs[k]).setAttribute("aria-selected", v === k);
     });
+    el("lockedView").hidden = !shut;
     /* Measured from the active button, which is zero-width while the panel is
        hidden — so the pill can only be placed once the panel is up. */
     paintSeg("viewTabs");
+    if (shut) { renderLockedView(v); return; }
     if (v === "lab") { paintSeg("labModes"); paintSeg("plateModes"); }
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
@@ -904,10 +1025,12 @@
     if (!x) return;
     /* Techniques are free and the bases are not, so this list is the one door
        between them: without the guard, a free visitor opens a technique, reads
-       "used in" and clicks straight through into a paid base. */
-    var used = FREE_MODE ? [] :
-      BASES.filter(function (d) { return d.techniques.indexOf(id) !== -1; })
+       "used in" and clicks straight through into a paid base. Locked, it says
+       how many bases use it instead. */
+    var used = LOCKED ? [] :
+      BASES.filter(function (d) { return (d.techniques || []).indexOf(id) !== -1; })
         .sort(function (p, q) { return p.name[state.lang].localeCompare(q.name[state.lang], state.lang, CMP); });
+    var usedPaid = LOCKED ? (LK.basesUsing[id] || 0) : 0;
     el("modalBody").innerHTML =
       '<div class="bm-head"><p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
       '<h2 id="modalTitle">' + esc(x.name[state.lang]) + "</h2>" +
@@ -918,7 +1041,11 @@
       (used.length ? "<h3>" + esc(t.techUsedIn) + '</h3><div class="chip-row">' +
         used.map(function (d) {
           return '<button type="button" class="chip-link" data-baselink="' + esc(d.id) + '">' + esc(d.name[state.lang]) + "</button>";
-        }).join("") + "</div>" : "");
+        }).join("") + "</div>" : "") +
+      (usedPaid ? "<h3>" + esc(t.techUsedIn) + LOCK_ICON + '</h3><div class="chip-row">' +
+        '<button type="button" class="chip-link chip-locked" data-full>' + LOCK_ICON +
+        esc(usedPaid === 1 ? t.lockedBasesUsingOne : t.lockedBasesUsing.replace("{n}", usedPaid)) +
+        "</button></div>" : "");
   }
   function openTech(id) { openItem("tech", id); }
 
@@ -1058,7 +1185,7 @@
   function renderModal(id) {
     var t = T(), i = byId[id];
     var other = state.lang === "en" ? i.name.fr : i.name.en;
-    var pairs = Array.from(PAIRS[i.id]).sort(function (a, b) { return name(byId[a]).localeCompare(name(byId[b]), state.lang, CMP); });
+    var pairs = Array.from(PAIRS[i.id] || []).sort(function (a, b) { return name(byId[a]).localeCompare(name(byId[b]), state.lang, CMP); });
     var trios = triosOf(id);
     var html =
       '<div class="m-head">' +
@@ -1084,23 +1211,64 @@
       renderTree(i) +
       kinBlock(i) +
       evinNote(i) +
-      (FREE_MODE ? "" :
-        "<h3>" + esc(t.pairsWith) + "</h3>" +
-        pairBlock(pairs) +
-        (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
-          return '<p class="m-story" style="font-size:14px">· <strong>' + esc(tr.name[state.lang]) + "</strong> — " +
-            tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
-        }).join("") : "") +
-        '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>");
+      /* Locked, an entry's pairings, trios and lab are a count and a way to the
+         full version. A creation keeps its own pairings: they are its maker's. */
+      (LOCKED && !i.custom
+        ? "<h3>" + esc(t.lockedPairsHead) + LOCK_ICON + "</h3>" +
+          lockedBox(LK.pairs[i.id]
+            ? t.lockedPairs.replace("{n}", fmt(LK.pairs[i.id]))
+            : t.lockedPairsNone)
+        : "<h3>" + esc(t.pairsWith) + "</h3>" +
+          pairBlock(pairs) +
+          (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
+            return '<p class="m-story" style="font-size:14px">· <strong>' + esc(tr.name[state.lang]) + "</strong> — " +
+              tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
+          }).join("") : "") +
+          (LOCKED ? "" : '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>"));
     el("modalBody").innerHTML = html;
+  }
+
+  /* What the full version holds, every count read from COPIUS_LOCKED; with an
+     id, it opens on that paid entry's name, and its public page, which carries
+     the teaser: drawing, family, season and price band. */
+  function renderFullModal(id) {
+    var t = T(), c = LK.counts, x = id ? PAID[id] : null, head;
+    if (x) {
+      var nm = lockedName(x), other = state.lang === "fr" ? x[1] : x[2];
+      head = '<div class="bm-head"><p class="m-cat">' + esc(catLabel(x[3])) + " · " + LOCK_ICON + esc(t.lockedTag) + "</p>" +
+        '<h2 id="modalTitle">' + esc(nm) + "</h2>" +
+        (other !== nm ? '<p class="m-latin">' + esc(other) + "</p>" : "") + "</div>" +
+        '<p class="dm-sum">' + esc(t.fullIs.replace("{name}", nm)) + "</p>" +
+        '<p class="full-page"><a href="' + (state.lang === "fr" ? "fr/i/" : "i/") + encodeURIComponent(x[0]) + '/">' +
+          esc(t.fullPage) + ' <span aria-hidden="true">→</span></a></p>' +
+        "<h3>" + esc(t.fullTitle) + "</h3>";
+    } else {
+      head = '<div class="bm-head"><h2 id="modalTitle">' + esc(t.fullTitle) + "</h2></div>" +
+        "<h3>" + esc(t.fullHolds) + "</h3>";
+    }
+    var rows = [
+      t.fullIngredients.replace("{p}", fmt(c.paid)).replace("{t}", fmt(c.ingredients)),
+      t.fullPairings.replace("{n}", fmt(c.pairings)),
+      t.fullTrees.replace("{n}", fmt(c.trees)),
+      t.fullLab,
+      t.fullTrios.replace("{n}", fmt(c.trios)),
+      t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
+      t.fullBases.replace("{n}", fmt(c.bases))
+    ];
+    el("modalBody").innerHTML = head +
+      '<ul class="full-list">' + rows.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>" +
+      '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
+        '<span class="full-soon">' + esc(t.fullSoon) + "</span></p>" +
+      '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>";
   }
 
   /* One dialog, three kinds of entry. showModal draws whatever is on top of
      the stack; openItem pushes, backModal pops, closeModal empties. Focus goes
      to ✕ on open and back to the control that opened the dialog on close. */
-  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal };
+  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal, full: renderFullModal };
   var LOOKUP = { ing: function (id) { return byId[id]; }, tech: function (id) { return techById[id]; },
-                 base: function (id) { return baseById[id]; } };
+                 base: function (id) { return baseById[id]; },
+                 full: function (id) { return LOCKED && (!id || !!PAID[id]); } };
   var opener = null;
   /* Give every stroke the same nominal length so one animation duration suits
      a two-stroke leaf and a twenty-stroke artichoke. Cheap: one modal's worth
@@ -1128,7 +1296,9 @@
     if (top.kind === "ing") primeArt();
     el("backBtn").hidden = modalStack.length < 2;
     if (history.replaceState) {
-      history.replaceState(null, "", top.kind === "ing" ? "#" + top.id : location.pathname + location.search);
+      /* A paid name keeps its link too: #id opens the panel naming it. */
+      history.replaceState(null, "", top.kind === "ing" || (top.kind === "full" && top.id)
+        ? "#" + top.id : location.pathname + location.search);
     }
   }
   function openItem(kind, id) {
@@ -1185,7 +1355,7 @@
     }
   /* Guarded as well as hidden: a chip left in a stale modal, a restored view or
      a hand-typed hash all reach this without passing the tab. */
-  function openBase(id) { if (FREE_MODE) return; openItem("base", id); }
+  function openBase(id) { if (LOCKED) return; openItem("base", id); }
 
   /* ---------- pairing lab ---------- */
   /* The two slots hold ids; the boxes show names. A box is searched like the
@@ -1296,8 +1466,8 @@
 
   /* The bands, in one place, because they are now three things at once: the
      label on the bar, the sentence under it, and the rows of the scale. The
-     boundaries are measured, not chosen — of 4 000 random plates 94 reached 55
-     and one reached 85, and the top band holds 63% of the trios and chefs'
+     boundaries are measured, not chosen — of 4 000 random plates 132 reached 55
+     and one reached 87, and the top band holds 63% of the trios and chefs'
      dishes (tools/measure-scale.js). */
   var SCALE = [
     { band: "balanced",   lo: 75, hi: 100, label: "plateBandBalanced",   why: "scaleBalanced" },
@@ -1319,7 +1489,7 @@
       var b = branchesOf(id).filter(function (x) { return x.id === form; })[0];
       if (b && b.pairs) return b.pairs.filter(function (x) { return byId[x]; });
     }
-    return byId[id] ? byId[id].pairs.slice() : [];
+    return byId[id] ? (byId[id].pairs || []).slice() : [];
   }
   /* The branch's own texture where a form is chosen — purée is not a potato. */
   function itemTexture(id, form) {
@@ -1890,7 +2060,7 @@
 
   /* ---------- trios section ---------- */
   function renderTrios() {
-    el("triosGrid").innerHTML = TRIOS.map(function (tr) {
+    el("triosGrid").innerHTML = TRIOS.filter(trioKnown).map(function (tr) {
       return '<div class="trio-card">' +
         '<div class="trio-arts">' + tr.ids.map(function (x) { return art(byId[x]); }).join("") + "</div>" +
         "<h3>" + esc(tr.name[state.lang]) + "</h3>" +
@@ -2033,16 +2203,9 @@
     renderCats();
     renderDaily();
     renderGrid();
-    /* The lab and the trios are the paid product and now share a tab of their
-       own, so the tab is the whole gate — nothing inside it needs hiding too. */
-    PAID_VIEWS.forEach(function (v) {
-      var tab = el({ chefs: "tabChefs", bases: "tabBases", lab: "tabLab" }[v]);
-      if (tab) tab.hidden = FREE_MODE;
-    });
-    /* Switching down to free while standing in a paid view has to move the
-       visitor, not leave them on a tab whose button has just disappeared. */
-    if (!viewAllowed(state.view)) { setView("atlas"); return renderAll(); }
-    if (!FREE_MODE) {
+    /* The lab and the trios are the full version and share a tab of their own;
+       locked, that tab opens #lockedView and nothing in #labView is drawn. */
+    if (!LOCKED) {
       fillLabInputs();
       renderLabResult();
       renderPlateAll();
@@ -2051,6 +2214,7 @@
     renderCreations();
     /* every non-atlas view has to re-render too, or a language switch leaves it
        in the old language — keyed off state.view so a new view cannot be missed */
+    if (viewLocked(state.view)) { renderLockedView(state.view); return; }
     var render = { chefs: renderChefs, tech: renderTech, bases: renderBases };
     if (render[state.view]) render[state.view]();
   }
@@ -2060,18 +2224,6 @@
     localStorage.setItem(LS_LANG, l);
     renderAll();
     refreshOpenModal();
-  }
-
-  /* Switching tier changes which entries exist, so an open modal may be showing
-     one that no longer does. Close it rather than refresh it. */
-  function setTier(mode) {
-    var want = mode === "free";
-    if (want === FREE_MODE) return;
-    FREE_MODE = want;
-    try { localStorage.setItem(LS_TIER, mode); } catch (e) {}
-    closeModal();
-    rebuildIndex();
-    renderAll();
   }
 
   /* ---------- motion ---------- */
@@ -2163,8 +2315,6 @@
 
   el("lang-en").addEventListener("click", function () { setLang("en"); });
   el("lang-fr").addEventListener("click", function () { setLang("fr"); });
-  el("tier-free").addEventListener("click", function () { setTier("free"); });
-  el("tier-full").addEventListener("click", function () { setTier("full"); });
 
   /* Typing in the top search is looking for an ingredient, whatever tab it
      starts from: the atlas comes forward and everything between the box and
@@ -2255,6 +2405,12 @@
       renderPlateAll();
       return;
     }
+    /* A paid name opens the full-version panel naming it; anything else marked
+       data-full opens it plain. Inside the dialog it stacks, so ← comes back. */
+    var lk = e.target.closest("[data-locked]");
+    if (lk) { openItem("full", lk.getAttribute("data-locked")); return; }
+    var fu = e.target.closest("[data-full]");
+    if (fu) { openItem("full", ""); return; }
     var o = e.target.closest("[data-open]");
     if (o) { openModal(o.getAttribute("data-open")); return; }
     var k = e.target.closest("[data-tech]");
@@ -2503,4 +2659,5 @@
   var hash = "";
   try { hash = decodeURIComponent(location.hash.replace("#", "")); } catch (e) {}
   if (hash && byId[hash]) { setView("atlas"); openModal(hash); }
+  else if (hash && LOCKED && PAID[hash]) { setView("atlas"); openItem("full", hash); }
 })();

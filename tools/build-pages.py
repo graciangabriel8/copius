@@ -8,6 +8,11 @@ the same data with the text actually in the HTML, at a URL of its own:
     i/verjus-rouge/       English
     fr/i/verjus-rouge/    French
 
+Only the free version is published. An entry in tools/free-tier.json gets its
+whole page minus the pairings; every other entry gets a teaser page (name,
+drawing, family, season, price) and a locked block saying what the full
+version holds. Dish pages are teasers too: the chefs are paid.
+
 Run:  python3 tools/build-pages.py
 """
 import datetime
@@ -15,7 +20,7 @@ import html
 import json
 import pathlib
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 import shutil
 import sys
 import unicodedata
@@ -23,6 +28,8 @@ import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APP = "atlas.html"
+SOURCES = "tools/sources.txt"
+FREE_TIER = "tools/free-tier.json"
 SITE = "https://copius.fr"
 
 # The atlas is closed while it is being finished. Flip this to True on the day it
@@ -68,7 +75,7 @@ def load_i18n():
     return out, re.findall(r'"([a-z]+)"', order.group(1))
 
 
-I18N, CAT_ORDER, VERSION = {}, [], 0   # filled by main(); module-level so the templates can read them
+I18N, CAT_ORDER, VERSION, FREE = {}, [], 0, set()   # filled by main(); module-level so the templates can read them
 
 
 def family(cat, lang):
@@ -85,8 +92,8 @@ def family_order(cats):
 UI = {
     "en": {"latin": "Latin name", "family": "Family", "origin": "Origin",
            "season": "Season (France)", "flavour": "Flavour", "story": "What it is",
-           "tip": "In the kitchen", "pairs": "Goes with", "price": "Typical price (France)",
-           "kin": "Same species", "near": "In season alongside", "alsoUsed": "Also used with",
+           "tip": "In the kitchen", "price": "Typical price (France)",
+           "kin": "Same species", "near": "In season alongside",
            "altImg": "%s, drawn for Copius",
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
@@ -96,11 +103,20 @@ UI = {
            "fixLbl": "Something wrong here, or missing?",
            "fixCta": "Tell us",
            "fixSubj": "Correction — %s",
-           "fixBody": "Page: %s\n\nWhat is wrong, or what is missing:\n\n"},
+           "fixBody": "Page: %s\n\nWhat is wrong, or what is missing:\n\n",
+           "lockHead": "Full version", "soon": "coming soon",
+           "lockGives": "The full version gives %s.", "and": " and ",
+           "lockStory": "what it is", "lockTip": "the kitchen note", "lockAll": "the whole entry",
+           "lockPairs1": "its pairing", "lockPairsN": "its %d pairings",
+           "freePairs1": "Its pairing is in the full version, coming soon (%s).",
+           "freePairsN": "Its %d pairings are in the full version, coming soon (%s).",
+           "neutral": "%s — %s. Season in France: %s.",
+           "kinMore": "+ %d in the full version, coming soon.",
+           "legend": "Dashed outline: in the full version, coming soon."},
     "fr": {"latin": "Nom latin", "family": "Famille", "origin": "Origine",
            "season": "Saison", "flavour": "Goût", "story": "Ce que c’est",
-           "tip": "En cuisine", "pairs": "S’accorde avec", "price": "Prix courant",
-           "kin": "Même espèce", "near": "De saison en même temps", "alsoUsed": "Entre aussi avec",
+           "tip": "En cuisine", "price": "Prix courant",
+           "kin": "Même espèce", "near": "De saison en même temps",
            "altImg": "%s, dessiné pour Copius",
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
@@ -110,8 +126,29 @@ UI = {
            "fixLbl": "Une erreur ici, ou un oubli ?",
            "fixCta": "Dites-le nous",
            "fixSubj": "Correction — %s",
-           "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n"},
+           "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n",
+           "lockHead": "Version complète", "soon": "bientôt disponible",
+           "lockGives": "La version complète donne %s.", "and": " et ",
+           "lockStory": "ce que c’est", "lockTip": "la note de cuisine", "lockAll": "la fiche entière",
+           "lockPairs1": "son accord", "lockPairsN": "ses %d accords",
+           "freePairs1": "Son accord est dans la version complète, bientôt disponible (%s).",
+           "freePairsN": "Ses %d accords sont dans la version complète, bientôt disponible (%s).",
+           "neutral": "%s — %s. Saison en France : %s.",
+           "kinMore": "+ %d dans la version complète, bientôt disponible.",
+           "legend": "Contour pointillé : version complète, bientôt disponible."},
 }
+
+# The full version's price, one home for both languages. A no-break space holds
+# each amount to its € sign: a line must not end on a bare "3".
+PRICE = {"en": "€3 a month or €29 a year", "fr": "3\u00a0€ par mois ou 29\u00a0€ par an"}
+
+
+def locked_block(gives, lang):
+    """The box that stands where paid content was: what the full version holds
+    here, its price, and that it is not on sale yet."""
+    t = UI[lang]
+    return ('<div class="locked"><h2>%s <small>%s</small></h2><p>%s %s.</p></div>'
+            % (e(t["lockHead"]), e(t["soon"]), e(t["lockGives"] % gives), e(PRICE[lang])))
 
 
 def unescape(s):
@@ -129,17 +166,18 @@ def version():
 
 
 def load():
-    """Every entry, with every field the pages need. Same source of truth as the
-    app: the data files it lists, in the order it lists them."""
-    idx = (ROOT / APP).read_text()
-    files = [f for f in re.findall(r'src="js/(data-[a-z-]+\.js)\?', idx)
-             if "chefs" not in f and "trees" not in f]
+    """Every entry, with every field the pages need, and the set of free ids.
+    Same source of truth as the full atlas: the files tools/sources.txt lists, in
+    its order. Only ingredient records match the {id:…,cat:…} head, so the
+    chefs, trees, bases and trios in the same list are skipped by the parse."""
+    files = [l.strip() for l in (ROOT / SOURCES).read_text().splitlines()
+             if l.strip() and not l.strip().startswith("#")]
     if not files:
-        sys.exit("no data files listed in %s — has the app moved?" % APP)
+        sys.exit("no source files listed in %s" % SOURCES)
 
     rows = []
     for fn in files:
-        text = (ROOT / "js" / fn).read_text()
+        text = (ROOT / fn).read_text()
         for blk in re.findall(r'^\{id:".*?(?=^\{id:"|\n\s*\]|\Z)', text, re.S | re.M):
             m = re.match(r'\{id:"([a-z0-9-]+)",\s*cat:"([a-z]+)"', blk)
             if not m:
@@ -172,7 +210,12 @@ def load():
                 "pairs": lst(r"pairs:\[([^\]]*)\]"),
                 "svg": one(r"svg:'(.*?)'\s*\}"),
             })
-    return rows
+
+    free = set(json.loads((ROOT / FREE_TIER).read_text())["ids"])
+    missing = sorted(free - {i["id"] for i in rows})
+    if missing:
+        sys.exit("free ids missing from the source data: %s" % ", ".join(missing))
+    return rows, free
 
 
 def correction_link(subject, url, lang):
@@ -299,39 +342,58 @@ def page(i, lang, by_id, count, G):
     here = "%s/i/%s/" % (SITE, i["id"]) if lang == "en" else "%s/fr/i/%s/" % (SITE, i["id"])
     there = "%s/fr/i/%s/" % (SITE, i["id"]) if lang == "en" else "%s/i/%s/" % (SITE, i["id"])
     up = "../../" if lang == "en" else "../../../"
+    paid = i["id"] not in FREE
+    n_pairs = len(G["partners"][i["id"]])
 
     story = i["story"][lang] or i["story"][other]
     tip = i["tip"][lang] or i["tip"][other]
-    desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…"
+    season = season_text(i["season"], lang)
 
-    rows = [(t["latin"], "<i>%s</i>" % e(i["latin"])) if i["latin"] else None,
+    # A paid entry is a teaser: name, drawing, family, season, price. Its story,
+    # tip, latin, origin and flavour stay in the full version, and so does every
+    # line of text built from them — the description included.
+    rows = [(t["latin"], "<i>%s</i>" % e(i["latin"])) if i["latin"] and not paid else None,
             (t["family"], e(fam)),
-            (t["origin"], e(i["origin"][lang] or i["origin"][other])) if i["origin"][lang] or i["origin"][other] else None,
-            (t["season"], e(season_text(i["season"], lang))),
-            (t["flavour"], " · ".join(e(I18N[lang]["flavors"].get(f, f)) for f in i["flavor"])) if i["flavor"] else None,
+            (t["origin"], e(i["origin"][lang] or i["origin"][other])) if (i["origin"][lang] or i["origin"][other]) and not paid else None,
+            (t["season"], e(season)),
+            (t["flavour"], " · ".join(e(I18N[lang]["flavors"].get(f, f)) for f in i["flavor"])) if i["flavor"] and not paid else None,
             (t["price"], e(i["pk"])) if i["pk"] else None]
     facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v)
                     for k, v in filter(None, rows))
 
+    if paid:
+        desc = t["neutral"] % (name, fam, season)
+        gives = [t["lockStory"]] if story else []
+        gives += [t["lockTip"]] if tip else []
+        gives += [t["lockPairs1"] if n_pairs == 1 else t["lockPairsN"] % n_pairs] if n_pairs else []
+        gives = (", ".join(gives[:-1]) + t["and"] + gives[-1] if len(gives) > 1
+                 else gives[0] if gives else t["lockAll"])
+        body = locked_block(gives, lang)
+    else:
+        desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…"
+        body = "<h2>%s</h2>\n  <p>%s</p>" % (e(t["story"]), e(story))
+        if tip:
+            body += "\n\n  <h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))
+        if n_pairs:
+            body += "\n\n  <p class=\"locked\">%s</p>" % e(
+                t["freePairs1"] % PRICE[lang] if n_pairs == 1 else t["freePairsN"] % (n_pairs, PRICE[lang]))
+
     # Both trees put siblings next to each other, so one relative path serves both.
-    # Same chip as the season pages and the atlas: the drawing is how an entry
-    # is recognised before the name is read.
-    def chip(x):
-        r = by_id[x]
-        return ('<a href="../%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
-                '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
-                % (x, r["svg"], e(r["name"][lang])))
-
-    links = [chip(pid) for pid in i["pairs"] if pid in by_id]
-
-    def linkrow(ids):
-        return " ".join(chip(x) for x in ids)
-    kin_ids, near_ids, back_ids = related(i, G)
-    extra = "".join('<h2>%s</h2><p class="pairs">%s</p>' % (e(t[k]), linkrow(v))
-                    for k, v in (("kin", kin_ids), ("alsoUsed", back_ids), ("near", near_ids)) if v)
+    # A teaser page shows no neighbours: its own latin and flavours pick them.
+    kin_ids, near_ids, kin_paid = related(i, G) if not paid else ([], [], 0)
+    extra = ""
+    if kin_ids or kin_paid:
+        extra += '<h2>%s</h2>' % e(t["kin"])
+        if kin_ids:
+            extra += '<p class="pairs">%s</p>' % " ".join(chip(by_id[x], lang, "../") for x in kin_ids)
+        if kin_paid:
+            extra += '<p class="locked">%s</p>' % e(t["kinMore"] % kin_paid)
+    if near_ids:
+        extra += '<h2>%s</h2><p class="pairs">%s</p>' % (
+            e(t["near"]), " ".join(chip(by_id[x], lang, "../") for x in near_ids))
 
     marks = "".join(' <span class="mk" title="%s">%s</span>' % (e(t[k]), s)
-                    for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k])
+                    for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k] and not paid)
 
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     ld = json_ld({"@context": "https://schema.org", "@type": "Thing", "name": name,
@@ -356,7 +418,7 @@ def page(i, lang, by_id, count, G):
 <body>
 <header>
   <a class="home" href="%(up)s">Copius</a>
-  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s%(hash)s">%(back)s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav>
 </header>
 
 <main>
@@ -366,12 +428,7 @@ def page(i, lang, by_id, count, G):
 
   <table>%(facts)s</table>
 
-  <h2>%(storylbl)s</h2>
-  <p>%(story)s</p>
-
-  %(tipblock)s
-
-  %(pairblock)s
+  %(body)s
   %(extra)s
 
   %(fix)s
@@ -379,7 +436,7 @@ def page(i, lang, by_id, count, G):
 </main>
 
 <footer>
-  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(dishidx)s">%(dishes)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(dishidx)s">%(dishes)s</a> · <a href="%(up)s%(app)s%(hash)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a><br>
   Copius — %(tagline)s · %(count)s
 </footer>
 <script src="%(up)sjs/page.js?v=%(v)d" defer></script>
@@ -403,11 +460,9 @@ def page(i, lang, by_id, count, G):
         "xdef": "%s/i/%s/" % (SITE, i["id"]),
         "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT, "ld": ld,
         "svg": i["svg"], "marks": marks, "facts": facts,
-        "storylbl": e(t["story"]), "story": e(story),
-        "tipblock": ("<h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))) if tip else "",
-        "extra": extra,
-        "pairblock": ('<h2>%s</h2><p class="pairs">%s</p>'
-                      % (e(t["pairs"]), " ".join(links))) if links else "",
+        "body": body, "extra": extra,
+        # A paid id opens the atlas on its locked panel.
+        "hash": "#" + i["id"] if paid else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
         "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN[lang])) if is_alcohol(i) else "",
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
@@ -419,16 +474,26 @@ def page(i, lang, by_id, count, G):
 # both, so every French page's "Tous les ingrédients" resolved to the ENGLISH
 # index and /fr/i/ — the sole hub for 1 835 French pages — was linked from
 # nothing on the whole site.
-# Three link blocks computed from fields the entries already carry. Half the
+# Two link blocks computed from fields the entries already carry. Half the
 # atlas sat on a single inbound link — from /i/, a flat page of 1 835 — which
-# is a list, not a graph.
-#
-# "Also used with" does the most work, and not for the obvious reason: it links
-# a page to everything that pairs WITH it, so butter (paired by 477 entries)
-# becomes a hub pointing back out at the obscure ones. Choosing the six by who
-# has the fewest inbound links rather than alphabetically rescues 848 pages
-# instead of 742, for exactly the same number of links.
-KIN_MAX = NEAR_MAX = BACK_MAX = 6
+# is a list, not a graph. A third, "Also used with", linked a page to everything
+# that pairs with it; it went with the lock, because a reverse pairing is a
+# pairing and pairings are the full version's.
+KIN_MAX = NEAR_MAX = 6
+
+
+def chip(r, lang, rel):
+    """An entry as a chip: its drawing, then its name, the way the atlas shows
+    it — the drawing is how an entry is recognised before the name is read.
+    `rel` climbs from the page to the entry pages of its language. A paid entry
+    is drawn dashed: its page is a teaser."""
+    return ('<a%s href="%s%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
+            '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
+            % (lk(r), rel, r["id"], r["svg"], e(r["name"][lang])))
+
+
+def lk(r):
+    return "" if r["id"] in FREE else ' class="lk"'
 
 
 # The illustrations were inline <svg>, which Google cannot index: its image
@@ -478,39 +543,42 @@ def genus_of(latin):
 
 
 def link_graph(rows):
-    """Everything the three blocks need, computed once for the whole build."""
+    """Everything the link blocks and the locked lines need, computed once for
+    the whole build. `partners` is the symmetric pairing graph the full atlas
+    builds, counted as tools/build-free.js counts it; only its sizes are used."""
     by_id = {i["id"]: i for i in rows}
-    inbound, back, genus, month = Counter(), defaultdict(list), defaultdict(list), defaultdict(set)
+    partners, genus, month = defaultdict(set), defaultdict(list), defaultdict(set)
     for i in rows:
         for p in i["pairs"]:
-            if p in by_id and p != i["id"]:
-                inbound[p] += 1
-                back[p].append(i["id"])
+            if p in by_id:
+                partners[i["id"]].add(p)
+                partners[p].add(i["id"])
         g = genus_of(i["latin"])
         if g:
             genus[g].append(i["id"])
         for m in i["season"]:
             month[m].add(i["id"])
-    return {"by_id": by_id, "inbound": inbound, "back": back, "genus": genus, "month": month}
+    return {"by_id": by_id, "partners": partners, "genus": genus, "month": month}
 
 
 def related(i, G):
-    """(kin, near, back) — ids only, deterministic, never the page itself."""
+    """(kin, near, kin_paid) — ids only, deterministic, never the page itself.
+    Only free entries are named. A paid genus-mate would give away a paid entry's
+    latin, and a paid pick for 'in season alongside', chosen by shared flavours,
+    its flavours; paid genus-mates are only counted."""
     by_id = G["by_id"]
     g = genus_of(i["latin"])
-    kin = sorted(x for x in G["genus"].get(g, []) if x != i["id"])[:KIN_MAX] if g else []
+    mates = [x for x in G["genus"].get(g, []) if x != i["id"]] if g else []
+    kin = sorted(x for x in mates if x in FREE)[:KIN_MAX]
+    kin_paid = sum(1 for x in mates if x not in FREE)
 
     near = []
     flav, months = set(i["flavor"]), set(i["season"])
     if flav and months:
-        cand = set().union(*[G["month"][m] for m in months]) - {i["id"]} - set(kin)
+        cand = (set().union(*[G["month"][m] for m in months]) & FREE) - {i["id"]} - set(kin)
         scored = [(len(flav & set(by_id[c]["flavor"])), c) for c in cand]
         near = [c for s, c in sorted(scored, key=lambda x: (-x[0], x[1])) if s >= 2][:NEAR_MAX]
-
-    seen = set(kin) | set(near) | set(i["pairs"])
-    back = [x for x in sorted(G["back"].get(i["id"], []), key=lambda x: (G["inbound"][x], x))
-            if x not in seen][:BACK_MAX]
-    return kin, near, back
+    return kin, near, kin_paid
 
 
 def page_title(name, alt_name, fam):
@@ -540,7 +608,7 @@ def index_page(rows, lang):
         items = sorted(by_fam[cat], key=lambda x: x["name"][lang].lower())
         blocks.append("<h2>%s <small>%d</small></h2><p class=\"pairs\">%s</p>" % (
             e(family(cat, lang)), len(items),
-            " ".join('<a href="%s/">%s</a>' % (i["id"], e(i["name"][lang])) for i in items)))
+            " ".join('<a%s href="%s/">%s</a>' % (lk(i), i["id"], e(i["name"][lang])) for i in items)))
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%s">
@@ -555,13 +623,13 @@ def index_page(rows, lang):
 </head>
 <body>
 <header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav></header>
-<main><h1>%s</h1>%s</main>
+<main><h1>%s</h1><p class="note">%s</p>%s</main>
 <footer>Copius — %s</footer>
 </body>
 </html>
 """ % (lang, THEME_SCRIPT, e(t["index"]), e(t["tagline"]), len(rows), e(t["index"]).lower(),
        robots, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
-       "".join(blocks), e(t["tagline"]))
+       e(t["legend"]), "".join(blocks), e(t["tagline"]))
 
 
 SLUG = {
@@ -620,16 +688,18 @@ DISHES = json.loads((ROOT / "tools" / "dishes.json").read_text()) \
 
 DISH_UI = {
     "en": {"seg": "dish", "memorable": "The dish that changed something",
-           "signature": "Signature dish", "why": "Why it works",
+           "signature": "Signature dish",
            "ing": "What is in it", "chef": "The cook",
-           "idx": "Dishes", "idxLede": "%d plates that moved cooking, or that a cook is known for — what each one is, and why the combination works.",
-           "all": "All dishes", "desc": "%s — %s. What it is, why the combination works, and every ingredient in it.",
+           "idx": "Dishes", "idxLede": "%d plates that moved cooking, or that a cook is known for, and what is in each one. Why each combination works is in the full version, coming soon.",
+           "all": "All dishes", "desc": "%s — %s. Every ingredient in it.",
+           "lockGives": "the note on this plate and why the combination works",
            "openAtlas": "See it in the atlas"},
     "fr": {"seg": "plat", "memorable": "Le plat qui a changé quelque chose",
-           "signature": "Plat signature", "why": "Pourquoi ça marche",
+           "signature": "Plat signature",
            "ing": "Ce qu\u2019il y a dedans", "chef": "Le cuisinier",
-           "idx": "Plats", "idxLede": "%d assiettes qui ont déplacé la cuisine, ou pour lesquelles un cuisinier est connu — ce qu\u2019elles sont, et pourquoi l\u2019accord tient.",
-           "all": "Tous les plats", "desc": "%s — %s. Ce que c\u2019est, pourquoi l\u2019accord tient, et tout ce qu\u2019il y a dedans.",
+           "idx": "Plats", "idxLede": "%d assiettes qui ont déplacé la cuisine, ou pour lesquelles un cuisinier est connu, et ce qu\u2019il y a dans chacune. Ce qui fait tenir chaque accord est dans la version complète, bientôt disponible.",
+           "all": "Tous les plats", "desc": "%s — %s. Tout ce qu\u2019il y a dedans.",
+           "lockGives": "la note sur ce plat et pourquoi l\u2019accord tient",
            "openAtlas": "Le voir dans l\u2019atlas"},
 }
 
@@ -639,22 +709,10 @@ def dish_url(did, lang):
             else "%s/fr/plat/%s/" % (SITE, did))
 
 
-def dish_chips(ids, by_id, lang, rel):
-    """Same chip as the season and entry pages: the drawing carries the name."""
-    out = []
-    for iid in ids:
-        r = by_id.get(iid)
-        if not r:
-            continue
-        out.append('<a href="%s%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
-                   '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
-                   % (rel, r["id"], r["svg"], e(r["name"][lang])))
-    return " ".join(out)
-
-
 def dish_page(d, lang, by_id):
-    """One plate. The note says what it moved; the why says what a cook can use.
-    Both were written for the atlas, where nothing is indexable."""
+    """One plate, as a teaser: the chefs are the full version's. The name, the
+    year, the cook and the ingredients are public; the note (what it moved) and
+    the why (what a cook can use) stand behind the locked block."""
     t, other = DISH_UI[lang], ("fr" if lang == "en" else "en")
     ui = UI[lang]
     # /dish/<id>/ is two deep, /fr/plat/<id>/ is three. Entry pages are ../../i/
@@ -691,12 +749,9 @@ def dish_page(d, lang, by_id):
 <main>
   <h3>%(kind)s%(year)s</h3>
   <h1>%(name)s</h1>
-  <p class="alt">%(chef)s · %(years)s · %(place)s</p>
+  <p class="alt">%(chef)s · %(years)s</p>
 
-  <p class="lede">%(note)s</p>
-
-  <h2>%(whylbl)s</h2>
-  <p>%(why)s</p>
+  %(locked)s
 
   <h2>%(inglbl)s</h2>
   <p class="pairs">%(chips)s</p>
@@ -718,10 +773,8 @@ def dish_page(d, lang, by_id):
         "name": e(name), "kind": e(kind),
         "year": (" · %s" % e(year)) if year != "\u2014" else "",
         "chef": e(d["chef"]["name"]), "years": e(years),
-        "place": e(d["chef"]["place"][lang]),
-        "note": e(d["note"][lang]), "why": e(d["why"][lang]),
-        "whylbl": e(t["why"]), "inglbl": e(t["ing"]),
-        "chips": dish_chips(d["ingredients"], by_id, lang, rel),
+        "locked": locked_block(t["lockGives"], lang), "inglbl": e(t["ing"]),
+        "chips": " ".join(chip(by_id[x], lang, rel) for x in d["ingredients"] if x in by_id),
         "openatlas": e(t["openAtlas"]), "all": e(t["all"]),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
@@ -819,11 +872,8 @@ def season_page(month, lang, rows):
     def chips(items, rel):
         # The drawing rides along: 208 bytes of path each, and 360 names in a row
         # is a wall of text that nobody reads to the end.
-        return " ".join(
-            '<a href="%s%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
-            '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
-            % (rel, r["id"], r["svg"], e(r["name"][lang]))
-            for r in sorted(items, key=lambda x: x["name"][lang].lower()))
+        return " ".join(chip(r, lang, rel)
+                        for r in sorted(items, key=lambda x: x["name"][lang].lower()))
 
     blocks = []
     if arriving:
@@ -869,6 +919,7 @@ def season_page(month, lang, rows):
   <h1>%(h1)s</h1>
   <p class="lede">%(lede)s</p>
   %(note)s
+  <p class="note">%(legend)s</p>
   %(blocks)s
   <h2>%(alllbl)s</h2>
   %(fams)s
@@ -891,7 +942,7 @@ def season_page(month, lang, rows):
                  % e(SEASON_NOTES.get(str(month), {}).get(lang, ""))
                  if SEASON_NOTES.get(str(month), {}).get(lang) else ""),
         "robots": robots, "here": here, "there": there,
-        "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]),
+        "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]), "legend": e(ui["legend"]),
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
         "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
@@ -1060,15 +1111,22 @@ h3 small{text-transform:none;letter-spacing:0}
 .fix{margin:30px 0 0;padding:14px 16px;background:var(--card);
   border:1px solid var(--border);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
 .fix a{color:var(--ink-2)}
+/* The full version. A paid entry's chip is dashed — its page is a teaser — and
+   a dashed box stands where paid content was. */
+.pairs a.lk{border-style:dashed;color:var(--ink-3)}
+.locked{margin:26px 0 0;padding:14px 16px;background:var(--card);
+  border:1px dashed var(--ink-3);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
+.locked h2{margin:0 0 6px;color:var(--ink)}
+.locked p{margin:0}
 @media (max-width:420px){h1{font-size:29px}th{width:44%;font-size:12px}}
 """
 
 
 def main():
-    global I18N, CAT_ORDER, VERSION
+    global I18N, CAT_ORDER, VERSION, FREE
     I18N, CAT_ORDER = load_i18n()
     VERSION = version()
-    rows = load()
+    rows, FREE = load()
     by_id = {i["id"]: i for i in rows}
     count = (len(rows), len({i["cat"] for i in rows}))
     G = link_graph(rows)
@@ -1109,8 +1167,7 @@ def main():
     (ROOT / "season" / "index.html").write_text(season_index("en", rows))
     (ROOT / "fr" / "saison" / "index.html").write_text(season_index("fr", rows))
 
-    # Thirty plates, written for a view that carries noindex. These are the same
-    # words on a surface a search engine reads.
+    # The plates, as teasers: name, year, cook and ingredients are public.
     shutil.rmtree(ROOT / "dish", ignore_errors=True)
     shutil.rmtree(ROOT / "fr" / "plat", ignore_errors=True)
     dishes = 0
@@ -1145,9 +1202,10 @@ def main():
         + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, today) for u in urls)
         + "</urlset>\n")
 
-    print('{"ingredientPages": %d, "seasonPages": %d, "dishPages": %d, "indexes": %d, '
-          '"sitemapUrls": %d, "indexable": %s}'
-          % (written, months, dishes, 6 if DISHES else 4, len(urls),
+    paid = sum(1 for i in rows if i["id"] not in FREE)
+    print('{"ingredientPages": %d, "free": %d, "paid": %d, "seasonPages": %d, "dishPages": %d, '
+          '"indexes": %d, "sitemapUrls": %d, "indexable": %s}'
+          % (written, len(rows) - paid, paid, months, dishes, 6 if DISHES else 4, len(urls),
              "true" if INDEXABLE else "false"))
     if not INDEXABLE:
         print("# every page carries noindex — flip INDEXABLE in this file when the atlas opens")

@@ -32,12 +32,9 @@ def inbound(root):
     """How many other entries name each id as a pairing — the atlas's own
     measure of how central an ingredient is. Ties break alphabetically so the
     order is stable across runs."""
-    atlas = (root / "atlas.html").read_text()
     counts = {}
-    for fn in re.findall(r'src="js/(data-[a-z-]+\.js)\?', atlas):
-        if "trees" in fn:
-            continue
-        txt = (root / "js" / fn).read_text()
+    for fn in make_card.data_files():
+        txt = (root / fn).read_text()
         for m in re.finditer(r'pairs:\[([^\]]*)\]', txt):
             for pid in re.findall(r'"([a-z0-9\u00e9-]+)"', m.group(1)):
                 counts[pid] = counts.get(pid, 0) + 1

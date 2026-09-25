@@ -6,6 +6,11 @@
 #   sh tools/bump.sh
 set -e
 cd "$(dirname "$0")/.."
+# The public data first: js/free.js (the free version and the locked teaser) and
+# the unpublished js/_premium.js, from tools/sources.txt. It refuses to write when
+# a free id is missing from the data, and set -e then stops the bump before any
+# version moves.
+osascript -l JavaScript tools/build-free.js
 python3 - <<'PY'
 import pathlib, re
 p = pathlib.Path("atlas.html"); t = p.read_text()
@@ -27,4 +32,7 @@ osascript -l JavaScript tools/dump-dishes.js
 # The share card carries the counts. It drifted to 1 857 ingredients against a
 # real 1 835 because it was a hand-made jpg with nothing pointing at the data.
 python3 tools/build-og.py
+# The public pages come from the same free list: rebuilt here, so moving an id to
+# the full version can never leave its whole page online, and their ?v= follows.
+python3 tools/build-pages.py
 echo "done — commit and push to publish"

@@ -11,10 +11,11 @@ ObjC.import("Foundation");
 var root = ObjC.unwrap($.NSFileManager.defaultManager.currentDirectoryPath);
 function read(f) { return ObjC.unwrap($.NSString.stringWithContentsOfFileEncodingError(root + "/" + f, $.NSUTF8StringEncoding, null)); }
 var g = globalThis; g.window = { console: console };
-var html = read("atlas.html"), re = /src="js\/([a-z0-9.-]+\.js)\?/g, m, files = ["i18n.js", "photos.js"];
-while ((m = re.exec(html))) { if (/^(data-|trios)/.test(m[1]) && files.indexOf(m[1]) === -1) files.push(m[1]); }
-files.forEach(function (f) { eval(read("js/" + f)); });
-eval(read("js/plate.js"));
+// The full data, in tools/sources.txt order (js/plate.js is its last file): the
+// draw below is seeded, so the order of INGREDIENTS is part of the measure.
+["js/i18n.js", "js/photos.js"].concat(read("tools/sources.txt").split("\n")
+  .map(function (l) { return l.trim(); }).filter(function (l) { return l && l.charAt(0) !== "#"; }))
+  .forEach(function (f) { eval(read(f)); });
 var ING = g.window.INGREDIENTS, PLATE = g.window.COPIUS_PLATE, byId = {};
 ING.forEach(function (i) { byId[i.id] = i; });
 // Same lineage the app builds: an entry, then its parent, then the parent's parent.

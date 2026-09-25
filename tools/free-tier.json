@@ -8,7 +8,7 @@
   "Calibrated against Gabriel's own answers to two recognition quizzes; he scored 20-30% on the samples, which showed the first cut of 1138 was far too generous.",
   "Cut again to 499 at his instruction."
  ],
- "not_yet_implemented": "No free:true flag exists in js/data-*.js. This file is the decision, not the gate. Shipping the tier means writing the flag and gating the lab, trios and pairs fields.",
+ "gate": "The lock ships from js/free.js, which tools/build-free.js builds from these ids.",
  "validity": "All 499 ids were checked against the live data on 2026-09-15: 0 missing. Re-check after any id rename.",
  "ids": [
   "abondance",

@@ -2,39 +2,40 @@
 //   node tools/validate.js
 //   osascript -l JavaScript tools/validate.js      (no Node required, macOS built-in)
 // Verifies unique ids, valid pairing/trio references, known flavor keys and
-// categories, and that every text field exists in both languages.
+// categories, and that every text field exists in both languages. Then the lock:
+// js/free.js holds exactly the free ids, with no pairing, variety link or paid id
+// in its records; _config.yml keeps every premium source off the site; and
+// .gitignore keeps js/_premium.js out of the repo.
 "use strict";
 
-var read, log;
+var read, log, listJs;
 if (typeof require === "function" && typeof process !== "undefined") {
   var fs = require("fs"), path = require("path");
-  read = function (f) { return fs.readFileSync(path.join(__dirname, "..", "js", f), "utf8"); };
+  read = function (f) { return fs.readFileSync(path.join(__dirname, "..", f), "utf8"); };
   log = console.log;
+  listJs = function () { return fs.readdirSync(path.join(__dirname, "..", "js")).filter(function (f) { return /\.js$/.test(f); }).map(function (f) { return "js/" + f; }); };
 } else {
   ObjC.import("Foundation");
   var cwd = ObjC.unwrap($.NSFileManager.defaultManager.currentDirectoryPath);
   read = function (f) {
-    return ObjC.unwrap($.NSString.stringWithContentsOfFileEncodingError(cwd + "/js/" + f, $.NSUTF8StringEncoding, null));
+    var s = $.NSString.stringWithContentsOfFileEncodingError(cwd + "/" + f, $.NSUTF8StringEncoding, null);
+    if (!s || s.isNil()) throw new Error("cannot read " + f);
+    return ObjC.unwrap(s);
   };
   log = function (s) { console.log(s); };
+  listJs = function () {
+    var a = ObjC.deepUnwrap($.NSFileManager.defaultManager.contentsOfDirectoryAtPathError(cwd + "/js", null)) || [];
+    return a.filter(function (f) { return /\.js$/.test(f); }).map(function (f) { return "js/" + f; });
+  };
 }
 
+// The full data, from tools/sources.txt: atlas.html loads only the free file now,
+// so its script tags no longer name the sources.
+var SOURCES = read("tools/sources.txt").split("\n").map(function (l) { return l.trim(); })
+  .filter(function (l) { return l && l.charAt(0) !== "#"; });
 var g = (typeof globalThis !== "undefined") ? globalThis : this;
 g.window = {};
-(function () {
-  // Load exactly what index.html loads, so the validator can never drift
-  // from the app the way it did when this list was written by hand.
-  var html = read("../atlas.html");
-  var re = /src="js\/([a-z0-9.-]+\.js)\?/g, m, out = ["i18n.js", "photos.js"];
-  while ((m = re.exec(html))) {
-    var f = m[1];
-    // data + vocabulary only; app.js needs a browser and is not data
-    if (!/^(data-|trios)/.test(f)) continue;
-    if (out.indexOf(f) === -1) out.push(f);
-  }
-  return out;
-})()
-  .forEach(function (f) { eval(read(f)); });
+["js/i18n.js", "js/photos.js"].concat(SOURCES).forEach(function (f) { eval(read(f)); });
 
 var I18N = g.window.I18N, INGREDIENTS = g.window.INGREDIENTS, TRIOS = g.window.TRIOS, CAT_ORDER = g.window.CAT_ORDER;
 var errors = [];
@@ -116,12 +117,77 @@ TREES.forEach(function (tr) {
   });
 });
 
+// ---- the lock ----
+// js/free.js (tools/build-free.js) is all the ingredient data the public atlas
+// loads: the ids of tools/free-tier.json and no other, without pairs or parent.
+// A paid id may appear in it only in COPIUS_LOCKED, the teaser that follows.
+// The same list as tools/build-free.js: pairs and parent are never in it.
+var FREE_KEYS = ["id", "cat", "price", "pk", "name", "latin", "origin", "season", "flavor",
+                 "texture", "story", "tip", "svg", "sign", "luxe", "rare", "kin"];
+var FREE_IDS = JSON.parse(read("tools/free-tier.json")).ids, FREE = {};
+FREE_IDS.forEach(function (id) { FREE[id] = true; });
+var freeText = read("js/free.js"), FW = {};
+new Function("window", freeText)(FW);
+var freeRecs = FW.INGREDIENTS || [], inFree = {};
+freeRecs.forEach(function (r) {
+  inFree[r.id] = true;
+  if (!FREE[r.id]) errors.push("js/free.js: " + r.id + " is not in tools/free-tier.json");
+  Object.keys(r).forEach(function (k) {
+    if (FREE_KEYS.indexOf(k) < 0) errors.push("js/free.js: " + r.id + " carries " + k);
+  });
+});
+FREE_IDS.forEach(function (id) { if (!inFree[id]) errors.push("js/free.js: free id " + id + " is missing"); });
+var from = freeText.indexOf("window.INGREDIENTS"), to = freeText.indexOf("window.COPIUS_LOCKED");
+if (from < 0 || to < from) errors.push("js/free.js: no INGREDIENTS followed by COPIUS_LOCKED");
+else {
+  var quoted = {}, qre = /"((?:[^"\\]|\\.)*)"/g, qm, part = freeText.slice(from, to);
+  while ((qm = qre.exec(part))) quoted[qm[1]] = true;
+  INGREDIENTS.forEach(function (i) {
+    if (!FREE[i.id] && quoted[i.id]) errors.push("js/free.js: paid id \"" + i.id + "\" in its INGREDIENTS");
+  });
+}
+// Jekyll publishes the repo: every source but the techniques (free, and loaded
+// as is) is excluded by path, and the techniques are not.
+var excluded = {}, inExclude = false;
+read("_config.yml").split("\n").forEach(function (l) {
+  if (/^exclude:\s*$/.test(l)) { inExclude = true; return; }
+  if (!inExclude) return;
+  var m = /^\s+-\s+["']?([^"'\s#]+)["']?\s*(#.*)?$/.exec(l);
+  if (m) excluded[m[1]] = true;
+  else if (/^[^\s#]/.test(l)) inExclude = false;
+});
+SOURCES.forEach(function (f) {
+  var pub = f === "js/data-techniques.js";
+  if (!pub && !excluded[f]) errors.push("_config.yml: " + f + " is not excluded, so the site would publish it");
+  if (pub && excluded[f]) errors.push("_config.yml: " + f + " is excluded, but the free atlas loads it");
+});
+// Every js file is a source (excluded above), one the public site serves, or the
+// unpublished bundle; and the atlas loads only served ones. A new premium file wired
+// the old way, a script tag and no sources.txt line, would otherwise go out with
+// every other check green.
+var PUBLISHED_JS = ["js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js"];
+var isSource = {};
+SOURCES.forEach(function (f) { isSource[f] = true; });
+listJs().forEach(function (f) {
+  if (!isSource[f] && PUBLISHED_JS.indexOf(f) < 0 && f !== "js/_premium.js")
+    errors.push(f + " is neither in tools/sources.txt nor a published file, so the site would serve it");
+});
+(read("atlas.html").match(/src="js\/[^"?]+/g) || []).forEach(function (m) {
+  var f = m.slice(5);
+  if (PUBLISHED_JS.indexOf(f) < 0) errors.push("atlas.html loads " + f + ", which is not a published file");
+});
+var ignored = read(".gitignore").split("\n").map(function (l) { return l.trim(); });
+if (ignored.indexOf("js/_premium.js") < 0 && ignored.indexOf("/js/_premium.js") < 0)
+  errors.push(".gitignore: js/_premium.js is not listed, so the full version could be committed");
+
 var cats = {};
 INGREDIENTS.forEach(function (i) { cats[i.cat] = (cats[i.cat] || 0) + 1; });
 log("ingredients: " + INGREDIENTS.length);
 log("families: " + Object.keys(cats).map(function (c) { return c + "=" + cats[c]; }).join(", "));
 log("trios: " + TRIOS.length);
 log("trees: " + TREES.length + " (" + branchCount + " branches)");
+log("js/free.js: " + freeRecs.length + " records for " + FREE_IDS.length + " free ids, " +
+    (INGREDIENTS.length - FREE_IDS.length) + " paid ids kept out");
 
 if (errors.length) {
   log("\n" + errors.length + " error(s):");

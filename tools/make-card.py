@@ -13,17 +13,27 @@ import unicodedata, sys, json, pathlib, datetime, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-# / is the holding page now; the app that lists the data files is atlas.html.
-APP = "atlas.html"
+# The source data in load order. atlas.html no longer names it: the public page
+# loads only the generated free file.
+SOURCES = ROOT / "tools" / "sources.txt"
+
+
+def data_files():
+    """The ingredient files of tools/sources.txt, in its order: every js/data-*.js
+    but the chefs, trees, bases and techniques, which hold no ingredient record."""
+    out = []
+    for line in SOURCES.read_text().splitlines():
+        f = line.strip()
+        if (f.startswith("js/data-") and f.endswith(".js") and
+                f[8:-3] not in ("chefs", "trees", "bases", "techniques")):
+            out.append(f)
+    return out
 
 
 def load():
-    idx = (ROOT / APP).read_text()
     rows = []
-    for fn in re.findall(r'src="js/(data-[a-z-]+\.js)\?', idx):
-        if "chefs" in fn or "trees" in fn:
-            continue
-        t = (ROOT / "js" / fn).read_text()
+    for fn in data_files():
+        t = (ROOT / fn).read_text()
         for blk in re.findall(r'^\{id:".*?(?=^\{id:"|\n\s*\]|\Z)', t, re.S | re.M):
             m = re.match(r'\{id:"([a-z0-9-]+)",\s*cat:"([a-z]+)"', blk)
             if not m:
@@ -44,7 +54,7 @@ def load():
     # empty list for an afternoon after the app moved off index.html, and the
     # only symptom was a ZeroDivisionError inside pick().
     if not rows:
-        sys.exit("no data files listed in %s — has the app moved again?" % APP)
+        sys.exit("no ingredient records in the data files of %s" % SOURCES.relative_to(ROOT))
     return rows
 
 SCHEDULE = ROOT / "social" / "schedule.json"

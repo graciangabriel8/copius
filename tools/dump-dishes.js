@@ -39,12 +39,13 @@ new Function("window", read("js/data-chefs.js"))(window);
 var CHEFS = window.CHEFS;
 if (!CHEFS || !CHEFS.length) { log("no chefs loaded — has data-chefs.js changed shape?"); throw new Error("no chefs"); }
 
-// Ingredient ids, so a dish cannot ship a link to a page that will not exist.
+// Ingredient ids, so a dish cannot ship a link to a page that will not exist:
+// every id in the ingredient files of tools/sources.txt.
 var ING = {};
-read("atlas.html").replace(/src="js\/(data-[a-z-]+\.js)\?/g, function (_, fn) {
-  if (fn.indexOf("chefs") !== -1 || fn.indexOf("trees") !== -1) return "";
-  read("js/" + fn).replace(/\{id:"([a-z0-9é-]+)",cat:"/g, function (__, id) { ING[id] = true; return ""; });
-  return "";
+read("tools/sources.txt").split("\n").forEach(function (l) {
+  var fn = l.trim();
+  if (!/^js\/data-[a-z-]+\.js$/.test(fn) || /^js\/data-(chefs|trees|bases|techniques)\.js$/.test(fn)) return;
+  read(fn).replace(/\{id:"([a-z0-9é-]+)",cat:"/g, function (__, id) { ING[id] = true; return ""; });
 });
 
 var out = [], seen = {}, problems = [];

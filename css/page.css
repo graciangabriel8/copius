@@ -103,4 +103,11 @@ h3 small{text-transform:none;letter-spacing:0}
 .fix{margin:30px 0 0;padding:14px 16px;background:var(--card);
   border:1px solid var(--border);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
 .fix a{color:var(--ink-2)}
+/* The full version. A paid entry's chip is dashed — its page is a teaser — and
+   a dashed box stands where paid content was. */
+.pairs a.lk{border-style:dashed;color:var(--ink-3)}
+.locked{margin:26px 0 0;padding:14px 16px;background:var(--card);
+  border:1px dashed var(--ink-3);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
+.locked h2{margin:0 0 6px;color:var(--ink)}
+.locked p{margin:0}
 @media (max-width:420px){h1{font-size:29px}th{width:44%;font-size:12px}}

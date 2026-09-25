@@ -124,7 +124,7 @@ input,select{font:inherit}
   outline:none;
 }
 #search:focus{border-color:var(--ink-3);box-shadow:0 0 0 3px var(--ring)}
-.lang-toggle,.tier-toggle{display:flex;flex:0 0 auto;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;background:var(--card);position:relative}
+.lang-toggle{display:flex;flex:0 0 auto;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;background:var(--card);position:relative}
 /* The pill slides between the choices. Its width is set from the active
    button rather than assumed at 50%, because "Libre" and "Une assiette
    entière" are nothing like the same width. */
@@ -138,10 +138,10 @@ input,select{font:inherit}
 @media (prefers-reduced-motion:reduce){.seg-ind{transition:none}}
 /* the view tabs sit in a 3px trough, so their pill is inset to match */
 .view-tabs .seg-ind{top:3px;height:calc(100% - 6px)}
-.lang-toggle button,.tier-toggle button{padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--ink-2);font-weight:600;font-size:13px;
+.lang-toggle button{padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--ink-2);font-weight:600;font-size:13px;
   position:relative;z-index:1;transition:color .2s ease;cursor:pointer;white-space:nowrap}
 /* the pill carries the fill now, so the button only changes its ink */
-.lang-toggle button.active,.tier-toggle button.active{background:transparent;color:var(--on-accent)}
+.lang-toggle button.active{background:transparent;color:var(--on-accent)}
 
 /* ---------- layout ---------- */
 main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
@@ -527,7 +527,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .view-tab{flex:none;white-space:nowrap;padding:11px 18px}
 
   /* Apple's 44px minimum touch target. */
-  .lang-toggle button,.tier-toggle button{padding:12px 16px}
+  .lang-toggle button{padding:12px 16px}
   .create-btn{padding:11px 18px}
   .toolbar{gap:12px 18px;font-size:15px}
   .check{min-height:44px}
@@ -844,12 +844,85 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .alcohol-warn-sm{margin-top:10px;padding:5px 7px;border-radius:6px;
   font-size:10.5px;line-height:1.35}
 
-/* Says which version is on screen, so a short grid reads as a choice
-   rather than as a missing catalogue. Empty in full mode. */
+/* Says which version is on screen, so a short grid reads as a cut rather
+   than as a missing catalogue. Empty in the full version. */
 .tier-note:empty{display:none}
 .tier-note{margin:0 0 18px;padding:10px 14px;border:1px solid var(--accent-soft-bd);
   border-radius:10px;background:var(--accent-soft);color:var(--accent-soft-ink);
   font-size:13px;line-height:1.5}
+
+/* ---------- the full version, locked ----------
+   One glyph, one register: a lock in the ink of the text beside it, greyed
+   rows for what is behind it, and no colour that reads as a button to buy. */
+.lock-ico{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;vertical-align:-1px;margin:0 0 0 6px}
+.check[hidden],.daily[hidden]{display:none}
+/* Where the free/full switch was: a pill that opens the panel. */
+.full-btn{display:inline-flex;align-items:center;gap:0;flex:0 0 auto;min-height:40px;
+  padding:8px 14px;border:1px dashed var(--border-strong);border-radius:999px;
+  background:var(--card);color:var(--ink-2);font-size:13px;font-weight:600;white-space:nowrap}
+.full-btn[hidden]{display:none}
+.full-btn .lock-ico{margin:0 7px 0 0}
+.full-btn:hover{border-color:var(--ink-3);color:var(--ink)}
+.full-btn:focus-visible,.locked-row:focus-visible,.locked-line:focus-visible,
+.kin-locked:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
+.view-tab .lock-ico{opacity:.8}
+/* A locked tab's panel. */
+.locked-panel{background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:28px 30px;box-shadow:var(--shadow);max-width:640px}
+.locked-panel h2{margin:0 0 8px;font-size:26px}
+.locked-kicker{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);display:flex;align-items:center}
+.locked-kicker .lock-ico,.m-cat .lock-ico{margin:0 6px 0 0}
+.locked-body{margin:0 0 10px;color:var(--ink-2);font-size:15px;line-height:1.6}
+.locked-price{margin:0;color:var(--ink-3);font-size:13.5px}
+.locked-open{max-width:360px}
+/* The end of the grid, and a search's paid names. */
+.locked-end{margin:18px 0 0}
+.locked-end[hidden]{display:none}
+.locked-h{margin:8px 0 10px;font-family:var(--sans);font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);display:flex;align-items:center;gap:6px}
+.locked-h .lock-ico{margin:0}
+.locked-rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.locked-row{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;text-align:left;
+  border:1px dashed var(--border-strong);border-radius:12px;background:transparent;color:var(--ink-3)}
+.locked-row .lock-ico{margin:0}
+.locked-row:hover{border-color:var(--ink-3);color:var(--ink-2)}
+.lr-name{flex:1 1 auto;min-width:0;font-size:14px;color:var(--ink-2)}
+.lr-cat{flex:none;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em}
+.locked-more{margin:10px 0 0;font-size:13px;color:var(--ink-3)}
+.locked-line{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;
+  padding:12px 16px;border:1px dashed var(--border-strong);border-radius:16px;
+  background:transparent;color:var(--ink-3);font-size:14px}
+.locked-line .lock-ico{margin:0 8px 0 0}
+.locked-line:hover{border-color:var(--ink-3);color:var(--ink-2)}
+.locked-favs{margin:0 0 10px;color:var(--ink-3);font-size:13.5px;text-align:center}
+/* Inside an entry: what a locked section holds, in place of it. */
+.locked-box{margin:0;padding:12px 16px;border:1px dashed var(--border-strong);border-radius:12px;
+  color:var(--ink-2);font-size:14px}
+.locked-box p{margin:0 0 6px;line-height:1.55}
+.locked-box .linkish{font-size:13.5px;color:var(--ink-3)}
+/* The preparations card already frames it. */
+.tw .locked-box{border:0;padding:0}
+.modal-body h3 .lock-ico{vertical-align:-1px}
+.kin-locked{display:inline-flex;align-items:center;gap:6px;margin:8px 0 0;padding:4px 0;border:0;
+  background:none;color:var(--ink-3);font-size:12.5px;text-decoration:underline;text-underline-offset:3px}
+.kin-locked .lock-ico,.chip-locked .lock-ico{margin:0}
+.chip-locked{color:var(--ink-3);border-style:dashed;background:transparent;padding:3px 11px}
+/* The panel itself. */
+.full-page{margin:4px 0 0;font-size:14px}
+.full-page a{color:var(--ink-2);text-underline-offset:3px}
+.full-list{margin:0;padding:0 0 0 18px;color:var(--ink);font-size:15px;line-height:1.75}
+.full-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:22px 0 10px;
+  padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
+.full-amount{font-family:var(--serif);font-size:20px;color:var(--ink)}
+.full-soon{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
+.full-free{margin:0;color:var(--ink-3);font-size:13.5px;line-height:1.55}
+@media (max-width:720px){
+  .full-btn{min-height:44px}
+  .locked-panel{padding:22px 20px}
+  .locked-rows{grid-template-columns:1fr}
+}
 
 /* ---------- the plate builder ---------- */
 .lab-modes,.plate-modes{margin:0 0 18px;width:max-content;max-width:100%}
