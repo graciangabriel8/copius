@@ -1451,8 +1451,8 @@
   /* Type, see, click. The old pickers were dropdowns, or a search that filtered
      a separate dropdown you then had to open yourself, so adding one
      ingredient took four moves. Now the query and the answer are the same
-     place. o: input, list, hits(q), opens(q), pick(id); count, typed() and
-     holds() optional. */
+     place. o: input, list, hits(q), opens(q), pick(id); typed() and holds()
+     optional. */
   var FINDER_SHOWN = 8;
   function makeFinder(o) {
     var hits = [], cursor = -1;
@@ -1461,7 +1461,6 @@
       o.input.setAttribute("aria-expanded", "false");
       o.input.removeAttribute("aria-activedescendant");
       cursor = -1;
-      if (o.count) o.count.textContent = "";
     }
     function render(open) {
       var t = T(), q = (o.input.value || "").trim();
@@ -1481,14 +1480,30 @@
               '<span class="pr-cat">' + esc(catLabel(i.cat)) + "</span></li>";
           }).join("")
         : '<li class="plate-result empty" role="presentation">' + esc(t.plateNoMatch) + "</li>";
+      /* How many more, as the list's last line: a line under the box sat
+         beneath the open list, and one line shared by both lab boxes stood
+         under the first while the second was being typed into. */
+      if (hits.length > FINDER_SHOWN) {
+        o.list.innerHTML += '<li class="plate-more" role="presentation">' +
+          esc(t.plateMore.replace("{n}", hits.length - FINDER_SHOWN)) + "</li>";
+      }
       o.list.hidden = false;
       o.input.setAttribute("aria-expanded", "true");
+      /* The arrow keys move a highlight the list never scrolled to, and the
+         pinned hint covers its bottom row: bring the row into the part that
+         shows, whichever way it went. */
+      if (cursor >= 0) {
+        /* Measured, not offsetTop: rows are fractional pixels tall and whole
+           ones drift a pixel short by the last row. */
+        var row = o.list.children[cursor].getBoundingClientRect(), box = o.list.getBoundingClientRect(),
+            more = o.list.querySelector(".plate-more");
+        var floor = more ? more.getBoundingClientRect().top : box.bottom - o.list.clientTop,
+            ceil = box.top + o.list.clientTop;
+        if (row.bottom > floor) o.list.scrollTop += Math.ceil(row.bottom - floor);
+        else if (row.top < ceil) o.list.scrollTop = cursor ? o.list.scrollTop - Math.ceil(ceil - row.top) : 0;
+      }
       if (cursor >= 0) o.input.setAttribute("aria-activedescendant", o.list.id + "-" + cursor);
       else o.input.removeAttribute("aria-activedescendant");
-      if (o.count) {
-        o.count.textContent = hits.length > FINDER_SHOWN
-          ? t.plateMore.replace("{n}", hits.length - FINDER_SHOWN) : "";
-      }
     }
     function pick(id) { close(); o.pick(id); }
     o.input.addEventListener("input", function () {
@@ -1532,8 +1547,11 @@
       else if (e.key === "Escape" && o.holds && o.holds()) e.preventDefault();
     });
     o.list.addEventListener("mousedown", function (e) {
+      /* Any row keeps focus in the box, the hint included, or the blur closes
+         the list; the scrollbar (the list itself) keeps its own behaviour. */
+      if (e.target !== o.list) e.preventDefault();
       var li = e.target.closest("[data-pick]");
-      if (li) { e.preventDefault(); pick(li.getAttribute("data-pick")); }
+      if (li) pick(li.getAttribute("data-pick"));
     });
     return {
       render: render,
@@ -2314,7 +2332,7 @@
     if (plate[k]) { plate[k].form = sel.value; renderPlateAll(); }
   });
   plateFinder = makeFinder({
-    input: el("plateSearch"), list: el("plateResults"), count: el("plateCount"),
+    input: el("plateSearch"), list: el("plateResults"),
     hits: plateSearchHits,
     /* It opens on a query, or on a role in guided mode. */
     opens: function (q) { return !!q || !!el("plateRole").value; },
@@ -2326,7 +2344,7 @@
       return !!labPick[slot] && el("lab" + slot).value.trim() === name(byId[labPick[slot]]);
     }
     makeFinder({
-      input: el("lab" + slot), list: el("lab" + slot + "Results"), count: el("labCount"),
+      input: el("lab" + slot), list: el("lab" + slot + "Results"),
       hits: labSlotHits(slot),
       /* A box that already shows its chosen ingredient stays shut on focus: the
          list would cover the verdict to offer what is already chosen. */
