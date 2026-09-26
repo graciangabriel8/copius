@@ -23,6 +23,9 @@ func fail(_ m: String, _ code: Int32) -> Never { FileHandle.standardError.write(
     var web: WKWebView!, window: NSWindow!
     var loaded: CheckedContinuation<Void, Never>?
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) { loaded?.resume(); loaded = nil }
+    // A page that never loads (the local server is down) stops the run instead of waiting forever.
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { fail("page failed to load: \(error.localizedDescription)", 4) }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { fail("page failed to load: \(error.localizedDescription)", 4) }
     @discardableResult func js(_ s: String) async -> Any? { try? await web.evaluateJavaScript(s) }
     func pause(_ ms: UInt64) async { try? await Task.sleep(nanoseconds: ms * 1_000_000) }
     func snapshot() async -> CGImage? {
@@ -50,6 +53,7 @@ func fail(_ m: String, _ code: Int32) -> Never { FileHandle.standardError.write(
         window.contentView = web
         window.orderFrontRegardless()
 
+        Task { try? await Task.sleep(nanoseconds: 20_000_000_000); if self.loaded != nil { fail("page did not load within 20 s: " + URLSTR, 4) } }
         await withCheckedContinuation { (k: CheckedContinuation<Void, Never>) in loaded = k; web.load(URLRequest(url: URL(string: URLSTR)!)) }
         var ready = false
         for _ in 0..<100 {

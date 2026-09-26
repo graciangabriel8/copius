@@ -2,13 +2,13 @@
  "id": "cashew",
  "fr": {
   "hook": "La noix de cajou n’est jamais vendue dans sa coque.",
-  "question": "Elle contient une huile caustique.",
+  "question": "Elle contient une huile qui brûle la peau.",
   "line": "Elle pousse sous un faux-fruit charnu, et cette huile est apparentée au sumac vénéneux.",
   "end": "Un dictionnaire illustré des ingrédients"
  },
  "en": {
   "hook": "Cashews are never sold in their shell.",
-  "question": "It holds a caustic oil.",
+  "question": "It holds an oil that burns the skin.",
   "line": "They grow beneath a fleshy false fruit, and the oil is related to poison ivy.",
   "end": "An illustrated dictionary of ingredients"
  }
