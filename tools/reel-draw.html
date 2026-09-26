@@ -5,8 +5,10 @@
 <title>Copius — reel, a drawing that draws itself</title>
 <!-- The "draw" reel, filmed by tools/drawreel.swift (never recorded by hand):
        reel-draw.html?copy=draw-cashew&lang=fr[&guides=1]
-     One ingredient: a hook from the first frame, its atlas drawing drawn stroke by
-     stroke, then its name and one line from its own story, then the end card. Little
+     One ingredient: its surprising fact on screen from the first frame (the payoff lands
+     inside the first second: the lab reel's curve lost half its viewers by 2.0 s), its
+     atlas drawing drawn stroke by stroke under it, then one line that explains, then the
+     end card. Little
      text on purpose: Instagram holds back reels that are "majority text" or muted
      (about.instagram.com, Instagram Ranking Explained), so the drawing carries the
      reel and the music is added in the app when posting.
@@ -25,9 +27,7 @@
   .hook .q{color:var(--accent);font-style:italic;margin-top:14px}
   #art{position:absolute;left:0;top:0;width:760px;height:760px;transform-origin:0 0}
   #art svg{width:100%;height:100%;display:block;overflow:visible}
-  .name{position:absolute;left:80px;right:80px;top:1080px;text-align:center;font-family:var(--serif);
-    font-size:84px;line-height:1.05;letter-spacing:-.015em}
-  .line{position:absolute;left:110px;right:110px;top:1210px;text-align:center;font-size:40px;line-height:1.36;color:var(--ink2);text-wrap:balance}
+  .line{position:absolute;left:110px;right:110px;top:1320px;text-align:center;font-size:40px;line-height:1.36;color:var(--ink2);text-wrap:balance}
   #end{position:absolute;inset:0;background:var(--end);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
   #end img{width:260px;height:260px;border-radius:50%}
   #end .url{font-family:var(--serif);font-size:88px;letter-spacing:-.01em}
@@ -40,7 +40,6 @@
 <div id="stage">
   <div class="hook" id="hook"><span id="h1"></span><span class="q" id="h2"></span></div>
   <div id="art"></div>
-  <div class="name" id="name"></div>
   <div class="line" id="line"></div>
   <div id="end"><img src="../brand/copius-profile.png" alt=""><div class="url">copius.fr</div><div class="tag" id="tag"></div></div>
 </div>
@@ -53,7 +52,6 @@
   function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
   function ease(x) { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
   function span(t, a, b) { return clamp((t - a) / (b - a)); }
-  function lerp(a, b, q) { return a + (b - a) * q; }
   var $ = function (id) { return document.getElementById(id); };
 
   // Safe area, as in tools/factreel.swift: the top 300 px and everything under 1500 px
@@ -66,7 +64,7 @@
   fetch("facts/" + (P.get("copy") || "draw-cashew") + ".json").then(function (r) { return r.json(); }).then(function (copy) {
     var C = copy[LANG];
     $("h1").textContent = C.hook; $("h2").textContent = C.question;
-    $("name").textContent = C.name; $("line").textContent = C.line; $("tag").textContent = C.end;
+    $("line").textContent = C.line; $("tag").textContent = C.end;
     document.documentElement.lang = LANG;
     return fetch("../img/" + copy.id + ".svg").then(function (r) { if (!r.ok) throw new Error("no drawing for " + copy.id); return r.text(); });
   }).then(function (svg) {
@@ -88,11 +86,8 @@
 
   window.__frame = function (t) {
     if (!strokes.length) return "not ready";
-    // 0 — the hook is there on the first frame; the disc settles under it at once.
-    var out = span(t, 4.5, 5.0);
-    $("hook").style.opacity = String(1 - out);
-    $("hook").style.transform = "translateY(" + (-24 * ease(out)) + "px)";
-    // The disc is there from the first frame, which Instagram takes as the cover.
+    // 0 — the fact and the disc are there on the first frame, which is also the cover;
+    // the fact stays up until the end card.
     // 0.15–3.9 — the drawing draws itself, each stroke a share of the time, overlapping.
     var a = .15, z = 3.9, n = strokes.length, each = (z - a) / (n * .75 + .25);
     strokes.forEach(function (s, i) {
@@ -101,13 +96,10 @@
       s.style.strokeOpacity = p > 0 ? "1" : "0";
       s.style.fillOpacity = String(ease(span(t, s0 + each * .7, s0 + each * .7 + .45)));
     });
-    // 4.5–5.1 — it rises and shrinks to make room; the name, then its line.
-    var up = ease(span(t, 4.5, 5.1)), size = lerp(760, 520, up);
-    var cx = 540, cy = lerp(930, 740, up);
-    var art = $("art");
-    art.style.transform = "translate(" + (cx - size / 2) + "px," + (cy - size / 2) + "px) scale(" + (size / 760) + ")";
-    var nm = ease(span(t, 4.85, 5.35)), ln = ease(span(t, 5.25, 5.8));
-    $("name").style.opacity = String(nm); $("name").style.transform = "translateY(" + (18 * (1 - nm)) + "px)";
+    // The drawing sits between the fact and the line; 4.1–4.7 — the line that explains.
+    var size = 600, cx = 540, cy = 985;
+    $("art").style.transform = "translate(" + (cx - size / 2) + "px," + (cy - size / 2) + "px) scale(" + (size / 760) + ")";
+    var ln = ease(span(t, 4.1, 4.7));
     $("line").style.opacity = String(ln); $("line").style.transform = "translateY(" + (18 * (1 - ln)) + "px)";
     // 8.6–9.1 — the end card.
     $("end").style.opacity = String(ease(span(t, 8.6, 9.1)));

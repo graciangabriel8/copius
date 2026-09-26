@@ -1,17 +1,15 @@
 {
  "id": "cashew",
  "fr": {
-  "hook": "Tu ne l’as jamais vue dans sa coque.",
-  "question": "Voici pourquoi.",
-  "name": "Noix de cajou",
-  "line": "Elle pousse sous un faux-fruit charnu, et sa coque contient une huile caustique apparentée au sumac vénéneux.",
+  "hook": "La noix de cajou n’est jamais vendue dans sa coque.",
+  "question": "Elle contient une huile caustique.",
+  "line": "Elle pousse sous un faux-fruit charnu, et cette huile est apparentée au sumac vénéneux.",
   "end": "Un dictionnaire illustré des ingrédients"
  },
  "en": {
-  "hook": "You’ve never seen it in its shell.",
-  "question": "Here’s why.",
-  "name": "Cashew",
-  "line": "It grows beneath a fleshy false fruit, and its shell holds a caustic oil related to poison ivy.",
+  "hook": "Cashews are never sold in their shell.",
+  "question": "It holds a caustic oil.",
+  "line": "They grow beneath a fleshy false fruit, and the oil is related to poison ivy.",
   "end": "An illustrated dictionary of ingredients"
  }
 }
