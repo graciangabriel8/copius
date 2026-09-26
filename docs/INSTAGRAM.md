@@ -19,7 +19,7 @@ no server.
    upload.
 4. `.github/workflows/daily-instagram.yml` runs at 19:07 Paris, reads today's
    id from the schedule, and publishes both slides as one carousel: a container
-   per slide, then a parent holding their ids. The bilingual caption is produced
+   per slide, then a parent holding their ids. The French caption is produced
    there and then by `make-card.py --caption`, which needs nothing but Python —
    so an edit to the caption reaches the next post without a regeneration step
    to forget.

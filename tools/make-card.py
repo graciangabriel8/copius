@@ -9,7 +9,7 @@ social/schedule.json (tools/build-schedule.py), fixed in advance so that a data
 edit never changes which card a date needs.
 """
 import re
-import unicodedata, sys, json, pathlib, datetime, html
+import sys, json, pathlib, datetime, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -30,6 +30,18 @@ def data_files():
     return out
 
 
+def typo(s):
+    """French typography for the posts. The data mostly writes a plain space
+    before : ; ? ! and inside « », which lets a line break there, and a few
+    entries carry straight apostrophes and « - » for an incise."""
+    s = s.replace("'", "\u2019")
+    s = re.sub(r"(?<=\D) - (?=\D)", " \u2014 ", s)
+    s = re.sub(r"[ \u00a0\u202f]*:(?=\s|$)", "\u00a0:", s)
+    s = re.sub(r"(?<=\S)[ \u00a0\u202f]*([;?!])(?=\s|$)", "\u202f\\1", s)
+    s = re.sub(r"\u00ab[ \u00a0\u202f]*", "\u00ab\u00a0", s)
+    return re.sub(r"[ \u00a0\u202f]*\u00bb", "\u00a0\u00bb", s)
+
+
 def load():
     rows = []
     for fn in data_files():
@@ -43,12 +55,12 @@ def load():
                 return x.group(1) if x else ""
             rows.append({
                 "id": m.group(1), "cat": m.group(2),
-                "en": field(r'name:\{en:"([^"]*)"'), "fr": field(r'name:\{[^}]*fr:"([^"]*)"'),
+                "en": field(r'name:\{en:"([^"]*)"'), "fr": typo(field(r'name:\{[^}]*fr:"([^"]*)"')),
                 "latin": field(r'latin:"([^"]*)"'),
                 "svg": field(r"svg:'(.*?)'\s*\}"),
                 "story_en": field(r'story:\{en:"((?:[^"\\]|\\.)*)"'),
-                "story_fr": field(r'story:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"'),
-                "tip_en": field(r'tip:\{en:"((?:[^"\\]|\\.)*)"'),
+                "story_fr": typo(field(r'story:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"')),
+                "tip_fr": typo(field(r'tip:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"')),
             })
     # Say so rather than dividing by zero three frames later: this returned an
     # empty list for an afternoon after the app moved off index.html, and the
@@ -92,13 +104,62 @@ def pick(rows, d):
 
 def wrap(s, width):
     out, line = [], ""
-    for w in s.split():
+    # Split on plain spaces only: French copy keeps a no-break space before
+    # : ; ? ! and inside numbers, and str.split() would break the line there.
+    for w in re.split(r"[ \t\r\n]+", s.strip()):
         if len(line) + len(w) + 1 > width:
             out.append(line); line = w
         else:
             line = (line + " " + w).strip()
     if line: out.append(line)
     return out
+
+def balance(s, width):
+    """As many lines as wrap() gives, each as even as they can be: no word
+    left alone on the last line."""
+    n = len(wrap(s, width))
+    while width > 12 and len(wrap(s, width - 1)) == n:
+        width -= 1
+    return wrap(s, width)
+
+
+def name_parts(fr):
+    """A French name often carries its gloss, « Niter kibbeh (beurre clarifié
+    épicé éthiopien) » or « Huile d’olive de Corse – Oliu di Corsica »: the gloss
+    goes on the italic line under the name, where the French name used to sit
+    under the English one."""
+    m = (re.match(r"^(.*?)\s*\((.*)\)\s*$", fr)
+         or re.match(r"^(.*?) \u2013 (.*)$", fr))
+    return (m.group(1), m.group(2)) if m else (fr, "")
+
+
+def latin(i):
+    """The Latin name without its note, which the data writes in English
+    ("Salmo salar (smoked)") and a French post cannot carry."""
+    return re.sub(r"\s*\([^)]*\)", "", i["latin"]).strip()
+
+
+def em(s):
+    """Rough Georgia advance width in em, enough to decide a line break."""
+    return sum(.28 if c in " \u00a0\u202fil.,\u2019'-ftjrI"
+               else .72 if c.isupper() or c in "mw" else .5 for c in s)
+
+
+def title(t, size, width=900):
+    """One line at full size when the name fits, else two balanced lines a
+    size down, else smaller still: a name is never cut."""
+    if em(t) * size <= width:
+        return [t], size
+    words = t.split(" ")
+    if len(words) > 1:
+        k = min(range(1, len(words)), key=lambda k: max(
+            em(" ".join(words[:k])), em(" ".join(words[k:]))))
+        lines = [" ".join(words[:k]), " ".join(words[k:])]
+        size = round(size * .85)
+    else:
+        lines = [t]
+    return lines, min(size, int(width / max(map(em, lines))))
+
 
 # The site keeps these in style.css; a standalone card must carry them itself.
 STYLE = (
@@ -111,22 +172,43 @@ STYLE = (
 
 def card(i):
     e = lambda s: html.escape(s or "", quote=True)
-    story = re.sub(r"\\+(.)", r"\1", i["story_en"] or "")
+    name, gloss = name_parts(i["fr"])
+    tl, ts = title(name, 66)
+    # Baselines relative to the first line of the name.
+    y, parts = 0, []
+    for l in tl:
+        parts.append((y, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+                         'font-size="%d" fill="#1c1a17">%s</text>', (ts, e(l))))
+        y += round(ts * 1.1)
+    y -= round(ts * 1.1)
+    if gloss:
+        y += 56
+        parts.append((y, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+                         'font-size="34" font-style="italic" fill="#8a857d">%s</text>', (e(gloss),)))
+    y += 46 if gloss else 56
+    parts.append((y, '<text x="540" y="%d" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" '
+                     'font-size="24" letter-spacing="3" fill="#a29c92">%s</text>', (e(latin(i).upper()),)))
+    y += 50 if gloss else 62
+    # The story fills what the name leaves of the band under the drawing
+    # (baselines 640 to 920), three lines at most.
+    room = min(3, max(1, (280 - y) // 44 + 1))
+    story = re.sub(r"\\+(.)", r"\1", i["story_fr"] or "")
     # End on a sentence where one fits; otherwise trim to a word and mark it.
-    sentences, kept = re.split(r"(?<=[.!?])\s+", story), ""
-    for s in sentences:
-        if len(wrap((kept + " " + s).strip(), 46)) > 3:
+    sentences, kept = re.split(r"(?<=[.!?\u2026]) +", story), ""
+    for x in sentences:
+        if len(wrap((kept + " " + x).strip(), 46)) > room:
             break
-        kept = (kept + " " + s).strip()
+        kept = (kept + " " + x).strip()
     if not kept:
-        lines = wrap(story, 46)[:3]
-        lines[-1] = lines[-1].rstrip(",;:") + "\u2026"
+        lines = wrap(story, 46)[:room]
+        lines[-1] = lines[-1].rstrip(",;:\u00a0\u202f") + "\u2026"
     else:
-        lines = wrap(kept, 46)
-    body = "".join(
-        '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
-        'font-size="30" fill="#55524d">%s</text>' % (812 + n * 44, e(l))
-        for n, l in enumerate(lines))
+        lines = balance(kept, 46)
+    for n, l in enumerate(lines):
+        parts.append((y + n * 44, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+                                  'font-size="30" fill="#55524d">%s</text>', (e(l),)))
+    top = 780 - (y + (len(lines) - 1) * 44) // 2      # centre the block on 780
+    text = "\n".join(f % ((top + dy,) + a) for dy, f, a in parts)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
 <rect width="1080" height="1080" fill="#F7F6F1"/>
@@ -134,10 +216,7 @@ def card(i):
 <g transform="translate(330,150) scale(4.375)">
   <circle cx="48" cy="50" r="42" fill="#F0F1E7"/>{i["svg"]}
 </g>
-<text x="540" y="660" text-anchor="middle" font-family="Georgia,serif" font-size="66" fill="#1c1a17">{e(i["en"])}</text>
-<text x="540" y="716" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-style="italic" fill="#8a857d">{e(i["fr"])}</text>
-<text x="540" y="762" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" letter-spacing="3" fill="#a29c92">{e(i["latin"].upper())}</text>
-{body}
+{text}
 <text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
 <text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
 </svg>'''
@@ -148,31 +227,39 @@ def tip_card(i):
     ingredient is; this says what to do with it, which is the half a cook
     actually keeps."""
     e = lambda s: html.escape(s or "", quote=True)
-    tip = re.sub(r"\\+(.)", r"\1", i["tip_en"] or "")
+    tip = re.sub(r"\\+(.)", r"\1", i["tip_fr"] or "")
     # Step the type down rather than cut the text: a tip's second sentence is
     # usually the one carrying the warning. The longest tip in the data (351
     # characters) settles on the third pair; the last is headroom.
     for size, cols in ((38, 40), (34, 45), (31, 50), (28, 55)):
-        lines = wrap(tip, cols)
+        lines = balance(tip, cols)
         if len(lines) * size * 1.45 <= 360:
             break
     lh = round(size * 1.45)
     # Centre the whole stack, not the tip alone: a two-line tip under a fixed
     # header hangs in a void, and this is the same page either way.
-    head = 288                                   # name to first line of tip
+    name, gloss = name_parts(i["fr"])
+    tl, ts = title(name, 52)
+    last = (len(tl) - 1) * round(ts * 1.1) + (52 if gloss else 0)  # last line of the name
+    head = last + 236                            # name to first line of tip
     s = 555 - (head + (len(lines) - 1) * lh) / 2  # baseline of the name
     body = "".join(
         '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
         'font-size="%d" fill="#55524d">%s</text>' % (s + head + n * lh, size, e(l))
         for n, l in enumerate(lines))
+    names = "".join(
+        '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+        'font-size="%d" fill="#1c1a17">%s</text>' % (s + n * round(ts * 1.1), ts, e(l))
+        for n, l in enumerate(tl)) + (
+        '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" font-size="28" '
+        'font-style="italic" fill="#8a857d">%s</text>' % (s + last, e(gloss)) if gloss else "")
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
 <rect width="1080" height="1080" fill="#F7F6F1"/>
 <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#E5E7DA" stroke-width="2"/>
-<text x="540" y="{s}" text-anchor="middle" font-family="Georgia,serif" font-size="52" fill="#1c1a17">{e(i["en"])}</text>
-<text x="540" y="{s + 52}" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-style="italic" fill="#8a857d">{e(i["fr"])}</text>
-<line x1="470" y1="{s + 126}" x2="610" y2="{s + 126}" stroke="#E5E7DA" stroke-width="2"/>
-<text x="540" y="{s + 188}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">IN THE KITCHEN</text>
+{names}
+<line x1="470" y1="{s + last + 74}" x2="610" y2="{s + last + 74}" stroke="#E5E7DA" stroke-width="2"/>
+<text x="540" y="{s + last + 136}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">EN CUISINE</text>
 {body}
 <text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
 <text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
@@ -192,9 +279,8 @@ def tip_card(i):
 NOT_A_DRINK = {"champagne-vinegar", "raspberry-vinegar", "shanxi-vinegar",
                "verjus-rouge", "vincotto", "grape-must"}
 DRINKS_ELSEWHERE = {"shaoxing-wine", "hon-mirin"}
-EVIN = ["L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
-        "\u00c0 consommer avec mod\u00e9ration.",
-        "Alcohol abuse is dangerous for your health. Drink in moderation."]
+EVIN = ("L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
+        "\u00c0 consommer avec mod\u00e9ration.")
 
 
 def is_alcohol(i):
@@ -202,74 +288,16 @@ def is_alcohol(i):
             or i["id"] in DRINKS_ELSEWHERE)
 
 
-# Family labels in French, read from the app rather than retyped here, so a
-# family renamed in one place is not stale in the other.
-def fr_families():
-    src = (ROOT / "js" / "i18n.js").read_text()
-    fr = src[src.index("fr:"):]
-    block = re.search(r"categories:\s*\{(.*?)\}", fr, re.S).group(1)
-    return dict(re.findall(r'(\w+):\s*"([^"]*)"', block))
-
-_FR_FAM = None
-
-def tagify(s):
-    """A hashtag from a name: accents folded, everything else dropped."""
-    s = unicodedata.normalize("NFD", s or "")
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
-    return "#" + re.sub(r"[^A-Za-z0-9]", "", s).lower()
-
-# Head words that are true of a thousand things and so identify none: they cost
-# a tag slot and bring nobody. "thes" is the accent-folded half of "Thés &
-# infusions", where "infusions" is the half worth keeping.
-GENERIC = {"#water", "#sauce", "#green", "#black", "#white", "#sweet",
-           "#dried", "#fresh", "#wild", "#thes", "#huile", "#poudre"}
-
-
-def hashtags(i):
-    """The ingredient's own names first: they are the only terms anyone
-    actually searches. The generic giants (#cuisine, #chef, #cooking) are won
-    by six-figure accounts and a small one never surfaces in them — narrow
-    tags are where a new account is findable at all."""
-    global _FR_FAM
-    if _FR_FAM is None:
-        _FR_FAM = fr_families()
-    out = [tagify(i["en"]), tagify(i["fr"])]
-    # the bare first word too, when the name is compound: "amande" as well as
-    # "amandelargueta", because that is the shorter thing people type
-    for n in (i["en"], i["fr"]):
-        head = tagify(n.split()[0]) if n.split() else ""
-        if len(head) - 1 >= 5 and head not in out and head not in GENERIC:
-            out.append(head)
-    fam = _FR_FAM.get(i["cat"], "")
-    for part in re.split(r"\s*&\s*", fam):          # "Noix & graines" -> both
-        tag = tagify(part)
-        if len(tag) - 1 >= 4 and tag not in out and tag not in GENERIC:
-            out.append(tag)
-    out.append("#copius")
-    seen, uniq = set(), []
-    for tg in out:
-        if tg not in seen and len(tg) - 1 >= 4:
-            seen.add(tg); uniq.append(tg)
-    return uniq[:10]
-
-
 def caption(i):
-    """Bilingual caption. Instagram captions carry no clickable link, so the
-    site is named rather than linked."""
+    """In French, the language of the account's audience (his call, 26 Sept
+    2026), and without hashtags, which he does not use. Instagram captions carry
+    no clickable link, so the site is named rather than linked."""
     un = lambda s: re.sub(r"\\+(.)", r"\1", s or "")
-    tags = hashtags(i)
-    # A flag opens each story, so a reader scrolling past knows which paragraph
-    # is theirs without reading into it. The title line is already both languages.
-    # High in the caption, not buried: Instagram hides everything past the first
-    # couple of lines behind "... more", and a mention nobody can see is not one.
-    return "\n".join([
-        "%s \u00b7 %s" % (i["en"], i["fr"]),
-        i["latin"],
-    ] + (EVIN if is_alcohol(i) else []) + ["",
-        "\U0001F1EC\U0001F1E7 " + un(i["story_en"]), "",
-        "\U0001F1EB\U0001F1F7 " + un(i["story_fr"]), "",
+    # The health message high in the caption, not buried: Instagram hides
+    # everything past the first couple of lines behind "... plus".
+    return "\n".join([i["fr"], latin(i)] + ([EVIN] if is_alcohol(i) else []) + ["",
+        un(i["story_fr"]), "",
         "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
-        "", " ".join(tags),
     ])
 
 

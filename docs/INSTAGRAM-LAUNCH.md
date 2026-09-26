@@ -65,7 +65,7 @@ needs no App Review — that only applies to apps acting on other people's
 accounts.
 
 Once the token and user id are in the repository secrets, the job posts the same
-ingredient the website shows that day, with a bilingual caption, at 08:00 UTC.
+ingredient the website shows that day, with a French caption, at 08:00 UTC.
 
 Cards are pre-rendered for 400 days and served from `copius.fr/social/`.
 
