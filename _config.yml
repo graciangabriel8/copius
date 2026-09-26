@@ -42,3 +42,4 @@ exclude:
   - js/trios-gastronomy.js
   - js/trios-premium.js
   - js/plate.js
+include: []   # keep .htaccess (OVH only) off the Pages site
