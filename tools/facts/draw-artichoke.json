@@ -1,0 +1,15 @@
+{
+ "id": "artichoke",
+ "fr": {
+  "hook": "Après un artichaut, même l’eau paraît sucrée.",
+  "question": "La faute à la cynarine.",
+  "line": "C’est une fleur de chardon, cueillie avant d’éclore, et un casse-tête pour les sommeliers.",
+  "end": "Un dictionnaire illustré des ingrédients"
+ },
+ "en": {
+  "hook": "After an artichoke, even water tastes sweet.",
+  "question": "Blame the cynarin.",
+  "line": "It’s a thistle flower, picked before it opens, and a headache for sommeliers.",
+  "end": "An illustrated dictionary of ingredients"
+ }
+}
