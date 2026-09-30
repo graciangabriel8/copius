@@ -412,11 +412,15 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
             fill-in .58s ease .46s both}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fill-in{from{opacity:0}to{opacity:1}}
-/* Sticky, so ✕ stays in reach once a phone has scrolled a long entry. The bar
-   itself is see-through: as a solid band it cut through the title of every
-   scrolled entry. Only the two round buttons float over the text. */
+/* On a phone the bar is sticky (the media query below), so ✕ stays in reach
+   once a long entry is scrolled: the entry fills the screen and there is no
+   outside to tap. On a wider screen the card floats in the middle, closes on
+   Escape or a click beside it, and its ✕ travels with it — held in place, it
+   hung over the text of the scrolling card. The bar itself is see-through: as
+   a solid band it cut through the title of every scrolled entry. Only the two
+   round buttons float over the text. */
 .modal-bar{display:flex;justify-content:space-between;padding:12px 14px 6px;
-  position:sticky;top:0;z-index:1;background:transparent;pointer-events:none}
+  position:relative;z-index:1;background:transparent;pointer-events:none}
 .modal-bar .ghost{
   border:1px solid var(--border);background:var(--bg);color:var(--ink-2);
   width:40px;height:40px;border-radius:50%;font-size:15px;line-height:1;
@@ -424,7 +428,8 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 }
 .modal-bar .ghost:hover{border-color:var(--ink-3);color:var(--ink)}
 /* Phones: the entry becomes a sheet from the top edge, so the sticky bar sits at the very top. */
-@media (max-width:720px){.overlay{padding:0 0 24px}.modal,.modal-bar{border-radius:0}}
+@media (max-width:720px){.overlay{padding:0 0 24px}.modal,.modal-bar{border-radius:0}
+  .modal-bar{position:sticky;top:0}}
 #backBtn{margin-right:auto}
 #closeBtn{margin-left:auto}
 .modal-body{padding:6px 34px 34px}
