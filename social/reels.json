@@ -3,6 +3,13 @@
     {"date": "2026-09-30", "file": "social/reels/miel.mp4", "cover": "social/reels/miel-cover.jpg", "id": "honey"},
     {"date": "2026-10-01", "file": "social/reels/huile-olive.mp4", "cover": "social/reels/huile-olive-cover.jpg", "id": "olive-oil"},
     {"date": "2026-10-02", "file": "social/reels/sel.mp4", "cover": "social/reels/sel-cover.jpg", "id": "salt"},
-    {"date": "2026-10-03", "file": "social/reels/caprese.mp4", "cover": "social/reels/caprese-cover.jpg", "id": "tomato"}
+    {"date": "2026-10-03", "file": "social/reels/caprese.mp4", "cover": "social/reels/caprese-cover.jpg", "id": "tomato"},
+    {"date": "2026-10-04", "file": "social/reels/pomme-de-terre.mp4", "cover": "social/reels/pomme-de-terre-cover.jpg", "id": "potato"},
+    {"date": "2026-10-05", "file": "social/reels/cafe.mp4", "cover": "social/reels/cafe-cover.jpg", "id": "coffee"},
+    {"date": "2026-10-06", "file": "social/reels/avocat.mp4", "cover": "social/reels/avocat-cover.jpg", "id": "avocado"},
+    {"date": "2026-10-07", "file": "social/reels/fraise.mp4", "cover": "social/reels/fraise-cover.jpg", "id": "strawberry"},
+    {"date": "2026-10-08", "file": "social/reels/banane.mp4", "cover": "social/reels/banane-cover.jpg", "id": "banana"},
+    {"date": "2026-10-09", "file": "social/reels/ananas.mp4", "cover": "social/reels/ananas-cover.jpg", "id": "pineapple"},
+    {"date": "2026-10-10", "file": "social/reels/figue.mp4", "cover": "social/reels/figue-cover.jpg", "id": "fig"}
   ]
 }
