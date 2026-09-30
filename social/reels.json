@@ -1,8 +1,8 @@
 {
   "reels": [
-    {"date": "2026-10-04", "file": "social/reels/miel.mp4", "id": "honey"},
-    {"date": "2026-10-07", "file": "social/reels/huile-olive.mp4", "id": "olive-oil"},
-    {"date": "2026-10-11", "file": "social/reels/sel.mp4", "id": "salt"},
-    {"date": "2026-10-14", "file": "social/reels/caprese.mp4", "id": "tomato"}
+    {"date": "2026-09-30", "file": "social/reels/miel.mp4", "cover": "social/reels/miel-cover.jpg", "id": "honey"},
+    {"date": "2026-10-01", "file": "social/reels/huile-olive.mp4", "cover": "social/reels/huile-olive-cover.jpg", "id": "olive-oil"},
+    {"date": "2026-10-02", "file": "social/reels/sel.mp4", "cover": "social/reels/sel-cover.jpg", "id": "salt"},
+    {"date": "2026-10-03", "file": "social/reels/caprese.mp4", "cover": "social/reels/caprese-cover.jpg", "id": "tomato"}
   ]
 }

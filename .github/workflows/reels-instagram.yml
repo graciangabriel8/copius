@@ -48,8 +48,8 @@ jobs:
           if [ "$DATE" \> "$TODAY" ]; then
             echo "::error::$DATE is after today ($TODAY) — change its date in social/reels.json instead"; exit 1
           fi
-          # file, id and the number of reels still to come, from one read of the
-          # file; an assignment, so a failing read stops the step under set -e
+          # file, id, cover and the number of reels still to come, from one read
+          # of the file; an assignment, so a failing read stops the step under set -e
           OUT="$(python3 - "$DATE" <<'PY'
           import json, sys
           d = sys.argv[1]
@@ -58,23 +58,31 @@ jobs:
           if len(hit) > 1:
               sys.exit("two reels scheduled on " + d)
           left = sum(1 for r in rs if r["date"] > d)
-          print(hit[0]["file"] if hit else "-", hit[0]["id"] if hit else "-", left)
+          h = hit[0] if hit else {}
+          print(h.get("file", "-"), h.get("id", "-"), h.get("cover", "-"), left)
           PY
           )"
-          read -r FILE ID LEFT <<< "$OUT"
-          echo "day $DATE: ${FILE} (${ID}); $LEFT reel(s) scheduled after it"
-          if [ "$LEFT" -lt 2 ]; then
+          read -r FILE ID COVER LEFT <<< "$OUT"
+          echo "day $DATE: ${FILE} (${ID}, cover ${COVER}); $LEFT reel(s) scheduled after it"
+          if [ "$LEFT" -lt 3 ]; then
             echo "::warning::only $LEFT reel(s) scheduled after $DATE — render more and add them to social/reels.json"
           fi
           if [ "$FILE" = "-" ]; then
             echo "::notice::no reel scheduled on $DATE"; exit 0
           fi
           test -f "$FILE" || { echo "::error::$FILE is scheduled on $DATE but is not in the repository"; exit 1; }
+          if [ "$COVER" != "-" ]; then
+            test -f "$COVER" || { echo "::error::cover $COVER is scheduled on $DATE but is not in the repository"; exit 1; }
+          fi
           python3 tools/make-card.py --caption-id "$ID" >/dev/null   # fails now, not after the wait
           {
             echo "file=$FILE"
             echo "id=$ID"
             echo "bytes=$(wc -c < "$FILE" | tr -d ' ')"
+            if [ "$COVER" != "-" ]; then
+              echo "cover=$COVER"
+              echo "cover_bytes=$(wc -c < "$COVER" | tr -d ' ')"
+            fi
           } >> "$GITHUB_OUTPUT"
 
       # 15:30 in Paris for a scheduled run; a run started by hand posts at once.
@@ -106,6 +114,9 @@ jobs:
           FILE: ${{ steps.pick.outputs.file }}
           ID: ${{ steps.pick.outputs.id }}
           BYTES: ${{ steps.pick.outputs.bytes }}
+          COVER: ${{ steps.pick.outputs.cover }}
+          COVER_BYTES: ${{ steps.pick.outputs.cover_bytes }}
+          EVENT: ${{ github.event_name }}
         run: |
           set -euo pipefail
           : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
@@ -114,14 +125,25 @@ jobs:
           CAPTION="$(python3 tools/make-card.py --caption-id "$ID")"
           test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
 
-          # 0. is the video live, and is it this one? Instagram fetches it itself
-          # and answers a missing or half-deployed file only with a container
-          # ERROR, so ask first: status, type and size against the committed file.
-          GOT="$(curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}' --max-time 120 "$URL")"
-          echo "site: $GOT for $URL (committed: $BYTES bytes)"
-          set -- $GOT
-          if [ "$1" != "200" ] || [ "${2%%;*}" != "video/mp4" ] || [ "$3" != "$BYTES" ]; then
-            echo "::error::$URL is not the committed video yet (deploy pending?) — nothing posted"; exit 1
+          # 0. are the video and its cover live, and are they these? Instagram
+          # fetches both itself and answers a missing or half-deployed file only
+          # with a container ERROR, so ask first: status, type and size against
+          # the committed files.
+          live() {  # url, content type, committed bytes
+            # "|" between fields: a content type can hold a space ("; charset=")
+            IFS='|' read -r CODE TYPE SIZE <<< "$(curl -sS -o /dev/null -w '%{http_code}|%{content_type}|%{size_download}' --max-time 120 "$1")"
+            echo "site: $CODE, ${TYPE:-no type}, $SIZE bytes for $1 (committed: $3 bytes)"
+            if [ "$CODE" != "200" ] || [ "${TYPE%%;*}" != "$2" ] || [ "$SIZE" != "$3" ]; then
+              echo "::error::$1 is not the committed file yet (deploy pending?) — nothing posted"; exit 1
+            fi
+          }
+          live "$URL" video/mp4 "$BYTES"
+          COVER_ARG=()
+          if [ -n "$COVER" ]; then
+            # The grid shows it cropped to its middle 3:4; the reel's own frames
+            # are the fallback when a day has no cover.
+            live "https://copius.fr/$COVER" image/jpeg "$COVER_BYTES"
+            COVER_ARG=(--data-urlencode "cover_url=https://copius.fr/$COVER")
           fi
 
           # 1. is this reel already up, or has a reel gone out today? A manual run
@@ -144,6 +166,10 @@ jobs:
           if any(flat(m.get("caption")) == flat(sys.argv[1]) for m in reels): print("this reel")
           elif any(m.get("timestamp") and paris(m["timestamp"]) == sys.argv[2] for m in reels): print("a reel today")
           else: print("")' "$CAPTION" "$(TZ=Europe/Paris date +%F)")"
+          if [ "$SEEN" = "a reel today" ] && [ "$EVENT" = "schedule" ]; then
+            # the day's own reel is skipped, and its date then lies in the past
+            echo "::warning::$ID ($FILE) not posted: another reel went out today — dispatch it by hand tomorrow, or move its date in social/reels.json"; exit 0
+          fi
           if [ -n "$SEEN" ]; then
             echo "::notice::already up: $SEEN — nothing to do"; exit 0
           fi
@@ -157,6 +183,7 @@ jobs:
             -d "media_type=REELS" \
             --data-urlencode "video_url=$URL" \
             --data-urlencode "caption=$CAPTION" \
+            ${COVER_ARG[@]+"${COVER_ARG[@]}"} \
             -d "share_to_feed=true" \
             -d "access_token=$IG_ACCESS_TOKEN")"
           CID="$(jid "$CREATE")"
