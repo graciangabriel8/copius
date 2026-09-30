@@ -107,14 +107,20 @@ jobs:
 
           # 0. has today already gone out? The job posts whatever the date picks,
           # every time it runs, so a manual run plus the cron would put the same
-          # card up twice on a public profile. Ask Instagram for the newest post
-          # and compare dates. An unreadable answer yields an empty string, which
-          # never equals $DATE, so the day's post still goes out — a missed day is
-          # invisible and this check exists only to stop a visible duplicate.
+          # card up twice on a public profile. Ask Instagram for the newest card
+          # and compare dates. Carousels only: a reel (reels-instagram.yml, 15:30
+          # on its days) is not the card, and counting it would skip the day's.
+          # An unreadable answer yields an empty string, which never equals
+          # $DATE, so the day's post still goes out — a missed day is invisible
+          # and this check exists only to stop a visible duplicate.
           LATEST="$(curl -sS -G "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
-            --data-urlencode "fields=timestamp" --data-urlencode "limit=1" \
+            --data-urlencode "fields=timestamp,media_type" --data-urlencode "limit=10" \
             --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
-            | python3 -c 'import sys,json; d=(json.load(sys.stdin).get("data") or [{}]); print((d[0].get("timestamp") or "")[:10])')"
+            | python3 -c 'import sys,json
+          try: d = json.load(sys.stdin).get("data") or []
+          except ValueError: d = []
+          d = [m for m in d if m.get("media_type") == "CAROUSEL_ALBUM"] or [{}]
+          print((d[0].get("timestamp") or "")[:10])')"
           echo "last post: ${LATEST:-<none>} | today: $DATE"
           if [ "$LATEST" = "$DATE" ]; then
             echo "::notice::already posted today ($DATE) — nothing to do"

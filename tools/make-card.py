@@ -334,6 +334,14 @@ if __name__ == "__main__":
         n = build_all(rows, ROOT / "social")
         print(json.dumps({"built": n, "dir": "social/"}))
         sys.exit(0)
+    # A reel's caption is the caption of the ingredient whose atlas page it
+    # closes on (social/reels.json), derived at post time like the cards'.
+    if len(sys.argv) > 2 and sys.argv[1] == "--caption-id":
+        byid = {r["id"]: r for r in rows}
+        if sys.argv[2] not in byid:
+            sys.exit("no ingredient %s in the data" % sys.argv[2])
+        print(caption(byid[sys.argv[2]]))
+        sys.exit(0)
     # Both take an optional date. The poster passes the same one to each, so the
     # picture and the caption cannot come from two different days; with no date
     # they mean today, and answer for the entry the website is showing.

@@ -1173,7 +1173,7 @@ svg:'<path class="f1 sf" d="M26 36h44l-4 30-16 6-24-4z"/><path class="s" d="M34 
 origin:{en:"Sea and rock, everywhere",fr:"Mer et roche, partout"},season:[],
 flavor:["salty","mild","briny","fresh"],texture:["hard","granular","dry"],
 story:{en:"The only rock we eat, and the only seasoning with no substitute. Roman soldiers were paid partly in it — salarium, the root of salary — and the gabelle, France's salt tax, was hated enough to be listed among the grievances of 1789.",
-fr:"La seule roche que nous mangeons, et le seul assaisonnement sans substitut. Les soldats romains étaient payés en partie avec — salarium, la racine de salaire — et la gabelle, l’impôt français sur le sel, fut assez détestée pour figurer parmi les doléances de 1789."},
+fr:"La seule roche que nous mangeons, et le seul assaisonnement sans substitut. Les soldats romains étaient payés en partie en sel — salarium, la racine de « salaire » — et la gabelle, l’impôt français sur le sel, fut assez détestée pour figurer parmi les doléances de 1789."},
 tip:{en:"Salt early for anything you want seasoned through, late for anything you want to stay crisp. It draws water either way.",
 fr:"Salez tôt ce que vous voulez assaisonner à cœur, tard ce que vous voulez garder croquant. Il tire l’eau dans les deux cas."},
 pairs:["black-pepper","butter","olive-oil","lemon","tomato","radish","beurre-demi-sel","maple-syrup"],

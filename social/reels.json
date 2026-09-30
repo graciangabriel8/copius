@@ -1,0 +1,8 @@
+{
+  "reels": [
+    {"date": "2026-10-04", "file": "social/reels/miel.mp4", "id": "honey"},
+    {"date": "2026-10-07", "file": "social/reels/huile-olive.mp4", "id": "olive-oil"},
+    {"date": "2026-10-11", "file": "social/reels/sel.mp4", "id": "salt"},
+    {"date": "2026-10-14", "file": "social/reels/caprese.mp4", "id": "tomato"}
+  ]
+}
