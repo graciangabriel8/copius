@@ -190,24 +190,43 @@ def card(i):
                      'font-size="24" letter-spacing="3" fill="#a29c92">%s</text>', (e(latin(i).upper()),)))
     y += 50 if gloss else 62
     # The story fills what the name leaves of the band under the drawing
-    # (baselines 640 to 920), three lines at most.
-    room = min(3, max(1, (280 - y) // 44 + 1))
+    # (baselines 640 to 920), in whole sentences, as many as fit. The type
+    # steps down, as on the tip card, until the first sentence fits whole: cut
+    # at a word, the chocolate card ended \u00ab Linn\u00e9 nomma plus tard\u2026 \u00bb and read
+    # as unfinished. A first sentence too long for the smallest size ends at
+    # its last dash, semicolon or colon that fits, where what comes before
+    # stands as a sentence; only one with none is trimmed to a word and marked.
     story = re.sub(r"\\+(.)", r"\1", i["story_fr"] or "")
-    # End on a sentence where one fits; otherwise trim to a word and mark it.
-    sentences, kept = re.split(r"(?<=[.!?\u2026]) +", story), ""
-    for x in sentences:
-        if len(wrap((kept + " " + x).strip(), 46)) > room:
+    sentences = re.split(r"(?<=[.!?\u2026]) +", story)
+    # clause, separator, clause\u2026: k clauses with their own separators are
+    # "".join(head[:2 * k - 1])
+    head = re.split(r"( \u2014 |[\u00a0\u202f ]?[;:] )", sentences[0])
+    sizes = ((30, 44, 46, 3), (27, 40, 51, 4), (25, 37, 56, 5))
+    lines = None
+    for size, step, cols, most in sizes:
+        room, kept = min(most, max(1, (280 - y) // step + 1)), ""
+        for x in sentences:
+            if len(wrap((kept + " " + x).strip(), cols)) > room:
+                break
+            kept = (kept + " " + x).strip()
+        if kept:
+            lines = balance(kept, cols)
             break
-        kept = (kept + " " + x).strip()
-    if not kept:
-        lines = wrap(story, 46)[:room]
+    if lines is None:
+        for size, step, cols, most in sizes:
+            room = min(most, max(1, (280 - y) // step + 1))
+            fit = [k for k in range((len(head) + 1) // 2 - 1, 0, -1)
+                   if len(wrap("".join(head[:2 * k - 1]) + ".", cols)) <= room]
+            if fit:
+                lines = balance("".join(head[:2 * fit[0] - 1]).rstrip(",:\u00a0\u202f") + ".", cols)
+                break
+    if lines is None:
+        lines = wrap(story, cols)[:room]
         lines[-1] = lines[-1].rstrip(",;:\u00a0\u202f") + "\u2026"
-    else:
-        lines = balance(kept, 46)
     for n, l in enumerate(lines):
-        parts.append((y + n * 44, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
-                                  'font-size="30" fill="#55524d">%s</text>', (e(l),)))
-    top = 780 - (y + (len(lines) - 1) * 44) // 2      # centre the block on 780
+        parts.append((y + n * step, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
+                                    'font-size="%d" fill="#55524d">%s</text>', (size, e(l))))
+    top = 780 - (y + (len(lines) - 1) * step) // 2    # centre the block on 780
     text = "\n".join(f % ((top + dy,) + a) for dy, f, a in parts)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
