@@ -191,6 +191,16 @@ if (htaccess !== null) {
       errors.push(".htaccess lets through js/(" + m[1] + "), not the published files (" + want + ")");
   });
   if (rules < 2) errors.push(".htaccess: the js/ rule is missing from " + (rules ? "one of its two rule sets" : "both rule sets"));
+  /* The site-wide ten-minute cache must leave /api/ alone: set on a script's
+     answer, it would make a no-store bundle cacheable, and "always set" would
+     replace the script's own value (DESIGN.md section 3, headers). */
+  htaccess.split("\n").forEach(function (l) {
+    if (/^\s*#/.test(l) || !/Header\s+(always\s+)?set\s+Cache-Control/.test(l)) return;
+    if (/Header\s+always\s+set\s+Cache-Control/.test(l))
+      errors.push(".htaccess: 'Header always set Cache-Control' replaces the scripts' own value: " + l.trim());
+    else if (/max-age=600/.test(l) && l.indexOf('"expr=%{REQUEST_URI} !~ m#^/api/#"') < 0)
+      errors.push(".htaccess: the site-wide Cache-Control does not leave /api/ alone: " + l.trim());
+  });
 }
 var ignored = read(".gitignore").split("\n").map(function (l) { return l.trim(); });
 if (ignored.indexOf("js/_premium.js") < 0 && ignored.indexOf("/js/_premium.js") < 0)

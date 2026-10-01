@@ -63,13 +63,27 @@ self.addEventListener('activate', function (e) {
     return Promise.all(keys.filter(function (k) {
       return k.indexOf('copius-') === 0 && k !== CACHE;
     }).map(function (k) { return caches.delete(k); }));
+  }).then(function () {
+    // An /api/ answer left in this cache by an older worker would serve the
+    // full version without asking the server about the session.
+    return caches.open(CACHE).then(function (c) {
+      return c.keys().then(function (keys) {
+        return Promise.all(keys.filter(function (k) { return SKIP.test(new URL(k.url).pathname); })
+          .map(function (k) { return c.delete(k); }));
+      });
+    });
   }).then(function () { return self.clients.claim(); }));
 });
 
+// Signing in never touches Cache Storage: the bundle's answer depends on the
+// session, and the link page carries a one-time token.
+const SKIP = /^\\/(api|connexion)(\\/|$)/;
+
 self.addEventListener('fetch', function (e) {
   var req = e.request;
-  if (req.method !== 'GET') return;
   if (new URL(req.url).origin !== self.location.origin) return;
+  if (SKIP.test(new URL(req.url).pathname)) return;
+  if (req.method !== 'GET') return;
 
   // The page itself: network first, so a new deploy is picked up. Cache is the offline fallback.
   if (req.mode === 'navigate') {
