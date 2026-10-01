@@ -9,9 +9,16 @@ on:
   schedule:
     # UTC, and early on purpose: the job holds until 15:30 in Paris, between
     # lunch and dinner service, whatever the cron and the October change do.
-    # See daily-instagram.yml for why the wall clock is waited for. Off the top
-    # of the hour, which GitHub delays most.
-    - cron: "5 12 * * *"
+    # GitHub starts these runs 3 to 6 h 36 late on this repository (see
+    # daily-instagram.yml): a 12:05 cron began at 17:58 UTC on 30 Sept, and on
+    # 1 Oct had not begun by 15:10. Three morning starts, as for the card: one
+    # more than 5 h 35 before 15:30 steps aside, the first within reach waits,
+    # the later ones queue behind it and find the reel up. On time, the 08:05
+    # start posts in summer and the 10:05 one in winter; 3 to 7 h 25 late, the
+    # 06:05 start does. Off the top of the hour, which GitHub delays most.
+    - cron: "5 6 * * *"
+    - cron: "5 8 * * *"
+    - cron: "5 10 * * *"
   workflow_dispatch:          # by hand: posts the day's reel, or a past day's, at once
     inputs:
       date:
@@ -19,7 +26,10 @@ on:
         required: false
 
 concurrency:
-  group: reels-instagram      # never two reel posts at once
+  # Scheduled starts queue in one lane; a run started by hand has its own, so
+  # it never waits hours behind a holding start or gets cancelled by the next
+  # one. The duplicate guards cover a manual run overlapping a scheduled one.
+  group: reels-instagram-${{ github.event_name == 'schedule' && 'cron' || 'manual' }}
   cancel-in-progress: false
 
 permissions:
@@ -87,6 +97,7 @@ jobs:
 
       # 15:30 in Paris for a scheduled run; a run started by hand posts at once.
       - name: Hold until 15:30 in Paris
+        id: hold
         if: github.event_name == 'schedule' && steps.pick.outputs.file != ''
         run: |
           set -euo pipefail
@@ -99,15 +110,18 @@ jobs:
             echo "::warning::started at or after 15:30 Paris — posting now, $(( -wait / 60 )) min late"
             exit 0
           fi
-          if [ "$wait" -gt 14400 ]; then
-            echo "::error::$(( wait / 60 )) min until 15:30 Paris — the schedule has moved, fix the cron"
-            exit 1
+          # Too early to wait inside GitHub's 6 h job limit: step aside, a later
+          # start of the three posts the reel. Publish reads skip.
+          if [ "$wait" -gt 20100 ]; then
+            echo "::notice::$(( wait / 60 )) min until 15:30 Paris — too early to wait; a later start posts the reel"
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
           echo "waiting $(( wait / 60 )) min"
           sleep "$wait"
 
       - name: Publish
-        if: steps.pick.outputs.file != ''
+        if: steps.pick.outputs.file != '' && steps.hold.outputs.skip != '1'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -214,3 +228,6 @@ jobs:
           PUB="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
             -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
           printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
+          # A queued start follows within seconds: hold the group two minutes so
+          # its guard reads a media list that already shows this post.
+          if [ "${{ github.event_name }}" = "schedule" ]; then sleep 120; fi

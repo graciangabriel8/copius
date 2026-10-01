@@ -18,15 +18,25 @@ on:
     # start of every hour… schedule your workflow to run at a different time of
     # the hour." A run at the top of the hour was once delayed by 90 minutes.
     #
-    # 13:35 UTC is 15:35 in Paris in summer and 14:35 in winter; the jitter can
-    # add three quarters of an hour to either. Both leave the job waiting, which
-    # is the point: waiting is the only thing that holds one Paris time across
-    # the October change.
-    - cron: "35 13 * * *"
+    # The jitter is no longer minutes. From 19 Sept to 1 Oct 2026 a 13:35 UTC
+    # cron was started between 16:41 and 20:11 UTC — 3 h to 6 h 36 late, so the
+    # card went out at 18:40–22:10 in Paris, mid-service, every day. So the job
+    # is started three times in the morning and the hold below decides: a start
+    # more than 5 h 35 before 17:00 Paris steps aside (GitHub kills a job at
+    # 6 h), the first one within reach waits for the wall clock, and the ones
+    # after it queue behind it in the concurrency group and find the card up.
+    # On time, the 09:35 start posts in summer and the 11:35 one in winter;
+    # 3 to 7 h 25 late, the 07:35 start does.
+    - cron: "35 7 * * *"
+    - cron: "35 9 * * *"
+    - cron: "35 11 * * *"
   workflow_dispatch:          # lets you run it by hand from the Actions tab
 
 concurrency:
-  group: daily-instagram      # never two posts at once
+  # Scheduled starts queue in one lane; a run started by hand has its own, so
+  # it never waits hours behind a holding start or gets cancelled by the next
+  # one. The duplicate guards cover a manual run overlapping a scheduled one.
+  group: daily-instagram-${{ github.event_name == 'schedule' && 'cron' || 'manual' }}
   cancel-in-progress: false
 
 permissions:
@@ -42,6 +52,7 @@ jobs:
       # tzdata, so the October change is handled by the same line. A run started
       # by hand posts immediately — waiting is for the scheduled one.
       - name: Hold until 17:00 in Paris
+        id: hold
         if: github.event_name == 'schedule'
         run: |
           set -euo pipefail
@@ -54,18 +65,19 @@ jobs:
             echo "::warning::started at or after 17:00 Paris — posting now, $(( -wait / 60 )) min late"
             exit 0
           fi
-          # Nothing legitimate waits four hours. If the cron ever moves, or the
-          # timezone: key starts being honoured, this stops rather than burning
-          # a runner until the job limit.
-          if [ "$wait" -gt 14400 ]; then
-            echo "::error::$(( wait / 60 )) min until 17:00 Paris — the schedule has moved, fix the cron"
-            exit 1
+          # Too early to wait inside GitHub's 6 h job limit: step aside, a later
+          # start of the three posts the card. The steps below read skip.
+          if [ "$wait" -gt 20100 ]; then
+            echo "::notice::$(( wait / 60 )) min until 17:00 Paris — too early to wait; a later start posts the card"
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
           echo "waiting $(( wait / 60 )) min"
           sleep "$wait"
 
       - name: Work out today's ingredient
         id: pick
+        if: steps.hold.outputs.skip != '1'
         run: |
           set -euo pipefail
           # The date is pinned once and reused, so the picture and the caption
@@ -89,6 +101,7 @@ jobs:
           fi
 
       - name: Publish
+        if: steps.hold.outputs.skip != '1'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -178,32 +191,6 @@ jobs:
           PUB="$(curl -sS -X POST "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
             -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
           printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
-
-  # Long-lived tokens die after 60 days and cannot be revived. This refreshes
-  # on Mondays and writes the new one straight back into the repository secret.
-  refresh-token:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
-    steps:
-      # The cron is daily and Meta refuses to refresh a token under 24 h old,
-      # so a delayed run followed by an on-time one would go red every time.
-      - name: Only on Mondays
-        run: |
-          if [ "$(date -u +%u)" != "1" ]; then echo "::notice::refresh runs on Mondays"; exit 0; fi
-          echo "MONDAY=1" >> "$GITHUB_ENV"
-
-      - name: Refresh the access token
-        if: env.MONDAY == '1'
-        env:
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
-        run: |
-          set -euo pipefail
-          if [ -z "${GH_TOKEN:-}" ]; then
-            echo "::warning::SECRETS_PAT not set — refresh the token by hand before it expires"; exit 0
-          fi
-          NEW="$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
-            | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
-          if [ -z "$NEW" ]; then echo "::error::refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
-          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" --body "$NEW"
-          echo "token refreshed (value never printed)"
+          # A queued start follows within seconds: hold the group two minutes so
+          # its guard reads a media list that already shows this post.
+          if [ "${{ github.event_name }}" = "schedule" ]; then sleep 120; fi

@@ -1,0 +1,33 @@
+name: Instagram token refresh
+
+# Long-lived tokens die after 60 days and cannot be revived. This refreshes the
+# token once a week and writes the new one straight back into the repository
+# secret. Its own workflow since 1 Oct 2026: inside the posting job it rode one
+# of three daily starts and was cancelled whenever that start was. Weekly, not
+# daily: Meta refuses to refresh a token under 24 h old.
+on:
+  schedule:
+    - cron: "17 9 * * 1"      # Mondays (UTC); however late GitHub starts it, it is still Monday
+  workflow_dispatch:          # by hand, when a Monday was missed
+
+permissions:
+  contents: read
+
+jobs:
+  refresh-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh the access token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::SECRETS_PAT not set — refresh the token by hand before it expires"; exit 0
+          fi
+          NEW="$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
+          if [ -z "$NEW" ]; then echo "::error::refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
+          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" --body "$NEW"
+          echo "token refreshed (value never printed)"
