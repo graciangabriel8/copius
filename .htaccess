@@ -26,7 +26,9 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
 <IfModule mod_headers.c>
   # Pages served every file with a ten-minute cache, and the ?v= stamps on the
   # assets are built around that. The service worker must never wait on a cache.
-  Header set Cache-Control "max-age=600"
+  # /api/ sets its own: this line would add a second Cache-Control to a script's
+  # answer, and "always set" would replace it (tools/validate.js checks both).
+  Header set Cache-Control "max-age=600" "expr=%{REQUEST_URI} !~ m#^/api/#"
   <Files "service-worker.js">
     Header set Cache-Control "no-cache"
   </Files>
