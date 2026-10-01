@@ -49,9 +49,18 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
   RewriteRule ^(tools|docs)(/.*)?$ - [R=404,L]
   RewriteRule ^(PLAN-[^/]*\.md|ROADMAP\.md|CNAME)$ - [R=404,L]
   RewriteRule ^js/(?!(app|i18n|photos|page|free|data-techniques)\.js$) - [NC,R=404,L]
-  # A folder without its trailing slash: add it here, in the request's own scheme.
+  # One hop to https://copius.fr, as Pages did: www to the bare domain, http to
+  # https (OVH's documented SERVER_PORT method), and a folder's missing trailing
+  # slash. REDIRECT_STATUS keeps the 404 page itself from being redirected when a
+  # missing URL came in over http: it must answer 404, not 301.
+  RewriteCond %{HTTP_HOST} ^www\.copius\.fr$ [NC]
+  RewriteRule ^(.*)$ https://copius.fr/$1 [R=301,L]
+  RewriteCond %{SERVER_PORT} ^80$
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+  RewriteRule ^(.*)$ https://copius.fr/$1 [R=301,L]
   RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^(.*[^/])$ /$1/ [R=301,L]
+  RewriteRule ^(.*[^/])$ https://copius.fr/$1/ [R=301,L]
   # A folder with no index.html is a 404 on Pages; here it would be a 403.
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html !-f
