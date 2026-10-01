@@ -140,7 +140,7 @@ UI = {
 
 # The full version's price, one home for both languages. A no-break space holds
 # each amount to its € sign: a line must not end on a bare "3".
-PRICE = {"en": "€3 a month or €29 a year", "fr": "3\u00a0€ par mois ou 29\u00a0€ par an"}
+PRICE = {"en": "€4.90 a month or €39 a year", "fr": "4,90\u00a0€ par mois ou 39\u00a0€ par an"}
 
 
 def locked_block(gives, lang):
