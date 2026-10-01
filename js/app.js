@@ -425,6 +425,7 @@
     el("contactLine").textContent = t.contactLine;
     el("aboutLink").textContent = t.aboutLink;
     el("privacyLink").textContent = t.privacyLink;
+    el("nokimeLink").textContent = t.nokimeLink;
     el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
