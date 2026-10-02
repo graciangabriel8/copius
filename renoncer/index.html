@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);var m=document.createElement("meta");m.name="theme-color";m.content=t==="dark"?"#14160F":"#F7F6F1";document.head.appendChild(m)}}catch(e){}</script>
+<script>(function(){var s="";try{s=localStorage.getItem("atlas-lang")||""}catch(e){}var q=/[?&]lang=(en|fr)\b/.exec(location.search);document.documentElement.lang=q?q[1]:/^(en|fr)$/.test(s)?s:/^fr/i.test(navigator.language||"")?"fr":"en"})()</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Renoncer au contrat ici · Withdraw — Copius</title>
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+<link rel="icon" sizes="192x192" href="/icons/icon-192.png">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
+<link rel="stylesheet" href="../css/page.css?v=212">
+<link rel="stylesheet" href="../css/pay.css?v=1">
+</head>
+<body>
+<header>
+  <a class="home" href="../">Copius</a>
+  <nav><a href="../atlas.html"><span lang="fr">Ouvrir l’atlas</span><span lang="en">Open the atlas</span></a></nav>
+</header>
+
+<main>
+<h1><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from the contract</span></h1>
+<p class="lang"><a href="#" data-lang="en" lang="fr">Read this in English</a><a href="#" data-lang="fr" lang="en">Lire en français</a></p>
+
+<form id="fill" novalidate>
+  <p class="lede" lang="fr">Pendant les 14 jours qui suivent votre abonnement, vous pouvez vous rétracter sans motif et sans frais. L’accès à la version complète se ferme, et nous vous remboursons la totalité du prix payé au plus tard 14 jours après.</p>
+  <p class="lede" lang="en">Within the 14 days after you subscribed, you may withdraw without giving a reason and at no cost. Access to the full version closes, and we refund the full price paid within 14 days.</p>
+  <div class="field"><label for="name"><span lang="fr">Nom et prénom</span><span lang="en">Full name</span></label>
+    <input type="text" id="name" autocomplete="name" required maxlength="200"></div>
+  <div class="field"><label for="email"><span lang="fr">Adresse e-mail de l’abonnement</span><span lang="en">Email address of the subscription</span></label>
+    <input type="email" id="email" autocomplete="email" required maxlength="254">
+    <span class="hint"><span lang="fr">L’accusé de réception y est envoyé aussitôt.</span><span lang="en">The acknowledgement is sent there at once.</span></span></div>
+  <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement</span><span lang="en">Subscription reference</span></label>
+    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off">
+    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement.</span><span lang="en">It is in the email that confirmed your subscription.</span></span></div>
+  <button type="submit" class="cx" id="send"><span lang="fr">Confirmer la rétractation</span><span lang="en">Confirm the withdrawal</span></button>
+  <p class="msg" id="msg" role="status"></p>
+  <p class="fine"><span lang="fr">Vous pouvez aussi envoyer le formulaire de rétractation qui figure à la fin des <a href="../cgv/">conditions générales de vente</a>, ou toute autre déclaration claire, à contact@copius.fr.</span><span lang="en">You can also send the withdrawal form at the end of the <a href="../cgv/">terms of sale</a>, or any other clear statement, to contact@copius.fr.</span></p>
+</form>
+
+<div id="done" hidden>
+  <p class="lede" id="doneText"></p>
+</div>
+</main>
+
+<footer>
+  <a href="../cgv/"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms of sale</span></a> ·
+  <a href="../resilier/"><span lang="fr">Résilier votre contrat</span><span lang="en">Cancel your contract</span></a> ·
+  <a href="mailto:contact@copius.fr">contact@copius.fr</a>
+</footer>
+
+<script>
+/* « Renoncer au contrat ici » (CGV article 7): name, address, reference, then
+   « Confirmer la rétractation » (api/withdraw.php). The answer is the same
+   whether or not the reference matches: the acknowledgement mail says what
+   was done. */
+(function () {
+  var M = {
+    fr: { fields: "Remplissez le nom, l’adresse e-mail et la référence.", wait: "Envoi…",
+      many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
+      fail: "La demande n’a pas pu partir. Réessayez dans un instant, ou écrivez à contact@copius.fr.",
+      done: "Votre rétractation est enregistrée, le {at}. Un accusé de réception part à {e}\u202F: il reprend votre déclaration et dit quand vous serez remboursé. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
+    en: { fields: "Fill in the name, the email address and the reference.", wait: "Sending…",
+      many: "Too many tries from this connection. Try again in a quarter of an hour.",
+      fail: "The request could not be sent. Try again in a moment, or write to contact@copius.fr.",
+      done: "Your withdrawal is recorded, on {at}. An acknowledgement is on its way to {e}: it repeats your statement and says when you will be refunded. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
+  };
+  var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
+  var L = function () { return M[root.lang] || M.fr; };
+  document.querySelectorAll("[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault(); root.lang = a.getAttribute("data-lang");
+      try { localStorage.setItem("atlas-lang", root.lang); } catch (x) {}
+    });
+  });
+  $("fill").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var t = L(), msg = $("msg"), btn = $("send");
+    var d = { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim(), lang: root.lang === "en" ? "en" : "fr" };
+    msg.className = "msg";
+    if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) || !d.ref) { msg.className = "msg err"; msg.textContent = t.fields; return; }
+    btn.disabled = true; msg.textContent = t.wait;
+    fetch("/api/withdraw.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) })
+      .then(function (r) { return r.status; }, function () { return 0; })
+      .then(function (s) {
+        if (s === 200) {
+          var at = new Intl.DateTimeFormat(root.lang === "en" ? "en-GB" : "fr-FR", { timeZone: "Europe/Paris",
+            day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date());
+          $("doneText").textContent = t.done.replace("{at}", at).replace("{e}", d.email);
+          $("fill").hidden = true; $("done").hidden = false; window.scrollTo(0, 0); return;
+        }
+        btn.disabled = false; msg.className = "msg err"; msg.textContent = s === 429 ? t.many : t.fail;
+      });
+  });
+})();
+</script>
+</body>
+</html>

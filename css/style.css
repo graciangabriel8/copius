@@ -923,6 +923,9 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
 .full-amount{font-family:var(--serif);font-size:20px;color:var(--ink)}
 .full-soon{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
+.full-order{margin-left:auto;padding:8px 18px;border-radius:999px;background:var(--ink);color:var(--bg);
+  font-size:14px;font-weight:600;text-decoration:none}
+.full-order:hover{opacity:.85}
 .full-free{margin:0;color:var(--ink-3);font-size:13.5px;line-height:1.55}
 
 /* Signing in: the form at the foot of the full-version dialog, the account,

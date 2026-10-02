@@ -54,18 +54,26 @@ function mime_word(string $s): string {
     return preg_match('/[^\x20-\x7e]/', $s) ? '=?UTF-8?B?' . base64_encode($s) . '?=' : $s;
 }
 
-/* The message, or null when any header value carries a line break or the
-   address is not the plain ASCII one the grant holds. */
+/* The sign-in message, or null when any header value carries a line break or
+   the address is not the plain ASCII one the grant holds. */
 function mail_message(string $to, string $lang, string $link): ?array {
     $lang = isset(MAIL_TEXT[$lang]) ? $lang : 'fr';
     $t = MAIL_TEXT[$lang];
+    if (!header_safe($link)) return null;
+    $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['ignore'], $t['bye'],
+        'Copius · contact@copius.fr']) . "\n";
+    return mail_build($to, $t['subject'], $text, fn(bool $banner): string => mail_html($t, $lang, $link, $banner));
+}
+
+/* Any Copius mail: the plain text and the HTML (built knowing whether the banner
+   travels with it), the banner as an inline part, the headers. Null when a
+   header value carries a line break or the address is not plain ASCII. */
+function mail_build(string $to, string $subject, string $text, callable $html): ?array {
     $from = (string)cfg('from'); $name = (string)cfg('from_name'); $reply = (string)cfg('reply_to');
-    if (!header_safe($to, $from, $name, $reply, $t['subject'], $link)) return null;
+    if (!header_safe($to, $from, $name, $reply, $subject)) return null;
     if (!preg_match('/^[\x21-\x7e]+@[\x21-\x7e]+$/', $to) || strpbrk($to, '<>,;"()[]\\') !== false) return null;
     $img = is_file(MAIL_BANNER) ? @file_get_contents(MAIL_BANNER) : false;
     if (!is_string($img) || strncmp($img, "\xFF\xD8", 2) !== 0) $img = false;    // empty or not a JPEG: no banner
-    $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['ignore'], $t['bye'],
-        'Copius · contact@copius.fr']) . "\n";
     $qp = fn(string $s): string => quoted_printable_encode(str_replace("\n", "\r\n", $s));
     /* "=_" never occurs in quoted-printable or base64, so no part can hold a boundary. */
     $id = bin2hex(random_bytes(8));
@@ -73,7 +81,7 @@ function mail_message(string $to, string $lang, string $link): ?array {
     $body = mime_parts("=_a$id", [
         "Content-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" . $qp($text),
         "Content-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" .
-            $qp(mail_html($t, $lang, $link, $img !== false)),
+            $qp($html($img !== false)),
     ]);
     if ($img !== false) {
         $body = mime_parts("=_r$id", [
@@ -86,7 +94,7 @@ function mail_message(string $to, string $lang, string $link): ?array {
     return [
         'to' => $to,
         'from' => $from,
-        'subject' => mime_word($t['subject']),
+        'subject' => mime_word($subject),
         'headers' => [
             'Date: ' . date('r'),
             'From: ' . mime_word($name) . " <$from>",

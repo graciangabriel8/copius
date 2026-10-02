@@ -19,6 +19,9 @@
      on that flag alone, never on which data happens to be present: the pairings,
      trees and views stay shut even if a paid record arrived without it. */
   var LOCKED = window.COPIUS_PREMIUM !== true;
+  /* Sales open with the launch push, which sets this to true (DESIGN-PAYMENT.md
+     section 9): the price then leads to the order page instead of « bientôt ». */
+  var PAYMENTS_LIVE = false;
   var LK = window.COPIUS_LOCKED || {};
   LK = {
     counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0 },
@@ -467,7 +470,7 @@
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
     el("fullBtn").hidden = !LOCKED;
-    el("fullBtn").innerHTML = LOCK_ICON + esc(t.fullBtn);
+    el("fullBtn").innerHTML = LOCK_ICON + esc(PAYMENTS_LIVE ? t.fullBtnLive : t.fullBtn);
     paintSeg("langToggle");
     /* An ended session says "sign in again", so its line opens the form. */
     var note = SESSION_NOTE[SESSION];
@@ -475,7 +478,7 @@
       ? (note ? (SESSION === "ended"
           ? '<button type="button" class="linkish tier-state" data-full>' + esc(t[note]) + "</button> "
           : '<strong class="tier-state">' + esc(t[note]) + "</strong> ") : "") +
-        esc(t.tierNote.replace("{n}", fmt(LK.counts.free))) : "";
+        esc((PAYMENTS_LIVE ? t.tierNoteLive : t.tierNote).replace("{n}", fmt(LK.counts.free))) : "";
     el("accountWrap").hidden = !hasMark();
     el("accountLink").textContent = t.accountLink;
     var t2 = t;
@@ -989,7 +992,8 @@
       '<p class="locked-kicker">' + LOCK_ICON + esc(t.lockedIn) + "</p>" +
       "<h2>" + esc(title) + "</h2>" +
       '<p class="locked-body">' + esc(body) + "</p>" +
-      '<p class="locked-price">' + esc(t.fullPrice) + " · " + esc(t.fullSoon) + "</p>" +
+      '<p class="locked-price">' + esc(t.fullPrice) + " · " +
+        (PAYMENTS_LIVE ? '<a href="commande/">' + esc(t.fullOrder) + "</a>" : esc(t.fullSoon)) + "</p>" +
       '<button type="button" class="m-lab-btn locked-open" data-full>' + esc(t.fullMore) + "</button>";
   }
 
@@ -1284,7 +1288,8 @@
     el("modalBody").innerHTML = head +
       '<ul class="full-list">' + rows.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>" +
       '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
-        '<span class="full-soon">' + esc(t.fullSoon) + "</span></p>" +
+        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.fullOrder) + "</a>"
+          : '<span class="full-soon">' + esc(t.fullSoon) + "</span>") + "</p>" +
       '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
   }
 
