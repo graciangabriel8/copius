@@ -54,6 +54,7 @@ $CFG = require PRIV . '/config.php';
 $KEY = @file_get_contents(PRIV . '/hmac.key');
 if (!is_string($KEY) || strlen($KEY) !== 32) {
     log_php('hmac.key is missing or not 32 bytes');
+    if (!isset($_SERVER['REQUEST_METHOD'])) { fwrite(fopen('php://stderr', 'w'), "hmac.key is missing or not 32 bytes\n"); exit(1); }
     http_response_code(503); api_headers(); exit;
 }
 
@@ -235,14 +236,16 @@ function prune_logs(): void {
     }
 }
 
-/* The deletions the privacy page promises (DESIGN.md section 2). A daily OVH
+/* The deletions the privacy page promises (DESIGN.md section 2). An hourly OVH
    scheduled task runs them through _purge.php, so they hold in a month with no
    sign-in at all; every endpoint that runs after its answer also calls
-   purge_soon(), which does the work at most once an hour in between. */
-function purge(): void {
+   purge_soon(), which does the work at most once an hour in between. Links go
+   at 23 hours, so with a run every hour none is older than the page's « sous
+   24 heures »; rate events keep their full 24 hours, which the limits count. */
+function purge(): bool {
     try {
         $n = now();
-        q('DELETE FROM login_tokens WHERE created < ?', [$n - 86400]);
+        q('DELETE FROM login_tokens WHERE created < ?', [$n - 23 * 3600]);
         q('DELETE FROM rate_events WHERE at < ?', [$n - 86400]);
         q('DELETE FROM sessions WHERE expires < ?', [$n]);
         /* A grant goes 12 months after a real end date; NULL, '' and
@@ -264,8 +267,10 @@ function purge(): void {
             q('DELETE FROM accounts WHERE id = ?', [$a['id']]);
         }
         prune_logs();
+        return true;
     } catch (Throwable $e) {
         log_php('purge: ' . describe($e));
+        return false;
     }
 }
 
