@@ -53,6 +53,9 @@ class Stub(http.server.SimpleHTTPRequestHandler):
                 return self.answer(int(MODE["me"]))
             me = {"email": "prof@ac-lyon.fr", "access": MODE["access"] == "1"}
             return self.answer(200, json.dumps(me).encode())
+        # The .htaccess rewrite: a browser carrying the marker gets the atlas at /.
+        if u.path == "/" and "__Host-copius_full=1" in [c.strip() for c in (self.headers.get("Cookie") or "").split(";")]:
+            self.path = "/atlas.html" + ("?" + u.query if u.query else "")
         return super().do_GET()
 
     def do_POST(self):

@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);var m=document.createElement("meta");m.name="theme-color";m.content=t==="dark"?"#14160F":"#F7F6F1";document.head.appendChild(m)}}catch(e){}</script>
+<script>
+/* A signed-in reader belongs on the atlas, which the server answers at this
+   same address. This page shown to one anyway came from a cache (Back, a copy
+   from before a sign-in, another tab that signed in) or from a server without
+   the .htaccess rule: atlas.html, which shows its address as / again. Never a
+   loop, since atlas.html is never sent back here. */
+(function () {
+  function go() { if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) location.replace("atlas.html" + location.hash); }
+  go();
+  window.addEventListener("pageshow", function (e) { if (e.persisted) go(); });
+  if (window.BroadcastChannel) new BroadcastChannel("copius-session").onmessage = go;
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Copius — an illustrated atlas of cooking</title>
 <meta name="description" content="An illustrated bilingual atlas of ingredients, techniques, bases and the people who cooked them. In progress.">
