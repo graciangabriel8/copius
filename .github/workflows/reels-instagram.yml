@@ -7,18 +7,21 @@ name: Reels to Instagram
 # documents. So this job, like the daily card, only calls the API.
 on:
   schedule:
-    # UTC, and early on purpose: the job holds until 15:30 in Paris, between
-    # lunch and dinner service, whatever the cron and the October change do.
+    # UTC, and early on purpose: the job holds until 12:00 in Paris, whatever
+    # the cron and the October change do. Noon since 3 Oct 2026: the salt reel,
+    # posted at 12:04 by hand, outdid the 09:43 and 17:13 ones; and the card
+    # posts at 17:00, so the two never land together.
     # GitHub starts these runs 3 to 6 h 36 late on this repository (see
     # daily-instagram.yml): a 12:05 cron began at 17:58 UTC on 30 Sept, and on
-    # 1 Oct had not begun by 15:10. Three morning starts, as for the card: one
-    # more than 5 h 35 before 15:30 steps aside, the first within reach waits,
-    # the later ones queue behind it and find the reel up. On time, the 08:05
-    # start posts in summer and the 10:05 one in winter; 3 to 7 h 25 late, the
-    # 06:05 start does. Off the top of the hour, which GitHub delays most.
+    # 1 Oct had not begun by 15:10. Three early starts, as for the card: one
+    # more than 5 h 35 before noon steps aside, the first within reach waits,
+    # the later ones queue behind it and find the reel up. On time, the 06:05
+    # start posts, summer and winter; up to 8 h late, the 02:05 or 04:05 one
+    # does, at most 5 min after noon. Off the top of the hour, which GitHub
+    # delays most.
+    - cron: "5 2 * * *"
+    - cron: "5 4 * * *"
     - cron: "5 6 * * *"
-    - cron: "5 8 * * *"
-    - cron: "5 10 * * *"
   workflow_dispatch:          # by hand: posts the day's reel, or a past day's, at once
     inputs:
       date:
@@ -95,25 +98,25 @@ jobs:
             fi
           } >> "$GITHUB_OUTPUT"
 
-      # 15:30 in Paris for a scheduled run; a run started by hand posts at once.
-      - name: Hold until 15:30 in Paris
+      # 12:00 in Paris for a scheduled run; a run started by hand posts at once.
+      - name: Hold until 12:00 in Paris
         id: hold
         if: github.event_name == 'schedule' && steps.pick.outputs.file != ''
         run: |
           set -euo pipefail
-          target="$(TZ=Europe/Paris date -d 'today 15:30' +%s)"
+          target="$(TZ=Europe/Paris date -d 'today 12:00' +%s)"
           now="$(date +%s)"
           wait=$(( target - now ))
           echo "now      $(TZ=Europe/Paris date -d "@$now" '+%F %H:%M %Z')"
           echo "posting  $(TZ=Europe/Paris date -d "@$target" '+%F %H:%M %Z')"
           if [ "$wait" -le 0 ]; then
-            echo "::warning::started at or after 15:30 Paris — posting now, $(( -wait / 60 )) min late"
+            echo "::warning::started at or after 12:00 Paris — posting now, $(( -wait / 60 )) min late"
             exit 0
           fi
           # Too early to wait inside GitHub's 6 h job limit: step aside, a later
           # start of the three posts the reel. Publish reads skip.
           if [ "$wait" -gt 20100 ]; then
-            echo "::notice::$(( wait / 60 )) min until 15:30 Paris — too early to wait; a later start posts the reel"
+            echo "::notice::$(( wait / 60 )) min until 12:00 Paris — too early to wait; a later start posts the reel"
             echo "skip=1" >> "$GITHUB_OUTPUT"
             exit 0
           fi
