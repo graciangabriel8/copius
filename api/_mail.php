@@ -198,13 +198,6 @@ function smtp_send(array $m, float $deadline): ?string {
     return $err;
 }
 
-/* PHP's mail(), for one message when SMTP has refused twice. It will likely
-   fail DMARC and land in spam, which still beats nothing (section 3). The
-   envelope sender is the sender mailbox, so bounces come back there. */
-function mail_fallback(array $m): bool {
-    return @mail($m['to'], $m['subject'], $m['body'], implode("\r\n", $m['headers']), '-f' . $m['from']);
-}
-
 /* The rig's transport: the message goes to a file in copius-private, never
    anywhere else. Production's config.php never sets it. */
 function mail_to_file(array $m): bool {
@@ -215,14 +208,15 @@ function mail_to_file(array $m): bool {
         "\r\n\r\n" . $m['body']);
 }
 
-/* Build and send one link; the outcome is a word for api.log. SMTP first; on a
-   refusal, one retry after about 60 s unless 60 s have already gone by, then
-   mail() unless 140 s have, all inside the 165 s execution limit. */
+/* Build and send one link; the outcome is a word for api.log. SMTP; on a
+   refusal, one retry after about 60 s unless 60 s have already gone by, inside
+   the 165 s execution limit. No other route: PHP's mail() would likely fail
+   DMARC, and its bounces could land in a mailbox the privacy page cannot
+   promise to empty; the reader asks for a new link instead. */
 function send_link(string $to, string $lang, string $link, float $t0): string {
     $m = mail_message($to, $lang, $link);
     if ($m === null) return 'header_refused';
     if (cfg('transport') === 'file') return mail_to_file($m) ? 'sent_file' : 'file_failed';
-    if (cfg('mail_test')) return mail_fallback($m) ? 'sent_mail_test' : 'mail_test_failed';
     $deadline = $t0 + 140;
     /* A connection reset mid-session still raises a warning in fgets() or
        fwrite(): it counts as a refusal like any other, never as an escape. */
@@ -238,6 +232,5 @@ function send_link(string $to, string $lang, string $link, float $t0): string {
         if ($err === null) return 'sent_retry';
         log_php('smtp retry ' . $err);
     }
-    if (microtime(true) - $t0 < 140 && mail_fallback($m)) return 'smtp_refused_mail';
     return 'smtp_refused';
 }

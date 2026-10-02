@@ -22,7 +22,7 @@ header_remove('X-Powered-By');
    PHP's own error_log setting never rotates (section 2, the logs). */
 /* A warning silenced with @ stays silent: PHP 8 still calls this handler for
    it, and throwing there would turn a refused SMTP connect into an exception
-   that skips the retry, the fallback and the purge. */
+   that skips the retry and the purge. */
 set_error_handler(function (int $no, string $msg, string $file, int $line): bool {
     if (!(error_reporting() & $no)) return false;
     throw new ErrorException($msg, 0, $no, $file, $line);
@@ -235,9 +235,10 @@ function prune_logs(): void {
     }
 }
 
-/* The deletions the privacy page promises (DESIGN.md section 2). There is no
-   cron, so every endpoint that runs after its answer calls purge_soon(), and
-   the work is done at most once an hour, whoever is using the site. */
+/* The deletions the privacy page promises (DESIGN.md section 2). A daily OVH
+   scheduled task runs them through _purge.php, so they hold in a month with no
+   sign-in at all; every endpoint that runs after its answer also calls
+   purge_soon(), which does the work at most once an hour in between. */
 function purge(): void {
     try {
         $n = now();

@@ -11,7 +11,7 @@
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
-<link rel="stylesheet" href="../css/page.css?v=210">
+<link rel="stylesheet" href="../css/page.css?v=211">
 <style>
   .lede{margin:0 0 24px;font:400 19px/1.5 var(--serif);color:var(--ink-2)}
   .sep{border:0;border-top:1px solid var(--border);margin:40px 0 32px}
@@ -33,7 +33,7 @@
 <h1 id="privacy-fr">Confidentialité</h1>
 <p class="switch"><a href="#privacy-en">Read this in English ↓</a></p>
 
-<p class="lede">Copius ne collecte rien sur vous. Il n’y a ni formulaire, ni liste de diffusion, ni traceur. La seule donnée personnelle que je détienne est celle que vous m’envoyez vous-même en écrivant à contact@copius.fr.</p>
+<p class="lede">Tant que vous n’utilisez pas le formulaire de connexion, Copius ne collecte rien sur vous en dehors des journaux techniques de l’hébergeur, décrits plus bas : ni compte, ni liste de diffusion, ni traceur. La version complète ne demande qu’une chose, votre adresse e-mail, pour vous connecter. Pour le reste, la seule donnée personnelle que je détienne est celle que vous m’envoyez vous-même en écrivant à contact@copius.fr.</p>
 
 <h2>Qui est responsable</h2>
 
@@ -61,6 +61,41 @@
   <dd>Écrivez-moi. Il n’y a pas de liste dont se désinscrire : dites-le et votre adresse est supprimée, sans justification à donner.</dd>
 </dl>
 
+<h2>Si vous demandez un lien de connexion</h2>
+
+<dl>
+  <dt>Ce qui est collecté</dt>
+  <dd>À chaque demande de lien : une empreinte de votre adresse IP et, si l’adresse saisie est bien formée, une empreinte de cette adresse e-mail avec votre adresse IP, qu’elle ait accès ou non. Quand un lien part, une empreinte de l’adresse e-mail seule. À chaque ouverture d’un lien : une empreinte de votre adresse IP. Une empreinte est un calcul à sens unique fait avec une clé secrète, jamais les adresses elles-mêmes. Aucun message ne part vers une adresse qui n’a pas accès.</dd>
+
+  <dt>Pourquoi, et sur quelle base</dt>
+  <dd>Seulement pour limiter le nombre de demandes, contre les abus : l’intérêt légitime à protéger le service, article 6-1-f du RGPD.</dd>
+
+  <dt>Combien de temps</dt>
+  <dd>24 heures.</dd>
+</dl>
+
+<h2>Si vous vous connectez à la version complète</h2>
+
+<dl>
+  <dt>Ce qui est collecté</dt>
+  <dd>Votre adresse e-mail, la langue du site au moment de la demande, la date de création de votre compte et celle de votre dernière connexion, ainsi que la date d’ouverture de votre accès, sa date de fin et une note interne (établissement, classe). Pour chaque appareil connecté, un identifiant de session tiré au hasard, avec ses dates de création et de dernière utilisation. Un journal technique des requêtes à la version complète (demande de lien, connexion, chargement, déconnexion), sans adresse e-mail ni adresse IP, avec le numéro de votre compte à la connexion et à la déconnexion.</dd>
+
+  <dt>Pourquoi</dt>
+  <dd>Pour vous envoyer le lien de connexion, vérifier que votre adresse a accès à la version complète, et vous garder connecté. Après la fin de l’accès, votre compte est gardé pour vous le rendre sans nouvelle inscription si vous le reprenez.</dd>
+
+  <dt>Sur quelle base</dt>
+  <dd>L’exécution du service que vous demandez, article 6-1-b du RGPD, ou, si votre établissement vous a ouvert l’accès, l’intérêt légitime à fournir le service convenu avec lui, article 6-1-f ; pour garder votre compte après la fin de l’accès, l’intérêt légitime à vous le rendre, article 6-1-f.</dd>
+
+  <dt>Qui d’autre y a accès</dt>
+  <dd>Personne. Ces données sont stockées chez OVHcloud, dans l’Union européenne, qui achemine aussi l’e-mail de connexion, envoyé depuis connexion@copius.fr. Aucun prestataire d’emailing, aucune publicité.</dd>
+
+  <dt>Combien de temps</dt>
+  <dd>Un lien de connexion vaut 15 minutes, ne sert qu’une fois et est effacé sous 24 heures. Une session prend fin quand vous vous déconnectez, ou après 30 jours sans utilisation. Le journal technique est effacé après 30 jours, et les messages revenus à l’adresse d’envoi sous deux mois. Votre compte, les dates de votre accès et la note sont gardés tant que vous avez accès à la version complète, puis effacés au plus tard douze mois après la fin de cet accès. Les sauvegardes de l’hébergeur s’effacent sous 30 jours.</dd>
+
+  <dt>Comment être retiré</dt>
+  <dd>« Se déconnecter partout » ferme toutes vos sessions. Pour effacer votre compte, écrivez-moi : il est supprimé sous un mois, avec votre accès, sans justification à donner.</dd>
+</dl>
+
 <h2>Vos droits</h2>
 
 <p>Vous pouvez à tout moment demander l’accès à vos données, leur rectification, leur effacement, la limitation de leur traitement, vous opposer à leur traitement, en demander la portabilité, et retirer votre consentement. Une demande à <a href="mailto:contact@copius.fr">contact@copius.fr</a> reçoit une réponse sous un mois.</p>
@@ -69,7 +104,7 @@
 
 <h2>Ce que le site fait sans vous demander</h2>
 
-<p><strong>Aucun traceur, aucun cookie publicitaire.</strong> Les seules statistiques de fréquentation sont celles que l’hébergeur tire de ses journaux techniques, décrites plus bas. Il n’y a pas de bandeau de cookies sur ce site parce qu’il n’y a rien à accepter.</p>
+<p><strong>Aucun traceur, aucun cookie publicitaire.</strong> Les seules statistiques de fréquentation sont celles que l’hébergeur tire de ses journaux techniques, décrites plus bas. Si vous vous connectez à la version complète, le site dépose deux cookies nécessaires à la connexion, dispensés de consentement : l’un garde votre session et reste illisible pour les scripts de la page, l’autre signale seulement à la page qu’une session existe. Ils durent 30 jours et sont effacés quand vous vous déconnectez. Il n’y a pas de bandeau de cookies sur ce site parce qu’il n’y a rien à accepter.</p>
 
 <p>L’atlas garde dans votre navigateur, et nulle part ailleurs, ce que vous y avez vous-même choisi ou créé : la langue, le thème clair ou sombre, vos favoris, et les fiches que vous créez vous-même, photos comprises. Il garde aussi une copie des pages que vous avez ouvertes, pour qu’elles s’affichent sans connexion : c’est un stockage technique nécessaire au fonctionnement du site, qui ne demande aucun consentement. Rien de tout cela ne quitte votre appareil, personne d’autre n’y a accès, et vider les données du site l’efface.</p>
 
@@ -82,7 +117,7 @@
 <h1>Privacy</h1>
 <p class="switch"><a href="#privacy-fr">Lire en français ↑</a></p>
 
-<p class="lede">Copius collects nothing about you. There is no form, no mailing list and no tracker. The only personal data I hold is what you send me yourself by writing to contact@copius.fr.</p>
+<p class="lede">Unless you use the sign-in form, Copius collects nothing about you beyond the host’s technical logs, described below: no account, no mailing list, no tracker. The full version asks for one thing, your email address, to sign you in. Beyond that, the only personal data I hold is what you send me yourself by writing to contact@copius.fr.</p>
 
 <h2>Who is responsible</h2>
 
@@ -110,6 +145,41 @@
   <dd>Write to me. There is no list to unsubscribe from: say so and the address is deleted, with no reason needed.</dd>
 </dl>
 
+<h2>If you ask for a sign-in link</h2>
+
+<dl>
+  <dt>What is collected</dt>
+  <dd>Each time a link is requested: a fingerprint of your IP address and, if the address typed is well formed, a fingerprint of that email address with your IP address, whether or not it has access. When a link is sent, a fingerprint of the email address alone. Each time a link is opened: a fingerprint of your IP address. A fingerprint is a one-way calculation made with a secret key, never the addresses themselves. No message is sent to an address that has no access.</dd>
+
+  <dt>What for, and on what basis</dt>
+  <dd>Only to limit how many requests can be made, against abuse: the legitimate interest in protecting the service, article 6(1)(f) GDPR.</dd>
+
+  <dt>For how long</dt>
+  <dd>24 hours.</dd>
+</dl>
+
+<h2>If you sign in to the full version</h2>
+
+<dl>
+  <dt>What is collected</dt>
+  <dd>Your email address, the site’s language when you asked, the date your account was created and the date you last signed in, as well as the date your access was opened, the date it ends and an internal note (school, class). For each signed-in device, a random session identifier with the dates it was created and last used. A technical log of the requests to the full version (link requests, sign-ins, loads, sign-outs), with no email address and no IP address, and your account number at sign-in and sign-out.</dd>
+
+  <dt>What for</dt>
+  <dd>To send you the sign-in link, check that your address has access to the full version, and keep you signed in. After your access ends, your account is kept so that it can be given back without a new sign-up if you take the access up again.</dd>
+
+  <dt>On what basis</dt>
+  <dd>Performance of the service you ask for, article 6(1)(b) GDPR, or, if your school opened the access for you, the legitimate interest in providing the service agreed with it, article 6(1)(f); for keeping your account after your access ends, the legitimate interest in giving it back to you, article 6(1)(f).</dd>
+
+  <dt>Who else has access</dt>
+  <dd>Nobody. This data is stored by OVHcloud, in the European Union, which also carries the sign-in email, sent from connexion@copius.fr. No emailing provider, no advertising.</dd>
+
+  <dt>For how long</dt>
+  <dd>A sign-in link works once, within 15 minutes, and is deleted within 24 hours. A session ends when you sign out, or after 30 days without use. The technical log is deleted after 30 days, and any messages returned to the sending address within two months. Your account, the dates of your access and the note are kept while you have access to the full version, then deleted at most twelve months after that access ends. The host’s backups are erased within 30 days.</dd>
+
+  <dt>How to be removed</dt>
+  <dd>“Sign out everywhere” closes all your sessions. To delete your account, write to me: it is deleted within one month, together with your access, with no reason needed.</dd>
+</dl>
+
 <h2>Your rights</h2>
 
 <p>At any time you may request access to your data, its correction, its erasure, restriction of its processing, object to the processing, request portability, and withdraw your consent. A request to <a href="mailto:contact@copius.fr">contact@copius.fr</a> is answered within one month.</p>
@@ -118,7 +188,7 @@
 
 <h2>What the site does without asking</h2>
 
-<p><strong>No trackers, no advertising cookies.</strong> The only visit statistics are the ones the host draws from its technical logs, described below. There is no cookie banner on this site because there is nothing to accept.</p>
+<p><strong>No trackers, no advertising cookies.</strong> The only visit statistics are the ones the host draws from its technical logs, described below. If you sign in to the full version, the site sets two cookies the sign-in needs, which are exempt from consent: one holds your session and cannot be read by the page’s scripts, the other only tells the page that a session exists. They last 30 days and are deleted when you sign out. There is no cookie banner on this site because there is nothing to accept.</p>
 
 <p>The atlas keeps in your browser, and nowhere else, what you chose or made there yourself: the language, the light or dark theme, your favourites, and the entries you create yourself, photos included. It also keeps a copy of the pages you have opened so they show without a connection: that is technical storage the site needs in order to work, which requires no consent. None of it ever leaves your device, nobody else can read it, and clearing the site’s data erases it.</p>
 
@@ -126,7 +196,7 @@
 
 </div>
 
-<p class="updated">Dernière mise à jour : 1er octobre 2026 · Last updated 1 October 2026</p>
+<p class="updated">Dernière mise à jour : 2 octobre 2026 · Last updated 2 October 2026</p>
 
 </main>
 

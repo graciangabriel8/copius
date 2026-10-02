@@ -804,6 +804,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .theme-ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 .foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+.foot-contact[hidden]{display:none}
 
 /* ---------- motion (v84): theme, ingredient of the day, search ---------- */
 /* Theme. The switch is instant, and that is the considered choice rather than
@@ -923,7 +924,30 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .full-amount{font-family:var(--serif);font-size:20px;color:var(--ink)}
 .full-soon{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
 .full-free{margin:0;color:var(--ink-3);font-size:13.5px;line-height:1.55}
+
+/* Signing in: the form at the foot of the full-version dialog, the account,
+   and the state a stub names at the head of the tier note. */
+.signin{margin:24px 0 0;padding:18px 0 0;border-top:1px solid var(--border)}
+.signin-head{margin:0 0 10px;color:var(--ink);font-size:15px}
+.signin-row{display:flex;flex-wrap:wrap;gap:8px}
+.signin-row input{flex:1 1 220px;min-width:0;padding:9px 14px;border-radius:999px;
+  border:1px solid var(--border-strong);background:var(--card);color:var(--ink);font:inherit;outline:none}
+.signin-row input:focus{border-color:var(--ink-3);box-shadow:0 0 0 3px var(--ring)}
+.signin-row button:disabled{opacity:.55;cursor:default}
+.signin-why{margin:10px 0 0;color:var(--ink-3);font-size:13px;line-height:1.5}
+.signin-why a{color:var(--ink-2);text-underline-offset:3px}
+.signin-sent{margin:12px 0 0;color:var(--ink);font-size:14px;line-height:1.55}
+.signin-sent:empty{margin:0}
+.signin-in{margin:22px 0 0;font-size:14px}
+.account-out{margin-top:8px}
+.account-out .m-lab-btn{margin-top:10px}
+.account-out .m-lab-btn:disabled{opacity:.55;cursor:default;background:var(--bg);
+  border-color:var(--border-strong);color:var(--ink-2)}
+.account-out .full-free{margin-top:8px}
+.tier-state{display:block;margin-bottom:4px;font-weight:600}
+button.tier-state{color:inherit;text-align:left;font-size:inherit}
 @media (max-width:720px){
+  .signin-row input{font-size:16px}
   .full-btn{min-height:44px}
   .locked-panel{padding:22px 20px}
   .locked-rows{grid-template-columns:1fr}

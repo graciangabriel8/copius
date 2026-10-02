@@ -34,6 +34,24 @@
   var LOCK_ICON = '<svg class="lock-ico" viewBox="0 0 16 16" aria-hidden="true">' +
     '<rect x="3" y="7.2" width="10" height="7" rx="1.6"/><path d="M5.4 7.2V5.1a2.6 2.6 0 0 1 5.2 0v2.1"/></svg>';
 
+  /* Signing in. The server sets two cookies: the session, which no script can
+     read, and __Host-copius_full, which only says that one exists and makes
+     atlas.html ask /api/premium.php for the bundle. An answer that is not the
+     bundle is a stub naming why (COPIUS_SESSION); a marker with no answer at
+     all means the request never came back: offline, or the server failing
+     outright, which reads like the database being down. There is no
+     separate sign-up: the account appears at the first sign-in of an address
+     that has access. */
+  /* A sign-in or sign-out in one tab reloads the site's other open tabs. A
+     broadcast rather than a localStorage stamp, so nothing is left stored. */
+  var SESSION_CH = window.BroadcastChannel ? new BroadcastChannel("copius-session") : null;
+  function hasMark() { return /(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie); }
+  var MARK_AT_LOAD = hasMark();
+  var SESSION = window.COPIUS_SESSION ||
+    (MARK_AT_LOAD && LOCKED ? (navigator.onLine === false ? "offline" : "unavailable") : "");
+  var SESSION_NOTE = { ended: "sessionEnded", noaccess: "sessionNoAccess",
+                       unavailable: "sessionUnavailable", offline: "sessionOffline" };
+
   /* A data file that fails to load says nothing: its family is simply absent and
      the count quietly drops, which is how one bad fetch of data-vegetables.js
      turned into an atlas with no vegetables in it and a search that could not
@@ -451,8 +469,15 @@
     el("fullBtn").hidden = !LOCKED;
     el("fullBtn").innerHTML = LOCK_ICON + esc(t.fullBtn);
     paintSeg("langToggle");
-    el("tierNote").textContent = LOCKED
-      ? t.tierNote.replace("{n}", fmt(LK.counts.free)) : "";
+    /* An ended session says "sign in again", so its line opens the form. */
+    var note = SESSION_NOTE[SESSION];
+    el("tierNote").innerHTML = LOCKED
+      ? (note ? (SESSION === "ended"
+          ? '<button type="button" class="linkish tier-state" data-full>' + esc(t[note]) + "</button> "
+          : '<strong class="tier-state">' + esc(t[note]) + "</strong> ") : "") +
+        esc(t.tierNote.replace("{n}", fmt(LK.counts.free))) : "";
+    el("accountWrap").hidden = !hasMark();
+    el("accountLink").textContent = t.accountLink;
     var t2 = t;
     fillSel("priceBand", [["all", t2.fAllPrices], ["1", t2.p1], ["2", t2.p2], ["3", t2.p3], ["4", t2.p4]], state.priceBand);
     /* Built from the tags that exist rather than a hand-kept list, so a new
@@ -1260,16 +1285,100 @@
       '<ul class="full-list">' + rows.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>" +
       '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
         '<span class="full-soon">' + esc(t.fullSoon) + "</span></p>" +
-      '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>";
+      '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
+  }
+
+  /* One field, one button, one line on what the address is for, and one
+     message after the submit, the same whatever the address: the page never
+     learns whether it has access. Signed in already, the account instead. */
+  function signinBlock(t) {
+    if (hasMark()) {
+      return '<p class="signin-in"><button type="button" class="linkish" data-account>' +
+        esc(t.accountLink) + "</button></p>";
+    }
+    return '<form class="signin" data-signin>' +
+      '<p class="signin-head" id="signinHead">' + esc(t.signinHead) + "</p>" +
+      '<div class="signin-row"><input type="email" name="email" required autocomplete="email" ' +
+        'spellcheck="false" aria-label="' + esc(t.signinPlaceholder) + '" aria-describedby="signinHead" ' +
+        'placeholder="' + esc(t.signinPlaceholder) + '">' +
+        '<button type="submit" class="create-btn">' + esc(t.signinBtn) + "</button></div>" +
+      '<p class="signin-why">' + esc(t.signinWhy) + ' <a href="confidentialite/">' + esc(t.privacyLink) + "</a></p>" +
+      '<p class="signin-sent" role="status"></p></form>';
+  }
+
+  /* The account: who is signed in, and the two ways out. /api/me.php is asked
+     once per opening; a language switch redraws from the answer already held. */
+  var ME = null;
+  function renderAccountModal() {
+    var t = T(), html = '<div class="bm-head"><h2 id="modalTitle">' + esc(t.accountTitle) + "</h2></div>";
+    if (!ME) {
+      el("modalBody").innerHTML = html + '<p class="dm-sum" aria-busy="true">…</p>';
+      /* Anything but a JSON answer carrying an address (offline, an error page)
+         is a failure, never the signed-in view with nothing in it. */
+      fetch("/api/me.php", { credentials: "same-origin", cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : { status: r.status }; })
+        .then(function (m) { return m && typeof m.email === "string" ? m : { status: (m && m.status) || -1 }; })
+        .catch(function () { return { status: -1 }; })
+        .then(function (m) {
+          ME = m;
+          /* No session behind the marker: drop the marker too, so the page
+             stops offering an account that is not there. */
+          if (m.status === 401) document.cookie = "__Host-copius_full=; Max-Age=0; Path=/; Secure";
+          var top = modalTop();
+          if (top && top.kind === "account" && !el("overlay").hidden) { showModal(); applyStatic(); }
+        });
+      return;
+    }
+    if (ME.status) {
+      /* After a 401 the marker is gone, so signinBlock gives the form back. */
+      el("modalBody").innerHTML = html + '<p class="dm-sum">' +
+        esc(t[ME.status === 401 ? "sessionEnded" : navigator.onLine === false ? "sessionOffline" : "sessionUnavailable"]) +
+        "</p>" + (ME.status === 401 ? signinBlock(t) : "");
+      return;
+    }
+    el("modalBody").innerHTML = html +
+      '<p class="dm-sum">' + esc(t.accountAs).replace("{email}", function () {
+        return "<strong>" + esc(ME.email) + "</strong>";
+      }) + "</p>" +
+      '<p class="dm-sum">' + esc(ME.access ? t.accountFull : t.sessionNoAccess) + "</p>" +
+      '<div class="account-out">' +
+        '<button type="button" class="m-lab-btn" data-signout>' + esc(t.signOut) + "</button>" +
+        '<button type="button" class="m-lab-btn" data-signout="all">' + esc(t.signOutAll) + "</button>" +
+        '<p class="full-free">' + esc(t.signOutAllHint) + "</p>" +
+        '<p class="signin-sent" role="status"></p></div>';
+  }
+
+  /* After the server has cleared both cookies, the page reloads from the
+     start, and the site's other open tabs do the same. Both buttons wait for
+     the answer: a single sign-out landing first would leave "everywhere" with
+     no session to act on. */
+  function signOut(all, btn) {
+    var box = btn.parentNode, both = box.querySelectorAll("[data-signout]");
+    function enable(on) { for (var k = 0; k < both.length; k++) both[k].disabled = !on; }
+    enable(false);
+    fetch("/api/logout.php", { method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ all: all }) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("logout " + r.status);
+        if (SESSION_CH) SESSION_CH.postMessage("changed");
+        location.replace("atlas.html");
+      })
+      .catch(function () {
+        enable(true);
+        var out = box.querySelector(".signin-sent");
+        if (out) out.textContent = T().signOutFailed;
+      });
   }
 
   /* One dialog, three kinds of entry. showModal draws whatever is on top of
      the stack; openItem pushes, backModal pops, closeModal empties. Focus goes
      to ✕ on open and back to the control that opened the dialog on close. */
-  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal, full: renderFullModal };
+  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal, full: renderFullModal,
+                 account: renderAccountModal };
   var LOOKUP = { ing: function (id) { return byId[id]; }, tech: function (id) { return techById[id]; },
                  base: function (id) { return baseById[id]; },
-                 full: function (id) { return LOCKED && (!id || !!PAID[id]); } };
+                 full: function (id) { return LOCKED && (!id || !!PAID[id]); },
+                 account: function () { return true; } };
   var opener = null;
   /* Give every stroke the same nominal length so one animation duration suits
      a two-stroke leaf and a twenty-stroke artichoke. Cheap: one modal's worth
@@ -2408,6 +2517,10 @@
     }
     /* A paid name opens the full-version panel naming it; anything else marked
        data-full opens it plain. Inside the dialog it stacks, so ← comes back. */
+    var ac = e.target.closest("[data-account]");
+    if (ac) { ME = null; openItem("account", ""); return; }
+    var so = e.target.closest("[data-signout]");
+    if (so) { signOut(so.getAttribute("data-signout") === "all", so); return; }
     var lk = e.target.closest("[data-locked]");
     if (lk) { openItem("full", lk.getAttribute("data-locked")); return; }
     var fu = e.target.closest("[data-full]");
@@ -2642,6 +2755,28 @@
       e.preventDefault();
       el("search").focus();
     }
+  });
+
+  /* The sign-in form. Whatever the server says about the address, the page
+     says the same thing; only a request that never went through (offline, or
+     too many from this connection) says so instead. */
+  document.body.addEventListener("submit", function (e) {
+    var f = e.target.closest("[data-signin]");
+    if (!f) return;
+    e.preventDefault();
+    var btn = f.querySelector("button"), out = f.querySelector(".signin-sent"), t = T();
+    btn.disabled = true;
+    fetch("/api/login.php", { method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: f.elements.email.value.trim(), lang: state.lang }) })
+      .then(function (r) { return r.ok; }, function () { return false; })
+      .then(function (ok) { btn.disabled = false; out.textContent = ok ? t.signinSent : t.signinFailed; });
+  });
+  /* A sign-in or sign-out in one tab reloads the others; so does a page the
+     back button brings back from memory with a marker that has since changed. */
+  if (SESSION_CH) SESSION_CH.onmessage = function () { location.reload(); };
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted && hasMark() !== MARK_AT_LOAD) location.reload();
   });
 
   /* ---------- init ---------- */
