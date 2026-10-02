@@ -1361,7 +1361,8 @@
       .then(function (r) {
         if (!r.ok) throw new Error("logout " + r.status);
         if (SESSION_CH) SESSION_CH.postMessage("changed");
-        location.replace("atlas.html");
+        /* Signed out, copius.fr/ is the landing page again. */
+        location.replace("/");
       })
       .catch(function () {
         enable(true);

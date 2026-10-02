@@ -29,6 +29,13 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
   # /api/ sets its own: this line would add a second Cache-Control to a script's
   # answer, and "always set" would replace it (tools/validate.js checks both).
   Header set Cache-Control "max-age=600" "expr=%{REQUEST_URI} !~ m#^/api/#"
+  # copius.fr/ is two pages at one address: the landing page, or the atlas for a
+  # browser that says it is signed in (the rewrite below). Checked with the server
+  # on every visit and keyed on the cookie, so no cache, the browser's or the
+  # service worker's network fetch, hands one of them to the other kind of
+  # visitor. THE_REQUEST, because the rewrite changes the URI this sees.
+  Header set Cache-Control "no-cache" "expr=%{THE_REQUEST} =~ m#^[A-Z]+ /([?][^ ]*)? #"
+  Header merge Vary "Cookie" "expr=%{THE_REQUEST} =~ m#^[A-Z]+ /([?][^ ]*)? #"
   <Files "service-worker.js">
     Header set Cache-Control "no-cache"
   </Files>
@@ -65,6 +72,12 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
   # and the next and nothing else, so the ones still ahead cannot leak once the
   # repository is private. After the redirects, so a card URL is canonical first.
   RewriteRule ^social/([a-z0-9-]+(\.2)?\.jpg)$ /api/card.php?f=$1 [L]
+  # A signed-in reader opens copius.fr/ on the atlas itself, the address bar
+  # unchanged. The cookie only says a session exists and is readable by scripts;
+  # the server still checks the session before it sends anything paid
+  # (api/premium.php). Without it, crawlers included, / is the landing page.
+  RewriteCond %{HTTP_COOKIE} (^|;\s*)__Host-copius_full=1(;|$)
+  RewriteRule ^$ /atlas.html [L]
   # A folder with no index.html is a 404 on Pages; here it would be a 403.
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html !-f
