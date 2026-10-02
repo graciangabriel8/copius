@@ -27,6 +27,9 @@ on:
       date:
         description: "Post the reel scheduled for this date (YYYY-MM-DD, today or earlier). Empty: today."
         required: false
+      id:
+        description: "Or post the reel with this id at once, whatever its date and even if a reel went out today (a byhand entry, such as the Copius film)."
+        required: false
 
 concurrency:
   # Scheduled starts queue in one lane; a run started by hand has its own, so
@@ -48,6 +51,7 @@ jobs:
         id: pick
         env:
           INPUT_DATE: ${{ inputs.date }}
+          INPUT_ID: ${{ inputs.id }}
         run: |
           set -euo pipefail
           TODAY="$(TZ=Europe/Paris date +%F)"
@@ -63,14 +67,18 @@ jobs:
           fi
           # file, id, cover and the number of reels still to come, from one read
           # of the file; an assignment, so a failing read stops the step under set -e
-          OUT="$(python3 - "$DATE" <<'PY'
+          OUT="$(python3 - "$DATE" "${INPUT_ID:-}" <<'PY'
           import json, sys
-          d = sys.argv[1]
+          d, want = sys.argv[1], sys.argv[2]
           rs = json.load(open("social/reels.json"))["reels"]
-          hit = [r for r in rs if r["date"] == d]
+          # A "byhand" entry (the Copius film) is posted only when named by id,
+          # never by its date; a named id is found whatever its date.
+          hit = [r for r in rs if r["id"] == want] if want else [r for r in rs if r["date"] == d and not r.get("byhand")]
           if len(hit) > 1:
-              sys.exit("two reels scheduled on " + d)
-          left = sum(1 for r in rs if r["date"] > d)
+              sys.exit("two reels match " + (want or d))
+          if want and not hit:
+              sys.exit("no reel with id " + want + " in social/reels.json")
+          left = sum(1 for r in rs if r["date"] > d and not r.get("byhand"))
           h = hit[0] if hit else {}
           print(h.get("file", "-"), h.get("id", "-"), h.get("cover", "-"), left)
           PY
@@ -87,7 +95,7 @@ jobs:
           if [ "$COVER" != "-" ]; then
             test -f "$COVER" || { echo "::error::cover $COVER is scheduled on $DATE but is not in the repository"; exit 1; }
           fi
-          python3 tools/make-card.py --caption-id "$ID" >/dev/null   # fails now, not after the wait
+          python3 tools/reel-caption.py "$ID" >/dev/null           # fails now, not after the wait
           {
             echo "file=$FILE"
             echo "id=$ID"
@@ -134,12 +142,13 @@ jobs:
           COVER: ${{ steps.pick.outputs.cover }}
           COVER_BYTES: ${{ steps.pick.outputs.cover_bytes }}
           EVENT: ${{ github.event_name }}
+          BY_ID: ${{ inputs.id }}
         run: |
           set -euo pipefail
           : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
           : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN repository secret}"
           URL="https://copius.fr/$FILE"
-          CAPTION="$(python3 tools/make-card.py --caption-id "$ID")"
+          CAPTION="$(python3 tools/reel-caption.py "$ID")"
           test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
 
           # 0. are the video and its cover live, and are they these? Instagram
@@ -186,6 +195,10 @@ jobs:
           if [ "$SEEN" = "a reel today" ] && [ "$EVENT" = "schedule" ]; then
             # the day's own reel is skipped, and its date then lies in the past
             echo "::warning::$ID ($FILE) not posted: another reel went out today — dispatch it by hand tomorrow, or move its date in social/reels.json"; exit 0
+          fi
+          # A reel named by id goes out even after the day's reel; never twice.
+          if [ "$SEEN" = "a reel today" ] && [ -n "${BY_ID:-}" ]; then
+            echo "a reel went out today already; $ID was named by hand, so it goes out too"; SEEN=""
           fi
           if [ -n "$SEEN" ]; then
             echo "::notice::already up: $SEEN — nothing to do"; exit 0

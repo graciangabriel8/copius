@@ -10,6 +10,7 @@
     {"date": "2026-10-07", "file": "social/reels/fraise.mp4", "cover": "social/reels/fraise-cover.jpg", "id": "strawberry"},
     {"date": "2026-10-08", "file": "social/reels/banane.mp4", "cover": "social/reels/banane-cover.jpg", "id": "banana"},
     {"date": "2026-10-09", "file": "social/reels/ananas.mp4", "cover": "social/reels/ananas-cover.jpg", "id": "pineapple"},
-    {"date": "2026-10-10", "file": "social/reels/figue.mp4", "cover": "social/reels/figue-cover.jpg", "id": "fig"}
+    {"date": "2026-10-10", "file": "social/reels/figue.mp4", "cover": "social/reels/figue-cover.jpg", "id": "fig"},
+    {"date": "2026-10-02", "file": "social/reels/copius-film-en.mp4", "cover": "social/reels/copius-film-en-cover.jpg", "id": "copius-film-en", "byhand": true, "caption": "Copius, an illustrated atlas of cooking. 1,888 ingredients, 13,200 pairings, 135 techniques, 68 chefs. copius.fr"}
   ]
 }
