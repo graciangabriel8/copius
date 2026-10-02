@@ -1,0 +1,114 @@
+name: Instagram insights
+
+# By hand only: the last posts' numbers (views, reach, likes, comments, saves,
+# shares; for reels also watch time and skip rate), to compare what worked.
+# This repository is public, and so are its logs and artifacts, while most of
+# these numbers are not: the report leaves the job only encrypted to the key in
+# .github/insights-pub.pem, whose private half is on the owner's Mac
+# (~/.copius-insights, read by ~/Projets/copius-reels/tools/insights.sh).
+# The log says how many posts were read, nothing else. Read-only on Instagram.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many of the latest posts (1 to 30)"
+        required: false
+        default: "15"
+
+concurrency:
+  group: insights-instagram
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the numbers
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?set the IG_USER_ID repository secret}"
+          : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN repository secret}"
+          python3 - <<'PY'
+          import json, os, urllib.error, urllib.parse, urllib.request
+          API = "https://graph.instagram.com/v23.0/"
+          TOKEN = os.environ["IG_ACCESS_TOKEN"]
+          try:
+              limit = max(1, min(30, int(os.environ.get("LIMIT") or 15)))
+          except ValueError:
+              limit = 15
+
+          def get(path, **q):
+              """One GET; an API error comes back as {'error': ...} with no token in it."""
+              q["access_token"] = TOKEN
+              url = API + path + "?" + urllib.parse.urlencode(q)
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as r:
+                      return json.load(r)
+              except urllib.error.HTTPError as e:
+                  try:
+                      err = json.load(e).get("error", {})
+                  except Exception:
+                      err = {}
+                  return {"error": {"code": err.get("code", e.code), "message": str(err.get("message", ""))[:200]}}
+              except Exception as e:
+                  return {"error": {"code": -1, "message": type(e).__name__}}
+
+          FEED = ["views", "reach", "likes", "comments", "saved", "shares", "total_interactions"]
+          REEL = FEED + ["ig_reels_avg_watch_time", "ig_reels_video_view_total_time", "reels_skip_rate"]
+          media = get(os.environ["IG_USER_ID"] + "/media", limit=limit,
+                      fields="id,media_type,media_product_type,timestamp,caption,permalink")
+          if "error" in media:
+              raise SystemExit("media list failed: %s" % media["error"])
+          # A metric this API version refuses for a kind of post fails the whole
+          # call (error 100). Then each metric is tried alone, once: one that
+          # fails while another answers is refused for that kind (reel, image,
+          # carousel, video) for the rest of the run. A post where every metric
+          # fails (too new, a rate limit, a timeout) is an error on its own row
+          # and teaches nothing. Worst case about 2 + 10 calls per kind.
+          refused, out = {}, []
+          for m in media.get("data", [])[:limit]:
+              key = "REELS" if m.get("media_product_type") == "REELS" else (m.get("media_type") or "FEED")
+              want = [x for x in (REEL if key == "REELS" else FEED) if x not in refused.get(key, ())]
+              r = get(m["id"] + "/insights", metric=",".join(want))
+              if r.get("error", {}).get("code") == 100 and len(want) > 1:
+                  alone = {x: "error" not in get(m["id"] + "/insights", metric=x) for x in want}
+                  if any(alone.values()):
+                      refused.setdefault(key, set()).update(x for x, ok in alone.items() if not ok)
+                      r = get(m["id"] + "/insights", metric=",".join(x for x, ok in alone.items() if ok))
+              vals = {d["name"]: (d.get("values") or [{}])[0].get("value") for d in r.get("data", [])}
+              out.append({"id": m["id"], "kind": "REELS" if key == "REELS" else "FEED", "type": m.get("media_type"),
+                          "at": m.get("timestamp"), "caption": (m.get("caption") or "")[:80],
+                          "permalink": m.get("permalink"), "metrics": vals, "error": r.get("error")})
+          json.dump({"refused": {k: sorted(v) for k, v in refused.items()}, "posts": out}, open("insights.json", "w"))
+          print("read %d post(s), %d with an error; %d metric(s) refused" % (
+              len(out), sum(1 for p in out if p["error"]), sum(len(v) for v in refused.values())))
+          PY
+
+      - name: Encrypt the report
+        run: |
+          set -euo pipefail
+          K="$(openssl rand -hex 32)"; IV="$(openssl rand -hex 16)"
+          openssl enc -aes-256-cbc -K "$K" -iv "$IV" -in insights.json -out insights.json.enc
+          printf '%s:%s' "$K" "$IV" | openssl pkeyutl -encrypt -pubin -inkey .github/insights-pub.pem \
+            -pkeyopt rsa_padding_mode:oaep -out insights.key.enc
+          rm -f insights.json
+          ls -l insights.json.enc insights.key.enc | awk '{print $5, $9}'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: insights
+          path: |
+            insights.json.enc
+            insights.key.enc
+          retention-days: 1
+          if-no-files-found: error
