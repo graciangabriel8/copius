@@ -7,22 +7,42 @@
    - AUTH only inside that TLS, and the password in no log and no error string;
    - every reply code checked, and the first unexpected one ends the session;
    - CR and LF refused in every header value before anything is written;
-   - the body quoted-printable UTF-8 with CRLF endings, and dot-stuffed;
+   - the text and HTML parts quoted-printable UTF-8 with CRLF endings, the
+     banner base64, and the whole message dot-stuffed;
    - a timeout on the connect and on each read, inside the request's time. */
 declare(strict_types=1);
 
+/* One set of words per language: the plain-text part and the HTML part are
+   both built from it, so the two never say different things. */
 const MAIL_TEXT = [
-    'fr' => ["Votre lien de connexion à Copius",
-             "Bonjour,\n\nVoici votre lien pour vous connecter à la version complète de Copius\u{00A0}:\n\n{link}\n\n" .
-             "Il est valable 15 minutes et ne sert qu’une fois. Ouvrez-le sur l’appareil où vous lisez Copius.\n\n" .
-             "Vous n’avez rien demandé\u{202F}? Ignorez ce message\u{00A0}: sans ce lien, personne ne peut se connecter à votre place.\n\n" .
-             "Copius · contact@copius.fr\n"],
-    'en' => ["Your Copius sign-in link",
-             "Hello,\n\nHere is your link to sign in to the full version of Copius:\n\n{link}\n\n" .
-             "It works once, within 15 minutes. Open it on the device where you read Copius.\n\n" .
-             "Didn’t ask for this? Ignore this email: without the link, nobody can sign in as you.\n\n" .
-             "Copius · contact@copius.fr\n"],
+    'fr' => [
+        'subject' => "Votre lien de connexion à Copius",
+        'alt'     => "Copius, un atlas illustré de la cuisine",
+        'hello'   => "Bonjour,",
+        'lead'    => "Voici votre lien pour vous connecter à la version complète de Copius.",
+        'button'  => "Me connecter",
+        'expiry'  => "Il est valable 15 minutes et ne sert qu’une fois. Ouvrez-le sur l’appareil où vous lisez Copius.",
+        'copy'    => "Le bouton ne s’ouvre pas\u{202F}? Copiez cette adresse dans votre navigateur\u{00A0}:",
+        'ignore'  => "Vous n’avez rien demandé\u{202F}? Ignorez ce message\u{00A0}: sans ce lien, personne ne peut se connecter à votre place.",
+        'bye'     => "Bonne lecture, et bonne cuisine.",
+    ],
+    'en' => [
+        'subject' => "Your Copius sign-in link",
+        'alt'     => "Copius, an illustrated atlas of cooking",
+        'hello'   => "Hello,",
+        'lead'    => "Here is your link to sign in to the full version of Copius.",
+        'button'  => "Sign me in",
+        'expiry'  => "It works once, within 15 minutes. Open it on the device where you read Copius.",
+        'copy'    => "Button not opening? Copy this address into your browser:",
+        'ignore'  => "Didn’t ask for this? Ignore this email: without the link, nobody can sign in as you.",
+        'bye'     => "Happy reading, and happy cooking.",
+    ],
 ];
+
+/* The banner on top of the HTML part travels inside the message (a cid: part),
+   so opening the mail fetches nothing from anywhere. A name starting with "_"
+   is never served. Missing, the mail goes without it. */
+const MAIL_BANNER = __DIR__ . '/_mail-banner.jpg';
 
 function header_safe(string ...$values): bool {
     foreach ($values as $v) if (preg_match('/[\r\n\0]/', $v)) return false;
@@ -37,27 +57,97 @@ function mime_word(string $s): string {
 /* The message, or null when any header value carries a line break or the
    address is not the plain ASCII one the grant holds. */
 function mail_message(string $to, string $lang, string $link): ?array {
-    [$subject, $text] = MAIL_TEXT[$lang] ?? MAIL_TEXT['fr'];
+    $lang = isset(MAIL_TEXT[$lang]) ? $lang : 'fr';
+    $t = MAIL_TEXT[$lang];
     $from = (string)cfg('from'); $name = (string)cfg('from_name'); $reply = (string)cfg('reply_to');
-    if (!header_safe($to, $from, $name, $reply, $subject, $link)) return null;
+    if (!header_safe($to, $from, $name, $reply, $t['subject'], $link)) return null;
     if (!preg_match('/^[\x21-\x7e]+@[\x21-\x7e]+$/', $to) || strpbrk($to, '<>,;"()[]\\') !== false) return null;
-    $body = str_replace("\n", "\r\n", str_replace('{link}', $link, $text));
+    $img = is_file(MAIL_BANNER) ? @file_get_contents(MAIL_BANNER) : false;
+    if (!is_string($img) || strncmp($img, "\xFF\xD8", 2) !== 0) $img = false;    // empty or not a JPEG: no banner
+    $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['ignore'], $t['bye'],
+        'Copius · contact@copius.fr']) . "\n";
+    $qp = fn(string $s): string => quoted_printable_encode(str_replace("\n", "\r\n", $s));
+    /* "=_" never occurs in quoted-printable or base64, so no part can hold a boundary. */
+    $id = bin2hex(random_bytes(8));
+    $type = "multipart/alternative; boundary=\"=_a$id\"";
+    $body = mime_parts("=_a$id", [
+        "Content-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" . $qp($text),
+        "Content-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" .
+            $qp(mail_html($t, $lang, $link, $img !== false)),
+    ]);
+    if ($img !== false) {
+        $body = mime_parts("=_r$id", [
+            "Content-Type: $type\r\n\r\n" . $body,
+            "Content-Type: image/jpeg\r\nContent-Transfer-Encoding: base64\r\nContent-ID: <banner@copius.fr>\r\n" .
+                "Content-Disposition: inline; filename=\"copius.jpg\"\r\n\r\n" . rtrim(chunk_split(base64_encode($img), 76, "\r\n")),
+        ]);
+        $type = "multipart/related; boundary=\"=_r$id\"; type=\"multipart/alternative\"";
+    }
     return [
         'to' => $to,
         'from' => $from,
-        'subject' => mime_word($subject),
+        'subject' => mime_word($t['subject']),
         'headers' => [
             'Date: ' . date('r'),
             'From: ' . mime_word($name) . " <$from>",
             "Reply-To: $reply",
             'Message-ID: <' . bin2hex(random_bytes(12)) . '@copius.fr>',
             'MIME-Version: 1.0',
-            'Content-Type: text/plain; charset=UTF-8',
-            'Content-Transfer-Encoding: quoted-printable',
+            "Content-Type: $type",
             'Auto-Submitted: auto-generated',
         ],
-        'body' => quoted_printable_encode($body),
+        'body' => $body,
     ];
+}
+
+function mime_parts(string $boundary, array $parts): string {
+    return "--$boundary\r\n" . implode("\r\n--$boundary\r\n", $parts) . "\r\n--$boundary--\r\n";
+}
+
+/* The HTML part: tables and inline styles, the only layout every mail app
+   keeps; the site's paper, ink and olive. Every word is escaped. Outlook for
+   Windows (Word's engine) ignores max-width and padding on a link, and takes
+   only the first font named: the [if mso] table fixes the card at 560 px,
+   mso-padding-alt pads the button's cell, and each font stack starts with a
+   font Windows has. */
+function mail_html(array $t, string $lang, string $link, bool $banner): string {
+    $e = fn(string $s): string => htmlspecialchars($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $l = $e($link);
+    $serif = "font-family:Georgia,'Times New Roman',serif";
+    $sans = 'font-family:Arial,Helvetica,sans-serif';
+    $top = $banner
+        ? '<tr><td style="padding:0"><img src="cid:banner@copius.fr" width="560" alt="' . $e($t['alt']) . '" ' .
+          'style="display:block;width:100%;max-width:560px;height:auto;border:0;border-radius:8px 8px 0 0"></td></tr>'
+        : '<tr><td style="padding:32px 32px 0;' . $serif . ';font-size:30px;letter-spacing:.12em;color:#1E211A">COPIUS</td></tr>';
+    return <<<HTML
+<!doctype html>
+<html lang="$lang"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>{$e($t['subject'])}</title></head>
+<body style="margin:0;padding:0;background:#F7F6F1">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F7F6F1"><tr><td align="center" style="padding:24px 12px">
+<!--[if mso]><table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background:#FFFEFC;border:1px solid #E5E7DA;border-radius:8px">
+$top
+<tr><td style="padding:28px 32px 4px;$serif;font-size:17px;line-height:1.6;color:#1E211A">
+<p style="margin:0 0 12px">{$e($t['hello'])}</p>
+<p style="margin:0 0 24px">{$e($t['lead'])}</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#4F5B3F" style="border-radius:6px;background:#4F5B3F;mso-padding-alt:13px 28px">
+<a href="$l" style="display:inline-block;padding:13px 28px;$sans;font-size:15px;font-weight:600;color:#FFFEFC;text-decoration:none;border-radius:6px">{$e($t['button'])}</a>
+</td></tr></table>
+<p style="margin:22px 0 0;font-size:15px;color:#565A4C">{$e($t['expiry'])}</p>
+</td></tr>
+<tr><td style="padding:20px 32px 0;$sans;font-size:13px;line-height:1.5;color:#6A6E5F">
+<p style="margin:0 0 4px">{$e($t['copy'])}</p>
+<p style="margin:0 0 16px;word-break:break-all"><a href="$l" style="color:#4F5B3F">$l</a></p>
+<p style="margin:0">{$e($t['ignore'])}</p>
+</td></tr>
+<tr><td style="padding:24px 32px 30px;$serif;font-size:17px;color:#1E211A">{$e($t['bye'])}</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+<p style="margin:16px 0 0;$sans;font-size:12px;color:#6A6E5F">Copius · <a href="mailto:contact@copius.fr" style="color:#6A6E5F">contact@copius.fr</a></p>
+</td></tr></table>
+</body></html>
+HTML;
 }
 
 /* One SMTP session. Null when the server took the message, else a short
