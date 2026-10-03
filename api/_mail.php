@@ -66,9 +66,10 @@ function mail_message(string $to, string $lang, string $link): ?array {
 }
 
 /* Any Copius mail: the plain text and the HTML (built knowing whether the banner
-   travels with it), the banner as an inline part, the headers. Null when a
-   header value carries a line break or the address is not plain ASCII. */
-function mail_build(string $to, string $subject, string $text, callable $html): ?array {
+   travels with it), the banner as an inline part, any attached files
+   ([filename, type, bytes], the order's CGV), the headers. Null when a header
+   value carries a line break or the address is not plain ASCII. */
+function mail_build(string $to, string $subject, string $text, callable $html, array $files = []): ?array {
     $from = (string)cfg('from'); $name = (string)cfg('from_name'); $reply = (string)cfg('reply_to');
     if (!header_safe($to, $from, $name, $reply, $subject)) return null;
     if (!preg_match('/^[\x21-\x7e]+@[\x21-\x7e]+$/', $to) || strpbrk($to, '<>,;"()[]\\') !== false) return null;
@@ -90,6 +91,16 @@ function mail_build(string $to, string $subject, string $text, callable $html): 
                 "Content-Disposition: inline; filename=\"copius.jpg\"\r\n\r\n" . rtrim(chunk_split(base64_encode($img), 76, "\r\n")),
         ]);
         $type = "multipart/related; boundary=\"=_r$id\"; type=\"multipart/alternative\"";
+    }
+    if ($files) {
+        $parts = ["Content-Type: $type\r\n\r\n" . $body];
+        foreach ($files as [$fname, $ftype, $bytes]) {
+            if (!preg_match('/^[A-Za-z0-9._-]+$/', $fname) || !preg_match('#^[a-z]+/[a-z0-9.+-]+$#', $ftype)) return null;
+            $parts[] = "Content-Type: $ftype; name=\"$fname\"\r\nContent-Transfer-Encoding: base64\r\n" .
+                "Content-Disposition: attachment; filename=\"$fname\"\r\n\r\n" . rtrim(chunk_split(base64_encode($bytes), 76, "\r\n"));
+        }
+        $body = mime_parts("=_m$id", $parts);
+        $type = "multipart/mixed; boundary=\"=_m$id\"";
     }
     return [
         'to' => $to,

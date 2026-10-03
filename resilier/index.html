@@ -13,7 +13,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
 <link rel="stylesheet" href="../css/page.css?v=212">
-<link rel="stylesheet" href="../css/pay.css?v=1">
+<link rel="stylesheet" href="../css/pay.css?v=2">
 </head>
 <body>
 <header>
@@ -23,22 +23,21 @@
 
 <main>
 <h1><span lang="fr">Résilier votre contrat</span><span lang="en">Cancel your contract</span></h1>
-<p class="lang"><a href="#" data-lang="en" lang="fr">Read this in English</a><a href="#" data-lang="fr" lang="en">Lire en français</a></p>
+<p class="lang"><a href="#" data-lang="en" lang="en">Read this in English</a><a href="#" data-lang="fr" lang="fr">Lire en français</a></p>
 
 <form id="fill" class="step" novalidate>
-  <p class="lede" lang="fr">Pour mettre fin à votre abonnement à la version complète, gratuitement. Un accusé de réception part aussitôt à l’adresse indiquée, avec la date de fin et ses effets.</p>
-  <p class="lede" lang="en">To end your subscription to the full version, at no cost. An acknowledgement goes at once to the address given, with the end date and what it means.</p>
+  <p class="lede" tabindex="-1"><span lang="fr">Pour mettre fin à votre abonnement à la version complète, gratuitement. Un accusé de réception part aussitôt à l’adresse indiquée.</span><span lang="en">To end your subscription to the full version, at no cost. An acknowledgement goes at once to the address given.</span></p>
   <div class="field"><label for="name"><span lang="fr">Nom et prénom</span><span lang="en">Full name</span></label>
     <input type="text" id="name" autocomplete="name" required maxlength="200"></div>
   <div class="field"><label for="email"><span lang="fr">Adresse e-mail de l’abonnement</span><span lang="en">Email address of the subscription</span></label>
     <input type="email" id="email" autocomplete="email" required maxlength="254">
     <span class="hint"><span lang="fr">L’accusé de réception y est envoyé.</span><span lang="en">The acknowledgement is sent there.</span></span></div>
   <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement</span><span lang="en">Subscription reference</span></label>
-    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off">
-    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement.</span><span lang="en">It is in the email that confirmed your subscription.</span></span></div>
+    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
+    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Résilier votre contrat&nbsp;» de cet e-mail la remplit pour vous. Vous ne la retrouvez pas&nbsp;? Écrivez à contact@copius.fr.</span><span lang="en">It is in the email that confirmed your subscription; the “Cancel your contract” link in that email fills it in for you. Can’t find it? Write to contact@copius.fr.</span></span></div>
   <fieldset>
     <legend><span lang="fr">Date de fin souhaitée</span><span lang="en">When should it end?</span></legend>
-    <label class="radio"><input type="radio" name="choice" value="period_end" checked>
+    <label class="radio"><input type="radio" name="choice" value="period_end">
       <span><span lang="fr">À la fin de la période en cours</span><span lang="en">At the end of the current period</span>
         <small lang="fr">Vous gardez l’accès jusque-là, sans remboursement.</small><small lang="en">You keep access until then, with no refund.</small></span></label>
     <label class="radio"><input type="radio" name="choice" value="early">
@@ -47,16 +46,17 @@
         <small lang="en">The paid days left are refunded. Monthly plan, or yearly after its first year.</small></span></label>
     <div class="field" id="dateField" hidden><label for="date"><span lang="fr">Date</span><span lang="en">Date</span></label>
       <input type="date" id="date"></div>
+    <p class="hint"><span lang="fr">Pendant la première année de la formule annuelle, la résiliation prend effet à la fin de cette année, quel que soit le choix ci-dessus, sauf motif légitime.</span><span lang="en">During the first year of the yearly plan, cancelling takes effect at the end of that year whatever you choose above, unless you have a legitimate reason.</span></p>
   </fieldset>
-  <div class="field"><label for="motif"><span lang="fr">Motif (facultatif)</span><span lang="en">Reason (optional)</span></label>
+  <div class="field"><label for="motif"><span lang="fr">Motif légitime (formule annuelle, première année, facultatif)</span><span lang="en">Legitimate reason (yearly plan, first year, optional)</span></label>
     <textarea id="motif" maxlength="2000"></textarea>
-    <span class="hint"><span lang="fr">Pendant la première année de la formule annuelle, la résiliation prend effet à la fin de cette année. Un motif légitime peut y faire exception : indiquez-le ici.</span><span lang="en">During the first year of the yearly plan, cancelling takes effect at the end of that year. A legitimate reason may be an exception: give it here.</span></span></div>
+    <span class="hint"><span lang="fr">Si un motif légitime vous empêche de poursuivre l’abonnement (par exemple un cas de force majeure), décrivez-le ici, puis envoyez un document qui l’établit (certificat, attestation, avis officiel…) en rappelant la référence de l’abonnement, par e-mail à contact@copius.fr ou par courrier à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne.</span><span lang="en">If a legitimate reason stops you from continuing (for example force majeure), describe it here, then send a document that shows it (a certificate, an attestation, an official notice…) quoting the subscription reference, by email to contact@copius.fr or by post to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France.</span></span></div>
   <button type="submit" class="cx"><span lang="fr">Vérifier</span><span lang="en">Review</span></button>
   <p class="msg err" id="fillMsg" role="alert"></p>
 </form>
 
 <form id="check" class="step" hidden novalidate>
-  <p class="lede"><span lang="fr">Vérifiez votre demande.</span><span lang="en">Check your request.</span></p>
+  <p class="lede" tabindex="-1"><span lang="fr">Récapitulatif de votre résiliation.</span><span lang="en">Your cancellation, before you send it.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Nom</span><span lang="en">Name</span></dt><dd id="sName"></dd><a class="edit" href="#name" data-edit="name"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
@@ -64,43 +64,63 @@
     <div><dt><span lang="fr">Fin souhaitée</span><span lang="en">End</span></dt><dd id="sEnd"></dd><a class="edit" href="#date" data-edit="date"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div id="sMotifRow"><dt><span lang="fr">Motif</span><span lang="en">Reason</span></dt><dd id="sMotif"></dd><a class="edit" href="#motif" data-edit="motif"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
   </dl>
-  <button type="submit" class="cx" id="send"><span lang="fr">Notifier la résiliation</span><span lang="en">Notify the cancellation</span></button>
+  <button type="submit" class="cx" id="send"><span lang="fr">Notification de la résiliation</span><span lang="en">Send the cancellation notice</span></button>
   <p class="msg" id="checkMsg" role="status"></p>
 </form>
 
-<div id="done" class="step" hidden>
-  <p class="lede" id="doneText"></p>
+<div id="done" class="step" hidden role="status">
+  <p class="lede" id="doneText" tabindex="-1"></p>
 </div>
 </main>
 
 <footer>
   <a href="../cgv/"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms of sale</span></a> ·
-  <a href="../renoncer/"><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from the contract</span></a> ·
+  <a href="../renoncer/"><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from contract here</span></a> ·
   <a href="mailto:contact@copius.fr">contact@copius.fr</a>
 </footer>
 
 <script>
 /* The « Résilier votre contrat » function (CGV article 9): the form, a summary
-   with « Modifier » links, then « Notifier la résiliation » (api/cancel.php).
-   The answer is the same whether or not the reference matches: what happens
-   next is in the acknowledgement mail. */
+   with « Modifier » links, then « Notification de la résiliation »
+   (api/cancel.php). The confirmation mail's link carries the reference after
+   the # (never sent to a server); a signed-in reader gets the address filled
+   in. The answer is the same whether or not the reference matches: what
+   follows is in the acknowledgement mail. */
 (function () {
   var M = {
-    fr: { end: "À la fin de la période en cours", on: "Le ", fields: "Remplissez le nom, l’adresse e-mail et la référence.",
-      date: "Choisissez une date entre aujourd’hui et dans 10 jours.", many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
+    fr: { end: "À la fin de la période en cours", on: "Le ", fields: "Remplissez le nom et l’adresse e-mail.",
+      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation.",
+      choice: "Choisissez la date de fin.", date: "Choisissez une date entre aujourd’hui et dans 10 jours.",
+      many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La demande n’a pas pu partir. Réessayez dans un instant, ou écrivez à contact@copius.fr.", wait: "Envoi…",
-      done: "Votre demande de résiliation est enregistrée, le {at}. Un accusé de réception part à {e}\u202F: il indique la date de fin de votre abonnement et ses effets. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
-    en: { end: "At the end of the current period", on: "On ", fields: "Fill in the name, the email address and the reference.",
-      date: "Pick a date between today and 10 days from now.", many: "Too many tries from this connection. Try again in a quarter of an hour.",
+      done: "Votre notification de résiliation est enregistrée, le {at}. Un accusé de réception part à {e}\u00A0: il reprend votre demande et vous dit la suite. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
+    en: { end: "At the end of the current period", on: "On ", fields: "Fill in the name and the email address.",
+      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email.",
+      choice: "Choose when it should end.", date: "Pick a date between today and 10 days from now.",
+      many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The request could not be sent. Try again in a moment, or write to contact@copius.fr.", wait: "Sending…",
-      done: "Your cancellation request is recorded, on {at}. An acknowledgement is on its way to {e}: it gives the end date of your subscription and what it means. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
+      done: "Your cancellation notice is recorded, on {at}. An acknowledgement is on its way to {e}: it repeats your request and tells you what follows. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
   };
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
-  var paris = function (d, opt) { return new Intl.DateTimeFormat(root.lang === "en" ? "en-GB" : "fr-FR", Object.assign({ timeZone: "Europe/Paris" }, opt)).format(d); };
+  var fmt = function (d, time) {
+    var o = { timeZone: "Europe/Paris", day: "numeric", month: "long", year: "numeric" };
+    var s = new Intl.DateTimeFormat(root.lang === "en" ? "en-GB" : "fr-FR", o).format(d);
+    if (!time) return s;
+    var p = {}; new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "numeric", minute: "2-digit", hourCycle: "h23" })
+      .formatToParts(d).forEach(function (x) { p[x.type] = x.value; });
+    return root.lang === "en" ? s + " at " + p.hour + ":" + p.minute + " (Paris)" : s + " à " + Number(p.hour) + "\u00A0h\u00A0" + p.minute;
+  };
   var ymd = function (d) { return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(d); };
   var today = ymd(new Date()), last = ymd(new Date(Date.now() + 10 * 864e5));
   $("date").min = today; $("date").max = last; $("date").value = today;
+  var pre = /^#r=([0-9a-f]{32})$/.exec(location.hash);
+  if (pre) $("ref").value = pre[1];
+  if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+  if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) {
+    fetch("/api/me.php", { credentials: "same-origin" }).then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (j) { if (j.email && !$("email").value) $("email").value = j.email; }, function () {});
+  }
   document.querySelectorAll("[data-lang]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault(); root.lang = a.getAttribute("data-lang");
@@ -109,33 +129,39 @@
     });
   });
   var form = $("fill"), check = $("check");
-  var choice = function () { return form.querySelector("input[name=choice]:checked").value; };
+  var choice = function () { var c = form.querySelector("input[name=choice]:checked"); return c ? c.value : ""; };
   form.querySelectorAll("input[name=choice]").forEach(function (r) {
     r.addEventListener("change", function () { $("dateField").hidden = choice() !== "early"; });
   });
+  function show(step) {
+    [form, check, $("done")].forEach(function (s) { s.hidden = s !== step; });
+    window.scrollTo(0, 0); step.querySelector(".lede").focus();
+  }
   function data() {
-    return { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim(),
+    return { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim().toLowerCase(),
       choice: choice(), date: choice() === "early" ? $("date").value : null, motif: $("motif").value.trim(),
       lang: root.lang === "en" ? "en" : "fr" };
   }
   function fill() {
     var d = data(), t = L();
     $("sName").textContent = d.name; $("sEmail").textContent = d.email; $("sRef").textContent = d.ref;
-    $("sEnd").textContent = d.choice === "early" ? t.on + paris(new Date(d.date + "T12:00:00Z"), { day: "numeric", month: "long", year: "numeric" }) : t.end;
+    $("sEnd").textContent = d.choice === "early" ? t.on + fmt(new Date(d.date + "T12:00:00Z")) : t.end;
     $("sMotif").textContent = d.motif; $("sMotifRow").hidden = !d.motif;
   }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var d = data(), m = $("fillMsg");
-    if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) || !d.ref) { m.textContent = L().fields; return; }
-    if (d.choice === "early" && !(d.date >= today && d.date <= last)) { m.textContent = L().date; $("date").focus(); return; }
-    m.textContent = ""; fill(); form.hidden = true; check.hidden = false; $("checkMsg").textContent = ""; window.scrollTo(0, 0);
+    var d = data(), m = $("fillMsg"), t = L();
+    if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { m.textContent = t.fields; return; }
+    if (!/^[0-9a-f]{32}$/.test(d.ref)) { m.textContent = t.ref; $("ref").focus(); return; }
+    if (!d.choice) { m.textContent = t.choice; form.querySelector("input[name=choice]").focus(); return; }
+    if (d.choice === "early" && !(d.date >= today && d.date <= last)) { m.textContent = t.date; $("date").focus(); return; }
+    m.textContent = ""; fill(); $("checkMsg").textContent = ""; show(check);
   });
   check.querySelectorAll("[data-edit]").forEach(function (a) {
     a.addEventListener("click", function (e) {
-      e.preventDefault(); check.hidden = true; form.hidden = false;
+      e.preventDefault(); show(form);
       var id = a.getAttribute("data-edit");
-      if (id === "date") { form.querySelector("input[name=choice]:checked").focus(); } else { $(id).focus(); }
+      (id === "date" ? form.querySelector("input[name=choice]:checked") : $(id)).focus();
     });
   });
   check.addEventListener("submit", function (e) {
@@ -143,14 +169,15 @@
     var btn = $("send"), msg = $("checkMsg"), t = L(), d = data();
     btn.disabled = true; msg.className = "msg"; msg.textContent = t.wait;
     fetch("/api/cancel.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) })
-      .then(function (r) { return r.status; }, function () { return 0; })
-      .then(function (s) {
-        if (s === 200) {
-          var at = paris(new Date(), { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return [r.status, j]; }); },
+            function () { return [0, {}]; })
+      .then(function (a) {
+        if (a[0] === 200) {
+          var at = fmt(a[1].at ? new Date(a[1].at * 1000) : new Date(), true);
           $("doneText").textContent = t.done.replace("{at}", at).replace("{e}", d.email);
-          check.hidden = true; $("done").hidden = false; window.scrollTo(0, 0); return;
+          show($("done")); return;
         }
-        btn.disabled = false; msg.className = "msg err"; msg.textContent = s === 429 ? t.many : t.fail;
+        btn.disabled = false; msg.className = "msg err"; msg.textContent = a[0] === 429 ? t.many : t.fail;
       });
   });
 })();

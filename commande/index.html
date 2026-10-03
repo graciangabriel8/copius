@@ -13,7 +13,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
 <link rel="stylesheet" href="../css/page.css?v=212">
-<link rel="stylesheet" href="../css/pay.css?v=1">
+<link rel="stylesheet" href="../css/pay.css?v=2">
 </head>
 <body>
 <header>
@@ -23,15 +23,14 @@
 
 <main>
 <h1><span lang="fr">La version complète de Copius</span><span lang="en">The full version of Copius</span></h1>
-<p class="lang"><a href="#" data-lang="en" lang="fr">Read this in English</a><a href="#" data-lang="fr" lang="en">Lire en français</a></p>
+<p class="lang"><a href="#" data-lang="en" lang="en">Read this in English</a><a href="#" data-lang="fr" lang="fr">Lire en français</a></p>
 
 <form id="choose" class="step" novalidate>
-  <p class="lede" lang="fr">Tout l’atlas, en français et en anglais.</p>
-  <p class="lede" lang="en">The whole atlas, in French and in English.</p>
+  <p class="lede" tabindex="-1"><span lang="fr">Tout l’atlas, en français et en anglais.</span><span lang="en">The whole atlas, in French and in English.</span></p>
   <ul class="includes" lang="fr">
-    <li>les 1&#8239;888 ingrédients de l’atlas illustré, et les 13&#8239;200 accords enregistrés ;</li>
-    <li>le labo des accords et l’assiette ;</li>
-    <li>68 chefs et 44 de leurs plats ;</li>
+    <li>les 1&#8239;888 ingrédients de l’atlas illustré, et les 13&#8239;200 accords enregistrés&#8239;;</li>
+    <li>le labo des accords et l’assiette&#8239;;</li>
+    <li>68 chefs et 44 de leurs plats&#8239;;</li>
     <li>45 bases et 40 trios classiques.</li>
   </ul>
   <ul class="includes" lang="en">
@@ -46,116 +45,120 @@
     <div class="plans">
       <label class="plan"><input type="radio" name="plan" value="monthly" checked>
         <span><b lang="fr">Mensuelle</b><b lang="en">Monthly</b>
-          <span class="amt" lang="fr">4,90 € par mois</span><span class="amt" lang="en">€4.90 a month</span>
+          <span class="amt" lang="fr">4,90&nbsp;€ par mois</span><span class="amt" lang="en">€4.90 a month</span>
           <small lang="fr">Sans durée minimale, renouvelée chaque mois jusqu’à résiliation.</small>
           <small lang="en">No minimum term, renewed each month until you cancel.</small></span></label>
       <label class="plan"><input type="radio" name="plan" value="yearly">
         <span><b lang="fr">Annuelle</b><b lang="en">Yearly</b>
-          <span class="amt" lang="fr">39 € par an</span><span class="amt" lang="en">€39 a year</span>
+          <span class="amt" lang="fr">39&nbsp;€ par an</span><span class="amt" lang="en">€39 a year</span>
           <small lang="fr">Engagement d’un an, reconduite chaque année sauf refus de votre part.</small>
           <small lang="en">A one-year commitment, renewed each year unless you refuse.</small></span></label>
     </div>
-    <p class="vat"><span lang="fr">Prix payés : TVA non applicable, article 293 B du CGI. Paiement par carte bancaire (Stripe).</span><span lang="en">Prices paid: VAT not applicable, article 293 B of the French tax code. Payment by card (Stripe).</span></p>
+    <p class="vat"><span lang="fr">Prix payés&nbsp;: TVA non applicable, article 293&nbsp;B du CGI. Paiement par carte bancaire (Stripe).</span><span lang="en">Prices paid: VAT not applicable, article 293 B of the French tax code. Payment by card (Stripe).</span></p>
   </fieldset>
 
   <div class="field">
     <label for="email"><span lang="fr">Votre adresse e-mail</span><span lang="en">Your email address</span></label>
     <input type="email" id="email" autocomplete="email" required maxlength="254">
-    <span class="hint"><span lang="fr">Elle reçoit la confirmation et sert à vous connecter : il n’y a pas de mot de passe.</span><span lang="en">It receives the confirmation and is how you sign in: there is no password.</span></span>
+    <span class="hint"><span lang="fr">Elle reçoit la confirmation et sert à vous connecter&nbsp;: il n’y a pas de mot de passe.</span><span lang="en">It receives the confirmation and is how you sign in: there is no password.</span></span>
   </div>
   <button type="submit" class="cx"><span lang="fr">Voir le récapitulatif</span><span lang="en">Review my order</span></button>
-  <p class="msg err" id="chooseMsg" role="alert"></p>
+  <p class="msg" id="chooseMsg" role="alert"></p>
 </form>
 
 <form id="review" class="step" hidden novalidate>
-  <p class="lede"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
+  <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
-    <div><dt><span lang="fr">Prix</span><span lang="en">Price</span></dt><dd id="sPrice"></dd></div>
-    <div><dt><span lang="fr">Durée</span><span lang="en">Term</span></dt><dd id="sTerm"></dd></div>
-    <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund.</span></dd></div>
+    <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd><span lang="fr">TVA non applicable, article 293&nbsp;B du CGI.</span><span lang="en">VAT not applicable, article 293 B of the French tax code.</span></dd></div>
+    <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&nbsp;Renoncer au contrat ici&nbsp;» en bas de chaque page de copius.fr et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function at the bottom of every copius.fr page and in the confirmation email.</span></dd></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
-    <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, sur la page sécurisée de Stripe.</span><span lang="en">Card, on Stripe’s secure page.</span></dd></div>
+    <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, saisie directement ou avec Link, sur la page sécurisée de Stripe.</span><span lang="en">Card, entered directly or with Link, on Stripe’s secure page.</span></dd></div>
   </dl>
   <label class="accept"><input type="checkbox" id="cgv">
-    <span><span lang="fr">J’accepte les <a href="../cgv/" target="_blank" rel="noopener">conditions générales de vente</a>.</span><span lang="en">I accept the <a href="../cgv/" target="_blank" rel="noopener">terms of sale</a> (in French, with an English translation for information).</span></span></label>
+    <span><span lang="fr">J’ai lu les <a href="../cgv/" target="_blank" rel="noopener">conditions générales de vente</a> de la version complète et je les accepte.</span><span lang="en">I have read the <a href="../cgv/" target="_blank" rel="noopener">terms of sale</a> of the full version (in French, the binding text) and I accept them.</span></span></label>
   <div class="row">
     <button type="submit" class="cx" id="pay"><span lang="fr">Continuer vers le paiement</span><span lang="en">Continue to payment</span></button>
   </div>
   <p class="msg" id="reviewMsg" role="status"></p>
-  <p class="fine"><span lang="fr">Vous validerez le paiement sur la page de Stripe ; c’est ce bouton-là qui vous engage. Vendeur : Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130 694 615, contact@copius.fr.</span><span lang="en">You confirm the payment on Stripe’s page; that button is the one that binds you. Seller: Gabriel Gracian-Leroudier, sole trader (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, contact@copius.fr.</span></p>
+  <p class="fine"><span lang="fr">Vous validerez le paiement sur la page de Stripe&#8239;; c’est ce bouton-là qui vous engage. Vendeur&nbsp;: Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130&nbsp;694&nbsp;615, +33&nbsp;6&nbsp;02&nbsp;18&nbsp;44&nbsp;19, contact@copius.fr. En cas de litige, vous pouvez recourir gratuitement au médiateur de la consommation&nbsp;: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span><span lang="en">You confirm the payment on Stripe’s page; that button is the one that binds you. Seller: Gabriel Gracian-Leroudier, sole trader (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, +33 6 02 18 44 19, contact@copius.fr. In a dispute you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span></p>
 </form>
 </main>
 
 <footer>
   <a href="../cgv/"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms of sale</span></a> ·
+  <a href="../resilier/"><span lang="fr">Résilier votre contrat</span><span lang="en">Cancel your contract</span></a> ·
+  <a href="../renoncer/"><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from contract here</span></a> ·
   <a href="../confidentialite/"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span></a>
 </footer>
 
 <script>
 /* Two steps on one page: the plan and the address, then the summary with
    « Modifier » links, the CGV box and the button that asks the server for a
-   Stripe Checkout page made for this order (api/order.php). */
+   Stripe Checkout page made for this order (api/order.php). Stripe's « back »
+   link returns here with #retour. */
 (function () {
   var M = {
-    fr: { monthly: "Mensuelle", yearly: "Annuelle", pm: "4,90\u00A0€ par mois", py: "39\u00A0€ par an",
-      tm: "Sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
-      ty: "Engagement d’un an, reconduite chaque année sauf refus de votre part.",
-      vat: " (TVA non applicable, article 293\u00A0B du CGI)", email: "Indiquez une adresse e-mail valide.",
+    fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 4,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
+      yearly: "Version complète de Copius — formule annuelle\u00A0: 39\u00A0€ pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.",
+      email: "Indiquez une adresse e-mail valide.",
       cgv: "Cochez la case pour accepter les conditions générales de vente.",
-      mailed: "Cette adresse a déjà un abonnement en cours\u202F: nous vous avons écrit, avec un lien pour vous connecter. Rien n’a été prélevé.",
-      closed: "Les commandes ne sont pas encore ouvertes. Revenez bientôt.",
+      mailed: "Cette adresse a déjà un abonnement en cours\u00A0: nous vous avons écrit. Rien n’a été prélevé.",
+      closed: "Les commandes ne sont pas ouvertes pour le moment.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
-      fail: "La page de paiement n’a pas pu s’ouvrir. Réessayez dans un instant\u202F; rien n’a été prélevé.", wait: "Ouverture de la page de paiement…" },
-    en: { monthly: "Monthly", yearly: "Yearly", pm: "€4.90 a month", py: "€39 a year",
-      tm: "No minimum term, renewed each month until you cancel.",
-      ty: "A one-year commitment, renewed each year unless you refuse.",
-      vat: " (VAT not applicable, article 293 B of the French tax code)", email: "Enter a valid email address.",
+      fail: "La page de paiement n’a pas pu s’ouvrir. Réessayez dans un instant\u202F; rien n’a été prélevé.", wait: "Ouverture de la page de paiement…",
+      back: "Le paiement n’a pas été validé\u202F: rien n’a été prélevé. Vous pouvez reprendre votre commande." },
+    en: { monthly: "Copius full version, monthly plan: €4.90 a month, no minimum term, renewed each month until you cancel.",
+      yearly: "Copius full version, yearly plan: €39 for a year, a one-year commitment, renewed each year unless you refuse.",
+      email: "Enter a valid email address.",
       cgv: "Tick the box to accept the terms of sale.",
-      mailed: "This address already has a subscription running: we have written to it, with a link to sign in. Nothing was charged.",
-      closed: "Orders are not open yet. Come back soon.",
+      mailed: "This address already has a subscription running: we have written to it. Nothing was charged.",
+      closed: "Orders are not open at the moment.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
-      fail: "The payment page could not open. Try again in a moment; nothing was charged.", wait: "Opening the payment page…" }
+      fail: "The payment page could not open. Try again in a moment; nothing was charged.", wait: "Opening the payment page…",
+      back: "The payment was not confirmed: nothing was charged. You can pick up your order again." }
   };
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
+  var choose = $("choose"), review = $("review");
+  var backFromStripe = location.hash === "#retour";
+  if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+  function plan() { return choose.querySelector("input[name=plan]:checked").value; }
+  function fill() { $("sPlan").textContent = L()[plan()]; $("sEmail").textContent = $("email").value.trim(); }
+  function say(el, key, err) { el.className = "msg" + (err ? " err" : ""); el.textContent = key ? L()[key] : ""; }
+  function show(step) {
+    choose.hidden = step !== choose; review.hidden = step !== review;
+    window.scrollTo(0, 0); step.querySelector(".lede").focus();
+  }
   document.querySelectorAll("[data-lang]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault(); root.lang = a.getAttribute("data-lang");
       try { localStorage.setItem("atlas-lang", root.lang); } catch (x) {}
-      if (!$("review").hidden) fill();
+      if (!review.hidden) fill();
     });
   });
-  var choose = $("choose"), review = $("review");
-  function plan() { return choose.querySelector("input[name=plan]:checked").value; }
-  function fill() {
-    var t = L(), p = plan();
-    $("sPlan").textContent = t[p];
-    $("sPrice").textContent = (p === "monthly" ? t.pm : t.py) + t.vat;
-    $("sTerm").textContent = p === "monthly" ? t.tm : t.ty;
-    $("sEmail").textContent = $("email").value.trim();
-  }
+  if (backFromStripe) say($("chooseMsg"), "back");
   choose.addEventListener("submit", function (e) {
     e.preventDefault();
-    var v = $("email").value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { $("chooseMsg").textContent = L().email; $("email").focus(); return; }
-    $("chooseMsg").textContent = "";
-    fill(); choose.hidden = true; review.hidden = false; $("reviewMsg").textContent = "";
-    window.scrollTo(0, 0);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim())) { say($("chooseMsg"), "email", true); $("email").focus(); return; }
+    say($("chooseMsg"), ""); fill(); say($("reviewMsg"), ""); show(review);
   });
   review.querySelectorAll("[data-edit]").forEach(function (a) {
     a.addEventListener("click", function (e) {
-      e.preventDefault(); review.hidden = true; choose.hidden = false;
-      var f = a.getAttribute("data-edit") === "email" ? $("email") : choose.querySelector("input[name=plan]:checked");
-      f.focus();
+      e.preventDefault(); show(choose);
+      (a.getAttribute("data-edit") === "email" ? $("email") : choose.querySelector("input[name=plan]:checked")).focus();
     });
+  });
+  /* Back from Stripe with the browser's button: the page comes back from the
+     cache as it was left, so the button is given back. */
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted && $("pay").disabled) { $("pay").disabled = false; say($("reviewMsg"), "back"); }
   });
   review.addEventListener("submit", function (e) {
     e.preventDefault();
-    var msg = $("reviewMsg"), btn = $("pay"), t = L();
-    msg.className = "msg";
-    if (!$("cgv").checked) { msg.className = "msg err"; msg.textContent = t.cgv; $("cgv").focus(); return; }
-    btn.disabled = true; msg.textContent = t.wait;
+    var msg = $("reviewMsg"), btn = $("pay");
+    if (!$("cgv").checked) { say(msg, "cgv", true); $("cgv").focus(); return; }
+    btn.disabled = true; say(msg, "wait");
     fetch("/api/order.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: $("email").value.trim(), plan: plan(), cgv: true, lang: root.lang === "en" ? "en" : "fr" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return [r.status, j]; }); },
@@ -164,9 +167,8 @@
         var s = a[0], j = a[1];
         if (s === 200 && j.url && /^https:\/\/checkout\.stripe\.com\//.test(j.url)) { location.assign(j.url); return; }
         btn.disabled = false;
-        if (s === 200 && j.mailed) { msg.textContent = t.mailed; return; }
-        msg.className = "msg err";
-        msg.textContent = s === 503 ? t.closed : s === 429 ? t.many : s === 400 ? t.email : t.fail;
+        if (s === 200 && j.mailed) { say(msg, "mailed"); return; }
+        say(msg, s === 503 ? "closed" : s === 429 ? "many" : s === 400 ? "email" : "fail", true);
       });
   });
 })();

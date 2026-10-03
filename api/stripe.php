@@ -1,9 +1,12 @@
 <?php
 /* POST from Stripe, the webhook (DESIGN-PAYMENT.md section 4): signature first,
-   then one transaction per event: the event id recorded (a duplicate ends
-   there), the state applied, the mails queued. A failure answers 500, so Stripe
-   sends the whole event again. Events of the shared account that are not
-   Copius's answer 200 and are ignored. */
+   then one transaction per event: the state applied, the mails queued. Every
+   handler can run twice with one effect (payments keyed by invoice, refunds by
+   Stripe's id, mails by their dedupe key, subscriptions re-read), which is what
+   makes a duplicate delivery harmless. A failure answers 500, so Stripe sends
+   the whole event again. Events of the shared account that are not
+   Copius's answer 200 and are ignored; one that names a Copius-shaped order we
+   do not have is answered 200 and handed to Gabriel. */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -21,19 +24,29 @@ $ev = json_decode($body, true);
 $obj = is_array($ev) ? ($ev['data']['object'] ?? null) : null;
 if (!is_string($ev['id'] ?? null) || !is_string($ev['type'] ?? null) || !is_array($obj)) { json_out(400); log_api('bad_event'); exit; }
 
-/* The order an invoice belongs to: its subscription's metadata as the invoice
-   carries it, else a subscription already on file. */
+/* Not ours, or ours but unknown: an order id of our shape with no order row
+   (deleted, or never written) means a buyer Copius has lost track of. */
+function not_found(?array $meta, string $what): string {
+    $id = order_id($meta);
+    if ($id === null) return 'foreign';
+    alert('unknown:' . $id, "Stripe sent $what for order $id, which Copius does not have: the buyer may be paying without access. Look the order up in Stripe.");
+    return 'unknown';
+}
+
+/* The subscription and order an invoice belongs to: its subscription's
+   metadata as the invoice carries it, else a subscription already on file. */
 function invoice_order(array $o): array {
     $d = $o['parent']['subscription_details'] ?? null;
     $sid = is_array($d) ? ($d['subscription'] ?? null) : null;
     if (is_array($sid)) $sid = $sid['id'] ?? null;
-    if (!is_string($sid)) return [null, null];
-    $order = our_order($d['metadata'] ?? null);
+    if (!is_string($sid)) return [null, null, null];
+    $meta = is_array($d['metadata'] ?? null) ? $d['metadata'] : null;
+    $order = our_order($meta);
     if (!$order) {
         $known = q('SELECT order_id FROM subscriptions WHERE id = ?', [$sid])->fetch();
-        if ($known) $order = q('SELECT * FROM orders WHERE id = ?', [$known['order_id']])->fetch() ?: null;
+        if ($known) $order = row('orders', $known['order_id']);
     }
-    return [$sid, $order];
+    return [$sid, $order, $meta];
 }
 
 /* One event, inside its transaction. Returns a word for api.log; $ref is the
@@ -42,34 +55,47 @@ function handle(string $type, array $o, ?string &$ref): string {
     switch ($type) {
     case 'checkout.session.completed':
         $order = our_order($o['metadata'] ?? null);
-        if (!$order || ($o['client_reference_id'] ?? '') !== $order['id']) return 'foreign';
+        if (!$order) return not_found($o['metadata'] ?? null, 'a completed checkout');
+        if (($o['client_reference_id'] ?? '') !== $order['id']) return 'foreign';
         if (($o['payment_status'] ?? '') === 'paid') q("UPDATE orders SET status = 'paid' WHERE id = ?", [$order['id']]);
         if (is_string($o['subscription'] ?? null)) refresh_sub($o['subscription'], $order);
         return 'applied';
 
     case 'invoice.paid':
-        [$sid, $order] = invoice_order($o);
-        if (!$order) return 'foreign';
+        [$sid, $order, $meta] = invoice_order($o);
+        if (!$order) return $sid ? not_found($meta, "a paid invoice ({$o['id']})") : 'foreign';
         $sub = refresh_sub($sid, $order);
+        $paid = (int)($o['status_transitions']['paid_at'] ?? now());
+        $cents = (int)($o['amount_paid'] ?? 0);
+        if (!row_payment((string)$o['id'])) {
+            q('INSERT INTO payments (invoice, subscription, amount, paid_at, payment_intent) VALUES (?, ?, ?, ?, ?)',
+              [$o['id'], $sid, $cents, $paid, invoice_intent((string)$o['id'])]);
+        }
+        q("UPDATE orders SET status = 'paid' WHERE id = ?", [$order['id']]);
+        $reason = (string)($o['billing_reason'] ?? '');
+        if ($reason !== 'subscription_create' && $reason !== 'subscription_cycle') {
+            alert('reason:' . $o['id'], "Invoice {$o['id']} of {$order['email']} ($sid) was paid with billing_reason « $reason », which Copius does not handle (a change made in the Dashboard?): the payment is recorded, the period is not. Check the subscription by hand.");
+            return 'alerted';
+        }
+        if (!in_array($sub['status'], array_merge(LIVE, ['incomplete']), true)) {
+            alert('late:' . $o['id'], "Invoice {$o['id']} of {$order['email']} was paid while its subscription $sid is « {$sub['status']} »: no access follows. Refund it, or reinstate the subscription by hand.");
+            return 'alerted';
+        }
         $start = $end = null;
         foreach ($o['lines']['data'] ?? [] as $l) {
             $p = $l['period'] ?? [];
             if (isset($p['end']) && ($end === null || (int)$p['end'] > $end)) { $end = (int)$p['end']; $start = (int)$p['start']; }
         }
         if ($end === null) throw new RuntimeException('invoice without a period');
-        $paid = (int)($o['status_transitions']['paid_at'] ?? now());
-        $cents = (int)($o['amount_paid'] ?? 0);
-        if (!q('SELECT 1 FROM payments WHERE invoice = ?', [$o['id']])->fetch()) {
-            q('INSERT INTO payments (invoice, subscription, amount, paid_at, payment_intent) VALUES (?, ?, ?, ?, ?)',
-              [$o['id'], $sid, $cents, $paid, invoice_intent((string)$o['id'])]);
-        }
         if (!$sub['paid_until'] || paris_date($end) > $sub['paid_until']) {
             q('UPDATE subscriptions SET paid_from = ?, paid_until = ?, amount = ?, retry_until = NULL WHERE id = ?',
               [paris_date($start), paris_date($end), $cents, $sid]);
         }
         if (!$sub['started']) q('UPDATE subscriptions SET started = ? WHERE id = ?', [paris_date($paid), $sid]);
-        q("UPDATE orders SET status = 'paid' WHERE id = ?", [$order['id']]);
-        if (($o['billing_reason'] ?? '') === 'subscription_create') {
+        if ($reason === 'subscription_create') {
+            $other = q("SELECT s.id FROM subscriptions s JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND s.id <> ?
+                        AND s.status IN ('active', 'trialing', 'past_due') AND o.confirmed_at IS NOT NULL", [$order['email'], $sid])->fetch();
+            if ($other) alert('dup:' . $sid, "{$order['email']} now pays two subscriptions ({$other['id']} and $sid): two orders paid at once? Offer to cancel and refund one.");
             /* Access opens when this mail is sent (send_outbox), not before. */
             queue('confirm', 'confirm:' . $order['id'], $order['email'], $order['lang'], $order['id'], [
                 'plan' => $order['plan'], 'cents' => $cents, 'started' => paris_date($paid), 'next' => paris_date($end),
@@ -77,22 +103,25 @@ function handle(string $type, array $o, ?string &$ref): string {
             ]);
             $ref = $order['id'];
         }
-        sync_grant($order['email']);
         return 'applied';
 
     case 'invoice.payment_failed':
-        [$sid, $order] = invoice_order($o);
-        if (!$order) return 'foreign';
+        [$sid, $order, $meta] = invoice_order($o);
+        if (!$order) return $sid ? not_found($meta, "a failed invoice ({$o['id']})") : 'foreign';
         refresh_sub($sid, $order);
         $retry = add_days(paris_date((int)($o['created'] ?? now())), RETRY_DAYS);
         q('UPDATE subscriptions SET retry_until = ? WHERE id = ?', [$retry, $sid]);
         if (($o['billing_reason'] ?? '') !== 'subscription_create') {
-            queue('failed', 'failed:' . $o['id'], $order['email'], $order['lang'], $order['id'],
-                ['plan' => $order['plan'], 'cents' => (int)($o['amount_due'] ?? 0), 'until' => $retry, 'ref' => $order['id'],
-                 'pay' => (string)($o['hosted_invoice_url'] ?? '')]);
-            $ref = $order['id'];
+            /* Events come in any order: a retry that went through since says nothing failed. */
+            [$code, $inv] = stripe('GET', '/v1/invoices/' . rawurlencode((string)$o['id']));
+            if ($code !== 200 || !$inv) throw new RuntimeException("invoice read $code");
+            if (($inv['status'] ?? '') !== 'paid') {
+                queue('failed', 'failed:' . $o['id'], $order['email'], $order['lang'], $order['id'],
+                    ['plan' => $order['plan'], 'cents' => (int)($o['amount_due'] ?? 0), 'until' => $retry, 'ref' => $order['id'],
+                     'pay' => (string)($inv['hosted_invoice_url'] ?? '')]);
+                $ref = $order['id'];
+            }
         }
-        sync_grant($order['email']);
         return 'applied';
 
     case 'customer.subscription.updated':
@@ -101,34 +130,34 @@ function handle(string $type, array $o, ?string &$ref): string {
         $order = our_order($o['metadata'] ?? null);
         if (!$order) {
             $known = q('SELECT order_id FROM subscriptions WHERE id = ?', [$sid])->fetch();
-            if (!$known) return 'foreign';
-            $order = q('SELECT * FROM orders WHERE id = ?', [$known['order_id']])->fetch() ?: null;
+            if (!$known) return not_found($o['metadata'] ?? null, "an update of subscription $sid");
+            $order = row('orders', $known['order_id']);
         }
-        $sub = refresh_sub($sid, $order);
-        if ($sub) sync_grant((string)$sub['email']);
+        refresh_sub($sid, $order);
         return 'applied';
 
     case 'charge.dispute.created':
     case 'refund.created':
+    case 'refund.updated':
         $pi = $o['payment_intent'] ?? null;
         if (is_array($pi)) $pi = $pi['id'] ?? null;
         $pay = is_string($pi) ? q('SELECT * FROM payments WHERE payment_intent = ?', [$pi])->fetch() : null;
         if (!$pay) return 'foreign';
-        $sub = q('SELECT * FROM subscriptions WHERE id = ?', [$pay['subscription']])->fetch();
-        if ($type === 'refund.created') {
-            if (isset($o['metadata']['copius'])) return 'ours';
-            q('UPDATE payments SET refunded = refunded + ? WHERE invoice = ?', [(int)($o['amount'] ?? 0), $pay['invoice']]);
-            alert('refund:' . $o['id'], 'A refund of ' . (int)($o['amount'] ?? 0) . " cents on {$pay['invoice']} ({$sub['email']}) " .
+        $sub = row('subscriptions', $pay['subscription']);
+        if ($type !== 'charge.dispute.created') {
+            $ours = isset($o['metadata']['copius']);
+            $new = record_refund($o, (string)$pay['invoice'], $ours);
+            if ($new && !$ours) alert('refund:' . $o['id'], 'A refund of ' . (int)($o['amount'] ?? 0) . " cents on {$pay['invoice']} ({$sub['email']}) " .
                 'was not issued by Copius: check that access and the records are as they should be.');
-            return 'alerted';
+            if (($o['status'] ?? '') === 'failed') alert('rfail:' . $o['id'], "Refund {$o['id']} on {$pay['invoice']} ({$sub['email']}) failed: issue it again by hand.");
+            return 'recorded';
         }
-        /* A dispute ends the subscription at once and closes access. */
-        if (in_array($sub['status'], ['active', 'trialing', 'past_due'], true)) {
+        /* A dispute ends the subscription at once, which closes access. */
+        if (in_array($sub['status'], LIVE, true)) {
             [$code, $s] = stripe('DELETE', '/v1/subscriptions/' . rawurlencode((string)$sub['id']));
             if ($code !== 200 || !$s) throw new RuntimeException("dispute cancel $code");
             refresh_sub((string)$sub['id'], null, $s);
         }
-        sync_grant((string)$sub['email']);
         alert('dispute:' . $o['id'], "A dispute was opened on {$pay['invoice']} ({$sub['email']}): the subscription is cancelled and access closed. Answer it in Stripe.");
         return 'applied';
     }
@@ -137,11 +166,7 @@ function handle(string $type, array $o, ?string &$ref): string {
 
 $ref = null;
 try {
-    $outcome = tx(function () use ($ev, $obj, &$ref) {
-        try { q('INSERT INTO processed_events (id, at) VALUES (?, ?)', [$ev['id'], now()]); }
-        catch (PDOException $e) { if ($e->getCode() === '23000') return 'duplicate'; throw $e; }
-        return handle($ev['type'], $obj, $ref);
-    });
+    $outcome = tx(function () use ($ev, $obj, &$ref) { return handle($ev['type'], $obj, $ref); });
 } catch (Throwable $e) {
     log_php('stripe ' . $ev['type'] . ': ' . describe($e));
     json_out(500); log_api('failed'); exit;

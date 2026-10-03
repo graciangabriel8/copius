@@ -3,7 +3,8 @@
    contrat » function (DESIGN-PAYMENT.md section 7, CGV article 9). The
    notification is recorded before anything else; the answer is the same
    whether or not it matches a subscription; the acknowledgement goes to the
-   typed address in every case. Works whether or not sales are open. */
+   typed address (one that matched nothing gets a short one, at most three a
+   day). Works whether or not sales are open. */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -21,42 +22,33 @@ if (cfg('per_ip_limits')) {
 $name = trim((string)($in['name'] ?? ''));
 $addr = normal_address((string)($in['email'] ?? ''));
 $ref = strtolower(trim((string)($in['ref'] ?? '')));
-$choice = in_array($in['choice'] ?? '', ['period_end', 'early'], true) ? $in['choice'] : 'period_end';
-$date = preg_match('/^\d{4}-\d{2}-\d{2}$/', (string)($in['date'] ?? '')) ? $in['date'] : null;
+$choice = in_array($in['choice'] ?? '', ['period_end', 'early'], true) ? $in['choice'] : null;
+$date = $in['date'] ?? null;
 $motif = trim((string)($in['motif'] ?? ''));
 $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
+$date_ok = $date === null || (is_string($date) && preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $date, $d) && checkdate((int)$d[2], (int)$d[3], (int)$d[1]));
 if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null ||
-    $ref === '' || strlen($ref) > 64 || !preg_match('/^[\x21-\x7e]+$/', $ref) ||
+    !preg_match('/^[0-9a-f]{32}$/', $ref) || $choice === null || !$date_ok ||
     mb_strlen($motif) > 2000 || !mb_check_encoding($motif, 'UTF-8')) {
     json_out(400); log_api('invalid'); exit;
 }
+/* Per address, whatever the IP: a cancellation is not something one sends often. */
+$per = rk('cw:' . $addr);
+if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
+hit($per);
 
 $sub = match_sub($ref, $addr);
-$id = tx(function () use ($name, $addr, $ref, $choice, $date, $motif, $sub) {
-    q('INSERT INTO cancellations (received_at, name, email, ref, choice, chosen_date, motif, subscription, outcome)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [now(), $name, $addr, $ref, $choice, $date, $motif === '' ? null : $motif, $sub['id'] ?? null, $sub ? 'received' : 'no_match']);
+$at = now();
+$id = tx(function () use ($at, $name, $addr, $ref, $lang, $choice, $date, $motif, $sub) {
+    q('INSERT INTO cancellations (received_at, name, email, ref, lang, choice, chosen_date, motif, subscription, outcome)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [$at, $name, $addr, $ref, $lang, $choice, $date, $motif === '' ? null : $motif, $sub['id'] ?? null, $sub ? 'received' : 'no_match']);
     return (int)db()->lastInsertId();
 });
-json_out(200, ['ok' => true]);
+json_out(200, ['ok' => true, 'at' => $at]);
 ignore_user_abort(true);
 if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
 
-if ($sub) {
-    if (!in_array($sub['status'], ['active', 'trialing', 'past_due'], true)) {
-        q("UPDATE cancellations SET outcome = 'ended_already' WHERE id = ?", [$id]);
-    } else {
-        apply_cancellation($id);
-    }
-}
-$c = q('SELECT * FROM cancellations WHERE id = ?', [$id])->fetch();
-if ($c['applied'] === 'year_end' && $motif !== '') {
-    alert('motif:' . $id, "Cancellation #$id of a first-year yearly plan ({$sub['id']}) states a reason; decide whether it is a « motif légitime »:\n\n$motif");
-}
-queue('cancel_ack', 'cack:' . $id, $addr, $lang, $sub ? (string)$sub['order_id'] : null, [
-    'name' => $name, 'ref' => $ref, 'at' => (int)$c['received_at'], 'choice' => $choice, 'date' => $date,
-    'matched' => (bool)$sub, 'outcome' => $c['outcome'], 'applied' => $c['applied'], 'end' => $c['effective_date'],
-    'refund' => (int)$c['refund_cents'], 'motif' => $motif,
-]);
-log_api('cancel_' . $c['outcome']);
-send_outbox(5, $T0 + 140, $sub ? (string)$sub['order_id'] : null);
+finish_cancellation($id);
+log_api('cancel_' . row('cancellations', $id)['outcome']);
+send_outbox(5, $T0 + 140, $sub ? (string)$sub['order_id'] : 'c:' . $id);

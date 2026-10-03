@@ -13,7 +13,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
 <link rel="stylesheet" href="../css/page.css?v=212">
-<link rel="stylesheet" href="../css/pay.css?v=1">
+<link rel="stylesheet" href="../css/pay.css?v=2">
 </head>
 <body>
 <header>
@@ -22,10 +22,10 @@
 </header>
 
 <main>
-<h1><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from the contract</span></h1>
-<p class="lang"><a href="#" data-lang="en" lang="fr">Read this in English</a><a href="#" data-lang="fr" lang="en">Lire en français</a></p>
+<h1><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from contract here</span></h1>
+<p class="lang"><a href="#" data-lang="en" lang="en">Read this in English</a><a href="#" data-lang="fr" lang="fr">Lire en français</a></p>
 
-<form id="fill" novalidate>
+<form id="fill" class="step" novalidate>
   <p class="lede" lang="fr">Pendant les 14 jours qui suivent votre abonnement, vous pouvez vous rétracter sans motif et sans frais. L’accès à la version complète se ferme, et nous vous remboursons la totalité du prix payé au plus tard 14 jours après.</p>
   <p class="lede" lang="en">Within the 14 days after you subscribed, you may withdraw without giving a reason and at no cost. Access to the full version closes, and we refund the full price paid within 14 days.</p>
   <div class="field"><label for="name"><span lang="fr">Nom et prénom</span><span lang="en">Full name</span></label>
@@ -34,15 +34,15 @@
     <input type="email" id="email" autocomplete="email" required maxlength="254">
     <span class="hint"><span lang="fr">L’accusé de réception y est envoyé aussitôt.</span><span lang="en">The acknowledgement is sent there at once.</span></span></div>
   <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement</span><span lang="en">Subscription reference</span></label>
-    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off">
-    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement.</span><span lang="en">It is in the email that confirmed your subscription.</span></span></div>
-  <button type="submit" class="cx" id="send"><span lang="fr">Confirmer la rétractation</span><span lang="en">Confirm the withdrawal</span></button>
+    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
+    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Renoncer au contrat ici&nbsp;» de cet e-mail la remplit pour vous.</span><span lang="en">It is in the email that confirmed your subscription; the “Withdraw from contract here” link in that email fills it in for you.</span></span></div>
+  <button type="submit" class="cx" id="send"><span lang="fr">Confirmer la rétractation</span><span lang="en">Confirm withdrawal</span></button>
   <p class="msg" id="msg" role="status"></p>
-  <p class="fine"><span lang="fr">Vous pouvez aussi envoyer le formulaire de rétractation qui figure à la fin des <a href="../cgv/">conditions générales de vente</a>, ou toute autre déclaration claire, à contact@copius.fr.</span><span lang="en">You can also send the withdrawal form at the end of the <a href="../cgv/">terms of sale</a>, or any other clear statement, to contact@copius.fr.</span></p>
+  <p class="fine"><span lang="fr">Vous ne retrouvez pas la référence&nbsp;? Envoyez le formulaire de rétractation qui figure à la fin des <a href="../cgv/">conditions générales de vente</a>, ou toute autre déclaration claire, à contact@copius.fr ou par courrier à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne.</span><span lang="en">Can’t find the reference? Send the withdrawal form at the end of the <a href="../cgv/">terms of sale</a>, or any other clear statement, to contact@copius.fr or by post to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France.</span></p>
 </form>
 
-<div id="done" hidden>
-  <p class="lede" id="doneText"></p>
+<div id="done" class="step" hidden role="status">
+  <p class="lede" id="doneText" tabindex="-1"></p>
 </div>
 </main>
 
@@ -54,22 +54,38 @@
 
 <script>
 /* « Renoncer au contrat ici » (CGV article 7): name, address, reference, then
-   « Confirmer la rétractation » (api/withdraw.php). The answer is the same
-   whether or not the reference matches: the acknowledgement mail says what
-   was done. */
+   « Confirmer la rétractation » (api/withdraw.php). The confirmation mail's
+   link carries the reference after the # (never sent to a server); a
+   signed-in reader gets the address filled in. The answer is the same whether
+   or not the reference matches: the acknowledgement says what follows. */
 (function () {
   var M = {
-    fr: { fields: "Remplissez le nom, l’adresse e-mail et la référence.", wait: "Envoi…",
+    fr: { fields: "Remplissez le nom et l’adresse e-mail.", wait: "Envoi…",
+      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La demande n’a pas pu partir. Réessayez dans un instant, ou écrivez à contact@copius.fr.",
-      done: "Votre rétractation est enregistrée, le {at}. Un accusé de réception part à {e}\u202F: il reprend votre déclaration et dit quand vous serez remboursé. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
-    en: { fields: "Fill in the name, the email address and the reference.", wait: "Sending…",
+      done: "Votre rétractation est enregistrée, le {at}. Un accusé de réception part à {e}\u00A0: il reprend votre déclaration et vous dit la suite. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
+    en: { fields: "Fill in the name and the email address.", wait: "Sending…",
+      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The request could not be sent. Try again in a moment, or write to contact@copius.fr.",
-      done: "Your withdrawal is recorded, on {at}. An acknowledgement is on its way to {e}: it repeats your statement and says when you will be refunded. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
+      done: "Your withdrawal is recorded, on {at}. An acknowledgement is on its way to {e}: it repeats your statement and tells you what follows. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
   };
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
+  var fmt = function (d) {
+    var s = new Intl.DateTimeFormat(root.lang === "en" ? "en-GB" : "fr-FR", { timeZone: "Europe/Paris", day: "numeric", month: "long", year: "numeric" }).format(d);
+    var p = {}; new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "numeric", minute: "2-digit", hourCycle: "h23" })
+      .formatToParts(d).forEach(function (x) { p[x.type] = x.value; });
+    return root.lang === "en" ? s + " at " + p.hour + ":" + p.minute + " (Paris)" : s + " à " + Number(p.hour) + "\u00A0h\u00A0" + p.minute;
+  };
+  var pre = /^#r=([0-9a-f]{32})$/.exec(location.hash);
+  if (pre) $("ref").value = pre[1];
+  if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+  if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) {
+    fetch("/api/me.php", { credentials: "same-origin" }).then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (j) { if (j.email && !$("email").value) $("email").value = j.email; }, function () {});
+  }
   document.querySelectorAll("[data-lang]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault(); root.lang = a.getAttribute("data-lang");
@@ -79,20 +95,20 @@
   $("fill").addEventListener("submit", function (e) {
     e.preventDefault();
     var t = L(), msg = $("msg"), btn = $("send");
-    var d = { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim(), lang: root.lang === "en" ? "en" : "fr" };
-    msg.className = "msg";
-    if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) || !d.ref) { msg.className = "msg err"; msg.textContent = t.fields; return; }
-    btn.disabled = true; msg.textContent = t.wait;
+    var d = { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim().toLowerCase(), lang: root.lang === "en" ? "en" : "fr" };
+    msg.className = "msg err";
+    if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { msg.textContent = t.fields; return; }
+    if (!/^[0-9a-f]{32}$/.test(d.ref)) { msg.textContent = t.ref; $("ref").focus(); return; }
+    msg.className = "msg"; btn.disabled = true; msg.textContent = t.wait;
     fetch("/api/withdraw.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) })
-      .then(function (r) { return r.status; }, function () { return 0; })
-      .then(function (s) {
-        if (s === 200) {
-          var at = new Intl.DateTimeFormat(root.lang === "en" ? "en-GB" : "fr-FR", { timeZone: "Europe/Paris",
-            day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date());
-          $("doneText").textContent = t.done.replace("{at}", at).replace("{e}", d.email);
-          $("fill").hidden = true; $("done").hidden = false; window.scrollTo(0, 0); return;
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return [r.status, j]; }); },
+            function () { return [0, {}]; })
+      .then(function (a) {
+        if (a[0] === 200) {
+          $("doneText").textContent = t.done.replace("{at}", fmt(a[1].at ? new Date(a[1].at * 1000) : new Date())).replace("{e}", d.email);
+          $("fill").hidden = true; $("done").hidden = false; window.scrollTo(0, 0); $("doneText").focus(); return;
         }
-        btn.disabled = false; msg.className = "msg err"; msg.textContent = s === 429 ? t.many : t.fail;
+        btn.disabled = false; msg.className = "msg err"; msg.textContent = a[0] === 429 ? t.many : t.fail;
       });
   });
 })();

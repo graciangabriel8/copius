@@ -25,11 +25,14 @@ $price = cfg('prices')[$plan] ?? null;
 if (!isset(PLANS[$plan]) || !is_string($price) || ($in['cgv'] ?? null) !== true || $addr === null) {
     json_out(400); log_api('invalid'); exit;
 }
+/* The confirmation attaches the CGV the buyer accepted: no file, no sale. */
+if (!is_file(__DIR__ . '/_cgv/' . basename((string)cfg('cgv_version')) . '-fr.pdf')) { json_out(503); log_api('no_cgv'); exit; }
 
-/* A live subscription already: nothing is created, the address is told. */
+/* A live subscription already: nothing is created, the address is told, at
+   most once a day. */
 $live = q("SELECT order_id FROM subscriptions WHERE email = ? AND status IN ('active', 'trialing', 'past_due')", [$addr])->fetch();
 if ($live) {
-    queue('already', 'already:' . $addr . ':' . date('Y-m-d-H'), $addr, $lang, $live['order_id'], ['ref' => $live['order_id']]);
+    queue('already', 'already:' . $addr . ':' . today(), $addr, $lang, $live['order_id'], ['ref' => $live['order_id']]);
     json_out(200, ['mailed' => true]);
     log_api('already');
     ignore_user_abort(true);
@@ -52,9 +55,9 @@ $t = PAY_TEXT[$lang];
     'subscription_data' => ['metadata' => ['order' => $id]],
     'locale' => $lang,
     'success_url' => cfg('origin') . '/merci/',
-    'cancel_url' => cfg('origin') . '/commande/',
+    'cancel_url' => cfg('origin') . '/commande/#retour',
     'expires_at' => now() + 3600,
-    'custom_text' => ['submit' => ['message' => $t['submit_' . $plan]]],
+    'custom_text' => ['submit' => ['message' => nb($t['submit_' . $plan], $lang)]],
 ], 'order:' . $id);
 $url = is_array($s) ? (string)($s['url'] ?? '') : '';
 if ($code !== 200 || !preg_match('#^https://#', $url) || !is_string($s['id'] ?? null)) {

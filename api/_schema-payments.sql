@@ -2,7 +2,9 @@
 -- phpMyAdmin, after _schema.sql. Times are Unix seconds set by PHP; dates are Paris
 -- dates (YYYY-MM-DD); money is in euro cents. Ids from Stripe are ASCII.
 -- Every row about a buyer is kept for the contract and five years after it, payments
--- for ten years; purge() deletes them after that (DESIGN-PAYMENT section 3).
+-- and refunds for ten years; purge_payments() deletes them after that (DESIGN-PAYMENT
+-- section 3). Access comes from these tables (paid_until() in _lib.php), never from
+-- grant rows.
 
 CREATE TABLE orders (
   id           CHAR(32) CHARACTER SET ascii NOT NULL PRIMARY KEY,   -- the buyer's reference
@@ -34,6 +36,7 @@ CREATE TABLE subscriptions (
   notice_sent_at  INT NULL,
   notice_missed   TINYINT NOT NULL DEFAULT 0,
   amount          INT NULL,                                        -- cents paid for that period
+  withdrawn_at    INT NULL,                                        -- an in-time withdrawal: access ends
   KEY (email), KEY (order_id)
 ) ENGINE=InnoDB;
 
@@ -43,13 +46,17 @@ CREATE TABLE payments (
   amount         INT NOT NULL,                                    -- cents
   paid_at        INT NOT NULL,
   payment_intent VARCHAR(255) CHARACTER SET ascii NULL,
-  refunded       INT NOT NULL DEFAULT 0,                          -- cents Copius refunded
-  KEY (subscription)
+  KEY (subscription), KEY (payment_intent)
 ) ENGINE=InnoDB;
 
-CREATE TABLE processed_events (
-  id VARCHAR(255) CHARACTER SET ascii NOT NULL PRIMARY KEY,         -- evt_...
-  at INT NOT NULL
+CREATE TABLE refunds (
+  id      VARCHAR(255) CHARACTER SET ascii NOT NULL PRIMARY KEY,    -- re_..., so one refund counts once
+  invoice VARCHAR(255) CHARACTER SET ascii NOT NULL,
+  cents   INT NOT NULL,
+  status  VARCHAR(16) CHARACTER SET ascii NOT NULL,                 -- Stripe's: pending, succeeded, failed...
+  ours    TINYINT NOT NULL DEFAULT 0,                               -- issued by Copius
+  at      INT NOT NULL,
+  KEY (invoice)
 ) ENGINE=InnoDB;
 
 CREATE TABLE outbox (
@@ -74,16 +81,19 @@ CREATE TABLE cancellations (
   name           VARCHAR(255) NOT NULL,
   email          VARCHAR(254) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
   ref            VARCHAR(64) CHARACTER SET ascii NOT NULL,
-  choice         VARCHAR(12) CHARACTER SET ascii NOT NULL,         -- period_end | early | year_end
+  lang           CHAR(2) CHARACTER SET ascii NOT NULL DEFAULT 'fr',
+  choice         VARCHAR(12) CHARACTER SET ascii NOT NULL,         -- period_end | early, as asked
   chosen_date    DATE NULL,
   motif          TEXT NULL,
   outcome        VARCHAR(16) CHARACTER SET ascii NOT NULL DEFAULT 'received',
   subscription   VARCHAR(255) CHARACTER SET ascii NULL,
-  applied        VARCHAR(12) CHARACTER SET ascii NULL,           -- the choice as applied
+  applied        VARCHAR(12) CHARACTER SET ascii NULL,           -- now | period_end | early | year_end
   effective_date DATE NULL,
+  invoice        VARCHAR(255) CHARACTER SET ascii NULL,           -- the payment an early end refunds
   refund_cents   INT NOT NULL DEFAULT 0,
   refunded_at    INT NULL,
   stripe_tries   INT NOT NULL DEFAULT 0,
+  acked          TINYINT NOT NULL DEFAULT 0,                      -- acknowledgement queued
   KEY (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -93,9 +103,11 @@ CREATE TABLE withdrawals (
   name         VARCHAR(255) NOT NULL,
   email        VARCHAR(254) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
   ref          VARCHAR(64) CHARACTER SET ascii NOT NULL,
+  lang         CHAR(2) CHARACTER SET ascii NOT NULL DEFAULT 'fr',
   outcome      VARCHAR(16) CHARACTER SET ascii NOT NULL DEFAULT 'received',
   subscription VARCHAR(255) CHARACTER SET ascii NULL,
   refund_cents INT NOT NULL DEFAULT 0,
   stripe_tries INT NOT NULL DEFAULT 0,
+  acked        TINYINT NOT NULL DEFAULT 0,
   KEY (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,8 +1,9 @@
 <?php
 /* POST {name, email, ref, lang}: « Renoncer au contrat ici » (DESIGN-PAYMENT.md
-   section 7, CGV article 7). Recorded first; within the 14 days the
-   subscription ends now, access closes and every payment is refunded in full.
-   The acknowledgement goes to the typed address in every case. */
+   section 7, CGV article 7). Recorded first; within the 14 days access closes
+   at once (withdrawn_at), then the subscription ends and every payment is
+   refunded in full. The acknowledgement goes to the typed address (one that
+   matched nothing gets a short one, at most three a day). */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -21,29 +22,33 @@ $name = trim((string)($in['name'] ?? ''));
 $addr = normal_address((string)($in['email'] ?? ''));
 $ref = strtolower(trim((string)($in['ref'] ?? '')));
 $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
-if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null ||
-    $ref === '' || strlen($ref) > 64 || !preg_match('/^[\x21-\x7e]+$/', $ref)) {
+if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null || !preg_match('/^[0-9a-f]{32}$/', $ref)) {
     json_out(400); log_api('invalid'); exit;
 }
+$per = rk('cw:' . $addr);
+if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
+hit($per);
 
 $sub = match_sub($ref, $addr);
 $late = $sub && today() > withdraw_deadline((string)$sub['started']);
-$id = tx(function () use ($name, $addr, $ref, $sub, $late) {
-    q('INSERT INTO withdrawals (received_at, name, email, ref, subscription, outcome) VALUES (?, ?, ?, ?, ?, ?)',
-      [now(), $name, $addr, $ref, $sub['id'] ?? null, !$sub ? 'no_match' : ($late ? 'out_of_time' : 'received')]);
+$at = now();
+$id = tx(function () use ($at, $name, $addr, $ref, $lang, $sub, $late) {
+    /* What this withdrawal refunds: every payment, less what was refunded before. */
+    $left = 0;
+    if ($sub && !$late) {
+        foreach (q('SELECT invoice, amount FROM payments WHERE subscription = ?', [$sub['id']])->fetchAll() as $p) {
+            $left += max(0, (int)$p['amount'] - refunded((string)$p['invoice']));
+        }
+        q('UPDATE subscriptions SET withdrawn_at = ? WHERE id = ? AND withdrawn_at IS NULL', [$at, $sub['id']]);
+    }
+    q('INSERT INTO withdrawals (received_at, name, email, ref, lang, subscription, outcome, refund_cents) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [$at, $name, $addr, $ref, $lang, $sub['id'] ?? null, !$sub ? 'no_match' : ($late ? 'out_of_time' : 'received'), $left]);
     return (int)db()->lastInsertId();
 });
-json_out(200, ['ok' => true]);
+json_out(200, ['ok' => true, 'at' => $at]);
 ignore_user_abort(true);
 if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
 
-if ($sub && !$late) apply_withdrawal($id);
-if ($late) alert('late:' . $id, "Withdrawal #$id for {$sub['id']} came after the deadline (" . withdraw_deadline((string)$sub['started']) . '): acknowledged as out of time.');
-$w = q('SELECT * FROM withdrawals WHERE id = ?', [$id])->fetch();
-queue('withdraw_ack', 'wack:' . $id, $addr, $lang, $sub ? (string)$sub['order_id'] : null, [
-    'name' => $name, 'ref' => $ref, 'at' => (int)$w['received_at'], 'matched' => (bool)$sub, 'outcome' => $w['outcome'],
-    'refund' => $sub ? (int)q('SELECT COALESCE(SUM(amount), 0) FROM payments WHERE subscription = ?', [$sub['id']])->fetchColumn() : 0,
-    'deadline' => $sub ? withdraw_deadline((string)$sub['started']) : null,
-]);
-log_api('withdraw_' . $w['outcome']);
-send_outbox(5, $T0 + 140, $sub ? (string)$sub['order_id'] : null);
+finish_withdrawal($id);
+log_api('withdraw_' . row('withdrawals', $id)['outcome']);
+send_outbox(5, $T0 + 140, $sub ? (string)$sub['order_id'] : 'w:' . $id);

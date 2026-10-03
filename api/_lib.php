@@ -136,16 +136,47 @@ function until_open($u): bool {
 
 /* Every grant row whose normalised address equals this one. Binary keys let
    "Prof@x.fr" and "prof@x.fr" coexist: any row with access gives access, and
-   the largest max_sessions among those rows sets the cap. */
+   the largest max_sessions among those rows sets the cap. A paid subscription
+   gives access too, read from the payment tables, never written into grants
+   (DESIGN-PAYMENT.md section 2), with the default cap of five sessions. */
 function access_for(string $addr): array {
     $rows = q('SELECT email, until, max_sessions FROM grants WHERE LOWER(TRIM(email)) = ?', [$addr])->fetchAll();
     $open = array_values(array_filter($rows, fn($r) => until_open($r['until'])));
+    $paid = $open ? null : paid_until($addr);
     return [
-        'access' => (bool)$open,
-        'address' => $open ? strtolower(trim($open[0]['email'])) : null,
-        'cap' => $open ? max(array_map(fn($r) => (int)$r['max_sessions'], $open)) : 0,
+        'access' => $open || $paid !== null,
+        'address' => $open ? strtolower(trim($open[0]['email'])) : ($paid !== null ? $addr : null),
+        'cap' => $open ? max(array_map(fn($r) => (int)$r['max_sessions'], $open)) : ($paid !== null ? 5 : 0),
         'zero' => (bool)array_filter($rows, fn($r) => $r['until'] === '0000-00-00'),
     ];
+}
+
+/* The last day a subscription gives access, or null when it gives none: live
+   at Stripe, not withdrawn from, paid for (a failed renewal keeps its 7-day
+   retry window). An active one gets a day's grace past its paid period, so a
+   renewal charged late in the evening never closes access at midnight while
+   its invoice.paid is on its way. */
+function sub_until(array $s): ?string {
+    if ($s['withdrawn_at'] || !$s['paid_until'] || !in_array($s['status'], ['active', 'trialing', 'past_due'], true)) return null;
+    $u = (string)$s['paid_until'];
+    if ($s['status'] === 'past_due' && $s['retry_until'] && $s['retry_until'] > $u) $u = (string)$s['retry_until'];
+    if ($s['cancel_at']) return min($u, date('Y-m-d', (int)$s['cancel_at']));
+    return $s['status'] === 'past_due' ? $u : date('Y-m-d', strtotime("$u +1 day"));
+}
+
+/* The latest day the address's paid subscriptions give access, or null. A
+   subscription counts once its order's confirmation is sent (L221-13). Read
+   only once config.php holds a Stripe key, which goes in with the payment
+   tables. */
+function paid_until(string $addr): ?string {
+    if (!cfg('stripe_key')) return null;
+    $best = null;
+    foreach (q('SELECT s.status, s.paid_until, s.retry_until, s.cancel_at, s.withdrawn_at FROM subscriptions s
+                JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND o.confirmed_at IS NOT NULL', [$addr])->fetchAll() as $s) {
+        $u = sub_until($s);
+        if ($u !== null && $u >= today() && ($best === null || $u > $best)) $best = $u;
+    }
+    return $best;
 }
 
 /* ---------- rate limits (section 3) ---------- */
@@ -258,8 +289,14 @@ function purge(): bool {
             }
         }
         /* An account, its sessions and its links go once no grant row for its
-           address remains; the address normalised by SQL, as the access check does. */
+           address remains, and no subscription that is running or ended less
+           than 12 months ago; the address normalised by SQL, as the access
+           check does. */
         $kept = array_flip(q('SELECT DISTINCT LOWER(TRIM(email)) FROM grants')->fetchAll(PDO::FETCH_COLUMN));
+        if (cfg('stripe_key')) {
+            foreach (q('SELECT DISTINCT email FROM subscriptions WHERE ended_at IS NULL OR ended_at > ?', [$n - 365 * 86400])
+                     ->fetchAll(PDO::FETCH_COLUMN) as $e) $kept[$e] = 0;
+        }
         foreach (q('SELECT id, email FROM accounts')->fetchAll() as $a) {
             if (isset($kept[$a['email']])) continue;
             q('DELETE FROM sessions WHERE account_id = ?', [$a['id']]);
