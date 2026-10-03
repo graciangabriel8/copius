@@ -25,7 +25,7 @@ $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
 if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null || !preg_match('/^[0-9a-f]{32}$/', $ref)) {
     json_out(400); log_api('invalid'); exit;
 }
-$per = rk('cw:' . $addr);
+$per = rk('cw:' . $addr . '|i:' . ip_key());
 if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
 hit($per);
 

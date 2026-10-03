@@ -224,11 +224,15 @@ function send_outbox(int $limit, float $deadline, ?string $only = null): int {
     return $sent;
 }
 
-/* Mails that gave up: the hourly job reports them through OVH's own mail (its
-   exit status), since our SMTP may be the very thing failing. Set their
-   attempts back to 0 in phpMyAdmin once the cause is fixed. */
+/* Mails that gave up and that someone depends on (not an already-subscribed
+   notice, not the answer to a request that matched nothing, which may well go
+   to an address that does not exist): the hourly job reports them through
+   OVH's own mail (its exit status), since our SMTP may be the very thing
+   failing. Set their attempts back to 0 in phpMyAdmin once the cause is fixed,
+   or delete them. */
 function stuck_mail(): int {
-    return (int)q('SELECT COUNT(*) FROM outbox WHERE sent_at IS NULL AND attempts >= ?', [OUTBOX_TRIES])->fetchColumn();
+    return (int)q("SELECT COUNT(*) FROM outbox WHERE sent_at IS NULL AND attempts >= ? AND kind <> 'already'
+                   AND ref NOT LIKE 'c:%' AND ref NOT LIKE 'w:%'", [OUTBOX_TRIES])->fetchColumn();
 }
 
 /* One message out, by the configured transport. Null when it went. */
@@ -269,29 +273,40 @@ function invoice_intent(string $invoice): ?string {
    keyed by Stripe's own id, so the same refund seen twice (a retried call, its
    webhook) counts once. */
 function refunded(string $invoice): int {
-    return (int)q("SELECT COALESCE(SUM(cents), 0) FROM refunds WHERE invoice = ? AND status <> 'failed'", [$invoice])->fetchColumn();
+    return (int)q("SELECT COALESCE(SUM(cents), 0) FROM refunds WHERE invoice = ? AND status IN ('pending', 'requires_action', 'succeeded')",
+        [$invoice])->fetchColumn();
 }
 
-/* Record a Stripe refund object; true when it was new. A known one gets its
-   status brought up to date. */
-function record_refund(array $r, string $invoice, bool $ours): bool {
-    $new = insert_once('INSERT INTO refunds (id, invoice, cents, status, ours, at) VALUES (?, ?, ?, ?, ?, ?)',
-        [(string)$r['id'], $invoice, (int)($r['amount'] ?? 0), (string)($r['status'] ?? 'pending'), $ours ? 1 : 0, now()]);
-    if (!$new) q('UPDATE refunds SET status = ? WHERE id = ?', [(string)($r['status'] ?? 'pending'), (string)$r['id']]);
+/* Record a Stripe refund object; true when it was new. Events come in any
+   order, so a known refund's status only moves forward: pending, then
+   succeeded, then failed or canceled (a refund can still fail after success). */
+function record_refund(array $r, string $invoice): bool {
+    $status = (string)($r['status'] ?? 'pending');
+    $key = is_string($r['metadata']['copius'] ?? null) ? $r['metadata']['copius'] : null;
+    $new = insert_once('INSERT INTO refunds (id, invoice, cents, status, ours, copius_key, at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        [(string)$r['id'], $invoice, (int)($r['amount'] ?? 0), $status, $key !== null ? 1 : 0, $key, now()]);
+    if (!$new) {
+        $rank = ['pending' => 0, 'requires_action' => 0, 'succeeded' => 1, 'failed' => 2, 'canceled' => 2];
+        $old = (string)q('SELECT status FROM refunds WHERE id = ?', [(string)$r['id']])->fetchColumn();
+        if (($rank[$status] ?? 0) >= ($rank[$old] ?? 0)) q('UPDATE refunds SET status = ? WHERE id = ?', [$status, (string)$r['id']]);
+    }
     return $new;
 }
 
-/* Refund up to $cents of one payment, never more than is left on it. Returns
-   200 once Stripe has it (or nothing was left), else Stripe's status (-1: the
-   payment has no intent to refund). */
+/* Refund $cents of one payment under $key. Returns 200 once Stripe has it
+   (or had it already: a refund recorded under the same key, whether by an
+   earlier answer or by its webhook), else Stripe's status: -1 when the payment
+   has no intent to refund, -2 when less is left on it than this refund (a
+   refund made elsewhere since). The amount never changes between tries, so a
+   retried key always carries the parameters of its first use. */
 function refund(array $pay, int $cents, string $key): int {
-    $cents = min($cents, (int)$pay['amount'] - refunded((string)$pay['invoice']));
-    if ($cents <= 0) return 200;
+    if ($cents <= 0 || q('SELECT 1 FROM refunds WHERE copius_key = ?', [$key])->fetch()) return 200;
+    if ($cents > (int)$pay['amount'] - refunded((string)$pay['invoice'])) return -2;
     if (!$pay['payment_intent']) return -1;
     [$code, $r] = stripe('POST', '/v1/refunds', ['payment_intent' => $pay['payment_intent'], 'amount' => $cents,
         'reason' => 'requested_by_customer', 'metadata' => ['copius' => $key]], $key);
     if ($code !== 200 || !is_string($r['id'] ?? null)) return $code;
-    record_refund($r, (string)$pay['invoice'], true);
+    record_refund($r, (string)$pay['invoice']);
     return 200;
 }
 
@@ -300,14 +315,17 @@ function refund(array $pay, int $cents, string $key): int {
    STRIPE_TRIES times, then handed to him too. */
 function stripe_failed(string $table, array $row, int $code, string $what): void {
     $id = (int)$row['id'];
+    /* A cancellation that will not be applied lets go of its subscription, so
+       a later notice can be. */
+    $release = $table === 'cancellations' ? ', holds = NULL' : '';
     if (!retryable($code)) {
-        q("UPDATE $table SET outcome = 'stripe_refused' WHERE id = ?", [$id]);
+        q("UPDATE $table SET outcome = 'stripe_refused'$release WHERE id = ?", [$id]);
         alert("refused:$table:$id", "Stripe refused the $what ($table #$id, HTTP $code): do it by hand in the Dashboard.");
         return;
     }
     q("UPDATE $table SET outcome = 'stripe_error', stripe_tries = stripe_tries + 1 WHERE id = ?", [$id]);
     if ((int)$row['stripe_tries'] + 1 >= STRIPE_TRIES) {
-        q("UPDATE $table SET outcome = 'stripe_failed' WHERE id = ?", [$id]);
+        q("UPDATE $table SET outcome = 'stripe_failed'$release WHERE id = ?", [$id]);
         alert("failed:$table:$id", "Stripe did not take the $what ($table #$id) after " . STRIPE_TRIES . ' hourly tries: do it by hand in the Dashboard.');
     }
 }
@@ -353,8 +371,8 @@ function cancel_terms(array $v, array $sub, string $choice, ?string $date, strin
 
 /* Apply a recorded cancellation at Stripe; safe to run again. Its terms are set
    once, on the first try, from Stripe's own state (ours when Stripe is out of
-   reach, so the acknowledgement can still give a date); a second notice for a
-   subscription already being cancelled changes nothing (outcome « already »). */
+   reach, so the acknowledgement can still give a date). Only the notice that
+   holds its subscription gets here (cancel.php); a later one is « already ». */
 function apply_cancellation(int $id): void {
     $c = row('cancellations', $id);
     if (!$c['subscription'] || !in_array($c['outcome'], ['received', 'stripe_error'], true)) { refund_cancellation($id); return; }
@@ -368,9 +386,6 @@ function apply_cancellation(int $id): void {
         return;
     }
     if (!$c['applied']) {
-        $prior = q("SELECT effective_date FROM cancellations WHERE subscription = ? AND id < ? AND applied IS NOT NULL
-                    AND outcome IN ('received', 'scheduled', 'stripe_error', 'stripe_refused', 'stripe_failed') ORDER BY id LIMIT 1", [$sid, $id])->fetch();
-        if ($prior) { q("UPDATE cancellations SET outcome = 'already', effective_date = ? WHERE id = ?", [$prior['effective_date'], $id]); return; }
         $sub = row('subscriptions', $sid);
         [$applied, $eff, $cents, $inv] = cancel_terms(sub_view($s, $sub), $sub, (string)$c['choice'], $c['chosen_date'], paris_date((int)$c['received_at']));
         q('UPDATE cancellations SET applied = ?, effective_date = ?, refund_cents = ?, invoice = ? WHERE id = ?',
@@ -378,12 +393,18 @@ function apply_cancellation(int $id): void {
         $c = row('cancellations', $id);
     }
     if (!$s) { stripe_failed('cancellations', $c, $code, "cancellation of $sid"); return; }
-    /* Ended now: when that was the term, when the chosen date has passed while
-       Stripe was out of reach, or when Stripe's period no longer ends on the
-       date promised (it started a new one since). */
-    $rolled = $c['applied'] !== 'now' && $c['applied'] !== 'early' && paris_date((int)($s['items']['data'][0]['current_period_end'] ?? 0)) !== $c['effective_date'];
-    if ($rolled) alert('rolled:' . $id, "Cancellation #$id of $sid was notified for the period ending {$c['effective_date']}, but Stripe started a new period before it could be applied: it is ended now. Refund that new period by hand if it was charged.");
-    if ($c['applied'] === 'now' || $c['effective_date'] < today() || $rolled) {
+    /* Terms set on an earlier try, from a state Stripe has since left (a new
+       period started, perhaps paid, while it was out of reach): nothing is
+       replayed blindly; Gabriel decides, with the customer's notice in hand. */
+    $item = $s['items']['data'][0] ?? [];
+    if ($c['outcome'] === 'stripe_error' && ((int)($item['current_period_start'] ?? 0) > (int)$c['received_at'] ||
+        (in_array($c['applied'], ['period_end', 'year_end'], true) && paris_date((int)($item['current_period_end'] ?? 0)) !== $c['effective_date']))) {
+        q("UPDATE cancellations SET outcome = 'stripe_refused', holds = NULL WHERE id = ?", [$id]);
+        alert('moved:' . $id, "Cancellation #$id of $sid (notified " . date('Y-m-d H:i', (int)$c['received_at']) . ", to end {$c['effective_date']}) " .
+            'waited for Stripe while a new period began: apply it by hand, ending the subscription as of that date and refunding any period charged after it.');
+        return;
+    }
+    if ($c['applied'] === 'now' || $c['effective_date'] < today()) {
         [$code, $obj] = stripe('DELETE', $path);
     } elseif ($c['applied'] === 'early') {
         [$code, $obj] = stripe('POST', $path, ['cancel_at' => strtotime($c['effective_date'] . ' 23:59:59'), 'proration_behavior' => 'none'], "cancel:$sid:$id");
@@ -424,7 +445,8 @@ function apply_withdrawal(int $id): void {
     if ($code !== 200 || !$s) { stripe_failed('withdrawals', $w, $code, "end of $sid"); return; }
     tx(fn() => refresh_sub($sid, null, $s));
     foreach (q('SELECT * FROM payments WHERE subscription = ? ORDER BY paid_at', [$sid])->fetchAll() as $p) {
-        $code = refund($p, (int)$p['amount'], 'refund:w' . $sid . ':' . $id . ':' . $p['invoice']);
+        $key = 'refund:w' . $sid . ':' . $id . ':' . $p['invoice'];
+        $code = refund($p, (int)$p['amount'] - refunded((string)$p['invoice']), $key);
         if ($code !== 200) { stripe_failed('withdrawals', $w, $code, "refund of {$p['invoice']}"); return; }
     }
     q("UPDATE withdrawals SET outcome = 'done' WHERE id = ?", [$id]);
@@ -455,6 +477,10 @@ function finish_cancellation(int $id): void {
     $c = row('cancellations', $id);
     if ($c['acked']) return;
     $sub = $c['subscription'] ? row('subscriptions', $c['subscription']) : null;
+    if ($c['outcome'] === 'already') {
+        $holder = q('SELECT effective_date FROM cancellations WHERE holds = ?', [$c['subscription']])->fetch();
+        $c['effective_date'] = $holder['effective_date'] ?? null;
+    }
     if ($sub || nomatch_ack_ok((string)$c['email'])) {
         $p = ['ref' => $c['ref'], 'at' => (int)$c['received_at'], 'choice' => $c['choice'], 'date' => $c['chosen_date'], 'matched' => (bool)$sub];
         if ($sub) $p += ['name' => $c['name'], 'motif' => (string)$c['motif'], 'outcome' => $c['outcome'], 'applied' => $c['applied'],
@@ -463,8 +489,8 @@ function finish_cancellation(int $id): void {
     }
     q('UPDATE cancellations SET acked = 1 WHERE id = ?', [$id]);
     if (!$sub) alert('nomatch:c' . $id, "Cancellation #$id from {$c['email']} (reference {$c['ref']}) matched no subscription: check whether it is a customer's.");
-    if ($sub && $c['applied'] === 'year_end' && (string)$c['motif'] !== '') {
-        alert('motif:' . $id, "Cancellation #$id of a first-year yearly plan ({$sub['id']}, {$c['email']}) states a reason; decide whether it is a « motif légitime »:\n\n{$c['motif']}");
+    if ($sub && (string)$c['motif'] !== '') {
+        alert('motif:' . $id, "Cancellation #$id of {$sub['id']} ({$sub['plan']}, {$c['email']}, outcome {$c['outcome']}) states a reason; decide whether it is a « motif légitime »:\n\n{$c['motif']}");
     }
 }
 
@@ -521,28 +547,31 @@ function renewal_notices(): void {
    retry, a refund pending. Ten minutes old at least, so a request still being
    finished by its own endpoint is left alone. */
 function pending_stripe_calls(float $deadline): void {
-    $jobs = [
+    $start = microtime(true);
+    $jobs = [   // withdrawals first: their refunds have a legal deadline
+        ['withdrawals', 'finish_withdrawal', "(acked = 0 OR outcome IN ('received', 'stripe_error'))"],
         ['cancellations', 'finish_cancellation', "(acked = 0 OR outcome IN ('received', 'stripe_error') OR
             (outcome = 'scheduled' AND refund_cents > 0 AND refunded_at IS NULL AND stripe_tries < " . STRIPE_TRIES . '))'],
-        ['withdrawals', 'finish_withdrawal', "(acked = 0 OR outcome IN ('received', 'stripe_error'))"],
     ];
-    foreach ($jobs as [$table, $finish, $where]) {
+    foreach ($jobs as $n => [$table, $finish, $where]) {
+        $until = $n === 0 ? $start + ($deadline - $start) / 2 : $deadline;
         foreach (q("SELECT id FROM $table WHERE received_at < ? AND $where ORDER BY id LIMIT 20", [now() - 600])->fetchAll(PDO::FETCH_COLUMN) as $id) {
-            if (microtime(true) > $deadline) return;
-            $finish((int)$id);
+            if (microtime(true) > $until) break;
+            /* One request that throws must not hold up the others, every hour. */
+            try { $finish((int)$id); } catch (Throwable $e) { log_php("$finish #$id: " . describe($e)); }
         }
     }
 }
 
 /* What the payment tables keep (section 3): pending orders 30 days (beyond
-   Stripe's 3 days of webhook retries), ordinary mails 30 days; an order and everything about it five years after its subscription
+   Stripe's 3 days of webhook retries), ordinary mails 30 days after sending
+   (one never sent stays until someone deals with it); an order and everything about it five years after its subscription
    ended, a request that matched nothing five years; payments and refunds ten
    years. */
 function purge_payments(): void {
     $n = now(); $five = $n - 5 * 365 * 86400; $ten = $n - 10 * 365 * 86400;
     q("DELETE FROM orders WHERE status = 'pending' AND created < ? AND id NOT IN (SELECT order_id FROM subscriptions)", [$n - 30 * 86400]);
-    q("DELETE FROM outbox WHERE kind IN ('already', 'failed', 'alert') AND (sent_at < ? OR (sent_at IS NULL AND created < ?))",
-      [$n - 30 * 86400, $n - 30 * 86400]);
+    q("DELETE FROM outbox WHERE kind IN ('already', 'failed', 'alert') AND sent_at < ?", [$n - 30 * 86400]);
     foreach (q('SELECT id, order_id FROM subscriptions WHERE ended_at IS NOT NULL AND ended_at < ?', [$five])->fetchAll() as $s) {
         tx(function () use ($s) {
             foreach (['cancellations', 'withdrawals'] as $t) q("DELETE FROM $t WHERE subscription = ?", [$s['id']]);

@@ -55,8 +55,9 @@ CREATE TABLE refunds (
   cents   INT NOT NULL,
   status  VARCHAR(16) CHARACTER SET ascii NOT NULL,                 -- Stripe's: pending, succeeded, failed...
   ours    TINYINT NOT NULL DEFAULT 0,                               -- issued by Copius
+  copius_key VARCHAR(255) CHARACTER SET ascii NULL,                 -- its Idempotency-Key, when ours
   at      INT NOT NULL,
-  KEY (invoice)
+  KEY (invoice), KEY (copius_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE outbox (
@@ -87,6 +88,7 @@ CREATE TABLE cancellations (
   motif          TEXT NULL,
   outcome        VARCHAR(16) CHARACTER SET ascii NOT NULL DEFAULT 'received',
   subscription   VARCHAR(255) CHARACTER SET ascii NULL,
+  holds          VARCHAR(255) CHARACTER SET ascii NULL UNIQUE,     -- the subscription it is THE cancellation of
   applied        VARCHAR(12) CHARACTER SET ascii NULL,           -- now | period_end | early | year_end
   effective_date DATE NULL,
   invoice        VARCHAR(255) CHARACTER SET ascii NULL,           -- the payment an early end refunds

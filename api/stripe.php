@@ -3,7 +3,8 @@
    then one transaction per event: the state applied, the mails queued. Every
    handler can run twice with one effect (payments keyed by invoice, refunds by
    Stripe's id, mails by their dedupe key, subscriptions re-read), which is what
-   makes a duplicate delivery harmless. A failure answers 500, so Stripe sends
+   makes a duplicate delivery harmless; two copies handled at the same moment can
+   still meet on a key or a lock, answer 500, and settle on Stripe's retry. A failure answers 500, so Stripe sends
    the whole event again. Events of the shared account that are not
    Copius's answer 200 and are ignored; one that names a Copius-shaped order we
    do not have is answered 200 and handed to Gabriel. */
@@ -67,10 +68,8 @@ function handle(string $type, array $o, ?string &$ref): string {
         $sub = refresh_sub($sid, $order);
         $paid = (int)($o['status_transitions']['paid_at'] ?? now());
         $cents = (int)($o['amount_paid'] ?? 0);
-        if (!row_payment((string)$o['id'])) {
-            q('INSERT INTO payments (invoice, subscription, amount, paid_at, payment_intent) VALUES (?, ?, ?, ?, ?)',
-              [$o['id'], $sid, $cents, $paid, invoice_intent((string)$o['id'])]);
-        }
+        insert_once('INSERT INTO payments (invoice, subscription, amount, paid_at, payment_intent) VALUES (?, ?, ?, ?, ?)',
+            [$o['id'], $sid, $cents, $paid, invoice_intent((string)$o['id'])]);
         q("UPDATE orders SET status = 'paid' WHERE id = ?", [$order['id']]);
         $reason = (string)($o['billing_reason'] ?? '');
         if ($reason !== 'subscription_create' && $reason !== 'subscription_cycle') {
@@ -146,7 +145,7 @@ function handle(string $type, array $o, ?string &$ref): string {
         $sub = row('subscriptions', $pay['subscription']);
         if ($type !== 'charge.dispute.created') {
             $ours = isset($o['metadata']['copius']);
-            $new = record_refund($o, (string)$pay['invoice'], $ours);
+            $new = record_refund($o, (string)$pay['invoice']);
             if ($new && !$ours) alert('refund:' . $o['id'], 'A refund of ' . (int)($o['amount'] ?? 0) . " cents on {$pay['invoice']} ({$sub['email']}) " .
                 'was not issued by Copius: check that access and the records are as they should be.');
             if (($o['status'] ?? '') === 'failed') alert('rfail:' . $o['id'], "Refund {$o['id']} on {$pay['invoice']} ({$sub['email']}) failed: issue it again by hand.");

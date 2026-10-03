@@ -166,10 +166,10 @@ function sub_until(array $s): ?string {
 
 /* The latest day the address's paid subscriptions give access, or null. A
    subscription counts once its order's confirmation is sent (L221-13). Read
-   only once config.php holds a Stripe key, which goes in with the payment
-   tables. */
+   once config.php says the payment tables exist (payment_tables), a switch of
+   its own: a key removed or rotated must never close paid access. */
 function paid_until(string $addr): ?string {
-    if (!cfg('stripe_key')) return null;
+    if (!cfg('payment_tables')) return null;
     $best = null;
     foreach (q('SELECT s.status, s.paid_until, s.retry_until, s.cancel_at, s.withdrawn_at FROM subscriptions s
                 JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND o.confirmed_at IS NOT NULL', [$addr])->fetchAll() as $s) {
@@ -293,7 +293,7 @@ function purge(): bool {
            than 12 months ago; the address normalised by SQL, as the access
            check does. */
         $kept = array_flip(q('SELECT DISTINCT LOWER(TRIM(email)) FROM grants')->fetchAll(PDO::FETCH_COLUMN));
-        if (cfg('stripe_key')) {
+        if (cfg('payment_tables')) {
             foreach (q('SELECT DISTINCT email FROM subscriptions WHERE ended_at IS NULL OR ended_at > ?', [$n - 365 * 86400])
                      ->fetchAll(PDO::FETCH_COLUMN) as $e) $kept[$e] = 0;
         }

@@ -32,19 +32,23 @@ if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8')
     mb_strlen($motif) > 2000 || !mb_check_encoding($motif, 'UTF-8')) {
     json_out(400); log_api('invalid'); exit;
 }
-/* Per address, whatever the IP: a cancellation is not something one sends often. */
-$per = rk('cw:' . $addr);
+/* Per address and IP, as login.php keys it, so a stranger elsewhere cannot use
+   up the owner's tries: a cancellation is not something one sends often. */
+$per = rk('cw:' . $addr . '|i:' . ip_key());
 if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
 hit($per);
 
 $sub = match_sub($ref, $addr);
 $at = now();
-$id = tx(function () use ($at, $name, $addr, $ref, $lang, $choice, $date, $motif, $sub) {
-    q('INSERT INTO cancellations (received_at, name, email, ref, lang, choice, chosen_date, motif, subscription, outcome)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [$at, $name, $addr, $ref, $lang, $choice, $date, $motif === '' ? null : $motif, $sub['id'] ?? null, $sub ? 'received' : 'no_match']);
-    return (int)db()->lastInsertId();
-});
+/* One cancellation per subscription, taken by the insert itself: `holds` is
+   unique, so of two notices sent at once only one holds the subscription; the
+   other is recorded as « already » and never applied (DESIGN-PAYMENT.md section 7). */
+$sql = 'INSERT INTO cancellations (received_at, name, email, ref, lang, choice, chosen_date, motif, subscription, holds, outcome)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+$row = [$at, $name, $addr, $ref, $lang, $choice, $date, $motif === '' ? null : $motif, $sub['id'] ?? null];
+if (!$sub) q($sql, array_merge($row, [null, 'no_match']));
+elseif (!insert_once($sql, array_merge($row, [$sub['id'], 'received']))) q($sql, array_merge($row, [null, 'already']));
+$id = (int)db()->lastInsertId();
 json_out(200, ['ok' => true, 'at' => $at]);
 ignore_user_abort(true);
 if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();

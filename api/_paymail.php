@@ -47,11 +47,12 @@ const PAY_TEXT = [
         'wish_early' => 'le {d}',
         'motif' => 'Motif indiqué',
         'cack_end' => 'Votre abonnement prend fin le {d}. Jusque-là, vous gardez l’accès à la version complète ; ensuite, seule la version gratuite reste accessible. Aucun paiement ne sera plus prélevé.',
-        'cack_now' => 'Le paiement de la période en cours n’ayant pas abouti, votre abonnement prend fin aujourd’hui, le {d} : le paiement en attente ne sera pas prélevé, et seule la version gratuite reste accessible.',
+        'cack_now' => 'La période payée étant terminée et la suivante pas encore payée, votre abonnement prend fin aujourd’hui, le {d} : aucun paiement ne sera plus prélevé, et seule la version gratuite reste accessible.',
         'cack_year' => 'Pendant la première année de la formule annuelle, la résiliation prend effet à la fin de cette année (article 9.3 des conditions générales de vente).',
         'cack_late' => 'La date demandée n’était pas possible (au plus tard 10 jours après votre demande, avant la fin de la période payée) : la résiliation prend effet à la fin de la période en cours.',
-        'cack_motif' => 'Vous avez indiqué un motif : nous l’examinons et revenons vers vous par e-mail. Pensez à envoyer le justificatif à contact@copius.fr.',
+        'cack_motif' => 'Vous avez indiqué un motif : nous l’examinons et revenons vers vous par e-mail. Pensez à envoyer le justificatif à contact@copius.fr ou par courrier à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne.',
         'cack_already' => 'Une résiliation de cet abonnement était déjà enregistrée : il prend fin le {d}, comme indiqué alors. Pour changer cette date, écrivez à contact@copius.fr.',
+        'cack_already_open' => 'Une résiliation de cet abonnement était déjà enregistrée : son accusé de réception vous donne la date de fin. Pour la changer, écrivez à contact@copius.fr.',
         'refund' => 'Nous vous remboursons {a} sur votre carte au plus tard le {d}.',
         'ended' => 'Cet abonnement avait déjà pris fin : aucun paiement ne sera plus prélevé.',
         'nomatch' => 'Nous n’avons pas pu rapprocher cette référence et cette adresse d’un abonnement. Vérifiez la référence, qui figure dans l’e-mail de confirmation, ou écrivez-nous à contact@copius.fr : votre demande reste enregistrée à la date ci-dessus.',
@@ -106,11 +107,12 @@ const PAY_TEXT = [
         'wish_early' => 'on {d}',
         'motif' => 'Reason given',
         'cack_end' => 'Your subscription ends on {d}. Until then you keep the full version; after that, only the free version remains. No further payment will be taken.',
-        'cack_now' => 'As the payment for the current period did not go through, your subscription ends today, {d}: the pending payment will not be taken, and only the free version remains.',
+        'cack_now' => 'As the paid period is over and the next one is not paid yet, your subscription ends today, {d}: no further payment will be taken, and only the free version remains.',
         'cack_year' => 'During the first year of the yearly plan, cancelling takes effect at the end of that year (article 9.3 of the terms of sale).',
         'cack_late' => 'The date requested was not possible (at most 10 days after your request, before the paid period ends): the cancellation takes effect at the end of the current period.',
-        'cack_motif' => 'You gave a reason: we are looking into it and will reply by email. Remember to send the supporting document to contact@copius.fr.',
+        'cack_motif' => 'You gave a reason: we are looking into it and will reply by email. Remember to send the supporting document to contact@copius.fr or by post to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France.',
         'cack_already' => 'A cancellation of this subscription was already recorded: it ends on {d}, as stated then. To change that date, write to contact@copius.fr.',
+        'cack_already_open' => 'A cancellation of this subscription was already recorded: its acknowledgement gives you the end date. To change it, write to contact@copius.fr.',
         'refund' => 'We will refund {a} to your card by {d} at the latest.',
         'ended' => 'This subscription had already ended: no further payment will be taken.',
         'nomatch' => 'We could not match this reference and this address to a subscription. Check the reference, which is in the confirmation email, or write to contact@copius.fr: your request stays on record at the date above.',
@@ -136,6 +138,9 @@ function nb(string $s, string $lang): string {
     return strtr($s, [' :' => "\u{00A0}:", ' ;' => "\u{202F};", ' ?' => "\u{202F}?", ' !' => "\u{202F}!",
         '« ' => "«\u{202F}", ' »' => "\u{202F}»", ' €' => "\u{00A0}€"]);
 }
+
+/* A label's colon: French takes a no-break space before it, English none. */
+function colon(string $lang): string { return $lang === 'fr' ? "\u{00A0}: " : ': '; }
 
 function fmt_date(string $d, string $lang): string {
     $t = strtotime($d);
@@ -172,11 +177,11 @@ function pay_mail(array $row): ?array {
         $b[] = ['p', $t['hello']];
         $b[] = ['p', $f('confirm_lead')];
         $b[] = ['box', [
-            $f('ref') . nb(' : ', $lang) . $r,
+            $f('ref') . colon($lang) . $r,
             $f('plan_' . $p['plan']),
-            $f('price_paid') . nb(' : ', $lang) . $money((int)$p['cents']) . ' (' . $t['vat'] . ')',
-            $f('start') . nb(' : ', $lang) . fmt_date($p['started'], $lang),
-            $f('next') . nb(' : ', $lang) . fmt_date($p['next'], $lang) . ', ' . $money(PLANS[$p['plan']]['cents']),
+            $f('price_paid') . colon($lang) . $money((int)$p['cents']) . ' (' . $t['vat'] . ')',
+            $f('start') . colon($lang) . fmt_date($p['started'], $lang),
+            $f('next') . colon($lang) . fmt_date($p['next'], $lang) . ', ' . $money(PLANS[$p['plan']]['cents']),
             $f('accepted', ['{at}' => fmt_at((int)$p['cgv_at'], $lang), '{v}' => fmt_date((string)$p['cgv'], $lang)]),
         ]];
         if ($p['plan'] === 'yearly') $b[] = ['p', $f('year_one')];
@@ -218,13 +223,15 @@ function pay_mail(array $row): ?array {
             break;
         }
         $b[] = ['p', $f('cack_lead', ['{at}' => fmt_at((int)$p['at'], $lang)])];
-        $lines = [$t['name'] . nb(' : ', $lang) . $p['name'], $t['email'] . nb(' : ', $lang) . $row['to_addr'],
-                  $t['ref'] . nb(' : ', $lang) . $p['ref'], $t['wish'] . nb(' : ', $lang) . $wish];
-        if ($p['motif'] !== '') $lines[] = $t['motif'] . nb(' : ', $lang) . $p['motif'];
+        $lines = [$t['name'] . colon($lang) . $p['name'], $t['email'] . colon($lang) . $row['to_addr'],
+                  $t['ref'] . colon($lang) . $p['ref'], $t['wish'] . colon($lang) . $wish];
+        if ($p['motif'] !== '') $lines[] = $t['motif'] . colon($lang) . $p['motif'];
         $b[] = ['box', $lines];
         $end = $p['end'] ? fmt_date((string)$p['end'], $lang) : '';
         if ($p['outcome'] === 'ended_already') { $b[] = ['p', $f('ended')]; break; }
-        if ($p['outcome'] === 'already') { $b[] = ['p', $f('cack_already', ['{d}' => $end])]; break; }
+        if ($p['outcome'] === 'already') { $b[] = ['p', $end !== '' ? $f('cack_already', ['{d}' => $end]) : $f('cack_already_open')];
+            if ($p['motif'] !== '') $b[] = ['p', $f('cack_motif')];
+            break; }
         if ($p['applied'] === 'now') { $b[] = ['p', $f('cack_now', ['{d}' => $end])]; break; }
         $b[] = ['p', $f('cack_end', ['{d}' => $end])];
         if ($p['applied'] === 'year_end') {
@@ -244,8 +251,8 @@ function pay_mail(array $row): ?array {
             break;
         }
         $b[] = ['p', $f('wack_lead', ['{at}' => fmt_at((int)$p['at'], $lang)])];
-        $b[] = ['box', [$f('wack_text', ['{r}' => $p['ref']]), $t['name'] . nb(' : ', $lang) . $p['name'],
-                        $t['email'] . nb(' : ', $lang) . $row['to_addr']]];
+        $b[] = ['box', [$f('wack_text', ['{r}' => $p['ref']]), $t['name'] . colon($lang) . $p['name'],
+                        $t['email'] . colon($lang) . $row['to_addr']]];
         if ($p['outcome'] === 'out_of_time') {
             $b[] = ['p', $f('wack_late', ['{d}' => fmt_date((string)$p['deadline'], $lang), '{u}' => "$o/resilier/#r={$p['ref']}"])];
             break;
@@ -284,7 +291,7 @@ function blocks_text(array $blocks, string $seller, string $lang): string {
         $out[] = match ($bl[0]) {
             'p', 'small' => $bl[1],
             'box' => $rule . "\n" . implode("\n", $bl[1]) . "\n" . $rule,
-            'btn' => $bl[1] . nb(' : ', $lang) . $bl[2],
+            'btn' => $bl[1] . colon($lang) . $bl[2],
         };
     }
     return implode("\n\n", $out) . "\n\n" . $seller . "\n";

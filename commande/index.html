@@ -70,7 +70,7 @@
   <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
-    <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd><span lang="fr">TVA non applicable, article 293&nbsp;B du CGI.</span><span lang="en">VAT not applicable, article 293 B of the French tax code.</span></dd></div>
+    <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd id="sPrice"></dd></div>
     <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&nbsp;Renoncer au contrat ici&nbsp;» en bas de chaque page de copius.fr et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function at the bottom of every copius.fr page and in the confirmation email.</span></dd></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, saisie directement ou avec Link, sur la page sécurisée de Stripe.</span><span lang="en">Card, entered directly or with Link, on Stripe’s secure page.</span></dd></div>
@@ -101,6 +101,7 @@
   var M = {
     fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 4,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
       yearly: "Version complète de Copius — formule annuelle\u00A0: 39\u00A0€ pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.",
+      pmonthly: "4,90\u00A0€ par mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "39\u00A0€ pour un an. TVA non applicable, article 293\u00A0B du CGI.",
       email: "Indiquez une adresse e-mail valide.",
       cgv: "Cochez la case pour accepter les conditions générales de vente.",
       mailed: "Cette adresse a déjà un abonnement en cours\u00A0: nous vous avons écrit. Rien n’a été prélevé.",
@@ -110,6 +111,7 @@
       back: "Le paiement n’a pas été validé\u202F: rien n’a été prélevé. Vous pouvez reprendre votre commande." },
     en: { monthly: "Copius full version, monthly plan: €4.90 a month, no minimum term, renewed each month until you cancel.",
       yearly: "Copius full version, yearly plan: €39 for a year, a one-year commitment, renewed each year unless you refuse.",
+      pmonthly: "€4.90 a month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€39 for a year. VAT not applicable, article 293 B of the French tax code.",
       email: "Enter a valid email address.",
       cgv: "Tick the box to accept the terms of sale.",
       mailed: "This address already has a subscription running: we have written to it. Nothing was charged.",
@@ -124,7 +126,9 @@
   var backFromStripe = location.hash === "#retour";
   if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
   function plan() { return choose.querySelector("input[name=plan]:checked").value; }
-  function fill() { $("sPlan").textContent = L()[plan()]; $("sEmail").textContent = $("email").value.trim(); }
+  function fill() {
+    $("sPlan").textContent = L()[plan()]; $("sPrice").textContent = L()["p" + plan()]; $("sEmail").textContent = $("email").value.trim();
+  }
   function say(el, key, err) { el.className = "msg" + (err ? " err" : ""); el.textContent = key ? L()[key] : ""; }
   function show(step) {
     choose.hidden = step !== choose; review.hidden = step !== review;
