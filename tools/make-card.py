@@ -307,6 +307,13 @@ def is_alcohol(i):
             or i["id"] in DRINKS_ELSEWHERE)
 
 
+# Instagram's own text, in spoken French (his call, 4 Oct 2026: the atlas's
+# stories read as a reference work, too formal for the account). An id with no
+# entry falls back to its atlas story, so the list is topped up ahead of the
+# schedule rather than guarded.
+SOCIAL_FR = json.loads((ROOT / "tools" / "captions-fr.json").read_text())
+
+
 def caption(i):
     """In French, the language of the account's audience (his call, 26 Sept
     2026), and without hashtags, which he does not use. Instagram captions carry
@@ -315,8 +322,7 @@ def caption(i):
     # The health message high in the caption, not buried: Instagram hides
     # everything past the first couple of lines behind "... plus".
     return "\n".join([i["fr"], latin(i)] + ([EVIN] if is_alcohol(i) else []) + ["",
-        un(i["story_fr"]), "",
-        "\u2014 copius, l\u2019atlas des ingr\u00e9dients \u00b7 copius.fr",
+        SOCIAL_FR.get(i["id"]) or un(i["story_fr"]), "", "copius.fr",
     ])
 
 
