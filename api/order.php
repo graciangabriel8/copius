@@ -54,6 +54,8 @@ $t = PAY_TEXT[$lang];
        (the order then fails with 502), so moving stripe_api_version to endive renames this
        allowed_payment_method_types. */
     'payment_method_types' => ['card'],
+    // Card alone still offers Link as a card wallet; he wants card and Apple Pay only.
+    'wallet_options' => ['link' => ['display' => 'never']],
     'line_items' => [['price' => $price, 'quantity' => 1]],
     'customer_email' => $addr,
     'client_reference_id' => $id,
