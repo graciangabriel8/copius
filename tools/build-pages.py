@@ -1185,7 +1185,7 @@ def main():
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     today = datetime.date.today().isoformat()
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
-            "%s/confidentialite/" % SITE,
+            "%s/confidentialite/" % SITE, "%s/cgv/" % SITE,
             "%s/season/" % SITE, "%s/fr/saison/" % SITE]
     if DISHES:
         urls += ["%s/dish/" % SITE, "%s/fr/plat/" % SITE]

@@ -567,9 +567,10 @@ function pending_stripe_calls(float $deadline): void {
    Stripe's 3 days of webhook retries), ordinary mails 30 days after sending
    (one never sent stays until someone deals with it); an order and everything about it five years after its subscription
    ended, a request that matched nothing five years; payments and refunds ten
-   years. */
+   years from the close of their accounting year (L123-22; a micro-entreprise's
+   year is the calendar year), so a payment goes on 1 January of its eleventh. */
 function purge_payments(): void {
-    $n = now(); $five = $n - 5 * 365 * 86400; $ten = $n - 10 * 365 * 86400;
+    $n = now(); $five = strtotime('-5 years', $n); $ten = mktime(0, 0, 0, 1, 1, (int)date('Y', $n) - 10);
     q("DELETE FROM orders WHERE status = 'pending' AND created < ? AND id NOT IN (SELECT order_id FROM subscriptions)", [$n - 30 * 86400]);
     q("DELETE FROM outbox WHERE kind IN ('already', 'failed', 'alert') AND sent_at < ?", [$n - 30 * 86400]);
     foreach (q('SELECT id, order_id FROM subscriptions WHERE ended_at IS NOT NULL AND ended_at < ?', [$five])->fetchAll() as $s) {

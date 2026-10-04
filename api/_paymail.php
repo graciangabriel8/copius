@@ -66,7 +66,7 @@ const PAY_TEXT = [
         'notice_box' => 'Date limite pour refuser la reconduction : {d}',
         'notice_text' => 'Votre abonnement annuel à la version complète de Copius (référence {r}) sera reconduit pour un an le {renew}, au prix de {a} ({vat}). Si vous ne souhaitez pas le reconduire, utilisez la fonction « Résilier votre contrat » avant la date limite ci-dessus : {u}. Sans refus de votre part, votre carte sera débitée le {renew}.',
         'bye' => 'Bonne lecture, et bonne cuisine.',
-        'seller' => 'Copius · Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne · SIREN 130 694 615 · contact@copius.fr',
+        'seller' => 'Copius · Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
         'months' => ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     ],
     'en' => [
@@ -126,7 +126,7 @@ const PAY_TEXT = [
         'notice_box' => 'Deadline to refuse the renewal: {d}',
         'notice_text' => 'Your yearly subscription to the full version of Copius (reference {r}) will renew for one year on {renew}, at {a} ({vat}). If you do not want it renewed, use the “Cancel your contract” function before the deadline above: {u}. Unless you refuse, your card will be charged on {renew}.',
         'bye' => 'Happy reading, and happy cooking.',
-        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615 · contact@copius.fr',
+        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
         'months' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     ],
 ];
@@ -137,6 +137,12 @@ function nb(string $s, string $lang): string {
     if ($lang !== 'fr') return $s;
     return strtr($s, [' :' => "\u{00A0}:", ' ;' => "\u{202F};", ' ?' => "\u{202F}?", ' !' => "\u{202F}!",
         '« ' => "«\u{202F}", ' »' => "\u{202F}»", ' €' => "\u{00A0}€"]);
+}
+
+/* The CGV of a version as a PDF: the file /cgv/ links for download, built by
+   tools/build-cgv.py, and the one the confirmation attaches. */
+function cgv_pdf(string $version, string $lang): string {
+    return dirname(__DIR__) . '/cgv/copius-cgv-' . basename($version) . '-' . $lang . '.pdf';
 }
 
 /* A label's colon: French takes a no-break space before it, English none. */
@@ -150,7 +156,7 @@ function fmt_date(string $d, string $lang): string {
 }
 
 function fmt_at(int $ts, string $lang): string {
-    return fmt_date(date('Y-m-d', $ts), $lang) . ($lang === 'fr' ? ' à ' . date('G', $ts) . ' h ' . date('i', $ts) : ' at ' . date('H:i', $ts) . ' (Paris)');
+    return fmt_date(date('Y-m-d', $ts), $lang) . ($lang === 'fr' ? ' à ' . date('G', $ts) . "\u{00A0}h\u{00A0}" . date('i', $ts) : ' at ' . date('H:i', $ts) . ' (Paris)');
 }
 
 function fmt_money(int $cents, string $lang): string {
@@ -193,7 +199,7 @@ function pay_mail(array $row): ?array {
         $b[] = ['small', $f('claims')];
         $v = basename((string)$p['cgv']);
         foreach (['fr', 'en'] as $cl) {
-            $pdf = @file_get_contents(__DIR__ . "/_cgv/$v-$cl.pdf");
+            $pdf = @file_get_contents(cgv_pdf($v, $cl));
             if (is_string($pdf) && strncmp($pdf, '%PDF', 4) === 0) $files[] = ["copius-cgv-$v-$cl.pdf", 'application/pdf', $pdf];
             elseif ($cl === 'fr') return null;            // never a confirmation without its CGV
             if ($lang === 'fr') break;

@@ -108,7 +108,10 @@ function handle(string $type, array $o, ?string &$ref): string {
         [$sid, $order, $meta] = invoice_order($o);
         if (!$order) return $sid ? not_found($meta, "a failed invoice ({$o['id']})") : 'foreign';
         refresh_sub($sid, $order);
-        $retry = add_days(paris_date((int)($o['created'] ?? now())), RETRY_DAYS);
+        /* Stripe's retry window runs from the first attempt, made when the invoice is
+           finalized (about an hour after it is drafted), not from its creation. */
+        $tried = (int)($o['status_transitions']['finalized_at'] ?? $o['created'] ?? now());
+        $retry = add_days(paris_date($tried), RETRY_DAYS);
         q('UPDATE subscriptions SET retry_until = ? WHERE id = ?', [$retry, $sid]);
         if (($o['billing_reason'] ?? '') !== 'subscription_create') {
             /* Events come in any order: a retry that went through since says nothing failed. */

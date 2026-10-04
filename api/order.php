@@ -26,7 +26,7 @@ if (!isset(PLANS[$plan]) || !is_string($price) || ($in['cgv'] ?? null) !== true 
     json_out(400); log_api('invalid'); exit;
 }
 /* The confirmation attaches the CGV the buyer accepted: no file, no sale. */
-if (!is_file(__DIR__ . '/_cgv/' . basename((string)cfg('cgv_version')) . '-fr.pdf')) { json_out(503); log_api('no_cgv'); exit; }
+if (!is_file(cgv_pdf((string)cfg('cgv_version'), 'fr'))) { json_out(503); log_api('no_cgv'); exit; }
 
 /* A live subscription already: nothing is created, the address is told, at
    most once a day. */
@@ -54,6 +54,9 @@ $t = PAY_TEXT[$lang];
     'metadata' => ['order' => $id],
     'subscription_data' => ['metadata' => ['order' => $id]],
     'locale' => $lang,
+    /* The euro price only, whatever the card (CGV 4.1, « aucun autre frais »), whatever the
+       account-wide Dashboard setting. The string, as http_build_query turns false into 0. */
+    'adaptive_pricing' => ['enabled' => 'false'],
     'success_url' => cfg('origin') . '/merci/',
     'cancel_url' => cfg('origin') . '/commande/#retour',
     'expires_at' => now() + 3600,
