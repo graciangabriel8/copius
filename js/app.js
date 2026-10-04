@@ -404,6 +404,9 @@
     var t = T();
     document.documentElement.lang = state.lang;
     el("tagline").textContent = t.tagline;
+    // Keyed on LOCKED, the one flag that opens the full version (top of this file).
+    el("tierBadge").textContent = LOCKED ? t.tierFree : t.tierPremium;
+    el("tierBadge").classList.toggle("tier-badge--premium", !LOCKED);
     placeholder("search", t.searchPh);
     startTypewriter();
     /* Static markup names its controls by key, so they switch with the rest. */

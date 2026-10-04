@@ -113,6 +113,13 @@ input,select{font:inherit}
 .brand-logo .bl-d{fill:var(--art-line)}
 .brand-text h1{margin:0;font-size:26px;line-height:1.1}
 .brand-text p{margin:0;font-size:12.5px;color:var(--ink-3)}
+/* Which version is open, beside the name: grey for the free one, the accent's soft
+   tint for the full one, the same pair the locked panels and their unlocking use. */
+.brand-row{display:flex;align-items:center;gap:8px}
+.tier-badge{font:600 10px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  padding:4px 7px 3px;border-radius:999px;border:1px solid var(--border-strong);background:var(--chip);color:var(--chip-ink)}
+.tier-badge:empty{display:none}
+.tier-badge--premium{border-color:var(--accent-soft-bd);background:var(--accent-soft);color:var(--accent-soft-ink)}
 /* Wraps rather than clips. The toggles have overflow:hidden for their pill
    shape, so without this a fourth control cuts a label in half instead of
    moving to a second row — and scrollWidth still matches clientWidth, which
