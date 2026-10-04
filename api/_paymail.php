@@ -19,16 +19,17 @@ const PAY_TEXT = [
         'signin' => 'Me connecter',
         'signin_note' => 'Ce lien est valable 15 minutes et ne sert qu’une fois. Ensuite, demandez-en un nouveau sur copius.fr avec cette adresse.',
         'confirm_subject' => 'Copius : confirmation de votre abonnement',
-        'confirm_lead' => 'Merci : votre abonnement à la version complète de Copius est confirmé. Voici ce que vous avez souscrit.',
+        'confirm_lead' => 'Merci : votre abonnement à la version complète de Copius est confirmé. Connectez-vous pour y accéder dès maintenant.',
+        'confirm_box' => 'Ce que vous avez souscrit :',
         'ref' => 'Référence de l’abonnement',
         'price_paid' => 'Prix payé',
         'start' => 'Début',
         'next' => 'Prochain paiement',
         'accepted' => 'Conditions générales de vente acceptées le {at}, version du {v}',
         'year_one' => 'La première année est un engagement ferme : une résiliation pendant cette année prend effet à sa fin. Avant chaque reconduction, nous vous écrivons, entre trois mois et un mois avant la date limite, pour vous rappeler que vous pouvez la refuser.',
-        'withdraw' => 'Vous pouvez vous rétracter jusqu’au {d} inclus, sans motif : fonction « Renoncer au contrat ici » ({u}), formulaire de rétractation à la fin des conditions jointes, ou message à contact@copius.fr. Vous serez intégralement remboursé sous 14 jours.',
-        'cancel_any' => 'Vous pouvez résilier à tout moment avec la fonction « Résilier votre contrat » : {u}',
-        'claims' => 'Une réclamation : écrivez à contact@copius.fr ou à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne. Si elle n’aboutit pas, vous pouvez saisir gratuitement le médiateur de la consommation : CM2C, 49 rue de Ponthieu, 75008 Paris, https://www.cm2c.net.',
+        'withdraw' => 'Vous pouvez vous rétracter jusqu’au {d} inclus, sans motif : fonction [[« Renoncer au contrat ici »|{u}]], formulaire de rétractation à la fin des conditions jointes, ou message à contact@copius.fr. Vous serez intégralement remboursé sous 14 jours.',
+        'cancel_any' => 'Vous pouvez résilier à tout moment avec la fonction [[« Résilier votre contrat »|{u}]].',
+        'claims' => 'Une réclamation : écrivez à contact@copius.fr ou à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne. Si elle n’aboutit pas, vous pouvez saisir gratuitement le médiateur de la consommation : CM2C, 49 rue de Ponthieu, 75008 Paris, [[cm2c.net|https://www.cm2c.net]].',
         'keep' => 'Vos conditions générales de vente sont jointes en PDF : téléchargez-les et conservez-les. Cet e-mail est l’archive de votre contrat.',
         'already_subject' => 'Copius : vous êtes déjà abonné',
         'already_lead' => 'Quelqu’un, sans doute vous, a voulu souscrire un abonnement à Copius avec cette adresse, qui en a déjà un en cours (référence {r}). Aucun nouvel abonnement n’a été créé et rien n’a été prélevé.',
@@ -79,16 +80,17 @@ const PAY_TEXT = [
         'signin' => 'Sign me in',
         'signin_note' => 'This link is valid once, for 15 minutes. After that, ask for a new one on copius.fr with this address.',
         'confirm_subject' => 'Copius: your subscription is confirmed',
-        'confirm_lead' => 'Thank you: your subscription to the full version of Copius is confirmed. Here is what you subscribed to.',
+        'confirm_lead' => 'Thank you: your subscription to the full version of Copius is confirmed. Sign in to use it right away.',
+        'confirm_box' => 'What you subscribed to:',
         'ref' => 'Subscription reference',
         'price_paid' => 'Price paid',
         'start' => 'Start',
         'next' => 'Next payment',
         'accepted' => 'Terms of sale accepted on {at}, version of {v}',
         'year_one' => 'The first year is a firm commitment: cancelling during it takes effect at its end. Before each renewal we write to you, between three months and one month before the deadline, to remind you that you can refuse it.',
-        'withdraw' => 'You may withdraw until {d} inclusive, without giving a reason: the “Withdraw from contract here” function ({u}), the withdrawal form at the end of the attached terms, or a message to contact@copius.fr. You will be refunded in full within 14 days.',
-        'cancel_any' => 'You can cancel at any time with the “Cancel your contract” function: {u}',
-        'claims' => 'A complaint? Write to contact@copius.fr or to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France. If that does not settle it, you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, https://www.cm2c.net.',
+        'withdraw' => 'You may withdraw until {d} inclusive, without giving a reason: the [[“Withdraw from contract here”|{u}]] function, the withdrawal form at the end of the attached terms, or a message to contact@copius.fr. You will be refunded in full within 14 days.',
+        'cancel_any' => 'You can cancel at any time with the [[“Cancel your contract”|{u}]] function.',
+        'claims' => 'A complaint? Write to contact@copius.fr or to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France. If that does not settle it, you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, [[cm2c.net|https://www.cm2c.net]].',
         'keep' => 'Your terms of sale are attached as a PDF, in French, the binding text: download and keep them. This email is the record of your contract.',
         'already_subject' => 'Copius: you already subscribe',
         'already_lead' => 'Someone, most likely you, tried to subscribe to Copius with this address, which already has a subscription running (reference {r}). No new subscription was created and nothing was charged.',
@@ -182,6 +184,9 @@ function pay_mail(array $row): ?array {
         $r = (string)$row['ref'];
         $b[] = ['p', $t['hello']];
         $b[] = ['p', $f('confirm_lead')];
+        $b[] = ['btn', $t['signin'], signin_link((string)$row['to_addr'], $lang)];
+        $b[] = ['small', $f('signin_note')];
+        $b[] = ['p', $f('confirm_box')];
         $b[] = ['box', [
             $f('ref') . colon($lang) . $r,
             $f('plan_' . $p['plan']),
@@ -190,12 +195,14 @@ function pay_mail(array $row): ?array {
             $f('next') . colon($lang) . fmt_date($p['next'], $lang) . ', ' . $money(PLANS[$p['plan']]['cents']),
             $f('accepted', ['{at}' => fmt_at((int)$p['cgv_at'], $lang), '{v}' => fmt_date((string)$p['cgv'], $lang)]),
         ]];
-        if ($p['plan'] === 'yearly') $b[] = ['p', $f('year_one')];
-        $b[] = ['p', $f('withdraw', ['{d}' => fmt_date(withdraw_deadline($p['started']), $lang), '{u}' => "$o/renoncer/#r=$r"])];
-        $b[] = ['p', $f('cancel_any', ['{u}' => "$o/resilier/#r=$r"])];
-        $b[] = ['btn', $t['signin'], signin_link((string)$row['to_addr'], $lang)];
-        $b[] = ['small', $f('signin_note')];
-        $b[] = ['p', $f('keep')];
+        $b[] = ['p', $t['bye']];
+        /* What the law asks the confirmation to carry (L221-13), whole but quiet:
+           after a rule, in the small type, every word kept. */
+        $b[] = ['rule'];
+        if ($p['plan'] === 'yearly') $b[] = ['small', $f('year_one')];
+        $b[] = ['small', $f('withdraw', ['{d}' => fmt_date(withdraw_deadline($p['started']), $lang), '{u}' => "$o/renoncer/#r=$r"])];
+        $b[] = ['small', $f('cancel_any', ['{u}' => "$o/resilier/#r=$r"])];
+        $b[] = ['small', $f('keep')];
         $b[] = ['small', $f('claims')];
         $v = basename((string)$p['cgv']);
         foreach (['fr', 'en'] as $cl) {
@@ -204,7 +211,6 @@ function pay_mail(array $row): ?array {
             elseif ($cl === 'fr') return null;            // never a confirmation without its CGV
             if ($lang === 'fr') break;
         }
-        $bye = true;
         break;
     case 'already':
         $subject = $t['already_subject'];
@@ -295,7 +301,8 @@ function blocks_text(array $blocks, string $seller, string $lang): string {
     $rule = str_repeat('━', 40);
     foreach ($blocks as $bl) {
         $out[] = match ($bl[0]) {
-            'p', 'small' => $bl[1],
+            'p', 'small' => preg_replace('/\[\[([^|\]]+)\|([^\]]+)\]\]/u', '$1 ($2)', $bl[1]),
+            'rule' => '—',
             'box' => $rule . "\n" . implode("\n", $bl[1]) . "\n" . $rule,
             'btn' => $bl[1] . colon($lang) . $bl[2],
         };
@@ -309,7 +316,8 @@ function blocks_html(array $blocks, string $lang, string $subject, string $selle
     $e = fn(string $s): string => nl2br(htmlspecialchars($s, ENT_QUOTES | ENT_HTML5, 'UTF-8'), false);
     /* Copius's own words only: an address in them becomes a link (never in a
        box, which quotes what the reader typed). */
-    $linked = fn(string $s): string => preg_replace('#https?://[A-Za-z0-9./:_=\#-]+[A-Za-z0-9/=]#', '<a href="$0" style="color:#4F5B3F">$0</a>', $e($s));
+    $linked = fn(string $s): string => preg_replace('#(?<!href=")https?://[A-Za-z0-9./:_=\#-]+[A-Za-z0-9/=]#', '<a href="$0" style="color:#4F5B3F">$0</a>',
+        preg_replace('/\[\[([^|\]]+)\|([^\]]+)\]\]/u', '<a href="$2" style="color:#6A6E5F">$1</a>', $e($s)));
     $serif = "font-family:Georgia,'Times New Roman',serif";
     $sans = 'font-family:Arial,Helvetica,sans-serif';
     $top = $banner
@@ -320,6 +328,7 @@ function blocks_html(array $blocks, string $lang, string $subject, string $selle
     foreach ($blocks as $bl) {
         $rows .= match ($bl[0]) {
             'p' => '<p style="margin:0 0 16px">' . $linked($bl[1]) . '</p>',
+            'rule' => '<hr style="margin:26px 0 18px;border:0;border-top:1px solid #E5E7DA">',
             'small' => '<p style="margin:0 0 16px;' . $sans . ';font-size:13px;line-height:1.5;color:#6A6E5F">' . $linked($bl[1]) . '</p>',
             'box' => '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px">' .
                 '<tr><td style="padding:14px 18px;border:1px solid #CBD0BB;border-radius:6px;background:#F7F6F1;' . $sans .
