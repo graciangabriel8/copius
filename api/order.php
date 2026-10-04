@@ -48,6 +48,12 @@ q('INSERT INTO orders (id, email, plan, lang, cgv_version, cgv_at, created) VALU
 $t = PAY_TEXT[$lang];
 [$code, $s] = stripe('POST', '/v1/checkout/sessions', [
     'mode' => 'subscription',
+    /* Card only (CGV 4.2, his call 4 Oct 2026), whatever methods the account shared with
+       Manager and Jobs has switched on: no SEPA, Klarna or Link. Apple Pay and Google Pay
+       pay with a card and stay. Dahlia only: endive answers 400 to payment_method_types
+       (the order then fails with 502), so moving stripe_api_version to endive renames this
+       allowed_payment_method_types. */
+    'payment_method_types' => ['card'],
     'line_items' => [['price' => $price, 'quantity' => 1]],
     'customer_email' => $addr,
     'client_reference_id' => $id,
