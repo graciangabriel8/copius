@@ -143,10 +143,43 @@ UI = {
 PRICE = {"en": "€4.90 a month or €39 a year", "fr": "4,90\u00a0€ par mois ou 39\u00a0€ par an"}
 
 
-def locked_block(gives, lang):
+def payments_live():
+    """Whether sales are open: the one switch is PAYMENTS_LIVE in js/app.js, so
+    these pages can never say « bientôt disponible » while the atlas sells."""
+    return re.search(r"^\s*var PAYMENTS_LIVE = true;", (ROOT / "js" / "app.js").read_text(encoding="utf-8"), re.M) is not None
+
+
+LIVE = payments_live()
+
+# What the "coming soon" wording becomes once sales are open (rebuilt by bump.sh).
+LIVE_UI = {
+    "en": {"order": "Order",
+           "freePairs1": "Its pairing is in the full version (%s).",
+           "freePairsN": "Its %d pairings are in the full version (%s).",
+           "kinMore": "+ %d in the full version.",
+           "legend": "Dashed outline: in the full version."},
+    "fr": {"order": "Commander",
+           "freePairs1": "Son accord est dans la version complète (%s).",
+           "freePairsN": "Ses %d accords sont dans la version complète (%s).",
+           "kinMore": "+ %d dans la version complète.",
+           "legend": "Contour pointillé : version complète."},
+}
+LIVE_DISH_UI = {
+    "en": {"idxLede": "%d plates that moved cooking, or that a cook is known for, and what is in each one. Why each combination works is in the full version."},
+    "fr": {"idxLede": "%d assiettes qui ont déplacé la cuisine, ou pour lesquelles un cuisinier est connu, et ce qu\u2019il y a dans chacune. Ce qui fait tenir chaque accord est dans la version complète."},
+}
+if LIVE:
+    for _l in UI:
+        UI[_l].update(LIVE_UI[_l])
+
+
+def locked_block(gives, lang, up):
     """The box that stands where paid content was: what the full version holds
-    here, its price, and that it is not on sale yet."""
+    here, its price, and either that it is not on sale yet or the way to order."""
     t = UI[lang]
+    if LIVE:
+        return ('<div class="locked"><h2>%s</h2><p>%s %s. <a href="%scommande/">%s</a></p></div>'
+                % (e(t["lockHead"]), e(t["lockGives"] % gives), e(PRICE[lang]), up, e(t["order"])))
     return ('<div class="locked"><h2>%s <small>%s</small></h2><p>%s %s.</p></div>'
             % (e(t["lockHead"]), e(t["soon"]), e(t["lockGives"] % gives), e(PRICE[lang])))
 
@@ -368,7 +401,7 @@ def page(i, lang, by_id, count, G):
         gives += [t["lockPairs1"] if n_pairs == 1 else t["lockPairsN"] % n_pairs] if n_pairs else []
         gives = (", ".join(gives[:-1]) + t["and"] + gives[-1] if len(gives) > 1
                  else gives[0] if gives else t["lockAll"])
-        body = locked_block(gives, lang)
+        body = locked_block(gives, lang, up)
     else:
         desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…"
         body = "<h2>%s</h2>\n  <p>%s</p>" % (e(t["story"]), e(story))
@@ -702,6 +735,9 @@ DISH_UI = {
            "lockGives": "la note sur ce plat et pourquoi l\u2019accord tient",
            "openAtlas": "Le voir dans l\u2019atlas"},
 }
+if LIVE:
+    for _l in DISH_UI:
+        DISH_UI[_l].update(LIVE_DISH_UI[_l])
 
 
 def dish_url(did, lang):
@@ -773,7 +809,7 @@ def dish_page(d, lang, by_id):
         "name": e(name), "kind": e(kind),
         "year": (" · %s" % e(year)) if year != "\u2014" else "",
         "chef": e(d["chef"]["name"]), "years": e(years),
-        "locked": locked_block(t["lockGives"], lang), "inglbl": e(t["ing"]),
+        "locked": locked_block(t["lockGives"], lang, up), "inglbl": e(t["ing"]),
         "chips": " ".join(chip(by_id[x], lang, rel) for x in d["ingredients"] if x in by_id),
         "openatlas": e(t["openAtlas"]), "all": e(t["all"]),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),

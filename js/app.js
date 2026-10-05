@@ -19,9 +19,11 @@
      on that flag alone, never on which data happens to be present: the pairings,
      trees and views stay shut even if a paid record arrived without it. */
   var LOCKED = window.COPIUS_PREMIUM !== true;
-  /* Sales open with the launch push, which sets this to true (DESIGN-PAYMENT.md
-     section 9): the price then leads to the order page instead of « bientôt ». */
-  var PAYMENTS_LIVE = false;
+  /* Sales are open (DESIGN-PAYMENT.md section 9): the price leads to the order
+     page instead of « bientôt ». tools/build-pages.py reads this line to word the
+     public pages the same way, so this is the one switch; config.php's
+     payments_live is the server's own. */
+  var PAYMENTS_LIVE = true;
   var LK = window.COPIUS_LOCKED || {};
   LK = {
     counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0 },

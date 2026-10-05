@@ -1,7 +1,7 @@
 {
   "name": "Copius — dictionnaire illustré des ingrédients",
   "short_name": "Copius",
-  "description": "A bilingual EN/FR illustrated atlas of cooking: origin, season, flavour notes, a story and a kitchen note for each ingredient. The free version is open to all; the full version is coming soon, and a version for schools will follow.",
+  "description": "A bilingual EN/FR illustrated atlas of cooking: origin, season, flavour notes, a story and a kitchen note for each ingredient. The free version is open to all; the full version is on sale, and a version for schools will follow.",
   "start_url": "./atlas.html",
   "scope": "./",
   "display": "standalone",
