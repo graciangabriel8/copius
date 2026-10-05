@@ -449,6 +449,9 @@
     el("contactLine").textContent = t.contactLine;
     el("aboutLink").textContent = t.aboutLink;
     el("privacyLink").textContent = t.privacyLink;
+    el("cgvLink").textContent = t.cgvLink;
+    el("cancelLink").textContent = t.cancelLink;
+    el("withdrawLink").textContent = t.withdrawLink;
     el("nokimeLink").textContent = t.nokimeLink;
     el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
@@ -1353,7 +1356,9 @@
         '<button type="button" class="m-lab-btn" data-signout>' + esc(t.signOut) + "</button>" +
         '<button type="button" class="m-lab-btn" data-signout="all">' + esc(t.signOutAll) + "</button>" +
         '<p class="full-free">' + esc(t.signOutAllHint) + "</p>" +
-        '<p class="signin-sent" role="status"></p></div>';
+        '<p class="signin-sent" role="status"></p></div>' +
+      '<p class="signin-why"><a href="resilier/">' + esc(t.cancelLink) + '</a> · ' +
+        '<a href="renoncer/">' + esc(t.withdrawLink) + "</a></p>";
   }
 
   /* After the server has cleared both cookies, the page reloads from the
