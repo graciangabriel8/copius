@@ -22,6 +22,7 @@
   --art-2:#d7d7d3;
   --art-3:#bcbcb6;
   --art-line:#585853;
+  --d-g:#6F8A4E; --d-r:#C0665A; --d-s:#4E86A0; --d-e:#9A7148; --d-o:#A07A14;
   --warn:#8a6d3b;
   --warn-line:#c8a869;
   --ring:#E3E8D6;
@@ -55,6 +56,7 @@
   --art-2:#3a3a36;
   --art-3:#4a4a45;
   --art-line:#b8b5ae;
+  --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
   --warn:#d1b276;
   --warn-line:#7a6435;
   --ring:#33362B;
@@ -70,6 +72,7 @@
     --plate:#242619; --accent:#AEB994; --on-accent:#191A14;
     --accent-soft:#2E3626; --accent-soft-ink:#C2CFA6; --accent-soft-bd:#46523A;
     --art-1:#2f2f2c; --art-2:#3a3a36; --art-3:#4a4a45; --art-line:#b8b5ae;
+    --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
     --warn:#d1b276; --warn-line:#7a6435; --ring:#33362B;
     --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lift:0 10px 30px rgba(0,0,0,.45);
     --head-bg:rgba(20,22,15,.92); --scrim:rgba(0,0,0,.6);
@@ -488,6 +491,12 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .art .s{fill:none;stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .art .sf{stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .art .dot{fill:var(--art-line)}
+/* A drawing's lines in its family's colour (js/app.js FAMILY); no family, grey. */
+.art[data-f="g"],.tw-core[data-f="g"]{--art-line:var(--d-g)}
+.art[data-f="r"],.tw-core[data-f="r"]{--art-line:var(--d-r)}
+.art[data-f="s"],.tw-core[data-f="s"]{--art-line:var(--d-s)}
+.art[data-f="e"],.tw-core[data-f="e"]{--art-line:var(--d-e)}
+.art[data-f="o"],.tw-core[data-f="o"]{--art-line:var(--d-o)}
 /* Protected designation, shown beside the name. Deliberately NOT on pairing chips: a dense
    grid speckled with red and blue is unreadable, and butter alone renders 479 of them.
    Red follows the AOP/DOP convention, blue the IGP one, both muted so the page keeps one

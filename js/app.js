@@ -364,11 +364,20 @@
     return monogramSvg((name(i) || "?").trim().charAt(0).toUpperCase(), name(i));
   }
 
+  /* Each family draws its lines in its own colour (css/style.css, [data-f]):
+     green for leaves and roots, pink for fruit and flowers, blue for the sea,
+     brown for mushrooms and the farm, gold for the pantry. */
+  var FAMILY = {};
+  [["g", "vegetables herbs seaweed legumes"], ["r", "fruits flowers sweet"], ["s", "seafood shellfish roe"],
+   ["e", "mushrooms meat cuts dairy fats"], ["o", "spices nuts grains condiments cellar infusions texture"]]
+    .forEach(function (f) { f[1].split(" ").forEach(function (c) { FAMILY[c] = f[0]; }); });
+  function famAttr(i) { return FAMILY[i.cat] ? ' data-f="' + FAMILY[i.cat] + '"' : ""; }
+
   function art(i, cls) {
     if (photosMap[i.id]) return '<img class="' + (cls || "") + '" src="' + photosMap[i.id] + '" alt="' + esc(name(i)) + '">';
     if (PHOTOS.has(i.id)) return '<img class="' + (cls || "") + '" src="img/' + i.id + '.jpg" alt="' + esc(name(i)) + '" loading="lazy">';
     if (i.custom) return monogram(i);
-    return '<svg class="art" viewBox="0 0 96 96" role="img" aria-label="' + esc(name(i)) + '">' +
+    return '<svg class="art"' + famAttr(i) + ' viewBox="0 0 96 96" role="img" aria-label="' + esc(name(i)) + '">' +
       '<circle cx="48" cy="50" r="42" fill="var(--plate)"/>' + i.svg + "</svg>";
   }
 
@@ -951,7 +960,7 @@
     // branch nodes are buttons.
     var svg = '<svg class="tw-svg" viewBox="0 0 460 404" role="group" aria-labelledby="treeTitle">' +
       links +
-      '<g class="tw-core"><circle class="tw-core-disc" r="' + CR + '" cx="' + CX + '" cy="' + CY + '"/>' +
+      '<g class="tw-core"' + famAttr(ing) + '><circle class="tw-core-disc" r="' + CR + '" cx="' + CX + '" cy="' + CY + '"/>' +
       '<g transform="translate(' + (CX - 34) + ' ' + (CY - 34) + ') scale(0.71)">' + (ing.svg || "") + "</g></g>" +
       nodes + "</svg>";
 
