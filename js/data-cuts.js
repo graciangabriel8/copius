@@ -107,7 +107,7 @@ fr:"Avant la gélatine industrielle, c’était la gélatine : la cuisine de mal
 tip:{en:"Ask for it split lengthwise, blanch it ten minutes and throw that first water away or the daube tastes of the yard. One foot sets roughly two litres of stock to a firm jelly — use half of it for a sauce you want glossy rather than solid.",
 fr:"Demandez-le fendu dans la longueur, blanchissez-le dix minutes et jetez cette première eau, sinon la daube sent l’étable. Un pied fait prendre environ deux litres de fond en gelée ferme — la moitié suffit pour une sauce brillante plutôt que prise."},
 pairs:["carrot","onion","bay-leaf","thyme","orange","red-wine-vinegar","clove","black-pepper"],
-svg:'<path class="f2 sf" d="M38 20h20l-2 32q11 9 7 19-4 9-15 9t-15-9q-4-10 7-19z"/><circle class="f1 sf" cx="48" cy="34" r="6"/><path class="s" d="M36 66q12 6 24 0"/><path class="s" d="M48 72v8"/>'},
+svg:'<path class="f2 sf" d="M31 18C30 31 30 43 32 52C34 58 38 60 44 60L58 60C62 60 63 57 60 54C56 50 52 46 50 40C48 33 49 25 50 18Z"/><ellipse class="f1 sf" cx="40.5" cy="18" rx="9.5" ry="3.6"/><circle class="f3 sf" cx="41" cy="18" r="2.4"/><path class="f3 sf" d="M42 59L60 58C67 63 72 70 75 78L55 78L41 77C39 71 39 63 42 59Z"/><path class="s" d="M52 59L64 78" stroke-width="2"/><path class="f3 sf" d="M32 51Q25 55 25 62Q30 60 34 57Z"/><path class="s" d="M36 28q4 2 8 0M36 37q4 2 8 0" stroke-width="1.5"/>'},
 
 {id:"tete-de-veau",cat:"cuts",price:2,pk:"12–20 €/kg",name:{en:"Calf's head",fr:"Tête de veau"},latin:"Bos taurus (caput)",
 origin:{en:"France, sold boned and rolled",fr:"France, vendue désossée et roulée"},season:[],
@@ -497,7 +497,7 @@ fr:"Les pieds à la Sainte-Menehould sont enveloppés de linge et cuits jusqu’
 tip:{en:"Buy them split and by the pair, and singe the bristles over a flame before they go anywhere near water. Cook, cool completely, then crumb and grill — a trotter straight from the pot is far too slack to hold a coating.",
 fr:"Achetez-les fendus et par paire, et flambez les soies à la flamme avant qu’ils n’approchent l’eau. Cuisez, refroidissez complètement, puis panez et grillez : un pied sorti du bouillon est bien trop mou pour tenir une panure."},
 pairs:["dijon-mustard","flour-t55","shallot","white-wine-vinegar","carrot","onion","bay-leaf","black-pepper"],
-svg:'<path class="f1 sf" d="M40 22h16v30q0 6 6 10 7 5 4 13-4 9-18 9t-18-9q-3-8 4-13 6-4 6-10z"/><path class="s" d="M48 62v18"/><path class="s" d="M40 30h16"/>'},
+svg:'<path class="f1 sf" d="M27 25C26 37 26 47 29 55C31 60 36 62 42 62L58 62C62 62 63 59 60 56C55 52 50 48 48 42C46 36 47 30 47 25Z"/><ellipse class="f2 sf" cx="37" cy="25" rx="10" ry="4"/><circle class="f3 sf" cx="38" cy="25" r="2"/><path class="f3 sf" d="M41 61L59 60C65 64 70 70 73 76L54 76L40 74C38 70 38 64 41 61Z"/><path class="s" d="M51 61L62 76" stroke-width="2"/><path class="f3 sf" d="M29 53Q22 57 22 64Q27 62 32 59Z"/><path class="s" d="M32 35q4 2 8 0M31 43q4 2 8 0" stroke-width="1.5"/>'},
 
 {id:"vessie-de-porc",cat:"cuts",price:2,pk:"8–15 €/pièce",name:{en:"Pig’s bladder",fr:"Vessie de porc"},latin:"Sus scrofa domesticus (vesica)",
 origin:{en:"Lyon and the Bresse table",fr:"Lyon et la table bressane"},season:[],
