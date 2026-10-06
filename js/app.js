@@ -1376,7 +1376,7 @@
       .then(function (r) {
         if (!r.ok) throw new Error("logout " + r.status);
         if (SESSION_CH) SESSION_CH.postMessage("changed");
-        /* Signed out, copius.fr/ is the landing page again. */
+        /* Back to copius.fr/, the home page. */
         location.replace("/");
       })
       .catch(function () {

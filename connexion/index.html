@@ -38,7 +38,7 @@
    What follows the # never reaches a server, a log or a Referer, and it leaves
    the address bar at once. The token is spent only on a click, so a mail
    scanner that opens the link cannot use it. Five endings: signed in (on to the
-   atlas), link expired or used, no access, cookies refused, no token. */
+   home page), link expired or used, no access, cookies refused, no token. */
 (function () {
   var h = location.hash, tok = (/(?:^#|&)t=([A-Za-z0-9_-]+)/.exec(h) || [])[1] || "";
   /* The link's language, else the atlas's own order: the saved choice, then
@@ -68,7 +68,7 @@
           if (!/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) { go.hidden = true; return say("cxCookies"); }
           /* The site's other open tabs reload into the full version. */
           if (window.BroadcastChannel) new BroadcastChannel("copius-session").postMessage("changed");
-          /* copius.fr/ itself: with the marker the server answers it with the atlas. */
+          /* The home page, as for everyone; its button opens the atlas, now full. */
           location.replace("/");
           return;
         }

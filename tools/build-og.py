@@ -11,7 +11,7 @@ system, which is the whole reason this is not a node script.
 
     python3 tools/build-og.py
 """
-import pathlib, re, subprocess, sys, tempfile
+import json, pathlib, re, subprocess, sys, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "og" / "copius.jpg"
@@ -46,8 +46,40 @@ html, k = re.subn(r'content="[^"]*? ingredients, [^"]*? techniques, [^"]*? bases
                   % (fmt(len(ing)), fmt(tech), fmt(bases), fmt(chefs)), html)
 if k != 1:
     sys.exit("index.html: the og:description count line was not found")
+
+# The landing page's wall of drawings: the page chooses the ids, and everything
+# else is refreshed from the data here, so a redrawn ingredient shows there too.
+# Free version only: each drawing links to its page, and a page outside the
+# free version is a locked one. The family picks the plate's tint.
+FAMILY = {c: f for f, cats in (("g", "vegetables herbs seaweed legumes"), ("r", "fruits flowers sweet"),
+                               ("s", "seafood shellfish roe"), ("e", "mushrooms meat cuts dairy fats"),
+                               ("o", "spices nuts grains condiments cellar infusions texture"))
+          for c in cats.split()}
+free = set(json.loads((ROOT / "tools" / "free-tier.json").read_text())["ids"])
+recs = {}
+for f in (ROOT / "js").glob("data-*.js"):
+    if any(x in f.name for x in NOT_INGREDIENTS):
+        continue
+    for m in re.finditer(r"\{id:\"([^\"]+)\",cat:\"([^\"]+)\"(.*?)svg:'(.*?)'\s*\}", f.read_text(), re.S):
+        en = re.search(r'name:\{en:"([^"]*)"', m.group(3))
+        fr = re.search(r'name:\{[^}]*?fr:"([^"]*)"', m.group(3))
+        recs[m.group(1)] = (m.group(2), en and en.group(1), fr and fr.group(1), m.group(4))
+wall = re.search(r"^  var D = (\[.*\]);$", html, re.M)
+if not wall:
+    sys.exit("index.html: the drawings line (var D = [...];) was not found")
+art = []
+for d in json.loads(wall.group(1)):
+    r = recs.get(d["i"])
+    if not r or r[0] not in FAMILY or not (r[1] and r[2] and r[3]):
+        sys.exit("index.html: no usable drawing in the data for " + d["i"])
+    if d["i"] not in free:
+        sys.exit("index.html: %s is not in the free version, so its page is locked" % d["i"])
+    art.append({"i": d["i"], "f": FAMILY[r[0]], "e": r[1], "r": r[2], "s": r[3]})
+html = (html[:wall.start(1)] + json.dumps(art, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+        + html[wall.end(1):])
 idx.write_text(html, encoding="utf-8")
-print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs" % (len(ing), tech, bases, chefs))
+print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs; %d drawings"
+      % (len(ing), tech, bases, chefs, len(art)))
 
 # qlmanage renders into a square box and scales to fit, so a 1200x630 svg comes
 # out zoomed and clipped. Authoring it square and cropping the middle band back

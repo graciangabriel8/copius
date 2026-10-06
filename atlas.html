@@ -252,15 +252,8 @@
     if (local && /(?:^\?|&)full(?:=|&|$)/.test(location.search)) {
       document.write('<script src="' + "js/" + '_premium.js?v=214"><\/script>'); return;
     }
-    if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) {
-      /* Signed in, the atlas's address is copius.fr/ itself, which the server
-         answers with this page for the same cookie (.htaccess): an atlas.html
-         address (a link, a bookmark, the installed app) is shown as / instead.
-         Same folder, so every relative path still resolves the same way. */
-      if (/\/atlas\.html$/.test(location.pathname) && window.history && history.replaceState)
-        history.replaceState(history.state, "", location.pathname.replace(/atlas\.html$/, "") + location.search + location.hash);
+    if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie))
       document.write('<script src="' + "/api/" + 'premium.php?v=214"><\/script>');
-    }
   })();
 </script>
 <script src="js/app.js?v=214"></script>
