@@ -50,8 +50,9 @@ if (/^#[a-z0-9-]+$/i.test(location.hash)) location.replace("atlas.html" + locati
   :root{
     --bg:#F7F6F1; --card:#FFFEFC; --border:#E5E7DA; --ink:#1E211A;
     --ink-2:#565A4C; --ink-3:#6A6E5F; --accent:#4F5B3F;
-    --line:#585853; --f1:#FFFEFC; --f2:#ECEBE4; --f3:#D8D7CE;
+    --f1:#FFFEFC; --f2:#ECEBE4; --f3:#D8D7CE;
     --t-g:#DCE4CB; --t-r:#F1DAD3; --t-s:#D3E1E6; --t-e:#E8DCCB; --t-o:#EEE3BC;
+    --d-g:#6F8A4E; --d-r:#C0665A; --d-s:#4E86A0; --d-e:#9A7148; --d-o:#C29A2E;
     --lift:0 12px 28px -10px rgba(30,33,26,.35);
     --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -62,16 +63,18 @@ if (/^#[a-z0-9-]+$/i.test(location.hash)) location.replace("atlas.html" + locati
   :root[data-theme="dark"]{
     --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --ink:#ECEBE2;
     --ink-2:#B4B7A6; --ink-3:#8E9280; --accent:#AEB994;
-    --line:#B8B5AE; --f1:#2A2C24; --f2:#33352C; --f3:#3E4035;
+    --f1:#2A2C24; --f2:#33352C; --f3:#3E4035;
     --t-g:#2C3524; --t-r:#3A2A27; --t-s:#22323A; --t-e:#352D23; --t-o:#37311F;
+    --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
     --lift:0 12px 28px -10px rgba(0,0,0,.7);
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --ink:#ECEBE2;
       --ink-2:#B4B7A6; --ink-3:#8E9280; --accent:#AEB994;
-      --line:#B8B5AE; --f1:#2A2C24; --f2:#33352C; --f3:#3E4035;
+      --f1:#2A2C24; --f2:#33352C; --f3:#3E4035;
       --t-g:#2C3524; --t-r:#3A2A27; --t-s:#22323A; --t-e:#352D23; --t-o:#37311F;
+      --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
       --lift:0 12px 28px -10px rgba(0,0,0,.7);
     }
   }
@@ -118,18 +121,19 @@ if (/^#[a-z0-9-]+$/i.test(location.hash)) location.replace("atlas.html" + locati
   /* Grows from a seed rather than fading in: a page whose clock never runs
      (a background tab, a preview) still shows every drawing. */
   @keyframes pop{from{scale:.2} to{scale:1}}
-  .tile[data-f="g"]{--fam:var(--t-g)}
-  .tile[data-f="r"]{--fam:var(--t-r)}
-  .tile[data-f="s"]{--fam:var(--t-s)}
-  .tile[data-f="e"]{--fam:var(--t-e)}
-  .tile[data-f="o"]{--fam:var(--t-o)}
+  /* Each family's plate tint, and its lines in the same colour, deeper. */
+  .tile[data-f="g"]{--fam:var(--t-g); --deep:var(--d-g)}
+  .tile[data-f="r"]{--fam:var(--t-r); --deep:var(--d-r)}
+  .tile[data-f="s"]{--fam:var(--t-s); --deep:var(--d-s)}
+  .tile[data-f="e"]{--fam:var(--t-e); --deep:var(--d-e)}
+  .tile[data-f="o"]{--fam:var(--t-o); --deep:var(--d-o)}
   .tile svg{display:block; width:100%; height:100%}
   .tile .f1{fill:var(--f1)}
   .tile .f2{fill:var(--f2)}
   .tile .f3{fill:var(--f3)}
-  .tile .s{fill:none; stroke:var(--line); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
-  .tile .sf{stroke:var(--line); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
-  .tile .dot{fill:var(--line)}
+  .tile .s{fill:none; stroke:var(--deep); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .tile .sf{stroke:var(--deep); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .tile .dot{fill:var(--deep)}
   .tile .nm{
     position:absolute; left:50%; top:100%; margin-top:8px; transform:translateX(-50%);
     white-space:nowrap; padding:3px 9px; border-radius:7px;
