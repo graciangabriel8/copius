@@ -99,6 +99,7 @@ UI = {
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
            "index": "All ingredients", "about": "About",
+           "index_desc": "%s: all %s ingredients.",
            "count": "%d ingredients · %d families",
            "fixLbl": "Something wrong here, or missing?",
            "fixCta": "Tell us",
@@ -122,6 +123,7 @@ UI = {
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
            "index": "Tous les ingrédients", "about": "À propos",
+           "index_desc": "%s : les %s ingrédients.",
            "count": "%d ingrédients · %d familles",
            "fixLbl": "Une erreur ici, ou un oubli ?",
            "fixCta": "Dites-le nous",
@@ -650,7 +652,7 @@ def index_page(rows, lang):
 %s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — Copius</title>
-<meta name="description" content="%s: %d %s.">%s
+<meta name="description" content="%s">%s
 %s
 <link rel="stylesheet" href="%scss/page.css?v=%d">
 </head>
@@ -660,7 +662,7 @@ def index_page(rows, lang):
 <footer>Copius — %s</footer>
 </body>
 </html>
-""" % (lang, THEME_SCRIPT, e(t["index"]), e(t["tagline"]), len(rows), e(t["index"]).lower(),
+""" % (lang, THEME_SCRIPT, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
        robots, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
        e(t["legend"]), "".join(blocks), e(t["tagline"]))
 
