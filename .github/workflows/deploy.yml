@@ -1,0 +1,39 @@
+# Every push to main runs tools/check.py. Only when it passes does this workflow move the branch `live` to that
+# commit; OVH deploys `live` (its Git link points at that branch), and GitHub's own webhook tells it when `live`
+# moves. A red check leaves `live`, so the site, on the last good version. Pushes keep going to main as before.
+# OVH only accepts notifications from GitHub's servers, so the deploy cannot be called from here directly.
+# `live` only moves forward along main (GitHub's API refuses anything else, so the clone here needs no history);
+# if main's history were ever rewritten, the move is refused and the run is red. `live` is created once by hand.
+# Runs queue rather than cancel each other; a run whose commit is no longer main's newest stands down and lets
+# the newer run promote it. A push that got no run ([skip ci], an Actions incident) is promoted by running this
+# workflow by hand: gh workflow run deploy.yml
+name: Checks, then deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+permissions:
+  contents: write   # to move the branch live, nothing else
+jobs:
+  check-and-promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch live (the checks compare css/ and js/ with it)
+        run: git fetch --depth=1 --no-tags origin live:refs/remotes/origin/live
+      - name: Checks
+        run: python3 tools/check.py
+      - name: Move live to this commit (OVH deploys live)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head=$(git ls-remote origin refs/heads/main) || { echo "::error::could not read main's newest commit"; exit 1; }
+          head=${head%%[[:space:]]*}
+          if [ -z "$head" ]; then echo "::error::could not read main's newest commit"; exit 1; fi
+          if [ "$head" != "$GITHUB_SHA" ]; then echo "main has moved on to $head; that newer run promotes it"; exit 0; fi
+          gh api -X PATCH "repos/$GITHUB_REPOSITORY/git/refs/heads/live" -f sha="$GITHUB_SHA" -F force=false --silent
+          echo "live is now $GITHUB_SHA"

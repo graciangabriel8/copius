@@ -1,6 +1,7 @@
 // The public data and the unpublished full bundle, from the source data.
 //
 //   osascript -l JavaScript tools/build-free.js          (from the project root; bump.sh runs it)
+//   node tools/build-free.js                             (the same, where there is no osascript: tools/check.py)
 //
 // js/free.js — the only ingredient data the public atlas loads: the ids in
 //   tools/free-tier.json, each record as in the source minus pairs and parent (the
@@ -12,16 +13,24 @@
 //   in .gitignore, and the leading underscore keeps Jekyll off it as well. Locally,
 //   atlas.html?full loads it; step 2 has the server hand the same bundle to
 //   subscribers.
-ObjC.import("Foundation");
-var root = ObjC.unwrap($.NSFileManager.defaultManager.currentDirectoryPath);
-function read(f) {
-  var s = $.NSString.stringWithContentsOfFileEncodingError(root + "/" + f, $.NSUTF8StringEncoding, null);
-  if (!s || s.isNil()) throw new Error("cannot read " + f);
-  return ObjC.unwrap(s);
-}
-function write(f, text) {
-  var ok = $(text).writeToFileAtomicallyEncodingError(root + "/" + f, true, $.NSUTF8StringEncoding, null);
-  if (!ok) throw new Error("cannot write " + f);
+var read, write;
+if (typeof require === "function" && typeof process !== "undefined") {
+  var fs = require("fs"), path = require("path");
+  var base = path.join(__dirname, "..");
+  read = function (f) { return fs.readFileSync(path.join(base, f), "utf8"); };
+  write = function (f, text) { fs.writeFileSync(path.join(base, f), text); };
+} else {
+  ObjC.import("Foundation");
+  var root = ObjC.unwrap($.NSFileManager.defaultManager.currentDirectoryPath);
+  read = function (f) {
+    var s = $.NSString.stringWithContentsOfFileEncodingError(root + "/" + f, $.NSUTF8StringEncoding, null);
+    if (!s || s.isNil()) throw new Error("cannot read " + f);
+    return ObjC.unwrap(s);
+  };
+  write = function (f, text) {
+    var ok = $(text).writeToFileAtomicallyEncodingError(root + "/" + f, true, $.NSUTF8StringEncoding, null);
+    if (!ok) throw new Error("cannot write " + f);
+  };
 }
 
 var SOURCES = read("tools/sources.txt").split("\n").map(function (l) { return l.trim(); })
