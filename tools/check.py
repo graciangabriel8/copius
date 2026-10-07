@@ -129,7 +129,7 @@ for page in pages:
 live = subprocess.run(["git", "-C", str(root), "rev-parse", "--verify", "-q", "refs/remotes/origin/live^{commit}"], capture_output=True, text=True).stdout.strip()
 if live and len(seen) == 1:
     now = next(iter(seen))
-    then = re.search(r"\?v=(\d+)", subprocess.run(["git", "-C", str(root), "show", live + ":atlas.html"], capture_output=True, text=True).stdout)
+    then = re.search(r"(?:css|js)/[\w.-]+\.(?:css|js)\?v=(\d+)", subprocess.run(["git", "-C", str(root), "show", live + ":atlas.html"], capture_output=True, text=True).stdout)
     moved = subprocess.run(["git", "-C", str(root), "diff", "--name-only", live, "--", "css", "js"], capture_output=True, text=True).stdout.split()
     stale = sorted(set(moved) & loaded)
     if then and then.group(1) == now and stale:
