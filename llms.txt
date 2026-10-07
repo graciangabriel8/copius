@@ -1,0 +1,19 @@
+# Copius
+
+> An illustrated bilingual atlas of ingredients, techniques, bases and the people who cooked them. In progress.
+
+Free version for everyone · full version: €4.90 a month or €39 a year · schools version soon
+Version gratuite pour tous · version complète : 4,90 € par mois ou 39 € par an · version écoles bientôt
+
+## Explore
+
+- [Copius — Ingredient Dictionary · Dictionnaire des ingrédients](https://copius.fr/atlas.html): The free version of Copius: the ingredients a cook is expected to know and the techniques — origin, season, flavour, price and a kitchen note for each, in English and French.
+- [All ingredients](https://copius.fr/i/) · French: https://copius.fr/fr/i/
+- [What is in season, month by month](https://copius.fr/season/): Twelve pages, one per month: what has a short season — three months or less — and is at its best then in France, with what arrives and what leaves. · French: https://copius.fr/fr/saison/
+- [Dishes](https://copius.fr/dish/): 44 plates that moved cooking, or that a cook is known for, and what is in each one. Why each combination works is in the full version. · French: https://copius.fr/fr/plat/
+- [About Copius — who writes it, and how](https://copius.fr/about/): Who writes Copius, how the entries are made, where the seasons and prices come from, and what is still missing.
+
+## Copius is a Nokime tool
+
+- [Nokime](https://nokime.fr/): Copius to find inspiration, Jobs to hire, Manager to know whether the dish pays.
+- Instagram: [@copius.fr](https://www.instagram.com/copius.fr/)
