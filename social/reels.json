@@ -11,6 +11,13 @@
     {"date": "2026-10-08", "file": "social/reels/banane.mp4", "cover": "social/reels/banane-cover.jpg", "id": "banana"},
     {"date": "2026-10-09", "file": "social/reels/ananas.mp4", "cover": "social/reels/ananas-cover.jpg", "id": "pineapple"},
     {"date": "2026-10-10", "file": "social/reels/figue.mp4", "cover": "social/reels/figue-cover.jpg", "id": "fig"},
+    {"date": "2026-10-11", "file": "social/reels/kiwi.mp4", "cover": "social/reels/kiwi-cover.jpg", "id": "kiwi"},
+    {"date": "2026-10-12", "file": "social/reels/piment.mp4", "cover": "social/reels/piment-cover.jpg", "id": "chili"},
+    {"date": "2026-10-13", "file": "social/reels/noix-de-coco.mp4", "cover": "social/reels/noix-de-coco-cover.jpg", "id": "coconut"},
+    {"date": "2026-10-14", "file": "social/reels/pomme.mp4", "cover": "social/reels/pomme-cover.jpg", "id": "apple"},
+    {"date": "2026-10-15", "file": "social/reels/chataigne.mp4", "cover": "social/reels/chataigne-cover.jpg", "id": "chestnut"},
+    {"date": "2026-10-16", "file": "social/reels/grenade.mp4", "cover": "social/reels/grenade-cover.jpg", "id": "pomegranate"},
+    {"date": "2026-10-17", "file": "social/reels/poire.mp4", "cover": "social/reels/poire-cover.jpg", "id": "pear"},
     {"date": "2026-10-02", "file": "social/reels/copius-film-en.mp4", "cover": "social/reels/copius-film-en-cover.jpg", "id": "copius-film-en", "byhand": true, "caption": "Copius, an illustrated atlas of cooking. 1,888 ingredients, 13,200 pairings, 135 techniques, 68 chefs. copius.fr"}
   ]
 }
