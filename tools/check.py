@@ -16,7 +16,8 @@ Prints one line per failure and exits 1 on any.
    catches a planted fake of each kind), and no credential file (config.php, *.key, .env, copius-private) tracked
 6. generated files: the generators bump.sh runs (all but the share card's jpg) run on a copy of the repo, and
    what they write matches what is committed: a data change pushed without `sh tools/bump.sh` fails, and so does
-   a page left over for an ingredient that left the free list. sitemap.xml's <lastmod> dates are not compared.
+   a page left over for an ingredient that left the free list. sitemap.xml is compared whole: its <lastmod> dates
+   come from the committed tools/lastmod.json, so a regeneration on any day reproduces them.
 7. PHP: php -l on api/*.php (required on GitHub, whose PHP is 8.3: OVH's 8.4-only syntax would need setup-php;
    skipped with a note where php is missing)
 """
@@ -167,7 +168,6 @@ for f in tracked():
 # 6. generated files: run on a copy of the tracked files (social/'s media are not needed), never on the repo
 GENERATORS = [[node, "tools/build-free.js"], [sys.executable, "tools/build-sw.py"], [node, "tools/dump-dishes.js"],
               [sys.executable, "tools/build-og.py"], [sys.executable, "tools/build-pages.py"]]   # bump.sh's order, minus the version bump
-LASTMOD = re.compile(rb"<lastmod>[^<]*</lastmod>")
 if node:
     with tempfile.TemporaryDirectory() as tmp:
         copy = pathlib.Path(tmp) / "site"
@@ -187,8 +187,7 @@ if node:
                 break
         if stopped: fail("generated: " + stopped)
         else:
-            norm = lambda rel, b: LASTMOD.sub(b"", b) if rel.name == "sitemap.xml" else b
-            changed = [str(rel) for rel in kept if not (copy / rel).is_file() or norm(rel, (copy / rel).read_bytes()) != norm(rel, (root / rel).read_bytes())]
+            changed = [str(rel) for rel in kept if not (copy / rel).is_file() or (copy / rel).read_bytes() != (root / rel).read_bytes()]
             gone = [r for r in changed if not (copy / r).is_file()]
             capped("generated: ", ["%s differs from what the generators write: run sh tools/bump.sh and commit" % r for r in changed if r not in gone])
             capped("generated: ", ["%s is no longer generated (left over): run sh tools/bump.sh and commit the removal" % r for r in gone])

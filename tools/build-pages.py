@@ -16,6 +16,7 @@ version holds. Dish pages are teasers too: the chefs are paid.
 Run:  python3 tools/build-pages.py
 """
 import datetime
+import hashlib
 import html
 import json
 import pathlib
@@ -632,6 +633,29 @@ def index_href(lang):
     return "i/" if lang == "en" else "fr/i/"
 
 
+# A <lastmod> is the day the page last changed, not the day it was built: every date read 2026-10-07 once, the build
+# date, and told a crawler nothing. tools/lastmod.json keeps, per sitemap URL, a fingerprint of the page as written
+# (its ?v= asset stamps left out, since every bump moves them, and so is the ingredient count in an entry page's
+# footer, which one new ingredient would move on all 3,776 of them) and the day that fingerprint was first seen. A
+# rebuild that changes nothing changes no date; a page whose content moves takes today's. Run after every page is
+# written: it reads them back, the hand-made ones (the home page, about/, cgv/...) included.
+LASTMOD = ROOT / "tools" / "lastmod.json"
+STAMP = re.compile(r"\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n</footer>)")
+
+
+def lastmods(urls):
+    known = json.loads(LASTMOD.read_text()) if LASTMOD.is_file() else {}
+    today = datetime.date.today().isoformat()
+    seen = {}
+    for u in urls:
+        page = ROOT / u[len(SITE) + 1:] / "index.html"
+        h = hashlib.sha256(STAMP.sub("", page.read_text(encoding="utf-8")).encode()).hexdigest()[:16]
+        old = known.get(u)
+        seen[u] = old if old and old[0] == h else [h, today]
+    LASTMOD.write_text("{\n" + ",\n".join("%s: %s" % (json.dumps(u), json.dumps(seen[u])) for u in sorted(seen)) + "\n}\n")
+    return [(u, seen[u][1]) for u in urls]
+
+
 def index_page(rows, lang):
     t = UI[lang]
     up = "../" if lang == "en" else "../../"
@@ -645,6 +669,9 @@ def index_page(rows, lang):
             e(family(cat, lang)), len(items),
             " ".join('<a%s href="%s/">%s</a>' % (lk(i), i["id"], e(i["name"][lang])) for i in items)))
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    other = "fr" if lang == "en" else "en"
+    here = "%s/i/" % SITE if lang == "en" else "%s/fr/i/" % SITE
+    there = "%s/fr/i/" % SITE if lang == "en" else "%s/i/" % SITE
     return """<!doctype html>
 <html lang="%s">
 <head>
@@ -653,6 +680,9 @@ def index_page(rows, lang):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — Copius</title>
 <meta name="description" content="%s">%s
+<link rel="canonical" href="%s">
+<link rel="alternate" hreflang="%s" href="%s">
+<link rel="alternate" hreflang="%s" href="%s">
 %s
 <link rel="stylesheet" href="%scss/page.css?v=%d">
 </head>
@@ -663,7 +693,7 @@ def index_page(rows, lang):
 </body>
 </html>
 """ % (lang, THEME_SCRIPT, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
-       robots, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
+       robots, here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
        e(t["legend"]), "".join(blocks), e(t["tagline"]))
 
 
@@ -1221,7 +1251,6 @@ def main():
         (ROOT / "fr" / "plat" / "index.html").write_text(dish_index("fr", by_id))
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
-    today = datetime.date.today().isoformat()
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
             "%s/confidentialite/" % SITE, "%s/cgv/" % SITE,
             "%s/season/" % SITE, "%s/fr/saison/" % SITE]
@@ -1237,7 +1266,7 @@ def main():
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, today) for u in urls)
+        + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, d) for u, d in lastmods(urls))
         + "</urlset>\n")
 
     paid = sum(1 for i in rows if i["id"] not in FREE)
