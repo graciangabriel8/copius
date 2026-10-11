@@ -18,6 +18,7 @@
     {"date": "2026-10-15", "file": "social/reels/chataigne.mp4", "cover": "social/reels/chataigne-cover.jpg", "id": "chestnut"},
     {"date": "2026-10-16", "file": "social/reels/grenade.mp4", "cover": "social/reels/grenade-cover.jpg", "id": "pomegranate"},
     {"date": "2026-10-17", "file": "social/reels/poire.mp4", "cover": "social/reels/poire-cover.jpg", "id": "pear"},
-    {"date": "2026-10-02", "file": "social/reels/copius-film-en.mp4", "cover": "social/reels/copius-film-en-cover.jpg", "id": "copius-film-en", "byhand": true, "caption": "Copius, an illustrated atlas of cooking. 1,888 ingredients, 13,200 pairings, 135 techniques, 68 chefs. copius.fr"}
+    {"date": "2026-10-02", "file": "social/reels/copius-film-en.mp4", "cover": "social/reels/copius-film-en-cover.jpg", "id": "copius-film-en", "byhand": true, "caption": "Copius, an illustrated atlas of cooking. 1,888 ingredients, 13,200 pairings, 135 techniques, 68 chefs. copius.fr"},
+    {"date": "2026-10-11", "file": "social/reels/copius-v-fr.mp4", "cover": "social/reels/copius-v-fr-cover.jpg", "id": "copius-v-fr", "byhand": true, "caption": "En panne d’idées en cuisine ?\nCopius : les produits de saison, et ce qui va avec.\nL’atlas illustré de la cuisine.\ncopius.fr"}
   ]
 }
