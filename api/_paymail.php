@@ -67,7 +67,7 @@ const PAY_TEXT = [
         'notice_box' => 'Date limite pour refuser la reconduction : {d}',
         'notice_text' => 'Votre abonnement annuel à la version complète de Copius (référence {r}) sera reconduit pour un an le {renew}, au prix de {a} ({vat}). Si vous ne souhaitez pas le reconduire, utilisez la fonction « Résilier votre contrat » avant la date limite ci-dessus : {u}. Sans refus de votre part, votre carte sera débitée le {renew}.',
         'bye' => 'Bonne lecture, et bonne cuisine.',
-        'seller' => 'Copius · Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
+        'seller' => 'Copius · Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne · SIREN 130 694 615, RCS Saint-Étienne en cours d’immatriculation · contact@copius.fr',
         'months' => ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     ],
     'en' => [
@@ -128,7 +128,7 @@ const PAY_TEXT = [
         'notice_box' => 'Deadline to refuse the renewal: {d}',
         'notice_text' => 'Your yearly subscription to the full version of Copius (reference {r}) will renew for one year on {renew}, at {a} ({vat}). If you do not want it renewed, use the “Cancel your contract” function before the deadline above: {u}. Unless you refuse, your card will be charged on {renew}.',
         'bye' => 'Happy reading, and happy cooking.',
-        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
+        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615, Saint-Étienne RCS registration in progress · contact@copius.fr',
         'months' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     ],
 ];
