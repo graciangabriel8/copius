@@ -52,9 +52,14 @@
   var SESSION_CH = window.BroadcastChannel ? new BroadcastChannel("copius-session") : null;
   function hasMark() { return /(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie); }
   /* The service worker's offline copy of the full version (service-worker.js,
-     PREMIUM_CACHE): gone with the sign-in. */
-  function forgetBundle() { try { if (window.caches) caches.delete("premium-copius"); } catch (e) {} }
+     PREMIUM_CACHE): gone with the sign-in, so also at any load without the
+     marker (the cookie expired or was cleared). Settles, never rejects. */
+  function forgetBundle() {
+    try { if (window.caches) return caches.delete("premium-copius").catch(function () {}); } catch (e) {}
+    return Promise.resolve();
+  }
   var MARK_AT_LOAD = hasMark();
+  if (!MARK_AT_LOAD) forgetBundle();
   var SESSION = window.COPIUS_SESSION ||
     (MARK_AT_LOAD && LOCKED ? (navigator.onLine === false ? "offline" : "unavailable") : "");
   var SESSION_NOTE = { ended: "sessionEnded", noaccess: "sessionNoAccess",
@@ -1395,9 +1400,8 @@
       .then(function (r) {
         if (!r.ok) throw new Error("logout " + r.status);
         if (SESSION_CH) SESSION_CH.postMessage("changed");
-        forgetBundle();
-        /* Back to copius.fr/, the home page. */
-        location.replace("/");
+        /* Back to copius.fr/, the home page, once the offline copy is gone. */
+        return forgetBundle().then(function () { location.replace("/"); });
       })
       .catch(function () {
         enable(true);

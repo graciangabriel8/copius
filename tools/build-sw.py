@@ -82,11 +82,13 @@ const SKIP = /^\\/(api|connexion)(\\/|$)/;
 // The full version, kept for when there is no network: the bundle the server
 // gave the last time it was asked (the bundle alone carries an ETag, a stub
 // never does). The server is always asked first; its copy answers only when it
-// cannot be reached, or says « unavailable » (a database blip), and only for the
-// ?v= it was saved under, within PREMIUM_DAYS of being saved. The server's
-// « ended » or « noaccess », and signing out (js/app.js), delete it. The atlas
-// asks for the bundle only while the sign-in marker cookie lives, so the copy
-// never outlasts the sign-in. Its own cache name, outside 'copius-', so a new
+// cannot be reached, fails (5xx) or says « unavailable » (a database blip); only
+// for the ?v= it was saved under, within PREMIUM_DAYS of being saved; and only
+// to the atlas's own script tag, never to an address typed in the bar. The
+// server's « ended » or « noaccess », a 401 from me.php, signing out, an atlas
+// load without the sign-in marker cookie (js/app.js) and a new sign-in
+// (connexion/) delete it. Kept under the PREMIUM URL, which the handlers below
+// never reach, and under its own cache name, outside 'copius-', so a new
 // worker version keeps it.
 const PREMIUM = '/api/premium.php';
 const PREMIUM_CACHE = 'premium-copius';
@@ -94,25 +96,30 @@ const PREMIUM_DAYS = 30;
 function premium(e) {
   var req = e.request, v = new URL(req.url).searchParams.get('v') || '';
   function saved(fallback) {
-    return caches.open(PREMIUM_CACHE).then(function (c) { return c.match('bundle'); }).then(function (hit) {
-      var fresh = hit && hit.headers.get('X-V') === v &&
-        Date.now() - Number(hit.headers.get('X-Saved')) < PREMIUM_DAYS * 864e5;
+    if (req.destination !== 'script') return Promise.resolve(fallback);
+    return caches.open(PREMIUM_CACHE).then(function (c) { return c.match(PREMIUM); }).then(function (hit) {
+      var at = hit ? Number(hit.headers.get('X-Saved')) : 0, now = Date.now();
+      var fresh = hit && hit.headers.get('X-V') === v && at <= now && now - at < PREMIUM_DAYS * 864e5;
       return fresh ? hit : fallback;
     });
   }
+  // The respondWith promise is still pending here, so the event can be kept
+  // alive for the cache write: the copy is 3-4 MB, and a worker stopped as
+  // soon as it answered would lose it.
   e.respondWith(fetch(req).then(function (res) {
     if (res.ok && res.headers.get('ETag')) {
-      res.clone().blob().then(function (b) {
+      e.waitUntil(res.clone().blob().then(function (b) {
         return caches.open(PREMIUM_CACHE).then(function (c) {
-          return c.put('bundle', new Response(b, { headers: {
+          return c.put(PREMIUM, new Response(b, { headers: {
             'Content-Type': 'text/javascript; charset=utf-8', 'X-Saved': String(Date.now()), 'X-V': v } }));
         });
-      });
+      }));
       return res;
     }
+    if (res.status >= 500) return saved(res);
     if (!res.ok) return res;
     return res.clone().text().then(function (s) {
-      if (/"(ended|noaccess)"/.test(s)) { caches.delete(PREMIUM_CACHE); return res; }
+      if (/"(ended|noaccess)"/.test(s)) { e.waitUntil(caches.delete(PREMIUM_CACHE)); return res; }
       return /"unavailable"/.test(s) ? saved(res) : res;
     });
   }, function () { return saved(Response.error()); }));

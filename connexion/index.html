@@ -12,7 +12,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
 <link rel="manifest" href="../manifest.json">
-<link rel="stylesheet" href="../css/page.css?v=220">
+<link rel="stylesheet" href="../css/page.css?v=221">
 <style>
   .cx{margin:10px 0 0;padding:11px 20px;border-radius:999px;border:1px solid var(--ink);
     background:var(--ink);color:var(--bg);font:600 15px/1.2 var(--sans);cursor:pointer}
@@ -42,7 +42,7 @@
 </div>
 </main>
 
-<script src="../js/i18n.js?v=220"></script>
+<script src="../js/i18n.js?v=221"></script>
 <script>
 /* The page a sign-in link opens: https://copius.fr/connexion/#t=<token>&l=fr.
    What follows the # never reaches a server, a log or a Referer, and it leaves
@@ -85,6 +85,10 @@
           if (!/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) { done(); say("cxCookies"); return false; }
           /* The site's other open tabs reload into the full version. */
           if (window.BroadcastChannel) new BroadcastChannel("copius-session").postMessage("changed");
+          /* A new sign-in starts without the last one's offline copy of the
+             full version (service-worker.js), which may be someone else's. */
+          var yes = function () { return true; };
+          try { if (window.caches) return caches.delete("premium-copius").then(yes, yes); } catch (e) {}
           return true;
         }
         busy = null;
@@ -116,7 +120,7 @@
   var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   /* Safari on a Mac makes a web app with Share, « Add to Dock », and copies the
      site's sign-in into it at that moment: sign in here first, then add it. */
-  var macSafari = !ios && /Macintosh/.test(ua) && /Safari\//.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox/.test(ua);
+  var macSafari = !ios && /Macintosh/.test(ua) && /Version\/(1[7-9]|[2-9]\d)\.[\d.]* Safari\//.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox/.test(ua);
   if (macSafari) {
     t.cxMacSteps.forEach(function (s) { var li = document.createElement("li"); li.textContent = s; steps.appendChild(li); });
   } else if (ios) {
