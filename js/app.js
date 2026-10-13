@@ -1284,8 +1284,8 @@
   }
 
   /* What the full version holds, every count read from COPIUS_LOCKED; with an
-     id, it opens on that paid entry's name, and its public page, which carries
-     the teaser: drawing, family, season and price band. */
+     id, it opens on that paid entry's name and links its public page: drawing,
+     family, season, price band, story and kitchen note. */
   function renderFullModal(id) {
     var t = T(), c = LK.counts, x = id ? PAID[id] : null, head;
     if (x) {

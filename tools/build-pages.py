@@ -8,10 +8,12 @@ the same data with the text actually in the HTML, at a URL of its own:
     i/verjus-rouge/       English
     fr/i/verjus-rouge/    French
 
-Only the free version is published. An entry in tools/free-tier.json gets its
-whole page minus the pairings; every other entry gets a teaser page (name,
-drawing, family, season, price) and a locked block saying what the full
-version holds. Dish pages are teasers too: the chefs are paid.
+Every entry's page shows its story and its kitchen tip openly. An entry in
+tools/free-tier.json also shows its latin name, origin and flavour; every other
+entry keeps those three rows, and the pairings, in the full version, and its
+page ends on a locked block saying what the full version adds. The pairings and
+the pairing lab are the full version's on every page. Dish pages are teasers:
+the chefs are paid.
 
 Run:  python3 tools/build-pages.py
 """
@@ -107,9 +109,10 @@ UI = {
            "fixSubj": "Correction — %s",
            "fixBody": "Page: %s\n\nWhat is wrong, or what is missing:\n\n",
            "lockHead": "Full version", "soon": "coming soon",
-           "lockGives": "The full version gives %s.", "and": " and ",
-           "lockStory": "what it is", "lockTip": "the kitchen note", "lockAll": "the whole entry",
-           "lockPairs1": "its pairing", "lockPairsN": "its %d pairings",
+           "lockGives": "The full version gives %s.",
+           "lockLab": "the pairing lab and the plate",
+           "lockPairs1": "its pairing, ", "lockPairsN": "its %d pairings, ",
+           "sameFam": "In the same family",
            "freePairs1": "Its pairing is in the full version, coming soon (%s).",
            "freePairsN": "Its %d pairings are in the full version, coming soon (%s).",
            "neutral": "%s — %s. Season in France: %s.",
@@ -131,9 +134,10 @@ UI = {
            "fixSubj": "Correction — %s",
            "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n",
            "lockHead": "Version complète", "soon": "bientôt disponible",
-           "lockGives": "La version complète donne %s.", "and": " et ",
-           "lockStory": "ce que c’est", "lockTip": "la note de cuisine", "lockAll": "la fiche entière",
-           "lockPairs1": "son accord", "lockPairsN": "ses %d accords",
+           "lockGives": "La version complète donne %s.",
+           "lockLab": "le labo d’accords et l’assiette",
+           "lockPairs1": "son accord, ", "lockPairsN": "ses %d accords, ",
+           "sameFam": "Dans la même famille",
            "freePairs1": "Son accord est dans la version complète, bientôt disponible (%s).",
            "freePairsN": "Ses %d accords sont dans la version complète, bientôt disponible (%s).",
            "neutral": "%s — %s. Saison en France : %s.",
@@ -177,7 +181,7 @@ if LIVE:
 
 
 def locked_block(gives, lang, up):
-    """The box that stands where paid content was: what the full version holds
+    """The box that stands where the paid content is: what the full version adds
     here, its price, and either that it is not on sale yet or the way to order."""
     t = UI[lang]
     if LIVE:
@@ -385,9 +389,10 @@ def page(i, lang, by_id, count, G):
     tip = i["tip"][lang] or i["tip"][other]
     season = season_text(i["season"], lang)
 
-    # A paid entry is a teaser: name, drawing, family, season, price. Its story,
-    # tip, latin, origin and flavour stay in the full version, and so does every
-    # line of text built from them — the description included.
+    # A paid entry shows its story and its kitchen tip like a free one. Its latin,
+    # origin and flavour rows stay in the full version, and so does every line
+    # of text built from them. The description is the story's, the free pages'
+    # method; the template only stands in for an entry with no story.
     rows = [(t["latin"], "<i>%s</i>" % e(i["latin"])) if i["latin"] and not paid else None,
             (t["family"], e(fam)),
             (t["origin"], e(i["origin"][lang] or i["origin"][other])) if (i["origin"][lang] or i["origin"][other]) and not paid else None,
@@ -397,25 +402,22 @@ def page(i, lang, by_id, count, G):
     facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v)
                     for k, v in filter(None, rows))
 
+    desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…" if story else t["neutral"] % (name, fam, season)
+    body = "<h2>%s</h2>\n  <p>%s</p>" % (e(t["story"]), e(story)) if story else ""
+    if tip:
+        body += "\n\n  <h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))
     if paid:
-        desc = t["neutral"] % (name, fam, season)
-        gives = [t["lockStory"]] if story else []
-        gives += [t["lockTip"]] if tip else []
-        gives += [t["lockPairs1"] if n_pairs == 1 else t["lockPairsN"] % n_pairs] if n_pairs else []
-        gives = (", ".join(gives[:-1]) + t["and"] + gives[-1] if len(gives) > 1
-                 else gives[0] if gives else t["lockAll"])
-        body = locked_block(gives, lang, up)
-    else:
-        desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…"
-        body = "<h2>%s</h2>\n  <p>%s</p>" % (e(t["story"]), e(story))
-        if tip:
-            body += "\n\n  <h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))
-        if n_pairs:
-            body += "\n\n  <p class=\"locked\">%s</p>" % e(
-                t["freePairs1"] % PRICE[lang] if n_pairs == 1 else t["freePairsN"] % (n_pairs, PRICE[lang]))
+        # The pairings are counted and named as the full version's, with the lab.
+        gives = (t["lockPairs1"] if n_pairs == 1 else t["lockPairsN"] % n_pairs if n_pairs else "") + t["lockLab"]
+        body += "\n\n  " + locked_block(gives, lang, up)
+    elif n_pairs:
+        body += "\n\n  <p class=\"locked\">%s</p>" % e(
+            t["freePairs1"] % PRICE[lang] if n_pairs == 1 else t["freePairsN"] % (n_pairs, PRICE[lang]))
 
     # Both trees put siblings next to each other, so one relative path serves both.
-    # A teaser page shows no neighbours: its own latin and flavours pick them.
+    # Same-species and in-season neighbours are picked from latin and flavour, which
+    # a paid page does not show, so only a free page has them. Every page has its
+    # family neighbours, picked from the family and the season, which every page shows.
     kin_ids, near_ids, kin_paid = related(i, G) if not paid else ([], [], 0)
     extra = ""
     if kin_ids or kin_paid:
@@ -427,6 +429,10 @@ def page(i, lang, by_id, count, G):
     if near_ids:
         extra += '<h2>%s</h2><p class="pairs">%s</p>' % (
             e(t["near"]), " ".join(chip(by_id[x], lang, "../") for x in near_ids))
+    fam_ids = family_mates(i, G)
+    if fam_ids:
+        extra += '<h2>%s</h2><p class="pairs">%s</p>' % (
+            e(t["sameFam"]), " ".join(chip(by_id[x], lang, "../") for x in fam_ids))
 
     marks = "".join(' <span class="mk" title="%s">%s</span>' % (e(t[k]), s)
                     for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k] and not paid)
@@ -514,15 +520,18 @@ def page(i, lang, by_id, count, G):
 # atlas sat on a single inbound link — from /i/, a flat page of 1 835 — which
 # is a list, not a graph. A third, "Also used with", linked a page to everything
 # that pairs with it; it went with the lock, because a reverse pairing is a
-# pairing and pairings are the full version's.
+# pairing and pairings are the full version's. Every page also names its family
+# neighbours (family_mates), because the 25 September lock left 144 of the 499
+# free pages and all 1,389 paid ones with no link to another entry.
 KIN_MAX = NEAR_MAX = 6
+FAMILY_MATES = 3
 
 
 def chip(r, lang, rel):
     """An entry as a chip: its drawing, then its name, the way the atlas shows
     it — the drawing is how an entry is recognised before the name is read.
     `rel` climbs from the page to the entry pages of its language. A paid entry
-    is drawn dashed: its page is a teaser."""
+    is drawn dashed: its pairings and its lab are the full version's."""
     return ('<a%s href="%s%s/"><svg class="ci" viewBox="0 0 96 96" aria-hidden="true">'
             '<circle cx="48" cy="50" r="42" fill="none"/>%s</svg>%s</a>'
             % (lk(r), rel, r["id"], r["svg"], e(r["name"][lang])))
@@ -584,7 +593,9 @@ def link_graph(rows):
     builds, counted as tools/build-free.js counts it; only its sizes are used."""
     by_id = {i["id"]: i for i in rows}
     partners, genus, month = defaultdict(set), defaultdict(list), defaultdict(set)
+    fam = defaultdict(list)
     for i in rows:
+        fam[i["cat"]].append(i)
         for p in i["pairs"]:
             if p in by_id:
                 partners[i["id"]].add(p)
@@ -594,7 +605,11 @@ def link_graph(rows):
             genus[g].append(i["id"])
         for m in i["season"]:
             month[m].add(i["id"])
-    return {"by_id": by_id, "partners": partners, "genus": genus, "month": month}
+    # A family in a ring, ordered by the month its season starts (all-year first), then by id:
+    # neighbours in the ring share a family and a season, both public on every page.
+    ring = {c: [x["id"] for x in sorted(v, key=lambda x: (min(x["season"]) if x["season"] else 0, x["id"]))]
+            for c, v in fam.items()}
+    return {"by_id": by_id, "partners": partners, "genus": genus, "month": month, "ring": ring}
 
 
 def related(i, G):
@@ -615,6 +630,21 @@ def related(i, G):
         scored = [(len(flav & set(by_id[c]["flavor"])), c) for c in cand]
         near = [c for s, c in sorted(scored, key=lambda x: (-x[0], x[1])) if s >= 2][:NEAR_MAX]
     return kin, near, kin_paid
+
+
+def family_mates(i, G):
+    """The FAMILY_MATES entries on each side of this one in its family's ring,
+    paid ones included, nearest first. The ring gives every page the same number
+    of links in and out, so no page hangs from the index alone, and it reads only
+    the family and the season: nothing a paid page keeps back is given away."""
+    ring = G["ring"][i["cat"]]
+    n, k = len(ring), ring.index(i["id"])
+    if n - 1 <= 2 * FAMILY_MATES:
+        return [ring[(k + d) % n] for d in range(1, n)]
+    out = []
+    for d in range(1, FAMILY_MATES + 1):
+        out += [ring[(k + d) % n], ring[(k - d) % n]]
+    return out
 
 
 def page_title(name, alt_name, fam):
@@ -1179,8 +1209,8 @@ h3 small{text-transform:none;letter-spacing:0}
 .fix{margin:30px 0 0;padding:14px 16px;background:var(--card);
   border:1px solid var(--border);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
 .fix a{color:var(--ink-2)}
-/* The full version. A paid entry's chip is dashed — its page is a teaser — and
-   a dashed box stands where paid content was. */
+/* The full version. A paid entry's chip is dashed — its pairings and its lab
+   are the full version's — and a dashed box stands where the paid content is. */
 .pairs a.lk{border-style:dashed;color:var(--ink-3)}
 .locked{margin:26px 0 0;padding:14px 16px;background:var(--card);
   border:1px dashed var(--ink-3);border-radius:12px;font-size:14.5px;color:var(--ink-3)}
