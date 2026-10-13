@@ -10,8 +10,9 @@ the same data with the text actually in the HTML, at a URL of its own:
 
 Every entry's page shows its story and its kitchen tip openly. An entry in
 tools/free-tier.json also shows its latin name, origin and flavour; every other
-entry keeps those three rows, and the pairings, in the full version, and its
-page ends on a locked block saying what the full version adds. The pairings and
+entry keeps those three rows, and the pairings, in the full version, and a
+locked block closes its entry text saying what the full version adds; the
+family links follow it. The pairings and
 the pairing lab are the full version's on every page. Dish pages are teasers:
 the chefs are paid.
 
@@ -402,7 +403,7 @@ def page(i, lang, by_id, count, G):
     facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v)
                     for k, v in filter(None, rows))
 
-    desc = re.sub(r"\s+", " ", story)[:155].rsplit(" ", 1)[0] + "…" if story else t["neutral"] % (name, fam, season)
+    desc = story_desc(story) if story else t["neutral"] % (name, fam, season)
     body = "<h2>%s</h2>\n  <p>%s</p>" % (e(t["story"]), e(story)) if story else ""
     if tip:
         body += "\n\n  <h2>%s</h2><p>%s</p>" % (e(t["tip"]), e(tip))
@@ -429,7 +430,8 @@ def page(i, lang, by_id, count, G):
     if near_ids:
         extra += '<h2>%s</h2><p class="pairs">%s</p>' % (
             e(t["near"]), " ".join(chip(by_id[x], lang, "../") for x in near_ids))
-    fam_ids = family_mates(i, G)
+    shown = set(kin_ids) | set(near_ids)
+    fam_ids = [x for x in family_mates(i, G) if x not in shown]
     if fam_ids:
         extra += '<h2>%s</h2><p class="pairs">%s</p>' % (
             e(t["sameFam"]), " ".join(chip(by_id[x], lang, "../") for x in fam_ids))
@@ -630,6 +632,17 @@ def related(i, G):
         scored = [(len(flav & set(by_id[c]["flavor"])), c) for c in cand]
         near = [c for s, c in sorted(scored, key=lambda x: (-x[0], x[1])) if s >= 2][:NEAR_MAX]
     return kin, near, kin_paid
+
+
+def story_desc(story):
+    """The description: the story whole when it fits in 155 characters, else cut
+    at a word and closed with an ellipsis. Only ASCII blanks collapse, so the
+    no-break spaces French typography needs survive."""
+    s = re.sub(r"[ \t\n]+", " ", story).strip()
+    if len(s) <= 155:
+        return s
+    cut = s[:155] if s[155] == " " else s[:155].rsplit(" ", 1)[0]
+    return cut.rstrip(" ,;:—–-") + "…"
 
 
 def family_mates(i, G):

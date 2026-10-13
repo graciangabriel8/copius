@@ -572,7 +572,7 @@ window.I18N = {
     fullBtnLive: "Version complète",
     fullTitle: "La version complète",
     fullIs: "{name} fait partie de la version complète.",
-    fullPage: "Sa page : dessin, famille, saison, prix, ce que c’est et la note de cuisine",
+    fullPage: "Sa page : dessin, famille, saison, prix, ce que c’est et la note de cuisine",
     fullHolds: "Ce qu’elle contient",
     fullIngredients: "{p} ingrédients de plus, {t} en tout",
     fullPairings: "Les {n} accords recensés, sur chaque fiche",
