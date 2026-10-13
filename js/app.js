@@ -51,6 +51,9 @@
      broadcast rather than a localStorage stamp, so nothing is left stored. */
   var SESSION_CH = window.BroadcastChannel ? new BroadcastChannel("copius-session") : null;
   function hasMark() { return /(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie); }
+  /* The service worker's offline copy of the full version (service-worker.js,
+     PREMIUM_CACHE): gone with the sign-in. */
+  function forgetBundle() { try { if (window.caches) caches.delete("premium-copius"); } catch (e) {} }
   var MARK_AT_LOAD = hasMark();
   var SESSION = window.COPIUS_SESSION ||
     (MARK_AT_LOAD && LOCKED ? (navigator.onLine === false ? "offline" : "unavailable") : "");
@@ -1352,7 +1355,7 @@
           ME = m;
           /* No session behind the marker: drop the marker too, so the page
              stops offering an account that is not there. */
-          if (m.status === 401) document.cookie = "__Host-copius_full=; Max-Age=0; Path=/; Secure";
+          if (m.status === 401) { document.cookie = "__Host-copius_full=; Max-Age=0; Path=/; Secure"; forgetBundle(); }
           var top = modalTop();
           if (top && top.kind === "account" && !el("overlay").hidden) { showModal(); applyStatic(); }
         });
@@ -1392,6 +1395,7 @@
       .then(function (r) {
         if (!r.ok) throw new Error("logout " + r.status);
         if (SESSION_CH) SESSION_CH.postMessage("changed");
+        forgetBundle();
         /* Back to copius.fr/, the home page. */
         location.replace("/");
       })

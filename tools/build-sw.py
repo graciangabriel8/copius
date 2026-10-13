@@ -75,13 +75,53 @@ self.addEventListener('activate', function (e) {
   }).then(function () { return self.clients.claim(); }));
 });
 
-// Signing in never touches Cache Storage: the bundle's answer depends on the
-// session, and the link page carries a one-time token.
+// Signing in never touches Cache Storage: the link page carries a one-time
+// token, and every other /api/ answer depends on the session.
 const SKIP = /^\\/(api|connexion)(\\/|$)/;
+
+// The full version, kept for when there is no network: the bundle the server
+// gave the last time it was asked (the bundle alone carries an ETag, a stub
+// never does). The server is always asked first; its copy answers only when it
+// cannot be reached, or says « unavailable » (a database blip), and only for the
+// ?v= it was saved under, within PREMIUM_DAYS of being saved. The server's
+// « ended » or « noaccess », and signing out (js/app.js), delete it. The atlas
+// asks for the bundle only while the sign-in marker cookie lives, so the copy
+// never outlasts the sign-in. Its own cache name, outside 'copius-', so a new
+// worker version keeps it.
+const PREMIUM = '/api/premium.php';
+const PREMIUM_CACHE = 'premium-copius';
+const PREMIUM_DAYS = 30;
+function premium(e) {
+  var req = e.request, v = new URL(req.url).searchParams.get('v') || '';
+  function saved(fallback) {
+    return caches.open(PREMIUM_CACHE).then(function (c) { return c.match('bundle'); }).then(function (hit) {
+      var fresh = hit && hit.headers.get('X-V') === v &&
+        Date.now() - Number(hit.headers.get('X-Saved')) < PREMIUM_DAYS * 864e5;
+      return fresh ? hit : fallback;
+    });
+  }
+  e.respondWith(fetch(req).then(function (res) {
+    if (res.ok && res.headers.get('ETag')) {
+      res.clone().blob().then(function (b) {
+        return caches.open(PREMIUM_CACHE).then(function (c) {
+          return c.put('bundle', new Response(b, { headers: {
+            'Content-Type': 'text/javascript; charset=utf-8', 'X-Saved': String(Date.now()), 'X-V': v } }));
+        });
+      });
+      return res;
+    }
+    if (!res.ok) return res;
+    return res.clone().text().then(function (s) {
+      if (/"(ended|noaccess)"/.test(s)) { caches.delete(PREMIUM_CACHE); return res; }
+      return /"unavailable"/.test(s) ? saved(res) : res;
+    });
+  }, function () { return saved(Response.error()); }));
+}
 
 self.addEventListener('fetch', function (e) {
   var req = e.request;
   if (new URL(req.url).origin !== self.location.origin) return;
+  if (req.method === 'GET' && new URL(req.url).pathname === PREMIUM) { premium(e); return; }
   if (SKIP.test(new URL(req.url).pathname)) return;
   if (req.method !== 'GET') return;
 
