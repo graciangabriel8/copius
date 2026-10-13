@@ -953,6 +953,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   border:1px solid var(--border-strong);background:var(--card);color:var(--ink);font:inherit;outline:none}
 .signin-row input:focus{border-color:var(--ink-3);box-shadow:0 0 0 3px var(--ring)}
 .signin-row button:disabled{opacity:.55;cursor:default}
+.signin-head.signin-code{margin:14px 0 10px;color:var(--ink-2);font-size:14px}
 .signin-why{margin:10px 0 0;color:var(--ink-3);font-size:13px;line-height:1.5}
 .signin-why a{color:var(--ink-2);text-underline-offset:3px}
 .signin-sent{margin:12px 0 0;color:var(--ink);font-size:14px;line-height:1.55}

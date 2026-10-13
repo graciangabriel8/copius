@@ -22,8 +22,9 @@ const MAIL_TEXT = [
         'lead'    => "Voici votre lien pour vous connecter à la version complète de Copius.",
         'button'  => "Me connecter",
         'expiry'  => "Il est valable 15 minutes et ne sert qu’une fois. Ouvrez-le sur l’appareil où vous lisez Copius.",
+        'code'    => "Vous lisez Copius dans l’app de votre écran d’accueil\u{202F}? Tapez-y plutôt ce code\u{00A0}:",
         'copy'    => "Le bouton ne s’ouvre pas\u{202F}? Copiez cette adresse dans votre navigateur\u{00A0}:",
-        'ignore'  => "Vous n’avez rien demandé\u{202F}? Ignorez ce message\u{00A0}: sans ce lien, personne ne peut se connecter à votre place.",
+        'ignore'  => "Vous n’avez rien demandé\u{202F}? Ignorez ce message\u{00A0}: sans lui, personne ne peut se connecter à votre place.",
         'bye'     => "Bonne lecture, et bonne cuisine.",
     ],
     'en' => [
@@ -33,8 +34,9 @@ const MAIL_TEXT = [
         'lead'    => "Here is your link to sign in to the full version of Copius.",
         'button'  => "Sign me in",
         'expiry'  => "It works once, within 15 minutes. Open it on the device where you read Copius.",
+        'code'    => "Reading Copius in the app on your home screen? Type this code there instead:",
         'copy'    => "Button not opening? Copy this address into your browser:",
-        'ignore'  => "Didn’t ask for this? Ignore this email: without the link, nobody can sign in as you.",
+        'ignore'  => "Didn’t ask for this? Ignore this email: without it, nobody can sign in as you.",
         'bye'     => "Happy reading, and happy cooking.",
     ],
 ];
@@ -56,14 +58,17 @@ function mime_word(string $s): string {
 
 /* The sign-in message, or null when any header value carries a line break or
    the address is not the plain ASCII one the grant holds. */
-function mail_message(string $to, string $lang, string $link): ?array {
+function mail_message(string $to, string $lang, string $link, string $code): ?array {
     $lang = isset(MAIL_TEXT[$lang]) ? $lang : 'fr';
     $t = MAIL_TEXT[$lang];
-    if (!header_safe($link)) return null;
-    $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['ignore'], $t['bye'],
-        'Copius · contact@copius.fr']) . "\n";
-    return mail_build($to, $t['subject'], $text, fn(bool $banner): string => mail_html($t, $lang, $link, $banner));
+    if (!header_safe($link) || !preg_match('/^\d{6}$/', $code)) return null;
+    $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['code'] . "\n" . code_shown($code),
+        $t['ignore'], $t['bye'], 'Copius · contact@copius.fr']) . "\n";
+    return mail_build($to, $t['subject'], $text, fn(bool $banner): string => mail_html($t, $lang, $link, $code, $banner));
 }
+
+/* A code as the reader copies it: two groups of three, easier to read and type. */
+function code_shown(string $code): string { return substr($code, 0, 3) . ' ' . substr($code, 3); }
 
 /* Any Copius mail: the plain text and the HTML (built knowing whether the banner
    travels with it), the banner as an inline part, any attached files
@@ -129,7 +134,7 @@ function mime_parts(string $boundary, array $parts): string {
    only the first font named: the [if mso] table fixes the card at 560 px,
    mso-padding-alt pads the button's cell, and each font stack starts with a
    font Windows has. */
-function mail_html(array $t, string $lang, string $link, bool $banner): string {
+function mail_html(array $t, string $lang, string $link, string $code, bool $banner): string {
     $e = fn(string $s): string => htmlspecialchars($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $l = $e($link);
     $serif = "font-family:Georgia,'Times New Roman',serif";
@@ -154,6 +159,8 @@ $top
 <a href="$l" style="display:inline-block;padding:13px 28px;$sans;font-size:15px;font-weight:600;color:#FFFEFC;text-decoration:none;border-radius:6px">{$e($t['button'])}</a>
 </td></tr></table>
 <p style="margin:22px 0 0;font-size:15px;color:#565A4C">{$e($t['expiry'])}</p>
+<p style="margin:18px 0 4px;font-size:15px;color:#565A4C">{$e($t['code'])}</p>
+<p style="margin:0;font-size:28px;letter-spacing:.16em;color:#1E211A">{$e(code_shown($code))}</p>
 </td></tr>
 <tr><td style="padding:20px 32px 0;$sans;font-size:13px;line-height:1.5;color:#6A6E5F">
 <p style="margin:0 0 4px">{$e($t['copy'])}</p>
@@ -232,8 +239,8 @@ function mail_to_file(array $m): bool {
    the 165 s execution limit. No other route: PHP's mail() would likely fail
    DMARC, and its bounces could land in a mailbox the privacy page cannot
    promise to empty; the reader asks for a new link instead. */
-function send_link(string $to, string $lang, string $link, float $t0): string {
-    $m = mail_message($to, $lang, $link);
+function send_link(string $to, string $lang, string $link, string $code, float $t0): string {
+    $m = mail_message($to, $lang, $link, $code);
     if ($m === null) return 'header_refused';
     if (cfg('transport') === 'file') return mail_to_file($m) ? 'sent_file' : 'file_failed';
     $deadline = $t0 + 140;

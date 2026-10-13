@@ -11,7 +11,7 @@
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F1">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14160F">
-<link rel="stylesheet" href="../css/page.css?v=218">
+<link rel="stylesheet" href="../css/page.css?v=219">
 <style>
   .lede{margin:0 0 24px;font:400 19px/1.5 var(--serif);color:var(--ink-2)}
   .sep{border:0;border-top:1px solid var(--border);margin:40px 0 32px}
@@ -65,7 +65,7 @@
 
 <dl>
   <dt>Ce qui est collecté</dt>
-  <dd>À chaque demande de lien : une empreinte de votre adresse IP et, si l’adresse saisie est bien formée, une empreinte de cette adresse e-mail avec votre adresse IP, qu’elle ait accès ou non. Quand un lien est créé pour une adresse qui a accès, une empreinte de l’adresse e-mail seule. À chaque ouverture d’un lien : une empreinte de votre adresse IP. Une empreinte est un calcul à sens unique fait avec une clé secrète, jamais les adresses elles-mêmes. Aucun message ne part vers une adresse qui n’a pas accès.</dd>
+  <dd>À chaque demande de lien : une empreinte de votre adresse IP et, si l’adresse saisie est bien formée, une empreinte de cette adresse e-mail avec votre adresse IP, qu’elle ait accès ou non. Quand un lien est créé pour une adresse qui a accès, une empreinte de l’adresse e-mail seule. À chaque ouverture d’un lien ou code tapé : une empreinte de votre adresse IP, et pour un code faux, une empreinte de l’adresse e-mail saisie. Une empreinte est un calcul à sens unique fait avec une clé secrète, jamais les adresses elles-mêmes. Aucun message ne part vers une adresse qui n’a pas accès.</dd>
 
   <dt>Pourquoi, et sur quelle base</dt>
   <dd>Seulement pour limiter le nombre de demandes, contre les abus : l’intérêt légitime à protéger le service, article 6-1-f du RGPD.</dd>
@@ -90,7 +90,7 @@
   <dd>Personne. Ces données sont stockées chez OVHcloud, dans l’Union européenne, qui achemine aussi l’e-mail de connexion, envoyé depuis connexion@copius.fr. Aucun prestataire d’emailing, aucune publicité.</dd>
 
   <dt>Combien de temps</dt>
-  <dd>Un lien de connexion vaut 15 minutes, ne sert qu’une fois et est effacé sous 24 heures. Une session prend fin quand vous vous déconnectez, ou après 30 jours sans utilisation. Le journal technique est effacé après 30 jours, et les messages revenus à l’adresse d’envoi sous deux mois. Votre compte, les dates de votre accès et la note sont gardés tant que vous avez accès à la version complète, puis effacés au plus tard douze mois après la fin de cet accès. Les sauvegardes de l’hébergeur s’effacent sous 30 jours.</dd>
+  <dd>Un lien de connexion et le code qui l’accompagne valent 15 minutes, ne servent qu’une fois (l’un ou l’autre) et sont effacés sous 24 heures ; un code se tape au plus 5 fois. Une session prend fin quand vous vous déconnectez, ou après 30 jours sans utilisation. Le journal technique est effacé après 30 jours, et les messages revenus à l’adresse d’envoi sous deux mois. Votre compte, les dates de votre accès et la note sont gardés tant que vous avez accès à la version complète, puis effacés au plus tard douze mois après la fin de cet accès. Les sauvegardes de l’hébergeur s’effacent sous 30 jours.</dd>
 
   <dt>Comment être retiré</dt>
   <dd>« Se déconnecter partout » ferme toutes vos sessions. Pour effacer votre compte, écrivez-moi : il est supprimé sous un mois, avec votre accès, sans justification à donner. Si votre adresse a un abonnement en cours, l’effacement commence par mettre fin à cet abonnement chez Stripe, avec le remboursement éventuellement dû&#8239;; les données décrites ci-dessous dans la section «&#8239;Si vous achetez la version complète&#8239;» sont gardées pendant les durées qui y sont indiquées, ce que le RGPD permet (article 17-3).</dd>
@@ -168,7 +168,7 @@
 
 <dl>
   <dt>What is collected</dt>
-  <dd>Each time a link is requested: a fingerprint of your IP address and, if the address typed is well formed, a fingerprint of that email address with your IP address, whether or not it has access. When a link is issued to an address that has access, a fingerprint of the email address alone. Each time a link is opened: a fingerprint of your IP address. A fingerprint is a one-way calculation made with a secret key, never the addresses themselves. No message is sent to an address that has no access.</dd>
+  <dd>Each time a link is requested: a fingerprint of your IP address and, if the address typed is well formed, a fingerprint of that email address with your IP address, whether or not it has access. When a link is issued to an address that has access, a fingerprint of the email address alone. Each time a link is opened or a code typed: a fingerprint of your IP address, and for a wrong code, a fingerprint of the email address typed. A fingerprint is a one-way calculation made with a secret key, never the addresses themselves. No message is sent to an address that has no access.</dd>
 
   <dt>What for, and on what basis</dt>
   <dd>Only to limit how many requests can be made, against abuse: the legitimate interest in protecting the service, article 6(1)(f) GDPR.</dd>
@@ -193,7 +193,7 @@
   <dd>Nobody. This data is stored by OVHcloud, in the European Union, which also carries the sign-in email, sent from connexion@copius.fr. No emailing provider, no advertising.</dd>
 
   <dt>For how long</dt>
-  <dd>A sign-in link works once, within 15 minutes, and is deleted within 24 hours. A session ends when you sign out, or after 30 days without use. The technical log is deleted after 30 days, and any messages returned to the sending address within two months. Your account, the dates of your access and the note are kept while you have access to the full version, then deleted at most twelve months after that access ends. The host’s backups are erased within 30 days.</dd>
+  <dd>A sign-in link and the code that comes with it work once (one or the other), within 15 minutes, and are deleted within 24 hours; a code can be typed at most 5 times. A session ends when you sign out, or after 30 days without use. The technical log is deleted after 30 days, and any messages returned to the sending address within two months. Your account, the dates of your access and the note are kept while you have access to the full version, then deleted at most twelve months after that access ends. The host’s backups are erased within 30 days.</dd>
 
   <dt>How to be removed</dt>
   <dd>“Sign out everywhere” closes all your sessions. To delete your account, write to me: it is deleted within one month, together with your access, with no reason needed. If your address has a running subscription, erasure begins by ending that subscription at Stripe, with any refund owed; the data described below in the section “If you buy the full version” is kept for the periods stated there, as the GDPR allows (article 17(3)).</dd>

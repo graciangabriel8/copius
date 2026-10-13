@@ -184,8 +184,10 @@ function pay_mail(array $row): ?array {
         $r = (string)$row['ref'];
         $b[] = ['p', $t['hello']];
         $b[] = ['p', $f('confirm_lead')];
-        $b[] = ['btn', $t['signin'], signin_link((string)$row['to_addr'], $lang)];
+        [$link, $code] = signin_link((string)$row['to_addr'], $lang);
+        $b[] = ['btn', $t['signin'], $link];
         $b[] = ['small', $f('signin_note')];
+        $b[] = ['code', MAIL_TEXT[$lang]['code'], $code];
         $b[] = ['p', $f('confirm_box')];
         $b[] = ['box', [
             $f('ref') . colon($lang) . $r,
@@ -305,6 +307,7 @@ function blocks_text(array $blocks, string $seller, string $lang): string {
             'rule' => '—',
             'box' => $rule . "\n" . implode("\n", $bl[1]) . "\n" . $rule,
             'btn' => $bl[1] . colon($lang) . $bl[2],
+            'code' => $bl[1] . "\n" . code_shown($bl[2]),
         };
     }
     return implode("\n\n", $out) . "\n\n" . $seller . "\n";
@@ -333,6 +336,8 @@ function blocks_html(array $blocks, string $lang, string $subject, string $selle
             'box' => '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px">' .
                 '<tr><td style="padding:14px 18px;border:1px solid #CBD0BB;border-radius:6px;background:#F7F6F1;' . $sans .
                 ';font-size:14px;line-height:1.6;color:#1E211A">' . implode('<br>', array_map($e, $bl[1])) . '</td></tr></table>',
+            'code' => '<p style="margin:0 0 4px;' . $sans . ';font-size:13px;line-height:1.5;color:#6A6E5F">' . $e($bl[1]) . '</p>' .
+                '<p style="margin:0 0 18px;font-size:26px;letter-spacing:.16em;color:#1E211A">' . $e(code_shown($bl[2])) . '</p>',
             'btn' => '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 14px"><tr>' .
                 '<td bgcolor="#4F5B3F" style="border-radius:6px;background:#4F5B3F;mso-padding-alt:13px 28px">' .
                 '<a href="' . htmlspecialchars($bl[2], ENT_QUOTES | ENT_HTML5, 'UTF-8') . '" style="display:inline-block;padding:13px 28px;' .

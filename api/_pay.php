@@ -242,14 +242,9 @@ function deliver(array $m, float $deadline): ?string {
 }
 
 /* A fresh sign-in link for the confirmation, made exactly as login.php makes one. */
-function signin_link(string $email, string $lang): string {
-    $token = b64url(random_bytes(32));
-    tx(function () use ($email, $lang, $token) {
-        q('DELETE FROM login_tokens WHERE email = ? AND used = 0', [$email]);
-        q('INSERT INTO login_tokens (token_hash, email, lang, created, expires, used) VALUES (?, ?, ?, ?, ?, 0)',
-          [hash('sha256', $token), $email, $lang, now(), now() + TOKEN_LIFE]);
-    });
-    return cfg('origin') . '/connexion/#t=' . $token . '&l=' . $lang;
+function signin_link(string $email, string $lang): array {
+    [$token, $code] = issue_login($email, $lang);
+    return [cfg('origin') . '/connexion/#t=' . $token . '&l=' . $lang, $code];
 }
 
 /* ---------- payments and refunds ---------- */

@@ -1,7 +1,9 @@
 <?php
-/* POST {t}: spend the link's token once, check access again, create the
-   account on its first sign-in, open a session, keep the device cap, set both
-   cookies. One transaction (DESIGN.md sections 2 and 3). */
+/* POST {t}, or {email, code}: spend the sign-in once, check access again,
+   create the account on its first sign-in, open a session, keep the device cap,
+   set both cookies. One transaction (DESIGN.md sections 2 and 3). The code is
+   for the app on a phone's home screen, which keeps its own cookies and which
+   a link in a mail cannot open (issue_login in _lib.php). */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 
@@ -17,10 +19,52 @@ if (cfg('per_ip_limits')) {
     hit($v);
 }
 
-/* Unknown, used and expired answer alike. */
-$t = (string)($in['t'] ?? '');
-if (!preg_match('/^[A-Za-z0-9_-]{43}$/', $t)) { json_out(410); log_api('gone'); exit; }
-$h = hash('sha256', $t);
+/* The sign-in a typed code stands for: its token's hash, or null with the reason
+   to log. Every try is counted before the code is compared, in the one statement
+   that also refuses it past CODE_TRIES, so tries sent in parallel cannot pass the
+   limit; the last one allowed, when wrong, kills the code but never the link: a
+   link cannot be guessed, and spending it would let anyone who knows the address
+   cancel the reader's sign-in without a new mail. Wrong codes for one address are
+   also capped across its sign-ins, CODE_DAY a day, since anyone who knows the
+   address can have new codes sent to it. */
+const CODE_DAY = 10;
+const CODE_FLOOR = 0.3;   // seconds every refused code takes, whatever was found
+function by_code(string $typed, string $code, string &$why): ?string {
+    $why = 'code_gone';
+    $addr = normal_address($typed);
+    $code = preg_replace('/\s+/', '', $code);
+    if ($addr === null || !preg_match('/^\d{6}$/', $code)) return null;
+    $wrong = rk('vc:' . $addr);
+    if (hits($wrong, 86400) >= CODE_DAY) { $why = 'code_locked'; return null; }
+    $row = q('SELECT token_hash, code_hash FROM login_tokens WHERE LOWER(TRIM(email)) = ? AND used = 0 AND expires > ?
+              AND code_hash IS NOT NULL ORDER BY created DESC LIMIT 1', [$addr, now()])->fetch();
+    if (!$row) return null;
+    if (q('UPDATE login_tokens SET code_tries = code_tries + 1 WHERE token_hash = ? AND used = 0 AND code_tries < ?',
+          [$row['token_hash'], CODE_TRIES])->rowCount() !== 1) return null;
+    if (hash_equals((string)$row['code_hash'], code_hash($row['token_hash'], $code))) return $row['token_hash'];
+    hit($wrong);
+    q('UPDATE login_tokens SET code_hash = NULL WHERE token_hash = ? AND code_tries >= ?', [$row['token_hash'], CODE_TRIES]);
+    return null;
+}
+
+/* Unknown, used, expired and wrong answer alike. */
+if (array_key_exists('code', $in)) {
+    $why = 'code_gone';
+    $email = $in['email'] ?? '';
+    try { $h = is_string($email) && is_string($in['code']) ? by_code($email, $in['code'], $why) : null; }
+    catch (Throwable $e) { log_php('verify code: ' . describe($e)); json_out(503); log_api('unavailable'); exit; }
+    if ($h === null) {
+        /* Every refusal takes the same least time, so how fast it comes says nothing
+           about whether the address has access (a live sign-in means writes first). */
+        $left = $T0 + CODE_FLOOR - microtime(true);
+        if ($left > 0) usleep((int)($left * 1e6));
+        json_out(410); log_api($why); exit;
+    }
+} else {
+    $t = (string)($in['t'] ?? '');
+    if (!preg_match('/^[A-Za-z0-9_-]{43}$/', $t)) { json_out(410); log_api('gone'); exit; }
+    $h = hash('sha256', $t);
+}
 
 /* The whole sign-in, as one transaction. Returns the answer's status and the
    account id; throws on a database error, rolled back. */

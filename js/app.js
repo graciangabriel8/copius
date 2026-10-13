@@ -1324,6 +1324,13 @@
         'spellcheck="false" aria-label="' + esc(t.signinPlaceholder) + '" aria-describedby="signinHead" ' +
         'placeholder="' + esc(t.signinPlaceholder) + '">' +
         '<button type="submit" class="create-btn">' + esc(t.signinBtn) + "</button></div>" +
+      /* The code the mail also carries, for the app on a home screen: a link in a
+         mail opens in a browser, whose sign-in the app does not share. */
+      '<p class="signin-head signin-code" id="codeHead">' + esc(t.codeHead) + "</p>" +
+      '<div class="signin-row"><input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" ' +
+        'maxlength="9" spellcheck="false" aria-describedby="codeHead" aria-label="' + esc(t.codeHead) + '" ' +
+        'placeholder="' + esc(t.codePlaceholder) + '">' +
+        '<button type="button" class="create-btn" data-code>' + esc(t.codeBtn) + "</button></div>" +
       '<p class="signin-why">' + esc(t.signinWhy) + ' <a href="confidentialite/">' + esc(t.privacyLink) + "</a></p>" +
       '<p class="signin-sent" role="status"></p></form>';
   }
@@ -2789,6 +2796,15 @@
     var f = e.target.closest("[data-signin]");
     if (!f) return;
     e.preventDefault();
+    /* Enter in the code field signs in with the code: a new link would cancel it.
+       In the installed app, Enter in the address field goes on to the code field
+       while it is empty: a reader there has usually come with a code to type. */
+    var code = f.elements.code;
+    if (document.activeElement === code) { f.querySelector("[data-code]").click(); return; }
+    if (document.activeElement === f.elements.email && !code.value.trim() &&
+        ((window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true)) {
+      code.focus(); return;
+    }
     var btn = f.querySelector("button"), out = f.querySelector(".signin-sent"), t = T();
     btn.disabled = true;
     fetch("/api/login.php", { method: "POST", credentials: "same-origin",
@@ -2796,6 +2812,30 @@
       body: JSON.stringify({ email: f.elements.email.value.trim(), lang: state.lang }) })
       .then(function (r) { return r.ok; }, function () { return false; })
       .then(function (ok) { btn.disabled = false; out.textContent = ok ? t.signinSent : t.signinFailed; });
+  });
+  /* The code from the mail, with the address typed above it. Signed in, this
+     page and the site's other tabs reload into the full version. */
+  document.body.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-code]");
+    if (!b) return;
+    var f = b.closest("[data-signin]"), out = f.querySelector(".signin-sent"), t = T();
+    var email = f.elements.email.value.trim(), code = f.elements.code.value.replace(/\D/g, "");
+    if (!f.elements.email.checkValidity() || !email) { f.elements.email.reportValidity(); return; }
+    if (code.length !== 6) { out.textContent = t.codeWrong; f.elements.code.focus(); return; }
+    b.disabled = true;
+    fetch("/api/verify.php", { method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email, code: code }) })
+      .then(function (r) { return r.status; }, function () { return 0; })
+      .then(function (s) {
+        b.disabled = false;
+        if (s === 200) {
+          if (!hasMark()) { out.textContent = t.cxCookies; return; }
+          if (SESSION_CH) SESSION_CH.postMessage("changed");
+          location.reload();
+          return;
+        }
+        out.textContent = s === 410 ? t.codeWrong : s === 403 ? t.sessionNoAccess : t.signinFailed;
+      });
   });
   /* A sign-in or sign-out in one tab reloads the others; so does a page the
      back button brings back from memory with a marker that has since changed. */

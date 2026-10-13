@@ -52,18 +52,12 @@ $alone = rk('e:' . $addr);
 if (hits($alone, 86400) >= lim((int)(cfg('address_ceiling') ?? 20))) { log_api('address_ceiling'); exit; }
 if (hits(rk('mail'), 3600) >= 40) { log_api('site_cap'); exit; }
 
-/* Only the newest link per address works: the old ones go in the same
-   transaction the new one is written in. From here on, only the grant's stored
-   address is used: in the table, in the To: and in the account. */
-$token = b64url(random_bytes(32));
-db()->beginTransaction();
-q('DELETE FROM login_tokens WHERE email = ? AND used = 0', [$acc['address']]);
-q('INSERT INTO login_tokens (token_hash, email, lang, created, expires, used) VALUES (?, ?, ?, ?, ?, 0)',
-  [hash('sha256', $token), $acc['address'], $lang, now(), now() + TOKEN_LIFE]);
-db()->commit();
+/* Only the newest link (and its code) per address works. From here on, only the
+   grant's stored address is used: in the table, in the To: and in the account. */
+[$token, $code] = issue_login($acc['address'], $lang);
 hit($alone);
 hit(rk('mail'));
 
 $link = cfg('origin') . '/connexion/#t=' . $token . '&l=' . $lang;
 db_release();
-log_api(send_link($acc['address'], $lang, $link, $T0));
+log_api(send_link($acc['address'], $lang, $link, $code, $T0));

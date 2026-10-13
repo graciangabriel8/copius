@@ -28,6 +28,8 @@ CREATE TABLE login_tokens (
   created    INT NOT NULL,
   expires    INT NOT NULL,
   used       TINYINT NOT NULL DEFAULT 0,
+  code_hash  CHAR(64) CHARACTER SET ascii NULL,
+  code_tries TINYINT NOT NULL DEFAULT 0,
   KEY (email)
 ) ENGINE=InnoDB;
 

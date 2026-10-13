@@ -9,6 +9,7 @@ const COOKIE_S = '__Host-copius_s';
 const COOKIE_FULL = '__Host-copius_full';
 const SESSION_LIFE = 30 * 86400;
 const TOKEN_LIFE = 15 * 60;
+const CODE_TRIES = 5;
 const BUNDLE_FORMAT = 1;
 
 $T0 = microtime(true);
@@ -209,6 +210,32 @@ function under(string $k, int $per15, int $per24h = 0): bool {
 /* ---------- sessions and cookies (section 3) ---------- */
 
 function b64url(string $bin): string { return rtrim(strtr(base64_encode($bin), '+/', '-_'), '='); }
+
+/* ---------- a sign-in to send (sections 2 and 3) ---------- */
+
+/* A link's token and a 6-digit code for the same sign-in: a link always opens in a browser, and an app installed on
+   a phone's home screen keeps its own cookies, so there the reader types the code instead. Only the newest pair per
+   address works: older unused ones go in the same transaction the new one is written in. The code is kept as a keyed
+   hash bound to its token, tried at most CODE_TRIES times (verify.php), and spent with the link: either one, once.
+   The last wrong try kills the code alone; the link still works. */
+function issue_login(string $email, string $lang): array {
+    $token = b64url(random_bytes(32));
+    $code = sprintf('%06d', random_int(0, 999999));
+    $h = hash('sha256', $token);
+    $pdo = db();
+    $pdo->beginTransaction();
+    try {
+        q('DELETE FROM login_tokens WHERE email = ? AND used = 0', [$email]);
+        q('INSERT INTO login_tokens (token_hash, email, lang, created, expires, used, code_hash, code_tries) VALUES (?, ?, ?, ?, ?, 0, ?, 0)',
+          [$h, $email, $lang, now(), now() + TOKEN_LIFE, code_hash($h, $code)]);
+        $pdo->commit();
+    } catch (Throwable $e) {
+        if ($pdo->inTransaction()) $pdo->rollBack();
+        throw $e;
+    }
+    return [$token, $code];
+}
+function code_hash(string $token_hash, string $code): string { global $KEY; return hash_hmac('sha256', 'code:' . $token_hash . ':' . $code, $KEY); }
 
 function set_cookies(string $sid): void {
     $tail = '; Max-Age=' . SESSION_LIFE . '; Path=/; Secure; SameSite=Lax';
