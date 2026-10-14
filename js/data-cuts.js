@@ -647,7 +647,7 @@ fr:"La pièce des grandes occasions : assez persillée pour s’arroser elle-mê
 tip:{en:"Salt generously, sear on all faces including the fat edge, then finish low with a thermometer, not a timer. Rest it half its cooking time — the bone keeps it warm.",
 fr:"Salez généreusement, saisissez toutes les faces y compris la tranche de gras, puis finissez doux au thermomètre, pas au minuteur. Reposez-la la moitié du temps de cuisson — l’os la garde chaude."},
 pairs:["rosemary","garlic","black-pepper","bone-marrow","shallot"],
-svg:'<path class="f2 sf" d="M38 40q16-8 26 2 6 7 0 16-8 12-22 8-12-4-10-16 2-7 6-10z"/><path class="f1 sf" d="M34 42q-6-2-8-8 6-2 10 2z"/><path class="s" d="M44 50q8-2 14 2" stroke-width="1.4"/>'},
+svg:'<path class="f1 sf" d="M11 45L32 34L39 46L17 57z"/><path class="f3 sf" d="M11 45L16 42L23 55L17 57z"/><path class="f1 sf" transform="translate(3 7)" d="M20 44C18 30 32 22 46 24c6 1 10 5 16 2 12-4 22 6 20 20-2 12-14 20-32 20S22 56 20 44z"/><path class="f2 sf" transform="translate(49 51) scale(1.12) translate(-48 -44)" d="M28 42c2-8 12-11 22-9 6 1 8 5 14 3 8-1 10 6 6 11-4 6-14 8-24 8-10-1-20-4-18-13z"/><path class="s" d="M39 48l7 2M53 47l8-3"/>'},
 
 {id:"selle-agneau",cat:"cuts",parent:"lamb",price:3,pk:"22–35 €/kg",name:{en:"Saddle of lamb",fr:"Selle d’agneau"},latin:"Agneau — selle",
 origin:{en:"France",fr:"France"},season:[3,4,5,6],

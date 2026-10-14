@@ -217,7 +217,7 @@ fr:"Le nom est un pluriel — broccoli, les petits bras ou pousses du chou. Des 
 tip:{en:"Do not throw away the stalk. Peeled of its tough skin it is sweeter and crunchier than the florets.",
 fr:"Ne jetez pas la tige. Épluchée de sa peau coriace, elle est plus sucrée et plus croquante que les fleurettes."},
 pairs:["garlic","chili","anchovy","lemon","olive-oil","almond","sesame","soy-sauce"],
-svg:'<path class="f2 sf" d="M30 46q0-16 18-16t18 16q0 12-18 12T30 46z"/><path class="s" d="M40 58v18M56 58v18M48 58v20"/><circle class="dot" cx="40" cy="42" r="3"/><circle class="dot" cx="55" cy="40" r="3"/>'},
+svg:'<path class="f1 sf" d="M41 84L38 70L31 54L37 54L41 65L44 54L52 54L55 65L59 54L65 54L58 70L55 84z"/><path class="f3 sf" d="M44 51a10.8 10.8 0 0 1 -17 -4a8 8 0 0 1 -6 -12a10 10 0 0 1 12 -10a11.8 11.8 0 0 1 19 -2a9.9 9.9 0 0 1 15 7a7.5 7.5 0 0 1 5 11a8.1 8.1 0 0 1 -9 10a12.2 12.2 0 0 1 -19 0z"/><path class="s" d="M37 52q-2-6 2-10M59 51q2-7-2-11M47 29q3 4 1 9"/>'},
 
 {id:"brussels-sprout",cat:"vegetables",price:1,pk:"3–6 €/kg",name:{en:"Brussels sprout",fr:"Chou de Bruxelles"},latin:"Brassica oleracea var. gemmifera",
 origin:{en:"Brabant, Belgium",fr:"Brabant, Belgique"},season:[10,11,12,1,2],

@@ -917,7 +917,7 @@ fr:"Le « roi des poissons » a convoqué des parlements : dans la satire de Juv
 tip:{en:"Cook it on the bone, always — the gelatine bastes the pearl-white flesh from within. Butter and lemon complete the coronation; a morel cream is the state occasion.",
 fr:"Cuisez-le sur l’arête, toujours — la gélatine arrose de l’intérieur sa chair blanc nacré. Beurre et citron achèvent le sacre ; une crème aux morilles est le dîner d’État."},
 pairs:["butter","lemon","egg","morel","cream"],
-svg:'<path class="f1 sf" d="M48 30q22 10 22 24T48 76Q26 66 26 54t22-24z" transform="rotate(45 48 53)"/><path class="dot" d="M42 44a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M48 40a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0"/><path class="s" d="M40 56q8 6 18 2" stroke-width="1.6"/>'},
+svg:'<path class="f1 sf" d="M63.1 47.5l15.3-6q4.2 8.5 0 17l-15.3-6z"/><path class="f1 sf" d="M15.5 50q12.8-22.1 25.5-22.1t25.5 22.1q-12.8 22.1-25.5 22.1t-25.5-22.1z"/><path class="f2 sf" d="M24.9 50q0-12.8 16.1-12.8q16.1 0 16.1 12.8q0 12.8-16.1 12.8q-16.1 0-16.1-12.8z"/><path class="s" d="M30.1 32.9L26.4 40.7M40.3 28.9L36.6 34.1M50.5 32L46.8 34.6M59.9 41L56.1 41.2M30.1 67.1L26.4 59.3M40.3 71.1L36.6 65.9M50.5 68L46.8 65.4M59.9 59L56.1 58.8"/><path class="dot" d="M30.2 47a1.4 1.4 0 1 0 2.9 0 1.4 1.4 0 1 0 -2.9 0M34 44a1.4 1.4 0 1 0 2.9 0 1.4 1.4 0 1 0 -2.9 0"/><path class="s" d="M47.8 47.5h.1M45.2 56h.1M25.7 50.9q1.3 2.5 4.2 1.3"/>'},
 
 {id:"urume-bushi",cat:"seafood",rare:true,price:3,pk:"60–110 €/kg",name:{en:"Urume-bushi",fr:"Urume-bushi (sardine ronde séchée)"},latin:"Etrumeus micropus",
 origin:{en:"Kyushu and Shikoku, Japan",fr:"Kyūshū et Shikoku, Japon"},season:[],
