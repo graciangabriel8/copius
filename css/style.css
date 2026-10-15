@@ -196,6 +196,16 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .check input:checked::after{content:"";width:9px;height:5px;border:2px solid var(--on-accent);
   border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
 .check input:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
+/* The month picker draws the same strip as the season line in an entry. */
+.month-pick{display:flex;align-items:center;gap:8px}
+.mp-months{display:flex;gap:3px}
+.mp{width:24px;height:24px;padding:0;border-radius:50%;border:1px solid var(--border-strong);
+  background:var(--card);color:var(--ink-3);font:inherit;font-size:11px;line-height:1;cursor:pointer;
+  display:grid;place-items:center;transition:background .12s,border-color .12s,color .12s}
+.mp:hover{border-color:var(--ink-3);color:var(--ink)}
+.mp.now{color:var(--ink);font-weight:700;border-color:var(--ink-3)}
+.mp.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.mp:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
 #sort,#priceBand,#flavour{padding:6px 10px;border-radius:10px;border:1px solid var(--border-strong);
   background:var(--card);color:var(--ink-2);-webkit-appearance:none;appearance:none;
   padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
@@ -553,6 +563,10 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .toolbar{gap:12px 18px;font-size:15px}
   .check{min-height:44px}
   .check input{width:20px;height:20px}
+  /* Twelve 44px targets do not fit 343px in a row: two rows of six. */
+  .month-pick{width:100%;flex-wrap:wrap}
+  .mp-months{display:grid;grid-template-columns:repeat(6,44px);gap:6px}
+  .mp{width:44px;height:44px;font-size:14px}
   #sort,#priceBand,#flavour{padding:11px 26px 11px 12px}
   .linkish{min-height:44px;display:inline-flex;align-items:center}
   main{padding:18px 16px 50px}

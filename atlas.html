@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=225">
+<link rel="stylesheet" href="css/style.css?v=226">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -83,7 +83,9 @@
   <nav id="cats" class="cats" data-i18n-aria="ariaFamilies"></nav>
 
   <div class="toolbar">
-    <label class="check"><input type="checkbox" id="seasonNow"><span id="seasonNowLbl"></span></label>
+    <!-- Months to cook in: any picked month narrows the grid to what is in season
+         then. Built by renderMonthPick(); the current month is marked. -->
+    <div id="monthPick" class="month-pick" role="group"><span id="monthPickLbl" class="mp-lbl"></span><span id="monthBtns" class="mp-months"></span></div>
     <a id="seasonLink" class="season-link" href="season/"></a>
     <label class="check"><input type="checkbox" id="favsOnly"><span id="favsOnlyLbl"></span></label>
     <label class="check"><input type="checkbox" id="rareOnly"><span id="rareOnlyLbl"></span></label>
@@ -232,10 +234,10 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/i18n.js?v=225"></script>
-<script src="js/photos.js?v=225"></script>
-<script src="js/data-techniques.js?v=225"></script>
-<script src="js/free.js?v=225"></script>
+<script src="js/i18n.js?v=226"></script>
+<script src="js/photos.js?v=226"></script>
+<script src="js/data-techniques.js?v=226"></script>
+<script src="js/free.js?v=226"></script>
 <script>
   /* The full version. js/_premium.js (tools/build-free.js; never published)
      replaces the free data with all of it and sets COPIUS_PREMIUM. It loads
@@ -250,13 +252,13 @@
   (function () {
     var h = location.hostname, local = h === "localhost" || h === "127.0.0.1";
     if (local && /(?:^\?|&)full(?:=|&|$)/.test(location.search)) {
-      document.write('<script src="' + "js/" + '_premium.js?v=225"><\/script>'); return;
+      document.write('<script src="' + "js/" + '_premium.js?v=226"><\/script>'); return;
     }
     if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie))
-      document.write('<script src="' + "/api/" + 'premium.php?v=225"><\/script>');
+      document.write('<script src="' + "/api/" + 'premium.php?v=226"><\/script>');
   })();
 </script>
-<script src="js/app.js?v=225"></script>
+<script src="js/app.js?v=226"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

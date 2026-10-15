@@ -257,7 +257,7 @@
     lang: readItem(LS_LANG) || ((navigator.language || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en"),
     view: "atlas",   // every visit opens on the atlas; the last tab used to be restored and a visit ending in the lab reopened there
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
-    cat: "all", q: "", dq: "", seasonNow: false, favsOnly: false, rareOnly: false, luxeOnly: false, signOnly: false, priceBand: "all", flavour: "all", sort: "name",
+    cat: "all", q: "", dq: "", months: [], favsOnly: false, rareOnly: false, luxeOnly: false, signOnly: false, priceBand: "all", flavour: "all", sort: "name",
     techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
   };
   var favs = new Set(readList(LS_FAVS));
@@ -412,6 +412,36 @@
 
   function catLabel(c) { return T().categories[c]; }
   function inSeasonNow(i) { return i.season.length === 0 || i.season.indexOf(new Date().getMonth() + 1) !== -1; }
+  /* Picked months (1–12) keep what is in season in any of them. All-year entries
+     drop out: 1,139 of them would bury the month, and the month pages leave them
+     out too. */
+  function inPickedMonths(i) {
+    return state.months.some(function (m) { return i.season.indexOf(m) !== -1; });
+  }
+  function renderMonthPick() {
+    var t = T(), now = new Date().getMonth() + 1;
+    el("monthPickLbl").textContent = t.season;
+    el("monthPick").setAttribute("aria-label", t.season);
+    el("monthBtns").innerHTML = t.monthsShort.map(function (m, idx) {
+      var on = state.months.indexOf(idx + 1) !== -1;
+      return '<button type="button" class="mp' + (on ? " on" : "") + (idx + 1 === now ? " now" : "") +
+        '" data-month="' + (idx + 1) + '" aria-pressed="' + on + '" aria-label="' + esc(t.months[idx]) +
+        '" title="' + esc(t.months[idx]) + '">' + m + "</button>";
+    }).join("");
+    paintSeasonLink();
+  }
+  /* The link goes to the month's own page, which carries what arrives and what
+     leaves: the month last picked, or this one. */
+  function paintSeasonLink() {
+    var months = ["january","february","march","april","may","june","july","august",
+                  "september","october","november","december"],
+        moisFr = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout",
+                  "septembre","octobre","novembre","decembre"],
+        m = state.months.length ? state.months[state.months.length - 1] - 1 : new Date().getMonth(),
+        sl = el("seasonLink");
+    sl.href = state.lang === "fr" ? "fr/saison/" + moisFr[m] + "/" : "season/" + months[m] + "/";
+    sl.textContent = T().seasonPage;
+  }
 
   /* ---------- static labels ---------- */
   // A search field's placeholder is also its name for assistive tech.
@@ -437,17 +467,7 @@
     paintThemeBtn();
     el("labA").setAttribute("aria-label", t.labA);
     el("labB").setAttribute("aria-label", t.labB);
-    el("seasonNowLbl").textContent = t.inSeasonNow;
-    /* The filter narrows this grid; the link goes to the month's own page, which
-       carries what arrives and what leaves — something a checkbox cannot say. */
-    var months = ["january","february","march","april","may","june","july","august",
-                  "september","october","november","december"],
-        moisFr = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout",
-                  "septembre","octobre","novembre","decembre"],
-        m = new Date().getMonth(),
-        sl = el("seasonLink");
-    sl.href = state.lang === "fr" ? "fr/saison/" + moisFr[m] + "/" : "season/" + months[m] + "/";
-    sl.textContent = t.seasonPage;
+    renderMonthPick();
     el("favsOnlyLbl").textContent = t.favsOnly;
     el("rareOnlyLbl").textContent = t.rareOnly + " ✦";
     /* No free entry is a connoisseur's one, so locked the filter could only
@@ -525,7 +545,7 @@
   function fmt(n) { return n.toLocaleString(state.lang === "fr" ? "fr-FR" : "en-GB"); }
   function renderStats(shown) {
     var t = T(), s = state;
-    var narrowed = s.cat !== "all" || s.q.trim() || s.seasonNow || s.favsOnly || s.rareOnly ||
+    var narrowed = s.cat !== "all" || s.q.trim() || s.months.length || s.favsOnly || s.rareOnly ||
       s.luxeOnly || s.signOnly || s.priceBand !== "all" || s.flavour !== "all";
     el("stats").textContent = narrowed
       ? t.statsFiltered.replace("{n}", fmt(shown)).replace("{t}", fmt(ING.length))
@@ -560,7 +580,7 @@
          narrow what the reader gets. They apply again once the box is empty. */
       if (!q) {
         if (state.cat !== "all" && i.cat !== state.cat) return false;
-        if (state.seasonNow && !inSeasonNow(i)) return false;
+        if (state.months.length && !inPickedMonths(i)) return false;
         if (state.favsOnly && !favs.has(i.id)) return false;
         if (state.rareOnly && !i.rare) return false;
         if (state.luxeOnly && !i.luxe) return false;
@@ -727,7 +747,7 @@
       }
       /* A count under any other filter would read as that many more matches:
          the teaser does not know which paid entries are in season or prestige. */
-      var narrowed = state.seasonNow || state.favsOnly || state.rareOnly || state.luxeOnly ||
+      var narrowed = state.months.length || state.favsOnly || state.rareOnly || state.luxeOnly ||
         state.signOnly || state.priceBand !== "all" || state.flavour !== "all";
       var n = narrowed ? 0 : state.cat === "all" ? LK.counts.paid : (LK.familyPaid[state.cat] || 0);
       if (n) {
@@ -2487,7 +2507,15 @@
     }
   }
   el("search").addEventListener("input", function (e) { onSearch(e.target.value); });
-  el("seasonNow").addEventListener("change", function (e) { state.seasonNow = e.target.checked; renderGrid(); });
+  el("monthBtns").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-month]");
+    if (!b) return;
+    var m = +b.getAttribute("data-month"), at = state.months.indexOf(m);
+    if (at === -1) state.months.push(m); else state.months.splice(at, 1);
+    renderMonthPick();
+    el("monthBtns").querySelector('[data-month="' + m + '"]').focus();
+    renderGrid();
+  });
   el("favsOnly").addEventListener("change", function (e) { state.favsOnly = e.target.checked; renderGrid(); });
   el("rareOnly").addEventListener("change", function (e) { state.rareOnly = e.target.checked; renderGrid(); });
   el("luxeOnly").addEventListener("change", function (e) { state.luxeOnly = e.target.checked; renderGrid(); });
