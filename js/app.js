@@ -1627,8 +1627,8 @@
   var plateMode = "guided";       // guided | free
   var plateTpl = "main";          // which guided template, when guided
   /* Suggestions a cook has waved off, keyed by template and role so switching
-     away and back remembers. A skipped slot stops being a gap: it is not what
-     the picker offers next and it does not sit there looking unfinished. */
+     away and back remembers. A skipped slot stops being a gap: it does not sit
+     there looking unfinished. */
   var plateSkip = {};
   function skipKey(role) { return plateTpl + ":" + role; }
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
@@ -1685,8 +1685,8 @@
   }
 
   /* What the chosen template suggests, and how much of it is on the plate.
-     A suggestion, not a gate: a filled slot no longer removes its role from the
-     picker, and a plate with empty slots is not incomplete. The atlas's own 79
+     A suggestion, not a gate: a plate with empty slots is not incomplete, and
+     the search offers every role whatever the slots say. The atlas's own 79
      curated plates do not fill any fixed grid — none of them satisfied the one
      this used to enforce — so the slots show what a plate of this kind usually
      wants and stop there. */
@@ -1703,24 +1703,6 @@
   }
   /* One ceiling, both modes. Guided never blocks on its slots. */
   function plateFull() { return plate.length >= PLATE.MAX_FREE; }
-
-  function fillPlateRole() {
-    var t = T(), sel = el("plateRole"), prev = sel.value, opts;
-    opts = '<option value="">' + esc(t.plateRoleAll) + "</option>" +
-      PLATE.ROLES.map(function (r) {
-        return '<option value="' + r + '">' + esc(t.roles[r]) + "</option>";
-      }).join("");
-    sel.innerHTML = opts;
-    if (prev && sel.querySelector('[value="' + prev + '"]')) sel.value = prev;
-    else if (plateMode === "guided") {
-      /* Point at the next thing the template is still missing, without
-         refusing anything else. */
-      var gap = roleRoom().filter(function (g) {
-        return !g.skipped && g.filled < g.n;
-      })[0];
-      if (gap) sel.value = gap.role;
-    }
-  }
 
   /* One search for the plate's box and the lab's two. It reaches names in both
      languages, the family, the latin name and the flavour notes — the last of
@@ -1768,9 +1750,7 @@
   }
 
   function plateSearchHits(q) {
-    var role = el("plateRole").value;
     return rankHits(ING.concat(BASE_ITEMS).filter(function (i) {
-      if (role && PLATE.roleOf(i) !== role) return false;
       if (plate.some(function (it) { return it.id === i.id; })) return false;
       return searchMatches(i, q);
     }), q);
@@ -1896,7 +1876,6 @@
     return {
       render: render,
       close: close,
-      reset: function () { cursor = -1; render(true); },
       isOpen: function () { return !o.list.hidden; }
     };
   }
@@ -2157,6 +2136,16 @@
     ind.style.width = w;
     ind.style.transform = x;
   }
+  /* The pill is measured, not laid out, so a window that changes width (a phone
+     turned, a window dragged across the 600px or 720px layout) leaves it off its
+     button until it is measured again. One repaint per frame. */
+  var segFrame = 0;
+  window.addEventListener("resize", function () {
+    cancelAnimationFrame(segFrame);
+    segFrame = requestAnimationFrame(function () {
+      ["viewTabs", "langToggle", "labModes", "plateModes"].forEach(paintSeg);
+    });
+  });
 
   function renderPlateAll() {
     var t = T();
@@ -2184,7 +2173,6 @@
     }).join("");
     tsel.value = plateTpl;
     tsel.setAttribute("aria-label", t.plateTplLabel);
-    fillPlateRole();
     if (plateFinder) plateFinder.render(plateFinder.isOpen());
     renderPlateSlots();
     renderPlateItems();
@@ -2203,10 +2191,6 @@
   function setPlateMode(m) {
     if (m === plateMode) return;
     plateMode = m;
-    /* Guided derives the role from the next empty slot; open means no filter at
-       all. Carrying the slot's role across made open mode silently show one
-       family, which read as a broken search rather than as an active filter. */
-    el("plateRole").value = "";
     el("plateSearch").value = "";
     /* Nothing is dropped on the way in or out: the slots are a suggestion, so a
        plate that does not match the template is simply a plate with empty
@@ -2568,9 +2552,6 @@
       if (plateSkip[skipKey(role)]) delete plateSkip[skipKey(role)];
       else {
         plateSkip[skipKey(role)] = true;
-        /* Waving a slot off while the picker is aimed at it should move the
-           aim, or the next thing offered is the thing just refused. */
-        if (el("plateRole").value === role) el("plateRole").value = "";
       }
       renderPlateAll();
       return;
@@ -2659,7 +2640,6 @@
   el("plateFree").addEventListener("click", function () { setPlateMode("free"); });
   el("plateTpl").addEventListener("change", function (e) {
     plateTpl = e.target.value;
-    el("plateRole").value = "";
     renderPlateAll();
   });
   /* Delegated, because the chips are rebuilt on every render. */
@@ -2672,11 +2652,12 @@
   plateFinder = makeFinder({
     input: el("plateSearch"), list: el("plateResults"),
     hits: plateSearchHits,
-    /* It opens on a query, or on a role in guided mode. */
-    opens: function (q) { return !!q || !!el("plateRole").value; },
+    /* It opens on a query only: typing is the one way in, as in the lab's
+       two boxes. A role picker that listed a whole family on focus was the
+       old dropdown again. */
+    opens: function (q) { return !!q; },
     pick: addToPlate
   });
-  el("plateRole").addEventListener("change", function () { plateFinder.reset(); });
   ["A", "B"].forEach(function (slot) {
     function holds() {
       return !!labPick[slot] && el("lab" + slot).value.trim() === name(byId[labPick[slot]]);
