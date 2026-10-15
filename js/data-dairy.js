@@ -17,7 +17,7 @@ fr:"Chaque meule est frottée pendant des mois d’affinage avec une saumure d�
 tip:{en:"Eat the rind — it is where the Sulz is, and the paste alone tastes like an ordinary mountain cheese. Melted it bullies everything around it, so cut a gratin half and half with Gruyère rather than letting it stand on its own.",
 fr:"Mangez la croûte : c’est là qu’est la Sulz, et la pâte seule a le goût d’un fromage de montagne quelconque. Fondu, il écrase tout ce qui l’entoure — coupez un gratin moitié appenzeller, moitié gruyère plutôt que de le laisser seul."},
 pairs:["potato","onion","cider-vinegar","black-pepper","rye","apple","cumin","pear"],
-svg:'<g transform="translate(3.02 3.15) scale(0.937)"><circle class="f2 sf" cx="44" cy="56" r="20"/><path class="s" d="M30 48q14 8 28 0"/><rect class="f3 sf" x="58" y="26" width="12" height="9" rx="2" transform="rotate(20 64 30)"/><path class="s" d="M68 26l6-8"/></g>'},
+svg:'<path class="f2 sf" d="M48 42L40.2 53.6A30 12 0 1 1 67.3 51.2z"/><path class="f1 sf" d="M48 42L40.2 53.6L40.2 73.6L48 62z"/><path class="f1 sf" d="M48 42L67.3 51.2L67.3 71.2L48 62z"/><path class="f3 sf" d="M40.2 53.6A30 12 0 0 1 18 42L18 62A30 12 0 0 0 40.2 73.6z"/><path class="f3 sf" d="M78 42A30 12 0 0 1 67.3 51.2L67.3 71.2A30 12 0 0 0 78 62z"/><path class="dot" d="M54.5 52a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0 -3 0M60.5 58a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0 -3 0M56.5 64a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0 -3 0"/>'},
 
 {id:"asiago-d-allevo",cat:"dairy",sign:"DOP",price:2,pk:"18–28 €/kg",name:{en:"Asiago d'allevo",fr:"Asiago d’allevo"},latin:"Asiago d’allevo DOP",
 origin:{en:"Altopiano di Asiago, Veneto",fr:"Plateau d’Asiago, Vénétie"},season:[],
@@ -137,7 +137,7 @@ fr:"Au congrès de Vienne en 1815, tandis que l’Europe se redécoupait, les di
 tip:{en:"Take it out an hour before serving. Cold Brie is chalk; at room temperature it slumps and smells of mushroom and cream.",
 fr:"Sortez-le une heure avant. Froid, le brie est plâtreux ; à température il s’affaisse et sent le champignon et la crème."},
 pairs:["apple","walnut","honey","grape","butter","mushroom","truffle","fig"],
-svg:'<circle class="f3 sf" cx="48" cy="52" r="24"/><path class="s" d="M48 28v48M24 52h48"/><circle class="s" cx="48" cy="52" r="16"/>'},
+svg:'<path class="f1 sf" d="M46 40L40.4 52.8A32 13 0 1 1 62 51.3z"/><path class="f2 sf" d="M46 40L40.4 52.8L40.4 64.8L46 52z"/><path class="f2 sf" d="M46 40L62 51.3L62 63.3L46 52z"/><path class="f1 sf" d="M40.4 52.8A32 13 0 0 1 14 40L14 52A32 13 0 0 0 40.4 64.8z"/><path class="f1 sf" d="M78 40A32 13 0 0 1 62 51.3L62 63.3A32 13 0 0 0 78 52z"/><path class="f1 sf" d="M40.5 59C46 56 56 55 62 56.5C65 61 60 67 52 68C44 68 39 65 40.5 59z"/><path class="f1 sf" d="M76 71.1A24 10 0 0 1 54.8 73.8L54.8 81.8A24 10 0 0 0 76 79.1z"/><path class="f2 sf" d="M59 64L54.8 73.8L54.8 81.8L59 72z"/><path class="f1 sf" d="M59 64L76 71.1A24 10 0 0 1 54.8 73.8z"/><path class="f1 sf" d="M58.5 66C56.5 70 55 75 55 81C51.5 79 50.5 73 52.5 69C54 66 56.5 65 58.5 66z"/>'},
 
 {id:"brie-de-meaux",cat:"dairy",parent:"brie",sign:"AOP",price:2,pk:"18–28 €/kg",name:{en:"Brie de Meaux",fr:"Brie de Meaux"},latin:"Brie de Meaux AOP",
 origin:{en:"Seine-et-Marne, Île-de-France",fr:"Seine-et-Marne, Île-de-France"},season:[],
@@ -187,7 +187,7 @@ fr:"Inventée dans une ferme des Pouilles vers 1900 pour écouler les chutes de 
 tip:{en:"Eat it the day you buy it, at room temperature, and open it at the table. Its whole appeal is the moment the cream runs out.",
 fr:"Mangez-la le jour même, à température, et ouvrez-la à table. Tout son charme est l’instant où la crème s’échappe."},
 pairs:["tomato","basil","olive-oil","black-pepper","prosciutto","fig","balsamic","peach"],
-svg:'<circle class="f3 sf" cx="48" cy="54" r="21"/><path class="s" d="M40 36q8-6 16 0"/><path class="s" d="M40 54q8 6 16 0"/>'},
+svg:'<path class="f1 sf" d="M42 45C32 47 26 55 26 63C26 73 36 79 48 79C60 79 70 73 70 63C70 55 64 47 54 45C51 43 45 43 42 45z"/><path class="s" d="M44 46C42 49 41 51 40 54M49 47C49 50 50 52 50 55M53 46C55 48 57 50 58 52"/><path class="f1 sf" d="M45 45C43 39 44 33 50 31C55 29 59 32 57 35C55 37 53 39 53 45z"/><path class="s" d="M47 39C50 38 52 37 54 35"/><path class="s" d="M30 66C32 72 38 75 44 76"/>'},
 
 {id:"butter",cat:"dairy",price:1,pk:"8–13 €/kg",name:{en:"Butter",fr:"Beurre"},latin:"Butyrum",
 origin:{en:"Steppes of Central Asia",fr:"Steppes d’Asie centrale"},season:[],
@@ -247,7 +247,7 @@ fr:"Marie Harel en aurait fait le premier en 1791, en cachant un prêtre réfrac
 tip:{en:"Buy it barely yielding at the centre and let it finish at home. A camembert already runny on the shelf has gone past its best.",
 fr:"Achetez-le à peine souple au centre et laissez-le finir chez vous. Un camembert déjà coulant en rayon a passé son heure."},
 pairs:["apple","walnut","potato","butter","cider-vinegar","onion","thyme","flour-t65"],
-svg:'<circle class="f3 sf" cx="48" cy="52" r="23"/><circle class="s" cx="48" cy="52" r="17"/><path class="s" d="M38 44q10-6 20 0M38 60q10 6 20 0"/>'},
+svg:'<path class="f2 sf" d="M21 57v8a27 10 0 0 0 54 0v-8z"/><path class="f2 sf" d="M21 57a27 10 0 1 0 54 0a27 10 0 1 0 -54 0z"/><path class="s" d="M25 70Q48 78 71 70"/><path class="f1 sf" d="M48 44L44 52.9A23 9 0 1 1 61.2 51.4z"/><path class="f2 sf" d="M48 44L44 52.9L44 65.9L48 57z"/><path class="f3 sf" d="M48 44L61.2 51.4L61.2 64.4L48 57z"/><path class="f1 sf" d="M44 52.9A23 9 0 0 1 25 44L25 57A23 9 0 0 0 44 65.9z"/><path class="f1 sf" d="M71 44A23 9 0 0 1 61.2 51.4L61.2 64.4A23 9 0 0 0 71 57z"/>'},
 
 {id:"cancoillotte",cat:"dairy",sign:"IGP",price:1,pk:"7–12 €/kg",name:{en:"Cancoillotte",fr:"Cancoillotte"},latin:"Cancoillotte IGP",
 origin:{en:"Franche-Comté",fr:"Franche-Comté"},season:[],
@@ -437,7 +437,7 @@ fr:"Le nom vient peut-être de la fleur de chardon qui servait autrefois à fair
 tip:{en:"Its lipase bite is sharpest cold, so grate it but let the shavings sit ten minutes at room temperature before they meet a warm plate. It seizes rather than melts — keep it off pizza and on top of a fava purée.",
 fr:"Sa morsure de lipase est la plus vive à froid : râpez-le, mais laissez les copeaux revenir dix minutes à température avant de les poser sur une assiette chaude. Il se rétracte plutôt qu’il ne fond — évitez la pizza, posez-le sur une purée de fèves."},
 pairs:["fava-bean","honey","pear","walnut","olive-oil","black-pepper"],
-svg:'<path class="f3 sf" d="M26 32q22-8 44 0-6 8-9 14 9 6 9 14 0 9-22 9t-22-9q0-8 9-14-3-6-9-14z"/><path class="s" d="M34 44h28M32 62h32"/><path class="s" d="M62 28q6-5 2-9t2-5"/>'},
+svg:'<path transform="matrix(-1 0 0 1 96 0)" class="f3 sf" d="M76.7 36.7C81.7 42.1 81.7 49.3 76.7 54.7A60 32 0 0 1 58.1 71.8C63.1 66.4 63.1 59.2 58.1 53.8A60 32 0 0 0 76.7 36.7z"/><path transform="matrix(-1 0 0 1 96 0)" class="f1 sf" d="M18 30L58.1 53.8C63.1 59.2 63.1 66.4 58.1 71.8L18 48z"/><path transform="matrix(-1 0 0 1 96 0)" class="f1 sf" d="M18 30L76.7 36.7A60 32 0 0 1 58.1 53.8z"/><path class="dot" d="M48.7 52a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M58.7 58a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M42.7 60a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M64.7 50a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0"/>'},
 
 {id:"fontina",cat:"dairy",sign:"DOP",price:2,pk:"22–32 €/kg",name:{en:"Fontina Valle d’Aosta",fr:"Fontina"},latin:"Fontina Valle d’Aosta DOP",
 origin:{en:"Aosta Valley, Italy",fr:"Vallée d’Aoste, Italie"},season:[],
@@ -447,7 +447,7 @@ fr:"Le médecin verceillais Pantaleone da Confienza décrivait déjà un fromage
 tip:{en:"For fonduta, dice it and steep it in just enough cold milk to cover for at least six hours, then melt it over water below 60 °C and beat in the yolks off the heat. Let it boil and it splits into oil and rubber.",
 fr:"Pour la fonduta, taillez-la en dés et laissez-la tremper au frais dans juste assez de lait pour la couvrir, six heures au moins, puis faites-la fondre au bain-marie sous 60 °C et incorporez les jaunes hors du feu. Portée à ébullition, elle se sépare en huile et en caoutchouc."},
 pairs:["potato","white-truffle","egg","butter","polenta-bramata","nutmeg"],
-svg:'<path class="f1 sf" d="M22 54 48 24l26 30z"/><path class="f2 sf" d="M22 54h52v6q-26 8-52 0z"/><path class="s" d="M32 62v10q0 5 4 5M48 65v11M62 62v8"/>'},
+svg:'<path class="f3 sf" d="M16 40Q24 52 16 62A32 12 0 0 0 80 62Q72 52 80 40z"/><path class="f1 sf" d="M16 40a32 12 0 1 0 64 0a32 12 0 1 0 -64 0z"/><path class="s" d="M38 44L43 37L46.5 41L50 34L58 44"/>'},
 
 {id:"pecorino-di-fossa",cat:"dairy",rare:true,price:3,pk:"40–60 €/kg",name:{en:"Formaggio di Fossa",fr:"Pecorino di Fossa"},latin:"Formaggio di Fossa di Sogliano DOP",
 origin:{en:"Sogliano al Rubicone, Romagna",fr:"Sogliano al Rubicone, Romagne"},season:[1,2,11,12],
@@ -497,7 +497,7 @@ fr:"Le nom vient de gape, mot auvergnat pour le babeurre resté dans la baratte,
 tip:{en:"The garlic is raw and sharpens as the cheese dries, so buy it young for the board and old for the pan. Crumbled into a potato gratin it seasons the whole dish and makes any other garlic redundant.",
 fr:"L’ail est cru et s’aiguise à mesure que le fromage sèche : achetez-le jeune pour le plateau, vieux pour la casserole. Émietté dans un gratin de pommes de terre, il assaisonne tout le plat et rend tout autre ail inutile."},
 pairs:["potato","rye","poitrine-fumee","apple","walnut","butter"],
-svg:'<path class="f1 sf" d="M22 68q0-27 26-27t26 27z"/><path class="s" d="M48 41V26"/><path class="s" d="M42 62q6-9 14-5"/><circle class="dot" cx="38" cy="58" r="2"/><circle class="dot" cx="50" cy="50" r="2"/><circle class="dot" cx="60" cy="60" r="2"/>'},
+svg:'<path class="f1 sf" d="M22 72C20 52 32 37 48 37C64 37 76 52 74 72C66 76 30 76 22 72z"/><path class="dot" d="M28.4 60a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M36.4 48a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M55.4 45a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M61.4 58a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M42.4 58a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M34.4 68a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M53.4 67a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M67.4 67a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M50.4 52a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M39.4 41a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0"/><path class="s" d="M48 38C40 47 33 59 30 74M48 38C56 47 63 59 66 74"/><path class="s" d="M48 37C41 29 36 35 48 37C60 35 55 29 48 37"/>'},
 
 {id:"garrotxa",cat:"dairy",rare:true,price:2,pk:"28–40 €/kg",name:{en:"Garrotxa",fr:"Garrotxa"},latin:"Formatge Garrotxa",
 origin:{en:"Catalonia, Spain",fr:"Catalogne, Espagne"},season:[],
@@ -537,7 +537,7 @@ fr:"Il a sa propre ligne dans le cahier des charges DOP : quatre-vingts jours mi
 tip:{en:"Treat it as a seasoning rather than a cheese: mash 30 g into a hot pan sauce for four, or crumble it into polenta, and taste for salt only once it has gone in.",
 fr:"Traitez-le en assaisonnement plutôt qu’en fromage : écrasez-en 30 g dans une sauce chaude pour quatre, ou émiettez-le dans la polenta, et ne rectifiez le sel qu’ensuite."},
 pairs:["polenta-bramata","walnut","pear","celery","honey","ruby-port"],
-svg:'<g transform="translate(3.55 3.7) scale(0.926)"><path class="f2 sf" d="M26 70V42l22-14 22 14v28z"/><path class="s" d="M34 48v18M44 44v22M54 46v20M64 50v16"/><path class="s" d="M74 26 56 44"/><circle class="dot" cx="76" cy="24" r="2.5"/></g>'},
+svg:'<path class="f2 sf" d="M71.1 33.8A58 22 0 0 1 49.7 47.3L49.7 77.3A58 22 0 0 0 71.1 63.8z"/><path class="f1 sf" d="M14 30L49.7 47.3L49.7 77.3L14 60z"/><path class="f2 sf" d="M14 30L71.1 33.8A58 22 0 0 1 49.7 47.3z"/><path class="s" d="M18 40l4 2l1 4l4 1M23 46l-2 4M28 37l3 4l-1 3M34 49l4 1l2 4l4 0M38 54l-1 4M20 58l4-1l3 3l3-1M27 60l1 4M40 66l3 2l0 4M44 44l3 3l3 0M36 70l-3 3"/><path class="dot" d="M19.7 50a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M29.7 44a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M40.7 58a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M24.7 68a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M44.7 52a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M30.7 58a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0"/>'},
 
 {id:"grana-padano",cat:"dairy",sign:"DOP",price:2,pk:"18–26 €/kg",name:{en:"Grana Padano",fr:"Grana Padano"},latin:"Grana Padano DOP",
 origin:{en:"Po Valley, Italy",fr:"Plaine du Pô, Italie"},season:[],
@@ -557,7 +557,7 @@ fr:"Un fromager grec a copié le gruyère suisse en 1914 ; le nom emprunté a ga
 tip:{en:"For saganaki, cut it a full centimetre thick, dust it in flour and drop it into a dry, properly hot pan; thinner slices leak fat and go rubbery before the crust forms.",
 fr:"Pour le saganaki, taillez-la à un bon centimètre, farinez-la et jetez-la dans une poêle sèche et bien chaude : plus fine, elle rend sa graisse et devient caoutchouteuse avant que la croûte ne prenne."},
 pairs:["honey","tomato","oregano","lemon","olive-oil","watermelon"],
-svg:'<path class="f2 sf" d="M20 50h48v6q0 12-24 12t-24-12z"/><path class="s" d="M68 54h16"/><path class="f1 sf" d="M32 40h22v12H32z"/><path class="s" d="M36 45h14"/>'},
+svg:'<path class="f1 sf" d="M48 40L40.2 51.6A30 12 0 1 1 69.2 48.5z"/><path class="f1 sf" d="M48 40L40.2 51.6L40.2 71.6L48 60z"/><path class="f2 sf" d="M48 40L69.2 48.5L69.2 68.5L48 60z"/><path class="f2 sf" d="M40.2 51.6A30 12 0 0 1 18 40L18 60A30 12 0 0 0 40.2 71.6z"/><path class="f2 sf" d="M78 40A30 12 0 0 1 69.2 48.5L69.2 68.5A30 12 0 0 0 78 60z"/><path class="s" d="M22 54l0 5M30 57l0 6M76 50l0 5"/>'},
 
 {id:"gruyere",cat:"dairy",sign:"AOP",price:2,pk:"22–32 €/kg",name:{en:"Gruyère",fr:"Gruyère"},latin:"Le Gruyère AOP",
 origin:{en:"Fribourg, Switzerland",fr:"Fribourg, Suisse"},season:[],
@@ -597,7 +597,7 @@ fr:"Des moines de l’Aubrac ont bâti une dômerie au XIIe siècle pour abriter
 tip:{en:"Only tome fraîche makes aligot — a matured Laguiole will not string. Beat it into hot potato purée off the heat, about 500 g of tome to a kilo of potatoes, and stop the moment the ribbon lifts.",
 fr:"Seule la tome fraîche fait l’aligot : un laguiole affiné ne filera pas. Battez-la dans la purée brûlante hors du feu, environ 500 g de tome pour un kilo de pommes de terre, et arrêtez dès que le ruban se lève."},
 pairs:["potato","garlic","cream","butter","saucisse-de-toulouse","parsley"],
-svg:'<path class="f2 sf" d="M24 40h44q-3 18-22 18t-22-18z"/><path class="s" d="M18 40h56"/><path class="s" d="M38 58q-3 14 3 20M56 56q5 12-1 20"/>'},
+svg:'<path class="f3 sf" d="M23 28v44a25 9 0 0 0 50 0v-44z"/><path class="f1 sf" d="M48 45L62.3 52.4A25 9 0 0 1 37.4 53.2z"/><path class="f1 sf" d="M48 28L37.4 36.2L37.4 53.2L48 45z"/><path class="f2 sf" d="M48 28L62.3 35.4L62.3 52.4L48 45z"/><path class="f2 sf" d="M48 28L37.4 36.2L31.8 35.7L28.8 34L24.2 32.7L23.8 30.7L21.2 28.8L22.7 26.9L22.8 24.9L26.2 23.3L28.3 21.4L33.3 20.5L37.6 19.2L43.2 19.1L48.5 18.4L53.8 19L59.4 19.2L63.1 20.8L68.6 21.6L70.5 23.5L73.8 25.2L73.4 27.2L74.4 29.2L71.6 30.9L71.1 33L66.3 34.1L62.3 35.4z"/>'},
 
 {id:"laminating-butter",cat:"dairy",parent:"butter",price:2,pk:"12–18 €/kg",name:{en:"Laminating butter (dry butter, 84%)",fr:"Beurre de tourage (beurre sec)"},latin:"Butyrum siccum",
 origin:{en:"Charentes-Poitou, France",fr:"Charentes-Poitou, France"},season:[],
@@ -637,7 +637,7 @@ fr:"En 1932, soixante-seize familles ont quitté le système du gruyère, dont e
 tip:{en:"It is drier and more concentrated than Gruyère, so cut the quantity by about a fifth in a fondue and let it come to room temperature before you grate it.",
 fr:"Plus sec et plus concentré que le gruyère : réduisez la quantité d’environ un cinquième dans une fondue et laissez-le revenir à température avant de le râper."},
 pairs:["potato","cornichon","apple","rye","walnut","onion"],
-svg:'<path class="f2 sf" d="M26 38h44q0 22-22 22t-22-22z"/><path class="s" d="M18 38h60"/><path class="s" d="M28 34q20-8 40 0"/><path class="s" d="M34 70q3-8 7-2 3-9 7 1 3-7 6 1"/>'},
+svg:'<path class="f2 sf" d="M48 38L27.4 48A32 13 0 1 1 66.4 48.6z"/><path class="f1 sf" d="M48 38L27.4 48L27.4 72L48 62z"/><path class="f1 sf" d="M48 38L66.4 48.6L66.4 72.6L48 62z"/><path class="f3 sf" d="M27.4 48A32 13 0 0 1 16 38L16 62A32 13 0 0 0 27.4 72z"/><path class="f3 sf" d="M80 38A32 13 0 0 1 66.4 48.6L66.4 72.6A32 13 0 0 0 80 62z"/><path class="dot" d="M28.7 52a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M36.7 58a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M60.7 56a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M66.7 62a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0M58.7 70a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 1 0 -2.6 0"/>'},
 
 {id:"mahon-menorca",cat:"dairy",price:2,pk:"20–30 €/kg",name:{en:"Mahón-Menorca",fr:"Mahón"},latin:"Mahón-Menorca DOP",
 origin:{en:"Menorca, Balearic Islands",fr:"Minorque, Baléares"},season:[],
@@ -677,7 +677,7 @@ fr:"La tradition le date de 962, quand l’évêque de Cambrai aurait ordonné a
 tip:{en:"For a flamiche, use it rindless and straight from the fridge so it grates instead of smearing, about 250 g for a 26 cm tart, and put no salt in the custard — it brings its own.",
 fr:"Pour une flamiche, prenez-le sans croûte et sortant du froid pour qu’il se râpe au lieu de s’étaler, environ 250 g pour une tarte de 26 cm, et ne salez pas l’appareil : il apporte le sien."},
 pairs:["potato","leek","cream","beer-vinegar","rye","endive","butter"],
-svg:'<path class="f3 sf" d="M26 28h44v44H26z"/><path class="s" d="M26 39h44M26 50h44M26 61h44"/><path class="s" d="M37 28v44M48 28v44M59 28v44"/>'},
+svg:'<path class="f3 sf" d="M21 68L47 68L47 52L21 52z"/><path class="f3 sf" d="M63.6 63.2L76.8 53.6L76.8 37.6L63.6 47.2z"/><path class="f1 sf" d="M47 68L48.9 60.8L48.9 44.8L47 52z"/><path class="f1 sf" d="M48.9 60.8L63.6 63.2L63.6 47.2L48.9 44.8z"/><path class="f2 sf" d="M21 52L47 52L48.9 44.8L63.6 47.2L76.8 37.6L40.8 37.6z"/><path class="s" d="M27.2 50.4L35 48.4M32.2 50.4L29.9 48.4M41.1 43.2L48.9 41.2M46.1 43.2L43.9 41.2M56.4 40.8L64.2 38.8M61.4 40.8L59.2 38.8M63.3 41.6L71 39.6M68.3 41.6L66 39.6"/>'},
 
 {id:"mascarpone",cat:"dairy",price:1,pk:"8–14 €/kg",name:{en:"Mascarpone",fr:"Mascarpone"},latin:"Mascarpone",
 origin:{en:"Lombardy, Italy",fr:"Lombardie, Italie"},season:[],
@@ -737,7 +737,7 @@ fr:"Nommée d’après le geste — mozzare, trancher — car le fromager arrach
 tip:{en:"Take it out of the fridge an hour ahead — cold numbs its milky perfume. Tear it, never slice it, and salt it just before serving.",
 fr:"Sortez-la du réfrigérateur une heure avant — le froid engourdit son parfum lacté. Déchirez-la, ne la tranchez jamais, et salez juste avant de servir."},
 pairs:["tomato","basil","olive-oil","prosciutto","peach","oregano"],
-svg:'<circle class="f1 sf" cx="48" cy="54" r="19"/><path class="s" d="M40 44q6-6 16-2" stroke-width="1.8"/><path class="f2 sf" d="M56 38q4-4 8-3-1 5-6 6z"/>'},
+svg:'<path class="f2 sf" d="M16 56a32 9 0 1 0 64 0a32 9 0 1 0 -64 0z"/><path class="f1 sf" d="M28 42a20 20 0 1 0 40 0a20 20 0 1 0 -40 0z"/><path class="f2 sf" d="M17 54Q23 51 29 54T41 54T53 54T65 54T79 54A32 9 0 0 1 17 54z"/><path class="f2 sf" d="M16 56A32 9 0 0 0 80 56C79 72 66 84 48 84C30 84 17 72 16 56z"/><path class="s" d="M34 33C36 29 40 26 45 25"/>'},
 
 {id:"mozzarella-di-bufala-campana",cat:"dairy",parent:"mozzarella",sign:"DOP",price:2,pk:"20–32 €/kg",name:{en:"Mozzarella di bufala campana",fr:"Mozzarella di bufala campana"},latin:"Mozzarella di Bufala Campana DOP",
 origin:{en:"Campania, Italy",fr:"Campanie, Italie"},season:[],
@@ -747,7 +747,7 @@ fr:"Des documents du XIIe siècle du monastère de San Lorenzo à Capoue décriv
 tip:{en:"Keep it in its own whey at cool room temperature and eat it the day you buy it. It weeps far more than cow mozzarella, so tear rather than slice it and drain it on a cloth for ten minutes before it goes anywhere near dough.",
 fr:"Gardez-la dans son lactosérum, à température de cave, et mangez-la le jour même. Elle rend beaucoup plus d’eau qu’une mozzarella de vache : déchirez-la plutôt que de la trancher et laissez-la s’égoutter dix minutes sur un linge avant qu’elle n’approche d’une pâte."},
 pairs:["tomato","basil","olive-oil","black-pepper","peach","prosciutto"],
-svg:'<circle class="f1 sf" cx="48" cy="46" r="22"/><path class="s" d="M43 26q5-8 10-3"/><path class="s" d="M38 40q9 7 19 2"/><path class="s" d="M20 72q28 8 56 0"/>'},
+svg:'<path class="f1 sf" d="M21 49a25 25 0 1 0 50 0a25 25 0 1 0 -50 0z"/><path class="f2 sf" d="M66.2 34.3L62 38L63 42L56 43L57 47L48 50L56 53L54 57L60 59L59 63L65.2 64.9A25 25 0 0 0 66.2 34.3z"/><path class="s" d="M60 46C62 50 62 54 60 57M65 41C67 46 67 54 65 60M69.5 43C70.5 47 70.5 53 69.5 57"/><path class="s" d="M28 38C30 33 34 29 39 27"/><path class="dot" d="M22.4 80a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M29.4 84a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M64.4 81a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0M71.4 76a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 1 0 -3.2 0"/>'},
 
 {id:"munster",cat:"dairy",sign:"AOP",price:2,pk:"20–30 €/kg",name:{en:"Munster",fr:"Munster"},latin:"Munster-Géromé AOP",
 origin:{en:"Vosges, Alsace",fr:"Vosges, Alsace"},season:[],
@@ -967,7 +967,7 @@ fr:"Le nom se rattache au latin robium, le rouge : Pline évoque une rubeola de 
 tip:{en:"Buy it at four to ten days old and eat it within two more. It is a lactic curd with nothing protecting it and it turns ammoniac fast; serve at cool room temperature, never straight from the fridge.",
 fr:"Achetez-la de quatre à dix jours et mangez-la dans les deux qui suivent. C'est un caillé lactique que rien ne protège et qui tourne vite à l'ammoniac ; servez-la à température de cave, jamais sortie du réfrigérateur."},
 pairs:["honey","olive-oil","hazelnut","chives","walnut","fig","black-pepper","peach"],
-svg:'<path class="f1 sf" d="M26 50v10q0 8 22 8t22-8V50z"/><ellipse class="f1 sf" cx="48" cy="50" rx="22" ry="9"/><path class="s" d="M37 48q6 5 13 1M44 57q5 2 9-2"/>'},
+svg:'<path class="f2 sf" d="M10 40v14a20 8 0 0 0 40 0v-14z"/><path class="f1 sf" d="M10 40a20 8 0 1 0 40 0a20 8 0 1 0 -40 0z"/><path class="s" d="M20 40q4-3 8 0t8 0"/><path class="f1 sf" d="M62 56L58.2 64.9A22 9 0 1 1 78.9 61.8z"/><path class="f1 sf" d="M62 56L58.2 64.9L58.2 78.9L62 70z"/><path class="f3 sf" d="M62 56L78.9 61.8L78.9 75.8L62 70z"/><path class="f2 sf" d="M58.2 64.9A22 9 0 0 1 40 56L40 70A22 9 0 0 0 58.2 78.9z"/><path class="f2 sf" d="M84 56A22 9 0 0 1 78.9 61.8L78.9 75.8A22 9 0 0 0 84 70z"/>'},
 
 {id:"rocamadour",cat:"dairy",sign:"AOP",price:2,pk:"1,50–2,50 €/pièce",name:{en:"Rocamadour",fr:"Rocamadour"},latin:"Rocamadour AOP",
 origin:{en:"Causses du Quercy, Lot",fr:"Causses du Quercy, Lot"},season:[3,4,5,6,7,8,9,10],
@@ -987,7 +987,7 @@ fr:"En 1981, le roncal devient le premier fromage espagnol doté d'une denominac
 tip:{en:"Drier than Idiazábal and never smoked, it crumbles rather than slices when cold. Take it out an hour ahead, cut it thick with a knife rather than a wire, and put quince paste beside it.",
 fr:"Plus sec que l'idiazábal et jamais fumé, il s'émiette au lieu de se trancher quand il est froid. Sortez-le une heure avant, coupez-le épais au couteau plutôt qu'au fil, et posez de la pâte de coing à côté."},
 pairs:["quince","walnut","honey","olive-oil","almond","pear","red-wine-vinegar","fig"],
-svg:'<path class="f2 sf" d="M26 68 48 24 70 68a24 24 0 0 1-44 0z"/><path class="s" d="M30 64a22 22 0 0 1 36 0"/><path class="s" d="M42 48h5M50 55h5M45 60h6"/>'},
+svg:'<path class="f2 sf" d="M48 36L37.7 47.3A30 12 0 1 1 63 46.4z"/><path class="f1 sf" d="M48 36L37.7 47.3L37.7 73.3L48 62z"/><path class="f1 sf" d="M48 36L63 46.4L63 72.4L48 62z"/><path class="f3 sf" d="M37.7 47.3A30 12 0 0 1 18 36L18 62A30 12 0 0 0 37.7 73.3z"/><path class="f3 sf" d="M78 36A30 12 0 0 1 63 46.4L63 72.4A30 12 0 0 0 78 62z"/><path class="f3 sf" d="M37.7 47.3L40.7 45.9L40.7 71.9L37.7 73.3z"/><path class="f3 sf" d="M63 46.4L60 44.8L60 70.8L63 72.4z"/><path class="s" d="M21 50h4M26 58h4M21 64h3M31 66h4M66 60h4M72 52h4M70 68h3M66 70h3"/>'},
 
 {id:"roquefort",cat:"dairy",sign:"AOP",price:2,pk:"28–45 €/kg",name:{en:"Roquefort",fr:"Roquefort"},latin:"Penicillium roqueforti",
 origin:{en:"Roquefort-sur-Soulzon, Aveyron",fr:"Roquefort-sur-Soulzon, Aveyron"},season:[],
@@ -1067,7 +1067,7 @@ fr:"Les archives de Berne enregistrent en 1530 une caravane de fromages partant 
 tip:{en:"Do not grate the old wheels: break curls off with a short blunt knife and let them warm in the hand, which is what möckli means. It has almost no elasticity, so it seasons a dish but will never string in a gratin.",
 fr:"Ne râpez pas les vieilles meules : détachez des copeaux au couteau court et laissez-les tiédir dans la main — c'est ce que veut dire möckli. Il n'a presque aucune élasticité : il assaisonne un plat, mais ne filera jamais dans un gratin."},
 pairs:["pear","honey","walnut","grape","black-pepper","prosciutto","apple","butter"],
-svg:'<path class="f2 sf" d="M20 56q28-10 56 0v10q-28 10-56 0z"/><path class="f1 sf" d="M30 46q8-11 17-6-7 2-9 9-5 4-8-3z"/><path class="f1 sf" d="M54 44q9-9 16-2-7 1-9 8-5 3-7-6z"/>'},
+svg:'<path class="f2 sf" d="M10 34v24a22 8 0 0 0 44 0v-24z"/><path class="f2 sf" d="M10 34a22 8 0 1 0 44 0a22 8 0 1 0 -44 0z"/><path class="f1 sf" d="M36.4 58.8C44.5 54.9 53.4 58 61.6 55.2C65.8 53.7 68.1 54.5 70.1 54.3C80.6 53.2 82.3 69.1 71.7 70.2C63.4 72.1 54.6 70 46.5 73.8C41 74.4 36.5 69.9 38.1 65.7C35.7 61.9 37.3 57.7 36.4 58.8z"/><path class="s" d="M70.9 62.2C72.4 62.1 73.6 63.6 72.2 64.7C69.8 66 67.8 63.7 68.4 61.7C69.2 59 73.5 58.5 74.7 61.8C76 65.3 72.8 68.5 68.9 68.1"/><path class="s" d="M42.1 65.3C49.8 62.4 56.2 65.8 63.7 61"/>'},
 
 {id:"schabziger",cat:"dairy",rare:true,price:2,pk:"35–55 €/kg",name:{en:"Schabziger",fr:"Schabziger"},latin:"Glarner Schabziger",
 origin:{en:"Glarus, Switzerland",fr:"Glaris, Suisse"},season:[],
@@ -1127,7 +1127,7 @@ fr:"Le nom vient du romagnol squaquaròn, qui dit son défaut de tenue : il se v
 tip:{en:"It is counted in days, not weeks: buy it and serve it within three. Spread it cold inside a hot piadina so it slackens without breaking, or loosen it with a spoonful of milk and use it as a cold sauce over grilled vegetables.",
 fr:"Il se compte en jours, pas en semaines : achetez-le et servez-le dans les trois. Étalez-le froid dans une piadina chaude pour qu'il se détende sans casser, ou détendez-le d'une cuillère de lait en sauce froide sur des légumes grillés."},
 pairs:["wild-rocket","prosciutto","fig","olive-oil","honey","walnut","tomato","black-pepper"],
-svg:'<ellipse class="f1 sf" cx="40" cy="44" rx="19" ry="13"/><path class="s" d="M57 50q11 7 17 16"/><path class="f1 sf" d="M35 56q-3 10 1 15t4-15z"/>'},
+svg:'<path class="f2 sf" d="M16 52v8a32 11 0 0 0 64 0v-8z"/><path class="f2 sf" d="M16 52a32 11 0 1 0 64 0a32 11 0 1 0 -64 0z"/><path class="f1 sf" d="M21 52C20 44 30 38 40 39C46 34 56 35 60 39C68 39 75 44 74 50C75 53 72 56 69 57C67 60 68 66 65 69C62 71 59 68 59 63C59 61 57 61 53 61.5C40 62.5 22 59 21 52z"/>'},
 
 {id:"stracchino-crescenza",cat:"dairy",price:2,pk:"16–26 €/kg",name:{en:"Stracchino (crescenza)",fr:"Stracchino (crescenza)"},latin:"Bos taurus",
 origin:{en:"Lombardy and Liguria",fr:"Lombardie et Ligurie"},season:[],
@@ -1157,7 +1157,7 @@ fr:"Il porte le nom du val bergamasque dont il vient, et il s’affinait non en 
 tip:{en:"It melts at low temperature without splitting, but the ammonia lives in the rind: pare it off before the cheese goes into polenta or a gratin. Cube it and stir it in off the heat, roughly 30 g for every 100 g of dry polenta.",
 fr:"Il fond à basse température sans trancher, mais l’ammoniaque est dans la croûte : ôtez-la avant de l’envoyer dans une polenta ou un gratin. Coupez-le en dés et incorporez-le hors du feu, environ 30 g pour 100 g de polenta sèche."},
 pairs:["polenta-bramata","pear","walnut","honey","radicchio","porcini","black-pepper","prosciutto"],
-svg:'<path class="f2 sf" d="M24 28h48v44H24z"/><path class="s" d="M24 40h48M24 52h48M24 64h48M40 28v44M56 28v44"/><path class="f1 sf" d="M48 50l24 22H48z"/>'},
+svg:'<path class="f2 sf" d="M18 58h40v10h-40z"/><path class="f1 sf" d="M18 58l22 -17h40l-22 17z"/><path class="f3 sf" d="M58 58l22 -17v10l-22 17z"/><path class="s" d="M34.5 52.9a2.6 1.9 0 1 0 5.2 0a2.6 1.9 0 1 0 -5.2 0zM49.5 52.9a2.6 1.9 0 1 0 5.2 0a2.6 1.9 0 1 0 -5.2 0zM43.3 46.1a2.6 1.9 0 1 0 5.2 0a2.6 1.9 0 1 0 -5.2 0zM58.3 46.1a2.6 1.9 0 1 0 5.2 0a2.6 1.9 0 1 0 -5.2 0zM46.5 47.9L52.5 47.9M49.5 47.9L48.4 51.7"/>'},
 
 {id:"lancashire",cat:"dairy",rare:true,price:2,pk:"25–40 €/kg",name:{en:"Tasty Lancashire",fr:"Lancashire"},latin:"Bos taurus",
 origin:{en:"The Fylde, Lancashire",fr:"Le Fylde, Lancashire"},season:[],
@@ -1177,7 +1177,7 @@ fr:"Les crémeries françaises séparent la crème en deux, et la différence co
 tip:{en:"It will not whip — the fat is already set. For chantilly you need crème liquide entière at 30% or above, and very cold.",
 fr:"Elle ne monte pas — la matière grasse est déjà prise. Pour une chantilly il faut de la crème liquide entière à 30 % au moins, et très froide."},
 pairs:["potato","mushroom","shallot","nutmeg","black-pepper","leek","egg","butter"],
-svg:'<path class="f1 sf" d="M22 54q-2 14 2 20 3 6 22 6 19 0 22-6 4-6 2-20-24 8-48 0z"/><path class="f2 sf" d="M22 54q11-9 24-9 13 0 24 9-24 8-48 0z"/><path class="f1 sf" d="M44 50l8-26q1-5 5-4 5 1 4 6l-8 26z"/><path class="s" d="M30 53q8-5 16-3 7 2 10 5" stroke-width="1.5"/><path class="s" d="M26 68q22 6 42 0" stroke-width="1.5"/>'},
+svg:'<path class="f2 sf" d="M57 46L62.5 18C63 15.5 67 15.5 67 18L62 46z"/><path class="f2 sf" d="M16 54L80 54C78 72 66 82 48 82C30 82 18 72 16 54z"/><path class="f1 sf" d="M19 56C18 47 27 43 36 43C38 36 42 31 47 30C46 34 49 36 52 37C56 38 58 41 57 43C68 43 78 47 77 56z"/><path class="s" d="M40 43C44 41 48 41 51 39"/>'},
 
 {id:"tome-des-bauges",cat:"dairy",sign:"AOP",price:2,pk:"22–34 €/kg",name:{en:"Tome des Bauges",fr:"Tome des Bauges"},latin:"Bos taurus",
 origin:{en:"Massif des Bauges, Savoie",fr:"Massif des Bauges, Savoie"},season:[9,10,11,12,1],
@@ -1286,7 +1286,7 @@ fr:"Une appellation, deux crèmes, et c’est la maturation qui les sépare. La 
 tip:{en:"Buy by the label: plain Crème de Bresse for poulet à la crème, gratins and sauces that simmer; the 'épaisse' for spooning over fruit or fromage blanc, or for stirring into a dish off the heat.",
 fr:"Choisissez selon l’étiquette : la crème de Bresse tout court pour le poulet à la crème, les gratins et les sauces qui mijotent ; l’« épaisse » pour napper des fruits ou un fromage blanc, ou pour lier un plat hors du feu."},
 pairs:["bresse-chicken","potato","morel","mushroom","pike","nutmeg","strawberry","fromage-blanc"],
-svg:'<path class="f1 sf" d="M22 48q-3 16 1 24 3 7 25 7 22 0 25-7 4-8 1-24z"/><path class="f2 sf" d="M18 46q2-16 30-16 28 0 30 16-4 6-10 2-4 5-10 1-5 5-10 0-5 5-10-1-6 4-10-2z"/><path class="s" d="M24 43q24 9 48 0"/><path class="s" d="M34 34q-2 5-4 9M48 31v10M62 34q2 5 4 9" stroke-width="1.5"/><path class="s" d="M25 64q23 6 46 0" stroke-width="1.5"/>'},
+svg:'<path class="f2 sf" d="M24 66L82 66C80 78 70 84 53 84C36 84 26 78 24 66z"/><path class="f1 sf" d="M57.8 32.2C61.3 41.2 57 47 56 55L63 55C64 47 68.3 41.2 63.8 31.2z"/><path class="f1 sf" d="M34 66C34 60 42 56 50 57C52 52 58 51 62 53C67 53 70 56 69 59C74 60 77 63 77 66z"/><path class="s" d="M44 62C50 59 58 60 62 63"/><path class="f2 sf" d="M37 19L51.8 30.5L60.3 32.2L51.8 35.5C47.8 43.2 43.2 51.6 37.2 56.7C34.7 58.7 31.9 58.5 29.4 56.6L19.6 48.9C17.1 47 16.2 44.3 18.1 41.9C23.3 34 30.3 27.6 37 19z"/><path class="s" d="M33.6 23.3C26.9 18 16 29.3 22.3 37.2"/>'},
 {id:"mothais-sur-feuille",cat:"dairy",parent:"goat-cheese",sign:"AOP",price:3,pk:"23–55 €/kg",name:{en:"Mothais sur feuille",fr:"Mothais sur feuille"},latin:"Capra hircus (raw milk)",
 origin:{en:"Southern Poitou, around La Mothe-Saint-Héray",fr:"Poitou méridional, autour de La Mothe-Saint-Héray"},season:[],
 flavor:["milky","musky","woody","nutty"],texture:["soft","creamy","smooth"],

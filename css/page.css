@@ -80,12 +80,13 @@ td{color:var(--ink)}
 .ci .f1,.ci .f2,.ci .sf{fill:var(--plate);stroke:var(--ink-3);stroke-width:5;
   stroke-linejoin:round}
 .ci .f2{fill:var(--border)}
+.ci .f3:not(.sf){fill:var(--ink-3)}
 .ci .s{fill:none;stroke:var(--ink-3);stroke-width:5;stroke-linecap:round}
 .ci .dot{fill:var(--ink-3)}
 .pairs a{display:inline-flex;align-items:center}
 .pairs a:hover .ci .f1,.pairs a:hover .ci .f2,.pairs a:hover .ci .sf,
 .pairs a:hover .ci .s{stroke:var(--ink)}
-.pairs a:hover .ci .dot{fill:var(--ink)}
+.pairs a:hover .ci .dot,.pairs a:hover .ci .f3:not(.sf){fill:var(--ink)}
 h2 small{color:var(--ink-3);font-size:14px}
 .ig-link{display:inline-flex;align-items:center;vertical-align:-6px;margin-left:9px;
   padding:4px;border-radius:8px;line-height:0;text-decoration:none}

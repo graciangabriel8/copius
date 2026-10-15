@@ -127,7 +127,7 @@ fr:"Presque unique parmi les graisses végétales, elle est solide à températu
 tip:{en:"Virgin coconut oil tastes strongly of coconut; the refined version tastes of nothing. Choose deliberately, they are not interchangeable.",
 fr:"L’huile vierge a un goût marqué de coco ; la raffinée n’a aucun goût. Choisissez sciemment, elles ne sont pas interchangeables."},
 pairs:["chili","lime","ginger","turmeric","cilantro","coconut-milk","curry-leaf","garlic"],
-svg:'<path class="f3 sf" d="M36 74V46h24v28z"/><path class="s" d="M36 54h24"/><circle class="f1 sf" cx="48" cy="34" r="8"/><circle class="dot" cx="45" cy="32" r="1.6"/><circle class="dot" cx="51" cy="32" r="1.6"/>'},
+svg:'<path class="f3 sf" d="M20 52Q20 82 48 84Q76 82 76 52z" transform="translate(0 2) translate(0 0) translate(48 50) scale(0.9) translate(-48 -50) rotate(10 48 56)"/><ellipse class="f2 sf" cx="48" cy="52" rx="28" ry="9" transform="translate(0 2) translate(0 0) translate(48 50) scale(0.9) translate(-48 -50) rotate(10 48 56)"/><path class="f1 sf" d="M24 53Q24 36 48 34Q72 36 72 53Q48 60 24 53z" transform="translate(0 2) translate(0 0) translate(48 50) scale(0.9) translate(-48 -50) rotate(10 48 56)"/><path class="s" d="M40 42Q44 36 52 38Q56 41 51 43" transform="translate(0 2) translate(0 0) translate(48 50) scale(0.9) translate(-48 -50) rotate(10 48 56)"/><path class="s" d="M30 66l4 8M42 72l3 8M58 72l-1 8" transform="translate(0 2) translate(0 0) translate(48 50) scale(0.9) translate(-48 -50) rotate(10 48 56)"/>'},
 
 {id:"flaxseed-oil",cat:"fats",price:2,pk:"25–45 €/L",name:{en:"Cold-pressed flaxseed oil",fr:"Huile de lin"},latin:"Linum usitatissimum",
 origin:{en:"Northern and Eastern Europe",fr:"Europe du Nord et de l’Est"},season:[],
@@ -237,7 +237,7 @@ fr:"Les moutons à queue grasse stockent leur énergie dans la queue comme le ch
 tip:{en:"Dice it small and render it slowly from cold, then fry the onions in the fat and return the crisp scraps at the end. It sets soft rather than hard, so a plov made with it does not go waxy as it cools — which is exactly what beef or pork fat cannot do.",
 fr:"Taillez-la en petits dés et fondez-la doucement à départ froid, puis faites-y suer les oignons et rendez les grattons croustillants à la fin. Elle fige souple et non dure : un plov fait avec elle ne devient pas cireux en refroidissant, ce dont la graisse de bœuf ou de porc est incapable."},
 pairs:["lamb","rice","onion","cumin","carrot","bulgur"],
-svg:'<path class="f1 sf" d="M22 48q0-18 18-18t18 18q0 16-18 22T22 48z"/><path class="s" d="M31 42q9 6 18 0M29 56q11 6 22 0"/><path class="f2 sf" d="M64 38h13v13H64z"/><path class="f2 sf" d="M66 56h13v13H66z"/>'},
+svg:'<path class="s" d="M26 52V70M34 54V72M44 54V72" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54)"/><path class="f1 sf" d="M52 36Q66 30 74 40Q84 52 80 66Q78 78 70 76Q66 74 64 70Q62 77 56 77Q48 76 48 64Q46 48 52 36z" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54)"/><path class="f2 sf" d="M38 56a10 10 0 0 1 -13 -3a7 7 0 0 1 -6 -8a7 7 0 0 1 7 -7a10 10 0 0 1 14 -3a10 10 0 0 1 14 3a7 7 0 0 1 4 9a7 7 0 0 1 -6 7a10 10 0 0 1 -14 2z" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54)"/><ellipse class="f3 sf" cx="16" cy="46" rx="7.5" ry="5" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54) rotate(25 16 46)"/><path class="f3 sf" d="M17 41L12 35L22 39z" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54)"/><path class="s" d="M64 70Q64 58 60 48" transform="translate(3 0) translate(48 54) scale(0.9) translate(-48 -54)"/>'},
 
 {id:"lard",cat:"fats",price:1,pk:"4–8 €/kg",name:{en:"Lard",fr:"Saindoux"},latin:"Adeps suillus",
 origin:{en:"Europe & China",fr:"Europe & Chine"},season:[],
@@ -247,7 +247,7 @@ fr:"Ses gros cristaux de gras enrobent les particules de farine mieux que le beu
 tip:{en:"Ask for leaf lard, from around the kidneys, if you are baking. The back fat is fine for frying but tastes of pork.",
 fr:"Demandez la panne, prise autour des rognons, si vous pâtissez. Le lard dorsal convient à la friture mais garde le goût de porc."},
 pairs:["potato","onion","garlic","black-pepper","thyme","cabbage","flour-t65","paprika"],
-svg:'<path class="f3 sf" d="M32 70V50h32v20z"/><path class="s" d="M32 58h32"/><path class="s" d="M42 50v20M54 50v20"/>'},
+svg:'<ellipse class="f2 sf" cx="66" cy="42" rx="10.5" ry="20" transform="rotate(16 66 42)"/><ellipse class="s" cx="66" cy="42" rx="6.5" ry="15" transform="rotate(16 66 42)"/><path class="f1 sf" d="M28 42V80Q28 86 46 86Q64 86 64 80V42z"/><ellipse class="f1 sf" cx="46" cy="42" rx="18" ry="6.5"/><path class="s" d="M34 42Q38 38 46 39Q54 41 50 44Q46 45 44 42"/><path class="s" d="M28 50Q46 56 64 50"/>'},
 
 {id:"panne-de-porc",cat:"fats",parent:"lard",price:1,pk:"5–10 €/kg",name:{en:"Leaf lard",fr:"Panne de porc"},latin:"Sus scrofa domesticus (adeps perirenalis)",
 origin:{en:"Around the pig’s kidneys",fr:"Autour des rognons du porc"},season:[],
@@ -257,7 +257,7 @@ fr:"La panne est la nappe de gras qui entoure les rognons, et elle ne remplace p
 tip:{en:"Render it low: dice it cold, add a splash of water to the pan and hold it under 110 °C until the water has gone and the pieces float pale gold. Push the heat and it browns — and browned lard tastes of pork forever after, which ruins it for pastry.",
 fr:"Fondez-la bas : coupez-la froide en dés, ajoutez un fond d’eau dans la casserole et tenez sous 110 °C jusqu’à ce que l’eau soit partie et que les morceaux flottent, blonds. Poussez le feu et elle colore — et un saindoux coloré garde à jamais le goût de porc, ce qui le condamne en pâtisserie."},
 pairs:["flour-t55","salt","apple","sugar","potato","onion","sage","rye-flour"],
-svg:'<path class="f1 sf" d="M48 24q18 6 20 26t-20 26q-20-6-20-26t20-26z"/><path class="s" d="M48 26v50"/><path class="s" d="M48 40q-8 4-12 12M48 40q8 4 12 12M48 56q-7 3-10 10M48 56q7 3 10 10"/>'},
+svg:'<path class="f1 sf" d="M14 60C12.8 54.9 13.9 46.8 16 42C18.1 37.2 23.5 31.3 28 28C32.5 24.7 40.6 21.2 46 20C51.4 18.8 59.2 18.5 64 20C68.8 21.5 75.3 26.1 78 30C80.7 33.9 82.3 41.2 82 46C81.7 50.8 79 57.8 76 62C73 66.2 67.1 71.3 62 74C56.9 76.7 47.7 79.7 42 80C36.3 80.3 28.2 79 24 76C19.8 73 15.2 65.1 14 60z"/><path class="f3 sf" d="M36 40C38 28 54 24 64 28C76 33 78 46 72 54C68 60 61 59 58 55C56 52 53 52 51 55C46 62 34 54 36 40z"/><path class="s" d="M50 50Q54 46 58 50"/><path class="f1 sf" d="M14 62A3.6 3.6 0 0 1 20 57A3.6 3.6 0 0 1 26 55A3.6 3.6 0 0 1 31 51A3.6 3.6 0 0 1 36 47A3.6 3.6 0 0 1 41 44A3.6 3.6 0 0 1 46 44A3.6 3.6 0 0 1 49 49Q48 62 40 72Q30 78 22 74Q14 70 14 62z"/><path class="s" d="M22 66Q30 64 36 58M28 72Q34 68 40 64"/>'},
 
 {id:"macadamia-oil",cat:"fats",price:2,pk:"40–60 €/L",name:{en:"Macadamia oil",fr:"Huile de macadamia"},latin:"Macadamia integrifolia",
 origin:{en:"Queensland, Australia",fr:"Queensland, Australie"},season:[],
