@@ -1,15 +1,16 @@
 {
  "what": "The free tier of Copius: a plain encyclopaedia of the ingredients a cook is expected to know. No pairings, no pairing lab, no trios — those stay paid.",
  "decided": "2026-09-13",
- "count": 499,
+ "count": 500,
  "how": [
   "Started from all 1838 ingredients.",
   "Cut to those a 2nd-year BTS MHR student would recognise by name — the rule was 'caviar yes, beluga caviar no': the category is known, the precise variety is not.",
   "Calibrated against Gabriel's own answers to two recognition quizzes; he scored 20-30% on the samples, which showed the first cut of 1138 was far too generous.",
-  "Cut again to 499 at his instruction."
+  "Cut again to 499 at his instruction.",
+  "2026-10-15: pine shoots added at Gabriel's instruction, free from the start."
  ],
  "gate": "The lock ships from js/free.js, which tools/build-free.js builds from these ids.",
- "validity": "All 499 ids were checked against the live data on 2026-09-15: 0 missing. Re-check after any id rename.",
+ "validity": "All 499 ids were checked against the live data on 2026-09-15: 0 missing. pine-shoots added 2026-10-15. Re-check after any id rename.",
  "ids": [
   "abondance",
   "absinthe",
@@ -353,6 +354,7 @@
   "pigeon",
   "pike",
   "pine-nut",
+  "pine-shoots",
   "pineapple",
   "pineau-des-charentes",
   "pink-peppercorn",
