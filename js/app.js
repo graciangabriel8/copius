@@ -1924,76 +1924,178 @@
     }).join("");
   }
 
-  /* One line per pair, chosen from what is actually true of that pair rather
-     than one of three sentences repeated down the column. Everything it reads
-     — the shared notes, the bridge ingredients, the family — is already in the
-     atlas; saying which is what makes the row worth reading twice. */
+  /* "a, b and c", in the reader's language. */
+  function andList(xs) {
+    if (xs.length < 2) return xs[0] || "";
+    return xs.slice(0, -1).join(", ") + " " + T().andWord + " " + xs[xs.length - 1];
+  }
+
+  /* One line per recorded or bridged pair, chosen from what is actually true
+     of that pair rather than one of three sentences repeated down the column.
+     Everything it reads — the shared notes, the bridge ingredients, the family
+     — is already in the atlas; saying which is what makes the row worth
+     reading twice. The pairs with nothing recorded share one line in the
+     verdict, so they need no sentence of their own. */
   function pairNote(row) {
     var t = T(), A = byId[row.a.id], B = byId[row.b.id];
-    var shared = (A.flavor || []).filter(function (f) {
-      return (B.flavor || []).indexOf(f) !== -1;
-    });
-    var notes = shared.map(function (f) { return t.flavors[f].toLowerCase(); });
-    function list(xs) {
-      if (xs.length < 2) return xs[0] || "";
-      return xs.slice(0, -1).join(", ") + " " + t.andWord + " " + xs[xs.length - 1];
-    }
 
     if (row.verdict === "ok") {
+      var notes = (A.flavor || []).filter(function (f) {
+        return (B.flavor || []).indexOf(f) !== -1;
+      }).map(function (f) { return t.flavors[f].toLowerCase(); });
       if (A.cat === B.cat) return t.pairOkFamily.replace("{family}", catLabel(A.cat).toLowerCase());
-      if (notes.length >= 2) return t.pairOkNotes.replace("{notes}", list(notes.slice(0, 3)));
+      if (notes.length >= 2) return t.pairOkNotes.replace("{notes}", andList(notes.slice(0, 3)));
       if (notes.length === 1) return t.pairOkOneNote.replace("{notes}", notes[0]);
       return t.pairOkContrast;
     }
 
-    if (row.verdict === "mid") {
-      /* The engine's own bridges, species included, so the note names what
-         the verdict was actually drawn from. */
-      var via = (row.bridges || []).filter(function (x) { return byId[x]; })
-        .map(function (x) { return name(byId[x]); })
-        .sort(function (x, y) { return x.localeCompare(y, state.lang, CMP); });
-      if (via.length > 3) {
-        return t.pairBridgeMany.replace("{n}", via.length).replace("{via}", list(via.slice(0, 2)));
-      }
-      if (via.length) return t.pairBridgeOne.replace("{via}", list(via));
-      return t.labBridgeShort;
+    /* The engine's own bridges, species included, so the note names what the
+       verdict was actually drawn from. */
+    var via = (row.bridges || []).filter(function (x) { return byId[x]; })
+      .map(function (x) { return name(byId[x]); })
+      .sort(function (x, y) { return x.localeCompare(y, state.lang, CMP); });
+    if (via.length > 3) {
+      return t.pairBridgeMany.replace("{n}", via.length).replace("{via}", andList(via.slice(0, 2)));
     }
-
-    if (A.cat === B.cat) return t.pairNoneFamily;
-    if (notes.length) return t.pairNoneNotes.replace("{notes}", list(notes.slice(0, 2)));
-    return t.pairNoneCold;
+    if (via.length) return t.pairBridgeOne.replace("{via}", andList(via));
+    return t.labBridgeShort;
   }
 
+  /* What the engine is told about the atlas: one object, for the verdict and
+     for every plate the suggestions try. */
+  var PLATE_CTX = {
+    byId: function (id) { return byId[id] || null; },
+    pairsOf: itemPairs,
+    textureOf: itemTexture,
+    lineageOf: lineage,
+    neighboursOf: function (id) { return PAIRS[id] ? Array.from(PAIRS[id]) : []; }
+  };
+
+  /* What to put on next, judged rather than guessed. Only the recorded
+     partners of what is already here are worth trying — something recorded
+     with nothing on the plate can only pull its score down — so they are
+     tallied first, the REC_SHORTLIST likeliest are judged with the plate, and
+     the REC_SHOWN that do the most for the result are offered. This runs on
+     every change to the plate, so the shortlist is the whole cost:
+     REC_SHORTLIST judgements of at most MAX_FREE items.
+
+     Never offered: what is already here or shares a lineage with it (a second
+     vanilla is no new accord, see pairSides); a drink, because nudging a cook
+     toward a wine is the promotional register the loi Évin forbids
+     (isAlcohol); and in guided mode a role the cook has waved off — the
+     slots are hidden in open mode, so a skip made there is not visible to
+     honour.
+
+     A full plate has no room: the offer becomes a swap for its most isolated
+     item, and disappears when no swap raises the score. */
+  var REC_SHORTLIST = 16;
+  var REC_SHOWN = 3;
+  function recommend(r) {
+    if (!plate.length) return [];
+    var out = null;
+    if (plateFull()) {
+      /* Fewest recorded accords, then fewest bridges, the first added on a tie.
+         An accord counts a hundred, so no number of bridges (fourteen at most)
+         outweighs one. */
+      var weight = {};
+      plate.forEach(function (it) { weight[it.id] = 0; });
+      r.rows.forEach(function (row) {
+        var w = row.verdict === "ok" ? 100 : row.verdict === "mid" ? 1 : 0;
+        weight[row.a.id] += w; weight[row.b.id] += w;
+      });
+      plate.forEach(function (it) { if (!out || weight[it.id] < weight[out.id]) out = it; });
+    }
+    var keep = plate.filter(function (it) { return it !== out; });
+    var skipped = {}, taken = {}, lone = {};
+    if (plateMode === "guided") roleRoom().forEach(function (g) { if (g.skipped) skipped[g.role] = true; });
+    plate.forEach(function (it) { lineage(it.id).forEach(function (x) { taken[x] = true; }); });
+    r.lonely.forEach(function (it) { lone[it.id] = true; });
+
+    /* How many items here each candidate is recorded with, species included,
+       and how many of those are on their own. Bounded by the plate (MAX_FREE)
+       times each item's recorded partners. */
+    var tally = {};
+    keep.forEach(function (it) {
+      var mine = {};
+      lineage(it.id).forEach(function (x) {
+        if (PAIRS[x]) PAIRS[x].forEach(function (c) { mine[c] = true; });
+      });
+      itemPairs(it.id, it.form).forEach(function (c) { mine[c] = true; });
+      Object.keys(mine).forEach(function (c) {
+        var e = tally[c] || (tally[c] = { id: c, links: 0, lone: 0 });
+        e.links++;
+        if (lone[it.id]) e.lone++;
+      });
+    });
+    /* Likeliest first: ties in a lonely item, then recorded with more of the
+       plate, then recorded with more of the atlas, which leaves the most room
+       to build on. The id settles the rest, so the offer never flickers. */
+    var shortlist = Object.keys(tally).map(function (c) { return tally[c]; }).filter(function (e) {
+      var i = byId[e.id];
+      return i && PAIRS[e.id] && !isAlcohol(i) && !skipped[PLATE.roleOf(i)] &&
+        !lineage(e.id).some(function (x) { return taken[x]; });
+    }).sort(function (x, y) {
+      return y.lone - x.lone || y.links - x.links || PAIRS[y.id].size - PAIRS[x.id].size ||
+        (x.id < y.id ? -1 : 1);
+    }).slice(0, REC_SHORTLIST);
+
+    /* Then what each actually does: the lonely items it ties in, the score it
+       leaves, the items it is recorded with. Below three ingredients there is
+       no score to raise, so anything recorded with the plate is worth it. */
+    return shortlist.map(function (e, rank) {
+      var cand = { id: e.id, form: "" };
+      var rr = PLATE.judge(keep.concat([cand]), PLATE_CTX), still = {}, linked = [];
+      rr.lonely.forEach(function (it) { still[it.id] = true; });
+      rr.rows.forEach(function (row) {
+        if (row.verdict !== "ok") return;
+        if (row.a === cand) linked.push(row.b);
+        else if (row.b === cand) linked.push(row.a);
+      });
+      /* The reason names the lonely items first: they are what it is for. */
+      linked.sort(function (x, y) {
+        return (lone[y.id] ? 1 : 0) - (lone[x.id] ? 1 : 0) || plate.indexOf(x) - plate.indexOf(y);
+      });
+      return { id: e.id, out: out, score: rr.score, linked: linked, rank: rank,
+               rescued: r.lonely.filter(function (it) { return it !== out && !still[it.id]; }).length };
+    }).filter(function (s) {
+      return s.linked.length && (r.score === null || s.score > r.score);
+    }).sort(function (x, y) {
+      return y.rescued - x.rescued ||
+        (y.score === null ? -1 : y.score) - (x.score === null ? -1 : x.score) ||
+        y.linked.length - x.linked.length || x.rank - y.rank;
+    }).slice(0, REC_SHOWN);
+  }
+
+  /* Pairs with nothing recorded are named on one line, this many of them. */
+  var NONE_NAMED = 6;
+
+  /* The verdict reads top to bottom as the questions come: is this plate good
+     (the score and its band), what holds it and what is on its own (one line),
+     what to try next (the suggestions). Then the five tastes, the allergens a
+     cook must write down, and the pairs. The arithmetic — every weighted note,
+     texture and its caveat — waits behind "Why this grade". */
   function renderPlateVerdict() {
     var t = T(), box = el("plateVerdict");
     if (plate.length < 1) { box.innerHTML = ""; return; }
-    var r = PLATE.judge(plate, {
-      byId: function (id) { return byId[id] || null; },
-      pairsOf: itemPairs,
-      textureOf: itemTexture,
-      lineageOf: lineage,
-      neighboursOf: function (id) { return PAIRS[id] ? Array.from(PAIRS[id]) : []; }
-    });
+    var r = PLATE.judge(plate, PLATE_CTX);
 
-    /* One note may name ingredients; the rest are plain sentences. */
+    /* Some notes name ingredients; the rest are plain sentences. */
     function noteText(nt) {
       var txt = t[nt.key] || "";
-      if (nt.key === "plateLonely") {
-        return txt.replace("{name}", itemLabel({ id: nt.ids[0], form: nt.form }));
-      }
+      if (nt.key === "plateLonely") return txt.replace("{names}", andList(nt.items.map(itemLabel)));
       if (nt.key === "plateSpine") {
         return txt.replace("{a}", name(byId[nt.ids[0]])).replace("{b}", name(byId[nt.ids[1]]));
       }
       if (nt.key === "plateAllergen") {
         var gk = { treeNuts: "allergenTreeNuts", peanut: "allergenPeanut", sesame: "allergenSesame" };
         return txt.replace("{names}", nt.ids.map(function (id) { return name(byId[id]); }).join(", "))
-                  .replace("{groups}", nt.groups.map(function (g) { return t[gk[g]]; }).join(" \u00b7 "));
+                  .replace("{groups}", nt.groups.map(function (g) { return t[gk[g]]; }).join(" · "));
       }
       return txt;
     }
     function noteLi(nt) {
       var w = typeof nt.points === "number"
-        ? '<span class="note-pts">' + (nt.points > 0 ? "+" : "\u2212") + Math.abs(nt.points) + "</span>"
+        ? '<span class="note-pts">' + (nt.points > 0 ? "+" : "−") + Math.abs(nt.points) + "</span>"
         : "";
       return '<li class="plate-note ' + nt.level + '">' + w +
         '<span class="note-text">' + esc(noteText(nt)) + "</span></li>";
@@ -2017,6 +2119,34 @@
           (plateWhyOpen ? "true" : "false") + '">' +
           esc(plateWhyOpen ? t.plateHide : t.plateWhy) + "</button></div>";
     }
+
+    /* One line under the score: the spine, then who is on their own — or, when
+       nobody is, that the set is well recorded. Below three, what to do next. */
+    var said = {};
+    r.structure.forEach(function (nt) { said[nt.key] = nt; });
+    var sum = [said.plateSpine, said.plateLonely || said.plateTight, said.plateThin]
+      .filter(function (nt) { return nt; });
+    var summary = sum.length
+      ? '<p class="plate-note plate-summary ' + (said.plateLonely ? "warn" : sum[0].level) + '">' +
+          esc(sum.map(noteText).join(" ")) + "</p>"
+      : "";
+
+    /* The pill the guided slots wear: one family of chips in the lab. */
+    var offer = recommend(r).map(function (s) {
+      var nm = name(byId[s.id]);
+      var why = s.out ? t.recSwap.replace("{x}", itemLabel(s.out))
+        : s.linked.length > 1
+          ? t.recLinks.replace("{a}", itemLabel(s.linked[0])).replace("{b}", itemLabel(s.linked[1]))
+          : t.recGoesWith.replace("{a}", itemLabel(s.linked[0]));
+      var label = s.out ? t.recSwapAria.replace("{x}", itemLabel(s.out)).replace("{name}", nm)
+        : t.recAddAria.replace("{name}", nm).replace("{why}", why);
+      return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '"' +
+        (s.out ? ' data-plate-swap="' + esc(s.out.id) + '"' : "") +
+        ' aria-label="' + esc(label) + '">' +
+        '<span class="slot-role">' + esc(nm) + "</span>" +
+        '<span class="rec-why">' + esc(why) + "</span></button>";
+    }).join("");
+    if (offer) offer = "<h3>" + esc(t.plateRecs) + "</h3>" + '<div class="plate-slots plate-recs">' + offer + "</div>";
 
     /* The five tastes are drawn in full, zeroes included: on this wheel an
        empty spoke is the finding. Sweet, salt, acid, bitter, umami — a cook
@@ -2045,59 +2175,73 @@
         '<span class="axis-n">' + r.axes[a] + "</span></div>";
     }).join("");
 
+    /* One mark a row — ✓ recorded, ~ a shared partner, · nothing — and the
+       reason in small type under the pair. The pairs with nothing recorded
+       share the last row: the same sentence down three rows was what made
+       this list a wall. */
+    function setRow(v, mark, pair, why) {
+      return '<li class="lab-set-row"><span class="pair-mark ' + v + '" aria-hidden="true">' + mark + "</span>" +
+        '<span class="lab-set-pair">' + pair + '<span class="lab-set-why">' + esc(why) + "</span></span></li>";
+    }
     var cohesion = "";
     if (r.rows.length) {
-      var order = { ok: 0, mid: 1, none: 2 };
+      var told = r.rows.filter(function (row) { return row.verdict !== "none"; }).sort(function (x, y) {
+        return (x.verdict === "ok" ? 0 : 1) - (y.verdict === "ok" ? 0 : 1);
+      });
+      var blank = r.rows.filter(function (row) { return row.verdict === "none"; });
+      var unnamed = blank.length - NONE_NAMED;
       cohesion = "<h3>" + esc(t.plateCohesion) + ' <span class="lab-set-count">' +
         esc(t.labSetCount.replace("{n}", r.direct).replace("{t}", r.rows.length)) + "</span></h3>" +
-        '<ul class="lab-set">' + r.rows.slice().sort(function (x, y) {
-          return order[x.verdict] - order[y.verdict];
-        }).map(function (row) {
-          return '<li class="lab-set-row"><span class="lab-set-pair">' +
-            esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
+        '<ul class="lab-set marks">' + told.map(function (row) {
+          return setRow(row.verdict, row.verdict === "ok" ? "✓" : "~",
+            esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">×</span> ' +
             esc(itemLabel(row.b)) +
-            (row.via ? '<span class="lab-set-via">' + esc(viaLine(row.via)) + "</span>" : "") + "</span>" +
-            '<span class="verdict ' + row.verdict + '">' +
-            (row.verdict === "ok" ? "&#10003;&nbsp; " : "") + esc(pairNote(row)) + "</span></li>";
-        }).join("") + "</ul>";
+            (row.via ? '<span class="lab-set-via">' + esc(viaLine(row.via)) + "</span>" : ""),
+            pairNote(row));
+        }).join("") +
+        (blank.length
+          ? setRow("none", "·", esc(blank.slice(0, NONE_NAMED).map(function (row) {
+              return itemLabel(row.a) + " × " + itemLabel(row.b);
+            }).join(", ") + (unnamed > 0 ? " (+" + unnamed + ")" : "")), t.pairNoneRest)
+          : "") + "</ul>";
     }
 
-    box.innerHTML = head +
+    /* Everything behind the grade: the scale, the split, the weighted notes,
+       texture (read beside the tastes, without a score: it earns none), and
+       what the lab leaves out. Only with a grade to explain. */
+    var detail = plateWhyOpen && head
+      ? '<div class="score-scale"><h3>' + esc(t.scaleTitle) + "</h3>" +
+          '<p class="scale-intro">' + esc(t.scaleIntro.replace("{p}", fmt(EDGE_COUNT))) + "</p>" +
+          '<ol class="scale-grid">' + SCALE.map(function (s) {
+            return '<li class="' + (s.band === r.band ? "on" : "") + '">' +
+              '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "–" + s.hi) + "</span>" +
+              '<span class="scale-band ' + s.band + '">' + esc(t[s.label]) + "</span>" +
+              '<span class="scale-why">' + esc(t[s.why]) + "</span></li>";
+          }).join("") + "</ol>" +
+          '<p class="scale-foot">' + esc(t.scaleFootnote) + "</p></div>" +
+        '<p class="plate-split">' +
+          esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
+        (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
+        (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "") +
+        (r.texture !== null && r.texNotes.length
+          ? "<h3>" + esc(t.plateTexture) + ' <span class="lab-set-count">' +
+              esc(t.plateTextureN.replace("{n}", r.textured).replace("{t}", r.count)) + "</span></h3>" +
+            '<ul class="plate-notes">' + r.texNotes.map(noteLi).join("") + "</ul>"
+          : "") +
+        '<p class="plate-caveat">' + esc(t.plateNoTexture) + "</p>"
+      : "";
+
+    box.innerHTML = head + summary + offer +
       "<h3>" + esc(t.plateTastes) + ' <span class="lab-set-count">' +
         esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
       '<div class="axis-grid wheel">' + wheel + "</div>" +
-      (plateWhyOpen
-        ? '<div class="score-scale"><h3>' + esc(t.scaleTitle) + "</h3>" +
-            '<p class="scale-intro">' + esc(t.scaleIntro.replace("{p}", fmt(EDGE_COUNT))) + "</p>" +
-            '<ol class="scale-grid">' + SCALE.map(function (s) {
-              return '<li class="' + (s.band === r.band ? "on" : "") + '">' +
-                '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "\u2013" + s.hi) + "</span>" +
-                '<span class="scale-band ' + s.band + '">' + esc(t[s.label]) + "</span>" +
-                '<span class="scale-why">' + esc(t[s.why]) + "</span></li>";
-            }).join("") + "</ol>" +
-            '<p class="scale-foot">' + esc(t.scaleFootnote) + "</p></div>" +
-          '<p class="plate-split">' +
-            esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
-          (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
-          (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "")
-        : "") +
-      /* Texture reads beside the tastes, without a score: it earns none. */
-      (r.texture !== null && r.texNotes.length
-        ? "<h3>" + esc(t.plateTexture) + ' <span class="lab-set-count">' +
-            esc(t.plateTextureN.replace("{n}", r.textured).replace("{t}", r.count)) + "</span></h3>" +
-          '<ul class="plate-notes">' + r.texNotes.map(noteLi).join("") + "</ul>"
-        : "") +
-      (r.structure.length
-        ? "<h3>" + esc(t.plateStructure) + "</h3>" +
-          '<ul class="plate-notes">' + r.structure.map(noteLi).join("") + "</ul>"
-        : "") +
+      detail +
       /* Declarable allergens: information a cook must write down, not a verdict. */
       (r.flags && r.flags.length
         ? "<h3>" + esc(t.plateFlags) + "</h3>" +
           '<ul class="plate-notes">' + r.flags.map(noteLi).join("") + "</ul>"
         : "") +
-      cohesion +
-      '<p class="plate-caveat">' + esc(t.plateNoTexture) + "</p>";
+      cohesion;
   }
 
   /* Slide the pill to whichever choice is active. Measured, not assumed: the
@@ -2194,13 +2338,19 @@
     renderPlateAll();
   }
 
-  function addToPlate(id) {
-    if (!id || !byId[id] || plateFull()) return;
-    if (plate.some(function (it) { return it.id === id; })) return;
-    /* No form is chosen here. Only 11 of 1 838 entries have one, so asking
-       before every add is noise for the other 1 827 — the chip carries the
-       choice, for the few that offer it. */
+  /* On the plate if there is room and it is not there yet; true when it went on.
+     No form is chosen here. Only 11 of 1 838 entries have one, so asking
+     before every add is noise for the other 1 827 — the chip carries the
+     choice, for the few that offer it. */
+  function putOnPlate(id) {
+    if (!id || !byId[id] || plateFull()) return false;
+    if (plate.some(function (it) { return it.id === id; })) return false;
     plate.push({ id: id, form: "" });
+    return true;
+  }
+
+  function addToPlate(id) {
+    if (!putOnPlate(id)) return;
     el("plateSearch").value = "";
     plateFinder.close();
     renderPlateAll();
@@ -2554,6 +2704,20 @@
     }
     var why = e.target.closest("[data-plate-why]");
     if (why) { plateWhyOpen = !plateWhyOpen; renderPlateVerdict(); return; }
+    /* A suggestion goes on the plate; a swap takes the place of what it
+       replaces. Focus moves to the next suggestion, since the one clicked is
+       gone with the redraw. */
+    var rec = e.target.closest("[data-plate-add]");
+    if (rec) {
+      var swapOut = rec.getAttribute("data-plate-swap"), at = -1;
+      plate.forEach(function (it, k) { if (it.id === swapOut) at = k; });
+      if (at >= 0) plate.splice(at, 1, { id: rec.getAttribute("data-plate-add"), form: "" });
+      else putOnPlate(rec.getAttribute("data-plate-add"));
+      renderPlateAll();
+      var nextRec = el("plateVerdict").querySelector("[data-plate-add]");
+      if (nextRec) nextRec.focus();
+      return;
+    }
     var px = e.target.closest("[data-plate-del]");
     if (px) {
       plate.splice(parseInt(px.getAttribute("data-plate-del"), 10), 1);

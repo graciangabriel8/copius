@@ -344,16 +344,25 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .lab-set-row:last-child{border-bottom:0;padding-bottom:0}
 .lab-set-pair{font-size:14.5px;color:var(--ink)}
-.lab-set-via{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-3)}
+.lab-set-via,.lab-set-why{display:block;margin-top:2px;max-width:65ch;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
 .lab-set-row .lab-x{font-size:16px}
 .lab-set-row .verdict{margin-bottom:0;padding:6px 12px;font-size:13px;flex:none}
+/* The plate's pairs: one mark a row and the reason under the pair, rather than
+   a pill at the end of each — six pills in three styles was the wall. */
+.lab-set.marks .lab-set-row{flex-direction:row;flex-wrap:nowrap;align-items:baseline;
+  justify-content:flex-start;gap:10px}
+.lab-set.marks .lab-set-pair{flex:1 1 0;min-width:0}
+.pair-mark{flex:0 0 1em;text-align:center;font-size:14.5px;color:var(--ink-3)}
+.pair-mark.ok{color:var(--accent)}
+/* One note style for the lab: green for what works, ochre for what to watch,
+   nothing dashed and nothing in italics. */
 .verdict{
   display:flex;align-items:center;gap:10px;
   padding:13px 16px;border-radius:12px;font-size:14.5px;margin-bottom:14px;
+  background:var(--chip);border:1px solid var(--border-strong);color:var(--ink-2)
 }
-.verdict.ok{background:var(--chip);border:1px solid var(--border-strong);color:var(--ink)}
-.verdict.mid{background:var(--chip);border:1px dashed var(--border-strong);color:var(--ink-2)}
-.verdict.none{background:var(--bg);border:1px dotted var(--border-strong);color:var(--ink-3);font-style:italic}
+.verdict.ok{background:var(--accent-soft);border-color:var(--accent-soft-bd);color:var(--accent-soft-ink)}
+.verdict.none{background:var(--bg);color:var(--ink-3)}
 .shared-notes{margin:0 0 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--ink-3);font-size:12.5px}
 .bridge-grid{display:flex;flex-wrap:wrap;gap:8px}
 
@@ -1065,7 +1074,7 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .axis-grid.wheel .axis-row.assumed .axis-name{color:var(--ink-2)}
 .axis-grid.wheel .axis-row.assumed .axis-bar{background:none;border:1px solid var(--border)}
 .axis-grid.wheel .axis-row.assumed .axis-n{color:var(--ink-3);font-size:11px;
-  letter-spacing:.04em;font-style:italic;white-space:nowrap}
+  letter-spacing:.04em;white-space:nowrap}
 .axis-grid.wheel .axis-row.empty .axis-bar{border:1px dashed var(--border-strong);background:none}
 .axis-grid.wheel .axis-row.empty .axis-n{color:var(--ink-3)}
 .axis-grid.wheel .axis-bar>span{background:var(--ink)}
@@ -1085,7 +1094,6 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .score-band{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   padding:3px 9px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink-2)}
 .score-band.balanced{border-color:var(--ink);color:var(--ink)}
-.score-band.off{border-style:dotted}
 .score-n{grid-row:1;grid-column:2;display:flex;align-items:baseline;gap:4px;
   font-variant-numeric:tabular-nums}
 .score-n b{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1}
@@ -1094,10 +1102,10 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .score-bar>span{display:block;height:100%;border-radius:999px;background:var(--ink-2)}
 .score-bar>span.balanced{background:var(--ink)}
 .score-bar>span.off,.score-bar>span.uneven{background:var(--ink-3)}
-.score-band.unrecorded{border-style:dashed;color:var(--ink-3)}
+.score-band.unrecorded{color:var(--ink-3)}
 /* The sentence that makes the number mean something. Spans the grid so it sits
    under the bar rather than beside the figure. */
-.score-meaning{grid-column:1/-1;margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.score-meaning{grid-column:1/-1;max-width:65ch;margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 
 /* The scale, opened with the rest of the arithmetic. Three columns on a wide
    screen, the reason wrapping under the label on a narrow one. */
@@ -1120,18 +1128,23 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   .scale-why{grid-column:1/-1}
 }
 
+/* Every note in the lab, the one-line summary included: plain text against a
+   thin rule, the rule green when it is good news and ochre when it is not. */
 .plate-notes{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
-.plate-note{font-size:14.5px;line-height:1.55;padding:11px 14px;border-radius:10px;
-  border-left:3px solid var(--border-strong);background:var(--chip);color:var(--ink);
+.plate-note{max-width:65ch;font-size:14.5px;line-height:1.55;padding:1px 0 1px 12px;
+  border-left:3px solid var(--border-strong);color:var(--ink-2);
   display:flex;align-items:flex-start;gap:12px}
+.plate-note.ok{border-left-color:var(--accent)}
+.plate-note.warn{border-left-color:var(--warn-line)}
 .note-pts{flex:0 0 auto;min-width:34px;font-size:12px;font-variant-numeric:tabular-nums;
   letter-spacing:.02em;color:var(--ink-3);padding-top:2px}
-.plate-note.warn .note-pts{color:var(--ink)}
+.plate-note.warn .note-pts{color:var(--warn)}
 .note-text{flex:1 1 auto}
-.plate-note.warn{border-left-color:var(--ink);}
-.plate-note.ok{border-left-style:solid;color:var(--ink-2);background:var(--bg)}
-.plate-note.info{border-left-style:dotted;color:var(--ink-3);background:var(--bg);font-style:italic}
-.plate-caveat{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+.plate-summary{margin:0 0 18px;color:var(--ink)}
+.plate-caveat{max-width:65ch;margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+/* A suggestion wears the guided slot's pill: the name, then why, quieter. */
+.plate-recs .slot-role{color:var(--ink)}
+.rec-why{color:var(--ink-3)}
 .plate-split{margin:0 0 18px;font-size:13px;line-height:1.55;color:var(--ink-2);
   padding:10px 14px;border-radius:10px;background:var(--chip)}
 
