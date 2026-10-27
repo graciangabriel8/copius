@@ -1549,7 +1549,8 @@
   function renderLabResult() {
     var t = T(), a = labPick.A, b = labPick.B, box = el("labResult");
     if (!a || !b) { box.innerHTML = ""; return; }
-    if (a === b) { box.innerHTML = '<div class="verdict mid">' + esc(t.labSame) + "</div>"; return; }
+    /* The plate's note style: a recorded pair is good news, the rest neutral. */
+    if (a === b) { box.innerHTML = '<p class="plate-note lab-note">' + esc(t.labSame) + "</p>"; return; }
     var A = byId[a], B = byId[b];
     var rec = recordedPair(a, b), direct = !!rec;
     var bridges = bridgesOf(a, b)
@@ -1557,11 +1558,10 @@
     var shared = A.flavor.filter(function (f) { return B.flavor.indexOf(f) !== -1; });
     var html = "";
     if (direct) {
-      html += '<div class="verdict ok">&#10003;&nbsp; ' + esc(t.labDirect) + "</div>";
+      html += '<p class="plate-note lab-note ok">' + esc(t.labDirect) + "</p>";
       if (rec.via) html += '<p class="lab-via">' + esc(viaLine(rec.via)) + "</p>";
     }
-    else if (bridges.length) html += '<div class="verdict mid">' + esc(t.labBridge) + "</div>";
-    else html += '<div class="verdict none">' + esc(t.labNone) + "</div>";
+    else html += '<p class="plate-note lab-note">' + esc(bridges.length ? t.labBridge : t.labNone) + "</p>";
     if (shared.length) {
       html += '<p class="shared-notes">' + esc(t.sharedNotes) + " " +
         shared.map(function (f) { return '<span class="tag">' + esc(t.flavors[f]) + "</span>"; }).join("") + "</p>";
@@ -1628,6 +1628,9 @@
   var plateSkip = {};
   function skipKey(role) { return plateTpl + ":" + role; }
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
+  /* Taken off with × during this visit: the cook said no, so it is not
+     suggested back. Held in memory only; a new visit starts clean. */
+  var plateRemoved = new Set();
   var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
   /* The bands, in one place, because they are now three things at once: the
@@ -1944,8 +1947,7 @@
         return (B.flavor || []).indexOf(f) !== -1;
       }).map(function (f) { return t.flavors[f].toLowerCase(); });
       if (A.cat === B.cat) return t.pairOkFamily.replace("{family}", catLabel(A.cat).toLowerCase());
-      if (notes.length >= 2) return t.pairOkNotes.replace("{notes}", andList(notes.slice(0, 3)));
-      if (notes.length === 1) return t.pairOkOneNote.replace("{notes}", notes[0]);
+      if (notes.length) return t.pairOkNotes.replace("{notes}", andList(notes.slice(0, 3)));
       return t.pairOkContrast;
     }
 
@@ -1980,14 +1982,18 @@
      REC_SHORTLIST judgements of at most MAX_FREE items.
 
      Never offered: what is already here or shares a lineage with it (a second
-     vanilla is no new accord, see pairSides); a drink, because nudging a cook
-     toward a wine is the promotional register the loi Évin forbids
-     (isAlcohol); and in guided mode a role the cook has waved off — the
-     slots are hidden in open mode, so a skip made there is not visible to
-     honour.
+     vanilla is no new accord, see pairSides); a drink or anything from the
+     cellar, because nudging a cook toward a wine is the promotional register
+     the loi Évin forbids (isAlcohol); a role the cook has waved off; and
+     anything taken off the plate with × during this visit (plateRemoved).
+     Nor does a reason name a drink: a candidate counts only through the
+     things it is recorded with that are not one.
 
-     A full plate has no room: the offer becomes a swap for its most isolated
-     item, and disappears when no swap raises the score. */
+     On a plate with room every candidate recorded with something here is
+     offered, the ones that tie in a lonely item first: adding to a good plate
+     may lower its density and still be the dish the cook wants. A full plate
+     has no room, so the offer becomes a swap for its most isolated item, and
+     a swap has to earn its place — it disappears when none raises the score. */
   var REC_SHORTLIST = 16;
   var REC_SHOWN = 3;
   function recommend(r) {
@@ -2007,20 +2013,21 @@
     }
     var keep = plate.filter(function (it) { return it !== out; });
     var skipped = {}, taken = {}, lone = {};
-    if (plateMode === "guided") roleRoom().forEach(function (g) { if (g.skipped) skipped[g.role] = true; });
+    roleRoom().forEach(function (g) { if (g.skipped) skipped[g.role] = true; });
     plate.forEach(function (it) { lineage(it.id).forEach(function (x) { taken[x] = true; }); });
     r.lonely.forEach(function (it) { lone[it.id] = true; });
 
     /* How many items here each candidate is recorded with, species included,
-       and how many of those are on their own. Bounded by the plate (MAX_FREE)
-       times each item's recorded partners. */
+       and how many of those are on their own. A chosen form speaks alone, as
+       it does in the engine: its own list, never the plain ingredient's.
+       Bounded by the plate (MAX_FREE) times each item's recorded partners. */
     var tally = {};
     keep.forEach(function (it) {
       var mine = {};
-      lineage(it.id).forEach(function (x) {
+      if (it.form) itemPairs(it.id, it.form).forEach(function (c) { mine[c] = true; });
+      else lineage(it.id).forEach(function (x) {
         if (PAIRS[x]) PAIRS[x].forEach(function (c) { mine[c] = true; });
       });
-      itemPairs(it.id, it.form).forEach(function (c) { mine[c] = true; });
       Object.keys(mine).forEach(function (c) {
         var e = tally[c] || (tally[c] = { id: c, links: 0, lone: 0 });
         e.links++;
@@ -2032,24 +2039,23 @@
        to build on. The id settles the rest, so the offer never flickers. */
     var shortlist = Object.keys(tally).map(function (c) { return tally[c]; }).filter(function (e) {
       var i = byId[e.id];
-      return i && PAIRS[e.id] && !isAlcohol(i) && !skipped[PLATE.roleOf(i)] &&
-        !lineage(e.id).some(function (x) { return taken[x]; });
+      return i && PAIRS[e.id] && !isAlcohol(i) && i.cat !== "cellar" && !plateRemoved.has(e.id) &&
+        !skipped[PLATE.roleOf(i)] && !lineage(e.id).some(function (x) { return taken[x]; });
     }).sort(function (x, y) {
       return y.lone - x.lone || y.links - x.links || PAIRS[y.id].size - PAIRS[x.id].size ||
         (x.id < y.id ? -1 : 1);
     }).slice(0, REC_SHORTLIST);
 
     /* Then what each actually does: the lonely items it ties in, the score it
-       leaves, the items it is recorded with. Below three ingredients there is
-       no score to raise, so anything recorded with the plate is worth it. */
+       leaves, the items it is recorded with. */
     return shortlist.map(function (e, rank) {
       var cand = { id: e.id, form: "" };
       var rr = PLATE.judge(keep.concat([cand]), PLATE_CTX), still = {}, linked = [];
       rr.lonely.forEach(function (it) { still[it.id] = true; });
       rr.rows.forEach(function (row) {
         if (row.verdict !== "ok") return;
-        if (row.a === cand) linked.push(row.b);
-        else if (row.b === cand) linked.push(row.a);
+        var other = row.a === cand ? row.b : row.b === cand ? row.a : null;
+        if (other && !isAlcohol(byId[other.id])) linked.push(other);
       });
       /* The reason names the lonely items first: they are what it is for. */
       linked.sort(function (x, y) {
@@ -2058,7 +2064,7 @@
       return { id: e.id, out: out, score: rr.score, linked: linked, rank: rank,
                rescued: r.lonely.filter(function (it) { return it !== out && !still[it.id]; }).length };
     }).filter(function (s) {
-      return s.linked.length && (r.score === null || s.score > r.score);
+      return s.linked.length && (!s.out || s.score > r.score);
     }).sort(function (x, y) {
       return y.rescued - x.rescued ||
         (y.score === null ? -1 : y.score) - (x.score === null ? -1 : x.score) ||
@@ -2082,6 +2088,8 @@
     /* Some notes name ingredients; the rest are plain sentences. */
     function noteText(nt) {
       var txt = t[nt.key] || "";
+      /* Everything on its own is one fact about the plate, not a list of it. */
+      if (nt.key === "plateLonely" && nt.ids.length === r.count) return t.plateLonelyAll;
       if (nt.key === "plateLonely") return txt.replace("{names}", andList(nt.items.map(itemLabel)));
       if (nt.key === "plateSpine") {
         return txt.replace("{a}", name(byId[nt.ids[0]])).replace("{b}", name(byId[nt.ids[1]]));
@@ -2089,13 +2097,13 @@
       if (nt.key === "plateAllergen") {
         var gk = { treeNuts: "allergenTreeNuts", peanut: "allergenPeanut", sesame: "allergenSesame" };
         return txt.replace("{names}", nt.ids.map(function (id) { return name(byId[id]); }).join(", "))
-                  .replace("{groups}", nt.groups.map(function (g) { return t[gk[g]]; }).join(" · "));
+                  .replace("{groups}", nt.groups.map(function (g) { return t[gk[g]]; }).join(" \u00b7 "));
       }
       return txt;
     }
     function noteLi(nt) {
       var w = typeof nt.points === "number"
-        ? '<span class="note-pts">' + (nt.points > 0 ? "+" : "−") + Math.abs(nt.points) + "</span>"
+        ? '<span class="note-pts">' + (nt.points > 0 ? "+" : "\u2212") + Math.abs(nt.points) + "</span>"
         : "";
       return '<li class="plate-note ' + nt.level + '">' + w +
         '<span class="note-text">' + esc(noteText(nt)) + "</span></li>";
@@ -2121,7 +2129,8 @@
     }
 
     /* One line under the score: the spine, then who is on their own — or, when
-       nobody is, that the set is well recorded. Below three, what to do next. */
+       nobody is, that the set is well recorded. Below three, what to do next.
+       A graded plate with none of those still gets its line: the count. */
     var said = {};
     r.structure.forEach(function (nt) { said[nt.key] = nt; });
     var sum = [said.plateSpine, said.plateLonely || said.plateTight, said.plateThin]
@@ -2129,51 +2138,46 @@
     var summary = sum.length
       ? '<p class="plate-note plate-summary ' + (said.plateLonely ? "warn" : sum[0].level) + '">' +
           esc(sum.map(noteText).join(" ")) + "</p>"
-      : "";
+      : r.score !== null
+        ? '<p class="plate-note plate-summary info">' +
+            esc(t.labSetCount.replace("{n}", r.direct).replace("{t}", r.rows.length)) + "</p>"
+        : "";
 
-    /* The pill the guided slots wear: one family of chips in the lab. */
+    /* The pill the guided slots wear: one family of chips in the lab. The
+       visible text is the button's whole name, so what a voice user reads
+       is what they can say. */
     var offer = recommend(r).map(function (s) {
       var nm = name(byId[s.id]);
-      var why = s.out ? t.recSwap.replace("{x}", itemLabel(s.out))
+      var why = s.out ? t.recSwap.replace("{x}", itemLabel(s.out)).replace("{a}", itemLabel(s.linked[0]))
         : s.linked.length > 1
           ? t.recLinks.replace("{a}", itemLabel(s.linked[0])).replace("{b}", itemLabel(s.linked[1]))
           : t.recGoesWith.replace("{a}", itemLabel(s.linked[0]));
-      var label = s.out ? t.recSwapAria.replace("{x}", itemLabel(s.out)).replace("{name}", nm)
-        : t.recAddAria.replace("{name}", nm).replace("{why}", why);
       return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '"' +
-        (s.out ? ' data-plate-swap="' + esc(s.out.id) + '"' : "") +
-        ' aria-label="' + esc(label) + '">' +
-        '<span class="slot-role">' + esc(nm) + "</span>" +
+        (s.out ? ' data-plate-swap="' + esc(s.out.id) + '"' : "") + ">" +
+        /* The space keeps the two apart in the name a screen reader builds;
+           in the flex row it takes no room. */
+        '<span class="slot-role">' + esc(nm) + "</span> " +
         '<span class="rec-why">' + esc(why) + "</span></button>";
     }).join("");
     if (offer) offer = "<h3>" + esc(t.plateRecs) + "</h3>" + '<div class="plate-slots plate-recs">' + offer + "</div>";
 
-    /* The five tastes are drawn in full, zeroes included: on this wheel an
-       empty spoke is the finding. Sweet, salt, acid, bitter, umami — a cook
-       reads the gap. The supporting axes are drawn only where present, because
-       there a missing bar and an empty one say the same thing. */
-    var topP = Math.max.apply(null, PLATE.PRIMARY.map(function (a) { return r.axes[a]; }).concat([1]));
-    var wheel = PLATE.PRIMARY.map(function (a) {
-      var v = r.axes[a];
-      /* An empty spoke is a finding on four of the five. Not on salt: a cook
-         seasons, so nothing is missing when no salty ingredient is listed —
-         it is marked as taken for granted rather than drawn as a gap. */
-      var assumed = a === "salty" && !v;
-      var cls = "axis-row" + (assumed ? " assumed" : v ? "" : " empty");
-      return '<div class="' + cls + '">' +
-        '<span class="axis-name">' + esc(t.axes[a]) + "</span>" +
-        '<span class="axis-bar"><span style="width:' + (v ? Math.round(v / topP * 100) : 0) + '%"></span></span>' +
-        '<span class="axis-n">' + (assumed ? esc(t.plateSaltAssumed) : v) + "</span></div>";
-    }).join("");
-
+    /* One strip of cells, each a taste and how many things on the plate carry
+       it: "2 of 4". The five tastes are drawn in full, zeroes included: an
+       empty cell is the finding — sweet, salt, acid, bitter, umami, and a cook
+       reads the gap. Not on salt: a cook seasons, so nothing is missing when no
+       salty ingredient is listed; it is marked as taken for granted. The
+       supporting axes use the same strip, present ones only, because there a
+       missing cell and an empty one say the same thing. */
+    function strip(axes) {
+      return '<ul class="taste-strip">' + axes.map(function (a) {
+        var v = r.axes[a], cls = v ? "on" : a === "salty" ? "assumed" : "off";
+        return '<li class="taste ' + cls + '"><span class="taste-name">' + esc(t.axes[a]) + "</span>" +
+          '<span class="taste-val">' + esc(cls === "assumed" ? t.plateSaltAssumed
+            : t.plateTasteOf.replace("{v}", v).replace("{n}", r.count)) + "</span></li>";
+      }).join("") + "</ul>";
+    }
     var support = PLATE.SUPPORT.filter(function (a) { return r.axes[a] > 0; })
       .sort(function (a, b) { return r.axes[b] - r.axes[a]; });
-    var topS = Math.max.apply(null, support.map(function (a) { return r.axes[a]; }).concat([1]));
-    var bars = support.map(function (a) {
-      return '<div class="axis-row support"><span class="axis-name">' + esc(t.axes[a]) + "</span>" +
-        '<span class="axis-bar"><span style="width:' + Math.round(r.axes[a] / topS * 100) + '%"></span></span>' +
-        '<span class="axis-n">' + r.axes[a] + "</span></div>";
-    }).join("");
 
     /* One mark a row — ✓ recorded, ~ a shared partner, · nothing — and the
        reason in small type under the pair. The pairs with nothing recorded
@@ -2193,16 +2197,17 @@
       cohesion = "<h3>" + esc(t.plateCohesion) + ' <span class="lab-set-count">' +
         esc(t.labSetCount.replace("{n}", r.direct).replace("{t}", r.rows.length)) + "</span></h3>" +
         '<ul class="lab-set marks">' + told.map(function (row) {
-          return setRow(row.verdict, row.verdict === "ok" ? "✓" : "~",
-            esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">×</span> ' +
+          return setRow(row.verdict, row.verdict === "ok" ? "\u2713" : "~",
+            esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
             esc(itemLabel(row.b)) +
             (row.via ? '<span class="lab-set-via">' + esc(viaLine(row.via)) + "</span>" : ""),
             pairNote(row));
         }).join("") +
         (blank.length
-          ? setRow("none", "·", esc(blank.slice(0, NONE_NAMED).map(function (row) {
-              return itemLabel(row.a) + " × " + itemLabel(row.b);
-            }).join(", ") + (unnamed > 0 ? " (+" + unnamed + ")" : "")), t.pairNoneRest)
+          ? setRow("none", "\u00b7", blank.slice(0, NONE_NAMED).map(function (row) {
+              return esc(itemLabel(row.a)) + ' <span class="lab-x" aria-hidden="true">\u00d7</span> ' +
+                esc(itemLabel(row.b));
+            }).join(", ") + (unnamed > 0 ? " (+" + unnamed + ")" : ""), t.pairNoneRest)
           : "") + "</ul>";
     }
 
@@ -2214,14 +2219,14 @@
           '<p class="scale-intro">' + esc(t.scaleIntro.replace("{p}", fmt(EDGE_COUNT))) + "</p>" +
           '<ol class="scale-grid">' + SCALE.map(function (s) {
             return '<li class="' + (s.band === r.band ? "on" : "") + '">' +
-              '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "–" + s.hi) + "</span>" +
+              '<span class="scale-range">' + (s.lo === s.hi ? s.lo : s.lo + "\u2013" + s.hi) + "</span>" +
               '<span class="scale-band ' + s.band + '">' + esc(t[s.label]) + "</span>" +
               '<span class="scale-why">' + esc(t[s.why]) + "</span></li>";
           }).join("") + "</ol>" +
           '<p class="scale-foot">' + esc(t.scaleFootnote) + "</p></div>" +
         '<p class="plate-split">' +
           esc(t.plateSplit.replace("{f}", r.flavour).replace("{c}", r.cohesion)) + "</p>" +
-        (bars ? "<h3>" + esc(t.plateSupport) + "</h3>" + '<div class="axis-grid">' + bars + "</div>" : "") +
+        (support.length ? "<h3>" + esc(t.plateSupport) + "</h3>" + strip(support) : "") +
         (r.notes.length ? '<ul class="plate-notes">' + r.notes.map(noteLi).join("") + "</ul>" : "") +
         (r.texture !== null && r.texNotes.length
           ? "<h3>" + esc(t.plateTexture) + ' <span class="lab-set-count">' +
@@ -2234,7 +2239,7 @@
     box.innerHTML = head + summary + offer +
       "<h3>" + esc(t.plateTastes) + ' <span class="lab-set-count">' +
         esc(t.plateTastesN.replace("{n}", r.tastes)) + "</span></h3>" +
-      '<div class="axis-grid wheel">' + wheel + "</div>" +
+      strip(PLATE.PRIMARY) +
       detail +
       /* Declarable allergens: information a cook must write down, not a verdict. */
       (r.flags && r.flags.length
@@ -2705,8 +2710,8 @@
     var why = e.target.closest("[data-plate-why]");
     if (why) { plateWhyOpen = !plateWhyOpen; renderPlateVerdict(); return; }
     /* A suggestion goes on the plate; a swap takes the place of what it
-       replaces. Focus moves to the next suggestion, since the one clicked is
-       gone with the redraw. */
+       replaces. The clicked chip is gone with the redraw, so focus moves to
+       the next suggestion, or back to the search when none is left. */
     var rec = e.target.closest("[data-plate-add]");
     if (rec) {
       var swapOut = rec.getAttribute("data-plate-swap"), at = -1;
@@ -2714,14 +2719,19 @@
       if (at >= 0) plate.splice(at, 1, { id: rec.getAttribute("data-plate-add"), form: "" });
       else putOnPlate(rec.getAttribute("data-plate-add"));
       renderPlateAll();
-      var nextRec = el("plateVerdict").querySelector("[data-plate-add]");
-      if (nextRec) nextRec.focus();
+      (el("plateVerdict").querySelector("[data-plate-add]") || el("plateSearch")).focus();
       return;
     }
+    /* × redraws the chips and drops focus on the page: it goes to the × now
+       at the same place, else the one before, else the search. */
     var px = e.target.closest("[data-plate-del]");
     if (px) {
-      plate.splice(parseInt(px.getAttribute("data-plate-del"), 10), 1);
+      var gone = parseInt(px.getAttribute("data-plate-del"), 10);
+      if (plate[gone]) plateRemoved.add(plate[gone].id);
+      plate.splice(gone, 1);
       renderPlateAll();
+      (el("plateItems").querySelector('[data-plate-del="' + Math.min(gone, plate.length - 1) + '"]') ||
+        el("plateSearch")).focus();
       return;
     }
     /* A paid name opens the full-version panel naming it; anything else marked
