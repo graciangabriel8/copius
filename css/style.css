@@ -113,6 +113,13 @@ input,select{font:inherit}
 .brand-logo .bl-s{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linecap:round}
 .brand-logo .bl-d{fill:var(--ink)}
 .brand h1{margin:0;font:400 26px/1 var(--serif);letter-spacing:.07em;text-transform:uppercase}
+/* One colour a letter, from the families' palette, in the order Google's logo sets its
+   four: blue, red, yellow, blue, green, red. Screen readers get the word whole. */
+.wm span:nth-child(1),.wm span:nth-child(4){color:var(--d-s)}
+.wm span:nth-child(2),.wm span:nth-child(6){color:var(--d-r)}
+.wm span:nth-child(3){color:var(--d-o)}
+.wm span:nth-child(5){color:var(--d-g)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* Wraps rather than clips. The toggles have overflow:hidden for their pill
    shape, so without this a fourth control cuts a label in half instead of
    moving to a second row — and scrollWidth still matches clientWidth, which
