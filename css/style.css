@@ -791,6 +791,15 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .base-ings{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .base-counts{white-space:nowrap;letter-spacing:.5px}
 
+/* Below 320px (a folded Galaxy Fold is 280) these rows' minimum widths exceed the
+   room the page leaves them and the whole page scrolls sideways. It sits after the
+   techniques and bases rules so it wins over them; at 320 and up nothing here applies. */
+@media (max-width:319px){
+  .trio-grid,.tech-list,.base-list{grid-template-columns:minmax(0,1fr)}
+  /* Six 44px targets and their gaps are 294px: three rows of four. */
+  .mp-months{grid-template-columns:repeat(4,44px)}
+  .tl-link-host{overflow-wrap:anywhere}
+}
 
 /* The ratio is the reason this section exists, so it is set like a heading and
    not like metadata: a cook who reads only this line can work. */
