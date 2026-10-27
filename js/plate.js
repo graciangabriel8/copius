@@ -563,9 +563,12 @@
        so it earns no points and sits in its own list. A plate can be perfectly
        balanced out of four things nobody has ever put on a plate together. */
     var structure = [];
-    lonely.forEach(function (it) {
-      structure.push({ level: "warn", key: "plateLonely", ids: [it.id], form: it.form });
-    });
+    /* One note for every item on its own, not one each: three boxes saying the
+       same sentence about three names read as three problems. */
+    if (lonely.length) {
+      structure.push({ level: "warn", key: "plateLonely",
+                       ids: lonely.map(function (it) { return it.id; }), items: lonely });
+    }
 
     /* The spine: the recorded pair that also shares the most flavour notes.
        Two ingredients agreeing on both counts is what the rest hangs off. Only

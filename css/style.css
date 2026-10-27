@@ -359,16 +359,25 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .lab-set-row:last-child{border-bottom:0;padding-bottom:0}
 .lab-set-pair{font-size:14.5px;color:var(--ink)}
-.lab-set-via{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-3)}
+.lab-set-via,.lab-set-why{display:block;margin-top:2px;max-width:65ch;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
 .lab-set-row .lab-x{font-size:16px}
 .lab-set-row .verdict{margin-bottom:0;padding:6px 12px;font-size:13px;flex:none}
+/* The plate's pairs: one mark a row and the reason under the pair, rather than
+   a pill at the end of each — six pills in three styles was the wall. */
+.lab-set.marks .lab-set-row{flex-direction:row;flex-wrap:nowrap;align-items:baseline;
+  justify-content:flex-start;gap:10px}
+.lab-set.marks .lab-set-pair{flex:1 1 0;min-width:0;max-width:65ch}
+.pair-mark{flex:0 0 1em;text-align:center;font-size:14.5px;color:var(--ink-3)}
+.pair-mark.ok{color:var(--accent)}
+/* One note style for the lab: green for what works, ochre for what to watch,
+   nothing dashed and nothing in italics. */
 .verdict{
   display:flex;align-items:center;gap:10px;
   padding:13px 16px;border-radius:12px;font-size:14.5px;margin-bottom:14px;
+  background:var(--chip);border:1px solid var(--border-strong);color:var(--ink-2)
 }
-.verdict.ok{background:var(--chip);border:1px solid var(--border-strong);color:var(--ink)}
-.verdict.mid{background:var(--chip);border:1px dashed var(--border-strong);color:var(--ink-2)}
-.verdict.none{background:var(--bg);border:1px dotted var(--border-strong);color:var(--ink-3);font-style:italic}
+.verdict.ok{background:var(--accent-soft);border-color:var(--accent-soft-bd);color:var(--accent-soft-ink)}
+.verdict.none{background:var(--bg);color:var(--ink-3)}
 .shared-notes{margin:0 0 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--ink-3);font-size:12.5px}
 .bridge-grid{display:flex;flex-wrap:wrap;gap:8px}
 
@@ -1023,7 +1032,7 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   padding:9px 12px;border-radius:8px;cursor:pointer;font-size:14.5px;color:var(--ink)}
 .plate-result:hover,.plate-result.on{background:var(--chip)}
 .plate-result.on{outline:1px solid var(--border-strong)}
-.plate-result.empty{cursor:default;color:var(--ink-3);font-style:italic}
+.plate-result.empty{cursor:default;color:var(--ink-3)}
 .plate-result.empty:hover{background:none}
 /* In a narrow list the family gives way, not the name: it wraps onto two lines
    rather than overlapping or splitting a one-word name like "Bettarazuke". */
@@ -1053,10 +1062,11 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   font-family:inherit;cursor:pointer;transition:opacity .18s ease,color .18s ease}
 .plate-slot.done{border-color:var(--border-strong);color:var(--ink)}
 /* waved off: still there to put back, no longer asking for anything */
-.plate-slot.skipped{opacity:.45;border-style:dashed}
+.plate-slot.skipped{opacity:.45}
 .plate-slot.skipped .slot-role{text-decoration:line-through}
 .plate-slot.skipped .slot-pip{opacity:.4}
 .plate-slot:hover{border-color:var(--border-strong)}
+.plate-slot:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
 .slot-role{letter-spacing:.02em}
 .slot-pip{width:7px;height:7px;border-radius:50%;border:1px solid var(--border-strong);display:inline-block}
 .slot-pip.on{background:var(--ink);border-color:var(--ink)}
@@ -1072,24 +1082,25 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   color:var(--ink-3);padding:0 4px;border-radius:6px}
 .plate-x:hover{color:var(--ink)}
 
-/* balance: the axes actually present, strongest first */
-.axis-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
-/* On the five-taste wheel a zero is drawn, not skipped — the gap is the reading. */
-.axis-grid.wheel .axis-row.empty .axis-name{color:var(--ink-3)}
-/* salt is taken for granted, not missing — it reads quietly, not as a gap */
-.axis-grid.wheel .axis-row.assumed .axis-name{color:var(--ink-2)}
-.axis-grid.wheel .axis-row.assumed .axis-bar{background:none;border:1px solid var(--border)}
-.axis-grid.wheel .axis-row.assumed .axis-n{color:var(--ink-3);font-size:11px;
-  letter-spacing:.04em;font-style:italic;white-space:nowrap}
-.axis-grid.wheel .axis-row.empty .axis-bar{border:1px dashed var(--border-strong);background:none}
-.axis-grid.wheel .axis-row.empty .axis-n{color:var(--ink-3)}
-.axis-grid.wheel .axis-bar>span{background:var(--ink)}
-.axis-row.support .axis-bar>span{background:var(--ink-3)}
-.axis-row{display:grid;grid-template-columns:132px 1fr 58px;align-items:center;gap:12px}
-.axis-name{font-size:13px;color:var(--ink-2)}
-.axis-bar{height:7px;border-radius:999px;background:var(--chip);overflow:hidden}
-.axis-bar>span{display:block;height:100%;background:var(--ink-2);border-radius:999px}
-.axis-n{font-size:12px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+/* The tastes: one strip of equal cells, each a taste and how much of the plate
+   carries it. Filled where something does, plain where nothing does; salt,
+   taken for granted, reads plain but not faded. The supporting axes behind
+   "Why this grade" use the same strip. */
+.taste-strip{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-auto-flow:column;
+  grid-auto-columns:minmax(0,112px);width:max-content;max-width:100%;
+  border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.taste{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 3px;
+  text-align:center;min-width:0}
+.taste+.taste{border-left:1px solid var(--border)}
+/* A label longer than its cell breaks rather than spills; below 480px the strip
+   wraps instead. */
+.taste-name{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
+.taste-val{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.taste.on{background:var(--accent-soft)}
+.taste.on .taste-name{font-weight:600;color:var(--accent-soft-ink)}
+.taste.on .taste-val{color:var(--accent-soft-ink)}
+.taste.off .taste-name{color:var(--ink-3)}
+.taste.assumed .taste-name{color:var(--ink-2)}
 
 /* the score: one reading, its band, and the weight behind each opinion */
 .score-head{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;
@@ -1100,7 +1111,6 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .score-band{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   padding:3px 9px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink-2)}
 .score-band.balanced{border-color:var(--ink);color:var(--ink)}
-.score-band.off{border-style:dotted}
 .score-n{grid-row:1;grid-column:2;display:flex;align-items:baseline;gap:4px;
   font-variant-numeric:tabular-nums}
 .score-n b{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1}
@@ -1109,17 +1119,17 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .score-bar>span{display:block;height:100%;border-radius:999px;background:var(--ink-2)}
 .score-bar>span.balanced{background:var(--ink)}
 .score-bar>span.off,.score-bar>span.uneven{background:var(--ink-3)}
-.score-band.unrecorded{border-style:dashed;color:var(--ink-3)}
+.score-band.unrecorded{color:var(--ink-3)}
 /* The sentence that makes the number mean something. Spans the grid so it sits
    under the bar rather than beside the figure. */
-.score-meaning{grid-column:1/-1;margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.score-meaning{grid-column:1/-1;max-width:65ch;margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 
 /* The scale, opened with the rest of the arithmetic. Three columns on a wide
    screen, the reason wrapping under the label on a narrow one. */
 .score-scale{margin:0 0 22px;padding:16px 18px;border:1px solid var(--border);
   border-radius:12px;background:var(--chip)}
 .score-scale h3{margin:0 0 6px}
-.scale-intro{margin:0 0 14px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.scale-intro{max-width:65ch;margin:0 0 14px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
 .scale-grid{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
 .scale-grid li{display:grid;grid-template-columns:62px 104px 1fr;gap:4px 12px;align-items:baseline;
   padding:8px 10px;border-radius:8px;font-size:13.5px;line-height:1.5}
@@ -1129,33 +1139,43 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .scale-band.balanced{color:var(--ink)}
 .scale-why{color:var(--ink-2)}
 .scale-grid li.on .scale-why,.scale-grid li.on .scale-band{color:var(--ink)}
-.scale-foot{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+.scale-foot{max-width:65ch;margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
 @media (max-width:560px){
   .scale-grid li{grid-template-columns:62px 1fr}
   .scale-why{grid-column:1/-1}
 }
 
+/* Every note in the lab, the one-line summary included: plain text against a
+   thin rule, the rule green when it is good news and ochre when it is not. */
 .plate-notes{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
-.plate-note{font-size:14.5px;line-height:1.55;padding:11px 14px;border-radius:10px;
-  border-left:3px solid var(--border-strong);background:var(--chip);color:var(--ink);
+.plate-note{max-width:65ch;font-size:14.5px;line-height:1.55;padding:1px 0 1px 12px;
+  border-left:3px solid var(--border-strong);color:var(--ink-2);
   display:flex;align-items:flex-start;gap:12px}
+.plate-note.ok{border-left-color:var(--accent)}
+.plate-note.warn{border-left-color:var(--warn)}
 .note-pts{flex:0 0 auto;min-width:34px;font-size:12px;font-variant-numeric:tabular-nums;
   letter-spacing:.02em;color:var(--ink-3);padding-top:2px}
-.plate-note.warn .note-pts{color:var(--ink)}
+.plate-note.warn .note-pts{color:var(--warn)}
 .note-text{flex:1 1 auto}
-.plate-note.warn{border-left-color:var(--ink);}
-.plate-note.ok{border-left-style:solid;color:var(--ink-2);background:var(--bg)}
-.plate-note.info{border-left-style:dotted;color:var(--ink-3);background:var(--bg);font-style:italic}
-.plate-caveat{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
-.plate-split{margin:0 0 18px;font-size:13px;line-height:1.55;color:var(--ink-2);
-  padding:10px 14px;border-radius:10px;background:var(--chip)}
+.plate-summary{margin:0 0 18px;color:var(--ink)}
+/* the two-ingredient result, in the same note style */
+.lab-note{margin:0 0 14px}
+.plate-caveat{max-width:65ch;margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+/* A suggestion wears the guided slot's pill: the name, then why, quieter. */
+.plate-recs .plate-slot{text-align:left;border-radius:14px}
+.plate-recs .slot-role{color:var(--ink)}
+.rec-why{color:var(--ink-3)}
+.plate-split{max-width:65ch;margin:0 0 18px;font-size:13px;line-height:1.55;color:var(--ink-2);
+  padding:1px 0 1px 12px;border-left:3px solid var(--border-strong)}
 
 @media (max-width:600px){
-  .axis-row{grid-template-columns:88px 1fr 52px;gap:9px}
   /* « Deux ingrédients » and « Une assiette entière » take 298px at the phone
-     padding and the card leaves 281 at 375px, so the second was clipped. Tighter
-     padding fits both on one line there; narrower, the long one wraps in its half. */
+     padding, and the card leaves 305 at 375px (375 − 32 page gutter − 2 border
+     − 36 card padding). Tighter padding fits both on one line there; narrower,
+     the long one wraps in its half. */
   .lab-modes button{flex:1 1 auto;min-width:0;padding:12px 10px;white-space:normal;line-height:1.25}
+  /* The card kept its desktop 28px 30px at every width. */
+  .lab{padding:22px 18px}
   .plate-find{flex:1 1 100%}
   /* Two boxes side by side leave the × at the end of the first row on a phone:
      stack them, the × between. */
@@ -1169,4 +1189,13 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   .lab-set-row{flex-direction:column;align-items:flex-start;gap:6px}
   .score-head{grid-template-columns:1fr auto}
   .lab-set-row .verdict{flex:1 1 auto;max-width:100%}
+}
+@media (max-width:480px){
+  /* Below this the five cells can't hold « Umami » or « Profondeur » whole:
+     the strip spans the card, a cell that can't fit starts a new row, and the
+     hairlines are the gap showing the strip's ground. */
+  .taste-strip{display:flex;flex-wrap:wrap;gap:1px;width:auto;background:var(--border)}
+  .taste{flex:1 1 0;min-width:auto;background:var(--card)}
+  .taste+.taste{border-left:0}
+  .taste-name,.taste-val{overflow-wrap:normal}
 }
