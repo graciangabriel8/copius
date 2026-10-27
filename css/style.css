@@ -105,24 +105,14 @@ input,select{font:inherit}
   padding:14px 28px;background:var(--head-bg);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
 }
-.brand{display:flex;align-items:center;gap:14px}
-.brand-mark{
-  width:44px;height:44px;border-radius:50%;background:var(--plate);
-  border:1.5px solid var(--border-strong);
-  display:flex;align-items:center;justify-content:center;
-}
-.brand-logo .bl-f{fill:var(--art-2);stroke:var(--art-line);stroke-width:2.6;stroke-linejoin:round}
-.brand-logo .bl-s{fill:none;stroke:var(--art-line);stroke-width:2.6;stroke-linecap:round}
-.brand-logo .bl-d{fill:var(--art-line)}
-.brand-text h1{margin:0;font-size:26px;line-height:1.1}
-.brand-text p{margin:0;font-size:12.5px;color:var(--ink-3)}
-/* Which version is open, set beside the name the way a dictionary's title page sets
-   its edition: serif italic on the title's baseline, no chip. Grey for the free one,
-   the accent for the full one. */
-.brand-row{display:flex;align-items:baseline;gap:10px}
-.tier-badge{font:italic 15px/1 var(--serif);white-space:nowrap;color:var(--ink-3)}
-.tier-badge:empty{display:none}
-.tier-badge--premium{color:var(--accent)}
+/* The welcome page's mark and name (index.html), smaller: the bare horn in ink on
+   the soft green, and the name in spaced capitals. Nothing under it. */
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{flex:none}
+.brand-logo .bl-f{fill:var(--accent-soft);stroke:var(--ink);stroke-width:3.6;stroke-linejoin:round}
+.brand-logo .bl-s{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linecap:round}
+.brand-logo .bl-d{fill:var(--ink)}
+.brand h1{margin:0;font:400 26px/1 var(--serif);letter-spacing:.07em;text-transform:uppercase}
 /* Wraps rather than clips. The toggles have overflow:hidden for their pill
    shape, so without this a fourth control cuts a label in half instead of
    moving to a second row — and scrollWidth still matches clientWidth, which
@@ -537,7 +527,6 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
      Give it the full width and let the buttons sit under it. */
   .head-tools{flex-wrap:wrap}
   #search{flex:1 1 100%;width:100%;min-width:0;order:-1}
-  .brand-text p{font-size:12px}
 
   /* iOS zooms the page when a focused field is under 16px, and never zooms back. */
   #search,#sort,#cPick,#cNotes,select,textarea,

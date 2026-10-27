@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=232">
+<link rel="stylesheet" href="css/style.css?v=233">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -39,11 +39,8 @@
 
 <header class="site-head">
   <div class="brand">
-    <div class="brand-mark"><svg class="brand-logo" viewBox="0 0 96 96" width="30" height="30" aria-hidden="true"><path class="bl-f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/><path class="bl-s" d="M52 24c9 4 14 11 14 20"/><circle class="bl-d" cx="62" cy="20" r="7"/><circle class="bl-d" cx="75" cy="30" r="5.5"/><circle class="bl-d" cx="52" cy="11" r="4.5"/></svg></div>
-    <div class="brand-text">
-      <div class="brand-row"><h1>Copius</h1><span id="tierBadge" class="tier-badge"></span></div>
-      <p id="tagline"></p>
-    </div>
+    <svg class="brand-logo" viewBox="0 0 96 96" width="34" height="34" aria-hidden="true"><path class="bl-f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/><path class="bl-s" d="M52 24c9 4 14 11 14 20"/><circle class="bl-d" cx="62" cy="20" r="7"/><circle class="bl-d" cx="75" cy="30" r="5.5"/><circle class="bl-d" cx="52" cy="11" r="4.5"/></svg>
+    <h1>Copius</h1>
   </div>
   <div class="head-tools">
     <input id="search" type="search" autocomplete="off">
@@ -233,10 +230,10 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/i18n.js?v=232"></script>
-<script src="js/photos.js?v=232"></script>
-<script src="js/data-techniques.js?v=232"></script>
-<script src="js/free.js?v=232"></script>
+<script src="js/i18n.js?v=233"></script>
+<script src="js/photos.js?v=233"></script>
+<script src="js/data-techniques.js?v=233"></script>
+<script src="js/free.js?v=233"></script>
 <script>
   /* The full version. js/_premium.js (tools/build-free.js; never published)
      replaces the free data with all of it and sets COPIUS_PREMIUM. It loads
@@ -251,13 +248,13 @@
   (function () {
     var h = location.hostname, local = h === "localhost" || h === "127.0.0.1";
     if (local && /(?:^\?|&)full(?:=|&|$)/.test(location.search)) {
-      document.write('<script src="' + "js/" + '_premium.js?v=232"><\/script>'); return;
+      document.write('<script src="' + "js/" + '_premium.js?v=233"><\/script>'); return;
     }
     if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie))
-      document.write('<script src="' + "/api/" + 'premium.php?v=232"><\/script>');
+      document.write('<script src="' + "/api/" + 'premium.php?v=233"><\/script>');
   })();
 </script>
-<script src="js/app.js?v=232"></script>
+<script src="js/app.js?v=233"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

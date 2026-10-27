@@ -1,9 +1,6 @@
 // UI strings and shared vocabularies — English / Français
 window.I18N = {
   en: {
-    tagline: "An illustrated dictionary of ingredients",
-    tierFree: "free version",
-    tierPremium: "full version",
     searchPh: "Search ingredients, flavors, families…  ( / )",
     all: "All",
     inSeasonNow: "In season now",
@@ -362,9 +359,6 @@ window.I18N = {
     }
   },
   fr: {
-    tagline: "Un dictionnaire illustré des ingrédients",
-    tierFree: "version gratuite",
-    tierPremium: "version complète",
     searchPh: "Rechercher un ingrédient, une saveur, une famille…  ( / )",
     all: "Tout",
     inSeasonNow: "De saison en ce moment",
