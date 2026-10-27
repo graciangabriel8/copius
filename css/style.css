@@ -1056,6 +1056,11 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .plate-x{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;
   color:var(--ink-3);padding:0 4px;border-radius:6px}
 .plate-x:hover{color:var(--ink)}
+/* A chip is never narrower than its items side by side, and a form's select can make
+   that wider than the plate: such a chip wraps, × kept at the right. A chip without a
+   form keeps to one line, because wrapping it would drop a long name below its icon. */
+.plate-chip:has(.chip-form){flex-wrap:wrap;row-gap:6px}
+.plate-chip:has(.chip-form) .plate-x{margin-left:auto}
 
 /* balance: the axes actually present, strongest first */
 .axis-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
