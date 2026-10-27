@@ -10,7 +10,8 @@
      the letters in plain ink. A search for « fraise » pops the doubts; each pairing that lands
      in the list pulls one letter home; the sixth comes without one, and the S waits until the
      lab gives its verdict, then lands on it.
-     Every word on screen is read from the site's own files (js/i18n.js, js/data-*.js), and
+     Every word on screen but the hook and the address is read from the site's own files
+     (js/i18n.js, js/data-*.js), and
      the drawings are the site's own, drawn as js/app.js art() draws them.
      The verdict is the engine's own: PLATE.judge on fraise + menthe + chocolat noir gave
      96, band balanced, on 27 Oct 2026 at b0bc9bd021 (the best of the fifteen plates of
@@ -28,6 +29,7 @@
   "keys": [1.7, 1.9, 2.1, 2.3, 2.5, 2.7],
   "hookOut": [2.8, 3.2],
   "head": [2.8, 3.4],
+  "lift": [3.0, 3.7],
   "chips": [[3.6, 4.1], [4.2, 4.7], [4.7, 5.2], [5.1, 5.6], [5.4, 5.9], [5.7, 6.2]],
   "sWait": [5.9, 6.5],
   "sPulse": [6.5, 6.9],
@@ -206,7 +208,7 @@
   /* As the question leaves, what is left of the mess floats up into the room it frees,
      above the word, so the list builds below in clear air. A thing with no lifted place
      (the strawberry, already gone; the marks, already burst) stays where it drifts. */
-  var LIFT = [3.0, 3.7];
+  var LIFT = C.lift;
   function drift(m, t) {
     var L = m.lx === undefined ? 0 : ease(span(t, LIFT[0], LIFT[1])), a = 1 - .4 * L;
     return { x: m.x + L * ((m.lx || 0) - m.x) + m.ax * a * Math.sin(m.w * t + m.p),

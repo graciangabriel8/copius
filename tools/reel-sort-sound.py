@@ -11,6 +11,9 @@ plucks the next note of a pentatonic scale, and the sixth pairing, which brings 
 only ticks; the S waits on the note under the verdict's, the count rises and stops dead,
 and the word lands on the verdict's bell. Mono, 48 kHz, 16 bits, as long as the reel.
 Each sound's gain is its peak; the noise is seeded, so a rebuild is the same file.
+
+The reel is drawreel's silent render with this file laid under it by the copius-reels score
+tool (levelled to -18 dBFS RMS or a -1 dBFS peak, whichever is lower; AAC, 48 kHz).
 """
 import json, math, pathlib, random, re, struct, sys, wave
 
@@ -148,7 +151,7 @@ for i, t0 in enumerate(keys):
 # The strawberry flies to the head of the list and rings; the mess floats up out of the way.
 whoosh(C["head"][0], C["head"][1], .2)
 put(bed, C["head"][1], bell(1318.5, 2, 2, .5, .6), .25)
-whoosh(3.0, 3.7, .06)
+whoosh(C["lift"][0], C["lift"][1], .06)
 
 # Each pairing flies into the list; the five that bring a letter pluck C D E G A as the
 # letter lands, with a soft thud; the sixth brings none and only ticks, low.
