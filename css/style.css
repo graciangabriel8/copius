@@ -23,8 +23,6 @@
   --art-3:#bcbcb6;
   --art-line:#585853;
   --d-g:#6F8A4E; --d-r:#C0665A; --d-s:#4E86A0; --d-e:#9A7148; --d-o:#A07A14;
-  /* The wordmark's letters: the families' hues, lighter and brighter than the drawings', and a lavender. */
-  --wm-g:#7EB052; --wm-o:#DCA829; --wm-r:#E77560; --wm-v:#AA83D6; --wm-s:#4EA7D1; --wm-e:#D0925A;
   --warn:#8a6d3b;
   --warn-line:#c8a869;
   --ring:#E3E8D6;
@@ -59,7 +57,6 @@
   --art-3:#4a4a45;
   --art-line:#b8b5ae;
   --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
-  --wm-g:#AEDC7F; --wm-o:#FED25F; --wm-r:#FAA495; --wm-v:#D1AFFA; --wm-s:#85CFF3; --wm-e:#F1BB89;
   --warn:#d1b276;
   --warn-line:#7a6435;
   --ring:#33362B;
@@ -76,7 +73,6 @@
     --accent-soft:#2E3626; --accent-soft-ink:#C2CFA6; --accent-soft-bd:#46523A;
     --art-1:#2f2f2c; --art-2:#3a3a36; --art-3:#4a4a45; --art-line:#b8b5ae;
     --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
-    --wm-g:#AEDC7F; --wm-o:#FED25F; --wm-r:#FAA495; --wm-v:#D1AFFA; --wm-s:#85CFF3; --wm-e:#F1BB89;
     --warn:#d1b276; --warn-line:#7a6435; --ring:#33362B;
     --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lift:0 10px 30px rgba(0,0,0,.45);
     --head-bg:rgba(20,22,15,.92); --scrim:rgba(0,0,0,.6);
@@ -117,26 +113,6 @@ input,select{font:inherit}
 .brand-logo .bl-s{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linecap:round}
 .brand-logo .bl-d{fill:var(--ink)}
 .brand h1{margin:0;font:400 26px/1 var(--serif);letter-spacing:.07em;text-transform:uppercase}
-/* One colour a letter, the five families' and a lavender on the I, so no colour comes back.
-   Every 2.5 s each colour moves one letter to the right, in a wave that starts at the C; the
-   first frame, and a screen that asks for less motion, keep this order. Screen readers get
-   the word whole. */
-.wm span{animation:wm-flow 15s ease-in-out infinite}
-.wm span:nth-child(1){color:var(--wm-g);animation-delay:-.8s}
-.wm span:nth-child(2){color:var(--wm-o);animation-delay:-13.15s}
-.wm span:nth-child(3){color:var(--wm-r);animation-delay:-10.5s}
-.wm span:nth-child(4){color:var(--wm-v);animation-delay:-7.85s}
-.wm span:nth-child(5){color:var(--wm-s);animation-delay:-5.2s}
-.wm span:nth-child(6){color:var(--wm-e);animation-delay:-2.55s}
-/* Each colour held 1.6 s, then 0.9 s into the colour on the letter's left (the C takes the S's).
-   A letter's delay puts it 0.8 s into its own colour's hold, less 0.15 s for each letter before it. */
-@keyframes wm-flow{
-  0%,10.667%{color:var(--wm-g)} 16.667%,27.333%{color:var(--wm-e)} 33.333%,44%{color:var(--wm-s)}
-  50%,60.667%{color:var(--wm-v)} 66.667%,77.333%{color:var(--wm-r)} 83.333%,94%{color:var(--wm-o)}
-  100%{color:var(--wm-g)}
-}
-@media (prefers-reduced-motion:reduce){.wm span{animation:none}}
-.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* Wraps rather than clips. The toggles have overflow:hidden for their pill
    shape, so without this a fourth control cuts a label in half instead of
    moving to a second row — and scrollWidth still matches clientWidth, which
