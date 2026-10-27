@@ -1054,7 +1054,8 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .plate-chip{position:relative;display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 9px;
   min-height:42px;padding:7px 8px 7px 45px;
   border:1px solid var(--border-strong);border-radius:12px;background:var(--card)}
-.plate-chip svg{position:absolute;left:10px;top:50%;width:26px;height:26px;margin-top:-13px}
+.plate-chip svg,.plate-chip img{position:absolute;left:10px;top:50%;width:26px;height:26px;margin-top:-13px}
+.plate-chip img{border-radius:50%;object-fit:cover}
 .plate-chip-name{font-size:14.5px;color:var(--ink)}
 .plate-chip-role{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .plate-x{margin-left:auto;border:0;background:none;cursor:pointer;font-size:18px;line-height:1;
@@ -1068,6 +1069,9 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   /* Apple's 44px minimum touch target: the × fills the chip's right padding. */
   .plate-chip{min-height:44px;padding-right:44px}
   .plate-x{position:absolute;top:50%;right:0;width:44px;height:44px;margin-top:-22px;padding:0}
+  /* On the narrowest phones a long word, such as the Assaisonnement role, can be wider than
+     the room between the icon and the ×: it breaks rather than push the chip past the plate. */
+  .plate-chip-name,.plate-chip-role{overflow-wrap:anywhere}
 }
 
 /* balance: the axes actually present, strongest first */
