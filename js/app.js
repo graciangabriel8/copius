@@ -1986,7 +1986,8 @@
      vanilla is no new accord, see pairSides); a drink or anything from the
      cellar, because nudging a cook toward a wine is the promotional register
      the loi Évin forbids (isAlcohol); a role the cook has waved off; and
-     anything taken off the plate with × during this visit (plateRemoved).
+     anything taken off the plate with × during this visit (plateRemoved);
+     and more than one of a species line among the offers — the stronger stays.
      Nor does a reason name a drink: a candidate counts only through the
      things it is recorded with that are not one.
 
@@ -2018,7 +2019,7 @@
       if (!out) return [];
     }
     var keep = plate.filter(function (it) { return it !== out; });
-    var skipped = {}, taken = {}, lone = {};
+    var skipped = {}, taken = {}, lone = {}, offered = {};
     roleRoom().forEach(function (g) { if (g.skipped) skipped[g.role] = true; });
     plate.forEach(function (it) { lineage(it.id).forEach(function (x) { taken[x] = true; }); });
     r.lonely.forEach(function (it) { lone[it.id] = true; });
@@ -2088,6 +2089,13 @@
       return y.rescued - x.rescued ||
         (y.score === null ? -1 : y.score) - (x.score === null ? -1 : x.score) ||
         y.linked.length - x.linked.length || x.rank - y.rank;
+    }).filter(function (s) {
+      /* One per species line, as `taken` holds between the plate and the
+         candidates: the stronger offer came first in the sort and stays. */
+      var mine = lineage(s.id);
+      if (mine.some(function (x) { return offered[x]; })) return false;
+      mine.forEach(function (x) { offered[x] = true; });
+      return true;
     }).slice(0, REC_SHOWN);
   }
 
@@ -2311,13 +2319,24 @@
     });
   });
 
+  /* At 375px the plate's search box has 275px for text, and the full
+     placeholder needs 389 in French: phones get the short one, from the
+     breakpoint of the lab's own CSS block. The box keeps the full text as its
+     name. A rotation or resize across the line swaps it, nothing more. */
+  var PHONE = window.matchMedia ? window.matchMedia("(max-width: 600px)") : null;
+  function platePlaceholder() {
+    var t = T();
+    el("plateSearch").placeholder = PHONE && PHONE.matches ? t.plateSearchPhShort : t.plateSearchPh;
+    el("plateSearch").setAttribute("aria-label", t.plateSearchPh);
+  }
+  if (PHONE) PHONE.addEventListener("change", platePlaceholder);
+
   function renderPlateAll() {
     var t = T();
     el("plateHint").textContent = plateMode === "guided"
       ? t.plateHintGuided
       : t.plateHintFree.replace("{n}", PLATE.MAX_FREE);
-    placeholder("plateSearch", t.plateSearchPh);
-    el("plateSearch").setAttribute("aria-label", t.plateSearchPh);
+    platePlaceholder();
     el("plateGuided").textContent = t.plateGuided;
     el("plateFree").textContent = t.plateFree;
     el("labModePair").textContent = t.labModePair;
