@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Copius — reel, the letters sort themselves</title>
+<!-- The "sort" reel, filmed by tools/drawreel.swift (never recorded by hand):
+       reel-sort.html[?guides=1]
+     His brief, 27 Oct 2026: the COPIUS letters in a mess, like the ideas in a cook's head,
+     then someone uses the tool and the word sorts itself out; then, longer, with sound, and
+     the letters in plain ink. A search for « fraise » pops the doubts; each pairing that lands
+     in the list pulls one letter home; the sixth comes without one, and the S waits until the
+     lab gives its verdict, then lands on it.
+     Every word on screen is read from the site's own files (js/i18n.js, js/data-*.js), and
+     the drawings are the site's own, drawn as js/app.js art() draws them.
+     The verdict is the engine's own: PLATE.judge on fraise + menthe + chocolat noir gave
+     96, band balanced, on 27 Oct 2026 at b0bc9bd021 (the best of the fifteen plates of
+     strawberry and two of its six pairings). Re-run it before reusing this reel.
+     The times below are the one table the picture and tools/reel-sort-sound.py both read.
+     Every frame is a pure function of t (window.__frame(t)), as in reel-draw.html. -->
+<script type="application/json" id="cues">
+{
+  "dur": 16,
+  "partners": ["balsamic", "black-pepper", "mint", "cream", "basil", "dark-chocolate"],
+  "plate": ["strawberry", "mint", "dark-chocolate"],
+  "score": 96,
+  "qPulse": [0.3, 0.6, 0.9],
+  "finger1": [0.5, 1.2, 1.4, 1.8, 2.2],
+  "keys": [1.7, 1.9, 2.1, 2.3, 2.5, 2.7],
+  "hookOut": [2.8, 3.2],
+  "head": [2.8, 3.4],
+  "chips": [[3.6, 4.1], [4.2, 4.7], [4.7, 5.2], [5.1, 5.6], [5.4, 5.9], [5.7, 6.2]],
+  "sWait": [5.9, 6.5],
+  "sPulse": [6.5, 6.9],
+  "button": [6.5, 6.8],
+  "finger2": [6.8, 7.4, 7.5, 7.7, 8.1],
+  "listOut": [7.6, 7.9],
+  "plateIn": [[7.9, 8.3], [8.0, 8.4], [8.1, 8.5]],
+  "scoreIn": [8.6, 8.8],
+  "count": [8.7, 10.1],
+  "sHome": [9.6, 10.1],
+  "drop": [10.0, 10.1],
+  "hit": 10.1,
+  "labOut": [11.7, 12.2],
+  "settle": [11.7, 12.4],
+  "row": [11.9, 12.5],
+  "rowRise": [12.1, 12.5],
+  "leaf": [12.5, 13.0],
+  "url": [12.8, 13.3]
+}
+</script>
+<script src="../js/i18n.js"></script>
+<script src="../js/data-fruits.js"></script>
+<script src="../js/data-condiments.js"></script>
+<script src="../js/data-spices.js"></script>
+<script src="../js/data-herbs.js"></script>
+<script src="../js/data-dairy.js"></script>
+<script src="../js/data-sweet.js"></script>
+<style>
+  :root{--bg:#F7F6F1;--ink:#1E211A;--ink2:#565A4C;--ink3:#6A6E5F;--card:#FFFEFC;--bd:#D1D5C3;--ring:#E3E8D6;--chip:#EDEFE3;
+    --leaf:#DCE4CB;--plate:#F0F1E7;--art-1:#e9e9e6;--art-2:#d7d7d3;--art-3:#bcbcb6;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:light}
+  *{box-sizing:border-box}
+  html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+  #stage{position:relative;width:1080px;height:1920px;background:var(--bg);font-family:var(--sans);color:var(--ink);overflow:hidden}
+  .hook{position:absolute;left:100px;right:100px;top:330px;text-align:center;font-family:var(--serif);
+    font-size:84px;line-height:1.12;letter-spacing:-.01em;text-wrap:balance;z-index:7}
+  /* The word as the site's header sets it (Georgia capitals, .07em apart), at reel size:
+     its capitals stand between y 625 and 772. */
+  #row{position:absolute;left:0;right:0;top:592px;display:flex;justify-content:center;gap:.07em;font:400 212px/1 var(--serif);z-index:4}
+  #row span{display:block;transform-origin:50% 60%;position:relative}
+  .q{position:absolute;left:0;top:0;width:100px;height:140px;margin:-70px 0 0 -50px;text-align:center;
+    font:400 120px/140px var(--serif);color:rgba(30,33,26,.55);z-index:1}
+  /* The drawings, by css/style.css .art: grey fills, lines in the family's colour. */
+  .art{position:absolute;left:0;top:0;width:100px;height:100px;overflow:visible;transform-origin:50% 50%;z-index:2}
+  .art .f1{fill:var(--art-1)} .art .f2{fill:var(--art-2)} .art .f3{fill:var(--art-3)}
+  .art .s{fill:none;stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .art .sf{stroke:var(--art-line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .art .dot{fill:var(--art-line)}
+  .art[data-f="g"]{--art-line:#6F8A4E} .art[data-f="r"]{--art-line:#C0665A} .art[data-f="s"]{--art-line:#4E86A0}
+  .art[data-f="e"]{--art-line:#9A7148} .art[data-f="o"]{--art-line:#A07A14}
+  /* The pairings, two columns of the site's chips at reel size. */
+  .chip{position:absolute;width:395px;height:88px;border-radius:44px;background:var(--card);border:2px solid var(--bd);
+    display:flex;align-items:center;padding:0 22px 0 92px;font-size:30px;line-height:1.08;color:var(--ink2);z-index:1}
+  #headName{position:absolute;left:232px;top:944px;font:400 54px/62px var(--serif);color:var(--ink);z-index:1}
+  /* The search field as the site draws it: a pill, card white, a hairline border. */
+  #pill{position:absolute;left:150px;width:780px;top:1345px;height:96px;border-radius:48px;border:2px solid var(--bd);
+    background:var(--card);display:flex;align-items:center;padding:0 44px;font-size:44px;color:var(--ink);white-space:nowrap;overflow:hidden;z-index:3}
+  #ph{color:var(--ink3)}
+  #caret{display:inline-block;width:3px;height:52px;margin-left:4px;background:var(--ink)}
+  /* The card's lab button (.m-lab-btn), in the same place. */
+  #btn{position:absolute;left:150px;width:780px;top:1345px;height:96px;border-radius:30px;border:2px solid var(--bd);
+    background:var(--card);display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--ink2);z-index:3}
+  /* The lab: a plate of three, then its score as .score-head draws it. */
+  .pcard{position:absolute;top:980px;width:240px;height:200px;border-radius:30px;background:var(--card);border:2px solid var(--bd);z-index:1}
+  .pname{position:absolute;left:0;right:0;top:142px;text-align:center;font-size:30px;color:var(--ink)}
+  #score{position:absolute;left:150px;top:1215px;width:780px;height:230px;border-radius:30px;background:var(--card);border:2px solid var(--bd);z-index:1}
+  #slabel{position:absolute;left:40px;top:36px;font:400 46px/1.1 var(--serif);color:var(--ink)}
+  #sband{position:absolute;left:40px;top:104px;font-size:28px;letter-spacing:.08em;text-transform:uppercase;line-height:1;
+    padding:9px 20px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);transform-origin:20% 50%}
+  #snum{position:absolute;right:40px;top:14px;display:flex;align-items:baseline;gap:10px;font-variant-numeric:tabular-nums;transform-origin:70% 70%}
+  #snum b{font:400 150px/1 var(--serif);color:var(--ink)}
+  #snum span{font-size:34px;color:var(--ink3)}
+  #sbar{position:absolute;left:40px;right:40px;top:180px;height:22px;border-radius:999px;background:var(--chip);overflow:hidden}
+  #sfill{display:block;height:100%;width:0;border-radius:999px;background:var(--ink)}
+  #leaf{position:absolute;left:445px;top:545px;width:190px;height:190px;overflow:visible;z-index:4}
+  #leaf .f{fill:var(--leaf);stroke:var(--ink);stroke-width:3.6;stroke-linejoin:round}
+  #leaf .s{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linecap:round}
+  #leaf .d{fill:var(--ink)}
+  .url{position:absolute;left:0;right:0;top:965px;text-align:center;font:400 62px/1.2 var(--serif);color:var(--ink2);letter-spacing:.02em;z-index:4}
+  #finger{position:absolute;left:0;top:0;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;
+    background:rgba(30,33,26,.17);border:3px solid rgba(255,255,255,.95);box-shadow:0 8px 22px rgba(30,33,26,.2);z-index:9}
+  .ripple{position:absolute;left:0;top:0;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;
+    border:4px solid rgba(30,33,26,.35);z-index:8}
+  .guide{position:absolute;left:0;right:0;border-top:4px dashed #d23;z-index:20}
+  .guide.v{right:auto;border-top:none;border-left:4px dashed #d23;width:0}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="hook" id="hook"></div>
+  <svg id="leaf" viewBox="0 0 96 96" aria-hidden="true"><path class="f" d="M52 24C30 32 16 52 20 66c2 9 12 12 17 6 4-5 0-12-5-10 4-12 16-22 34-24Z"/><path class="s" d="M52 24c9 4 14 11 14 20"/><circle class="d" cx="62" cy="20" r="7"/><circle class="d" cx="75" cy="30" r="5.5"/><circle class="d" cx="52" cy="11" r="4.5"/></svg>
+  <div id="row"><span>C</span><span>O</span><span>P</span><span>I</span><span>U</span><span>S</span></div>
+  <div class="url" id="url">copius.fr</div>
+  <div id="headName"></div>
+  <div id="score"><div id="slabel"></div><div id="sband"></div><div id="snum"><b>0</b><span>/ 100</span></div><div id="sbar"><span id="sfill"></span></div></div>
+  <div id="pill"><span id="ph"></span><span id="typed"></span><span id="caret"></span></div>
+  <div id="btn"></div>
+  <div class="ripple" id="rip1"></div>
+  <div class="ripple" id="rip2"></div>
+  <div id="finger"></div>
+</div>
+<script>
+(function () {
+  var C = JSON.parse(document.getElementById("cues").textContent);
+  var T = window.I18N.fr, byId = {};
+  (window.INGREDIENTS || []).forEach(function (i) { byId[i.id] = i; });
+  window.__duration = C.dur;
+  window.__ready = false;
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function span(t, a, b) { return clamp((t - a) / (b - a)); }
+  function ease(x) { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+  function out3(x) { x = clamp(x); return 1 - Math.pow(1 - x, 3); }
+  function in2(x) { x = clamp(x); return x * x; }
+  function back(x, s) { x = clamp(x); s = s || 1.4; return 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2); }
+  function bump(t, a, d) { return Math.sin(Math.PI * span(t, a, a + d)); }
+  var $ = function (id) { return document.getElementById(id); };
+  var stage = $("stage");
+
+  // The hook is ours; the rest is the site's own copy. The search placeholder is the
+  // typewriter's hold frame (js/app.js startTypewriter): lead, first phrase, ellipsis.
+  var HOOK = "Vos idées partent dans tous les sens ?";
+  var PH = (T.searchLead || "Rechercher ") + ((T.searchPhrases || ["un ingrédient"])[0]) + "…";
+  var WORD = byId.strawberry.name.fr.toLowerCase();
+
+  if (new URLSearchParams(location.search).get("guides")) {
+    [285, 300, 1460, 1635].forEach(function (y) {
+      var g = document.createElement("div"); g.className = "guide"; g.style.top = y + "px"; stage.appendChild(g);
+    });
+    var v = document.createElement("div"); v.className = "guide v"; v.style.left = "950px"; v.style.top = "960px"; v.style.height = "960px";
+    stage.appendChild(v);
+  }
+
+  // js/app.js FAMILY: the colour each family draws its lines in.
+  var FAMILY = {};
+  [["g", "vegetables herbs seaweed legumes"], ["r", "fruits flowers sweet"], ["s", "seafood shellfish roe"],
+   ["e", "mushrooms meat cuts dairy fats"], ["o", "spices nuts grains condiments cellar infusions texture"]]
+    .forEach(function (f) { f[1].split(" ").forEach(function (c) { FAMILY[c] = f[0]; }); });
+  // As js/app.js art(): the plate disc, then the ingredient's own drawing.
+  function art(id) {
+    var i = byId[id], s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.setAttribute("class", "art"); s.setAttribute("viewBox", "0 0 96 96"); s.setAttribute("data-f", FAMILY[i.cat]);
+    s.innerHTML = '<circle cx="48" cy="50" r="42" fill="#F0F1E7"/>' + i.svg;
+    stage.appendChild(s);
+    return s;
+  }
+
+  /* The mess. Each thing has a centre, an angle, a size (px for drawings and marks, a
+     factor of the 212 px word for letters), its own drift, and the place and size it lifts
+     to (lx, ly, ls) when the question leaves. */
+  var MESS_L = [
+    { x: 640, y: 930, r: 130, s: 1.25, ax: 30, ay: 26, w: 2.3, p: 0.4, lx: 760, ly: 395, ls: .75 },   // C, upside down
+    { x: 400, y: 790, r: 14, s: .8, ax: 26, ay: 30, w: 2.8, p: 2.1, lx: 450, ly: 395, ls: .55 },      // O, small
+    { x: 770, y: 1150, r: -100, s: 1.3, ax: 32, ay: 20, w: 1.9, p: 4.0, lx: 800, ly: 525, ls: .78 },  // P, on its side
+    { x: 840, y: 700, r: 58, s: 1.45, ax: 24, ay: 22, w: 2.5, p: 1.2, lx: 935, ly: 390, ls: .85 },    // I, large
+    { x: 300, y: 1050, r: -36, s: 1.0, ax: 34, ay: 24, w: 2.7, p: 5.3, lx: 375, ly: 530, ls: .62 },   // U
+    { x: 230, y: 700, r: -24, s: 1.3, ax: 26, ay: 22, w: 2.1, p: 3.1, lx: 255, ly: 390, ls: .8 }      // S
+  ];
+  var MESS_D = {
+    "strawberry":     { x: 880, y: 930, r: 18, s: 220, ax: 22, ay: 28, w: 2.0, p: 0.9 },
+    "balsamic":       { x: 460, y: 1190, r: -14, s: 170, ax: 26, ay: 22, w: 2.4, p: 3.7, lx: 485, ly: 520, ls: 110 },
+    "black-pepper":   { x: 130, y: 880, r: 12, s: 170, ax: 24, ay: 30, w: 2.2, p: 1.9, lx: 125, ly: 385, ls: 110 },
+    "mint":           { x: 590, y: 690, r: -20, s: 170, ax: 28, ay: 24, w: 2.6, p: 5.0, lx: 605, ly: 375, ls: 110 },
+    "cream":          { x: 880, y: 1250, r: 16, s: 170, ax: 22, ay: 26, w: 2.1, p: 2.6, lx: 950, ly: 520, ls: 110 },
+    "basil":          { x: 150, y: 1240, r: -10, s: 170, ax: 30, ay: 22, w: 2.5, p: 4.4, lx: 165, ly: 515, ls: 110 },
+    "dark-chocolate": { x: 660, y: 1250, r: 22, s: 170, ax: 26, ay: 20, w: 2.3, p: 0.2, lx: 640, ly: 520, ls: 110 }
+  };
+  var MESS_Q = [
+    { x: 110, y: 620, r: -12, ax: 14, ay: 18, w: 2.9, p: 0.7 },
+    { x: 980, y: 760, r: 16, ax: 12, ay: 16, w: 2.4, p: 2.2 },
+    { x: 520, y: 590, r: 8, ax: 16, ay: 12, w: 3.1, p: 4.1 },
+    { x: 70, y: 1060, r: -20, ax: 12, ay: 18, w: 2.6, p: 1.4 },
+    { x: 480, y: 1010, r: 10, ax: 14, ay: 14, w: 2.2, p: 5.6 },
+    { x: 330, y: 1300, r: -6, ax: 16, ay: 12, w: 2.8, p: 3.3 }
+  ];
+  /* As the question leaves, what is left of the mess floats up into the room it frees,
+     above the word, so the list builds below in clear air. A thing with no lifted place
+     (the strawberry, already gone; the marks, already burst) stays where it drifts. */
+  var LIFT = [3.0, 3.7];
+  function drift(m, t) {
+    var L = m.lx === undefined ? 0 : ease(span(t, LIFT[0], LIFT[1])), a = 1 - .4 * L;
+    return { x: m.x + L * ((m.lx || 0) - m.x) + m.ax * a * Math.sin(m.w * t + m.p),
+             y: m.y + L * ((m.ly || 0) - m.y) + m.ay * a * Math.sin(m.w * .83 * t + m.p * 1.7),
+             r: m.r + 10 * Math.sin(m.w * .9 * t + m.p), s: m.s + L * ((m.ls || 0) - m.s) };
+  }
+  /* A thing's pose at t: where it drifts, then each move in turn pulls it toward the next
+     place on a back-eased path (rotation and size settle without overshooting). */
+  function pose(t, base, moves) {
+    var p = base(t), fly = 0;
+    for (var i = 0; i < moves.length; i++) {
+      var m = moves[i];
+      if (t <= m.a) break;
+      var q = typeof m.to === "function" ? m.to(t) : m.to, u = span(t, m.a, m.b), k = back(u, 1.1), kr = out3(u);
+      p = { x: p.x + (q.x - p.x) * k, y: p.y + (q.y - p.y) * k, r: p.r + (q.r - p.r) * kr, s: p.s + (q.s - p.s) * k };
+      if (u < 1) fly = u;
+    }
+    p.fly = fly;
+    return p;
+  }
+
+  /* Places. Chips: two columns, three rows, in the data's order; a drawing sits in the
+     chip's disc. The head of the list: the strawberry and its name. The lab: three cards. The
+     end: the seven in a row, the strawberry in the middle. */
+  var chipAt = C.partners.map(function (id, k) { return { x: 130 + (k % 2) * 415, y: 1030 + Math.floor(k / 2) * 100 }; });
+  var HEAD = { x: 172, y: 975, r: 0, s: 84 };
+  var PLATE_AT = C.plate.map(function (id, k) { return { x: 280 + k * 260, y: 1056, r: 0, s: 100 }; });
+  var END = ["balsamic", "black-pepper", "mint", "strawberry", "cream", "basil", "dark-chocolate"];
+  function endAt(id) { return { x: 540 + (END.indexOf(id) - 3) * 112, y: 1160, r: 0, s: 100 }; }
+
+  var draw = {}, chips = [], pcards = [], qs = [], letters = [], home = [];
+  // The S waits hovering over its own place (set once the word is measured), then drops in.
+  var WAIT = { x: 0, y: 0, r: 8, s: .7, ax: 18, ay: 12, w: 2.2, p: 0.5 };
+
+  document.fonts.ready.then(function () {
+    $("hook").textContent = HOOK;
+    $("headName").textContent = byId.strawberry.name.fr;
+    $("btn").textContent = T.openLab;
+    $("slabel").textContent = T.plateScore;
+    $("sband").textContent = T.plateBandBalanced;
+    MESS_Q.forEach(function () { var q = document.createElement("div"); q.className = "q"; q.textContent = "?"; stage.appendChild(q); qs.push(q); });
+    C.partners.forEach(function (id, k) {
+      var c = document.createElement("div"); c.className = "chip"; c.textContent = byId[id].name.fr;
+      c.style.left = chipAt[k].x + "px"; c.style.top = chipAt[k].y + "px"; stage.appendChild(c); chips.push(c);
+    });
+    C.plate.forEach(function (id, k) {
+      var c = document.createElement("div"); c.className = "pcard"; c.style.left = (160 + k * 260) + "px";
+      var n = document.createElement("div"); n.className = "pname"; n.textContent = byId[id].name.fr; c.appendChild(n);
+      stage.appendChild(c); pcards.push(c);
+    });
+    ["strawberry"].concat(C.partners).forEach(function (id) { draw[id] = art(id); });
+    letters = [].slice.call($("row").children);
+    var st = stage.getBoundingClientRect();
+    home = letters.map(function (el) {
+      var b = el.getBoundingClientRect();
+      return { x: b.left - st.left + b.width / 2, y: b.top - st.top + b.height * .6 };
+    });
+    WAIT.x = home[5].x - 40; WAIT.y = home[5].y - 270;
+    window.__frame(0); window.__ready = true;
+  }).catch(function (e) { window.__error = String(e && e.message || e); });
+
+  function placeArt(el, p, op, z) {
+    el.style.transform = "translate(" + (p.x - 50).toFixed(2) + "px," + (p.y - 50).toFixed(2) + "px) rotate(" +
+      p.r.toFixed(2) + "deg) scale(" + Math.max(.01, p.s / 100).toFixed(4) + ")";
+    el.style.opacity = String(op);
+    el.style.zIndex = p.fly ? "6" : String(z);
+    var bl = 2.6 * Math.sin(Math.PI * p.fly) / Math.max(.3, p.s / 100);
+    el.style.filter = bl > .05 ? "blur(" + bl.toFixed(2) + "px)" : "none";
+  }
+
+  window.__frame = function (t) {
+    if (!letters.length) return "not ready";
+    var chosen = function (id) { return C.plate.indexOf(id) >= 0; };
+    var listOut = ease(span(t, C.listOut[0], C.listOut[1])), labOut = ease(span(t, C.labOut[0], C.labOut[1]));
+
+    // The question marks: three pulse while the mess hums, then each key typed bursts one.
+    qs.forEach(function (q, i) {
+      var d = drift(MESS_Q[i], t), b = span(t, C.keys[i], C.keys[i] + .3);
+      var pulse = i % 2 === 0 ? 1 + .18 * bump(t, C.qPulse[i / 2], .3) : 1;
+      var s = b < .35 ? 1 + .3 * out3(b / .35) : 1.3 * (1 - in2((b - .35) / .65));
+      q.style.transform = "translate(" + d.x.toFixed(2) + "px," + d.y.toFixed(2) + "px) rotate(" + (d.r + 40 * b).toFixed(2) +
+        "deg) scale(" + (s * pulse).toFixed(4) + ")";
+      q.style.opacity = b >= 1 ? "0" : String(1 - in2(b) * .6);
+    });
+
+    // The drawings: the strawberry heads the list, each pairing flies into its chip; the two
+    // chosen go on the plate with the strawberry, the others leave with their chips; all
+    // seven end in a row.
+    var sp = pose(t, function (t) { return drift(MESS_D.strawberry, t); },
+      [{ a: C.head[0], b: C.head[1], to: HEAD }, { a: C.plateIn[0][0], b: C.plateIn[0][1], to: PLATE_AT[0] },
+       { a: C.row[0], b: C.row[1], to: endAt("strawberry") }]);
+    placeArt(draw.strawberry, sp, 1, 2);
+    C.partners.forEach(function (id, k) {
+      var c = chipAt[k], seat = { x: c.x + 45, y: c.y + 44, r: 0, s: 70 };
+      var moves = [{ a: C.chips[k][0], b: C.chips[k][1], to: seat }], op = 1;
+      if (chosen(id)) {
+        var j = C.plate.indexOf(id);
+        moves.push({ a: C.plateIn[j][0], b: C.plateIn[j][1], to: PLATE_AT[j] }, { a: C.row[0], b: C.row[1], to: endAt(id) });
+      } else if (t >= C.rowRise[0]) {
+        var e = endAt(id), u = ease(span(t, C.rowRise[0], C.rowRise[1]));
+        placeArt(draw[id], { x: e.x, y: e.y + 20 * (1 - u), r: 0, s: 100, fly: 0 }, u, 2);
+        return;
+      } else op = 1 - listOut;
+      placeArt(draw[id], pose(t, function (t) { return drift(MESS_D[id], t); }, moves), op, 2);
+    });
+
+    // The chips: each card comes as its drawing leaves the mess, and bounces when it lands.
+    chips.forEach(function (c, k) {
+      var a = C.chips[k][0], land = C.chips[k][1], inn = out3(span(t, a, a + .25));
+      var keep = chosen(C.partners[k]) ? 1 - ease(span(t, C.plateIn[0][0], C.plateIn[0][0] + .3)) : 1 - listOut;
+      var sc = (.9 + .1 * inn) * (1 + .04 * bump(t, land, .15)) * (chosen(C.partners[k]) ? 1 : 1 - .08 * listOut);
+      c.style.opacity = String(inn * keep);
+      c.style.transform = "scale(" + sc.toFixed(4) + ")";
+    });
+    var hn = ease(span(t, C.head[1] - .1, C.head[1] + .2)) * (1 - listOut);
+    $("headName").style.opacity = String(hn);
+    $("headName").style.transform = "translateY(" + (16 * (1 - ease(span(t, C.head[1] - .1, C.head[1] + .2)))).toFixed(2) + "px)";
+
+    // The letters: five fly home with the first five chips; the S waits, then lands on the verdict.
+    var nod = 1 + .05 * bump(t, C.hit, .3);
+    letters.forEach(function (el, i) {
+      var h = home[i], H = { x: h.x, y: h.y, r: 0, s: 1 }, p, settled;
+      if (i < 5) {
+        p = pose(t, function (t) { return drift(MESS_L[i], t); }, [{ a: C.chips[i][0], b: C.chips[i][1], to: H }]);
+        settled = out3(span(t, C.chips[i][0], C.chips[i][1]));
+      } else {
+        p = pose(t, function (t) { return drift(MESS_L[5], t); },
+          [{ a: C.sWait[0], b: C.sWait[1], to: function (t) { return drift(WAIT, t); } }, { a: C.sHome[0], b: C.sHome[1], to: H }]);
+        p.s *= 1 + .1 * (bump(t, C.sPulse[0], .25) + bump(t, C.sPulse[1], .25));
+        settled = out3(span(t, C.sHome[0], C.sHome[1]));
+      }
+      el.style.transform = "translate(" + (p.x - h.x).toFixed(2) + "px," + (p.y - h.y).toFixed(2) + "px) rotate(" +
+        p.r.toFixed(2) + "deg) scale(" + (p.s * nod).toFixed(4) + ")";
+      el.style.zIndex = p.fly ? "7" : "4";
+      el.style.filter = p.fly ? "blur(" + (2.6 * Math.sin(Math.PI * p.fly)).toFixed(2) + "px)" : "none";
+      // Loose letters float with a shadow; a letter in its place lies flat, as in the header.
+      el.style.textShadow = "0 14px 26px rgba(30,33,26," + (.16 * (1 - settled)).toFixed(3) + ")";
+    });
+
+    // The question leaves as the list comes.
+    var hk = ease(span(t, C.hookOut[0], C.hookOut[1]));
+    $("hook").style.opacity = String(1 - hk); $("hook").style.transform = "translateY(" + (-12 * hk) + "px)";
+
+    // The finger: in, a tap on the field, out; back later for the lab button.
+    function finger(f, x, y) {
+      var fin = out3(span(t, f[0], f[1])), fout = in2(span(t, f[3], f[4]));
+      return { x: 1010 + (x - 1010) * fin + (1080 - x) * fout, y: 1700 + (y - 1700) * fin + (1780 - y) * fout,
+               op: span(t, f[0], f[0] + .15) * (1 - span(t, f[4] - .2, f[4])), press: 1 - .16 * bump(t, f[2] - .05, .22) };
+    }
+    var f1 = finger(C.finger1, 690, 1393), f2 = finger(C.finger2, 540, 1393), f = t < C.finger2[0] ? f1 : f2;
+    $("finger").style.transform = "translate(" + f.x.toFixed(2) + "px," + f.y.toFixed(2) + "px) scale(" + f.press.toFixed(4) + ")";
+    $("finger").style.opacity = String(f.op);
+    [[$("rip1"), C.finger1[2], 690], [$("rip2"), C.finger2[2], 540]].forEach(function (r) {
+      var rp = span(t, r[1], r[1] + .4);
+      r[0].style.transform = "translate(" + r[2] + "px,1393px) scale(" + (.6 + 1.5 * out3(rp)).toFixed(4) + ")";
+      r[0].style.opacity = rp > 0 && rp < 1 ? String(.9 * (1 - rp)) : "0";
+    });
+
+    // The field: its placeholder until the tap, then focus, then the word, key by key.
+    var tap = C.finger1[2], focus = span(t, tap, tap + .15);
+    $("pill").style.borderColor = focus > 0 ? "#6A6E5F" : "";
+    $("pill").style.boxShadow = "0 0 0 " + (8 * focus).toFixed(1) + "px #E3E8D6";
+    var keys = C.keys.filter(function (k) { return t >= k; }).length;
+    $("ph").textContent = t < tap ? PH : "";
+    $("typed").textContent = WORD.slice(0, keys);
+    $("caret").style.opacity = t < tap ? "0" : (t - tap) % 1 < .55 || (keys > 0 && keys < 6) ? "1" : "0";
+    var bt = ease(span(t, C.button[0], C.button[1]));
+    $("pill").style.opacity = String(1 - bt);
+    $("btn").style.opacity = String(bt * (1 - ease(span(t, C.finger2[2], C.finger2[2] + .3))));
+    $("btn").style.transform = "scale(" + (1 - .03 * bump(t, C.finger2[2] - .05, .22)).toFixed(4) + ")";
+
+    // The lab: three cards under the plate, then the score counting to the engine's verdict.
+    pcards.forEach(function (c, k) {
+      var u = ease(span(t, C.plateIn[k][0], C.plateIn[k][0] + .3)) * (1 - labOut);
+      c.style.opacity = String(u);
+      c.style.transform = "translateY(" + (16 * labOut).toFixed(2) + "px) scale(" + (1 + .03 * bump(t, C.plateIn[k][1], .15)).toFixed(4) + ")";
+      c.firstChild.style.opacity = String(ease(span(t, C.plateIn[k][1] - .1, C.plateIn[k][1] + .15)));
+    });
+    var si = ease(span(t, C.scoreIn[0], C.scoreIn[1]));
+    $("score").style.opacity = String(si * (1 - labOut));
+    $("score").style.transform = "translateY(" + (16 * (1 - si) + 16 * labOut).toFixed(2) + "px)";
+    var cnt = out3(span(t, C.count[0], C.count[1]));
+    // Rounded down, so the verdict's own number shows only as the S lands on it.
+    $("snum").firstChild.textContent = String(Math.floor(C.score * cnt + 1e-9));
+    $("snum").style.transform = "scale(" + (1 + .15 * (1 - out3(span(t, C.hit, C.hit + .2))) * (t >= C.hit ? 1 : 0)).toFixed(4) + ")";
+    $("sfill").style.width = (C.score * cnt).toFixed(2) + "%";
+    var tg = span(t, C.hit, C.hit + .2);
+    $("sband").style.opacity = String(t >= C.hit ? 1 : 0);
+    $("sband").style.transform = "scale(" + (1 + .2 * (1 - out3(tg))).toFixed(4) + ")";
+
+    // The end: as the lab leaves, the word settles to the middle of the frame; the leaf
+    // over it, the address and the seven under it.
+    $("row").style.transform = "translateY(" + (150 * ease(span(t, C.settle[0], C.settle[1]))).toFixed(2) + "px)";
+    var lf = span(t, C.leaf[0], C.leaf[1]);
+    $("leaf").style.opacity = String(ease(lf)); $("leaf").style.transform = "scale(" + (.6 + .4 * back(lf, 1.6)).toFixed(4) + ")";
+    var ur = ease(span(t, C.url[0], C.url[1]));
+    $("url").style.opacity = String(ur); $("url").style.transform = "translateY(" + (16 * (1 - ur)).toFixed(2) + "px)";
+    return true;
+  };
+})();
+</script>
+</body>
+</html>
