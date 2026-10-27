@@ -1074,10 +1074,11 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 .taste-strip{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-auto-flow:column;
   grid-auto-columns:minmax(0,112px);width:max-content;max-width:100%;
   border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.taste{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;
+.taste{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 3px;
   text-align:center;min-width:0}
 .taste+.taste{border-left:1px solid var(--border)}
-/* "Profondeur" and "Aromatics" break inside a cell at 375px rather than spill. */
+/* A label longer than its cell breaks rather than spills; below 480px the strip
+   wraps instead. */
 .taste-name{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
 .taste-val{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .taste.on{background:var(--accent-soft)}
@@ -1154,9 +1155,12 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 
 @media (max-width:600px){
   /* « Deux ingrédients » and « Une assiette entière » take 298px at the phone
-     padding and the card leaves 281 at 375px, so the second was clipped. Tighter
-     padding fits both on one line there; narrower, the long one wraps in its half. */
+     padding, and the card leaves 305 at 375px (375 − 32 page gutter − 2 border
+     − 36 card padding). Tighter padding fits both on one line there; narrower,
+     the long one wraps in its half. */
   .lab-modes button{flex:1 1 auto;min-width:0;padding:12px 10px;white-space:normal;line-height:1.25}
+  /* The card kept its desktop 28px 30px at every width. */
+  .lab{padding:22px 18px}
   .plate-find{flex:1 1 100%}
   /* Two boxes side by side leave the × at the end of the first row on a phone:
      stack them, the × between. */
@@ -1170,4 +1174,13 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   .lab-set-row{flex-direction:column;align-items:flex-start;gap:6px}
   .score-head{grid-template-columns:1fr auto}
   .lab-set-row .verdict{flex:1 1 auto;max-width:100%}
+}
+@media (max-width:480px){
+  /* Below this the five cells can't hold « Umami » or « Profondeur » whole:
+     the strip spans the card, a cell that can't fit starts a new row, and the
+     hairlines are the gap showing the strip's ground. */
+  .taste-strip{display:flex;flex-wrap:wrap;gap:1px;width:auto;background:var(--border)}
+  .taste{flex:1 1 0;min-width:auto;background:var(--card)}
+  .taste+.taste{border-left:0}
+  .taste-name,.taste-val{overflow-wrap:normal}
 }

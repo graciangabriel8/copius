@@ -1629,7 +1629,8 @@
   function skipKey(role) { return plateTpl + ":" + role; }
   var plate = [];                 // [{ id, form }] — form is a branch id, or ""
   /* Taken off with × during this visit: the cook said no, so it is not
-     suggested back. Held in memory only; a new visit starts clean. */
+     suggested back. Held in memory only; a new visit starts clean, so does an
+     emptied plate, and adding an item back by hand withdraws its no. */
   var plateRemoved = new Set();
   var plateWhyOpen = false;       // the grade shows; its arithmetic is asked for
 
@@ -1992,8 +1993,9 @@
      On a plate with room every candidate recorded with something here is
      offered, the ones that tie in a lonely item first: adding to a good plate
      may lower its density and still be the dish the cook wants. A full plate
-     has no room, so the offer becomes a swap for its most isolated item, and
-     a swap has to earn its place — it disappears when none raises the score. */
+     has no room, so the offer becomes a swap for its most isolated item —
+     never a drink, and the same kind of item (a vegetable for a vegetable) —
+     and a swap has to earn its place: it disappears when none raises the score. */
   var REC_SHORTLIST = 16;
   var REC_SHOWN = 3;
   function recommend(r) {
@@ -2009,7 +2011,11 @@
         var w = row.verdict === "ok" ? 100 : row.verdict === "mid" ? 1 : 0;
         weight[row.a.id] += w; weight[row.b.id] += w;
       });
-      plate.forEach(function (it) { if (!out || weight[it.id] < weight[out.id]) out = it; });
+      /* Never a drink: a swap would be the nudge toward one the loi Évin rules out. */
+      plate.forEach(function (it) {
+        if (!isAlcohol(byId[it.id]) && (!out || weight[it.id] < weight[out.id])) out = it;
+      });
+      if (!out) return [];
     }
     var keep = plate.filter(function (it) { return it !== out; });
     var skipped = {}, taken = {}, lone = {};
@@ -2023,11 +2029,18 @@
        Bounded by the plate (MAX_FREE) times each item's recorded partners. */
     var tally = {};
     keep.forEach(function (it) {
+      /* A drink's partners could only be offered through it, and no reason
+         names a drink, so they would crowd the shortlist for nothing. */
+      if (isAlcohol(byId[it.id])) return;
       var mine = {};
       if (it.form) itemPairs(it.id, it.form).forEach(function (c) { mine[c] = true; });
-      else lineage(it.id).forEach(function (x) {
-        if (PAIRS[x]) PAIRS[x].forEach(function (c) { mine[c] = true; });
-      });
+      else {
+        lineage(it.id).forEach(function (x) {
+          if (PAIRS[x]) PAIRS[x].forEach(function (c) { mine[c] = true; });
+        });
+        /* A base is in no PAIRS row; its own list is its only voice. */
+        itemPairs(it.id, "").forEach(function (c) { mine[c] = true; });
+      }
       Object.keys(mine).forEach(function (c) {
         var e = tally[c] || (tally[c] = { id: c, links: 0, lone: 0 });
         e.links++;
@@ -2040,7 +2053,8 @@
     var shortlist = Object.keys(tally).map(function (c) { return tally[c]; }).filter(function (e) {
       var i = byId[e.id];
       return i && PAIRS[e.id] && !isAlcohol(i) && i.cat !== "cellar" && !plateRemoved.has(e.id) &&
-        !skipped[PLATE.roleOf(i)] && !lineage(e.id).some(function (x) { return taken[x]; });
+        !skipped[PLATE.roleOf(i)] && !lineage(e.id).some(function (x) { return taken[x]; }) &&
+        (!out || PLATE.roleOf(i) === PLATE.roleOf(byId[out.id]));
     }).sort(function (x, y) {
       return y.lone - x.lone || y.links - x.links || PAIRS[y.id].size - PAIRS[x.id].size ||
         (x.id < y.id ? -1 : 1);
@@ -2061,8 +2075,13 @@
       linked.sort(function (x, y) {
         return (lone[y.id] ? 1 : 0) - (lone[x.id] ? 1 : 0) || plate.indexOf(x) - plate.indexOf(y);
       });
+      /* ties: it links two things and the first was on its own — only then
+         is "links A and B" true of it rather than "goes with A". */
       return { id: e.id, out: out, score: rr.score, linked: linked, rank: rank,
-               rescued: r.lonely.filter(function (it) { return it !== out && !still[it.id]; }).length };
+               ties: linked.length > 1 && !!lone[linked[0].id],
+               rescued: r.lonely.filter(function (it) {
+                 return !isAlcohol(byId[it.id]) && it !== out && !still[it.id];
+               }).length };
     }).filter(function (s) {
       return s.linked.length && (!s.out || s.score > r.score);
     }).sort(function (x, y) {
@@ -2149,7 +2168,7 @@
     var offer = recommend(r).map(function (s) {
       var nm = name(byId[s.id]);
       var why = s.out ? t.recSwap.replace("{x}", itemLabel(s.out)).replace("{a}", itemLabel(s.linked[0]))
-        : s.linked.length > 1
+        : s.ties
           ? t.recLinks.replace("{a}", itemLabel(s.linked[0])).replace("{b}", itemLabel(s.linked[1]))
           : t.recGoesWith.replace("{a}", itemLabel(s.linked[0]));
       return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '"' +
@@ -2351,6 +2370,7 @@
     if (!id || !byId[id] || plateFull()) return false;
     if (plate.some(function (it) { return it.id === id; })) return false;
     plate.push({ id: id, form: "" });
+    plateRemoved.delete(id);
     return true;
   }
 
@@ -2729,6 +2749,7 @@
       var gone = parseInt(px.getAttribute("data-plate-del"), 10);
       if (plate[gone]) plateRemoved.add(plate[gone].id);
       plate.splice(gone, 1);
+      if (!plate.length) plateRemoved.clear();   // an emptied plate starts a new dish
       renderPlateAll();
       (el("plateItems").querySelector('[data-plate-del="' + Math.min(gone, plate.length - 1) + '"]') ||
         el("plateSearch")).focus();
