@@ -1048,19 +1048,31 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 
 .plate-items{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
 .plate-empty{margin:0 0 22px}
-.plate-chip{display:inline-flex;align-items:center;gap:9px;padding:7px 8px 7px 10px;
+/* A chip wraps when it is wider than the plate, its × kept at the right. The icon sits
+   in the left padding, out of the flow, so a long name wraps beside it, not below it;
+   the min-height is the icon's 26px with the padding and border around it. */
+.plate-chip{position:relative;display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 9px;
+  min-height:42px;padding:7px 8px 7px 45px;
   border:1px solid var(--border-strong);border-radius:12px;background:var(--card)}
-.plate-chip svg{width:26px;height:26px;flex:0 0 auto}
+.plate-chip svg,.plate-chip img{position:absolute;left:10px;top:50%;width:26px;height:26px;margin-top:-13px}
+.plate-chip img{border-radius:50%;object-fit:cover}
 .plate-chip-name{font-size:14.5px;color:var(--ink)}
 .plate-chip-role{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.plate-x{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;
+.plate-x{margin-left:auto;border:0;background:none;cursor:pointer;font-size:18px;line-height:1;
   color:var(--ink-3);padding:0 4px;border-radius:6px}
 .plate-x:hover{color:var(--ink)}
-/* A chip is never narrower than its items side by side, and a form's select can make
-   that wider than the plate: such a chip wraps, × kept at the right. A chip without a
-   form keeps to one line, because wrapping it would drop a long name below its icon. */
-.plate-chip:has(.chip-form){flex-wrap:wrap;row-gap:6px}
-.plate-chip:has(.chip-form) .plate-x{margin-left:auto}
+@media (max-width:720px){
+  /* .chip-form's 12px outranks the 16px that keeps iOS from zooming on phones. At 16px a
+     form's name can outgrow the chip, so the select shrinks to it: a percentage width,
+     because a percentage max-width would still let the select push the chip wider. */
+  .chip-form{font-size:16px;width:100%;max-width:max-content}
+  /* Apple's 44px minimum touch target: the × fills the chip's right padding. */
+  .plate-chip{min-height:44px;padding-right:44px}
+  .plate-x{position:absolute;top:50%;right:0;width:44px;height:44px;margin-top:-22px;padding:0}
+  /* On the narrowest phones a long word, such as the Assaisonnement role, can be wider than
+     the room between the icon and the ×: it breaks rather than push the chip past the plate. */
+  .plate-chip-name,.plate-chip-role{overflow-wrap:anywhere}
+}
 
 /* balance: the axes actually present, strongest first */
 .axis-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
