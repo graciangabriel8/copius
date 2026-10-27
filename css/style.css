@@ -537,9 +537,11 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .head-tools{flex-wrap:wrap}
   #search{flex:1 1 100%;width:100%;min-width:0;order:-1}
 
-  /* iOS zooms the page when a focused field is under 16px, and never zooms back. */
-  #search,#sort,#cPick,#cNotes,select,textarea,
-  input[type="text"],input[type="search"]{font-size:16px}
+  /* iOS zooms the page when a focused field is under 16px, and never zooms back.
+     The Labo's searches and template select, and the create form's names and
+     family, set their size in rules that outrank a bare selector: name them. */
+  #search,#sort,#cPick,#cNotes,#labA,#labB,#plateSearch,#plateTpl,
+  #cNameEn,#cNameFr,#cCat,select,textarea,input{font-size:16px}
 
   /* Fifteen chips wrapped into seven rows swallowed the first screen — scroll them instead. */
   .cats{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
