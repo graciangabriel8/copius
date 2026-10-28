@@ -133,8 +133,7 @@ UI = {
            "fixLbl": "Une erreur ici, ou un oubli\u202f?",
            "fixCta": "Dites-le nous",
            "fixSubj": "Correction — %s",
-           # plain spaces: this body is percent-encoded into every page, where a no-break space would move every lastmod
-           "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n",
+           "fixBody": "Page\u00a0: %s\n\nCe qui ne va pas, ou ce qui manque\u00a0:\n\n",
            "lockHead": "Version complète", "soon": "bientôt disponible",
            "lockGives": "La version complète donne %s.",
            "lockLab": "le labo d’accords et l’assiette",
@@ -262,11 +261,13 @@ def load():
 
 def correction_link(subject, url, lang):
     """A mailto, deliberately. No account, no moderation queue, and nothing that
-    looks abandoned when nobody has written yet."""
+    looks abandoned when nobody has written yet. Its text goes out with plain
+    spaces: percent-encoded, a no-break space reads %C2%A0, which SPACES in the
+    lastmod fingerprint does not see as a space."""
     t = UI[lang]
     href = "mailto:contact@copius.fr?subject=%s&body=%s" % (
-        urllib.parse.quote(t["fixSubj"] % subject),
-        urllib.parse.quote(t["fixBody"] % url))
+        urllib.parse.quote(SPACES.sub(" ", t["fixSubj"] % subject)),
+        urllib.parse.quote(SPACES.sub(" ", t["fixBody"] % url)))
     return ('<p class="fix">%s <a href="%s">%s</a></p>'
             % (e(t["fixLbl"]), e(href), e(t["fixCta"])))
 
@@ -637,14 +638,17 @@ def related(i, G):
 
 def story_desc(story):
     """The description: the story whole when it fits in 155 characters, else cut
-    at a word (a no-break space counts as a break) and closed with an ellipsis.
-    Only ASCII blanks collapse, so the no-break spaces French typography needs
-    survive."""
+    at a word (a no-break space counts as a break) and closed with an ellipsis,
+    then any quotation the cut left open. Only ASCII blanks collapse, so the
+    no-break spaces French typography needs survive."""
     s = re.sub(r"[ \t\n]+", " ", story).strip()
     if len(s) <= 155:
         return s
     cut = s[:155] if s[155].isspace() else re.sub(r"\s\S*$", "", s[:155])
-    return cut.rstrip(" \u00a0\u202f,;:—–-«") + "…"
+    cut = re.sub(r"[\s,;:—–«“-]+$", "", cut)
+    if cut.count("«") > cut.count("»"):
+        return cut + "…\u00a0»"
+    return cut + ("…”" if cut.count("“") > cut.count("”") else "…")
 
 
 def family_mates(i, G):
@@ -696,7 +700,7 @@ def lastmods(urls):
     seen = {}
     for u in urls:
         page = ROOT / u[len(SITE) + 1:] / "index.html"
-        h = hashlib.sha256(SPACES.sub(" ", STAMP.sub("", page.read_text(encoding="utf-8"))).encode()).hexdigest()[:16]
+        h = hashlib.sha256(STAMP.sub("", SPACES.sub(" ", page.read_text(encoding="utf-8"))).encode()).hexdigest()[:16]
         old = known.get(u)
         seen[u] = old if old and old[0] == h else [h, today]
     LASTMOD.write_text("{\n" + ",\n".join("%s: %s" % (json.dumps(u), json.dumps(seen[u])) for u in sorted(seen)) + "\n}\n")
