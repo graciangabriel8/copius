@@ -1,5 +1,7 @@
 /* Copius — illustrated ingredient dictionary. Neutral white/grey palette. */
 :root{
+  /* Light only: this also asks browsers that darken pages on their own not to. */
+  color-scheme:only light;
   --bg:#F7F6F1;
   --card:#FFFEFC;
   --border:#E5E7DA;
@@ -35,49 +37,6 @@
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
-/* ---------- dark ---------- */
-:root[data-theme="dark"]{
-  --bg:#14160F;
-  --card:#1C1E16;
-  --border:#2C2F24;
-  --border-strong:#3C4033;
-  --ink:#ECEBE2;
-  --ink-2:#B4B7A6;
-  --ink-3:#8E9280;
-  --chip:#252820;
-  --chip-ink:#C7CBB9;
-  --plate:#242619;
-  --accent:#AEB994;
-  --accent-soft:#2E3626;
-  --accent-soft-ink:#C2CFA6;
-  --accent-soft-bd:#46523A;
-  --on-accent:#191A14;
-  --art-1:#2f2f2c;
-  --art-2:#3a3a36;
-  --art-3:#4a4a45;
-  --art-line:#b8b5ae;
-  --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
-  --warn:#d1b276;
-  --warn-line:#7a6435;
-  --ring:#33362B;
-  --head-bg:rgba(20,22,15,.92);
-  --scrim:rgba(0,0,0,.6);
-  --shadow:0 1px 2px rgba(0,0,0,.35);
-  --shadow-lift:0 10px 30px rgba(0,0,0,.45);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#14160F; --card:#1C1E16; --border:#2C2F24; --border-strong:#3C4033;
-    --ink:#ECEBE2; --ink-2:#B4B7A6; --ink-3:#8E9280; --chip:#252820; --chip-ink:#C7CBB9;
-    --plate:#242619; --accent:#AEB994; --on-accent:#191A14;
-    --accent-soft:#2E3626; --accent-soft-ink:#C2CFA6; --accent-soft-bd:#46523A;
-    --art-1:#2f2f2c; --art-2:#3a3a36; --art-3:#4a4a45; --art-line:#b8b5ae;
-    --d-g:#A3BC80; --d-r:#E3958A; --d-s:#82B6CE; --d-e:#CDA57C; --d-o:#E2C063;
-    --warn:#d1b276; --warn-line:#7a6435; --ring:#33362B;
-    --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lift:0 10px 30px rgba(0,0,0,.45);
-    --head-bg:rgba(20,22,15,.92); --scrim:rgba(0,0,0,.6);
-  }
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
@@ -514,12 +473,6 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   padding:2px 6px;vertical-align:middle;white-space:nowrap}
 .sign-aop{color:#8A3A30;background:#F2DFDB;border:1px solid #DBB8B1}
 .sign-igp{color:#2F5273;background:#DCE5EF;border:1px solid #B3C6DA}
-:root[data-theme="dark"] .sign-aop{color:#E8B3A8;background:#3A2320;border-color:#5C3A34}
-:root[data-theme="dark"] .sign-igp{color:#A8C4E0;background:#1E2B38;border-color:#33485E}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sign-aop{
-  color:#E8B3A8;background:#3A2320;border-color:#5C3A34}
-  :root:not([data-theme="light"]) .sign-igp{
-  color:#A8C4E0;background:#1E2B38;border-color:#33485E}}
 
 /* ---------- responsive ---------- */
 @media (max-width:720px){
@@ -530,8 +483,8 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .head-tools{flex:1 1 100%;min-width:0;gap:10px;justify-content:flex-start}
   /* The search field spans the row above; leaving the controls packed left
      ended the second row 72px short of it and read as unfinished. Push the
-     language and theme group to the right edge so the two rows align. */
-  .head-tools .theme-btn{margin-left:auto}
+     language toggle to the right edge so the two rows align. */
+  .head-tools .lang-toggle{margin-left:auto}
   /* Search shared a row with Créer and both toggles and was cut to "Recherc".
      Give it the full width and let the buttons sit under it. */
   .head-tools{flex-wrap:wrap}
@@ -823,37 +776,11 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .m-note.warn{border-left-color:var(--warn-line)}
 .m-note.warn h3{color:var(--warn)}
 
-/* Its own control, not a third language. It used to sit inside .lang-toggle,
-   which put a bordered pill inside a bordered pill and made the sun read as an
-   option beside EN and FR. */
-.theme-btn{border:1px solid var(--border-strong);background:var(--card);color:var(--ink-2);
-  border-radius:999px;width:46px;height:46px;line-height:1;font-size:17px;padding:0;
-  display:inline-flex;align-items:center;justify-content:center;transition:background .12s,border-color .12s}
-.theme-btn:hover{border-color:var(--ink-3);background:var(--chip)}
-.theme-ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-
 .foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
 .foot-contact a{color:inherit;text-underline-offset:3px}
 .foot-contact[hidden]{display:none}
 
-/* ---------- motion (v84): theme, ingredient of the day, search ---------- */
-/* Theme. The switch is instant, and that is the considered choice rather than
-   the lazy one: a crossfade interpolates every colour through its midpoint, and
-   the midpoint between this palette's two grounds is the same grey as the
-   midpoint between its two inks. Body text measured 1.03:1 against the page
-   halfway through — the words disappear. There is no duration that avoids it,
-   because the midpoint is where the fade goes, so the fade goes.
-
-   The button still turns. One element, no interpolation, nothing to go muddy. */
-.theme-btn{transition:background .12s,border-color .12s}
-/* The button turns a half circle on each switch and always comes to rest
-   upright. It used to add 180deg to an inline transform every time it was
-   clicked, which meant the rest position alternated between 0 and 180: every
-   other switch left the crescent sitting upside down, and it stayed that way
-   until the page was reloaded. An animation has nowhere to accumulate. */
-.theme-btn.roll{animation:roll .5s cubic-bezier(.2,.7,.2,1)}
-@keyframes roll{from{transform:rotate(-180deg)}to{transform:rotate(0)}}
-
+/* ---------- motion (v84): ingredient of the day, search ---------- */
 /* Ingredient of the day. The drawing floats; each new entry — a new day, a
    language switch — rises in. */
 .daily .d-art{animation:d-float 4.5s ease-in-out infinite}
@@ -868,8 +795,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 
 @media (prefers-reduced-motion:reduce){
   .daily .d-art,.daily .d-art svg,.daily .d-art img,.daily>div{animation:none}
-  #search,.theme-btn{transition:none}
-  .theme-btn.roll{animation:none}
+  #search{transition:none}
 }
 
 /* loi Evin health message. Legible, not decorative: it is a legal mention. */

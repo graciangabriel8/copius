@@ -292,7 +292,6 @@ window.I18N = {
     close: "Close",
     back: "Back",
     // Names for controls whose visible label is an icon, a glyph or a placeholder.
-    ariaTheme: "Theme", themeLight: "Light", themeDark: "Dark",
     ariaViews: "Views", ariaFamilies: "Families", ariaTaste: "Taste", ariaSort: "Sort",
     ariaGender: "Gender", ariaStars: "Stars", ariaCountry: "Country", ariaEra: "Era", ariaGroup: "Group",
     igLink: "Copius on Instagram",
@@ -659,7 +658,6 @@ window.I18N = {
     lockedFavsOne: "1 de vos favoris fait partie de la version complète.",
     close: "Fermer",
     back: "Retour",
-    ariaTheme: "Thème", themeLight: "Clair", themeDark: "Sombre",
     ariaViews: "Vues", ariaFamilies: "Familles", ariaTaste: "Goût", ariaSort: "Tri",
     ariaGender: "Genre", ariaStars: "Étoiles", ariaCountry: "Pays", ariaEra: "Époque", ariaGroup: "Groupe",
     igLink: "Copius sur Instagram",

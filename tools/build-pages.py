@@ -292,34 +292,10 @@ def head_extra(title, desc, url, lang):
         + THEME_COLOR)
 
 
-# Browser chrome follows the page. The same two values are --bg in the page.css
-# constant below; they are written here rather than read from it because this
-# pair is markup, not stylesheet.
-BG_LIGHT, BG_DARK = "#F7F6F1", "#14160F"
-
-# Applied before first paint, so a visitor who chose dark in the atlas never sees
-# a white flash here. The atlas stores the choice under this key.
-THEME_SCRIPT = ('<script>try{var t=localStorage.getItem("copius-theme"),r=document.documentElement;'
-                'if(t==="dark"||t==="light"){r.setAttribute("data-theme",t);'
-                # The two theme-color metas further down the head are matched
-                # against the browser's setting, not this one, so the chrome
-                # ends up the other colour from the page. A meta carrying no
-                # media always matches, and the browser takes the first match in
-                # tree order — the parser has not reached theirs yet, so this one
-                # is ahead of both.
-                'var m=document.createElement("meta");m.name="theme-color";'
-                'm.content=t==="dark"?"%s":"%s";document.head.appendChild(m);'
-                # The drawing is an <img>: a file loaded that way sees the browser's
-                # setting and can never see this one. When the two disagree it is
-                # the wrong colours, so js/page.js lays a themed copy over it and
-                # leaves it there.
-                'if(matchMedia("(prefers-color-scheme: dark)").matches!==(t==="dark"))'
-                'r.setAttribute("data-art","swap")}}'
-                'catch(e){}</script>') % (BG_DARK, BG_LIGHT)
-
-THEME_COLOR = ('<meta name="theme-color" media="(prefers-color-scheme: light)" content="%s">\n'
-               '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="%s">'
-               % (BG_LIGHT, BG_DARK))
+# Browser chrome follows the page: the same value is --bg in the page.css
+# constant below, written here rather than read from it because this is
+# markup, not stylesheet.
+THEME_COLOR = '<meta name="theme-color" content="#F7F6F1">'
 
 
 def e(s):
@@ -449,7 +425,6 @@ def page(i, lang, by_id, count, G):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
-%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">%(robots)s
@@ -504,7 +479,7 @@ def page(i, lang, by_id, count, G):
         "dishes": e(DISH_UI[lang]["idx"]),
         "here": here, "there": there,
         "xdef": "%s/i/%s/" % (SITE, i["id"]),
-        "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT, "ld": ld,
+        "up": up, "app": APP, "v": VERSION, "ld": ld,
         "svg": i["svg"], "marks": marks, "facts": facts,
         "body": body, "extra": extra,
         # A paid id opens the atlas on its locked panel.
@@ -564,13 +539,6 @@ ART_STYLE = (
     # thumbnailer among them — shows the first frame, and the first frame
     # of a draw-on is an empty circle. The atlas animates its own inline
     # copy instead, where the document is live.
-    # Dark flips the ink too, not only the fills. It used to change the four
-    # fills and leave stroke and dots at #585853 — the light-mode ink — which
-    # put a 2.17:1 line on a 2.17:1 plate. The same drawing gets 6.33:1 in
-    # light. --line is what the atlas has always used here: 7.60:1.
-    "@media(prefers-color-scheme:dark){"
-    ".s,.f1,.f2,.f3,.sf{stroke:#b8b5ae}"
-    ".f1,.f3,.sf{fill:#242422}.f2{fill:#2c2c29}.dot{fill:#b8b5ae}.bg{fill:#242619}}"
     "</style>")
 
 
@@ -727,7 +695,6 @@ def index_page(rows, lang):
 <html lang="%s">
 <head>
 <meta charset="utf-8">
-%s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — Copius</title>
 <meta name="description" content="%s">%s
@@ -743,7 +710,7 @@ def index_page(rows, lang):
 <footer>Copius — %s</footer>
 </body>
 </html>
-""" % (lang, THEME_SCRIPT, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
+""" % (lang, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
        robots, here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
        e(t["legend"]), "".join(blocks), e(t["tagline"]))
 
@@ -849,7 +816,6 @@ def dish_page(d, lang, by_id):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
-%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(name)s — %(chef)s · Copius</title>
 <meta name="description" content="%(desc)s">%(robots)s
@@ -887,7 +853,7 @@ def dish_page(d, lang, by_id):
 """ % {
         "og": head_extra(e("%s — %s" % (name, d["chef"]["name"])), e(desc), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "theme": THEME_SCRIPT, "robots": robots,
+        "robots": robots,
         "here": here, "there": there, "desc": e(desc),
         "name": e(name), "kind": e(kind),
         "year": (" · %s" % e(year)) if year != "\u2014" else "",
@@ -922,7 +888,6 @@ def dish_index(lang, by_id):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
-%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
 <meta name="description" content="%(lede)s">%(robots)s
@@ -952,7 +917,7 @@ def dish_index(lang, by_id):
 """ % {
         "og": head_extra(e(t["idx"]), e(lede), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "theme": THEME_SCRIPT, "robots": robots, "here": here, "there": there,
+        "robots": robots, "here": here, "there": there,
         "title": e(t["idx"]), "lede": e(lede), "groups": "\n  ".join(groups),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
@@ -1018,7 +983,6 @@ def season_page(month, lang, rows):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
-%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
 <meta name="description" content="%(lede)s">%(robots)s
@@ -1054,7 +1018,7 @@ def season_page(month, lang, rows):
 </html>
 """ % {
         "og": head_extra(e(t["title"] % name), e(t["lede"] % (len(now), name)), here, lang),
-        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
         "title": e(t["title"] % name), "h1": e(t["h1"] % name), "months": e(t["months"]),
         "lede": e(t["lede"] % (len(now), name)),
         "note": ("<p class=\"month-note\">%s</p>"
@@ -1089,7 +1053,6 @@ def season_index(lang, rows):
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
-%(theme)s
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
 <meta name="description" content="%(lede)s">%(robots)s
@@ -1118,7 +1081,7 @@ def season_index(lang, rows):
 </html>
 """ % {
         "og": head_extra(e(t["idxTitle"]), e(t["idxLede"]), here, lang),
-        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION, "theme": THEME_SCRIPT,
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
         "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "robots": robots,
         "here": here, "there": there, "months": months, "about": e(ui["about"]),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
@@ -1131,16 +1094,10 @@ CSS = """/* loi Evin health message: legible, not decorative. */
   font-size:12px;line-height:1.45}
 /* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
-:root{--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
+:root{color-scheme:only light;--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
   --ink-3:#6A6E5F;--plate:#F0F1E7;--line:#585853;
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-/* Dark twice: once for the system setting, once for the choice made in the atlas,
-   which wins either way. */
-:root[data-theme="dark"]{--bg:#14160F;--card:#1C1E16;--border:#2C2F24;
-  --ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14160F;--card:#1C1E16;
-  --border:#2C2F24;--ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 var(--sans);
   -webkit-font-smoothing:antialiased}

@@ -4,16 +4,10 @@
   font-size:12px;line-height:1.45}
 /* Copius — ingredient pages. Generated pages share this one file rather than
    inlining it 3,714 times. Same tokens as the atlas. */
-:root{--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
+:root{color-scheme:only light;--bg:#F7F6F1;--card:#FFFEFC;--border:#E5E7DA;--ink:#1E211A;--ink-2:#565A4C;
   --ink-3:#6A6E5F;--plate:#F0F1E7;--line:#585853;
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-/* Dark twice: once for the system setting, once for the choice made in the atlas,
-   which wins either way. */
-:root[data-theme="dark"]{--bg:#14160F;--card:#1C1E16;--border:#2C2F24;
-  --ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14160F;--card:#1C1E16;
-  --border:#2C2F24;--ink:#ECEBE2;--ink-2:#B4B7A6;--ink-3:#8E9280;--plate:#242619;--line:#b8b5ae}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 var(--sans);
   -webkit-font-smoothing:antialiased}
