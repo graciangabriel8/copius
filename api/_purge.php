@@ -21,8 +21,19 @@ if (cfg('payment_tables')) {
         'stripe_retries' => fn() => pending_stripe_calls($T0 + 60),
         'notices' => fn() => renewal_notices(),
         'outbox' => fn() => send_outbox(20, $T0 + 140),
-        /* Mails that gave up are reported here, through OVH's mail, not ours. */
-        'stuck_mail' => function () { if (stuck_mail() > 0) throw new RuntimeException(stuck_mail() . ' mails gave up: see the outbox table'); },
+        /* Mails that gave up are reported here, through OVH's mail, not ours,
+           once a day: OVH turns a task off after 10 failed runs in a row, which
+           would stop the deletions too. 23½ hours, so the run 24 hours later
+           reports again and the one an hour before never does, whatever
+           their seconds. */
+        'stuck_mail' => function () {
+            $n = stuck_mail();
+            if ($n === 0) return;
+            $k = rk('stuck_mail');
+            if (hits($k, 23 * 3600 + 1800) > 0) return;
+            hit($k);
+            throw new RuntimeException("$n mails gave up: see the outbox table");
+        },
     ];
     foreach ($steps as $name => $step) {
         try { $step(); } catch (Throwable $e) { log_php("$name: " . describe($e)); $failed[] = $name; }
