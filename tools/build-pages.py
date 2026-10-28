@@ -128,11 +128,12 @@ UI = {
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
            "index": "Tous les ingrédients", "about": "À propos",
-           "index_desc": "%s : les %s ingrédients.",
+           "index_desc": "%s\u00a0: les %s ingrédients.",
            "count": "%d ingrédients · %d familles",
-           "fixLbl": "Une erreur ici, ou un oubli ?",
+           "fixLbl": "Une erreur ici, ou un oubli\u202f?",
            "fixCta": "Dites-le nous",
            "fixSubj": "Correction — %s",
+           # plain spaces: this body is percent-encoded into every page, where a no-break space would move every lastmod
            "fixBody": "Page : %s\n\nCe qui ne va pas, ou ce qui manque :\n\n",
            "lockHead": "Version complète", "soon": "bientôt disponible",
            "lockGives": "La version complète donne %s.",
@@ -141,9 +142,9 @@ UI = {
            "sameFam": "Dans la même famille",
            "freePairs1": "Son accord est dans la version complète, bientôt disponible (%s).",
            "freePairsN": "Ses %d accords sont dans la version complète, bientôt disponible (%s).",
-           "neutral": "%s — %s. Saison en France : %s.",
+           "neutral": "%s — %s. Saison en France\u00a0: %s.",
            "kinMore": "+ %d dans la version complète, bientôt disponible.",
-           "legend": "Contour pointillé : version complète, bientôt disponible."},
+           "legend": "Contour pointillé\u00a0: version complète, bientôt disponible."},
 }
 
 # The full version's price, one home for both languages. A no-break space holds
@@ -170,7 +171,7 @@ LIVE_UI = {
            "freePairs1": "Son accord est dans la version complète (%s).",
            "freePairsN": "Ses %d accords sont dans la version complète (%s).",
            "kinMore": "+ %d dans la version complète.",
-           "legend": "Contour pointillé : version complète."},
+           "legend": "Contour pointillé\u00a0: version complète."},
 }
 LIVE_DISH_UI = {
     "en": {"idxLede": "%d plates that moved cooking, or that a cook is known for, and what is in each one. Why each combination works is in the full version."},
@@ -636,13 +637,14 @@ def related(i, G):
 
 def story_desc(story):
     """The description: the story whole when it fits in 155 characters, else cut
-    at a word and closed with an ellipsis. Only ASCII blanks collapse, so the
-    no-break spaces French typography needs survive."""
+    at a word (a no-break space counts as a break) and closed with an ellipsis.
+    Only ASCII blanks collapse, so the no-break spaces French typography needs
+    survive."""
     s = re.sub(r"[ \t\n]+", " ", story).strip()
     if len(s) <= 155:
         return s
-    cut = s[:155] if s[155] == " " else s[:155].rsplit(" ", 1)[0]
-    return cut.rstrip(" ,;:—–-") + "…"
+    cut = s[:155] if s[155].isspace() else re.sub(r"\s\S*$", "", s[:155])
+    return cut.rstrip(" \u00a0\u202f,;:—–-«") + "…"
 
 
 def family_mates(i, G):
@@ -679,11 +681,13 @@ def index_href(lang):
 # A <lastmod> is the day the page last changed, not the day it was built: every date read 2026-10-07 once, the build
 # date, and told a crawler nothing. tools/lastmod.json keeps, per sitemap URL, a fingerprint of the page as written
 # (its ?v= asset stamps left out, since every bump moves them, and so is the ingredient count in an entry page's
-# footer, which one new ingredient would move on all 3,776 of them) and the day that fingerprint was first seen. A
+# footer, which one new ingredient would move on all 3,776 of them; every kind of space reads as one, so a typography
+# pass that puts a no-break space before « : » moves no date either) and the day that fingerprint was first seen. A
 # rebuild that changes nothing changes no date; a page whose content moves takes today's. Run after every page is
 # written: it reads them back, the hand-made ones (the home page, about/, cgv/...) included.
 LASTMOD = ROOT / "tools" / "lastmod.json"
 STAMP = re.compile(r"\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n</footer>)")
+SPACES = re.compile("[\u00a0\u202f]|&nbsp;|&#8239;|&#160;")
 
 
 def lastmods(urls):
@@ -692,7 +696,7 @@ def lastmods(urls):
     seen = {}
     for u in urls:
         page = ROOT / u[len(SITE) + 1:] / "index.html"
-        h = hashlib.sha256(STAMP.sub("", page.read_text(encoding="utf-8")).encode()).hexdigest()[:16]
+        h = hashlib.sha256(SPACES.sub(" ", STAMP.sub("", page.read_text(encoding="utf-8"))).encode()).hexdigest()[:16]
         old = known.get(u)
         seen[u] = old if old and old[0] == h else [h, today]
     LASTMOD.write_text("{\n" + ",\n".join("%s: %s" % (json.dumps(u), json.dumps(seen[u])) for u in sorted(seen)) + "\n}\n")
@@ -767,7 +771,7 @@ SEASON_UI = {
     "fr": {"h1": "Produits de saison en %s",
            "title": "Produits de saison en %s — fruits, légumes, poissons et champignons",
            "lede": ("%d ingrédients à saison courte — trois mois ou moins — sont à leur "
-                    "meilleur en %s en France. Pas seulement des fruits et des légumes : "
+                    "meilleur en %s en France. Pas seulement des fruits et des légumes\u00a0: "
                     "les poissons, les champignons, le gibier et les fromages ont une "
                     "saison eux aussi."),
            "new": "Nouveau ce mois-ci", "last": "Dernier mois pour",
@@ -777,7 +781,7 @@ SEASON_UI = {
            "prev": "%s", "next": "%s", "months": "Tous les mois",
            "none": "Rien ne commence ni ne finit ce mois-ci.",
            "idxTitle": "Les produits de saison, mois par mois",
-           "idxLede": ("Douze pages, une par mois : ce qui a une saison courte — trois "
+           "idxLede": ("Douze pages, une par mois\u00a0: ce qui a une saison courte — trois "
                        "mois ou moins — et est à son meilleur à ce moment-là en France, "
                        "avec ce qui arrive et ce qui s’en va."),
            "idxCount": "%d ingrédients"},
