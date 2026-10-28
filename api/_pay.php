@@ -11,8 +11,8 @@ require_once __DIR__ . '/_paymail.php';
    amounts here are what the pages and the mails show, and refunds are computed
    from what was actually paid. */
 const PLANS = [
-    'monthly' => ['cents' => 490, 'months' => 1],
-    'yearly'  => ['cents' => 3900, 'months' => 12],
+    'monthly' => ['cents' => 590, 'months' => 1],
+    'yearly'  => ['cents' => 4900, 'months' => 12],
 ];
 const LIVE = ['active', 'trialing', 'past_due'];
 const RETRY_DAYS = 7;          // a failed renewal keeps access this long (CGV 4.4)

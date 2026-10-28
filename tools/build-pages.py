@@ -148,7 +148,7 @@ UI = {
 
 # The full version's price, one home for both languages. A no-break space holds
 # each amount to its € sign: a line must not end on a bare "3".
-PRICE = {"en": "€4.90 a month or €39 a year", "fr": "4,90\u00a0€ par mois ou 39\u00a0€ par an"}
+PRICE = {"en": "€5.90 a month or €49 a year", "fr": "5,90\u00a0€ par mois ou 49\u00a0€ par an"}
 
 
 def payments_live():

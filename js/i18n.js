@@ -218,7 +218,7 @@ window.I18N = {
     fullTrios: "{n} classic trios",
     fullChefs: "{n} chefs and {d} of their dishes",
     fullBases: "{n} bases",
-    fullPrice: "€4.90 a month or €39 a year",
+    fullPrice: "€5.90 a month or €49 a year",
     fullSoon: "Coming soon",
     fullFree: "The free version stays open to all: {n} ingredients and the techniques. A version for schools is to come.",
     fullMore: "What the full version holds",
@@ -226,8 +226,8 @@ window.I18N = {
 
     /* ---- the subscription tab ---- */
     subTitle: "All of Copius for {price} a month",
-    subPrice: "€4.90",
-    subTerms: "No minimum term, renewed each month until you cancel. Or €39 a year: a one-year commitment, renewed each year unless you refuse.",
+    subPrice: "€5.90",
+    subTerms: "No minimum term, renewed each month until you cancel. Or €49 a year: a one-year commitment, renewed each year unless you refuse.",
     subCta: "Subscribe",
     subFreeNow: "The one you are using",
     subFreeTitle: "The free version",
@@ -590,7 +590,7 @@ window.I18N = {
     fullTrios: "{n} trios classiques",
     fullChefs: "{n} cuisiniers et {d} de leurs plats",
     fullBases: "{n} bases",
-    fullPrice: "4,90 € par mois ou 39 € par an",
+    fullPrice: "5,90 € par mois ou 49 € par an",
     fullSoon: "Bientôt disponible",
     fullFree: "La version gratuite reste ouverte à tous : {n} ingrédients et les techniques. Une version pour les écoles est à venir.",
     fullMore: "Ce que contient la version complète",
@@ -598,8 +598,8 @@ window.I18N = {
 
     /* ---- the subscription tab ---- */
     subTitle: "Tout Copius pour {price} par mois",
-    subPrice: "4,90 €",
-    subTerms: "Sans durée minimale, renouvelé chaque mois jusqu’à résiliation. Ou 39 € par an : engagement d’un an, reconduit chaque année sauf refus de votre part.",
+    subPrice: "5,90 €",
+    subTerms: "Sans durée minimale, renouvelé chaque mois jusqu’à résiliation. Ou 49 € par an : engagement d’un an, reconduit chaque année sauf refus de votre part.",
     subCta: "S’abonner",
     subFreeNow: "Celle que vous utilisez",
     subFreeTitle: "La version gratuite",
