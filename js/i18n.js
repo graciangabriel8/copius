@@ -34,6 +34,7 @@ window.I18N = {
     tabTech: "Techniques",
     tabBases: "Bases",
     tabLab: "The Lab",
+    tabSub: "Subscription",
     techTitle: "Techniques",
     techHint: "The gestures a kitchen is built on — how each one is done, and how it fails.",
     techSearchPh: "Search a technique…",
@@ -205,8 +206,6 @@ window.I18N = {
     emptyFree: "Nothing in the free version matches your search.",
 
     /* ---- the full version, locked ---- */
-    fullBtn: "Full version · coming soon",
-    fullBtnLive: "Full version",
     fullTitle: "The full version",
     fullIs: "{name} is in the full version.",
     fullPage: "Its page: drawing, family, season, price, what it is and the kitchen note",
@@ -224,6 +223,15 @@ window.I18N = {
     fullFree: "The free version stays open to all: {n} ingredients and the techniques. A version for schools is to come.",
     fullMore: "What the full version holds",
     lockedTag: "full version",
+
+    /* ---- the subscription tab ---- */
+    subTitle: "All of Copius for €4.90 a month",
+    subTerms: "No minimum term, renewed each month until you cancel. Or €39 a year: a one-year commitment, renewed each year unless you refuse.",
+    subCta: "Subscribe",
+    subFreeNow: "The one you are using",
+    subFreeTitle: "The free version",
+    subFreeHolds: "{n} ingredients and the techniques, with no account.",
+    subSchoolsTitle: "The version for schools",
 
     /* ---- signing in: the form, the notices, the account, the link page ---- */
     signinHead: "Already have access? Get a sign-in link.",
@@ -395,6 +403,7 @@ window.I18N = {
     tabTech: "Techniques",
     tabBases: "Bases",
     tabLab: "Le Labo",
+    tabSub: "Abonnement",
     techTitle: "Techniques",
     techHint: "Les gestes sur lesquels une cuisine repose — comment on les fait, et comment on les rate.",
     techSearchPh: "Chercher une technique…",
@@ -566,8 +575,6 @@ window.I18N = {
     emptyFree: "Rien dans la version gratuite ne correspond à votre recherche.",
 
     /* ---- la version complète, verrouillée ---- */
-    fullBtn: "Version complète · bientôt disponible",
-    fullBtnLive: "Version complète",
     fullTitle: "La version complète",
     fullIs: "{name} fait partie de la version complète.",
     fullPage: "Sa page : dessin, famille, saison, prix, ce que c’est et la note de cuisine",
@@ -579,12 +586,21 @@ window.I18N = {
     fullTrios: "{n} trios classiques",
     fullChefs: "{n} cuisiniers et {d} de leurs plats",
     fullBases: "{n} bases",
-    fullPrice: "4,90 € par mois ou 39 € par an",
+    fullPrice: "4,90 € par mois ou 39 € par an",
     fullSoon: "Bientôt disponible",
     fullOrder: "Commander",
     fullFree: "La version gratuite reste ouverte à tous : {n} ingrédients et les techniques. Une version pour les écoles est à venir.",
     fullMore: "Ce que contient la version complète",
     lockedTag: "version complète",
+
+    /* ---- the subscription tab ---- */
+    subTitle: "Tout Copius pour 4,90 € par mois",
+    subTerms: "Sans durée minimale, renouvelé chaque mois jusqu’à résiliation. Ou 39 € par an : engagement d’un an, reconduit chaque année sauf refus de votre part.",
+    subCta: "S’abonner",
+    subFreeNow: "Celle que vous utilisez",
+    subFreeTitle: "La version gratuite",
+    subFreeHolds: "{n} ingrédients et les techniques, sans compte.",
+    subSchoolsTitle: "La version pour les écoles",
 
     /* ---- la connexion : le formulaire, les avis, le compte, la page du lien ---- */
     signinHead: "Déjà un accès ? Recevez un lien de connexion.",

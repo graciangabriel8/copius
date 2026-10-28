@@ -548,13 +548,6 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .cats::-webkit-scrollbar{display:none}
   .cats .chip{flex:none;scroll-snap-align:start;padding:11px 15px;font-size:14px}
 
-  /* Four tabs no longer fit a single pill at 375px, so "Les chefs" wrapped to
-     two lines and threw the row's baseline out. Scroll them like the families. */
-  .view-tabs{display:flex;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
-             scrollbar-width:none;-ms-overflow-style:none;border-radius:22px}
-  .view-tabs::-webkit-scrollbar{display:none}
-  .view-tab{flex:none;white-space:nowrap;padding:11px 18px}
-
   /* Apple's 44px minimum touch target. */
   .lang-toggle button{padding:12px 16px}
   .create-btn{padding:11px 18px}
@@ -676,12 +669,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 
 
 /* ---------- view tabs ---------- */
-/* The tabs and the version switch share a row: tabs left, switch right. It
-   wraps, so a narrow screen puts the switch on its own line rather than
-   squeezing the tabs. The margin moved to the row. */
-.view-row{display:flex;align-items:center;justify-content:space-between;
-          gap:12px 16px;flex-wrap:wrap;margin-bottom:22px}
-.view-tabs{display:inline-flex;gap:3px;border:1px solid var(--border-strong);border-radius:999px;
+.view-tabs{display:flex;width:max-content;max-width:100%;gap:3px;margin-bottom:22px;
+           border:1px solid var(--border-strong);border-radius:999px;
            padding:3px;background:var(--card);position:relative}
 .view-tab{border:0;background:transparent;padding:9px 20px;border-radius:999px;
           color:var(--ink-2);font-size:13.5px;font-weight:600;cursor:pointer;
@@ -689,6 +678,18 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .view-tab:hover{color:var(--ink)}
 /* the pill carries the fill, so the tab only changes its ink */
 .view-tab.active{background:transparent;color:var(--on-accent)}
+/* The offer's tab keeps the accent ink, hovered too, so it reads as the way in. */
+.view-tab.tab-sub:not(.active){color:var(--accent)}
+/* Four tabs no longer fit a single pill at 375px, so "Les chefs" wrapped to
+   two lines and threw the row's baseline out. Scroll them like the families.
+   With the offer's tab, six need ~730px of window, hence 760. After the rules
+   above, so its width wins over theirs. */
+@media (max-width:760px){
+  .view-tabs{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+             scrollbar-width:none;-ms-overflow-style:none}
+  .view-tabs::-webkit-scrollbar{display:none}
+  .view-tab{flex:none;white-space:nowrap}
+}
 
 /* ---------- chefs timeline ---------- */
 .chefs-head{margin-bottom:24px}
@@ -891,14 +892,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .lock-ico{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;
   stroke-linecap:round;stroke-linejoin:round;vertical-align:-1px;margin:0 0 0 6px}
 .check[hidden],.daily[hidden]{display:none}
-/* Where the free/full switch was: a pill that opens the panel. */
-.full-btn{display:inline-flex;align-items:center;gap:0;flex:0 0 auto;min-height:40px;
-  padding:8px 14px;border:1px dashed var(--border-strong);border-radius:999px;
-  background:var(--card);color:var(--ink-2);font-size:13px;font-weight:600;white-space:nowrap}
-.full-btn[hidden]{display:none}
-.full-btn .lock-ico{margin:0 7px 0 0}
-.full-btn:hover{border-color:var(--ink-3);color:var(--ink)}
-.full-btn:focus-visible,.locked-row:focus-visible,.locked-line:focus-visible,
+.locked-row:focus-visible,.locked-line:focus-visible,
 .kin-locked:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
 .view-tab .lock-ico{opacity:.8}
 /* A locked tab's panel. */
@@ -980,9 +974,38 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 button.tier-state{color:inherit;text-align:left;font-size:inherit}
 @media (max-width:720px){
   .signin-row input{font-size:16px}
-  .full-btn{min-height:44px}
   .locked-panel{padding:22px 20px}
   .locked-rows{grid-template-columns:1fr}
+}
+
+/* ---------- the subscription tab ----------
+   The full version leads, the free one in use and the schools' one beside it.
+   The one place the full version is sold, so its order link alone takes the
+   accent fill. */
+.sub-panel{max-width:920px}
+.sub-panel h2{margin:0 0 6px;font-size:30px;line-height:1.2;text-wrap:balance}
+.sub-terms{margin:0 0 22px;color:var(--ink-2);font-size:15px;line-height:1.6}
+.sub-plans{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;align-items:start}
+.sub-side{display:grid;gap:14px}
+.sub-plan{background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:22px 24px;box-shadow:var(--shadow)}
+.sub-plan h3{margin:0 0 12px;font-size:20px}
+.sub-full{border-color:var(--accent)}
+.sub-now{display:block;width:fit-content;margin:0 0 10px;padding:2px 10px;
+  border:1px solid var(--accent-soft-bd);border-radius:999px;background:var(--accent-soft);
+  color:var(--accent-soft-ink);font-size:12px;font-weight:600}
+.sub-holds{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.55}
+.sub-soon{margin:14px 0 0}
+.sub-cta{display:flex;align-items:center;justify-content:center;min-height:48px;margin:20px 0 0;
+  padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--on-accent);
+  font-size:15px;font-weight:600;text-decoration:none}
+.sub-cta:hover{opacity:.9}
+.sub-cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sub-panel .signin{max-width:560px}
+@media (max-width:720px){
+  .sub-plans{grid-template-columns:1fr}
+  .sub-panel h2{font-size:25px}
+  .sub-plan{padding:20px}
 }
 
 /* ---------- the plate builder ---------- */

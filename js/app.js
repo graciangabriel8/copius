@@ -492,6 +492,8 @@
     el("createBtn").textContent = "+ " + t.create;
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabTech").textContent = t.tabTech;
+    el("tabSub").textContent = t.tabSub;
+    el("tabSub").hidden = !LOCKED;
     /* A paid tab carries a lock, and says so to assistive tech. */
     [["tabChefs", t.tabChefs], ["tabBases", t.tabBases], ["tabLab", t.tabLab]].forEach(function (p) {
       var b = el(p[0]);
@@ -510,8 +512,6 @@
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
-    el("fullBtn").hidden = !LOCKED;
-    el("fullBtn").innerHTML = LOCK_ICON + esc(PAYMENTS_LIVE ? t.fullBtnLive : t.fullBtn);
     paintSeg("langToggle");
     /* An ended session says "sign in again", so its line opens the form. */
     var note = SESSION_NOTE[SESSION];
@@ -1035,14 +1035,16 @@
       '<p class="locked-body">' + esc(body) + "</p>" +
       '<p class="locked-price">' + esc(t.fullPrice) + " · " +
         (PAYMENTS_LIVE ? '<a href="commande/">' + esc(t.fullOrder) + "</a>" : esc(t.fullSoon)) + "</p>" +
-      '<button type="button" class="m-lab-btn locked-open" data-full>' + esc(t.fullMore) + "</button>";
+      '<button type="button" class="m-lab-btn locked-open" data-sub>' + esc(t.fullMore) + "</button>";
   }
 
   function setView(v) {
+    /* The offer is for the free version; loaded in full, the atlas instead. */
+    if (v === "sub" && !LOCKED) v = "atlas";
     state.view = v;
     var shut = viewLocked(v);
-    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView" };
-    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab" };
+    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView", sub: "subView" };
+    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab", sub: "tabSub" };
     Object.keys(views).forEach(function (k) {
       el(views[k]).hidden = shut || v !== k;
       el(tabs[k]).classList.toggle("active", v === k);
@@ -1057,6 +1059,7 @@
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
     if (v === "bases") renderBases();
+    if (v === "sub") renderSub();
   }
 
   /* ---------- techniques ---------- */
@@ -1317,7 +1320,17 @@
       head = '<div class="bm-head"><h2 id="modalTitle">' + esc(t.fullTitle) + "</h2></div>" +
         "<h3>" + esc(t.fullHolds) + "</h3>";
     }
-    var rows = [
+    el("modalBody").innerHTML = head + fullRows(t) +
+      '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
+        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.fullOrder) + "</a>"
+          : '<span class="full-soon">' + esc(t.fullSoon) + "</span>") + "</p>" +
+      '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
+  }
+
+  /* The list of what the full version holds, for the dialog and the tab. */
+  function fullRows(t) {
+    var c = LK.counts;
+    return '<ul class="full-list">' + [
       t.fullIngredients.replace("{p}", fmt(c.paid)).replace("{t}", fmt(c.ingredients)),
       t.fullPairings.replace("{n}", fmt(c.pairings)),
       t.fullTrees.replace("{n}", fmt(c.trees)),
@@ -1325,34 +1338,58 @@
       t.fullTrios.replace("{n}", fmt(c.trios)),
       t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
       t.fullBases.replace("{n}", fmt(c.bases))
-    ];
-    el("modalBody").innerHTML = head +
-      '<ul class="full-list">' + rows.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>" +
-      '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
-        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.fullOrder) + "</a>"
-          : '<span class="full-soon">' + esc(t.fullSoon) + "</span>") + "</p>" +
-      '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
+    ].map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
+  }
+
+  /* The subscription tab: the full version with its order link, then the free
+     one in use and the one for schools, then the sign-in for an access
+     already bought. Drawn again only for a new language or sign-in, so any
+     other redraw (a photo loaded, the tab opened again) keeps an address or a
+     code being typed. */
+  var subDrawn = "";
+  function renderSub() {
+    var t = T(), key = state.lang + hasMark();
+    if (key === subDrawn) return;
+    subDrawn = key;
+    el("subPanel").innerHTML =
+      "<h2>" + esc(t.subTitle) + "</h2>" +
+      '<p class="sub-terms">' + esc(t.subTerms) + "</p>" +
+      '<div class="sub-plans">' +
+        '<article class="sub-plan sub-full"><h3>' + esc(t.fullTitle) + "</h3>" + fullRows(t) +
+          (PAYMENTS_LIVE ? '<a class="sub-cta" href="commande/">' + esc(t.subCta) + "</a>"
+            : '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p>") + "</article>" +
+        '<div class="sub-side">' +
+          '<article class="sub-plan"><p class="sub-now">' + esc(t.subFreeNow) + "</p>" +
+            "<h3>" + esc(t.subFreeTitle) + "</h3>" +
+            '<p class="sub-holds">' + esc(t.subFreeHolds.replace("{n}", fmt(LK.counts.free))) + "</p></article>" +
+          '<article class="sub-plan"><h3>' + esc(t.subSchoolsTitle) + "</h3>" +
+            '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p></article>" +
+        "</div>" +
+      "</div>" + signinBlock(t);
   }
 
   /* One field, one button, one line on what the address is for, and one
      message after the submit, the same whatever the address: the page never
-     learns whether it has access. Signed in already, the account instead. */
+     learns whether it has access. Signed in already, the account instead.
+     The dialog and the tab can both hold one, so each render numbers its ids. */
+  var signinSeq = 0;
   function signinBlock(t) {
     if (hasMark()) {
       return '<p class="signin-in"><button type="button" class="linkish" data-account>' +
         esc(t.accountLink) + "</button></p>";
     }
+    var n = ++signinSeq;
     return '<form class="signin" data-signin>' +
-      '<p class="signin-head" id="signinHead">' + esc(t.signinHead) + "</p>" +
+      '<p class="signin-head" id="signinHead' + n + '">' + esc(t.signinHead) + "</p>" +
       '<div class="signin-row"><input type="email" name="email" required autocomplete="email" ' +
-        'spellcheck="false" aria-label="' + esc(t.signinPlaceholder) + '" aria-describedby="signinHead" ' +
+        'spellcheck="false" aria-label="' + esc(t.signinPlaceholder) + '" aria-describedby="signinHead' + n + '" ' +
         'placeholder="' + esc(t.signinPlaceholder) + '">' +
         '<button type="submit" class="create-btn">' + esc(t.signinBtn) + "</button></div>" +
       /* The code the mail also carries, for the app on a home screen: a link in a
          mail opens in a browser, whose sign-in the app does not share. */
-      '<p class="signin-head signin-code" id="codeHead">' + esc(t.codeHead) + "</p>" +
+      '<p class="signin-head signin-code" id="codeHead' + n + '">' + esc(t.codeHead) + "</p>" +
       '<div class="signin-row"><input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" ' +
-        'maxlength="9" spellcheck="false" aria-describedby="codeHead" aria-label="' + esc(t.codeHead) + '" ' +
+        'maxlength="9" spellcheck="false" aria-describedby="codeHead' + n + '" aria-label="' + esc(t.codeHead) + '" ' +
         'placeholder="' + esc(t.codePlaceholder) + '">' +
         '<button type="button" class="create-btn" data-code>' + esc(t.codeBtn) + "</button></div>" +
       '<p class="signin-why">' + esc(t.signinWhy) + ' <a href="confidentialite/">' + esc(t.privacyLink) + "</a></p>" +
@@ -2559,7 +2596,7 @@
     /* every non-atlas view has to re-render too, or a language switch leaves it
        in the old language — keyed off state.view so a new view cannot be missed */
     if (viewLocked(state.view)) { renderLockedView(state.view); return; }
-    var render = { chefs: renderChefs, tech: renderTech, bases: renderBases };
+    var render = { chefs: renderChefs, tech: renderTech, bases: renderBases, sub: renderSub };
     if (render[state.view]) render[state.view]();
   }
 
@@ -2774,6 +2811,10 @@
         el("plateSearch")).focus();
       return;
     }
+    /* A locked view's button opens the subscription tab and moves focus to
+       its tab, since the button itself is gone with the panel. */
+    var sb = e.target.closest("[data-sub]");
+    if (sb) { setView("sub"); el("tabSub").focus(); return; }
     /* A paid name opens the full-version panel naming it; anything else marked
        data-full opens it plain. Inside the dialog it stacks, so ← comes back. */
     var ac = e.target.closest("[data-account]");
@@ -2900,6 +2941,7 @@
   el("tabTech").addEventListener("click", function () { setView("tech"); });
   el("tabBases").addEventListener("click", function () { setView("bases"); });
   el("tabLab").addEventListener("click", function () { setView("lab"); });
+  el("tabSub").addEventListener("click", function () { setView("sub"); });
   el("techSearch").addEventListener("input", function (e) { state.techQ = e.target.value; renderTech(); });
   el("techGroup").addEventListener("change", function (e) { state.techGroup = e.target.value; renderTech(); });
   el("baseSearch").addEventListener("input", function (e) { state.baseQ = e.target.value; renderBases(); });
@@ -3088,4 +3130,5 @@
   try { hash = decodeURIComponent(location.hash.replace("#", "")); } catch (e) {}
   if (hash && byId[hash]) { setView("atlas"); openModal(hash); }
   else if (hash && LOCKED && PAID[hash]) { setView("atlas"); openItem("full", hash); }
+  else if (hash === "abonnement" || hash === "subscription") setView("sub");
 })();
