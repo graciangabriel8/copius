@@ -6,7 +6,8 @@ external assets and no network. Usage:
     python3 tools/make-card.py [YYYY-MM-DD] [out.svg]
 Defaults to today and social/<id>.svg. The day -> ingredient map is
 social/schedule.json (tools/build-schedule.py), fixed in advance so that a data
-edit never changes which card a date needs.
+edit changes which card a date needs only by removing an id scheduled on or
+before that date.
 """
 import re
 import sys, json, pathlib, datetime, html
@@ -79,28 +80,23 @@ def schedule():
     return datetime.date.fromisoformat(s["start"]), s["days"]
 
 
-def resolve(rows, days, idx):
-    """The entry scheduled at idx, or the first later one still in the data:
-    an entry merged away leaves its id in the schedule rather than shifting
-    every later day. The warning goes to stderr so `$(--today-id)` stays clean."""
-    byid = {r["id"]: r for r in rows}
-    for j in range(idx, len(days)):
-        if days[j] in byid:
-            if j != idx:
-                print("::warning::%s is no longer in the data — using %s instead"
-                      % (days[idx], days[j]), file=sys.stderr)
-            return byid[days[j]]
-    sys.exit("no scheduled id from %s on exists in the data — " % days[idx] + EXHAUSTED)
-
-
 def pick(rows, d):
+    """The entry the schedule names for d, and no other. api/card.php serves
+    only the schedule's own id for a day, so a stand-in picked here was refused
+    there: an entry merged away once made this fall forward to a later id, and
+    the day's post died on card.php's 404. tools/build-schedule.py drops an id
+    that has left the data, and tools/check.py fails until it has."""
     start, days = schedule()
     idx = (d - start).days
     if idx < 0:
         sys.exit("%s is before the schedule starts (%s)" % (d, start))
     if idx >= len(days):
         sys.exit(EXHAUSTED)
-    return resolve(rows, days, idx)
+    i = next((r for r in rows if r["id"] == days[idx]), None)
+    if i is None:
+        sys.exit("%s, scheduled for %s, is no longer in the data — run:"
+                 " python3 tools/build-schedule.py && commit" % (days[idx], d))
+    return i
 
 def wrap(s, width):
     out, line = [], ""
@@ -347,12 +343,14 @@ if __name__ == "__main__":
         start, days = schedule()
         first = max(0, (datetime.date.today() - start).days)
         last = min(len(days), first + int(sys.argv[2])) if len(sys.argv) > 2 else len(days)
-        want, seen = [], set()
-        for k in range(first, last):
-            i = resolve(rows, days, k)
-            if i["id"] not in seen:
-                seen.add(i["id"]); want.append(i)
-        n = build_all(want, ROOT / "social")
+        # An id that has left the data has no card to build; the rest still
+        # get theirs, since build-social.sh has already emptied social/.
+        byid = {r["id"]: r for r in rows}
+        gone = [x for x in days[first:last] if x not in byid]
+        if gone:
+            print("::warning::no card for %s, no longer in the data — run: python3 tools/build-schedule.py"
+                  % " ".join(gone), file=sys.stderr)
+        n = build_all([byid[x] for x in days[first:last] if x in byid], ROOT / "social")
         print(json.dumps({"built": n, "days": last - first, "dir": "social/"}))
         sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "--all":

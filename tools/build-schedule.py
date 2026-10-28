@@ -5,10 +5,14 @@
 
 The day -> ingredient map used to be a stride over the ingredient list, so any
 edit to the data reshuffled every day and the pre-built cards stopped matching
-the date. This file pins the order instead. Re-running never changes a day that
-is already scheduled: ids new to the data are appended and nothing is dropped —
-an id that has since left the data stays in the file and make-card.py falls
-forward past it.
+the date. This file pins the order instead. Re-running appends the ids new to
+the data and, without --reorder-pending, moves no day already scheduled but
+this: from today on, an id that has left the data is dropped and the days after
+it move up, since the poster and api/card.php both take the schedule's own id
+for a day and an id with no data has no card that can go out. A day with k ids
+dropped on or before it takes the id and card that were k days later, so the
+last days of the built window take ids with no card yet; the family walk below
+swaps a few more.
 
 Order is by how central an ingredient is: the number of OTHER entries that name
 it as a pairing. Butter is named by 477, garlic by 413; 1 140 entries are named
@@ -21,11 +25,12 @@ entries keep their day — later.
                                                      that has not happened yet
 """
 import datetime as _dt
-import importlib.util, json, pathlib, re, sys
+import importlib.util, json, pathlib, re, sys, zoneinfo
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "social" / "schedule.json"
 START = "2026-09-09"
+PARIS = zoneinfo.ZoneInfo("Europe/Paris")   # api/card.php counts the days in Paris
 
 
 def inbound(root):
@@ -50,30 +55,41 @@ def main():
     cat = {r["id"]: r["cat"] for r in rows}
     sched = (json.loads(OUT.read_text()) if OUT.exists()
              else {"start": START, "days": []})
-    have = set(sched["days"])
     rank = inbound(ROOT)
     def key(i):
         return (-rank.get(i, 0), i)
 
-    reorder = "--reorder-pending" in sys.argv
-    if reorder:
+    # From today on, an id that has left the data is dropped and the days after
+    # it move up. Today too, though its card may have gone out at 17:00:
+    # if it has not, the day still needs a card, and that id can no longer
+    # give one; if it has, the id moved into today is never posted. Days
+    # before today keep what went out on them. The family walk below restarts
+    # at the first gap.
+    today = (_dt.datetime.now(PARIS).date() - _dt.date.fromisoformat(sched["start"])).days
+    old, t = sched["days"], max(0, min(today, len(sched["days"])))
+    dropped = [i for i in old[t:] if i not in cat]
+    gap = old.index(dropped[0], t) if dropped else len(old)
+    days = old[:t] + [i for i in old[t:] if i in cat]
+    if dropped:
+        print("dropped %d id(s) no longer in the data: %s" % (len(dropped), " ".join(dropped)))
+        if gap == today:
+            print("today's own id was dropped: if today's card already went out, the id moved into today is never posted")
+
+    if "--reorder-pending" in sys.argv:
         # Days already past keep whatever went out on them; everything from
-        # today forward is re-ranked. Nothing is dropped, only moved.
+        # today forward is re-ranked. Nothing else is dropped, only moved.
         # +1: today's card goes out at 17:00 and may already have. Today is
         # spent, so the re-rank starts at tomorrow.
-        gone = (_dt.date.today() - _dt.date.fromisoformat(sched["start"])).days + 1
-        gone = max(0, min(gone, len(sched["days"])))
-        pending = sched["days"][gone:]
-        sched["days"] = sched["days"][:gone]
-        have = set(sched["days"])
-        new = sorted(set(pending) | {i for i in cat if i not in have} - have, key=key)
-        print("re-ranking %d pending days; %d already gone are untouched" % (len(pending), gone))
-    else:
-        new = sorted((i for i in cat if i not in have), key=key)
+        gone = max(0, min(today + 1, len(days)))
+        print("re-ranking %d pending days; %d already gone are untouched" % (len(days) - gone, gone))
+        days = days[:gone]
+    added = sorted(set(cat) - set(days), key=key)
+    gap = min(gap, len(days))
+    new, days = days[gap:] + added, days[:gap]
     # Two consecutive days never share a family: when they would, swap the
     # offender with the first later id of another family. The walk is forward,
     # so the id swapped back is checked again when its turn comes.
-    prev = sched["days"][-1] if sched["days"] else None
+    prev = days[-1] if days else None
     for k in range(len(new)):
         if prev is not None and cat.get(prev) == cat[new[k]]:
             for j in range(k + 1, len(new)):
@@ -81,10 +97,15 @@ def main():
                     new[k], new[j] = new[j], new[k]
                     break
         prev = new[k]
-    sched["days"].extend(new)
+    sched["days"] = days + new
+    if dropped:   # slices: a day past the new end has changed too
+        moved = [k for k in range(t, len(old)) if old[k:k + 1] != sched["days"][k:k + 1]]
+        print("%d day(s) change, the first on %s: push it now, as the job reads the schedule from main,"
+              " api/card.php reads it on copius.fr, and a changed day's post fails until copius.fr has it too"
+              % (len(moved), _dt.date.fromisoformat(sched["start"]) + _dt.timedelta(moved[0])))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(sched, indent=0, ensure_ascii=False) + "\n")
-    print("appended %d, first 12: %s" % (len(new), " ".join(new[:12]) or "-"))
+    print("appended %d, first 12: %s" % (len(added), " ".join(added[:12]) or "-"))
     print("schedule: %s + %d days (ends %s)" % (
         sched["start"], len(sched["days"]),
         make_card.datetime.date.fromisoformat(sched["start"])

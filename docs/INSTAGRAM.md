@@ -8,17 +8,19 @@ no server.
 1. `social/schedule.json` says which ingredient goes out on which day: a start
    date and one id per day, written once by `tools/build-schedule.py` as a
    seeded shuffle of every ingredient (no two consecutive days from the same
-   family). Re-running it only appends ingredients that are new to the data;
-   a day already scheduled never moves.
+   family). Re-running it appends ingredients that are new to the data; a day
+   already scheduled changes ingredient only when its own or an earlier one
+   leaves the data (below), or with `--reorder-pending`.
 2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
    JPEGs, two per day: `<id>.jpg` is the illustrated card, `<id>.2.jpg` sets the
    handling note as type. Run it on the Mac — the rasteriser is `qlmanage` — and
    commit `social/`. A tip never gets cut: the type steps down a size instead.
-3. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
+3. copius.fr serves those JPEGs at public HTTPS URLs — which is exactly what
    Instagram's API requires, since it fetches the image rather than accepting an
-   upload.
-4. `.github/workflows/daily-instagram.yml` runs at 19:07 Paris, reads today's
-   id from the schedule, and publishes both slides as one carousel: a container
+   upload. `api/card.php` answers for them and serves each card only on its day
+   and the next, in Paris time.
+4. At 17:00 Paris, `.github/workflows/daily-instagram.yml` reads today's id
+   from the schedule and publishes both slides as one carousel: a container
    per slide, then a parent holding their ids. The French caption is produced
    there and then by `make-card.py --caption`, which needs nothing but Python —
    so an edit to the caption reaches the next post without a regeneration step
@@ -85,10 +87,19 @@ about two months later.
 ## When the cards run out
 
 Data edits never invalidate a card: the schedule pins each date to an id, and
-an entry merged away is skipped forward to the next scheduled one that still
-exists (the job logs a warning naming both). The only maintenance is extending
-the window before the last built card is posted — the job warns 40 days out,
-and fails with this exact command once the schedule itself is exhausted:
+the cards are named by id. An entry merged away has to leave the schedule too,
+because `api/card.php` serves only the id the schedule names for the day, and
+the job refuses such a day rather than post another day's card:
+`tools/check.py` fails until `python3 tools/build-schedule.py` has dropped it
+from today on. Every later day then moves up one (a few may swap to keep
+families apart), so push the result at once: the job reads the schedule from
+`main`, `api/card.php` reads it on copius.fr, and a moved day's post fails
+until copius.fr has it too. If the entry was today's and today's card already went
+out, the ingredient moved into today is never posted.
+
+The only maintenance is extending the window before the last built card is
+posted — the job warns 40 days out, and fails with this exact command once the
+schedule itself is exhausted:
 
 ```sh
 python3 tools/build-schedule.py     # appends any ingredient not yet scheduled
