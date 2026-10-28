@@ -10,7 +10,7 @@ no server.
    seeded shuffle of every ingredient (no two consecutive days from the same
    family). Re-running it appends ingredients that are new to the data; a day
    already scheduled moves only when an ingredient before it leaves the data
-   (below).
+   (below), or with `--reorder-pending`.
 2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
    JPEGs, two per day: `<id>.jpg` is the illustrated card, `<id>.2.jpg` sets the
    handling note as type. Run it on the Mac — the rasteriser is `qlmanage` — and
@@ -87,12 +87,18 @@ about two months later.
 
 Data edits never invalidate a card: the schedule pins each date to an id, and
 the cards are named by id. An entry merged away has to leave the schedule too,
-because `api/card.php` serves only the id the schedule names for the day:
+because `api/card.php` serves only the id the schedule names for the day, and
+the job refuses such a day rather than post another day's card:
 `tools/check.py` fails until `python3 tools/build-schedule.py` has dropped it
-from today on, which moves every later day up one, and the job refuses such a
-day rather than post another day's card. The only maintenance is extending
-the window before the last built card is posted — the job warns 40 days out,
-and fails with this exact command once the schedule itself is exhausted:
+from today on. Every later day then moves up one (a few may swap to keep
+families apart), so push the result at once: the job reads the schedule from
+`main`, `api/card.php` reads it on copius.fr, and a moved day's post fails
+until copius.fr has it too. If the entry was today's and today's card already went
+out, the ingredient moved into today is never posted.
+
+The only maintenance is extending the window before the last built card is
+posted — the job warns 40 days out, and fails with this exact command once the
+schedule itself is exhausted:
 
 ```sh
 python3 tools/build-schedule.py     # appends any ingredient not yet scheduled

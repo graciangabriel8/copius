@@ -7,7 +7,7 @@ external assets and no network. Usage:
 Defaults to today and social/<id>.svg. The day -> ingredient map is
 social/schedule.json (tools/build-schedule.py), fixed in advance so that a data
 edit changes which card a date needs only by removing an id scheduled before
-it, and the date then needs a card already built.
+it.
 """
 import re
 import sys, json, pathlib, datetime, html
