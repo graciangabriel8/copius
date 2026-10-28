@@ -29,18 +29,35 @@ if not (ing and tech and chefs):
     sys.exit("counted zero of something — has a data file been renamed?")
 line = "%d INGREDIENTS · %d TECHNIQUES · %d CHEFS" % (len(ing), tech, chefs)
 
-# The landing page shows the same numbers, plus the bases. They are rewritten in
-# place here so they cannot drift again: the page said 59 bases when the file
-# held 45, and 81 chefs when there were 68.
+# The landing page shows the same numbers, plus the bases, and sets each version
+# against the other. They are rewritten in place here so they cannot drift
+# again: the page said 59 bases when the file held 45, and 81 chefs when there
+# were 68. The free version's numbers come from js/free.js, which build-free.js
+# has just written (tools/bump.sh runs it first).
 bases = len(re.findall(r'\{id:"', (ROOT / "js" / "data-bases.js").read_text()))
+lk = re.search(r"^window\.COPIUS_LOCKED = (\{.*\});$", (ROOT / "js" / "free.js").read_text(encoding="utf-8"), re.M)
+if not lk:
+    sys.exit("js/free.js: the COPIUS_LOCKED line was not found")
+lk = json.loads(lk.group(1))
+strawberry = lk["pairs"].get("strawberry")
+if not strawberry:
+    sys.exit("js/free.js: no pairing count for strawberry, the comparison's example in index.html")
+# The page sells the full version (its doors and #versions link to commande/),
+# so it may only be built while the one switch, PAYMENTS_LIVE in js/app.js, is on.
+if not re.search(r"^\s*var PAYMENTS_LIVE = true;", (ROOT / "js" / "app.js").read_text(encoding="utf-8"), re.M):
+    sys.exit("js/app.js: PAYMENTS_LIVE is off, but index.html sells the full version; take its order links out first")
 def fmt(n):
     return "{:,}".format(n).replace(",", "\u202f")   # 1 839, French style, unbreakable
 idx = ROOT / "index.html"
 html = idx.read_text(encoding="utf-8")
-for key, n in (("ingredients", len(ing)), ("techniques", tech), ("bases", bases), ("chefs", chefs)):
+# "strawberry": the pairings of the comparison's example.
+for key, n in (("ingredients", len(ing)), ("techniques", tech), ("bases", bases), ("chefs", chefs),
+               ("free", lk["counts"]["free"]), ("pairings", lk["counts"]["pairings"]),
+               ("dishes", lk["counts"]["dishes"]), ("trios", lk["counts"]["trios"]),
+               ("strawberry", strawberry)):
     html, k = re.subn(r'(data-count="%s">)[^<]*' % key, lambda m: m.group(1) + fmt(n), html)
-    if k != 1:
-        sys.exit("index.html: expected one data-count=%s, found %d" % (key, k))
+    if not k:
+        sys.exit("index.html: no data-count=%s" % key)
 html, k = re.subn(r'content="[^"]*? ingredients, [^"]*? techniques, [^"]*? bases and [^"]*? chefs, ',
                   'content="%s ingredients, %s techniques, %s bases and %s chefs, '
                   % (fmt(len(ing)), fmt(tech), fmt(bases), fmt(chefs)), html)
