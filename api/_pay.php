@@ -447,9 +447,24 @@ function apply_withdrawal(int $id): void {
     q("UPDATE withdrawals SET outcome = 'done' WHERE id = ?", [$id]);
 }
 
-/* Match a typed reference and address to a subscription (cancel, withdraw). */
-function match_sub(string $ref, ?string $email): ?array {
-    if ($email === null || !preg_match('/^[0-9a-f]{32}$/', $ref)) return null;
+/* Match a typed reference and address to a subscription (cancel, withdraw). The
+   reference is optional (D215-2, D221-5): without one, the address's running
+   subscription (one just paid may have no start day yet), else its latest
+   that started. Two can share a start day (one withdrawn and a new one, or two
+   checkouts paid at once), so running comes first, and an address with several
+   running is handed to Gabriel. The acknowledgement goes to that same address,
+   so its owner hears of a notice someone else sent. */
+function match_sub(string $ref, ?string $email, string $kind): ?array {
+    if ($email === null) return null;
+    if ($ref === '') {
+        $all = q("SELECT *, (status IN ('active', 'trialing', 'past_due') AND withdrawn_at IS NULL) AS running
+                  FROM subscriptions WHERE email = ? AND (started IS NOT NULL OR status IN ('active', 'trialing', 'past_due'))
+                  ORDER BY running DESC, started DESC, id DESC", [$email])->fetchAll();
+        $running = count(array_filter($all, fn($s) => (int)$s['running'] === 1));
+        if ($running > 1) alert("several:$kind:" . $all[0]['id'] . ':' . today(), "A $kind without a reference from $email was matched to {$all[0]['id']}, but the address has $running running subscriptions: check which one was meant.");
+        return $all[0] ?? null;
+    }
+    if (!preg_match('/^[0-9a-f]{32}$/', $ref)) return null;
     return q('SELECT * FROM subscriptions WHERE order_id = ? AND email = ?', [$ref, $email])->fetch() ?: null;
 }
 
@@ -477,13 +492,13 @@ function finish_cancellation(int $id): void {
         $c['effective_date'] = $holder['effective_date'] ?? null;
     }
     if ($sub || nomatch_ack_ok((string)$c['email'])) {
-        $p = ['ref' => $c['ref'], 'at' => (int)$c['received_at'], 'choice' => $c['choice'], 'date' => $c['chosen_date'], 'matched' => (bool)$sub];
+        $p = ['ref' => $sub ? (string)$sub['order_id'] : (string)$c['ref'], 'quote' => (string)$c['ref'] !== '', 'at' => (int)$c['received_at'], 'choice' => $c['choice'], 'date' => $c['chosen_date'], 'matched' => (bool)$sub];
         if ($sub) $p += ['name' => $c['name'], 'motif' => (string)$c['motif'], 'outcome' => $c['outcome'], 'applied' => $c['applied'],
                          'end' => $c['effective_date'], 'refund' => (int)$c['refund_cents']];
         queue('cancel_ack', 'cack:' . $id, (string)$c['email'], (string)$c['lang'], $sub ? (string)$sub['order_id'] : 'c:' . $id, $p);
     }
     q('UPDATE cancellations SET acked = 1 WHERE id = ?', [$id]);
-    if (!$sub) alert('nomatch:c' . $id, "Cancellation #$id from {$c['email']} (reference {$c['ref']}) matched no subscription: check whether it is a customer's.");
+    if (!$sub) alert('nomatch:c' . $id, "Cancellation #$id from {$c['email']} (" . ($c['ref'] === '' ? 'no reference' : "reference {$c['ref']}") . ") matched no subscription: check whether it is a customer's.");
     if ($sub && (string)$c['motif'] !== '') {
         alert('motif:' . $id, "Cancellation #$id of {$sub['id']} ({$sub['plan']}, {$c['email']}, outcome {$c['outcome']}) states a reason; decide whether it is a « motif légitime »:\n\n{$c['motif']}");
     }
@@ -496,14 +511,14 @@ function finish_withdrawal(int $id): void {
     if ($w['acked']) return;
     $sub = $w['subscription'] ? row('subscriptions', $w['subscription']) : null;
     if ($sub || nomatch_ack_ok((string)$w['email'])) {
-        $p = ['ref' => $w['ref'], 'at' => (int)$w['received_at'], 'matched' => (bool)$sub];
+        $p = ['ref' => $sub ? (string)$sub['order_id'] : (string)$w['ref'], 'quote' => (string)$w['ref'] !== '', 'at' => (int)$w['received_at'], 'matched' => (bool)$sub];
         if ($sub) $p += ['name' => $w['name'], 'outcome' => $w['outcome'], 'refund' => (int)$w['refund_cents'],
-                         'deadline' => withdraw_deadline((string)$sub['started'])];
+                         'deadline' => withdraw_deadline((string)($sub['started'] ?? paris_date((int)$w['received_at'])))];
         queue('withdraw_ack', 'wack:' . $id, (string)$w['email'], (string)$w['lang'], $sub ? (string)$sub['order_id'] : 'w:' . $id, $p);
     }
     q('UPDATE withdrawals SET acked = 1 WHERE id = ?', [$id]);
-    if (!$sub) alert('nomatch:w' . $id, "Withdrawal #$id from {$w['email']} (reference {$w['ref']}) matched no subscription: a clear statement of withdrawal still counts (L221-21), so check whether it is a customer's.");
-    if ($sub && $w['outcome'] === 'out_of_time') alert('late:' . $id, "Withdrawal #$id for {$sub['id']} came after the deadline (" . withdraw_deadline((string)$sub['started']) . '): acknowledged as out of time.');
+    if (!$sub) alert('nomatch:w' . $id, "Withdrawal #$id from {$w['email']} (" . ($w['ref'] === '' ? 'no reference' : "reference {$w['ref']}") . ") matched no subscription: a clear statement of withdrawal still counts (L221-21), so check whether it is a customer's.");
+    if ($sub && $w['outcome'] === 'out_of_time') alert('late:' . $id, "Withdrawal #$id for {$sub['id']} came after the deadline (" . withdraw_deadline((string)($sub['started'] ?? paris_date((int)$w['received_at']))) . '): acknowledged as out of time.');
     if ($sub && $w['outcome'] !== 'out_of_time' && q("SELECT COUNT(*) FROM withdrawals WHERE email = ? AND id < ? AND subscription IS NOT NULL
             AND outcome <> 'out_of_time' AND received_at > ?", [$w['email'], $id, now() - 365 * 86400])->fetchColumn() > 0) {
         alert('repeat:' . $id, "{$w['email']} withdrew again within a year (withdrawal #$id): subscribe, use, withdraw may be a loop.");

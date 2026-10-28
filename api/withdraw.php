@@ -1,5 +1,5 @@
 <?php
-/* POST {name, email, ref, lang}: « Renoncer au contrat ici » (DESIGN-PAYMENT.md
+/* POST {name, email, ref?, lang}: « Renoncer au contrat ici » (DESIGN-PAYMENT.md
    section 7, CGV article 7). Recorded first; within the 14 days access closes
    at once (withdrawn_at), then the subscription ends and every payment is
    refunded in full. The acknowledgement goes to the typed address (one that
@@ -22,15 +22,15 @@ $name = trim((string)($in['name'] ?? ''));
 $addr = normal_address((string)($in['email'] ?? ''));
 $ref = strtolower(trim((string)($in['ref'] ?? '')));
 $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
-if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null || !preg_match('/^[0-9a-f]{32}$/', $ref)) {
+if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null || ($ref !== '' && !preg_match('/^[0-9a-f]{32}$/', $ref))) {
     json_out(400); log_api('invalid'); exit;
 }
 $per = rk('cw:' . $addr . '|i:' . ip_key());
 if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
 hit($per);
 
-$sub = match_sub($ref, $addr);
-$late = $sub && today() > withdraw_deadline((string)$sub['started']);
+$sub = match_sub($ref, $addr, 'withdrawal');
+$late = $sub && today() > withdraw_deadline((string)($sub['started'] ?? today()));
 $at = now();
 $id = tx(function () use ($at, $name, $addr, $ref, $lang, $sub, $late) {
     /* What this withdrawal refunds: every payment, less what was refunded before. */
@@ -45,6 +45,8 @@ $id = tx(function () use ($at, $name, $addr, $ref, $lang, $sub, $late) {
       [$at, $name, $addr, $ref, $lang, $sub['id'] ?? null, !$sub ? 'no_match' : ($late ? 'out_of_time' : 'received'), $left]);
     return (int)db()->lastInsertId();
 });
+/* Its first payment not recorded yet, the refund below cannot see it. */
+if ($sub && !$late && $sub['started'] === null) alert('nostart:' . $id, "Withdrawal #$id for {$sub['id']} came before its first payment was recorded: check that the payment is refunded.");
 json_out(200, ['ok' => true, 'at' => $at]);
 ignore_user_abort(true);
 if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();

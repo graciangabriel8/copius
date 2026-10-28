@@ -1,5 +1,5 @@
 <?php
-/* POST {name, email, ref, choice, date?, motif?, lang}: the « Résilier votre
+/* POST {name, email, ref?, choice, date?, motif?, lang}: the « Résilier votre
    contrat » function (DESIGN-PAYMENT.md section 7, CGV article 9). The
    notification is recorded before anything else; the answer is the same
    whether or not it matches a subscription; the acknowledgement goes to the
@@ -28,7 +28,7 @@ $motif = trim((string)($in['motif'] ?? ''));
 $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
 $date_ok = $date === null || (is_string($date) && preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $date, $d) && checkdate((int)$d[2], (int)$d[3], (int)$d[1]));
 if ($name === '' || mb_strlen($name) > 200 || !mb_check_encoding($name, 'UTF-8') || $addr === null ||
-    !preg_match('/^[0-9a-f]{32}$/', $ref) || $choice === null || !$date_ok ||
+    ($ref !== '' && !preg_match('/^[0-9a-f]{32}$/', $ref)) || $choice === null || !$date_ok ||
     mb_strlen($motif) > 2000 || !mb_check_encoding($motif, 'UTF-8')) {
     json_out(400); log_api('invalid'); exit;
 }
@@ -38,7 +38,7 @@ $per = rk('cw:' . $addr . '|i:' . ip_key());
 if (!under($per, 3, 5)) { json_out(429); log_api('address_limit'); exit; }
 hit($per);
 
-$sub = match_sub($ref, $addr);
+$sub = match_sub($ref, $addr, 'cancellation');
 $at = now();
 /* One cancellation per subscription, taken by the insert itself: `holds` is
    unique, so of two notices sent at once only one holds the subscription; the

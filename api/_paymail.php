@@ -41,9 +41,11 @@ const PAY_TEXT = [
         'cack_subject' => 'Copius : accusé de réception de votre résiliation',
         'cack_lead' => 'Nous avons bien reçu, le {at}, votre demande de résiliation :',
         'cack_lead_nomatch' => 'Nous avons bien reçu, le {at}, une demande de résiliation pour la référence {r}, envoyée avec cette adresse.',
+        'cack_lead_nomatch_noref' => 'Nous avons bien reçu, le {at}, une demande de résiliation envoyée avec cette adresse, sans référence d’abonnement.',
         'name' => 'Nom',
         'email' => 'Adresse e-mail',
         'wish' => 'Date de fin demandée',
+        'motif_given' => 'oui (non repris ici)',
         'wish_period_end' => 'à la fin de la période en cours',
         'wish_early' => 'le {d}',
         'motif' => 'Motif indiqué',
@@ -57,9 +59,11 @@ const PAY_TEXT = [
         'refund' => 'Nous vous remboursons {a} sur votre carte au plus tard le {d}.',
         'ended' => 'Cet abonnement avait déjà pris fin : aucun paiement ne sera plus prélevé.',
         'nomatch' => 'Nous n’avons pas pu rapprocher cette référence et cette adresse d’un abonnement. Vérifiez la référence, qui figure dans l’e-mail de confirmation, ou écrivez-nous à contact@copius.fr : votre demande reste enregistrée à la date ci-dessus.',
+        'nomatch_noref' => 'Nous n’avons trouvé aucun abonnement à cette adresse. Vérifiez que c’est bien celle de l’abonnement, ou écrivez-nous à contact@copius.fr : votre demande reste enregistrée à la date ci-dessus.',
         'wack_subject' => 'Copius : accusé de réception de votre rétractation',
         'wack_lead' => 'Nous avons bien reçu votre rétractation, envoyée le {at} :',
         'wack_lead_nomatch' => 'Nous avons bien reçu, le {at}, une rétractation pour la référence {r}, envoyée avec cette adresse.',
+        'wack_lead_nomatch_noref' => 'Nous avons bien reçu, le {at}, une rétractation envoyée avec cette adresse, sans référence d’abonnement.',
         'wack_text' => 'Je vous notifie par la présente ma rétractation du contrat d’abonnement à la version complète de Copius, référence {r}.',
         'wack_done' => 'Votre accès à la version complète est fermé et aucun paiement ne sera plus prélevé.',
         'wack_late' => 'Le délai de rétractation de cet abonnement a pris fin le {d} : votre demande ne peut donc pas valoir rétractation. Pour mettre fin à l’abonnement, utilisez la fonction « Résilier votre contrat » ({u}). Une question : contact@copius.fr.',
@@ -102,9 +106,11 @@ const PAY_TEXT = [
         'cack_subject' => 'Copius: acknowledgement of your cancellation',
         'cack_lead' => 'We received your cancellation request on {at}:',
         'cack_lead_nomatch' => 'We received, on {at}, a cancellation request for reference {r}, sent with this address.',
+        'cack_lead_nomatch_noref' => 'We received, on {at}, a cancellation request sent with this address, without a subscription reference.',
         'name' => 'Name',
         'email' => 'Email address',
         'wish' => 'End date requested',
+        'motif_given' => 'yes (not repeated here)',
         'wish_period_end' => 'at the end of the current period',
         'wish_early' => 'on {d}',
         'motif' => 'Reason given',
@@ -118,9 +124,11 @@ const PAY_TEXT = [
         'refund' => 'We will refund {a} to your card by {d} at the latest.',
         'ended' => 'This subscription had already ended: no further payment will be taken.',
         'nomatch' => 'We could not match this reference and this address to a subscription. Check the reference, which is in the confirmation email, or write to contact@copius.fr: your request stays on record at the date above.',
+        'nomatch_noref' => 'We found no subscription at this address. Check that it is the one the subscription uses, or write to contact@copius.fr: your request stays on record at the date above.',
         'wack_subject' => 'Copius: acknowledgement of your withdrawal',
         'wack_lead' => 'We received your withdrawal, sent on {at}:',
         'wack_lead_nomatch' => 'We received, on {at}, a withdrawal for reference {r}, sent with this address.',
+        'wack_lead_nomatch_noref' => 'We received, on {at}, a withdrawal sent with this address, without a subscription reference.',
         'wack_text' => 'I hereby give notice that I withdraw from the subscription contract for the full version of Copius, reference {r}.',
         'wack_done' => 'Your access to the full version is closed and no further payment will be taken.',
         'wack_late' => 'The withdrawal period for this subscription ended on {d}, so your request cannot count as a withdrawal. To end the subscription, use the “Cancel your contract” function ({u}). Any question: contact@copius.fr.',
@@ -232,14 +240,18 @@ function pay_mail(array $row): ?array {
         $b[] = ['p', $t['hello']];
         $wish = $p['choice'] === 'early' && $p['date'] ? $f('wish_early', ['{d}' => fmt_date($p['date'], $lang)]) : $t['wish_period_end'];
         if (!$p['matched']) {
-            $b[] = ['p', $f('cack_lead_nomatch', ['{at}' => fmt_at((int)$p['at'], $lang), '{r}' => $p['ref']])];
-            $b[] = ['p', $f('nomatch')];
+            $noref = $p['ref'] === '';
+            $b[] = ['p', $f($noref ? 'cack_lead_nomatch_noref' : 'cack_lead_nomatch', ['{at}' => fmt_at((int)$p['at'], $lang), '{r}' => $p['ref']])];
+            $b[] = ['p', $f($noref ? 'nomatch_noref' : 'nomatch')];
             break;
         }
         $b[] = ['p', $f('cack_lead', ['{at}' => fmt_at((int)$p['at'], $lang)])];
-        $lines = [$t['name'] . colon($lang) . $p['name'], $t['email'] . colon($lang) . $row['to_addr'],
-                  $t['ref'] . colon($lang) . $p['ref'], $t['wish'] . colon($lang) . $wish];
-        if ($p['motif'] !== '') $lines[] = $t['motif'] . colon($lang) . $p['motif'];
+        /* Matched by its address alone, a notice may come from anyone who knows it:
+           its typed name and reason stay out of the subscriber's mail. */
+        $quote = $p['quote'] ?? true;
+        $lines = array_merge($quote ? [$t['name'] . colon($lang) . $p['name']] : [], [$t['email'] . colon($lang) . $row['to_addr'],
+                  $t['ref'] . colon($lang) . $p['ref'], $t['wish'] . colon($lang) . $wish]);
+        if ($p['motif'] !== '') $lines[] = $t['motif'] . colon($lang) . ($quote ? $p['motif'] : $t['motif_given']);
         $b[] = ['box', $lines];
         $end = $p['end'] ? fmt_date((string)$p['end'], $lang) : '';
         if ($p['outcome'] === 'ended_already') { $b[] = ['p', $f('ended')]; break; }
@@ -260,13 +272,14 @@ function pay_mail(array $row): ?array {
         $subject = $t['wack_subject'];
         $b[] = ['p', $t['hello']];
         if (!$p['matched']) {
-            $b[] = ['p', $f('wack_lead_nomatch', ['{at}' => fmt_at((int)$p['at'], $lang), '{r}' => $p['ref']])];
-            $b[] = ['p', $f('nomatch')];
+            $noref = $p['ref'] === '';
+            $b[] = ['p', $f($noref ? 'wack_lead_nomatch_noref' : 'wack_lead_nomatch', ['{at}' => fmt_at((int)$p['at'], $lang), '{r}' => $p['ref']])];
+            $b[] = ['p', $f($noref ? 'nomatch_noref' : 'nomatch')];
             break;
         }
         $b[] = ['p', $f('wack_lead', ['{at}' => fmt_at((int)$p['at'], $lang)])];
-        $b[] = ['box', [$f('wack_text', ['{r}' => $p['ref']]), $t['name'] . colon($lang) . $p['name'],
-                        $t['email'] . colon($lang) . $row['to_addr']]];
+        $b[] = ['box', array_merge([$f('wack_text', ['{r}' => $p['ref']])], ($p['quote'] ?? true) ? [$t['name'] . colon($lang) . $p['name']] : [],
+                        [$t['email'] . colon($lang) . $row['to_addr']])];
         if ($p['outcome'] === 'out_of_time') {
             $b[] = ['p', $f('wack_late', ['{d}' => fmt_date((string)$p['deadline'], $lang), '{u}' => "$o/resilier/#r={$p['ref']}"])];
             break;

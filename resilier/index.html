@@ -30,9 +30,9 @@
   <div class="field"><label for="email"><span lang="fr">Adresse e-mail de l’abonnement</span><span lang="en">Email address of the subscription</span></label>
     <input type="email" id="email" autocomplete="email" required maxlength="254">
     <span class="hint"><span lang="fr">L’accusé de réception y est envoyé.</span><span lang="en">The acknowledgement is sent there.</span></span></div>
-  <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement</span><span lang="en">Subscription reference</span></label>
-    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
-    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Résilier votre contrat&nbsp;» de cet e-mail la remplit pour vous. Vous ne la retrouvez pas&nbsp;? Écrivez à contact@copius.fr.</span><span lang="en">It is in the email that confirmed your subscription; the “Cancel your contract” link in that email fills it in for you. Can’t find it? Write to contact@copius.fr.</span></span></div>
+  <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement (facultative)</span><span lang="en">Subscription reference (optional)</span></label>
+    <input type="text" id="ref" maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
+    <span class="hint"><span lang="fr">Sans elle, l’adresse e-mail suffit à retrouver l’abonnement. Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Résilier votre contrat&nbsp;» de cet e-mail la remplit pour vous.</span><span lang="en">Without it, the email address is enough to find the subscription. It is in the email that confirmed your subscription; the “Cancel your contract” link in that email fills it in for you.</span></span></div>
   <fieldset>
     <legend><span lang="fr">Date de fin souhaitée</span><span lang="en">When should it end?</span></legend>
     <label class="radio"><input type="radio" name="choice" value="period_end">
@@ -82,18 +82,19 @@
    with « Modifier » links, then « Notification de la résiliation »
    (api/cancel.php). The confirmation mail's link carries the reference after
    the # (never sent to a server); a signed-in reader gets the address filled
-   in. The answer is the same whether or not the reference matches: what
+   in. The reference is optional: without it the address finds the
+   subscription. The answer is the same whether or not anything matches: what
    follows is in the acknowledgement mail. */
 (function () {
   var M = {
-    fr: { end: "À la fin de la période en cours", on: "Le ", fields: "Remplissez le nom et l’adresse e-mail.",
-      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation.",
+    fr: { end: "À la fin de la période en cours", on: "Le ", noref: "Non indiquée", fields: "Remplissez le nom et l’adresse e-mail.",
+      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation, ou laissez le champ vide.",
       choice: "Choisissez la date de fin.", date: "Choisissez une date entre aujourd’hui et dans 10 jours.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La demande n’a pas pu partir. Réessayez dans un instant, ou écrivez à contact@copius.fr.", wait: "Envoi…",
       done: "Votre notification de résiliation est enregistrée, le {at}. Un accusé de réception part à {e}\u00A0: il reprend votre demande et vous dit la suite. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
-    en: { end: "At the end of the current period", on: "On ", fields: "Fill in the name and the email address.",
-      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email.",
+    en: { end: "At the end of the current period", on: "On ", noref: "Not given", fields: "Fill in the name and the email address.",
+      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email, or leave the field empty.",
       choice: "Choose when it should end.", date: "Pick a date between today and 10 days from now.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The request could not be sent. Try again in a moment, or write to contact@copius.fr.", wait: "Sending…",
@@ -142,7 +143,7 @@
   }
   function fill() {
     var d = data(), t = L();
-    $("sName").textContent = d.name; $("sEmail").textContent = d.email; $("sRef").textContent = d.ref;
+    $("sName").textContent = d.name; $("sEmail").textContent = d.email; $("sRef").textContent = d.ref || t.noref;
     $("sEnd").textContent = d.choice === "early" ? t.on + fmt(new Date(d.date + "T12:00:00Z")) : t.end;
     $("sMotif").textContent = d.motif; $("sMotifRow").hidden = !d.motif;
   }
@@ -150,7 +151,7 @@
     e.preventDefault();
     var d = data(), m = $("fillMsg"), t = L();
     if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { m.textContent = t.fields; return; }
-    if (!/^[0-9a-f]{32}$/.test(d.ref)) { m.textContent = t.ref; $("ref").focus(); return; }
+    if (d.ref && !/^[0-9a-f]{32}$/.test(d.ref)) { m.textContent = t.ref; $("ref").focus(); return; }
     if (!d.choice) { m.textContent = t.choice; form.querySelector("input[name=choice]").focus(); return; }
     if (d.choice === "early" && !(d.date >= today && d.date <= last)) { m.textContent = t.date; $("date").focus(); return; }
     m.textContent = ""; fill(); $("checkMsg").textContent = ""; show(check);

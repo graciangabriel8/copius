@@ -31,12 +31,12 @@
   <div class="field"><label for="email"><span lang="fr">Adresse e-mail de l’abonnement</span><span lang="en">Email address of the subscription</span></label>
     <input type="email" id="email" autocomplete="email" required maxlength="254">
     <span class="hint"><span lang="fr">L’accusé de réception y est envoyé aussitôt.</span><span lang="en">The acknowledgement is sent there at once.</span></span></div>
-  <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement</span><span lang="en">Subscription reference</span></label>
-    <input type="text" id="ref" required maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
-    <span class="hint"><span lang="fr">Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Renoncer au contrat ici&nbsp;» de cet e-mail la remplit pour vous.</span><span lang="en">It is in the email that confirmed your subscription; the “Withdraw from contract here” link in that email fills it in for you.</span></span></div>
+  <div class="field"><label for="ref"><span lang="fr">Référence de l’abonnement (facultative)</span><span lang="en">Subscription reference (optional)</span></label>
+    <input type="text" id="ref" maxlength="64" spellcheck="false" autocapitalize="off" autocomplete="off">
+    <span class="hint"><span lang="fr">Sans elle, l’adresse e-mail suffit à retrouver l’abonnement. Elle figure dans l’e-mail qui a confirmé votre abonnement&nbsp;; le lien «&nbsp;Renoncer au contrat ici&nbsp;» de cet e-mail la remplit pour vous.</span><span lang="en">Without it, the email address is enough to find the subscription. It is in the email that confirmed your subscription; the “Withdraw from contract here” link in that email fills it in for you.</span></span></div>
   <button type="submit" class="cx" id="send"><span lang="fr">Confirmer la rétractation</span><span lang="en">Confirm withdrawal</span></button>
   <p class="msg" id="msg" role="status"></p>
-  <p class="fine"><span lang="fr">Vous ne retrouvez pas la référence&nbsp;? Envoyez le formulaire de rétractation qui figure à la fin des <a href="../cgv/">conditions générales de vente</a>, ou toute autre déclaration claire, à contact@copius.fr ou par courrier à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne.</span><span lang="en">Can’t find the reference? Send the withdrawal form at the end of the <a href="../cgv/">terms of sale</a>, or any other clear statement, to contact@copius.fr or by post to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France.</span></p>
+  <p class="fine"><span lang="fr">Vous pouvez aussi envoyer le formulaire de rétractation qui figure à la fin des <a href="../cgv/">conditions générales de vente</a>, ou toute autre déclaration claire, à contact@copius.fr ou par courrier à Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne.</span><span lang="en">You can also send the withdrawal form at the end of the <a href="../cgv/">terms of sale</a>, or any other clear statement, to contact@copius.fr or by post to Gabriel Gracian-Leroudier, 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France.</span></p>
 </form>
 
 <div id="done" class="step" hidden role="status">
@@ -54,17 +54,18 @@
 /* « Renoncer au contrat ici » (CGV article 7): name, address, reference, then
    « Confirmer la rétractation » (api/withdraw.php). The confirmation mail's
    link carries the reference after the # (never sent to a server); a
-   signed-in reader gets the address filled in. The answer is the same whether
-   or not the reference matches: the acknowledgement says what follows. */
+   signed-in reader gets the address filled in. The reference is optional:
+   without it the address finds the subscription. The answer is the same
+   whether or not anything matches: the acknowledgement says what follows. */
 (function () {
   var M = {
     fr: { fields: "Remplissez le nom et l’adresse e-mail.", wait: "Envoi…",
-      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation.",
+      ref: "La référence compte 32 caractères, chiffres et lettres de a à f\u00A0: copiez-la depuis l’e-mail de confirmation, ou laissez le champ vide.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La demande n’a pas pu partir. Réessayez dans un instant, ou écrivez à contact@copius.fr.",
       done: "Votre rétractation est enregistrée, le {at}. Un accusé de réception part à {e}\u00A0: il reprend votre déclaration et vous dit la suite. Rien reçu d’ici une heure\u202F? Regardez vos courriers indésirables, puis écrivez à contact@copius.fr." },
     en: { fields: "Fill in the name and the email address.", wait: "Sending…",
-      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email.",
+      ref: "The reference has 32 characters, digits and letters a to f: copy it from the confirmation email, or leave the field empty.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The request could not be sent. Try again in a moment, or write to contact@copius.fr.",
       done: "Your withdrawal is recorded, on {at}. An acknowledgement is on its way to {e}: it repeats your statement and tells you what follows. Nothing within an hour? Check your spam folder, then write to contact@copius.fr." }
@@ -96,7 +97,7 @@
     var d = { name: $("name").value.trim(), email: $("email").value.trim(), ref: $("ref").value.trim().toLowerCase(), lang: root.lang === "en" ? "en" : "fr" };
     msg.className = "msg err";
     if (!d.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { msg.textContent = t.fields; return; }
-    if (!/^[0-9a-f]{32}$/.test(d.ref)) { msg.textContent = t.ref; $("ref").focus(); return; }
+    if (d.ref && !/^[0-9a-f]{32}$/.test(d.ref)) { msg.textContent = t.ref; $("ref").focus(); return; }
     msg.className = "msg"; btn.disabled = true; msg.textContent = t.wait;
     fetch("/api/withdraw.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return [r.status, j]; }); },
