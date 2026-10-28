@@ -8,8 +8,9 @@ no server.
 1. `social/schedule.json` says which ingredient goes out on which day: a start
    date and one id per day, written once by `tools/build-schedule.py` as a
    seeded shuffle of every ingredient (no two consecutive days from the same
-   family). Re-running it only appends ingredients that are new to the data;
-   a day already scheduled never moves.
+   family). Re-running it appends ingredients that are new to the data; a day
+   already scheduled moves only when an ingredient before it leaves the data
+   (below).
 2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
    JPEGs, two per day: `<id>.jpg` is the illustrated card, `<id>.2.jpg` sets the
    handling note as type. Run it on the Mac — the rasteriser is `qlmanage` — and
@@ -85,8 +86,11 @@ about two months later.
 ## When the cards run out
 
 Data edits never invalidate a card: the schedule pins each date to an id, and
-an entry merged away is skipped forward to the next scheduled one that still
-exists (the job logs a warning naming both). The only maintenance is extending
+the cards are named by id. An entry merged away has to leave the schedule too,
+because `api/card.php` serves only the id the schedule names for the day:
+`tools/check.py` fails until `python3 tools/build-schedule.py` has dropped it
+from today on, which moves every later day up one, and the job refuses such a
+day rather than post another day's card. The only maintenance is extending
 the window before the last built card is posted — the job warns 40 days out,
 and fails with this exact command once the schedule itself is exhausted:
 

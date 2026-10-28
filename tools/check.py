@@ -20,8 +20,13 @@ Prints one line per failure and exits 1 on any.
    come from the committed tools/lastmod.json, so a regeneration on any day reproduces them.
 7. PHP: php -l on api/*.php (required on GitHub, whose PHP is 8.3: OVH's 8.4-only syntax would need setup-php;
    skipped with a note where php is missing)
+8. the day's card: api/card.php serves only the id social/schedule.json names for today or yesterday in Paris, so
+   no day from today on may name an id that has left the data (tools/build-schedule.py drops it). On a copy whose
+   today names one, make-card.py refuses the day rather than name another id, and once build-schedule.py has run,
+   the id it gives the poster is the one card.php serves today, while tomorrow's card stays refused (card.php run
+   where php is, required on GitHub)
 """
-import hashlib, html, json, os, re, shutil, subprocess, sys, pathlib, tempfile
+import datetime, hashlib, html, importlib.util, json, os, re, shutil, subprocess, sys, pathlib, tempfile, zoneinfo
 
 root = pathlib.Path(__file__).resolve().parent.parent
 CI = os.environ.get("GITHUB_ACTIONS") == "true"
@@ -207,6 +212,38 @@ if php:
         if r.returncode != 0: fail("PHP %s: %s" % (f.relative_to(root), next((l for l in out if "error:" in l.lower()), out[0]).strip()))
 elif CI: fail("PHP: php is missing on the runner")
 else: print("note: php missing here, api/*.php not linted (GitHub does it)")
+
+# 8. the day's card: the poster posts copius.fr/social/<id>.jpg for the id make-card.py gives it
+sys.dont_write_bytecode = True   # importing make-card.py would leave tools/__pycache__ in the repo
+spec = importlib.util.spec_from_file_location("make_card", root / "tools/make-card.py")
+make_card = importlib.util.module_from_spec(spec); spec.loader.exec_module(make_card)
+ids, (start, days) = {r["id"] for r in make_card.load()}, make_card.schedule()
+today = datetime.datetime.now(zoneinfo.ZoneInfo("Europe/Paris")).date()
+capped("day's card: ", ["social/schedule.json names %s on %s, and it is no longer in the data: run python3 tools/build-schedule.py and commit"
+                        % (i, start + datetime.timedelta(k)) for k, i in enumerate(days) if start + datetime.timedelta(k) >= today and i not in ids])
+with tempfile.TemporaryDirectory() as tmp:   # the copy: yesterday, then an id merged out of the data today, then two more
+    copy, plant, first = pathlib.Path(tmp), "zz-merged-away", sorted(ids)[:3]
+    for rel in ["tools/make-card.py", "tools/build-schedule.py", "tools/sources.txt", "tools/captions-fr.json", "api/card.php"] + make_card.data_files():
+        (copy / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(root / rel, copy / rel)
+    (copy / "social").mkdir()
+    (copy / "social/schedule.json").write_text(json.dumps({"start": str(today - datetime.timedelta(1)), "days": [first[0], plant] + first[1:]}))
+    run = lambda *cmd: subprocess.run([sys.executable, *cmd], capture_output=True, text=True, cwd=str(copy), env=dict(os.environ, PYTHONDONTWRITEBYTECODE="1"))
+    r = run("tools/make-card.py", "--today-id", str(today))
+    if r.returncode == 0: fail("day's card: make-card.py gave %s in place of a day's id that has left the data, and card.php refuses a stand-in" % r.stdout.strip())
+    r = run("tools/build-schedule.py")
+    if r.returncode != 0: fail("day's card: tools/build-schedule.py stopped: " + ((r.stderr or r.stdout).strip().splitlines() or ["?"])[-1])
+    sched = json.loads((copy / "social/schedule.json").read_text())["days"]
+    got = run("tools/make-card.py", "--today-id", str(today)).stdout.strip()
+    if got != sched[1]: fail("day's card: after tools/build-schedule.py, make-card.py gives %r for today and the schedule names %s, which card.php serves" % (got, sched[1]))
+    elif php:   # card.php reads only social/: a stand-in jpg for today's card and tomorrow's
+        for i in sched[1:3]: (copy / "social" / (i + ".jpg")).write_text(i)
+        serve = lambda i: subprocess.run([php, "-d", "display_errors=stderr", "-r", '$_GET["f"] = $argv[1]; require $argv[2];', "--", i + ".jpg",
+                                          str(copy / "api/card.php")], capture_output=True, text=True).stdout
+        if serve(got) != got: fail("day's card: api/card.php refuses %s.jpg on its own day" % got)
+        if serve(sched[2]) == sched[2]: fail("day's card: api/card.php serves %s.jpg a day early" % sched[2])
+    elif CI: fail("day's card: php is missing on the runner")
+    else: print("note: php missing here, api/card.php not run on the day's card (GitHub does it)")
 
 for f in failures: print("FAIL " + f)
 print("%d page(s) checked: %s" % (len(pages), "all good" if not failures else "%d failure(s)" % len(failures)))
