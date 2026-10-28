@@ -511,8 +511,8 @@ function finish_withdrawal(int $id): void {
     if ($w['acked']) return;
     $sub = $w['subscription'] ? row('subscriptions', $w['subscription']) : null;
     if ($sub || nomatch_ack_ok((string)$w['email'])) {
-        $p = ['ref' => $sub ? (string)$sub['order_id'] : (string)$w['ref'], 'quote' => (string)$w['ref'] !== '', 'at' => (int)$w['received_at'], 'matched' => (bool)$sub];
-        if ($sub) $p += ['name' => $w['name'], 'outcome' => $w['outcome'], 'refund' => (int)$w['refund_cents'],
+        $p = ['ref' => $sub ? (string)$sub['order_id'] : (string)$w['ref'], 'quote' => (string)$w['ref'] !== '', 'at' => (int)$w['received_at'], 'matched' => (bool)$sub, 'name' => (string)$w['name']];
+        if ($sub) $p += ['outcome' => $w['outcome'], 'refund' => (int)$w['refund_cents'],
                          'deadline' => withdraw_deadline((string)($sub['started'] ?? paris_date((int)$w['received_at'])))];
         queue('withdraw_ack', 'wack:' . $id, (string)$w['email'], (string)$w['lang'], $sub ? (string)$sub['order_id'] : 'w:' . $id, $p);
     }

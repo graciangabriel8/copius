@@ -227,7 +227,10 @@ def card(i):
         parts.append((y + n * step, '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
                                     'font-size="%d" fill="#55524d">%s</text>', (size, e(l))))
     top = 780 - (y + (len(lines) - 1) * step) // 2    # centre the block on 780
+    if is_alcohol(i):    # keep the last baseline clear of the health line at y=948
+        top = min(top, 915 - (y + (len(lines) - 1) * step))
     text = "\n".join(f % ((top + dy,) + a) for dy, f, a in parts)
+    warn = WARN_SVG % html.escape(EVIN, quote=True) if is_alcohol(i) else ""
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
 <rect width="1080" height="1080" fill="#F7F6F1"/>
@@ -236,6 +239,7 @@ def card(i):
   <circle cx="48" cy="50" r="42" fill="#F0F1E7"/>{i["svg"]}
 </g>
 {text}
+{warn}
 <text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
 <text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
 </svg>'''
@@ -262,6 +266,8 @@ def tip_card(i):
     last = (len(tl) - 1) * round(ts * 1.1) + (52 if gloss else 0)  # last line of the name
     head = last + 236                            # name to first line of tip
     s = 555 - (head + (len(lines) - 1) * lh) / 2  # baseline of the name
+    if is_alcohol(i):    # keep the last baseline clear of the health line at y=948
+        s = min(s, 915 - (head + (len(lines) - 1) * lh))
     body = "".join(
         '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" '
         'font-size="%d" fill="#55524d">%s</text>' % (s + head + n * lh, size, e(l))
@@ -272,6 +278,7 @@ def tip_card(i):
         for n, l in enumerate(tl)) + (
         '<text x="540" y="%d" text-anchor="middle" font-family="Georgia,serif" font-size="28" '
         'font-style="italic" fill="#8a857d">%s</text>' % (s + last, e(gloss)) if gloss else "")
+    warn = WARN_SVG % html.escape(EVIN, quote=True) if is_alcohol(i) else ""
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 {STYLE}
 <rect width="1080" height="1080" fill="#F7F6F1"/>
@@ -280,6 +287,7 @@ def tip_card(i):
 <line x1="470" y1="{s + last + 74}" x2="610" y2="{s + last + 74}" stroke="#E5E7DA" stroke-width="2"/>
 <text x="540" y="{s + last + 136}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">EN CUISINE</text>
 {body}
+{warn}
 <text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
 <text x="540" y="1016" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="2" fill="#a29c92">copius.fr</text>
 </svg>'''
@@ -302,6 +310,10 @@ EVIN = ("L\u2019abus d\u2019alcool est dangereux pour la sant\u00e9. "
         "\u00c0 consommer avec mod\u00e9ration.")
 
 
+WARN_SVG = ('<text x="540" y="948" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" '
+            'font-size="22" fill="#8a857d">%s</text>')
+
+
 def is_alcohol(i):
     return ((i["cat"] == "cellar" and i["id"] not in NOT_A_DRINK)
             or i["id"] in DRINKS_ELSEWHERE)
@@ -321,7 +333,7 @@ def caption(i):
     un = lambda s: re.sub(r"\\+(.)", r"\1", s or "")
     # The health message high in the caption, not buried: Instagram hides
     # everything past the first couple of lines behind "... plus".
-    return "\n".join([i["fr"], latin(i)] + ([EVIN] if is_alcohol(i) else []) + ["",
+    return "\n".join([i["fr"]] + ([EVIN] if is_alcohol(i) else []) + [latin(i), "",
         SOCIAL_FR.get(i["id"]) or un(i["story_fr"]), "", "copius.fr",
     ])
 

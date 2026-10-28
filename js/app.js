@@ -479,10 +479,12 @@
     el("labTitle").textContent = t.labTitle;
     el("labHint").textContent = t.labHint;
     el("triosTitle").textContent = t.triosTitle;
-    el("footNote").textContent = t.footNote;
+    el("footNote").textContent = t.footNote + " · " + t.alcoholWarning;
     el("contactLine").textContent = t.contactLine + " · " + t.replyTime;
     el("aboutLink").textContent = t.aboutLink;
     el("privacyLink").textContent = t.privacyLink;
+    el("legalLink").textContent = t.legalLink;
+    el("legalLink").href = "confidentialite/#" + t.legalAnchor;
     el("cgvLink").textContent = t.cgvLink;
     el("cancelLink").textContent = t.cancelLink;
     el("withdrawLink").textContent = t.withdrawLink;
@@ -2321,6 +2323,7 @@
         ? "<h3>" + esc(t.plateFlags) + "</h3>" +
           '<ul class="plate-notes">' + r.flags.map(noteLi).join("") + "</ul>"
         : "") +
+      '<p class="plate-caveat">' + esc(t.plateAllergenCaveat) + "</p>" +
       cohesion;
   }
 

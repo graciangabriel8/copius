@@ -65,11 +65,15 @@ const PAY_TEXT = [
         'wack_lead_nomatch' => 'Nous avons bien reçu, le {at}, une rétractation pour la référence {r}, envoyée avec cette adresse.',
         'wack_lead_nomatch_noref' => 'Nous avons bien reçu, le {at}, une rétractation envoyée avec cette adresse, sans référence d’abonnement.',
         'wack_text' => 'Je vous notifie par la présente ma rétractation du contrat d’abonnement à la version complète de Copius, référence {r}.',
+        'wack_text_noref' => 'Je vous notifie par la présente ma rétractation du contrat d’abonnement à la version complète de Copius.',
+        'name_declared' => 'Nom indiqué dans la déclaration',
+        'wack_notyou' => 'Ce n’est pas vous qui avez envoyé cette rétractation ? Écrivez-nous aussitôt à contact@copius.fr.',
+        'cack_notyou' => 'Ce n’est pas vous qui avez envoyé cette résiliation ? Écrivez-nous aussitôt à contact@copius.fr.',
         'wack_done' => 'Votre accès à la version complète est fermé et aucun paiement ne sera plus prélevé.',
         'wack_late' => 'Le délai de rétractation de cet abonnement a pris fin le {d} : votre demande ne peut donc pas valoir rétractation. Pour mettre fin à l’abonnement, utilisez la fonction « Résilier votre contrat » ({u}). Une question : contact@copius.fr.',
         'notice_subject' => 'Copius : votre abonnement annuel sera reconduit le {d}',
         'notice_box' => 'Date limite pour refuser la reconduction : {d}',
-        'notice_text' => 'Votre abonnement annuel à la version complète de Copius (référence {r}) sera reconduit pour un an le {renew}, au prix de {a} ({vat}). Si vous ne souhaitez pas le reconduire, utilisez la fonction « Résilier votre contrat » avant la date limite ci-dessus : {u}. Sans refus de votre part, votre carte sera débitée le {renew}.',
+        'notice_text' => 'Votre abonnement annuel à la version complète de Copius (référence {r}) sera reconduit pour un an le {renew}, au prix de {a} ({vat}). Si vous ne souhaitez pas le reconduire, utilisez la fonction « Résilier votre contrat » au plus tard à la date limite ci-dessus, ce jour compris : {u}. Sans refus de votre part, votre carte sera débitée le {renew}.',
         'bye' => 'Bonne lecture, et bonne cuisine.',
         'seller' => 'Copius · Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
         'months' => ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
@@ -130,13 +134,17 @@ const PAY_TEXT = [
         'wack_lead_nomatch' => 'We received, on {at}, a withdrawal for reference {r}, sent with this address.',
         'wack_lead_nomatch_noref' => 'We received, on {at}, a withdrawal sent with this address, without a subscription reference.',
         'wack_text' => 'I hereby give notice that I withdraw from the subscription contract for the full version of Copius, reference {r}.',
+        'wack_text_noref' => 'I hereby give notice that I withdraw from the subscription contract for the full version of Copius.',
+        'name_declared' => 'Name given in the statement',
+        'wack_notyou' => 'You did not send this withdrawal? Write to contact@copius.fr at once.',
+        'cack_notyou' => 'You did not send this cancellation? Write to contact@copius.fr at once.',
         'wack_done' => 'Your access to the full version is closed and no further payment will be taken.',
         'wack_late' => 'The withdrawal period for this subscription ended on {d}, so your request cannot count as a withdrawal. To end the subscription, use the “Cancel your contract” function ({u}). Any question: contact@copius.fr.',
         'notice_subject' => 'Copius: your yearly subscription renews on {d}',
         'notice_box' => 'Deadline to refuse the renewal: {d}',
-        'notice_text' => 'Your yearly subscription to the full version of Copius (reference {r}) will renew for one year on {renew}, at {a} ({vat}). If you do not want it renewed, use the “Cancel your contract” function before the deadline above: {u}. Unless you refuse, your card will be charged on {renew}.',
+        'notice_text' => 'Your yearly subscription to the full version of Copius (reference {r}) will renew for one year on {renew}, at {a} ({vat}). If you do not want it renewed, use the “Cancel your contract” function by the deadline above, that day included: {u}. Unless you refuse, your card will be charged on {renew}.',
         'bye' => 'Happy reading, and happy cooking.',
-        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
+        'seller' => 'Copius · Gabriel Gracian-Leroudier, sole trader (entrepreneur individuel, EI) (Nokime) · 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France · SIREN 130 694 615, RCS Saint-Étienne · contact@copius.fr',
         'months' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     ],
 ];
@@ -275,10 +283,14 @@ function pay_mail(array $row): ?array {
             $noref = $p['ref'] === '';
             $b[] = ['p', $f($noref ? 'wack_lead_nomatch_noref' : 'wack_lead_nomatch', ['{at}' => fmt_at((int)$p['at'], $lang), '{r}' => $p['ref']])];
             $b[] = ['p', $f($noref ? 'nomatch_noref' : 'nomatch')];
+            $name = trim(preg_replace('/\s+/u', ' ', (string)($p['name'] ?? '')));   // typed by anyone: one line inside the box
+            $b[] = ['box', array_merge([$noref ? $f('wack_text_noref') : $f('wack_text', ['{r}' => $p['ref']])],
+                            $name !== '' ? [$t['name_declared'] . colon($lang) . $name] : [],
+                            [$t['email'] . colon($lang) . $row['to_addr']])];
             break;
         }
         $b[] = ['p', $f('wack_lead', ['{at}' => fmt_at((int)$p['at'], $lang)])];
-        $b[] = ['box', array_merge([$f('wack_text', ['{r}' => $p['ref']])], ($p['quote'] ?? true) ? [$t['name'] . colon($lang) . $p['name']] : [],
+        $b[] = ['box', array_merge([$f('wack_text', ['{r}' => $p['ref']])], [(($p['quote'] ?? true) ? $t['name'] : $t['name_declared']) . colon($lang) . trim(preg_replace('/\s+/u', ' ', (string)$p['name']))],
                         [$t['email'] . colon($lang) . $row['to_addr']])];
         if ($p['outcome'] === 'out_of_time') {
             $b[] = ['p', $f('wack_late', ['{d}' => fmt_date((string)$p['deadline'], $lang), '{u}' => "$o/resilier/#r={$p['ref']}"])];
@@ -306,6 +318,9 @@ function pay_mail(array $row): ?array {
         return null;
     }
     if ($bye) $b[] = ['p', $t['bye']];
+    /* Matched by its address alone: the sender may not be the subscriber. */
+    if (($row['kind'] === 'cancel_ack' || $row['kind'] === 'withdraw_ack') && !empty($p['matched']) && !($p['quote'] ?? true))
+        $b[] = ['p', $f($row['kind'] === 'cancel_ack' ? 'cack_notyou' : 'wack_notyou')];
     $subject = nb($subject, $lang);
     return mail_build((string)$row['to_addr'], $subject, blocks_text($b, $t['seller'], $lang),
         fn(bool $banner): string => blocks_html($b, $lang, $subject, $t['seller'], $banner), $files);

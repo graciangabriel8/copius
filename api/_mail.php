@@ -63,7 +63,7 @@ function mail_message(string $to, string $lang, string $link, string $code): ?ar
     $t = MAIL_TEXT[$lang];
     if (!header_safe($link) || !preg_match('/^\d{6}$/', $code)) return null;
     $text = implode("\n\n", [$t['hello'], $t['lead'], $link, $t['expiry'], $t['code'] . "\n" . code_shown($code),
-        $t['ignore'], $t['bye'], 'Copius · contact@copius.fr']) . "\n";
+        $t['ignore'], $t['bye'], 'Copius · Gabriel Gracian-Leroudier EI (Nokime) · contact@copius.fr']) . "\n";
     return mail_build($to, $t['subject'], $text, fn(bool $banner): string => mail_html($t, $lang, $link, $code, $banner));
 }
 
@@ -170,7 +170,7 @@ $top
 <tr><td style="padding:24px 32px 30px;$serif;font-size:17px;color:#1E211A">{$e($t['bye'])}</td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
-<p style="margin:16px 0 0;$sans;font-size:12px;color:#6A6E5F">Copius · <a href="mailto:contact@copius.fr" style="color:#6A6E5F">contact@copius.fr</a></p>
+<p style="margin:16px 0 0;$sans;font-size:12px;color:#6A6E5F">Copius · Gabriel Gracian-Leroudier EI (Nokime) · <a href="mailto:contact@copius.fr" style="color:#6A6E5F">contact@copius.fr</a></p>
 </td></tr></table>
 </body></html>
 HTML;

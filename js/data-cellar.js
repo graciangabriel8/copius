@@ -19,7 +19,7 @@ fr:"Il est sec, si profond que soit son nez : goûtez avant de sucrer quoi que 
 pairs:["jamon-serrano","porc-iberique-bellota","mushroom","almond","onion","chicken"],
 svg:'<path class="f2 sf" d="M24 32Q52 27 74 33Q81 50 74 67Q52 73 24 68z"/><path class="s" d="M40 30.5Q36 50 40 70M64 31.5Q68 50 64 69"/><path class="f1 sf" d="M48 29.5Q45 50 48 71L55 70.5Q52 50 55 29.5z"/><ellipse class="f3 sf" cx="24" cy="50" rx="9" ry="18"/><ellipse class="s" cx="24" cy="50" rx="5" ry="12"/><path class="f2 sf" d="M42 76l5-5h12l5 5z"/>'},
 
-{id:"armagnac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
+{id:"armagnac",cat:"cellar",sign:"AOC",price:3,pk:"40–100 €/L",name:{en:"Armagnac",fr:"Armagnac"},latin:"Vitis vinifera 'Baco'",
 origin:{en:"Gascony, southwest France",fr:"Gascogne, Sud-Ouest de la France"},season:[],
 flavor:["fruity","woody","warm","rich"],texture:["fluid","silky"],
 story:{en:"Baco 22A is a hybrid, crossed at the end of the nineteenth century in the wake of phylloxera, and Armagnac is the one French appellation still allowed to keep a hybrid in the vineyard. A single low-strength run through the alambic armagnacais leaves in the heavy aromatics that a second distillation would strip, which is why it reads as prune and violet where Cognac reads as flowers.",
@@ -59,7 +59,7 @@ fr:"Déglacez le porc ou les tripes tant que la poêle est vive, puis ajoutez la
 pairs:["apple","pork","cream","camembert","butter","andouille","chicken","pear"],
 svg:'<path class="f2 sf" d="M42 34q-7-7-15-2t-4 22 13 22q6 3 6 3t6-3q9-4 13-22t-4-22-15 2z"/><path class="s" d="M42 34v-9"/><path class="f1 sf" d="M42 27q7-10 15-7-2 11-15 7z"/><path class="f1 sf" d="M62 52h14v10q0 8-7 8t-7-8z"/><path class="s" d="M69 70v6M63 76h12"/>'},
 
-{id:"cheongju",cat:"cellar",rare:true,price:2,pk:"10–20 €/L",name:{en:"Cheongju",fr:"Cheongju"},latin:"Oryza sativa",
+{id:"cheongju",cat:"cellar",price:2,pk:"10–20 €/L",name:{en:"Cheongju",fr:"Cheongju"},latin:"Oryza sativa",
 origin:{en:"Korea",fr:"Corée"},season:[],
 flavor:["sweet","mild","umami"],texture:["fluid","smooth"],
 story:{en:"Cheongju is the clear wine drawn off the top of a fermented rice mash; stir water into what is left at the bottom and you have makgeolli, so the two are one brew divided. It is the wine of jesa, the rite for the ancestors, which is why it sits in Korean kitchens for reasons that have nothing to do with the pan.",
@@ -69,7 +69,7 @@ fr:"C’est le désodorisant de la cuisine coréenne : une cuillère à soupe s
 pairs:["beef","pork","garlic","ginger","gochujang","doenjang","spring-onion","pear"],
 svg:'<path class="f1 sf" d="M20 50h56q-5 22-28 22T20 50z"/><path class="s" d="M20 50h56M28 60q20 8 40 0"/><ellipse class="f2 sf" cx="44" cy="44" rx="12" ry="7"/><path class="f3 sf" d="M54 42l17-13 3 4-17 13z"/>'},
 
-{id:"mei-kuei-lu-chiew",cat:"cellar",rare:true,price:2,pk:"8–16 €/L",name:{en:"Chinese rose wine",fr:"Alcool de rose chinois (mei kuei lu)"},latin:"Rosa rugosa",
+{id:"mei-kuei-lu-chiew",cat:"cellar",price:2,pk:"8–16 €/L",name:{en:"Chinese rose wine",fr:"Alcool de rose chinois (mei kuei lu)"},latin:"Rosa rugosa",
 origin:{en:"Northern China, Cantonese kitchens",fr:"Chine du Nord, cuisines cantonaises"},season:[],
 flavor:["floral","sweet","warm"],texture:["fluid","smooth"],
 story:{en:"Sorghum spirit is steeped with rose petals and rock sugar and bottled at around fifty-four percent, strong enough that a spoonful is the whole dose. It is what makes Cantonese lap cheong smell of roses rather than of pork, and no rice or grain wine stands in for it.",
@@ -79,7 +79,7 @@ fr:"Une cuillère à café pour 500 g de porc est la juste mesure au char siu ;
 pairs:["pork","honey","soy-sauce","star-anise","chinese-five-spice","garlic","ginger","hoisin-sauce"],
 svg:'<path class="f2 sf" d="M42 34h12v6q10 6 10 18v14q0 6-6 6H38q-6 0-6-6V58q0-12 10-18z"/><path class="s" d="M32 62h32"/><path class="f1 sf" d="M48 12q9 0 9 8t-9 10q-9-2-9-10t9-8z"/><path class="s" d="M43 20q5-4 10 0M48 30v4"/>'},
 
-{id:"cognac",cat:"cellar",sign:"AOC",luxe:true,price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
+{id:"cognac",cat:"cellar",sign:"AOC",price:3,pk:"40–95 €/L",name:{en:"Cognac",fr:"Cognac"},latin:"Vitis vinifera 'Ugni blanc'",
 origin:{en:"Charente & Charente-Maritime",fr:"Charente et Charente-Maritime"},season:[],
 flavor:["fruity","floral","warm","woody"],texture:["silky","smooth"],
 story:{en:"Ugni blanc makes a wine too thin and too acid to drink, around nine percent, which is precisely what the charentais still wants - and it is now very nearly all that Cognac plants. The angels' share, two or three percent of each cask lost to the air every year, feeds a black fungus called Baudoinia on the town's walls, so the ageing cellars can be found by their soot.",
@@ -159,7 +159,7 @@ fr:"Dans la fondue, ce n’est pas un arôme mais une mécanique : une cuiller�
 pairs:["cherry","dark-chocolate","gruyere","emmentaler","cream","almond","apricot","griotte"],
 svg:'<path class="f1 sf" d="M44 14h8v20q8 8 8 20v20q0 4-4 4H40q-4 0-4-4V54q0-12 8-20z"/><path class="s" d="M36 62h24"/><circle class="f3 sf" cx="26" cy="66" r="8"/><circle class="f2 sf" cx="70" cy="68" r="7"/><path class="s" d="M26 58q2-14 14-18M70 61q0-12-12-16"/>'},
 
-{id:"macvin-du-jura",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"20–32 €/L",name:{en:"Macvin du Jura",fr:"Macvin du Jura"},latin:"Vitis vinifera",
+{id:"macvin-du-jura",cat:"cellar",sign:"AOP",price:2,pk:"20–32 €/L",name:{en:"Macvin du Jura",fr:"Macvin du Jura"},latin:"Vitis vinifera",
 origin:{en:"Jura, France",fr:"Jura, France"},season:[],
 flavor:["sweet","warm","woody"],texture:["silky","smooth"],
 story:{en:"Macvin is the only French appellation whose mistelle is muted with marc — oak-aged pomace brandy — rather than with a wine brandy, and the name carries it: mac, for marc. Recognised in 1991, it is the youngest of the Jura appellations and the one that tastes least like wine, all pressed skins and warm spice.",
@@ -229,7 +229,7 @@ fr:"Prenez la bouteille marquée secco ou vergine : la version douce transforme
 pairs:["quasi-de-veau","chicken","mushroom","sage","butter","parmesan"],
 svg:'<path class="f1 sf" d="M22 46h40v10a12 12 0 0 1-12 12H34a12 12 0 0 1-12-12z"/><path class="s" d="M62 50l16-6"/><path class="s" d="M26 46q8-9 16-3t18-3"/><path class="f2 sf" d="M70 60q6 4 6 9t-6 7q-5-2-5-7t5-9z"/>'},
 
-{id:"maury",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–24 €/L",name:{en:"Maury",fr:"Maury"},latin:"Vitis vinifera 'Grenache noir'",
+{id:"maury",cat:"cellar",sign:"AOP",price:2,pk:"12–24 €/L",name:{en:"Maury",fr:"Maury"},latin:"Vitis vinifera 'Grenache noir'",
 origin:{en:"Agly valley, Roussillon",fr:"Vallée de l’Agly, Roussillon"},season:[],
 flavor:["sweet","fruity","rich"],texture:["viscous","smooth"],
 story:{en:"Maury's Grenache grows on a band of black schist in the Agly valley, under the ruined Cathar fortress of Quéribus — rock that holds heat and almost no water. Most of it is bottled young in the grenat style, sealed against air, so where Banyuls goes nutty Maury stays black-fruited and tight.",
@@ -309,7 +309,7 @@ fr:"Dans une sauce aux coquillages, versez-le tôt et laissez-le cuire une bonne
 pairs:["cantaloupe","foie-gras","scallop","langoustine","butter","shallot"],
 svg:'<path class="f1 sf" d="M28 34h26l-4 40H32z"/><path class="s" d="M29 44h24"/><path class="f2 sf" d="M60 26q16 4 16 18-14-2-16-18z"/><path class="s" d="M62 31q11 5 12 12"/>'},
 
-{id:"eau-de-vie-framboise",cat:"cellar",luxe:true,price:3,pk:"60–120 €/L",name:{en:"Raspberry eau-de-vie",fr:"Eau-de-vie de framboise"},latin:"Rubus idaeus",
+{id:"eau-de-vie-framboise",cat:"cellar",price:3,pk:"60–120 €/L",name:{en:"Raspberry eau-de-vie",fr:"Eau-de-vie de framboise"},latin:"Rubus idaeus",
 origin:{en:"Alsace & Baden",fr:"Alsace et pays de Bade"},season:[],
 flavor:["fruity","floral","warm"],texture:["fluid","smooth"],
 story:{en:"Raspberries carry so little sugar that fermenting them yields barely any alcohol, so most framboise is not fermented at all: the fruit is steeped in neutral spirit and the whole macerate is then distilled. Something like twenty-five kilos of berries stand behind a single litre, which is the whole explanation for the price.",
@@ -329,7 +329,7 @@ fr:"Il est vert et haut de ton : il se met à la fin - une cuillerée dans une 
 pairs:["lime","banana","pineapple","mango","coconut","passion-fruit","ginger","vanilla"],
 svg:'<path class="f2 sf" d="M30 78l6-56 8 1-6 55z"/><path class="s" d="M31 64h8M33 50h8M35 36h8"/><path class="f2 sf" d="M52 78l8-52 8 2-8 50z"/><path class="s" d="M53 64h9M56 50h9M59 36h9"/><path class="f1 sf" d="M44 24q14-10 24-4-12 10-24 4z"/>'},
 
-{id:"rivesaltes-ambre",cat:"cellar",sign:"AOP",rare:true,price:2,pk:"12–25 €/L",name:{en:"Rivesaltes ambré",fr:"Rivesaltes ambré"},latin:"Vitis vinifera 'Grenache blanc'",
+{id:"rivesaltes-ambre",cat:"cellar",sign:"AOP",price:2,pk:"12–25 €/L",name:{en:"Rivesaltes ambré",fr:"Rivesaltes ambré"},latin:"Vitis vinifera 'Grenache blanc'",
 origin:{en:"Rivesaltes, Roussillon",fr:"Rivesaltes, Roussillon"},season:[],
 flavor:["sweet","nutty","honeyed","fruity"],texture:["silky","viscous"],
 story:{en:"Rivesaltes is the largest vin doux naturel appellation in France, and ambré is its white face: Grenache blanc and Macabeu, muted with spirit and then held at least two years in deliberately oxidative conditions, often in demijohns left outdoors. What comes out smells of dried apricot, hazelnut and candied peel, with none of the red-fruit weight of its Grenache noir neighbours.",
@@ -419,7 +419,7 @@ fr:"Achetez la bouteille que l’on boit, pas celle étiquetée vin de cuisine 
 pairs:["ginger","spring-onion","soy-sauce","pork-belly","chicken","star-anise","crab"],
 svg:'<path class="f2 sf" d="M36 36q-11 10-11 22t11 16q12 4 24 0t11-16-11-22z"/><path class="f2 sf" d="M42 26h12v10H42z"/><path class="f1 sf" d="M37 27q11-9 22 0-11 5-22 0z"/><path class="s" d="M42 31h12"/>'},
 
-{id:"vin-de-paille",cat:"cellar",rare:true,luxe:true,price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
+{id:"vin-de-paille",cat:"cellar",price:4,pk:"80–140 €/L",name:{en:"Vin de paille",fr:"Vin de paille"},latin:"Vitis vinifera",
 origin:{en:"Jura, dried in unheated lofts",fr:"Jura, séché en greniers non chauffés"},season:[],
 flavor:["sweet","honeyed","fruity"],texture:["viscous","silky"],
 story:{en:"The bunches are laid on straw or hung in an unheated loft for at least six weeks and pressed between Christmas and late February; a hundred kilos of shrivelled grapes yield fifteen to eighteen litres of must. Nothing is added at any point — the sweetness is only the water that left.",
@@ -429,7 +429,7 @@ fr:"Déglacez hors du feu et ne réduisez pas de plus de moitié : à gros boui
 pairs:["foie-gras","apricot","pear","walnut","blue-cheese","fig"],
 svg:'<path class="s" d="M17 62q6.2 0.7 12.4 0q6.2 -0.7 12.4 0q6.2 0.7 12.4 0q6.2 -0.7 12.4 0q6.2 0.7 12.4 0M14 66q5.5 -0.7 11 0q5.5 0.7 11 0q5.5 -0.7 11 0q5.5 0.7 11 0q5.5 -0.7 11 0q5.5 0.7 11 0M19 70q5.8 0.7 11.6 0q5.8 -0.7 11.6 0q5.8 0.7 11.6 0q5.8 -0.7 11.6 0q5.8 0.7 11.6 0M20 74q5.5 -0.7 11 0q5.5 0.7 11 0q5.5 -0.7 11 0q5.5 0.7 11 0q5.5 -0.7 11 0M27 78q5.6 0.7 11.2 0q5.6 -0.7 11.2 0q5.6 0.7 11.2 0q5.6 -0.7 11.2 0M31 82q5.5 -0.7 11 0q5.5 0.7 11 0q5.5 -0.7 11 0"/><path class="f2 sf" d="M56.5 48a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM56.5 58a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM46.5 43a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM46.5 53a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM36.5 58a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM26.5 53a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM46.5 63a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0z"/><path class="f3 sf" d="M36.5 48a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0zM26.8 53a5.2 5.2 0 1 0 10.4 0a5.2 5.2 0 1 0 -10.4 0zM46.5 63a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0z"/><path class="s" d="M39.2 47A3 3 0 0 1 43.9 45.7M31 50.3A2.9 2.9 0 0 1 34.9 53M49.2 64A3 3 0 0 1 52 60M41 46l2 3M31 55l3-1M51 61l3 2"/><path class="s" d="M67 53q6-2 9-8"/><path class="f2 sf" d="M72 48q8-6 12 0q-6 5-12 0z"/>'},
 
-{id:"vin-jaune",cat:"cellar",luxe:true,price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
+{id:"vin-jaune",cat:"cellar",price:4,pk:"60–110 €/L",name:{en:"Vin jaune",fr:"Vin jaune"},latin:"Vitis vinifera (Savagnin)",
 origin:{en:"Château-Chalon and Arbois, Jura",fr:"Château-Chalon et Arbois, Jura"},season:[],
 flavor:["nutty","warm","umami"],texture:["fluid","silky"],
 story:{en:"The barrel is filled once and never topped up again for six years and three months; a film of yeast grows across the surface and shields the wine while about a third of it evaporates. That loss is why the bottle holds 62 cl — what is left of a litre after the cellar has taken its share.",

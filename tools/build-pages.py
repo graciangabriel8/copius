@@ -459,7 +459,7 @@ def page(i, lang, by_id, count, G):
 <footer>
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(dishidx)s">%(dishes)s</a> · <a href="%(up)s%(app)s%(hash)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s<br>
   Copius — %(tagline)s · %(count)s
-</footer>
+%(fevin)s</footer>
 <script src="%(up)sjs/page.js?v=%(v)d" defer></script>
 </body>
 </html>
@@ -485,7 +485,7 @@ def page(i, lang, by_id, count, G):
         # A paid id opens the atlas on its locked panel.
         "hash": "#" + i["id"] if paid else "",
         "fix": correction_link(name, here, lang), "about": e(t["about"]),
-        "legal": legal_links(up, lang),
+        "legal": legal_links(up, lang), "fevin": foot_evin(lang),
         "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN[lang])) if is_alcohol(i) else "",
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
         "tagline": e(t["tagline"]), "count": e(t["count"] % count),
@@ -646,10 +646,14 @@ def page_title(name, alt_name, fam):
     return "%s — %s · Copius" % (name, fam)
 
 
-# The two contract links, worded as the hand pages word them (merci/, commande/): the French
+# The legal-notice link and the two contract links, worded as the hand pages word them (merci/, commande/): the French
 # label is the one the law names, so an English page shows it too, as index.html does.
-LEGAL = {"fr": (("resilier/", "Résilier votre contrat"), ("renoncer/", "Renoncer au contrat ici")),
-         "en": (("resilier/", "Résilier votre contrat · Cancel your contract"), ("renoncer/", "Renoncer au contrat ici · Withdraw from contract here"))}
+LEGAL = {"fr": (("confidentialite/#mentions", "Mentions légales"), ("resilier/", "Résilier votre contrat"), ("renoncer/", "Renoncer au contrat ici")),
+         "en": (("confidentialite/#legal-notice", "Mentions légales · Legal notice"), ("resilier/", "Résilier votre contrat · Cancel your contract"), ("renoncer/", "Renoncer au contrat ici · Withdraw from contract here"))}
+
+
+def foot_evin(lang):
+    return '<p class="foot-evin">%s</p>\n' % e(EVIN[lang])
 
 
 def legal_links(up, lang):
@@ -668,7 +672,7 @@ def index_href(lang):
 # rebuild that changes nothing changes no date; a page whose content moves takes today's. Run after every page is
 # written: it reads them back, the hand-made ones (the home page, about/, cgv/...) included.
 LASTMOD = ROOT / "tools" / "lastmod.json"
-STAMP = re.compile(r"\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n</footer>)")
+STAMP = re.compile(r"\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n(?:<p class=\"foot-evin\">[^\n]*</p>\n)?</footer>)")
 SPACES = re.compile("[\u00a0\u202f]|&nbsp;|&#8239;|&#160;")
 
 
@@ -717,12 +721,13 @@ def index_page(rows, lang):
 <body>
 <header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav></header>
 <main><h1>%s</h1><p class="note">%s</p>%s</main>
-<footer>Copius — %s<br>%s</footer>
+<footer>Copius — %s<br>%s
+%s</footer>
 </body>
 </html>
 """ % (lang, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
        robots, here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
-       e(t["legend"]), "".join(blocks), e(t["tagline"]), legal_links(up, lang))
+       e(t["legend"]), "".join(blocks), e(t["tagline"]), legal_links(up, lang), foot_evin(lang).rstrip("\n"))
 
 
 SLUG = {
@@ -857,7 +862,7 @@ def dish_page(d, lang, by_id):
 <footer>
   <a href="../">%(all)s</a> · <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s<br>
   Copius — %(tagline)s
-</footer>
+%(fevin)s</footer>
 </body>
 </html>
 """ % {
@@ -874,7 +879,7 @@ def dish_page(d, lang, by_id):
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
         "index": e(ui["index"]), "about": e(ui["about"]), "tagline": e(ui["tagline"]),
-        "legal": legal_links(up, lang),
+        "legal": legal_links(up, lang), "fevin": foot_evin(lang),
     }
 
 
@@ -922,7 +927,7 @@ def dish_index(lang, by_id):
 
 <footer>
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s
-</footer>
+%(fevin)s</footer>
 </body>
 </html>
 """ % {
@@ -932,7 +937,7 @@ def dish_index(lang, by_id):
         "title": e(t["idx"]), "lede": e(lede), "groups": "\n  ".join(groups),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
-        "index": e(ui["index"]), "about": e(ui["about"]), "legal": legal_links(up, lang),
+        "index": e(ui["index"]), "about": e(ui["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
     }
 
 
@@ -1024,7 +1029,7 @@ def season_page(month, lang, rows):
 <footer>
   <a href="%(prevurl)s">← %(prev)s</a> · <a href="../">%(months)s</a> · <a href="%(nexturl)s">%(next)s →</a><br>
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s
-</footer>
+%(fevin)s</footer>
 </body>
 </html>
 """ % {
@@ -1040,7 +1045,7 @@ def season_page(month, lang, rows):
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
         "prev": e(MONTHS[lang][prev_m]), "next": e(MONTHS[lang][next_m]),
-        "fix": correction_link(t["h1"] % name, here, lang), "about": e(UI[lang]["about"]), "legal": legal_links(up, lang),
+        "fix": correction_link(t["h1"] % name, here, lang), "about": e(UI[lang]["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
     }
 
@@ -1087,14 +1092,14 @@ def season_index(lang, rows):
 
 <footer>
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s
-</footer>
+%(fevin)s</footer>
 </body>
 </html>
 """ % {
         "og": head_extra(e(t["idxTitle"]), e(t["idxLede"]), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
         "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "robots": robots,
-        "here": here, "there": there, "months": months, "about": e(ui["about"]), "legal": legal_links(up, lang),
+        "here": here, "there": there, "months": months, "about": e(ui["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
     }
 
@@ -1185,6 +1190,7 @@ h2 small{color:var(--ink-3);font-size:14px}
 .ig-dot{fill:var(--ink-3);stroke:none}
 .ig-link:hover .ig{stroke:var(--ink)}
 .ig-link:hover .ig-dot{fill:var(--ink)}
+.foot-evin{margin:10px 0 0;font-size:12px;line-height:1.45;color:var(--ink-3)}
 footer{padding:24px 20px 48px;margin-top:26px;border-top:1px solid var(--border);
   font-size:13.5px;color:var(--ink-3);line-height:1.9}
 h3{font:400 16px/1.3 var(--sans);margin:20px 0 7px;color:var(--ink-3);
