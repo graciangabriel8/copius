@@ -48,16 +48,18 @@ if not re.search(r"^\s*var PAYMENTS_LIVE = true;", (ROOT / "js" / "app.js").read
     sys.exit("js/app.js: PAYMENTS_LIVE is off, but index.html sells the full version; take its order links out first")
 def fmt(n):
     return "{:,}".format(n).replace(",", "\u202f")   # 1 839, French style, unbreakable
-idx = ROOT / "index.html"
-html = idx.read_text(encoding="utf-8")
 # "strawberry": the pairings of the comparison's example.
-for key, n in (("ingredients", len(ing)), ("techniques", tech), ("bases", bases), ("chefs", chefs),
-               ("free", lk["counts"]["free"]), ("pairings", lk["counts"]["pairings"]),
-               ("dishes", lk["counts"]["dishes"]), ("trios", lk["counts"]["trios"]),
-               ("strawberry", strawberry)):
-    html, k = re.subn(r'(data-count="%s">)[^<]*' % key, lambda m: m.group(1) + fmt(n), html)
-    if not k:
-        sys.exit("index.html: no data-count=%s" % key)
+N = {"ingredients": len(ing), "techniques": tech, "bases": bases, "chefs": chefs,
+     "free": lk["counts"]["free"], "pairings": lk["counts"]["pairings"],
+     "dishes": lk["counts"]["dishes"], "trios": lk["counts"]["trios"], "strawberry": strawberry}
+def counts(page, html, keys):
+    for key in keys:
+        html, k = re.subn(r'(data-count="%s">)[^<]*' % key, lambda m: m.group(1) + fmt(N[key]), html)
+        if not k:
+            sys.exit("%s: no data-count=%s" % (page, key))
+    return html
+idx = ROOT / "index.html"
+html = counts("index.html", idx.read_text(encoding="utf-8"), N)
 html, k = re.subn(r'content="[^"]*? ingredients, [^"]*? techniques, [^"]*? bases and [^"]*? chefs, ',
                   'content="%s ingredients, %s techniques, %s bases and %s chefs, '
                   % (fmt(len(ing)), fmt(tech), fmt(bases), fmt(chefs)), html)
@@ -93,6 +95,23 @@ html = (html[:wall.start(1)] + json.dumps(art, ensure_ascii=False, separators=("
 idx.write_text(html, encoding="utf-8")
 print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs; %d drawings"
       % (len(ing), tech, bases, chefs, len(art)))
+
+# The order page lists the full version's numbers, under a row of plates whose
+# drawings are written in from the data the same way.
+order = ROOT / "commande" / "index.html"
+html = counts("commande/index.html", order.read_text(encoding="utf-8"),
+              ("ingredients", "pairings", "chefs", "dishes", "bases", "trios"))
+def plate(m):
+    r = recs.get(m.group(1))
+    if not r or r[0] not in FAMILY or not r[3]:
+        sys.exit("commande/index.html: no usable drawing in the data for " + m.group(1))
+    return '<span class="art" data-art="%s" data-f="%s"><svg viewBox="0 0 96 96">%s</svg></span>' % (
+        m.group(1), FAMILY[r[0]], r[3])
+html, k = re.subn(r'<span class="art" data-art="([^"]+)"[^>]*>(?:<svg .*?</svg>)?</span>', plate, html, flags=re.S)
+if not k:
+    sys.exit("commande/index.html: the row of plates was not found")
+order.write_text(html, encoding="utf-8")
+print("commande/index.html counts and %d drawings" % k)
 
 # qlmanage renders into a square box and scales to fit, so a 1200x630 svg comes
 # out zoomed and clipped. Authoring it square and cropping the middle band back

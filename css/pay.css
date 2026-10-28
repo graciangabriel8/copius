@@ -1,6 +1,29 @@
 /* Copius — the order, thanks, cancel and withdraw pages (DESIGN-PAYMENT.md
    section 9). On top of page.css: one language shown at a time, form fields,
    the plan choice, the summary, the button. */
+/* The atlas's accent, and the home page's plates: one tint per family. */
+:root{--accent:#4F5B3F;--on-accent:#FFFFFF;--f1:#FFFEFC;--f2:#ECEBE4;--f3:#D8D7CE;
+  --t-g:#DCE4CB;--t-r:#F1DAD3;--t-s:#D3E1E6;--t-e:#E8DCCB;--t-o:#EEE3BC}
+:root[data-theme="dark"]{--accent:#AEB994;--on-accent:#191A14;--f1:#2A2C24;--f2:#33352C;--f3:#3E4035;
+  --t-g:#2C3524;--t-r:#3A2A27;--t-s:#22323A;--t-e:#352D23;--t-o:#37311F;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#AEB994;--on-accent:#191A14;
+  --f1:#2A2C24;--f2:#33352C;--f3:#3E4035;--t-g:#2C3524;--t-r:#3A2A27;--t-s:#22323A;--t-e:#352D23;--t-o:#37311F;
+  color-scheme:dark}}
+.plates{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.art{flex:none;display:block;width:56px;height:56px;border-radius:50%;background:var(--fam,var(--f2))}
+[data-f="g"]{--fam:var(--t-g)}
+[data-f="r"]{--fam:var(--t-r)}
+[data-f="s"]{--fam:var(--t-s)}
+[data-f="e"]{--fam:var(--t-e)}
+[data-f="o"]{--fam:var(--t-o)}
+.art svg{display:block;width:100%;height:100%}
+.art .f1{fill:var(--f1)}
+.art .f2{fill:var(--f2)}
+.art .f3{fill:var(--f3)}
+.art .s{fill:none;stroke:var(--line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.art .sf{stroke:var(--line);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.art .dot{fill:var(--line)}
+h1 em{color:var(--accent)}
 html[lang="fr"] [lang="en"]:not(html):not([data-lang]),html[lang="en"] [lang="fr"]:not(html):not([data-lang]),
 html[lang="fr"] a[data-lang="fr"],html[lang="en"] a[data-lang="en"]{display:none}
 .lang{margin:-6px 0 22px;font-size:14px}
@@ -11,10 +34,12 @@ legend{padding:0;margin:0 0 10px;font:400 20px/1.3 var(--serif)}
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .plan{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--card);
   border:1px solid var(--border);border-radius:12px;cursor:pointer}
-.plan:has(input:checked){border-color:var(--ink-2);box-shadow:0 0 0 1px var(--ink-2)}
-.plan input{margin:5px 0 0;accent-color:var(--ink)}
+.plan:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);
+  background:color-mix(in srgb,var(--accent) 8%,var(--card))}
+.plan input{margin:5px 0 0;accent-color:var(--accent)}
 .plan b{display:block;font:400 19px/1.3 var(--serif);color:var(--ink)}
 .plan .amt{display:block;margin:2px 0 4px;font-weight:600;font-variant-numeric:tabular-nums}
+.plan .eq{display:block;margin:-3px 0 5px;font-size:14px;color:var(--accent)}
 .plan small{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-3)}
 .vat{margin:10px 0 0;font-size:13.5px;color:var(--ink-3)}
 .field{display:flex;flex-direction:column;gap:5px;margin:0 0 16px}
@@ -24,15 +49,17 @@ fieldset .hint{margin:8px 0 0}
 input[type=email],input[type=text],input[type=date],textarea{width:100%;max-width:440px;padding:10px 12px;
   border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink);font:15px/1.4 var(--sans)}
 textarea{min-height:90px;max-width:100%;resize:vertical}
-input:focus-visible,textarea:focus-visible{outline:2px solid var(--ink-3);outline-offset:1px}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 input[type=date]{color-scheme:light}
 :root[data-theme="dark"] input[type=date]{color-scheme:dark}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) input[type=date]{color-scheme:dark}}
 .radio{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;font-size:15px}
-.radio input{margin:4px 0 0;accent-color:var(--ink)}
+.radio input{margin:4px 0 0;accent-color:var(--accent)}
 .radio small{display:block;color:var(--ink-3);font-size:13.5px}
-.includes{margin:0 0 22px;padding-left:20px;color:var(--ink-2)}
-.includes li{margin:2px 0}
+.includes{margin:0 0 22px;padding:0;list-style:none;color:var(--ink-2)}
+.includes li{position:relative;margin:2px 0;padding-left:26px}
+.includes li::before{content:"";position:absolute;left:3px;top:.48em;width:11px;height:6px;
+  border:solid var(--accent);border-width:0 0 2px 2px;transform:rotate(-45deg)}
 .summary{margin:0 0 20px;padding:4px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
 .summary div{display:grid;grid-template-columns:minmax(120px,34%) 1fr auto;gap:4px 14px;padding:11px 0;
   border-bottom:1px solid var(--border);align-items:baseline}
@@ -41,12 +68,12 @@ input[type=date]{color-scheme:light}
 .summary dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
 .summary .edit{font-size:13.5px;justify-self:end}
 .accept{display:flex;gap:10px;align-items:flex-start;margin:0 0 18px;font-size:15px}
-.accept input{margin:4px 0 0;width:17px;height:17px;accent-color:var(--ink)}
-.cx{margin:4px 0 0;padding:12px 22px;border-radius:999px;border:1px solid var(--ink);
-  background:var(--ink);color:var(--bg);font:600 15px/1.2 var(--sans);cursor:pointer}
+.accept input{margin:4px 0 0;width:17px;height:17px;accent-color:var(--accent)}
+.cx{margin:4px 0 0;padding:12px 22px;border-radius:999px;border:1px solid var(--accent);
+  background:var(--accent);color:var(--on-accent);font:600 15px/1.2 var(--sans);cursor:pointer}
 .cx:hover{opacity:.85}
 .cx:disabled{opacity:.5;cursor:default}
-.cx:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
+.cx:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .ghost{background:transparent;color:var(--ink)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .msg{margin:14px 0 0;font-size:15px;color:var(--ink-2)}
