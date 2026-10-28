@@ -16,7 +16,7 @@
 <body>
 <header>
   <a class="home" href="../">Copius</a>
-  <nav><a href="../atlas.html"><span lang="fr">Ouvrir l’atlas</span><span lang="en">Open the atlas</span></a></nav>
+  <nav><a href="../atlas.html"><span lang="fr">Ouvrir la version gratuite</span><span lang="en">Open the free version</span></a></nav>
 </header>
 
 <main>
@@ -27,18 +27,6 @@
 
 <form id="choose" class="step" novalidate>
   <p class="lede" tabindex="-1"><span lang="fr">Tout l’atlas, en français et en anglais.</span><span lang="en">The whole atlas, in French and in English.</span></p>
-  <ul class="includes" lang="fr">
-    <li>les <span data-count="ingredients">1 889</span> ingrédients de l’atlas illustré, et les <span data-count="pairings">13 208</span> accords enregistrés&#8239;;</li>
-    <li>le labo des accords et l’assiette&#8239;;</li>
-    <li><span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats&#8239;;</li>
-    <li><span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques.</li>
-  </ul>
-  <ul class="includes" lang="en">
-    <li>the <span data-count="ingredients">1 889</span> ingredients of the illustrated atlas, and the <span data-count="pairings">13 208</span> recorded pairings;</li>
-    <li>the pairing lab and the plate;</li>
-    <li><span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes;</li>
-    <li><span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios.</li>
-  </ul>
 
   <fieldset>
     <legend><span lang="fr">Votre formule</span><span lang="en">Your plan</span></legend>
@@ -52,29 +40,47 @@
         <span><b lang="fr">Annuelle</b><b lang="en">Yearly</b>
           <span class="amt" lang="fr">39&nbsp;€ par an</span><span class="amt" lang="en">€39 a year</span>
           <span class="eq" lang="fr">soit 3,25&nbsp;€ par mois</span><span class="eq" lang="en">that is €3.25 a month</span>
+          <span class="eq" lang="fr">19,80&nbsp;€ de moins que 12 mois à 4,90&nbsp;€</span><span class="eq" lang="en">€19.80 less than paying €4.90 for 12 months</span>
           <small lang="fr">Engagement d’un an, reconduite chaque année sauf refus de votre part.</small>
           <small lang="en">A one-year commitment, renewed each year unless you refuse.</small></span></label>
     </div>
-    <p class="vat"><span lang="fr">Prix payés&nbsp;: TVA non applicable, article 293&nbsp;B du CGI. Paiement par carte bancaire (Stripe).</span><span lang="en">Prices paid: VAT not applicable, article 293 B of the French tax code. Payment by card (Stripe).</span></p>
   </fieldset>
 
   <div class="field">
     <label for="email"><span lang="fr">Votre adresse e-mail</span><span lang="en">Your email address</span></label>
     <input type="email" id="email" autocomplete="email" required maxlength="254">
-    <span class="hint"><span lang="fr">Elle reçoit la confirmation et sert à vous connecter&nbsp;: il n’y a pas de mot de passe.</span><span lang="en">It receives the confirmation and is how you sign in: there is no password.</span></span>
+    <span class="hint"><span lang="fr">Elle reçoit la confirmation, avec un lien et un code pour ouvrir la version complète. Pas de mot de passe.</span><span lang="en">It receives the confirmation, with a link and a code to open the full version. No password.</span></span>
   </div>
+  <p class="payline"><span lang="fr">Paiement sécurisé chez Stripe&nbsp;: carte bancaire, ou Apple Pay si votre navigateur le propose.</span><span lang="en">Secure payment with Stripe: card, or Apple Pay if your browser offers it.</span></p>
   <button type="submit" class="cx"><span lang="fr">Voir le récapitulatif</span><span lang="en">Review my order</span></button>
   <p class="msg" id="chooseMsg" role="alert"></p>
+  <ul class="includes" lang="fr">
+    <li>les <span data-count="ingredients">1 889</span> ingrédients de l’atlas illustré, et les <span data-count="pairings">13 208</span> accords enregistrés&#8239;;</li>
+    <li><span data-count="techniques">135</span> techniques&#8239;;</li>
+    <li>le labo d’accords et l’assiette&#8239;;</li>
+    <li><span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats&#8239;;</li>
+    <li><span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques.</li>
+  </ul>
+  <ul class="includes" lang="en">
+    <li>the <span data-count="ingredients">1 889</span> ingredients of the illustrated atlas, and the <span data-count="pairings">13 208</span> recorded pairings;</li>
+    <li><span data-count="techniques">135</span> techniques;</li>
+    <li>the pairing lab and the plate;</li>
+    <li><span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes;</li>
+    <li><span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios.</li>
+  </ul>
+  <p class="vat"><span lang="fr">Prix payés&nbsp;: TVA non applicable, article 293&nbsp;B du CGI.</span><span lang="en">Prices paid: VAT not applicable, article 293 B of the French tax code.</span></p>
 </form>
 
 <form id="review" class="step" hidden novalidate>
   <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
+    <div><dt><span lang="fr">Contenu</span><span lang="en">Contents</span></dt><dd><span lang="fr"><span data-count="ingredients">1 889</span> ingrédients, <span data-count="pairings">13 208</span> accords, <span data-count="techniques">135</span> techniques, le labo d’accords, <span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats, <span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques</span><span lang="en"><span data-count="ingredients">1 889</span> ingredients, <span data-count="pairings">13 208</span> pairings, <span data-count="techniques">135</span> techniques, the pairing lab, <span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes, <span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios</span></dd></div>
     <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd id="sPrice"></dd></div>
-    <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&nbsp;Renoncer au contrat ici&nbsp;» dans votre compte, en bas des pages de l’atlas, de l’accueil et de la commande sur copius.fr, et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function in your account, at the bottom of the atlas, home and order pages on copius.fr, and in the confirmation email.</span></dd></div>
+    <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&#8239;Renoncer au contrat ici&#8239;» dans votre compte, en bas des pages de l’atlas, de l’accueil et de la commande sur copius.fr, et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function in your account, at the bottom of the atlas, home and order pages on copius.fr, and in the confirmation email.</span></dd></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
-    <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, saisie directement ou avec Apple Pay, sur la page sécurisée de Stripe.</span><span lang="en">Card, entered directly or with Apple Pay, on Stripe’s secure page.</span></dd></div>
+    <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, sur la page sécurisée de Stripe (et Apple Pay quand votre navigateur le propose).</span><span lang="en">Card, on Stripe’s secure page (and Apple Pay when your browser offers it).</span></dd></div>
+    <div><dt><span lang="fr">Accès</span><span lang="en">Access</span></dt><dd><span lang="fr">Dès le paiement validé, par le lien envoyé par e-mail</span><span lang="en">As soon as the payment goes through, by the link we email you</span></dd></div>
   </dl>
   <label class="accept"><input type="checkbox" id="cgv">
     <span><span lang="fr">J’ai lu les <a href="../cgv/" target="_blank" rel="noopener">conditions générales de vente</a> de la version complète et je les accepte.</span><span lang="en">I have read the <a href="../cgv/" target="_blank" rel="noopener">terms of sale</a> of the full version (in French, the binding text) and I accept them.</span></span></label>
@@ -82,14 +88,14 @@
     <button type="submit" class="cx" id="pay"><span lang="fr">Continuer vers le paiement</span><span lang="en">Continue to payment</span></button>
   </div>
   <p class="msg" id="reviewMsg" role="status"></p>
-  <p class="fine"><span lang="fr">Vous validerez le paiement sur la page de Stripe&#8239;; c’est ce bouton-là qui vous engage. Vendeur&nbsp;: Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130&nbsp;694&nbsp;615, RCS Saint-Étienne, +33&nbsp;6&nbsp;02&nbsp;18&nbsp;44&nbsp;19, contact@copius.fr. En cas de litige, vous pouvez recourir gratuitement au médiateur de la consommation&nbsp;: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span><span lang="en">You confirm the payment on Stripe’s page; that button is the one that binds you. Seller: Gabriel Gracian-Leroudier, sole trader (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, RCS Saint-Étienne, +33 6 02 18 44 19, contact@copius.fr. In a dispute you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span></p>
+  <p class="fine"><span lang="fr">Vous validerez le paiement sur la page de Stripe&#8239;; c’est ce bouton-là qui vous engage. Vendeur&nbsp;: Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130&nbsp;694&nbsp;615, RCS Saint-Étienne, +33&nbsp;6&nbsp;02&nbsp;18&nbsp;44&nbsp;19, contact@copius.fr. On vous répond sous 2 jours ouvrés. En cas de litige, vous pouvez recourir gratuitement au médiateur de la consommation&nbsp;: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span><span lang="en">You confirm the payment on Stripe’s page; that button is the one that binds you. Seller: Gabriel Gracian-Leroudier, sole trader (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, RCS Saint-Étienne, +33 6 02 18 44 19, contact@copius.fr. We reply within 2 working days. In a dispute you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span></p>
 </form>
 </main>
 
 <footer>
   <a href="../cgv/"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms of sale</span></a> ·
-  <a href="../resilier/"><span lang="fr">Résilier votre contrat</span><span lang="en">Cancel your contract</span></a> ·
-  <a href="../renoncer/"><span lang="fr">Renoncer au contrat ici</span><span lang="en">Withdraw from contract here</span></a> ·
+  <a href="../resilier/"><span lang="fr">Résilier votre contrat</span><span lang="en">Résilier votre contrat · Cancel your contract</span></a> ·
+  <a href="../renoncer/"><span lang="fr">Renoncer au contrat ici</span><span lang="en">Renoncer au contrat ici · Withdraw from contract here</span></a> ·
   <a href="../confidentialite/"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span></a>
 </footer>
 

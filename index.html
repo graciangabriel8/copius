@@ -21,7 +21,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="tdm-reservation" content="1">
 <title>Copius — un atlas illustré de la cuisine · an illustrated atlas of cooking</title>
-<meta name="description" content="Un atlas illustré de la cuisine, en français et en anglais : ingrédients, techniques, bases et chefs. An illustrated atlas of cooking in English and French: ingredients, techniques, bases and chefs.">
+<meta name="description" content="Un atlas illustré de la cuisine, en français et en anglais : ingrédients, techniques, bases et chefs. An illustrated atlas of cooking in English and French: ingredients, techniques, bases and chefs.">
 <link rel="canonical" href="https://copius.fr/">
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
@@ -73,7 +73,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   html:not([data-lang]) span[data-l="en"]:not(.also)::before{content:" / "}
   html:not([data-lang]) .lang{display:none}
   /* A signed-in reader has the full version: one door, straight in, and no offer. */
-  html[data-signed] .doors, html[data-signed] .more, html[data-signed] .versions,
+  html[data-signed] .doors, html[data-signed] .more, html[data-signed] .signin-line, html[data-signed] .versions,
   html:not([data-signed]) .cta-in{display:none}
   .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
 
@@ -179,6 +179,8 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   /* In the sans: Georgia's figures are old-style only, and its zero reads as an o. */
   .price{margin:auto 0 0; font:600 16px/1.25 var(--sans); color:var(--ink)}
   .price small{display:block; margin-top:2px; font:13px/1.4 var(--sans); color:var(--ink-3)}
+  /* The monthly plan's own term, read with the line above it. */
+  .price .term{display:block; font:400 13px/1.4 var(--sans); color:var(--ink-2)}
   /* Only the full version's door is filled; the free one is a ring. */
   .go{
     display:flex; align-items:center; justify-content:center; gap:8px; min-height:46px;
@@ -192,6 +194,8 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .go:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
   .more{margin-top:18px; padding:4px 2px; color:var(--ink-2); font-size:14.5px; text-underline-offset:3px}
   .more:hover{color:var(--ink)}
+  .signin-line{margin:10px 0 0; color:var(--ink-3); font-size:13.5px}
+  .signin-line a{color:var(--ink-2); text-underline-offset:3px}
 
   /* ---- Compared: an example of the full version, then row by row ---- */
   .versions{
@@ -224,6 +228,9 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .score em{margin-left:4px; padding:3px 10px; border-radius:999px; font-style:normal; font-size:13px; font-weight:600;
     background:var(--t-g); color:var(--ink)}
   .demo-note{margin:0; color:var(--ink-3); font-size:13.5px}
+  .demo-split{margin:0; color:var(--ink-2); font-size:14px}
+  .demo-free{justify-self:start; color:var(--ink-2); font-size:14px; text-underline-offset:3px}
+  .demo-free:hover{color:var(--ink)}
   /* The example at play (the script at the end): two pairings tapped, their
      plates carried into the lab, the plate scored. */
   .demo .off{opacity:0}
@@ -251,7 +258,11 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .compare .no{color:var(--ink-3); font-weight:400}
   .compare small{display:block; font-weight:400; color:var(--ink-2); font-size:13px}
   .v-buy{display:grid; gap:12px; justify-items:center; text-align:center}
-  .v-price{margin:0; font:400 clamp(21px,2.4vw,25px)/1.3 var(--serif); text-wrap:balance}  .v-ctas{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; width:100%}
+  .v-price{margin:0; font:400 clamp(21px,2.4vw,25px)/1.3 var(--serif); text-wrap:balance}
+  /* Prices in the sans: the serif's figures are old-style. */
+  .amt{font-family:var(--sans); font-weight:600}
+  .v-year{margin:-6px 0 0; color:var(--ink-2); font:400 15px/1.4 var(--sans)}
+  .v-ctas{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; width:100%}
   .v-ctas .go{flex:1 1 220px; max-width:300px}
   .v-terms{margin:0; max-width:58ch; color:var(--ink-3); font-size:13px; line-height:1.55}
   .v-schools{margin:0; color:var(--ink-2); font-size:14px}
@@ -281,6 +292,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .links{display:flex; flex-wrap:wrap; justify-content:center; gap:0 16px}
   .links a{padding:3px 0; color:var(--ink-3); text-decoration:none}
   .links a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+  .links .reply{padding:3px 0}
   a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
 
   /* Phone: the drawings fill the top of the screen, the door sits low under
@@ -294,7 +306,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     /* Tall enough to sit behind the two doors as well as the title; a signed-in
        reader has the title and one button only. */
     .hero::before{
-      left:0; top:auto; bottom:0; width:100%; height:560px; transform:none;
+      left:0; top:auto; bottom:0; width:100%; height:620px; transform:none;
       background:linear-gradient(transparent, var(--bg) 110px);
     }
     html[data-signed] .hero::before{height:400px}
@@ -329,7 +341,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     .tile,.cta,.cta .arrow,.go{transition:none}
   }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://copius.fr/#site","name":"Copius","url":"https://copius.fr/","inLanguage":["en","fr"],"description":"Un atlas illustré de la cuisine, en français et en anglais : ingrédients, techniques, bases et chefs. An illustrated atlas of cooking in English and French: ingredients, techniques, bases and chefs.","publisher":{"@type":"Organization","@id":"https://nokime.fr/#org","name":"Nokime","url":"https://nokime.fr/","sameAs":["https://www.instagram.com/nokime.fr/"]}},{"@type":"Organization","@id":"https://copius.fr/#org","name":"Copius","url":"https://copius.fr/","logo":"https://copius.fr/icons/icon-512.png","sameAs":["https://www.instagram.com/copius.fr/"],"parentOrganization":{"@id":"https://nokime.fr/#org"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://copius.fr/#site","name":"Copius","url":"https://copius.fr/","inLanguage":["en","fr"],"description":"Un atlas illustré de la cuisine, en français et en anglais : ingrédients, techniques, bases et chefs. An illustrated atlas of cooking in English and French: ingredients, techniques, bases and chefs.","publisher":{"@type":"Organization","@id":"https://nokime.fr/#org","name":"Nokime","url":"https://nokime.fr/","sameAs":["https://www.instagram.com/nokime.fr/"]}},{"@type":"Organization","@id":"https://copius.fr/#org","name":"Copius","url":"https://copius.fr/","logo":"https://copius.fr/icons/icon-512.png","sameAs":["https://www.instagram.com/copius.fr/"],"parentOrganization":{"@id":"https://nokime.fr/#org"}}]}</script>
 </head>
 <body>
 
@@ -352,7 +364,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     <circle class="bl-d" cx="52" cy="11" r="4.5"/>
   </svg>
   <h1>Copius</h1>
-  <p class="lede"><span data-l="fr" lang="fr">Un atlas <em>illustré</em> de la cuisine</span><span data-l="en">An <em>illustrated</em> atlas of cooking</span></p>
+  <p class="lede"><span data-l="fr" lang="fr">Chaque ingrédient, son histoire et <em>ce qui va avec</em>.</span><span data-l="en">Every ingredient, its story, and <em>what goes with it</em>.</span></p>
   <a class="cta cta-in" href="atlas.html"><span data-l="fr" lang="fr">Entrer dans l’atlas</span><span data-l="en">Enter the atlas</span><span class="arrow" aria-hidden="true">→</span></a>
   <!-- Every number in data-count, here and in #versions, is rewritten by
        tools/build-og.py at every bump. -->
@@ -374,11 +386,12 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
         <li><b data-count="pairings">13 208</b> <span data-l="fr" lang="fr">accords</span><span data-l="en">pairings</span></li>
         <li><span data-l="fr" lang="fr">le labo d’accords</span><span data-l="en">the pairing lab</span></li>
       </ul>
-      <p class="price"><span data-l="fr" lang="fr">4,90&nbsp;€ par mois</span><span data-l="en">€4.90 a month</span><small><span data-l="fr" lang="fr">ou 39&nbsp;€ par an</span><span data-l="en">or €39 a year</span></small></p>
+      <p class="price"><span data-l="fr" lang="fr">4,90&nbsp;€ par mois</span><span data-l="en">€4.90 a month</span><span class="term"><span data-l="fr" lang="fr">sans engagement</span><span data-l="en">no commitment</span></span><small><span data-l="fr" lang="fr">ou 39&nbsp;€ par an, engagement d’un an</span><span data-l="en">or €39 a year, one-year commitment</span></small></p>
       <a class="go go-full" href="commande/"><span data-l="fr" lang="fr">S’abonner</span><span data-l="en">Subscribe</span> <span aria-hidden="true">→</span></a>
     </section>
   </div>
-  <a class="more" href="#versions"><span data-l="fr" lang="fr">Comparer les deux versions</span><span data-l="en">Compare the two versions</span> <span aria-hidden="true">↓</span></a>
+  <a class="more" href="#versions"><span data-l="fr" lang="fr">Comparez les deux versions sur la fraise</span><span data-l="en">Compare both versions on the strawberry</span> <span aria-hidden="true">↓</span></a>
+  <p class="signin-line"><span data-l="fr" lang="fr">Vous avez déjà la version complète&#8239;? <a href="atlas.html#abonnement">Se connecter</a></span><span data-l="en">Already have the full version? <a href="atlas.html#abonnement">Sign in</a></span></p>
 </main>
 
 <!-- The example is the reel's (tools/reel-sort.html): six of the strawberry's
@@ -405,13 +418,15 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
       <li><span data-l="fr" lang="fr">Basilic</span><span data-l="en">Basil</span></li>
       <li data-pick="dark-chocolate"><span data-l="fr" lang="fr">Chocolat noir</span><span data-l="en">Dark chocolate</span></li>
     </ul>
+    <p class="demo-split"><span data-l="fr" lang="fr">Dans la version gratuite&nbsp;: la fraise, sa saison, son histoire. Ses <span data-count="strawberry">49</span> accords et le labo&nbsp;: dans la complète.</span><span data-l="en">In the free version: the strawberry, its season, its story. Its <span data-count="strawberry">49</span> pairings and the lab: in the full one.</span></p>
     <div class="demo-lab">
       <p class="kicker"><span data-l="fr" lang="fr">Le labo d’accords</span><span data-l="en">The pairing lab</span></p>
       <div class="plate-row">
         <span class="art" data-art="strawberry"></span><span class="plus" aria-hidden="true">+</span><span class="art" data-art="mint"></span><span class="plus" aria-hidden="true">+</span><span class="art" data-art="dark-chocolate"></span>
         <p class="score"><b>96</b><span>/100</span><em><span data-l="fr" lang="fr">Équilibrée</span><span data-l="en">Balanced</span></em></p>
       </div>
-      <p class="demo-note"><span data-l="fr" lang="fr">Fraise, menthe et chocolat noir&nbsp;: l’assiette, notée par le labo.</span><span data-l="en">Strawberry, mint and dark chocolate: the plate, scored by the lab.</span></p>
+      <p class="demo-note"><span data-l="fr" lang="fr">Fraise, menthe et chocolat noir&nbsp;: ça tient&#8239;? Le labo note l’assiette sur 100.</span><span data-l="en">Strawberry, mint and dark chocolate: does it work? The lab scores the plate out of 100.</span></p>
+      <a class="demo-free" href="atlas.html#strawberry"><span data-l="fr" lang="fr">Lire la fiche de la fraise dans la version gratuite</span><span data-l="en">Read the strawberry entry in the free version</span> <span aria-hidden="true">→</span></a>
     </div>
   </figure>
 
@@ -419,7 +434,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     <table class="compare">
       <thead><tr><td></td><th scope="col"><span data-l="fr" lang="fr">Gratuite</span><span data-l="en">Free</span></th><th scope="col" class="full"><span data-l="fr" lang="fr">Complète</span><span data-l="en">Full</span></th></tr></thead>
       <tbody>
-        <tr><th scope="row"><span data-l="fr" lang="fr">Ingrédients illustrés&nbsp;: saison, prix, histoire</span><span data-l="en">Illustrated ingredients: season, price, story</span></th><td data-count="free">500</td><td class="full" data-count="ingredients">1 889</td></tr>
+        <tr><th scope="row"><span data-l="fr" lang="fr">Fiches dans l’atlas&nbsp;: saison, prix, histoire</span><span data-l="en">Entries in the atlas: season, price, story</span></th><td data-count="free">500</td><td class="full" data-count="ingredients">1 889</td></tr>
         <tr><th scope="row">Techniques</th><td data-count="techniques">135</td><td class="full" data-count="techniques">135</td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Accords&nbsp;: ce qui va avec chaque ingrédient</span><span data-l="en">Pairings: what goes with each ingredient</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full" data-count="pairings">13 208</td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Le labo d’accords, et l’assiette notée sur 100</span><span data-l="en">The pairing lab, and the plate scored out of 100</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full"><span aria-hidden="true">✓</span><span class="sr" data-l="fr" lang="fr">oui</span><span class="sr" data-l="en">yes</span></td></tr>
@@ -433,12 +448,13 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   </div>
 
   <div class="v-buy">
-    <p class="v-price"><span data-l="fr" lang="fr">Tout Copius pour 4,90&nbsp;€ par mois</span><span data-l="en">All of Copius for €4.90 a month</span></p>
+    <p class="v-price"><span data-l="fr" lang="fr">La version complète, <span class="amt">4,90&nbsp;€</span> par mois</span><span data-l="en">The full version, <span class="amt">€4.90</span> a month</span></p>
+    <p class="v-year"><span data-l="fr" lang="fr">ou 39&nbsp;€ par an, soit 3,25&nbsp;€ par mois</span><span data-l="en">or €39 a year, that is €3.25 a month</span></p>
     <div class="v-ctas">
       <a class="go go-full" href="commande/"><span data-l="fr" lang="fr">S’abonner</span><span data-l="en">Subscribe</span> <span aria-hidden="true">→</span></a>
-      <a class="go" href="atlas.html"><span data-l="fr" lang="fr">Entrer gratuitement</span><span data-l="en">Enter for free</span></a>
+      <a class="go" href="atlas.html"><span data-l="fr" lang="fr">Ouvrir la version gratuite</span><span data-l="en">Open the free version</span></a>
     </div>
-    <p class="v-terms"><span data-l="fr" lang="fr">Sans durée minimale, renouvelé chaque mois jusqu’à résiliation. Ou 39&nbsp;€ par an&nbsp;: engagement d’un an, reconduit chaque année sauf refus de votre part.</span><span data-l="en">No minimum term, renewed each month until you cancel. Or €39 a year: a one-year commitment, renewed each year unless you refuse.</span></p>
+    <p class="v-terms"><span data-l="fr" lang="fr">Sans durée minimale, renouvelé chaque mois jusqu’à résiliation.<br>Ou 39&nbsp;€ par an&nbsp;: engagement d’un an, reconduit chaque année sauf refus de votre part.</span><span data-l="en">No minimum term, renewed each month until you cancel.<br>Or €39 a year: a one-year commitment, renewed each year unless you refuse.</span></p>
     <p class="v-schools"><span data-l="fr" lang="fr">Version pour les écoles&nbsp;: à venir.</span><span data-l="en">Version for schools: to come.</span></p>
   </div>
 </section>
@@ -448,7 +464,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     <a data-l="fr" lang="fr" href="fr/i/">Tous les ingrédients</a><a data-l="en" href="i/">All the ingredients</a>
     <a data-l="fr" lang="fr" href="fr/saison/">De saison</a><a data-l="en" href="season/">In season</a>
     <a href="about/"><span data-l="fr" lang="fr">À propos</span><span data-l="en">About</span></a>
-    <a href="mailto:contact@copius.fr">Contact</a>
+    <span class="reply"><a href="mailto:contact@copius.fr">Contact</a> · <span data-l="fr" lang="fr">On vous répond sous 2 jours ouvrés.</span><span data-l="en">We reply within 2 working days.</span></span>
     <a href="confidentialite/"><span data-l="fr" lang="fr">Confidentialité</span><span data-l="en">Privacy</span></a>
     <a href="cgv/"><span data-l="fr" lang="fr">Conditions générales de vente</span><span data-l="en">Terms of sale</span></a>
     <!-- The two French labels are the law's own wording: they show in English too. -->
@@ -480,8 +496,8 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   // its plate travels down into the lab, then the lab scores the plate. Between
   // runs, and with reduced motion, it rests on the finished plate.
   var lab = document.querySelector(".demo-lab");
-  if (lab && lab.animate && "IntersectionObserver" in window &&
-      !matchMedia("(prefers-reduced-motion: reduce)").matches) (function () {
+  var still = matchMedia("(prefers-reduced-motion: reduce)");
+  if (lab && lab.animate && "IntersectionObserver" in window && !still.matches) (function () {
     var score = lab.querySelector(".score"), num = score.querySelector("b"), mark = num.textContent;
     var picks = document.querySelectorAll(".demo [data-pick]"), steps = [], gen = 0, on = false;
     for (var i = 0; i < picks.length; i++) {
@@ -509,7 +525,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
       score.className = "score counting";
       requestAnimationFrame(function step(t) {
         if (g !== gen) return;
-        var p = Math.min(1, (t - t0) / 900);
+        var p = Math.max(0, Math.min(1, (t - t0) / 900));
         num.textContent = Math.round(mark * (1 - Math.pow(1 - p, 3)));
         if (p < 1) requestAnimationFrame(step); else score.className = "score";
       });
@@ -524,7 +540,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     // A hidden tab stops it too: its timers keep firing while its frames do not.
     var ratio = 0;
     function go() {
-      if (!on && ratio >= .8 && !document.hidden) { on = true; rest(); var g = gen; at(g, 1200, function () { play(g); }); }
+      if (!on && ratio >= .8 && !document.hidden && !still.matches) { on = true; rest(); var g = gen; at(g, 1200, function () { play(g); }); }
     }
     function stop() { if (on) { on = false; rest(); } }
     new IntersectionObserver(function (e) {
@@ -532,6 +548,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
       if (ratio > 0) go(); else stop();
     }, { threshold: [0, .8] }).observe(lab);
     document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else go(); });
+    if (still.addEventListener) still.addEventListener("change", function () { if (still.matches) stop(); else go(); });
   })();
 
   function lang() { return root.getAttribute("data-lang") === "fr" ? "fr" : "en"; }

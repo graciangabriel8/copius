@@ -37,6 +37,11 @@ legend{padding:0;margin:0 0 10px;font:400 20px/1.3 var(--serif)}
 .plan .eq{display:block;margin:-3px 0 5px;font-size:14px;color:var(--accent)}
 .plan small{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-3)}
 .vat{margin:10px 0 0;font-size:13.5px;color:var(--ink-3)}
+/* The order form: how one pays, just above the button; after it, what the
+   version holds, then the legal line. */
+.payline{margin:0 0 6px;font-size:14px;color:var(--ink-2)}
+.cx~.includes{margin:22px 0 0}
+.includes~.vat{margin-top:16px}
 .field{display:flex;flex-direction:column;gap:5px;margin:0 0 16px}
 .field label,.choice-label{font-size:14px;font-weight:600;color:var(--ink-2)}
 .hint{font-size:13px;line-height:1.5;color:var(--ink-3)}
@@ -72,4 +77,4 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 .msg:empty{display:none}
 .msg.err{color:#9A3B2A}
 .fine{margin:22px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-3)}
-@media (max-width:480px){.summary div{grid-template-columns:1fr auto}.summary dd{grid-column:1/-1;grid-row:2}}
+@media (max-width:480px){.plates{display:none}.summary div{grid-template-columns:1fr auto}.summary dd{grid-column:1/-1;grid-row:2}}

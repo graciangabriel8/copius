@@ -100,7 +100,7 @@ print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs; %d 
 # drawings are written in from the data the same way.
 order = ROOT / "commande" / "index.html"
 html = counts("commande/index.html", order.read_text(encoding="utf-8"),
-              ("ingredients", "pairings", "chefs", "dishes", "bases", "trios"))
+              ("ingredients", "pairings", "techniques", "chefs", "dishes", "bases", "trios"))
 def plate(m):
     r = recs.get(m.group(1))
     if not r or r[0] not in FAMILY or not r[3]:

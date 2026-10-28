@@ -480,7 +480,7 @@
     el("labHint").textContent = t.labHint;
     el("triosTitle").textContent = t.triosTitle;
     el("footNote").textContent = t.footNote;
-    el("contactLine").textContent = t.contactLine;
+    el("contactLine").textContent = t.contactLine + " · " + t.replyTime;
     el("aboutLink").textContent = t.aboutLink;
     el("privacyLink").textContent = t.privacyLink;
     el("cgvLink").textContent = t.cgvLink;
@@ -1363,7 +1363,7 @@
     if (key === subDrawn) return;
     subDrawn = key;
     el("subPanel").innerHTML =
-      "<h2>" + esc(t.subTitle) + "</h2>" +
+      "<h2>" + esc(t.subTitle).replace("{price}", '<span class="amt">' + esc(t.subPrice) + "</span>") + "</h2>" +
       '<div class="sub-plans">' +
         '<article class="sub-plan sub-full"><h3>' + esc(t.fullTitle) + "</h3>" + fullRows(t) +
           (PAYMENTS_LIVE ? '<a class="sub-cta" href="commande/">' + esc(t.subCta) + "</a>"

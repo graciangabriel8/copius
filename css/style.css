@@ -136,8 +136,8 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 /* ---------- toolbar ---------- */
 .toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--ink-2);font-size:13.5px}
 .check{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
-/* The native checkbox draws a white box whatever the page is, which reads as a
-   hole punched in the dark theme. Draw our own from the tokens instead. */
+/* The native checkbox draws its own box whatever the page is. Draw ours from
+   the tokens instead. */
 .check input{appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;
   border:1.5px solid var(--border-strong);border-radius:5px;background:var(--card);
   display:grid;place-content:center;cursor:pointer;transition:background .12s,border-color .12s}
@@ -172,9 +172,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   padding:18px 16px 16px;text-align:center;cursor:pointer;
   box-shadow:var(--shadow);transition:box-shadow .2s ease, transform .2s ease;
 }
-/* border-color eases on the way into a hover and nowhere else. Left on the
-   resting rule it also caught the theme switch, and 1 835 card borders easing
-   between the two palettes is 1 835 hairlines sitting on an in-between grey. */
+/* border-color eases on the way into a hover and nowhere else. */
 .card:hover{box-shadow:var(--shadow-lift);transform:translateY(-3px);border-color:var(--border-strong);
   transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease}
 .card-art svg,.card-art img{width:96px;height:96px}
@@ -191,9 +189,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   transition:transform .15s ease;
 }
 .fav:hover{transform:scale(1.2)}
-/* The colour eases onto a star being marked, which is the only time it should.
-   On the resting rule it also caught the theme switch, and there is one of
-   these in every card — 1 835 of them crossing between the palettes together. */
+/* The colour eases onto a star being marked, which is the only time it should. */
 .fav.on{color:var(--ink-3);transition:color .15s ease, transform .15s ease}
 .empty{color:var(--ink-3);text-align:center;padding:40px 0;font-style:italic}
 .rare-mark{font-size:.55em;color:var(--ink-3);vertical-align:.35em;cursor:help}
@@ -641,7 +637,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   .view-tabs{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
              scrollbar-width:none;-ms-overflow-style:none}
   .view-tabs::-webkit-scrollbar{display:none}
-  .view-tab{flex:none;white-space:nowrap}
+  .view-tab{flex:none;white-space:nowrap;padding:11px 18px}
 }
 
 /* ---------- chefs timeline ---------- */
@@ -875,7 +871,9 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .full-list{margin:0;padding:0 0 0 18px;color:var(--ink);font-size:15px;line-height:1.75}
 .full-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:22px 0 10px;
   padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
-.full-amount{font-family:var(--serif);font-size:20px;color:var(--ink)}
+/* Prices in the sans: the serif's figures are old-style. */
+.full-amount{font-family:var(--sans);font-weight:600;font-size:20px;color:var(--ink)}
+.sub-panel h2 .amt{font-family:var(--sans);font-weight:600}
 .full-soon{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
 .full-order{margin-left:auto;padding:8px 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);
   font-size:14px;font-weight:600;text-decoration:none}

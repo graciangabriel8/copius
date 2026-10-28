@@ -23,12 +23,8 @@ figure{margin:0 0 14px;width:104px;height:104px;position:relative}
 /* js/page.js lays a copy of the svg over the <img>. The <img> itself never
    leaves the page — inline svg is not something Google Images can index, and
    1 835 drawings are the one click channel an answer engine cannot stand in
-   front of. Two jobs for the copy: it draws itself on arrival, and it is the
-   only one of the two that can be themed, because a file loaded through <img>
-   sees the browser's colour scheme and never the choice made in the atlas.
-   Where the two agree the copy goes at the end of the draw and these colours
-   are the ones baked into the file anyway, so the hand-off is invisible; where
-   they disagree the copy stays, and it is the one that is right. */
+   front of. The copy draws itself on arrival and goes at the end of the draw;
+   these colours are the ones baked into the file, so the hand-off is invisible. */
 figure svg.ink{position:absolute;left:0;top:0;background:var(--bg)}
 figure svg.ink .s{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}
 figure svg.ink .f1,figure svg.ink .f3,figure svg.ink .sf{fill:var(--plate);
