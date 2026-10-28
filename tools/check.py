@@ -211,7 +211,7 @@ if php:
         out = (r.stdout + r.stderr).strip().splitlines() or ["?"]   # "Errors parsing" alone says nothing: show the parse error
         if r.returncode != 0: fail("PHP %s: %s" % (f.relative_to(root), next((l for l in out if "error:" in l.lower()), out[0]).strip()))
 elif CI: fail("PHP: php is missing on the runner")
-else: print("note: php missing here, api/*.php not linted (GitHub does it)")
+else: print("note: php missing here, api/*.php not linted and api/card.php not run on the day's card (GitHub does both)")
 
 # 8. the day's card: the poster posts copius.fr/social/<id>.jpg for the id make-card.py gives it
 def day_card(today):   # the failures on the day given: a planted copy run through the tools, then the real schedule
@@ -252,7 +252,6 @@ for _ in range(2):
     except (Exception, SystemExit) as e: traceback.print_exc(); found = ["stopped (traceback above): %s: %s" % (type(e).__name__, e)]
     if paris() == today: break
 capped("day's card: ", found)
-if not php: print("note: php missing here, api/card.php not run on the day's card (GitHub does it)")
 
 for f in failures: print("FAIL " + f)
 print("%d page(s) checked: %s" % (len(pages), "all good" if not failures else "%d failure(s)" % len(failures)))

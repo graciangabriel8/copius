@@ -7,11 +7,12 @@ The day -> ingredient map used to be a stride over the ingredient list, so any
 edit to the data reshuffled every day and the pre-built cards stopped matching
 the date. This file pins the order instead. Re-running appends the ids new to
 the data and, without --reorder-pending, moves no day already scheduled but
-this: from today on, an id that has left the data is dropped and every later
-day moves up one, since the poster and api/card.php both take the schedule's
-own id for a day and an id with no data has no card that can go out. A moved
-day takes the next day's id and card, except the last day of the built window,
-whose new id has no card yet, and the few days the family walk below swaps.
+this: from today on, an id that has left the data is dropped and the days after
+it move up, since the poster and api/card.php both take the schedule's own id
+for a day and an id with no data has no card that can go out. A day with k ids
+dropped on or before it takes the id and card that were k days later, so the
+last days of the built window take ids with no card yet; the family walk below
+swaps a few more.
 
 Order is by how central an ingredient is: the number of OTHER entries that name
 it as a pairing. Butter is named by 477, garlic by 413; 1 140 entries are named
@@ -58,22 +59,19 @@ def main():
     def key(i):
         return (-rank.get(i, 0), i)
 
-    # From today on, an id that has left the data is dropped and every later
-    # day moves up one. Today too, though its card may have gone out at 17:00:
+    # From today on, an id that has left the data is dropped and the days after
+    # it move up. Today too, though its card may have gone out at 17:00:
     # if it has not, the day still needs a card, and that id can no longer
     # give one; if it has, the id moved into today is never posted. Days
     # before today keep what went out on them. The family walk below restarts
     # at the first gap.
     today = (_dt.datetime.now(PARIS).date() - _dt.date.fromisoformat(sched["start"])).days
-    days, t = sched["days"], max(0, min(today, len(sched["days"])))
-    dropped = [i for i in days[t:] if i not in cat]
-    gap = days.index(dropped[0], t) if dropped else len(days)
-    days = days[:t] + [i for i in days[t:] if i in cat]
+    old, t = sched["days"], max(0, min(today, len(sched["days"])))
+    dropped = [i for i in old[t:] if i not in cat]
+    gap = old.index(dropped[0], t) if dropped else len(old)
+    days = old[:t] + [i for i in old[t:] if i in cat]
     if dropped:
         print("dropped %d id(s) no longer in the data: %s" % (len(dropped), " ".join(dropped)))
-        print("every day from %s on moves up one: push it now, as the job reads the schedule from main,"
-              " api/card.php reads it on copius.fr, and a moved day's post fails until copius.fr has it too"
-              % (_dt.date.fromisoformat(sched["start"]) + _dt.timedelta(gap)))
         if gap == today:
             print("today's own id was dropped: if today's card already went out, the id moved into today is never posted")
 
@@ -100,6 +98,11 @@ def main():
                     break
         prev = new[k]
     sched["days"] = days + new
+    if dropped:   # slices: a day past the new end has changed too
+        moved = [k for k in range(t, len(old)) if old[k:k + 1] != sched["days"][k:k + 1]]
+        print("%d day(s) change, the first on %s: push it now, as the job reads the schedule from main,"
+              " api/card.php reads it on copius.fr, and a changed day's post fails until copius.fr has it too"
+              % (len(moved), _dt.date.fromisoformat(sched["start"]) + _dt.timedelta(moved[0])))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(sched, indent=0, ensure_ascii=False) + "\n")
     print("appended %d, first 12: %s" % (len(added), " ".join(added[:12]) or "-"))

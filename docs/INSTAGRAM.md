@@ -9,17 +9,18 @@ no server.
    date and one id per day, written once by `tools/build-schedule.py` as a
    seeded shuffle of every ingredient (no two consecutive days from the same
    family). Re-running it appends ingredients that are new to the data; a day
-   already scheduled moves only when an ingredient before it leaves the data
-   (below), or with `--reorder-pending`.
+   already scheduled changes ingredient only when its own or an earlier one
+   leaves the data (below), or with `--reorder-pending`.
 2. `tools/build-social.sh` renders the next 400 scheduled days to 1080×1080
    JPEGs, two per day: `<id>.jpg` is the illustrated card, `<id>.2.jpg` sets the
    handling note as type. Run it on the Mac — the rasteriser is `qlmanage` — and
    commit `social/`. A tip never gets cut: the type steps down a size instead.
-3. GitHub Pages serves those JPEGs at public HTTPS URLs — which is exactly what
+3. copius.fr serves those JPEGs at public HTTPS URLs — which is exactly what
    Instagram's API requires, since it fetches the image rather than accepting an
-   upload.
-4. `.github/workflows/daily-instagram.yml` runs at 19:07 Paris, reads today's
-   id from the schedule, and publishes both slides as one carousel: a container
+   upload. `api/card.php` answers for them and serves each card only on its day
+   and the next, in Paris time.
+4. At 17:00 Paris, `.github/workflows/daily-instagram.yml` reads today's id
+   from the schedule and publishes both slides as one carousel: a container
    per slide, then a parent holding their ids. The French caption is produced
    there and then by `make-card.py --caption`, which needs nothing but Python —
    so an edit to the caption reaches the next post without a regeneration step
