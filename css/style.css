@@ -833,6 +833,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .theme-ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 .foot-contact{display:block;margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+.foot-contact a{color:inherit;text-underline-offset:3px}
 .foot-contact[hidden]{display:none}
 
 /* ---------- motion (v84): theme, ingredient of the day, search ---------- */
@@ -888,7 +889,9 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 
 /* ---------- the full version, locked ----------
    One glyph, one register: a lock in the ink of the text beside it, greyed
-   rows for what is behind it, and no colour that reads as a button to buy. */
+   rows for what is behind it. The accent fill marks one thing, the order
+   link, wherever it shows: an entry's pairings, a locked tab's panel, the
+   full version's dialog and the subscription tab. */
 .lock-ico{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;
   stroke-linecap:round;stroke-linejoin:round;vertical-align:-1px;margin:0 0 0 6px}
 .check[hidden],.daily[hidden]{display:none}
@@ -903,8 +906,10 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   color:var(--ink-3);display:flex;align-items:center}
 .locked-kicker .lock-ico,.m-cat .lock-ico{margin:0 6px 0 0}
 .locked-body{margin:0 0 10px;color:var(--ink-2);font-size:15px;line-height:1.6}
-.locked-price{margin:0;color:var(--ink-3);font-size:13.5px}
-.locked-open{max-width:360px}
+.locked-price{margin:6px 0 10px;color:var(--ink-3);font-size:13.5px}
+/* The order link, sized to its words rather than to the box; two classes, to
+   outrank .sub-cta, defined further down. */
+.sub-cta.locked-cta{width:fit-content;gap:8px;margin:12px 0 0;padding:11px 28px}
 /* The end of the grid, and a search's paid names. */
 .locked-end{margin:18px 0 0}
 .locked-end[hidden]{display:none}
@@ -930,6 +935,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   color:var(--ink-2);font-size:14px}
 .locked-box p{margin:0 0 6px;line-height:1.55}
 .locked-box .linkish{font-size:13.5px;color:var(--ink-3)}
+.locked-box .locked-price{margin:8px 0 12px}
 /* The preparations card already frames it. */
 .tw .locked-box{border:0;padding:0}
 .modal-body h3 .lock-ico{vertical-align:-1px}
@@ -945,7 +951,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
 .full-amount{font-family:var(--serif);font-size:20px;color:var(--ink)}
 .full-soon{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
-.full-order{margin-left:auto;padding:8px 18px;border-radius:999px;background:var(--ink);color:var(--bg);
+.full-order{margin-left:auto;padding:8px 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);
   font-size:14px;font-weight:600;text-decoration:none}
 .full-order:hover{opacity:.85}
 .full-free{margin:0;color:var(--ink-3);font-size:13.5px;line-height:1.55}
@@ -971,6 +977,8 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
   border-color:var(--border-strong);color:var(--ink-2)}
 .account-out .full-free{margin-top:8px}
 .tier-state{display:block;margin-bottom:4px;font-weight:600}
+/* Inline in the note's text, so the phone's 44px link box does not open a gap. */
+.tier-more{display:inline;min-height:0;color:inherit;font-size:inherit;font-weight:600}
 button.tier-state{color:inherit;text-align:left;font-size:inherit}
 @media (max-width:720px){
   .signin-row input{font-size:16px}
@@ -980,11 +988,12 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
 
 /* ---------- the subscription tab ----------
    The full version leads, the free one in use and the schools' one beside it.
-   The one place the full version is sold, so its order link alone takes the
-   accent fill. */
+   Its order link takes the accent fill, like the one in a locked entry's
+   pairings. */
 .sub-panel{max-width:920px}
-.sub-panel h2{margin:0 0 6px;font-size:30px;line-height:1.2;text-wrap:balance}
-.sub-terms{margin:0 0 22px;color:var(--ink-2);font-size:15px;line-height:1.6}
+.sub-panel h2{margin:0 0 18px;font-size:30px;line-height:1.2;text-wrap:balance}
+/* The terms of renewal, small, under the order link they bind. */
+.sub-terms{margin:12px 0 0;color:var(--ink-3);font-size:13px;line-height:1.55}
 .sub-plans{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;align-items:start}
 .sub-side{display:grid;gap:14px}
 .sub-plan{background:var(--card);border:1px solid var(--border);border-radius:20px;

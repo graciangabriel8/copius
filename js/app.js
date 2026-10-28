@@ -513,13 +513,15 @@
     el("lang-en").classList.toggle("active", state.lang === "en");
     el("lang-fr").classList.toggle("active", state.lang === "fr");
     paintSeg("langToggle");
-    /* An ended session says "sign in again", so its line opens the form. */
+    /* An ended session says "sign in again", so its line opens the form. The
+       note ends on the way to the subscription tab. */
     var note = SESSION_NOTE[SESSION];
     el("tierNote").innerHTML = LOCKED
       ? (note ? (SESSION === "ended"
           ? '<button type="button" class="linkish tier-state" data-full>' + esc(t[note]) + "</button> "
           : '<strong class="tier-state">' + esc(t[note]) + "</strong> ") : "") +
-        esc((PAYMENTS_LIVE ? t.tierNoteLive : t.tierNote).replace("{n}", fmt(LK.counts.free))) : "";
+        esc((PAYMENTS_LIVE ? t.tierNoteLive : t.tierNote).replace("{n}", fmt(LK.counts.free))) +
+        ' <button type="button" class="linkish tier-more" data-sub>' + esc(t.fullMore) + "</button>" : "";
     el("accountWrap").hidden = !hasMark();
     el("accountLink").textContent = t.accountLink;
     var t2 = t;
@@ -938,10 +940,22 @@
 
 
   /* What a locked section says in place of its content, and the way to the
-     panel that says what the full version holds. */
-  function lockedBox(text) {
+     panel that says what the full version holds. The pairings' box, the wall
+     a reel's visitor meets first, also carries the order link and its price. */
+  function lockedBox(text, order) {
+    var t = T();
     return '<div class="locked-box"><p>' + esc(text) + "</p>" +
-      '<button type="button" class="linkish" data-full>' + esc(T().fullMore) + "</button></div>";
+      (order ? orderLine(t) : "") +
+      '<button type="button" class="linkish" data-full>' + esc(t.fullMore) + "</button></div>";
+  }
+
+  /* The order link, then the price under it; before the payments, the price
+     and "coming soon". */
+  function orderLine(t) {
+    return PAYMENTS_LIVE
+      ? '<a class="sub-cta locked-cta" href="commande/">' + esc(t.subCta) + ' <span aria-hidden="true">→</span></a>' +
+        '<p class="locked-price">' + esc(t.fullPrice) + "</p>"
+      : '<p class="locked-price">' + esc(t.fullPrice) + " · " + esc(t.fullSoon) + "</p>";
   }
 
   function renderTree(ing) {
@@ -1032,10 +1046,8 @@
     el("lockedPanel").innerHTML =
       '<p class="locked-kicker">' + LOCK_ICON + esc(t.lockedIn) + "</p>" +
       "<h2>" + esc(title) + "</h2>" +
-      '<p class="locked-body">' + esc(body) + "</p>" +
-      '<p class="locked-price">' + esc(t.fullPrice) + " · " +
-        (PAYMENTS_LIVE ? '<a href="commande/">' + esc(t.fullOrder) + "</a>" : esc(t.fullSoon)) + "</p>" +
-      '<button type="button" class="m-lab-btn locked-open" data-sub>' + esc(t.fullMore) + "</button>";
+      '<p class="locked-body">' + esc(body) + "</p>" + orderLine(t) +
+      '<button type="button" class="linkish" data-sub>' + esc(t.fullMore) + "</button>";
   }
 
   function setView(v) {
@@ -1291,7 +1303,7 @@
         ? "<h3>" + esc(t.lockedPairsHead) + LOCK_ICON + "</h3>" +
           lockedBox(LK.pairs[i.id]
             ? t.lockedPairs.replace("{n}", fmt(LK.pairs[i.id]))
-            : t.lockedPairsNone)
+            : t.lockedPairsNone, true)
         : "<h3>" + esc(t.pairsWith) + "</h3>" +
           pairBlock(pairs) +
           (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
@@ -1322,7 +1334,7 @@
     }
     el("modalBody").innerHTML = head + fullRows(t) +
       '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
-        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.fullOrder) + "</a>"
+        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.subCta) + "</a>"
           : '<span class="full-soon">' + esc(t.fullSoon) + "</span>") + "</p>" +
       '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
   }
@@ -1341,11 +1353,11 @@
     ].map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
   }
 
-  /* The subscription tab: the full version with its order link, then the free
-     one in use and the one for schools, then the sign-in for an access
-     already bought. Drawn again only for a new language or sign-in, so any
-     other redraw (a photo loaded, the tab opened again) keeps an address or a
-     code being typed. */
+  /* The subscription tab: the full version with its order link and the terms
+     under it, then the free one in use and the one for schools, then the
+     sign-in for an access already bought. Drawn again only for a new language
+     or sign-in, so any other redraw (a photo loaded, the tab opened again)
+     keeps an address or a code being typed. */
   var subDrawn = "";
   function renderSub() {
     var t = T(), key = state.lang + hasMark();
@@ -1353,11 +1365,11 @@
     subDrawn = key;
     el("subPanel").innerHTML =
       "<h2>" + esc(t.subTitle) + "</h2>" +
-      '<p class="sub-terms">' + esc(t.subTerms) + "</p>" +
       '<div class="sub-plans">' +
         '<article class="sub-plan sub-full"><h3>' + esc(t.fullTitle) + "</h3>" + fullRows(t) +
           (PAYMENTS_LIVE ? '<a class="sub-cta" href="commande/">' + esc(t.subCta) + "</a>"
-            : '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p>") + "</article>" +
+            : '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p>") +
+          '<p class="sub-terms">' + esc(t.subTerms) + "</p></article>" +
         '<div class="sub-side">' +
           '<article class="sub-plan"><p class="sub-now">' + esc(t.subFreeNow) + "</p>" +
             "<h3>" + esc(t.subFreeTitle) + "</h3>" +
