@@ -250,6 +250,19 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .score em{margin-left:4px; padding:3px 10px; border-radius:999px; font-style:normal; font-size:13px; font-weight:600;
     background:var(--t-g); color:var(--ink)}
   .demo-note{margin:0; color:var(--ink-3); font-size:13.5px}
+  /* The example at play (the script at the end): two pairings tapped, their
+     plates carried into the lab, the plate scored. */
+  .demo .off{opacity:0}
+  .plate-row > *, .score em{transition:opacity .35s}
+  .chips li{position:relative; transition:background-color .3s, border-color .3s}
+  .chips li.on{background:var(--fam); border-color:var(--fam)}
+  .chips li.on::after{
+    content:""; position:absolute; inset:-1px; border-radius:inherit; pointer-events:none;
+    border:2px solid var(--accent); animation:tap .7s ease-out both;
+  }
+  @keyframes tap{from{opacity:.8; transform:scale(1)} to{opacity:0; transform:scale(1.3)}}
+  .score:is(.off,.counting) em{opacity:0}
+  .score b{display:inline-block; text-align:right}
   .compare-wrap{overflow-x:auto}
   .compare{width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.4}
   .compare th, .compare td{padding:11px 8px; border-top:1px solid var(--border); vertical-align:middle}
@@ -413,10 +426,10 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     <ul class="chips">
       <li><span data-l="fr" lang="fr">Vinaigre balsamique</span><span data-l="en">Balsamic vinegar</span></li>
       <li><span data-l="fr" lang="fr">Poivre noir</span><span data-l="en">Black pepper</span></li>
-      <li><span data-l="fr" lang="fr">Menthe</span><span data-l="en">Mint</span></li>
+      <li data-pick="mint"><span data-l="fr" lang="fr">Menthe</span><span data-l="en">Mint</span></li>
       <li><span data-l="fr" lang="fr">Crème</span><span data-l="en">Cream</span></li>
       <li><span data-l="fr" lang="fr">Basilic</span><span data-l="en">Basil</span></li>
-      <li><span data-l="fr" lang="fr">Chocolat noir</span><span data-l="en">Dark chocolate</span></li>
+      <li data-pick="dark-chocolate"><span data-l="fr" lang="fr">Chocolat noir</span><span data-l="en">Dark chocolate</span></li>
     </ul>
     <div class="demo-lab">
       <p class="kicker"><span data-l="fr" lang="fr">Le labo d’accords</span><span data-l="en">The pairing lab</span></p>
@@ -488,6 +501,64 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     var d = BY[arts[a].getAttribute("data-art")];
     if (d) { arts[a].setAttribute("data-f", d.f); arts[a].innerHTML = '<svg viewBox="0 0 96 96">' + d.s + "</svg>"; }
   }
+
+  // ...and plays it while its lab is on screen: each picked pairing is tapped,
+  // its plate travels down into the lab, then the lab scores the plate. Between
+  // runs, and with reduced motion, it rests on the finished plate.
+  var lab = document.querySelector(".demo-lab");
+  if (lab && lab.animate && "IntersectionObserver" in window &&
+      !matchMedia("(prefers-reduced-motion: reduce)").matches) (function () {
+    var score = lab.querySelector(".score"), num = score.querySelector("b"), mark = num.textContent;
+    var picks = document.querySelectorAll(".demo [data-pick]"), steps = [], gen = 0, on = false;
+    for (var i = 0; i < picks.length; i++) {
+      var plate = lab.querySelector('[data-art="' + picks[i].getAttribute("data-pick") + '"]');
+      picks[i].setAttribute("data-f", plate.getAttribute("data-f"));
+      steps.push({ chip: picks[i], plate: plate, plus: plate.previousElementSibling });
+    }
+    function each(fn) { for (var i = 0; i < steps.length; i++) fn(steps[i], i); }
+    function at(g, ms, fn) { setTimeout(function () { if (g === gen) fn(); }, ms); }
+    function rest() {
+      gen++;
+      each(function (s) { s.chip.classList.remove("on"); s.plate.classList.remove("off"); s.plus.classList.remove("off"); });
+      score.className = "score"; num.textContent = mark;
+    }
+    function carry(s) {
+      var a = s.chip.getBoundingClientRect(), b = s.plate.getBoundingClientRect();
+      s.chip.classList.add("on"); s.plate.classList.remove("off"); s.plus.classList.remove("off");
+      s.plate.animate([{ transform: "translate(" + (a.left + a.width / 2 - b.left - b.width / 2) + "px," +
+        (a.top + a.height / 2 - b.top - b.height / 2) + "px) scale(.4)", opacity: 0 }, { transform: "none", opacity: 1 }],
+        { duration: 800, easing: "cubic-bezier(.2,.8,.2,1)" });
+    }
+    function judge(g) {
+      var t0 = performance.now();
+      num.style.minWidth = num.getBoundingClientRect().width + "px";
+      score.className = "score counting";
+      requestAnimationFrame(function step(t) {
+        if (g !== gen) return;
+        var p = Math.min(1, (t - t0) / 900);
+        num.textContent = Math.round(mark * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step); else score.className = "score";
+      });
+    }
+    function play(g) {
+      each(function (s) { s.chip.classList.remove("on"); s.plate.classList.add("off"); s.plus.classList.add("off"); });
+      score.className = "score off";
+      each(function (s, i) { at(g, 900 + i * 1300, function () { carry(s); }); });
+      at(g, 900 + steps.length * 1300, function () { judge(g); });
+      at(g, 900 + steps.length * 1300 + 900 + 4200, function () { play(g); });
+    }
+    // A hidden tab stops it too: its timers keep firing while its frames do not.
+    var ratio = 0;
+    function go() {
+      if (!on && ratio >= .8 && !document.hidden) { on = true; rest(); var g = gen; at(g, 1200, function () { play(g); }); }
+    }
+    function stop() { if (on) { on = false; rest(); } }
+    new IntersectionObserver(function (e) {
+      ratio = e[e.length - 1].intersectionRatio;
+      if (ratio > 0) go(); else stop();
+    }, { threshold: [0, .8] }).observe(lab);
+    document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else go(); });
+  })();
 
   function lang() { return root.getAttribute("data-lang") === "fr" ? "fr" : "en"; }
   function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
