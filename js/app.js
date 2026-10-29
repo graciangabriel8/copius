@@ -1657,9 +1657,11 @@
       t.fullLab,
       t.fullTrios.replace("{n}", fmt(c.trios)),
       t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
-      t.fullBases.replace("{n}", fmt(c.bases)),
-      t.fullComponents.replace("{n}", fmt(c.components))
-    ].map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
+      /* A cached free.js from before bases or components has no such count:
+         the row is left out rather than fmt(undefined) breaking the dialog. */
+      c.bases == null ? "" : t.fullBases.replace("{n}", fmt(c.bases)),
+      c.components == null ? "" : t.fullComponents.replace("{n}", fmt(c.components))
+    ].filter(Boolean).map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
   }
 
   /* The subscription tab: the full version with its order link and the terms
@@ -2490,19 +2492,35 @@
       return c.family === "crunch" ||
         (c.family === "powders" && c.texture.some(function (x) { return CRUNCH_TAGS.indexOf(x) !== -1; }));
     }).map(function (c) {
-      var linked = [], bridges = [];
-      plate.forEach(function (it) {
-        if (c.pairs.indexOf(it.id) !== -1) { linked.push(it); return; }
-        /* A plate of components never appears in a pairs list (they are
-           comp: ids), so a shared partner — the engine's bridge — counts too. */
-        var via = PLATE_CTX.neighboursOf(it.id).filter(function (x) { return c.pairs.indexOf(x) !== -1; })[0];
-        if (via) bridges.push({ item: it, via: via });
+      /* The engine says what it links to, as for recommend: a chosen form
+         speaks only through its own list, and lineage is the engine's to
+         exclude. A plate of components never appears in a pairs list (they
+         are comp: ids), so a bridge through another component counts too —
+         only there, and only through what the crunch is served with, never
+         its recipe: through salt or butter nearly everything bridges.
+         Neither a drink on the plate nor one as the shared partner is ever
+         the reason (isAlcohol). */
+      var cand = { id: c.id, form: "" }, linked = [], bridges = [],
+          rec = compById[c.id.slice(COMP_PREFIX.length)];
+      PLATE.judge(plate.concat([cand]), PLATE_CTX).rows.forEach(function (row) {
+        var other = row.a === cand ? row.b : row.b === cand ? row.a : null, oi = other && byId[other.id];
+        if (!other || (oi && isAlcohol(oi))) return;
+        if (row.verdict === "ok") { linked.push(other); return; }
+        if (row.verdict !== "mid" || !oi || !oi.isComp) return;
+        /* The most particular partner names the bridge best: the one recorded
+           with the fewest things. */
+        var via = row.bridges.filter(function (x) {
+          return (rec.pairs || []).indexOf(x) !== -1 && byId[x] && !isAlcohol(byId[x]);
+        }).sort(function (x, y) {
+          return PLATE_CTX.neighboursOf(x).length - PLATE_CTX.neighboursOf(y).length || (x < y ? -1 : 1);
+        })[0];
+        if (via) bridges.push({ item: other, via: via });
       });
-      /* Sweet with nothing salty, meaty or umami beside it: a nougatine, not a
-         granola salé. It suits the plate when the plate is a dessert. */
-      var sweet = c.flavor.indexOf("sweet") !== -1 && !c.flavor.some(function (f) {
-        return f === "salty" || f === "meaty" || f === "umami";
-      });
+      /* A dessert crunch: sugar in the recipe and no salt or umami in its
+         taste (the engine's axes): the nougatine, not the granola salé or the
+         beetroot tuile. It leads on a dessert plate and trails on the others. */
+      var sweet = rec.ingredients.some(function (x) { return byId[x.id] && byId[x.id].cat === "sweet"; }) &&
+        !c.flavor.some(function (f) { var a = PLATE.AXIS_BY_TAG[f]; return a === "salty" || a === "umami"; });
       return { id: c.id, linked: linked, bridges: bridges, fits: sweet === !!r.sweetPlate };
     }).filter(function (s) {
       /* A component recorded with nothing here would sit alone on the plate and
