@@ -178,6 +178,9 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .door b, .compare td{font-variant-numeric:tabular-nums}
   .door b{font-weight:600; color:var(--ink)}
   .door .no{color:var(--ink-3)}
+  /* The newest part of the full version, flagged where the two are compared. */
+  .new{display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px; vertical-align:1px;
+    background:var(--accent); color:var(--on-accent); font:600 10.5px/1.5 var(--sans); letter-spacing:.06em; text-transform:uppercase}
   /* Pushed to the foot, so both doors line up whatever the lines above. */
   /* In the sans: Georgia's figures are old-style only, and its zero reads as an o. */
   .price{margin:auto 0 0; font:600 16px/1.25 var(--sans); color:var(--ink)}
@@ -377,6 +380,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
       <ul>
         <li><b data-count="free">500</b> <span data-l="fr" lang="fr">ingrédients</span><span data-l="en">ingredients</span></li>
         <li><b data-count="techniques">135</b> techniques</li>
+        <li><b data-count="freecomponents">3</b> <span data-l="fr" lang="fr">composants en exemple</span><span data-l="en">sample components</span></li>
         <li class="no"><span data-l="fr" lang="fr">sans les accords</span><span data-l="en">no pairings</span></li>
       </ul>
       <p class="price"><span data-l="fr" lang="fr">0&nbsp;€</span><span data-l="en">€0</span><small><span data-l="fr" lang="fr">sans compte</span><span data-l="en">no account</span></small></p>
@@ -387,6 +391,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
       <ul>
         <li><b data-count="ingredients">1 889</b> <span data-l="fr" lang="fr">ingrédients</span><span data-l="en">ingredients</span></li>
         <li><b data-count="pairings">13 208</b> <span data-l="fr" lang="fr">accords</span><span data-l="en">pairings</span></li>
+        <li><b data-count="components">61</b> <span data-l="fr" lang="fr">composants</span><span data-l="en">components</span> <span class="new"><span data-l="fr" lang="fr">nouveau</span><span data-l="en">new</span></span></li>
         <li><span data-l="fr" lang="fr">le labo d’accords</span><span data-l="en">the pairing lab</span></li>
       </ul>
       <p class="price"><span data-l="fr" lang="fr">5,90&nbsp;€ par mois</span><span data-l="en">€5.90 a month</span><span class="term"><span data-l="fr" lang="fr">sans engagement</span><span data-l="en">no commitment</span></span><small><span data-l="fr" lang="fr">ou 49&nbsp;€ par an, engagement d’un an</span><span data-l="en">or €49 a year, one-year commitment</span></small></p>
@@ -402,7 +407,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
      Re-run the plate in the lab when the pairings data moves. -->
 <section class="versions" id="versions" aria-labelledby="vTitle">
   <h2 id="vTitle"><span data-l="fr" lang="fr">Gratuite ou complète&#8239;?</span><span data-l="en">Free or full?</span></h2>
-  <p class="v-lede"><span data-l="fr" lang="fr">La gratuite, ce sont les <span data-count="free">500</span> ingrédients à connaître et les techniques. La complète, c’est tout l’atlas&nbsp;: chaque ingrédient, ce qui va avec, et le labo pour savoir si l’assiette tient la route.</span><span data-l="en">The free one holds the <span data-count="free">500</span> ingredients to know, and the techniques. The full one is the whole atlas: every ingredient, what goes with it, and the lab to tell whether the plate holds together.</span></p>
+  <p class="v-lede"><span data-l="fr" lang="fr">La gratuite, ce sont les <span data-count="free">500</span> ingrédients à connaître et les techniques. La complète, c’est tout l’atlas&nbsp;: chaque ingrédient, ce qui va avec, les composants avec leur recette, et le labo pour savoir si l’assiette tient la route.</span><span data-l="en">The free one holds the <span data-count="free">500</span> ingredients to know, and the techniques. The full one is the whole atlas: every ingredient, what goes with it, the components with their recipes, and the lab to tell whether the plate holds together.</span></p>
 
   <figure class="demo">
     <figcaption class="kicker"><span data-l="fr" lang="fr">Exemple, dans la version complète</span><span data-l="en">An example, in the full version</span></figcaption>
@@ -443,6 +448,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
         <tr><th scope="row"><span data-l="fr" lang="fr">Le labo d’accords, et l’assiette notée sur 100</span><span data-l="en">The pairing lab, and the plate scored out of 100</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full"><span aria-hidden="true">✓</span><span class="sr" data-l="fr" lang="fr">oui</span><span class="sr" data-l="en">yes</span></td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Trios classiques</span><span data-l="en">Classic trios</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full" data-count="trios">40</td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Bases&nbsp;: fonds, sauces, émulsions…</span><span data-l="en">Bases: stocks, sauces, emulsions…</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full" data-count="bases">45</td></tr>
+        <tr><th scope="row"><span data-l="fr" lang="fr">Composants&nbsp;: purées, sauces, crumbles…, avec quantités et méthode</span><span data-l="en">Components: purées, sauces, crumbles…, with quantities and method</span> <span class="new"><span data-l="fr" lang="fr">nouveau</span><span data-l="en">new</span></span></th><td><span data-count="freecomponents">3</span><small><span data-l="fr" lang="fr">en exemple</span><span data-l="en">samples</span></small></td><td class="full" data-count="components">61</td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Chefs, et leurs plats</span><span data-l="en">Chefs, and their dishes</span></th><td class="no"><span aria-hidden="true">—</span><span class="sr" data-l="fr" lang="fr">non</span><span class="sr" data-l="en">no</span></td><td class="full"><span data-count="chefs">68</span><span class="sr"> chefs,</span><small><span data-count="dishes">44</span> <span data-l="fr" lang="fr">plats</span><span data-l="en">dishes</span></small></td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Compte</span><span data-l="en">Account</span></th><td class="no"><span data-l="fr" lang="fr">aucun</span><span data-l="en">none</span></td><td class="full"><span data-l="fr" lang="fr">votre e-mail</span><span data-l="en">your email</span></td></tr>
         <tr><th scope="row"><span data-l="fr" lang="fr">Prix</span><span data-l="en">Price</span></th><td><span data-l="fr" lang="fr">0&nbsp;€</span><span data-l="en">€0</span></td><td class="full"><span data-l="fr" lang="fr">5,90&nbsp;€/mois</span><span data-l="en">€5.90/month</span><small><span data-l="fr" lang="fr">ou 49&nbsp;€/an</span><span data-l="en">or €49/year</span></small></td></tr>

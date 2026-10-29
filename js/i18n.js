@@ -270,6 +270,7 @@ window.I18N = {
     subFreeNow: "The one you are using",
     subFreeTitle: "The free version",
     subFreeHolds: "{n} ingredients and the techniques, with no account.",
+    subFreeHoldsComp: "{n} ingredients, the techniques and {c} sample components, with no account.",
     subSchoolsTitle: "The version for schools",
 
     /* ---- signing in: the form, the notices, the account, the link page ---- */
@@ -685,6 +686,7 @@ window.I18N = {
     subFreeNow: "Celle que vous utilisez",
     subFreeTitle: "La version gratuite",
     subFreeHolds: "{n} ingrédients et les techniques, sans compte.",
+    subFreeHoldsComp: "{n} ingrédients, les techniques et {c} composants en exemple, sans compte.",
     subSchoolsTitle: "La version pour les écoles",
 
     /* ---- la connexion : le formulaire, les avis, le compte, la page du lien ---- */

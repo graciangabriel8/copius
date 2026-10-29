@@ -1660,12 +1660,12 @@
       t.fullPairings.replace("{n}", fmt(c.pairings)),
       t.fullTrees.replace("{n}", fmt(c.trees)),
       t.fullLab,
-      t.fullTrios.replace("{n}", fmt(c.trios)),
-      t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
       /* A cached free.js from before bases or components has no such count:
          the row is left out rather than fmt(undefined) breaking the dialog. */
-      c.bases == null ? "" : t.fullBases.replace("{n}", fmt(c.bases)),
-      c.components == null ? "" : t.fullComponents.replace("{n}", fmt(c.components))
+      c.components == null ? "" : t.fullComponents.replace("{n}", fmt(c.components)),
+      t.fullTrios.replace("{n}", fmt(c.trios)),
+      t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
+      c.bases == null ? "" : t.fullBases.replace("{n}", fmt(c.bases))
     ].filter(Boolean).map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
   }
 
@@ -1689,7 +1689,8 @@
         '<div class="sub-side">' +
           '<article class="sub-plan"><p class="sub-now">' + esc(t.subFreeNow) + "</p>" +
             "<h3>" + esc(t.subFreeTitle) + "</h3>" +
-            '<p class="sub-holds">' + esc(t.subFreeHolds.replace("{n}", fmt(LK.counts.free))) + "</p></article>" +
+            '<p class="sub-holds">' + esc((LK.counts.freeComponents == null ? t.subFreeHolds
+              : t.subFreeHoldsComp.replace("{c}", fmt(LK.counts.freeComponents))).replace("{n}", fmt(LK.counts.free))) + "</p></article>" +
           '<article class="sub-plan"><h3>' + esc(t.subSchoolsTitle) + "</h3>" +
             '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p></article>" +
         "</div>" +

@@ -120,7 +120,8 @@ var LOCKED = {
     ingredients: ALL.length, free: free.length, paid: items.length,
     pairings: Object.keys(edges).length, chefs: CHEFS.length,
     dishes: CHEFS.reduce(function (n, c) { return n + (c.dishes || []).length; }, 0),
-    bases: BASES.length, trios: TRIOS.length, trees: TREES.length, components: COMPONENTS.length
+    bases: BASES.length, trios: TRIOS.length, trees: TREES.length, components: COMPONENTS.length,
+    freeComponents: freeComps.length
   },
   familyPaid: familyPaid, pairs: pairs, kin: kin, trees: trees, basesUsing: basesUsing,
   components: compList, compUsing: compUsing,
