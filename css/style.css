@@ -721,7 +721,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .az-b:hover{background:var(--chip);color:var(--ink)}
 .az-b.off{color:var(--border-strong);cursor:default}
 .az-b:focus-visible,.az-row:focus-visible,.lg-row:focus-visible,.pl:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
-.az-let{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:8px;border-top:1px solid var(--border);padding:10px 0 6px;scroll-margin-top:84px}
+.az-let{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:8px;border-top:1px solid var(--border);padding:10px 0 6px}
 .az-L{margin:0;font:400 34px/1 var(--serif);color:var(--accent);padding-top:4px}
 .az-row{display:grid;grid-template-columns:minmax(150px,210px) minmax(0,1fr) 128px;column-gap:18px;align-items:baseline;
   padding:7px 6px;margin:0 -6px;border-radius:6px;border-bottom:1px dotted var(--border);cursor:pointer}

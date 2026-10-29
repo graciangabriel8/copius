@@ -1241,25 +1241,37 @@
   /* A ratio is shown as a formula only when every part of its first sentence is
      a quantity and a label joined by " : "; whatever follows (later sentences,
      the text after " — " or " ; ") becomes the note. Anything else (a list inside
-     one term, "+", "ou", a term without a quantity, fewer than two terms) is shown
-     whole, in italics: a plain line beats a half-read formula, and nothing of the
-     string is ever left out. */
-  var RATIO_QTY = /^(?:(Pour|Per|jusqu'\u00e0|up to)\s+)?(\d+(?:[.,]\d+)?(?:\s?[\u2013-]\s?\d+(?:[.,]\d+)?|\s+(?:\u00e0|to)\s+\d+(?:[.,]\d+)?)?(?:\s?(?:c\. \u00e0 s\.|c\. \u00e0 c\.|tbsp|tsp|kg|g|mg|L|dL|cl|ml|%|min|h)(?![\p{L}]))?)(?:\s+(.*))?$/iu;
+     one term, "+", "ou", a second quantity or a temperature in a label, a time as a
+     term, a term without a quantity, fewer than two terms) is shown whole, in
+     italics: a plain line beats a half-read formula, and nothing of the string is
+     ever left out or altered. Matching runs on a copy whose no-break spaces are
+     plain spaces (same length), and every piece shown is cut from the raw string,
+     so the French spaces before ":" and ";" stay, and so does a closing period. */
+  var RATIO_QTY = /^(?:(Pour|Per|jusqu'à|up to)\s+)?(\d+(?:[.,]\d+)?(?:\s?[–-]\s?\d+(?:[.,]\d+)?|\s+(?:à|to)\s+\d+(?:[.,]\d+)?)?(?:\s?(?:c\. à s\.|c\. à c\.|tbsp|tsp|kg|g|mg|L|dL|cl|ml|%|min|h)(?![\p{L}]))?)(?:\s+(.*))?$/iu;
+  var RATIO_BAD_LABEL = /\s[+→=]\s|=|\.\s|\s(?:ou|or)\s|(?:^|[^\p{L}\d])\d/iu;
   function parseRatio(raw) {
-    var s = raw.replace(/[\u00a0\u202f]/g, " ").trim(), rest = [], m = s.match(/^(.*?)(?: \u2014 |\s?;\s)(.*)$/);
-    if (m) { s = m[1]; rest.push(m[2]); }
-    m = s.match(/^(.+?)\.\s+(?=[A-Z\u00c0-\u00d6\u00d8-\u00de\u0152])(.*)$/);
-    if (m) { s = m[1]; rest.unshift(m[2]); } else s = s.replace(/\.$/, "");
-    var parts = s.split(" : "), terms = [];
-    if (parts.length < 2) return null;
-    for (var i = 0; i < parts.length; i++) {
-      var q = parts[i].match(RATIO_QTY);
+    var n = raw.replace(/[  ]/g, " "), rest = [], end = n.length,
+        m = n.match(/^(.*?)(?: — |\s?;\s)(.*)$/);
+    if (m) { end = m[1].length; rest.push(raw.slice(n.length - m[2].length)); }
+    var s = n.slice(0, end);
+    m = s.match(/^(.+?\.)\s+(?=[A-ZÀ-ÖØ-ÞŒ])(.*)$/);
+    if (m) { rest.unshift(raw.slice(s.length - m[2].length, s.length)); s = m[1]; }
+    var terms = [], pos = 0, at;
+    do {
+      at = s.indexOf(" : ", pos);
+      var part = s.slice(pos, at === -1 ? s.length : at), q = part.match(RATIO_QTY);
       if (!q) return null;
       var label = q[3] || "";
-      if (/ \+ |\u2192|=|\.\s|,\s*(?:(?:ou|or)\s+)?\d|\b(?:ou|or)\s+\d/i.test(label)) return null;
-      terms.push({ pre: q[1] || "", qty: q[2], label: label });
-    }
-    return { terms: terms, note: rest.join(" \u00b7 ") };
+      if (RATIO_BAD_LABEL.test(label) || /\d\s?(?:min|h)$/i.test(q[2])) return null;
+      terms.push({
+        pre: q[1] ? raw.substr(pos, q[1].length) : "",
+        qty: raw.substr(pos + part.indexOf(q[2], (q[1] || "").length), q[2].length),
+        label: label ? raw.substr(pos + part.length - label.length, label.length) : ""
+      });
+      pos = at + 3;
+    } while (at !== -1);
+    if (terms.length < 2) return null;
+    return { terms: terms, note: rest.join(" · ") };
   }
   function ratioHtml(raw) {
     var p = parseRatio(raw);
@@ -3274,10 +3286,18 @@
     var card = e.target.closest("[data-comp]");
     if (card) openComp(card.getAttribute("data-comp"));
   });
-  /* a letter of the glossary rail jumps to its section */
+  /* a letter of the glossary rail jumps to its section: the sticky header's height
+     is measured at the click (it is one row on a desktop and three on a phone), so
+     the heading is never left under it, and focus moves to the section's first
+     entry so the next Tab reads on from there. */
   el("techRail").addEventListener("click", function (e) {
     var b = e.target.closest("[data-az]"), sec = b && el("techaz-" + b.getAttribute("data-az"));
-    if (sec) sec.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
+    if (!sec) return;
+    var head = document.querySelector(".site-head");
+    sec.style.scrollMarginTop = ((head ? head.offsetHeight : 0) + 8) + "px";
+    sec.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
+    var first = sec.querySelector(".az-row");
+    if (first) first.focus({ preventScroll: true });
   });
   el("techList").addEventListener("click", function (e) {
     var c = e.target.closest("[data-tech-card]");
