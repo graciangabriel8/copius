@@ -178,7 +178,7 @@
                        "crunch", "pickles", "gels", "powders", "creams", "sweet"];
   var COMP_ROLE = {
     sauces: "sauce", emulsions: "sauce", "butters-oils": "sauce", glazes: "sauce",
-    broths: "sauce", gels: "sauce", creams: "sauce",
+    broths: "sauce", gels: "sauce", creams: "fat",
     crunch: "crunch", powders: "crunch", pickles: "acid", purees: "vegetable", sweet: "fruit"
   };
   function buildCompItems(byIngId) {
@@ -2483,9 +2483,9 @@
   /* An all-soft plate (the engine's plateAllSoft note) is offered the crunch
      components: the crunch family, else a powder tagged crisp, crunchy or
      brittle. Ranked first by whether its sweetness matches the plate's, then
-     by how many items on the plate appear in the component's pairs or
-     ingredients, then by how many share a partner with it; each is
-     added in one tap, like the offers above. */
+     by whether it goes with anything here, then by how many items it goes
+     with directly and through an ingredient of a component; each is added
+     in one tap, like the offers above. */
   var CRUNCH_TAGS = ["crisp", "crunchy", "brittle"];
   var CRUNCH_SHOWN = 3;
   function crunchOffer(r) {
@@ -2500,11 +2500,13 @@
       /* The engine says what it links to, as for recommend: a chosen form
          speaks only through its own list, and lineage is the engine's to
          exclude. A plate of components never appears in a pairs list (they
-         are comp: ids), so a bridge through another component counts too —
-         only there, and only through what the crunch is served with, never
-         its recipe: through salt or butter nearly everything bridges.
-         Neither a drink on the plate nor one as the shared partner is ever
-         the reason (isAlcohol). */
+         are comp: ids), so a bridge to a component counts too, but only
+         through an ingredient that is in it — the reason then names
+         something on the plate (« va avec Carotte, dans Purée de carottes »),
+         never a partner that is not — and only through what the crunch is
+         served with, never its recipe: through salt or butter nearly
+         everything bridges. Neither a drink on the plate nor one as the
+         shared ingredient is ever the reason (isAlcohol). */
       var cand = { id: c.id, form: "" }, linked = [], bridges = [],
           rec = compById[c.id.slice(COMP_PREFIX.length)];
       PLATE.judge(plate.concat([cand]), PLATE_CTX).rows.forEach(function (row) {
@@ -2512,10 +2514,12 @@
         if (!other || (oi && isAlcohol(oi))) return;
         if (row.verdict === "ok") { linked.push(other); return; }
         if (row.verdict !== "mid" || !oi || !oi.isComp) return;
-        /* The most particular partner names the bridge best: the one recorded
-           with the fewest things. */
+        var inside = compById[other.id.slice(COMP_PREFIX.length)].ingredients.map(function (x) { return x.id; });
+        /* The most particular ingredient names the bridge best: the one
+           recorded with the fewest things. */
         var via = row.bridges.filter(function (x) {
-          return (rec.pairs || []).indexOf(x) !== -1 && byId[x] && !isAlcohol(byId[x]);
+          return inside.indexOf(x) !== -1 && !PLATE_SKIP[x] && (rec.pairs || []).indexOf(x) !== -1 &&
+            byId[x] && !isAlcohol(byId[x]);
         }).sort(function (x, y) {
           return PLATE_CTX.neighboursOf(x).length - PLATE_CTX.neighboursOf(y).length || (x < y ? -1 : 1);
         })[0];
@@ -2526,13 +2530,16 @@
          beetroot tuile. It leads on a dessert plate and trails on the others. */
       var sweet = rec.ingredients.some(function (x) { return byId[x.id] && byId[x.id].cat === "sweet"; }) &&
         !c.flavor.some(function (f) { var a = PLATE.AXIS_BY_TAG[f]; return a === "salty" || a === "umami"; });
-      return { id: c.id, linked: linked, bridges: bridges, fits: sweet === !!r.sweetPlate };
+      return { id: c.id, linked: linked, bridges: bridges, fits: sweet === !!r.sweetPlate,
+               tied: linked.length > 0 || bridges.length > 0 };
     }).filter(function (s) {
-      /* A component recorded with nothing here would sit alone on the plate and
-         lower the grade: only linked or bridged ones are offered. */
-      return s.linked.length > 0 || s.bridges.length > 0;
+      /* One tied to nothing here is still the crunch the plate lacks, offered
+         for that alone and after the ones that go with something — but never
+         across sweet and savoury: no pancetta crumble for its crunch alone
+         on a dessert. */
+      return s.tied || s.fits;
     }).sort(function (a, b) {
-      return (b.fits ? 1 : 0) - (a.fits ? 1 : 0) ||
+      return (b.fits ? 1 : 0) - (a.fits ? 1 : 0) || (b.tied ? 1 : 0) - (a.tied ? 1 : 0) ||
         b.linked.length - a.linked.length || b.bridges.length - a.bridges.length ||
         (a.id < b.id ? -1 : 1);
     }).slice(0, CRUNCH_SHOWN);
@@ -2550,12 +2557,20 @@
     var t = T(), box = el("plateVerdict");
     if (plate.length < 1) { box.innerHTML = ""; return; }
     var r = PLATE.judge(plate, PLATE_CTX);
+    var bridgedOnly = r.direct === 0 && r.rows.some(function (row) { return row.verdict === "mid"; }),
+        hasComp = plate.some(function (it) { return byId[it.id] && byId[it.id].isComp; });
 
     /* Some notes name ingredients; the rest are plain sentences. */
     function noteText(nt) {
       var txt = t[nt.key] || "";
       /* Everything on its own is one fact about the plate, not a list of it. */
-      if (nt.key === "plateLonely" && nt.ids.length === r.count) return t.plateLonelyAll;
+      /* Nothing tied directly but the score still counts shared partners: the
+         line says so, or it contradicts the band's sentence above it. A
+         component is in no pairs list, so it only ever meets the rest this way. */
+      if (nt.key === "plateLonely" && nt.ids.length === r.count) {
+        if (!bridgedOnly) return t.plateLonelyAll;
+        return t.plateBridgedAll + (hasComp ? " " + t.plateCompCounts : "");
+      }
       if (nt.key === "plateLonely") return txt.replace("{names}", andList(nt.items.map(itemLabel)));
       if (nt.key === "plateSpine") {
         return txt.replace("{a}", name(byId[nt.ids[0]])).replace("{b}", name(byId[nt.ids[1]]));
@@ -2588,7 +2603,7 @@
         /* The number alone taught nothing: a plate the atlas had never seen
            came out at 31 and read as a passing mark. The band's own sentence
            sits under the bar, always, not behind the detail toggle. */
-        '<p class="score-meaning">' + esc(t[step.why]) + "</p>" +
+        '<p class="score-meaning">' + esc(bridgedOnly ? t.scaleBridged : t[step.why]) + "</p>" +
         '<button type="button" class="score-why" data-plate-why aria-expanded="' +
           (plateWhyOpen ? "true" : "false") + '">' +
           esc(plateWhyOpen ? t.plateHide : t.plateWhy) + "</button></div>";
@@ -2629,7 +2644,9 @@
     /* The plate is all soft: crunch components to add, same chips as above. */
     var crunch = crunchOffer(r).map(function (s) {
       var why = s.linked.length ? t.recGoesWith.replace("{a}", itemLabel(s.linked[0]))
-        : t.recSharesWith.replace("{via}", name(byId[s.bridges[0].via])).replace("{a}", itemLabel(s.bridges[0].item));
+        : s.bridges.length
+          ? t.recGoesWithin.replace("{x}", name(byId[s.bridges[0].via])).replace("{a}", itemLabel(s.bridges[0].item))
+          : t.recCrunchOnly;
       return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '">' +
         '<span class="slot-role">' + esc(name(byId[s.id])) + "</span> " +
         '<span class="rec-why">' + esc(why) + "</span></button>";
