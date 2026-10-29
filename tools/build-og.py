@@ -17,7 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "og" / "copius.jpg"
 
 # Counted, never typed.
-NOT_INGREDIENTS = ("chefs", "trees", "techniques", "bases")
+NOT_INGREDIENTS = ("chefs", "trees", "techniques", "bases", "components")
 ing = set()
 for f in (ROOT / "js").glob("data-*.js"):
     if any(x in f.name for x in NOT_INGREDIENTS):

@@ -28,6 +28,7 @@ js/data-sweet.js
 js/data-texture.js
 js/data-vegetables.js
 js/data-bases.js
+js/data-components.js
 js/data-techniques.js
 js/data-trees.js
 js/data-chefs.js

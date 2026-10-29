@@ -37,7 +37,8 @@ var g = (typeof globalThis !== "undefined") ? globalThis : this;
 g.window = {};
 ["js/i18n.js", "js/photos.js"].concat(SOURCES).forEach(function (f) { eval(read(f)); });
 
-var I18N = g.window.I18N, INGREDIENTS = g.window.INGREDIENTS, TRIOS = g.window.TRIOS, CAT_ORDER = g.window.CAT_ORDER;
+var I18N = g.window.I18N, INGREDIENTS = g.window.INGREDIENTS, TRIOS = g.window.TRIOS, CAT_ORDER = g.window.CAT_ORDER,
+    BASES = g.window.BASES || [], COMPONENTS = g.window.COMPONENTS || [];
 var errors = [];
 var ids = {};
 
@@ -117,6 +118,41 @@ TREES.forEach(function (tr) {
   });
 });
 
+// ---- components (js/data-components.js) ----
+var COMP_FAMILIES = ["purees", "sauces", "emulsions", "broths", "butters-oils", "glazes", "crunch", "pickles", "gels", "powders", "creams", "sweet"];
+var COMP_UNITS = ["g", "ml", "pc", "pinch", "sprig", "leaf", "pod", "clove"];
+var baseIds = {}, compIds = {};
+BASES.forEach(function (b) { baseIds[b.id] = true; });
+function biText(v) { return v && typeof v.en === "string" && v.en && typeof v.fr === "string" && v.fr; }
+COMPONENTS.forEach(function (c) {
+  var w = "component " + c.id + ": ";
+  if (compIds[c.id]) errors.push("duplicate component id: " + c.id);
+  compIds[c.id] = true;
+  if (COMP_FAMILIES.indexOf(c.family) < 0) errors.push(w + "unknown family " + c.family);
+  ["name", "summary", "yield", "holds", "lifts"].forEach(function (f) {
+    if (!biText(c[f])) errors.push(w + "missing " + f + " in en or fr");
+  });
+  ["method", "keys"].forEach(function (f) {
+    if (!c[f] || !c[f].length) errors.push(w + "no " + f);
+    (c[f] || []).forEach(function (s, n) { if (!biText(s)) errors.push(w + f + " " + n + " missing en or fr"); });
+  });
+  if (!c.ingredients || !c.ingredients.length) errors.push(w + "no ingredients");
+  (c.ingredients || []).forEach(function (x) {
+    if (!ids[x.id]) errors.push(w + "ingredient '" + x.id + "' does not exist");
+    if (!(x.qty > 0)) errors.push(w + "ingredient '" + x.id + "' has qty " + x.qty);
+    if (COMP_UNITS.indexOf(x.unit) < 0) errors.push(w + "ingredient '" + x.id + "' has unit " + x.unit);
+  });
+  (c.pairs || []).forEach(function (p) { if (!ids[p]) errors.push(w + "pairing ref '" + p + "' does not exist"); });
+  if (c.base !== undefined && !baseIds[c.base]) errors.push(w + "base '" + c.base + "' is not in BASES");
+  var o = c.origin;
+  if (!o || (o.type !== "copius" && o.type !== "legendary")) errors.push(w + "origin.type must be copius or legendary");
+  else if (o.type === "legendary") {
+    if (!o.chef || !o.restaurant) errors.push(w + "legendary without chef or restaurant");
+    if (!/^https?:\/\//.test(o.source || "")) errors.push(w + "legendary without an http source");
+    if (!biText(o.ours)) errors.push(w + "legendary without ours in en and fr");
+  }
+});
+
 // ---- the lock ----
 // js/free.js (tools/build-free.js) is all the ingredient data the public atlas
 // loads: the ids of tools/free-tier.json and no other, without pairs or parent.
@@ -137,8 +173,19 @@ freeRecs.forEach(function (r) {
   });
 });
 FREE_IDS.forEach(function (id) { if (!inFree[id]) errors.push("js/free.js: free id " + id + " is missing"); });
-var from = freeText.indexOf("window.INGREDIENTS"), to = freeText.indexOf("window.COPIUS_LOCKED");
-if (from < 0 || to < from) errors.push("js/free.js: no INGREDIENTS followed by COPIUS_LOCKED");
+// The free components: exactly the ids of tools/free-components.json, no other.
+var FREE_COMP_IDS = JSON.parse(read("tools/free-components.json")).ids, inFreeComp = {};
+(FW.COMPONENTS || []).forEach(function (c) {
+  inFreeComp[c.id] = true;
+  if (FREE_COMP_IDS.indexOf(c.id) < 0) errors.push("js/free.js: component " + c.id + " is not in tools/free-components.json");
+});
+FREE_COMP_IDS.forEach(function (id) {
+  if (!inFreeComp[id]) errors.push("js/free.js: free component " + id + " is missing");
+  if (!compIds[id]) errors.push("tools/free-components.json: " + id + " is not a component");
+});
+var from = freeText.indexOf("window.INGREDIENTS"), to = freeText.indexOf("window.COMPONENTS");
+if (to < 0) to = freeText.indexOf("window.COPIUS_LOCKED");
+if (from < 0 || to < from) errors.push("js/free.js: no INGREDIENTS followed by COMPONENTS and COPIUS_LOCKED");
 else {
   var quoted = {}, qre = /"((?:[^"\\]|\\.)*)"/g, qm, part = freeText.slice(from, to);
   while ((qm = qre.exec(part))) quoted[qm[1]] = true;
@@ -211,6 +258,7 @@ INGREDIENTS.forEach(function (i) { cats[i.cat] = (cats[i.cat] || 0) + 1; });
 log("ingredients: " + INGREDIENTS.length);
 log("families: " + Object.keys(cats).map(function (c) { return c + "=" + cats[c]; }).join(", "));
 log("trios: " + TRIOS.length);
+log("components: " + COMPONENTS.length + " (" + FREE_COMP_IDS.length + " free)");
 log("trees: " + TREES.length + " (" + branchCount + " branches)");
 log("js/free.js: " + freeRecs.length + " records for " + FREE_IDS.length + " free ids, " +
     (INGREDIENTS.length - FREE_IDS.length) + " paid ids kept out");

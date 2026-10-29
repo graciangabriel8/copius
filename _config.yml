@@ -36,6 +36,7 @@ exclude:
   - js/data-texture.js
   - js/data-vegetables.js
   - js/data-bases.js
+  - js/data-components.js
   - js/data-trees.js
   - js/data-chefs.js
   - js/trios.js
