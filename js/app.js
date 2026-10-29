@@ -172,6 +172,8 @@
      flavour, texture and pairings: the record's, plus the ingredients it is
      made of. Its role on the plate comes from its family, in this one table,
      keyed by family and never by id (the engine reads `role` first). */
+  /* Too plain to stand for a component: never its drawing, on a card or a chip. */
+  var PLATE_SKIP = { salt: 1, water: 1 };
   var COMP_FAMILIES = ["purees", "sauces", "emulsions", "broths", "butters-oils", "glazes",
                        "crunch", "pickles", "gels", "powders", "creams", "sweet"];
   var COMP_ROLE = {
@@ -186,13 +188,17 @@
           if (!byIngId[id] || seen[id]) return false;
           return (seen[id] = true);
         });
+      /* On a chip it wears its lead ingredient's drawing, as its card does. */
+      var lead = (c.ingredients || []).filter(function (x) {
+        return byIngId[x.id] && byIngId[x.id].svg && !PLATE_SKIP[x.id];
+      })[0];
       return {
         id: COMP_PREFIX + c.id, cat: "__comp", isComp: true, family: c.family,
         role: COMP_ROLE[c.family] || "sauce",
         name: { en: c.name.en, fr: c.name.fr },
         latin: "", origin: { en: "", fr: "" }, season: [],
         flavor: (c.flavor || []).slice(), texture: (c.texture || []).slice(),
-        pairs: pairs, svg: "",
+        pairs: pairs, svg: lead ? byIngId[lead.id].svg : "",
         story: { en: "", fr: "" }, tip: { en: "", fr: "" }
       };
     });
@@ -1334,7 +1340,6 @@
      list carries no chef or restaurant: only the opened component's origin block
      does. The free version's paid components have no record: a lock on the empty
      plate and the summary instead of the ingredients. */
-  var PLATE_SKIP = { salt: 1, water: 1 };
   function compCard(r) {
     var t = T(), open = !!r.rec, drawn = "", names = "";
     if (open) {
