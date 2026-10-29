@@ -749,6 +749,7 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .lg-row:hover{background:var(--chip)}
 .lg-name{margin:0;font:400 17px/1.25 var(--serif);color:var(--ink-2);padding-top:6px}
 .lg-f{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px 10px}
+.lg-c{display:inline-flex;align-items:flex-start;gap:10px;min-width:0}
 .lg-t{position:relative;display:inline-flex;flex-direction:column;gap:2px;max-width:220px}
 .lg-pre{position:absolute;left:0;bottom:100%;font-size:11px;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .lg-q{font:400 30px/1.05 var(--serif);color:var(--ink);white-space:nowrap}

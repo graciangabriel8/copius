@@ -1277,9 +1277,10 @@
     var p = parseRatio(raw);
     if (!p) return '<div class="lg-f"><span class="lg-t txt"><span class="lg-q">' + esc(raw) + "</span></span></div>";
     return '<div><div class="lg-f">' + p.terms.map(function (x, i) {
-      return (i ? '<span class="lg-sep" aria-hidden="true">:</span>' : "") + '<span class="lg-t">' +
+      /* The colon travels with the term after it, so a wrapped line never ends on one. */
+      return '<span class="lg-c">' + (i ? '<span class="lg-sep" aria-hidden="true">:</span>' : "") + '<span class="lg-t">' +
         (x.pre ? '<span class="lg-pre">' + esc(x.pre) + "</span>" : "") + '<span class="lg-q">' + esc(x.qty) + "</span>" +
-        (x.label ? '<span class="lg-l">' + esc(x.label) + "</span>" : "") + "</span>";
+        (x.label ? '<span class="lg-l">' + esc(x.label) + "</span>" : "") + "</span></span>";
     }).join("") + "</div>" + (p.note ? '<p class="lg-note">' + esc(p.note) + "</p>" : "") + "</div>";
   }
 
