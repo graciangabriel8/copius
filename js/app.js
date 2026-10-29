@@ -2482,8 +2482,8 @@
 
   /* An all-soft plate (the engine's plateAllSoft note) is offered the crunch
      components: the crunch family, else a powder tagged crisp, crunchy or
-     brittle. Ranked first by whether its sweetness matches the plate's, then
-     by whether it goes with anything here, then by how many items it goes
+     brittle. Ranked first by whether it goes with anything here, then by
+     whether its sweetness matches the plate's, then by how many items it goes
      with directly and through an ingredient of a component; each is added
      in one tap, like the offers above. */
   var CRUNCH_TAGS = ["crisp", "crunchy", "brittle"];
@@ -2539,7 +2539,7 @@
          on a dessert. */
       return s.tied || s.fits;
     }).sort(function (a, b) {
-      return (b.fits ? 1 : 0) - (a.fits ? 1 : 0) || (b.tied ? 1 : 0) - (a.tied ? 1 : 0) ||
+      return (b.tied ? 1 : 0) - (a.tied ? 1 : 0) || (b.fits ? 1 : 0) - (a.fits ? 1 : 0) ||
         b.linked.length - a.linked.length || b.bridges.length - a.bridges.length ||
         (a.id < b.id ? -1 : 1);
     }).slice(0, CRUNCH_SHOWN);
@@ -2557,19 +2557,31 @@
     var t = T(), box = el("plateVerdict");
     if (plate.length < 1) { box.innerHTML = ""; return; }
     var r = PLATE.judge(plate, PLATE_CTX);
-    var bridgedOnly = r.direct === 0 && r.rows.some(function (row) { return row.verdict === "mid"; }),
+    /* The items a shared partner ties to something else on the plate. */
+    var bridged = [];
+    r.rows.forEach(function (row) {
+      if (row.verdict !== "mid") return;
+      if (bridged.indexOf(row.a) === -1) bridged.push(row.a);
+      if (bridged.indexOf(row.b) === -1) bridged.push(row.b);
+    });
+    var bridgedOnly = r.direct === 0 && bridged.length > 0,
         hasComp = plate.some(function (it) { return byId[it.id] && byId[it.id].isComp; });
 
     /* Some notes name ingredients; the rest are plain sentences. */
     function noteText(nt) {
       var txt = t[nt.key] || "";
-      /* Everything on its own is one fact about the plate, not a list of it. */
-      /* Nothing tied directly but the score still counts shared partners: the
-         line says so, or it contradicts the band's sentence above it. A
-         component is in no pairs list, so it only ever meets the rest this way. */
+      /* Everything on its own is one fact about the plate, not a list of it —
+         unless the score still counts shared partners: then the line says
+         which items meet that way and which meet nothing, or it contradicts
+         the band's sentence above it. A component is in no pairs list, so it
+         only ever meets the rest this way. */
       if (nt.key === "plateLonely" && nt.ids.length === r.count) {
         if (!bridgedOnly) return t.plateLonelyAll;
-        return t.plateBridgedAll + (hasComp ? " " + t.plateCompCounts : "");
+        var stranded = nt.items.filter(function (it) { return bridged.indexOf(it) === -1; });
+        return (stranded.length
+          ? t.plateBridgedSome.replace("{names}", andList(bridged.map(itemLabel)))
+              .replace("{rest}", andList(stranded.map(itemLabel)))
+          : t.plateBridgedAll) + (hasComp ? " " + t.plateCompCounts : "");
       }
       if (nt.key === "plateLonely") return txt.replace("{names}", andList(nt.items.map(itemLabel)));
       if (nt.key === "plateSpine") {
