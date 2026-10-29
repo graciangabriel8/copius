@@ -1656,7 +1656,8 @@
       t.fullLab,
       t.fullTrios.replace("{n}", fmt(c.trios)),
       t.fullChefs.replace("{n}", fmt(c.chefs)).replace("{d}", fmt(c.dishes)),
-      t.fullBases.replace("{n}", fmt(c.bases))
+      t.fullBases.replace("{n}", fmt(c.bases)),
+      t.fullComponents.replace("{n}", fmt(c.components))
     ].map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
   }
 
@@ -2473,8 +2474,10 @@
 
   /* An all-soft plate (the engine's plateAllSoft note) is offered the crunch
      components: the crunch family, else a powder tagged crisp, crunchy or
-     brittle. Ranked by how many items on the plate appear in the component's
-     pairs or ingredients; each is added in one tap, like the offers above. */
+     brittle. Ranked first by whether its sweetness matches the plate's, then
+     by how many items on the plate appear in the component's pairs or
+     ingredients, then by how many share a partner with it; each is
+     added in one tap, like the offers above. */
   var CRUNCH_TAGS = ["crisp", "crunchy", "brittle"];
   var CRUNCH_SHOWN = 3;
   function crunchOffer(r) {
@@ -2486,14 +2489,28 @@
       return c.family === "crunch" ||
         (c.family === "powders" && c.texture.some(function (x) { return CRUNCH_TAGS.indexOf(x) !== -1; }));
     }).map(function (c) {
-      var linked = plate.filter(function (it) { return c.pairs.indexOf(it.id) !== -1; });
-      return { id: c.id, linked: linked };
+      var linked = [], bridges = [];
+      plate.forEach(function (it) {
+        if (c.pairs.indexOf(it.id) !== -1) { linked.push(it); return; }
+        /* A plate of components never appears in a pairs list (they are
+           comp: ids), so a shared partner — the engine's bridge — counts too. */
+        var via = PLATE_CTX.neighboursOf(it.id).filter(function (x) { return c.pairs.indexOf(x) !== -1; })[0];
+        if (via) bridges.push({ item: it, via: via });
+      });
+      /* Sweet with nothing salty, meaty or umami beside it: a nougatine, not a
+         granola salé. It suits the plate when the plate is a dessert. */
+      var sweet = c.flavor.indexOf("sweet") !== -1 && !c.flavor.some(function (f) {
+        return f === "salty" || f === "meaty" || f === "umami";
+      });
+      return { id: c.id, linked: linked, bridges: bridges, fits: sweet === !!r.sweetPlate };
     }).filter(function (s) {
       /* A component recorded with nothing here would sit alone on the plate and
-         lower the grade: only linked ones are offered. */
-      return s.linked.length > 0;
+         lower the grade: only linked or bridged ones are offered. */
+      return s.linked.length > 0 || s.bridges.length > 0;
     }).sort(function (a, b) {
-      return b.linked.length - a.linked.length || (a.id < b.id ? -1 : 1);
+      return (b.fits ? 1 : 0) - (a.fits ? 1 : 0) ||
+        b.linked.length - a.linked.length || b.bridges.length - a.bridges.length ||
+        (a.id < b.id ? -1 : 1);
     }).slice(0, CRUNCH_SHOWN);
   }
 
@@ -2587,7 +2604,8 @@
     if (offer) offer = "<h3>" + esc(t.plateRecs) + "</h3>" + '<div class="plate-slots plate-recs">' + offer + "</div>";
     /* The plate is all soft: crunch components to add, same chips as above. */
     var crunch = crunchOffer(r).map(function (s) {
-      var why = t.recGoesWith.replace("{a}", itemLabel(s.linked[0]));
+      var why = s.linked.length ? t.recGoesWith.replace("{a}", itemLabel(s.linked[0]))
+        : t.recSharesWith.replace("{via}", name(byId[s.bridges[0].via])).replace("{a}", itemLabel(s.bridges[0].item));
       return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '">' +
         '<span class="slot-role">' + esc(name(byId[s.id])) + "</span> " +
         '<span class="rec-why">' + esc(why) + "</span></button>";
