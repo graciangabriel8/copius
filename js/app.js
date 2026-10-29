@@ -1301,7 +1301,7 @@
       return norm(r.name.en + " " + r.name.fr + " " + r.summary[state.lang] + " " +
         compFamilyLabel(r.family) + " " + ings).indexOf(q) !== -1;
     });
-    el("compCount").textContent = t.compCountTpl.replace("{n}", list.length);
+    el("compCount").textContent = list.length === 1 ? t.compCountOne : t.compCountTpl.replace("{n}", list.length);
     el("componentList").innerHTML = fams.map(function (f) {
       var inFam = list.filter(function (r) { return r.family === f; }).sort(function (a, b) {
         return a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP);
@@ -1334,7 +1334,8 @@
         ? '<button type="button" class="chip-link" data-baselink="' + esc(c.base) + '">' +
             esc(baseById[c.base].name[state.lang]) + "</button>" : "";
     var tags = (c.texture || []).map(function (x) { return t.textures[x] || x; })
-      .concat((c.flavor || []).map(function (x) { return t.flavors[x] || x; }));
+      .concat((c.flavor || []).map(function (x) { return t.flavors[x] || x; }))
+      .filter(function (x, i, a) { return a.indexOf(x) === i; });
     var season = Array.isArray(c.season) && c.season.length ? '<div class="m-season">' + seasonDots(c) + "</div>" : "";
     var colon = state.lang === "fr" ? " : " : ": ";
     el("modalBody").innerHTML =
@@ -1361,13 +1362,23 @@
       (o.type === "legendary"
         ? '<div class="m-note"><h3>' + esc(t.compOurs) + "</h3><p>" + esc((o.ours || {})[state.lang] || "") + "</p>" +
           '<p class="comp-credit">' + esc(t.compChef) + colon +
-          esc(o.chef || "") + " · " + esc(t.compRestaurant) + colon +
-          esc(o.restaurant || "") + "</p>" +
+          esc(compCredit(o.chef)) + " · " + esc(t.compRestaurant) + colon +
+          esc(compCredit(o.restaurant)) + "</p>" +
           (o.source ? '<p class="comp-credit">' + esc(t.compSource) + colon +
             '<a href="' + esc(o.source) + '" target="_blank" rel="noopener">' +
             esc(o.source.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) +
             ' <span aria-hidden="true">↗</span></a></p>' : "") + "</div>"
         : "");
+  }
+  /* The chef and restaurant lines are English in the data: the connectors, the
+     places and the quotes are put into the reader's language here; the
+     qualifier in brackets is in the localised "Our version" note beside it. */
+  function compCredit(v) {
+    var t = T(), x = String(v || "").replace(/\s*\([^)]*\)/g, "");
+    x = x.split(" and ").join(" " + t.compAnd + " ").split(", then ").join(", " + t.compThen + " ");
+    Object.keys(t.compPlaces).forEach(function (k) { x = x.split(k).join(t.compPlaces[k]); });
+    return state.lang === "fr"
+      ? x.replace(/'/g, "\u2019").replace(/"([^"]*)"/g, "\u00ab\u202f$1\u202f\u00bb") : x;
   }
   function openComp(id) { openItem("comp", id); }
 
@@ -2246,7 +2257,10 @@
     pairsOf: itemPairs,
     textureOf: itemTexture,
     lineageOf: lineage,
-    neighboursOf: function (id) { return PAIRS[id] ? Array.from(PAIRS[id]) : []; }
+    neighboursOf: function (id) {
+      /* A component is in no PAIRS row: its own list is its neighbours. */
+      return PAIRS[id] ? Array.from(PAIRS[id]) : byId[id] && byId[id].isComp ? byId[id].pairs.slice() : [];
+    }
   };
 
   /* What to put on next, judged rather than guessed. Only the recorded
@@ -2316,6 +2330,10 @@
         });
         /* A base is in no PAIRS row; its own list is its only voice. */
         itemPairs(it.id, "").forEach(function (c) { mine[c] = true; });
+      }
+      /* A component's own ingredients are already in it: never offered back. */
+      if (byId[it.id] && byId[it.id].isComp) {
+        compById[it.id.slice(COMP_PREFIX.length)].ingredients.forEach(function (x) { delete mine[x.id]; });
       }
       Object.keys(mine).forEach(function (c) {
         var e = tally[c] || (tally[c] = { id: c, links: 0, lone: 0 });
@@ -2391,6 +2409,10 @@
     }).map(function (c) {
       var linked = plate.filter(function (it) { return c.pairs.indexOf(it.id) !== -1; });
       return { id: c.id, linked: linked };
+    }).filter(function (s) {
+      /* A component recorded with nothing here would sit alone on the plate and
+         lower the grade: only linked ones are offered. */
+      return s.linked.length > 0;
     }).sort(function (a, b) {
       return b.linked.length - a.linked.length || (a.id < b.id ? -1 : 1);
     }).slice(0, CRUNCH_SHOWN);
@@ -2486,7 +2508,7 @@
     if (offer) offer = "<h3>" + esc(t.plateRecs) + "</h3>" + '<div class="plate-slots plate-recs">' + offer + "</div>";
     /* The plate is all soft: crunch components to add, same chips as above. */
     var crunch = crunchOffer(r).map(function (s) {
-      var why = s.linked.length ? t.recGoesWith.replace("{a}", itemLabel(s.linked[0])) : t.compCrunchPlain;
+      var why = t.recGoesWith.replace("{a}", itemLabel(s.linked[0]));
       return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '">' +
         '<span class="slot-role">' + esc(name(byId[s.id])) + "</span> " +
         '<span class="rec-why">' + esc(why) + "</span></button>";
