@@ -40,7 +40,11 @@
        no pairings of their own. The caller synthesises a record for each from
        the ingredients it lists, so by the time the engine sees one it is an
        ingredient like any other, under this category. */
-    __base: "sauce"
+    __base: "sauce",
+    /* A component (js/data-components.js) names its own role from its family,
+       through `role` on the record the caller builds. This is only the
+       fallback for one that arrives without. */
+    __comp: "sauce"
   };
 
   var ROLE_OVERRIDE = {
@@ -67,10 +71,14 @@
   var SESAME = set("sesame black-sesame black-sesame-paste chinese-sesame-paste tahini");
   var ALLERGENS = [["treeNuts", TREE_NUTS], ["peanut", PEANUT], ["sesame", SESAME]];
 
-  var ROLES = ["protein", "vegetable", "starch", "fat", "sauce", "seasoning", "nuts", "fruit", "aside"];
+  /* "crunch" (a crumble, a powder, a nougatine) and "acid" (a pickle) are roles
+     only a component can have: no ingredient family maps to them. */
+  var ROLES = ["protein", "vegetable", "starch", "fat", "sauce", "seasoning", "nuts", "fruit", "aside",
+               "crunch", "acid"];
 
+  /* A record may name its role outright; the caller does so for components. */
   function roleOf(ing) {
-    return ROLE_OVERRIDE[ing.id] || ROLE_BY_CAT[ing.cat] || "aside";
+    return ing.role || ROLE_OVERRIDE[ing.id] || ROLE_BY_CAT[ing.cat] || "aside";
   }
 
   /* ---------- flavour axes ----------

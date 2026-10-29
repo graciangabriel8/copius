@@ -631,9 +631,9 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .view-tab.tab-sub:not(.active){color:var(--accent)}
 /* Four tabs no longer fit a single pill at 375px, so "Les chefs" wrapped to
    two lines and threw the row's baseline out. Scroll them like the families.
-   With the offer's tab, six need ~730px of window, hence 760. After the rules
-   above, so its width wins over theirs. */
-@media (max-width:760px){
+   With the offer's tab, six need ~730px of window; with Components, seven need
+   ~860px, hence 900. After the rules above, so its width wins over theirs. */
+@media (max-width:900px){
   .view-tabs{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
              scrollbar-width:none;-ms-overflow-style:none}
   .view-tabs::-webkit-scrollbar{display:none}
@@ -752,6 +752,28 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .bm-head{margin-bottom:10px}
 .bm-head h2{margin:6px 0 2px}
 .dm-sum{margin:0 0 4px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+
+/* Components: the bases' cards and chips, plus what bases do not have —
+   family headings, the legendary badge and a quantity list. */
+.comp-list{padding:0 20px 40px}
+.comp-list .base-list{padding:0 0 18px}
+.comp-fam{margin:14px 0 10px;font-family:var(--sans);font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
+.comp-card{min-height:170px}
+.comp-shut .base-sum{-webkit-line-clamp:5}
+.comp-shut .base-meta{display:flex;align-items:center;gap:6px}
+.comp-shut .base-meta .lock-ico{margin:0 0 0 auto}
+.comp-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;vertical-align:1px;
+  background:var(--accent-soft);color:var(--accent-soft-ink);font-size:10px;letter-spacing:.08em}
+.comp-temp{margin:-2px 0 8px;font-size:13px;color:var(--ink-3)}
+.comp-ings{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:6px}
+.comp-ings li{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.comp-qty{min-width:70px;font-size:13.5px;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.comp-method{margin:0 0 4px;padding-left:22px;font-size:14px;line-height:1.65;color:var(--ink)}
+.comp-method li{margin:0 0 6px}
+.comp-keys{margin:0;padding-left:18px;font-size:14px;line-height:1.6}
+.comp-credit{margin:6px 0 0;font-size:13px;color:var(--ink-2)}
+.comp-credit a{color:var(--ink);text-underline-offset:3px}
 
 /* Same species. Sits above the pairings because it answers a different question:
    pairings are what it goes with, kin is what it is. */

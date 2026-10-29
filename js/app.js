@@ -5,10 +5,12 @@
   var LS_LANG = "atlas-lang", LS_FAVS = "atlas-favs";
   var LS_MYINGS = "atlas-my-ingredients";
   var BASE = window.INGREDIENTS || [], TRIOS = window.TRIOS || [], I18N = window.I18N, CAT_ORDER = window.CAT_ORDER;
-  var TECHNIQUES = window.TECHNIQUES || [], BASES = window.BASES || [];
-  var techById = {}, baseById = {};
+  var TECHNIQUES = window.TECHNIQUES || [], BASES = window.BASES || [], COMPONENTS = window.COMPONENTS || [];
+  var techById = {}, baseById = {}, compById = {};
   TECHNIQUES.forEach(function (x) { techById[x.id] = x; });
   BASES.forEach(function (x) { baseById[x.id] = x; });
+  /* The free version holds the free three in full; the full version holds every one. */
+  COMPONENTS.forEach(function (x) { compById[x.id] = x; });
   var PHOTOS = new Set(window.PHOTOS || []);
 
   /* The version. js/free.js carries the free cut and COPIUS_LOCKED, the teaser
@@ -26,9 +28,12 @@
   var PAYMENTS_LIVE = true;
   var LK = window.COPIUS_LOCKED || {};
   LK = {
-    counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0 },
+    counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0, components: 0 },
     familyPaid: LK.familyPaid || {}, pairs: LK.pairs || {}, kin: LK.kin || {},
-    trees: LK.trees || {}, basesUsing: LK.basesUsing || {}, items: LK.items || []
+    trees: LK.trees || {}, basesUsing: LK.basesUsing || {}, items: LK.items || [],
+    /* [id, family, origin type, name en, name fr, summary en, summary fr] for every
+       component, and how many paid components use each ingredient. */
+    components: LK.components || [], compUsing: LK.compUsing || {}
   };
   var PAID = {};   // id -> [id, name en, name fr, family]
   LK.items.forEach(function (x) { PAID[x[0]] = x; });
@@ -162,8 +167,39 @@
     }).filter(Boolean);
   }
 
-  var ING, byId, PAIRS, EDGE_COUNT, BASE_ITEMS = [];
-  var BASE_PREFIX = "base:";
+  /* ---------- components as plate items ----------
+     A component is a finished element, so unlike a base it brings its own
+     flavour, texture and pairings: the record's, plus the ingredients it is
+     made of. Its role on the plate comes from its family, in this one table,
+     keyed by family and never by id (the engine reads `role` first). */
+  var COMP_FAMILIES = ["purees", "sauces", "emulsions", "broths", "butters-oils", "glazes",
+                       "crunch", "pickles", "gels", "powders", "creams", "sweet"];
+  var COMP_ROLE = {
+    sauces: "sauce", emulsions: "sauce", "butters-oils": "sauce", glazes: "sauce",
+    broths: "sauce", gels: "sauce", creams: "sauce",
+    crunch: "crunch", powders: "crunch", pickles: "acid", purees: "vegetable", sweet: "fruit"
+  };
+  function buildCompItems(byIngId) {
+    return COMPONENTS.map(function (c) {
+      var seen = {}, pairs = (c.pairs || []).concat((c.ingredients || []).map(function (x) { return x.id; }))
+        .filter(function (id) {
+          if (!byIngId[id] || seen[id]) return false;
+          return (seen[id] = true);
+        });
+      return {
+        id: COMP_PREFIX + c.id, cat: "__comp", isComp: true, family: c.family,
+        role: COMP_ROLE[c.family] || "sauce",
+        name: { en: c.name.en, fr: c.name.fr },
+        latin: "", origin: { en: "", fr: "" }, season: [],
+        flavor: (c.flavor || []).slice(), texture: (c.texture || []).slice(),
+        pairs: pairs, svg: "",
+        story: { en: "", fr: "" }, tip: { en: "", fr: "" }
+      };
+    });
+  }
+
+  var ING, byId, PAIRS, EDGE_COUNT, BASE_ITEMS = [], COMP_ITEMS = [];
+  var BASE_PREFIX = "base:", COMP_PREFIX = "comp:";
 
   function rebuildIndex() {
     ING = BASE.concat(myIngs);
@@ -173,6 +209,8 @@
        sauce, and nothing else (grid, search, counters) iterates BASE_ITEMS. */
     BASE_ITEMS = LOCKED ? [] : buildBaseItems(byId);
     BASE_ITEMS.forEach(function (b) { byId[b.id] = b; });
+    COMP_ITEMS = LOCKED ? [] : buildCompItems(byId);
+    COMP_ITEMS.forEach(function (c) { byId[c.id] = c; });
     // Symmetric pairing graph: a declared pair counts in both directions.
     PAIRS = {};
     ING.forEach(function (i) { PAIRS[i.id] = new Set(); });
@@ -258,7 +296,8 @@
     view: "atlas",   // every visit opens on the atlas; the last tab used to be restored and a visit ending in the lab reopened there
     chefQ: "", chefGender: "all", chefStars: "all", chefCountry: "all", chefEra: "all",
     cat: "all", q: "", dq: "", months: [], favsOnly: false, rareOnly: false, luxeOnly: false, signOnly: false, priceBand: "all", flavour: "all", sort: "name",
-    techQ: "", techGroup: "all", baseQ: "", baseGroup: "all"
+    techQ: "", techGroup: "all", baseQ: "", baseGroup: "all",
+    compQ: "", compFamily: "all", compOrigin: "all"
   };
   var favs = new Set(readList(LS_FAVS));
   /* Everything opened in the dialog, oldest first: {kind: ing|tech|base, id}.
@@ -495,6 +534,7 @@
     el("tabTech").textContent = t.tabTech;
     el("tabSub").textContent = t.tabSub;
     el("tabSub").hidden = !LOCKED;
+    el("tabComponents").textContent = t.tabComponents;
     /* A paid tab carries a lock, and says so to assistive tech. */
     [["tabChefs", t.tabChefs], ["tabBases", t.tabBases], ["tabLab", t.tabLab]].forEach(function (p) {
       var b = el(p[0]);
@@ -509,6 +549,8 @@
        A locked tab has its panel whatever data is loaded. */
     el("tabTech").hidden = TECHNIQUES.length === 0;
     el("tabBases").hidden = !LOCKED && BASES.length === 0;
+    /* Open to everyone: locked, the list is the teaser's names and summaries. */
+    el("tabComponents").hidden = compRows().length === 0;
     el("creationsTitle").textContent = t.myCreations;
     el("creationsHint").textContent = t.myCreationsHint;
     el("lang-en").classList.toggle("active", state.lang === "en");
@@ -1056,8 +1098,10 @@
     if (v === "sub" && !LOCKED) v = "atlas";
     state.view = v;
     var shut = viewLocked(v);
-    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView", lab: "labView", sub: "subView" };
-    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases", lab: "tabLab", sub: "tabSub" };
+    var views = { atlas: "atlasView", chefs: "chefsView", tech: "techView", bases: "basesView",
+                  components: "componentsView", lab: "labView", sub: "subView" };
+    var tabs = { atlas: "tabAtlas", chefs: "tabChefs", tech: "tabTech", bases: "tabBases",
+                 components: "tabComponents", lab: "tabLab", sub: "tabSub" };
     Object.keys(views).forEach(function (k) {
       el(views[k]).hidden = shut || v !== k;
       el(tabs[k]).classList.toggle("active", v === k);
@@ -1072,6 +1116,7 @@
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
     if (v === "bases") renderBases();
+    if (v === "components") renderComponents();
     if (v === "sub") renderSub();
   }
 
@@ -1173,6 +1218,177 @@
           "</span></p></article>";
       }).join("");
     }
+
+  /* ---------- components ----------
+     Open to everyone. The free version lists every component's name and summary
+     (COPIUS_LOCKED.components) and opens the free three in full (their records
+     are in window.COMPONENTS); the full version holds every record. */
+  function compRows() {
+    if (!LOCKED) {
+      return COMPONENTS.map(function (c) {
+        return { id: c.id, family: c.family, origin: c.origin.type, name: c.name, summary: c.summary, rec: c };
+      });
+    }
+    return LK.components.map(function (x) {
+      return { id: x[0], family: x[1], origin: x[2], name: { en: x[3], fr: x[4] },
+               summary: { en: x[5], fr: x[6] }, rec: compById[x[0]] || null };
+    });
+  }
+  function compFamilyLabel(f) { return T().compFamilies[f] || f; }
+  function compBadge(origin) {
+    return origin === "legendary" ? ' <span class="comp-badge">' + esc(T().compLegendary) + "</span>" : "";
+  }
+  /* An ingredient of a component: a chip to the ingredient, or in the free version
+     the locked chip of a paid one. */
+  function compIngChip(id) {
+    if (byId[id]) {
+      return '<button type="button" class="chip-link" data-open="' + esc(id) + '">' + art(byId[id]) +
+        "<span>" + esc(name(byId[id])) + "</span></button>";
+    }
+    if (LOCKED && PAID[id]) {
+      return '<button type="button" class="chip-link chip-locked" data-locked="' + esc(id) + '">' + LOCK_ICON +
+        "<span>" + esc(lockedName(PAID[id])) + "</span></button>";
+    }
+    return "";
+  }
+  function compIngName(id) {
+    return byId[id] ? name(byId[id]) : LOCKED && PAID[id] ? lockedName(PAID[id]) : "";
+  }
+  /* "500 g", "2 pinches", "1" (a count: the ingredient's name says what). */
+  function compQty(q) {
+    var u = q.unit;
+    if (u === "pc") return fmt(q.qty);
+    if (u === "g" || u === "ml") return fmt(q.qty) + " " + u;
+    var w = T().compUnits[u] || [u, u];
+    var plural = state.lang === "fr" ? q.qty > 1 : q.qty !== 1;
+    return fmt(q.qty) + " " + w[plural ? 1 : 0];
+  }
+
+  function compCard(r) {
+    var t = T(), open = !!r.rec;
+    var top = open ? r.rec.ingredients.map(function (x) { return compIngName(x.id); })
+      .filter(Boolean).slice(0, 4).map(esc).join(" · ") : "";
+    return '<article class="base-card comp-card' + (open ? "" : " comp-shut") + '" ' +
+      (open ? 'data-comp="' + esc(r.id) + '"'
+            : 'data-full aria-label="' + esc(r.name[state.lang] + " — " + t.lockedTag) + '"') +
+      ' tabindex="0" role="button">' +
+      '<p class="base-meta">' + esc(compFamilyLabel(r.family)) + compBadge(r.origin) + (open ? "" : LOCK_ICON) + "</p>" +
+      "<h3>" + esc(r.name[state.lang]) + "</h3>" +
+      '<p class="base-sum">' + esc(r.summary[state.lang]) + "</p>" +
+      (top ? '<p class="base-foot"><span class="base-ings">' + top + "</span></p>" : "") +
+      "</article>";
+  }
+
+  function renderComponents() {
+    var t = T(), rows = compRows();
+    el("componentsTitle").textContent = t.componentsTitle;
+    el("componentsHint").textContent = t.componentsHint;
+    placeholder("compSearch", t.compSearchPh);
+    var fams = COMP_FAMILIES.filter(function (f) { return rows.some(function (r) { return r.family === f; }); });
+    if (state.compFamily !== "all" && fams.indexOf(state.compFamily) === -1) state.compFamily = "all";
+    fillSel("compFamily", [["all", t.compAllFamilies]].concat(fams.map(function (f) {
+      return [f, compFamilyLabel(f)];
+    })), state.compFamily);
+    fillSel("compOrigin", ["all", "copius", "legendary"].map(function (o) {
+      return [o, t.compOrigins[o]];
+    }), state.compOrigin);
+    var q = norm(state.compQ.trim());
+    var list = rows.filter(function (r) {
+      if (state.compFamily !== "all" && r.family !== state.compFamily) return false;
+      if (state.compOrigin !== "all" && r.origin !== state.compOrigin) return false;
+      if (!q) return true;
+      var ings = r.rec ? r.rec.ingredients.map(function (x) { return compIngName(x.id); }).join(" ") : "";
+      return norm(r.name.en + " " + r.name.fr + " " + r.summary[state.lang] + " " +
+        compFamilyLabel(r.family) + " " + ings).indexOf(q) !== -1;
+    });
+    el("compCount").textContent = t.compCountTpl.replace("{n}", list.length);
+    el("componentList").innerHTML = fams.map(function (f) {
+      var inFam = list.filter(function (r) { return r.family === f; }).sort(function (a, b) {
+        return a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP);
+      });
+      if (!inFam.length) return "";
+      return '<section class="comp-group"><h3 class="comp-fam">' + esc(compFamilyLabel(f)) +
+        ' <span class="kin-n">' + inFam.length + '</span></h3><div class="base-list">' +
+        inFam.map(compCard).join("") + "</div></section>";
+    }).join("") +
+      (LOCKED && LK.counts.components
+        ? '<button type="button" class="locked-line" data-full>' + LOCK_ICON +
+          esc(t.lockedComponents.replace("{n}", fmt(LK.counts.components))) + "</button>" : "");
+  }
+
+  function renderCompModal(id) {
+    var t = T(), c = compById[id];
+    if (!c) return;
+    var o = c.origin || {};
+    var ings = c.ingredients.map(function (x) {
+      var chip = compIngChip(x.id);
+      return chip ? '<li><span class="comp-qty">' + esc(compQty(x)) + "</span>" + chip + "</li>" : "";
+    }).join("");
+    var pairs = (c.pairs || []).map(compIngChip).join("");
+    /* The base is paid, and the free version holds no record of it: a locked chip
+       that says so, never a name it does not have. */
+    var built = !c.base ? "" : LOCKED
+      ? '<button type="button" class="chip-link chip-locked" data-full>' + LOCK_ICON +
+          esc(t.lockedBasesUsingOne) + "</button>"
+      : baseById[c.base]
+        ? '<button type="button" class="chip-link" data-baselink="' + esc(c.base) + '">' +
+            esc(baseById[c.base].name[state.lang]) + "</button>" : "";
+    var tags = (c.texture || []).map(function (x) { return t.textures[x] || x; })
+      .concat((c.flavor || []).map(function (x) { return t.flavors[x] || x; }));
+    var season = Array.isArray(c.season) && c.season.length ? '<div class="m-season">' + seasonDots(c) + "</div>" : "";
+    var colon = state.lang === "fr" ? " : " : ": ";
+    el("modalBody").innerHTML =
+      '<div class="bm-head"><p class="base-meta">' + esc(compFamilyLabel(c.family)) + compBadge(o.type) + "</p>" +
+      '<h2 id="modalTitle">' + esc(c.name[state.lang]) + "</h2>" +
+      '<p class="base-era">' + esc(c.name[state.lang === "en" ? "fr" : "en"]) + "</p></div>" +
+      '<p class="bm-sum">' + esc(c.summary[state.lang]) + "</p>" +
+      '<p class="comp-temp">' + esc(t.compTemps[c.temp] || "") + "</p>" + season +
+      (ings ? "<h3>" + esc(t.compIngredients) + '</h3><ul class="comp-ings">' + ings + "</ul>" : "") +
+      (built ? "<h3>" + esc(t.compBuiltOn) + '</h3><div class="chip-row">' + built + "</div>" : "") +
+      "<h3>" + esc(t.compYield) + '</h3><p class="bm-sum">' + esc(c.yield[state.lang]) + "</p>" +
+      "<h3>" + esc(t.compMethod) + '</h3><ol class="comp-method">' + c.method.map(function (s) {
+        return "<li>" + esc(s[state.lang]) + "</li>";
+      }).join("") + "</ol>" +
+      '<div class="m-note"><h3>' + esc(t.compKeys) + '</h3><ul class="comp-keys">' + c.keys.map(function (s) {
+        return "<li>" + esc(s[state.lang]) + "</li>";
+      }).join("") + "</ul></div>" +
+      "<h3>" + esc(t.compHolds) + '</h3><p class="bm-sum">' + esc(c.holds[state.lang]) + "</p>" +
+      "<h3>" + esc(t.compLifts) + '</h3><p class="bm-sum">' + esc(c.lifts[state.lang]) + "</p>" +
+      (tags.length ? '<div class="m-tags">' + tags.map(function (x) {
+        return '<span class="tag">' + esc(x) + "</span>";
+      }).join("") + "</div>" : "") +
+      (pairs ? "<h3>" + esc(t.compPairs) + '</h3><div class="chip-row">' + pairs + "</div>" : "") +
+      (o.type === "legendary"
+        ? '<div class="m-note"><h3>' + esc(t.compOurs) + "</h3><p>" + esc((o.ours || {})[state.lang] || "") + "</p>" +
+          '<p class="comp-credit">' + esc(t.compChef) + colon +
+          esc(o.chef || "") + " · " + esc(t.compRestaurant) + colon +
+          esc(o.restaurant || "") + "</p>" +
+          (o.source ? '<p class="comp-credit">' + esc(t.compSource) + colon +
+            '<a href="' + esc(o.source) + '" target="_blank" rel="noopener">' +
+            esc(o.source.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) +
+            ' <span aria-hidden="true">↗</span></a></p>' : "") + "</div>"
+        : "");
+  }
+  function openComp(id) { openItem("comp", id); }
+
+  /* "Used in" on an ingredient: every component made with it in the full version;
+     in the free version the free three that are, then the paid ones as a count. */
+  function compUsedBlock(id) {
+    var t = T();
+    var used = COMPONENTS.filter(function (c) {
+      return c.ingredients.some(function (x) { return x.id === id; });
+    }).sort(function (a, b) { return a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP); });
+    var paid = LOCKED ? (LK.compUsing[id] || 0) : 0;
+    if (!used.length && !paid) return "";
+    return "<h3>" + esc(t.compUsedIn) + (paid ? LOCK_ICON : "") + '</h3><div class="chip-row">' +
+      used.map(function (c) {
+        return '<button type="button" class="chip-link comp-chip" data-complink="' + esc(c.id) + '">' +
+          esc(c.name[state.lang]) + "</button>";
+      }).join("") +
+      (paid ? '<button type="button" class="chip-link chip-locked" data-full>' + LOCK_ICON +
+        esc(paid === 1 ? t.lockedCompUsingOne : t.lockedCompUsing.replace("{n}", paid)) + "</button>" : "") +
+      "</div>";
+  }
 
   var COUNTRIES = ["FR","IT","ES","GB","DK","SE","NO","FO","SI","US","PE","CO","GH","JP","KR","HK","TH"];
 
@@ -1312,7 +1528,7 @@
               tr.ids.map(function (x) { return esc(name(byId[x])); }).join(" + ") + "</p>";
           }).join("") : "") +
           (LOCKED ? "" : '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>"));
-    el("modalBody").innerHTML = html;
+    el("modalBody").innerHTML = html + compUsedBlock(i.id);
   }
 
   /* What the full version holds, every count read from COPIUS_LOCKED; with an
@@ -1479,10 +1695,10 @@
   /* One dialog, three kinds of entry. showModal draws whatever is on top of
      the stack; openItem pushes, backModal pops, closeModal empties. Focus goes
      to ✕ on open and back to the control that opened the dialog on close. */
-  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal, full: renderFullModal,
-                 account: renderAccountModal };
+  var RENDER = { ing: renderModal, tech: renderTechModal, base: renderBaseModal, comp: renderCompModal,
+                 full: renderFullModal, account: renderAccountModal };
   var LOOKUP = { ing: function (id) { return byId[id]; }, tech: function (id) { return techById[id]; },
-                 base: function (id) { return baseById[id]; },
+                 base: function (id) { return baseById[id]; }, comp: function (id) { return compById[id]; },
                  full: function (id) { return LOCKED && (!id || !!PAID[id]); },
                  account: function () { return true; } };
   var opener = null;
@@ -1558,6 +1774,14 @@
         return '<button type="button" class="chip-link" data-tech="' + esc(x) + '">' +
           esc(techById[x].name[state.lang]) + "</button>";
       }).join("");
+      /* The components built on this base; the base is the full version's, so
+         the list is too. */
+      var into = COMPONENTS.filter(function (c) { return c.base === id; })
+        .sort(function (a, b) { return a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP); })
+        .map(function (c) {
+          return '<button type="button" class="chip-link comp-chip" data-complink="' + esc(c.id) + '">' +
+            esc(c.name[state.lang]) + "</button>";
+        }).join("");
       el("modalBody").innerHTML =
         '<div class="bm-head"><p class="base-meta">' + esc(t.baseGroups[d.group] || d.group) + "</p>" +
         '<h2 id="modalTitle">' + esc(d.name[state.lang]) + "</h2>" +
@@ -1567,7 +1791,8 @@
         "<h3>" + esc(t.baseUses) + "</h3>" + '<p class="bm-sum">' + esc(d.uses[state.lang]) + "</p>" +
         '<div class="m-note"><h3>' + esc(t.baseFailure) + "</h3><p>" + esc(d.failure[state.lang]) + "</p></div>" +
         (ings ? "<h3>" + esc(t.baseIngredients) + '</h3><div class="chip-row">' + ings + "</div>" : "") +
-        (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "");
+        (techs ? "<h3>" + esc(t.baseTechniques) + '</h3><div class="chip-row">' + techs + "</div>" : "") +
+        (into ? "<h3>" + esc(t.compDevelopedInto) + '</h3><div class="chip-row">' + into + "</div>" : "");
     }
   /* Guarded as well as hidden: a chip left in a stale modal, a restored view or
      a hand-typed hash all reach this without passing the tab. */
@@ -1800,7 +2025,7 @@
   }
 
   function plateSearchHits(q) {
-    return rankHits(ING.concat(BASE_ITEMS).filter(function (i) {
+    return rankHits(ING.concat(BASE_ITEMS, COMP_ITEMS).filter(function (i) {
       if (plate.some(function (it) { return it.id === i.id; })) return false;
       return searchMatches(i, q);
     }), q);
@@ -2149,6 +2374,28 @@
     }).slice(0, REC_SHOWN);
   }
 
+  /* An all-soft plate (the engine's plateAllSoft note) is offered the crunch
+     components: the crunch family, else a powder tagged crisp, crunchy or
+     brittle. Ranked by how many items on the plate appear in the component's
+     pairs or ingredients; each is added in one tap, like the offers above. */
+  var CRUNCH_TAGS = ["crisp", "crunchy", "brittle"];
+  var CRUNCH_SHOWN = 3;
+  function crunchOffer(r) {
+    if (LOCKED || plateFull() || !r.texNotes.some(function (nt) { return nt.key === "plateAllSoft"; })) return [];
+    var onPlate = {};
+    plate.forEach(function (it) { onPlate[it.id] = true; });
+    return COMP_ITEMS.filter(function (c) {
+      if (onPlate[c.id] || plateRemoved.has(c.id)) return false;
+      return c.family === "crunch" ||
+        (c.family === "powders" && c.texture.some(function (x) { return CRUNCH_TAGS.indexOf(x) !== -1; }));
+    }).map(function (c) {
+      var linked = plate.filter(function (it) { return c.pairs.indexOf(it.id) !== -1; });
+      return { id: c.id, linked: linked };
+    }).sort(function (a, b) {
+      return b.linked.length - a.linked.length || (a.id < b.id ? -1 : 1);
+    }).slice(0, CRUNCH_SHOWN);
+  }
+
   /* Pairs with nothing recorded are named on one line, this many of them. */
   var NONE_NAMED = 6;
 
@@ -2237,6 +2484,14 @@
         '<span class="rec-why">' + esc(why) + "</span></button>";
     }).join("");
     if (offer) offer = "<h3>" + esc(t.plateRecs) + "</h3>" + '<div class="plate-slots plate-recs">' + offer + "</div>";
+    /* The plate is all soft: crunch components to add, same chips as above. */
+    var crunch = crunchOffer(r).map(function (s) {
+      var why = s.linked.length ? t.recGoesWith.replace("{a}", itemLabel(s.linked[0])) : t.compCrunchPlain;
+      return '<button type="button" class="plate-slot" data-plate-add="' + esc(s.id) + '">' +
+        '<span class="slot-role">' + esc(name(byId[s.id])) + "</span> " +
+        '<span class="rec-why">' + esc(why) + "</span></button>";
+    }).join("");
+    if (crunch) offer += "<h3>" + esc(t.compCrunchOffer) + "</h3>" + '<div class="plate-slots plate-recs">' + crunch + "</div>";
 
     /* One strip of cells, each a taste and how many things on the plate carry
        it: "2 of 4". The five tastes are drawn in full, zeroes included: an
@@ -2610,7 +2865,8 @@
     /* every non-atlas view has to re-render too, or a language switch leaves it
        in the old language — keyed off state.view so a new view cannot be missed */
     if (viewLocked(state.view)) { renderLockedView(state.view); return; }
-    var render = { chefs: renderChefs, tech: renderTech, bases: renderBases, sub: renderSub };
+    var render = { chefs: renderChefs, tech: renderTech, bases: renderBases, components: renderComponents,
+                   sub: renderSub };
     if (render[state.view]) render[state.view]();
   }
 
@@ -2799,6 +3055,8 @@
     if (k) { openTech(k.getAttribute("data-tech")); return; }
     var d = e.target.closest("[data-baselink]");
     if (d) { openBase(d.getAttribute("data-baselink")); return; }
+    var cl = e.target.closest("[data-complink]");
+    if (cl) { openComp(cl.getAttribute("data-complink")); return; }
     var br = e.target.closest("[data-branch]");
     if (br) {
       treeSel = br.getAttribute("data-branch");
@@ -2908,6 +3166,7 @@
   el("tabChefs").addEventListener("click", function () { setView("chefs"); });
   el("tabTech").addEventListener("click", function () { setView("tech"); });
   el("tabBases").addEventListener("click", function () { setView("bases"); });
+  el("tabComponents").addEventListener("click", function () { setView("components"); });
   el("tabLab").addEventListener("click", function () { setView("lab"); });
   el("tabSub").addEventListener("click", function () { setView("sub"); });
   el("techSearch").addEventListener("input", function (e) { state.techQ = e.target.value; renderTech(); });
@@ -2918,6 +3177,13 @@
   el("baseList").addEventListener("click", function (e) {
     var card = e.target.closest("[data-base]");
     if (card) { openBase(card.getAttribute("data-base")); return; }
+  });
+  el("compSearch").addEventListener("input", function (e) { state.compQ = e.target.value; renderComponents(); });
+  el("compFamily").addEventListener("change", function (e) { state.compFamily = e.target.value; renderComponents(); });
+  el("compOrigin").addEventListener("change", function (e) { state.compOrigin = e.target.value; renderComponents(); });
+  el("componentList").addEventListener("click", function (e) {
+    var card = e.target.closest("[data-comp]");
+    if (card) openComp(card.getAttribute("data-comp"));
   });
   el("techList").addEventListener("click", function (e) {
     var c = e.target.closest("[data-tech-card]");
