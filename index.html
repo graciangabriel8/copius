@@ -78,8 +78,11 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
 
   /* ---- The wall: the atlas's own drawings, drifting in columns ---- */
+  /* It runs past the window's top and bottom: scrolling past either end
+     bounces the page, the wall with it, and the bounce brings in more
+     drawings, not a bare strip. */
   .wall{
-    position:fixed; inset:0; z-index:0; overflow:hidden;
+    position:fixed; inset:-30vh 0; z-index:0; overflow:hidden;
     display:flex; justify-content:center; align-items:flex-start; gap:var(--gx);
   }
   /* The offset also stands without the drift, so still columns keep their
@@ -561,12 +564,12 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   for (var i = D.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = D[i]; D[i] = D[j]; D[j] = t; }
 
   // Enough columns to cover the width (an odd count, so one sits in the
-  // middle) and enough tiles per column to cover the height through the whole
+  // middle) and enough tiles per column to cover the wall's height through the whole
   // drift, one spare for a phone's toolbar folding away. Rebuilt, which
   // restarts the drift, only when the columns change or more rows are needed.
   function build() {
     var T = size("--tile"), X = T + size("--gx"), Y = T + size("--gy");
-    var W = window.innerWidth, H = window.innerHeight;
+    var W = window.innerWidth, H = wall.offsetHeight;
     var C = Math.ceil(W / X) + 1; if (C % 2 === 0) C++;
     var N = Math.ceil(H / Y + 0.5) + 1;
     if (C === cols && N <= rows) return;
