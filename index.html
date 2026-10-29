@@ -569,7 +569,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   // restarts the drift, only when the columns change or more rows are needed.
   function build() {
     var T = size("--tile"), X = T + size("--gx"), Y = T + size("--gy");
-    var W = window.innerWidth, H = wall.offsetHeight;
+    var W = window.innerWidth, H = Math.max(wall.offsetHeight, window.innerHeight);
     var C = Math.ceil(W / X) + 1; if (C % 2 === 0) C++;
     var N = Math.ceil(H / Y + 0.5) + 1;
     if (C === cols && N <= rows) return;
