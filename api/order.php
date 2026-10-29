@@ -1,7 +1,8 @@
 <?php
-/* POST {email, plan, cgv: true, lang}: the order, then a Stripe Checkout
+/* POST {email, plan, country, cgv: true, lang}: the order, then a Stripe Checkout
    Session made for it, server-side (DESIGN-PAYMENT.md section 1). Answers
-   {url} to go and pay, or {mailed: true} when the address already subscribes. */
+   {url} to go and pay, or {mailed: true} when the address already subscribes;
+   403 {error: country} for a buyer living where Copius is not sold. */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -21,10 +22,14 @@ if (cfg('per_ip_limits')) {
 $plan = (string)($in['plan'] ?? '');
 $lang = ($in['lang'] ?? '') === 'en' ? 'en' : 'fr';
 $addr = normal_address((string)($in['email'] ?? ''));
+$country = is_string($in['country'] ?? null) ? $in['country'] : '';
 $price = cfg('prices')[$plan] ?? null;
-if (!isset(PLANS[$plan]) || !is_string($price) || ($in['cgv'] ?? null) !== true || $addr === null) {
+if (!isset(PLANS[$plan]) || !is_string($price) || ($in['cgv'] ?? null) !== true || $addr === null
+    || !preg_match('/^[A-Z]{2}$/', $country)) {
     json_out(400); log_api('invalid'); exit;
 }
+/* The country the buyer declares (CGV 2.1), kept with the order at Stripe. */
+if (in_array($country, BLOCKED_COUNTRIES, true)) { json_out(403, ['error' => 'country']); log_api('country'); exit; }
 /* The confirmation attaches the CGV the buyer accepted: no file, no sale. */
 if (!is_file(cgv_pdf((string)cfg('cgv_version'), 'fr'))) { json_out(503); log_api('no_cgv'); exit; }
 
@@ -59,8 +64,8 @@ $t = PAY_TEXT[$lang];
     'line_items' => [['price' => $price, 'quantity' => 1]],
     'customer_email' => $addr,
     'client_reference_id' => $id,
-    'metadata' => ['order' => $id],
-    'subscription_data' => ['metadata' => ['order' => $id]],
+    'metadata' => ['order' => $id, 'country' => $country],
+    'subscription_data' => ['metadata' => ['order' => $id, 'country' => $country]],
     'locale' => $lang,
     /* The euro price only, whatever the card (CGV 4.1, « aucun autre frais »), whatever the
        account-wide Dashboard setting. The string, as http_build_query turns false into 0. */
