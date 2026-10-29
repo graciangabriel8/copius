@@ -1,0 +1,2354 @@
+[
+ {
+  "id": "adria",
+  "name": "Ferran Adrià",
+  "born": 1962,
+  "died": null,
+  "approx": false,
+  "country": "ES",
+  "place": {
+   "en": "elBulli, Cala Montjoi, Catalonia",
+   "fr": "elBulli, Cala Montjoi, Catalogne"
+  },
+  "role": {
+   "en": "Chef",
+   "fr": "Chef"
+  },
+  "work": {
+   "en": "elBulli (chef from 1987; closed 2011)",
+   "fr": "elBulli (chef à partir de 1987 ; fermé en 2011)"
+  },
+  "url": "https://www.elbullifoundation.com",
+  "stars": {
+   "n": 3,
+   "years": "1997–2011"
+  },
+  "ingredients": [
+   "olive-oil",
+   "almond",
+   "tomato",
+   "saffron",
+   "sea-urchin",
+   "oyster",
+   "pea",
+   "parmesan"
+  ],
+  "dishes": [
+   "olive-spherique"
+  ]
+ },
+ {
+  "id": "aduriz",
+  "name": "Andoni Luis Aduriz",
+  "born": 1971,
+  "died": null,
+  "approx": false,
+  "country": "ES",
+  "place": {
+   "en": "Mugaritz, Errenteria, Basque Country",
+   "fr": "Mugaritz, Errenteria, Pays basque"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Mugaritz (1998)",
+   "fr": "Mugaritz (1998)"
+  },
+  "url": "https://www.mugaritz.com",
+  "stars": null,
+  "ingredients": [
+   "potato",
+   "hake",
+   "cod",
+   "olive-oil",
+   "egg",
+   "sea-urchin",
+   "white-beans",
+   "manchego"
+  ],
+  "dishes": [
+   "pierres-comestibles"
+  ]
+ },
+ {
+  "id": "aizpitarte",
+  "name": "Iñaki Aizpitarte",
+  "born": 1971,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Le Chateaubriand, Paris 11e",
+   "fr": "Le Chateaubriand, Paris 11e"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Le Chateaubriand (2006)",
+   "fr": "Le Chateaubriand (2006)"
+  },
+  "url": "https://www.lechateaubriand.net",
+  "stars": null,
+  "ingredients": [
+   "mackerel",
+   "beetroot",
+   "oyster",
+   "white-wine-vinegar",
+   "lard",
+   "radish",
+   "cream",
+   "black-pepper"
+  ],
+  "dishes": [
+   "tocino-del-cielo-jaune-d-oeuf"
+  ]
+ },
+ {
+  "id": "alleno",
+  "name": "Yannick Alléno",
+  "born": 1968,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Pavillon Ledoyen, Paris; Courchevel",
+   "fr": "Pavillon Ledoyen, Paris ; Courchevel"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "Sauces: Reflections of a Chef (2014)",
+   "fr": "Sauces, réflexions d’un cuisinier (2014)"
+  },
+  "url": "https://www.yannick-alleno.com",
+  "stars": null,
+  "ingredients": [
+   "shallot",
+   "beurre-de-baratte",
+   "cream",
+   "truffle",
+   "langoustine",
+   "white-wine-vinegar",
+   "mushroom",
+   "chicken"
+  ],
+  "dishes": [
+   "tarte-friande-de-langoustine"
+  ]
+ },
+ {
+  "id": "arzak",
+  "name": "Elena Arzak",
+  "born": 1969,
+  "died": null,
+  "approx": false,
+  "country": "ES",
+  "place": {
+   "en": "Arzak, San Sebastián",
+   "fr": "Arzak, Saint-Sébastien"
+  },
+  "role": {
+   "en": "Co-chef with her father, Juan Mari Arzak",
+   "fr": "Co-cheffe avec son père, Juan Mari Arzak"
+  },
+  "work": {
+   "en": "Arzak — the family house since 1897",
+   "fr": "Arzak — la maison familiale depuis 1897"
+  },
+  "url": "https://www.arzak.es",
+  "stars": null,
+  "ingredients": [
+   "hake",
+   "squid-ink",
+   "piquillo",
+   "egg",
+   "olive-oil",
+   "dark-chocolate",
+   "cod",
+   "almond"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "atadika",
+  "name": "Selassie Atadika",
+  "born": 1978,
+  "died": null,
+  "approx": true,
+  "country": "GH",
+  "place": {
+   "en": "Midunu, Accra",
+   "fr": "Midunu, Accra"
+  },
+  "role": {
+   "en": "Chef and founder",
+   "fr": "Cheffe et fondatrice"
+  },
+  "work": {
+   "en": "Midunu (2014)",
+   "fr": "Midunu (2014)"
+  },
+  "url": "https://www.midunu.com",
+  "stars": null,
+  "ingredients": [
+   "millet",
+   "sorghum",
+   "peanut",
+   "banana",
+   "chili",
+   "ginger",
+   "coconut",
+   "dark-chocolate"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "bailey",
+  "name": "Mashama Bailey",
+  "born": 1974,
+  "died": null,
+  "approx": false,
+  "country": "US",
+  "place": {
+   "en": "The Grey, Savannah, Georgia",
+   "fr": "The Grey, Savannah, Géorgie"
+  },
+  "role": {
+   "en": "Executive chef and partner",
+   "fr": "Cheffe exécutive et associée"
+  },
+  "work": {
+   "en": "The Grey (2014)",
+   "fr": "The Grey (2014)"
+  },
+  "url": "https://www.thegreyrestaurant.com",
+  "stars": null,
+  "ingredients": [
+   "rice",
+   "oyster",
+   "shrimp",
+   "tomato",
+   "corn",
+   "lard",
+   "black-pepper",
+   "buttermilk"
+  ],
+  "dishes": [
+   "foie-gras-et-gruau-de-mais"
+  ]
+ },
+ {
+  "id": "berasategui",
+  "name": "Martín Berasategui",
+  "born": 1960,
+  "died": null,
+  "approx": false,
+  "country": "ES",
+  "place": {
+   "en": "Lasarte-Oria, Basque Country",
+   "fr": "Lasarte-Oria, Pays basque"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "Restaurante Martín Berasategui (1993)",
+   "fr": "Restaurante Martín Berasategui (1993)"
+  },
+  "url": "https://www.martinberasategui.com",
+  "stars": null,
+  "ingredients": [
+   "hake",
+   "squid",
+   "olive-oil",
+   "foie-gras",
+   "piquillo",
+   "cod",
+   "cream",
+   "truffle"
+  ],
+  "dishes": [
+   "millefeuille-d-anguille-fumee"
+  ]
+ },
+ {
+  "id": "bise",
+  "name": "Marguerite Bise",
+  "born": 1898,
+  "died": 1965,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Talloires, lac d’Annecy",
+   "fr": "Talloires, lac d’Annecy"
+  },
+  "role": {
+   "en": "Cook and innkeeper",
+   "fr": "Cuisinière et aubergiste"
+  },
+  "work": {
+   "en": "Auberge du Père Bise",
+   "fr": "Auberge du Père Bise"
+  },
+  "url": "https://www.perebise.com",
+  "stars": null,
+  "ingredients": [
+   "char",
+   "crayfish",
+   "beurre-de-baratte",
+   "cream",
+   "morel",
+   "chives",
+   "tarragon",
+   "white-wine-vinegar"
+  ],
+  "dishes": [
+   "gratin-de-queues-d-ecrevisses"
+  ]
+ },
+ {
+  "id": "blanc",
+  "name": "Élisa Blanc, la Mère Blanc",
+  "born": 1883,
+  "died": 1949,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Vonnas, Ain",
+   "fr": "Vonnas, Ain"
+  },
+  "role": {
+   "en": "Cook and innkeeper",
+   "fr": "Cuisinière et aubergiste"
+  },
+  "work": {
+   "en": "The family inn at Vonnas",
+   "fr": "L’auberge familiale de Vonnas"
+  },
+  "url": "https://www.georgesblanc.com",
+  "stars": null,
+  "ingredients": [
+   "bresse-chicken",
+   "cream",
+   "beurre-de-baratte",
+   "morel",
+   "tarragon",
+   "egg",
+   "flour-t55",
+   "white-wine-vinegar"
+  ],
+  "dishes": [
+   "poulet-de-bresse-a-la-creme"
+  ]
+ },
+ {
+  "id": "blumenthal",
+  "name": "Heston Blumenthal",
+  "born": 1966,
+  "died": null,
+  "approx": false,
+  "country": "GB",
+  "place": {
+   "en": "The Fat Duck, Bray, Berkshire",
+   "fr": "The Fat Duck, Bray, Berkshire"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "The Fat Duck (1995)",
+   "fr": "The Fat Duck (1995)"
+  },
+  "url": "https://www.thefatduck.co.uk",
+  "stars": null,
+  "ingredients": [
+   "beef",
+   "egg",
+   "cream",
+   "vanilla",
+   "dark-chocolate",
+   "lard",
+   "mustard",
+   "apple"
+  ],
+  "dishes": [
+   "sound-of-the-sea"
+  ]
+ },
+ {
+  "id": "bocuse",
+  "name": "Paul Bocuse",
+  "born": 1926,
+  "died": 2018,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Collonges-au-Mont-d’Or",
+   "fr": "Collonges-au-Mont-d’Or"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "L’Auberge du Pont de Collonges",
+   "fr": "L’Auberge du Pont de Collonges"
+  },
+  "url": "https://www.bocuse.fr",
+  "stars": {
+   "n": 3,
+   "years": "1965–2019"
+  },
+  "ingredients": [
+   "truffle",
+   "chicken",
+   "foie-gras",
+   "beurre-de-baratte",
+   "bresse-chicken",
+   "morel",
+   "cream",
+   "potato"
+  ],
+  "dishes": [
+   "soupe-aux-truffes-noires-vge"
+  ]
+ },
+ {
+  "id": "bottura",
+  "name": "Massimo Bottura",
+  "born": 1962,
+  "died": null,
+  "approx": false,
+  "country": "IT",
+  "place": {
+   "en": "Osteria Francescana, Modena",
+   "fr": "Osteria Francescana, Modène"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Food for Soul; the Refettorio (2015)",
+   "fr": "Food for Soul ; le Refettorio (2015)"
+  },
+  "url": "https://www.osteriafrancescana.it",
+  "stars": null,
+  "ingredients": [
+   "parmesan",
+   "balsamic",
+   "flour-t55",
+   "egg",
+   "beurre-de-baratte",
+   "prosciutto",
+   "tomato",
+   "basil"
+  ],
+  "dishes": [
+   "oops-i-dropped-the-lemon-tart"
+  ]
+ },
+ {
+  "id": "bras",
+  "name": "Michel Bras",
+  "born": 1946,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Laguiole, Aubrac",
+   "fr": "Laguiole, Aubrac"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Le gargouillou (1980); le coulant au chocolat (1981)",
+   "fr": "Le gargouillou (1980) ; le coulant au chocolat (1981)"
+  },
+  "url": "https://www.bras.fr",
+  "stars": null,
+  "ingredients": [
+   "dark-chocolate",
+   "fava-bean",
+   "pea",
+   "chervil",
+   "lovage",
+   "sorrel",
+   "beurre-de-baratte",
+   "cantal"
+  ],
+  "dishes": [
+   "coulant-au-chocolat"
+  ]
+ },
+ {
+  "id": "brazier",
+  "name": "Eugénie Brazier, la Mère Brazier",
+  "born": 1895,
+  "died": 1977,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Lyon and col de la Luère",
+   "fr": "Lyon et col de la Luère"
+  },
+  "role": {
+   "en": "Cook and restaurateur",
+   "fr": "Cuisinière et restauratrice"
+  },
+  "work": {
+   "en": "La Mère Brazier, rue Royale",
+   "fr": "La Mère Brazier, rue Royale"
+  },
+  "url": "https://www.lamerebrazier.fr",
+  "stars": null,
+  "ingredients": [
+   "chicken",
+   "truffle",
+   "artichoke",
+   "foie-gras",
+   "beurre-de-baratte",
+   "cream",
+   "morel",
+   "tarragon"
+  ],
+  "dishes": [
+   "poularde-demi-deuil"
+  ]
+ },
+ {
+  "id": "careme",
+  "name": "Marie-Antoine Carême",
+  "born": 1784,
+  "died": 1833,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris — Talleyrand, later foreign courts",
+   "fr": "Paris — Talleyrand, puis cours étrangères"
+  },
+  "role": {
+   "en": "Cook and pastry chef",
+   "fr": "Cuisinier et pâtissier"
+  },
+  "work": {
+   "en": "L’Art de la cuisine française au XIXe siècle",
+   "fr": "L’Art de la cuisine française au XIXe siècle"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "flour-t45",
+   "sugar",
+   "egg",
+   "cream",
+   "truffle",
+   "almond",
+   "vanilla"
+  ],
+  "dishes": [
+   "charlotte-russe"
+  ]
+ },
+ {
+  "id": "chapel",
+  "name": "Alain Chapel",
+  "born": 1937,
+  "died": 1990,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Mionnay, Ain",
+   "fr": "Mionnay, Ain"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "La cuisine, c’est beaucoup plus que des recettes (1980)",
+   "fr": "La cuisine, c’est beaucoup plus que des recettes (1980)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "bresse-chicken",
+   "truffle",
+   "morel",
+   "cream",
+   "crayfish",
+   "beurre-de-baratte",
+   "artichoke",
+   "tarragon"
+  ],
+  "dishes": [
+   "gateau-de-foies-blonds"
+  ]
+ },
+ {
+  "id": "child",
+  "name": "Julia Child",
+  "born": 1912,
+  "died": 2004,
+  "approx": false,
+  "country": "US",
+  "place": {
+   "en": "Paris, then Cambridge, Massachusetts",
+   "fr": "Paris, puis Cambridge, Massachusetts"
+  },
+  "role": {
+   "en": "Cook, author and broadcaster",
+   "fr": "Cuisinière, auteure et présentatrice"
+  },
+  "work": {
+   "en": "Mastering the Art of French Cooking (1961)",
+   "fr": "Mastering the Art of French Cooking (1961)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "beef",
+   "red-wine-vinegar",
+   "mushroom",
+   "onion",
+   "egg",
+   "cream",
+   "shallot"
+  ],
+  "dishes": [
+   "boeuf-bourguignon"
+  ]
+ },
+ {
+  "id": "colagreco",
+  "name": "Mauro Colagreco",
+  "born": 1976,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Mirazur, Menton — born in La Plata, Argentina",
+   "fr": "Mirazur, Menton — né à La Plata, Argentine"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Mirazur (2006)",
+   "fr": "Mirazur (2006)"
+  },
+  "url": "https://www.mirazur.fr",
+  "stars": null,
+  "ingredients": [
+   "beetroot",
+   "lemon",
+   "olive-oil",
+   "sea-bass",
+   "fava-bean",
+   "artichoke",
+   "honey"
+  ],
+  "dishes": [
+   "betterave-en-croute-de-sel"
+  ]
+ },
+ {
+  "id": "crenn",
+  "name": "Dominique Crenn",
+  "born": 1965,
+  "died": null,
+  "approx": false,
+  "country": "US",
+  "place": {
+   "en": "Atelier Crenn, San Francisco",
+   "fr": "Atelier Crenn, San Francisco"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Atelier Crenn (2011)",
+   "fr": "Atelier Crenn (2011)"
+  },
+  "url": "https://www.ateliercrenn.com",
+  "stars": null,
+  "ingredients": [
+   "oyster",
+   "sea-urchin",
+   "buckwheat",
+   "beurre-de-baratte",
+   "cream",
+   "apple",
+   "cider-vinegar",
+   "nori"
+  ],
+  "dishes": [
+   "kir-breton"
+  ]
+ },
+ {
+  "id": "crippa",
+  "name": "Enrico Crippa",
+  "born": 1971,
+  "died": null,
+  "approx": false,
+  "country": "IT",
+  "place": {
+   "en": "Piazza Duomo, Alba, Piedmont",
+   "fr": "Piazza Duomo, Alba, Piémont"
+  },
+  "role": {
+   "en": "Chef",
+   "fr": "Chef"
+  },
+  "work": {
+   "en": "Insalata 21… 31… 41… 51",
+   "fr": "Insalata 21… 31… 41… 51"
+  },
+  "url": "https://www.piazzaduomoalba.it",
+  "stars": null,
+  "ingredients": [
+   "white-truffle",
+   "lettuce",
+   "roquette",
+   "purslane",
+   "borage",
+   "hazelnut",
+   "egg",
+   "olive-oil"
+  ],
+  "dishes": [
+   "insalata-21-31-41"
+  ]
+ },
+ {
+  "id": "darroze",
+  "name": "Hélène Darroze",
+  "born": 1967,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris and London",
+   "fr": "Paris et Londres"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Cheffe et restauratrice"
+  },
+  "work": {
+   "en": "Hélène Darroze at The Connaught (2008)",
+   "fr": "Hélène Darroze at The Connaught (2008)"
+  },
+  "url": "https://www.helenedarroze.com",
+  "stars": null,
+  "ingredients": [
+   "foie-gras",
+   "duck",
+   "piquillo",
+   "espelette",
+   "prune",
+   "beurre-de-baratte",
+   "chestnut",
+   "oyster"
+  ],
+  "dishes": [
+   "homard-aux-epices-tandoori"
+  ]
+ },
+ {
+  "id": "donckele",
+  "name": "Arnaud Donckele",
+  "born": 1977,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Saint-Tropez and Paris",
+   "fr": "Saint-Tropez et Paris"
+  },
+  "role": {
+   "en": "Chef",
+   "fr": "Chef"
+  },
+  "work": {
+   "en": "La Vague d’Or; Plénitude (2021)",
+   "fr": "La Vague d’Or ; Plénitude (2021)"
+  },
+  "url": "https://www.chevalblanc.com/fr/maison/paris/restaurants-et-bars/plenitude/",
+  "stars": null,
+  "ingredients": [
+   "sea-bass",
+   "red-mullet",
+   "olive-oil",
+   "fennel",
+   "tomato",
+   "beurre-de-baratte",
+   "saffron",
+   "basil"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "dubois",
+  "name": "Urbain Dubois",
+  "born": 1818,
+  "died": 1901,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris, then the Prussian court",
+   "fr": "Paris, puis la cour de Prusse"
+  },
+  "role": {
+   "en": "Chef to Prince Orloff, then to Wilhelm I",
+   "fr": "Chef du prince Orloff, puis de Guillaume Ier"
+  },
+  "work": {
+   "en": "La Cuisine classique (1856), with Émile Bernard",
+   "fr": "La Cuisine classique (1856), avec Émile Bernard"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "tendron-de-veau",
+   "mushroom",
+   "onion",
+   "cream",
+   "truffle",
+   "beurre-de-baratte",
+   "flour-t55",
+   "gruyere"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "ducasse",
+  "name": "Alain Ducasse",
+  "born": 1956,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Monaco, Paris, London and elsewhere",
+   "fr": "Monaco, Paris, Londres et ailleurs"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "Le Louis XV, Monaco (1987)",
+   "fr": "Le Louis XV, Monaco (1987)"
+  },
+  "url": "https://www.ducasse-paris.com",
+  "stars": null,
+  "ingredients": [
+   "olive-oil",
+   "tomato",
+   "zucchini",
+   "basil",
+   "sea-bass",
+   "artichoke",
+   "lemon",
+   "fennel"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "dumaine",
+  "name": "Alexandre Dumaine",
+  "born": 1895,
+  "died": 1974,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Saulieu, Burgundy",
+   "fr": "Saulieu, Bourgogne"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Hôtel de la Côte-d’Or",
+   "fr": "Hôtel de la Côte-d’Or"
+  },
+  "url": "https://www.bernard-loiseau.com",
+  "stars": {
+   "n": 3,
+   "years": "1935–1964"
+  },
+  "ingredients": [
+   "beef",
+   "red-wine-vinegar",
+   "mushroom",
+   "lard",
+   "onion",
+   "chicken",
+   "cream",
+   "truffle"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "escoffier",
+  "name": "Auguste Escoffier",
+  "born": 1846,
+  "died": 1935,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Savoy and Carlton hotels, London",
+   "fr": "Hôtels Savoy et Carlton, Londres"
+  },
+  "role": {
+   "en": "Chef de cuisine and author",
+   "fr": "Chef de cuisine et auteur"
+  },
+  "work": {
+   "en": "Le Guide culinaire (1903)",
+   "fr": "Le Guide culinaire (1903)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "tenderloin",
+   "beurre-de-baratte",
+   "shallot",
+   "truffle",
+   "tarragon",
+   "flour-t55",
+   "cream",
+   "tomato"
+  ],
+  "dishes": [
+   "peche-melba"
+  ]
+ },
+ {
+  "id": "espinosa",
+  "name": "Leonor Espinosa",
+  "born": 1963,
+  "died": null,
+  "approx": false,
+  "country": "CO",
+  "place": {
+   "en": "Leo, Bogotá",
+   "fr": "Leo, Bogota"
+  },
+  "role": {
+   "en": "Chef-patronne",
+   "fr": "Cheffe-propriétaire"
+  },
+  "work": {
+   "en": "Leo (2007); the FunLeo foundation",
+   "fr": "Leo (2007) ; la fondation FunLeo"
+  },
+  "url": "https://www.restauranteleo.com",
+  "stars": null,
+  "ingredients": [
+   "corn",
+   "coconut",
+   "chili",
+   "yam",
+   "lime",
+   "banana",
+   "cilantro",
+   "dark-chocolate"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "frantzen",
+  "name": "Björn Frantzén",
+  "born": 1977,
+  "died": null,
+  "approx": false,
+  "country": "SE",
+  "place": {
+   "en": "Frantzén, Stockholm; Zén, Singapore",
+   "fr": "Frantzén, Stockholm ; Zén, Singapour"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Frantzén (2008; reopened 2017)",
+   "fr": "Frantzén (2008 ; rouvert en 2017)"
+  },
+  "url": "https://www.restaurantfrantzen.com",
+  "stars": null,
+  "ingredients": [
+   "langoustine",
+   "caviar",
+   "truffle",
+   "beurre-de-baratte",
+   "soy-sauce",
+   "wasabi",
+   "cream",
+   "chives"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "gagnaire",
+  "name": "Pierre Gagnaire",
+  "born": 1950,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Saint-Étienne, then Paris",
+   "fr": "Saint-Étienne, puis Paris"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "Collaboration with the chemist Hervé This",
+   "fr": "Collaboration avec le chimiste Hervé This"
+  },
+  "url": "https://www.pierregagnaire.com",
+  "stars": null,
+  "ingredients": [
+   "langoustine",
+   "foie-gras",
+   "yuzu",
+   "tonka",
+   "dark-chocolate",
+   "cream",
+   "sea-urchin",
+   "black-pepper"
+  ],
+  "dishes": [
+   "biscuit-souffle-au-chocolat"
+  ]
+ },
+ {
+  "id": "gouffe",
+  "name": "Jules Gouffé",
+  "born": 1807,
+  "died": 1877,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris — the Jockey Club",
+   "fr": "Paris — le Jockey Club"
+  },
+  "role": {
+   "en": "Chef and author; pupil of Carême",
+   "fr": "Chef et auteur ; élève de Carême"
+  },
+  "work": {
+   "en": "Le Livre de cuisine (1867)",
+   "fr": "Le Livre de cuisine (1867)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "cream",
+   "truffle",
+   "flour-t55",
+   "egg",
+   "sugar",
+   "tendron-de-veau",
+   "mushroom"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "grattard",
+  "name": "Adeline Grattard",
+  "born": 1978,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Yam’Tcha, Paris 1er",
+   "fr": "Yam’Tcha, Paris 1er"
+  },
+  "role": {
+   "en": "Chef-patronne, with Chi Wah Chan",
+   "fr": "Cheffe-propriétaire, avec Chi Wah Chan"
+  },
+  "work": {
+   "en": "Yam’Tcha (2009–2025)",
+   "fr": "Yam’Tcha (2009–2025)"
+  },
+  "url": "https://www.yamtcha.com",
+  "stars": null,
+  "ingredients": [
+   "ginger",
+   "soy-sauce",
+   "pak-choi",
+   "scallop",
+   "sesame-oil",
+   "star-anise",
+   "duck",
+   "shiitake"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "guerard",
+  "name": "Michel Guérard",
+  "born": 1933,
+  "died": 2024,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Eugénie-les-Bains, Landes",
+   "fr": "Eugénie-les-Bains, Landes"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "La Grande Cuisine minceur (1976)",
+   "fr": "La Grande Cuisine minceur (1976)"
+  },
+  "url": "https://www.lespresdeugenie.com",
+  "stars": null,
+  "ingredients": [
+   "fromage-blanc",
+   "chervil",
+   "tarragon",
+   "lemon",
+   "asparagus",
+   "salmon",
+   "mushroom",
+   "yogurt"
+  ],
+  "dishes": [
+   "salade-gourmande"
+  ]
+ },
+ {
+  "id": "hasegawa",
+  "name": "Zaiyu Hasegawa",
+  "born": 1978,
+  "died": null,
+  "approx": false,
+  "country": "JP",
+  "place": {
+   "en": "Den, Tokyo",
+   "fr": "Den, Tokyo"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Den (2007)",
+   "fr": "Den (2007)"
+  },
+  "url": "https://www.jimbochoden.com",
+  "stars": null,
+  "ingredients": [
+   "rice",
+   "soy-sauce",
+   "kombu",
+   "katsuobushi",
+   "shiitake",
+   "sea-bream",
+   "yuzu",
+   "wasabi"
+  ],
+  "dishes": [
+   "dentucky-fried-chicken"
+  ]
+ },
+ {
+  "id": "herme",
+  "name": "Pierre Hermé",
+  "born": 1961,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris and Tokyo",
+   "fr": "Paris et Tokyo"
+  },
+  "role": {
+   "en": "Pastry chef",
+   "fr": "Pâtissier"
+  },
+  "work": {
+   "en": "Maison Pierre Hermé (1998)",
+   "fr": "Maison Pierre Hermé (1998)"
+  },
+  "url": "https://www.pierreherme.com",
+  "stars": null,
+  "ingredients": [
+   "raspberry",
+   "lychee",
+   "dark-chocolate",
+   "beurre-de-baratte",
+   "almond",
+   "vanilla",
+   "passion-fruit",
+   "sugar"
+  ],
+  "dishes": [
+   "ispahan"
+  ]
+ },
+ {
+  "id": "keller",
+  "name": "Thomas Keller",
+  "born": 1955,
+  "died": null,
+  "approx": false,
+  "country": "US",
+  "place": {
+   "en": "The French Laundry, Yountville; Per Se, New York",
+   "fr": "The French Laundry, Yountville ; Per Se, New York"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "The French Laundry Cookbook (1999)",
+   "fr": "The French Laundry Cookbook (1999)"
+  },
+  "url": "https://www.thomaskeller.com",
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "salmon",
+   "caviar",
+   "truffle",
+   "oyster",
+   "cauliflower",
+   "cream",
+   "chives"
+  ],
+  "dishes": [
+   "oysters-and-pearls"
+  ]
+ },
+ {
+  "id": "khan",
+  "name": "Asma Khan",
+  "born": 1969,
+  "died": null,
+  "approx": false,
+  "country": "GB",
+  "place": {
+   "en": "Darjeeling Express, London — from Kolkata",
+   "fr": "Darjeeling Express, Londres — originaire de Calcutta"
+  },
+  "role": {
+   "en": "Restaurateur",
+   "fr": "Restauratrice"
+  },
+  "work": {
+   "en": "Darjeeling Express (2017)",
+   "fr": "Darjeeling Express (2017)"
+  },
+  "url": "https://www.darjeeling-express.com",
+  "stars": null,
+  "ingredients": [
+   "cardamom",
+   "ghee",
+   "basmati",
+   "saffron",
+   "clove",
+   "cinnamon",
+   "ginger",
+   "yogurt"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "kofoed",
+  "name": "Rasmus Kofoed",
+  "born": 1974,
+  "died": null,
+  "approx": false,
+  "country": "DK",
+  "place": {
+   "en": "Geranium, Copenhagen",
+   "fr": "Geranium, Copenhague"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Bocuse d’Or gold (2011)",
+   "fr": "Bocuse d’Or, médaille d’or (2011)"
+  },
+  "url": "https://www.geranium.dk",
+  "stars": null,
+  "ingredients": [
+   "langoustine",
+   "oyster",
+   "caviar",
+   "celeriac",
+   "juniper",
+   "creme-fraiche",
+   "dill",
+   "beetroot"
+  ],
+  "dishes": [
+   "couteaux-mineraux-et-creme-aigre"
+  ]
+ },
+ {
+  "id": "kwan",
+  "name": "Jeong Kwan",
+  "born": 1957,
+  "died": null,
+  "approx": false,
+  "country": "KR",
+  "place": {
+   "en": "Chunjinam hermitage, Baekyangsa temple",
+   "fr": "Ermitage de Chunjinam, temple de Baekyangsa"
+  },
+  "role": {
+   "en": "Buddhist nun",
+   "fr": "Nonne bouddhiste"
+  },
+  "work": {
+   "en": "Korean temple cuisine",
+   "fr": "La cuisine des temples coréens"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "soy-sauce",
+   "sesame-oil",
+   "shiitake",
+   "kimchi",
+   "rice",
+   "kombu",
+   "sesame",
+   "pine-nut"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "lavarenne",
+  "name": "François Pierre de La Varenne",
+  "born": 1618,
+  "died": 1678,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Dijon, France",
+   "fr": "Dijon, France"
+  },
+  "role": {
+   "en": "Cook to the Marquis d’Uxelles",
+   "fr": "Cuisinier du marquis d’Uxelles"
+  },
+  "work": {
+   "en": "Le Cuisinier françois (1651)",
+   "fr": "Le Cuisinier françois (1651)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "mushroom",
+   "shallot",
+   "thyme",
+   "bay-leaf",
+   "parsley",
+   "flour-t55",
+   "white-wine-vinegar"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "lenotre",
+  "name": "Gaston Lenôtre",
+  "born": 1920,
+  "died": 2009,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris, from Normandy",
+   "fr": "Paris, depuis la Normandie"
+  },
+  "role": {
+   "en": "Pastry chef and founder of a school",
+   "fr": "Pâtissier et fondateur d’une école"
+  },
+  "work": {
+   "en": "École Lenôtre (1971)",
+   "fr": "École Lenôtre (1971)"
+  },
+  "url": "https://www.lenotre.com",
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "dark-chocolate",
+   "cream",
+   "raspberry",
+   "vanilla",
+   "almond",
+   "sugar",
+   "flour-t45"
+  ],
+  "dishes": [
+   "feuille-d-automne"
+  ]
+ },
+ {
+  "id": "marcon",
+  "name": "Régis Marcon",
+  "born": 1956,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Saint-Bonnet-le-Froid, Haute-Loire",
+   "fr": "Saint-Bonnet-le-Froid, Haute-Loire"
+  },
+  "role": {
+   "en": "Chef-patron, with his son Jacques",
+   "fr": "Chef-propriétaire, avec son fils Jacques"
+  },
+  "work": {
+   "en": "Bocuse d’Or (1995)",
+   "fr": "Bocuse d’Or (1995)"
+  },
+  "url": "https://www.regismarcon.fr",
+  "stars": null,
+  "ingredients": [
+   "porcini",
+   "morel",
+   "lentille-du-puy",
+   "chanterelle",
+   "black-trumpet",
+   "cream",
+   "beurre-de-baratte",
+   "hazelnut"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "martinez",
+  "name": "Virgilio Martínez",
+  "born": 1977,
+  "died": null,
+  "approx": false,
+  "country": "PE",
+  "place": {
+   "en": "Central, Lima; Mil, Cusco",
+   "fr": "Central, Lima ; Mil, Cuzco"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Central (2008); Mater Iniciativa",
+   "fr": "Central (2008) ; Mater Iniciativa"
+  },
+  "url": "https://www.centralrestaurante.com.pe",
+  "stars": null,
+  "ingredients": [
+   "potato",
+   "quinoa",
+   "lime",
+   "corn",
+   "chili",
+   "avocado",
+   "cilantro",
+   "dark-chocolate"
+  ],
+  "dishes": [
+   "ecosystemes"
+  ]
+ },
+ {
+  "id": "menon",
+  "name": "Menon",
+  "born": 1700,
+  "died": 1770,
+  "approx": true,
+  "country": "FR",
+  "place": {
+   "en": "Paris",
+   "fr": "Paris"
+  },
+  "role": {
+   "en": "Author — identity otherwise unknown",
+   "fr": "Auteur — identité par ailleurs inconnue"
+  },
+  "work": {
+   "en": "La Cuisinière bourgeoise (1746)",
+   "fr": "La Cuisinière bourgeoise (1746)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "onion",
+   "carrot",
+   "beurre-de-baratte",
+   "parsley",
+   "bay-leaf",
+   "egg",
+   "flour-t55",
+   "white-wine-vinegar"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "montagne",
+  "name": "Prosper Montagné",
+  "born": 1865,
+  "died": 1948,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Paris",
+   "fr": "Paris"
+  },
+  "role": {
+   "en": "Chef and author",
+   "fr": "Chef et auteur"
+  },
+  "work": {
+   "en": "Larousse gastronomique (1938)",
+   "fr": "Larousse gastronomique (1938)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "beurre-de-baratte",
+   "shallot",
+   "tarragon",
+   "cream",
+   "truffle",
+   "flour-t55",
+   "mushroom",
+   "white-wine-vinegar"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "munk",
+  "name": "Rasmus Munk",
+  "born": 1991,
+  "died": null,
+  "approx": false,
+  "country": "DK",
+  "place": {
+   "en": "Alchemist, Refshaleøen, Copenhagen",
+   "fr": "Alchemist, Refshaleøen, Copenhague"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Alchemist (2015; reopened at scale 2019)",
+   "fr": "Alchemist (2015 ; rouvert à grande échelle en 2019)"
+  },
+  "url": "https://alchemist.dk",
+  "stars": null,
+  "ingredients": [
+   "oyster",
+   "sea-urchin",
+   "caviar",
+   "beetroot",
+   "dark-chocolate",
+   "lamb",
+   "nori",
+   "cream"
+  ],
+  "dishes": [
+   "tartare-de-coeur-d-agneau-sauce"
+  ]
+ },
+ {
+  "id": "oliver",
+  "name": "Raymond Oliver",
+  "born": 1909,
+  "died": 1990,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Le Grand Véfour, Paris",
+   "fr": "Le Grand Véfour, Paris"
+  },
+  "role": {
+   "en": "Chef-patron and broadcaster",
+   "fr": "Chef-propriétaire et homme de télévision"
+  },
+  "work": {
+   "en": "Art et magie de la cuisine (television, from 1954)",
+   "fr": "Art et magie de la cuisine (télévision, dès 1954)"
+  },
+  "url": "https://www.grand-vefour.com",
+  "stars": {
+   "n": 3,
+   "years": "1953–1983"
+  },
+  "ingredients": [
+   "beurre-de-baratte",
+   "truffle",
+   "foie-gras",
+   "cream",
+   "chicken",
+   "shallot",
+   "white-wine-vinegar",
+   "lobster"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "ono",
+  "name": "Jiro Ono",
+  "born": 1925,
+  "died": null,
+  "approx": false,
+  "country": "JP",
+  "place": {
+   "en": "Sukiyabashi Jiro, Ginza, Tokyo",
+   "fr": "Sukiyabashi Jiro, Ginza, Tokyo"
+  },
+  "role": {
+   "en": "Sushi chef",
+   "fr": "Maître sushi"
+  },
+  "work": {
+   "en": "Sukiyabashi Jiro",
+   "fr": "Sukiyabashi Jiro"
+  },
+  "url": "https://www.sushi-jiro.jp",
+  "stars": {
+   "n": 3,
+   "years": "2007–2019"
+  },
+  "ingredients": [
+   "tuna",
+   "rice",
+   "rice-vinegar",
+   "wasabi",
+   "soy-sauce",
+   "nori",
+   "sea-bream",
+   "mackerel"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "ottolenghi",
+  "name": "Yotam Ottolenghi",
+  "born": 1968,
+  "died": null,
+  "approx": false,
+  "country": "GB",
+  "place": {
+   "en": "London — born in Jerusalem",
+   "fr": "Londres — né à Jérusalem"
+  },
+  "role": {
+   "en": "Chef, author and restaurateur",
+   "fr": "Chef, auteur et restaurateur"
+  },
+  "work": {
+   "en": "Plenty (2010); Jerusalem (2012), with Sami Tamimi",
+   "fr": "Plenty (2010) ; Jerusalem (2012), avec Sami Tamimi"
+  },
+  "url": "https://ottolenghi.co.uk",
+  "stars": null,
+  "ingredients": [
+   "tahini",
+   "zaatar",
+   "sumac",
+   "pomegranate",
+   "lemon",
+   "chickpeas",
+   "eggplant",
+   "yogurt"
+  ],
+  "dishes": [
+   "aubergine-rotie-sauce-au-babeurre"
+  ]
+ },
+ {
+  "id": "pic",
+  "name": "Anne-Sophie Pic",
+  "born": 1969,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Maison Pic, Valence",
+   "fr": "Maison Pic, Valence"
+  },
+  "role": {
+   "en": "Chef-patronne",
+   "fr": "Cheffe-propriétaire"
+  },
+  "work": {
+   "en": "Maison Pic",
+   "fr": "Maison Pic"
+  },
+  "url": "https://www.anne-sophie-pic.com",
+  "stars": null,
+  "ingredients": [
+   "sea-bass",
+   "caviar",
+   "truffle",
+   "coffee",
+   "cream",
+   "beurre-de-baratte",
+   "chervil",
+   "white-chocolate"
+  ],
+  "dishes": [
+   "berlingots"
+  ]
+ },
+ {
+  "id": "pic-andre",
+  "name": "André Pic",
+  "born": 1893,
+  "died": 1984,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Valence, Drôme",
+   "fr": "Valence, Drôme"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Maison Pic",
+   "fr": "Maison Pic"
+  },
+  "url": "https://www.anne-sophie-pic.com",
+  "stars": null,
+  "ingredients": [
+   "crayfish",
+   "truffle",
+   "cream",
+   "beurre-de-baratte",
+   "chicken",
+   "morel",
+   "tarragon",
+   "white-wine-vinegar"
+  ],
+  "dishes": [
+   "boudin-de-brochet-richelieu-sauce"
+  ]
+ },
+ {
+  "id": "point",
+  "name": "Fernand Point",
+  "born": 1897,
+  "died": 1955,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "La Pyramide, Vienne",
+   "fr": "La Pyramide, Vienne"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Ma Gastronomie (published 1969)",
+   "fr": "Ma Gastronomie (paru en 1969)"
+  },
+  "url": "https://www.lapyramide.com",
+  "stars": {
+   "n": 3,
+   "years": "1933–1955"
+  },
+  "ingredients": [
+   "beurre-de-baratte",
+   "cream",
+   "morel",
+   "truffle",
+   "crayfish",
+   "asparagus",
+   "chicken",
+   "tarragon"
+  ],
+  "dishes": [
+   "gateau-marjolaine"
+  ]
+ },
+ {
+  "id": "redzepi",
+  "name": "René Redzepi",
+  "born": 1977,
+  "died": null,
+  "approx": false,
+  "country": "DK",
+  "place": {
+   "en": "Noma, Copenhagen",
+   "fr": "Noma, Copenhague"
+  },
+  "role": {
+   "en": "Founder",
+   "fr": "Fondateur"
+  },
+  "work": {
+   "en": "Noma (2003); the New Nordic Cuisine manifesto (2004)",
+   "fr": "Noma (2003) ; le manifeste de la nouvelle cuisine nordique (2004)"
+  },
+  "url": "https://noma.dk",
+  "stars": null,
+  "ingredients": [
+   "oyster",
+   "nori",
+   "sea-buckthorn",
+   "juniper",
+   "buckwheat",
+   "creme-fraiche",
+   "lovage",
+   "beetroot"
+  ],
+  "dishes": [
+   "radis-terre-et-herbes"
+  ]
+ },
+ {
+  "id": "renaut",
+  "name": "Emmanuel Renaut",
+  "born": 1968,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Flocons de Sel, Megève",
+   "fr": "Flocons de Sel, Megève"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Meilleur Ouvrier de France (2004)",
+   "fr": "Meilleur Ouvrier de France (2004)"
+  },
+  "url": "https://www.floconsdesel.com",
+  "stars": null,
+  "ingredients": [
+   "char",
+   "reblochon",
+   "beaufort",
+   "morel",
+   "hazelnut",
+   "cream",
+   "lovage",
+   "butter"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "robuchon",
+  "name": "Joël Robuchon",
+  "born": 1945,
+  "died": 2018,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Jamin, Paris; later L’Atelier, worldwide",
+   "fr": "Jamin, Paris ; puis L’Atelier, dans le monde"
+  },
+  "role": {
+   "en": "Chef and restaurateur",
+   "fr": "Chef et restaurateur"
+  },
+  "work": {
+   "en": "Purée de pommes de terre; L’Atelier (2003)",
+   "fr": "Purée de pommes de terre ; L’Atelier (2003)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "potato",
+   "beurre-de-baratte",
+   "cream",
+   "truffle",
+   "caviar",
+   "langoustine",
+   "cauliflower",
+   "black-pepper"
+  ],
+  "dishes": [
+   "puree-de-pommes-de-terre"
+  ]
+ },
+ {
+  "id": "roca",
+  "name": "Joan, Josep et Jordi Roca",
+  "born": 1964,
+  "died": null,
+  "approx": false,
+  "country": "ES",
+  "place": {
+   "en": "El Celler de Can Roca, Girona",
+   "fr": "El Celler de Can Roca, Gérone"
+  },
+  "role": {
+   "en": "Brothers — chef, sommelier, pastry chef",
+   "fr": "Frères — chef, sommelier, pâtissier"
+  },
+  "work": {
+   "en": "El Celler de Can Roca (1986)",
+   "fr": "El Celler de Can Roca (1986)"
+  },
+  "url": "https://cellercanroca.com",
+  "stars": null,
+  "ingredients": [
+   "shrimp",
+   "olive-oil",
+   "sea-urchin",
+   "dark-chocolate",
+   "truffle",
+   "saffron",
+   "almond",
+   "cream"
+  ],
+  "dishes": [
+   "timbale-de-pomme-et-foie-gras"
+  ]
+ },
+ {
+  "id": "romito",
+  "name": "Niko Romito",
+  "born": 1974,
+  "died": null,
+  "approx": false,
+  "country": "IT",
+  "place": {
+   "en": "Reale, Castel di Sangro, Abruzzo",
+   "fr": "Reale, Castel di Sangro, Abruzzes"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Reale (family restaurant from 2000)",
+   "fr": "Reale (restaurant familial dès 2000)"
+  },
+  "url": "https://www.nikoromito.com",
+  "stars": null,
+  "ingredients": [
+   "flour-t55",
+   "tomato",
+   "olive-oil",
+   "potato",
+   "onion",
+   "lamb",
+   "pecorino",
+   "sage"
+  ],
+  "dishes": [
+   "assoluto-d-oignons"
+  ]
+ },
+ {
+  "id": "ros",
+  "name": "Ana Roš",
+  "born": 1972,
+  "died": null,
+  "approx": false,
+  "country": "SI",
+  "place": {
+   "en": "Hiša Franko, Kobarid, Slovenia",
+   "fr": "Hiša Franko, Kobarid, Slovénie"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Cheffe-propriétaire"
+  },
+  "work": {
+   "en": "Hiša Franko",
+   "fr": "Hiša Franko"
+  },
+  "url": "https://www.hisafranko.com",
+  "stars": null,
+  "ingredients": [
+   "trout",
+   "cream",
+   "kale",
+   "hazelnut",
+   "elderberry",
+   "sorrel",
+   "beetroot",
+   "honey"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "scappi",
+  "name": "Bartolomeo Scappi",
+  "born": 1500,
+  "died": 1577,
+  "approx": true,
+  "country": "IT",
+  "place": {
+   "en": "Rome — papal kitchens",
+   "fr": "Rome — cuisines pontificales"
+  },
+  "role": {
+   "en": "Private cook to Pius IV and Pius V",
+   "fr": "Cuisinier privé de Pie IV et Pie V"
+  },
+  "work": {
+   "en": "Opera dell’arte del cucinare (1570)",
+   "fr": "Opera dell’arte del cucinare (1570)"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "saffron",
+   "cinnamon",
+   "sugar",
+   "almond",
+   "vanilla",
+   "black-pepper",
+   "egg",
+   "flour-t55"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "smyth",
+  "name": "Clare Smyth",
+  "born": 1978,
+  "died": null,
+  "approx": false,
+  "country": "GB",
+  "place": {
+   "en": "Core, Notting Hill, London",
+   "fr": "Core, Notting Hill, Londres"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Cheffe-propriétaire"
+  },
+  "work": {
+   "en": "Core by Clare Smyth (2017)",
+   "fr": "Core by Clare Smyth (2017)"
+  },
+  "url": "https://www.corebyclaresmyth.com",
+  "stars": null,
+  "ingredients": [
+   "potato",
+   "lamb",
+   "scallop",
+   "beurre-de-baratte",
+   "cream",
+   "apple",
+   "oyster",
+   "truffle"
+  ],
+  "dishes": [
+   "pomme-de-terre-et-oeufs-de-poisson"
+  ]
+ },
+ {
+  "id": "taillevent",
+  "name": "Guillaume Tirel, dit Taillevent",
+  "born": 1310,
+  "died": 1395,
+  "approx": true,
+  "country": "FR",
+  "place": {
+   "en": "France — court of Charles V",
+   "fr": "France — cour de Charles V"
+  },
+  "role": {
+   "en": "Cook to the French court",
+   "fr": "Queux de la cour de France"
+  },
+  "work": {
+   "en": "Le Viandier",
+   "fr": "Le Viandier"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "verjus",
+   "black-pepper",
+   "cinnamon",
+   "ginger",
+   "saffron",
+   "clove",
+   "nutmeg",
+   "almond"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "troisgros",
+  "name": "Jean et Pierre Troisgros",
+  "born": 1926,
+  "died": 2020,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Roanne, Loire",
+   "fr": "Roanne, Loire"
+  },
+  "role": {
+   "en": "Brothers, chef-patrons",
+   "fr": "Frères, chefs-propriétaires"
+  },
+  "work": {
+   "en": "Saumon à l’oseille (1962)",
+   "fr": "Saumon à l’oseille (1962)"
+  },
+  "url": "https://www.troisgros.fr",
+  "stars": null,
+  "ingredients": [
+   "salmon",
+   "sorrel",
+   "cream",
+   "shallot",
+   "white-wine-vinegar",
+   "beurre-de-baratte",
+   "chervil",
+   "black-pepper"
+  ],
+  "dishes": [
+   "escalope-de-saumon-a-l-oseille"
+  ]
+ },
+ {
+  "id": "vatel",
+  "name": "François Vatel",
+  "born": 1631,
+  "died": 1671,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Vaux-le-Vicomte, then Chantilly",
+   "fr": "Vaux-le-Vicomte, puis Chantilly"
+  },
+  "role": {
+   "en": "Maître d’hôtel to Fouquet, then to the Prince de Condé",
+   "fr": "Maître d’hôtel de Fouquet, puis du prince de Condé"
+  },
+  "work": {
+   "en": "The fête for Louis XIV at Chantilly, April 1671",
+   "fr": "La fête pour Louis XIV à Chantilly, avril 1671"
+  },
+  "url": null,
+  "stars": null,
+  "ingredients": [
+   "cream",
+   "sugar",
+   "turbot",
+   "dover-sole",
+   "beurre-de-baratte",
+   "asparagus",
+   "strawberry",
+   "truffle"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "verge",
+  "name": "Roger Vergé",
+  "born": 1930,
+  "died": 2015,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Le Moulin de Mougins, Provence",
+   "fr": "Le Moulin de Mougins, Provence"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Ma cuisine du soleil (1978)",
+   "fr": "Ma cuisine du soleil (1978)"
+  },
+  "url": "https://www.moulindemougins.com",
+  "stars": null,
+  "ingredients": [
+   "olive-oil",
+   "basil",
+   "tomato",
+   "zucchini",
+   "fennel",
+   "garlic",
+   "sea-bass",
+   "lemon"
+  ],
+  "dishes": [
+   "poupeton-de-fleur-de-courgette"
+  ]
+ },
+ {
+  "id": "veyrat",
+  "name": "Marc Veyrat",
+  "born": 1950,
+  "died": null,
+  "approx": false,
+  "country": "FR",
+  "place": {
+   "en": "Annecy, then Megève and Manigod",
+   "fr": "Annecy, puis Megève et Manigod"
+  },
+  "role": {
+   "en": "Chef-patron",
+   "fr": "Chef-propriétaire"
+  },
+  "work": {
+   "en": "Cooking with alpine plants",
+   "fr": "La cuisine des plantes alpines"
+  },
+  "url": "https://www.marcveyrat.fr",
+  "stars": null,
+  "ingredients": [
+   "lovage",
+   "sorrel",
+   "wild-garlic",
+   "char",
+   "cream",
+   "beaufort",
+   "hazelnut",
+   "angelica"
+  ],
+  "dishes": [
+   "pates-disparaissantes"
+  ]
+ },
+ {
+  "id": "vildgaard",
+  "name": "Eric Vildgaard",
+  "born": 1984,
+  "died": null,
+  "approx": true,
+  "country": "DK",
+  "place": {
+   "en": "Jordnær, Gentofte, north of Copenhagen",
+   "fr": "Jordnær, Gentofte, au nord de Copenhague"
+  },
+  "role": {
+   "en": "Chef-patron, with Tina Kragh Vildgaard",
+   "fr": "Chef-propriétaire, avec Tina Kragh Vildgaard"
+  },
+  "work": {
+   "en": "Jordnær (2017)",
+   "fr": "Jordnær (2017)"
+  },
+  "url": "https://www.restaurantjordnaer.dk",
+  "stars": null,
+  "ingredients": [
+   "langoustine",
+   "caviar",
+   "oyster",
+   "scallop",
+   "turbot",
+   "cream",
+   "beurre-de-baratte",
+   "chives"
+  ],
+  "dishes": []
+ },
+ {
+  "id": "waters",
+  "name": "Alice Waters",
+  "born": 1944,
+  "died": null,
+  "approx": false,
+  "country": "US",
+  "place": {
+   "en": "Chez Panisse, Berkeley, California",
+   "fr": "Chez Panisse, Berkeley, Californie"
+  },
+  "role": {
+   "en": "Restaurateur and campaigner",
+   "fr": "Restauratrice et militante"
+  },
+  "work": {
+   "en": "Chez Panisse (1971); the Edible Schoolyard (1995)",
+   "fr": "Chez Panisse (1971) ; l’Edible Schoolyard (1995)"
+  },
+  "url": "https://www.chezpanisse.com",
+  "stars": null,
+  "ingredients": [
+   "lettuce",
+   "olive-oil",
+   "garlic",
+   "tomato",
+   "goat-cheese",
+   "basil",
+   "lemon",
+   "fig"
+  ],
+  "dishes": [
+   "salade-du-jardin-de-chez-panisse"
+  ]
+ },
+ {
+  "id": "white",
+  "name": "Marco Pierre White",
+  "born": 1961,
+  "died": null,
+  "approx": false,
+  "country": "GB",
+  "place": {
+   "en": "Harveys, then The Restaurant, London",
+   "fr": "Harveys, puis The Restaurant, Londres"
+  },
+  "role": {
+   "en": "Chef",
+   "fr": "Chef"
+  },
+  "work": {
+   "en": "White Heat (1990)",
+   "fr": "White Heat (1990)"
+  },
+  "url": null,
+  "stars": {
+   "n": 3,
+   "years": "1995–1999"
+  },
+  "ingredients": [
+   "beurre-de-baratte",
+   "tarragon",
+   "langoustine",
+   "truffle",
+   "pigeon",
+   "cream",
+   "shallot",
+   "white-wine-vinegar"
+  ],
+  "dishes": [
+   "tagliatelle-d-huitres-au-caviar"
+  ]
+ }
+]

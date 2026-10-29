@@ -13,8 +13,8 @@ tools/free-tier.json also shows its latin name, origin and flavour; every other
 entry keeps those three rows, and the pairings, in the full version, and a
 locked block closes its entry text saying what the full version adds; the
 family links follow it. The pairings and
-the pairing lab are the full version's on every page. Dish pages are teasers:
-the chefs are paid.
+the pairing lab are the full version's on every page. Dish pages are teasers,
+and chef pages are facts pages: what each chef changed is paid.
 
 Run:  python3 tools/build-pages.py
 """
@@ -60,7 +60,8 @@ def load_i18n():
     """Family and flavour labels, per language, from the file the atlas itself
     uses — one copy, so a page never files an ingredient under a name the atlas
     does not. Returns {"en": {"categories": {...}, "flavors": {...}}, "fr": ...}
-    and the family order of the filter bar."""
+    and the family order of the filter bar. Country names ride along, keyed by
+    their two-letter code, for the chef pages."""
     text = (ROOT / I18N_FILE).read_text()
     out = {}
     for lang in ("en", "fr"):
@@ -73,6 +74,10 @@ def load_i18n():
             if not blk:
                 sys.exit("no %s.%s in %s" % (lang, key, I18N_FILE))
             out[lang][key] = dict(re.findall(r'([a-z]+)\s*:\s*"([^"]*)"', blk.group(1)))
+        blk = re.search(r"\bcountries: \{(.*?)\}", m.group(1), re.S)
+        if not blk:
+            sys.exit("no %s.countries in %s" % (lang, I18N_FILE))
+        out[lang]["countries"] = dict(re.findall(r'([A-Z]{2})\s*:\s*"([^"]*)"', blk.group(1)))
     order = re.search(r"CAT_ORDER = \[([^\]]*)\]", text)
     if not order:
         sys.exit("no CAT_ORDER in %s" % I18N_FILE)
@@ -811,8 +816,8 @@ def dish_url(did, lang):
 
 
 def dish_page(d, lang, by_id):
-    """One plate, as a teaser: the chefs are the full version's. The name, the
-    year, the cook and the ingredients are public; the note (what it moved) and
+    """One plate, as a teaser. The name, the year, the cook (linked to the
+    cook's facts page) and the ingredients are public; the note (what it moved) and
     the why (what a cook can use) stand behind the locked block."""
     t, other = DISH_UI[lang], ("fr" if lang == "en" else "en")
     ui = UI[lang]
@@ -872,7 +877,8 @@ def dish_page(d, lang, by_id):
         "here": here, "there": there, "desc": e(desc),
         "name": e(name), "kind": e(kind),
         "year": (" · %s" % e(year)) if year != "\u2014" else "",
-        "chef": e(d["chef"]["name"]), "years": e(years),
+        "chef": ('<a href="../../chef/%s/">%s</a>' % (d["chef"]["id"], e(d["chef"]["name"]))
+                 if d["chef"]["id"] in CHEF_IDS else e(d["chef"]["name"])), "years": e(years),
         "locked": locked_block(t["lockGives"], lang, up), "inglbl": e(t["ing"]),
         "chips": " ".join(chip(by_id[x], lang, rel) for x in d["ingredients"] if x in by_id),
         "openatlas": e(t["openAtlas"]), "all": e(t["all"]),
@@ -938,6 +944,216 @@ def dish_index(lang, by_id):
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
         "index": e(ui["index"]), "about": e(ui["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
+    }
+
+
+# Chefs come from tools/chefs.json, written by tools/dump-dishes.js with only the
+# fields a free page may show: the contribution, the legacy, the phrase and the
+# star note never leave data-chefs.js. A chef page is a facts page, nothing more.
+CHEFS = json.loads((ROOT / "tools" / "chefs.json").read_text()) \
+    if (ROOT / "tools" / "chefs.json").exists() else []
+CHEF_IDS = {c["id"] for c in CHEFS}
+
+# One record, several people: one birth year or one range would stand for all
+# of them, so these pages carry no dates.
+SHARED_RECORD = {"roca", "troisgros"}
+if SHARED_RECORD - CHEF_IDS and CHEFS:
+    sys.exit("SHARED_RECORD names no such chef: %s" % ", ".join(sorted(SHARED_RECORD - CHEF_IDS)))
+
+CHEF_UI = {
+    "en": {"idx": "Chefs", "all": "All chefs",
+           "idxLede": "%d cooks, with the dates, country, place, role and documented work of each. Their contribution and their legacy are in the full version.",
+           "dates": "Dates", "bornLbl": "Born", "country": "Country", "place": "Place", "work": "Documented work",
+           "stars": "Michelin stars", "site": "Website", "dish": "Dish", "ing": "Associated ingredients",
+           "circa": "c. ", "born": "b. %s",
+           "desc": "%s — %s, %s.",
+           "lockTexts": "the 2 texts of this page (contribution and legacy)",
+           "lockDish": "the note and the why of the dish",
+           "lockPairs1": "the pairings of this ingredient", "lockPairsN": "the pairings of these %d ingredients",
+           "lockLast": " and the timeline of all %d cooks in order of birth",
+           "noLink": "Copius has no connection with this chef or their restaurant.",
+           "noLinkStars": "Copius has no connection with the MICHELIN Guide.",
+           "noLinkAll": "Copius has no connection with these chefs or their restaurants."},
+    "fr": {"idx": "Chefs", "all": "Tous les chefs",
+           "idxLede": "%d cuisiniers, avec pour chacun les dates, le pays, le lieu, la fonction et les travaux documentés. Leur apport et leur héritage sont dans la version complète.",
+           "dates": "Dates", "bornLbl": "Naissance", "country": "Pays", "place": "Lieu", "work": "Travaux documentés",
+           "stars": "Étoiles Michelin", "site": "Site web", "dish": "Plat", "ing": "Ingrédients associés",
+           "circa": "vers ", "born": "%s",
+           "desc": "%s — %s, %s.",
+           "lockTexts": "les 2 textes de cette fiche (apport et héritage)",
+           "lockDish": "la note et le pourquoi du plat",
+           "lockPairs1": "les accords de cet ingrédient", "lockPairsN": "les accords de ces %d ingrédients",
+           "lockLast": " et la frise des %d cuisiniers par ordre de naissance",
+           "noLink": "Copius n’a aucun lien avec ce chef ni avec son restaurant.",
+           "noLinkStars": "Copius n’a aucun lien avec le Guide MICHELIN.",
+           "noLinkAll": "Copius n’a aucun lien avec ces chefs ni avec leurs restaurants."},
+}
+
+# Stars only as a closed range: an open or single year would republish the
+# current selection. dump-dishes.js already drops them; this refuses a sidecar
+# that did not.
+CLOSED_STARS = re.compile(r"\d{4}–\d{4}")
+
+
+def chef_url(cid, lang):
+    return ("%s/chef/%s/" % (SITE, cid) if lang == "en"
+            else "%s/fr/chef/%s/" % (SITE, cid))
+
+
+def chef_born(c, lang):
+    return "%s%d" % (CHEF_UI[lang]["circa"] if c["approx"] else "", c["born"])
+
+
+def chef_years(c, lang):
+    """Gender-free, unlike the atlas's « né en » / « née en »: gender is not a
+    field a chef page shows."""
+    if c["died"]:
+        return "%s–%d" % (chef_born(c, lang), c["died"])
+    return CHEF_UI[lang]["born"] % chef_born(c, lang)
+
+
+def chef_page(c, lang, by_id, dish_by_id):
+    """One cook, as a facts page: name, dates, country, place, role, documented
+    work, website, dish and ingredients. What they changed stays paid."""
+    t, other = CHEF_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    # /chef/<id>/ is two deep, /fr/chef/<id>/ is three. Entry pages are ../../i/
+    # and dish pages ../../dish/ or ../../plat/ from both.
+    up = "../../" if lang == "en" else "../../../"
+    here, there = chef_url(c["id"], lang), chef_url(c["id"], other)
+    name, role, place = c["name"], c["role"][lang], c["place"][lang]
+    years = chef_years(c, lang)
+    shared = c["id"] in SHARED_RECORD
+    stars = c["stars"]
+    if stars and not CLOSED_STARS.fullmatch(stars["years"]):
+        sys.exit("%s: stars with an open year range reached build-pages.py" % c["id"])
+    rows = [None if shared else (t["dates"], e(years)) if c["died"] else (t["bornLbl"], e(chef_born(c, lang))),
+            (t["country"], e(I18N[lang]["countries"].get(c["country"], c["country"]))),
+            (t["place"], e(place)),
+            (t["work"], e(c["work"][lang])),
+            (t["stars"], e("★" * stars["n"] + " " + stars["years"])) if stars else None,
+            (t["site"], '<a href="%s" target="_blank" rel="noopener noreferrer">%s ↗</a>' % (
+                e(c["url"]), e(re.sub(r"/$", "", re.sub(r"^https?://(www\.)?", "", c["url"]))))) if c["url"] else None]
+    facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v) for k, v in filter(None, rows))
+    dishes = [dish_by_id[x] for x in c["dishes"] if x in dish_by_id]
+    body = ""
+    if dishes:
+        seg = "dish" if lang == "en" else "plat"
+        body += '<h2>%s</h2><p class="pairs">%s</p>\n\n  ' % (e(t["dish"]), " ".join(
+            '<a href="../../%s/%s/">%s</a>' % (seg, d["id"], e(d["name"][lang])) for d in dishes))
+    ings = [x for x in c["ingredients"] if x in by_id]
+    if ings:
+        body += '<h2>%s</h2><p class="pairs">%s</p>\n\n  ' % (
+            e(t["ing"]), " ".join(chip(by_id[x], lang, "../../i/") for x in ings))
+    parts = [t["lockTexts"]] + ([t["lockDish"]] if dishes else []) + (
+        [t["lockPairsN"] % len(ings) if len(ings) > 1 else t["lockPairs1"]] if ings else [])
+    gives = ", ".join(parts) + t["lockLast"] % len(CHEFS)
+    nolink = '<p class="foot-evin">%s</p>\n<p class="foot-evin">%s</p>\n' % (e(t["noLink"]), e(t["noLinkStars"]))
+    title = "%s, %s" % (name, role) if shared else "%s (%s), %s" % (name, years, role)
+    desc = t["desc"] % (name, role, place)
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(title)s · Copius</title>
+<meta name="description" content="%(desc)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+<link rel="alternate" hreflang="x-default" href="%(xdef)s">
+%(og)s
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a></nav>
+</header>
+
+<main>
+  <h1>%(name)s</h1>
+  <p class="alt">%(role)s</p>
+
+  <table>%(facts)s</table>
+
+  %(body)s%(locked)s
+
+  %(fix)s
+</main>
+
+<footer>
+  <a href="../">%(all)s</a> · <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s<br>
+  Copius — %(tagline)s
+%(nolink)s%(fevin)s</footer>
+</body>
+</html>
+""" % {
+        "og": head_extra(e(title), e(desc), here, lang),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
+        "robots": robots, "here": here, "there": there, "xdef": chef_url(c["id"], "en"),
+        "title": e(title), "desc": e(desc), "name": e(name), "role": e(role),
+        "facts": facts, "body": body, "locked": locked_block(gives, lang, up),
+        "fix": correction_link(name, here, lang), "all": e(t["all"]),
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "idx": index_href(lang),
+        "index": e(ui["index"]), "about": e(ui["about"]), "tagline": e(ui["tagline"]),
+        "legal": legal_links(up, lang), "nolink": nolink, "fevin": foot_evin(lang),
+    }
+
+
+def chef_index(lang):
+    """Every chef by name, alphabetically: the birth-order timeline is the
+    full version's."""
+    t, other = CHEF_UI[lang], ("fr" if lang == "en" else "en")
+    ui = UI[lang]
+    up = "../" if lang == "en" else "../../"
+    here = "%s/chef/" % SITE if lang == "en" else "%s/fr/chef/" % SITE
+    there = "%s/fr/chef/" % SITE if lang == "en" else "%s/chef/" % SITE
+    lede = t["idxLede"] % len(CHEFS)
+    key = lambda c: unicodedata.normalize("NFD", c["name"]).encode("ascii", "ignore").decode().lower()
+    names = " ".join('<a href="%s/">%s</a>' % (c["id"], e(c["name"])) for c in sorted(CHEFS, key=key))
+    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
+    return """<!doctype html>
+<html lang="%(lang)s">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%(title)s · Copius</title>
+<meta name="description" content="%(lede)s">%(robots)s
+<link rel="canonical" href="%(here)s">
+<link rel="alternate" hreflang="%(lang)s" href="%(here)s">
+<link rel="alternate" hreflang="%(other)s" href="%(there)s">
+<link rel="alternate" hreflang="x-default" href="%(xdef)s">
+%(og)s
+<link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+</head>
+<body>
+<header>
+  <a class="home" href="%(up)s">Copius</a>
+  <nav><a href="%(there)s">%(otherlbl)s</a> · <a href="%(up)s%(app)s">%(back)s</a></nav>
+</header>
+
+<main>
+  <h1>%(title)s</h1>
+  <p class="lede">%(lede)s</p>
+  <p class="pairs">%(names)s</p>
+</main>
+
+<footer>
+  <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(app)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s
+<p class="foot-evin">%(nolink)s</p>
+%(fevin)s</footer>
+</body>
+</html>
+""" % {
+        "og": head_extra(e(t["idx"]), e(lede), here, lang),
+        "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
+        "robots": robots, "here": here, "there": there, "xdef": "%s/chef/" % SITE,
+        "title": e(t["idx"]), "lede": e(lede), "names": names,
+        "otherlbl": e(ui["other"]), "back": e(ui["back"]), "idx": index_href(lang),
+        "index": e(ui["index"]), "about": e(ui["about"]), "legal": legal_links(up, lang),
+        "nolink": e(t["noLinkAll"]), "fevin": foot_evin(lang),
     }
 
 
@@ -1272,6 +1488,23 @@ def main():
         (ROOT / "dish" / "index.html").write_text(dish_index("en", by_id))
         (ROOT / "fr" / "plat" / "index.html").write_text(dish_index("fr", by_id))
 
+    # The cooks, as facts pages. No ingredient page links here (v1): their
+    # lastmod must not move.
+    shutil.rmtree(ROOT / "chef", ignore_errors=True)
+    shutil.rmtree(ROOT / "fr" / "chef", ignore_errors=True)
+    dish_by_id = {d["id"]: d for d in DISHES}
+    chefs = 0
+    for c in CHEFS:
+        for lang in ("en", "fr"):
+            out = (ROOT / "chef" / c["id"] if lang == "en"
+                   else ROOT / "fr" / "chef" / c["id"])
+            out.mkdir(parents=True, exist_ok=True)
+            (out / "index.html").write_text(chef_page(c, lang, by_id, dish_by_id))
+            chefs += 1
+    if CHEFS:
+        (ROOT / "chef" / "index.html").write_text(chef_index("en"))
+        (ROOT / "fr" / "chef" / "index.html").write_text(chef_index("fr"))
+
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
             "%s/confidentialite/" % SITE, "%s/cgv/" % SITE,
@@ -1280,6 +1513,10 @@ def main():
         urls += ["%s/dish/" % SITE, "%s/fr/plat/" % SITE]
         for d in DISHES:
             urls += [dish_url(d["id"], "en"), dish_url(d["id"], "fr")]
+    if CHEFS:
+        urls += ["%s/chef/" % SITE, "%s/fr/chef/" % SITE]
+        for c in CHEFS:
+            urls += [chef_url(c["id"], "en"), chef_url(c["id"], "fr")]
     for m in range(1, 13):
         urls += ["%s/season/%s/" % (SITE, SLUG["en"][m]),
                  "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]
@@ -1293,8 +1530,9 @@ def main():
 
     paid = sum(1 for i in rows if i["id"] not in FREE)
     print('{"ingredientPages": %d, "free": %d, "paid": %d, "seasonPages": %d, "dishPages": %d, '
-          '"indexes": %d, "sitemapUrls": %d, "indexable": %s}'
-          % (written, len(rows) - paid, paid, months, dishes, 6 if DISHES else 4, len(urls),
+          '"chefPages": %d, "indexes": %d, "sitemapUrls": %d, "indexable": %s}'
+          % (written, len(rows) - paid, paid, months, dishes, chefs,
+             4 + (2 if DISHES else 0) + (2 if CHEFS else 0), len(urls),
              "true" if INDEXABLE else "false"))
     if not INDEXABLE:
         print("# every page carries noindex — flip INDEXABLE in this file when the atlas opens")

@@ -1,4 +1,5 @@
-// Dishes out of js/data-chefs.js and into tools/dishes.json, for build-pages.py.
+// Dishes out of js/data-chefs.js and into tools/dishes.json, and the chefs'
+// public facts into tools/chefs.json, for build-pages.py.
 // Run from the project root with either:
 //   node tools/dump-dishes.js
 //   osascript -l JavaScript tools/dump-dishes.js      (no Node required, macOS built-in)
@@ -75,9 +76,37 @@ CHEFS.forEach(function (c) {
   });
 });
 
+// A chef page is a facts page, so only its fields leave data-chefs.js: the
+// contribution, the legacy, the phrase, the gender and the star note stay in
+// the paid view. Stars only with a closed year range: an open or single year
+// would republish the current selection.
+var chefs = [], chefSeen = {}, CLOSED = /^(\d{4})–(\d{4})$/;
+CHEFS.forEach(function (c) {
+  if (!/^[a-z0-9-]+$/.test(c.id || "")) problems.push("chef id is not slug-safe: " + c.id);
+  else if (chefSeen[c.id]) problems.push("duplicate chef id: " + c.id);
+  chefSeen[c.id] = true;
+  ["place", "role", "work"].forEach(function (k) {
+    if (!c[k] || !c[k].en || !c[k].fr) problems.push(c.id + ": " + k + " missing a language");
+  });
+  if (typeof c.born !== "number") problems.push(c.id + ": born is not a year");
+  if (c.died != null && typeof c.died !== "number") problems.push(c.id + ": died is not a year");
+  var y = c.stars && CLOSED.exec(c.stars.years || "");
+  chefs.push({
+    id: c.id, name: c.name, born: c.born, died: c.died || null, approx: !!c.approx,
+    country: c.country,
+    place: { en: c.place.en, fr: c.place.fr },
+    role: { en: c.role.en, fr: c.role.fr },
+    work: { en: c.work.en, fr: c.work.fr },
+    url: c.url || null,
+    stars: y && +y[1] < +y[2] ? { n: c.stars.n, years: c.stars.years } : null,
+    ingredients: (c.ingredients || []).filter(function (x) { return ING[x]; }),
+    dishes: (c.dishes || []).map(function (d) { return d.id; })
+  });
+});
+
 if (problems.length) {
   problems.forEach(function (p) { log("  " + p); });
-  throw new Error(problems.length + " problem(s) — dishes.json not written");
+  throw new Error(problems.length + " problem(s) — dishes.json and chefs.json not written");
 }
 
 out.sort(function (a, b) { return a.id < b.id ? -1 : 1; });
@@ -85,3 +114,8 @@ write("tools/dishes.json", JSON.stringify(out, null, 1) + "\n");
 log("tools/dishes.json — " + out.length + " dishes (" +
     out.filter(function (d) { return d.kind === "memorable"; }).length + " memorable, " +
     out.filter(function (d) { return d.kind === "signature"; }).length + " signature)");
+
+chefs.sort(function (a, b) { return a.id < b.id ? -1 : 1; });
+write("tools/chefs.json", JSON.stringify(chefs, null, 1) + "\n");
+log("tools/chefs.json — " + chefs.length + " chefs (" +
+    chefs.filter(function (c) { return c.stars; }).length + " with a closed star range)");
