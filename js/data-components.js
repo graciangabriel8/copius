@@ -108,14 +108,7 @@ window.COMPONENTS = [
   "fr": "Une assiette maigre qui manque de relief : poisson blanc vapeur, volaille pochée, carré de porc rôti. Le beurre noisette apporte le gras et la note grillée qui manquent, le citron l’empêche de peser."
  },
  "principle": "fat-carrier",
- "season": [
-  6,
-  7,
-  8,
-  9,
-  10,
-  11
- ],
+ "season": "all",
  "origin": {
   "type": "copius"
  }
@@ -482,266 +475,6 @@ window.COMPONENTS = [
  }
 },
 {
- "id": "puree-ratte-montee-au-beurre",
- "family": "purees",
- "name": {
-  "en": "Butter-mounted ratte potato purée",
-  "fr": "Purée de ratte montée au beurre"
- },
- "summary": {
-  "en": "A ratte potato purée mounted with a very high proportion of cold butter and loosened with boiling milk: glossy, supple, rich enough to stand as an element on its own beside a roast and its jus.",
-  "fr": "Une purée de ratte montée avec une très forte proportion de beurre froid et détendue au lait bouillant : brillante, souple, assez riche pour tenir seule à côté d’un rôti et de son jus."
- },
- "ingredients": [
-  {
-   "id": "ratte-potato",
-   "qty": 1000,
-   "unit": "g"
-  },
-  {
-   "id": "butter",
-   "qty": 300,
-   "unit": "g"
-  },
-  {
-   "id": "salt",
-   "qty": 25,
-   "unit": "g"
-  }
- ],
- "yield": {
-  "en": "About 1.4 kg, 18 plates of 80 g (plus 250 ml whole milk, given in the method: milk has no atlas entry yet)",
-  "fr": "Environ 1,4 kg, 18 assiettes de 80 g (plus 250 ml de lait entier, donné dans la méthode : le lait n’a pas encore de fiche dans l’atlas)"
- },
- "method": [
-  {
-   "en": "Wash the rattes and put them whole, unpeeled, into 2 L cold water with 20 g of the salt. Bring to a simmer and cook gently 25 to 30 min, until a knife slides in with no resistance. The skin keeps water out of the flesh.",
-   "fr": "Laver les rattes et les mettre entières, non épluchées, dans 2 L d’eau froide salée avec 20 g du sel. Porter à frémissement et cuire doucement 25 à 30 min, jusqu’à ce que la lame d’un couteau entre sans résistance. La peau empêche la chair de prendre l’eau."
-  },
-  {
-   "en": "Meanwhile dice the butter into 1.5 cm cubes and keep it in the fridge until the last moment. Bring 250 ml whole milk to the boil just before you need it.",
-   "fr": "Pendant ce temps, tailler le beurre en cubes de 1,5 cm et le garder au froid jusqu’au dernier moment. Porter 250 ml de lait entier à ébullition juste avant l’emploi."
-  },
-  {
-   "en": "Drain, peel while still burning hot (hold them in a cloth) and pass at once through a food mill fitted with the finest grid, or a drum sieve with a scraper, straight into a wide saucepan. Never a blender: it bursts the starch and turns the purée to glue.",
-   "fr": "Égoutter, éplucher brûlant en tenant les pommes de terre dans un torchon et passer aussitôt au moulin à légumes grille la plus fine, ou au tamis à la corne, directement dans une sauteuse large. Jamais de mixeur : il fait éclater l’amidon et rend la purée collante."
-  },
-  {
-   "en": "Dry the purée over low heat, turning it with a wooden spatula 4 to 5 min, until it stops steaming hard and starts to come away from the pan. The water you drive off now is the room the butter will take.",
-   "fr": "Dessécher la purée sur feu doux en la retournant à la spatule en bois 4 à 5 min, jusqu’à ce qu’elle cesse de fumer fort et commence à se détacher du fond. L’eau chassée maintenant laisse la place au beurre."
-  },
-  {
-   "en": "On the lowest heat, beat in the cold butter a few cubes at a time, working hard with the spatula; wait until each addition is absorbed before the next. The purée turns glossy and supple.",
-   "fr": "Sur feu très doux, incorporer le beurre froid quelques cubes à la fois en travaillant vigoureusement à la spatule ; attendre que chaque ajout soit absorbé avant le suivant. La purée devient brillante et souple."
-  },
-  {
-   "en": "Pour in the boiling milk in a thin stream, still beating, until the purée falls softly from the spatula and just holds its shape. Season with the remaining salt. For the finest texture, pass it once more through a fine drum sieve.",
-   "fr": "Verser le lait bouillant en filet sans cesser de travailler, jusqu’à ce que la purée retombe mollement de la spatule tout en gardant sa forme. Assaisonner avec le reste du sel. Pour une texture plus fine, la repasser au tamis fin."
-  }
- ],
- "keys": [
-  {
-   "en": "Cold butter into hot, dried purée, a little at a time: that is what makes it emulsify instead of oiling. If it turns greasy, beat in a spoon of hot milk.",
-   "fr": "Beurre froid dans une purée chaude et desséchée, petit à petit : c’est ce qui la fait émulsionner au lieu de graisser. Si elle tranche, rattraper avec une cuillerée de lait chaud."
-  },
-  {
-   "en": "The ratte's dense, fine flesh takes this much fat without turning sticky, as long as it is only ever milled or sieved, never blended.",
-   "fr": "La chair dense et fine de la ratte prend autant de gras sans devenir collante, à condition de n’être que passée au moulin ou au tamis, jamais mixée."
-  },
-  {
-   "en": "It never boils once the butter is in: heat beyond a bare simmer splits the butter out.",
-   "fr": "Elle ne bout plus une fois le beurre incorporé : au-delà d’un léger frémissement, le beurre se sépare."
-  }
- ],
- "texture": [
-  "smooth",
-  "silky",
-  "creamy"
- ],
- "flavor": [
-  "buttery",
-  "rich",
-  "milky",
-  "earthy"
- ],
- "temp": "hot",
- "holds": {
-  "en": "Best within 1 h, kept in a bain-marie at 60 to 65 °C with film pressed on the surface, beaten again before service. Up to 2 days refrigerated: reheat gently with a little hot milk, beating, never boiling.",
-  "fr": "Idéale dans l’heure, tenue au bain-marie à 60 à 65 °C, film au contact, retravaillée à la spatule avant l’envoi. Jusqu’à 2 jours au froid positif : remettre à température doucement avec un peu de lait chaud, à la spatule, sans faire bouillir."
- },
- "pairs": [
-  "chicken",
-  "truffle",
-  "scallop",
-  "beef",
-  "morel",
-  "lamb"
- ],
- "lifts": {
-  "en": "A roast or a braise served with a strongly reduced jus: the butter-heavy purée rounds the jus's sharpness and gives the plate the soft, rich counterpart it lacks.",
-  "fr": "Un rôti ou un braisé servi avec un jus très réduit : la purée chargée de beurre arrondit la pointe du jus et donne à l’assiette le contrepoint fondant et riche qui lui manque."
- },
- "principle": "fat-carrier",
- "season": [
-  5,
-  6,
-  7,
-  8,
-  9
- ],
- "origin": {
-  "type": "legendary",
-  "chef": "Joël Robuchon",
-  "restaurant": "L'Atelier, Paris",
-  "source": "https://guide.michelin.com/en/article/features/joel-robuchon-pommes-puree",
-  "ours": {
-   "en": "Made famous by Joël Robuchon, L'Atelier, Paris. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source describes the method (whole potatoes, food mill, drying, cold butter then hot milk) and gives no proportions: the quantities here are Copius's own reading, not the chef's.",
-   "fr": "Rendu célèbre par Joël Robuchon, L’Atelier, Paris. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La source publique décrit la méthode (pommes de terre entières, moulin, dessèchement, beurre froid puis lait chaud) sans donner de proportions : les quantités sont une lecture de Copius, pas celles du chef."
-  }
- }
-},
-{
- "id": "sauce-oseille-troisgros",
- "family": "sauces",
- "name": {
-  "en": "Sorrel cream sauce, Troisgros style",
-  "fr": "Sauce à l’oseille façon Troisgros"
- },
- "summary": {
-  "en": "A reduced fish fumet and cream sauce into which raw sorrel is dropped at the last second: rich, then sharp, the acid built into the green itself.",
-  "fr": "Une réduction de fumet et de crème dans laquelle l’oseille crue tombe à la dernière seconde : riche, puis acidulée, l’acidité portée par la feuille elle-même."
- },
- "ingredients": [
-  {
-   "id": "whiting",
-   "qty": 500,
-   "unit": "g"
-  },
-  {
-   "id": "shallot",
-   "qty": 60,
-   "unit": "g"
-  },
-  {
-   "id": "butter",
-   "qty": 40,
-   "unit": "g"
-  },
-  {
-   "id": "verjus",
-   "qty": 100,
-   "unit": "ml"
-  },
-  {
-   "id": "cream",
-   "qty": 250,
-   "unit": "ml"
-  },
-  {
-   "id": "sorrel",
-   "qty": 60,
-   "unit": "g"
-  },
-  {
-   "id": "lemon",
-   "qty": 1,
-   "unit": "pc"
-  },
-  {
-   "id": "salt",
-   "qty": 3,
-   "unit": "g"
-  }
- ],
- "yield": {
-  "en": "About 300 ml, 6 plates of 50 ml",
-  "fr": "Environ 300 ml, 6 assiettes de 50 ml"
- },
- "method": [
-  {
-   "en": "Fumet: rinse the whiting bones and trimmings (gills removed) under cold water, sweat them 3 min in 10 g butter with a third of the shallot, cover with 600 ml cold water, bring to a simmer, skim, and cook 20 min, no longer. Strain without pressing: about 400 ml.",
-   "fr": "Fumet : dégorger les arêtes et parures de merlan (ouïes retirées) à l’eau froide, les faire suer 3 min avec 10 g de beurre et un tiers de l’échalote, mouiller de 600 ml d’eau froide, porter à frémissement, écumer et cuire 20 min, pas plus. Passer sans fouler : environ 400 ml."
-  },
-  {
-   "en": "Chop the rest of the shallot finely and sweat it in a small sauteuse, add the verjus and reduce almost dry.",
-   "fr": "Ciseler le reste de l’échalote, la faire suer dans un petit sautoir, ajouter le verjus et réduire à presque sec."
-  },
-  {
-   "en": "Add 300 ml fumet and reduce by three quarters, to about 80 ml, syrupy.",
-   "fr": "Mouiller de 300 ml de fumet et réduire des trois quarts, à environ 80 ml, sirupeux."
-  },
-  {
-   "en": "Add the cream and simmer until the sauce coats the spoon (nappe), about 5 min. Strain through a chinois and mount with 30 g cold butter.",
-   "fr": "Ajouter la crème et cuire à frémissement jusqu’à ce que la sauce nappe la cuillère, environ 5 min. Passer au chinois et monter avec 30 g de beurre froid."
-  },
-  {
-   "en": "To order: strip the sorrel stems, tear the leaves, drop them into the hot sauce for 10 to 15 s, just until they wilt and turn olive green. Taste before adding salt or lemon, and serve at once.",
-   "fr": "À la commande : équeuter l’oseille, déchirer les feuilles, les plonger 10 à 15 s dans la sauce chaude, juste le temps qu’elles tombent et virent au vert olive. Goûter avant de saler ou de citronner, et envoyer aussitôt."
-  }
- ],
- "keys": [
-  {
-   "en": "Sorrel goes in at the very last moment: it collapses and goes khaki in seconds, which is expected; boiled, it turns stringy and sour.",
-   "fr": "L’oseille entre au tout dernier moment : elle tombe et vire au kaki en quelques secondes, c’est normal ; bouillie, elle devient filandreuse et aigre."
-  },
-  {
-   "en": "The fumet reduction must be strong; the cream dilutes it.",
-   "fr": "La réduction de fumet doit être corsée : la crème la dilue."
-  },
-  {
-   "en": "Sorrel is the acid: taste before any lemon.",
-   "fr": "L’oseille est l’acidité de la sauce : goûter avant tout citron."
-  }
- ],
- "texture": [
-  "silky",
-  "smooth"
- ],
- "flavor": [
-  "sour",
-  "creamy",
-  "rich",
-  "grassy"
- ],
- "temp": "hot",
- "holds": {
-  "en": "The base without sorrel keeps 2 days refrigerated; reheat gently and whisk. The sorrel goes in only to order.",
-  "fr": "La base sans oseille se garde 2 jours au froid positif ; la remettre en température doucement, au fouet. L’oseille n’entre qu’à la commande."
- },
- "pairs": [
-  "salmon",
-  "sea-trout",
-  "pike",
-  "egg",
-  "ratte-potato",
-  "veau-sous-la-mere"
- ],
- "lifts": {
-  "en": "A fatty fish, salmon or sea trout, that a cream sauce would make heavy: sorrel's oxalic acid cuts the cream and the fish at once, so the plate stays fresh.",
-  "fr": "Un poisson gras, saumon ou truite de mer, qu’une sauce à la crème alourdirait : l’acidité oxalique de l’oseille tranche à la fois la crème et le poisson, et l’assiette reste fraîche."
- },
- "principle": "fat-acid",
- "season": [
-  4,
-  5,
-  6,
-  7,
-  8,
-  9
- ],
- "origin": {
-  "type": "legendary",
-  "chef": "Jean and Pierre Troisgros",
-  "restaurant": "Troisgros, Roanne",
-  "source": "https://reportergourmet.com/en/news/9807-how-the-troisgros-family-made-salmon-with-cream-legendary-the-sorrel-recipe",
-  "ours": {
-   "en": "The sauce of the Troisgros brothers' escalope de saumon à l'oseille is usually published as a fish fumet reduced with white wine and dry vermouth, finished with cream, butter and raw sorrel. Our version keeps that structure, replaces the wine and vermouth with verjus so the acidity comes without alcohol, and the quantities, method and wording are our own.",
-   "fr": "La sauce de l’escalope de saumon à l’oseille des frères Troisgros est d’ordinaire publiée comme un fumet réduit au vin blanc et au vermouth sec, fini à la crème, au beurre et à l’oseille crue. Notre version garde cette structure, remplace le vin et le vermouth par du verjus pour apporter l’acidité sans alcool ; les quantités, la méthode et la rédaction sont les nôtres."
-  }
- },
- "base": "fumet-de-poisson"
-},
-{
  "id": "romesco",
  "family": "sauces",
  "name": {
@@ -852,8 +585,8 @@ window.COMPONENTS = [
  ],
  "temp": "room",
  "holds": {
-  "en": "5 days refrigerated under a thin film of olive oil. Serve at room temperature; stir or re-blend briefly if it separates.",
-  "fr": "5 jours au froid positif sous une fine couche d’huile d’olive. Servir à température ambiante ; remuer ou remixer brièvement si elle se sépare."
+  "en": "3 days refrigerated, film pressed onto the surface. Serve at room temperature; stir or re-blend briefly if it separates.",
+  "fr": "3 jours au froid positif, filmée au contact. Servir à température ambiante ; remuer ou remixer brièvement si elle se sépare."
  },
  "pairs": [
   "calcot",
@@ -970,7 +703,7 @@ window.COMPONENTS = [
   },
   {
    "en": "Season after reducing: soy and salt concentrate with the liquid.",
-   "fr": "Assaisonner après réduction : la soja et le sel se concentrent avec le liquide."
+   "fr": "Assaisonner après réduction : la sauce soja et le sel se concentrent avec le liquide."
   },
   {
    "en": "Leave out the butter and it stays vegan; it will be thinner and less glossy.",
@@ -1168,7 +901,7 @@ window.COMPONENTS = [
   },
   {
    "id": "salt",
-   "qty": 215,
+   "qty": 170,
    "unit": "g"
   }
  ],
@@ -1186,8 +919,8 @@ window.COMPONENTS = [
    "fr": "Les fumer 20 min dans un fumoir de cuisine sur copeaux de hêtre, hors du feu direct une fois les copeaux bien fumants."
   },
   {
-   "en": "Weigh everything: mushrooms and their juices, crumbled dried shiitake, koji, salt and 300 ml water. The salt is about 12 % of the total; recalculate it if your weights differ. Mix well and pack into a clean jar or a vacuum bag, film pressed on the surface.",
-   "fr": "Tout peser : champignons avec leur jus, shiitakés séchés émiettés, koji, sel et 300 ml d’eau. Le sel représente environ 12 % du total ; le recalculer si les poids diffèrent. Bien mélanger et tasser dans un bocal propre ou un sac sous vide, film au contact."
+   "en": "Weigh the roasted mushrooms with their juices, the crumbled dried shiitake, the koji and 300 ml water. Salt = 0.136 × that total weight, which makes it 12 % of the whole: about 170 g once the mushrooms are roasted. Mix well and pack into a clean jar or a vacuum bag, film pressed on the surface.",
+   "fr": "Peser les champignons rôtis avec leur jus, les shiitakés séchés émiettés, le koji et 300 ml d’eau. Sel = 0,136 × poids total des autres ingrédients, soit 12 % du tout : environ 170 g une fois les champignons rôtis. Bien mélanger et tasser dans un bocal propre ou un sac sous vide, film au contact."
   },
   {
    "en": "Hold at 60 °C (dehydrator, proving cabinet or a water bath with the bag sealed) 8 weeks, stirring or kneading the bag once a week.",
@@ -1243,12 +976,12 @@ window.COMPONENTS = [
  "season": "all",
  "origin": {
   "type": "legendary",
-  "chef": "René Redzepi, Lars Williams, Thomas Frebel",
+  "chef": "René Redzepi, Thomas Frebel",
   "restaurant": "Noma, Copenhagen",
   "source": "https://robbreport.com.sg/noma-denmark-two-michelin-stars-best-restaurants-in-the-world-will-soon-sell-what-made-it-famous-its-garums/",
   "ours": {
-   "en": "Made famous by René Redzepi, Lars Williams and Thomas Frebel, Noma, Copenhagen. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source describes a koji garum and a smoked mushroom version with no ratios or duration: the quantities, temperature, time and safety limits are Copius's own reading.",
-   "fr": "Rendu célèbre par René Redzepi, Lars Williams et Thomas Frebel, Noma, Copenhague. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La source publique décrit un garum au koji et une version aux champignons fumés sans proportions ni durée : quantités, température, temps et limites de sécurité sont une lecture de Copius."
+   "en": "Made famous by René Redzepi and Thomas Frebel, Noma, Copenhagen. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source describes a koji garum and a smoked mushroom version with no ratios or duration: the quantities, temperature, time and safety limits are Copius's own reading.",
+   "fr": "Rendu célèbre par René Redzepi et Thomas Frebel, Noma, Copenhague. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La source publique décrit un garum au koji et une version aux champignons fumés sans proportions ni durée : quantités, température, temps et limites de sécurité sont une lecture de Copius."
   }
  }
 },
@@ -1317,8 +1050,8 @@ window.COMPONENTS = [
    "fr": "Mixer 3 à 4 min avec le vinaigre et le sel, en ajoutant une cuillerée d’eau seulement si les lames patinent, jusqu’à une texture parfaitement lisse. Passer au chinois fin pour retirer les peaux."
   },
   {
-   "en": "Cool quickly and store in a jar under a thin film of oil.",
-   "fr": "Refroidir rapidement et conserver en bocal sous une fine couche d’huile."
+   "en": "Cool quickly, pack into a jar and press film onto the surface.",
+   "fr": "Refroidir rapidement, mettre en bocal et filmer au contact."
   }
  ],
  "keys": [
@@ -1331,8 +1064,8 @@ window.COMPONENTS = [
    "fr": "Pousser l’oignon jusqu’au doré : sa douceur équilibre le piment."
   },
   {
-   "en": "Cooked garlic under oil stays in the fridge and is used within a week; freeze anything beyond that.",
-   "fr": "L’ail cuit sous huile reste au froid et s’utilise dans la semaine ; congeler tout ce qui dépasse."
+   "en": "Cooked garlic in a low-acid purée: 3 days in the fridge at most, and freeze the rest in portions the day it is made.",
+   "fr": "Ail cuit dans une purée peu acide : 3 jours au froid au plus, et congeler le reste en portions le jour même."
   }
  ],
  "texture": [
@@ -1347,8 +1080,8 @@ window.COMPONENTS = [
  ],
  "temp": "room",
  "holds": {
-  "en": "1 week at 4 °C under a film of oil, served with a clean spoon; 3 months frozen in portions.",
-  "fr": "1 semaine à 4 °C sous une couche d’huile, prélevée à la cuillère propre ; 3 mois au congélateur en portions."
+  "en": "3 days at 4 °C, film pressed onto the surface; 3 months frozen in portions.",
+  "fr": "3 jours à 4 °C, filmée au contact ; 3 mois au congélateur en portions."
  },
  "pairs": [
   "sea-bass",
@@ -1728,8 +1461,8 @@ window.COMPONENTS = [
  ],
  "temp": "warm",
  "holds": {
-  "en": "1 week at 4 °C in a jar under a film of oil, served with a clean spoon; 3 months frozen in portions. Warm gently in a wok before use.",
-  "fr": "1 semaine à 4 °C en bocal sous une couche d’huile, prélevée à la cuillère propre ; 3 mois au congélateur en portions. Réchauffer doucement au wok avant l’emploi."
+  "en": "3 days at 4 °C in a jar, film pressed onto the surface; 3 months frozen in portions. Warm gently in a wok before use.",
+  "fr": "3 jours à 4 °C en bocal, filmée au contact ; 3 mois au congélateur en portions. Réchauffer doucement au wok avant l’emploi."
  },
  "pairs": [
   "crab",
@@ -2027,6 +1760,147 @@ window.COMPONENTS = [
  }
 },
 {
+ "id": "sauce-creme-oseille",
+ "family": "sauces",
+ "name": {
+  "en": "Sorrel cream sauce",
+  "fr": "Sauce crème à l’oseille"
+ },
+ "summary": {
+  "en": "A reduced fish fumet and cream sauce into which raw sorrel is dropped at the last second: rich, then sharp, the acid built into the green itself.",
+  "fr": "Une réduction de fumet et de crème dans laquelle l’oseille crue tombe à la dernière seconde : riche, puis acidulée, l’acidité portée par la feuille elle-même."
+ },
+ "ingredients": [
+  {
+   "id": "whiting",
+   "qty": 500,
+   "unit": "g"
+  },
+  {
+   "id": "shallot",
+   "qty": 60,
+   "unit": "g"
+  },
+  {
+   "id": "butter",
+   "qty": 40,
+   "unit": "g"
+  },
+  {
+   "id": "verjus",
+   "qty": 100,
+   "unit": "ml"
+  },
+  {
+   "id": "cream",
+   "qty": 250,
+   "unit": "ml"
+  },
+  {
+   "id": "sorrel",
+   "qty": 60,
+   "unit": "g"
+  },
+  {
+   "id": "lemon",
+   "qty": 1,
+   "unit": "pc"
+  },
+  {
+   "id": "salt",
+   "qty": 3,
+   "unit": "g"
+  }
+ ],
+ "yield": {
+  "en": "About 300 ml, 6 plates of 50 ml",
+  "fr": "Environ 300 ml, 6 assiettes de 50 ml"
+ },
+ "method": [
+  {
+   "en": "Fumet: rinse the whiting bones and trimmings (gills removed) under cold water, sweat them 3 min in 10 g butter with a third of the shallot, cover with 600 ml cold water, bring to a simmer, skim, and cook 20 min, no longer. Strain without pressing: about 400 ml.",
+   "fr": "Fumet : dégorger les arêtes et parures de merlan (ouïes retirées) à l’eau froide, les faire suer 3 min avec 10 g de beurre et un tiers de l’échalote, mouiller de 600 ml d’eau froide, porter à frémissement, écumer et cuire 20 min, pas plus. Passer sans fouler : environ 400 ml."
+  },
+  {
+   "en": "Chop the rest of the shallot finely and sweat it in a small sauteuse, add the verjus and reduce almost dry.",
+   "fr": "Ciseler le reste de l’échalote, la faire suer dans un petit sautoir, ajouter le verjus et réduire à presque sec."
+  },
+  {
+   "en": "Add 300 ml fumet and reduce by three quarters, to about 80 ml, syrupy.",
+   "fr": "Mouiller de 300 ml de fumet et réduire des trois quarts, à environ 80 ml, sirupeux."
+  },
+  {
+   "en": "Add the cream and simmer until the sauce coats the spoon (nappe), about 5 min. Strain through a chinois and mount with 30 g cold butter.",
+   "fr": "Ajouter la crème et cuire à frémissement jusqu’à ce que la sauce nappe la cuillère, environ 5 min. Passer au chinois et monter avec 30 g de beurre froid."
+  },
+  {
+   "en": "To order: strip the sorrel stems, tear the leaves, drop them into the hot sauce for 10 to 15 s, just until they wilt and turn olive green. Taste before adding salt or lemon, and serve at once.",
+   "fr": "À la commande : équeuter l’oseille, déchirer les feuilles, les plonger 10 à 15 s dans la sauce chaude, juste le temps qu’elles tombent et virent au vert olive. Goûter avant de saler ou de citronner, et envoyer aussitôt."
+  }
+ ],
+ "keys": [
+  {
+   "en": "Sorrel goes in at the very last moment: it collapses and goes khaki in seconds, which is expected; boiled, it turns stringy and sour.",
+   "fr": "L’oseille entre au tout dernier moment : elle tombe et vire au kaki en quelques secondes, c’est normal ; bouillie, elle devient filandreuse et aigre."
+  },
+  {
+   "en": "The fumet reduction must be strong; the cream dilutes it.",
+   "fr": "La réduction de fumet doit être corsée : la crème la dilue."
+  },
+  {
+   "en": "Sorrel is the acid: taste before any lemon.",
+   "fr": "L’oseille est l’acidité de la sauce : goûter avant tout citron."
+  }
+ ],
+ "texture": [
+  "silky",
+  "smooth"
+ ],
+ "flavor": [
+  "sour",
+  "creamy",
+  "rich",
+  "grassy"
+ ],
+ "temp": "hot",
+ "holds": {
+  "en": "The base without sorrel keeps 2 days refrigerated; reheat gently and whisk. The sorrel goes in only to order.",
+  "fr": "La base sans oseille se garde 2 jours au froid positif ; la remettre en température doucement, au fouet. L’oseille n’entre qu’à la commande."
+ },
+ "pairs": [
+  "salmon",
+  "sea-trout",
+  "pike",
+  "egg",
+  "ratte-potato",
+  "veau-sous-la-mere"
+ ],
+ "lifts": {
+  "en": "A fatty fish, salmon or sea trout, that a cream sauce would make heavy: sorrel's oxalic acid cuts the cream and the fish at once, so the plate stays fresh.",
+  "fr": "Un poisson gras, saumon ou truite de mer, qu’une sauce à la crème alourdirait : l’acidité oxalique de l’oseille tranche à la fois la crème et le poisson, et l’assiette reste fraîche."
+ },
+ "principle": "fat-acid",
+ "season": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "origin": {
+  "type": "legendary",
+  "chef": "Jean and Pierre Troisgros",
+  "restaurant": "Troisgros, Roanne",
+  "source": "https://reportergourmet.com/en/news/9807-how-the-troisgros-family-made-salmon-with-cream-legendary-the-sorrel-recipe",
+  "ours": {
+   "en": "Made famous by Jean and Pierre Troisgros, Troisgros, Roanne. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source reduces a fish fumet with white wine and vermouth, finished with cream and raw sorrel; Copius replaces the wine and vermouth with verjus, and the quantities are its own.",
+   "fr": "Rendu célèbre par Jean et Pierre Troisgros, Troisgros, Roanne. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La source publique réduit un fumet au vin blanc et au vermouth, fini à la crème et à l’oseille crue ; Copius remplace le vin et le vermouth par du verjus, et les quantités sont les siennes."
+  }
+ },
+ "base": "fumet-de-poisson"
+},
+{
  "id": "beurre-blanc-verjus",
  "family": "emulsions",
  "name": {
@@ -2206,8 +2080,8 @@ window.COMPONENTS = [
  ],
  "keys": [
   {
-   "en": "Butter at 60 to 65 °C: hotter it cooks the yolks, cooler it will not emulsify.",
-   "fr": "Beurre à 60–65 °C : plus chaud, il cuit les jaunes ; plus froid, il n’émulsionne pas."
+   "en": "Butter at 55 to 65 °C: hotter it cooks the yolks, cooler the sauce ends up lukewarm and sets at the pass.",
+   "fr": "Beurre à 55–65 °C : plus chaud, il cuit les jaunes ; plus froid, la sauce tiédit et fige au service."
   },
   {
    "en": "Cook the sabayon to a ribbon, not to scrambled egg; the bowl should stay touchable.",
@@ -3019,8 +2893,8 @@ window.COMPONENTS = [
    "fr": "Rôtir carcasses et ailerons à 200 °C, 40 min, jusqu’à ce qu’ils soient dorés."
   },
   {
-   "en": "Cover with 2.5 litres cold water, bring slowly to the boil, skim, then cook at 85 to 90 °C, barely trembling, 2 hours 30.",
-   "fr": "Mouiller de 2,5 litres d’eau froide, porter doucement à ébullition, écumer, puis cuire à 85–90 °C, à peine frémissant, 2 heures 30."
+   "en": "Cover with 2.5 litres cold water, bring slowly to 90 °C, skim, then cook at 85 to 90 °C, barely trembling, 2 hours 30.",
+   "fr": "Mouiller de 2,5 litres d’eau froide, porter doucement à 90 °C, écumer, puis cuire à 85–90 °C, à peine frémissant, 2 heures 30."
   },
   {
    "en": "Meanwhile char the unpeeled ginger, sliced lengthwise, and the spring onions in a dry pan. Add them with the bruised lemongrass for the last 20 min.",
@@ -3037,8 +2911,8 @@ window.COMPONENTS = [
  ],
  "keys": [
   {
-   "en": "Never let it boil: boiling emulsifies the fat and clouds the broth.",
-   "fr": "Ne jamais le faire bouillir : l’ébullition émulsionne la graisse et trouble le bouillon."
+   "en": "Never let it boil while it cooks: boiling emulsifies the fat and clouds the broth.",
+   "fr": "Ne jamais le faire bouillir pendant la cuisson : l’ébullition émulsionne la graisse et trouble le bouillon."
   },
   {
    "en": "Aromatics go in late; lemongrass and lime leaf boiled for hours turn grassy and bitter.",
@@ -3531,11 +3405,6 @@ window.COMPONENTS = [
    "id": "pimenton-de-la-vera",
    "qty": 3,
    "unit": "g"
-  },
-  {
-   "id": "thyme",
-   "qty": 2,
-   "unit": "sprig"
   }
  ],
  "yield": {
@@ -3544,8 +3413,8 @@ window.COMPONENTS = [
  },
  "method": [
   {
-   "en": "Dice the chorizo into 5 mm cubes. Put it in a small pan with the cold oil and thyme.",
-   "fr": "Tailler le chorizo en dés de 5 mm. Le mettre dans une petite casserole avec l’huile froide et le thym."
+   "en": "Dice the chorizo into 5 mm cubes. Put it in a small pan with the cold oil.",
+   "fr": "Tailler le chorizo en dés de 5 mm. Le mettre dans une petite casserole avec l’huile froide."
   },
   {
    "en": "Bring slowly to 85 to 90 °C and hold 30 min: the oil should barely bubble and the chorizo must not fry dark.",
@@ -3570,8 +3439,8 @@ window.COMPONENTS = [
    "fr": "Filtrer deux fois : les particules de viande laissées raccourcissent sa conservation."
   },
   {
-   "en": "No fresh garlic in the oil: it brings a botulism risk.",
-   "fr": "Pas d’ail frais dans l’huile : il apporte un risque de botulisme."
+   "en": "No fresh garlic or fresh herbs in the oil: they bring a botulism risk.",
+   "fr": "Ni ail frais ni herbes fraîches dans l’huile : ils apportent un risque de botulisme."
   }
  ],
  "texture": [
@@ -3616,7 +3485,7 @@ window.COMPONENTS = [
  },
  "summary": {
   "en": "An amber caramel deglazed with sherry vinegar and reduced with blood orange juice to a syrup: sweet, sour and bitter, brushed on duck, endive or roots.",
-  "fr": "Un caramel blond déglacé au vinaigre de Xérès et réduit au jus d’orange sanguine jusqu’au sirop : sucré, acide et amer, au pinceau sur un canard, une endive ou des racines."
+  "fr": "Un caramel ambré déglacé au vinaigre de Xérès et réduit au jus d’orange sanguine jusqu’au sirop : sucré, acide et amer, au pinceau sur un canard, une endive ou des racines."
  },
  "ingredients": [
   {
@@ -3656,7 +3525,7 @@ window.COMPONENTS = [
   },
   {
    "en": "Cook the sugar dry in a heavy pan to an amber caramel, about 175 to 180 °C, no darker.",
-   "fr": "Cuire le sucre à sec dans une casserole à fond épais jusqu’au caramel blond, environ 175–180 °C, pas plus foncé."
+   "fr": "Cuire le sucre à sec dans une casserole à fond épais jusqu’au caramel ambré, environ 175–180 °C, pas plus foncé."
   },
   {
    "en": "Off the heat, deglaze with the vinegar, standing back from the steam, and stir until the caramel has dissolved.",
@@ -3674,7 +3543,7 @@ window.COMPONENTS = [
  "keys": [
   {
    "en": "The caramel's colour sets the bitterness: amber, never brown.",
-   "fr": "La couleur du caramel fixe l’amertume : blond, jamais brun."
+   "fr": "La couleur du caramel fixe l’amertume : ambré, jamais brun."
   },
   {
    "en": "Test a drop on a cold plate: it should hold, then slowly run.",
@@ -3724,95 +3593,112 @@ window.COMPONENTS = [
  "base": "gastrique"
 },
 {
- "id": "glacage-miso-miel",
+ "id": "laque-miso-rouge-miel",
  "family": "glazes",
  "name": {
-  "en": "White miso and honey glaze",
-  "fr": "Glaçage au miso blanc et au miel"
+  "en": "Red miso and honey lacquer for roots",
+  "fr": "Laque au miso rouge et au miel pour légumes-racines"
  },
  "summary": {
-  "en": "Sweet white miso warmed with honey, rice vinegar and ginger juice, brushed thin and blistered under the salamander: sweet, salty, deeply savoury.",
-  "fr": "Miso blanc doux tiédi avec miel, vinaigre de riz et jus de gingembre, étalé en couche fine et caramélisé sous la salamandre : sucré, salé, profondément sapide."
+  "en": "Red miso, honey and cider vinegar reduced and mounted with butter into a glossy lacquer, brushed on roots in coats as they finish roasting: it turns a sweet root savoury.",
+  "fr": "Miso rouge, miel et vinaigre de cidre réduits puis montés au beurre en une laque brillante, posée en plusieurs couches sur des racines en fin de rôtissage : elle rend une racine douce franchement sapide."
  },
  "ingredients": [
   {
-   "id": "saikyo-miso",
-   "qty": 150,
+   "id": "aka-miso",
+   "qty": 50,
    "unit": "g"
   },
   {
    "id": "honey",
-   "qty": 30,
+   "qty": 70,
    "unit": "g"
   },
   {
-   "id": "rice-vinegar",
+   "id": "cider-vinegar",
    "qty": 30,
    "unit": "ml"
   },
   {
-   "id": "ginger",
-   "qty": 10,
+   "id": "butter",
+   "qty": 40,
    "unit": "g"
+  },
+  {
+   "id": "black-pepper",
+   "qty": 1,
+   "unit": "pinch"
   }
  ],
  "yield": {
-  "en": "About 220 g, 20 plates",
-  "fr": "Environ 220 g, 20 assiettes"
+  "en": "About 220 g, enough to lacquer 2 kg of roots, 12 plates",
+  "fr": "Environ 220 g, de quoi laquer 2 kg de racines, 12 assiettes"
  },
  "method": [
   {
-   "en": "Grate the ginger and squeeze its juice through a cloth.",
-   "fr": "Râper le gingembre et en exprimer le jus dans un linge."
+   "en": "Whisk the red miso into 60 ml cold water until no lumps remain.",
+   "fr": "Délayer le miso rouge au fouet dans 60 ml d’eau froide, jusqu’à ce qu’il ne reste aucun grumeau."
   },
   {
-   "en": "Whisk the miso, honey, vinegar and ginger juice with 30 ml water in a small pan over low heat, 2 to 3 min, until smooth; do not boil.",
-   "fr": "Fouetter le miso, le miel, le vinaigre et le jus de gingembre avec 30 ml d’eau dans une petite casserole à feu doux, 2 à 3 min, jusqu’à ce que ce soit lisse ; ne pas faire bouillir."
+   "en": "Bring the honey and cider vinegar to the boil in a small saucepan and reduce 2 min, until the bubbles grow larger and slower.",
+   "fr": "Porter à ébullition le miel et le vinaigre de cidre dans une petite casserole et réduire 2 min, jusqu’à ce que les bulles grossissent et ralentissent."
   },
   {
-   "en": "Brush a thin layer onto the cooked or almost cooked fish or vegetable and set under a hot salamander, 2 to 4 min, until blistered with brown spots.",
-   "fr": "Étaler au pinceau une couche fine sur le poisson ou le légume cuit ou presque cuit et passer sous une salamandre chaude, 2 à 4 min, jusqu’à ce qu’il cloque avec des taches brunes."
+   "en": "Off the heat, whisk in the miso, return to a low heat and simmer 1 min, until it coats the spoon. Off the heat again, mount with the cold diced butter piece by piece until glossy, then add the pepper.",
+   "fr": "Hors du feu, ajouter le miso délayé au fouet, remettre sur feu doux et laisser frémir 1 min, jusqu’à ce que la laque nappe la cuillère. De nouveau hors du feu, monter au beurre froid en dés, morceau par morceau, jusqu’à ce qu’elle brille, puis poivrer."
+  },
+  {
+   "en": "Roast the roots (small whole carrots, wedges of squash or parsnip), lightly oiled and unsalted, at 200 °C until almost tender, 20 to 30 min.",
+   "fr": "Rôtir les racines (carottes fanes entières, quartiers de courge ou de panais), légèrement huilées et sans sel, à 200 °C jusqu’à ce qu’elles soient presque tendres, 20 à 30 min."
+  },
+  {
+   "en": "Brush on a thin coat, return to the oven 4 min, and repeat three times, turning them, until lacquered and caramelised on the edges. A last coat out of the oven gives the shine.",
+   "fr": "Badigeonner une couche fine au pinceau, remettre 4 min au four et recommencer trois fois en les retournant, jusqu’à ce qu’elles soient laquées et caramélisées sur les arêtes. Une dernière couche hors du four donne le brillant."
   }
  ],
  "keys": [
   {
-   "en": "Watch it under the salamander: the sugars go from brown to burnt in seconds.",
-   "fr": "Surveiller sous la salamandre : les sucres passent du brun au brûlé en quelques secondes."
+   "en": "Red miso is saltier and deeper than white: do not salt the roots first, the lacquer seasons them.",
+   "fr": "Le miso rouge est plus salé et plus profond que le blanc : ne pas saler les racines avant, la laque les assaisonne."
   },
   {
-   "en": "Brush thin and wipe off the excess; a thick layer burns before it browns.",
-   "fr": "Étaler fin et essuyer l’excédent : une couche épaisse brûle avant de colorer."
+   "en": "Lacquer only in the last 15 minutes: honey and miso burn in a hot oven long before the root is cooked.",
+   "fr": "Ne laquer que dans le dernier quart d’heure : miel et miso brûlent au four bien avant que la racine soit cuite."
   },
   {
-   "en": "Saikyo miso is sweet and mild; a darker miso needs less and a little more honey.",
-   "fr": "Le miso saikyo est doux et peu salé ; un miso plus foncé s’emploie en moindre quantité, avec un peu plus de miel."
+   "en": "Never boil it once the butter is in: the emulsion breaks and the lacquer slides off greasy. If it splits, whisk in a spoon of hot water.",
+   "fr": "Ne plus la faire bouillir une fois le beurre incorporé : l’émulsion tranche et la laque glisse, grasse. Si elle tranche, la rattraper au fouet avec une cuillerée d’eau chaude."
   }
  ],
  "texture": [
-  "viscous"
+  "viscous",
+  "smooth"
  ],
  "flavor": [
   "umami",
-  "sweet",
   "salty",
-  "honeyed"
+  "sweet",
+  "honeyed",
+  "tangy"
  ],
  "temp": "hot",
  "holds": {
-  "en": "1 month refrigerated in a closed jar.",
-  "fr": "1 mois au froid positif en bocal fermé."
+  "en": "2 weeks refrigerated in a closed jar. It sets in the cold: warm to about 50 °C and whisk before use.",
+  "fr": "2 semaines au froid positif en bocal fermé. Elle fige au froid : la tiédir vers 50 °C et la fouetter avant l’emploi."
  },
  "pairs": [
-  "eggplant",
-  "cod",
-  "salmon",
   "carrot",
+  "parsnip",
   "butternut",
-  "daikon"
+  "beetroot",
+  "celeriac",
+  "sweet-potato",
+  "turnip",
+  "jerusalem-artichoke"
  ],
  "lifts": {
-  "en": "Aubergine, cod, salmon, carrots or squash that need colour and savour: the miso's salt and the honey's sugar brown together into a crust.",
-  "fr": "Aubergine, cabillaud, saumon, carottes ou courge qui demandent couleur et sapidité : le sel du miso et le sucre du miel brunissent ensemble en croûte."
+  "en": "A plate of roasted roots that is sweet and nothing else: the salt and fermented depth of red miso and the edge of the vinegar give carrots, parsnip or squash the savour of a meat glaze, with no meat.",
+  "fr": "Une assiette de racines rôties, douce et rien d’autre : le sel et la profondeur fermentée du miso rouge, le mordant du vinaigre donnent aux carottes, au panais ou à la courge la sapidité d’un glaçage de viande, sans viande."
  },
  "principle": "sweet-salt",
  "season": "all",
@@ -4079,8 +3965,8 @@ window.COMPONENTS = [
  },
  "method": [
   {
-   "en": "Bring the sake and mirin to the boil in a heavy saucepan and boil 20 to 30 s to drive off the alcohol.",
-   "fr": "Porter le saké et le mirin à ébullition dans une casserole à fond épais et laisser bouillir 20 à 30 s pour chasser l’alcool."
+   "en": "Bring the sake and mirin to the boil in a heavy saucepan and boil 1 to 2 min to drive off most of the alcohol.",
+   "fr": "Porter le saké et le mirin à ébullition dans une casserole à fond épais et laisser bouillir 1 à 2 min pour chasser l’essentiel de l’alcool."
   },
   {
    "en": "Turn the heat to its lowest and whisk in the white (shiro) miso until completely smooth.",
@@ -4262,14 +4148,7 @@ window.COMPONENTS = [
  "principle": "crunch",
  "season": "all",
  "origin": {
-  "type": "legendary",
-  "chef": "Pierre Hermé",
-  "restaurant": "Pierre Hermé Paris",
-  "source": "https://fr.gaultmillau.com/en/news/pierre-herme-revisite-le-flan-de-son-enfance-dans-une-version-infiniment-chocolat",
-  "ours": {
-   "en": "Hermé found his chocolate flan bare and topped it with a cocoa nougatine. This formula is Copius's own nib tuile-nougatine in standard pastry ratios, not his recipe.",
-   "fr": "Hermé trouvait son flan au chocolat trop nu et l’a coiffé d’une nougatine cacao. Cette formule est la nougatine-tuile au grué de Copius, aux proportions classiques de pâtisserie, pas sa recette."
-  }
+  "type": "copius"
  },
  "base": "caramel"
 },
@@ -4326,7 +4205,7 @@ window.COMPONENTS = [
   },
   {
    "en": "Slice the shallot into 1 mm rings and fry them in 40 g of the rendered fat (top up with neutral oil if short) until light golden; they keep colouring off the heat. Drain on paper.",
-   "fr": "Ciseler l’échalote en anneaux de 1 mm et la frire dans 40 g de graisse fondue (compléter d’huile neutre s’il en manque) jusqu’à une couleur blonde ; elle continue de colorer hors du feu. Égoutter sur papier absorbant."
+   "fr": "Émincer l’échalote en anneaux de 1 mm et la frire dans 40 g de graisse fondue (compléter d’huile neutre s’il en manque) jusqu’à une couleur blonde ; elle continue de colorer hors du feu. Égoutter sur papier absorbant."
   },
   {
    "en": "Toast the walnuts at 160 °C for 8 to 10 minutes, rub off the loose skins in a cloth and chop to 3 to 4 mm.",
@@ -4631,119 +4510,6 @@ window.COMPONENTS = [
  }
 },
 {
- "id": "frites-cuites-trois-fois",
- "family": "crunch",
- "name": {
-  "en": "Triple-cooked chips",
-  "fr": "Frites cuites trois fois"
- },
- "summary": {
-  "en": "Thick potato batons simmered until they crack, dried cold, fried low then high: a glass-hard, deeply cracked crust over a fluffy core that stays crisp beside a sauce.",
-  "fr": "Des bâtonnets de pomme de terre pochés jusqu’à se fendre, séchés au froid, frits à basse puis à haute température : une croûte vitreuse et craquelée sur un cœur fondant, qui reste croustillante à côté d’une sauce."
- },
- "ingredients": [
-  {
-   "id": "bintje-potato",
-   "qty": 1000,
-   "unit": "g"
-  },
-  {
-   "id": "peanut-oil",
-   "qty": 3000,
-   "unit": "ml"
-  },
-  {
-   "id": "salt",
-   "qty": 20,
-   "unit": "g"
-  },
-  {
-   "id": "maldon-flake-salt",
-   "qty": 5,
-   "unit": "g"
-  }
- ],
- "yield": {
-  "en": "About 600 g of chips, 4 plates as a side",
-  "fr": "Environ 600 g de frites, 4 assiettes en garniture"
- },
- "method": [
-  {
-   "en": "Peel the potatoes and cut them into even batons 2 cm square. Rinse under cold running water 3 to 5 min, until the water runs clear.",
-   "fr": "Éplucher les pommes de terre et les tailler en bâtonnets réguliers de 2 cm de section. Rincer sous l’eau froide courante 3 à 5 min, jusqu’à ce que l’eau soit claire."
-  },
-  {
-   "en": "Put them into 2 L cold water with the 20 g salt, bring to a bare simmer and poach 20 to 30 min, until the edges crack and the batons are on the point of breaking. Lift them out one layer at a time with a spider onto a rack.",
-   "fr": "Les mettre dans 2 L d’eau froide avec les 20 g de sel, porter à petit frémissement et pocher 20 à 30 min, jusqu’à ce que les arêtes se fendillent et que les bâtonnets soient sur le point de casser. Les sortir couche par couche à l’araignée sur une grille."
-  },
-  {
-   "en": "Let the steam escape, then put the rack uncovered in the freezer 1 h (or 2 h in the fridge), until the surface is dry and cold.",
-   "fr": "Laisser la vapeur s’échapper, puis passer la grille à découvert au congélateur 1 h (ou 2 h au réfrigérateur), jusqu’à ce que la surface soit sèche et froide."
-  },
-  {
-   "en": "First fry at 130 °C, in small batches so the oil holds its temperature, about 5 min: a thin, pale skin forms, with no colour. Drain on the rack and chill again 1 h.",
-   "fr": "Premier bain à 130 °C, par petites quantités pour que l’huile garde sa température, environ 5 min : une fine peau pâle se forme, sans coloration. Égoutter sur grille et refroidir de nouveau 1 h."
-  },
-  {
-   "en": "Second fry at 180 °C, 6 to 8 min, until deep golden and glass-crisp. Drain and season at once with the flake salt.",
-   "fr": "Second bain à 180 °C, 6 à 8 min, jusqu’à une belle couleur dorée et une croûte vitreuse. Égoutter et assaisonner aussitôt de sel en flocons."
-  }
- ],
- "keys": [
-  {
-   "en": "Poach until they almost break: the cracks hold a little fat and become the crispest part.",
-   "fr": "Pocher jusqu’à ce qu’ils cassent presque : les fissures retiennent un peu de gras et deviennent la partie la plus croustillante."
-  },
-  {
-   "en": "Dry and cold between every stage: surface water makes the oil spit and leaves the crust leathery.",
-   "fr": "Sec et froid entre chaque étape : l’eau en surface fait crépiter l’huile et rend la croûte cuirassée."
-  },
-  {
-   "en": "A floury, low-sugar potato (bintje, agria): a sweet one browns before it crisps. Stop at golden, not brown, which also keeps acrylamide down.",
-   "fr": "Une pomme de terre farineuse et peu sucrée (bintje, agria) : une variété sucrée colore avant de croustiller. S’arrêter au doré, pas au brun, ce qui limite aussi l’acrylamide."
-  }
- ],
- "texture": [
-  "crisp",
-  "crunchy",
-  "soft"
- ],
- "flavor": [
-  "toasty",
-  "salty",
-  "mild"
- ],
- "temp": "hot",
- "holds": {
-  "en": "After the first fry, the batons keep 2 days refrigerated, uncovered on a rack, or 1 month frozen; give them the second fry from cold, to order. Once fried, serve within a few minutes.",
-  "fr": "Après le premier bain, les bâtonnets se gardent 2 jours au froid, à découvert sur grille, ou 1 mois au congélateur ; donner le second bain à la minute, sortis du froid. Une fois frites, servir dans les minutes qui suivent."
- },
- "pairs": [
-  "beef",
-  "cod",
-  "mussel",
-  "egg",
-  "malt-vinegar",
-  "lamb"
- ],
- "lifts": {
-  "en": "A plate of soft or sauced elements, a braise, mussels or a tartare, that needs real crunch and starch: the glassy crust holds up beside a sauce longer than an ordinary chip.",
-  "fr": "Une assiette d’éléments fondants ou nappés, braisé, moules ou tartare, qui réclame un vrai croustillant et de l’amidon : la croûte vitreuse tient à côté d’une sauce plus longtemps qu’une frite ordinaire."
- },
- "principle": "crunch",
- "season": "all",
- "origin": {
-  "type": "legendary",
-  "chef": "Heston Blumenthal",
-  "restaurant": "The Fat Duck, Bray",
-  "source": "https://en.wikipedia.org/wiki/Triple-cooked_chips",
-  "ours": {
-   "en": "Made famous by Heston Blumenthal, The Fat Duck, Bray. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The stages, temperatures and times follow the public source; the cut, the batch, the salting and the wording are Copius's own.",
-   "fr": "Rendu célèbre par Heston Blumenthal, The Fat Duck, Bray. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. Les étapes, températures et temps suivent la source publique ; la taille, la quantité, le salage et la rédaction sont de Copius."
-  }
- }
-},
-{
  "id": "pickles-rhubarbe-baies-roses",
  "family": "pickles",
  "name": {
@@ -4813,8 +4579,8 @@ window.COMPONENTS = [
    "fr": "Tailler régulièrement : les morceaux fins se marinent à cœur, les épais restent crus et filandreux au centre."
   },
   {
-   "en": "Forced rhubarb in early spring gives the pinkest, most tender result.",
-   "fr": "La rhubarbe forcée du début du printemps donne le résultat le plus rose et le plus tendre."
+   "en": "Young field rhubarb in April and May gives the pinkest, most tender result.",
+   "fr": "La jeune rhubarbe de plein champ, en avril et mai, donne le résultat le plus rose et le plus tendre."
   }
  ],
  "texture": [
@@ -5368,12 +5134,12 @@ window.COMPONENTS = [
    "fr": "Suspendre dans une étamine ou une chausse au-dessus d’un saladier, 12 heures au réfrigérateur. Ne jamais presser : la pression trouble l’eau."
   },
   {
-   "en": "Weigh 450 g of the clear water. Soak the gelatine (three 2 g leaves) in cold water for 10 minutes.",
-   "fr": "Peser 450 g d’eau limpide. Ramollir la gélatine (trois feuilles de 2 g) 10 minutes dans l’eau froide."
+   "en": "Weigh 450 g of the clear water. Bruise the basil leaves, infuse them 20 minutes in the cold tomato water, then lift them out. In the last 10 minutes, soak the gelatine (three 2 g leaves) in cold water.",
+   "fr": "Peser 450 g d’eau limpide. Froisser les feuilles de basilic, les infuser 20 minutes dans l’eau de tomate froide, puis les retirer. Pendant les 10 dernières minutes, ramollir la gélatine (trois feuilles de 2 g) dans l’eau froide."
   },
   {
-   "en": "Warm 100 g of the tomato water to 60 °C, dissolve the squeezed gelatine in it and stir it back into the rest. Add the basil leaves, bruised, and infuse 20 minutes cold, then lift them out.",
-   "fr": "Chauffer 100 g d’eau de tomate à 60 °C, y dissoudre la gélatine essorée et mélanger au reste. Ajouter les feuilles de basilic froissées, infuser 20 minutes à froid, puis les retirer."
+   "en": "Warm 100 g of the infused tomato water to 60 °C, dissolve the squeezed gelatine in it and stir it back into the rest.",
+   "fr": "Chauffer 100 g d’eau de tomate infusée à 60 °C, y dissoudre la gélatine essorée et la mélanger au reste."
   },
   {
    "en": "Pour 1 cm deep into a tray or straight into the serving bowls and set 4 hours at 4 °C. Cut into cubes or break with a spoon.",
@@ -6468,8 +6234,8 @@ window.COMPONENTS = [
   }
  ],
  "yield": {
-  "en": "About 470 g, one 0.5 L siphon, 12 plates.",
-  "fr": "Environ 470 g, un siphon de 0,5 L, 12 assiettes."
+  "en": "About 470 g, one 1 L siphon, 12 plates.",
+  "fr": "Environ 470 g, un siphon de 1 L, 12 assiettes."
  },
  "method": [
   {
@@ -6489,8 +6255,8 @@ window.COMPONENTS = [
    "fr": "Passer au chinois étamine : le moindre grumeau bouche la douille."
   },
   {
-   "en": "Fill a 0.5 L siphon no more than two thirds, charge with one N2O cartridge, shake, add a second and shake again. Hold in a bain-marie at 63 to 65 °C and test before plating.",
-   "fr": "Remplir un siphon de 0,5 L aux deux tiers au plus, charger d’une cartouche de N2O, secouer, ajouter une seconde cartouche et secouer encore. Maintenir au bain-marie à 63-65 °C et tester avant de dresser."
+   "en": "Fill a 1 L siphon no more than two thirds, charge with one N2O cartridge, shake, add a second and shake again. Hold in a bain-marie at 63 to 65 °C and test before plating.",
+   "fr": "Remplir un siphon de 1 L aux deux tiers au plus, charger d’une cartouche de N2O, secouer, ajouter une seconde cartouche et secouer encore. Maintenir au bain-marie à 63-65 °C et tester avant de dresser."
   }
  ],
  "keys": [
@@ -6814,8 +6580,8 @@ window.COMPONENTS = [
   }
  ],
  "yield": {
-  "en": "About 285 g, one 18 cm frame 4 mm thick, 12 to 15 plates.",
-  "fr": "Environ 285 g, un cadre de 18 cm sur 4 mm d’épaisseur, 12 à 15 assiettes."
+  "en": "About 285 g, one 30 × 30 cm frame 4 mm thick, 12 to 15 plates.",
+  "fr": "Environ 285 g, un cadre de 30 × 30 cm sur 4 mm d’épaisseur, 12 à 15 assiettes."
  },
  "method": [
   {
@@ -6880,14 +6646,7 @@ window.COMPONENTS = [
  "principle": "crunch",
  "season": "all",
  "origin": {
-  "type": "legendary",
-  "chef": "Pierre Hermé",
-  "restaurant": "Pierre Hermé Paris",
-  "source": "https://www.pierreherme.com/en/2000-feuilles-entremets.html",
-  "ours": {
-   "en": "Hermé's 2000 Feuilles sets a crisp praliné between caramelised puff pastry and praliné cream. This croustillant is the standard pastry-kitchen formula written by Copius, not his recipe.",
-   "fr": "Le 2000 Feuilles de Hermé place un praliné croustillant entre un feuilletage caramélisé et une crème pralinée. Ce croustillant est la formule classique de pâtisserie, rédigée par Copius, pas sa recette."
-  }
+  "type": "copius"
  }
 },
 {
@@ -7371,7 +7130,7 @@ window.COMPONENTS = [
   "restaurant": "Café de Paris, Monte-Carlo",
   "source": "https://en.wikipedia.org/wiki/Cr%C3%AApe_Suzette",
   "ours": {
-   "en": "Attributed to Henri Charpentier, Café de Paris, Monte-Carlo (origin disputed). Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source gives no quantities and no method: the recipe and quantities are Copius's own. It leaves out the orange liqueur and the flambé; the dark caramel carries the depth without alcohol.",
+   "en": "Attributed to Henri Charpentier, Café de Paris, Monte-Carlo (origin disputed). Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The public source gives no quantities and no method: the recipe and quantities are Copius's own. It leaves out the orange liqueur and the flambé; the amber caramel carries the depth without alcohol.",
    "fr": "Attribué à Henri Charpentier, Café de Paris, Monte-Carlo (origine discutée). Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La source publique ne donne ni quantités ni méthode : recette et quantités sont de Copius. Elle laisse de côté la liqueur d’orange et le flambage ; le caramel ambré porte la profondeur sans alcool."
   }
  }
@@ -7492,8 +7251,8 @@ window.COMPONENTS = [
   "restaurant": "Maison Le Roux, Quiberon",
   "source": "https://en.wikipedia.org/wiki/Salted_caramel",
   "ours": {
-   "en": "Made famous by Henri Le Roux, Quiberon. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The house does not publish its formula and this is not it: the recipe and quantities are entirely Copius's own, a sauce built on the general salted-butter caramel technique.",
-   "fr": "Rendu célèbre par Henri Le Roux, Quiberon. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La maison ne publie pas sa formule et celle-ci n’en est pas une : la recette et les quantités sont entièrement de Copius, une sauce bâtie sur la technique générale du caramel au beurre salé."
+   "en": "Made famous by Henri Le Roux, Maison Le Roux, Quiberon. Copius's own version, written from public sources. Neither the chef nor the restaurant took part in it or approved it. The house does not publish its formula and this is not it: the recipe and quantities are entirely Copius's own, a sauce built on the general salted-butter caramel technique.",
+   "fr": "Rendu célèbre par Henri Le Roux, Maison Le Roux, Quiberon. Version écrite par Copius d’après des sources publiques. Ni le chef ni le restaurant n’y ont participé ni ne l’ont approuvée. La maison ne publie pas sa formule et celle-ci n’en est pas une : la recette et les quantités sont entièrement de Copius, une sauce bâtie sur la technique générale du caramel au beurre salé."
   }
  }
 },
