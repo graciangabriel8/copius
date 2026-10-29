@@ -329,7 +329,7 @@ window.I18N = {
     back: "Back",
     // Names for controls whose visible label is an icon, a glyph or a placeholder.
     ariaViews: "Views", ariaFamilies: "Families", ariaTaste: "Taste", ariaSort: "Sort",
-    ariaGender: "Gender", ariaStars: "Stars", ariaCountry: "Country", ariaEra: "Era", ariaGroup: "Group",
+    ariaGender: "Gender", ariaStars: "Stars", ariaCountry: "Country", ariaEra: "Era", ariaGroup: "Group", ariaLetters: "Letters",
     igLink: "Copius on Instagram",
     removePick: "Remove {name}",
     footNote: "Copius — an illustrated atlas of ingredients, techniques, bases and the people who cooked them.",
@@ -736,7 +736,7 @@ window.I18N = {
     close: "Fermer",
     back: "Retour",
     ariaViews: "Vues", ariaFamilies: "Familles", ariaTaste: "Goût", ariaSort: "Tri",
-    ariaGender: "Genre", ariaStars: "Étoiles", ariaCountry: "Pays", ariaEra: "Époque", ariaGroup: "Groupe",
+    ariaGender: "Genre", ariaStars: "Étoiles", ariaCountry: "Pays", ariaEra: "Époque", ariaGroup: "Groupe", ariaLetters: "Lettres",
     igLink: "Copius sur Instagram",
     removePick: "Retirer {name}",
     footNote: "Copius — un atlas illustré des ingrédients, des techniques, des bases et de ceux qui les ont faits.",

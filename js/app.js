@@ -1143,13 +1143,33 @@
       return x.name[state.lang].localeCompare(y.name[state.lang], state.lang, CMP);
     });
     el("techCount").textContent = t.techCountTpl.replace("{n}", list.length);
-    el("techList").innerHTML = list.map(function (x) {
-      return '<article class="tech-card" id="t-' + esc(x.id) + '" data-tech-card="' + esc(x.id) + '" tabindex="0" role="button">' +
-        '<p class="tech-group">' + esc(groupLabel(x.group)) + "</p>" +
-        "<h3>" + esc(x.name[state.lang]) + "</h3>" +
-        '<p class="tech-sum">' + esc(x.summary[state.lang]) + "</p>" +
-        "</article>";
+    /* A-Z glossary: the list is already sorted by the displayed name; each entry
+       sits under its first letter (accents, case and a leading quote folded, "À la
+       nappe" under A), and the rail is built from what is left after the filters. */
+    var byLetter = {}, order = [];
+    list.forEach(function (x) {
+      var L = azLetter(x.name[state.lang]);
+      if (!byLetter[L]) { byLetter[L] = []; order.push(L); }
+      byLetter[L].push(x);
+    });
+    el("techRail").innerHTML = AZ.concat(byLetter["#"] ? ["#"] : []).map(function (L) {
+      return byLetter[L] ? '<button type="button" class="az-b" data-az="' + L + '">' + L + "</button>"
+                         : '<span class="az-b off" aria-hidden="true">' + L + "</span>";
     }).join("");
+    el("techList").innerHTML = order.map(function (L) {
+      return '<section class="az-let" id="techaz-' + L + '"><h3 class="az-L">' + L + '</h3><div class="az-ul">' +
+        byLetter[L].map(function (x) {
+          return '<div class="az-row" id="t-' + esc(x.id) + '" data-tech-card="' + esc(x.id) + '" data-g="' + esc(x.group) +
+            '" tabindex="0" role="button"><span class="az-term">' + esc(x.name[state.lang]) + '</span>' +
+            '<span class="az-gist">' + esc(x.summary[state.lang]) + '</span>' +
+            '<span class="az-grp">' + esc(groupLabel(x.group)) + "</span></div>";
+        }).join("") + "</div></section>";
+    }).join("");
+  }
+  var AZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  function azLetter(s) {
+    var c = norm(s).replace(/^[^a-z0-9]+/, "").charAt(0).toUpperCase();
+    return /[A-Z]/.test(c) ? c : "#";
   }
 
   function renderTechModal(id) {
@@ -1205,19 +1225,51 @@
         return a.name[state.lang].localeCompare(b.name[state.lang], state.lang);
       });
       el("baseCount").textContent = t.baseCountTpl.replace("{n}", list.length);
-      el("baseList").innerHTML = list.map(function (d) {
-        var top = d.ingredients.filter(function (i) { return byId[i]; })
-          .slice(0, 4).map(function (i) { return esc(name(byId[i])); }).join(" \u00b7 ");
-        return '<article class="base-card" data-base="' + esc(d.id) + '" tabindex="0" role="button">' +
-          '<p class="base-meta">' + esc(t.baseGroups[d.group] || d.group) + "</p>" +
-          "<h3>" + esc(d.name[state.lang]) + "</h3>" +
-          '<p class="base-ratio">' + esc(d.ratio[state.lang]) + "</p>" +
-          '<p class="base-sum">' + esc(d.summary[state.lang]) + "</p>" +
-          '<p class="base-foot"><span class="base-ings">' + top + "</span>" +
-          '<span class="base-counts">' + d.techniques.length + " \u00b7 " + d.ingredients.length +
-          "</span></p></article>";
+      /* Ratio ledger: one ruled header per family with its count, then a row per
+         base. The list is already in family order. */
+      el("baseList").innerHTML = groups.map(function (g) {
+        var rows = list.filter(function (d) { return d.group === g; });
+        if (!rows.length) return "";
+        return '<section class="lg-grp"><div class="lg-gh"><h3>' + esc(t.baseGroups[g] || g) + "</h3><span>" +
+          rows.length + "</span></div>" + rows.map(function (d) {
+            return '<div class="lg-row" data-base="' + esc(d.id) + '" tabindex="0" role="button">' +
+              '<h4 class="lg-name">' + esc(d.name[state.lang]) + "</h4>" + ratioHtml(d.ratio[state.lang]) + "</div>";
+          }).join("") + "</section>";
       }).join("");
     }
+
+  /* A ratio is shown as a formula only when every part of its first sentence is
+     a quantity and a label joined by " : "; whatever follows (later sentences,
+     the text after " — " or " ; ") becomes the note. Anything else (a list inside
+     one term, "+", "ou", a term without a quantity, fewer than two terms) is shown
+     whole, in italics: a plain line beats a half-read formula, and nothing of the
+     string is ever left out. */
+  var RATIO_QTY = /^(?:(Pour|Per|jusqu'\u00e0|up to)\s+)?(\d+(?:[.,]\d+)?(?:\s?[\u2013-]\s?\d+(?:[.,]\d+)?|\s+(?:\u00e0|to)\s+\d+(?:[.,]\d+)?)?(?:\s?(?:c\. \u00e0 s\.|c\. \u00e0 c\.|tbsp|tsp|kg|g|mg|L|dL|cl|ml|%|min|h)(?![\p{L}]))?)(?:\s+(.*))?$/iu;
+  function parseRatio(raw) {
+    var s = raw.replace(/[\u00a0\u202f]/g, " ").trim(), rest = [], m = s.match(/^(.*?)(?: \u2014 |\s?;\s)(.*)$/);
+    if (m) { s = m[1]; rest.push(m[2]); }
+    m = s.match(/^(.+?)\.\s+(?=[A-Z\u00c0-\u00d6\u00d8-\u00de\u0152])(.*)$/);
+    if (m) { s = m[1]; rest.unshift(m[2]); } else s = s.replace(/\.$/, "");
+    var parts = s.split(" : "), terms = [];
+    if (parts.length < 2) return null;
+    for (var i = 0; i < parts.length; i++) {
+      var q = parts[i].match(RATIO_QTY);
+      if (!q) return null;
+      var label = q[3] || "";
+      if (/ \+ |\u2192|=|\.\s|,\s*(?:(?:ou|or)\s+)?\d|\b(?:ou|or)\s+\d/i.test(label)) return null;
+      terms.push({ pre: q[1] || "", qty: q[2], label: label });
+    }
+    return { terms: terms, note: rest.join(" \u00b7 ") };
+  }
+  function ratioHtml(raw) {
+    var p = parseRatio(raw);
+    if (!p) return '<div class="lg-f"><span class="lg-t txt"><span class="lg-q">' + esc(raw) + "</span></span></div>";
+    return '<div><div class="lg-f">' + p.terms.map(function (x, i) {
+      return (i ? '<span class="lg-sep" aria-hidden="true">:</span>' : "") + '<span class="lg-t">' +
+        (x.pre ? '<span class="lg-pre">' + esc(x.pre) + "</span>" : "") + '<span class="lg-q">' + esc(x.qty) + "</span>" +
+        (x.label ? '<span class="lg-l">' + esc(x.label) + "</span>" : "") + "</span>";
+    }).join("") + "</div>" + (p.note ? '<p class="lg-note">' + esc(p.note) + "</p>" : "") + "</div>";
+  }
 
   /* ---------- components ----------
      Open to everyone. The free version lists every component's name and summary
@@ -1264,19 +1316,38 @@
     return fmt(q.qty) + " " + w[plural ? 1 : 0];
   }
 
+  /* A plate: up to four of the component's ingredient drawings on a disc, "+n"
+     for the rest. Salt and water are never drawn (unless nothing else is). The
+     list carries no chef or restaurant: only the opened component's origin block
+     does. The free version's paid components have no record: a lock on the empty
+     plate and the summary instead of the ingredients. */
+  var PLATE_SKIP = { salt: 1, water: 1 };
   function compCard(r) {
-    var t = T(), open = !!r.rec;
-    var top = open ? r.rec.ingredients.map(function (x) { return compIngName(x.id); })
-      .filter(Boolean).slice(0, 4).map(esc).join(" · ") : "";
-    return '<article class="base-card comp-card' + (open ? "" : " comp-shut") + '" ' +
+    var t = T(), open = !!r.rec, drawn = "", names = "";
+    if (open) {
+      var all = r.rec.ingredients.map(function (x) { return x.id; }).filter(compIngName);
+      var key = all.filter(function (id) { return !PLATE_SKIP[id]; });
+      if (!key.length) key = all;
+      var shown = key.slice(0, 4), more = key.length - shown.length;
+      names = key.map(function (id) { return esc(compIngName(id)); }).join(" \u00b7 ");
+      drawn = '<span class="pl-disc n' + shown.length + '">' +
+        shown.map(function (id) { return '<img src="img/' + esc(id) + '.svg" alt="" loading="lazy">'; }).join("") +
+        (more > 0 ? '<span class="pl-more">+' + more + "</span>" : "") + "</span>";
+    } else {
+      drawn = '<span class="pl-disc shut">' + LOCK_ICON + "</span>";
+    }
+    var chips = (open ? (r.rec.texture || []).slice(0, 2).map(function (x) {
+      return '<span class="pl-chip">' + esc(t.textures[x] || x) + "</span>";
+    }).join("") : "") + (r.origin === "legendary" ? '<span class="pl-chip leg">' + esc(t.compLegendary) + "</span>" : "");
+    return '<article class="pl' + (open ? "" : " pl-shut") + '" ' +
       (open ? 'data-comp="' + esc(r.id) + '"'
-            : 'data-full aria-label="' + esc(r.name[state.lang] + " — " + t.lockedTag) + '"') +
-      ' tabindex="0" role="button">' +
-      '<p class="base-meta">' + esc(compFamilyLabel(r.family)) + compBadge(r.origin) + (open ? "" : LOCK_ICON) + "</p>" +
-      "<h3>" + esc(r.name[state.lang]) + "</h3>" +
-      '<p class="base-sum">' + esc(r.summary[state.lang]) + "</p>" +
-      (top ? '<p class="base-foot"><span class="base-ings">' + top + "</span></p>" : "") +
-      "</article>";
+            : 'data-full aria-label="' + esc(r.name[state.lang] + " \u2014 " + t.lockedTag) + '"') +
+      ' tabindex="0" role="button">' + drawn + "<div>" +
+      '<p class="pl-fam">' + esc(compFamilyLabel(r.family)) + "</p>" +
+      '<h3 class="pl-name">' + esc(r.name[state.lang]) + "</h3>" +
+      (chips ? '<div class="pl-chips">' + chips + "</div>" : "") +
+      (open ? '<p class="pl-ings">' + names + "</p>" : '<p class="pl-sum">' + esc(r.summary[state.lang]) + "</p>") +
+      "</div></article>";
   }
 
   function renderComponents() {
@@ -1302,15 +1373,11 @@
         compFamilyLabel(r.family) + " " + ings).indexOf(q) !== -1;
     });
     el("compCount").textContent = list.length === 1 ? t.compCountOne : t.compCountTpl.replace("{n}", list.length);
-    el("componentList").innerHTML = fams.map(function (f) {
-      var inFam = list.filter(function (r) { return r.family === f; }).sort(function (a, b) {
-        return a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP);
-      });
-      if (!inFam.length) return "";
-      return '<section class="comp-group"><h3 class="comp-fam">' + esc(compFamilyLabel(f)) +
-        ' <span class="kin-n">' + inFam.length + '</span></h3><div class="base-list">' +
-        inFam.map(compCard).join("") + "</div></section>";
-    }).join("") +
+    list.sort(function (a, b) {
+      return fams.indexOf(a.family) - fams.indexOf(b.family) ||
+        a.name[state.lang].localeCompare(b.name[state.lang], state.lang, CMP);
+    });
+    el("componentList").innerHTML = '<div class="pl-grid">' + list.map(compCard).join("") + "</div>" +
       (LOCKED && LK.counts.components
         ? '<button type="button" class="locked-line" data-full>' + LOCK_ICON +
           esc(t.lockedComponents.replace("{n}", fmt(LK.counts.components))) + "</button>" : "");
@@ -3206,6 +3273,11 @@
   el("componentList").addEventListener("click", function (e) {
     var card = e.target.closest("[data-comp]");
     if (card) openComp(card.getAttribute("data-comp"));
+  });
+  /* a letter of the glossary rail jumps to its section */
+  el("techRail").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-az]"), sec = b && el("techaz-" + b.getAttribute("data-az"));
+    if (sec) sec.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
   });
   el("techList").addEventListener("click", function (e) {
     var c = e.target.closest("[data-tech-card]");
