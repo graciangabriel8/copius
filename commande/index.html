@@ -10,8 +10,8 @@
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" content="#F7F6F1">
-<link rel="stylesheet" href="../css/page.css?v=264">
-<link rel="stylesheet" href="../css/pay.css?v=264">
+<link rel="stylesheet" href="../css/page.css?v=265">
+<link rel="stylesheet" href="../css/pay.css?v=265">
 </head>
 <body>
 <header>
@@ -54,7 +54,7 @@
   <div class="field">
     <label for="country"><span lang="fr">Votre pays de résidence</span><span lang="en">Your country of residence</span></label>
     <select id="country" autocomplete="country" required><option value=""></option></select>
-    <span class="hint"><span lang="fr">Copius n’est pas vendu aux personnes qui résident au Royaume-Uni ou sur l’île de Man.</span><span lang="en">Copius is not sold to people who live in the United Kingdom or the Isle of Man.</span></span>
+    <span class="hint"><span lang="fr">Copius n’est pas vendu aux personnes qui résident au Royaume-Uni, sur l’île de Man ou en Corée du Sud.</span><span lang="en">Copius is not sold to people who live in the United Kingdom, the Isle of Man or South Korea.</span></span>
   </div>
   <p class="payline"><span lang="fr">Paiement sécurisé chez Stripe&nbsp;: carte bancaire, ou Apple Pay si votre navigateur le propose.</span><span lang="en">Secure payment with Stripe: card, or Apple Pay if your browser offers it.</span></p>
   <button type="submit" class="cx"><span lang="fr">Voir le récapitulatif</span><span lang="en">Review my order</span></button>
@@ -113,8 +113,9 @@
    « Modifier » links, the CGV box and the button that asks the server for a
    Stripe Checkout page made for this order (api/order.php). Stripe's « back »
    link returns here with #retour. Copius is not sold to people living in the
-   United Kingdom or the Isle of Man (CGV 2.1): the buyer declares a country,
-   named in the page's language, and the server refuses those two too. */
+   United Kingdom, the Isle of Man or South Korea (CGV 2.1): the buyer
+   declares a country, named in the page's language, and the server refuses
+   those three too. */
 (function () {
   var M = {
     fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 5,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
@@ -122,7 +123,7 @@
       pmonthly: "5,90\u00A0€ par mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "49\u00A0€ pour un an. TVA non applicable, article 293\u00A0B du CGI.",
       email: "Indiquez une adresse e-mail valide.",
       country: "Choisissez votre pays de résidence.", choose: "Choisissez votre pays",
-      blocked: "Copius n’est pas vendu aux personnes qui résident au Royaume-Uni ou sur l’île de Man.",
+      blocked: "Copius n’est pas vendu aux personnes qui résident au Royaume-Uni, sur l’île de Man ou en Corée du Sud.",
       cgv: "Cochez la case pour accepter les conditions générales de vente.",
       mailed: "Cette adresse a déjà un abonnement en cours\u00A0: nous vous avons écrit. Rien n’a été prélevé.",
       closed: "Les commandes ne sont pas ouvertes pour le moment.",
@@ -134,7 +135,7 @@
       pmonthly: "€5.90 a month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€49 for a year. VAT not applicable, article 293 B of the French tax code.",
       email: "Enter a valid email address.",
       country: "Choose your country of residence.", choose: "Choose your country",
-      blocked: "Copius is not sold to people who live in the United Kingdom or the Isle of Man.",
+      blocked: "Copius is not sold to people who live in the United Kingdom, the Isle of Man or South Korea.",
       cgv: "Tick the box to accept the terms of sale.",
       mailed: "This address already has a subscription running: we have written to it. Nothing was charged.",
       closed: "Orders are not open at the moment.",
@@ -145,7 +146,7 @@
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
   var choose = $("choose"), review = $("review"), country = $("country");
-  var CODES = "AD AE AF AG AI AL AM AO AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GT GU GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG US UY UZ VA VC VE VG VI VN VU WF WS XK YE YT ZA ZM ZW".split(" "), BLOCKED = ["GB", "IM"];
+  var CODES = "AD AE AF AG AI AL AM AO AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GT GU GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG US UY UZ VA VC VE VG VI VN VU WF WS XK YE YT ZA ZM ZW".split(" "), BLOCKED = ["GB", "IM", "KR"];
   /* The countries in the page's language, France first, the choice kept
      across a language switch. Without Intl.DisplayNames the codes show. */
   function countries() {

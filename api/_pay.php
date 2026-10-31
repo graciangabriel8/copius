@@ -15,10 +15,11 @@ const PLANS = [
     'yearly'  => ['cents' => 4900, 'months' => 12],
 ];
 const LIVE = ['active', 'trialing', 'past_due'];
-/* Copius is not sold to consumers living in the United Kingdom or the Isle of
-   Man (CGV 2.1): UK VAT is owed there from the first sale, whatever the
-   seller's size. Jersey, Guernsey and Gibraltar are outside UK VAT. */
-const BLOCKED_COUNTRIES = ['GB', 'IM'];
+/* Copius is not sold to consumers living in the United Kingdom, the Isle of
+   Man or South Korea (CGV 2.1): VAT is owed there from the first sale to a
+   consumer, whatever the seller's size. Jersey, Guernsey and Gibraltar are
+   outside UK VAT. */
+const BLOCKED_COUNTRIES = ['GB', 'IM', 'KR'];
 const RETRY_DAYS = 7;          // a failed renewal keeps access this long (CGV 4.4)
 const EARLY_DAYS = 10;         // a cancellation takes effect at most this far ahead (CGV 9.2)
 const WITHDRAW_DAYS = 14;      // CGV 7.1

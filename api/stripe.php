@@ -93,7 +93,7 @@ function handle(string $type, array $o, ?string &$ref): string {
         }
         if (!$sub['started']) q('UPDATE subscriptions SET started = ? WHERE id = ?', [paris_date($paid), $sid]);
         /* The buyer declared a country where Copius is sold (order.php); the card
-           is the backstop. A card from the UK or the Isle of Man, or one whose
+           is the backstop. A card from a country where it is not sold, or one whose
            country cannot be read, is reported, and access opens all the same: a
            card's country is not always its holder's, and Gabriel asks the buyer
            (CGV 2.1). */
@@ -103,11 +103,11 @@ function handle(string $type, array $o, ?string &$ref): string {
             if ($cc === null) throw new RuntimeException($pi === null ? 'no payment intent' : 'no card country');
         } catch (Throwable $e) {
             $cc = null;
-            alert('cc:' . $o['id'], "The card country of invoice {$o['id']} ({$order['email']}, declared $declared) could not be read (" . describe($e) . "): check in Stripe that the card is not from the UK or the Isle of Man.");
+            alert('cc:' . $o['id'], "The card country of invoice {$o['id']} ({$order['email']}, declared $declared) could not be read (" . describe($e) . "): check in Stripe that the card is not from the UK, the Isle of Man or South Korea.");
         }
         if ($cc !== null && in_array($cc, BLOCKED_COUNTRIES, true)) {
             alert('uk:' . $o['id'], "Invoice {$o['id']} of {$order['email']} ($sid) was paid with a card from $cc; the buyer declared $declared. "
-                . 'Access is open. Ask the buyer where they live: if in the UK or the Isle of Man, cancel the subscription and refund every payment in Stripe within 14 days (CGV 2.1).');
+                . 'Access is open. Ask the buyer where they live: if in the UK, the Isle of Man or South Korea, cancel the subscription and refund every payment in Stripe within 14 days (CGV 2.1).');
         }
         if ($reason === 'subscription_create') {
             $other = q("SELECT s.id FROM subscriptions s JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND s.id <> ?
