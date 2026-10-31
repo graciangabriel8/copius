@@ -20,12 +20,12 @@ SOURCES = ROOT / "tools" / "sources.txt"
 
 def data_files():
     """The ingredient files of tools/sources.txt, in its order: every js/data-*.js
-    but the chefs, trees, bases and techniques, which hold no ingredient record."""
+    but the chefs, trees, bases, components and techniques, which hold no ingredient record."""
     out = []
     for line in SOURCES.read_text().splitlines():
         f = line.strip()
         if (f.startswith("js/data-") and f.endswith(".js") and
-                f[8:-3] not in ("chefs", "trees", "bases", "techniques")):
+                f[8:-3] not in ("chefs", "trees", "bases", "components", "techniques")):
             out.append(f)
     return out
 

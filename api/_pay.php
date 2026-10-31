@@ -15,6 +15,10 @@ const PLANS = [
     'yearly'  => ['cents' => 4900, 'months' => 12],
 ];
 const LIVE = ['active', 'trialing', 'past_due'];
+/* Copius is not sold to consumers living in the United Kingdom or the Isle of
+   Man (CGV 2.1): UK VAT is owed there from the first sale, whatever the
+   seller's size. Jersey, Guernsey and Gibraltar are outside UK VAT. */
+const BLOCKED_COUNTRIES = ['GB', 'IM'];
 const RETRY_DAYS = 7;          // a failed renewal keeps access this long (CGV 4.4)
 const EARLY_DAYS = 10;         // a cancellation takes effect at most this far ahead (CGV 9.2)
 const WITHDRAW_DAYS = 14;      // CGV 7.1
@@ -262,6 +266,16 @@ function invoice_intent(string $invoice): ?string {
         }
     }
     return null;
+}
+
+/* The country of the card behind a payment intent, as its issuer declares it
+   (Charges read; the key has no PaymentIntents read), or null when the charge
+   names none. Throws when Stripe cannot be read. */
+function card_country(string $pi): ?string {
+    [$code, $l] = stripe('GET', '/v1/charges', ['payment_intent' => $pi, 'limit' => 1]);
+    if ($code !== 200 || !$l) throw new RuntimeException("charges read $code");
+    $cc = $l['data'][0]['payment_method_details']['card']['country'] ?? null;
+    return is_string($cc) && preg_match('/^[A-Z]{2}$/', $cc) ? $cc : null;
 }
 
 /* What has been refunded on a payment, whoever issued it. Each refund is a row

@@ -10,8 +10,8 @@
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" content="#F7F6F1">
-<link rel="stylesheet" href="../css/page.css?v=244">
-<link rel="stylesheet" href="../css/pay.css?v=244">
+<link rel="stylesheet" href="../css/page.css?v=264">
+<link rel="stylesheet" href="../css/pay.css?v=264">
 </head>
 <body>
 <header>
@@ -51,6 +51,11 @@
     <input type="email" id="email" autocomplete="email" required maxlength="254">
     <span class="hint"><span lang="fr">Elle reçoit la confirmation, avec un lien et un code pour ouvrir la version complète. Pas de mot de passe.</span><span lang="en">It receives the confirmation, with a link and a code to open the full version. No password.</span></span>
   </div>
+  <div class="field">
+    <label for="country"><span lang="fr">Votre pays de résidence</span><span lang="en">Your country of residence</span></label>
+    <select id="country" autocomplete="country" required><option value=""></option></select>
+    <span class="hint"><span lang="fr">Copius n’est pas vendu aux personnes qui résident au Royaume-Uni ou sur l’île de Man.</span><span lang="en">Copius is not sold to people who live in the United Kingdom or the Isle of Man.</span></span>
+  </div>
   <p class="payline"><span lang="fr">Paiement sécurisé chez Stripe&nbsp;: carte bancaire, ou Apple Pay si votre navigateur le propose.</span><span lang="en">Secure payment with Stripe: card, or Apple Pay if your browser offers it.</span></p>
   <button type="submit" class="cx"><span lang="fr">Voir le récapitulatif</span><span lang="en">Review my order</span></button>
   <p class="msg" id="chooseMsg" role="alert"></p>
@@ -58,6 +63,7 @@
     <li>les <span data-count="ingredients">1 889</span> ingrédients de l’atlas illustré, et les <span data-count="pairings">13 208</span> accords enregistrés&#8239;;</li>
     <li><span data-count="techniques">135</span> techniques&#8239;;</li>
     <li>le labo d’accords et l’assiette&#8239;;</li>
+    <li><span data-count="components">61</span> composants, avec quantités et méthode&#8239;;</li>
     <li><span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats&#8239;;</li>
     <li><span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques.</li>
   </ul>
@@ -65,6 +71,7 @@
     <li>the <span data-count="ingredients">1 889</span> ingredients of the illustrated atlas, and the <span data-count="pairings">13 208</span> recorded pairings;</li>
     <li><span data-count="techniques">135</span> techniques;</li>
     <li>the pairing lab and the plate;</li>
+    <li><span data-count="components">61</span> components, with quantities and method;</li>
     <li><span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes;</li>
     <li><span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios.</li>
   </ul>
@@ -75,10 +82,11 @@
   <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
-    <div><dt><span lang="fr">Contenu</span><span lang="en">Contents</span></dt><dd><span lang="fr"><span data-count="ingredients">1 889</span> ingrédients, <span data-count="pairings">13 208</span> accords, <span data-count="techniques">135</span> techniques, le labo d’accords, <span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats, <span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques</span><span lang="en"><span data-count="ingredients">1 889</span> ingredients, <span data-count="pairings">13 208</span> pairings, <span data-count="techniques">135</span> techniques, the pairing lab, <span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes, <span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios</span></dd></div>
+    <div><dt><span lang="fr">Contenu</span><span lang="en">Contents</span></dt><dd><span lang="fr"><span data-count="ingredients">1 889</span> ingrédients, <span data-count="pairings">13 208</span> accords, <span data-count="techniques">135</span> techniques, le labo d’accords, <span data-count="components">61</span> composants, <span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats, <span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques</span><span lang="en"><span data-count="ingredients">1 889</span> ingredients, <span data-count="pairings">13 208</span> pairings, <span data-count="techniques">135</span> techniques, the pairing lab, <span data-count="components">61</span> components, <span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes, <span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios</span></dd></div>
     <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd id="sPrice"></dd></div>
     <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&#8239;Renoncer au contrat ici&#8239;» dans votre compte, en bas de chaque page de copius.fr, et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function in your account, at the bottom of every page of copius.fr, and in the confirmation email.</span></dd></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
+    <div><dt><span lang="fr">Pays de résidence</span><span lang="en">Country of residence</span></dt><dd id="sCountry"></dd><a class="edit" href="#country" data-edit="country"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Paiement</span><span lang="en">Payment</span></dt><dd><span lang="fr">Carte bancaire, sur la page sécurisée de Stripe (et Apple Pay quand votre navigateur le propose).</span><span lang="en">Card, on Stripe’s secure page (and Apple Pay when your browser offers it).</span></dd></div>
     <div><dt><span lang="fr">Accès</span><span lang="en">Access</span></dt><dd><span lang="fr">Dès le paiement validé, par le lien envoyé par e-mail</span><span lang="en">As soon as the payment goes through, by the link we email you</span></dd></div>
   </dl>
@@ -104,13 +112,17 @@
 /* Two steps on one page: the plan and the address, then the summary with
    « Modifier » links, the CGV box and the button that asks the server for a
    Stripe Checkout page made for this order (api/order.php). Stripe's « back »
-   link returns here with #retour. */
+   link returns here with #retour. Copius is not sold to people living in the
+   United Kingdom or the Isle of Man (CGV 2.1): the buyer declares a country,
+   named in the page's language, and the server refuses those two too. */
 (function () {
   var M = {
     fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 5,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
       yearly: "Version complète de Copius — formule annuelle\u00A0: 49\u00A0€ pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.",
       pmonthly: "5,90\u00A0€ par mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "49\u00A0€ pour un an. TVA non applicable, article 293\u00A0B du CGI.",
       email: "Indiquez une adresse e-mail valide.",
+      country: "Choisissez votre pays de résidence.", choose: "Choisissez votre pays",
+      blocked: "Copius n’est pas vendu aux personnes qui résident au Royaume-Uni ou sur l’île de Man.",
       cgv: "Cochez la case pour accepter les conditions générales de vente.",
       mailed: "Cette adresse a déjà un abonnement en cours\u00A0: nous vous avons écrit. Rien n’a été prélevé.",
       closed: "Les commandes ne sont pas ouvertes pour le moment.",
@@ -121,6 +133,8 @@
       yearly: "Copius full version, yearly plan: €49 for a year, a one-year commitment, renewed each year unless you refuse.",
       pmonthly: "€5.90 a month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€49 for a year. VAT not applicable, article 293 B of the French tax code.",
       email: "Enter a valid email address.",
+      country: "Choose your country of residence.", choose: "Choose your country",
+      blocked: "Copius is not sold to people who live in the United Kingdom or the Isle of Man.",
       cgv: "Tick the box to accept the terms of sale.",
       mailed: "This address already has a subscription running: we have written to it. Nothing was charged.",
       closed: "Orders are not open at the moment.",
@@ -130,12 +144,27 @@
   };
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
-  var choose = $("choose"), review = $("review");
+  var choose = $("choose"), review = $("review"), country = $("country");
+  var CODES = "AD AE AF AG AI AL AM AO AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GT GU GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG US UY UZ VA VC VE VG VI VN VU WF WS XK YE YT ZA ZM ZW".split(" "), BLOCKED = ["GB", "IM"];
+  /* The countries in the page's language, France first, the choice kept
+     across a language switch. Without Intl.DisplayNames the codes show. */
+  function countries() {
+    var lang = root.lang === "en" ? "en" : "fr", keep = country.value, dn = null;
+    try { dn = new Intl.DisplayNames([lang], { type: "region" }); } catch (x) {}
+    var named = CODES.map(function (c) { return [c, (dn && dn.of(c)) || c]; });
+    named.sort(function (a, b) { return a[0] === "FR" ? -1 : b[0] === "FR" ? 1 : a[1].localeCompare(b[1], lang); });
+    country.options[0].textContent = L().choose;
+    while (country.options.length > 1) country.remove(1);
+    named.forEach(function (n) { country.add(new Option(n[1], n[0])); });
+    country.value = keep;
+  }
+  function blocked() { return BLOCKED.indexOf(country.value) >= 0; }
   var backFromStripe = location.hash === "#retour";
   if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
   function plan() { return choose.querySelector("input[name=plan]:checked").value; }
   function fill() {
     $("sPlan").textContent = L()[plan()]; $("sPrice").textContent = L()["p" + plan()]; $("sEmail").textContent = $("email").value.trim();
+    $("sCountry").textContent = country.selectedIndex > 0 ? country.options[country.selectedIndex].textContent : "";
   }
   function say(el, key, err) { el.className = "msg" + (err ? " err" : ""); el.textContent = key ? L()[key] : ""; }
   function show(step) {
@@ -146,19 +175,24 @@
     a.addEventListener("click", function (e) {
       e.preventDefault(); root.lang = a.getAttribute("data-lang");
       try { localStorage.setItem("atlas-lang", root.lang); } catch (x) {}
+      countries();
       if (!review.hidden) fill();
     });
   });
+  countries();
+  country.addEventListener("change", function () { say($("chooseMsg"), blocked() ? "blocked" : "", blocked()); });
   if (backFromStripe) say($("chooseMsg"), "back");
   choose.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim())) { say($("chooseMsg"), "email", true); $("email").focus(); return; }
+    if (!country.value || blocked()) { say($("chooseMsg"), country.value ? "blocked" : "country", true); country.focus(); return; }
     say($("chooseMsg"), ""); fill(); say($("reviewMsg"), ""); show(review);
   });
   review.querySelectorAll("[data-edit]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault(); show(choose);
-      (a.getAttribute("data-edit") === "email" ? $("email") : choose.querySelector("input[name=plan]:checked")).focus();
+      var f = a.getAttribute("data-edit");
+      (f === "email" ? $("email") : f === "country" ? country : choose.querySelector("input[name=plan]:checked")).focus();
     });
   });
   /* Back from Stripe with the browser's button: the page comes back from the
@@ -172,7 +206,7 @@
     if (!$("cgv").checked) { say(msg, "cgv", true); $("cgv").focus(); return; }
     btn.disabled = true; say(msg, "wait");
     fetch("/api/order.php", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: $("email").value.trim(), plan: plan(), cgv: true, lang: root.lang === "en" ? "en" : "fr" }) })
+      body: JSON.stringify({ email: $("email").value.trim(), plan: plan(), country: country.value, cgv: true, lang: root.lang === "en" ? "en" : "fr" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return [r.status, j]; }); },
             function () { return [0, {}]; })
       .then(function (a) {
@@ -180,7 +214,7 @@
         if (s === 200 && j.url && /^https:\/\/checkout\.stripe\.com\//.test(j.url)) { location.assign(j.url); return; }
         btn.disabled = false;
         if (s === 200 && j.mailed) { say(msg, "mailed"); return; }
-        say(msg, s === 503 ? "closed" : s === 429 ? "many" : s === 400 ? "email" : "fail", true);
+        say(msg, s === 503 ? "closed" : s === 429 ? "many" : s === 403 && j.error === "country" ? "blocked" : s === 400 ? "email" : "fail", true);
       });
   });
 })();

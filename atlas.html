@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=244">
+<link rel="stylesheet" href="css/style.css?v=264">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -51,6 +51,7 @@
     <button id="tabChefs" class="view-tab" type="button" role="tab" aria-controls="chefsView"></button>
     <button id="tabTech" class="view-tab" type="button" role="tab" aria-controls="techView"></button>
     <button id="tabBases" class="view-tab" type="button" role="tab" aria-controls="basesView"></button>
+    <button id="tabComponents" class="view-tab" type="button" role="tab" aria-controls="componentsView"></button>
     <button id="tabLab" class="view-tab" type="button" role="tab" aria-controls="labView"></button>
   </nav>
 
@@ -186,7 +187,8 @@
       <select id="techGroup" data-i18n-aria="ariaGroup"></select>
       <span id="techCount" class="stats"></span>
     </div>
-    <div id="techList" class="tech-list"></div>
+    <nav id="techRail" class="az-rail" data-i18n-aria="ariaLetters"></nav>
+    <div id="techList" class="az-list"></div>
   </div>
 
   <div id="basesView" role="tabpanel" hidden>
@@ -199,7 +201,21 @@
       <select id="baseGroup" data-i18n-aria="ariaGroup"></select>
       <span id="baseCount" class="stats"></span>
     </div>
-    <div id="baseList" class="base-list"></div>
+    <div id="baseList" class="lg-list"></div>
+  </div>
+
+  <div id="componentsView" role="tabpanel" hidden>
+    <div class="chefs-head">
+      <h2 id="componentsTitle"></h2>
+      <p id="componentsHint" class="muted"></p>
+    </div>
+    <div class="chef-filters">
+      <input id="compSearch" type="search" autocomplete="off">
+      <select id="compFamily" data-i18n-aria="ariaFamilies"></select>
+      <select id="compOrigin" data-i18n-aria="origin"></select>
+      <span id="compCount" class="stats"></span>
+    </div>
+    <div id="componentList" class="comp-list"></div>
   </div>
 </main>
 
@@ -221,10 +237,10 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/i18n.js?v=244"></script>
-<script src="js/photos.js?v=244"></script>
-<script src="js/data-techniques.js?v=244"></script>
-<script src="js/free.js?v=244"></script>
+<script src="js/i18n.js?v=264"></script>
+<script src="js/photos.js?v=264"></script>
+<script src="js/data-techniques.js?v=264"></script>
+<script src="js/free.js?v=264"></script>
 <script>
   /* The full version. js/_premium.js (tools/build-free.js; never published)
      replaces the free data with all of it and sets COPIUS_PREMIUM. It loads
@@ -239,13 +255,13 @@
   (function () {
     var h = location.hostname, local = h === "localhost" || h === "127.0.0.1";
     if (local && /(?:^\?|&)full(?:=|&|$)/.test(location.search)) {
-      document.write('<script src="' + "js/" + '_premium.js?v=244"><\/script>'); return;
+      document.write('<script src="' + "js/" + '_premium.js?v=264"><\/script>'); return;
     }
     if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie))
-      document.write('<script src="' + "/api/" + 'premium.php?v=244"><\/script>');
+      document.write('<script src="' + "/api/" + 'premium.php?v=264"><\/script>');
   })();
 </script>
-<script src="js/app.js?v=244"></script>
+<script src="js/app.js?v=264"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

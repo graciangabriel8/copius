@@ -68,8 +68,9 @@ function handle(string $type, array $o, ?string &$ref): string {
         $sub = refresh_sub($sid, $order);
         $paid = (int)($o['status_transitions']['paid_at'] ?? now());
         $cents = (int)($o['amount_paid'] ?? 0);
+        $pi = invoice_intent((string)$o['id']);
         insert_once('INSERT INTO payments (invoice, subscription, amount, paid_at, payment_intent) VALUES (?, ?, ?, ?, ?)',
-            [$o['id'], $sid, $cents, $paid, invoice_intent((string)$o['id'])]);
+            [$o['id'], $sid, $cents, $paid, $pi]);
         q("UPDATE orders SET status = 'paid' WHERE id = ?", [$order['id']]);
         $reason = (string)($o['billing_reason'] ?? '');
         if ($reason !== 'subscription_create' && $reason !== 'subscription_cycle') {
@@ -91,6 +92,23 @@ function handle(string $type, array $o, ?string &$ref): string {
               [paris_date($start), paris_date($end), $cents, $sid]);
         }
         if (!$sub['started']) q('UPDATE subscriptions SET started = ? WHERE id = ?', [paris_date($paid), $sid]);
+        /* The buyer declared a country where Copius is sold (order.php); the card
+           is the backstop. A card from the UK or the Isle of Man, or one whose
+           country cannot be read, is reported, and access opens all the same: a
+           card's country is not always its holder's, and Gabriel asks the buyer
+           (CGV 2.1). */
+        $declared = is_string($meta['country'] ?? null) ? $meta['country'] : 'nothing';
+        try {
+            $cc = $pi === null ? null : card_country($pi);
+            if ($cc === null) throw new RuntimeException($pi === null ? 'no payment intent' : 'no card country');
+        } catch (Throwable $e) {
+            $cc = null;
+            alert('cc:' . $o['id'], "The card country of invoice {$o['id']} ({$order['email']}, declared $declared) could not be read (" . describe($e) . "): check in Stripe that the card is not from the UK or the Isle of Man.");
+        }
+        if ($cc !== null && in_array($cc, BLOCKED_COUNTRIES, true)) {
+            alert('uk:' . $o['id'], "Invoice {$o['id']} of {$order['email']} ($sid) was paid with a card from $cc; the buyer declared $declared. "
+                . 'Access is open. Ask the buyer where they live: if in the UK or the Isle of Man, cancel the subscription and refund every payment in Stripe within 14 days (CGV 2.1).');
+        }
         if ($reason === 'subscription_create') {
             $other = q("SELECT s.id FROM subscriptions s JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND s.id <> ?
                         AND s.status IN ('active', 'trialing', 'past_due') AND o.confirmed_at IS NOT NULL", [$order['email'], $sid])->fetch();

@@ -59,7 +59,7 @@ def main(argv):
     print("  %d ids to place" % len(tags))
     total = 0
     for f in sorted(glob.glob(os.path.join(ROOT, "js", "data-*.js"))):
-        if re.search(r'data-(chefs|trees|techniques|bases)\.js$', f):
+        if re.search(r'data-(chefs|trees|techniques|bases|components)\.js$', f):
             continue
         w, _ = apply_file(f, tags, dry)
         if w:

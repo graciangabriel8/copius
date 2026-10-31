@@ -17,7 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "og" / "copius.jpg"
 
 # Counted, never typed.
-NOT_INGREDIENTS = ("chefs", "trees", "techniques", "bases")
+NOT_INGREDIENTS = ("chefs", "trees", "techniques", "bases", "components")
 ing = set()
 for f in (ROOT / "js").glob("data-*.js"):
     if any(x in f.name for x in NOT_INGREDIENTS):
@@ -51,7 +51,8 @@ def fmt(n):
 # "strawberry": the pairings of the comparison's example.
 N = {"ingredients": len(ing), "techniques": tech, "bases": bases, "chefs": chefs,
      "free": lk["counts"]["free"], "pairings": lk["counts"]["pairings"],
-     "dishes": lk["counts"]["dishes"], "trios": lk["counts"]["trios"], "strawberry": strawberry}
+     "dishes": lk["counts"]["dishes"], "trios": lk["counts"]["trios"], "strawberry": strawberry,
+     "components": lk["counts"]["components"], "freecomponents": lk["counts"]["freeComponents"]}
 def counts(page, html, keys):
     for key in keys:
         html, k = re.subn(r'(data-count="%s">)[^<]*' % key, lambda m: m.group(1) + fmt(N[key]), html)
@@ -100,7 +101,7 @@ print("index.html counts: %d ingredients, %d techniques, %d bases, %d chefs; %d 
 # drawings are written in from the data the same way.
 order = ROOT / "commande" / "index.html"
 html = counts("commande/index.html", order.read_text(encoding="utf-8"),
-              ("ingredients", "pairings", "techniques", "chefs", "dishes", "bases", "trios"))
+              ("ingredients", "pairings", "techniques", "chefs", "dishes", "bases", "trios", "components"))
 def plate(m):
     r = recs.get(m.group(1))
     if not r or r[0] not in FAMILY or not r[3]:

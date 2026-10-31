@@ -45,7 +45,7 @@ if (!CHEFS || !CHEFS.length) { log("no chefs loaded — has data-chefs.js change
 var ING = {};
 read("tools/sources.txt").split("\n").forEach(function (l) {
   var fn = l.trim();
-  if (!/^js\/data-[a-z-]+\.js$/.test(fn) || /^js\/data-(chefs|trees|bases|techniques)\.js$/.test(fn)) return;
+  if (!/^js\/data-[a-z-]+\.js$/.test(fn) || /^js\/data-(chefs|trees|bases|components|techniques)\.js$/.test(fn)) return;
   read(fn).replace(/\{id:"([a-z0-9é-]+)",cat:"/g, function (__, id) { ING[id] = true; return ""; });
 });
 

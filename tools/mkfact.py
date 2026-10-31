@@ -21,6 +21,7 @@ a = ap.parse_args()
 # the entry, by id, from whichever data file holds it
 name = None
 for p in glob.glob(os.path.join(ROOT, "js", "data-*.js")):
+    if p.endswith("data-components.js"): continue
     t = io.open(p, encoding="utf-8").read()
     i = t.find('{id:"%s"' % a.id)
     if i < 0: continue
