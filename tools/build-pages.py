@@ -423,9 +423,14 @@ def page(i, lang, by_id, count, G):
                     for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k] and not paid)
 
     robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
-    ld = json_ld({"@context": "https://schema.org", "@type": "Thing", "name": name,
-                  "alternateName": alt_name, "description": desc, "url": here,
-                  "isPartOf": {"@type": "WebSite", "name": "Copius", "url": SITE}})
+    # The page is the CreativeWork, the ingredient what it is about: publisher and
+    # isPartOf are not properties of a bare Thing. Nokime's and the site's @id are
+    # the home page's nodes.
+    ld = json_ld({"@context": "https://schema.org", "@type": "WebPage", "url": here, "inLanguage": lang,
+                  "isPartOf": {"@type": "WebSite", "@id": SITE + "/#site", "name": "Copius", "url": SITE + "/"},
+                  "publisher": {"@type": "Organization", "@id": "https://nokime.fr/#org", "name": "Nokime",
+                                "url": "https://nokime.fr/"},
+                  "about": {"@type": "Thing", "name": name, "alternateName": alt_name, "description": desc}})
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
