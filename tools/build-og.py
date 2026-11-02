@@ -66,6 +66,17 @@ html, k = re.subn(r'content="[^"]*? ingredients, [^"]*? techniques, [^"]*? bases
                   % (fmt(len(ing)), fmt(tech), fmt(bases), fmt(chefs)), html)
 if k != 1:
     sys.exit("index.html: the og:description count line was not found")
+# The free version's size in prose, on the home page and wherever a crawler or an
+# assistant reads what Copius is, follows the same count.
+FREE_PROSE = re.compile(r"\d[\d\u202f]* (ingrédients et les techniques|ingredients and the techniques)")
+def free_prose(page, text):
+    text, k = FREE_PROSE.subn(lambda m: fmt(N["free"]) + " " + m.group(1), text)
+    if not k:
+        sys.exit("%s: the free version's size in prose was not found" % page)
+    return text
+html = free_prose("index.html", html)
+for rel in ("llms.txt", "about/index.html"):
+    (ROOT / rel).write_text(free_prose(rel, (ROOT / rel).read_text(encoding="utf-8")), encoding="utf-8")
 
 # The landing page's wall of drawings: the page chooses the ids, and everything
 # else is refreshed from the data here, so a redrawn ingredient shows there too.

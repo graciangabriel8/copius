@@ -426,7 +426,7 @@ def page(i, lang, by_id, count, G):
     # The page is the CreativeWork, the ingredient what it is about: publisher and
     # isPartOf are not properties of a bare Thing. Nokime's and the site's @id are
     # the home page's nodes.
-    ld = json_ld({"@context": "https://schema.org", "@type": "WebPage", "url": here, "inLanguage": lang,
+    ld = json_ld({"@context": "https://schema.org", "@type": "WebPage", "name": name, "url": here, "inLanguage": lang,
                   "isPartOf": {"@type": "WebSite", "@id": SITE + "/#site", "name": "Copius", "url": SITE + "/"},
                   "publisher": {"@type": "Organization", "@id": "https://nokime.fr/#org", "name": "Nokime",
                                 "url": "https://nokime.fr/"},
