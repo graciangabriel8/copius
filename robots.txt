@@ -9,5 +9,9 @@
 User-agent: *
 Allow: /
 
-# 3 763 urls, and nothing links to most of them from outside.
+# The pages meant for Google's index (tools/build-pages.py, indexed()).
 Sitemap: https://copius.fr/sitemap.xml
+# The pages kept for readers with noindex, listed so Google fetches them again and
+# reads it. Once Search Console shows them excluded, this line can go; the file
+# stays, tools/ghpages-stubs.py reads it.
+Sitemap: https://copius.fr/sitemap-noindex.xml

@@ -40,6 +40,51 @@ SITE = "https://copius.fr"
 # opens and rebuild: it is the only thing standing between these pages and Google.
 INDEXABLE = True
 
+# What Google is asked to index (3 Nov 2026). On 26 Oct copius.fr fell out of the
+# rankings site-wide with its ~4,000 templated pages still indexed; the bet is
+# fewer pages, each one the best answer for its search. In the index, in both
+# languages: every paid entry (rare ingredients the big sites barely cover, where
+# nearly every click came from), the free entries in tools/index-keep.json (the
+# ones Google ranked or clicked), the month pages and the ingredient index. The
+# English pages stay: 14-27 Oct, 519 of the 1,185 pages Google showed and most
+# top searches were English. Every other generated page stays for readers but
+# carries noindex and moves to sitemap-noindex.xml: the other free entries (the
+# common ingredients, which encyclopaedias and recipe sites own) and the dish and
+# chef pages (a few lines of facts each). A page whose twin is out of the index
+# loses its hreflang links, which would point at a page Google was told not to
+# index. EN_INDEXED False keeps only the French pages.
+EN_INDEXED = True
+INDEX_KEEP = json.loads((ROOT / "tools" / "index-keep.json").read_text())["ids"]
+
+
+def indexed(url):
+    if not INDEXABLE:
+        return False
+    p = url[len(SITE):]
+    if p.startswith("/fr/"):
+        p = p[3:]
+    elif not EN_INDEXED and re.match(r"/(i|season|dish|chef)/", p):
+        return False
+    m = re.match(r"/i/([^/]+)/$", p)
+    if m:
+        return m.group(1) not in FREE or m.group(1) in INDEX_KEEP
+    return not re.match(r"/(dish|plat|chef)/", p)
+
+
+ALTERNATE = re.compile(r'\n<link rel="alternate" hreflang="[^"]+" href="([^"]+)">')
+
+
+def put(folder, doc):
+    """Write a generated page with the index rules applied."""
+    here = "%s/%s/" % (SITE, folder.relative_to(ROOT).as_posix())
+    if not indexed(here):
+        assert doc.count('<link rel="canonical"') == 1, here
+        doc = doc.replace('<link rel="canonical"', '<meta name="robots" content="%s">\n<link rel="canonical"'
+                          % ("noindex" if INDEXABLE else "noindex,nofollow"))
+    if not all(indexed(u) for u in ALTERNATE.findall(doc)):
+        doc = ALTERNATE.sub("", doc)
+    (folder / "index.html").write_text(doc)
+
 # A month page lists only genuinely narrow seasons. Mont d'Or runs September to May
 # and the goat cheeses March to October — real seasons, but naming them as "what is
 # in season in September" says almost nothing. Three months or fewer is the window
@@ -107,6 +152,7 @@ UI = {
            "allYear": "All year", "back": "Open the atlas", "other": "En français",
            "rare": "Little known", "luxe": "Prestige",
            "tagline": "An illustrated atlas of cooking",
+           "tool": "a Nokime tool",
            "index": "All ingredients", "about": "About",
            "index_desc": "%s: all %s ingredients.",
            "count": "%d ingredients · %d families",
@@ -132,6 +178,7 @@ UI = {
            "allYear": "Toute l’année", "back": "Ouvrir l’atlas", "other": "In English",
            "rare": "Méconnu", "luxe": "Prestige",
            "tagline": "Un atlas illustré de la cuisine",
+           "tool": "un outil Nokime",
            "index": "Tous les ingrédients", "about": "À propos",
            "index_desc": "%s\u00a0: les %s ingrédients.",
            "count": "%d ingrédients · %d familles",
@@ -422,7 +469,6 @@ def page(i, lang, by_id, count, G):
     marks = "".join(' <span class="mk" title="%s">%s</span>' % (e(t[k]), s)
                     for k, s in (("rare", "✦"), ("luxe", "◆")) if i[k] and not paid)
 
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     # The page is the CreativeWork, the ingredient what it is about: publisher and
     # isPartOf are not properties of a bare Thing. Nokime's and the site's @id are
     # the home page's nodes.
@@ -437,7 +483,7 @@ def page(i, lang, by_id, count, G):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s</title>
-<meta name="description" content="%(desc)s">%(robots)s
+<meta name="description" content="%(desc)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -468,7 +514,7 @@ def page(i, lang, by_id, count, G):
 
 <footer>
   <a href="%(up)s%(idx)s">%(index)s</a> · <a href="%(up)s%(dishidx)s">%(dishes)s</a> · <a href="%(up)s%(app)s%(hash)s">%(back)s</a> · <a href="%(up)sabout/">%(about)s</a> · %(legal)s<br>
-  Copius — %(tagline)s · %(count)s
+  Copius — %(tagline)s · <a href="https://nokime.fr/">%(tool)s</a> · %(count)s
 %(fevin)s</footer>
 <script src="%(up)sjs/page.js?v=%(v)d" defer></script>
 </body>
@@ -484,8 +530,7 @@ def page(i, lang, by_id, count, G):
         "art": "%simg/%s.svg?v=%d" % (up, i["id"], VERSION),
         "alt_img": e(t["altImg"] % name),
         "lang": lang, "other": other, "name": e(name), "alt": e(alt_name),
-        "fam": e(fam), "desc": e(desc), "robots": robots,
-        "dishidx": "dish/" if lang == "en" else "fr/plat/",
+        "fam": e(fam), "desc": e(desc), "dishidx": "dish/" if lang == "en" else "fr/plat/",
         "dishes": e(DISH_UI[lang]["idx"]),
         "here": here, "there": there,
         "xdef": "%s/i/%s/" % (SITE, i["id"]),
@@ -498,7 +543,7 @@ def page(i, lang, by_id, count, G):
         "legal": legal_links(up, lang), "fevin": foot_evin(lang),
         "evin": ('<p class="alcohol-warn">%s</p>' % e(EVIN[lang])) if is_alcohol(i) else "",
         "otherlbl": e(t["other"]), "back": e(t["back"]), "index": e(t["index"]), "idx": index_href(lang),
-        "tagline": e(t["tagline"]), "count": e(t["count"] % count),
+        "tagline": e(t["tagline"]), "tool": e(t["tool"]), "count": e(t["count"] % count),
     }
 
 
@@ -711,7 +756,6 @@ def index_page(rows, lang):
         blocks.append("<h2>%s <small>%d</small></h2><p class=\"pairs\">%s</p>" % (
             e(family(cat, lang)), len(items),
             " ".join('<a%s href="%s/">%s</a>' % (lk(i), i["id"], e(i["name"][lang])) for i in items)))
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     other = "fr" if lang == "en" else "en"
     here = "%s/i/" % SITE if lang == "en" else "%s/fr/i/" % SITE
     there = "%s/fr/i/" % SITE if lang == "en" else "%s/i/" % SITE
@@ -721,7 +765,7 @@ def index_page(rows, lang):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — Copius</title>
-<meta name="description" content="%s">%s
+<meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="alternate" hreflang="%s" href="%s">
 <link rel="alternate" hreflang="%s" href="%s">
@@ -736,7 +780,7 @@ def index_page(rows, lang):
 </body>
 </html>
 """ % (lang, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
-       robots, here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
+       here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
        e(t["legend"]), "".join(blocks), e(t["tagline"]), legal_links(up, lang), foot_evin(lang).rstrip("\n"))
 
 
@@ -836,14 +880,13 @@ def dish_page(d, lang, by_id):
     year = d["year"][lang]
     years = "%s–%s" % (d["chef"]["born"], d["chef"]["died"]) if d["chef"]["died"] else str(d["chef"]["born"])
     desc = t["desc"] % (name, d["chef"]["name"])
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(name)s — %(chef)s · Copius</title>
-<meta name="description" content="%(desc)s">%(robots)s
+<meta name="description" content="%(desc)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -878,7 +921,6 @@ def dish_page(d, lang, by_id):
 """ % {
         "og": head_extra(e("%s — %s" % (name, d["chef"]["name"])), e(desc), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "robots": robots,
         "here": here, "there": there, "desc": e(desc),
         "name": e(name), "kind": e(kind),
         "year": (" · %s" % e(year)) if year != "\u2014" else "",
@@ -910,14 +952,13 @@ def dish_index(lang, by_id):
         groups.append("<h2>%s <small>%d</small></h2><p class=\"pairs\">%s</p>" % (
             e(t[kind]), len(got),
             " ".join('<a href="%s/">%s</a>' % (d["id"], e(d["name"][lang])) for d in got)))
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
-<meta name="description" content="%(lede)s">%(robots)s
+<meta name="description" content="%(lede)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -944,7 +985,7 @@ def dish_index(lang, by_id):
 """ % {
         "og": head_extra(e(t["idx"]), e(lede), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "robots": robots, "here": here, "there": there,
+        "here": here, "there": there,
         "title": e(t["idx"]), "lede": e(lede), "groups": "\n  ".join(groups),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]),
         "idx": "i/" if lang == "en" else "fr/i/",
@@ -1056,14 +1097,13 @@ def chef_page(c, lang, by_id, dish_by_id):
     nolink = '<p class="foot-evin">%s</p>\n<p class="foot-evin">%s</p>\n' % (e(t["noLink"]), e(t["noLinkStars"]))
     title = "%s, %s" % (name, role) if shared else "%s (%s), %s" % (name, years, role)
     desc = t["desc"] % (name, role, place)
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
-<meta name="description" content="%(desc)s">%(robots)s
+<meta name="description" content="%(desc)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -1097,7 +1137,7 @@ def chef_page(c, lang, by_id, dish_by_id):
 """ % {
         "og": head_extra(e(title), e(desc), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "robots": robots, "here": here, "there": there, "xdef": chef_url(c["id"], "en"),
+        "here": here, "there": there, "xdef": chef_url(c["id"], "en"),
         "title": e(title), "desc": e(desc), "name": e(name), "role": e(role),
         "facts": facts, "body": body, "locked": locked_block(gives, lang, up),
         "fix": correction_link(name, here, lang), "all": e(t["all"]),
@@ -1118,14 +1158,13 @@ def chef_index(lang):
     lede = t["idxLede"] % len(CHEFS)
     key = lambda c: unicodedata.normalize("NFD", c["name"]).encode("ascii", "ignore").decode().lower()
     names = " ".join('<a href="%s/">%s</a>' % (c["id"], e(c["name"])) for c in sorted(CHEFS, key=key))
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
-<meta name="description" content="%(lede)s">%(robots)s
+<meta name="description" content="%(lede)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -1154,7 +1193,7 @@ def chef_index(lang):
 """ % {
         "og": head_extra(e(t["idx"]), e(lede), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "robots": robots, "here": here, "there": there, "xdef": "%s/chef/" % SITE,
+        "here": here, "there": there, "xdef": "%s/chef/" % SITE,
         "title": e(t["idx"]), "lede": e(lede), "names": names,
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "idx": index_href(lang),
         "index": e(ui["index"]), "about": e(ui["about"]), "legal": legal_links(up, lang),
@@ -1215,14 +1254,13 @@ def season_page(month, lang, rows):
             e(family(cat, lang)),
             len(by_fam[cat]), chips(by_fam[cat], rel)))
 
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
-<meta name="description" content="%(lede)s">%(robots)s
+<meta name="description" content="%(lede)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -1261,7 +1299,7 @@ def season_page(month, lang, rows):
         "note": ("<p class=\"month-note\">%s</p>"
                  % e(SEASON_NOTES.get(str(month), {}).get(lang, ""))
                  if SEASON_NOTES.get(str(month), {}).get(lang) else ""),
-        "robots": robots, "here": here, "there": there,
+        "here": here, "there": there,
         "blocks": "".join(blocks) or "<p>%s</p>" % e(t["none"]), "legend": e(ui["legend"]),
         "alllbl": e(t["all"] % name), "fams": "".join(fam_blocks),
         "prevurl": url(prev_m, lang), "nexturl": url(next_m, lang),
@@ -1285,14 +1323,13 @@ def season_index(lang, rows):
            e(t["idxCount"] % sum(1 for r in rows if m in r["season"]
                                  and 0 < len(r["season"]) <= SEASON_MAX_MONTHS)))
         for m in range(1, 13))
-    robots = "" if INDEXABLE else '\n<meta name="robots" content="noindex,nofollow">'
     return """<!doctype html>
 <html lang="%(lang)s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%(title)s · Copius</title>
-<meta name="description" content="%(lede)s">%(robots)s
+<meta name="description" content="%(lede)s">
 <link rel="canonical" href="%(here)s">
 <link rel="alternate" hreflang="%(lang)s" href="%(here)s">
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
@@ -1319,8 +1356,7 @@ def season_index(lang, rows):
 """ % {
         "og": head_extra(e(t["idxTitle"]), e(t["idxLede"]), here, lang),
         "lang": lang, "other": other, "up": up, "app": APP, "v": VERSION,
-        "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "robots": robots,
-        "here": here, "there": there, "months": months, "about": e(ui["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
+        "title": e(t["idxTitle"]), "lede": e(t["idxLede"]), "here": here, "there": there, "months": months, "about": e(ui["about"]), "legal": legal_links(up, lang), "fevin": foot_evin(lang),
         "otherlbl": e(ui["other"]), "back": e(ui["back"]), "index": e(ui["index"]), "idx": index_href(lang),
     }
 
@@ -1438,6 +1474,9 @@ def main():
     I18N, CAT_ORDER = load_i18n()
     VERSION = version()
     rows, FREE = load()
+    stray = sorted(set(INDEX_KEEP) - set(FREE))
+    if stray:
+        sys.exit("tools/index-keep.json: not free entries: %s" % ", ".join(stray))
     by_id = {i["id"]: i for i in rows}
     count = (len(rows), len({i["cat"] for i in rows}))
     G = link_graph(rows)
@@ -1458,11 +1497,11 @@ def main():
         for lang in ("en", "fr"):
             out = ROOT / ("i/%s" % i["id"] if lang == "en" else "fr/i/%s" % i["id"])
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(page(i, lang, by_id, count, G))
+            put(out, page(i, lang, by_id, count, G))
             written += 1
 
-    (ROOT / "i" / "index.html").write_text(index_page(rows, "en"))
-    (ROOT / "fr" / "i" / "index.html").write_text(index_page(rows, "fr"))
+    put(ROOT / "i", index_page(rows, "en"))
+    put(ROOT / "fr" / "i", index_page(rows, "fr"))
 
     # Twelve pages built from the one field an encyclopaedia does not carry.
     shutil.rmtree(ROOT / "season", ignore_errors=True)
@@ -1473,10 +1512,10 @@ def main():
             out = (ROOT / "season" / SLUG["en"][m] if lang == "en"
                    else ROOT / "fr" / "saison" / SLUG["fr"][m])
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(season_page(m, lang, rows))
+            put(out, season_page(m, lang, rows))
             months += 1
-    (ROOT / "season" / "index.html").write_text(season_index("en", rows))
-    (ROOT / "fr" / "saison" / "index.html").write_text(season_index("fr", rows))
+    put(ROOT / "season", season_index("en", rows))
+    put(ROOT / "fr" / "saison", season_index("fr", rows))
 
     # The plates, as teasers: name, year, cook and ingredients are public.
     shutil.rmtree(ROOT / "dish", ignore_errors=True)
@@ -1487,11 +1526,11 @@ def main():
             out = (ROOT / "dish" / d["id"] if lang == "en"
                    else ROOT / "fr" / "plat" / d["id"])
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(dish_page(d, lang, by_id))
+            put(out, dish_page(d, lang, by_id))
             dishes += 1
     if DISHES:
-        (ROOT / "dish" / "index.html").write_text(dish_index("en", by_id))
-        (ROOT / "fr" / "plat" / "index.html").write_text(dish_index("fr", by_id))
+        put(ROOT / "dish", dish_index("en", by_id))
+        put(ROOT / "fr" / "plat", dish_index("fr", by_id))
 
     # The cooks, as facts pages. No ingredient page links here (v1): their
     # lastmod must not move.
@@ -1504,11 +1543,11 @@ def main():
             out = (ROOT / "chef" / c["id"] if lang == "en"
                    else ROOT / "fr" / "chef" / c["id"])
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(chef_page(c, lang, by_id, dish_by_id))
+            put(out, chef_page(c, lang, by_id, dish_by_id))
             chefs += 1
     if CHEFS:
-        (ROOT / "chef" / "index.html").write_text(chef_index("en"))
-        (ROOT / "fr" / "chef" / "index.html").write_text(chef_index("fr"))
+        put(ROOT / "chef", chef_index("en"))
+        put(ROOT / "fr" / "chef", chef_index("fr"))
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,
@@ -1527,17 +1566,23 @@ def main():
                  "%s/fr/saison/%s/" % (SITE, SLUG["fr"][m])]
     for i in rows:
         urls += ["%s/i/%s/" % (SITE, i["id"]), "%s/fr/i/%s/" % (SITE, i["id"])]
-    (ROOT / "sitemap.xml").write_text(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, d) for u, d in lastmods(urls))
-        + "</urlset>\n")
+    # The noindex pages get a sitemap of their own: Google reads a noindex only when
+    # it fetches the page again, and a fresh <lastmod> is what sends it back. It is
+    # also the list tools/ghpages-stubs.py needs beside sitemap.xml.
+    dated = lastmods(urls)
+    for name, keep in (("sitemap.xml", True), ("sitemap-noindex.xml", False)):
+        (ROOT / name).write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "".join("<url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, d) for u, d in dated if indexed(u) == keep)
+            + "</urlset>\n")
+    shown = sum(1 for u in urls if indexed(u))
 
     paid = sum(1 for i in rows if i["id"] not in FREE)
     print('{"ingredientPages": %d, "free": %d, "paid": %d, "seasonPages": %d, "dishPages": %d, '
-          '"chefPages": %d, "indexes": %d, "sitemapUrls": %d, "indexable": %s}'
+          '"chefPages": %d, "indexes": %d, "sitemapUrls": %d, "noindexUrls": %d, "indexable": %s}'
           % (written, len(rows) - paid, paid, months, dishes, chefs,
-             4 + (2 if DISHES else 0) + (2 if CHEFS else 0), len(urls),
+             4 + (2 if DISHES else 0) + (2 if CHEFS else 0), shown, len(urls) - shown,
              "true" if INDEXABLE else "false"))
     if not INDEXABLE:
         print("# every page carries noindex — flip INDEXABLE in this file when the atlas opens")

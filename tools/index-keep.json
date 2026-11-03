@@ -1,0 +1,6 @@
+{
+ "what": "Free entries whose pages stay in Google's index although the free tier is otherwise out of it (tools/build-pages.py, indexed()).",
+ "rule": "A free entry that held a best position of 15 or better on Google 1 Sept - 9 Oct, or got a click 14-27 Oct, the last days before the 26 Oct drop.",
+ "source": "Search Console, copius.fr: 1 Sept - 9 Oct, English and French merged (kairos/seo/copius-free-entries-demand-2026-10-10.md); 14-27 Oct top pages by clicks (kairos/seo/copius-lecture-2026-10-28.md). Only the most-seen entries were recorded, so a free entry outside these lists may also qualify: re-read with a full page export.",
+ "ids": ["sea-bass", "whiting", "quasi-de-veau", "halibut", "poule-a-bouillir", "john-dory", "sherry-vinegar", "zander", "jambon-de-paris"]
+}
