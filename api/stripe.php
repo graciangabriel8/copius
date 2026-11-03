@@ -98,14 +98,16 @@ function handle(string $type, array $o, ?string &$ref): string {
            card's country is not always its holder's, and Gabriel asks the buyer
            (CGV 2.1). */
         $declared = is_string($meta['country'] ?? null) ? $meta['country'] : 'nothing';
-        try {
+        /* A trial's invoice at signup charges nothing and has no payment to read:
+           the card is checked on the first invoice that charges it. */
+        if ($cents > 0) try {
             $cc = $pi === null ? null : card_country($pi);
             if ($cc === null) throw new RuntimeException($pi === null ? 'no payment intent' : 'no card country');
         } catch (Throwable $e) {
             $cc = null;
             alert('cc:' . $o['id'], "The card country of invoice {$o['id']} ({$order['email']}, declared $declared) could not be read (" . describe($e) . "): check in Stripe that the card is not from the UK, the Isle of Man or South Korea.");
         }
-        if ($cc !== null && in_array($cc, BLOCKED_COUNTRIES, true)) {
+        if ($cents > 0 && $cc !== null && in_array($cc, BLOCKED_COUNTRIES, true)) {
             alert('uk:' . $o['id'], "Invoice {$o['id']} of {$order['email']} ($sid) was paid with a card from $cc; the buyer declared $declared. "
                 . 'Access is open. Ask the buyer where they live: if in the UK, the Isle of Man or South Korea, cancel the subscription and refund every payment in Stripe within 14 days (CGV 2.1).');
         }
@@ -125,7 +127,7 @@ function handle(string $type, array $o, ?string &$ref): string {
     case 'invoice.payment_failed':
         [$sid, $order, $meta] = invoice_order($o);
         if (!$order) return $sid ? not_found($meta, "a failed invoice ({$o['id']})") : 'foreign';
-        refresh_sub($sid, $order);
+        $sub = refresh_sub($sid, $order);
         /* Stripe's retry window runs from the first attempt, made when the invoice is
            finalized (about an hour after it is drafted), not from its creation. */
         $tried = (int)($o['status_transitions']['finalized_at'] ?? $o['created'] ?? now());
@@ -136,9 +138,11 @@ function handle(string $type, array $o, ?string &$ref): string {
             [$code, $inv] = stripe('GET', '/v1/invoices/' . rawurlencode((string)$o['id']));
             if ($code !== 200 || !$inv) throw new RuntimeException("invoice read $code");
             if (($inv['status'] ?? '') !== 'paid') {
+                /* Nothing paid yet: the first charge after a free trial, whose
+                   failure keeps no access (sub_until). */
                 queue('failed', 'failed:' . $o['id'], $order['email'], $order['lang'], $order['id'],
                     ['plan' => $order['plan'], 'cents' => (int)($o['amount_due'] ?? 0), 'until' => $retry, 'ref' => $order['id'],
-                     'pay' => (string)($inv['hosted_invoice_url'] ?? '')]);
+                     'pay' => (string)($inv['hosted_invoice_url'] ?? ''), 'trial' => (int)($sub['amount'] ?? 0) === 0]);
                 $ref = $order['id'];
             }
         }

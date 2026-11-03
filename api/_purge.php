@@ -20,6 +20,7 @@ if (cfg('payment_tables')) {
         'purge_payments' => fn() => purge_payments(),
         'stripe_retries' => fn() => pending_stripe_calls($T0 + 60),
         'notices' => fn() => renewal_notices(),
+        'trials' => fn() => trial_reminders(),
         'outbox' => fn() => send_outbox(20, $T0 + 140),
         /* Mails that gave up are reported here, through OVH's mail, not ours,
            once a day: OVH turns a task off after 10 failed runs in a row, which

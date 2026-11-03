@@ -11,6 +11,9 @@ no tokens, no limits, no database. The real endpoints are in DESIGN.md
   verify   200 sets both cookies; nocookie answers 200 and sets none; else that status
   premium  bundle (js/_premium.js, built locally) or ended | noaccess | unavailable | down
   me       the status me.php answers (200); access 1 or 0
+  preview.php answers from api/_preview.json; hit.php prints its event and answers 204
+  order.php prints its body; an address with « used » in it gets the 409 of a
+  trial already had, any other the 503 of sales closed (no Stripe here)
 """
 import http.server, json, pathlib, sys, urllib.parse
 
@@ -53,11 +56,21 @@ class Stub(http.server.SimpleHTTPRequestHandler):
                 return self.answer(int(MODE["me"]))
             me = {"email": "prof@ac-lyon.fr", "access": MODE["access"] == "1"}
             return self.answer(200, json.dumps(me).encode())
+        if u.path == "/api/preview.php":
+            pv = json.loads((ROOT / "api" / "_preview.json").read_text())
+            ids = pv.get(urllib.parse.parse_qs(u.query).get("id", [""])[0], [])[:3]
+            return self.answer(200, json.dumps({"ids": ids}).encode())
         return super().do_GET()
 
     def do_POST(self):
-        self.rfile.read(int(self.headers.get("Content-Length") or 0))
+        body = self.rfile.read(int(self.headers.get("Content-Length") or 0))
         path = urllib.parse.urlparse(self.path).path
+        if path == "/api/order.php":
+            print("order", body.decode("utf-8", "replace"), flush=True)
+            o = json.loads(body or b"{}")
+            if "used" in str(o.get("email", "")) and o.get("trial") != 0:
+                return self.answer(409, json.dumps({"error": "offer", "trial": 0, "used": True}).encode())
+            return self.answer(503, b"{}")
         if path == "/api/login.php":
             return self.answer(int(MODE["login"]), b'{"ok":true}')
         if path == "/api/verify.php":
@@ -65,6 +78,9 @@ class Stub(http.server.SimpleHTTPRequestHandler):
             return self.answer(200 if v == "nocookie" else int(v), b"{}", cookies=SET if v == "200" else ())
         if path == "/api/logout.php":
             return self.answer(204, cookies=CLEAR)
+        if path == "/api/hit.php":
+            print("hit", urllib.parse.urlparse(self.path).query, flush=True)
+            return self.answer(204)
         self.answer(404)
 
 

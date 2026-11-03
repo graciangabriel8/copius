@@ -193,6 +193,30 @@ else {
     if (!FREE[i.id] && quoted[i.id]) errors.push("js/free.js: paid id \"" + i.id + "\" in its INGREDIENTS");
   });
 }
+// api/_preview.json (tools/build-free.js) is all of the pairings a visitor
+// without access can ask for: free entries only, at most three ids each, real
+// pairings, never a drink on either side, three or more left out.
+var APPJS = read("js/app.js"), PV = JSON.parse(read("api/_preview.json")), VP = {};
+function idList(name) {
+  var m = new RegExp("var " + name + " = \\[([\\s\\S]*?)\\];").exec(APPJS), s = {};
+  if (!m) errors.push("js/app.js: no " + name); else (m[1].match(/"[a-z0-9-]+"/g) || []).forEach(function (q) { s[q.slice(1, -1)] = 1; });
+  return s;
+}
+var NAD = idList("NOT_A_DRINK"), DEL = idList("DRINKS_ELSEWHERE");
+function drink(x) { return (x.cat === "cellar" && !NAD[x.id]) || !!DEL[x.id]; }
+INGREDIENTS.forEach(function (i) { VP[i.id] = VP[i.id] || {};
+  (i.pairs || []).forEach(function (p) { VP[i.id][p] = 1; VP[p] = VP[p] || {}; VP[p][i.id] = 1; }); });
+Object.keys(PV).forEach(function (id) {
+  var l = PV[id];
+  if (!FREE[id]) errors.push("api/_preview.json: " + id + " is not free");
+  else if (drink(byIdV[id])) errors.push("api/_preview.json: " + id + " is a drink");
+  if (!Array.isArray(l) || !l.length || l.length > 3) { errors.push("api/_preview.json: " + id + ": 1 to 3 ids"); return; }
+  if (Object.keys(VP[id] || {}).length - l.length < 3) errors.push("api/_preview.json: " + id + ": fewer than 3 pairings left locked");
+  l.forEach(function (p) {
+    if (!byIdV[p] || !VP[id][p]) errors.push("api/_preview.json: " + id + ": " + p + " is not one of its pairings");
+    else if (drink(byIdV[p])) errors.push("api/_preview.json: " + id + ": " + p + " is a drink");
+  });
+});
 // Jekyll publishes the repo: every source but the techniques (free, and loaded
 // as is) is excluded by path, and the techniques are not.
 var excluded = {}, inExclude = false;
@@ -262,6 +286,7 @@ log("components: " + COMPONENTS.length + " (" + FREE_COMP_IDS.length + " free)")
 log("trees: " + TREES.length + " (" + branchCount + " branches)");
 log("js/free.js: " + freeRecs.length + " records for " + FREE_IDS.length + " free ids, " +
     (INGREDIENTS.length - FREE_IDS.length) + " paid ids kept out");
+log("api/_preview.json: " + Object.keys(PV).length + " samples");
 
 if (errors.length) {
   log("\n" + errors.length + " error(s):");

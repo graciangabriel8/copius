@@ -1,8 +1,11 @@
 <?php
-/* POST {email, plan, country, cgv: true, lang}: the order, then a Stripe Checkout
-   Session made for it, server-side (DESIGN-PAYMENT.md section 1). Answers
-   {url} to go and pay, or {mailed: true} when the address already subscribes;
-   403 {error: country} for a buyer living where Copius is not sold. */
+/* POST {email, plan, country, cgv: true, lang, trial}: the order, then a Stripe
+   Checkout Session made for it, server-side (DESIGN-PAYMENT.md section 1).
+   Answers {url} to go and pay, or {mailed: true} when the address already
+   subscribes; 403 {error: country} for a buyer living where Copius is not sold;
+   409 {error: offer, trial, used} when the free trial the page showed (trial, in
+   days) is not the one this address gets, so the buyer reads the right one
+   before paying. */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -46,11 +49,25 @@ if ($live) {
     exit;
 }
 
+/* One free trial per address (CGV 4.5): an address that ever subscribed, trial
+   or not, starts paying on the day; « used » tells the page which it is. Like
+   « mailed » above, the answer says whether an address subscribed before. */
+$trial = max(0, (int)cfg('trial_days'));
+$used = $trial && q('SELECT 1 FROM subscriptions WHERE email = ? LIMIT 1', [$addr])->fetch();
+if ($used) $trial = 0;
+if (($in['trial'] ?? 0) !== $trial) { json_out(409, ['error' => 'offer', 'trial' => $trial, 'used' => (bool)$used]); log_api('offer'); exit; }
+
 $id = bin2hex(random_bytes(16));
 q('INSERT INTO orders (id, email, plan, lang, cgv_version, cgv_at, created) VALUES (?, ?, ?, ?, ?, ?, ?)',
   [$id, $addr, $plan, $lang, (string)cfg('cgv_version'), now(), now()]);
 
 $t = PAY_TEXT[$lang];
+/* The trial ends $trial days to the second after the payment page is done, and
+   the first charge comes then: the date is today's plus the trial, or a day
+   later for a page finished after midnight, never earlier than said. */
+$submit = $trial
+    ? strtr($t['submit_trial_' . $plan], ['{n}' => (string)$trial, '{d}' => fmt_date(paris_date(now() + $trial * 86400), $lang)])
+    : $t['submit_' . $plan];
 [$code, $s] = stripe('POST', '/v1/checkout/sessions', [
     'mode' => 'subscription',
     /* Card only (CGV 4.2, his call 4 Oct 2026), whatever methods the account shared with
@@ -65,7 +82,11 @@ $t = PAY_TEXT[$lang];
     'customer_email' => $addr,
     'client_reference_id' => $id,
     'metadata' => ['order' => $id, 'country' => $country],
-    'subscription_data' => ['metadata' => ['order' => $id, 'country' => $country]],
+    'subscription_data' => ['metadata' => ['order' => $id, 'country' => $country]]
+        + ($trial ? ['trial_period_days' => $trial] : []),
+    /* The card is taken at signup even when nothing is due today (Stripe's own
+       default, said aloud): the trial converts by itself unless cancelled. */
+    'payment_method_collection' => 'always',
     'locale' => $lang,
     /* The euro price only, whatever the card (CGV 4.1, « aucun autre frais »), whatever the
        account-wide Dashboard setting. The string, as http_build_query turns false into 0. */
@@ -73,7 +94,7 @@ $t = PAY_TEXT[$lang];
     'success_url' => cfg('origin') . '/merci/',
     'cancel_url' => cfg('origin') . '/commande/#retour',
     'expires_at' => now() + 3600,
-    'custom_text' => ['submit' => ['message' => nb($t['submit_' . $plan], $lang)]],
+    'custom_text' => ['submit' => ['message' => nb($submit, $lang)]],
 ], 'order:' . $id);
 $url = is_array($s) ? (string)($s['url'] ?? '') : '';
 if ($code !== 200 || !preg_match('#^https://#', $url) || !is_string($s['id'] ?? null)) {

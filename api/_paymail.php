@@ -15,11 +15,24 @@ const PAY_TEXT = [
         'plan_yearly' => 'Version complète de Copius — formule annuelle : 49 € pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.',
         'submit_monthly' => '5,90 € par mois, sans durée minimale, renouvelé chaque mois jusqu’à résiliation. Vous pouvez vous rétracter pendant 14 jours.',
         'submit_yearly' => '49 € pour un an, engagement d’un an, reconduit chaque année sauf refus de votre part. Vous pouvez vous rétracter pendant 14 jours.',
+        'submit_trial_monthly' => '{n} jours gratuits : rien n’est prélevé aujourd’hui. Sans résiliation avant le {d}, 5,90 € seront prélevés ce jour-là, puis chaque mois, sans durée minimale. Vous pouvez vous rétracter pendant 14 jours à compter d’aujourd’hui.',
+        'submit_trial_yearly' => '{n} jours gratuits : rien n’est prélevé aujourd’hui. Sans résiliation avant le {d}, 49 € seront prélevés ce jour-là pour un an ferme, puis l’abonnement est reconduit chaque année sauf refus de votre part. Vous pouvez vous rétracter pendant 14 jours à compter d’aujourd’hui.',
         'vat' => 'TVA non applicable, article 293 B du CGI',
         'signin' => 'Me connecter',
         'signin_note' => 'Ce lien est valable 15 minutes et ne sert qu’une fois. Ensuite, demandez-en un nouveau sur copius.fr avec cette adresse.',
         'confirm_subject' => 'Copius : confirmation de votre abonnement',
         'confirm_lead' => 'Merci : votre abonnement à la version complète de Copius est confirmé. Connectez-vous pour y accéder dès maintenant.',
+        'confirm_lead_trial' => 'Merci : votre abonnement à la version complète de Copius est confirmé, et ses premiers jours sont gratuits. Connectez-vous pour y accéder dès maintenant.',
+        'trial_line' => 'Essai gratuit jusqu’au {d} : rien n’est prélevé avant',
+        'first' => 'Premier paiement',
+        'trial_cancel' => 'Pour ne rien payer, résiliez avant le {d} avec la fonction [[« Résilier votre contrat »|{u}]] : l’abonnement prend fin avec l’essai et rien n’est prélevé. Nous vous le rappellerons deux jours avant.',
+        'year_one_trial' => 'La première année, qui commence au premier paiement, est un engagement ferme : une résiliation pendant cette année prend effet à sa fin. Avant chaque reconduction, nous vous écrivons, entre trois mois et un mois avant la date limite, pour vous rappeler que vous pouvez la refuser.',
+        'tend_subject' => 'Copius : votre essai gratuit se termine le {d}',
+        'tend_lead' => 'Votre essai gratuit de la version complète de Copius (référence {r}) se termine le {d}. Sans résiliation d’ici là, {a} seront prélevés ce jour-là sur la carte enregistrée, {then}.',
+        'tend_then_monthly' => 'puis chaque mois, sans durée minimale',
+        'tend_then_yearly' => 'pour un an ferme, puis chaque année sauf refus de votre part',
+        'tend_keep' => 'Vous voulez continuer ? Rien à faire.',
+        'tend_stop' => 'Vous préférez arrêter ? Résiliez avant le {d} avec la fonction [[« Résilier votre contrat »|{u}]] : rien ne sera prélevé.',
         'confirm_box' => 'Ce que vous avez souscrit :',
         'ref' => 'Référence de l’abonnement',
         'price_paid' => 'Prix payé',
@@ -38,6 +51,8 @@ const PAY_TEXT = [
         'failed_lead' => 'Le paiement de {a} pour le renouvellement de votre abonnement (référence {r}) n’a pas abouti. Nous le tenterons à nouveau dans les prochains jours.',
         'failed_keep' => 'Vous gardez l’accès à la version complète jusqu’au {d}. Sans paiement d’ici là, l’abonnement prend fin, sans aucun frais.',
         'failed_pay' => 'Payer avec une autre carte',
+        'failed_lead_trial' => 'Votre essai gratuit est terminé, et le premier paiement de {a} pour votre abonnement (référence {r}) n’a pas abouti. Nous le tenterons à nouveau dans les prochains jours.',
+        'failed_keep_trial' => 'En attendant, l’accès à la version complète est suspendu : il revient dès que le paiement passe. Sans paiement d’ici le {d}, l’abonnement prend fin, sans aucun frais.',
         'cack_subject' => 'Copius : accusé de réception de votre résiliation',
         'cack_lead' => 'Nous avons bien reçu, le {at}, votre demande de résiliation :',
         'cack_lead_nomatch' => 'Nous avons bien reçu, le {at}, une demande de résiliation pour la référence {r}, envoyée avec cette adresse.',
@@ -84,11 +99,24 @@ const PAY_TEXT = [
         'plan_yearly' => 'Copius full version, yearly plan: €49 for a year, a one-year commitment, renewed each year unless you refuse.',
         'submit_monthly' => '€5.90 a month, no minimum term, renewed each month until you cancel. You may withdraw within 14 days.',
         'submit_yearly' => '€49 for a year, a one-year commitment, renewed each year unless you refuse. You may withdraw within 14 days.',
+        'submit_trial_monthly' => '{n} days free: nothing is charged today. Unless you cancel before {d}, €5.90 will be charged that day, then every month, with no minimum term. You may withdraw within 14 days from today.',
+        'submit_trial_yearly' => '{n} days free: nothing is charged today. Unless you cancel before {d}, €49 will be charged that day for a firm year, then the subscription renews each year unless you refuse. You may withdraw within 14 days from today.',
         'vat' => 'VAT not applicable, article 293 B of the French tax code',
         'signin' => 'Sign me in',
         'signin_note' => 'This link is valid once, for 15 minutes. After that, ask for a new one on copius.fr with this address.',
         'confirm_subject' => 'Copius: your subscription is confirmed',
         'confirm_lead' => 'Thank you: your subscription to the full version of Copius is confirmed. Sign in to use it right away.',
+        'confirm_lead_trial' => 'Thank you: your subscription to the full version of Copius is confirmed, and its first days are free. Sign in to use it right away.',
+        'trial_line' => 'Free trial until {d}: nothing is charged before then',
+        'first' => 'First payment',
+        'trial_cancel' => 'To pay nothing, cancel before {d} with the [[“Cancel your contract”|{u}]] function: the subscription ends with the trial and nothing is charged. We will remind you two days before.',
+        'year_one_trial' => 'The first year, which starts with the first payment, is a firm commitment: cancelling during that year takes effect at its end. Before each renewal, we write to you, between three months and one month before the deadline, to remind you that you may refuse it.',
+        'tend_subject' => 'Copius: your free trial ends on {d}',
+        'tend_lead' => 'Your free trial of the full version of Copius (reference {r}) ends on {d}. Unless you cancel by then, {a} will be charged that day to the card on file, {then}.',
+        'tend_then_monthly' => 'then every month, with no minimum term',
+        'tend_then_yearly' => 'for a firm year, then each year unless you refuse',
+        'tend_keep' => 'Want to carry on? Nothing to do.',
+        'tend_stop' => 'Rather stop? Cancel before {d} with the [[“Cancel your contract”|{u}]] function: nothing will be charged.',
         'confirm_box' => 'What you subscribed to:',
         'ref' => 'Subscription reference',
         'price_paid' => 'Price paid',
@@ -107,6 +135,8 @@ const PAY_TEXT = [
         'failed_lead' => 'The payment of {a} renewing your subscription (reference {r}) did not go through. We will try again over the next few days.',
         'failed_keep' => 'You keep the full version until {d}. Without a payment by then, the subscription ends, at no cost.',
         'failed_pay' => 'Pay with another card',
+        'failed_lead_trial' => 'Your free trial is over, and the first payment of {a} for your subscription (reference {r}) did not go through. We will try again in the coming days.',
+        'failed_keep_trial' => 'Until then, the full version is paused: it comes back as soon as the payment goes through. Without a payment by {d}, the subscription ends, at no cost.',
         'cack_subject' => 'Copius: acknowledgement of your cancellation',
         'cack_lead' => 'We received your cancellation request on {at}:',
         'cack_lead_nomatch' => 'We received, on {at}, a cancellation request for reference {r}, sent with this address.',
@@ -199,7 +229,8 @@ function pay_mail(array $row): ?array {
         $subject = $t['confirm_subject'];
         $r = (string)$row['ref'];
         $b[] = ['p', $t['hello']];
-        $b[] = ['p', $f('confirm_lead')];
+        $trial = (int)$p['cents'] === 0;              // a free trial's €0 first invoice
+        $b[] = ['p', $f($trial ? 'confirm_lead_trial' : 'confirm_lead')];
         [$link, $code] = signin_link((string)$row['to_addr'], $lang);
         $b[] = ['btn', $t['signin'], $link];
         $b[] = ['small', $f('signin_note')];
@@ -208,16 +239,18 @@ function pay_mail(array $row): ?array {
         $b[] = ['box', [
             $f('ref') . colon($lang) . $r,
             $f('plan_' . $p['plan']),
-            $f('price_paid') . colon($lang) . $money((int)$p['cents']) . ' (' . $t['vat'] . ')',
+            $trial ? $f('trial_line', ['{d}' => fmt_date($p['next'], $lang)])
+                   : $f('price_paid') . colon($lang) . $money((int)$p['cents']) . ' (' . $t['vat'] . ')',
             $f('start') . colon($lang) . fmt_date($p['started'], $lang),
-            $f('next') . colon($lang) . fmt_date($p['next'], $lang) . ', ' . $money(PLANS[$p['plan']]['cents']),
+            $f($trial ? 'first' : 'next') . colon($lang) . fmt_date($p['next'], $lang) . ', ' . $money(PLANS[$p['plan']]['cents']) . ($trial ? ' (' . $t['vat'] . ')' : ''),
             $f('accepted', ['{at}' => fmt_at((int)$p['cgv_at'], $lang), '{v}' => fmt_date((string)$p['cgv'], $lang)]),
         ]];
         $b[] = ['p', $t['bye']];
         /* What the law asks the confirmation to carry (L221-13), whole but quiet:
            after a rule, in the small type, every word kept. */
         $b[] = ['rule'];
-        if ($p['plan'] === 'yearly') $b[] = ['small', $f('year_one')];
+        if ($trial) $b[] = ['small', $f('trial_cancel', ['{d}' => fmt_date($p['next'], $lang), '{u}' => "$o/resilier/#r=$r"])];
+        if ($p['plan'] === 'yearly') $b[] = ['small', $f($trial ? 'year_one_trial' : 'year_one')];
         $b[] = ['small', $f('withdraw', ['{d}' => fmt_date(withdraw_deadline($p['started']), $lang), '{u}' => "$o/renoncer/#r=$r"])];
         $b[] = ['small', $f('cancel_any', ['{u}' => "$o/resilier/#r=$r"])];
         $b[] = ['small', $f('keep')];
@@ -239,8 +272,9 @@ function pay_mail(array $row): ?array {
     case 'failed':
         $subject = $t['failed_subject'];
         $b[] = ['p', $t['hello']];
-        $b[] = ['p', $f('failed_lead', ['{a}' => $money((int)$p['cents']), '{r}' => $p['ref']])];
-        $b[] = ['p', $f('failed_keep', ['{d}' => fmt_date($p['until'], $lang)])];
+        $tr = !empty($p['trial']);
+        $b[] = ['p', $f($tr ? 'failed_lead_trial' : 'failed_lead', ['{a}' => $money((int)$p['cents']), '{r}' => $p['ref']])];
+        $b[] = ['p', $f($tr ? 'failed_keep_trial' : 'failed_keep', ['{d}' => fmt_date($p['until'], $lang)])];
         if (preg_match('#^https://[\x21-\x7e]+$#', (string)($p['pay'] ?? ''))) $b[] = ['btn', $t['failed_pay'], $p['pay']];
         break;
     case 'cancel_ack':
@@ -299,6 +333,15 @@ function pay_mail(array $row): ?array {
         $b[] = ['p', $f('wack_done')];
         if ((int)$p['refund'] > 0) $b[] = ['p', $f('refund', ['{a}' => $money((int)$p['refund']),
             '{d}' => fmt_date(add_days(date('Y-m-d', (int)$p['at']), 14), $lang)])];
+        break;
+    case 'trial_end':
+        $d = fmt_date((string)$p['end'], $lang);
+        $subject = $f('tend_subject', ['{d}' => $d]);
+        $b[] = ['p', $t['hello']];
+        $b[] = ['p', $f('tend_lead', ['{r}' => $p['ref'], '{d}' => $d, '{a}' => $money((int)$p['cents']), '{then}' => $t['tend_then_' . $p['plan']]])];
+        $b[] = ['p', $f('tend_keep')];
+        $b[] = ['p', $f('tend_stop', ['{d}' => $d, '{u}' => "$o/resilier/#r={$p['ref']}"])];
+        $bye = true;
         break;
     case 'notice':
         $subject = $f('notice_subject', ['{d}' => fmt_date($p['renews'], $lang)]);

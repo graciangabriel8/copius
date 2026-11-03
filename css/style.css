@@ -939,6 +939,13 @@ button,a,.chip,.card,.check{-webkit-tap-highlight-color:transparent}
 .locked-box .locked-price{margin:8px 0 12px}
 /* The preparations card already frames it. */
 .tw .locked-box{border:0;padding:0}
+/* The sample of a free entry's locked pairings: the real chips, then blank
+   pills standing for the rest, never readable. */
+.pv-grid{margin:4px 0 8px}
+.pv-ghosts{display:contents}
+.pv-ghost{display:inline-block;height:38px;border-radius:999px;background:var(--chip);
+  border:1px solid var(--border);opacity:.7}
+.locked-box .pv-rest{font-size:13.5px;color:var(--ink-3)}
 .modal-body h3 .lock-ico{vertical-align:-1px}
 .kin-locked{display:inline-flex;align-items:center;gap:6px;margin:8px 0 0;padding:4px 0;border:0;
   background:none;color:var(--ink-3);font-size:12.5px;text-decoration:underline;text-underline-offset:3px}

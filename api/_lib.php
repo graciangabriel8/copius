@@ -154,13 +154,14 @@ function access_for(string $addr): array {
 
 /* The last day a subscription gives access, or null when it gives none: live
    at Stripe, not withdrawn from, paid for (a failed renewal keeps its 7-day
-   retry window). An active one gets a day's grace past its paid period, so a
+   retry window; a first charge failing at the end of a free trial, nothing
+   paid yet, keeps none). An active one gets a day's grace past its paid period, so a
    renewal charged late in the evening never closes access at midnight while
    its invoice.paid is on its way. */
 function sub_until(array $s): ?string {
     if ($s['withdrawn_at'] || !$s['paid_until'] || !in_array($s['status'], ['active', 'trialing', 'past_due'], true)) return null;
     $u = (string)$s['paid_until'];
-    if ($s['status'] === 'past_due' && $s['retry_until'] && $s['retry_until'] > $u) $u = (string)$s['retry_until'];
+    if ($s['status'] === 'past_due' && $s['retry_until'] && $s['retry_until'] > $u && (int)$s['amount'] > 0) $u = (string)$s['retry_until'];
     if ($s['cancel_at']) return min($u, date('Y-m-d', (int)$s['cancel_at']));
     return $s['status'] === 'past_due' ? $u : date('Y-m-d', strtotime("$u +1 day"));
 }
@@ -172,7 +173,7 @@ function sub_until(array $s): ?string {
 function paid_until(string $addr): ?string {
     if (!cfg('payment_tables')) return null;
     $best = null;
-    foreach (q('SELECT s.status, s.paid_until, s.retry_until, s.cancel_at, s.withdrawn_at FROM subscriptions s
+    foreach (q('SELECT s.status, s.paid_until, s.retry_until, s.cancel_at, s.withdrawn_at, s.amount FROM subscriptions s
                 JOIN orders o ON o.id = s.order_id WHERE s.email = ? AND o.confirmed_at IS NOT NULL', [$addr])->fetchAll() as $s) {
         $u = sub_until($s);
         if ($u !== null && $u >= today() && ($best === null || $u > $best)) $best = $u;

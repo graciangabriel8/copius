@@ -362,14 +362,15 @@ function sub_view(?array $s, array $sub): array {
    refund in cents, the invoice refunded]. A renewal not paid
    (failing, or about to be charged) ends the subscription now, so the open
    invoice is never taken. A first-year yearly plan ends with its year whatever
-   was asked (CGV 9.3). Otherwise « early » is a date from the day of the notice
+   was asked (CGV 9.3), once its free trial is over: during the trial nothing is
+   paid and the trial's end is the period's. Otherwise « early » is a date from the day of the notice
    to ten days after, before the paid period ends, with the unused days refunded. */
 function cancel_terms(array $v, array $sub, string $choice, ?string $date, string $day): array {
     if (($v['status'] !== 'active' && $v['status'] !== 'trialing') || in_array($v['invoice_status'], ['draft', 'open'], true)) {
         return ['now', $day, 0, null];
     }
     $end = paris_date($v['end']);
-    if ($sub['plan'] === 'yearly' && $day < add_months((string)$sub['started'], 12)) return ['year_end', $end, 0, null];
+    if ($v['status'] !== 'trialing' && $sub['plan'] === 'yearly' && $day < add_months((string)$sub['started'], 12)) return ['year_end', $end, 0, null];
     if ($choice !== 'early' || !$date || $date < $day || $date > add_days($day, EARLY_DAYS) || $date >= $end) {
         return ['period_end', $end, 0, null];
     }
@@ -547,8 +548,10 @@ function finish_withdrawal(int $id): void {
    subscription notice_missed and tells Gabriel, once per deadline. */
 function renewal_notices(): void {
     $day = today();
+    /* amount > 0: a trial just converted has its trial's end as paid_until until
+       its first charge is recorded, and no notice is due for that. */
     foreach (q("SELECT * FROM subscriptions WHERE plan = 'yearly' AND status = 'active' AND cancel_at IS NULL AND withdrawn_at IS NULL
-                AND paid_until IS NOT NULL")->fetchAll() as $s) {
+                AND paid_until IS NOT NULL AND amount > 0")->fetchAll() as $s) {
         $deadline = add_days((string)$s['paid_until'], -1);
         if ($s['notice_deadline'] === $deadline && $s['notice_sent_at']) continue;
         $from = add_months($deadline, -3); $to = add_days(add_months($deadline, -1), -2);
@@ -565,6 +568,20 @@ function renewal_notices(): void {
             alert('missed:' . $s['id'] . ':' . $deadline, "No renewal notice went to {$s['email']} ({$s['id']}) by $to: " .
                 'after the renewal they may end at any time with the unused days refunded (CGV 8.2).');
         }
+    }
+}
+
+/* The reminder before a free trial converts (CGV 4.5): queued once, two days
+   before the trial's last day, for a trial still running that nobody cancelled
+   or withdrew from and whose confirmation went out. The confirmation itself
+   was the first reminder, with the same dates. */
+function trial_reminders(): void {
+    $day = today();
+    foreach (q("SELECT s.* , o.lang FROM subscriptions s JOIN orders o ON o.id = s.order_id
+                WHERE s.status = 'trialing' AND s.cancel_at IS NULL AND s.withdrawn_at IS NULL AND s.paid_until IS NOT NULL
+                AND o.confirmed_at IS NOT NULL AND s.paid_until BETWEEN ? AND ?", [$day, add_days($day, 2)])->fetchAll() as $s) {
+        queue('trial_end', 'trial:' . $s['id'], (string)$s['email'], (string)($s['lang'] ?? 'fr'), (string)$s['order_id'],
+            ['plan' => $s['plan'], 'end' => $s['paid_until'], 'cents' => PLANS[$s['plan']]['cents'], 'ref' => $s['order_id']]);
     }
 }
 

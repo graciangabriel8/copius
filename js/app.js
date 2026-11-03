@@ -26,6 +26,15 @@
      public pages the same way, so this is the one switch; config.php's
      payments_live is the server's own. */
   var PAYMENTS_LIVE = true;
+  /* The free trial, in days, 0 for none: the order page (commande/) and
+     config.php's trial_days say the same, and api/order.php refuses an order
+     whose page showed another. */
+  var TRIAL_DAYS = 7;
+  /* Counts without a cookie or an identifier (api/hit.php): which locked doors
+     get knocked on, by the hour, nothing about who knocked. */
+  function count(ev) {
+    try { if (navigator.sendBeacon) navigator.sendBeacon("/api/hit.php?e=" + ev); } catch (x) {}
+  }
   var LK = window.COPIUS_LOCKED || {};
   LK = {
     counts: LK.counts || { ingredients: 0, free: 0, paid: 0, pairings: 0, chefs: 0, dishes: 0, bases: 0, trios: 0, trees: 0, components: 0 },
@@ -991,9 +1000,9 @@
   /* What a locked section says in place of its content, and the way to the
      panel that says what the full version holds. The pairings' box, the wall
      a reel's visitor meets first, also carries the order link and its price. */
-  function lockedBox(text, order) {
+  function lockedBox(text, order, preview) {
     var t = T();
-    return '<div class="locked-box"><p>' + esc(text) + "</p>" +
+    return '<div class="locked-box"' + (preview ? ' data-preview="' + esc(preview) + '"' : "") + '><p class="lb-text">' + esc(text) + "</p>" +
       (order ? orderLine(t) : "") +
       '<button type="button" class="linkish" data-full>' + esc(t.fullMore) + "</button></div>";
   }
@@ -1002,9 +1011,36 @@
      and "coming soon". */
   function orderLine(t) {
     return PAYMENTS_LIVE
-      ? '<a class="sub-cta locked-cta" href="commande/">' + esc(t.subCta) + ' <span aria-hidden="true">→</span></a>' +
-        '<p class="locked-price">' + esc(t.fullPrice) + "</p>"
+      ? '<a class="sub-cta locked-cta" href="commande/">' + esc(ctaText(t)) + ' <span aria-hidden="true">→</span></a>' +
+        '<p class="locked-price">' + esc(offerPrice(t)) + "</p>"
       : '<p class="locked-price">' + esc(t.fullPrice) + " · " + esc(t.fullSoon) + "</p>";
+  }
+  /* The order link's words and the price under it: the trial first when there is one. */
+  function ctaText(t) { return TRIAL_DAYS ? t.trialCta.replace("{d}", TRIAL_DAYS) : t.subCta; }
+  function offerPrice(t) { return TRIAL_DAYS ? t.trialThen.replace("{d}", TRIAL_DAYS).replace("{price}", t.fullPrice) : t.fullPrice; }
+
+  /* A free entry's locked pairings show a sample: up to three of them, never a
+     drink, asked of the server one entry at a time (api/preview.php), the rest
+     as blank chips. Without an answer the box keeps its count. */
+  var previews = {};
+  function loadPreview(id) {
+    if (!previews[id]) {
+      previews[id] = fetch("/api/preview.php?id=" + encodeURIComponent(id), { credentials: "omit" })
+        .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+        .then(function (j) { return Array.isArray(j.ids) ? j.ids.filter(function (x) { return byId[x] || PAID[x]; }).slice(0, 3) : []; })
+        .catch(function () { delete previews[id]; return []; });
+    }
+    previews[id].then(function (ids) {
+      var box = el("modalBody").querySelector('[data-preview="' + id + '"]'), n = LK.pairs[id] || 0;
+      if (!box || !ids.length || n <= ids.length) return;
+      var t = T(), rest = Math.min(n - ids.length, 6), ghosts = "";
+      for (var g = 0; g < rest; g++) ghosts += '<span class="pv-ghost" style="width:' + (64 + (g * 37) % 50) + 'px"></span>';
+      box.querySelector(".lb-text").outerHTML =
+        '<p class="lb-text">' + esc(t.previewLead.replace("{k}", ids.length).replace("{n}", fmt(n))) + "</p>" +
+        '<div class="pair-grid pv-grid">' + ids.map(function (x) { return byId[x] ? pairChip(x) : compIngChip(x); }).join("") +
+          '<span class="pv-ghosts" aria-hidden="true">' + ghosts + "</span></div>" +
+        '<p class="pv-rest">' + esc(t.previewRest.replace("{r}", fmt(n - ids.length))) + "</p>";
+    });
   }
 
   function renderTree(ing) {
@@ -1117,7 +1153,7 @@
     /* Measured from the active button, which is zero-width while the panel is
        hidden — so the pill can only be placed once the panel is up. */
     paintSeg("viewTabs");
-    if (shut) { renderLockedView(v); return; }
+    if (shut) { count("locked_view"); renderLockedView(v); return; }
     if (v === "lab") { paintSeg("labModes"); paintSeg("plateModes"); }
     if (v === "chefs") renderChefs();
     if (v === "tech") renderTech();
@@ -1616,7 +1652,7 @@
         ? "<h3>" + esc(t.lockedPairsHead) + LOCK_ICON + "</h3>" +
           lockedBox(LK.pairs[i.id]
             ? t.lockedPairs.replace("{n}", fmt(LK.pairs[i.id]))
-            : t.lockedPairsNone, true)
+            : t.lockedPairsNone, true, LK.pairs[i.id] ? i.id : "")
         : "<h3>" + esc(t.pairsWith) + "</h3>" +
           pairBlock(pairs) +
           (trios.length ? "<h3>" + esc(t.inTrios) + "</h3>" + trios.map(function (tr) {
@@ -1625,6 +1661,7 @@
           }).join("") : "") +
           (LOCKED ? "" : '<button type="button" class="m-lab-btn" data-lab="' + i.id + '">' + esc(t.openLab) + "</button>"));
     el("modalBody").innerHTML = html + compUsedBlock(i.id);
+    if (LOCKED && !i.custom && LK.pairs[i.id]) loadPreview(i.id);
   }
 
   /* What the full version holds, every count read from COPIUS_LOCKED; with an
@@ -1647,7 +1684,7 @@
     }
     el("modalBody").innerHTML = head + fullRows(t) +
       '<p class="full-price"><span class="full-amount">' + esc(t.fullPrice) + "</span>" +
-        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(t.subCta) + "</a>"
+        (PAYMENTS_LIVE ? '<a class="full-order" href="commande/">' + esc(ctaText(t)) + "</a>"
           : '<span class="full-soon">' + esc(t.fullSoon) + "</span>") + "</p>" +
       '<p class="full-free">' + esc(t.fullFree.replace("{n}", fmt(c.free))) + "</p>" + signinBlock(t);
   }
@@ -1683,9 +1720,9 @@
       "<h2>" + esc(t.subTitle).replace("{price}", '<span class="amt">' + esc(t.subPrice) + "</span>") + "</h2>" +
       '<div class="sub-plans">' +
         '<article class="sub-plan sub-full"><h3>' + esc(t.fullTitle) + "</h3>" + fullRows(t) +
-          (PAYMENTS_LIVE ? '<a class="sub-cta" href="commande/">' + esc(t.subCta) + "</a>"
+          (PAYMENTS_LIVE ? '<a class="sub-cta" href="commande/">' + esc(ctaText(t)) + "</a>"
             : '<p class="full-soon sub-soon">' + esc(t.fullSoon) + "</p>") +
-          '<p class="sub-terms">' + esc(t.subTerms) + "</p></article>" +
+          '<p class="sub-terms">' + esc((TRIAL_DAYS ? t.trialTerms.replace("{d}", TRIAL_DAYS) + " " : "") + t.subTerms) + "</p></article>" +
         '<div class="sub-side">' +
           '<article class="sub-plan"><p class="sub-now">' + esc(t.subFreeNow) + "</p>" +
             "<h3>" + esc(t.subFreeTitle) + "</h3>" +
@@ -3219,7 +3256,9 @@
     var so = e.target.closest("[data-signout]");
     if (so) { signOut(so.getAttribute("data-signout") === "all", so); return; }
     var lk = e.target.closest("[data-locked]");
-    if (lk) { openItem("full", lk.getAttribute("data-locked")); return; }
+    if (lk) { count("locked_open"); openItem("full", lk.getAttribute("data-locked")); return; }
+    var oc = e.target.closest('a[href="commande/"]');
+    if (oc) count(oc.closest("[data-preview]") ? "preview_cta" : "cta");   // and the link goes on
     var fu = e.target.closest("[data-full]");
     if (fu) { openItem("full", ""); return; }
     var o = e.target.closest("[data-open]");
