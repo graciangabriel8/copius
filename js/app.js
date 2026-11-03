@@ -33,7 +33,7 @@
   /* Counts without a cookie or an identifier (api/hit.php): which locked doors
      get knocked on, by the hour, nothing about who knocked. */
   function count(ev) {
-    try { if (navigator.sendBeacon) navigator.sendBeacon("/api/hit.php?e=" + ev); } catch (x) {}
+    try { fetch("/api/hit.php?e=" + ev, { method: "POST", keepalive: true, credentials: "omit" }).catch(function () {}); } catch (x) {}
   }
   var LK = window.COPIUS_LOCKED || {};
   LK = {

@@ -12,8 +12,9 @@ no tokens, no limits, no database. The real endpoints are in DESIGN.md
   premium  bundle (js/_premium.js, built locally) or ended | noaccess | unavailable | down
   me       the status me.php answers (200); access 1 or 0
   preview.php answers from api/_preview.json; hit.php prints its event and answers 204
-  order.php prints its body; an address with « used » in it gets the 409 of a
-  trial already had, any other the 503 of sales closed (no Stripe here)
+  order.php prints its body; an address with « used » in it asking for a trial
+  gets the « mailed » answer of a trial already had, a trial other than 0 or 7
+  the 409 of a changed offer, any other the 503 of sales closed (no Stripe here)
 """
 import http.server, json, pathlib, sys, urllib.parse
 
@@ -68,8 +69,10 @@ class Stub(http.server.SimpleHTTPRequestHandler):
         if path == "/api/order.php":
             print("order", body.decode("utf-8", "replace"), flush=True)
             o = json.loads(body or b"{}")
-            if "used" in str(o.get("email", "")) and o.get("trial") != 0:
-                return self.answer(409, json.dumps({"error": "offer", "trial": 0, "used": True}).encode())
+            if o.get("trial", 0) not in (0, 7):
+                return self.answer(409, json.dumps({"error": "offer", "trial": 7}).encode())
+            if "used" in str(o.get("email", "")) and o.get("trial"):
+                return self.answer(200, json.dumps({"mailed": True}).encode())
             return self.answer(503, b"{}")
         if path == "/api/login.php":
             return self.answer(int(MODE["login"]), b'{"ok":true}')

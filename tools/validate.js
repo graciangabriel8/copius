@@ -206,16 +206,23 @@ var NAD = idList("NOT_A_DRINK"), DEL = idList("DRINKS_ELSEWHERE");
 function drink(x) { return (x.cat === "cellar" && !NAD[x.id]) || !!DEL[x.id]; }
 INGREDIENTS.forEach(function (i) { VP[i.id] = VP[i.id] || {};
   (i.pairs || []).forEach(function (p) { VP[i.id][p] = 1; VP[p] = VP[p] || {}; VP[p][i.id] = 1; }); });
+// SHOWN[x]: every pairing of x that some sample reveals, from either side.
+var SHOWN = {};
 Object.keys(PV).forEach(function (id) {
   var l = PV[id];
   if (!FREE[id]) errors.push("api/_preview.json: " + id + " is not free");
   else if (drink(byIdV[id])) errors.push("api/_preview.json: " + id + " is a drink");
   if (!Array.isArray(l) || !l.length || l.length > 3) { errors.push("api/_preview.json: " + id + ": 1 to 3 ids"); return; }
   if (Object.keys(VP[id] || {}).length - l.length < 3) errors.push("api/_preview.json: " + id + ": fewer than 3 pairings left locked");
+  l.forEach(function (p) { (SHOWN[p] = SHOWN[p] || {})[id] = 1; (SHOWN[id] = SHOWN[id] || {})[p] = 1; });
   l.forEach(function (p) {
     if (!byIdV[p] || !VP[id][p]) errors.push("api/_preview.json: " + id + ": " + p + " is not one of its pairings");
     else if (drink(byIdV[p])) errors.push("api/_preview.json: " + id + ": " + p + " is a drink");
   });
+});
+Object.keys(SHOWN).forEach(function (x) {
+  var n = Object.keys(VP[x] || {}).length, k = Object.keys(SHOWN[x]).length;
+  if (n - k < 3) errors.push("api/_preview.json: the samples together show " + k + " of " + x + "'s " + n + " pairings");
 });
 // Jekyll publishes the repo: every source but the techniques (free, and loaded
 // as is) is excluded by path, and the techniques are not.

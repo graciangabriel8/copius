@@ -10,8 +10,8 @@
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" content="#F7F6F1">
-<link rel="stylesheet" href="../css/page.css?v=267">
-<link rel="stylesheet" href="../css/pay.css?v=267">
+<link rel="stylesheet" href="../css/page.css?v=268">
+<link rel="stylesheet" href="../css/pay.css?v=268">
 </head>
 <body>
 <header>
@@ -46,8 +46,8 @@
           <span class="eq" lang="fr">21,80&nbsp;€ de moins que 12 mois à 5,90&nbsp;€</span><span class="eq" lang="en">€21.80 less than paying €5.90 for 12 months</span>
           <small lang="fr">Engagement d’un an, reconduite chaque année sauf refus de votre part.</small>
           <small lang="en">A one-year commitment, renewed each year unless you refuse.</small>
-          <small class="trial-on" lang="fr">7&nbsp;jours gratuits&#8239;; l’année d’engagement commence au premier paiement.</small>
-          <small class="trial-on" lang="en">7 days free; the year’s commitment starts at the first payment.</small></span></label>
+          <small class="trial-on" lang="fr">7&nbsp;jours gratuits&#8239;; l’année d’engagement commence à la fin de l’essai.</small>
+          <small class="trial-on" lang="en">7 days free; the year’s commitment starts when the trial ends.</small></span></label>
     </div>
   </fieldset>
 
@@ -89,7 +89,7 @@
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Contenu</span><span lang="en">Contents</span></dt><dd><span lang="fr"><span data-count="ingredients">1 889</span> ingrédients, <span data-count="pairings">13 208</span> accords, <span data-count="techniques">135</span> techniques, le labo d’accords, <span data-count="components">61</span> composants, <span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats, <span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques</span><span lang="en"><span data-count="ingredients">1 889</span> ingredients, <span data-count="pairings">13 208</span> pairings, <span data-count="techniques">135</span> techniques, the pairing lab, <span data-count="components">61</span> components, <span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes, <span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios</span></dd></div>
     <div class="trial-on"><dt><span lang="fr">Essai gratuit</span><span lang="en">Free trial</span></dt><dd id="sTrial"></dd></div>
-    <div><dt><span lang="fr">Prix payé</span><span lang="en">Price paid</span></dt><dd id="sPrice"></dd></div>
+    <div><dt><span lang="fr">Prix</span><span lang="en">Price</span></dt><dd id="sPrice"></dd></div>
     <div><dt><span lang="fr">Rétractation</span><span lang="en">Withdrawal</span></dt><dd><span lang="fr">Vous pouvez vous rétracter pendant 14 jours (article 7 des conditions générales de vente), avec remboursement intégral, grâce à la fonction «&#8239;Renoncer au contrat ici&#8239;» dans votre compte, en bas de chaque page de copius.fr, et dans l’e-mail de confirmation.</span><span lang="en">You may withdraw within 14 days (article 7 of the terms of sale), with a full refund, through the “Withdraw from contract here” function in your account, at the bottom of every page of copius.fr, and in the confirmation email.</span></dd></div>
     <div><dt><span lang="fr">Adresse e-mail</span><span lang="en">Email</span></dt><dd id="sEmail"></dd><a class="edit" href="#email" data-edit="email"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Pays de résidence</span><span lang="en">Country of residence</span></dt><dd id="sCountry"></dd><a class="edit" href="#country" data-edit="country"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
@@ -127,17 +127,16 @@
     fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 5,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
       yearly: "Version complète de Copius — formule annuelle\u00A0: 49\u00A0€ pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.",
       pmonthly: "5,90\u00A0€ par mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "49\u00A0€ pour un an. TVA non applicable, article 293\u00A0B du CGI.",
-      tmonthly: "5,90\u00A0€ par mois, prélevés pour la première fois le {d}, puis chaque mois. TVA non applicable, article 293\u00A0B du CGI.",
-      tyearly: "49\u00A0€ pour un an ferme, prélevés le {d}, puis chaque année sauf refus de votre part. TVA non applicable, article 293\u00A0B du CGI.",
+      tmonthly: "5,90\u00A0€ par mois, prélevés pour la première fois à la fin de l’essai, puis chaque mois. TVA non applicable, article 293\u00A0B du CGI.",
+      tyearly: "49\u00A0€ pour un an ferme, prélevés à la fin de l’essai, puis chaque année sauf refus de votre part. TVA non applicable, article 293\u00A0B du CGI.",
       trial: "{n}\u00A0jours, jusqu’au {d}\u00A0: rien n’est prélevé avant. Pour ne rien payer, résiliez avant le {d} avec la fonction «\u202FRésilier votre contrat\u202F», dont le lien est dans l’e-mail de confirmation\u202F; nous vous le rappelons deux jours avant. Un essai par adresse e-mail.",
       access: "Dès le paiement validé, par le lien envoyé par e-mail", taccess: "Dès la commande validée sur la page de Stripe, par le lien envoyé par e-mail",
-      offerNone: "Cette adresse a déjà profité d’un essai gratuit\u00A0: l’abonnement commence aujourd’hui, au prix ci-dessus. Vérifiez, puis continuez.",
-      offerTrial: "L’offre a changé\u202F: vérifiez le récapitulatif, puis continuez.",
+      offerTrial: "L’offre a changé\u00A0: vérifiez le récapitulatif, puis continuez.",
       email: "Indiquez une adresse e-mail valide.",
       country: "Choisissez votre pays de résidence.", choose: "Choisissez votre pays",
       blocked: "Copius n’est pas vendu aux personnes qui résident au Royaume-Uni, sur l’île de Man ou en Corée du Sud\u00A0: la TVA y serait due dès la première vente. Vous habitez ailleurs\u202F? Choisissez votre pays dans la liste.",
       cgv: "Cochez la case pour accepter les conditions générales de vente.",
-      mailed: "Cette adresse a déjà un abonnement en cours\u00A0: nous vous avons écrit. Rien n’a été prélevé.",
+      mailed: "Nous avons écrit à cette adresse\u00A0: la suite est dans le message. Rien n’a été prélevé.",
       closed: "Les commandes ne sont pas ouvertes pour le moment.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La page de paiement n’a pas pu s’ouvrir. Réessayez dans un instant\u202F; rien n’a été prélevé.", wait: "Ouverture de la page de paiement…",
@@ -145,17 +144,16 @@
     en: { monthly: "Copius full version, monthly plan: €5.90 a month, no minimum term, renewed each month until you cancel.",
       yearly: "Copius full version, yearly plan: €49 for a year, a one-year commitment, renewed each year unless you refuse.",
       pmonthly: "€5.90 a month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€49 for a year. VAT not applicable, article 293 B of the French tax code.",
-      tmonthly: "€5.90 a month, first charged on {d}, then every month. VAT not applicable, article 293 B of the French tax code.",
-      tyearly: "€49 for a firm year, charged on {d}, then each year unless you refuse. VAT not applicable, article 293 B of the French tax code.",
+      tmonthly: "€5.90 a month, first charged when the trial ends, then every month. VAT not applicable, article 293 B of the French tax code.",
+      tyearly: "€49 for a firm year, charged when the trial ends, then each year unless you refuse. VAT not applicable, article 293 B of the French tax code.",
       trial: "{n} days, until {d}: nothing is charged before then. To pay nothing, cancel before {d} with the “Cancel your contract” function, linked from the confirmation email; we remind you two days before. One trial per email address.",
       access: "As soon as the payment goes through, by the link we email you", taccess: "As soon as the order is confirmed on Stripe’s page, by the link we email you",
-      offerNone: "This address has already had a free trial: the subscription starts today, at the price above. Check it, then go on.",
       offerTrial: "The offer has changed: check the summary, then go on.",
       email: "Enter a valid email address.",
       country: "Choose your country of residence.", choose: "Choose your country",
       blocked: "Copius is not sold to people who live in the United Kingdom, the Isle of Man or South Korea: VAT would be due there from the first sale. Live somewhere else? Pick your country from the list.",
       cgv: "Tick the box to accept the terms of sale.",
-      mailed: "This address already has a subscription running: we have written to it. Nothing was charged.",
+      mailed: "We have written to this address: the next step is in that email. Nothing was charged.",
       closed: "Orders are not open at the moment.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The payment page could not open. Try again in a moment; nothing was charged.", wait: "Opening the payment page…",
@@ -165,10 +163,11 @@
   var L = function () { return M[root.lang] || M.fr; };
   var choose = $("choose"), review = $("review"), country = $("country");
   /* The free trial in days, as config.php's trial_days says: order.php answers
-     409 with its own figure when they differ, or when this address had one. */
-  var TRIAL = 7;
+     409 with its own figure when they differ. The link mailed to an address
+     that already had one opens the page without it (#sans-essai). */
+  var TRIAL = location.hash === "#sans-essai" ? 0 : 7;
   /* Counts without a cookie or an identifier (api/hit.php). */
-  function count(ev) { try { if (navigator.sendBeacon) navigator.sendBeacon("/api/hit.php?e=" + ev); } catch (x) {} }
+  function count(ev) { try { fetch("/api/hit.php?e=" + ev, { method: "POST", keepalive: true, credentials: "omit" }).catch(function () {}); } catch (x) {} }
   /* The day the trial ends and the first charge comes, in Paris, as the
      server says it (api/order.php). */
   function trialEnd() {
@@ -256,7 +255,7 @@
         if (s === 200 && j.mailed) { say(msg, "mailed"); return; }
         if (s === 403 && j.error === "country") { show(choose); say($("chooseMsg"), "blocked", true); country.focus(); return; }
         if (s === 409 && j.error === "offer" && typeof j.trial === "number") {
-          TRIAL = j.trial; applyTrial(); fill(); say(msg, j.used ? "offerNone" : "offerTrial", true); return;
+          TRIAL = j.trial; applyTrial(); fill(); say(msg, "offerTrial", true); return;
         }
         say(msg, s === 503 ? "closed" : s === 429 ? "many" : s === 400 ? "email" : "fail", true);
       });

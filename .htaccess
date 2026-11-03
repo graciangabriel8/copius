@@ -16,6 +16,7 @@ ErrorDocument 404 /404.html
 # without mod_rewrite; the rewrite rules below cover the same names at any depth.
 RedirectMatch 404 "^/(\.git|\.github|\.claude|tools|docs)(/.*)?$"
 RedirectMatch 404 "^/([._][^/]*|PLAN-[^/]*\.md|ROADMAP\.md|CNAME)$"
+RedirectMatch 404 "^/api/[._]"
 
 # The full version's data sits in js/ beside the six files the public atlas loads
 # (Copius locked it on 25 Sept 2026; _config.yml keeps it off Pages by path). Here

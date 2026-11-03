@@ -2,10 +2,11 @@
 /* POST {email, plan, country, cgv: true, lang, trial}: the order, then a Stripe
    Checkout Session made for it, server-side (DESIGN-PAYMENT.md section 1).
    Answers {url} to go and pay, or {mailed: true} when the address already
-   subscribes; 403 {error: country} for a buyer living where Copius is not sold;
-   409 {error: offer, trial, used} when the free trial the page showed (trial, in
-   days) is not the one this address gets, so the buyer reads the right one
-   before paying. */
+   subscribes or asks for a second free trial (the mail says which, the page
+   never learns it); 403 {error: country} for a buyer living where Copius is not
+   sold; 409 {error: offer, trial} when the free trial the page showed (trial, in
+   days, 0 for none) is neither none nor the one on offer, so the buyer reads
+   the right one before paying. */
 declare(strict_types=1);
 require __DIR__ . '/_lib.php';
 require __DIR__ . '/_mail.php';
@@ -49,13 +50,24 @@ if ($live) {
     exit;
 }
 
-/* One free trial per address (CGV 4.5): an address that ever subscribed, trial
-   or not, starts paying on the day; « used » tells the page which it is. Like
-   « mailed » above, the answer says whether an address subscribed before. */
-$trial = max(0, (int)cfg('trial_days'));
-$used = $trial && q('SELECT 1 FROM subscriptions WHERE email = ? LIMIT 1', [$addr])->fetch();
-if ($used) $trial = 0;
-if (($in['trial'] ?? 0) !== $trial) { json_out(409, ['error' => 'offer', 'trial' => $trial, 'used' => (bool)$used]); log_api('offer'); exit; }
+/* The free trial (CGV 4.5): the page sends the days it showed, 0 for an order
+   without one (a page from before the trial sends nothing: 0). One trial per
+   address: one that ever subscribed, trial or not, is told by mail, at most
+   once a day, how to subscribe without it; the page gets the same answer as for
+   a live subscription, so it never learns which. */
+$offer = max(0, (int)cfg('trial_days'));
+$trial = $in['trial'] ?? 0;
+if ($trial !== 0 && $trial !== $offer) { json_out(409, ['error' => 'offer', 'trial' => $offer]); log_api('offer'); exit; }
+if ($trial && q('SELECT 1 FROM subscriptions WHERE email = ? LIMIT 1', [$addr])->fetch()) {
+    $h = substr(hash('sha256', $addr), 0, 32);
+    queue('trial_used', 'trial_used:' . $h . ':' . today(), $addr, $lang, 'u:' . $h, []);
+    json_out(200, ['mailed' => true]);
+    log_api('trial_used');
+    ignore_user_abort(true);
+    if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
+    send_outbox(5, $T0 + 140, 'u:' . $h);
+    exit;
+}
 
 $id = bin2hex(random_bytes(16));
 q('INSERT INTO orders (id, email, plan, lang, cgv_version, cgv_at, created) VALUES (?, ?, ?, ?, ?, ?, ?)',

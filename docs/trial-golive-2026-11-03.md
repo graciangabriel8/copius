@@ -13,6 +13,20 @@ Check in **test mode** (no live change, no cost): create a subscription Checkout
   1. our own review button becomes the binding one (« Commander avec obligation de paiement »), Stripe's page only takes the card; CGV 5.1 and 5.2 change again;
   2. ship the paywall preview and the counter without the trial (`trial_days` 0, CGV of 31 Oct stays).
 
+## 0b. Blocker: the payment spec has no trial
+
+DESIGN-PAYMENT.md outranks the code and says nothing of a trial. Where the branch departs from it, for his sign-off as spec owner (the spec is not edited to match):
+
+- §2 access: a first charge failing at a trial's end keeps no access and no 7-day retry window (`sub_until`, `amount` 0).
+- §5 hourly job: a new step, `trial_reminders`, with alerts `trial_late` and `trial_missed`.
+- §6 mails: new `trial_end`, `trial_used`, and the trial variants of the confirmation, failed and cancel mails; `trial_end` closes with « Bonne lecture ».
+- §1 order input: `trial` (days shown, 0 for none); answers 409 `offer` and `mailed` for an address that already subscribed.
+- §9 /merci/: « Votre commande est validée. »
+
+## 0c. Blocker: no rig probe covers the trial yet
+
+`copius-rig/probes-pay.sh` has none for: the retry window closed when `amount` is 0, the first-year rule skipped while trialing, the card-country check only when `cents` > 0, the 409 `offer` and the `trial_used` mail, `trial_reminders` and its two alerts, the `amount` > 0 filter in `renewal_notices`. Each goes red with its guard removed before the push. PHP lints clean (rig's php -l, 3 Nov).
+
 ## 1. config.php, just before the push
 
 - `trial_days` => 7
@@ -40,5 +54,6 @@ No other Stripe setting changes: the trial is set per Checkout Session by api/or
 
 ## Rollback
 
-- Trial only: `trial_days` => 0. The page then gets a 409 « l'offre a changé », shows the no-trial price and charges on the day; the static « 7 jours gratuits » copy stays, so a full rollback is the revert below.
-- Everything: revert the branch's commits on main, push, `cgv_version` back to '2026-10-31'.
+There is no trial-only rollback: `trial_days` 0 alone would leave « 7 jours gratuits » on the home page, the atlas and the order page for an offer nobody gets.
+
+- Revert the branch's commits on main, push, `cgv_version` back to '2026-10-31'.

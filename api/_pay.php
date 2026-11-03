@@ -236,7 +236,7 @@ function send_outbox(int $limit, float $deadline, ?string $only = null): int {
    failing. Set their attempts back to 0 in phpMyAdmin once the cause is fixed,
    or delete them. */
 function stuck_mail(): int {
-    return (int)q("SELECT COUNT(*) FROM outbox WHERE sent_at IS NULL AND attempts >= ? AND kind <> 'already'
+    return (int)q("SELECT COUNT(*) FROM outbox WHERE sent_at IS NULL AND attempts >= ? AND kind NOT IN ('already', 'trial_used')
                    AND ref NOT LIKE 'c:%' AND ref NOT LIKE 'w:%'", [OUTBOX_TRIES])->fetchColumn();
 }
 
@@ -573,15 +573,26 @@ function renewal_notices(): void {
 
 /* The reminder before a free trial converts (CGV 4.5): queued once, two days
    before the trial's last day, for a trial still running that nobody cancelled
-   or withdrew from and whose confirmation went out. The confirmation itself
-   was the first reminder, with the same dates. */
+   or withdrew from (a cancellation still on its way to Stripe included) and
+   whose confirmation went out. The confirmation itself was the first reminder,
+   with the same dates. One queued less than two days before the end, or a
+   trial that converted with none queued (the hourly job down all along), is an
+   alert: CGV 4.5 promised it. */
 function trial_reminders(): void {
     $day = today();
     foreach (q("SELECT s.* , o.lang FROM subscriptions s JOIN orders o ON o.id = s.order_id
                 WHERE s.status = 'trialing' AND s.cancel_at IS NULL AND s.withdrawn_at IS NULL AND s.paid_until IS NOT NULL
+                AND NOT EXISTS (SELECT 1 FROM cancellations c WHERE c.subscription = s.id)
                 AND o.confirmed_at IS NOT NULL AND s.paid_until BETWEEN ? AND ?", [$day, add_days($day, 2)])->fetchAll() as $s) {
+        if ($s['paid_until'] < add_days($day, 2) && !q('SELECT 1 FROM outbox WHERE dedupe = ?', ['trial:' . $s['id']])->fetch())
+            alert('trial_late:' . $s['id'], "The trial reminder to {$s['email']} ({$s['id']}) goes out less than two days before {$s['paid_until']} (CGV 4.5).");
         queue('trial_end', 'trial:' . $s['id'], (string)$s['email'], (string)($s['lang'] ?? 'fr'), (string)$s['order_id'],
             ['plan' => $s['plan'], 'end' => $s['paid_until'], 'cents' => PLANS[$s['plan']]['cents'], 'ref' => $s['order_id']]);
+    }
+    foreach (q("SELECT s.id, s.email FROM subscriptions s WHERE s.status IN ('active', 'past_due') AND s.started >= ?
+                AND EXISTS (SELECT 1 FROM payments p WHERE p.subscription = s.id AND p.amount = 0)", [add_days($day, -21)])->fetchAll() as $s) {
+        if (!q('SELECT 1 FROM outbox WHERE dedupe = ?', ['trial:' . $s['id']])->fetch())
+            alert('trial_missed:' . $s['id'], "The free trial of {$s['email']} ({$s['id']}) converted with no reminder sent (CGV 4.5).");
     }
 }
 
@@ -614,7 +625,7 @@ function pending_stripe_calls(float $deadline): void {
 function purge_payments(): void {
     $n = now(); $five = strtotime('-5 years', $n); $ten = mktime(0, 0, 0, 1, 1, (int)date('Y', $n) - 10);
     q("DELETE FROM orders WHERE status = 'pending' AND created < ? AND id NOT IN (SELECT order_id FROM subscriptions)", [$n - 30 * 86400]);
-    q("DELETE FROM outbox WHERE kind IN ('already', 'failed', 'alert') AND sent_at < ?", [$n - 30 * 86400]);
+    q("DELETE FROM outbox WHERE kind IN ('already', 'trial_used', 'failed', 'alert') AND sent_at < ?", [$n - 30 * 86400]);
     foreach (q('SELECT id, order_id FROM subscriptions WHERE ended_at IS NOT NULL AND ended_at < ?', [$five])->fetchAll() as $s) {
         tx(function () use ($s) {
             foreach (['cancellations', 'withdrawals'] as $t) q("DELETE FROM $t WHERE subscription = ?", [$s['id']]);
