@@ -5,20 +5,27 @@
 # hosting's name, kept out of this public file and out of the log); a second deploy of the same `live` changes nothing.
 # A refused call is red at once, whatever the site shows. Once OVH took it, the files the move changed and the front
 # pages are compared with the site: the run is green only when every one comes out as committed (a deleted one as a
-# 404) once SETTLE has passed, so a deploy that breaks the site goes red too, and red if one is still off WAIT after
-# the call.
-import hashlib, http.client, json, os, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
+# 404 or a redirect) and the full version's data still answers 404, once SETTLE has passed since OVH took the call, so
+# a deploy that breaks the site or opens the paid files goes red too, and red if one is still off WAIT after that.
+import hashlib, http.client, json, os, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 
 API = "https://eu.api.ovh.com/1.0"
 SITE = "https://copius.fr/"
-WAIT, SETTLE, EVERY, TRIES, GAP = 12 * 60, 3 * 60, 15, 6, 30
+# ASSUMED ASK = 6 min: how long OVH takes to deploy the whole site is unknown. The checks take 2 to 4 minutes, so ASK
+# and WAIT together stay inside the job's 25.
+WAIT, SETTLE, EVERY, ASK, GAP = 12 * 60, 3 * 60, 15, 6 * 60, 30
 LOOK = 12
 # What the site never serves as is: .htaccess answers 404 for tools/, docs/ and any name starting with . or _ at any
-# depth, the PHP under api/ is not what the site sends, and api/card.php answers social/'s cards only on their days.
-NOT_SERVED = ("tools/", "docs/", "api/", "social/")
+# depth, and the PHP under api/ is not what the site sends.
+NOT_SERVED = ("tools/", "docs/", "api/")
+# api/card.php answers social/'s cards only on their days (.htaccess); social/reels/ is served as committed.
+CARD = re.compile(r"social/[a-z0-9-]+(\.2)?\.jpg")
 # js/ answers 404 for anything else, the full version's data above all (.htaccess, PUBLISHED_JS in tools/validate.js).
 PUBLIC_JS = ("js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js")
-SERVED = (".html", ".css", ".js", ".xml", ".json", ".txt", ".svg", ".png", ".jpg", ".webp", ".ico", ".mp4", ".woff2")
+# One of each family of those files, asked every run: if one answers, paid content is public.
+LOCKED = ("js/data-meat.js", "js/trios-premium.js", "js/plate.js")
+# No .mp4: a reel is 12 MB on every pass, and social/reels.json and the covers land with it.
+SERVED = (".html", ".css", ".js", ".xml", ".json", ".txt", ".svg", ".png", ".jpg", ".webp", ".ico", ".pdf", ".woff2")
 # Loaded on every visit, and rewritten by every version bump.
 FRONT = ("index.html", "atlas.html", "css/style.css", "js/app.js", "js/i18n.js", "service-worker.js")
 # What a deploy task can be once OVH took it; `cancelled` is the other value in OVH's schema.
@@ -28,8 +35,8 @@ NET = (urllib.error.URLError, OSError, http.client.HTTPException)
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, *args):   # a redirect would carry the signed headers to another address
-        return None
+    def redirect_request(self, *args):   # a redirect would carry the signed headers to another address, and a retired
+        return None                      # page's redirect would read as its target's bytes
 
 
 def git(*args):
@@ -79,15 +86,14 @@ def deploy():
         return "the OVH_* secrets are not set, so no deploy was asked"
     # Bounded, and a second deploy changes nothing: a blip, a 5xx, or a 409, OVH's answer while another deployment runs,
     # which may have started before `live` moved.
-    for attempt in range(TRIES):
+    deadline = time.time() + ASK
+    while True:
         answer = ask_once(keys)
         if answer is None:
             return None
-        if not answer[1]:
-            break
-        if attempt + 1 < TRIES:
-            time.sleep(GAP)
-    return answer[0]
+        if not answer[1] or time.time() >= deadline:
+            return answer[0]
+        time.sleep(GAP)
 
 
 def fetch(path):
@@ -96,7 +102,7 @@ def fetch(path):
     url = SITE + urllib.parse.quote(path[:-len("index.html")] if path.endswith("index.html") else path)
     req = urllib.request.Request(url + "?deploy=%d" % time.time_ns(), headers={"Cache-Control": "no-cache"})
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with urllib.request.build_opener(NoRedirect).open(req, timeout=20) as r:
             return r.read()
     except urllib.error.HTTPError as e:
         return e.code
@@ -112,23 +118,33 @@ def committed(path):
 
 
 def served(path):
-    if path.startswith(NOT_SERVED) or any(part[0] in "._" for part in path.split("/")):
+    if path.startswith(NOT_SERVED) or CARD.fullmatch(path) or any(part[0] in "._" for part in path.split("/")):
         return False
     return path in PUBLIC_JS if path.startswith("js/") else path.endswith(SERVED)
+
+
+def landed(path, got):
+    want = expected[path]
+    return got == want or (want == 404 and isinstance(got, int) and 300 <= got < 400)
 
 
 def files():
     # The checkout's origin/live is the old `live`, fetched before the move, so the diff lists what the move changed.
     # On a re-run or a dispatch `live` already was this commit, and the commit's own changes stand in (deploy.yml
-    # fetches live two commits deep for this). Bounded: LOOK files from the move, then the front pages.
+    # fetches live two commits deep for this). Bounded: LOOK files from the move, first to last, then the front pages.
     base = "refs/remotes/origin/live"
     if git("rev-parse", base) == git("rev-parse", "HEAD"):
         base = "HEAD^"
     names = [os.fsdecode(n) for n in git("diff", "-z", "--name-only", "--no-renames", base, "HEAD").split(b"\0")]
     moved = [p for p in names if p and served(p)]
+    if not moved:
+        print("::warning::this push changed no file the run can compare, so green only means OVH took the call and the "
+              "site still answers: OVH's deployment history is the proof")
+    picks = moved
     if len(moved) > LOOK:
-        print("%d changed files, comparing the first %d" % (len(moved), LOOK))
-    return {p: committed(p) for p in moved[:LOOK] + [p for p in FRONT if p not in moved[:LOOK]]}
+        print("%d changed files, comparing %d from first to last" % (len(moved), LOOK))
+        picks = [moved[i * (len(moved) - 1) // (LOOK - 1)] for i in range(LOOK)]
+    return {**{p: committed(p) for p in picks + [p for p in FRONT if p not in picks]}, **{p: 404 for p in LOCKED}}
 
 
 picked = None
@@ -138,23 +154,26 @@ except (subprocess.CalledProcessError, OSError) as e:
     # Comparing is only how the run checks the deploy: the deploy is still asked for, then the run is red.
     picked = "the files to compare could not be picked (%s)" % type(e).__name__
 
-asked = time.time()
 problem = deploy()
 if problem or picked:
     print("::error::" + "; ".join(filter(None, (problem, picked))))
     sys.exit(1)
 
+asked = time.time()   # after any asking again, which must not eat the window that catches a deploy breaking the site
 while True:
     last = {p: fetch(p) for p in expected}
-    pending = [p for p in expected if last[p] != expected[p]]
+    pending = [p for p in expected if not landed(p, last[p])]
     waited = time.time() - asked
     if (not pending and waited >= SETTLE) or waited > WAIT:
         break
     time.sleep(EVERY)
 if pending:
-    def says(r):
-        return "no answer" if r is None else "HTTP %d" % r if isinstance(r, int) else "another copy"
+    def says(p):
+        r = last[p]
+        if r is None or isinstance(r, int):
+            return "no answer" if r is None else "HTTP %d" % r
+        return "the file itself, not a 404" if expected[p] == 404 else "another copy"
     print("::error::%d minutes after the deploy, copius.fr still answers %s" % (
-        WAIT // 60, ", ".join("%s with %s" % (p, says(last[p])) for p in pending)))
+        WAIT // 60, ", ".join("%s with %s" % (p, says(p)) for p in pending)))
     sys.exit(1)
 print("copius.fr serves this commit's " + ", ".join(expected))
