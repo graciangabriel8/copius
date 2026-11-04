@@ -1,7 +1,8 @@
 # Every push to main runs tools/check.py. Only when it passes does this workflow move the branch `live` to that
-# commit; OVH deploys `live` (its Git link points at that branch), and GitHub's own webhook tells it when `live`
-# moves. A red check leaves `live`, so the site, on the last good version. Pushes keep going to main as before.
-# OVH only accepts notifications from GitHub's servers, so the deploy cannot be called from here directly.
+# commit; OVH deploys `live` (its Git link points at that branch). tools/ovh-deploy.py then asks OVH's API for that
+# deploy and waits until copius.fr serves the new files, because OVH can refuse GitHub's webhook for hours and a
+# refused notice left the site old under a green run. A red check leaves `live`, so the site, on the last good
+# version. Pushes keep going to main as before.
 # `live` only moves forward along main (GitHub's API refuses anything else, so the clone here needs no history);
 # if main's history were ever rewritten, the move is refused and the run is red. `live` is created once by hand.
 # Runs queue rather than cancel each other; a run whose commit is no longer main's newest stands down and lets
@@ -20,14 +21,17 @@ permissions:
 jobs:
   check-and-promote:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - name: Fetch live (the checks compare css/ and js/ with it)
-        run: git fetch --depth=1 --no-tags origin live:refs/remotes/origin/live
+        # Two commits deep: on a re-run live is this commit, and depth 1 would cut its parent, which
+        # tools/ovh-deploy.py then compares it with.
+        run: git fetch --depth=2 --no-tags origin live:refs/remotes/origin/live
       - name: Checks
         run: python3 tools/check.py
       - name: Move live to this commit (OVH deploys live)
+        id: promote
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -37,3 +41,12 @@ jobs:
           if [ "$head" != "$GITHUB_SHA" ]; then echo "main has moved on to $head; that newer run promotes it"; exit 0; fi
           gh api -X PATCH "repos/$GITHUB_REPOSITORY/git/refs/heads/live" -f sha="$GITHUB_SHA" -F force=false --silent
           echo "live is now $GITHUB_SHA"
+          echo "moved=true" >> "$GITHUB_OUTPUT"
+      - name: Deploy live on OVH, then wait until copius.fr serves it
+        if: steps.promote.outputs.moved == 'true'
+        env:
+          OVH_APP_KEY: ${{ secrets.OVH_APP_KEY }}
+          OVH_APP_SECRET: ${{ secrets.OVH_APP_SECRET }}
+          OVH_CONSUMER_KEY: ${{ secrets.OVH_CONSUMER_KEY }}
+          OVH_SERVICE: ${{ secrets.OVH_SERVICE }}
+        run: python3 tools/ovh-deploy.py
