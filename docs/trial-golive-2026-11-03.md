@@ -4,7 +4,7 @@ Branch `paywall-trial`. Nothing here has been run against live Stripe or OVH.
 
 ## 0. The button that binds (settled)
 
-The CGV (5.1) and the law (L. 221-14 al. 2) need the button that binds the buyer to name the duty to pay. With `trial_period_days`, Stripe Checkout labels its button « Démarrer la période d'essai », which does not say a payment follows, so our own review button is the binding one: « Commander avec obligation de paiement ». It places the order; Stripe's page only carries it out by taking the card, and its button adds no commitment. Leaving that page without giving a card cancels the order at no cost. Stripe's own button stays on screen, so the drafting reduces the risk that a buyer calls it the validating function and does not remove it: this reading of the law has had no lawyer's check.
+The CGV (5.1) and the law (L. 221-14 al. 2) need the button that binds the buyer to name the duty to pay. With `trial_period_days`, Stripe Checkout labels its button « Démarrer la période d'essai », which does not say a payment follows, so our own review button is the binding one: « Commander avec obligation de paiement ». It places the order; Stripe's page only carries it out by taking the card, and its button adds no commitment. Leaving that page without giving a card cancels the order at no cost. Stripe's own button stays on screen, so the drafting reduces the risk that a buyer calls it the validating function and does not remove it: this reading of the law has had no lawyer's check, and he chose on 5 Nov 2026 to go without one for now, having read the terms.
 
 Read in Stripe's test mode on 5 Nov 2026 (`trial_period_days` 7, `locale` fr, `payment_method_collection` always); his choice the same day. CGV 5.1 and 5.2 of 5 Nov carry it; their sources are `docs/cgv-copius-2026-11-05-{fr,en}.md`.
 
@@ -20,7 +20,7 @@ DESIGN-PAYMENT.md outranks the code and says nothing of a trial. He signed off t
 - §1 order input: `trial` (days shown, 0 for none); answers 409 `offer` and `mailed` for an address that already subscribed.
 - §9 /merci/: « Votre commande est validée. »
 
-Found by the review on 5 Nov 2026, awaiting his sign-off:
+Found by the review and signed off the same day:
 
 - §1 order: `trialing` counts as a live subscription; the Checkout Session sets `payment_method_collection` to always.
 - §4 card check: only on an invoice that charges (`cents` > 0).
