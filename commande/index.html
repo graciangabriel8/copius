@@ -84,7 +84,7 @@
 </form>
 
 <form id="review" class="step" hidden novalidate>
-  <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de payer.</span><span lang="en">Check your order before paying.</span></p>
+  <p class="lede" tabindex="-1"><span lang="fr">Vérifiez votre commande avant de la valider.</span><span lang="en">Check your order before placing it.</span></p>
   <dl class="summary">
     <div><dt><span lang="fr">Formule</span><span lang="en">Plan</span></dt><dd id="sPlan"></dd><a class="edit" href="#plan" data-edit="plan"><span lang="fr">Modifier</span><span lang="en">Change</span></a></div>
     <div><dt><span lang="fr">Contenu</span><span lang="en">Contents</span></dt><dd><span lang="fr"><span data-count="ingredients">1 889</span> ingrédients, <span data-count="pairings">13 208</span> accords, <span data-count="techniques">135</span> techniques, le labo d’accords, <span data-count="components">61</span> composants, <span data-count="chefs">68</span> chefs et <span data-count="dishes">44</span> de leurs plats, <span data-count="bases">45</span> bases et <span data-count="trios">40</span> trios classiques</span><span lang="en"><span data-count="ingredients">1 889</span> ingredients, <span data-count="pairings">13 208</span> pairings, <span data-count="techniques">135</span> techniques, the pairing lab, <span data-count="components">61</span> components, <span data-count="chefs">68</span> chefs and <span data-count="dishes">44</span> of their dishes, <span data-count="bases">45</span> bases and <span data-count="trios">40</span> classic trios</span></dd></div>
@@ -99,10 +99,10 @@
   <label class="accept"><input type="checkbox" id="cgv">
     <span><span lang="fr">J’ai lu les <a href="../cgv/" target="_blank" rel="noopener">conditions générales de vente</a> de la version complète et je les accepte.</span><span lang="en">I have read the <a href="../cgv/" target="_blank" rel="noopener">terms of sale</a> of the full version (in French, the binding text) and I accept them.</span></span></label>
   <div class="row">
-    <button type="submit" class="cx" id="pay"><span lang="fr">Continuer vers le paiement</span><span lang="en">Continue to payment</span></button>
+    <button type="submit" class="cx" id="pay"><span lang="fr">Commander avec obligation de paiement</span><span lang="en">Order with obligation to pay</span></button>
   </div>
   <p class="msg" id="reviewMsg" role="status"></p>
-  <p class="fine"><span lang="fr">Vous validerez la commande sur la page de Stripe&#8239;; c’est ce bouton-là qui vous engage. Vendeur&nbsp;: Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130&nbsp;694&nbsp;615, RCS Saint-Étienne, +33&nbsp;6&nbsp;02&nbsp;18&nbsp;44&nbsp;19, contact@copius.fr. On vous répond sous 2 jours ouvrés. En cas de litige, vous pouvez recourir gratuitement au médiateur de la consommation&nbsp;: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span><span lang="en">You confirm the order on Stripe’s page; that button is the one that binds you. Seller: Gabriel Gracian-Leroudier, sole trader (entrepreneur individuel, EI) (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, RCS Saint-Étienne, +33 6 02 18 44 19, contact@copius.fr. We reply within 2 working days. In a dispute you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span></p>
+  <p class="fine"><span lang="fr">Ce bouton passe votre commande et vous engage à payer. La page de Stripe sert seulement à l’exécuter&nbsp;: vous y donnez votre carte. Si vous la quittez sans le faire, votre commande est annulée sans frais et vous ne devez rien. Vendeur&nbsp;: Gabriel Gracian-Leroudier, entrepreneur individuel (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, SIREN 130&nbsp;694&nbsp;615, RCS Saint-Étienne, +33&nbsp;6&nbsp;02&nbsp;18&nbsp;44&nbsp;19, contact@copius.fr. On vous répond sous 2 jours ouvrés. En cas de litige, vous pouvez recourir gratuitement au médiateur de la consommation&nbsp;: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span><span lang="en">This button places your order and binds you to pay. Stripe’s page only carries it out: you give your card there. If you leave without doing so, your order is cancelled at no cost and you owe nothing. Seller: Gabriel Gracian-Leroudier, sole trader (entrepreneur individuel, EI) (Nokime), 21 rue des Docteurs Charcot, 42100 Saint-Étienne, France, SIREN 130 694 615, RCS Saint-Étienne, +33 6 02 18 44 19, contact@copius.fr. We reply within 2 working days. In a dispute you may turn, free of charge, to the consumer mediator: CM2C, 49 rue de Ponthieu, 75008 Paris, <a href="https://www.cm2c.net" rel="noopener">cm2c.net</a>.</span></p>
 </form>
 </main>
 
@@ -118,7 +118,7 @@
 /* Two steps on one page: the plan and the address, then the summary with
    « Modifier » links, the CGV box and the button that asks the server for a
    Stripe Checkout page made for this order (api/order.php). Stripe's « back »
-   link returns here with #retour. Copius is not sold to people living in the
+   link returns here with #retour, or #retour-sans-essai. Copius is not sold to people living in the
    United Kingdom, the Isle of Man or South Korea (CGV 2.1): the buyer
    declares a country, named in the page's language, and the server refuses
    those three too. */
@@ -126,12 +126,12 @@
   var M = {
     fr: { monthly: "Version complète de Copius — formule mensuelle\u00A0: 5,90\u00A0€ par mois, sans durée minimale, renouvelée chaque mois jusqu’à résiliation.",
       yearly: "Version complète de Copius — formule annuelle\u00A0: 49\u00A0€ pour un an, engagement d’un an, reconduite chaque année sauf refus de votre part.",
-      pmonthly: "5,90\u00A0€ par mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "49\u00A0€ pour un an. TVA non applicable, article 293\u00A0B du CGI.",
+      pmonthly: "5,90\u00A0€ par mois, prélevés pour la première fois aujourd’hui, le {d}, puis chaque mois. TVA non applicable, article 293\u00A0B du CGI.", pyearly: "49\u00A0€ pour un an ferme, prélevés aujourd’hui, le {d}, puis chaque année sauf refus de votre part. TVA non applicable, article 293\u00A0B du CGI.",
       tmonthly: "5,90\u00A0€ par mois, prélevés pour la première fois à la fin de l’essai, puis chaque mois. TVA non applicable, article 293\u00A0B du CGI.",
       tyearly: "49\u00A0€ pour un an ferme, prélevés à la fin de l’essai, puis chaque année sauf refus de votre part. TVA non applicable, article 293\u00A0B du CGI.",
       trial: "{n}\u00A0jours, jusqu’au {d}\u00A0: rien n’est prélevé avant. Pour ne rien payer, résiliez avant le {d} avec la fonction «\u202FRésilier votre contrat\u202F», dont le lien est dans l’e-mail de confirmation\u202F; nous vous le rappelons deux jours avant. Un essai par adresse e-mail.",
-      access: "Dès le paiement validé, par le lien envoyé par e-mail", taccess: "Dès la commande validée sur la page de Stripe, par le lien envoyé par e-mail",
-      offerTrial: "L’offre a changé\u00A0: vérifiez le récapitulatif, puis continuez.",
+      access: "Dès le paiement validé, par le lien envoyé par e-mail", taccess: "Dès votre carte enregistrée sur la page de Stripe, par le lien envoyé par e-mail",
+      offerTrial: "L’offre a changé\u00A0: vérifiez le récapitulatif, puis validez votre commande.",
       email: "Indiquez une adresse e-mail valide.",
       country: "Choisissez votre pays de résidence.", choose: "Choisissez votre pays",
       blocked: "Copius n’est pas vendu aux personnes qui résident au Royaume-Uni, sur l’île de Man ou en Corée du Sud\u00A0: la TVA y serait due dès la première vente. Vous habitez ailleurs\u202F? Choisissez votre pays dans la liste.",
@@ -140,15 +140,15 @@
       closed: "Les commandes ne sont pas ouvertes pour le moment.",
       many: "Trop d’essais depuis cette connexion. Réessayez dans un quart d’heure.",
       fail: "La page de paiement n’a pas pu s’ouvrir. Réessayez dans un instant\u202F; rien n’a été prélevé.", wait: "Ouverture de la page de paiement…",
-      back: "Le paiement n’a pas été validé\u202F: rien n’a été prélevé. Vous pouvez reprendre votre commande." },
+      back: "Votre commande est annulée sans frais\u202F: rien n’a été prélevé et vous ne devez rien. Vous pouvez la reprendre." },
     en: { monthly: "Copius full version, monthly plan: €5.90 a month, no minimum term, renewed each month until you cancel.",
       yearly: "Copius full version, yearly plan: €49 for a year, a one-year commitment, renewed each year unless you refuse.",
-      pmonthly: "€5.90 a month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€49 for a year. VAT not applicable, article 293 B of the French tax code.",
+      pmonthly: "€5.90 a month, first charged today, {d}, then every month. VAT not applicable, article 293 B of the French tax code.", pyearly: "€49 for a firm year, charged today, {d}, then each year unless you refuse. VAT not applicable, article 293 B of the French tax code.",
       tmonthly: "€5.90 a month, first charged when the trial ends, then every month. VAT not applicable, article 293 B of the French tax code.",
       tyearly: "€49 for a firm year, charged when the trial ends, then each year unless you refuse. VAT not applicable, article 293 B of the French tax code.",
       trial: "{n} days, until {d}: nothing is charged before then. To pay nothing, cancel before {d} with the “Cancel your contract” function, linked from the confirmation email; we remind you two days before. One trial per email address.",
-      access: "As soon as the payment goes through, by the link we email you", taccess: "As soon as the order is confirmed on Stripe’s page, by the link we email you",
-      offerTrial: "The offer has changed: check the summary, then go on.",
+      access: "As soon as the payment goes through, by the link we email you", taccess: "As soon as your card is saved on Stripe’s page, by the link we email you",
+      offerTrial: "The offer has changed: check the summary, then place your order.",
       email: "Enter a valid email address.",
       country: "Choose your country of residence.", choose: "Choose your country",
       blocked: "Copius is not sold to people who live in the United Kingdom, the Isle of Man or South Korea: VAT would be due there from the first sale. Live somewhere else? Pick your country from the list.",
@@ -157,15 +157,16 @@
       closed: "Orders are not open at the moment.",
       many: "Too many tries from this connection. Try again in a quarter of an hour.",
       fail: "The payment page could not open. Try again in a moment; nothing was charged.", wait: "Opening the payment page…",
-      back: "The payment was not confirmed: nothing was charged. You can pick up your order again." }
+      back: "Your order is cancelled at no cost: nothing was charged and you owe nothing. You can pick it up again." }
   };
   var root = document.documentElement, $ = function (id) { return document.getElementById(id); };
   var L = function () { return M[root.lang] || M.fr; };
   var choose = $("choose"), review = $("review"), country = $("country");
   /* The free trial in days, as config.php's trial_days says: order.php answers
      409 with its own figure when they differ. The link mailed to an address
-     that already had one opens the page without it (#sans-essai). */
-  var TRIAL = location.hash === "#sans-essai" ? 0 : 7;
+     that already had one opens the page without it (#sans-essai), and the address
+     keeps saying so through a reload and back from Stripe. */
+  var TRIAL = /^#(retour-)?sans-essai$/.test(location.hash) ? 0 : 7;
   /* Counts without a cookie or an identifier (api/hit.php). */
   function count(ev) { try { fetch("/api/hit.php?e=" + ev, { method: "POST", keepalive: true, credentials: "omit" }).catch(function () {}); } catch (x) {} }
   /* The day the trial ends and the first charge comes, in Paris, as the
@@ -194,13 +195,13 @@
     country.value = keep;
   }
   function blocked() { return BLOCKED.indexOf(country.value) >= 0; }
-  var backFromStripe = location.hash === "#retour";
-  if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+  var backFromStripe = /^#retour/.test(location.hash);
+  if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search + (TRIAL ? "" : "#sans-essai"));
   function plan() { return choose.querySelector("input[name=plan]:checked").value; }
   function fill() {
     var d = trialEnd();
     $("sPlan").textContent = L()[plan()]; $("sEmail").textContent = $("email").value.trim();
-    $("sPrice").textContent = TRIAL ? L()["t" + plan()].replace("{d}", d) : L()["p" + plan()];
+    $("sPrice").textContent = L()[(TRIAL ? "t" : "p") + plan()].replace("{d}", d);
     $("sTrial").textContent = L().trial.replace("{n}", TRIAL).split("{d}").join(d);
     $("sAccess").textContent = TRIAL ? L().taccess : L().access;
     $("sCountry").textContent = country.selectedIndex > 0 ? country.options[country.selectedIndex].textContent : "";

@@ -104,7 +104,7 @@ $submit = $trial
        account-wide Dashboard setting. The string, as http_build_query turns false into 0. */
     'adaptive_pricing' => ['enabled' => 'false'],
     'success_url' => cfg('origin') . '/merci/',
-    'cancel_url' => cfg('origin') . '/commande/#retour',
+    'cancel_url' => cfg('origin') . '/commande/#retour' . ($trial ? '' : '-sans-essai'),
     'expires_at' => now() + 3600,
     'custom_text' => ['submit' => ['message' => nb($submit, $lang)]],
 ], 'order:' . $id);

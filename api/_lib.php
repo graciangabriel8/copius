@@ -162,7 +162,7 @@ function sub_until(array $s): ?string {
     if ($s['withdrawn_at'] || !$s['paid_until'] || !in_array($s['status'], ['active', 'trialing', 'past_due'], true)) return null;
     if ($s['status'] === 'past_due' && (int)$s['amount'] === 0) return null;
     $u = (string)$s['paid_until'];
-    if ($s['status'] === 'past_due' && $s['retry_until'] && $s['retry_until'] > $u && (int)$s['amount'] > 0) $u = (string)$s['retry_until'];
+    if ($s['status'] === 'past_due' && $s['retry_until'] && $s['retry_until'] > $u) $u = (string)$s['retry_until'];
     if ($s['cancel_at']) return min($u, date('Y-m-d', (int)$s['cancel_at']));
     return $s['status'] === 'past_due' ? $u : date('Y-m-d', strtotime("$u +1 day"));
 }

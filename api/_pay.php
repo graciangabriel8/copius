@@ -363,14 +363,15 @@ function sub_view(?array $s, array $sub): array {
    (failing, or about to be charged) ends the subscription now, so the open
    invoice is never taken. A first-year yearly plan ends with its year whatever
    was asked (CGV 9.3), once its free trial is over: during the trial nothing is
-   paid and the trial's end is the period's. Otherwise « early » is a date from the day of the notice
+   paid and the trial's end is the period's. That year runs from the trial's end
+   (CGV 8.2), so it is the paid period that began within 12 months of `started`. Otherwise « early » is a date from the day of the notice
    to ten days after, before the paid period ends, with the unused days refunded. */
 function cancel_terms(array $v, array $sub, string $choice, ?string $date, string $day): array {
     if (($v['status'] !== 'active' && $v['status'] !== 'trialing') || in_array($v['invoice_status'], ['draft', 'open'], true)) {
         return ['now', $day, 0, null];
     }
     $end = paris_date($v['end']);
-    if ($v['status'] !== 'trialing' && $sub['plan'] === 'yearly' && $day < add_months((string)$sub['started'], 12)) return ['year_end', $end, 0, null];
+    if ($v['status'] !== 'trialing' && $sub['plan'] === 'yearly' && paris_date($v['start']) < add_months((string)$sub['started'], 12)) return ['year_end', $end, 0, null];
     if ($choice !== 'early' || !$date || $date < $day || $date > add_days($day, EARLY_DAYS) || $date >= $end) {
         return ['period_end', $end, 0, null];
     }
