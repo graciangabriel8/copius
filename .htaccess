@@ -10,6 +10,9 @@ DirectoryIndex index.html
 # The 404 page uses absolute paths, so it renders at any depth.
 ErrorDocument 404 /404.html
 
+# The about page's French address, which people and assistants guess.
+RedirectMatch 301 "^/a-propos/?$" "https://copius.fr/about/"
+
 # Pages published only what Jekyll kept (see _config.yml): tools, docs, the plans,
 # and every name starting with "." or "_". Apache serves the whole checkout, the
 # .git folder included, so the same set answers 404. These two lines hold even

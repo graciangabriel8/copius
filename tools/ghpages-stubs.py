@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Write the old address's redirect pages: one per copius.fr sitemap URL, at the same path under
+"""Write the old address's redirect pages: one per URL of copius.fr's two sitemaps, at the same path under
 graciangabriel8.github.io/copius/, sending the reader (and its search ranking) to the page's new home.
 
 The site lived on GitHub Pages before copius.fr; its pages are linked from places we cannot edit. The gh-pages
 branch serves them now, and a missing path only ever got the 404 page, which redirects with a script but answers
 404, so a crawler never followed it. Each page here answers 200 with a canonical, a meta refresh and a script.
 The root page (index.html) and 404.html are the branch's own and left alone. A page there that is not one of these
-stubs is never written over, and a stub whose URL left the sitemap is removed, so the branch follows the sitemap.
+stubs is never written over, and a stub whose URL left both sitemaps is removed, so the branch follows them.
+sitemap-noindex.xml lists the pages kept for readers but out of Google's index; their old links redirect too.
 
 Run it on a checkout of the gh-pages branch after the sitemap gains URLs, then commit and push that branch:
 
@@ -20,7 +21,8 @@ MARK = "Copius a déménagé"   # every page of the old address, the stubs inclu
 if not ((OUT / ".nojekyll").is_file() and MARK in (OUT / "index.html").read_text(encoding="utf-8")):
     sys.exit("%s is not the gh-pages checkout (no .nojekyll, or no « %s » root page)" % (OUT, MARK))
 SITE = "https://copius.fr/"
-urls = re.findall(r"<loc>([^<]+)</loc>", (pathlib.Path(__file__).resolve().parent.parent / "sitemap.xml").read_text())
+REPO = pathlib.Path(__file__).resolve().parent.parent
+urls = [u for name in ("sitemap.xml", "sitemap-noindex.xml") for u in re.findall(r"<loc>([^<]+)</loc>", (REPO / name).read_text())]
 if not urls or any(not u.startswith(SITE) for u in urls): sys.exit("sitemap.xml: no URLs, or one outside %s" % SITE)
 
 PAGE = """<!doctype html>
