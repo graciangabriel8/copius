@@ -1469,9 +1469,250 @@ h3 small{text-transform:none;letter-spacing:0}
 """
 
 
+# The full fiche of one ingredient, for a message to the cook who works with it:
+# copius.fr/fiche/<slug>/, one per id of tools/fiche-ids.json. Unlisted on purpose:
+# noindex, in no sitemap, linked from no page, not in the service worker's list, and
+# with no counter, since one cook per ingredient would make a counter name who opened
+# it. These pages name no drink, no cook and no legendary component: the health
+# message every other footer carries is left out because there is nothing here for it
+# to answer. Text that would break that is dropped whole and printed, never reworded,
+# and the finished page is scanned again before it is written.
+FICHE_DRINK_WORDS = ("vin", "vins", "biere", "bieres", "cidre", "cidres", "champagne", "cognac", "armagnac", "calvados",
+                     "porto", "madere", "xeres", "sherry", "marsala", "vermouth", "pastis", "liqueur", "liqueurs", "kirsch",
+                     "rhum", "rhums", "whisky", "whiskey", "vodka", "gin", "tequila", "mezcal", "sake", "sakes", "absinthe",
+                     "hydromel", "grappa", "eau-de-vie", "eaux-de-vie", "eau de vie", "eaux de vie", "alcool", "alcools",
+                     "spiritueux", "aperitif", "digestif", "cocktail", "cocktails", "sommelier", "mirin", "shaoxing",
+                     "sauternes", "banyuls", "pineau", "creme de cassis", "pedro ximenez", "px", "amaretto", "ale", "ales", "curacao",
+                     "alcoolise", "alcoolisee", "alcoolises", "alcoolisees", "awamori", "huangjiu", "medronho", "sauvignon", "maiwein",
+                     "zubrowka", "bloody mary", "gins", "mai tai", "maraschino", "cidricole", "cidricoles", "brassicole", "brassicoles",
+                     "distillateur", "distillateurs", "bonne bouteille", "grande bouteille", "genepi",
+                     # The guide and its distinctions, which are the restaurants' and not ours to use. « Anis étoilé » stays.
+                     "michelin", "table etoilee", "tables etoilees", "chef etoile", "chefs etoiles", "restaurant etoile",
+                     "restaurants etoiles", "deux etoiles", "trois etoiles")
+FICHE_NOT_DRINKS = {"cornouaille", "domfront", "pays d'auge"}   # cellar entries named after a bare place
+FICHE_COOKS = ("André Daguin", "Alain Passard", "Alain Senderens", "Amelia Simmons", "Apicius", "Brillat-Savarin",
+               "Clément Faugier", "Fergus Henderson", "Frédéric Bau", "Georges Ohsawa", "Kawahara Toshio", "Lee Kum Sheung",
+               "Mrs Beeton", "Platina", "Raymond Calvel", "Tao Huabi")   # named in the entries' text, with no chef record
+FICHE_PLAIN_WORDS = {"Blanc", "Bras", "Khan", "Pic", "Point", "Roux", "White"}   # surnames that mean something else too: full names only
+FICHE_SHOWN, FICHE_FOLD = 30, 40    # a longer pairing list opens on its first 30, so the doors stay in reach
+
+
+def fold(s):
+    s = s.translate({0x153: "oe", 0x152: "Oe", 0xe6: "ae", 0xc6: "Ae", 0x2019: "'", 0xa0: " ", 0x202f: " "})
+    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+
+
+def fiche_scanner(rows):
+    """The test a fiche's text must pass. Drinks match in any case. Names of people,
+    restaurants and legendary components match as written, so « Noma » does not catch
+    a word and a plain « caramel au beurre salé » is left alone. A vinegar is not a
+    drink, so « vinaigre de vin » is taken out first."""
+    named = json.loads((ROOT / "tools" / "fiche-data.json").read_text())
+    drinks = set(FICHE_DRINK_WORDS)
+    for i in rows:
+        if is_alcohol(i):
+            whole = fold(i["name"]["fr"]).lower()
+            drinks.add(re.sub(r"\s*\(.*?\)", "", whole))
+            drinks.update(x for x in re.findall(r"\((.*?)\)", whole) if len(x) > 3)
+    proper = {fold(re.sub(r"\s*\(.*?\)", "", n)) for n in named["legendary"]}
+    for n in [c["name"] for c in CHEFS] + named["cooks"] + list(FICHE_COOKS):
+        for piece in re.sub(r"\(.*?\)|\"", "", fold(n)).split(","):
+            piece = re.sub(r"^\s*(?:dit|la)\s+", "", " ".join(piece.split()))
+            people = re.split(r" (?:et|and) ", piece)
+            for person in people:
+                if len(people) > 1 and " " not in person:   # the Jean of « Jean et Pierre Troisgros » is a first name
+                    continue
+                last = person.split()[-1]
+                proper.update(p for p in (person, last) if " " in p or p not in FICHE_PLAIN_WORDS)
+    alternatives = lambda names: "|".join(re.escape(w) for w in sorted(names, key=len, reverse=True))
+    drink_re = re.compile(r"(?<!\w)(?:%s)(?!\w)" % alternatives(drinks - FICHE_NOT_DRINKS))
+    proper_re = re.compile(r"(?<!\w)(?:%s)(?!\w)|\b(?:[Cc]hefs?|[Mm]ere) [A-Z]\w+" % alternatives(proper))
+    vinegar = re.compile(r"vinaigres? d(?:e |')(?!lies\b)[\w-]+(?: (?:rouge|blanc|jaune|de [\w-]+))?", re.I)
+
+    def hit(text):
+        plain = vinegar.sub(" ", fold(text))
+        m = drink_re.search(plain.lower()) or proper_re.search(plain)
+        return m.group(0) if m else None
+    return hit
+
+
+def fiche_string(key):
+    """One French string of the atlas, read from its own file so a fiche says what the site says."""
+    block = re.search(r"^  fr: \{(.*?)^  \}", (ROOT / I18N_FILE).read_text(), re.S | re.M).group(1)
+    m = re.search(r"\b%s: \"([^\"]*)\"" % key, block)
+    if not m:
+        sys.exit("no fr.%s in %s" % (key, I18N_FILE))
+    return m.group(1)
+
+
+FICHE_CSS = """.alt{font-size:17px}
+.pairs span{display:inline-flex;align-items:center;background:var(--card);border:1px solid var(--border);
+  border-radius:999px;padding:4px 12px;font-size:14px;color:var(--ink-2)}
+summary{margin:12px 0;font-size:15px;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+  list-style:none}
+summary::-webkit-details-marker{display:none}
+details[open] summary{display:none}
+h3{text-transform:none;letter-spacing:0;font:400 18px/1.3 var(--serif);color:var(--ink);margin:24px 0 4px}
+.var{margin:0 0 6px;font-size:14px;color:var(--ink-3)}
+ul{margin:0 0 12px;padding-left:20px;color:var(--ink-2)}
+li{margin:0 0 6px}
+.form{margin:0 0 7px;font-size:13px;color:var(--ink-3)}
+.doors{margin:36px 0 0;padding-top:22px;border-top:1px solid var(--border);display:grid;gap:10px}
+.doors p{margin:0}
+.go{display:block;min-height:46px;padding:12px 14px;border-radius:12px;text-align:center;text-decoration:none;font-size:16px}
+.go-full{background:#4F5B3F;color:#FFFEFC}
+.go-full:hover{background:var(--ink);color:var(--bg)}
+.go-free{border:1px solid var(--border);background:var(--card);color:var(--ink)}
+.then{font-size:13.5px;color:var(--ink-3);text-align:center}
+footer{margin-top:18px;padding-top:16px;font-size:12.5px}
+"""
+
+
+def fiche_chips(ids, by_id):
+    return "".join('<span><svg class="ci" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="50" r="42" fill="none"/>'
+                   '%s</svg>%s</span> ' % (by_id[x]["svg"], e(by_id[x]["name"]["fr"])) for x in ids)
+
+
+def fiche_page(i, here, by_id, G, hit, dropped):
+    t = UI["fr"]
+
+    def said(text, where):
+        if text and hit(text):
+            dropped.append("%s: %s dropped, it names « %s »" % (i["id"], where, hit(text)))
+            return ""
+        return text
+
+    def fit(ids, where):
+        keep = [x for x in ids if x in by_id and not is_alcohol(by_id[x]) and said(by_id[x]["name"]["fr"], where + " " + x)]
+        return sorted(keep, key=lambda x: (re.sub(r"\W", "", fold(by_id[x]["name"]["fr"]).lower()), x))   # ’Nduja files under N
+
+    origin, story, tip = (said(i[k]["fr"], k) for k in ("origin", "story", "tip"))
+    tastes = " · ".join(e(I18N["fr"]["flavors"].get(f, f)) for f in i["flavor"])
+    rows = [(t["origin"], e(origin)), (t["season"], e(season_text(i["season"], "fr"))),
+            (t["flavour"], tastes), (t["price"], e(i["pk"]))]
+    facts = "".join("<tr><th>%s</th><td>%s</td></tr>" % (e(k), v) for k, v in rows if v)
+
+    body = ""
+    if story:
+        body += "<h2>%s</h2>\n  <p>%s</p>\n" % (e(t["story"]), e(story))
+    if tip:
+        body += "  <h2>%s</h2>\n  <p>%s</p>\n" % (e(t["tip"]), e(tip))
+
+    forms = ""
+    for b in json.loads((ROOT / "tools" / "fiche-data.json").read_text())["trees"].get(i["id"], []):
+        where = "preparation " + b["id"]
+        name = said(b["name"]["fr"], where)
+        technique = said(b["technique"]["fr"], where + " technique")
+        if not name or not technique:
+            continue
+        variety = said(b["variety"]["fr"], where + " variety")
+        tips = [x for x in (said(p["fr"], where + " tip") for p in b.get("tips", [])) if x]
+        pairs = fit(b.get("pairs", []), where + " pairing")
+        forms += "  <h3>%s</h3>\n" % e(name)
+        if variety:
+            forms += '  <p class="var">%s</p>\n' % e(variety)
+        forms += "  <p>%s</p>\n" % e(technique)
+        if tips:
+            forms += "  <ul>%s</ul>\n" % "".join("<li>%s</li>" % e(x) for x in tips)
+        if pairs:
+            forms += '  <p class="form">%s</p>\n  <p class="pairs">%s</p>\n' % (e(fiche_string("pairsInForm")), fiche_chips(pairs, by_id))
+    if forms:
+        body += "  <h2>%s</h2>\n%s" % (e(fiche_string("preparations")), forms)
+
+    partners = fit(G["partners"][i["id"]], "pairing")
+    if partners:
+        body += '  <h2>%s <small>%d</small></h2>\n' % (e(fiche_string("pairsWith")), len(partners))
+        fold_it = len(partners) > FICHE_FOLD
+        head = partners[:FICHE_SHOWN] if fold_it else partners
+        body += '  <p class="pairs">%s</p>\n' % fiche_chips(head, by_id)
+        if fold_it:
+            body += '  <details><summary>%s</summary><p class="pairs">%s</p></details>\n' % (
+                e(fiche_string("morePairs").replace("%d", str(len(partners)))), fiche_chips(partners[FICHE_SHOWN:], by_id))
+
+    days = int(re.search(r"var TRIAL_DAYS = (\d+);", (ROOT / "js" / "app.js").read_text()).group(1))
+    price = fiche_string("fullPrice")
+    cta = fiche_string("trialCta").replace("{d} ", "%d " % days) if days else fiche_string("subCta")
+    then = fiche_string("trialThen").replace("{d} ", "%d " % days).replace("{price}", price) if days else price
+
+    name = i["name"]["fr"]
+    doc = """<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>%(title)s</title>
+<meta name="description" content="%(desc)s">
+%(og)s
+<link rel="stylesheet" href="../../css/page.css?v=%(v)d">
+<style>%(css)s</style>
+</head>
+<body>
+<header><a class="home" href="../../">Copius</a></header>
+<main>
+  <figure><img src="../../img/%(id)s.svg?v=%(v)d" alt="%(alt)s" width="104" height="104" decoding="async"></figure>
+  <h1>%(name)s</h1>
+  <p class="alt">%(latin)s</p>
+  <table>%(facts)s</table>
+  %(body)s
+  <section class="doors">
+    <p>Cette fiche vient de la version complète de Copius.</p>
+    <a class="go go-full" href="../../commande/?lang=fr">%(cta)s <span aria-hidden="true">→</span></a>
+    <p class="then">%(then)s</p>
+    <a class="go go-free" href="../../%(app)s">Ouvrir la version gratuite</a>
+  </section>
+</main>
+<footer>%(legal)s<br>Copius, <a href="https://nokime.fr/">%(tool)s</a></footer>
+<script src="../../js/page.js?v=%(v)d" defer></script>
+</body>
+</html>
+""" % {"title": e("%s · Copius" % name), "desc": e(story_desc(story) if story else name),
+       "og": head_extra(e("%s · Copius" % name), e(story_desc(story) if story else name), here, "fr"),
+       "v": VERSION, "css": FICHE_CSS, "id": i["id"], "alt": e(t["altImg"] % name), "name": e(name),
+       "latin": "<i>%s</i>" % e(i["latin"]) if i["latin"] else "", "facts": facts, "body": body,
+       "cta": e(cta), "then": e(then), "app": APP, "legal": legal_links("../../", "fr"), "tool": e(t["tool"])}
+
+    text = html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"<(style|script|svg)\b.*?</\1>", " ", doc, flags=re.S)))
+    if hit(text):
+        sys.exit("fiche %s: the finished page still names « %s »" % (i["id"], hit(text)))
+    return doc, len(partners), len(G["partners"][i["id"]]) - len(partners)
+
+
+def build_fiches(rows, G):
+    # id -> address. The address is written down, not derived from the name: renaming
+    # an ingredient must not break a link already sent to a cook.
+    slugs = json.loads((ROOT / "tools" / "fiche-ids.json").read_text())
+    by_id = {i["id"]: i for i in rows}
+    hit = fiche_scanner(rows)
+    shutil.rmtree(ROOT / "fiche", ignore_errors=True)
+    dropped = []
+    if len(set(slugs.values())) != len(slugs):
+        sys.exit("tools/fiche-ids.json: two ingredients share an address")
+    for x, slug in slugs.items():
+        if x not in by_id:
+            sys.exit("tools/fiche-ids.json: no such ingredient: %s" % x)
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
+            sys.exit("tools/fiche-ids.json: bad address for %s: %s" % (x, slug))
+        i = by_id[x]
+        if is_alcohol(i) or hit(i["name"]["fr"]):
+            sys.exit("tools/fiche-ids.json: %s cannot have a fiche, its name names a drink or a cook" % x)
+        doc, shown, removed = fiche_page(i, "%s/fiche/%s/" % (SITE, slug), by_id, G, hit, dropped)
+        out = ROOT / "fiche" / slug
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(doc)
+        print("fiche/%s/ — %d pairings, %d left out, %d bytes" % (slug, shown, removed, len(doc.encode())))
+    for d in dropped:
+        print("  " + d)
+
+
 def main():
     global I18N, CAT_ORDER, VERSION, FREE
     I18N, CAT_ORDER = load_i18n()
+    if "--fiches" in sys.argv:   # only the fiches: seconds, against the ~4,000 files of a whole build
+        VERSION = version()
+        rows, FREE = load()
+        build_fiches(rows, link_graph(rows))
+        return
     VERSION = version()
     rows, FREE = load()
     stray = sorted(set(INDEX_KEEP) - set(FREE))
@@ -1548,6 +1789,8 @@ def main():
     if CHEFS:
         put(ROOT / "chef", chef_index("en"))
         put(ROOT / "fr" / "chef", chef_index("fr"))
+
+    build_fiches(rows, G)
 
     # A sitemap is how 3,714 pages get discovered without a link from anywhere.
     urls = ["%s/" % SITE, "%s/i/" % SITE, "%s/fr/i/" % SITE, "%s/about/" % SITE,

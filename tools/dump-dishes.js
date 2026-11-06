@@ -119,3 +119,20 @@ chefs.sort(function (a, b) { return a.id < b.id ? -1 : 1; });
 write("tools/chefs.json", JSON.stringify(chefs, null, 1) + "\n");
 log("tools/chefs.json — " + chefs.length + " chefs (" +
     chefs.filter(function (c) { return c.stars; }).length + " with a closed star range)");
+
+// For the fiches in build-pages.py: the preparations, and what a fiche may not name
+// (the legendary components' own names, cooks and restaurants).
+var w = {};
+new Function("window", read("js/data-trees.js"))(w);
+new Function("window", read("js/data-components.js"))(w);
+var trees = {}, legendary = {}, cooks = {};
+w.TREES.forEach(function (t) { trees[t.id] = t.branches; });
+w.COMPONENTS.forEach(function (c) {
+  if (!c.origin || c.origin.type !== "legendary") return;
+  legendary[c.name.fr] = 1;
+  if (c.origin.restaurant) legendary[c.origin.restaurant.split(",")[0].trim()] = 1;
+  (c.origin.chef || "").split(",").forEach(function (n) { if (n.trim()) cooks[n.trim()] = 1; });
+});
+write("tools/fiche-data.json", JSON.stringify({ trees: trees, legendary: Object.keys(legendary).sort(), cooks: Object.keys(cooks).sort() }, null, 1) + "\n");
+log("tools/fiche-data.json — " + Object.keys(trees).length + " trees, " + Object.keys(legendary).length +
+    " legendary names, " + Object.keys(cooks).length + " of their cooks");
