@@ -53,7 +53,8 @@ const PAY_TEXT = [
         'failed_subject' => 'Copius : le paiement de votre abonnement n’a pas abouti',
         'failed_lead' => 'Le paiement de {a} pour le renouvellement de votre abonnement (référence {r}) n’a pas abouti. Nous le tenterons à nouveau dans les prochains jours.',
         'failed_keep' => 'Vous gardez l’accès à la version complète jusqu’au {d}. Sans paiement d’ici là, l’abonnement prend fin, sans aucun frais.',
-        'failed_pay' => 'Payer avec une autre carte',
+        'failed_bank' => 'Votre banque demande peut-être une validation : dans ce cas, passez par le lien ci-dessous, remettez la même carte et validez chez elle.',
+        'failed_pay' => 'Payer par carte',
         'failed_lead_trial' => 'Votre essai gratuit est terminé, et le premier paiement de {a} pour votre abonnement (référence {r}) n’a pas abouti. Nous le tenterons à nouveau dans les prochains jours.',
         'failed_keep_trial' => 'En attendant, l’accès à la version complète est suspendu : il revient dès que le paiement passe. Sans paiement d’ici le {d}, l’abonnement prend fin, sans aucun frais.',
         'cack_subject' => 'Copius : accusé de réception de votre résiliation',
@@ -140,7 +141,8 @@ const PAY_TEXT = [
         'failed_subject' => 'Copius: the payment for your subscription did not go through',
         'failed_lead' => 'The payment of {a} renewing your subscription (reference {r}) did not go through. We will try again over the next few days.',
         'failed_keep' => 'You keep the full version until {d}. Without a payment by then, the subscription ends, at no cost.',
-        'failed_pay' => 'Pay with another card',
+        'failed_bank' => 'Your bank may be asking you to approve this payment: if so, use the link below, enter the same card again and approve it with your bank.',
+        'failed_pay' => 'Pay by card',
         'failed_lead_trial' => 'Your free trial is over, and the first payment of {a} for your subscription (reference {r}) did not go through. We will try again in the coming days.',
         'failed_keep_trial' => 'Until then, the full version is paused: it comes back as soon as the payment goes through. Without a payment by {d}, the subscription ends, at no cost.',
         'cack_subject' => 'Copius: acknowledgement of your cancellation',
@@ -287,7 +289,10 @@ function pay_mail(array $row): ?array {
         $tr = !empty($p['trial']);
         $b[] = ['p', $f($tr ? 'failed_lead_trial' : 'failed_lead', ['{a}' => $money((int)$p['cents']), '{r}' => $p['ref']])];
         $b[] = ['p', $f($tr ? 'failed_keep_trial' : 'failed_keep', ['{d}' => fmt_date($p['until'], $lang)])];
-        if (preg_match('#^https://[\x21-\x7e]+$#', (string)($p['pay'] ?? ''))) $b[] = ['btn', $t['failed_pay'], $p['pay']];
+        if (preg_match('#^https://[\x21-\x7e]+$#', (string)($p['pay'] ?? ''))) {
+            $b[] = ['p', $f('failed_bank')];
+            $b[] = ['btn', $t['failed_pay'], $p['pay']];
+        }
         break;
     case 'cancel_ack':
         $subject = $t['cack_subject'];

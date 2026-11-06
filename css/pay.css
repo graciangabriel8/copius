@@ -76,5 +76,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .msg{margin:14px 0 0;font-size:15px;color:var(--ink-2)}
 .msg:empty{display:none}
 .msg.err{color:#9A3B2A}
+#backMsg{margin:0 0 14px}
 .fine{margin:22px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-3)}
 @media (max-width:480px){.plates{display:none}.summary div{grid-template-columns:1fr auto}.summary dd{grid-column:1/-1;grid-row:2}}

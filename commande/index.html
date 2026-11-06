@@ -26,6 +26,7 @@
 <p class="lang"><a href="#" data-lang="en" lang="en">Read this in English</a><a href="#" data-lang="fr" lang="fr">Lire en français</a></p>
 
 <form id="choose" class="step" novalidate>
+  <p class="msg" id="backMsg" role="status"></p>
   <p class="lede" tabindex="-1"><span lang="fr">Tout l’atlas, en français et en anglais.</span><span lang="en">The whole atlas, in French and in English.</span>
     <span class="trial-on" lang="fr">Les 7&nbsp;premiers jours sont gratuits, sur les deux formules.</span><span class="trial-on" lang="en">The first 7 days are free, on both plans.</span></p>
 
@@ -195,7 +196,22 @@
     country.value = keep;
   }
   function blocked() { return BLOCKED.indexOf(country.value) >= 0; }
-  var backFromStripe = /^#retour/.test(location.hash);
+  /* What the buyer typed, kept in this tab only while Stripe's page is open. The way
+     back loads this page afresh, by Stripe's « back » link or the browser's button;
+     a payment drops it (merci/index.html), so finding it means no payment came of it. */
+  var KEPT = "copius-order";
+  function kept() { try { return JSON.parse(sessionStorage.getItem(KEPT)); } catch (x) { return null; } }
+  function forget() { try { sessionStorage.removeItem(KEPT); } catch (x) {} }
+  function stash() { try { sessionStorage.setItem(KEPT, JSON.stringify({ email: $("email").value.trim(), plan: plan(), country: country.value, lang: root.lang })); } catch (x) {} }
+  var back = kept(); forget();
+  var backFromStripe = !!back || /^#retour/.test(location.hash);
+  function recall() {
+    if (!back) return;
+    if (back.lang === "en" || back.lang === "fr") { root.lang = back.lang; countries(); }
+    if (typeof back.email === "string") $("email").value = back.email;
+    if (CODES.indexOf(back.country) >= 0) country.value = back.country;
+    choose.elements.plan.value = back.plan;
+  }
   if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search + (TRIAL ? "" : "#sans-essai"));
   function plan() { return choose.querySelector("input[name=plan]:checked").value; }
   function fill() {
@@ -216,16 +232,18 @@
       e.preventDefault(); root.lang = a.getAttribute("data-lang");
       try { localStorage.setItem("atlas-lang", root.lang); } catch (x) {}
       countries();
+      if (backFromStripe) say($("backMsg"), "back");
       if (!review.hidden) fill();
     });
   });
   countries();
   country.addEventListener("change", function () { say($("chooseMsg"), blocked() ? "blocked" : "", blocked()); });
-  if (backFromStripe) say($("chooseMsg"), "back");
+  if (backFromStripe) { recall(); say($("backMsg"), "back"); }
   choose.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim())) { say($("chooseMsg"), "email", true); $("email").focus(); return; }
     if (!country.value || blocked()) { say($("chooseMsg"), country.value ? "blocked" : "country", true); country.focus(); return; }
+    backFromStripe = false; say($("backMsg"), "");
     say($("chooseMsg"), ""); fill(); say($("reviewMsg"), ""); show(review); count("order_review");
   });
   review.querySelectorAll("[data-edit]").forEach(function (a) {
@@ -238,7 +256,7 @@
   /* Back from Stripe with the browser's button: the page comes back from the
      cache as it was left, so the button is given back. */
   window.addEventListener("pageshow", function (e) {
-    if (e.persisted && $("pay").disabled) { $("pay").disabled = false; say($("reviewMsg"), "back"); }
+    if (e.persisted && $("pay").disabled) { $("pay").disabled = false; say($("reviewMsg"), kept() ? "back" : ""); forget(); }
   });
   review.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -251,7 +269,7 @@
             function () { return [0, {}]; })
       .then(function (a) {
         var s = a[0], j = a[1];
-        if (s === 200 && j.url && /^https:\/\/checkout\.stripe\.com\//.test(j.url)) { location.assign(j.url); return; }
+        if (s === 200 && j.url && /^https:\/\/checkout\.stripe\.com\//.test(j.url)) { stash(); location.assign(j.url); return; }
         btn.disabled = false;
         if (s === 200 && j.mailed) { say(msg, "mailed"); return; }
         if (s === 403 && j.error === "country") { show(choose); say($("chooseMsg"), "blocked", true); country.focus(); return; }
