@@ -73,6 +73,8 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
   # and the next and nothing else, so the ones still ahead cannot leak once the
   # repository is private. After the redirects, so a card URL is canonical first.
   RewriteRule ^social/([a-z0-9-]+(\.2)?\.jpg)$ /api/card.php?f=$1 [L]
+  # The same for @copius.en's cards, in social/en/ (its banner sits a folder down, served as is).
+  RewriteRule ^social/en/([a-z0-9-]+(\.2)?\.jpg)$ /api/card.php?f=$1&lang=en [L]
   # A folder with no index.html is a 404 on Pages; here it would be a 403.
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html !-f

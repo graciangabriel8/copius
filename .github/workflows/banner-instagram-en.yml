@@ -1,0 +1,119 @@
+name: Banner to Instagram (@copius.en)
+
+# Once, by hand, on the owner's go: the three banner tiles in social/en/banner/,
+# posted right, then middle, then left, so the grid reads left to right. He
+# pins them on his phone (the API cannot pin). The banner must open the grid, so
+# a run starts only on an empty account; within a run, tile n goes up when
+# exactly n-1 images are there and nothing else. The API cannot tell a tile from
+# any other image, so a run that stopped half-way resumes only when started with
+# "resume", after a look at the grid shows nothing but the earlier tiles.
+on:
+  workflow_dispatch:
+    inputs:
+      resume:
+        description: "Resume a run that stopped half-way: only when the account's posts are exactly the earlier tiles."
+        type: boolean
+        default: false
+
+concurrency:
+  group: banner-instagram-en
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post the three tiles
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID_EN }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_EN }}
+          RESUME: ${{ inputs.resume }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?set the IG_USER_ID_EN repository secret}"
+          : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN_EN repository secret}"
+          TILES=(social/en/banner/1-right.jpg social/en/banner/2-middle.jpg social/en/banner/3-left.jpg)
+
+          # Every tile live at its committed size before anything is posted.
+          for f in "${TILES[@]}"; do
+            test -f "$f" || { echo "::error::$f is not in the repository"; exit 1; }
+            IFS='|' read -r CODE TYPE SIZE <<< "$(curl -sS -o /dev/null -w '%{http_code}|%{content_type}|%{size_download}' --max-time 60 "https://copius.fr/$f")"
+            echo "site: $CODE, ${TYPE:-no type}, $SIZE bytes for $f (committed: $(wc -c < "$f" | tr -d ' '))"
+            if [ "$CODE" != "200" ] || [ "${TYPE%%;*}" != "image/jpeg" ] || [ "$SIZE" != "$(wc -c < "$f" | tr -d ' ')" ]; then
+              echo "::error::$f is not live as committed (deploy pending?) — nothing posted"; exit 1
+            fi
+          done
+
+          # What is on the account: the number of posts, and whether all of them
+          # are single images. An unreadable answer stops the job, which is the
+          # safe side here: a tile out of order cannot be moved afterwards.
+          state() {
+            curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+              --data-urlencode "fields=media_type" --data-urlencode "limit=50" \
+              --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+              | python3 -c 'import sys, json
+          d = json.load(sys.stdin)
+          if "data" not in d: sys.exit("unreadable media list: " + json.dumps(d)[:300])
+          m = d["data"]
+          print(len(m), "images" if all(x.get("media_type") == "IMAGE" for x in m) else "mixed")'
+          }
+          jid() { printf '%s' "$1" | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("id",""))
+          except ValueError: print("")'; }
+
+          # The count must be a number, or the job stops (an unreadable list).
+          count_of() {
+            read -r COUNT KIND <<< "$(state)"
+            case "$COUNT" in ''|*[!0-9]*) echo "::error::could not read the account's posts — nothing more posted"; exit 1 ;; esac
+          }
+
+          count_of
+          if [ "$COUNT" -ne 0 ] && [ "$RESUME" != "true" ]; then
+            echo "::error::the account already has $COUNT post(s): the banner must open the grid — nothing posted (rerun with resume only if they are the earlier tiles)"; exit 1
+          fi
+
+          for n in 1 2 3; do
+            count_of
+            if [ "$COUNT" -ge "$n" ]; then
+              echo "tile $n: already up ($COUNT post(s) on the account)"; continue
+            fi
+            if [ "$COUNT" -ne $(( n - 1 )) ] || [ "$KIND" != "images" ]; then
+              echo "::error::the account has $COUNT post(s) ($KIND): the banner must open the grid — nothing posted"; exit 1
+            fi
+            f="${TILES[$(( n - 1 ))]}"
+            CREATE="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+              --data-urlencode "image_url=https://copius.fr/$f" -d "access_token=$IG_ACCESS_TOKEN")"
+            CID="$(jid "$CREATE")"
+            if [ -z "$CID" ]; then echo "::error::container failed for $f: $(printf '%s' "$CREATE" | head -c 400)"; exit 1; fi
+            STATUS=""
+            for i in 1 2 3 4 5 6; do
+              [ "$i" = 1 ] || sleep 60
+              STATUS="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$CID" \
+                --data-urlencode "fields=status_code" --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+                | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("status_code",""))
+          except ValueError: print("")')"
+              echo "container $CID ($f): ${STATUS:-<no status>} (check $i/6)"
+              case "$STATUS" in
+                FINISHED) break ;;
+                ERROR|EXPIRED) echo "::error::container ended as $STATUS"; exit 1 ;;
+              esac
+            done
+            if [ "$STATUS" != "FINISHED" ]; then echo "::error::container still ${STATUS:-without status} after five minutes"; exit 1; fi
+            PUB="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
+              -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
+            printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
+            # The next tile only once the media list shows this one, so its guard counts it.
+            for i in 1 2 3 4 5 6; do
+              sleep 20
+              count_of
+              [ "$COUNT" -ge "$n" ] && break
+            done
+            if [ "$COUNT" -lt "$n" ]; then echo "::error::tile $n published but not listed after two minutes — run the job again to resume"; exit 1; fi
+          done
+          echo "banner up: pin the three tiles on the phone, left to right"

@@ -1,0 +1,189 @@
+name: Daily ingredient to Instagram (@copius.en)
+
+# @copius.en's daily card at 21:00 Paris: the same ingredient as @copius.fr's
+# card that day (social/schedule.json), in English, from social/en/ (built by
+# `sh tools/build-social.sh <days> en`). A drink day posts nothing: the English
+# account carries no drink. The same job as daily-instagram.yml, with its own
+# key, folder and hour, kept as a separate file so the live French job stays
+# untouched.
+on:
+  schedule:
+    # UTC, early, and held to the wall clock below, as for the French card:
+    # GitHub starts this repository's runs 3 to 6 h 36 late. A start more than
+    # 5 h 35 before 21:00 Paris steps aside; the first within reach waits; the
+    # later ones queue and find the card up. On time, the 15:50 start posts in
+    # winter and the 13:50 one in summer; late, the 11:50 one does. Off the top
+    # of the hour, and off the French jobs' minutes.
+    - cron: "50 11 * * *"
+    - cron: "50 13 * * *"
+    - cron: "50 15 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: daily-instagram-en-${{ github.event_name == 'schedule' && 'cron' || 'manual' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out today's ingredient
+        id: pick
+        run: |
+          set -euo pipefail
+          # The Paris day, pinned once, before the hold so a drink day does not
+          # wait for nothing: every start lands on the Paris day it posts for,
+          # which at 21:00 Paris is also the UTC day the French card used, so both
+          # accounts show the same ingredient.
+          DATE="$(TZ=Europe/Paris date +%F)"
+          ID="$(python3 tools/make-card.py --lang en --today-id "$DATE")"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          if [ "$ID" = "-" ]; then
+            echo "::notice::$DATE is a drink day — @copius.en posts no drink, so no card today"; exit 0
+          fi
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "Today: $ID ($DATE)"
+          for f in "social/en/$ID.jpg" "social/en/$ID.2.jpg"; do
+            test -f "$f" || { echo "::error::$f is missing — the English card window has run out. Run: sh tools/build-social.sh 60 en && git add social/en && git commit && git push"; exit 1; }
+          done
+          # Days of English cards left, drink days counted as covered.
+          LEFT="$(python3 - "$DATE" <<'PY'
+          import json, datetime, os, subprocess, sys
+          s = json.load(open("social/schedule.json"))
+          t = (datetime.date.fromisoformat(sys.argv[1]) - datetime.date.fromisoformat(s["start"])).days
+          d = s["days"]
+          n = 0
+          for k in range(t, len(d)):
+              if os.path.exists("social/en/%s.jpg" % d[k]):
+                  n += 1
+                  continue
+              day = (datetime.date.fromisoformat(s["start"]) + datetime.timedelta(k)).isoformat()
+              out = subprocess.run(["python3", "tools/make-card.py", "--lang", "en", "--today-id", day], capture_output=True, text=True).stdout.strip()
+              if out != "-":
+                  break
+              n += 1
+          print(n)
+          PY
+          )"
+          if [ "$LEFT" -lt 14 ]; then
+            echo "::warning::only $LEFT days of English cards left — run: sh tools/build-social.sh 60 en && git add social/en && git commit && git push"
+          fi
+
+      - name: Hold until 21:00 in Paris
+        id: hold
+        if: github.event_name == 'schedule' && steps.pick.outputs.id != ''
+        env:
+          DATE: ${{ steps.pick.outputs.date }}
+        run: |
+          set -euo pipefail
+          target="$(TZ=Europe/Paris date -d "$DATE 21:00" +%s)"
+          now="$(date +%s)"
+          wait=$(( target - now ))
+          echo "now      $(TZ=Europe/Paris date -d "@$now" '+%F %H:%M %Z')"
+          echo "posting  $(TZ=Europe/Paris date -d "@$target" '+%F %H:%M %Z')"
+          if [ "$wait" -le 0 ]; then
+            echo "::warning::started at or after 21:00 Paris — posting now, $(( -wait / 60 )) min late"
+            exit 0
+          fi
+          if [ "$wait" -gt 20100 ]; then
+            echo "::notice::$(( wait / 60 )) min until 21:00 Paris — too early to wait; a later start posts the card"
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "waiting $(( wait / 60 )) min"
+          sleep "$wait"
+
+      - name: Publish
+        if: steps.hold.outputs.skip != '1' && steps.pick.outputs.id != ''
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID_EN }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_EN }}
+          ID: ${{ steps.pick.outputs.id }}
+          DATE: ${{ steps.pick.outputs.date }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?set the IG_USER_ID_EN repository secret}"
+          : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN_EN repository secret}"
+          IMG="https://copius.fr/social/en/$ID.jpg"
+          IMG2="https://copius.fr/social/en/$ID.2.jpg"
+          CAPTION="$(python3 tools/make-card.py --lang en --caption "$DATE")"
+          test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
+
+          # 0. are both slides live? Instagram answers a missing file only with a
+          # failed container, so ask the site first (api/card.php serves a card on
+          # its day and the next only).
+          for u in "$IMG" "$IMG2"; do
+            IFS='|' read -r CODE TYPE <<< "$(curl -sS -o /dev/null -w '%{http_code}|%{content_type}' --max-time 60 "$u")"
+            echo "site: $CODE, ${TYPE:-no type} for $u"
+            if [ "$CODE" != "200" ] || [ "${TYPE%%;*}" != "image/jpeg" ]; then
+              echo "::error::$u is not live (deploy pending?) — nothing posted"; exit 1
+            fi
+          done
+
+          # 1. has a card gone out today on this account, or this caption at all?
+          # Carousels only: the 18:00 reel is not the card. The day is Paris's.
+          # An unreadable answer posts: a missed day is invisible, a duplicate is not.
+          SEEN="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "fields=timestamp,media_type,caption" --data-urlencode "limit=50" \
+            --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys, json, datetime, zoneinfo
+          try: d = json.load(sys.stdin).get("data") or []
+          except ValueError: d = []
+          flat = lambda s: " ".join((s or "").split())
+          paris = lambda t: datetime.datetime.strptime(t, "%Y-%m-%dT%H:%M:%S%z").astimezone(zoneinfo.ZoneInfo("Europe/Paris")).date().isoformat()
+          cards = [m for m in d if m.get("media_type") == "CAROUSEL_ALBUM"]
+          if any(flat(m.get("caption")) == flat(sys.argv[1]) for m in cards): print("this card")
+          elif any(m.get("timestamp") and paris(m["timestamp"]) == sys.argv[2] for m in cards): print("a card today")
+          else: print("")' "$CAPTION" "$DATE")"
+          if [ -n "$SEEN" ]; then
+            echo "::notice::already up: $SEEN — nothing to do"; exit 0
+          fi
+
+          # 2. containers: one per slide, then the carousel holding them; the
+          # caption belongs to the parent only.
+          jid() { printf '%s' "$1" | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("id",""))
+          except ValueError: print("")'; }
+          ITEM1="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "image_url=$IMG" -d "is_carousel_item=true" -d "access_token=$IG_ACCESS_TOKEN")"
+          ITEM2="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "image_url=$IMG2" -d "is_carousel_item=true" -d "access_token=$IG_ACCESS_TOKEN")"
+          C1="$(jid "$ITEM1")"; C2="$(jid "$ITEM2")"
+          if [ -z "$C1" ] || [ -z "$C2" ]; then
+            echo "::error::carousel item failed: $(printf '%s%s' "$ITEM1" "$ITEM2" | head -c 400)"; exit 1
+          fi
+          CREATE="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            -d "media_type=CAROUSEL" -d "children=$C1,$C2" \
+            --data-urlencode "caption=$CAPTION" -d "access_token=$IG_ACCESS_TOKEN")"
+          CID="$(jid "$CREATE")"
+          if [ -z "$CID" ]; then echo "::error::container failed: $(printf '%s' "$CREATE" | head -c 400)"; exit 1; fi
+
+          # 3. wait for Instagram to fetch the images, five minutes at most.
+          STATUS=""
+          for i in 1 2 3 4 5 6; do
+            [ "$i" = 1 ] || sleep 60
+            STATUS="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$CID" \
+              --data-urlencode "fields=status_code" --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+              | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("status_code",""))
+          except ValueError: print("")')"
+            echo "container $CID: ${STATUS:-<no status>} (check $i/6)"
+            case "$STATUS" in
+              FINISHED) break ;;
+              ERROR|EXPIRED) echo "::error::container ended as $STATUS"; exit 1 ;;
+            esac
+          done
+          if [ "$STATUS" != "FINISHED" ]; then
+            echo "::error::container still ${STATUS:-without status} after five minutes"; exit 1
+          fi
+
+          # 4. publish
+          PUB="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
+            -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
+          printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
+          if [ "${{ github.event_name }}" = "schedule" ]; then sleep 120; fi

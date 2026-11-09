@@ -1,0 +1,218 @@
+name: Reels to Instagram (@copius.en)
+
+# @copius.en's reel of the day, from social/_reels-en.json, at 18:00 Paris. The
+# same job as reels-instagram.yml (@copius.fr, noon), with its own key, queue
+# and hour, kept as a separate file so the live French job stays untouched. Two
+# rules are stricter here: an entry marked "held" is never posted, and a reel
+# named by hand never goes out on a day that already has a reel (at most one a
+# day on this account, posts by hand included).
+on:
+  schedule:
+    # UTC, and early on purpose: GitHub starts this repository's runs 3 to
+    # 6 h 36 late (see daily-instagram.yml), so three starts, as for the French
+    # reel. One more than 5 h 35 before 18:00 Paris steps aside, the first
+    # within reach waits, the later ones queue behind it and find the reel up.
+    # On time, the 12:20 start posts, summer and winter; up to 8 h late, the
+    # 08:20 or 10:20 one does. Off the top of the hour, and off the French
+    # jobs' minutes.
+    - cron: "20 8 * * *"
+    - cron: "20 10 * * *"
+    - cron: "20 12 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Post the reel scheduled for this date (YYYY-MM-DD, today or earlier). Empty: today."
+        required: false
+      id:
+        description: "Or post the reel with this id at once, whatever its date, unless a reel went out today."
+        required: false
+
+concurrency:
+  group: reels-instagram-en-${{ github.event_name == 'schedule' && 'cron' || 'manual' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find the day's reel
+        id: pick
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+          INPUT_ID: ${{ inputs.id }}
+        run: |
+          set -euo pipefail
+          TODAY="$(TZ=Europe/Paris date +%F)"
+          DATE="${INPUT_DATE:-$TODAY}"
+          case "$DATE" in
+            [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;;
+            *) echo "::error::date must be YYYY-MM-DD, got '$DATE'"; exit 1 ;;
+          esac
+          if [ "$DATE" \> "$TODAY" ]; then
+            echo "::error::$DATE is after today ($TODAY) — change its date in social/_reels-en.json instead"; exit 1
+          fi
+          OUT="$(python3 - "$DATE" "${INPUT_ID:-}" <<'PY'
+          import json, sys
+          d, want = sys.argv[1], sys.argv[2]
+          rs = json.load(open("social/_reels-en.json"))["reels"]
+          # A held entry waits for the owner to release it: never posted, by date or by id.
+          hit = [r for r in rs if r["id"] == want] if want else [r for r in rs if r.get("date") == d and "held" not in r]
+          if len(hit) > 1:
+              sys.exit("two reels match " + (want or d))
+          if want and not hit:
+              sys.exit("no reel with id " + want + " in social/_reels-en.json")
+          if hit and "held" in hit[0]:
+              sys.exit(hit[0]["id"] + " is held: " + str(hit[0]["held"]))
+          left = sum(1 for r in rs if (r.get("date") or "") > d and "held" not in r)
+          h = hit[0] if hit else {}
+          print(h.get("file", "-"), h.get("id", "-"), h.get("cover", "-"), left)
+          PY
+          )"
+          read -r FILE ID COVER LEFT <<< "$OUT"
+          echo "day $DATE: ${FILE} (${ID}, cover ${COVER}); $LEFT reel(s) scheduled after it"
+          if [ "$LEFT" -lt 3 ]; then
+            echo "::warning::only $LEFT reel(s) scheduled after $DATE on @copius.en — release more from social/_reels-en.json"
+          fi
+          if [ "$FILE" = "-" ]; then
+            echo "::notice::no reel scheduled on $DATE"; exit 0
+          fi
+          test -f "$FILE" || { echo "::error::$FILE is scheduled on $DATE but is not in the repository"; exit 1; }
+          if [ "$COVER" != "-" ]; then
+            test -f "$COVER" || { echo "::error::cover $COVER is scheduled on $DATE but is not in the repository"; exit 1; }
+          fi
+          python3 tools/reel-caption.py --en "$ID" >/dev/null       # fails now, not after the wait
+          {
+            echo "file=$FILE"
+            echo "id=$ID"
+            echo "bytes=$(wc -c < "$FILE" | tr -d ' ')"
+            if [ "$COVER" != "-" ]; then
+              echo "cover=$COVER"
+              echo "cover_bytes=$(wc -c < "$COVER" | tr -d ' ')"
+            fi
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Hold until 18:00 in Paris
+        id: hold
+        if: github.event_name == 'schedule' && steps.pick.outputs.file != ''
+        run: |
+          set -euo pipefail
+          target="$(TZ=Europe/Paris date -d 'today 18:00' +%s)"
+          now="$(date +%s)"
+          wait=$(( target - now ))
+          echo "now      $(TZ=Europe/Paris date -d "@$now" '+%F %H:%M %Z')"
+          echo "posting  $(TZ=Europe/Paris date -d "@$target" '+%F %H:%M %Z')"
+          if [ "$wait" -le 0 ]; then
+            echo "::warning::started at or after 18:00 Paris — posting now, $(( -wait / 60 )) min late"
+            exit 0
+          fi
+          if [ "$wait" -gt 20100 ]; then
+            echo "::notice::$(( wait / 60 )) min until 18:00 Paris — too early to wait; a later start posts the reel"
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "waiting $(( wait / 60 )) min"
+          sleep "$wait"
+
+      - name: Publish
+        if: steps.pick.outputs.file != '' && steps.hold.outputs.skip != '1'
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID_EN }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_EN }}
+          FILE: ${{ steps.pick.outputs.file }}
+          ID: ${{ steps.pick.outputs.id }}
+          BYTES: ${{ steps.pick.outputs.bytes }}
+          COVER: ${{ steps.pick.outputs.cover }}
+          COVER_BYTES: ${{ steps.pick.outputs.cover_bytes }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?set the IG_USER_ID_EN repository secret}"
+          : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN_EN repository secret}"
+          URL="https://copius.fr/$FILE"
+          CAPTION="$(python3 tools/reel-caption.py --en "$ID")"
+          test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
+
+          # 0. are the video and its cover live, and are they these?
+          live() {  # url, content type, committed bytes
+            IFS='|' read -r CODE TYPE SIZE <<< "$(curl -sS -o /dev/null -w '%{http_code}|%{content_type}|%{size_download}' --max-time 120 "$1")"
+            echo "site: $CODE, ${TYPE:-no type}, $SIZE bytes for $1 (committed: $3 bytes)"
+            if [ "$CODE" != "200" ] || [ "${TYPE%%;*}" != "$2" ] || [ "$SIZE" != "$3" ]; then
+              echo "::error::$1 is not the committed file yet (deploy pending?) — nothing posted"; exit 1
+            fi
+          }
+          live "$URL" video/mp4 "$BYTES"
+          COVER_ARG=()
+          if [ -n "$COVER" ]; then
+            live "https://copius.fr/$COVER" image/jpeg "$COVER_BYTES"
+            COVER_ARG=(--data-urlencode "cover_url=https://copius.fr/$COVER")
+          fi
+
+          # 1. is this reel already up, or has a reel gone out today on this
+          # account? Same caption among the last 50 reels, or any reel this Paris
+          # day. Unlike @copius.fr, a reel named by hand does not override the
+          # second check. An unreadable answer gives an empty list and the reel
+          # goes out: a missed reel is invisible, a duplicate is not.
+          SEEN="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            --data-urlencode "fields=timestamp,media_product_type,caption" --data-urlencode "limit=50" \
+            --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys, json, datetime, zoneinfo
+          try: d = json.load(sys.stdin).get("data") or []
+          except ValueError: d = []
+          flat = lambda s: " ".join((s or "").split())
+          paris = lambda t: datetime.datetime.strptime(t, "%Y-%m-%dT%H:%M:%S%z").astimezone(zoneinfo.ZoneInfo("Europe/Paris")).date().isoformat()
+          reels = [m for m in d if m.get("media_product_type") == "REELS"]
+          if any(flat(m.get("caption")) == flat(sys.argv[1]) for m in reels): print("this reel")
+          elif any(m.get("timestamp") and paris(m["timestamp"]) == sys.argv[2] for m in reels): print("a reel today")
+          else: print("")' "$CAPTION" "$(TZ=Europe/Paris date +%F)")"
+          if [ "$SEEN" = "a reel today" ]; then
+            echo "::warning::$ID ($FILE) not posted: a reel already went out today on @copius.en — move its date in social/_reels-en.json"; exit 0
+          fi
+          if [ -n "$SEEN" ]; then
+            echo "::notice::already up: $SEEN — nothing to do"; exit 0
+          fi
+          echo "not posted yet"
+
+          # 2. the container: Instagram downloads the video from the site.
+          jid() { printf '%s' "$1" | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("id",""))
+          except ValueError: print("")'; }
+          CREATE="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+            -d "media_type=REELS" \
+            --data-urlencode "video_url=$URL" \
+            --data-urlencode "caption=$CAPTION" \
+            ${COVER_ARG[@]+"${COVER_ARG[@]}"} \
+            -d "share_to_feed=true" \
+            -d "access_token=$IG_ACCESS_TOKEN")"
+          CID="$(jid "$CREATE")"
+          if [ -z "$CID" ]; then echo "::error::container failed: $(printf '%s' "$CREATE" | head -c 400)"; exit 1; fi
+
+          # 3. wait for Instagram to fetch and process the video, five minutes at most.
+          STATUS=""
+          for i in 1 2 3 4 5 6; do
+            [ "$i" = 1 ] || sleep 60
+            STATUS="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$CID" \
+              --data-urlencode "fields=status_code" \
+              --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+              | python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get("status_code",""))
+          except ValueError: print("")')"
+            echo "container $CID: ${STATUS:-<no status>} (check $i/6)"
+            case "$STATUS" in
+              FINISHED) break ;;
+              ERROR|EXPIRED) echo "::error::container ended as $STATUS"; exit 1 ;;
+            esac
+          done
+          if [ "$STATUS" != "FINISHED" ]; then
+            echo "::error::container still ${STATUS:-without status} after five minutes"; exit 1
+          fi
+
+          # 4. publish
+          PUB="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
+            -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
+          printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'
+          if [ "$EVENT" = "schedule" ]; then sleep 120; fi

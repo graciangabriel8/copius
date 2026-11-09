@@ -18,8 +18,8 @@ LOOK = 12
 # What the site never serves as is: .htaccess answers 404 for tools/, docs/ and any name starting with . or _ at any
 # depth, and the PHP under api/ is not what the site sends.
 NOT_SERVED = ("tools/", "docs/", "api/")
-# api/card.php answers social/'s cards only on their days (.htaccess); social/reels/ is served as committed.
-CARD = re.compile(r"social/[a-z0-9-]+(\.2)?\.jpg")
+# api/card.php answers social/'s and social/en/'s cards only on their days (.htaccess); social/reels/ is served as committed.
+CARD = re.compile(r"social/(en/)?[a-z0-9-]+(\.2)?\.jpg")
 # js/ answers 404 for anything else, the full version's data above all (.htaccess, PUBLISHED_JS in tools/validate.js).
 PUBLIC_JS = ("js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js")
 # One of each family of those files, asked every run: if one answers, paid content is public.

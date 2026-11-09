@@ -4,7 +4,9 @@
 Pure-data: every illustration lives in the entry's own `svg` field, so no
 external assets and no network. Usage:
     python3 tools/make-card.py [YYYY-MM-DD] [out.svg]
-Defaults to today and social/<id>.svg. The day -> ingredient map is
+Defaults to today and social/<id>.svg. A leading `--lang en` makes every mode
+below speak English for @copius.en: English names, stories, tips and captions,
+cards under social/en/, and no drink at all (see is_alcohol). The day -> ingredient map is
 social/schedule.json (tools/build-schedule.py), fixed in advance so that a data
 edit never changes which card a date needs.
 """
@@ -61,6 +63,7 @@ def load():
                 "story_en": field(r'story:\{en:"((?:[^"\\]|\\.)*)"'),
                 "story_fr": typo(field(r'story:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"')),
                 "tip_fr": typo(field(r'tip:\{[^}]*?fr:"((?:[^"\\]|\\.)*)"')),
+                "tip_en": field(r'tip:\{en:"((?:[^"\\]|\\.)*)"'),
             })
     # Say so rather than dividing by zero three frames later: this returned an
     # empty list for an afternoon after the app moved off index.html, and the
@@ -68,6 +71,23 @@ def load():
     if not rows:
         sys.exit("no ingredient records in the data files of %s" % SOURCES.relative_to(ROOT))
     return rows
+
+# Set by a leading `--lang en` (see __main__). French stays the default, so the
+# French workflows call this file exactly as before.
+EN = False
+
+
+def name_of(i):
+    return i["en"] if EN else i["fr"]
+
+
+def story_of(i):
+    return i["story_en"] if EN else i["story_fr"]
+
+
+def tip_of(i):
+    return i["tip_en"] if EN else i["tip_fr"]
+
 
 SCHEDULE = ROOT / "social" / "schedule.json"
 EXHAUSTED = ("schedule exhausted — run: python3 tools/build-schedule.py"
@@ -172,7 +192,7 @@ STYLE = (
 
 def card(i):
     e = lambda s: html.escape(s or "", quote=True)
-    name, gloss = name_parts(i["fr"])
+    name, gloss = name_parts(name_of(i))
     tl, ts = title(name, 66)
     # Baselines relative to the first line of the name.
     y, parts = 0, []
@@ -196,7 +216,7 @@ def card(i):
     # as unfinished. A first sentence too long for the smallest size ends at
     # its last dash, semicolon or colon that fits, where what comes before
     # stands as a sentence; only one with none is trimmed to a word and marked.
-    story = re.sub(r"\\+(.)", r"\1", i["story_fr"] or "")
+    story = re.sub(r"\\+(.)", r"\1", story_of(i) or "")
     sentences = re.split(r"(?<=[.!?\u2026]) +", story)
     # clause, separator, clause\u2026: k clauses with their own separators are
     # "".join(head[:2 * k - 1])
@@ -250,7 +270,7 @@ def tip_card(i):
     ingredient is; this says what to do with it, which is the half a cook
     actually keeps."""
     e = lambda s: html.escape(s or "", quote=True)
-    tip = re.sub(r"\\+(.)", r"\1", i["tip_fr"] or "")
+    tip = re.sub(r"\\+(.)", r"\1", tip_of(i) or "")
     # Step the type down rather than cut the text: a tip's second sentence is
     # usually the one carrying the warning. The longest tip in the data (351
     # characters) settles on the third pair; the last is headroom.
@@ -261,7 +281,7 @@ def tip_card(i):
     lh = round(size * 1.45)
     # Centre the whole stack, not the tip alone: a two-line tip under a fixed
     # header hangs in a void, and this is the same page either way.
-    name, gloss = name_parts(i["fr"])
+    name, gloss = name_parts(name_of(i))
     tl, ts = title(name, 52)
     last = (len(tl) - 1) * round(ts * 1.1) + (52 if gloss else 0)  # last line of the name
     head = last + 236                            # name to first line of tip
@@ -285,7 +305,7 @@ def tip_card(i):
 <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#E5E7DA" stroke-width="2"/>
 {names}
 <line x1="470" y1="{s + last + 74}" x2="610" y2="{s + last + 74}" stroke="#E5E7DA" stroke-width="2"/>
-<text x="540" y="{s + last + 136}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">EN CUISINE</text>
+<text x="540" y="{s + last + 136}" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a29c92">{"IN THE KITCHEN" if EN else "EN CUISINE"}</text>
 {body}
 {warn}
 <text x="540" y="986" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" letter-spacing="5" fill="#b4ada2">COPIUS</text>
@@ -324,6 +344,10 @@ def is_alcohol(i):
 # entry falls back to its atlas story, so the list is topped up ahead of the
 # schedule rather than guarded.
 SOCIAL_FR = json.loads((ROOT / "tools" / "captions-fr.json").read_text())
+# The same for @copius.en, in spoken English, read only in English so the French
+# jobs never depend on it. Its fallback is the atlas's English story.
+def social_en():
+    return json.loads((ROOT / "tools" / "captions-en.json").read_text())
 
 
 def caption(i):
@@ -331,6 +355,11 @@ def caption(i):
     2026), and without hashtags, which he does not use. Instagram captions carry
     no clickable link, so the site is named rather than linked."""
     un = lambda s: re.sub(r"\\+(.)", r"\1", s or "")
+    if EN:
+        # @copius.en posts no drink (is_alcohol), so it never needs the health message.
+        if is_alcohol(i):
+            sys.exit("%s is a drink: @copius.en posts no drink" % i["id"])
+        return "\n".join([i["en"], latin(i), "", social_en().get(i["id"]) or un(i["story_en"]), "", "copius.fr"])
     # The health message high in the caption, not buried: Instagram hides
     # everything past the first couple of lines behind "... plus".
     return "\n".join([i["fr"]] + ([EVIN] if is_alcohol(i) else []) + [latin(i), "",
@@ -344,6 +373,8 @@ def build_all(rows, outdir):
     outdir.mkdir(parents=True, exist_ok=True)
     done = set()
     for i in rows:
+        if EN and is_alcohol(i):
+            continue
         (outdir / (i["id"] + ".svg")).write_text(card(i))
         (outdir / (i["id"] + ".2.svg")).write_text(tip_card(i))
         done.add(i["id"])
@@ -351,6 +382,10 @@ def build_all(rows, outdir):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:3] == ["--lang", "en"]:
+        EN = True
+        del sys.argv[1:3]
+    OUT = ROOT / "social" / "en" if EN else ROOT / "social"
     rows = load()
     if len(sys.argv) > 1 and sys.argv[1] == "--window":
         # The next N scheduled days from today (all remaining when N is not
@@ -364,12 +399,16 @@ if __name__ == "__main__":
             i = resolve(rows, days, k)
             if i["id"] not in seen:
                 seen.add(i["id"]); want.append(i)
-        n = build_all(want, ROOT / "social")
-        print(json.dumps({"built": n, "days": last - first, "dir": "social/"}))
+        if EN:  # captions are written ahead of the cards; name the ids that would fall back to the raw story
+            bare = [i["id"] for i in want if not is_alcohol(i) and i["id"] not in social_en()]
+            if bare:
+                print("no English caption yet (falls back to the atlas story): " + " ".join(bare), file=sys.stderr)
+        n = build_all(want, OUT)
+        print(json.dumps({"built": n, "days": last - first, "dir": str(OUT.relative_to(ROOT)) + "/"}))
         sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "--all":
-        n = build_all(rows, ROOT / "social")
-        print(json.dumps({"built": n, "dir": "social/"}))
+        n = build_all(rows, OUT)
+        print(json.dumps({"built": n, "dir": str(OUT.relative_to(ROOT)) + "/"}))
         sys.exit(0)
     # A reel's caption is the caption of the ingredient whose atlas page it
     # closes on (social/reels.json), derived at post time like the cards'.
@@ -386,11 +425,15 @@ if __name__ == "__main__":
         d = (datetime.date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2
              else datetime.date.today())
         i = pick(rows, d)
-        print(i["id"] if sys.argv[1] == "--today-id" else caption(i))
+        # A drink day has no English card: "-" tells the English poster to skip it.
+        if sys.argv[1] == "--today-id":
+            print("-" if EN and is_alcohol(i) else i["id"])
+        else:
+            print(caption(i))
         sys.exit(0)
     d = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date.today()
     i = pick(rows, d)
-    out = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "social" / (i["id"] + ".svg")
+    out = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else OUT / (i["id"] + ".svg")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(card(i))
     print(json.dumps({"date": str(d), "id": i["id"], "en": i["en"], "fr": i["fr"], "file": str(out)}))

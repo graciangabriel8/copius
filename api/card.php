@@ -33,7 +33,9 @@ foreach ([$day, $day - 1] as $k) {
 }
 if ($id === null) not_found();
 
-$path = dirname(__DIR__) . '/social/' . $id . (($m[2] ?? '') === '.2' ? '.2' : '') . '.jpg';
+// @copius.en's cards live in social/en/ (.htaccess); a drink day has none there, so it is a 404.
+$dir = (($_GET['lang'] ?? '') === 'en') ? '/social/en/' : '/social/';
+$path = dirname(__DIR__) . $dir . $id . (($m[2] ?? '') === '.2' ? '.2' : '') . '.jpg';
 if (!is_file($path)) not_found();
 header('Content-Type: image/jpeg');
 header('Content-Length: ' . filesize($path));

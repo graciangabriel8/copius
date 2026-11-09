@@ -26,8 +26,29 @@ jobs:
           if [ -z "${GH_TOKEN:-}" ]; then
             echo "::warning::SECRETS_PAT not set — refresh the token by hand before it expires"; exit 0
           fi
-          NEW="$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
+          NEW="$(curl -sS --max-time 60 "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
             | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
           if [ -z "$NEW" ]; then echo "::error::refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
           gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" --body "$NEW"
           echo "token refreshed (value never printed)"
+
+      # @copius.en's key, the same way, and whatever the French step above did.
+      # Until IG_ACCESS_TOKEN_EN exists, this step only says so.
+      - name: Refresh the @copius.en access token
+        if: always()
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_EN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${IG_ACCESS_TOKEN:-}" ]; then
+            echo "::notice::IG_ACCESS_TOKEN_EN not set yet — nothing to refresh for @copius.en"; exit 0
+          fi
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::SECRETS_PAT not set — refresh the @copius.en token by hand before it expires"; exit 0
+          fi
+          NEW="$(curl -sS --max-time 60 "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
+            | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
+          if [ -z "$NEW" ]; then echo "::error::@copius.en refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
+          gh secret set IG_ACCESS_TOKEN_EN --repo "${{ github.repository }}" --body "$NEW"
+          echo "@copius.en token refreshed (value never printed)"
