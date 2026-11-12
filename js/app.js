@@ -3638,31 +3638,28 @@
         /* The tone each line shades into: the element's own border, else its fill. */
         var cs = getComputedStyle(p), tone = parseFloat(cs.borderTopWidth) > 0 ? cs.borderTopColor : cs.backgroundColor;
         if (!tone || tone === "transparent" || /,\s*0\)$/.test(tone)) tone = "";
-        s.dataset.tone = tone;
+        s.style.setProperty("--tone", tone || "var(--border)");
         n++;
         svg.appendChild(s);
       });
-      /* However many boxes a wide screen holds, the drawing takes under 1.4 s. */
-      var gap = n ? Math.min(35, 450 / n) : 0;
+      /* However many boxes a wide screen holds, the drawing takes about a second. */
+      var gap = n ? Math.min(30, 300 / n) : 0;
       Array.prototype.forEach.call(svg.childNodes, function (s, i) { s.style.animationDelay = Math.round(i * gap) + "ms"; });
       document.body.appendChild(svg);
       var over = false;
-      /* Drawn, each line shades from the drawings' grey to its element's tone
-         while the page fades in beneath, then the lines go. */
-      function finish() {
+      /* Each line lightens into its element's tone while it is drawn (css,
+         @keyframes sketch); the page fades in under the last strokes, then the
+         lines go. A tap or a key skips to the page at once. */
+      function finish(skip) {
         if (over) return;
         over = true;
-        Array.prototype.forEach.call(svg.querySelectorAll("rect"), function (s) {
-          s.style.strokeDashoffset = "0"; s.style.animation = "none";
-          s.style.stroke = s.dataset.tone || "var(--border)";
-        });
         showPage();
-        setTimeout(function () { svg.classList.add("done"); }, 450);
-        setTimeout(function () { svg.remove(); done(); }, 1000);
+        setTimeout(function () { svg.classList.add("done"); }, skip === true ? 0 : 250);
+        setTimeout(function () { svg.remove(); done(); }, skip === true ? 400 : 650);
       }
-      svg.addEventListener("pointerdown", finish);
-      document.addEventListener("keydown", finish, { once: true });
-      setTimeout(finish, 900 + gap * n);
+      svg.addEventListener("pointerdown", function () { finish(true); });
+      document.addEventListener("keydown", function () { finish(true); }, { once: true });
+      setTimeout(finish, 550 + gap * n);
     });
   }
 

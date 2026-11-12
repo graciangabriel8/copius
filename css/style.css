@@ -1223,11 +1223,12 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
    after a sign-in, and the spotlight walks through four things. */
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
 html[data-bridge="door"] .site-head,html[data-bridge="door"] main,html[data-bridge="door"] .site-foot{opacity:0}
-.site-head,main,.site-foot{transition:opacity .8s ease}
-.sketch{position:fixed;inset:0;width:100%;height:100%;z-index:70;transition:opacity .55s ease}
+.site-head,main,.site-foot{transition:opacity .6s ease}
+.sketch{position:fixed;inset:0;width:100%;height:100%;z-index:70;transition:opacity .4s ease}
 .sketch rect{fill:none;stroke:var(--art-line);stroke-width:1.6;stroke-linecap:round;
-  stroke-dasharray:1;stroke-dashoffset:1;animation:sketch .9s cubic-bezier(.4,0,.2,1) forwards;transition:stroke .7s ease}
-@keyframes sketch{to{stroke-dashoffset:0}}
+  stroke-dasharray:1;stroke-dashoffset:1;animation:sketch .8s cubic-bezier(.4,0,.2,1) forwards}
+/* drawn in the drawings' grey, lightening into the element's own tone as it goes */
+@keyframes sketch{0%{stroke-dashoffset:1;stroke:var(--art-line)}35%{stroke:var(--art-line)}100%{stroke-dashoffset:0;stroke:var(--tone,var(--border))}}
 .sketch.done{opacity:0}
 .tour-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border-strong);background:var(--card);
   color:var(--ink-2);font:400 19px/1 var(--serif);cursor:pointer;flex:none}
