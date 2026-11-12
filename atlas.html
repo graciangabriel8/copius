@@ -19,6 +19,20 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css?v=270">
+<script>
+/* First entry from the door: the page waits, hidden, for js/app.js to sketch it
+   (the intro at the end of app.js). It shows itself after 3 s whatever happens. */
+(function () {
+  try {
+    if (sessionStorage.getItem("copius-bridge") !== "door" || location.hash) return;
+    if ((localStorage.getItem("copius-intro") || "").split(",").indexOf("tour") !== -1) return;
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var d = document.documentElement;
+    d.setAttribute("data-bridge", "door");
+    setTimeout(function () { d.removeAttribute("data-bridge"); }, 3000);
+  } catch (e) {}
+})();
+</script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -39,6 +53,7 @@
     <div class="lang-toggle" id="langToggle" role="group" aria-label="Language / Langue">
       <button id="lang-en" type="button">EN</button><button id="lang-fr" type="button">FR</button>
     </div>
+    <button id="tourBtn" class="tour-btn" type="button">?</button>
   </div>
 </header>
 

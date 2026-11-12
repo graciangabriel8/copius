@@ -346,6 +346,8 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     .tile{animation:none}
     .tile,.cta,.cta .arrow,.go{transition:none}
   }
+  /* The door and the atlas cross-fade where the browser can (css/style.css says the same). */
+  @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://copius.fr/#site","name":"Copius","url":"https://copius.fr/","inLanguage":["en","fr"],"description":"Copius, un outil Nokime : l’atlas illustré de la cuisine, en français et en anglais. Version gratuite avec 500 ingrédients et les techniques, version complète à 5,90 € par mois ou 49 € par an, version pour les écoles bientôt. Copius, a Nokime tool: an illustrated atlas of cooking in French and English. Free version with 500 ingredients and the techniques, full version at €5.90 a month or €49 a year, schools version soon.","publisher":{"@type":"Organization","@id":"https://nokime.fr/#org","name":"Nokime","url":"https://nokime.fr/","sameAs":["https://www.instagram.com/nokime.fr/"]}},{"@type":"Organization","@id":"https://copius.fr/#org","name":"Copius","url":"https://copius.fr/","logo":"https://copius.fr/icons/icon-512.png","sameAs":["https://www.instagram.com/copius.fr/"],"parentOrganization":{"@id":"https://nokime.fr/#org"}}]}</script>
 </head>
@@ -371,7 +373,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   </svg>
   <h1>Copius</h1>
   <p class="lede"><span data-l="fr" lang="fr">Chaque ingrédient, son histoire et <em>ce qui va avec</em>.</span><span data-l="en">Every ingredient, its story, and <em>what goes with it</em>.</span></p>
-  <a class="cta cta-in" href="atlas.html"><span data-l="fr" lang="fr">Entrer dans l’atlas</span><span data-l="en">Enter the atlas</span><span class="arrow" aria-hidden="true">→</span></a>
+  <a class="cta cta-in" href="atlas.html" data-enter><span data-l="fr" lang="fr">Entrer dans l’atlas</span><span data-l="en">Enter the atlas</span><span class="arrow" aria-hidden="true">→</span></a>
   <!-- Every number in data-count, here and in #versions, is rewritten by
        tools/build-og.py at every bump. -->
   <div class="doors">
@@ -384,7 +386,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
         <li class="no"><span data-l="fr" lang="fr">juste un avant-goût des accords</span><span data-l="en">only a taste of the pairings</span></li>
       </ul>
       <p class="price"><span data-l="fr" lang="fr">0&nbsp;€</span><span data-l="en">€0</span><small><span data-l="fr" lang="fr">sans compte</span><span data-l="en">no account</span></small></p>
-      <a class="go" href="atlas.html"><span data-l="fr" lang="fr">Entrer</span><span data-l="en">Enter</span> <span aria-hidden="true">→</span></a>
+      <a class="go" href="atlas.html" data-enter><span data-l="fr" lang="fr">Entrer</span><span data-l="en">Enter</span> <span aria-hidden="true">→</span></a>
     </section>
     <section class="door door-full" aria-labelledby="doorFull">
       <h2 id="doorFull"><span data-l="fr" lang="fr">Version complète</span><span data-l="en">Full version</span></h2>
@@ -461,7 +463,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     <p class="v-year"><span data-l="fr" lang="fr">ou 49&nbsp;€ par an, soit 4,08&nbsp;€ par mois</span><span data-l="en">or €49 a year, that is €4.08 a month</span></p>
     <div class="v-ctas">
       <a class="go go-full" href="commande/"><span data-l="fr" lang="fr">Essayer 7&nbsp;jours gratuits</span><span data-l="en">Try it free for 7 days</span> <span aria-hidden="true">→</span></a>
-      <a class="go" href="atlas.html"><span data-l="fr" lang="fr">Ouvrir la version gratuite</span><span data-l="en">Open the free version</span></a>
+      <a class="go" href="atlas.html" data-enter><span data-l="fr" lang="fr">Ouvrir la version gratuite</span><span data-l="en">Open the free version</span></a>
     </div>
     <p class="v-terms"><span data-l="fr" lang="fr">Sans durée minimale, renouvelé chaque mois jusqu’à résiliation.<br>Ou 49&nbsp;€ par an&nbsp;: engagement d’un an, reconduit chaque année sauf refus de votre part.</span><span data-l="en">No minimum term, renewed each month until you cancel.<br>Or €49 a year: a one-year commitment, renewed each year unless you refuse.</span></p>
     <p class="v-schools"><span data-l="fr" lang="fr">Version pour les écoles&nbsp;: à venir.</span><span data-l="en">Version for schools: to come.</span></p>
@@ -650,5 +652,14 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
 })();
 </script>
 
+<script>
+/* « Entrer » leaves the atlas a one-shot note: the first time, it sketches itself
+   and the spotlight follows (the intro at the end of js/app.js). A sign-in's
+   note (connexion/) is kept, so its padlocks still open. */
+document.addEventListener("click", function (e) {
+  if (!e.target.closest("[data-enter]")) return;
+  try { if (sessionStorage.getItem("copius-bridge") !== "full") sessionStorage.setItem("copius-bridge", "door"); } catch (x) {}
+});
+</script>
 </body>
 </html>

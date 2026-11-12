@@ -102,6 +102,8 @@
           if (!/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie)) { done(); say("cxCookies"); return false; }
           /* The site's other open tabs reload into the full version. */
           if (window.BroadcastChannel) new BroadcastChannel("copius-session").postMessage("changed");
+          /* The atlas opens its padlocks for a first sign-in (the intro at the end of js/app.js). */
+          try { sessionStorage.setItem("copius-bridge", "full"); } catch (e) {}
           /* A new sign-in starts without the last one's offline copy of the
              full version (service-worker.js), which may be someone else's. */
           var yes = function () { return true; };

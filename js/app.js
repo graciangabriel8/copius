@@ -545,6 +545,8 @@
     el("nokimeLink").textContent = t.nokimeLink;
     el("disclaimer").textContent = t.disclaimer;
     el("createBtn").textContent = "+ " + t.create;
+    el("tourBtn").setAttribute("aria-label", t.tourAgain);
+    el("tourBtn").title = t.tourAgain;
     el("tabAtlas").textContent = t.tabAtlas;
     el("tabTech").textContent = t.tabTech;
     el("tabSub").textContent = t.tabSub;
@@ -3559,6 +3561,8 @@
         if (s === 200) {
           if (!hasMark()) { out.textContent = t.cxCookies; return; }
           if (SESSION_CH) SESSION_CH.postMessage("changed");
+          /* The reloaded page opens its padlocks, once per browser (intro below). */
+          try { sessionStorage.setItem("copius-bridge", "full"); } catch (x) {}
           location.reload();
           return;
         }
@@ -3590,4 +3594,194 @@
   if (hash && byId[hash]) { setView("atlas"); openModal(hash); }
   else if (hash && LOCKED && PAID[hash]) { setView("atlas"); openItem("full", hash); }
   else if (hash === "abonnement" || hash === "subscription") setView("sub");
+
+  /* ---------- first visit ----------
+     The door's « Entrer » (index.html) and a sign-in (connexion/, the code
+     above) leave a one-shot note in this tab's sessionStorage, read and
+     cleared here. Entering from the door, the atlas sketches itself in the
+     drawings' grey line, then fills in; signed in to the full version, its
+     padlocks open and the count climbs. Then the four-step spotlight. Each
+     plays once per browser (copius-intro in localStorage, named on the privacy
+     page); the « ? » in the header replays the spotlight. Nothing plays on a
+     link straight to an entry, and with reduced motion only the spotlight
+     comes, without movement. The head of atlas.html hides the page while the
+     sketch runs and shows it again by itself after three seconds, so a
+     failure here can never leave it blank. */
+  var LS_INTRO = "copius-intro";
+  function introSeen(k) { return (readItem(LS_INTRO) || "").split(",").indexOf(k) !== -1; }
+  function introMark(k) {
+    if (introSeen(k)) return;
+    try { localStorage.setItem(LS_INTRO, ((readItem(LS_INTRO) || "") + "," + k).replace(/^,/, "")); } catch (e) {}
+  }
+  function showPage() { document.documentElement.removeAttribute("data-bridge"); }
+
+  /* E: the boxes of what is on screen, drawn as one line each, then the page. */
+  function playSketch() {
+    return new Promise(function (done) {
+      var vw = window.innerWidth, vh = window.innerHeight, NS = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(NS, "svg");
+      svg.setAttribute("class", "sketch");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("viewBox", "0 0 " + vw + " " + vh);
+      var parts = ["search", "createBtn", "langToggle", "tourBtn", "viewTabs", "tierNote", "daily"]
+        .map(el).concat(Array.prototype.slice.call(document.querySelectorAll("#cats > *, #monthBtns > *, #grid > .card"), 0, 40));
+      var n = 0;
+      parts.forEach(function (p) {
+        if (!p || p.hidden) return;
+        var r = p.getBoundingClientRect();
+        if (r.width < 4 || r.height < 4 || r.bottom < 0 || r.top > vh) return;
+        var rx = Math.min(parseFloat(getComputedStyle(p).borderTopLeftRadius) || 0, r.height / 2, r.width / 2);
+        var s = document.createElementNS(NS, "rect");
+        s.setAttribute("x", r.left); s.setAttribute("y", r.top);
+        s.setAttribute("width", r.width); s.setAttribute("height", r.height);
+        s.setAttribute("rx", rx); s.setAttribute("pathLength", "1");
+        /* The tone each line shades into: the element's own border, else its fill. */
+        var cs = getComputedStyle(p), tone = parseFloat(cs.borderTopWidth) > 0 ? cs.borderTopColor : cs.backgroundColor;
+        if (!tone || tone === "transparent" || /,\s*0\)$/.test(tone)) tone = "";
+        s.dataset.tone = tone;
+        n++;
+        svg.appendChild(s);
+      });
+      /* However many boxes a wide screen holds, the drawing takes under 1.4 s. */
+      var gap = n ? Math.min(35, 450 / n) : 0;
+      Array.prototype.forEach.call(svg.childNodes, function (s, i) { s.style.animationDelay = Math.round(i * gap) + "ms"; });
+      document.body.appendChild(svg);
+      var over = false;
+      /* Drawn, each line shades from the drawings' grey to its element's tone
+         while the page fades in beneath, then the lines go. */
+      function finish() {
+        if (over) return;
+        over = true;
+        Array.prototype.forEach.call(svg.querySelectorAll("rect"), function (s) {
+          s.style.strokeDashoffset = "0"; s.style.animation = "none";
+          s.style.stroke = s.dataset.tone || "var(--border)";
+        });
+        showPage();
+        setTimeout(function () { svg.classList.add("done"); }, 450);
+        setTimeout(function () { svg.remove(); done(); }, 1000);
+      }
+      svg.addEventListener("pointerdown", finish);
+      document.addEventListener("keydown", finish, { once: true });
+      setTimeout(finish, 900 + gap * n);
+    });
+  }
+
+  /* F: the full version's tabs start locked, then open one after another,
+     while the count climbs from the free version's to the whole atlas. */
+  function playUnlock() {
+    return new Promise(function (done) {
+      var t = T(), from = LK.counts.free || ING.length, to = ING.length, still = reducedMotion();
+      var note = el("tierNote");
+      note.innerHTML = esc(t.introWelcome).replace("{n}", '<b class="intro-count">' + fmt(still ? to : from) + "</b>");
+      note.classList.add("welcome");
+      if (still) { done(); return; }
+      var tabs = ["tabChefs", "tabBases", "tabLab"].map(el).filter(function (b) { return b && !b.hidden; });
+      tabs.forEach(function (b) { b.insertAdjacentHTML("beforeend", '<span class="lock-temp">' + LOCK_ICON + "</span>"); });
+      var count = note.querySelector(".intro-count"), t0 = null, DUR = 1100;
+      setTimeout(function () {
+        tabs.forEach(function (b, i) {
+          var l = b.querySelector(".lock-temp");
+          setTimeout(function () { l.classList.add("open"); }, i * 260);
+          setTimeout(function () { l.remove(); }, i * 260 + 900);
+        });
+        requestAnimationFrame(function step(ts) {
+          if (t0 === null) t0 = ts;
+          var k = Math.min(1, (ts - t0) / DUR), e = 1 - Math.pow(1 - k, 3);
+          count.textContent = fmt(Math.round(from + (to - from) * e));
+          if (k < 1) requestAnimationFrame(step); else setTimeout(done, 350);
+        });
+      }, 450);
+    });
+  }
+
+  /* The spotlight: a pool of light on one thing at a time, the page dimmed but
+     readable around it, one line beside it. A dialog: focus stays in it,
+     Escape leaves, the arrows step, and leaving puts focus back. */
+  function startTour() {
+    if (document.querySelector(".tour")) return;
+    if (state.view !== "atlas") setView("atlas");
+    var t = T(), back = document.activeElement, still = reducedMotion();
+    var steps = [
+      { el: function () { return el("search"); }, text: t.tour1 },
+      { el: function () { return document.querySelector("#grid > .card"); }, text: t.tour2 },
+      { el: function () { return el("viewTabs"); }, text: LOCKED ? t.tour3 : t.tour3Full },
+      { el: function () { return el("createBtn"); }, text: t.tour4 }
+    ].filter(function (s) { var e = s.el(); return e && !e.hidden; });
+    if (!steps.length) return;
+    var box = document.createElement("div");
+    box.className = "tour";
+    box.innerHTML = '<div class="tour-hole"></div>' +
+      '<div class="tour-tip" role="dialog" aria-modal="true" aria-labelledby="tourN" aria-describedby="tourText">' +
+      '<p class="tour-n" id="tourN"></p><p class="tour-text" id="tourText" aria-live="polite"></p>' +
+      '<div class="tour-nav"><button type="button" class="linkish tour-skip">' + esc(t.tourSkip) + "</button>" +
+      '<span class="tour-dots" aria-hidden="true">' + steps.map(function () { return "<i></i>"; }).join("") + "</span>" +
+      '<button type="button" class="tour-next"></button></div></div>';
+    document.body.appendChild(box);
+    var hole = box.querySelector(".tour-hole"), tip = box.querySelector(".tour-tip");
+    var next = box.querySelector(".tour-next"), skip = box.querySelector(".tour-skip"), at = 0, raf = 0;
+    function place() {
+      var target = steps[at].el();
+      if (!target) return;
+      var r = target.getBoundingClientRect(), pad = 6, vw = window.innerWidth, vh = window.innerHeight;
+      hole.style.left = (r.left - pad) + "px"; hole.style.top = (r.top - pad) + "px";
+      hole.style.width = (r.width + pad * 2) + "px"; hole.style.height = (r.height + pad * 2) + "px";
+      hole.style.borderRadius = Math.min(22, (r.height + pad * 2) / 2) + "px";
+      var w = tip.offsetWidth, h = tip.offsetHeight, gap = 14;
+      var top = r.bottom + pad + gap + h < vh ? r.bottom + pad + gap : Math.max(12, r.top - pad - gap - h);
+      if (top + h > vh - 12) top = Math.max(12, vh - h - 12);
+      tip.style.top = top + "px";
+      tip.style.left = Math.max(12, Math.min(vw - w - 12, r.left)) + "px";
+    }
+    function follow() { cancelAnimationFrame(raf); raf = requestAnimationFrame(place); }
+    function show(i) {
+      at = i;
+      box.querySelector(".tour-n").textContent = t.tourStep.replace("{i}", i + 1).replace("{n}", steps.length);
+      box.querySelector(".tour-text").textContent = steps[i].text;
+      next.textContent = i === steps.length - 1 ? t.tourDone : t.tourNext + " \u2192";
+      Array.prototype.forEach.call(box.querySelectorAll(".tour-dots i"), function (d, k) { d.classList.toggle("on", k === i); });
+      var target = steps[i].el(), r = target.getBoundingClientRect();
+      if (r.top < 70 || r.bottom > window.innerHeight - 160) {
+        target.scrollIntoView({ block: "center", behavior: still ? "auto" : "smooth" });
+        setTimeout(place, still ? 0 : 420);
+      }
+      place();
+    }
+    function end() {
+      introMark("tour");
+      window.removeEventListener("resize", follow);
+      window.removeEventListener("scroll", follow, true);
+      document.removeEventListener("keydown", keys, true);
+      box.remove();
+      if (back && back !== document.body && back.focus && document.contains(back)) back.focus({ preventScroll: true });
+      else el("search").focus({ preventScroll: true });
+    }
+    function keys(e) {
+      if (e.key === "Escape") { e.preventDefault(); end(); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); if (at < steps.length - 1) show(at + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); if (at > 0) show(at - 1); }
+      else if (e.key === "Tab") { e.preventDefault(); (document.activeElement === next ? skip : next).focus(); }
+    }
+    next.addEventListener("click", function () { if (at < steps.length - 1) show(at + 1); else end(); });
+    skip.addEventListener("click", end);
+    window.addEventListener("resize", follow);
+    window.addEventListener("scroll", follow, true);
+    document.addEventListener("keydown", keys, true);
+    show(0);
+    next.focus({ preventScroll: true });
+  }
+  el("tourBtn").addEventListener("click", function () {
+    if (el("overlay").hidden === false) closeModal();
+    startTour();
+  });
+
+  var bridge = null;
+  try { bridge = sessionStorage.getItem("copius-bridge"); sessionStorage.removeItem("copius-bridge"); } catch (e) {}
+  var opened = !el("overlay").hidden || state.view !== "atlas";
+  if (hash || opened || !bridge) showPage();
+  else if (bridge === "full" && !LOCKED && !introSeen("full")) {
+    showPage();
+    playUnlock().then(function () { introMark("full"); if (!introSeen("tour")) startTour(); });
+  } else if (bridge === "door" && !introSeen("tour")) {
+    (document.documentElement.hasAttribute("data-bridge") ? playSketch() : Promise.resolve()).then(startTour);
+  } else showPage();
 })();
