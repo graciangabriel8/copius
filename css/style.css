@@ -1218,10 +1218,8 @@ button.tier-state{color:inherit;text-align:left;font-size:inherit}
   .taste-name,.taste-val{overflow-wrap:normal}
 }
 /* ---------- first visit (the intro at the end of js/app.js) ----------
-   The door and the atlas cross-fade where the browser can; then, the first
-   time, the atlas sketches itself in the drawings' line, opens its padlocks
-   after a sign-in, and the spotlight walks through four things. */
-@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+   The first time, the atlas sketches itself in the drawings' line, opens its
+   padlocks after a sign-in, and the spotlight walks through four things. */
 html[data-bridge="door"] .site-head,html[data-bridge="door"] main,html[data-bridge="door"] .site-foot{opacity:0}
 .site-head,main,.site-foot{transition:opacity .6s ease}
 .sketch{position:fixed;inset:0;width:100%;height:100%;z-index:70;transition:opacity .4s ease}
@@ -1249,7 +1247,8 @@ html[data-bridge="door"] .site-head,html[data-bridge="door"] main,html[data-brid
 .tour-next{min-height:44px;padding:0 18px;border:0;border-radius:99px;background:var(--accent);color:var(--on-accent);
   font:600 14px var(--sans);cursor:pointer}
 .tour-next:focus-visible,.tour-skip:focus-visible,.tour-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.view-tab .lock-temp{display:inline-flex;margin-left:6px;transition:opacity .35s ease .35s}
+/* in the tab's own padding, so the tab bar keeps its width while they open */
+.view-tab .lock-temp{position:absolute;right:5px;top:50%;margin-top:-6px;display:inline-flex;transition:opacity .35s ease .35s}
 .lock-temp .lock-ico path{transform-box:fill-box;transform-origin:100% 100%;transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .lock-temp.open .lock-ico path{transform:translateY(-1.5px) rotate(-32deg)}
 .lock-temp.open{opacity:0}

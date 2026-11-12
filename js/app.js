@@ -3581,7 +3581,7 @@
   /* state.view defaults to "atlas" but nothing applied it to the DOM, so a first
      load showed the atlas with no tab marked selected. */
   setView(state.view);
-  idbOpen().then(function (db) {
+  var photosLoad = idbOpen().then(function (db) {
     idb = db;
     return idbLoadAll();
   }).then(function (all) {
@@ -3608,17 +3608,27 @@
      sketch runs and shows it again by itself after three seconds, so a
      failure here can never leave it blank. */
   var LS_INTRO = "copius-intro";
-  function introSeen(k) { return (readItem(LS_INTRO) || "").split(",").indexOf(k) !== -1; }
+  /* Where localStorage cannot be written, this tab's sessionStorage remembers
+     instead, so the intro still plays once rather than on every « Entrer ». */
+  function introList() {
+    var s = "";
+    try { s = sessionStorage.getItem(LS_INTRO) || ""; } catch (e) {}
+    return ((readItem(LS_INTRO) || "") + "," + s).split(",");
+  }
+  function introSeen(k) { return introList().indexOf(k) !== -1; }
   function introMark(k) {
     if (introSeen(k)) return;
-    try { localStorage.setItem(LS_INTRO, ((readItem(LS_INTRO) || "") + "," + k).replace(/^,/, "")); } catch (e) {}
+    try { localStorage.setItem(LS_INTRO, ((readItem(LS_INTRO) || "") + "," + k).replace(/^,/, "")); }
+    catch (e) {
+      try { sessionStorage.setItem(LS_INTRO, ((sessionStorage.getItem(LS_INTRO) || "") + "," + k).replace(/^,/, "")); } catch (x) {}
+    }
   }
   function showPage() { document.documentElement.removeAttribute("data-bridge"); }
 
   /* E: the boxes of what is on screen, drawn as one line each, then the page. */
   function playSketch() {
     return new Promise(function (done) {
-      var vw = window.innerWidth, vh = window.innerHeight, NS = "http://www.w3.org/2000/svg";
+      var vw = document.documentElement.clientWidth, vh = document.documentElement.clientHeight, NS = "http://www.w3.org/2000/svg";
       var svg = document.createElementNS(NS, "svg");
       svg.setAttribute("class", "sketch");
       svg.setAttribute("aria-hidden", "true");
@@ -3655,7 +3665,7 @@
         over = true;
         showPage();
         setTimeout(function () { svg.classList.add("done"); }, skip === true ? 0 : 250);
-        setTimeout(function () { svg.remove(); done(); }, skip === true ? 400 : 650);
+        setTimeout(function () { svg.remove(); done(skip === true); }, skip === true ? 400 : 650);
       }
       svg.addEventListener("pointerdown", function () { finish(true); });
       document.addEventListener("keydown", function () { finish(true); }, { once: true });
@@ -3671,6 +3681,7 @@
       var note = el("tierNote");
       note.innerHTML = esc(t.introWelcome).replace("{n}", '<b class="intro-count">' + fmt(still ? to : from) + "</b>");
       note.classList.add("welcome");
+      note.setAttribute("role", "status");
       if (still) { done(); return; }
       var tabs = ["tabChefs", "tabBases", "tabLab"].map(el).filter(function (b) { return b && !b.hidden; });
       tabs.forEach(function (b) { b.insertAdjacentHTML("beforeend", '<span class="lock-temp">' + LOCK_ICON + "</span>"); });
@@ -3678,6 +3689,7 @@
       setTimeout(function () {
         tabs.forEach(function (b, i) {
           var l = b.querySelector(".lock-temp");
+          if (!l) return;
           setTimeout(function () { l.classList.add("open"); }, i * 260);
           setTimeout(function () { l.remove(); }, i * 260 + 900);
         });
@@ -3695,7 +3707,8 @@
      readable around it, one line beside it. A dialog: focus stays in it,
      Escape leaves, the arrows step, and leaving puts focus back. */
   function startTour() {
-    if (document.querySelector(".tour")) return;
+    /* Never over an entry or the create form someone has opened meanwhile. */
+    if (document.querySelector(".tour") || !el("overlay").hidden || !el("createOverlay").hidden) return;
     if (state.view !== "atlas") setView("atlas");
     var t = T(), back = document.activeElement, still = reducedMotion();
     var steps = [
@@ -3747,12 +3760,15 @@
       introMark("tour");
       window.removeEventListener("resize", follow);
       window.removeEventListener("scroll", follow, true);
-      document.removeEventListener("keydown", keys, true);
+      window.removeEventListener("keydown", keys, true);
       box.remove();
+      /* Back where focus was; after an intro that started by itself, nowhere, so a phone opens no keyboard. */
       if (back && back !== document.body && back.focus && document.contains(back)) back.focus({ preventScroll: true });
-      else el("search").focus({ preventScroll: true });
     }
     function keys(e) {
+      /* The page's own shortcuts (« / » to search, Escape for a dialog) stay out while the tour is open. */
+      if (["Escape", "ArrowRight", "ArrowLeft", "Tab", "/"].indexOf(e.key) !== -1) e.stopImmediatePropagation();
+      if (e.key === "/") { e.preventDefault(); return; }
       if (e.key === "Escape") { e.preventDefault(); end(); }
       else if (e.key === "ArrowRight") { e.preventDefault(); if (at < steps.length - 1) show(at + 1); }
       else if (e.key === "ArrowLeft") { e.preventDefault(); if (at > 0) show(at - 1); }
@@ -3762,7 +3778,8 @@
     skip.addEventListener("click", end);
     window.addEventListener("resize", follow);
     window.addEventListener("scroll", follow, true);
-    document.addEventListener("keydown", keys, true);
+    /* On window, first in line, so the page's own key handlers on document never see these keys. */
+    window.addEventListener("keydown", keys, true);
     show(0);
     next.focus({ preventScroll: true });
   }
@@ -3773,12 +3790,23 @@
 
   var bridge = null;
   try { bridge = sessionStorage.getItem("copius-bridge"); sessionStorage.removeItem("copius-bridge"); } catch (e) {}
+  /* A code typed on the Subscription tab reloads onto #abonnement: the
+     padlocks open on the atlas all the same. */
+  if (bridge === "full" && (hash === "abonnement" || hash === "subscription")) {
+    hash = "";
+    if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    setView("atlas");
+  }
+  /* The photos' re-render rewrites the tabs and the note, so the intro waits
+     for it, 0.7 s at most. A tap during the sketch skips the tour as well. */
+  var photosReady = Promise.race([photosLoad, new Promise(function (r) { setTimeout(r, 700); })]);
   var opened = !el("overlay").hidden || state.view !== "atlas";
   if (hash || opened || !bridge) showPage();
   else if (bridge === "full" && !LOCKED && !introSeen("full")) {
     showPage();
-    playUnlock().then(function () { introMark("full"); if (!introSeen("tour")) startTour(); });
+    photosReady.then(playUnlock).then(function () { introMark("full"); if (!introSeen("tour")) startTour(); });
   } else if (bridge === "door" && !introSeen("tour")) {
-    (document.documentElement.hasAttribute("data-bridge") ? playSketch() : Promise.resolve()).then(startTour);
+    photosReady.then(function () { return document.documentElement.hasAttribute("data-bridge") ? playSketch() : false; })
+      .then(function (skipped) { if (skipped) introMark("tour"); else startTour(); });
   } else showPage();
 })();
