@@ -3599,8 +3599,8 @@
      The door's « Entrer » (index.html) and a sign-in (connexion/, the code
      above) leave a one-shot note in this tab's sessionStorage, read and
      cleared here. Entering from the door, the atlas sketches itself in the
-     drawings' grey line, then fills in; signed in to the full version, its
-     padlocks open and the count climbs. Then the four-step spotlight. Each
+     drawings' grey line, then fills in; in the full version, signed in now or
+     long before, its padlocks open and the count climbs. Then the four-step spotlight. Each
      plays once per browser (copius-intro in localStorage, named on the privacy
      page); the « ? » in the header replays the spotlight. Nothing plays on a
      link straight to an entry, and with reduced motion only the spotlight
@@ -3801,8 +3801,10 @@
      for it, 0.7 s at most. A tap during the sketch skips the tour as well. */
   var photosReady = Promise.race([photosLoad, new Promise(function (r) { setTimeout(r, 700); })]);
   var opened = !el("overlay").hidden || state.view !== "atlas";
-  if (hash || opened || !bridge) showPage();
-  else if (bridge === "full" && !LOCKED && !introSeen("full")) {
+  if (hash || opened) showPage();
+  /* The full version opens its padlocks once per browser: after a sign-in, and
+     for someone already subscribed, on their first visit since. */
+  else if (!LOCKED && !introSeen("full")) {
     showPage();
     photosReady.then(playUnlock).then(function () { introMark("full"); if (!introSeen("tour")) startTour(); });
   } else if (bridge === "door" && !introSeen("tour")) {
