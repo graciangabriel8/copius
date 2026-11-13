@@ -77,6 +77,9 @@ input,select{font:inherit}
    moving to a second row — and scrollWidth still matches clientWidth, which
    is why it does not show up as an overflow. */
 .head-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px;row-gap:10px;flex:1;justify-content:flex-end;min-width:260px}
+/* Above a phone the tools keep one row: the search gives way first, so the
+   « ? » never pushes the language toggle onto a second line. */
+@media (min-width:721px){.head-tools{flex-wrap:nowrap}#search{flex:0 1 auto;min-width:150px}}
 #search{
   width:min(380px,100%);padding:9px 14px;border-radius:999px;
   border:1px solid var(--border-strong);background:var(--card);color:var(--ink);
@@ -500,6 +503,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   /* Apple's 44px minimum touch target. */
   .lang-toggle button{padding:12px 16px}
   .create-btn{padding:11px 18px}
+  .tour-btn{width:44px;height:44px}
   .toolbar{gap:12px 18px;font-size:15px}
   .check{min-height:44px}
   .check input{width:20px;height:20px}
@@ -1228,7 +1232,7 @@ html[data-bridge="door"] .site-head,html[data-bridge="door"] main,html[data-brid
 /* drawn in the drawings' grey, lightening into the element's own tone as it goes */
 @keyframes sketch{0%{stroke-dashoffset:1;stroke:var(--art-line)}35%{stroke:var(--art-line)}100%{stroke-dashoffset:0;stroke:var(--tone,var(--border))}}
 .sketch.done{opacity:0}
-.tour-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border-strong);background:var(--card);
+.tour-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border-strong);background:var(--card);
   color:var(--ink-2);font:400 19px/1 var(--serif);cursor:pointer;flex:none}
 .tour-btn:hover{background:var(--chip);color:var(--ink)}
 .tour{position:fixed;inset:0;z-index:80}
