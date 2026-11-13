@@ -86,7 +86,9 @@
 
   <nav id="cats" class="cats" data-i18n-aria="ariaFamilies"></nav>
 
-  <div class="toolbar">
+  <div class="toolbar" id="toolbar">
+    <!-- Folded by default: the months, the ticks, price, taste and sort open from here. -->
+    <button id="filtersBtn" class="filters-btn" type="button" aria-expanded="false" aria-controls="toolbar"></button>
     <!-- Months to cook in: any picked month narrows the grid to what is in season
          then. Built by renderMonthPick(); the current month is marked. -->
     <div id="monthPick" class="month-pick" role="group"><span id="monthPickLbl" class="mp-lbl"></span><span id="monthBtns" class="mp-months"></span></div>

@@ -530,6 +530,7 @@
     signs.sort();
     el("signOnlyLbl").textContent = t.signOnly + (signs.length ? " (" + signs.join(", ") + ")" : "");
     el("random").textContent = t.random;
+    paintFiltersBtn();
     el("labTitle").textContent = t.labTitle;
     el("labHint").textContent = t.labHint;
     el("triosTitle").textContent = t.triosTitle;
@@ -601,7 +602,16 @@
   /* The stats line answers the question of the moment: the whole atlas when
      nothing narrows it, "312 of 1,852" as soon as a search or filter does. */
   function fmt(n) { return n.toLocaleString(state.lang === "fr" ? "fr-FR" : "en-GB"); }
+  /* « Filtres », or « Filtres · 2 » when two are in use, so a folded bar never
+     hides that the grid is narrowed. */
+  function paintFiltersBtn() {
+    var s = state, n = (s.months.length ? 1 : 0) + (s.favsOnly ? 1 : 0) + (s.rareOnly ? 1 : 0) +
+      (s.luxeOnly ? 1 : 0) + (s.signOnly ? 1 : 0) + (s.priceBand !== "all" ? 1 : 0) +
+      (s.flavour !== "all" ? 1 : 0) + (s.sort !== "name" ? 1 : 0);
+    el("filtersBtn").textContent = T().filters + (n ? " \u00b7 " + n : "");
+  }
   function renderStats(shown) {
+    paintFiltersBtn();
     var t = T(), s = state;
     var narrowed = s.cat !== "all" || s.q.trim() || s.months.length || s.favsOnly || s.rareOnly ||
       s.luxeOnly || s.signOnly || s.priceBand !== "all" || s.flavour !== "all";
@@ -3170,6 +3180,10 @@
   el("priceBand").addEventListener("change", function (e) { state.priceBand = e.target.value; renderGrid(); });
   el("flavour").addEventListener("change", function (e) { state.flavour = e.target.value; renderGrid(); });
   el("sort").addEventListener("change", function (e) { state.sort = e.target.value; renderGrid(); });
+  el("filtersBtn").addEventListener("click", function () {
+    var open = el("toolbar").classList.toggle("open");
+    this.setAttribute("aria-expanded", open ? "true" : "false");
+  });
   el("random").addEventListener("click", function () {
     openModal(ING[Math.floor(Math.random() * ING.length)].id);
   });

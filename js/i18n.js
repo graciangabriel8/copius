@@ -241,6 +241,7 @@ window.I18N = {
     tierNoteLive: "The free version: the {n} ingredients a cook is expected to know, and the techniques, with only a taste of the pairings. A version for schools will follow.",
     /* First visit: the four-step spotlight, its « ? », and the welcome after a first sign-in. */
     tourAgain: "How it works",
+    filters: "Filters",
     tourStep: "{i} of {n}",
     tourNext: "Next",
     tourDone: "Done",
@@ -673,6 +674,7 @@ window.I18N = {
     tierNote: "La version gratuite : les {n} produits qu’un cuisinier est censé connaître, et les techniques, avec juste un avant-goût des accords. La version complète arrive bientôt, et une version pour les écoles suivra.",
     tierNoteLive: "La version gratuite : les {n} produits qu’un cuisinier est censé connaître, et les techniques, avec juste un avant-goût des accords. Une version pour les écoles suivra.",
     tourAgain: "Comment ça marche\u00a0?",
+    filters: "Filtres",
     tourStep: "{i} sur {n}",
     tourNext: "Suivant",
     tourDone: "Terminé",

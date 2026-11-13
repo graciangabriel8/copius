@@ -112,16 +112,16 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 .daily{
   display:flex;align-items:center;gap:26px;
   background:var(--card);border:1px solid var(--border);border-radius:20px;
-  padding:22px 28px;margin-bottom:26px;box-shadow:var(--shadow);cursor:pointer;
+  padding:16px 24px;margin-bottom:20px;box-shadow:var(--shadow);cursor:pointer;
   transition:box-shadow .2s ease, transform .2s ease;
 }
 .daily:hover{box-shadow:var(--shadow-lift);transform:translateY(-1px)}
 .daily .d-art{flex:0 0 auto}
-.daily .d-art svg,.daily .d-art img{width:120px;height:120px}
+.daily .d-art svg,.daily .d-art img{width:84px;height:84px}
 .daily .d-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);margin:0 0 4px}
-.daily h2{margin:0 0 2px;font-size:30px}
+.daily h2{margin:0 0 2px;font-size:24px}
 .daily .d-latin{margin:0 0 10px;font-style:italic;color:var(--ink-3);font-size:13.5px}
-.daily .d-story{margin:0;color:var(--ink-2);max-width:64ch}
+.daily .d-story{margin:0;color:var(--ink-2);max-width:64ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ---------- category chips ---------- */
 .cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
@@ -138,6 +138,16 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
 
 /* ---------- toolbar ---------- */
 .toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--ink-2);font-size:13.5px}
+/* Folded, the bar is one row: the filters button, « Surprenez-moi » and the count.
+   Open, every filter shows as before. The families stay above it, always. */
+.toolbar:not(.open) > :not(.filters-btn):not(#random):not(#stats){display:none}
+.filters-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;
+  border:1px solid var(--border-strong);background:var(--card);color:var(--ink);font:600 13px var(--sans);cursor:pointer}
+.filters-btn:hover{background:var(--chip)}
+.filters-btn[aria-expanded="true"]{background:var(--accent-soft);border-color:var(--accent-soft-bd);color:var(--accent-soft-ink)}
+.filters-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.toolbar.open{padding-bottom:4px}
+.toolbar #stats{margin-left:auto}
 .check{display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
 /* The native checkbox draws its own box whatever the page is. Draw ours from
    the tokens instead. */
@@ -522,7 +532,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .daily .d-label{font-size:10.5px;margin:0 0 2px}
   .daily .d-latin{margin:0 0 6px;font-size:12.5px}
   .daily .d-story{max-width:none;font-size:14px;display:-webkit-box;
-                  -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+                  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .modal-body{padding:4px 20px 24px}
   .m-head{justify-content:center;text-align:center}
   .m-season{justify-content:center}
