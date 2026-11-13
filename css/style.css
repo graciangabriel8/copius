@@ -514,6 +514,7 @@ main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
   .lang-toggle button{padding:12px 16px}
   .create-btn{padding:11px 18px}
   .tour-btn{width:44px;height:44px}
+  .filters-btn{min-height:44px;font-size:15px}
   .toolbar{gap:12px 18px;font-size:15px}
   .check{min-height:44px}
   .check input{width:20px;height:20px}

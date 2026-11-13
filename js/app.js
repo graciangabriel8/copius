@@ -602,12 +602,12 @@
   /* The stats line answers the question of the moment: the whole atlas when
      nothing narrows it, "312 of 1,852" as soon as a search or filter does. */
   function fmt(n) { return n.toLocaleString(state.lang === "fr" ? "fr-FR" : "en-GB"); }
-  /* « Filtres », or « Filtres · 2 » when two are in use, so a folded bar never
-     hides that the grid is narrowed. */
+  /* « Filtres », or « Filtres · 2 » when two narrow the grid, so a folded bar
+     never hides it. The sort narrows nothing, so it is not counted. */
   function paintFiltersBtn() {
     var s = state, n = (s.months.length ? 1 : 0) + (s.favsOnly ? 1 : 0) + (s.rareOnly ? 1 : 0) +
       (s.luxeOnly ? 1 : 0) + (s.signOnly ? 1 : 0) + (s.priceBand !== "all" ? 1 : 0) +
-      (s.flavour !== "all" ? 1 : 0) + (s.sort !== "name" ? 1 : 0);
+      (s.flavour !== "all" ? 1 : 0);
     el("filtersBtn").textContent = T().filters + (n ? " \u00b7 " + n : "");
   }
   function renderStats(shown) {
