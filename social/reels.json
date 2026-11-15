@@ -36,6 +36,18 @@
     {"date": "2026-11-10", "file": "social/reels/chou-de-bruxelles.mp4", "cover": "social/reels/chou-de-bruxelles-cover.jpg", "id": "brussels-sprout"},
     {"date": "2026-11-11", "file": "social/reels/copius-3d-panier.mp4", "cover": "social/reels/copius-3d-panier-cover.jpg", "id": "copius-3d-panier", "caption": "Retour du marché, le panier plein… on cuisine quoi ?\nLe labo te dit ce qui va ensemble, et ce qui manque pour tout relier.\nDans la version complète de Copius.\ncopius.fr"},
     {"date": "2026-11-13", "file": "social/reels/copius-3d-bloque.mp4", "cover": "social/reels/copius-3d-bloque-cover.jpg", "id": "copius-3d-bloque", "caption": "Ton plat tient la route, mais il lui manque un truc ?\nLe labo te dit quoi : ici, du croquant.\nDans la version complète de Copius.\ncopius.fr"},
-    {"date": "2026-11-15", "file": "social/reels/copius-3d-a-soi.mp4", "cover": "social/reels/copius-3d-a-soi-cover.jpg", "id": "copius-3d-a-soi", "caption": "Envie d’inventer un plat bien à toi ?\nPioche des produits, le labo te dit ce qui va ensemble.\nDans la version complète de Copius.\ncopius.fr"}
+    {"date": "2026-11-15", "file": "social/reels/copius-3d-a-soi.mp4", "cover": "social/reels/copius-3d-a-soi-cover.jpg", "id": "copius-3d-a-soi", "caption": "Envie d’inventer un plat bien à toi ?\nPioche des produits, le labo te dit ce qui va ensemble.\nDans la version complète de Copius.\ncopius.fr"},
+    {"date": "2026-11-16", "file": "social/reels/pomme.mp4", "cover": "social/reels/pomme-cover.jpg", "id": "apple"},
+    {"date": "2026-11-17", "file": "social/reels/sel.mp4", "cover": "social/reels/sel-cover.jpg", "id": "salt"},
+    {"date": "2026-11-18", "file": "social/reels/figue.mp4", "cover": "social/reels/figue-cover.jpg", "id": "fig"},
+    {"date": "2026-11-19", "file": "social/reels/pomme-de-terre.mp4", "cover": "social/reels/pomme-de-terre-cover.jpg", "id": "potato"},
+    {"date": "2026-11-20", "file": "social/reels/kiwi.mp4", "cover": "social/reels/kiwi-cover.jpg", "id": "kiwi"},
+    {"date": "2026-11-21", "file": "social/reels/miel.mp4", "cover": "social/reels/miel-cover.jpg", "id": "honey"},
+    {"date": "2026-11-22", "file": "social/reels/piment.mp4", "cover": "social/reels/piment-cover.jpg", "id": "chili"},
+    {"date": "2026-11-23", "file": "social/reels/caprese.mp4", "cover": "social/reels/caprese-cover.jpg", "id": "tomato"},
+    {"date": "2026-11-24", "file": "social/reels/banane.mp4", "cover": "social/reels/banane-cover.jpg", "id": "banana"},
+    {"date": "2026-11-25", "file": "social/reels/huile-olive.mp4", "cover": "social/reels/huile-olive-cover.jpg", "id": "olive-oil"},
+    {"date": "2026-11-26", "file": "social/reels/ananas.mp4", "cover": "social/reels/ananas-cover.jpg", "id": "pineapple"},
+    {"date": "2026-11-27", "file": "social/reels/fraise.mp4", "cover": "social/reels/fraise-cover.jpg", "id": "strawberry"}
   ]
 }

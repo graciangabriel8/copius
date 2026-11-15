@@ -1,6 +1,18 @@
 {
   "note": "@copius.en's reel queue, read by .github/workflows/reels-instagram-en.yml at 18:00 Paris; the underscore keeps it off the site. An entry with \"held\" is never posted, by date or by id. To release one, on the owner's go: copy source video and cover to \"file\" and \"cover\", check each copy's sha256 against source (the files the Manager chat vetted), give it a \"date\", delete \"held\" and \"source\", commit both files with the entry. At most one reel a Paris day on the account.",
   "reels": [
+    {"date": "2026-11-16", "file": "social/reels-en/tomato.mp4", "cover": "social/reels-en/tomato-cover.jpg", "id": "tomato"},
+    {"date": "2026-11-17", "file": "social/reels-en/honey.mp4", "cover": "social/reels-en/honey-cover.jpg", "id": "honey"},
+    {"date": "2026-11-18", "file": "social/reels-en/olive-oil.mp4", "cover": "social/reels-en/olive-oil-cover.jpg", "id": "olive-oil"},
+    {"date": "2026-11-19", "file": "social/reels-en/strawberry.mp4", "cover": "social/reels-en/strawberry-cover.jpg", "id": "strawberry"},
+    {"date": "2026-11-20", "file": "social/reels-en/banana.mp4", "cover": "social/reels-en/banana-cover.jpg", "id": "banana"},
+    {"date": "2026-11-21", "file": "social/reels-en/pineapple.mp4", "cover": "social/reels-en/pineapple-cover.jpg", "id": "pineapple"},
+    {"date": "2026-11-22", "file": "social/reels-en/salt.mp4", "cover": "social/reels-en/salt-cover.jpg", "id": "salt"},
+    {"date": "2026-11-23", "file": "social/reels-en/potato.mp4", "cover": "social/reels-en/potato-cover.jpg", "id": "potato"},
+    {"date": "2026-11-24", "file": "social/reels-en/apple.mp4", "cover": "social/reels-en/apple-cover.jpg", "id": "apple"},
+    {"date": "2026-11-25", "file": "social/reels-en/fig.mp4", "cover": "social/reels-en/fig-cover.jpg", "id": "fig"},
+    {"date": "2026-11-26", "file": "social/reels-en/chili.mp4", "cover": "social/reels-en/chili-cover.jpg", "id": "chili"},
+    {"date": "2026-11-27", "file": "social/reels-en/kiwi.mp4", "cover": "social/reels-en/kiwi-cover.jpg", "id": "kiwi"},
     {"id": "copius-3d-basket-en",
      "file": "social/reels-en/copius-3d-basket-en.mp4",
      "cover": "social/reels-en/copius-3d-basket-en-cover.jpg",

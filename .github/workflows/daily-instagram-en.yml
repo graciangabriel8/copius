@@ -127,11 +127,14 @@ jobs:
 
           # 1. has a card gone out today on this account, or this caption at all?
           # Carousels only: the 18:00 reel is not the card. The day is Paris's.
-          # An unreadable answer posts: a missed day is invisible, a duplicate is not.
-          SEEN="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
-            --data-urlencode "fields=timestamp,media_type,caption" --data-urlencode "limit=50" \
-            --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
-            | python3 -c 'import sys, json, datetime, zoneinfo
+          # A readable answer with no list posts: a missed day is invisible, a
+          # duplicate is not. A request that fails outright stops the step.
+          # Asked twice: here, and again just before publishing.
+          guard() {
+            SEEN="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
+              --data-urlencode "fields=timestamp,media_type,caption" --data-urlencode "limit=50" \
+              --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+              | python3 -c 'import sys, json, datetime, zoneinfo
           try: d = json.load(sys.stdin).get("data") or []
           except ValueError: d = []
           flat = lambda s: " ".join((s or "").split())
@@ -140,9 +143,11 @@ jobs:
           if any(flat(m.get("caption")) == flat(sys.argv[1]) for m in cards): print("this card")
           elif any(m.get("timestamp") and paris(m["timestamp"]) == sys.argv[2] for m in cards): print("a card today")
           else: print("")' "$CAPTION" "$DATE")"
-          if [ -n "$SEEN" ]; then
-            echo "::notice::already up: $SEEN — nothing to do"; exit 0
-          fi
+            if [ -n "$SEEN" ]; then
+              echo "::notice::already up: $SEEN — nothing to do"; exit 0
+            fi
+          }
+          guard
 
           # 2. containers: one per slide, then the carousel holding them; the
           # caption belongs to the parent only.
@@ -167,8 +172,9 @@ jobs:
           STATUS=""
           for i in 1 2 3 4 5 6; do
             [ "$i" = 1 ] || sleep 60
-            STATUS="$(curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$CID" \
-              --data-urlencode "fields=status_code" --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+            # a poll that times out is one more check, not the end of the run
+            STATUS="$( { curl -sS -G --max-time 60 "https://graph.instagram.com/v23.0/$CID" \
+              --data-urlencode "fields=status_code" --data-urlencode "access_token=$IG_ACCESS_TOKEN" || true; } \
               | python3 -c 'import sys,json
           try: print(json.load(sys.stdin).get("status_code",""))
           except ValueError: print("")')"
@@ -182,7 +188,8 @@ jobs:
             echo "::error::container still ${STATUS:-without status} after five minutes"; exit 1
           fi
 
-          # 4. publish
+          # 4. publish, once the guard still finds no card up today
+          guard
           PUB="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media_publish" \
             -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN")"
           printf '%s' "$PUB" | python3 -c 'import sys,json;d=json.load(sys.stdin);print("published",d["id"]) if d.get("id") else sys.exit("publish failed: "+json.dumps(d)[:400])'

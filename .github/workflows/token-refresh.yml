@@ -50,5 +50,6 @@ jobs:
           NEW="$(curl -sS --max-time 60 "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN" \
             | python3 -c 'import sys,json;d=json.load(sys.stdin);print(d.get("access_token",""))')"
           if [ -z "$NEW" ]; then echo "::error::@copius.en refresh failed — the token may be within 24h of issue, or already dead"; exit 1; fi
+          echo "::add-mask::$NEW"
           gh secret set IG_ACCESS_TOKEN_EN --repo "${{ github.repository }}" --body "$NEW"
           echo "@copius.en token refreshed (value never printed)"
