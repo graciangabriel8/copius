@@ -138,11 +138,9 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     width:min(100vw, max(165%,560px)); height:max(175%,540px); transform:translate(-50%,-50%);
     background:radial-gradient(closest-side, var(--bg) 60%, color-mix(in srgb, var(--bg) 82%, transparent) 74%, transparent 100%);
   }
-  .c-mark{flex:none; width:auto; height:1.04em; margin:0 .03em 0 0; position:relative; top:.035em}
+  .wordmark img{display:block; width:auto; height:clamp(52px,9vw,104px)}
   h1{
-    margin:0; padding-left:.07em;
-    font:400 clamp(56px,11vw,140px)/.92 var(--serif);
-    color:#2A5D1C; display:flex; align-items:baseline; justify-content:center;
+    margin:0; line-height:0; display:flex; justify-content:center;
   }
   .lede{margin:18px 0 0; font:400 clamp(19px,2.3vw,27px)/1.3 var(--serif); color:var(--ink-2); text-wrap:balance}
   .lede em{color:var(--accent)}
@@ -331,7 +329,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   /* Short screens (a phone on its side): the title gives way to the doors. */
   @media (max-height:480px){
     .hero{padding-top:12px; padding-bottom:12px}
-    h1{font-size:clamp(44px,18vh,140px)}
+    .wordmark img{height:clamp(44px,14vh,104px)}
     .lede{margin-top:10px}
     .cta{margin-top:18px}
     .doors{margin-top:16px}
@@ -357,7 +355,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
 </header>
 
 <main class="hero">
-  <h1 class="wordmark" aria-label="Copius"><img class="c-mark" src="icons/c-mark.png" width="280" height="306" alt=""><span aria-hidden="true">opius</span></h1>
+  <h1 class="wordmark"><img src="icons/copius-lockup.svg" width="485" height="118" alt="Copius"></h1>
   <p class="lede"><span data-l="fr" lang="fr">Chaque ingrédient, son histoire et <em>ce qui va avec</em>.</span><span data-l="en">Every ingredient, its story, and <em>what goes with it</em>.</span></p>
   <a class="cta cta-in" href="atlas.html" data-enter><span data-l="fr" lang="fr">Entrer dans l’atlas</span><span data-l="en">Enter the atlas</span><span class="arrow" aria-hidden="true">→</span></a>
   <!-- Every number in data-count, here and in #versions, is rewritten by

@@ -64,12 +64,11 @@ input,select{font:inherit}
   padding:14px 28px;background:var(--head-bg);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
 }
-/* The welcome page's wordmark (index.html), smaller: the drawn green C, then
-   « opius » in the C's own dark green. Nothing under it. */
+/* The welcome page's lockup (index.html), smaller: the split C (ink, its top arm green) and « copius »
+   in Archivo, as one drawing (icons/copius-lockup.svg). Nothing under it. */
 .brand{display:flex;align-items:center;gap:12px}
-.brand h1{margin:0;font:400 30px/1 var(--serif);color:#2A5D1C;display:flex;align-items:baseline}
-/* The C is a drawing (icons/c-mark.png); its body spans 1.3 cap heights and sits on the baseline. */
-.brand-logo{flex:none;width:auto;height:1.04em;margin:0 .03em 0 0;vertical-align:baseline;position:relative;top:.035em}
+.brand h1{margin:0;line-height:0}
+.brand h1 img{display:block;width:auto;height:30px}
 /* Wraps rather than clips. The toggles have overflow:hidden for their pill
    shape, so without this a fourth control cuts a label in half instead of
    moving to a second row — and scrollWidth still matches clientWidth, which
