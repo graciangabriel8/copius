@@ -77,9 +77,11 @@ jobs:
               echo "::error::another post landed after tile $((n - 1)) — stopped before tile $n"; exit 1
             fi
             f="${TILES[$((n - 1))]}"
-            CID="$(curl -sS -X POST --max-time 120 "$G/$IG_USER_ID/media" \
-              --data-urlencode "image_url=https://copius.fr/$f" -d "access_token=$IG_ACCESS_TOKEN" | jget id)"
-            [ -n "$CID" ] || { echo "::error::container failed for $f"; exit 1; }
+            CREATE="$(curl -sS -X POST --max-time 120 "$G/$IG_USER_ID/media" \
+              --data-urlencode "image_url=https://copius.fr/$f" -d "access_token=$IG_ACCESS_TOKEN")"
+            CID="$(printf '%s' "$CREATE" | jget id)"
+            # Instagram's answer carries no token; it is printed so a refusal says why.
+            [ -n "$CID" ] || { echo "::error::container failed for $f: $(printf '%s' "$CREATE" | head -c 400)"; exit 1; }
             STATUS=""
             for i in 1 2 3 4 5 6; do
               [ "$i" = 1 ] || sleep 60
