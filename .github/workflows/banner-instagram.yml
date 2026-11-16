@@ -1,0 +1,104 @@
+name: Banner to Instagram (once, by hand)
+
+# The new logo's three-post banner, posted once per account on the owner's go
+# (16 Nov 2026): social/banner/<account>/1-right, 2-middle, 3-left, in that
+# order, so the grid reads left to right. The API cannot pin, so he pins the
+# three on his phone, or the next reel shifts them. A tile goes up only when
+# the account's newest post is the tile just before it (none for tile 1), so
+# nothing else can land between them; a run that stopped half-way resumes with
+# start_from after a look at the grid. Posts cannot be deleted by the API.
+on:
+  workflow_dispatch:
+    inputs:
+      account:
+        description: "fr (@copius.fr) or en (@copius.en)"
+        type: choice
+        options: [fr, en]
+      start_from:
+        description: "First tile to post (1 = right). Above 1 only after a look shows the earlier tiles are the newest posts."
+        type: choice
+        options: ["1", "2", "3"]
+        default: "1"
+
+concurrency:
+  group: banner-instagram-${{ inputs.account }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post the tiles
+        env:
+          ACCOUNT: ${{ inputs.account }}
+          START: ${{ inputs.start_from }}
+          IG_USER_ID: ${{ inputs.account == 'en' && secrets.IG_USER_ID_EN || secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ inputs.account == 'en' && secrets.IG_ACCESS_TOKEN_EN || secrets.IG_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          : "${IG_USER_ID:?the account's IG user id secret is missing}"
+          : "${IG_ACCESS_TOKEN:?the account's IG token secret is missing}"
+          G=https://graph.instagram.com/v23.0
+          TILES=(social/banner/$ACCOUNT/1-right.jpg social/banner/$ACCOUNT/2-middle.jpg social/banner/$ACCOUNT/3-left.jpg)
+
+          # Every tile live at its committed size before anything is posted.
+          for f in "${TILES[@]}"; do
+            test -f "$f" || { echo "::error::$f is not in the repository"; exit 1; }
+            IFS='|' read -r CODE TYPE SIZE <<< "$(curl -sS -o /dev/null -w '%{http_code}|%{content_type}|%{size_download}' --max-time 60 "https://copius.fr/$f")"
+            echo "site: $CODE, ${TYPE:-no type}, $SIZE bytes for $f (committed: $(wc -c < "$f" | tr -d ' '))"
+            if [ "$CODE" != "200" ] || [ "${TYPE%%;*}" != "image/jpeg" ] || [ "$SIZE" != "$(wc -c < "$f" | tr -d ' ')" ]; then
+              echo "::error::$f is not live as committed (deploy pending?) — nothing posted"; exit 1
+            fi
+          done
+
+          # The id of the account's newest post; an unreadable answer stops the job.
+          newest() {
+            curl -sS -G --max-time 60 "$G/$IG_USER_ID/media" --data-urlencode "fields=id" --data-urlencode "limit=1" \
+              --data-urlencode "access_token=$IG_ACCESS_TOKEN" \
+              | python3 -c 'import sys, json
+          d = json.load(sys.stdin)
+          if "data" not in d: sys.exit("unreadable media list: " + json.dumps(d)[:300])
+          print(d["data"][0]["id"] if d["data"] else "none")'
+          }
+          jget() { python3 -c 'import sys,json
+          try: print(json.load(sys.stdin).get(sys.argv[1],""))
+          except ValueError: print("")' "$1"; }
+
+          PREV=""
+          for n in 1 2 3; do
+            [ "$n" -ge "$START" ] || continue
+            if [ -n "$PREV" ] && [ "$(newest)" != "$PREV" ]; then
+              echo "::error::another post landed after tile $((n - 1)) — stopped before tile $n"; exit 1
+            fi
+            f="${TILES[$((n - 1))]}"
+            CID="$(curl -sS -X POST --max-time 120 "$G/$IG_USER_ID/media" \
+              --data-urlencode "image_url=https://copius.fr/$f" -d "access_token=$IG_ACCESS_TOKEN" | jget id)"
+            [ -n "$CID" ] || { echo "::error::container failed for $f"; exit 1; }
+            STATUS=""
+            for i in 1 2 3 4 5 6; do
+              [ "$i" = 1 ] || sleep 60
+              STATUS="$(curl -sS -G --max-time 60 "$G/$CID" --data-urlencode "fields=status_code" \
+                --data-urlencode "access_token=$IG_ACCESS_TOKEN" | jget status_code)"
+              echo "container ($f): ${STATUS:-<no status>} (check $i/6)"
+              case "$STATUS" in FINISHED) break ;; ERROR|EXPIRED) echo "::error::container ended as $STATUS"; exit 1 ;; esac
+            done
+            [ "$STATUS" = "FINISHED" ] || { echo "::error::container not ready after five minutes"; exit 1; }
+            PUB="$(curl -sS -X POST --max-time 120 "$G/$IG_USER_ID/media_publish" \
+              -d "creation_id=$CID" -d "access_token=$IG_ACCESS_TOKEN" | jget id)"
+            [ -n "$PUB" ] || { echo "::error::publish failed for $f"; exit 1; }
+            echo "tile $n published"
+            # The next tile only once this one is the newest listed post.
+            for i in 1 2 3 4 5 6; do
+              sleep 20
+              [ "$(newest)" = "$PUB" ] && break
+            done
+            [ "$(newest)" = "$PUB" ] || { echo "::error::tile $n published but not listed newest after two minutes — resume with start_from $((n + 1)) after a look"; exit 1; }
+            PREV="$PUB"
+          done
+          echo "banner up on @copius.$ACCOUNT: pin the three tiles on the phone"
