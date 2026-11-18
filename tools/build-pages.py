@@ -328,8 +328,8 @@ def head_extra(title, desc, url, lang):
     """Favicon from real files, not a data: URI — Google needs a crawlable URL to
     show an icon — plus the card that appears when the link is pasted anywhere."""
     return (
-        '<link rel="icon" href="/icons/icon.svg?v=2" type="image/svg+xml">\n'
-        '<link rel="icon" sizes="192x192" href="/icons/icon-192.png?v=2">\n'
+        '<link rel="icon" href="/icons/icon.svg?i=2" type="image/svg+xml">\n'
+        '<link rel="icon" sizes="192x192" href="/icons/icon-192.png?i=2">\n'
         '<meta property="og:type" content="article">\n'
         '<meta property="og:site_name" content="Copius">\n'
         '<meta property="og:title" content="%s">\n'

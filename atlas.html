@@ -6,8 +6,8 @@
 <meta name="robots" content="noindex,follow">
 <title>Copius — Ingredient Dictionary · Dictionnaire des ingrédients</title>
 <meta name="tdm-reservation" content="1">
-<link rel="icon" href="/icons/icon.svg?v=3" type="image/svg+xml">
-<link rel="icon" sizes="192x192" href="/icons/icon-192.png?v=3">
+<link rel="icon" href="/icons/icon.svg?i=2" type="image/svg+xml">
+<link rel="icon" sizes="192x192" href="/icons/icon-192.png?i=2">
 <meta name="description" content="The free version of Copius: the ingredients a cook is expected to know and the techniques — origin, season, flavour, price and a kitchen note for each, in English and French.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Copius">
@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=276">
 <script>
 /* First entry from the door: the page waits, hidden, for js/app.js to sketch it
    (the intro at the end of app.js). It shows itself after 3 s whatever happens. */
@@ -35,7 +35,7 @@
 </script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F6F1">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?i=2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Copius">
 </head>
@@ -253,10 +253,10 @@
 
 <input type="file" id="photoFile" accept="image/*" hidden>
 
-<script src="js/i18n.js?v=3"></script>
-<script src="js/photos.js?v=3"></script>
-<script src="js/data-techniques.js?v=3"></script>
-<script src="js/free.js?v=3"></script>
+<script src="js/i18n.js?v=276"></script>
+<script src="js/photos.js?v=276"></script>
+<script src="js/data-techniques.js?v=276"></script>
+<script src="js/free.js?v=276"></script>
 <script>
   /* The full version. js/_premium.js (tools/build-free.js; never published)
      replaces the free data with all of it and sets COPIUS_PREMIUM. It loads
@@ -271,13 +271,13 @@
   (function () {
     var h = location.hostname, local = h === "localhost" || h === "127.0.0.1";
     if (local && /(?:^\?|&)full(?:=|&|$)/.test(location.search)) {
-      document.write('<script src="' + "js/" + '_premium.js?v=3"><\/script>'); return;
+      document.write('<script src="' + "js/" + '_premium.js?v=276"><\/script>'); return;
     }
     if (/(?:^|;\s*)__Host-copius_full=1(?:;|$)/.test(document.cookie))
-      document.write('<script src="' + "/api/" + 'premium.php?v=3"><\/script>');
+      document.write('<script src="' + "/api/" + 'premium.php?v=276"><\/script>');
   })();
 </script>
-<script src="js/app.js?v=3"></script>
+<script src="js/app.js?v=276"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
