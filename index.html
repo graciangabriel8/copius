@@ -334,10 +334,30 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
     .cta{margin-top:18px}
     .doors{margin-top:16px}
   }
+  /* The scroll cue: the hero fills the screen, so nothing said there was more below. A round arrow pops in,
+     bobs, and fades once the page moves; on a phone the hero keeps room for it under the sign-in line. */
+  .scroll-cue{
+    position:fixed; z-index:5; left:50%; bottom:calc(18px + env(safe-area-inset-bottom));
+    width:48px; height:48px; margin-left:-24px; border-radius:50%;
+    display:grid; place-items:center; color:var(--ink);
+    background:var(--card); border:1px solid var(--border); box-shadow:var(--lift);
+    animation:cue-pop .6s cubic-bezier(.2,1.6,.4,1) backwards, cue-bob 1.8s ease-in-out .6s infinite;
+    transition:opacity .3s, visibility .3s;
+  }
+  .scroll-cue svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  .scroll-cue:hover{color:var(--accent)}
+  .scroll-cue:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  .scroll-cue.gone{opacity:0; visibility:hidden}
+  .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  /* From half size, not from nothing: a page whose clock never runs (a background tab, a preview) still shows it. */
+  @keyframes cue-pop{from{transform:scale(.55)} to{transform:scale(1)}}
+  @keyframes cue-bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)}}
+  @media (max-width:600px){ .hero{padding-bottom:calc(76px + env(safe-area-inset-bottom))} }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .tile{animation:none}
     .tile,.cta,.cta .arrow,.go{transition:none}
+    .scroll-cue{animation:none}
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://copius.fr/#site","name":"Copius","url":"https://copius.fr/","inLanguage":["en","fr"],"description":"Copius, un outil Nokime : l’atlas illustré de la cuisine, en français et en anglais. Version gratuite avec 500 ingrédients et les techniques, version complète à 5,90 € par mois ou 49 € par an, version pour les écoles bientôt. Copius, a Nokime tool: an illustrated atlas of cooking in French and English. Free version with 500 ingredients and the techniques, full version at €5.90 a month or €49 a year, schools version soon.","publisher":{"@type":"Organization","@id":"https://nokime.fr/#org","name":"Nokime","url":"https://nokime.fr/","sameAs":["https://www.instagram.com/nokime.fr/"]}},{"@type":"Organization","@id":"https://copius.fr/#org","name":"Copius","url":"https://copius.fr/","logo":"https://copius.fr/icons/icon-512.png","sameAs":["https://www.instagram.com/copius.fr/"],"parentOrganization":{"@id":"https://nokime.fr/#org"}}]}</script>
@@ -387,6 +407,7 @@ if (/^#[a-z0-9-]+$/i.test(location.hash) && location.hash !== "#versions") locat
   <a class="more" href="#versions"><span data-l="fr" lang="fr">Comparez les deux versions sur la fraise</span><span data-l="en">Compare both versions on the strawberry</span> <span aria-hidden="true">↓</span></a>
   <p class="signin-line"><span data-l="fr" lang="fr">Vous avez déjà la version complète&#8239;? <a href="atlas.html#abonnement">Se connecter</a></span><span data-l="en">Already have the full version? <a href="atlas.html#abonnement">Sign in</a></span></p>
 </main>
+<a class="scroll-cue" id="scrollCue" href="#versions"><span class="vh"><span data-l="fr" lang="fr">Voir la suite</span><span data-l="en">See more</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5l6 6 6-6"/></svg></a>
 
 <!-- The example is the reel's (tools/reel-sort.html): six of the strawberry's
      pairings, and the plate PLATE.judge scored 96, "balanced", on 28 Oct 2026.
@@ -644,6 +665,14 @@ document.addEventListener("click", function (e) {
   if (!e.target.closest("[data-enter]")) return;
   try { if (sessionStorage.getItem("copius-bridge") !== "full") sessionStorage.setItem("copius-bridge", "door"); } catch (x) {}
 });
+</script>
+<script>
+/* The scroll cue leaves once the page has moved, and comes back at the top. */
+(function () {
+  var cue = document.getElementById("scrollCue"); if (!cue) return;
+  function upd() { cue.classList.toggle("gone", window.scrollY > 60); }
+  window.addEventListener("scroll", upd, {passive: true}); upd();
+})();
 </script>
 </body>
 </html>
