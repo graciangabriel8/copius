@@ -18,6 +18,11 @@ on:
     - cron: "50 13 * * *"
     - cron: "50 15 * * *"
   workflow_dispatch:
+    inputs:
+      date:
+        description: "Catch-up: a missed day to post now (YYYY-MM-DD, within the last 14 days). Empty = today."
+        required: false
+        default: ""
 
 concurrency:
   group: daily-instagram-en-${{ github.event_name == 'schedule' && 'cron' || 'manual' }}
@@ -34,6 +39,8 @@ jobs:
 
       - name: Work out today's ingredient
         id: pick
+        env:
+          CATCHUP: ${{ inputs.date }}
         run: |
           set -euo pipefail
           # The Paris day, pinned once, before the hold so a drink day does not
@@ -41,6 +48,14 @@ jobs:
           # which at 21:00 Paris is also the UTC day the French card used, so both
           # accounts show the same ingredient.
           DATE="$(TZ=Europe/Paris date +%F)"
+          # A catch-up names a missed day: before today, and at most 14 days back.
+          if [ -n "${CATCHUP:-}" ]; then
+            python3 -c 'import sys, datetime as d
+          c, t = d.date.fromisoformat(sys.argv[1]), d.date.fromisoformat(sys.argv[2])
+          sys.exit(0 if t - d.timedelta(14) <= c < t else "catch-up date must be within the 14 days before today")' "$CATCHUP" "$DATE"
+            DATE="$CATCHUP"
+            echo "catchup=1" >> "$GITHUB_OUTPUT"
+          fi
           ID="$(python3 tools/make-card.py --lang en --today-id "$DATE")"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
           if [ "$ID" = "-" ]; then
@@ -105,12 +120,19 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_EN }}
           ID: ${{ steps.pick.outputs.id }}
           DATE: ${{ steps.pick.outputs.date }}
+          CATCHUP: ${{ steps.pick.outputs.catchup }}
         run: |
           set -euo pipefail
           : "${IG_USER_ID:?set the IG_USER_ID_EN repository secret}"
           : "${IG_ACCESS_TOKEN:?set the IG_ACCESS_TOKEN_EN repository secret}"
           IMG="https://copius.fr/social/en/$ID.jpg"
           IMG2="https://copius.fr/social/en/$ID.2.jpg"
+          # copius.fr serves a card on its day and the next only, so a catch-up takes the same files
+          # from the public repository, pinned to this run's commit.
+          if [ "${CATCHUP:-}" = "1" ]; then
+            RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}"
+            IMG="$RAW/social/en/$ID.jpg"; IMG2="$RAW/social/en/$ID.2.jpg"
+          fi
           CAPTION="$(python3 tools/make-card.py --lang en --caption "$DATE")"
           test -n "$CAPTION" || { echo "::error::empty caption for $ID"; exit 1; }
 
