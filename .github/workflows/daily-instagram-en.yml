@@ -154,14 +154,10 @@ jobs:
           jid() { printf '%s' "$1" | python3 -c 'import sys,json
           try: print(json.load(sys.stdin).get("id",""))
           except ValueError: print("")'; }
-          ITEM1="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
-            --data-urlencode "image_url=$IMG" -d "is_carousel_item=true" -d "access_token=$IG_ACCESS_TOKEN")"
-          ITEM2="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
-            --data-urlencode "image_url=$IMG2" -d "is_carousel_item=true" -d "access_token=$IG_ACCESS_TOKEN")"
-          C1="$(jid "$ITEM1")"; C2="$(jid "$ITEM2")"
-          if [ -z "$C1" ] || [ -z "$C2" ]; then
-            echo "::error::carousel item failed: $(printf '%s%s' "$ITEM1" "$ITEM2" | head -c 400)"; exit 1
-          fi
+          # One container per slide; a « Media download has failed » (2207052) is tried again after a
+          # pause, since Meta's fetch for it never reached copius.fr (tools/ig-item.sh).
+          C1="$(sh tools/ig-item.sh "$IMG")" || { echo "::error::carousel item failed (card)"; exit 1; }
+          C2="$(sh tools/ig-item.sh "$IMG2")" || { echo "::error::carousel item failed (second slide)"; exit 1; }
           CREATE="$(curl -sS -X POST --max-time 120 "https://graph.instagram.com/v23.0/$IG_USER_ID/media" \
             -d "media_type=CAROUSEL" -d "children=$C1,$C2" \
             --data-urlencode "caption=$CAPTION" -d "access_token=$IG_ACCESS_TOKEN")"

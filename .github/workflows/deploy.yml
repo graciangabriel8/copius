@@ -30,6 +30,8 @@ jobs:
         run: git fetch --depth=2 --no-tags origin live:refs/remotes/origin/live
       - name: Checks
         run: python3 tools/check.py
+      - name: The daily cards' retry on Instagram's download failure (tools/ig-item.sh)
+        run: sh tools/test-ig-item.sh
       - name: Move live to this commit (OVH deploys live)
         id: promote
         env:
