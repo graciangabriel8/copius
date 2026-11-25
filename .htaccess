@@ -25,7 +25,7 @@ RedirectMatch 404 "^/api/[._]"
 # (Copius locked it on 25 Sept 2026; _config.yml keeps it off Pages by path). Here
 # every other name in js/ answers 404, so a data file added later stays private
 # until it is listed here and in PUBLISHED_JS in the repo's tools/validate.js.
-RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)"
+RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques|smooth)\.js$)"
 
 <IfModule mod_headers.c>
   # Pages served every file with a ten-minute cache, and the ?v= stamps on the
@@ -56,7 +56,7 @@ RedirectMatch 404 "(?i)^/js/(?!(app|i18n|photos|page|free|data-techniques)\.js$)
   RewriteRule (^|/)[._] - [R=404,L]
   RewriteRule ^(tools|docs)(/.*)?$ - [R=404,L]
   RewriteRule ^(PLAN-[^/]*\.md|ROADMAP\.md|CNAME)$ - [R=404,L]
-  RewriteRule ^js/(?!(app|i18n|photos|page|free|data-techniques)\.js$) - [NC,R=404,L]
+  RewriteRule ^js/(?!(app|i18n|photos|page|free|data-techniques|smooth)\.js$) - [NC,R=404,L]
   # One hop to https://copius.fr, as Pages did: www to the bare domain, http to
   # https (OVH's documented SERVER_PORT method), and a folder's missing trailing
   # slash. REDIRECT_STATUS keeps the 404 page itself from being redirected when a

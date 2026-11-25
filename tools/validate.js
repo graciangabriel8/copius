@@ -243,7 +243,7 @@ SOURCES.forEach(function (f) {
 // unpublished bundle; and the atlas loads only served ones. A new premium file wired
 // the old way, a script tag and no sources.txt line, would otherwise go out with
 // every other check green.
-var PUBLISHED_JS = ["js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js"];
+var PUBLISHED_JS = ["js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js", "js/smooth.js"];
 var isSource = {};
 SOURCES.forEach(function (f) { isSource[f] = true; });
 listJs().forEach(function (f) {

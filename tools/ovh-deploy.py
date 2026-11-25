@@ -21,7 +21,7 @@ NOT_SERVED = ("tools/", "docs/", "api/")
 # api/card.php answers social/'s and social/en/'s cards only on their days (.htaccess); social/reels/ is served as committed.
 CARD = re.compile(r"social/(en/)?[a-z0-9-]+(\.2)?\.jpg")
 # js/ answers 404 for anything else, the full version's data above all (.htaccess, PUBLISHED_JS in tools/validate.js).
-PUBLIC_JS = ("js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js")
+PUBLIC_JS = ("js/app.js", "js/i18n.js", "js/photos.js", "js/page.js", "js/free.js", "js/data-techniques.js", "js/smooth.js")
 # One of each family of those files, asked every run: if one answers, paid content is public.
 LOCKED = ("js/data-meat.js", "js/trios-premium.js", "js/plate.js")
 # No .mp4: a reel is 12 MB on every pass, and social/reels.json and the covers land with it.

@@ -490,6 +490,7 @@ def page(i, lang, by_id, count, G):
 <link rel="alternate" hreflang="x-default" href="%(xdef)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 <script type="application/ld+json">%(ld)s</script>
 </head>
 <body>
@@ -721,13 +722,13 @@ def index_href(lang):
 
 # A <lastmod> is the day the page last changed, not the day it was built: every date read 2026-10-07 once, the build
 # date, and told a crawler nothing. tools/lastmod.json keeps, per sitemap URL, a fingerprint of the page as written
-# (its ?v= asset stamps left out, since every bump moves them, and so is the ingredient count in an entry page's
+# (its ?v= asset stamps left out, since every bump moves them, and the js/smooth.js tag every page carries, added 25 Nov 2026, and so is the ingredient count in an entry page's
 # footer, which one new ingredient would move on all 3,776 of them; every kind of space reads as one, so a typography
 # pass that puts a no-break space before « : » moves no date either) and the day that fingerprint was first seen. A
 # rebuild that changes nothing changes no date; a page whose content moves takes today's. Run after every page is
 # written: it reads them back, the hand-made ones (the home page, about/, cgv/...) included.
 LASTMOD = ROOT / "tools" / "lastmod.json"
-STAMP = re.compile(r"\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n(?:<p class=\"foot-evin\">[^\n]*</p>\n)?</footer>)")
+STAMP = re.compile(r"<script src=\"(?:\.\./)*js/smooth\.js\?v=\d+\" defer></script>\n|\?v=\d+|\d+ (?:ingredients|ingrédients) · \d+ (?:families|familles)(?=\n(?:<p class=\"foot-evin\">[^\n]*</p>\n)?</footer>)")
 SPACES = re.compile("[\u00a0\u202f]|&nbsp;|&#8239;|&#160;")
 
 
@@ -771,6 +772,7 @@ def index_page(rows, lang):
 <link rel="alternate" hreflang="%s" href="%s">
 %s
 <link rel="stylesheet" href="%scss/page.css?v=%d">
+<script src="%sjs/smooth.js?v=%d" defer></script>
 </head>
 <body>
 <header><a class="home" href="%s">Copius</a><nav><a href="%s%s">%s</a><a class="ig-link" href="https://instagram.com/copius.fr" rel="me noopener" target="_blank" aria-label="Copius sur Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.2" class="ig-dot"/></svg></a></nav></header>
@@ -780,7 +782,7 @@ def index_page(rows, lang):
 </body>
 </html>
 """ % (lang, e(t["index"]), e(t["index_desc"] % (t["tagline"], "{:,}".format(len(rows)).replace(",", "," if lang == "en" else "\u00a0"))),
-       here, lang, here, other, there, THEME_COLOR, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
+       here, lang, here, other, there, THEME_COLOR, up, VERSION, up, VERSION, up, up, APP, e(t["back"]), e(t["index"]),
        e(t["legend"]), "".join(blocks), e(t["tagline"]), legal_links(up, lang), foot_evin(lang).rstrip("\n"))
 
 
@@ -892,6 +894,7 @@ def dish_page(d, lang, by_id):
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -964,6 +967,7 @@ def dish_index(lang, by_id):
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -1110,6 +1114,7 @@ def chef_page(c, lang, by_id, dish_by_id):
 <link rel="alternate" hreflang="x-default" href="%(xdef)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -1171,6 +1176,7 @@ def chef_index(lang):
 <link rel="alternate" hreflang="x-default" href="%(xdef)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -1266,6 +1272,7 @@ def season_page(month, lang, rows):
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -1335,6 +1342,7 @@ def season_index(lang, rows):
 <link rel="alternate" hreflang="%(other)s" href="%(there)s">
 %(og)s
 <link rel="stylesheet" href="%(up)scss/page.css?v=%(v)d">
+<script src="%(up)sjs/smooth.js?v=%(v)d" defer></script>
 </head>
 <body>
 <header>
@@ -1645,6 +1653,7 @@ def fiche_page(i, here, by_id, G, hit, dropped):
 <meta name="description" content="%(desc)s">
 %(og)s
 <link rel="stylesheet" href="../../css/page.css?v=%(v)d">
+<script src="../../js/smooth.js?v=%(v)d" defer></script>
 <style>%(css)s</style>
 </head>
 <body>

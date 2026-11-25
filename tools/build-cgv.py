@@ -39,6 +39,7 @@ PAGE = """<!doctype html>
 <link rel="icon" sizes="192x192" href="/icons/icon-192.png">
 <meta name="theme-color" content="#F7F6F1">
 <link rel="stylesheet" href="../css/page.css?v=@@V@@">
+<script src="../js/smooth.js?v=@@V@@" defer></script>
 <style>
   main{overflow-wrap:break-word}
   .sep{border:0;border-top:1px solid var(--border);margin:40px 0 32px}
