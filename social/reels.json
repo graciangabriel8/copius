@@ -48,6 +48,13 @@
     {"date": "2026-11-24", "file": "social/reels/banane.mp4", "cover": "social/reels/banane-cover.jpg", "id": "banana"},
     {"date": "2026-11-25", "file": "social/reels/huile-olive.mp4", "cover": "social/reels/huile-olive-cover.jpg", "id": "olive-oil"},
     {"date": "2026-11-26", "file": "social/reels/ananas.mp4", "cover": "social/reels/ananas-cover.jpg", "id": "pineapple"},
-    {"date": "2026-11-27", "file": "social/reels/fraise.mp4", "cover": "social/reels/fraise-cover.jpg", "id": "strawberry"}
+    {"date": "2026-11-27", "file": "social/reels/fraise.mp4", "cover": "social/reels/fraise-cover.jpg", "id": "strawberry"},
+    {"date": "2026-11-28", "file": "social/reels/fact-nutmeg.mp4", "cover": "social/reels/fact-nutmeg-cover.jpg", "id": "nutmeg"},
+    {"date": "2026-11-29", "file": "social/reels/fact-clementine.mp4", "cover": "social/reels/fact-clementine-cover.jpg", "id": "clementine"},
+    {"date": "2026-11-30", "file": "social/reels/fact-leek.mp4", "cover": "social/reels/fact-leek-cover.jpg", "id": "leek"},
+    {"date": "2026-12-01", "file": "social/reels/fact-cranberry.mp4", "cover": "social/reels/fact-cranberry-cover.jpg", "id": "cranberry"},
+    {"date": "2026-12-02", "file": "social/reels/fact-quince.mp4", "cover": "social/reels/fact-quince-cover.jpg", "id": "quince"},
+    {"date": "2026-12-03", "file": "social/reels/fact-vanilla.mp4", "cover": "social/reels/fact-vanilla-cover.jpg", "id": "vanilla"},
+    {"date": "2026-12-04", "file": "social/reels/fact-cinnamon.mp4", "cover": "social/reels/fact-cinnamon-cover.jpg", "id": "cinnamon"}
   ]
 }
